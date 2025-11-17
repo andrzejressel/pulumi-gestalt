@@ -26,7 +26,11 @@
 ///         instanceType: p4d.24xlarge
 ///         startDateRange: 2024-04-28T15:04:05Z
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod capacity_block_reservation {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -104,8 +108,6 @@ pub mod capacity_block_reservation {
         name: &str,
         args: CapacityBlockReservationArgs,
     ) -> CapacityBlockReservationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let capacity_block_offering_id_binding = args
             .capacity_block_offering_id
             .get_output(context);

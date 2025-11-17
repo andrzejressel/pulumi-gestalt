@@ -40,7 +40,11 @@
 /// $ pulumi import cloudflare:index/waitingRoom:WaitingRoom default <zone_id>/<waiting_room_id>
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod waiting_room {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -165,8 +169,6 @@ pub mod waiting_room {
         name: &str,
         args: WaitingRoomArgs,
     ) -> WaitingRoomResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let additional_routes_binding = args.additional_routes.get_output(context);
         let cookie_suffix_binding = args.cookie_suffix.get_output(context);
         let custom_page_html_binding = args.custom_page_html.get_output(context);

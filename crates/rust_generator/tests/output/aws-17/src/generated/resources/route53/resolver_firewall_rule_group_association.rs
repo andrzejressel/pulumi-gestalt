@@ -30,7 +30,11 @@
 /// ```sh
 /// $ pulumi import aws:route53/resolverFirewallRuleGroupAssociation:ResolverFirewallRuleGroupAssociation example rslvr-frgassoc-0123456789abcdef
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod resolver_firewall_rule_group_association {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -92,8 +96,6 @@ pub mod resolver_firewall_rule_group_association {
         name: &str,
         args: ResolverFirewallRuleGroupAssociationArgs,
     ) -> ResolverFirewallRuleGroupAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let firewall_rule_group_id_binding = args
             .firewall_rule_group_id
             .get_output(context);

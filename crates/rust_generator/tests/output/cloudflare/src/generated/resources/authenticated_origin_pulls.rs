@@ -74,7 +74,11 @@
 /// $ pulumi import cloudflare:index/authenticatedOriginPulls:AuthenticatedOriginPulls example <zone_id>/<certificate_id>/<hostname>
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod authenticated_origin_pulls {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -120,8 +124,6 @@ pub mod authenticated_origin_pulls {
         name: &str,
         args: AuthenticatedOriginPullsArgs,
     ) -> AuthenticatedOriginPullsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authenticated_origin_pulls_certificate_binding = args
             .authenticated_origin_pulls_certificate
             .get_output(context);

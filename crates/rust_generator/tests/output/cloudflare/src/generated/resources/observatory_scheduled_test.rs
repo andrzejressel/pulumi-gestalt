@@ -25,7 +25,11 @@
 /// $ pulumi import cloudflare:index/observatoryScheduledTest:ObservatoryScheduledTest example <zone_id>:<url>:<region>
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod observatory_scheduled_test {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -67,8 +71,6 @@ pub mod observatory_scheduled_test {
         name: &str,
         args: ObservatoryScheduledTestArgs,
     ) -> ObservatoryScheduledTestResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let frequency_binding = args.frequency.get_output(context);
         let region_binding = args.region.get_output(context);
         let url_binding = args.url.get_output(context);

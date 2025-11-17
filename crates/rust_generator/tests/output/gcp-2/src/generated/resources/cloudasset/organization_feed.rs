@@ -71,7 +71,11 @@
 /// $ pulumi import gcp:cloudasset/organizationFeed:OrganizationFeed default {{org_id}}/{{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod organization_feed {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -169,8 +173,6 @@ pub mod organization_feed {
         name: &str,
         args: OrganizationFeedArgs,
     ) -> OrganizationFeedResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let asset_names_binding = args.asset_names.get_output(context);
         let asset_types_binding = args.asset_types.get_output(context);
         let billing_project_binding = args.billing_project.get_output(context);

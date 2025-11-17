@@ -157,7 +157,11 @@
 /// $ pulumi import gcp:logging/metric:Metric default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod metric {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -293,8 +297,6 @@ pub mod metric {
         name: &str,
         args: MetricArgs,
     ) -> MetricResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_name_binding = args.bucket_name.get_output(context);
         let bucket_options_binding = args.bucket_options.get_output(context);
         let description_binding = args.description.get_output(context);

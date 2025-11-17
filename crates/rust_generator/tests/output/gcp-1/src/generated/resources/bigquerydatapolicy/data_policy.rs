@@ -136,7 +136,11 @@
 /// $ pulumi import gcp:bigquerydatapolicy/dataPolicy:DataPolicy default {{location}}/{{data_policy_id}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod data_policy {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -206,8 +210,6 @@ pub mod data_policy {
         name: &str,
         args: DataPolicyArgs,
     ) -> DataPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let data_masking_policy_binding = args.data_masking_policy.get_output(context);
         let data_policy_id_binding = args.data_policy_id.get_output(context);
         let data_policy_type_binding = args.data_policy_type.get_output(context);

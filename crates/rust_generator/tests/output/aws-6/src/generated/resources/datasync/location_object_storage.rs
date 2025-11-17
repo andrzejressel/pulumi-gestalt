@@ -27,7 +27,11 @@
 /// ```sh
 /// $ pulumi import aws:datasync/locationObjectStorage:LocationObjectStorage example arn:aws:datasync:us-east-1:123456789012:location/loc-12345678901234567
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod location_object_storage {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -111,8 +115,6 @@ pub mod location_object_storage {
         name: &str,
         args: LocationObjectStorageArgs,
     ) -> LocationObjectStorageResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_key_binding = args.access_key.get_output(context);
         let agent_arns_binding = args.agent_arns.get_output(context);
         let bucket_name_binding = args.bucket_name.get_output(context);

@@ -50,7 +50,11 @@
 /// ```sh
 /// $ pulumi import aws:backup/vaultNotifications:VaultNotifications test TestVault
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod vault_notifications {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -89,8 +93,6 @@ pub mod vault_notifications {
         name: &str,
         args: VaultNotificationsArgs,
     ) -> VaultNotificationsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let backup_vault_events_binding = args.backup_vault_events.get_output(context);
         let backup_vault_name_binding = args.backup_vault_name.get_output(context);
         let sns_topic_arn_binding = args.sns_topic_arn.get_output(context);

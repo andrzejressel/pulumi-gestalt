@@ -26,7 +26,11 @@
 /// ```sh
 /// $ pulumi import aws:lambda/functionRecursionConfig:FunctionRecursionConfig example SomeFunction
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod function_recursion_config {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -58,8 +62,6 @@ pub mod function_recursion_config {
         name: &str,
         args: FunctionRecursionConfigArgs,
     ) -> FunctionRecursionConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let function_name_binding = args.function_name.get_output(context);
         let recursive_loop_binding = args.recursive_loop.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

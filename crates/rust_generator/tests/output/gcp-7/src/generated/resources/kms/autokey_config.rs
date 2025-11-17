@@ -124,7 +124,11 @@
 /// $ pulumi import gcp:kms/autokeyConfig:AutokeyConfig default {{folder}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod autokey_config {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -166,8 +170,6 @@ pub mod autokey_config {
         name: &str,
         args: AutokeyConfigArgs,
     ) -> AutokeyConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let folder_binding = args.folder.get_output(context);
         let key_project_binding = args.key_project.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

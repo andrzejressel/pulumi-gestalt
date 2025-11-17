@@ -189,7 +189,11 @@
 ///
 ///  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod consent_store_iam_binding {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -268,8 +272,6 @@ pub mod consent_store_iam_binding {
         name: &str,
         args: ConsentStoreIamBindingArgs,
     ) -> ConsentStoreIamBindingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let condition_binding = args.condition.get_output(context);
         let consent_store_id_binding = args.consent_store_id.get_output(context);
         let dataset_binding = args.dataset.get_output(context);

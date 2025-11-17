@@ -27,7 +27,11 @@
 /// ```sh
 /// $ pulumi import aws:ec2/localGatewayRoute:LocalGatewayRoute example lgw-rtb-12345678_172.16.0.0/16
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod local_gateway_route {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -68,8 +72,6 @@ pub mod local_gateway_route {
         name: &str,
         args: LocalGatewayRouteArgs,
     ) -> LocalGatewayRouteResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let destination_cidr_block_binding = args
             .destination_cidr_block
             .get_output(context);

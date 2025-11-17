@@ -34,7 +34,11 @@
 /// ```sh
 /// $ pulumi import aws:datasync/locationAzureBlob:LocationAzureBlob example arn:aws:datasync:us-east-1:123456789012:location/loc-12345678901234567
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod location_azure_blob {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -111,8 +115,6 @@ pub mod location_azure_blob {
         name: &str,
         args: LocationAzureBlobArgs,
     ) -> LocationAzureBlobResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_tier_binding = args.access_tier.get_output(context);
         let agent_arns_binding = args.agent_arns.get_output(context);
         let authentication_type_binding = args.authentication_type.get_output(context);

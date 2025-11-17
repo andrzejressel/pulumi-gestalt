@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_bastion_shareable_link {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -29,8 +33,6 @@ pub mod get_bastion_shareable_link {
         context: &pulumi_gestalt_rust::Context,
         args: GetBastionShareableLinkArgs,
     ) -> GetBastionShareableLinkResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bastion_host_name_binding = args.bastion_host_name.get_output(context);
         let resource_group_name_binding = args.resource_group_name.get_output(context);
         let vms_binding = args.vms.get_output(context);

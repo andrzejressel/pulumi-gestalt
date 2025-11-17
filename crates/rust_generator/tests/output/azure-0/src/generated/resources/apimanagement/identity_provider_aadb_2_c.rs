@@ -56,7 +56,11 @@
 /// $ pulumi import azure:apimanagement/identityProviderAadb2c:IdentityProviderAadb2c example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/mygroup1/providers/Microsoft.ApiManagement/service/service1/identityProviders/aadB2C
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod identity_provider_aadb_2_c {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -138,8 +142,6 @@ pub mod identity_provider_aadb_2_c {
         name: &str,
         args: IdentityProviderAadb2cArgs,
     ) -> IdentityProviderAadb2cResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allowed_tenant_binding = args.allowed_tenant.get_output(context);
         let api_management_name_binding = args.api_management_name.get_output(context);
         let authority_binding = args.authority.get_output(context);

@@ -25,7 +25,11 @@
 /// ```sh
 /// $ pulumi import aws:directoryservice/conditionalForwader:ConditionalForwader example d-1234567890:example.com
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod conditional_forwader {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -62,8 +66,6 @@ pub mod conditional_forwader {
         name: &str,
         args: ConditionalForwaderArgs,
     ) -> ConditionalForwaderResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let directory_id_binding = args.directory_id.get_output(context);
         let dns_ips_binding = args.dns_ips.get_output(context);
         let remote_domain_name_binding = args.remote_domain_name.get_output(context);

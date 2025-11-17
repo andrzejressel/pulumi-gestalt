@@ -40,7 +40,11 @@
 /// ```sh
 /// $ pulumi import aws:ec2/managedPrefixList:ManagedPrefixList default pl-0570a1d2d725c16be
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod managed_prefix_list {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -105,8 +109,6 @@ pub mod managed_prefix_list {
         name: &str,
         args: ManagedPrefixListArgs,
     ) -> ManagedPrefixListResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let address_family_binding = args.address_family.get_output(context);
         let entries_binding = args.entries.get_output(context);
         let max_entries_binding = args.max_entries.get_output(context);

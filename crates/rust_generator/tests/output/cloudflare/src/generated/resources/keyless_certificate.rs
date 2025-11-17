@@ -28,7 +28,11 @@
 /// $ pulumi import cloudflare:index/keylessCertificate:KeylessCertificate example <zone_id>/<keyless_certificate_id>
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod keyless_certificate {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -87,8 +91,6 @@ pub mod keyless_certificate {
         name: &str,
         args: KeylessCertificateArgs,
     ) -> KeylessCertificateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bundle_method_binding = args.bundle_method.get_output(context);
         let certificate_binding = args.certificate.get_output(context);
         let enabled_binding = args.enabled.get_output(context);

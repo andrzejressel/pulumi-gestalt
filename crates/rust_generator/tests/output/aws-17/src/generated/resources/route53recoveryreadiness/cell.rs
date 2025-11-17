@@ -21,7 +21,11 @@
 /// ```sh
 /// $ pulumi import aws:route53recoveryreadiness/cell:Cell us-west-2-failover-cell us-west-2-failover-cell
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod cell {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -74,8 +78,6 @@ pub mod cell {
         name: &str,
         args: CellArgs,
     ) -> CellResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cell_name_binding = args.cell_name.get_output(context);
         let cells_binding = args.cells.get_output(context);
         let tags_binding = args.tags.get_output(context);

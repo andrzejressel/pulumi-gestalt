@@ -68,7 +68,11 @@
 /// $ pulumi import gcp:applicationintegration/authConfig:AuthConfig default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod auth_config {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -199,8 +203,6 @@ pub mod auth_config {
         name: &str,
         args: AuthConfigArgs,
     ) -> AuthConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let client_certificate_binding = args.client_certificate.get_output(context);
         let decrypted_credential_binding = args.decrypted_credential.get_output(context);
         let description_binding = args.description.get_output(context);

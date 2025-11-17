@@ -44,7 +44,11 @@
 /// $ pulumi import gcp:logging/billingAccountSink:BillingAccountSink default billingAccounts/{{billing_account_id}}/sinks/{{sink_id}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod billing_account_sink {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -137,8 +141,6 @@ pub mod billing_account_sink {
         name: &str,
         args: BillingAccountSinkArgs,
     ) -> BillingAccountSinkResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bigquery_options_binding = args.bigquery_options.get_output(context);
         let billing_account_binding = args.billing_account.get_output(context);
         let description_binding = args.description.get_output(context);

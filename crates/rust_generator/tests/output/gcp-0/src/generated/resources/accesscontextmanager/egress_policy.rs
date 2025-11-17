@@ -17,7 +17,11 @@
 /// $ pulumi import gcp:accesscontextmanager/egressPolicy:EgressPolicy default {{egress_policy_name}}/{{resource}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod egress_policy {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -55,8 +59,6 @@ pub mod egress_policy {
         name: &str,
         args: EgressPolicyArgs,
     ) -> EgressPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let egress_policy_name_binding = args.egress_policy_name.get_output(context);
         let resource_binding = args.resource.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

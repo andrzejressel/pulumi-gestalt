@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_membership_binding {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -48,8 +52,6 @@ pub mod get_membership_binding {
         context: &pulumi_gestalt_rust::Context,
         args: GetMembershipBindingArgs,
     ) -> GetMembershipBindingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let location_binding = args.location.get_output(context);
         let membership_binding_id_binding = args
             .membership_binding_id

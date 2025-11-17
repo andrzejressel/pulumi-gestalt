@@ -33,7 +33,11 @@
 /// ```sh
 /// $ pulumi import aws:route53/profilesAssociation:ProfilesAssociation example rpa-id-12345678
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod profiles_association {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -96,8 +100,6 @@ pub mod profiles_association {
         name: &str,
         args: ProfilesAssociationArgs,
     ) -> ProfilesAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let profile_id_binding = args.profile_id.get_output(context);
         let resource_id_binding = args.resource_id.get_output(context);

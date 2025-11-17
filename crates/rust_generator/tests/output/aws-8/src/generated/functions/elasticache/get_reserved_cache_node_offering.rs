@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_reserved_cache_node_offering {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -45,8 +49,6 @@ pub mod get_reserved_cache_node_offering {
         context: &pulumi_gestalt_rust::Context,
         args: GetReservedCacheNodeOfferingArgs,
     ) -> GetReservedCacheNodeOfferingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cache_node_type_binding = args.cache_node_type.get_output(context);
         let duration_binding = args.duration.get_output(context);
         let offering_type_binding = args.offering_type.get_output(context);

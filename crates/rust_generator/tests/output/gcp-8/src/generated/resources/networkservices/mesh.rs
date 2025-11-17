@@ -52,7 +52,11 @@
 /// $ pulumi import gcp:networkservices/mesh:Mesh default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod mesh {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -138,8 +142,6 @@ pub mod mesh {
         name: &str,
         args: MeshArgs,
     ) -> MeshResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let interception_port_binding = args.interception_port.get_output(context);
         let labels_binding = args.labels.get_output(context);

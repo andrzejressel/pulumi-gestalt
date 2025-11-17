@@ -237,7 +237,11 @@
 /// $ pulumi import azure:network/virtualNetworkGatewayConnection:VirtualNetworkGatewayConnection exampleConnection /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myGroup1/providers/Microsoft.Network/connections/myConnection1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod virtual_network_gateway_connection {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -438,8 +442,6 @@ pub mod virtual_network_gateway_connection {
         name: &str,
         args: VirtualNetworkGatewayConnectionArgs,
     ) -> VirtualNetworkGatewayConnectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authorization_key_binding = args.authorization_key.get_output(context);
         let connection_mode_binding = args.connection_mode.get_output(context);
         let connection_protocol_binding = args.connection_protocol.get_output(context);

@@ -203,7 +203,11 @@
 /// $ pulumi import gcp:apigee/natAddress:NatAddress default {{instance_id}}/{{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod nat_address {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -252,8 +256,6 @@ pub mod nat_address {
         name: &str,
         args: NatAddressArgs,
     ) -> NatAddressResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let activate_binding = args.activate.get_output(context);
         let instance_id_binding = args.instance_id.get_output(context);
         let name_binding = args.name.get_output(context);

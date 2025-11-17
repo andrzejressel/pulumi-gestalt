@@ -44,7 +44,11 @@
 /// $ pulumi import azure:management/groupPolicyRemediation:GroupPolicyRemediation example /providers/Microsoft.Management/managementGroups/my-mgmt-group-id/providers/Microsoft.PolicyInsights/remediations/remediation1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod group_policy_remediation {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -108,8 +112,6 @@ pub mod group_policy_remediation {
         name: &str,
         args: GroupPolicyRemediationArgs,
     ) -> GroupPolicyRemediationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let failure_percentage_binding = args.failure_percentage.get_output(context);
         let location_filters_binding = args.location_filters.get_output(context);
         let management_group_id_binding = args.management_group_id.get_output(context);

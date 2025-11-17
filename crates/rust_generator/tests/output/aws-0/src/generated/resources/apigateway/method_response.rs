@@ -125,7 +125,11 @@
 /// ```sh
 /// $ pulumi import aws:apigateway/methodResponse:MethodResponse example 12345abcde/67890fghij/GET/200
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod method_response {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -189,8 +193,6 @@ pub mod method_response {
         name: &str,
         args: MethodResponseArgs,
     ) -> MethodResponseResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let http_method_binding = args.http_method.get_output(context);
         let resource_id_binding = args.resource_id.get_output(context);
         let response_models_binding = args.response_models.get_output(context);

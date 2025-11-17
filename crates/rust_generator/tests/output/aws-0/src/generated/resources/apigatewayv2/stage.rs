@@ -29,7 +29,11 @@
 /// ```
 /// -> __Note:__ The API Gateway managed stage created as part of [_quick_create_](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-basic-concept.html#apigateway-definition-quick-create) cannot be imported.
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod stage {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -147,8 +151,6 @@ pub mod stage {
         name: &str,
         args: StageArgs,
     ) -> StageResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_log_settings_binding = args.access_log_settings.get_output(context);
         let api_id_binding = args.api_id.get_output(context);
         let auto_deploy_binding = args.auto_deploy.get_output(context);

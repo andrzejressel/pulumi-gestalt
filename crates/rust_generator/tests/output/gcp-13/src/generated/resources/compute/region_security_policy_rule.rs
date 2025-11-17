@@ -294,7 +294,11 @@
 /// $ pulumi import gcp:compute/regionSecurityPolicyRule:RegionSecurityPolicyRule default {{security_policy}}/{{priority}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod region_security_policy_rule {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -443,8 +447,6 @@ pub mod region_security_policy_rule {
         name: &str,
         args: RegionSecurityPolicyRuleArgs,
     ) -> RegionSecurityPolicyRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let action_binding = args.action.get_output(context);
         let description_binding = args.description.get_output(context);
         let match__binding = args.match_.get_output(context);

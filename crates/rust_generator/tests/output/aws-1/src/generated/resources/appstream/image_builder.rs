@@ -28,7 +28,11 @@
 /// ```sh
 /// $ pulumi import aws:appstream/imageBuilder:ImageBuilder example imageBuilderExample
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod image_builder {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -147,8 +151,6 @@ pub mod image_builder {
         name: &str,
         args: ImageBuilderArgs,
     ) -> ImageBuilderResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_endpoints_binding = args.access_endpoints.get_output(context);
         let appstream_agent_version_binding = args
             .appstream_agent_version

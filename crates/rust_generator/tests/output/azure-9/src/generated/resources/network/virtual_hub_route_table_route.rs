@@ -110,7 +110,11 @@
 /// $ pulumi import azure:network/virtualHubRouteTableRoute:VirtualHubRouteTableRoute example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group1/providers/Microsoft.Network/virtualHubs/virtualHub1/hubRouteTables/routeTable1/routes/routeName
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod virtual_hub_route_table_route {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -162,8 +166,6 @@ pub mod virtual_hub_route_table_route {
         name: &str,
         args: VirtualHubRouteTableRouteArgs,
     ) -> VirtualHubRouteTableRouteResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let destinations_binding = args.destinations.get_output(context);
         let destinations_type_binding = args.destinations_type.get_output(context);
         let name_binding = args.name.get_output(context);

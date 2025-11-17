@@ -122,7 +122,11 @@
 /// $ pulumi import gcp:compute/packetMirroring:PacketMirroring default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod packet_mirroring {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -221,8 +225,6 @@ pub mod packet_mirroring {
         name: &str,
         args: PacketMirroringArgs,
     ) -> PacketMirroringResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let collector_ilb_binding = args.collector_ilb.get_output(context);
         let description_binding = args.description.get_output(context);
         let filter_binding = args.filter.get_output(context);

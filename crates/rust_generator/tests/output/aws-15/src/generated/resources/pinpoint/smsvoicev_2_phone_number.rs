@@ -26,7 +26,11 @@
 /// ```sh
 /// $ pulumi import aws:pinpoint/smsvoicev2PhoneNumber:Smsvoicev2PhoneNumber example phone-abcdef0123456789abcdef0123456789
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod smsvoicev_2_phone_number {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -126,8 +130,6 @@ pub mod smsvoicev_2_phone_number {
         name: &str,
         args: Smsvoicev2PhoneNumberArgs,
     ) -> Smsvoicev2PhoneNumberResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let deletion_protection_enabled_binding = args
             .deletion_protection_enabled
             .get_output(context);

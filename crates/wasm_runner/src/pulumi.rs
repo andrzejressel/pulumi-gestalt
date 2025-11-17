@@ -334,7 +334,6 @@ impl Pulumi {
         let mut store = Store::new(
             &engine,
             SimplePluginCtx {
-                // logger: SimpleLogger {},
                 table,
                 context: wasi_ctx,
                 my_state: MyState { table: table2 },

@@ -18,7 +18,11 @@
 ///
 /// You cannot import the SMS preferences.
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod sms_preferences {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -76,8 +80,6 @@ pub mod sms_preferences {
         name: &str,
         args: SmsPreferencesArgs,
     ) -> SmsPreferencesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let default_sender_id_binding = args.default_sender_id.get_output(context);
         let default_sms_type_binding = args.default_sms_type.get_output(context);
         let delivery_status_iam_role_arn_binding = args

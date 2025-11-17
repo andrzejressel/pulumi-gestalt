@@ -29,7 +29,11 @@
 /// ```sh
 /// $ pulumi import aws:servicequotas/serviceQuota:ServiceQuota example vpc/L-F678F1CE
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod service_quota {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -82,8 +86,6 @@ pub mod service_quota {
         name: &str,
         args: ServiceQuotaArgs,
     ) -> ServiceQuotaResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let quota_code_binding = args.quota_code.get_output(context);
         let service_code_binding = args.service_code.get_output(context);
         let value_binding = args.value.get_output(context);

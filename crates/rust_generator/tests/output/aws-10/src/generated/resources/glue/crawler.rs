@@ -160,7 +160,11 @@
 /// ```sh
 /// $ pulumi import aws:glue/crawler:Crawler MyJob MyJob
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod crawler {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -350,8 +354,6 @@ pub mod crawler {
         name: &str,
         args: CrawlerArgs,
     ) -> CrawlerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let catalog_targets_binding = args.catalog_targets.get_output(context);
         let classifiers_binding = args.classifiers.get_output(context);
         let configuration_binding = args.configuration.get_output(context);

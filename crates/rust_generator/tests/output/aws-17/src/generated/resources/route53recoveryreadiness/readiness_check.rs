@@ -24,7 +24,11 @@
 /// ```sh
 /// $ pulumi import aws:route53recoveryreadiness/readinessCheck:ReadinessCheck my-cw-alarm-check example
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod readiness_check {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -75,8 +79,6 @@ pub mod readiness_check {
         name: &str,
         args: ReadinessCheckArgs,
     ) -> ReadinessCheckResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let readiness_check_name_binding = args.readiness_check_name.get_output(context);
         let resource_set_name_binding = args.resource_set_name.get_output(context);
         let tags_binding = args.tags.get_output(context);

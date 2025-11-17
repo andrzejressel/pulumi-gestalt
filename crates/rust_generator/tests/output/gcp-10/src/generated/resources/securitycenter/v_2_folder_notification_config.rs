@@ -72,7 +72,11 @@
 /// $ pulumi import gcp:securitycenter/v2FolderNotificationConfig:V2FolderNotificationConfig default {{folder}}/{{location}}/{{config_id}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod v_2_folder_notification_config {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -138,8 +142,6 @@ pub mod v_2_folder_notification_config {
         name: &str,
         args: V2FolderNotificationConfigArgs,
     ) -> V2FolderNotificationConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let config_id_binding = args.config_id.get_output(context);
         let description_binding = args.description.get_output(context);
         let folder_binding = args.folder.get_output(context);

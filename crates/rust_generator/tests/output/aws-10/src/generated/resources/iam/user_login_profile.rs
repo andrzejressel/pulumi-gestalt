@@ -32,7 +32,11 @@
 /// ```
 /// Since Pulumi has no method to read the PGP or password information during import, use the resource options `ignore_changes` argument to ignore them (unless you want to recreate a password). For example:
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod user_login_profile {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -80,8 +84,6 @@ pub mod user_login_profile {
         name: &str,
         args: UserLoginProfileArgs,
     ) -> UserLoginProfileResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let password_length_binding = args.password_length.get_output(context);
         let password_reset_required_binding = args
             .password_reset_required

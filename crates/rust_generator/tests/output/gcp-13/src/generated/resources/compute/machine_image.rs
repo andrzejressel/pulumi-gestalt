@@ -126,7 +126,11 @@
 /// $ pulumi import gcp:compute/machineImage:MachineImage default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod machine_image {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -204,8 +208,6 @@ pub mod machine_image {
         name: &str,
         args: MachineImageArgs,
     ) -> MachineImageResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let guest_flush_binding = args.guest_flush.get_output(context);
         let machine_image_encryption_key_binding = args

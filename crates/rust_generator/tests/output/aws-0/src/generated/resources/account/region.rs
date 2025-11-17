@@ -21,7 +21,11 @@
 /// ```sh
 /// $ pulumi import aws:account/region:Region example ap-southeast-3
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod region {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -60,8 +64,6 @@ pub mod region {
         name: &str,
         args: RegionArgs,
     ) -> RegionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
         let region_name_binding = args.region_name.get_output(context);

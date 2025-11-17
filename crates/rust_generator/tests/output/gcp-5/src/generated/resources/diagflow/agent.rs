@@ -53,7 +53,11 @@
 /// $ pulumi import gcp:diagflow/agent:Agent default {{project}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod agent {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -196,8 +200,6 @@ pub mod agent {
         name: &str,
         args: AgentArgs,
     ) -> AgentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_version_binding = args.api_version.get_output(context);
         let avatar_uri_binding = args.avatar_uri.get_output(context);
         let classification_threshold_binding = args

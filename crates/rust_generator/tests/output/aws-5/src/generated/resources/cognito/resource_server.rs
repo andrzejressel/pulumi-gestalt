@@ -60,7 +60,11 @@
 /// ```sh
 /// $ pulumi import aws:cognito/resourceServer:ResourceServer example "us-west-2_abc123|https://example.com"
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod resource_server {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -108,8 +112,6 @@ pub mod resource_server {
         name: &str,
         args: ResourceServerArgs,
     ) -> ResourceServerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let identifier_binding = args.identifier.get_output(context);
         let name_binding = args.name.get_output(context);
         let scopes_binding = args.scopes.get_output(context);

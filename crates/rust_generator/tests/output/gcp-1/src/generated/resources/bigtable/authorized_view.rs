@@ -80,7 +80,11 @@
 /// $ pulumi import gcp:bigtable/authorizedView:AuthorizedView default {{instance_name}}/{{table_name}}/{{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod authorized_view {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -140,8 +144,6 @@ pub mod authorized_view {
         name: &str,
         args: AuthorizedViewArgs,
     ) -> AuthorizedViewResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let deletion_protection_binding = args.deletion_protection.get_output(context);
         let instance_name_binding = args.instance_name.get_output(context);
         let name_binding = args.name.get_output(context);

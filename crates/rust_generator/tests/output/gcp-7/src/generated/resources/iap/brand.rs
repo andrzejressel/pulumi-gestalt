@@ -59,7 +59,11 @@
 /// $ pulumi import gcp:iap/brand:Brand default {{project_number}}/{{brand_id}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod brand {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -119,8 +123,6 @@ pub mod brand {
         name: &str,
         args: BrandArgs,
     ) -> BrandResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_title_binding = args.application_title.get_output(context);
         let project_binding = args.project.get_output(context);
         let support_email_binding = args.support_email.get_output(context);

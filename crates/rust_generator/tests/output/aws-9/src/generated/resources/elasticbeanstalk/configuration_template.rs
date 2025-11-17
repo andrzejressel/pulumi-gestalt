@@ -35,7 +35,11 @@
 /// * `name` - name of the configuration option
 /// * `value` - value for the configuration option
 /// * `resource` - (Optional) resource name for [scheduled action](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options-general.html#command-options-general-autoscalingscheduledaction)
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod configuration_template {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -99,8 +103,6 @@ pub mod configuration_template {
         name: &str,
         args: ConfigurationTemplateArgs,
     ) -> ConfigurationTemplateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_binding = args.application.get_output(context);
         let description_binding = args.description.get_output(context);
         let environment_id_binding = args.environment_id.get_output(context);

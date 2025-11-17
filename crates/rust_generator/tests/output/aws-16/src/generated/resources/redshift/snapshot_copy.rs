@@ -26,7 +26,11 @@
 /// ```sh
 /// $ pulumi import aws:redshift/snapshotCopy:SnapshotCopy example cluster-id-12345678
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod snapshot_copy {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -79,8 +83,6 @@ pub mod snapshot_copy {
         name: &str,
         args: SnapshotCopyArgs,
     ) -> SnapshotCopyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_identifier_binding = args.cluster_identifier.get_output(context);
         let destination_region_binding = args.destination_region.get_output(context);
         let manual_snapshot_retention_period_binding = args

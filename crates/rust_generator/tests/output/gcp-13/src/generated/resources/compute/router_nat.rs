@@ -255,7 +255,11 @@
 /// $ pulumi import gcp:compute/routerNat:RouterNat default {{router}}/{{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod router_nat {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -517,8 +521,6 @@ pub mod router_nat {
         name: &str,
         args: RouterNatArgs,
     ) -> RouterNatResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_network_tier_binding = args.auto_network_tier.get_output(context);
         let drain_nat_ips_binding = args.drain_nat_ips.get_output(context);
         let enable_dynamic_port_allocation_binding = args

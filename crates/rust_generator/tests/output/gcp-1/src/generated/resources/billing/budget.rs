@@ -249,7 +249,11 @@
 /// $ pulumi import gcp:billing/budget:Budget default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod budget {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -334,8 +338,6 @@ pub mod budget {
         name: &str,
         args: BudgetArgs,
     ) -> BudgetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let all_updates_rule_binding = args.all_updates_rule.get_output(context);
         let amount_binding = args.amount.get_output(context);
         let billing_account_binding = args.billing_account.get_output(context);

@@ -102,7 +102,11 @@
 /// ```sh
 /// $ pulumi import aws:cloudformation/stackInstances:StackInstances example example,SELF,OU
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod stack_instances {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -190,8 +194,6 @@ pub mod stack_instances {
         name: &str,
         args: StackInstancesArgs,
     ) -> StackInstancesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let accounts_binding = args.accounts.get_output(context);
         let call_as_binding = args.call_as.get_output(context);
         let deployment_targets_binding = args.deployment_targets.get_output(context);

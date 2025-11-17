@@ -71,7 +71,11 @@
 /// $ pulumi import gcp:appengine/serviceNetworkSettings:ServiceNetworkSettings default {{service}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod service_network_settings {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -112,8 +116,6 @@ pub mod service_network_settings {
         name: &str,
         args: ServiceNetworkSettingsArgs,
     ) -> ServiceNetworkSettingsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let network_settings_binding = args.network_settings.get_output(context);
         let project_binding = args.project.get_output(context);
         let service_binding = args.service.get_output(context);

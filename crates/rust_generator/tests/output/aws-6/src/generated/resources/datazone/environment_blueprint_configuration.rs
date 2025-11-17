@@ -39,7 +39,11 @@
 /// ```sh
 /// $ pulumi import aws:datazone/environmentBlueprintConfiguration:EnvironmentBlueprintConfiguration example domain-id-12345/environment-blueprint-id-54321
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod environment_blueprint_configuration {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -109,8 +113,6 @@ pub mod environment_blueprint_configuration {
         name: &str,
         args: EnvironmentBlueprintConfigurationArgs,
     ) -> EnvironmentBlueprintConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let domain_id_binding = args.domain_id.get_output(context);
         let enabled_regions_binding = args.enabled_regions.get_output(context);
         let environment_blueprint_id_binding = args

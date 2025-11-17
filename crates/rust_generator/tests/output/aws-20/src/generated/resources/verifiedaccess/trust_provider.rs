@@ -25,7 +25,11 @@
 /// ```sh
 /// $ pulumi import aws:verifiedaccess/trustProvider:TrustProvider example vatp-8012925589
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod trust_provider {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -108,8 +112,6 @@ pub mod trust_provider {
         name: &str,
         args: TrustProviderArgs,
     ) -> TrustProviderResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let device_options_binding = args.device_options.get_output(context);
         let device_trust_provider_type_binding = args

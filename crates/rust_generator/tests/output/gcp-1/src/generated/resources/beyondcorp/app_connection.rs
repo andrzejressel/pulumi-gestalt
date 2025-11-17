@@ -132,7 +132,11 @@
 /// $ pulumi import gcp:beyondcorp/appConnection:AppConnection default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod app_connection {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -228,8 +232,6 @@ pub mod app_connection {
         name: &str,
         args: AppConnectionArgs,
     ) -> AppConnectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_endpoint_binding = args.application_endpoint.get_output(context);
         let connectors_binding = args.connectors.get_output(context);
         let display_name_binding = args.display_name.get_output(context);

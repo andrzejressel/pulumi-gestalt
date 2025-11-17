@@ -26,7 +26,11 @@
 /// ```sh
 /// $ pulumi import aws:synthetics/groupAssociation:GroupAssociation example arn:aws:synthetics:us-west-2:123456789012:canary:tf-acc-test-abcd1234,examplename
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod group_association {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -61,8 +65,6 @@ pub mod group_association {
         name: &str,
         args: GroupAssociationArgs,
     ) -> GroupAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let canary_arn_binding = args.canary_arn.get_output(context);
         let group_name_binding = args.group_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

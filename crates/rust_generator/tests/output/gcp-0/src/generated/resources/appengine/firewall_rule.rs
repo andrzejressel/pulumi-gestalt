@@ -71,7 +71,11 @@
 /// $ pulumi import gcp:appengine/firewallRule:FirewallRule default {{priority}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod firewall_rule {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -136,8 +140,6 @@ pub mod firewall_rule {
         name: &str,
         args: FirewallRuleArgs,
     ) -> FirewallRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let action_binding = args.action.get_output(context);
         let description_binding = args.description.get_output(context);
         let priority_binding = args.priority.get_output(context);

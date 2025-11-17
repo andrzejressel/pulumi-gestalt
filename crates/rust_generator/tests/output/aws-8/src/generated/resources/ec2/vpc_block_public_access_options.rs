@@ -25,7 +25,11 @@
 /// ```sh
 /// $ pulumi import aws:ec2/vpcBlockPublicAccessOptions:VpcBlockPublicAccessOptions example us-east-1
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod vpc_block_public_access_options {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -63,8 +67,6 @@ pub mod vpc_block_public_access_options {
         name: &str,
         args: VpcBlockPublicAccessOptionsArgs,
     ) -> VpcBlockPublicAccessOptionsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let internet_gateway_block_mode_binding = args
             .internet_gateway_block_mode
             .get_output(context);

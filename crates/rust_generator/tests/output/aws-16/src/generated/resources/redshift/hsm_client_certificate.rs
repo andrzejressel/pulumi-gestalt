@@ -23,7 +23,11 @@
 /// ```sh
 /// $ pulumi import aws:redshift/hsmClientCertificate:HsmClientCertificate test example
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod hsm_client_certificate {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -69,8 +73,6 @@ pub mod hsm_client_certificate {
         name: &str,
         args: HsmClientCertificateArgs,
     ) -> HsmClientCertificateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let hsm_client_certificate_identifier_binding = args
             .hsm_client_certificate_identifier
             .get_output(context);

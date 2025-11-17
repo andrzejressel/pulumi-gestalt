@@ -103,7 +103,11 @@
 /// $ pulumi import gcp:vertex/aiFeatureGroupFeature:AiFeatureGroupFeature default {{feature_group}}/{{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod ai_feature_group_feature {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -189,8 +193,6 @@ pub mod ai_feature_group_feature {
         name: &str,
         args: AiFeatureGroupFeatureArgs,
     ) -> AiFeatureGroupFeatureResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let feature_group_binding = args.feature_group.get_output(context);
         let labels_binding = args.labels.get_output(context);

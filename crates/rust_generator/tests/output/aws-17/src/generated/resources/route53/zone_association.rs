@@ -60,7 +60,11 @@
 /// ```sh
 /// $ pulumi import aws:route53/zoneAssociation:ZoneAssociation example Z123456ABCDEFG:vpc-12345678:us-east-2
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod zone_association {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -99,8 +103,6 @@ pub mod zone_association {
         name: &str,
         args: ZoneAssociationArgs,
     ) -> ZoneAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let vpc_id_binding = args.vpc_id.get_output(context);
         let vpc_region_binding = args.vpc_region.get_output(context);
         let zone_id_binding = args.zone_id.get_output(context);

@@ -32,7 +32,11 @@
 /// ```sh
 /// $ pulumi import aws:cfg/organizationCustomPolicyRule:OrganizationCustomPolicyRule example example_rule_name
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod organization_custom_policy_rule {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -133,8 +137,6 @@ pub mod organization_custom_policy_rule {
         name: &str,
         args: OrganizationCustomPolicyRuleArgs,
     ) -> OrganizationCustomPolicyRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let debug_log_delivery_accounts_binding = args
             .debug_log_delivery_accounts
             .get_output(context);

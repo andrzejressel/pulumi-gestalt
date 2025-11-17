@@ -29,7 +29,11 @@
 /// ```sh
 /// $ pulumi import aws:devopsguru/eventSourcesConfig:EventSourcesConfig example us-east-1
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod event_sources_config {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -60,8 +64,6 @@ pub mod event_sources_config {
         name: &str,
         args: EventSourcesConfigArgs,
     ) -> EventSourcesConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let event_sources_binding = args.event_sources.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:devopsguru/eventSourcesConfig:EventSourcesConfig".into(),

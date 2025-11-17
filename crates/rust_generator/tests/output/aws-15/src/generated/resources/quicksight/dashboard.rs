@@ -84,7 +84,11 @@
 /// ```sh
 /// $ pulumi import aws:quicksight/dashboard:Dashboard example 123456789012,example-id
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod dashboard {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -197,8 +201,6 @@ pub mod dashboard {
         name: &str,
         args: DashboardArgs,
     ) -> DashboardResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aws_account_id_binding = args.aws_account_id.get_output(context);
         let dashboard_id_binding = args.dashboard_id.get_output(context);
         let dashboard_publish_options_binding = args

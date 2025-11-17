@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_account_id_token {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -36,8 +40,6 @@ pub mod get_account_id_token {
         context: &pulumi_gestalt_rust::Context,
         args: GetAccountIdTokenArgs,
     ) -> GetAccountIdTokenResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let delegates_binding = args.delegates.get_output(context);
         let include_email_binding = args.include_email.get_output(context);
         let target_audience_binding = args.target_audience.get_output(context);

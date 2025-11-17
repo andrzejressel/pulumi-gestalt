@@ -26,7 +26,11 @@
 /// $ pulumi import cloudflare:index/zeroTrustTunnelCloudflared:ZeroTrustTunnelCloudflared example <account_id>/<tunnel_id>
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod zero_trust_tunnel_cloudflared {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -72,8 +76,6 @@ pub mod zero_trust_tunnel_cloudflared {
         name: &str,
         args: ZeroTrustTunnelCloudflaredArgs,
     ) -> ZeroTrustTunnelCloudflaredResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let config_src_binding = args.config_src.get_output(context);
         let name_binding = args.name.get_output(context);

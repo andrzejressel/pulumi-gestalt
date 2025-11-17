@@ -35,7 +35,11 @@
 /// ```sh
 /// $ pulumi import aws:apigateway/documentationVersion:DocumentationVersion example 5i4e1ko720/example-version
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod documentation_version {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -72,8 +76,6 @@ pub mod documentation_version {
         name: &str,
         args: DocumentationVersionArgs,
     ) -> DocumentationVersionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let rest_api_id_binding = args.rest_api_id.get_output(context);
         let version_binding = args.version.get_output(context);

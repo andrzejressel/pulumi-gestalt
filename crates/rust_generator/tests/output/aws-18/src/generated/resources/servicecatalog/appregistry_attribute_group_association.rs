@@ -35,7 +35,11 @@
 /// ```sh
 /// $ pulumi import aws:servicecatalog/appregistryAttributeGroupAssociation:AppregistryAttributeGroupAssociation example 12456778723424sdffsdfsdq34,12234t3564dsfsdf34asff4ww3
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod appregistry_attribute_group_association {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -67,8 +71,6 @@ pub mod appregistry_attribute_group_association {
         name: &str,
         args: AppregistryAttributeGroupAssociationArgs,
     ) -> AppregistryAttributeGroupAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_id_binding = args.application_id.get_output(context);
         let attribute_group_id_binding = args.attribute_group_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

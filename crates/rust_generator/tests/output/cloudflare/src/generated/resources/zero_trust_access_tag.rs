@@ -1,6 +1,10 @@
 /// Provides a resource to customize the pages your end users will see
 /// when trying to reach applications behind Cloudflare Access.
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod zero_trust_access_tag {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -42,8 +46,6 @@ pub mod zero_trust_access_tag {
         name: &str,
         args: ZeroTrustAccessTagArgs,
     ) -> ZeroTrustAccessTagResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let app_count_binding = args.app_count.get_output(context);
         let name_binding = args.name.get_output(context);

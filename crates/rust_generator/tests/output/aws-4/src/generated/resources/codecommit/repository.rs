@@ -46,7 +46,11 @@
 /// ```sh
 /// $ pulumi import aws:codecommit/repository:Repository imported ExistingRepo
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod repository {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -109,8 +113,6 @@ pub mod repository {
         name: &str,
         args: RepositoryArgs,
     ) -> RepositoryResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let default_branch_binding = args.default_branch.get_output(context);
         let description_binding = args.description.get_output(context);
         let kms_key_id_binding = args.kms_key_id.get_output(context);

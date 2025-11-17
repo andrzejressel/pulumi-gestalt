@@ -62,7 +62,11 @@
 /// $ pulumi import gcp:compute/targetPool:TargetPool default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod target_pool {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -164,8 +168,6 @@ pub mod target_pool {
         name: &str,
         args: TargetPoolArgs,
     ) -> TargetPoolResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let backup_pool_binding = args.backup_pool.get_output(context);
         let description_binding = args.description.get_output(context);
         let failover_ratio_binding = args.failover_ratio.get_output(context);

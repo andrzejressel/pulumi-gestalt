@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_hours_of_operation {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -50,8 +54,6 @@ pub mod get_hours_of_operation {
         context: &pulumi_gestalt_rust::Context,
         args: GetHoursOfOperationArgs,
     ) -> GetHoursOfOperationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let hours_of_operation_id_binding = args
             .hours_of_operation_id
             .get_output(context);

@@ -60,7 +60,11 @@
 ///
 /// This resource does not support import.
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod secret_ciphertext {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -113,8 +117,6 @@ pub mod secret_ciphertext {
         name: &str,
         args: SecretCiphertextArgs,
     ) -> SecretCiphertextResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let additional_authenticated_data_binding = args
             .additional_authenticated_data
             .get_output(context);

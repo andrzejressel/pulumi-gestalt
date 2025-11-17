@@ -32,7 +32,11 @@
 /// ```sh
 /// $ pulumi import aws:kinesis/streamConsumer:StreamConsumer example arn:aws:kinesis:us-west-2:123456789012:stream/example/consumer/example:1616044553
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod stream_consumer {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -68,8 +72,6 @@ pub mod stream_consumer {
         name: &str,
         args: StreamConsumerArgs,
     ) -> StreamConsumerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let stream_arn_binding = args.stream_arn.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

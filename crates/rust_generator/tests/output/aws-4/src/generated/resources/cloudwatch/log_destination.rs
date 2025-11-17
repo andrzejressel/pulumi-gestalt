@@ -25,7 +25,11 @@
 /// ```sh
 /// $ pulumi import aws:cloudwatch/logDestination:LogDestination test_destination test_destination
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod log_destination {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -77,8 +81,6 @@ pub mod log_destination {
         name: &str,
         args: LogDestinationArgs,
     ) -> LogDestinationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let role_arn_binding = args.role_arn.get_output(context);
         let tags_binding = args.tags.get_output(context);

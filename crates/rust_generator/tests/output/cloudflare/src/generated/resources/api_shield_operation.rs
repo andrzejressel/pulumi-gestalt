@@ -18,7 +18,11 @@
 ///     );
 /// }
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod api_shield_operation {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -60,8 +64,6 @@ pub mod api_shield_operation {
         name: &str,
         args: ApiShieldOperationArgs,
     ) -> ApiShieldOperationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let endpoint_binding = args.endpoint.get_output(context);
         let host_binding = args.host.get_output(context);
         let method_binding = args.method.get_output(context);

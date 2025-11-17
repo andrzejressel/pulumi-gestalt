@@ -261,7 +261,11 @@
 /// $ pulumi import azure:compute/scaleSet:ScaleSet scaleset1 /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/mygroup1/providers/Microsoft.Compute/virtualMachineScaleSets/scaleset1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod scale_set {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -491,8 +495,6 @@ pub mod scale_set {
         name: &str,
         args: ScaleSetArgs,
     ) -> ScaleSetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let automatic_os_upgrade_binding = args.automatic_os_upgrade.get_output(context);
         let boot_diagnostics_binding = args.boot_diagnostics.get_output(context);
         let eviction_policy_binding = args.eviction_policy.get_output(context);

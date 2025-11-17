@@ -20,7 +20,11 @@
 ///     );
 /// }
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod attachment {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -52,8 +56,6 @@ pub mod attachment {
         name: &str,
         args: AttachmentArgs,
     ) -> AttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let elb_binding = args.elb.get_output(context);
         let instance_binding = args.instance.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

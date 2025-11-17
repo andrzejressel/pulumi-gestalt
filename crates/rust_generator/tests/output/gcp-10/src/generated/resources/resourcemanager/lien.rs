@@ -44,7 +44,11 @@
 /// $ pulumi import gcp:resourcemanager/lien:Lien default {{parent}}/{{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod lien {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -116,8 +120,6 @@ pub mod lien {
         name: &str,
         args: LienArgs,
     ) -> LienResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let origin_binding = args.origin.get_output(context);
         let parent_binding = args.parent.get_output(context);
         let reason_binding = args.reason.get_output(context);

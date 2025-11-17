@@ -33,7 +33,11 @@
 /// ```sh
 /// $ pulumi import aws:serverlessrepository/cloudFormationStack:CloudFormationStack example serverlessrepo-postgres-rotator
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod cloud_formation_stack {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -101,8 +105,6 @@ pub mod cloud_formation_stack {
         name: &str,
         args: CloudFormationStackArgs,
     ) -> CloudFormationStackResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_id_binding = args.application_id.get_output(context);
         let capabilities_binding = args.capabilities.get_output(context);
         let name_binding = args.name.get_output(context);

@@ -42,7 +42,11 @@
 /// ```sh
 /// $ pulumi import aws:opensearch/package:Package example package-id
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod package {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -91,8 +95,6 @@ pub mod package {
         name: &str,
         args: PackageArgs,
     ) -> PackageResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let package_description_binding = args.package_description.get_output(context);
         let package_name_binding = args.package_name.get_output(context);
         let package_source_binding = args.package_source.get_output(context);

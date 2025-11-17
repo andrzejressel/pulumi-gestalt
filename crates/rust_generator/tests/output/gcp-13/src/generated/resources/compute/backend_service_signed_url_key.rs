@@ -75,7 +75,11 @@
 ///
 /// This resource does not support import.
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod backend_service_signed_url_key {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -129,8 +133,6 @@ pub mod backend_service_signed_url_key {
         name: &str,
         args: BackendServiceSignedUrlKeyArgs,
     ) -> BackendServiceSignedUrlKeyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let backend_service_binding = args.backend_service.get_output(context);
         let key_value_binding = args.key_value.get_output(context);
         let name_binding = args.name.get_output(context);

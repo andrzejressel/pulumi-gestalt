@@ -61,7 +61,11 @@
 /// ```sh
 /// $ pulumi import aws:ssmcontacts/contactChannel:ContactChannel example arn:aws:ssm-contacts:us-west-2:123456789012:contact-channel/example
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod contact_channel {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -111,8 +115,6 @@ pub mod contact_channel {
         name: &str,
         args: ContactChannelArgs,
     ) -> ContactChannelResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let contact_id_binding = args.contact_id.get_output(context);
         let delivery_address_binding = args.delivery_address.get_output(context);
         let name_binding = args.name.get_output(context);

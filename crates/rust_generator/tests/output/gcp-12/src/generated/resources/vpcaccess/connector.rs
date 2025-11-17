@@ -89,7 +89,11 @@
 /// $ pulumi import gcp:vpcaccess/connector:Connector default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod connector {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -198,8 +202,6 @@ pub mod connector {
         name: &str,
         args: ConnectorArgs,
     ) -> ConnectorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let ip_cidr_range_binding = args.ip_cidr_range.get_output(context);
         let machine_type_binding = args.machine_type.get_output(context);
         let max_instances_binding = args.max_instances.get_output(context);

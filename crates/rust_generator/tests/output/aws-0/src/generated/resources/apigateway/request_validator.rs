@@ -26,7 +26,11 @@
 /// ```sh
 /// $ pulumi import aws:apigateway/requestValidator:RequestValidator example 12345abcde/67890fghij
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod request_validator {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -70,8 +74,6 @@ pub mod request_validator {
         name: &str,
         args: RequestValidatorArgs,
     ) -> RequestValidatorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let rest_api_binding = args.rest_api.get_output(context);
         let validate_request_body_binding = args

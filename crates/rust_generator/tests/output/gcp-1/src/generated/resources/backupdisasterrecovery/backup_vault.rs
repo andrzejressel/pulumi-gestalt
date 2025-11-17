@@ -53,7 +53,11 @@
 /// $ pulumi import gcp:backupdisasterrecovery/backupVault:BackupVault default {{location}}/{{backup_vault_id}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod backup_vault {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -241,8 +245,6 @@ pub mod backup_vault {
         name: &str,
         args: BackupVaultArgs,
     ) -> BackupVaultResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_restriction_binding = args.access_restriction.get_output(context);
         let allow_missing_binding = args.allow_missing.get_output(context);
         let annotations_binding = args.annotations.get_output(context);

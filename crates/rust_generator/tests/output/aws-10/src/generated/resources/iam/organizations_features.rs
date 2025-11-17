@@ -32,7 +32,11 @@
 /// ```sh
 /// $ pulumi import aws:iam/organizationsFeatures:OrganizationsFeatures example o-1234567
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod organizations_features {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -59,8 +63,6 @@ pub mod organizations_features {
         name: &str,
         args: OrganizationsFeaturesArgs,
     ) -> OrganizationsFeaturesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let enabled_features_binding = args.enabled_features.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:iam/organizationsFeatures:OrganizationsFeatures".into(),

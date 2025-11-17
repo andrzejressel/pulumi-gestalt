@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_broker_engine_types {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -27,8 +31,6 @@ pub mod get_broker_engine_types {
         context: &pulumi_gestalt_rust::Context,
         args: GetBrokerEngineTypesArgs,
     ) -> GetBrokerEngineTypesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let engine_type_binding = args.engine_type.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:mq/getBrokerEngineTypes:getBrokerEngineTypes".into(),

@@ -122,7 +122,11 @@
 /// $ pulumi import gcp:firebase/appCheckPlayIntegrityConfig:AppCheckPlayIntegrityConfig default {{app_id}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod app_check_play_integrity_config {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -175,8 +179,6 @@ pub mod app_check_play_integrity_config {
         name: &str,
         args: AppCheckPlayIntegrityConfigArgs,
     ) -> AppCheckPlayIntegrityConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_id_binding = args.app_id.get_output(context);
         let project_binding = args.project.get_output(context);
         let token_ttl_binding = args.token_ttl.get_output(context);

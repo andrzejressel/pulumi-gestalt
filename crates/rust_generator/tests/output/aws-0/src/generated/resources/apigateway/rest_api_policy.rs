@@ -48,7 +48,11 @@
 /// ```sh
 /// $ pulumi import aws:apigateway/restApiPolicy:RestApiPolicy example 12345abcde
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod rest_api_policy {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -80,8 +84,6 @@ pub mod rest_api_policy {
         name: &str,
         args: RestApiPolicyArgs,
     ) -> RestApiPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let policy_binding = args.policy.get_output(context);
         let rest_api_id_binding = args.rest_api_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

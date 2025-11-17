@@ -34,7 +34,11 @@
 /// ```sh
 /// $ pulumi import aws:networkmanager/transitGatewayRegistration:TransitGatewayRegistration example global-network-0d47f6t230mz46dy4,arn:aws:ec2:us-west-2:123456789012:transit-gateway/tgw-123abc05e04123abc
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod transit_gateway_registration {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -66,8 +70,6 @@ pub mod transit_gateway_registration {
         name: &str,
         args: TransitGatewayRegistrationArgs,
     ) -> TransitGatewayRegistrationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let global_network_id_binding = args.global_network_id.get_output(context);
         let transit_gateway_arn_binding = args.transit_gateway_arn.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

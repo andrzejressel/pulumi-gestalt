@@ -22,7 +22,11 @@
 /// $ pulumi import cloudflare:index/customSsl:CustomSsl example <zone_id>/<certificate_id>
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod custom_ssl {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -73,8 +77,6 @@ pub mod custom_ssl {
         name: &str,
         args: CustomSslArgs,
     ) -> CustomSslResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let custom_ssl_options_binding = args.custom_ssl_options.get_output(context);
         let custom_ssl_priorities_binding = args
             .custom_ssl_priorities

@@ -55,7 +55,11 @@
 /// ```sh
 /// $ pulumi import aws:datapipeline/pipelineDefinition:PipelineDefinition example df-1234567890
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod pipeline_definition {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -121,8 +125,6 @@ pub mod pipeline_definition {
         name: &str,
         args: PipelineDefinitionArgs,
     ) -> PipelineDefinitionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let parameter_objects_binding = args.parameter_objects.get_output(context);
         let parameter_values_binding = args.parameter_values.get_output(context);
         let pipeline_id_binding = args.pipeline_id.get_output(context);

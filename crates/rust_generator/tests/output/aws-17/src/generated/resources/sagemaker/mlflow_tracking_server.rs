@@ -27,7 +27,11 @@
 /// ```sh
 /// $ pulumi import aws:sagemaker/mlflowTrackingServer:MlflowTrackingServer example example
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod mlflow_tracking_server {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -105,8 +109,6 @@ pub mod mlflow_tracking_server {
         name: &str,
         args: MlflowTrackingServerArgs,
     ) -> MlflowTrackingServerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let artifact_store_uri_binding = args.artifact_store_uri.get_output(context);
         let automatic_model_registration_binding = args
             .automatic_model_registration

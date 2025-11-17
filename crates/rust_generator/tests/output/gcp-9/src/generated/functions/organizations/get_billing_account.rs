@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_billing_account {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -42,8 +46,6 @@ pub mod get_billing_account {
         context: &pulumi_gestalt_rust::Context,
         args: GetBillingAccountArgs,
     ) -> GetBillingAccountResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let billing_account_binding = args.billing_account.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let lookup_projects_binding = args.lookup_projects.get_output(context);

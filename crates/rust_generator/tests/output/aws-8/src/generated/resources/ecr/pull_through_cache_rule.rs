@@ -30,7 +30,11 @@
 /// ```sh
 /// $ pulumi import aws:ecr/pullThroughCacheRule:PullThroughCacheRule example ecr-public
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod pull_through_cache_rule {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -69,8 +73,6 @@ pub mod pull_through_cache_rule {
         name: &str,
         args: PullThroughCacheRuleArgs,
     ) -> PullThroughCacheRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let credential_arn_binding = args.credential_arn.get_output(context);
         let ecr_repository_prefix_binding = args
             .ecr_repository_prefix

@@ -197,7 +197,11 @@
 /// $ pulumi import gcp:bigqueryanalyticshub/listing:Listing default {{location}}/{{data_exchange_id}}/{{listing_id}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod listing {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -318,8 +322,6 @@ pub mod listing {
         name: &str,
         args: ListingArgs,
     ) -> ListingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bigquery_dataset_binding = args.bigquery_dataset.get_output(context);
         let categories_binding = args.categories.get_output(context);
         let data_exchange_id_binding = args.data_exchange_id.get_output(context);

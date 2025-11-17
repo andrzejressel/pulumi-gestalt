@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod nursery {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -35,8 +39,6 @@ pub mod nursery {
         name: &str,
         args: NurseryArgs,
     ) -> NurseryResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let sizes_binding = args.sizes.get_output(context);
         let varieties_binding = args.varieties.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

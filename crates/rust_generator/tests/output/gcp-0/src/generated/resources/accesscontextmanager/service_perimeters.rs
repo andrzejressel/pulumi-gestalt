@@ -73,7 +73,11 @@
 /// $ pulumi import gcp:accesscontextmanager/servicePerimeters:ServicePerimeters default {{parent}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod service_perimeters {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -127,8 +131,6 @@ pub mod service_perimeters {
         name: &str,
         args: ServicePerimetersArgs,
     ) -> ServicePerimetersResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let parent_binding = args.parent.get_output(context);
         let service_perimeters_binding = args.service_perimeters.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

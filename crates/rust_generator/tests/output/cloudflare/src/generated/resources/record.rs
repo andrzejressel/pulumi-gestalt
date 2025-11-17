@@ -45,7 +45,11 @@
 /// $ pulumi import cloudflare:index/record:Record example <zone_id>/<record_id>
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod record {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -137,8 +141,6 @@ pub mod record {
         name: &str,
         args: RecordArgs,
     ) -> RecordResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allow_overwrite_binding = args.allow_overwrite.get_output(context);
         let comment_binding = args.comment.get_output(context);
         let content_binding = args.content.get_output(context);

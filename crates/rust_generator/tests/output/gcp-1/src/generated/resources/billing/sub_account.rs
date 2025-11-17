@@ -29,7 +29,11 @@
 /// $ pulumi import gcp:billing/subAccount:SubAccount default billingAccounts/{billing_account_id}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod sub_account {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -78,8 +82,6 @@ pub mod sub_account {
         name: &str,
         args: SubAccountArgs,
     ) -> SubAccountResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let deletion_policy_binding = args.deletion_policy.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let master_billing_account_binding = args

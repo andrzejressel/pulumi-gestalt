@@ -33,7 +33,11 @@
 /// $ pulumi import azure:appservice/staticWebApp:StaticWebApp example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group1/providers/Microsoft.Web/staticSites/my-static-site1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod static_web_app {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -143,8 +147,6 @@ pub mod static_web_app {
         name: &str,
         args: StaticWebAppArgs,
     ) -> StaticWebAppResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_settings_binding = args.app_settings.get_output(context);
         let basic_auth_binding = args.basic_auth.get_output(context);
         let configuration_file_changes_enabled_binding = args

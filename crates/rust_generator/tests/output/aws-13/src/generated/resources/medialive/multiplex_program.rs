@@ -47,7 +47,11 @@
 /// ```sh
 /// $ pulumi import aws:medialive/multiplexProgram:MultiplexProgram example example_program/1234567
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod multiplex_program {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -96,8 +100,6 @@ pub mod multiplex_program {
         name: &str,
         args: MultiplexProgramArgs,
     ) -> MultiplexProgramResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let multiplex_id_binding = args.multiplex_id.get_output(context);
         let multiplex_program_settings_binding = args
             .multiplex_program_settings

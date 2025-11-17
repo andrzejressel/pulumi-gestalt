@@ -52,7 +52,11 @@
 /// $ pulumi import azure:sentinel/dataConnectorThreatIntelligenceTaxii:DataConnectorThreatIntelligenceTaxii example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group1/providers/Microsoft.OperationalInsights/workspaces/workspace1/providers/Microsoft.SecurityInsights/dataConnectors/dc1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod data_connector_threat_intelligence_taxii {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -128,8 +132,6 @@ pub mod data_connector_threat_intelligence_taxii {
         name: &str,
         args: DataConnectorThreatIntelligenceTaxiiArgs,
     ) -> DataConnectorThreatIntelligenceTaxiiResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_root_url_binding = args.api_root_url.get_output(context);
         let collection_id_binding = args.collection_id.get_output(context);
         let display_name_binding = args.display_name.get_output(context);

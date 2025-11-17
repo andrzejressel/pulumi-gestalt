@@ -59,7 +59,11 @@
 /// $ pulumi import gcp:accesscontextmanager/accessLevels:AccessLevels default {{parent}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod access_levels {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -109,8 +113,6 @@ pub mod access_levels {
         name: &str,
         args: AccessLevelsArgs,
     ) -> AccessLevelsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_levels_binding = args.access_levels.get_output(context);
         let parent_binding = args.parent.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

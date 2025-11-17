@@ -19,7 +19,11 @@
 /// ```sh
 /// $ pulumi import aws:ec2/carrierGateway:CarrierGateway example cgw-12345
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod carrier_gateway {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -63,8 +67,6 @@ pub mod carrier_gateway {
         name: &str,
         args: CarrierGatewayArgs,
     ) -> CarrierGatewayResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let tags_binding = args.tags.get_output(context);
         let vpc_id_binding = args.vpc_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

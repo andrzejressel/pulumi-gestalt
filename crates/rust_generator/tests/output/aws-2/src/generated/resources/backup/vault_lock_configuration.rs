@@ -26,7 +26,11 @@
 /// ```sh
 /// $ pulumi import aws:backup/vaultLockConfiguration:VaultLockConfiguration test TestVault
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod vault_lock_configuration {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -70,8 +74,6 @@ pub mod vault_lock_configuration {
         name: &str,
         args: VaultLockConfigurationArgs,
     ) -> VaultLockConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let backup_vault_name_binding = args.backup_vault_name.get_output(context);
         let changeable_for_days_binding = args.changeable_for_days.get_output(context);
         let max_retention_days_binding = args.max_retention_days.get_output(context);

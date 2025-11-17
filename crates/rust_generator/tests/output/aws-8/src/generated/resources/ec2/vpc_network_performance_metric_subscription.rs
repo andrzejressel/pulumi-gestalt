@@ -16,7 +16,11 @@
 ///     );
 /// }
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod vpc_network_performance_metric_subscription {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -60,8 +64,6 @@ pub mod vpc_network_performance_metric_subscription {
         name: &str,
         args: VpcNetworkPerformanceMetricSubscriptionArgs,
     ) -> VpcNetworkPerformanceMetricSubscriptionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let destination_binding = args.destination.get_output(context);
         let metric_binding = args.metric.get_output(context);
         let source_binding = args.source.get_output(context);

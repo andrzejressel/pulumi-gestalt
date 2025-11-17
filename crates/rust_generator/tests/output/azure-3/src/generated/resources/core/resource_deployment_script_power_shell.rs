@@ -51,7 +51,11 @@
 /// $ pulumi import azure:core/resourceDeploymentScriptPowerShell:ResourceDeploymentScriptPowerShell example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/resourceGroup1/providers/Microsoft.Resources/deploymentScripts/script1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod resource_deployment_script_power_shell {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -198,8 +202,6 @@ pub mod resource_deployment_script_power_shell {
         name: &str,
         args: ResourceDeploymentScriptPowerShellArgs,
     ) -> ResourceDeploymentScriptPowerShellResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cleanup_preference_binding = args.cleanup_preference.get_output(context);
         let command_line_binding = args.command_line.get_output(context);
         let container_binding = args.container.get_output(context);

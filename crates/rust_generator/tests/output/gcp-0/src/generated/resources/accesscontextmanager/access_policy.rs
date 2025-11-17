@@ -62,7 +62,11 @@
 /// $ pulumi import gcp:accesscontextmanager/accessPolicy:AccessPolicy default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod access_policy {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -115,8 +119,6 @@ pub mod access_policy {
         name: &str,
         args: AccessPolicyArgs,
     ) -> AccessPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let parent_binding = args.parent.get_output(context);
         let scopes_binding = args.scopes.get_output(context);
         let title_binding = args.title.get_output(context);

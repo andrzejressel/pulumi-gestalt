@@ -101,7 +101,11 @@
 /// $ pulumi import gcp:compute/firewall:Firewall default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod firewall {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -364,8 +368,6 @@ pub mod firewall {
         name: &str,
         args: FirewallArgs,
     ) -> FirewallResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allows_binding = args.allows.get_output(context);
         let denies_binding = args.denies.get_output(context);
         let description_binding = args.description.get_output(context);

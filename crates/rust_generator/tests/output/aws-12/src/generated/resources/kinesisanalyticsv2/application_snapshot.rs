@@ -25,7 +25,11 @@
 /// ```sh
 /// $ pulumi import aws:kinesisanalyticsv2/applicationSnapshot:ApplicationSnapshot example example-application/example-snapshot
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod application_snapshot {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -61,8 +65,6 @@ pub mod application_snapshot {
         name: &str,
         args: ApplicationSnapshotArgs,
     ) -> ApplicationSnapshotResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_name_binding = args.application_name.get_output(context);
         let snapshot_name_binding = args.snapshot_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

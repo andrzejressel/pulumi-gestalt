@@ -70,7 +70,11 @@
 /// $ pulumi import azure:compute/bastionHost:BastionHost example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/mygroup1/providers/Microsoft.Network/bastionHosts/instance1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod bastion_host {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -214,8 +218,6 @@ pub mod bastion_host {
         name: &str,
         args: BastionHostArgs,
     ) -> BastionHostResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let copy_paste_enabled_binding = args.copy_paste_enabled.get_output(context);
         let file_copy_enabled_binding = args.file_copy_enabled.get_output(context);
         let ip_configuration_binding = args.ip_configuration.get_output(context);

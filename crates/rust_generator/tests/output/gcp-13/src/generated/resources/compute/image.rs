@@ -135,7 +135,11 @@
 /// $ pulumi import gcp:compute/image:Image default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod image {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -340,8 +344,6 @@ pub mod image {
         name: &str,
         args: ImageArgs,
     ) -> ImageResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let disk_size_gb_binding = args.disk_size_gb.get_output(context);
         let family_binding = args.family.get_output(context);

@@ -43,7 +43,11 @@
 /// ```sh
 /// $ pulumi import aws:efs/fileSystem:FileSystem foo fs-6fa144c6
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod file_system {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -155,8 +159,6 @@ pub mod file_system {
         name: &str,
         args: FileSystemArgs,
     ) -> FileSystemResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let availability_zone_name_binding = args
             .availability_zone_name
             .get_output(context);

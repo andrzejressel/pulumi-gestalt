@@ -30,7 +30,11 @@
 /// ```sh
 /// $ pulumi import aws:ec2/localGatewayRouteTableVpcAssociation:LocalGatewayRouteTableVpcAssociation example lgw-vpc-assoc-1234567890abcdef
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod local_gateway_route_table_vpc_association {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -80,8 +84,6 @@ pub mod local_gateway_route_table_vpc_association {
         name: &str,
         args: LocalGatewayRouteTableVpcAssociationArgs,
     ) -> LocalGatewayRouteTableVpcAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let local_gateway_route_table_id_binding = args
             .local_gateway_route_table_id
             .get_output(context);

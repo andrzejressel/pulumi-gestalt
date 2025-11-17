@@ -44,7 +44,11 @@
 /// ```sh
 /// $ pulumi import aws:lightsail/disk_attachment:Disk_attachment test test-disk,test-instance
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod disk_attachment {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -81,8 +85,6 @@ pub mod disk_attachment {
         name: &str,
         args: Disk_attachmentArgs,
     ) -> Disk_attachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let disk_name_binding = args.disk_name.get_output(context);
         let disk_path_binding = args.disk_path.get_output(context);
         let instance_name_binding = args.instance_name.get_output(context);

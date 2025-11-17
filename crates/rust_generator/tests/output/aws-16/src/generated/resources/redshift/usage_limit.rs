@@ -26,7 +26,11 @@
 /// ```sh
 /// $ pulumi import aws:redshift/usageLimit:UsageLimit example example-id
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod usage_limit {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -93,8 +97,6 @@ pub mod usage_limit {
         name: &str,
         args: UsageLimitArgs,
     ) -> UsageLimitResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let amount_binding = args.amount.get_output(context);
         let breach_action_binding = args.breach_action.get_output(context);
         let cluster_identifier_binding = args.cluster_identifier.get_output(context);

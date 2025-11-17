@@ -293,7 +293,11 @@
 /// $ pulumi import gcp:dataproc/batch:Batch default {{location}}/{{batch_id}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod batch {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -452,8 +456,6 @@ pub mod batch {
         name: &str,
         args: BatchArgs,
     ) -> BatchResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let batch_id_binding = args.batch_id.get_output(context);
         let environment_config_binding = args.environment_config.get_output(context);
         let labels_binding = args.labels.get_output(context);

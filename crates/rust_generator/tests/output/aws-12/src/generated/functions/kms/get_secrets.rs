@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_secrets {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -30,8 +34,6 @@ pub mod get_secrets {
         context: &pulumi_gestalt_rust::Context,
         args: GetSecretsArgs,
     ) -> GetSecretsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let secrets_binding = args.secrets.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:kms/getSecrets:getSecrets".into(),

@@ -40,7 +40,11 @@
 /// $ pulumi import gcp:datacatalog/taxonomy:Taxonomy default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod taxonomy {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -116,8 +120,6 @@ pub mod taxonomy {
         name: &str,
         args: TaxonomyArgs,
     ) -> TaxonomyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let activated_policy_types_binding = args
             .activated_policy_types
             .get_output(context);

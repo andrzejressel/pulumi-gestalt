@@ -83,7 +83,11 @@
 /// $ pulumi import gcp:iam/workforcePool:WorkforcePool default {{location}}/{{workforce_pool_id}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod workforce_pool {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -187,8 +191,6 @@ pub mod workforce_pool {
         name: &str,
         args: WorkforcePoolArgs,
     ) -> WorkforcePoolResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_restrictions_binding = args.access_restrictions.get_output(context);
         let description_binding = args.description.get_output(context);
         let disabled_binding = args.disabled.get_output(context);

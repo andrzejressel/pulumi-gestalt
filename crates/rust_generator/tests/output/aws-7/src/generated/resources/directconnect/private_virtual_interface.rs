@@ -27,7 +27,11 @@
 /// ```sh
 /// $ pulumi import aws:directconnect/privateVirtualInterface:PrivateVirtualInterface test dxvif-33cc44dd
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod private_virtual_interface {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -131,8 +135,6 @@ pub mod private_virtual_interface {
         name: &str,
         args: PrivateVirtualInterfaceArgs,
     ) -> PrivateVirtualInterfaceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let address_family_binding = args.address_family.get_output(context);
         let amazon_address_binding = args.amazon_address.get_output(context);
         let bgp_asn_binding = args.bgp_asn.get_output(context);

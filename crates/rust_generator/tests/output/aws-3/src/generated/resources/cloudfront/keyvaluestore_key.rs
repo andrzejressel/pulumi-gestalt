@@ -34,7 +34,11 @@
 /// ```sh
 /// $ pulumi import aws:cloudfront/keyvaluestoreKey:KeyvaluestoreKey example arn:aws:cloudfront::111111111111:key-value-store/8562g61f-caba-2845-9d99-b97diwae5d3c,someKey
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod keyvaluestore_key {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -73,8 +77,6 @@ pub mod keyvaluestore_key {
         name: &str,
         args: KeyvaluestoreKeyArgs,
     ) -> KeyvaluestoreKeyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let key_binding = args.key.get_output(context);
         let key_value_store_arn_binding = args.key_value_store_arn.get_output(context);
         let value_binding = args.value.get_output(context);

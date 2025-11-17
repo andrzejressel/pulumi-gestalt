@@ -52,7 +52,11 @@
 /// ```sh
 /// $ pulumi import aws:transfer/access:Access example s-12345678/S-1-1-12-1234567890-123456789-1234567890-1234
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod access {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -122,8 +126,6 @@ pub mod access {
         name: &str,
         args: AccessArgs,
     ) -> AccessResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let external_id_binding = args.external_id.get_output(context);
         let home_directory_binding = args.home_directory.get_output(context);
         let home_directory_mappings_binding = args

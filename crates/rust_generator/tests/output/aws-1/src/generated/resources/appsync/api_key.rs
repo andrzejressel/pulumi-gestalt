@@ -31,7 +31,11 @@
 /// ```sh
 /// $ pulumi import aws:appsync/apiKey:ApiKey example xxxxx:yyyyy
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod api_key {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -71,8 +75,6 @@ pub mod api_key {
         name: &str,
         args: ApiKeyArgs,
     ) -> ApiKeyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_id_binding = args.api_id.get_output(context);
         let description_binding = args.description.get_output(context);
         let expires_binding = args.expires.get_output(context);

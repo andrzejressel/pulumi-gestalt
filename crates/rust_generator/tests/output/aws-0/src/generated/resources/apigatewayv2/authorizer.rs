@@ -51,7 +51,11 @@
 /// ```sh
 /// $ pulumi import aws:apigatewayv2/authorizer:Authorizer example aabbccddee/1122334
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod authorizer {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -159,8 +163,6 @@ pub mod authorizer {
         name: &str,
         args: AuthorizerArgs,
     ) -> AuthorizerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_id_binding = args.api_id.get_output(context);
         let authorizer_credentials_arn_binding = args
             .authorizer_credentials_arn

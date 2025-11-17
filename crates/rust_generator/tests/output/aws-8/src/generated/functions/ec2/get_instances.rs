@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_instances {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -51,8 +55,6 @@ pub mod get_instances {
         context: &pulumi_gestalt_rust::Context,
         args: GetInstancesArgs,
     ) -> GetInstancesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filters_binding = args.filters.get_output(context);
         let instance_state_names_binding = args.instance_state_names.get_output(context);
         let instance_tags_binding = args.instance_tags.get_output(context);

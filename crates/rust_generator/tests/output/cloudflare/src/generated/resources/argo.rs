@@ -25,7 +25,11 @@
 /// $ pulumi import cloudflare:index/argo:Argo example <zone_id>
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod argo {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -62,8 +66,6 @@ pub mod argo {
         name: &str,
         args: ArgoArgs,
     ) -> ArgoResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let smart_routing_binding = args.smart_routing.get_output(context);
         let tiered_caching_binding = args.tiered_caching.get_output(context);
         let zone_id_binding = args.zone_id.get_output(context);

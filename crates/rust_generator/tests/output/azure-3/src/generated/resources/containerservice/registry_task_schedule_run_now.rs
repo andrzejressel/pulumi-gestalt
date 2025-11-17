@@ -49,7 +49,11 @@
 ///     );
 /// }
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod registry_task_schedule_run_now {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -76,8 +80,6 @@ pub mod registry_task_schedule_run_now {
         name: &str,
         args: RegistryTaskScheduleRunNowArgs,
     ) -> RegistryTaskScheduleRunNowResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let container_registry_task_id_binding = args
             .container_registry_task_id
             .get_output(context);

@@ -44,7 +44,11 @@
 /// $ pulumi import azure:loganalytics/dataSourceWindowsEvent:DataSourceWindowsEvent example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group1/providers/Microsoft.OperationalInsights/workspaces/workspace1/dataSources/datasource1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod data_source_windows_event {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -91,8 +95,6 @@ pub mod data_source_windows_event {
         name: &str,
         args: DataSourceWindowsEventArgs,
     ) -> DataSourceWindowsEventResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let event_log_name_binding = args.event_log_name.get_output(context);
         let event_types_binding = args.event_types.get_output(context);
         let name_binding = args.name.get_output(context);

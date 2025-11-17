@@ -12,7 +12,11 @@
 /// $ pulumi import azure:stack/hciDeploymentSetting:HciDeploymentSetting example /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/group1/providers/Microsoft.AzureStackHCI/clusters/clus1/deploymentSettings/default
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod hci_deployment_setting {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -58,8 +62,6 @@ pub mod hci_deployment_setting {
         name: &str,
         args: HciDeploymentSettingArgs,
     ) -> HciDeploymentSettingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let arc_resource_ids_binding = args.arc_resource_ids.get_output(context);
         let scale_units_binding = args.scale_units.get_output(context);
         let stack_hci_cluster_id_binding = args.stack_hci_cluster_id.get_output(context);

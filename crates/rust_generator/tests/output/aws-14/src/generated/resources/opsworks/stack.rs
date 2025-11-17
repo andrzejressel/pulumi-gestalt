@@ -28,7 +28,11 @@
 /// ```sh
 /// $ pulumi import aws:opsworks/stack:Stack bar 00000000-0000-0000-0000-000000000000
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod stack {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -190,8 +194,6 @@ pub mod stack {
         name: &str,
         args: StackArgs,
     ) -> StackResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let agent_version_binding = args.agent_version.get_output(context);
         let berkshelf_version_binding = args.berkshelf_version.get_output(context);
         let color_binding = args.color.get_output(context);

@@ -2,13 +2,13 @@ use anyhow::Result;
 use pulumi_gestalt_providers_random::random_string;
 use pulumi_gestalt_providers_random::random_string::RandomStringArgs;
 use pulumi_gestalt_rust::ConfigValue;
-use pulumi_gestalt_rust::GestaltContext;
-use pulumi_gestalt_rust::GestaltOutput;
 use pulumi_gestalt_rust::ToOutput;
 use pulumi_gestalt_rust::{Context, Output, add_export, pulumi_combine, pulumi_format};
 
-pulumi_gestalt_rust::pulumi_main!();
-#[allow(dead_code)]
+fn main() {
+    pulumi_gestalt_rust::run(pulumi_main).unwrap();
+}
+
 fn pulumi_main(context: &Context) -> Result<()> {
     let length: Output<i32> = context.new_output(&12).map(|i: i32| i * 3);
 

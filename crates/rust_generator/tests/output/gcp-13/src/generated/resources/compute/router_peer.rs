@@ -416,7 +416,11 @@
 /// $ pulumi import gcp:compute/routerPeer:RouterPeer default {{router}}/{{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod router_peer {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -710,8 +714,6 @@ pub mod router_peer {
         name: &str,
         args: RouterPeerArgs,
     ) -> RouterPeerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let advertise_mode_binding = args.advertise_mode.get_output(context);
         let advertised_groups_binding = args.advertised_groups.get_output(context);
         let advertised_ip_ranges_binding = args.advertised_ip_ranges.get_output(context);

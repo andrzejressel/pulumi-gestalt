@@ -80,7 +80,11 @@
 /// ```sh
 /// $ pulumi import aws:connect/userHierarchyStructure:UserHierarchyStructure example f1288a1f-6193-445a-b47e-af739b2
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod user_hierarchy_structure {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -116,8 +120,6 @@ pub mod user_hierarchy_structure {
         name: &str,
         args: UserHierarchyStructureArgs,
     ) -> UserHierarchyStructureResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let hierarchy_structure_binding = args.hierarchy_structure.get_output(context);
         let instance_id_binding = args.instance_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

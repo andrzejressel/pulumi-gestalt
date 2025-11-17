@@ -11,7 +11,11 @@
 ///       zoneId: 0da42c8d2132a9ddaf714f9e7c920711
 ///       enabled: 'true'
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod email_routing_settings {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -58,8 +62,6 @@ pub mod email_routing_settings {
         name: &str,
         args: EmailRoutingSettingsArgs,
     ) -> EmailRoutingSettingsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let enabled_binding = args.enabled.get_output(context);
         let skip_wizard_binding = args.skip_wizard.get_output(context);
         let zone_id_binding = args.zone_id.get_output(context);

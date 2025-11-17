@@ -94,7 +94,11 @@
 /// ```sh
 /// $ pulumi import aws:chime/voiceConnectorStreaming:VoiceConnectorStreaming default abcdef1ghij2klmno3pqr4
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod voice_connector_streaming {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -153,8 +157,6 @@ pub mod voice_connector_streaming {
         name: &str,
         args: VoiceConnectorStreamingArgs,
     ) -> VoiceConnectorStreamingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let data_retention_binding = args.data_retention.get_output(context);
         let disabled_binding = args.disabled.get_output(context);
         let media_insights_configuration_binding = args

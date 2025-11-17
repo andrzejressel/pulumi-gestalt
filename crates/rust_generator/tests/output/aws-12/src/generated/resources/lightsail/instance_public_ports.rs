@@ -34,7 +34,11 @@
 ///     );
 /// }
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod instance_public_ports {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -70,8 +74,6 @@ pub mod instance_public_ports {
         name: &str,
         args: InstancePublicPortsArgs,
     ) -> InstancePublicPortsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let instance_name_binding = args.instance_name.get_output(context);
         let port_infos_binding = args.port_infos.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

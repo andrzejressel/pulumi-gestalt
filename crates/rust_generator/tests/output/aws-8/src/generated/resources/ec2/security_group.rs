@@ -226,7 +226,11 @@
 /// ```sh
 /// $ pulumi import aws:ec2/securityGroup:SecurityGroup elb_sg sg-903004f8
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod security_group {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -308,8 +312,6 @@ pub mod security_group {
         name: &str,
         args: SecurityGroupArgs,
     ) -> SecurityGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let egress_binding = args.egress.get_output(context);
         let ingress_binding = args.ingress.get_output(context);

@@ -31,7 +31,11 @@
 /// ```sh
 /// $ pulumi import aws:ec2/vpcIpamScope:VpcIpamScope example ipam-scope-0513c69f283d11dfb
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod vpc_ipam_scope {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -84,8 +88,6 @@ pub mod vpc_ipam_scope {
         name: &str,
         args: VpcIpamScopeArgs,
     ) -> VpcIpamScopeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let ipam_id_binding = args.ipam_id.get_output(context);
         let tags_binding = args.tags.get_output(context);

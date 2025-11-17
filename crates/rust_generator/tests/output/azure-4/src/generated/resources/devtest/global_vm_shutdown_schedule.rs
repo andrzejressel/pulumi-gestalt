@@ -87,7 +87,11 @@
 ///
 /// The name of the resource within the `resource id` will always follow the format `shutdown-computevm-<VM Name>` where `<VM Name>` is replaced by the name of the target Virtual Machine
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod global_vm_shutdown_schedule {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -152,8 +156,6 @@ pub mod global_vm_shutdown_schedule {
         name: &str,
         args: GlobalVMShutdownScheduleArgs,
     ) -> GlobalVMShutdownScheduleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let daily_recurrence_time_binding = args
             .daily_recurrence_time
             .get_output(context);

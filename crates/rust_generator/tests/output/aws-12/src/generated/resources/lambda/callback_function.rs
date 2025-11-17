@@ -172,7 +172,11 @@
 ///
 ///
 /// ### API Gateway Handler Function
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod callback_function {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -462,8 +466,6 @@ pub mod callback_function {
         name: &str,
         args: CallbackFunctionArgs,
     ) -> CallbackFunctionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let architectures_binding = args.architectures.get_output(context);
         let callback_binding = args.callback.get_output(context);
         let callback_factory_binding = args.callback_factory.get_output(context);

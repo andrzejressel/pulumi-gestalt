@@ -67,7 +67,11 @@
 /// ```sh
 /// $ pulumi import aws:computeoptimizer/recommendationPreferences:RecommendationPreferences example Ec2Instance,AccountId,123456789012
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod recommendation_preferences {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -172,8 +176,6 @@ pub mod recommendation_preferences {
         name: &str,
         args: RecommendationPreferencesArgs,
     ) -> RecommendationPreferencesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let enhanced_infrastructure_metrics_binding = args
             .enhanced_infrastructure_metrics
             .get_output(context);

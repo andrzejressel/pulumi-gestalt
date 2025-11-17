@@ -46,7 +46,11 @@
 /// ```sh
 /// $ pulumi import aws:ec2/vpcEndpointPolicy:VpcEndpointPolicy example vpce-3ecf2a57
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod vpc_endpoint_policy {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -78,8 +82,6 @@ pub mod vpc_endpoint_policy {
         name: &str,
         args: VpcEndpointPolicyArgs,
     ) -> VpcEndpointPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let policy_binding = args.policy.get_output(context);
         let vpc_endpoint_id_binding = args.vpc_endpoint_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

@@ -7,7 +7,11 @@
 /// ```sh
 /// $ pulumi import aws:ec2/launchTemplate:LaunchTemplate web lt-12345678
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod launch_template {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -332,8 +336,6 @@ pub mod launch_template {
         name: &str,
         args: LaunchTemplateArgs,
     ) -> LaunchTemplateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let block_device_mappings_binding = args
             .block_device_mappings
             .get_output(context);

@@ -49,7 +49,11 @@
 /// ```sh
 /// $ pulumi import aws:ssm/defaultPatchBaseline:DefaultPatchBaseline example CENTOS
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod default_patch_baseline {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -113,8 +117,6 @@ pub mod default_patch_baseline {
         name: &str,
         args: DefaultPatchBaselineArgs,
     ) -> DefaultPatchBaselineResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let baseline_id_binding = args.baseline_id.get_output(context);
         let operating_system_binding = args.operating_system.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

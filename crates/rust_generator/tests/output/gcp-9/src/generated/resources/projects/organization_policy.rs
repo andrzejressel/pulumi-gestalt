@@ -129,7 +129,11 @@
 /// $ pulumi import gcp:projects/organizationPolicy:OrganizationPolicy default {{project_id}}:{{constraint}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod organization_policy {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -211,8 +215,6 @@ pub mod organization_policy {
         name: &str,
         args: OrganizationPolicyArgs,
     ) -> OrganizationPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let boolean_policy_binding = args.boolean_policy.get_output(context);
         let constraint_binding = args.constraint.get_output(context);
         let list_policy_binding = args.list_policy.get_output(context);

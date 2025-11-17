@@ -25,7 +25,11 @@
 /// ```sh
 /// $ pulumi import aws:ec2/networkInterfaceAttachment:NetworkInterfaceAttachment secondary_nic eni-attach-0a33842b4ec347c4c
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod network_interface_attachment {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -66,8 +70,6 @@ pub mod network_interface_attachment {
         name: &str,
         args: NetworkInterfaceAttachmentArgs,
     ) -> NetworkInterfaceAttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let device_index_binding = args.device_index.get_output(context);
         let instance_id_binding = args.instance_id.get_output(context);
         let network_interface_id_binding = args.network_interface_id.get_output(context);

@@ -42,7 +42,11 @@
 /// $ pulumi import cloudflare:index/deviceSettingsPolicy:DeviceSettingsPolicy example <account_id>/<device_policy_id>
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod device_settings_policy {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -159,8 +163,6 @@ pub mod device_settings_policy {
         name: &str,
         args: DeviceSettingsPolicyArgs,
     ) -> DeviceSettingsPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let allow_mode_switch_binding = args.allow_mode_switch.get_output(context);
         let allow_updates_binding = args.allow_updates.get_output(context);

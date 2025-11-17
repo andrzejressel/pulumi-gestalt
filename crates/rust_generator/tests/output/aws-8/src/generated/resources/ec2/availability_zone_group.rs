@@ -26,7 +26,11 @@
 /// ```sh
 /// $ pulumi import aws:ec2/availabilityZoneGroup:AvailabilityZoneGroup example us-west-2-lax-1
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod availability_zone_group {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -58,8 +62,6 @@ pub mod availability_zone_group {
         name: &str,
         args: AvailabilityZoneGroupArgs,
     ) -> AvailabilityZoneGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let group_name_binding = args.group_name.get_output(context);
         let opt_in_status_binding = args.opt_in_status.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

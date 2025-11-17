@@ -26,7 +26,11 @@
 ///     );
 /// }
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod workspace_service_account_token {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -76,8 +80,6 @@ pub mod workspace_service_account_token {
         name: &str,
         args: WorkspaceServiceAccountTokenArgs,
     ) -> WorkspaceServiceAccountTokenResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let seconds_to_live_binding = args.seconds_to_live.get_output(context);
         let service_account_id_binding = args.service_account_id.get_output(context);

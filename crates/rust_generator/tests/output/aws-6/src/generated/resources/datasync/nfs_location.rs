@@ -31,7 +31,11 @@
 /// ```sh
 /// $ pulumi import aws:datasync/nfsLocation:NfsLocation example arn:aws:datasync:us-east-1:123456789012:location/loc-12345678901234567
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod nfs_location {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -97,8 +101,6 @@ pub mod nfs_location {
         name: &str,
         args: NfsLocationArgs,
     ) -> NfsLocationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let mount_options_binding = args.mount_options.get_output(context);
         let on_prem_config_binding = args.on_prem_config.get_output(context);
         let server_hostname_binding = args.server_hostname.get_output(context);

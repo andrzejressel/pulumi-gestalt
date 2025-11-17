@@ -123,7 +123,11 @@
 /// $ pulumi import gcp:apigee/targetServer:TargetServer default {{env_id}}/{{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod target_server {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -201,8 +205,6 @@ pub mod target_server {
         name: &str,
         args: TargetServerArgs,
     ) -> TargetServerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let env_id_binding = args.env_id.get_output(context);
         let host_binding = args.host.get_output(context);

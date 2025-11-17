@@ -102,7 +102,11 @@
 /// $ pulumi import gcp:diagflow/cxAgent:CxAgent default {{location}}/{{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod cx_agent {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -255,8 +259,6 @@ pub mod cx_agent {
         name: &str,
         args: CxAgentArgs,
     ) -> CxAgentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let advanced_settings_binding = args.advanced_settings.get_output(context);
         let avatar_uri_binding = args.avatar_uri.get_output(context);
         let default_language_code_binding = args

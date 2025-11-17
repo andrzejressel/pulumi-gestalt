@@ -21,7 +21,11 @@
 /// ```sh
 /// $ pulumi import aws:lightsail/lb:Lb test example-load-balancer
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod lb {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -86,8 +90,6 @@ pub mod lb {
         name: &str,
         args: LbArgs,
     ) -> LbResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let health_check_path_binding = args.health_check_path.get_output(context);
         let instance_port_binding = args.instance_port.get_output(context);
         let ip_address_type_binding = args.ip_address_type.get_output(context);

@@ -18,7 +18,11 @@
 /// ```sh
 /// $ pulumi import aws:backup/globalSettings:GlobalSettings example 123456789012
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod global_settings {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -49,8 +53,6 @@ pub mod global_settings {
         name: &str,
         args: GlobalSettingsArgs,
     ) -> GlobalSettingsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let global_settings_binding = args.global_settings.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:backup/globalSettings:GlobalSettings".into(),

@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_kafka_version {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -28,8 +32,6 @@ pub mod get_kafka_version {
         context: &pulumi_gestalt_rust::Context,
         args: GetKafkaVersionArgs,
     ) -> GetKafkaVersionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let preferred_versions_binding = args.preferred_versions.get_output(context);
         let version_binding = args.version.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

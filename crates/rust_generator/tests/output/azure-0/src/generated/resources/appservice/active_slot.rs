@@ -29,7 +29,11 @@
 ///       appServiceName: ${exampleAppService.name}
 ///       appServiceSlotName: ${exampleSlot.name}
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod active_slot {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -66,8 +70,6 @@ pub mod active_slot {
         name: &str,
         args: ActiveSlotArgs,
     ) -> ActiveSlotResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_service_name_binding = args.app_service_name.get_output(context);
         let app_service_slot_name_binding = args
             .app_service_slot_name

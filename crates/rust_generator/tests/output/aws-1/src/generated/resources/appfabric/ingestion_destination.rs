@@ -45,7 +45,11 @@
 ///     );
 /// }
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod ingestion_destination {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -125,8 +129,6 @@ pub mod ingestion_destination {
         name: &str,
         args: IngestionDestinationArgs,
     ) -> IngestionDestinationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_bundle_arn_binding = args.app_bundle_arn.get_output(context);
         let destination_configuration_binding = args
             .destination_configuration

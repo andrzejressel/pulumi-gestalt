@@ -53,7 +53,11 @@
 /// $ pulumi import gcp:iam/organizationsPolicyBinding:OrganizationsPolicyBinding default {{organization}}/{{location}}/{{policy_binding_id}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod organizations_policy_binding {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -175,8 +179,6 @@ pub mod organizations_policy_binding {
         name: &str,
         args: OrganizationsPolicyBindingArgs,
     ) -> OrganizationsPolicyBindingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let annotations_binding = args.annotations.get_output(context);
         let condition_binding = args.condition.get_output(context);
         let display_name_binding = args.display_name.get_output(context);

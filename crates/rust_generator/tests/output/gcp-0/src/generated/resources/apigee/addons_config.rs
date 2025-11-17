@@ -138,7 +138,11 @@
 /// $ pulumi import gcp:apigee/addonsConfig:AddonsConfig default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod addons_config {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -182,8 +186,6 @@ pub mod addons_config {
         name: &str,
         args: AddonsConfigArgs,
     ) -> AddonsConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let addons_config_binding = args.addons_config.get_output(context);
         let org_binding = args.org.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

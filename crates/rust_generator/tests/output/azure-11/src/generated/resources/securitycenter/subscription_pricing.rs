@@ -47,7 +47,11 @@
 /// $ pulumi import azure:securitycenter/subscriptionPricing:SubscriptionPricing example /subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Security/pricings/<resource_type>
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod subscription_pricing {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -97,8 +101,6 @@ pub mod subscription_pricing {
         name: &str,
         args: SubscriptionPricingArgs,
     ) -> SubscriptionPricingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let extensions_binding = args.extensions.get_output(context);
         let resource_type_binding = args.resource_type.get_output(context);
         let subplan_binding = args.subplan.get_output(context);

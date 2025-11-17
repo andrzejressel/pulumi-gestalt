@@ -71,7 +71,11 @@
 /// ```sh
 /// $ pulumi import aws:ses/mailFrom:MailFrom example example.com
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod mail_from {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -112,8 +116,6 @@ pub mod mail_from {
         name: &str,
         args: MailFromArgs,
     ) -> MailFromResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let behavior_on_mx_failure_binding = args
             .behavior_on_mx_failure
             .get_output(context);

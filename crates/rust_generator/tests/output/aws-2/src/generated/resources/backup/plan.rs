@@ -27,7 +27,11 @@
 /// ```sh
 /// $ pulumi import aws:backup/plan:Plan test <id>
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod plan {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -89,8 +93,6 @@ pub mod plan {
         name: &str,
         args: PlanArgs,
     ) -> PlanResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let advanced_backup_settings_binding = args
             .advanced_backup_settings
             .get_output(context);

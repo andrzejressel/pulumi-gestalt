@@ -31,7 +31,11 @@
 /// ```sh
 /// $ pulumi import aws:ec2/vpcIpv4CidrBlockAssociation:VpcIpv4CidrBlockAssociation example vpc-cidr-assoc-xxxxxxxx
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod vpc_ipv_4_cidr_block_association {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -73,8 +77,6 @@ pub mod vpc_ipv_4_cidr_block_association {
         name: &str,
         args: VpcIpv4CidrBlockAssociationArgs,
     ) -> VpcIpv4CidrBlockAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cidr_block_binding = args.cidr_block.get_output(context);
         let ipv4_ipam_pool_id_binding = args.ipv4_ipam_pool_id.get_output(context);
         let ipv4_netmask_length_binding = args.ipv4_netmask_length.get_output(context);

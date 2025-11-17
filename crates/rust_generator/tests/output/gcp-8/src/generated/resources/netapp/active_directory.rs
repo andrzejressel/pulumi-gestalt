@@ -73,7 +73,11 @@
 /// $ pulumi import gcp:netapp/activeDirectory:ActiveDirectory default {{location}}/{{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod active_directory {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -241,8 +245,6 @@ pub mod active_directory {
         name: &str,
         args: ActiveDirectoryArgs,
     ) -> ActiveDirectoryResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let administrators_binding = args.administrators.get_output(context);
         let aes_encryption_binding = args.aes_encryption.get_output(context);
         let backup_operators_binding = args.backup_operators.get_output(context);

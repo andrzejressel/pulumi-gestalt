@@ -10,7 +10,11 @@
 /// $ pulumi import azure:workloadssap/threeTierVirtualInstance:ThreeTierVirtualInstance example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group1/providers/Microsoft.Workloads/sapVirtualInstances/vis1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod three_tier_virtual_instance {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -101,8 +105,6 @@ pub mod three_tier_virtual_instance {
         name: &str,
         args: ThreeTierVirtualInstanceArgs,
     ) -> ThreeTierVirtualInstanceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_location_binding = args.app_location.get_output(context);
         let environment_binding = args.environment.get_output(context);
         let identity_binding = args.identity.get_output(context);

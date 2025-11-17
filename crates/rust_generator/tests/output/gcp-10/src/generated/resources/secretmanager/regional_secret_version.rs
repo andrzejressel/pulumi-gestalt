@@ -113,7 +113,11 @@
 /// $ pulumi import gcp:secretmanager/regionalSecretVersion:RegionalSecretVersion default projects/{{project}}/locations/{{location}}/secrets/{{secret_id}}/versions/{{version}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod regional_secret_version {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -196,8 +200,6 @@ pub mod regional_secret_version {
         name: &str,
         args: RegionalSecretVersionArgs,
     ) -> RegionalSecretVersionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let deletion_policy_binding = args.deletion_policy.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
         let is_secret_data_base64_binding = args

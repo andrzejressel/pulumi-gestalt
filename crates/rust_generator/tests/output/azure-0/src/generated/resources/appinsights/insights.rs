@@ -71,7 +71,11 @@
 /// $ pulumi import azure:appinsights/insights:Insights instance1 /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/mygroup1/providers/Microsoft.Insights/components/instance1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod insights {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -192,8 +196,6 @@ pub mod insights {
         name: &str,
         args: InsightsArgs,
     ) -> InsightsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_type_binding = args.application_type.get_output(context);
         let daily_data_cap_in_gb_binding = args.daily_data_cap_in_gb.get_output(context);
         let daily_data_cap_notifications_disabled_binding = args

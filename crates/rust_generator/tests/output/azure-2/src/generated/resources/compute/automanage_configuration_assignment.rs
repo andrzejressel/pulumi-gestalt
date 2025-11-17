@@ -97,7 +97,11 @@
 /// $ pulumi import azure:compute/automanageConfigurationAssignment:AutomanageConfigurationAssignment example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group1/providers/Microsoft.Compute/virtualMachines/vm1/providers/Microsoft.AutoManage/configurationProfileAssignments/default
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod automanage_configuration_assignment {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -129,8 +133,6 @@ pub mod automanage_configuration_assignment {
         name: &str,
         args: AutomanageConfigurationAssignmentArgs,
     ) -> AutomanageConfigurationAssignmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let configuration_id_binding = args.configuration_id.get_output(context);
         let virtual_machine_id_binding = args.virtual_machine_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

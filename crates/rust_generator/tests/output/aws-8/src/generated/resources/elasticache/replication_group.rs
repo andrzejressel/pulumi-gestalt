@@ -219,7 +219,11 @@
 /// ```sh
 /// $ pulumi import aws:elasticache/replicationGroup:ReplicationGroup my_replication_group replication-group-1
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod replication_group {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -548,8 +552,6 @@ pub mod replication_group {
         name: &str,
         args: ReplicationGroupArgs,
     ) -> ReplicationGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let apply_immediately_binding = args.apply_immediately.get_output(context);
         let at_rest_encryption_enabled_binding = args
             .at_rest_encryption_enabled

@@ -26,7 +26,11 @@
 /// ```sh
 /// $ pulumi import aws:wafv2/ipSet:IpSet example a1b2c3d4-d5f6-7777-8888-9999aaaabbbbcccc/example/REGIONAL
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod ip_set {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -89,8 +93,6 @@ pub mod ip_set {
         name: &str,
         args: IpSetArgs,
     ) -> IpSetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let addresses_binding = args.addresses.get_output(context);
         let description_binding = args.description.get_output(context);
         let ip_address_version_binding = args.ip_address_version.get_output(context);

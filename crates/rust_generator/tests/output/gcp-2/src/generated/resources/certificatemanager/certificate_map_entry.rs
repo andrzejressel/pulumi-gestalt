@@ -82,7 +82,11 @@
 /// $ pulumi import gcp:certificatemanager/certificateMapEntry:CertificateMapEntry default {{map}}/{{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod certificate_map_entry {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -197,8 +201,6 @@ pub mod certificate_map_entry {
         name: &str,
         args: CertificateMapEntryArgs,
     ) -> CertificateMapEntryResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let certificates_binding = args.certificates.get_output(context);
         let description_binding = args.description.get_output(context);
         let hostname_binding = args.hostname.get_output(context);

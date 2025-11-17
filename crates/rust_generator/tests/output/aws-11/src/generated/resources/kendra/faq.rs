@@ -76,7 +76,11 @@
 /// ```sh
 /// $ pulumi import aws:kendra/faq:Faq example faq-123456780/idx-8012925589
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod faq {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -152,8 +156,6 @@ pub mod faq {
         name: &str,
         args: FaqArgs,
     ) -> FaqResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let file_format_binding = args.file_format.get_output(context);
         let index_id_binding = args.index_id.get_output(context);

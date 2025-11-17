@@ -87,7 +87,11 @@
 /// $ pulumi import gcp:vertex/aiTensorboard:AiTensorboard default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod ai_tensorboard {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -182,8 +186,6 @@ pub mod ai_tensorboard {
         name: &str,
         args: AiTensorboardArgs,
     ) -> AiTensorboardResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let encryption_spec_binding = args.encryption_spec.get_output(context);

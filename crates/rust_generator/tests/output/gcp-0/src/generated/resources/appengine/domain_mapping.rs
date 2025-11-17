@@ -55,7 +55,11 @@
 /// $ pulumi import gcp:appengine/domainMapping:DomainMapping default {{domain_name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod domain_mapping {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -125,8 +129,6 @@ pub mod domain_mapping {
         name: &str,
         args: DomainMappingArgs,
     ) -> DomainMappingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let domain_name_binding = args.domain_name.get_output(context);
         let override_strategy_binding = args.override_strategy.get_output(context);
         let project_binding = args.project.get_output(context);

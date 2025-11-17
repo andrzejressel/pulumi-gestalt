@@ -28,7 +28,11 @@
 ///       function: aws:getPartition
 ///       arguments: {}
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod application_layer_automatic_response {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -71,8 +75,6 @@ pub mod application_layer_automatic_response {
         name: &str,
         args: ApplicationLayerAutomaticResponseArgs,
     ) -> ApplicationLayerAutomaticResponseResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let action_binding = args.action.get_output(context);
         let resource_arn_binding = args.resource_arn.get_output(context);
         let timeouts_binding = args.timeouts.get_output(context);

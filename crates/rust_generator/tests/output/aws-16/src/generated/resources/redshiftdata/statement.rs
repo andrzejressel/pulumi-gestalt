@@ -46,7 +46,11 @@
 /// ```sh
 /// $ pulumi import aws:redshiftdata/statement:Statement example example
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod statement {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -119,8 +123,6 @@ pub mod statement {
         name: &str,
         args: StatementArgs,
     ) -> StatementResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_identifier_binding = args.cluster_identifier.get_output(context);
         let database_binding = args.database.get_output(context);
         let db_user_binding = args.db_user.get_output(context);

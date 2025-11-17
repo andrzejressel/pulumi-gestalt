@@ -33,7 +33,11 @@
 /// ```sh
 /// $ pulumi import aws:rds/reservedInstance:ReservedInstance reservation_instance CustomReservationID
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod reserved_instance {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -115,8 +119,6 @@ pub mod reserved_instance {
         name: &str,
         args: ReservedInstanceArgs,
     ) -> ReservedInstanceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let instance_count_binding = args.instance_count.get_output(context);
         let offering_id_binding = args.offering_id.get_output(context);
         let reservation_id_binding = args.reservation_id.get_output(context);

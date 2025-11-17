@@ -66,7 +66,11 @@
 /// $ pulumi import gcp:networksecurity/mirroringEndpointGroupAssociation:MirroringEndpointGroupAssociation default {{location}}/{{mirroring_endpoint_group_association_id}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod mirroring_endpoint_group_association {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -182,8 +186,6 @@ pub mod mirroring_endpoint_group_association {
         name: &str,
         args: MirroringEndpointGroupAssociationArgs,
     ) -> MirroringEndpointGroupAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let labels_binding = args.labels.get_output(context);
         let location_binding = args.location.get_output(context);
         let mirroring_endpoint_group_binding = args

@@ -101,7 +101,11 @@
 /// $ pulumi import gcp:networksecurity/gatewaySecurityPolicyRule:GatewaySecurityPolicyRule default {{location}}/{{gateway_security_policy}}/{{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod gateway_security_policy_rule {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -202,8 +206,6 @@ pub mod gateway_security_policy_rule {
         name: &str,
         args: GatewaySecurityPolicyRuleArgs,
     ) -> GatewaySecurityPolicyRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_matcher_binding = args.application_matcher.get_output(context);
         let basic_profile_binding = args.basic_profile.get_output(context);
         let description_binding = args.description.get_output(context);

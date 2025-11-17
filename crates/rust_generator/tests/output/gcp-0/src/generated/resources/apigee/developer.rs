@@ -159,7 +159,11 @@
 /// $ pulumi import gcp:apigee/developer:Developer default {{org_id}}/{{email}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod developer {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -233,8 +237,6 @@ pub mod developer {
         name: &str,
         args: DeveloperArgs,
     ) -> DeveloperResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let attributes_binding = args.attributes.get_output(context);
         let email_binding = args.email.get_output(context);
         let first_name_binding = args.first_name.get_output(context);

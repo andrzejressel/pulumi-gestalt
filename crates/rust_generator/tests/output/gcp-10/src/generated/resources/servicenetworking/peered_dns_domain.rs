@@ -36,7 +36,11 @@
 /// $ pulumi import gcp:servicenetworking/peeredDnsDomain:PeeredDnsDomain default services/{service}/projects/{project}/global/networks/{network}/peeredDnsDomains/{name}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod peered_dns_domain {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -85,8 +89,6 @@ pub mod peered_dns_domain {
         name: &str,
         args: PeeredDnsDomainArgs,
     ) -> PeeredDnsDomainResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dns_suffix_binding = args.dns_suffix.get_output(context);
         let name_binding = args.name.get_output(context);
         let network_binding = args.network.get_output(context);

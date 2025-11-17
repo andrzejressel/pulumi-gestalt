@@ -19,7 +19,11 @@
 /// ```sh
 /// $ pulumi import aws:iot/thing:Thing example example
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod thing {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -66,8 +70,6 @@ pub mod thing {
         name: &str,
         args: ThingArgs,
     ) -> ThingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let attributes_binding = args.attributes.get_output(context);
         let name_binding = args.name.get_output(context);
         let thing_type_name_binding = args.thing_type_name.get_output(context);

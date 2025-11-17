@@ -42,7 +42,11 @@
 /// ```sh
 /// $ pulumi import aws:grafana/licenseAssociation:LicenseAssociation example g-2054c75a02
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod license_association {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -83,8 +87,6 @@ pub mod license_association {
         name: &str,
         args: LicenseAssociationArgs,
     ) -> LicenseAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let grafana_token_binding = args.grafana_token.get_output(context);
         let license_type_binding = args.license_type.get_output(context);
         let workspace_id_binding = args.workspace_id.get_output(context);

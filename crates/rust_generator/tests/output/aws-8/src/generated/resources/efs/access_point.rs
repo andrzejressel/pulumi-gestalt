@@ -21,7 +21,11 @@
 /// ```sh
 /// $ pulumi import aws:efs/accessPoint:AccessPoint test fsap-52a643fb
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod access_point {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -84,8 +88,6 @@ pub mod access_point {
         name: &str,
         args: AccessPointArgs,
     ) -> AccessPointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let file_system_id_binding = args.file_system_id.get_output(context);
         let posix_user_binding = args.posix_user.get_output(context);
         let root_directory_binding = args.root_directory.get_output(context);

@@ -52,7 +52,11 @@
 /// $ pulumi import azure:network/networkManagerSecurityAdminConfiguration:NetworkManagerSecurityAdminConfiguration example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/resourceGroup1/providers/Microsoft.Network/networkManagers/networkManager1/securityAdminConfigurations/configuration1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod network_manager_security_admin_configuration {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -98,8 +102,6 @@ pub mod network_manager_security_admin_configuration {
         name: &str,
         args: NetworkManagerSecurityAdminConfigurationArgs,
     ) -> NetworkManagerSecurityAdminConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let apply_on_network_intent_policy_based_services_binding = args
             .apply_on_network_intent_policy_based_services
             .get_output(context);

@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_crypto_keys {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -37,8 +41,6 @@ pub mod get_crypto_keys {
         context: &pulumi_gestalt_rust::Context,
         args: GetCryptoKeysArgs,
     ) -> GetCryptoKeysResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filter_binding = args.filter.get_output(context);
         let key_ring_binding = args.key_ring.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

@@ -35,7 +35,11 @@
 /// ```sh
 /// $ pulumi import aws:backup/regionSettings:RegionSettings test us-west-2
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod region_settings {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -75,8 +79,6 @@ pub mod region_settings {
         name: &str,
         args: RegionSettingsArgs,
     ) -> RegionSettingsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let resource_type_management_preference_binding = args
             .resource_type_management_preference
             .get_output(context);

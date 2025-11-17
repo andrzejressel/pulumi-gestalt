@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_authorization_token {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -34,8 +38,6 @@ pub mod get_authorization_token {
         context: &pulumi_gestalt_rust::Context,
         args: GetAuthorizationTokenArgs,
     ) -> GetAuthorizationTokenResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let domain_binding = args.domain.get_output(context);
         let domain_owner_binding = args.domain_owner.get_output(context);
         let duration_seconds_binding = args.duration_seconds.get_output(context);

@@ -30,7 +30,11 @@
 /// ```sh
 /// $ pulumi import aws:directoryservice/radiusSettings:RadiusSettings example d-926724cf57
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod radius_settings {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -97,8 +101,6 @@ pub mod radius_settings {
         name: &str,
         args: RadiusSettingsArgs,
     ) -> RadiusSettingsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authentication_protocol_binding = args
             .authentication_protocol
             .get_output(context);

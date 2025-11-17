@@ -61,7 +61,11 @@
 /// $ pulumi import azure:redis/enterpriseDatabase:EnterpriseDatabase example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group1/providers/Microsoft.Cache/redisEnterprise/cluster1/databases/database1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod enterprise_database {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -146,8 +150,6 @@ pub mod enterprise_database {
         name: &str,
         args: EnterpriseDatabaseArgs,
     ) -> EnterpriseDatabaseResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let client_protocol_binding = args.client_protocol.get_output(context);
         let cluster_id_binding = args.cluster_id.get_output(context);
         let clustering_policy_binding = args.clustering_policy.get_output(context);

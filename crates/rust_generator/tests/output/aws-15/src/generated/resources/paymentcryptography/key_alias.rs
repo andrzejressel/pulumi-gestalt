@@ -34,7 +34,11 @@
 /// ```sh
 /// $ pulumi import aws:paymentcryptography/keyAlias:KeyAlias example alias/4681482429376900170
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod key_alias {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -70,8 +74,6 @@ pub mod key_alias {
         name: &str,
         args: KeyAliasArgs,
     ) -> KeyAliasResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let alias_name_binding = args.alias_name.get_output(context);
         let key_arn_binding = args.key_arn.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

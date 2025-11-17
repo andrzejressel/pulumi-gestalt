@@ -38,7 +38,11 @@
 /// $ pulumi import azure:mssql/virtualMachine:VirtualMachine example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group1/providers/Microsoft.SqlVirtualMachine/sqlVirtualMachines/example1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod virtual_machine {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -182,8 +186,6 @@ pub mod virtual_machine {
         name: &str,
         args: VirtualMachineArgs,
     ) -> VirtualMachineResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let assessment_binding = args.assessment.get_output(context);
         let auto_backup_binding = args.auto_backup.get_output(context);
         let auto_patching_binding = args.auto_patching.get_output(context);

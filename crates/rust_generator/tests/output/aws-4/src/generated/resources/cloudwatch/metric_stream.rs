@@ -159,7 +159,11 @@
 /// ```sh
 /// $ pulumi import aws:cloudwatch/metricStream:MetricStream sample sample-stream-name
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod metric_stream {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -269,8 +273,6 @@ pub mod metric_stream {
         name: &str,
         args: MetricStreamArgs,
     ) -> MetricStreamResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let exclude_filters_binding = args.exclude_filters.get_output(context);
         let firehose_arn_binding = args.firehose_arn.get_output(context);
         let include_filters_binding = args.include_filters.get_output(context);

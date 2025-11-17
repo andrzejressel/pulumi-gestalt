@@ -25,7 +25,11 @@
 /// ```sh
 /// $ pulumi import aws:iot/thingGroupMembership:ThingGroupMembership example thing_group_name/thing_name
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod thing_group_membership {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -62,8 +66,6 @@ pub mod thing_group_membership {
         name: &str,
         args: ThingGroupMembershipArgs,
     ) -> ThingGroupMembershipResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let override_dynamic_group_binding = args
             .override_dynamic_group
             .get_output(context);

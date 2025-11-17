@@ -41,7 +41,11 @@
 /// $ pulumi import azure:logicapps/integrationAccountAssembly:IntegrationAccountAssembly example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group1/providers/Microsoft.Logic/integrationAccounts/account1/assemblies/assembly1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod integration_account_assembly {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -107,8 +111,6 @@ pub mod integration_account_assembly {
         name: &str,
         args: IntegrationAccountAssemblyArgs,
     ) -> IntegrationAccountAssemblyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let assembly_name_binding = args.assembly_name.get_output(context);
         let assembly_version_binding = args.assembly_version.get_output(context);
         let content_binding = args.content.get_output(context);

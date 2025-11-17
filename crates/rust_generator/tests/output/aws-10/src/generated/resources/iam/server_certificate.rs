@@ -72,7 +72,11 @@
 /// ```sh
 /// $ pulumi import aws:iam/serverCertificate:ServerCertificate certificate example.com-certificate-until-2018
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod server_certificate {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -163,8 +167,6 @@ pub mod server_certificate {
         name: &str,
         args: ServerCertificateArgs,
     ) -> ServerCertificateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let certificate_body_binding = args.certificate_body.get_output(context);
         let certificate_chain_binding = args.certificate_chain.get_output(context);
         let name_binding = args.name.get_output(context);

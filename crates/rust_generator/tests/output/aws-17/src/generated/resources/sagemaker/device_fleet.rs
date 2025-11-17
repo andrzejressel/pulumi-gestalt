@@ -31,7 +31,11 @@
 /// ```sh
 /// $ pulumi import aws:sagemaker/deviceFleet:DeviceFleet example my-fleet
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod device_fleet {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -98,8 +102,6 @@ pub mod device_fleet {
         name: &str,
         args: DeviceFleetArgs,
     ) -> DeviceFleetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let device_fleet_name_binding = args.device_fleet_name.get_output(context);
         let enable_iot_role_alias_binding = args

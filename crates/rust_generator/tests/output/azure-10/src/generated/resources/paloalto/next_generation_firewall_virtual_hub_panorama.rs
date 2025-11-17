@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod next_generation_firewall_virtual_hub_panorama {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -77,8 +81,6 @@ pub mod next_generation_firewall_virtual_hub_panorama {
         name: &str,
         args: NextGenerationFirewallVirtualHubPanoramaArgs,
     ) -> NextGenerationFirewallVirtualHubPanoramaResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let destination_nats_binding = args.destination_nats.get_output(context);
         let dns_settings_binding = args.dns_settings.get_output(context);
         let location_binding = args.location.get_output(context);

@@ -112,7 +112,11 @@
 /// ```sh
 /// $ pulumi import aws:cfg/recorder:Recorder foo example
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod recorder {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -162,8 +166,6 @@ pub mod recorder {
         name: &str,
         args: RecorderArgs,
     ) -> RecorderResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let recording_group_binding = args.recording_group.get_output(context);
         let recording_mode_binding = args.recording_mode.get_output(context);

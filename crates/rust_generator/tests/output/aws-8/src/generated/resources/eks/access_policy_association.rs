@@ -23,7 +23,11 @@
 /// ```sh
 /// $ pulumi import aws:eks/accessPolicyAssociation:AccessPolicyAssociation my_eks_access_entry my_cluster_name#my_principal_arn#my_policy_arn
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod access_policy_association {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -73,8 +77,6 @@ pub mod access_policy_association {
         name: &str,
         args: AccessPolicyAssociationArgs,
     ) -> AccessPolicyAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_scope_binding = args.access_scope.get_output(context);
         let cluster_name_binding = args.cluster_name.get_output(context);
         let policy_arn_binding = args.policy_arn.get_output(context);

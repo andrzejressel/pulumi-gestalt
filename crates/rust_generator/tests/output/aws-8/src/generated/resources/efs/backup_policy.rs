@@ -31,7 +31,11 @@
 /// ```sh
 /// $ pulumi import aws:efs/backupPolicy:BackupPolicy example fs-6fa144c6
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod backup_policy {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -67,8 +71,6 @@ pub mod backup_policy {
         name: &str,
         args: BackupPolicyArgs,
     ) -> BackupPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let backup_policy_binding = args.backup_policy.get_output(context);
         let file_system_id_binding = args.file_system_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

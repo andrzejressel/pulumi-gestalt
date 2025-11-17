@@ -134,7 +134,11 @@
 /// $ pulumi import gcp:tpu/v2Vm:V2Vm default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod v_2_vm {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -353,8 +357,6 @@ pub mod v_2_vm {
         name: &str,
         args: V2VmArgs,
     ) -> V2VmResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let accelerator_config_binding = args.accelerator_config.get_output(context);
         let accelerator_type_binding = args.accelerator_type.get_output(context);
         let cidr_block_binding = args.cidr_block.get_output(context);

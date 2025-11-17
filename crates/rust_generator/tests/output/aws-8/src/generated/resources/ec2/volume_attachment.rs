@@ -36,7 +36,11 @@
 /// ```sh
 /// $ pulumi import aws:ec2/volumeAttachment:VolumeAttachment example /dev/sdh:vol-049df61146c4d7901:i-12345678
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod volume_attachment {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -108,8 +112,6 @@ pub mod volume_attachment {
         name: &str,
         args: VolumeAttachmentArgs,
     ) -> VolumeAttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let device_name_binding = args.device_name.get_output(context);
         let force_detach_binding = args.force_detach.get_output(context);
         let instance_id_binding = args.instance_id.get_output(context);

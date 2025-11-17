@@ -64,7 +64,11 @@
 /// ```sh
 /// $ pulumi import aws:cloudwatch/logResourcePolicy:LogResourcePolicy MyPolicy MyPolicy
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod log_resource_policy {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -96,8 +100,6 @@ pub mod log_resource_policy {
         name: &str,
         args: LogResourcePolicyArgs,
     ) -> LogResourcePolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let policy_document_binding = args.policy_document.get_output(context);
         let policy_name_binding = args.policy_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

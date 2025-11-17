@@ -223,7 +223,11 @@
 /// $ pulumi import gcp:bigquery/dataset:Dataset default {{dataset_id}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod dataset {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -510,8 +514,6 @@ pub mod dataset {
         name: &str,
         args: DatasetArgs,
     ) -> DatasetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let accesses_binding = args.accesses.get_output(context);
         let dataset_id_binding = args.dataset_id.get_output(context);
         let default_collation_binding = args.default_collation.get_output(context);

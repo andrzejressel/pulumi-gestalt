@@ -40,7 +40,11 @@
 /// $ pulumi import azure:appinsights/workbook:Workbook example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/resourceGroup1/providers/Microsoft.Insights/workbooks/resource1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod workbook {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -129,8 +133,6 @@ pub mod workbook {
         name: &str,
         args: WorkbookArgs,
     ) -> WorkbookResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let category_binding = args.category.get_output(context);
         let data_json_binding = args.data_json.get_output(context);
         let description_binding = args.description.get_output(context);

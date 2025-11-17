@@ -37,7 +37,11 @@
 /// ```sh
 /// $ pulumi import aws:finspace/kxDataview:KxDataview example n3ceo7wqxoxcti5tujqwzs,my-tf-kx-database,my-tf-kx-dataview
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod kx_dataview {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -147,8 +151,6 @@ pub mod kx_dataview {
         name: &str,
         args: KxDataviewArgs,
     ) -> KxDataviewResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_update_binding = args.auto_update.get_output(context);
         let availability_zone_id_binding = args.availability_zone_id.get_output(context);
         let az_mode_binding = args.az_mode.get_output(context);

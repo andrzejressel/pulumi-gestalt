@@ -99,7 +99,11 @@
 /// $ pulumi import gcp:discoveryengine/targetSite:TargetSite default {{location}}/{{data_store_id}}/{{target_site_id}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod target_site {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -200,8 +204,6 @@ pub mod target_site {
         name: &str,
         args: TargetSiteArgs,
     ) -> TargetSiteResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let data_store_id_binding = args.data_store_id.get_output(context);
         let exact_match_binding = args.exact_match.get_output(context);
         let location_binding = args.location.get_output(context);

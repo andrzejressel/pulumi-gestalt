@@ -49,7 +49,11 @@
 /// $ pulumi import azure:storage/shareFile:ShareFile example https://account1.file.core.windows.net/share1/file1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod share_file {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -124,8 +128,6 @@ pub mod share_file {
         name: &str,
         args: ShareFileArgs,
     ) -> ShareFileResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let content_disposition_binding = args.content_disposition.get_output(context);
         let content_encoding_binding = args.content_encoding.get_output(context);
         let content_md5_binding = args.content_md5.get_output(context);

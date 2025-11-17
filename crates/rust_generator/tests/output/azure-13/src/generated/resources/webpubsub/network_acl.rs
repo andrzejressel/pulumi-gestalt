@@ -78,7 +78,11 @@
 /// $ pulumi import azure:webpubsub/networkAcl:NetworkAcl example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group1/providers/Microsoft.SignalRService/webPubSub/webpubsub1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod network_acl {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -128,8 +132,6 @@ pub mod network_acl {
         name: &str,
         args: NetworkAclArgs,
     ) -> NetworkAclResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let default_action_binding = args.default_action.get_output(context);
         let private_endpoints_binding = args.private_endpoints.get_output(context);
         let public_network_binding = args.public_network.get_output(context);

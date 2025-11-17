@@ -900,7 +900,11 @@
 /// $ pulumi import gcp:compute/forwardingRule:ForwardingRule default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod forwarding_rule {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -1422,8 +1426,6 @@ pub mod forwarding_rule {
         name: &str,
         args: ForwardingRuleArgs,
     ) -> ForwardingRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let all_ports_binding = args.all_ports.get_output(context);
         let allow_global_access_binding = args.allow_global_access.get_output(context);
         let allow_psc_global_access_binding = args

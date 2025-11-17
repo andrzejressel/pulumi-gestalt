@@ -31,7 +31,11 @@
 /// ```sh
 /// $ pulumi import aws:route53recoveryreadiness/resourceSet:ResourceSet my-cw-alarm-set example
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod resource_set {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -92,8 +96,6 @@ pub mod resource_set {
         name: &str,
         args: ResourceSetArgs,
     ) -> ResourceSetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let resource_set_name_binding = args.resource_set_name.get_output(context);
         let resource_set_type_binding = args.resource_set_type.get_output(context);
         let resources_binding = args.resources.get_output(context);

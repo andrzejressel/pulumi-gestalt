@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_permissions {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -98,8 +102,6 @@ pub mod get_permissions {
         context: &pulumi_gestalt_rust::Context,
         args: GetPermissionsArgs,
     ) -> GetPermissionsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let catalog_id_binding = args.catalog_id.get_output(context);
         let catalog_resource_binding = args.catalog_resource.get_output(context);
         let data_cells_filter_binding = args.data_cells_filter.get_output(context);

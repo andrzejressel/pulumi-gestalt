@@ -436,7 +436,11 @@
 /// $ pulumi import gcp:dataproc/metastoreService:MetastoreService default {{location}}/{{service_id}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod metastore_service {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -657,8 +661,6 @@ pub mod metastore_service {
         name: &str,
         args: MetastoreServiceArgs,
     ) -> MetastoreServiceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let database_type_binding = args.database_type.get_output(context);
         let deletion_protection_binding = args.deletion_protection.get_output(context);
         let encryption_config_binding = args.encryption_config.get_output(context);

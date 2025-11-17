@@ -26,7 +26,11 @@
 /// ```sh
 /// $ pulumi import aws:sagemaker/studioLifecycleConfig:StudioLifecycleConfig example example
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod studio_lifecycle_config {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -78,8 +82,6 @@ pub mod studio_lifecycle_config {
         name: &str,
         args: StudioLifecycleConfigArgs,
     ) -> StudioLifecycleConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let studio_lifecycle_config_app_type_binding = args
             .studio_lifecycle_config_app_type
             .get_output(context);

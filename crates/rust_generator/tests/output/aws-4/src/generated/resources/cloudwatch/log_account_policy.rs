@@ -72,7 +72,11 @@
 /// ```sh
 /// $ pulumi import aws:cloudwatch/logAccountPolicy:LogAccountPolicy example "my-account-policy:SUBSCRIPTION_FILTER_POLICY"
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod log_account_policy {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -119,8 +123,6 @@ pub mod log_account_policy {
         name: &str,
         args: LogAccountPolicyArgs,
     ) -> LogAccountPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let policy_document_binding = args.policy_document.get_output(context);
         let policy_name_binding = args.policy_name.get_output(context);
         let policy_type_binding = args.policy_type.get_output(context);

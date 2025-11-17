@@ -24,7 +24,11 @@
 /// ```sh
 /// $ pulumi import aws:organizations/delegatedAdministrator:DelegatedAdministrator example 123456789012/config.amazonaws.com
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod delegated_administrator {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -70,8 +74,6 @@ pub mod delegated_administrator {
         name: &str,
         args: DelegatedAdministratorArgs,
     ) -> DelegatedAdministratorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let service_principal_binding = args.service_principal.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

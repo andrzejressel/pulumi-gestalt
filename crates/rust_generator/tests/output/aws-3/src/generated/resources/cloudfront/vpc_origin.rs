@@ -55,7 +55,11 @@
 ///
 /// % pulumi import aws_cloudfront_vpc_origin vo_JQEa410sssUFoY6wMkx69j
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod vpc_origin {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -106,8 +110,6 @@ pub mod vpc_origin {
         name: &str,
         args: VpcOriginArgs,
     ) -> VpcOriginResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let tags_binding = args.tags.get_output(context);
         let timeouts_binding = args.timeouts.get_output(context);
         let vpc_origin_endpoint_config_binding = args

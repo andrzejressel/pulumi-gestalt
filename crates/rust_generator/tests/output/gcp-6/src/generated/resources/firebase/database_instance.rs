@@ -124,7 +124,11 @@
 /// $ pulumi import gcp:firebase/databaseInstance:DatabaseInstance default {{instance_id}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod database_instance {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -203,8 +207,6 @@ pub mod database_instance {
         name: &str,
         args: DatabaseInstanceArgs,
     ) -> DatabaseInstanceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let desired_state_binding = args.desired_state.get_output(context);
         let instance_id_binding = args.instance_id.get_output(context);
         let project_binding = args.project.get_output(context);

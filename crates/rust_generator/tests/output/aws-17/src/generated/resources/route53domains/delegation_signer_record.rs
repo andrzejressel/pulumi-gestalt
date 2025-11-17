@@ -88,7 +88,11 @@
 /// ```sh
 /// $ pulumi import aws:route53domains/delegationSignerRecord:DelegationSignerRecord example example.com,40DE3534F5324DBDAC598ACEDB5B1E26A5368732D9C791D1347E4FBDDF6FC343
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod delegation_signer_record {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -137,8 +141,6 @@ pub mod delegation_signer_record {
         name: &str,
         args: DelegationSignerRecordArgs,
     ) -> DelegationSignerRecordResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let domain_name_binding = args.domain_name.get_output(context);
         let signing_attributes_binding = args.signing_attributes.get_output(context);
         let timeouts_binding = args.timeouts.get_output(context);

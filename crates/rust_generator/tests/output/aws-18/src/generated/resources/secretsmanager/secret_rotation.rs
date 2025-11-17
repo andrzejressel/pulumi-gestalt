@@ -39,7 +39,11 @@
 /// ```sh
 /// $ pulumi import aws:secretsmanager/secretRotation:SecretRotation example arn:aws:secretsmanager:us-east-1:123456789012:secret:example-123456
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod secret_rotation {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -87,8 +91,6 @@ pub mod secret_rotation {
         name: &str,
         args: SecretRotationArgs,
     ) -> SecretRotationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let rotate_immediately_binding = args.rotate_immediately.get_output(context);
         let rotation_lambda_arn_binding = args.rotation_lambda_arn.get_output(context);
         let rotation_rules_binding = args.rotation_rules.get_output(context);

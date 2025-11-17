@@ -38,7 +38,11 @@
 /// $ pulumi import azure:oracle/exadataInfrastructure:ExadataInfrastructure example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/resourceGroup/providers/Oracle.Database/cloudExadataInfrastructures/cloudExadataInfrastructures1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod exadata_infrastructure {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -125,8 +129,6 @@ pub mod exadata_infrastructure {
         name: &str,
         args: ExadataInfrastructureArgs,
     ) -> ExadataInfrastructureResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let compute_count_binding = args.compute_count.get_output(context);
         let customer_contacts_binding = args.customer_contacts.get_output(context);
         let display_name_binding = args.display_name.get_output(context);

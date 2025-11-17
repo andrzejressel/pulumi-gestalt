@@ -27,7 +27,11 @@
 /// ```sh
 /// $ pulumi import aws:kms/customKeyStore:CustomKeyStore example cks-5ebd4ef395a96288e
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod custom_key_store {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -69,8 +73,6 @@ pub mod custom_key_store {
         name: &str,
         args: CustomKeyStoreArgs,
     ) -> CustomKeyStoreResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cloud_hsm_cluster_id_binding = args.cloud_hsm_cluster_id.get_output(context);
         let custom_key_store_name_binding = args
             .custom_key_store_name

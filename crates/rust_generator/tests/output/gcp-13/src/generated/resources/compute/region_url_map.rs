@@ -623,7 +623,11 @@
 /// $ pulumi import gcp:compute/regionUrlMap:RegionUrlMap default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod region_url_map {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -782,8 +786,6 @@ pub mod region_url_map {
         name: &str,
         args: RegionUrlMapArgs,
     ) -> RegionUrlMapResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let default_route_action_binding = args.default_route_action.get_output(context);
         let default_service_binding = args.default_service.get_output(context);
         let default_url_redirect_binding = args.default_url_redirect.get_output(context);

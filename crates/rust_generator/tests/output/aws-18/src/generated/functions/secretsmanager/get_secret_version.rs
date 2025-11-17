@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_secret_version {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -40,8 +44,6 @@ pub mod get_secret_version {
         context: &pulumi_gestalt_rust::Context,
         args: GetSecretVersionArgs,
     ) -> GetSecretVersionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let secret_id_binding = args.secret_id.get_output(context);
         let version_id_binding = args.version_id.get_output(context);
         let version_stage_binding = args.version_stage.get_output(context);

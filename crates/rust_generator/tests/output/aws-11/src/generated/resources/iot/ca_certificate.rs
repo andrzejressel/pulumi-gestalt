@@ -59,7 +59,11 @@
 ///       function: aws:iot:getRegistrationCode
 ///       arguments: {}
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod ca_certificate {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -142,8 +146,6 @@ pub mod ca_certificate {
         name: &str,
         args: CaCertificateArgs,
     ) -> CaCertificateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let active_binding = args.active.get_output(context);
         let allow_auto_registration_binding = args
             .allow_auto_registration

@@ -26,7 +26,11 @@
 /// ```sh
 /// $ pulumi import aws:transcribe/vocabularyFilter:VocabularyFilter example example-name
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod vocabulary_filter {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -90,8 +94,6 @@ pub mod vocabulary_filter {
         name: &str,
         args: VocabularyFilterArgs,
     ) -> VocabularyFilterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let language_code_binding = args.language_code.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let vocabulary_filter_file_uri_binding = args

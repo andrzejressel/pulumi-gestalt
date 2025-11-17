@@ -19,7 +19,11 @@
 ///     );
 /// }
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod access_custom_page {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -71,8 +75,6 @@ pub mod access_custom_page {
         name: &str,
         args: AccessCustomPageArgs,
     ) -> AccessCustomPageResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let app_count_binding = args.app_count.get_output(context);
         let custom_html_binding = args.custom_html.get_output(context);

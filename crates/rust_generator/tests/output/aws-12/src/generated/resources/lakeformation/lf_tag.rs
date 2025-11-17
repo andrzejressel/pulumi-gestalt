@@ -24,7 +24,11 @@
 /// ```sh
 /// $ pulumi import aws:lakeformation/lfTag:LfTag example 123456789012:some_key
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod lf_tag {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -61,8 +65,6 @@ pub mod lf_tag {
         name: &str,
         args: LfTagArgs,
     ) -> LfTagResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let catalog_id_binding = args.catalog_id.get_output(context);
         let key_binding = args.key.get_output(context);
         let values_binding = args.values.get_output(context);

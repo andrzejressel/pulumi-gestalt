@@ -18,7 +18,11 @@
 /// ```sh
 /// $ pulumi import aws:networkmanager/connectPeer:ConnectPeer example connect-peer-061f3e96275db1acc
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod connect_peer {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -105,8 +109,6 @@ pub mod connect_peer {
         name: &str,
         args: ConnectPeerArgs,
     ) -> ConnectPeerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bgp_options_binding = args.bgp_options.get_output(context);
         let connect_attachment_id_binding = args
             .connect_attachment_id

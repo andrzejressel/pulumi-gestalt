@@ -29,7 +29,11 @@
 /// ```sh
 /// $ pulumi import aws:xray/samplingRule:SamplingRule example example
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod sampling_rule {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -130,8 +134,6 @@ pub mod sampling_rule {
         name: &str,
         args: SamplingRuleArgs,
     ) -> SamplingRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let attributes_binding = args.attributes.get_output(context);
         let fixed_rate_binding = args.fixed_rate.get_output(context);
         let host_binding = args.host.get_output(context);

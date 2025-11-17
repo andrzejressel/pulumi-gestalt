@@ -39,7 +39,11 @@
 /// ```sh
 /// $ pulumi import aws:quicksight/dataSource:DataSource example 123456789123/my-data-source-id
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod data_source {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -145,8 +149,6 @@ pub mod data_source {
         name: &str,
         args: DataSourceArgs,
     ) -> DataSourceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aws_account_id_binding = args.aws_account_id.get_output(context);
         let credentials_binding = args.credentials.get_output(context);
         let data_source_id_binding = args.data_source_id.get_output(context);

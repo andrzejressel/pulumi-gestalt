@@ -46,7 +46,11 @@
 ///       arguments:
 ///         name: directconnect!prod/us-east-1/directconnect/0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod macsec_key_association {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -96,8 +100,6 @@ pub mod macsec_key_association {
         name: &str,
         args: MacsecKeyAssociationArgs,
     ) -> MacsecKeyAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cak_binding = args.cak.get_output(context);
         let ckn_binding = args.ckn.get_output(context);
         let connection_id_binding = args.connection_id.get_output(context);

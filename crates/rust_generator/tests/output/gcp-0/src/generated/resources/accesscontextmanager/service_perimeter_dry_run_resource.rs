@@ -63,7 +63,11 @@
 /// $ pulumi import gcp:accesscontextmanager/servicePerimeterDryRunResource:ServicePerimeterDryRunResource default {{perimeter_name}}/{{resource}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod service_perimeter_dry_run_resource {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -105,8 +109,6 @@ pub mod service_perimeter_dry_run_resource {
         name: &str,
         args: ServicePerimeterDryRunResourceArgs,
     ) -> ServicePerimeterDryRunResourceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let perimeter_name_binding = args.perimeter_name.get_output(context);
         let resource_binding = args.resource.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

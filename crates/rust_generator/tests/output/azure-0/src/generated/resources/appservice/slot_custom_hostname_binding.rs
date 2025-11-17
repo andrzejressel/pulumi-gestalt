@@ -60,7 +60,11 @@
 /// $ pulumi import azure:appservice/slotCustomHostnameBinding:SlotCustomHostnameBinding mywebsite /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/mygroup1/providers/Microsoft.Web/sites/instance1/slots/staging/hostNameBindings/mywebsite.com
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod slot_custom_hostname_binding {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -112,8 +116,6 @@ pub mod slot_custom_hostname_binding {
         name: &str,
         args: SlotCustomHostnameBindingArgs,
     ) -> SlotCustomHostnameBindingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_service_slot_id_binding = args.app_service_slot_id.get_output(context);
         let hostname_binding = args.hostname.get_output(context);
         let ssl_state_binding = args.ssl_state.get_output(context);

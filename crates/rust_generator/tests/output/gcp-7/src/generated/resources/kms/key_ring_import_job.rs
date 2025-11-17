@@ -29,7 +29,11 @@
 /// $ pulumi import gcp:kms/keyRingImportJob:KeyRingImportJob default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod key_ring_import_job {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -104,8 +108,6 @@ pub mod key_ring_import_job {
         name: &str,
         args: KeyRingImportJobArgs,
     ) -> KeyRingImportJobResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let import_job_id_binding = args.import_job_id.get_output(context);
         let import_method_binding = args.import_method.get_output(context);
         let key_ring_binding = args.key_ring.get_output(context);

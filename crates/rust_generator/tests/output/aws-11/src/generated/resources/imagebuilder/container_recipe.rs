@@ -47,7 +47,11 @@
 /// ```sh
 /// $ pulumi import aws:imagebuilder/containerRecipe:ContainerRecipe example arn:aws:imagebuilder:us-east-1:123456789012:container-recipe/example/1.0.0
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod container_recipe {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -177,8 +181,6 @@ pub mod container_recipe {
         name: &str,
         args: ContainerRecipeArgs,
     ) -> ContainerRecipeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let components_binding = args.components.get_output(context);
         let container_type_binding = args.container_type.get_output(context);
         let description_binding = args.description.get_output(context);

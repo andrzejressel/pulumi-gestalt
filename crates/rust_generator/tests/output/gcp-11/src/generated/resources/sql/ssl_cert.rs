@@ -32,7 +32,11 @@
 ///
 /// Since the contents of the certificate cannot be accessed after its creation, this resource cannot be imported.
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod ssl_cert {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -91,8 +95,6 @@ pub mod ssl_cert {
         name: &str,
         args: SslCertArgs,
     ) -> SslCertResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let common_name_binding = args.common_name.get_output(context);
         let instance_binding = args.instance.get_output(context);
         let project_binding = args.project.get_output(context);

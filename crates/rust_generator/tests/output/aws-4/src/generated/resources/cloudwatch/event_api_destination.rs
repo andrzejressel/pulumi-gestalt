@@ -30,7 +30,11 @@
 /// ```sh
 /// $ pulumi import aws:cloudwatch/eventApiDestination:EventApiDestination test api-destination
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod event_api_destination {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -86,8 +90,6 @@ pub mod event_api_destination {
         name: &str,
         args: EventApiDestinationArgs,
     ) -> EventApiDestinationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let connection_arn_binding = args.connection_arn.get_output(context);
         let description_binding = args.description.get_output(context);
         let http_method_binding = args.http_method.get_output(context);

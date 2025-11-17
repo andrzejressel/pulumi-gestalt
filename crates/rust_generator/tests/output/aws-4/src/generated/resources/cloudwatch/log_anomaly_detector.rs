@@ -30,7 +30,11 @@
 /// ```sh
 /// $ pulumi import aws:cloudwatch/logAnomalyDetector:LogAnomalyDetector example log_anomaly_detector-arn-12345678
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod log_anomaly_detector {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -101,8 +105,6 @@ pub mod log_anomaly_detector {
         name: &str,
         args: LogAnomalyDetectorArgs,
     ) -> LogAnomalyDetectorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let anomaly_visibility_time_binding = args
             .anomaly_visibility_time
             .get_output(context);

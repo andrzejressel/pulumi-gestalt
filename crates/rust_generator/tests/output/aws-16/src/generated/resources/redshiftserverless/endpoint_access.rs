@@ -24,7 +24,11 @@
 /// ```sh
 /// $ pulumi import aws:redshiftserverless/endpointAccess:EndpointAccess example example
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod endpoint_access {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -83,8 +87,6 @@ pub mod endpoint_access {
         name: &str,
         args: EndpointAccessArgs,
     ) -> EndpointAccessResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let endpoint_name_binding = args.endpoint_name.get_output(context);
         let owner_account_binding = args.owner_account.get_output(context);
         let subnet_ids_binding = args.subnet_ids.get_output(context);

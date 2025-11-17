@@ -42,7 +42,11 @@
 /// ```sh
 /// $ pulumi import aws:securitylake/subscriber:Subscriber example 9f3bfe79-d543-474d-a93c-f3846805d208
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod subscriber {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -131,8 +135,6 @@ pub mod subscriber {
         name: &str,
         args: SubscriberArgs,
     ) -> SubscriberResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_type_binding = args.access_type.get_output(context);
         let source_binding = args.source.get_output(context);
         let subscriber_description_binding = args

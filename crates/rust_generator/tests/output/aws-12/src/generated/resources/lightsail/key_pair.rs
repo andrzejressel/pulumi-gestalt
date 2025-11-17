@@ -58,7 +58,11 @@
 ///
 /// You cannot import Lightsail Key Pairs because the private and public key are only available on initial creation.
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod key_pair {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -124,8 +128,6 @@ pub mod key_pair {
         name: &str,
         args: KeyPairArgs,
     ) -> KeyPairResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let name_prefix_binding = args.name_prefix.get_output(context);
         let pgp_key_binding = args.pgp_key.get_output(context);

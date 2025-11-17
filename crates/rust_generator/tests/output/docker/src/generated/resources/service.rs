@@ -59,7 +59,11 @@
 /// $ pulumi import docker:index/service:Service foo 4pcphbxkfn2rffhbhe6czytgi
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod service {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -144,8 +148,6 @@ pub mod service {
         name: &str,
         args: ServiceArgs,
     ) -> ServiceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auth_binding = args.auth.get_output(context);
         let converge_config_binding = args.converge_config.get_output(context);
         let endpoint_spec_binding = args.endpoint_spec.get_output(context);

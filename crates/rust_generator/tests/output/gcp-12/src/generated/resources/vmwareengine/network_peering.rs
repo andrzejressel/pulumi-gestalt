@@ -86,7 +86,11 @@
 /// $ pulumi import gcp:vmwareengine/networkPeering:NetworkPeering default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod network_peering {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -201,8 +205,6 @@ pub mod network_peering {
         name: &str,
         args: NetworkPeeringArgs,
     ) -> NetworkPeeringResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let export_custom_routes_binding = args.export_custom_routes.get_output(context);
         let export_custom_routes_with_public_ip_binding = args

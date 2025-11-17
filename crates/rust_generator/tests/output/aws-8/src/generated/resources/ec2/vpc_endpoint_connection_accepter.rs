@@ -43,7 +43,11 @@
 /// ```sh
 /// $ pulumi import aws:ec2/vpcEndpointConnectionAccepter:VpcEndpointConnectionAccepter foo vpce-svc-0f97a19d3fa8220bc_vpce-010601a6db371e263
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod vpc_endpoint_connection_accepter {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -77,8 +81,6 @@ pub mod vpc_endpoint_connection_accepter {
         name: &str,
         args: VpcEndpointConnectionAccepterArgs,
     ) -> VpcEndpointConnectionAccepterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let vpc_endpoint_id_binding = args.vpc_endpoint_id.get_output(context);
         let vpc_endpoint_service_id_binding = args
             .vpc_endpoint_service_id

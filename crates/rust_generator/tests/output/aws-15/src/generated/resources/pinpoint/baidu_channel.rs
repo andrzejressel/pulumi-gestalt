@@ -27,7 +27,11 @@
 /// ```sh
 /// $ pulumi import aws:pinpoint/baiduChannel:BaiduChannel channel application-id
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod baidu_channel {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -69,8 +73,6 @@ pub mod baidu_channel {
         name: &str,
         args: BaiduChannelArgs,
     ) -> BaiduChannelResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_key_binding = args.api_key.get_output(context);
         let application_id_binding = args.application_id.get_output(context);
         let enabled_binding = args.enabled.get_output(context);

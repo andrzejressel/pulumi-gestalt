@@ -33,7 +33,11 @@
 /// ```sh
 /// $ pulumi import aws:elasticache/reservedCacheNode:ReservedCacheNode example CustomReservationID
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod reserved_cache_node {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -115,8 +119,6 @@ pub mod reserved_cache_node {
         name: &str,
         args: ReservedCacheNodeArgs,
     ) -> ReservedCacheNodeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cache_node_count_binding = args.cache_node_count.get_output(context);
         let reserved_cache_nodes_offering_id_binding = args
             .reserved_cache_nodes_offering_id

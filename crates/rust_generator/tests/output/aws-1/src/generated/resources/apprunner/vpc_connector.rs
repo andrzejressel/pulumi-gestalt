@@ -25,7 +25,11 @@
 /// ```sh
 /// $ pulumi import aws:apprunner/vpcConnector:VpcConnector example arn:aws:apprunner:us-east-1:1234567890:vpcconnector/example/1/0a03292a89764e5882c41d8f991c82fe
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod vpc_connector {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -81,8 +85,6 @@ pub mod vpc_connector {
         name: &str,
         args: VpcConnectorArgs,
     ) -> VpcConnectorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let security_groups_binding = args.security_groups.get_output(context);
         let subnets_binding = args.subnets.get_output(context);
         let tags_binding = args.tags.get_output(context);

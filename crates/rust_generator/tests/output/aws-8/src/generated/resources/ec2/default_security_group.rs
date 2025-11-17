@@ -67,7 +67,11 @@
 /// ```sh
 /// $ pulumi import aws:ec2/defaultSecurityGroup:DefaultSecurityGroup default_sg sg-903004f8
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod default_security_group {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -137,8 +141,6 @@ pub mod default_security_group {
         name: &str,
         args: DefaultSecurityGroupArgs,
     ) -> DefaultSecurityGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let egress_binding = args.egress.get_output(context);
         let ingress_binding = args.ingress.get_output(context);
         let revoke_rules_on_delete_binding = args

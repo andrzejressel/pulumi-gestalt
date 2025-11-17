@@ -23,7 +23,11 @@
 /// ```sh
 /// $ pulumi import aws:ram/sharingWithOrganization:SharingWithOrganization example 123456789012
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod sharing_with_organization {
     #[allow(dead_code)]
     pub struct SharingWithOrganizationResult {
@@ -39,8 +43,6 @@ pub mod sharing_with_organization {
         context: &pulumi_gestalt_rust::Context,
         name: &str,
     ) -> SharingWithOrganizationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ram/sharingWithOrganization:SharingWithOrganization".into(),
             name: name.to_string(),

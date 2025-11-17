@@ -69,7 +69,11 @@
 /// $ pulumi import azure:synapse/integrationRuntimeAzure:IntegrationRuntimeAzure example /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Synapse/workspaces/workspace1/integrationRuntimes/IntegrationRuntime1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod integration_runtime_azure {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -126,8 +130,6 @@ pub mod integration_runtime_azure {
         name: &str,
         args: IntegrationRuntimeAzureArgs,
     ) -> IntegrationRuntimeAzureResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let compute_type_binding = args.compute_type.get_output(context);
         let core_count_binding = args.core_count.get_output(context);
         let description_binding = args.description.get_output(context);

@@ -79,7 +79,11 @@
 /// ```sh
 /// $ pulumi import aws:securityhub/configurationPolicyAssociation:ConfigurationPolicyAssociation example_account_association 123456789012
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod configuration_policy_association {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -111,8 +115,6 @@ pub mod configuration_policy_association {
         name: &str,
         args: ConfigurationPolicyAssociationArgs,
     ) -> ConfigurationPolicyAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let policy_id_binding = args.policy_id.get_output(context);
         let target_id_binding = args.target_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

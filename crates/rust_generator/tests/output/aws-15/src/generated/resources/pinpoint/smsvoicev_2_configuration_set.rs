@@ -25,7 +25,11 @@
 /// ```sh
 /// $ pulumi import aws:pinpoint/smsvoicev2ConfigurationSet:Smsvoicev2ConfigurationSet example example-configuration-set
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod smsvoicev_2_configuration_set {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -77,8 +81,6 @@ pub mod smsvoicev_2_configuration_set {
         name: &str,
         args: Smsvoicev2ConfigurationSetArgs,
     ) -> Smsvoicev2ConfigurationSetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let default_message_type_binding = args.default_message_type.get_output(context);
         let default_sender_id_binding = args.default_sender_id.get_output(context);
         let name_binding = args.name.get_output(context);

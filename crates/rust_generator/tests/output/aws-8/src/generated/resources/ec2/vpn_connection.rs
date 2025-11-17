@@ -119,7 +119,11 @@
 /// ```sh
 /// $ pulumi import aws:ec2/vpnConnection:VpnConnection testvpnconnection vpn-40f41529
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod vpn_connection {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -549,8 +553,6 @@ pub mod vpn_connection {
         name: &str,
         args: VpnConnectionArgs,
     ) -> VpnConnectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let customer_gateway_id_binding = args.customer_gateway_id.get_output(context);
         let enable_acceleration_binding = args.enable_acceleration.get_output(context);
         let local_ipv4_network_cidr_binding = args

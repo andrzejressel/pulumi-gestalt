@@ -158,7 +158,11 @@
 ///
 /// This resource does not support import.
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod dataset_access {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -308,8 +312,6 @@ pub mod dataset_access {
         name: &str,
         args: DatasetAccessArgs,
     ) -> DatasetAccessResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authorized_dataset_binding = args.authorized_dataset.get_output(context);
         let dataset_id_binding = args.dataset_id.get_output(context);
         let domain_binding = args.domain.get_output(context);

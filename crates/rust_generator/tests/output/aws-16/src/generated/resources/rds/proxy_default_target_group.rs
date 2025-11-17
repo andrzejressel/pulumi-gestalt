@@ -48,7 +48,11 @@
 /// ```sh
 /// $ pulumi import aws:rds/proxyDefaultTargetGroup:ProxyDefaultTargetGroup example example
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod proxy_default_target_group {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -88,8 +92,6 @@ pub mod proxy_default_target_group {
         name: &str,
         args: ProxyDefaultTargetGroupArgs,
     ) -> ProxyDefaultTargetGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let connection_pool_config_binding = args
             .connection_pool_config
             .get_output(context);

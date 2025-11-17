@@ -43,7 +43,11 @@
 /// ```sh
 /// $ pulumi import aws:ses/domainIdentity:DomainIdentity example example.com
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod domain_identity {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -74,8 +78,6 @@ pub mod domain_identity {
         name: &str,
         args: DomainIdentityArgs,
     ) -> DomainIdentityResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let domain_binding = args.domain.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ses/domainIdentity:DomainIdentity".into(),

@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_network_packet_core_data_plane {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -42,8 +46,6 @@ pub mod get_network_packet_core_data_plane {
         context: &pulumi_gestalt_rust::Context,
         args: GetNetworkPacketCoreDataPlaneArgs,
     ) -> GetNetworkPacketCoreDataPlaneResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let mobile_network_packet_core_control_plane_id_binding = args
             .mobile_network_packet_core_control_plane_id
             .get_output(context);

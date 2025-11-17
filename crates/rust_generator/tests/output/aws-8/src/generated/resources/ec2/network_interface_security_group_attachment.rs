@@ -83,7 +83,11 @@
 /// ```sh
 /// $ pulumi import aws:ec2/networkInterfaceSecurityGroupAttachment:NetworkInterfaceSecurityGroupAttachment sg_attachment eni-1234567890abcdef0_sg-1234567890abcdef0
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod network_interface_security_group_attachment {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -115,8 +119,6 @@ pub mod network_interface_security_group_attachment {
         name: &str,
         args: NetworkInterfaceSecurityGroupAttachmentArgs,
     ) -> NetworkInterfaceSecurityGroupAttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let network_interface_id_binding = args.network_interface_id.get_output(context);
         let security_group_id_binding = args.security_group_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

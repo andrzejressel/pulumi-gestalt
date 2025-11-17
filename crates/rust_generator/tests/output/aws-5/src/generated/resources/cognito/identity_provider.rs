@@ -33,7 +33,11 @@
 /// ```sh
 /// $ pulumi import aws:cognito/identityProvider:IdentityProvider example us-west-2_abc123:CorpAD
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod identity_provider {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -93,8 +97,6 @@ pub mod identity_provider {
         name: &str,
         args: IdentityProviderArgs,
     ) -> IdentityProviderResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let attribute_mapping_binding = args.attribute_mapping.get_output(context);
         let idp_identifiers_binding = args.idp_identifiers.get_output(context);
         let provider_details_binding = args.provider_details.get_output(context);

@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_instance_type_offering {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -38,8 +42,6 @@ pub mod get_instance_type_offering {
         context: &pulumi_gestalt_rust::Context,
         args: GetInstanceTypeOfferingArgs,
     ) -> GetInstanceTypeOfferingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filters_binding = args.filters.get_output(context);
         let location_type_binding = args.location_type.get_output(context);
         let preferred_instance_types_binding = args

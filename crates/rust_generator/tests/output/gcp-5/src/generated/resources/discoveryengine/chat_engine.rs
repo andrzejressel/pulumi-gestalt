@@ -146,7 +146,11 @@
 /// $ pulumi import gcp:discoveryengine/chatEngine:ChatEngine default {{location}}/{{collection_id}}/{{engine_id}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod chat_engine {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -237,8 +241,6 @@ pub mod chat_engine {
         name: &str,
         args: ChatEngineArgs,
     ) -> ChatEngineResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let chat_engine_config_binding = args.chat_engine_config.get_output(context);
         let collection_id_binding = args.collection_id.get_output(context);
         let common_config_binding = args.common_config.get_output(context);

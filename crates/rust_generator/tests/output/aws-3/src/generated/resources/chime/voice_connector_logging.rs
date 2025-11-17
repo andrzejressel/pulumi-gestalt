@@ -32,7 +32,11 @@
 /// ```sh
 /// $ pulumi import aws:chime/voiceConnectorLogging:VoiceConnectorLogging default abcdef1ghij2klmno3pqr4
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod voice_connector_logging {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -69,8 +73,6 @@ pub mod voice_connector_logging {
         name: &str,
         args: VoiceConnectorLoggingArgs,
     ) -> VoiceConnectorLoggingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let enable_media_metric_logs_binding = args
             .enable_media_metric_logs
             .get_output(context);

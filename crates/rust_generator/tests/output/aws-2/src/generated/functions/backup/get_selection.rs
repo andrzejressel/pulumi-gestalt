@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_selection {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -32,8 +36,6 @@ pub mod get_selection {
         context: &pulumi_gestalt_rust::Context,
         args: GetSelectionArgs,
     ) -> GetSelectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let plan_id_binding = args.plan_id.get_output(context);
         let selection_id_binding = args.selection_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

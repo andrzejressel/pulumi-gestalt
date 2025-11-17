@@ -28,7 +28,11 @@
 /// }
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod standards_control_association {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -74,8 +78,6 @@ pub mod standards_control_association {
         name: &str,
         args: StandardsControlAssociationArgs,
     ) -> StandardsControlAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let association_status_binding = args.association_status.get_output(context);
         let security_control_id_binding = args.security_control_id.get_output(context);
         let standards_arn_binding = args.standards_arn.get_output(context);

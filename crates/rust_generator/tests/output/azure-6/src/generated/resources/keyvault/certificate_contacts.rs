@@ -64,7 +64,11 @@
 /// $ pulumi import azure:keyvault/certificateContacts:CertificateContacts example https://example-keyvault.vault.azure.net/certificates/contacts
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod certificate_contacts {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -102,8 +106,6 @@ pub mod certificate_contacts {
         name: &str,
         args: CertificateContactsArgs,
     ) -> CertificateContactsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let contacts_binding = args.contacts.get_output(context);
         let key_vault_id_binding = args.key_vault_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

@@ -31,7 +31,11 @@
 /// ```sh
 /// $ pulumi import aws:ec2/networkInsightsAnalysis:NetworkInsightsAnalysis test nia-0462085c957f11a55
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod network_insights_analysis {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -113,8 +117,6 @@ pub mod network_insights_analysis {
         name: &str,
         args: NetworkInsightsAnalysisArgs,
     ) -> NetworkInsightsAnalysisResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filter_in_arns_binding = args.filter_in_arns.get_output(context);
         let network_insights_path_id_binding = args
             .network_insights_path_id

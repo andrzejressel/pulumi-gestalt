@@ -110,7 +110,11 @@
 ///
 /// It is all right if the constraint contains a slash, as in the example above.
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod policy {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -194,8 +198,6 @@ pub mod policy {
         name: &str,
         args: PolicyArgs,
     ) -> PolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let boolean_policy_binding = args.boolean_policy.get_output(context);
         let constraint_binding = args.constraint.get_output(context);
         let list_policy_binding = args.list_policy.get_output(context);

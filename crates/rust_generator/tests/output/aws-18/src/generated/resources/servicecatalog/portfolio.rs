@@ -25,7 +25,11 @@
 /// ```sh
 /// $ pulumi import aws:servicecatalog/portfolio:Portfolio testfolio port-12344321
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod portfolio {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -77,8 +81,6 @@ pub mod portfolio {
         name: &str,
         args: PortfolioArgs,
     ) -> PortfolioResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let provider_name_binding = args.provider_name.get_output(context);

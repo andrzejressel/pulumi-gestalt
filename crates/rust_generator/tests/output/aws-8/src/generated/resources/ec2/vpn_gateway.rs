@@ -20,7 +20,11 @@
 /// ```sh
 /// $ pulumi import aws:ec2/vpnGateway:VpnGateway testvpngateway vgw-9a4cacf3
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod vpn_gateway {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -72,8 +76,6 @@ pub mod vpn_gateway {
         name: &str,
         args: VpnGatewayArgs,
     ) -> VpnGatewayResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let amazon_side_asn_binding = args.amazon_side_asn.get_output(context);
         let availability_zone_binding = args.availability_zone.get_output(context);
         let tags_binding = args.tags.get_output(context);

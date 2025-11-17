@@ -49,7 +49,11 @@
 /// ```sh
 /// $ pulumi import aws:iam/userGroupMembership:UserGroupMembership example1 user1/group1/group2
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod user_group_membership {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -81,8 +85,6 @@ pub mod user_group_membership {
         name: &str,
         args: UserGroupMembershipArgs,
     ) -> UserGroupMembershipResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let groups_binding = args.groups.get_output(context);
         let user_binding = args.user.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

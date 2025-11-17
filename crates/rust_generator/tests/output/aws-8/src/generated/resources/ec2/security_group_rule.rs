@@ -145,7 +145,11 @@
 /// ```sh
 /// $ pulumi import aws:ec2/securityGroupRule:SecurityGroupRule rule_name sg-656c65616e6f72_ingress_tcp_80_80_self_2001:db8::/48
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod security_group_rule {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -234,8 +238,6 @@ pub mod security_group_rule {
         name: &str,
         args: SecurityGroupRuleArgs,
     ) -> SecurityGroupRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cidr_blocks_binding = args.cidr_blocks.get_output(context);
         let description_binding = args.description.get_output(context);
         let from_port_binding = args.from_port.get_output(context);

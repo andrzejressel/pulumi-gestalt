@@ -30,7 +30,11 @@
 /// ```sh
 /// $ pulumi import aws:appstream/directoryConfig:DirectoryConfig example directoryNameExample
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod directory_config {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -77,8 +81,6 @@ pub mod directory_config {
         name: &str,
         args: DirectoryConfigArgs,
     ) -> DirectoryConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let directory_name_binding = args.directory_name.get_output(context);
         let organizational_unit_distinguished_names_binding = args
             .organizational_unit_distinguished_names

@@ -29,7 +29,11 @@
 /// ```sh
 /// $ pulumi import aws:chime/sdkvoiceGlobalSettings:SdkvoiceGlobalSettings example 123456789012
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod sdkvoice_global_settings {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -60,8 +64,6 @@ pub mod sdkvoice_global_settings {
         name: &str,
         args: SdkvoiceGlobalSettingsArgs,
     ) -> SdkvoiceGlobalSettingsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let voice_connector_binding = args.voice_connector.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:chime/sdkvoiceGlobalSettings:SdkvoiceGlobalSettings".into(),

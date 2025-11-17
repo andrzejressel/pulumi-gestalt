@@ -9,7 +9,11 @@
 /// $ pulumi import cloudflare:index/loadBalancerMonitor:LoadBalancerMonitor example <account_id>/<load_balancer_monitor_id>
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod load_balancer_monitor {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -124,8 +128,6 @@ pub mod load_balancer_monitor {
         name: &str,
         args: LoadBalancerMonitorArgs,
     ) -> LoadBalancerMonitorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let allow_insecure_binding = args.allow_insecure.get_output(context);
         let consecutive_down_binding = args.consecutive_down.get_output(context);

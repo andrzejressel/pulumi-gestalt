@@ -35,7 +35,11 @@
 /// ```sh
 /// $ pulumi import aws:ssoadmin/applicationAccessScope:ApplicationAccessScope example arn:aws:sso::123456789012:application/ssoins-123456789012/apl-123456789012,sso:account:access
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod application_access_scope {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -76,8 +80,6 @@ pub mod application_access_scope {
         name: &str,
         args: ApplicationAccessScopeArgs,
     ) -> ApplicationAccessScopeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_arn_binding = args.application_arn.get_output(context);
         let authorized_targets_binding = args.authorized_targets.get_output(context);
         let scope_binding = args.scope.get_output(context);

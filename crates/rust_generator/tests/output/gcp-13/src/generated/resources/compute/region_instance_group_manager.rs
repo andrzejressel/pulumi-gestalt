@@ -115,7 +115,11 @@
 /// $ pulumi import gcp:compute/regionInstanceGroupManager:RegionInstanceGroupManager default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod region_instance_group_manager {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -441,8 +445,6 @@ pub mod region_instance_group_manager {
         name: &str,
         args: RegionInstanceGroupManagerArgs,
     ) -> RegionInstanceGroupManagerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let all_instances_config_binding = args.all_instances_config.get_output(context);
         let auto_healing_policies_binding = args
             .auto_healing_policies

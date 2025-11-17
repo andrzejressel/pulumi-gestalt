@@ -80,7 +80,11 @@
 /// ```sh
 /// $ pulumi import aws:cognito/userPool:UserPool pool us-west-2_abc123
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod user_pool {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -308,8 +312,6 @@ pub mod user_pool {
         name: &str,
         args: UserPoolArgs,
     ) -> UserPoolResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_recovery_setting_binding = args
             .account_recovery_setting
             .get_output(context);

@@ -43,7 +43,11 @@
 /// ```sh
 /// $ pulumi import aws:devopsguru/serviceIntegration:ServiceIntegration example us-east-1
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod service_integration {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -100,8 +104,6 @@ pub mod service_integration {
         name: &str,
         args: ServiceIntegrationArgs,
     ) -> ServiceIntegrationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let kms_server_side_encryption_binding = args
             .kms_server_side_encryption
             .get_output(context);

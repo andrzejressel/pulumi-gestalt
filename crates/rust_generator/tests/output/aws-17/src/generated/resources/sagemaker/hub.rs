@@ -23,7 +23,11 @@
 /// ```sh
 /// $ pulumi import aws:sagemaker/hub:Hub test_hub my-code-repo
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod hub {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -89,8 +93,6 @@ pub mod hub {
         name: &str,
         args: HubArgs,
     ) -> HubResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let hub_description_binding = args.hub_description.get_output(context);
         let hub_display_name_binding = args.hub_display_name.get_output(context);
         let hub_name_binding = args.hub_name.get_output(context);

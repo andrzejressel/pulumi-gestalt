@@ -168,7 +168,11 @@
 /// $ pulumi import gcp:compute/externalVpnGateway:ExternalVpnGateway default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod external_vpn_gateway {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -270,8 +274,6 @@ pub mod external_vpn_gateway {
         name: &str,
         args: ExternalVpnGatewayArgs,
     ) -> ExternalVpnGatewayResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let interfaces_binding = args.interfaces.get_output(context);
         let labels_binding = args.labels.get_output(context);

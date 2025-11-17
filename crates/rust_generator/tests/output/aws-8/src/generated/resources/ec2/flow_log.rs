@@ -196,7 +196,11 @@
 /// ```sh
 /// $ pulumi import aws:ec2/flowLog:FlowLog test_flow_log fl-1a2b3c4d
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod flow_log {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -317,8 +321,6 @@ pub mod flow_log {
         name: &str,
         args: FlowLogArgs,
     ) -> FlowLogResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let deliver_cross_account_role_binding = args
             .deliver_cross_account_role
             .get_output(context);

@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod func_with_secrets {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -24,8 +28,6 @@ pub mod func_with_secrets {
         context: &pulumi_gestalt_rust::Context,
         args: FuncWithSecretsArgs,
     ) -> FuncWithSecretsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let crypto_key_binding = args.crypto_key.get_output(context);
         let plaintext_binding = args.plaintext.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

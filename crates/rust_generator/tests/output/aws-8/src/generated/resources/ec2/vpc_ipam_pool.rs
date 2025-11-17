@@ -72,7 +72,11 @@
 /// ```sh
 /// $ pulumi import aws:ec2/vpcIpamPool:VpcIpamPool example ipam-pool-0958f95207d978e1e
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod vpc_ipam_pool {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -195,8 +199,6 @@ pub mod vpc_ipam_pool {
         name: &str,
         args: VpcIpamPoolArgs,
     ) -> VpcIpamPoolResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let address_family_binding = args.address_family.get_output(context);
         let allocation_default_netmask_length_binding = args
             .allocation_default_netmask_length

@@ -78,7 +78,11 @@
 /// ```sh
 /// $ pulumi import aws:sagemaker/workforce:Workforce example example
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod workforce {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -145,8 +149,6 @@ pub mod workforce {
         name: &str,
         args: WorkforceArgs,
     ) -> WorkforceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cognito_config_binding = args.cognito_config.get_output(context);
         let oidc_config_binding = args.oidc_config.get_output(context);
         let source_ip_config_binding = args.source_ip_config.get_output(context);

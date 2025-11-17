@@ -27,7 +27,11 @@
 /// $ pulumi import cloudflare:index/turnstileWidget:TurnstileWidget example <account_id>/<site_key>
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod turnstile_widget {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -86,8 +90,6 @@ pub mod turnstile_widget {
         name: &str,
         args: TurnstileWidgetArgs,
     ) -> TurnstileWidgetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let bot_fight_mode_binding = args.bot_fight_mode.get_output(context);
         let domains_binding = args.domains.get_output(context);

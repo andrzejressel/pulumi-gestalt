@@ -31,7 +31,11 @@
 /// ```sh
 /// $ pulumi import aws:sagemaker/notebookInstanceLifecycleConfiguration:NotebookInstanceLifecycleConfiguration lc foo
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod notebook_instance_lifecycle_configuration {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -70,8 +74,6 @@ pub mod notebook_instance_lifecycle_configuration {
         name: &str,
         args: NotebookInstanceLifecycleConfigurationArgs,
     ) -> NotebookInstanceLifecycleConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let on_create_binding = args.on_create.get_output(context);
         let on_start_binding = args.on_start.get_output(context);

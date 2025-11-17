@@ -82,7 +82,11 @@
 /// $ pulumi import azure:network/networkManagerAdminRule:NetworkManagerAdminRule example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/resourceGroup1/providers/Microsoft.Network/networkManagers/networkManager1/securityAdminConfigurations/configuration1/ruleCollections/ruleCollection1/rules/rule1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod network_manager_admin_rule {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -169,8 +173,6 @@ pub mod network_manager_admin_rule {
         name: &str,
         args: NetworkManagerAdminRuleArgs,
     ) -> NetworkManagerAdminRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let action_binding = args.action.get_output(context);
         let admin_rule_collection_id_binding = args
             .admin_rule_collection_id

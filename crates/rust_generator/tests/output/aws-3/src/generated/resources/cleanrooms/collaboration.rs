@@ -38,7 +38,11 @@
 /// ```sh
 /// $ pulumi import aws:cleanrooms/collaboration:Collaboration collaboration 1234abcd-12ab-34cd-56ef-1234567890ab
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod collaboration {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -145,8 +149,6 @@ pub mod collaboration {
         name: &str,
         args: CollaborationArgs,
     ) -> CollaborationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let creator_display_name_binding = args.creator_display_name.get_output(context);
         let creator_member_abilities_binding = args
             .creator_member_abilities

@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_canonical_user_id {
     #[allow(dead_code)]
     pub struct GetCanonicalUserIdResult {
@@ -12,8 +16,6 @@ pub mod get_canonical_user_id {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(context: &pulumi_gestalt_rust::Context) -> GetCanonicalUserIdResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:s3/getCanonicalUserId:getCanonicalUserId".into(),
             version: super::super::super::get_version(),

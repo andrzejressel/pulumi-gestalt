@@ -54,7 +54,11 @@
 /// $ pulumi import azure:paloalto/localRulestackRule:LocalRulestackRule example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/mygroup1/providers/PaloAltoNetworks.Cloudngfw/localRulestacks/myLocalRulestack/localRules/myRule1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod local_rulestack_rule {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -197,8 +201,6 @@ pub mod local_rulestack_rule {
         name: &str,
         args: LocalRulestackRuleArgs,
     ) -> LocalRulestackRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let action_binding = args.action.get_output(context);
         let applications_binding = args.applications.get_output(context);
         let audit_comment_binding = args.audit_comment.get_output(context);

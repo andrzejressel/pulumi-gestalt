@@ -72,7 +72,11 @@
 /// ```sh
 /// $ pulumi import aws:bedrockmodel/invocationLoggingConfiguration:InvocationLoggingConfiguration my_config us-east-1
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod invocation_logging_configuration {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -107,8 +111,6 @@ pub mod invocation_logging_configuration {
         name: &str,
         args: InvocationLoggingConfigurationArgs,
     ) -> InvocationLoggingConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let logging_config_binding = args.logging_config.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:bedrockmodel/invocationLoggingConfiguration:InvocationLoggingConfiguration"

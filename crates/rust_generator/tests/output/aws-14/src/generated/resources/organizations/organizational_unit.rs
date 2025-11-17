@@ -24,7 +24,11 @@
 /// ```sh
 /// $ pulumi import aws:organizations/organizationalUnit:OrganizationalUnit example ou-1234567
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod organizational_unit {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -75,8 +79,6 @@ pub mod organizational_unit {
         name: &str,
         args: OrganizationalUnitArgs,
     ) -> OrganizationalUnitResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let parent_id_binding = args.parent_id.get_output(context);
         let tags_binding = args.tags.get_output(context);

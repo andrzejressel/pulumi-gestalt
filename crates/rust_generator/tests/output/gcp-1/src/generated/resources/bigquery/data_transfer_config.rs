@@ -171,7 +171,11 @@
 /// $ pulumi import gcp:bigquery/dataTransferConfig:DataTransferConfig default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod data_transfer_config {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -366,8 +370,6 @@ pub mod data_transfer_config {
         name: &str,
         args: DataTransferConfigArgs,
     ) -> DataTransferConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let data_refresh_window_days_binding = args
             .data_refresh_window_days
             .get_output(context);

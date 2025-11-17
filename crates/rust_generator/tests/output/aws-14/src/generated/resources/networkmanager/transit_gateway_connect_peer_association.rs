@@ -28,7 +28,11 @@
 /// ```sh
 /// $ pulumi import aws:networkmanager/transitGatewayConnectPeerAssociation:TransitGatewayConnectPeerAssociation example global-network-0d47f6t230mz46dy4,arn:aws:ec2:us-west-2:123456789012:transit-gateway-connect-peer/tgw-connect-peer-12345678
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod transit_gateway_connect_peer_association {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -70,8 +74,6 @@ pub mod transit_gateway_connect_peer_association {
         name: &str,
         args: TransitGatewayConnectPeerAssociationArgs,
     ) -> TransitGatewayConnectPeerAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let device_id_binding = args.device_id.get_output(context);
         let global_network_id_binding = args.global_network_id.get_output(context);
         let link_id_binding = args.link_id.get_output(context);

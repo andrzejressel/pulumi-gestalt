@@ -21,7 +21,11 @@
 /// ```sh
 /// $ pulumi import aws:rum/appMonitor:AppMonitor example example
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod app_monitor {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -95,8 +99,6 @@ pub mod app_monitor {
         name: &str,
         args: AppMonitorArgs,
     ) -> AppMonitorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_monitor_configuration_binding = args
             .app_monitor_configuration
             .get_output(context);

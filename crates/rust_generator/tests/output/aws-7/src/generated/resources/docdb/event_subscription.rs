@@ -47,7 +47,11 @@
 /// ```sh
 /// $ pulumi import aws:docdb/eventSubscription:EventSubscription example event-sub
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod event_subscription {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -119,8 +123,6 @@ pub mod event_subscription {
         name: &str,
         args: EventSubscriptionArgs,
     ) -> EventSubscriptionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let enabled_binding = args.enabled.get_output(context);
         let event_categories_binding = args.event_categories.get_output(context);
         let name_binding = args.name.get_output(context);

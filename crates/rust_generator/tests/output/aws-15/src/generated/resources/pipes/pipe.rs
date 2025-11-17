@@ -202,7 +202,11 @@
 /// ```sh
 /// $ pulumi import aws:pipes/pipe:Pipe example my-pipe
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod pipe {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -319,8 +323,6 @@ pub mod pipe {
         name: &str,
         args: PipeArgs,
     ) -> PipeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let desired_state_binding = args.desired_state.get_output(context);
         let enrichment_binding = args.enrichment.get_output(context);

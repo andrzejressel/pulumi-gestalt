@@ -54,7 +54,11 @@
 /// ```sh
 /// $ pulumi import aws:codebuild/fleet:Fleet name fleet-name
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod fleet {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -155,8 +159,6 @@ pub mod fleet {
         name: &str,
         args: FleetArgs,
     ) -> FleetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let base_capacity_binding = args.base_capacity.get_output(context);
         let compute_type_binding = args.compute_type.get_output(context);
         let environment_type_binding = args.environment_type.get_output(context);

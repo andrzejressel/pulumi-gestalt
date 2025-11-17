@@ -31,7 +31,11 @@
 /// ```sh
 /// $ pulumi import aws:applicationinsights/application:Application some some-application
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod application {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -107,8 +111,6 @@ pub mod application {
         name: &str,
         args: ApplicationArgs,
     ) -> ApplicationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_config_enabled_binding = args.auto_config_enabled.get_output(context);
         let auto_create_binding = args.auto_create.get_output(context);
         let cwe_monitor_enabled_binding = args.cwe_monitor_enabled.get_output(context);

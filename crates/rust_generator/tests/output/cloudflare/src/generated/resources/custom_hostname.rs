@@ -24,7 +24,11 @@
 /// $ pulumi import cloudflare:index/customHostname:CustomHostname example 1d5fdc9e88c8a8c4518b068cd94331fe/0d89c70d-ad9f-4843-b99f-6cc0252067e9
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod custom_hostname {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -99,8 +103,6 @@ pub mod custom_hostname {
         name: &str,
         args: CustomHostnameArgs,
     ) -> CustomHostnameResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let custom_metadata_binding = args.custom_metadata.get_output(context);
         let custom_origin_server_binding = args.custom_origin_server.get_output(context);
         let custom_origin_sni_binding = args.custom_origin_sni.get_output(context);

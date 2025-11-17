@@ -38,7 +38,11 @@
 /// ```sh
 /// $ pulumi import aws:connect/hoursOfOperation:HoursOfOperation example f1288a1f-6193-445a-b47e-af739b2:c1d4e5f6-1b3c-1b3c-1b3c-c1d4e5f6c1d4e5
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod hours_of_operation {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -106,8 +110,6 @@ pub mod hours_of_operation {
         name: &str,
         args: HoursOfOperationArgs,
     ) -> HoursOfOperationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let configs_binding = args.configs.get_output(context);
         let description_binding = args.description.get_output(context);
         let instance_id_binding = args.instance_id.get_output(context);

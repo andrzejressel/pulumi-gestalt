@@ -52,7 +52,11 @@
 ///
 /// This resource does not support import.
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod peering {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -130,8 +134,6 @@ pub mod peering {
         name: &str,
         args: PeeringArgs,
     ) -> PeeringResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authorized_network_binding = args.authorized_network.get_output(context);
         let domain_resource_binding = args.domain_resource.get_output(context);
         let labels_binding = args.labels.get_output(context);

@@ -113,7 +113,11 @@
 /// $ pulumi import gcp:compute/regionPerInstanceConfig:RegionPerInstanceConfig default {{region_instance_group_manager}}/{{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod region_per_instance_config {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -224,8 +228,6 @@ pub mod region_per_instance_config {
         name: &str,
         args: RegionPerInstanceConfigArgs,
     ) -> RegionPerInstanceConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let minimal_action_binding = args.minimal_action.get_output(context);
         let most_disruptive_allowed_action_binding = args
             .most_disruptive_allowed_action

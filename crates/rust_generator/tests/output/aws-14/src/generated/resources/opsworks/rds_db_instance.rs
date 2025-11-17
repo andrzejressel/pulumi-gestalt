@@ -18,7 +18,11 @@
 ///     );
 /// }
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod rds_db_instance {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -60,8 +64,6 @@ pub mod rds_db_instance {
         name: &str,
         args: RdsDbInstanceArgs,
     ) -> RdsDbInstanceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let db_password_binding = args.db_password.get_output(context);
         let db_user_binding = args.db_user.get_output(context);
         let rds_db_instance_arn_binding = args.rds_db_instance_arn.get_output(context);

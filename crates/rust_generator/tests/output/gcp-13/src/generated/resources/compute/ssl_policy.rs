@@ -61,7 +61,11 @@
 /// $ pulumi import gcp:compute/sSLPolicy:SSLPolicy default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod ssl_policy {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -180,8 +184,6 @@ pub mod ssl_policy {
         name: &str,
         args: SSLPolicyArgs,
     ) -> SSLPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let custom_features_binding = args.custom_features.get_output(context);
         let description_binding = args.description.get_output(context);
         let min_tls_version_binding = args.min_tls_version.get_output(context);

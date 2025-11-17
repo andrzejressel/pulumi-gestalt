@@ -44,7 +44,11 @@
 /// ```sh
 /// $ pulumi import aws:rds/clusterSnapshotCopy:ClusterSnapshotCopy example my-snapshot
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod cluster_snapshot_copy {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -146,8 +150,6 @@ pub mod cluster_snapshot_copy {
         name: &str,
         args: ClusterSnapshotCopyArgs,
     ) -> ClusterSnapshotCopyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let copy_tags_binding = args.copy_tags.get_output(context);
         let destination_region_binding = args.destination_region.get_output(context);
         let kms_key_id_binding = args.kms_key_id.get_output(context);

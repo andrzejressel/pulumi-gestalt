@@ -1,5 +1,9 @@
 /// test new feature with resoruces
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod foo {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -42,8 +46,6 @@ pub mod foo {
         name: &str,
         args: FooArgs,
     ) -> FooResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let argument_binding = args.argument.get_output(context);
         let backup_kube_client_settings_binding = args
             .backup_kube_client_settings

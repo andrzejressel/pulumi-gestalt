@@ -78,7 +78,11 @@
 /// $ pulumi import gcp:logging/linkedDataset:LinkedDataset default {{parent}}/locations/{{location}}/buckets/{{bucket}}/links/{{link_id}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod linked_dataset {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -155,8 +159,6 @@ pub mod linked_dataset {
         name: &str,
         args: LinkedDatasetArgs,
     ) -> LinkedDatasetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bigquery_datasets_binding = args.bigquery_datasets.get_output(context);
         let bucket_binding = args.bucket.get_output(context);
         let description_binding = args.description.get_output(context);

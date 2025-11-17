@@ -28,7 +28,11 @@
 /// ```sh
 /// $ pulumi import aws:rds/instanceDesiredState:InstanceDesiredState example rds_instance_state-id-12345678
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod instance_desired_state {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -67,8 +71,6 @@ pub mod instance_desired_state {
         name: &str,
         args: InstanceDesiredStateArgs,
     ) -> InstanceDesiredStateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let identifier_binding = args.identifier.get_output(context);
         let state_binding = args.state.get_output(context);
         let timeouts_binding = args.timeouts.get_output(context);

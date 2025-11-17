@@ -138,7 +138,11 @@
 /// $ pulumi import gcp:monitoring/alertPolicy:AlertPolicy default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod alert_policy {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -272,8 +276,6 @@ pub mod alert_policy {
         name: &str,
         args: AlertPolicyArgs,
     ) -> AlertPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let alert_strategy_binding = args.alert_strategy.get_output(context);
         let combiner_binding = args.combiner.get_output(context);
         let conditions_binding = args.conditions.get_output(context);

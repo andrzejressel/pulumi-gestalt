@@ -25,7 +25,11 @@
 /// ```sh
 /// $ pulumi import aws:ec2/placementGroup:PlacementGroup prod_pg production-placement-group
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod placement_group {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -90,8 +94,6 @@ pub mod placement_group {
         name: &str,
         args: PlacementGroupArgs,
     ) -> PlacementGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let partition_count_binding = args.partition_count.get_output(context);
         let spread_level_binding = args.spread_level.get_output(context);

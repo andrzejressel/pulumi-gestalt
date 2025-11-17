@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_custom_key_store {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -33,8 +37,6 @@ pub mod get_custom_key_store {
         context: &pulumi_gestalt_rust::Context,
         args: GetCustomKeyStoreArgs,
     ) -> GetCustomKeyStoreResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let custom_key_store_id_binding = args.custom_key_store_id.get_output(context);
         let custom_key_store_name_binding = args
             .custom_key_store_name

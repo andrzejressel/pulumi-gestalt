@@ -140,7 +140,11 @@
 /// ```sh
 /// $ pulumi import aws:ssm/patchBaseline:PatchBaseline example pb-12345678
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod patch_baseline {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -258,8 +262,6 @@ pub mod patch_baseline {
         name: &str,
         args: PatchBaselineArgs,
     ) -> PatchBaselineResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let approval_rules_binding = args.approval_rules.get_output(context);
         let approved_patches_binding = args.approved_patches.get_output(context);
         let approved_patches_compliance_level_binding = args

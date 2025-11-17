@@ -47,7 +47,11 @@
 /// $ pulumi import azure:appplatform/springCloudElasticApplicationPerformanceMonitoring:SpringCloudElasticApplicationPerformanceMonitoring example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/mygroup1/providers/Microsoft.AppPlatform/spring/service1/apms/apm1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod spring_cloud_elastic_application_performance_monitoring {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -99,8 +103,6 @@ pub mod spring_cloud_elastic_application_performance_monitoring {
         name: &str,
         args: SpringCloudElasticApplicationPerformanceMonitoringArgs,
     ) -> SpringCloudElasticApplicationPerformanceMonitoringResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_packages_binding = args.application_packages.get_output(context);
         let globally_enabled_binding = args.globally_enabled.get_output(context);
         let name_binding = args.name.get_output(context);

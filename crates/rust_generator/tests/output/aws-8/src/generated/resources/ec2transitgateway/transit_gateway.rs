@@ -21,7 +21,11 @@
 /// ```sh
 /// $ pulumi import aws:ec2transitgateway/transitGateway:TransitGateway example tgw-12345678
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod transit_gateway {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -132,8 +136,6 @@ pub mod transit_gateway {
         name: &str,
         args: TransitGatewayArgs,
     ) -> TransitGatewayResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let amazon_side_asn_binding = args.amazon_side_asn.get_output(context);
         let auto_accept_shared_attachments_binding = args
             .auto_accept_shared_attachments

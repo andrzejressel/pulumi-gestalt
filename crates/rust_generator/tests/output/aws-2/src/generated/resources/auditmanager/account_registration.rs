@@ -37,7 +37,11 @@
 /// ```sh
 /// $ pulumi import aws:auditmanager/accountRegistration:AccountRegistration example us-east-1
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod account_registration {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -76,8 +80,6 @@ pub mod account_registration {
         name: &str,
         args: AccountRegistrationArgs,
     ) -> AccountRegistrationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let delegated_admin_account_binding = args
             .delegated_admin_account
             .get_output(context);

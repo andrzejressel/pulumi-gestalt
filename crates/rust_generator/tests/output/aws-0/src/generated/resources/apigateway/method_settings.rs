@@ -110,7 +110,11 @@
 /// ```sh
 /// $ pulumi import aws:apigateway/methodSettings:MethodSettings example 12345abcde/example/test/GET
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod method_settings {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -156,8 +160,6 @@ pub mod method_settings {
         name: &str,
         args: MethodSettingsArgs,
     ) -> MethodSettingsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let method_path_binding = args.method_path.get_output(context);
         let rest_api_binding = args.rest_api.get_output(context);
         let settings_binding = args.settings.get_output(context);

@@ -26,7 +26,11 @@
 /// ```sh
 /// $ pulumi import aws:ec2/dedicatedHost:DedicatedHost example h-0385a99d0e4b20cbb
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod dedicated_host {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -100,8 +104,6 @@ pub mod dedicated_host {
         name: &str,
         args: DedicatedHostArgs,
     ) -> DedicatedHostResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let asset_id_binding = args.asset_id.get_output(context);
         let auto_placement_binding = args.auto_placement.get_output(context);
         let availability_zone_binding = args.availability_zone.get_output(context);

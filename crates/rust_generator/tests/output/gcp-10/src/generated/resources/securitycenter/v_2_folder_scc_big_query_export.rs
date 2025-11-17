@@ -66,7 +66,11 @@
 /// $ pulumi import gcp:securitycenter/v2FolderSccBigQueryExport:V2FolderSccBigQueryExport default {{folder}}/{{location}}/{{big_query_export_id}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod v_2_folder_scc_big_query_export {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -187,8 +191,6 @@ pub mod v_2_folder_scc_big_query_export {
         name: &str,
         args: V2FolderSccBigQueryExportArgs,
     ) -> V2FolderSccBigQueryExportResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let big_query_export_id_binding = args.big_query_export_id.get_output(context);
         let dataset_binding = args.dataset.get_output(context);
         let description_binding = args.description.get_output(context);

@@ -32,7 +32,11 @@
 /// $ pulumi import azure:core/portalTenantConfiguration:PortalTenantConfiguration example /providers/Microsoft.Portal/tenantConfigurations/default
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod portal_tenant_configuration {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -63,8 +67,6 @@ pub mod portal_tenant_configuration {
         name: &str,
         args: PortalTenantConfigurationArgs,
     ) -> PortalTenantConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let private_markdown_storage_enforced_binding = args
             .private_markdown_storage_enforced
             .get_output(context);

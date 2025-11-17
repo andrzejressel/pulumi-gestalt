@@ -68,7 +68,11 @@
 /// ```sh
 /// $ pulumi import aws:dms/replicationSubnetGroup:ReplicationSubnetGroup test test-dms-replication-subnet-group-tf
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod replication_subnet_group {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -123,8 +127,6 @@ pub mod replication_subnet_group {
         name: &str,
         args: ReplicationSubnetGroupArgs,
     ) -> ReplicationSubnetGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let replication_subnet_group_description_binding = args
             .replication_subnet_group_description
             .get_output(context);

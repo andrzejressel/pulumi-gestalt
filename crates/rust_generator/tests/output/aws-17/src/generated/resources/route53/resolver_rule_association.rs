@@ -24,7 +24,11 @@
 /// ```sh
 /// $ pulumi import aws:route53/resolverRuleAssociation:ResolverRuleAssociation example rslvr-rrassoc-97242eaf88example
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod resolver_rule_association {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -61,8 +65,6 @@ pub mod resolver_rule_association {
         name: &str,
         args: ResolverRuleAssociationArgs,
     ) -> ResolverRuleAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let resolver_rule_id_binding = args.resolver_rule_id.get_output(context);
         let vpc_id_binding = args.vpc_id.get_output(context);

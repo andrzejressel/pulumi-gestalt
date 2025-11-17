@@ -74,7 +74,11 @@
 /// ```sh
 /// $ pulumi import aws:cognito/userPoolUICustomization:UserPoolUICustomization example us-west-2_ZCTarbt5C,12bu4fuk3mlgqa2rtrujgp6egq
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod user_pool_ui_customization {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -124,8 +128,6 @@ pub mod user_pool_ui_customization {
         name: &str,
         args: UserPoolUICustomizationArgs,
     ) -> UserPoolUICustomizationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let client_id_binding = args.client_id.get_output(context);
         let css_binding = args.css.get_output(context);
         let image_file_binding = args.image_file.get_output(context);

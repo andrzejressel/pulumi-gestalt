@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_dev_environment {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -82,8 +86,6 @@ pub mod get_dev_environment {
         context: &pulumi_gestalt_rust::Context,
         args: GetDevEnvironmentArgs,
     ) -> GetDevEnvironmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let alias_binding = args.alias.get_output(context);
         let creator_id_binding = args.creator_id.get_output(context);
         let env_id_binding = args.env_id.get_output(context);

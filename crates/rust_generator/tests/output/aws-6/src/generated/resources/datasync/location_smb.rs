@@ -29,7 +29,11 @@
 /// ```sh
 /// $ pulumi import aws:datasync/locationSmb:LocationSmb example arn:aws:datasync:us-east-1:123456789012:location/loc-12345678901234567
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod location_smb {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -106,8 +110,6 @@ pub mod location_smb {
         name: &str,
         args: LocationSmbArgs,
     ) -> LocationSmbResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let agent_arns_binding = args.agent_arns.get_output(context);
         let domain_binding = args.domain.get_output(context);
         let mount_options_binding = args.mount_options.get_output(context);

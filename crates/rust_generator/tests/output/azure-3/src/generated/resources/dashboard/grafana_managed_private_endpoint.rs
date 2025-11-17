@@ -51,7 +51,11 @@
 /// $ pulumi import azure:dashboard/grafanaManagedPrivateEndpoint:GrafanaManagedPrivateEndpoint example /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Dashboard/grafana/workspace1/managedPrivateEndpoints/endpoint1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod grafana_managed_private_endpoint {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -119,8 +123,6 @@ pub mod grafana_managed_private_endpoint {
         name: &str,
         args: GrafanaManagedPrivateEndpointArgs,
     ) -> GrafanaManagedPrivateEndpointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let grafana_id_binding = args.grafana_id.get_output(context);
         let group_ids_binding = args.group_ids.get_output(context);
         let location_binding = args.location.get_output(context);

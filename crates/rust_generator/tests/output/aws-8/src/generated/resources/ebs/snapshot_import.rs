@@ -16,7 +16,11 @@
 ///       tags:
 ///         Name: HelloWorld
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod snapshot_import {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -116,8 +120,6 @@ pub mod snapshot_import {
         name: &str,
         args: SnapshotImportArgs,
     ) -> SnapshotImportResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let client_data_binding = args.client_data.get_output(context);
         let description_binding = args.description.get_output(context);
         let disk_container_binding = args.disk_container.get_output(context);

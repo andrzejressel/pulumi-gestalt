@@ -36,7 +36,11 @@
 /// ```sh
 /// $ pulumi import aws:cloudwatch/logMetricFilter:LogMetricFilter test /aws/lambda/function:test
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod log_metric_filter {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -84,8 +88,6 @@ pub mod log_metric_filter {
         name: &str,
         args: LogMetricFilterArgs,
     ) -> LogMetricFilterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let log_group_name_binding = args.log_group_name.get_output(context);
         let metric_transformation_binding = args
             .metric_transformation

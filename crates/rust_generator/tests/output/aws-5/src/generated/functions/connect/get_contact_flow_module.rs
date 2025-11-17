@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_contact_flow_module {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -47,8 +51,6 @@ pub mod get_contact_flow_module {
         context: &pulumi_gestalt_rust::Context,
         args: GetContactFlowModuleArgs,
     ) -> GetContactFlowModuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let contact_flow_module_id_binding = args
             .contact_flow_module_id
             .get_output(context);

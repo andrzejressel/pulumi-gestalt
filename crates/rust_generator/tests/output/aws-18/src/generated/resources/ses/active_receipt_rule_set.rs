@@ -21,7 +21,11 @@
 /// ```sh
 /// $ pulumi import aws:ses/activeReceiptRuleSet:ActiveReceiptRuleSet my_rule_set my_rule_set_name
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod active_receipt_rule_set {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -50,8 +54,6 @@ pub mod active_receipt_rule_set {
         name: &str,
         args: ActiveReceiptRuleSetArgs,
     ) -> ActiveReceiptRuleSetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let rule_set_name_binding = args.rule_set_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ses/activeReceiptRuleSet:ActiveReceiptRuleSet".into(),

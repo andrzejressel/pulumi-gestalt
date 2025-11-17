@@ -61,7 +61,11 @@
 /// ```sh
 /// $ pulumi import aws:transfer/connector:Connector example c-4221a88afd5f4362a
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod connector {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -137,8 +141,6 @@ pub mod connector {
         name: &str,
         args: ConnectorArgs,
     ) -> ConnectorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_role_binding = args.access_role.get_output(context);
         let as2_config_binding = args.as2_config.get_output(context);
         let logging_role_binding = args.logging_role.get_output(context);

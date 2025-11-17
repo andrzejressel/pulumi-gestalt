@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_snapshot_ids {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -40,8 +44,6 @@ pub mod get_snapshot_ids {
         context: &pulumi_gestalt_rust::Context,
         args: GetSnapshotIdsArgs,
     ) -> GetSnapshotIdsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filters_binding = args.filters.get_output(context);
         let owners_binding = args.owners.get_output(context);
         let restorable_by_user_ids_binding = args

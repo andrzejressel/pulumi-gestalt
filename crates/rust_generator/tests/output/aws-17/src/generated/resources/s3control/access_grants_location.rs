@@ -31,7 +31,11 @@
 /// ```sh
 /// $ pulumi import aws:s3control/accessGrantsLocation:AccessGrantsLocation example 123456789012,default
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod access_grants_location {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -85,8 +89,6 @@ pub mod access_grants_location {
         name: &str,
         args: AccessGrantsLocationArgs,
     ) -> AccessGrantsLocationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let iam_role_arn_binding = args.iam_role_arn.get_output(context);
         let location_scope_binding = args.location_scope.get_output(context);

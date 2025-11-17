@@ -28,7 +28,11 @@
 /// ```sh
 /// $ pulumi import aws:auditmanager/assessmentDelegation:AssessmentDelegation example abcdef-123456,arn:aws:iam::123456789012:role/example,example
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod assessment_delegation {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -83,8 +87,6 @@ pub mod assessment_delegation {
         name: &str,
         args: AssessmentDelegationArgs,
     ) -> AssessmentDelegationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let assessment_id_binding = args.assessment_id.get_output(context);
         let comment_binding = args.comment.get_output(context);
         let control_set_id_binding = args.control_set_id.get_output(context);

@@ -82,7 +82,11 @@
 /// $ pulumi import azure:streamanalytics/outputFunction:OutputFunction example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group1/providers/Microsoft.StreamAnalytics/streamingJobs/job1/outputs/output1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod output_function {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -144,8 +148,6 @@ pub mod output_function {
         name: &str,
         args: OutputFunctionArgs,
     ) -> OutputFunctionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_key_binding = args.api_key.get_output(context);
         let batch_max_count_binding = args.batch_max_count.get_output(context);
         let batch_max_in_bytes_binding = args.batch_max_in_bytes.get_output(context);

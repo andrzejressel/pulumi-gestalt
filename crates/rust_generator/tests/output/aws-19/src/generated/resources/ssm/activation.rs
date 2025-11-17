@@ -50,7 +50,11 @@
 /// ```
 /// -> __Note:__ The `activation_code` attribute cannot be imported.
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod activation {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -116,8 +120,6 @@ pub mod activation {
         name: &str,
         args: ActivationArgs,
     ) -> ActivationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let expiration_date_binding = args.expiration_date.get_output(context);
         let iam_role_binding = args.iam_role.get_output(context);

@@ -35,7 +35,11 @@
 /// ```sh
 /// $ pulumi import aws:sqs/redriveAllowPolicy:RedriveAllowPolicy test https://queue.amazonaws.com/123456789012/myqueue
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod redrive_allow_policy {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -67,8 +71,6 @@ pub mod redrive_allow_policy {
         name: &str,
         args: RedriveAllowPolicyArgs,
     ) -> RedriveAllowPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let queue_url_binding = args.queue_url.get_output(context);
         let redrive_allow_policy_binding = args.redrive_allow_policy.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

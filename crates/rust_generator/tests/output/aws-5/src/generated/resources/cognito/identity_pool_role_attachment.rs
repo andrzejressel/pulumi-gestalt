@@ -7,7 +7,11 @@
 /// ```sh
 /// $ pulumi import aws:cognito/identityPoolRoleAttachment:IdentityPoolRoleAttachment example us-west-2:b64805ad-cb56-40ba-9ffc-f5d8207e6d42
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod identity_pool_role_attachment {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -56,8 +60,6 @@ pub mod identity_pool_role_attachment {
         name: &str,
         args: IdentityPoolRoleAttachmentArgs,
     ) -> IdentityPoolRoleAttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let identity_pool_id_binding = args.identity_pool_id.get_output(context);
         let role_mappings_binding = args.role_mappings.get_output(context);
         let roles_binding = args.roles.get_output(context);

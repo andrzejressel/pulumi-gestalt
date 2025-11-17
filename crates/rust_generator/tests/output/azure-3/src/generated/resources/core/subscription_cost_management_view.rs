@@ -41,7 +41,11 @@
 /// $ pulumi import azure:core/subscriptionCostManagementView:SubscriptionCostManagementView example /subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.CostManagement/views/costmanagementview
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod subscription_cost_management_view {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -125,8 +129,6 @@ pub mod subscription_cost_management_view {
         name: &str,
         args: SubscriptionCostManagementViewArgs,
     ) -> SubscriptionCostManagementViewResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let accumulated_binding = args.accumulated.get_output(context);
         let chart_type_binding = args.chart_type.get_output(context);
         let dataset_binding = args.dataset.get_output(context);

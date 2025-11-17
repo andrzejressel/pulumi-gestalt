@@ -57,7 +57,11 @@
 /// ```sh
 /// $ pulumi import aws:iam/rolePolicyAttachment:RolePolicyAttachment test-attach test-role/arn:aws:iam::xxxxxxxxxxxx:policy/test-policy
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod role_policy_attachment {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -89,8 +93,6 @@ pub mod role_policy_attachment {
         name: &str,
         args: RolePolicyAttachmentArgs,
     ) -> RolePolicyAttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let policy_arn_binding = args.policy_arn.get_output(context);
         let role_binding = args.role.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

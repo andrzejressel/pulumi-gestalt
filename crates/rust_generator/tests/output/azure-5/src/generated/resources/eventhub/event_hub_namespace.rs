@@ -30,7 +30,11 @@
 /// $ pulumi import azure:eventhub/eventHubNamespace:EventHubNamespace namespace1 /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group1/providers/Microsoft.EventHub/namespaces/namespace1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod event_hub_namespace {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -156,8 +160,6 @@ pub mod event_hub_namespace {
         name: &str,
         args: EventHubNamespaceArgs,
     ) -> EventHubNamespaceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_inflate_enabled_binding = args.auto_inflate_enabled.get_output(context);
         let capacity_binding = args.capacity.get_output(context);
         let dedicated_cluster_id_binding = args.dedicated_cluster_id.get_output(context);

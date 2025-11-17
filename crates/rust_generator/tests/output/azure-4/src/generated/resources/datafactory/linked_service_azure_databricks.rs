@@ -111,7 +111,11 @@
 /// $ pulumi import azure:datafactory/linkedServiceAzureDatabricks:LinkedServiceAzureDatabricks example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/example/providers/Microsoft.DataFactory/factories/example/linkedservices/example
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod linked_service_azure_databricks {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -237,8 +241,6 @@ pub mod linked_service_azure_databricks {
         name: &str,
         args: LinkedServiceAzureDatabricksArgs,
     ) -> LinkedServiceAzureDatabricksResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_token_binding = args.access_token.get_output(context);
         let adb_domain_binding = args.adb_domain.get_output(context);
         let additional_properties_binding = args

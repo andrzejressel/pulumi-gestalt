@@ -32,7 +32,11 @@
 /// ```sh
 /// $ pulumi import aws:quicksight/iamPolicyAssignment:IamPolicyAssignment example 123456789012,default,example
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod iam_policy_assignment {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -94,8 +98,6 @@ pub mod iam_policy_assignment {
         name: &str,
         args: IamPolicyAssignmentArgs,
     ) -> IamPolicyAssignmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let assignment_name_binding = args.assignment_name.get_output(context);
         let assignment_status_binding = args.assignment_status.get_output(context);
         let aws_account_id_binding = args.aws_account_id.get_output(context);

@@ -79,7 +79,11 @@
 /// ```sh
 /// $ pulumi import aws:ssmincidents/responsePlan:ResponsePlan responsePlanName ARNValue
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod response_plan {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -149,8 +153,6 @@ pub mod response_plan {
         name: &str,
         args: ResponsePlanArgs,
     ) -> ResponsePlanResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let action_binding = args.action.get_output(context);
         let chat_channels_binding = args.chat_channels.get_output(context);
         let display_name_binding = args.display_name.get_output(context);

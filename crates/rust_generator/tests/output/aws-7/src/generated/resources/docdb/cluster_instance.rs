@@ -41,7 +41,11 @@
 /// ```sh
 /// $ pulumi import aws:docdb/clusterInstance:ClusterInstance prod_instance_1 aurora-cluster-instance-1
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod cluster_instance {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -223,8 +227,6 @@ pub mod cluster_instance {
         name: &str,
         args: ClusterInstanceArgs,
     ) -> ClusterInstanceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let apply_immediately_binding = args.apply_immediately.get_output(context);
         let auto_minor_version_upgrade_binding = args
             .auto_minor_version_upgrade

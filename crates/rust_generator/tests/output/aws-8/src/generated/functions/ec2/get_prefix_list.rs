@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_prefix_list {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -37,8 +41,6 @@ pub mod get_prefix_list {
         context: &pulumi_gestalt_rust::Context,
         args: GetPrefixListArgs,
     ) -> GetPrefixListResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filters_binding = args.filters.get_output(context);
         let name_binding = args.name.get_output(context);
         let prefix_list_id_binding = args.prefix_list_id.get_output(context);

@@ -60,7 +60,11 @@
 /// ```sh
 /// $ pulumi import aws:networkmanager/coreNetworkPolicyAttachment:CoreNetworkPolicyAttachment example core-network-0d47f6t230mz46dy4
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod core_network_policy_attachment {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -94,8 +98,6 @@ pub mod core_network_policy_attachment {
         name: &str,
         args: CoreNetworkPolicyAttachmentArgs,
     ) -> CoreNetworkPolicyAttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let core_network_id_binding = args.core_network_id.get_output(context);
         let policy_document_binding = args.policy_document.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

@@ -32,7 +32,11 @@
 ///     );
 /// }
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod proxy_protocol_policy {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -68,8 +72,6 @@ pub mod proxy_protocol_policy {
         name: &str,
         args: ProxyProtocolPolicyArgs,
     ) -> ProxyProtocolPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let instance_ports_binding = args.instance_ports.get_output(context);
         let load_balancer_binding = args.load_balancer.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

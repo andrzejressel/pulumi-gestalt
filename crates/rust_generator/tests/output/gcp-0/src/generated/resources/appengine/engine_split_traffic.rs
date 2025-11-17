@@ -90,7 +90,11 @@
 /// $ pulumi import gcp:appengine/engineSplitTraffic:EngineSplitTraffic default {{service}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod engine_split_traffic {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -136,8 +140,6 @@ pub mod engine_split_traffic {
         name: &str,
         args: EngineSplitTrafficArgs,
     ) -> EngineSplitTrafficResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let migrate_traffic_binding = args.migrate_traffic.get_output(context);
         let project_binding = args.project.get_output(context);
         let service_binding = args.service.get_output(context);

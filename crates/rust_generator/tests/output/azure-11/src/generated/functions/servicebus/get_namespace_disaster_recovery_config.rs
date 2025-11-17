@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_namespace_disaster_recovery_config {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -40,8 +44,6 @@ pub mod get_namespace_disaster_recovery_config {
         context: &pulumi_gestalt_rust::Context,
         args: GetNamespaceDisasterRecoveryConfigArgs,
     ) -> GetNamespaceDisasterRecoveryConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let alias_authorization_rule_id_binding = args
             .alias_authorization_rule_id
             .get_output(context);

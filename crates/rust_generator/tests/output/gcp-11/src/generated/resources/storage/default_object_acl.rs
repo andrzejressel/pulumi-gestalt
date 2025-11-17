@@ -36,7 +36,11 @@
 ///
 /// This resource does not support import.
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod default_object_acl {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -72,8 +76,6 @@ pub mod default_object_acl {
         name: &str,
         args: DefaultObjectACLArgs,
     ) -> DefaultObjectACLResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_binding = args.bucket.get_output(context);
         let role_entities_binding = args.role_entities.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

@@ -263,7 +263,11 @@
 /// $ pulumi import gcp:networkmanagement/vpcFlowLogsConfig:VpcFlowLogsConfig default {{location}}/{{vpc_flow_logs_config_id}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod vpc_flow_logs_config {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -405,8 +409,6 @@ pub mod vpc_flow_logs_config {
         name: &str,
         args: VpcFlowLogsConfigArgs,
     ) -> VpcFlowLogsConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aggregation_interval_binding = args.aggregation_interval.get_output(context);
         let description_binding = args.description.get_output(context);
         let filter_expr_binding = args.filter_expr.get_output(context);

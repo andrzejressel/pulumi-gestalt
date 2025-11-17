@@ -66,7 +66,11 @@
 /// ```sh
 /// $ pulumi import aws:securityhub/findingAggregator:FindingAggregator example arn:aws:securityhub:eu-west-1:123456789098:finding-aggregator/abcd1234-abcd-1234-1234-abcdef123456
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod finding_aggregator {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -98,8 +102,6 @@ pub mod finding_aggregator {
         name: &str,
         args: FindingAggregatorArgs,
     ) -> FindingAggregatorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let linking_mode_binding = args.linking_mode.get_output(context);
         let specified_regions_binding = args.specified_regions.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

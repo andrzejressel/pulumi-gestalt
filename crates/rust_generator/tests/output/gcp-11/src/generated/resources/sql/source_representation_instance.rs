@@ -81,7 +81,11 @@
 /// $ pulumi import gcp:sql/sourceRepresentationInstance:SourceRepresentationInstance default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod source_representation_instance {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -179,8 +183,6 @@ pub mod source_representation_instance {
         name: &str,
         args: SourceRepresentationInstanceArgs,
     ) -> SourceRepresentationInstanceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let ca_certificate_binding = args.ca_certificate.get_output(context);
         let client_certificate_binding = args.client_certificate.get_output(context);
         let client_key_binding = args.client_key.get_output(context);

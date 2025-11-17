@@ -26,7 +26,11 @@
 /// ```sh
 /// $ pulumi import aws:networkmanager/transitGatewayRouteTableAttachment:TransitGatewayRouteTableAttachment example attachment-0f8fa60d2238d1bd8
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod transit_gateway_route_table_attachment {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -91,8 +95,6 @@ pub mod transit_gateway_route_table_attachment {
         name: &str,
         args: TransitGatewayRouteTableAttachmentArgs,
     ) -> TransitGatewayRouteTableAttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let peering_id_binding = args.peering_id.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let transit_gateway_route_table_arn_binding = args

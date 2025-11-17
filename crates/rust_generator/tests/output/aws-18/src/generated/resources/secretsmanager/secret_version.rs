@@ -54,7 +54,11 @@
 /// ```sh
 /// $ pulumi import aws:secretsmanager/secretVersion:SecretVersion example 'arn:aws:secretsmanager:us-east-1:123456789012:secret:example-123456|xxxxx-xxxxxxx-xxxxxxx-xxxxx'
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod secret_version {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -104,8 +108,6 @@ pub mod secret_version {
         name: &str,
         args: SecretVersionArgs,
     ) -> SecretVersionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let secret_binary_binding = args.secret_binary.get_output(context);
         let secret_id_binding = args.secret_id.get_output(context);
         let secret_string_binding = args.secret_string.get_output(context);

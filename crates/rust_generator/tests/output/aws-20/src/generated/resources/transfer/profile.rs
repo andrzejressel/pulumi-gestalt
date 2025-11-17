@@ -22,7 +22,11 @@
 /// ```sh
 /// $ pulumi import aws:transfer/profile:Profile example p-4221a88afd5f4362a
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod profile {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -75,8 +79,6 @@ pub mod profile {
         name: &str,
         args: ProfileArgs,
     ) -> ProfileResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let as2_id_binding = args.as2_id.get_output(context);
         let certificate_ids_binding = args.certificate_ids.get_output(context);
         let profile_type_binding = args.profile_type.get_output(context);

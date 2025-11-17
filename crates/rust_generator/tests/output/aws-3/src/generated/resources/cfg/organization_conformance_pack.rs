@@ -88,7 +88,11 @@
 /// ```sh
 /// $ pulumi import aws:cfg/organizationConformancePack:OrganizationConformancePack example example
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod organization_conformance_pack {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -155,8 +159,6 @@ pub mod organization_conformance_pack {
         name: &str,
         args: OrganizationConformancePackArgs,
     ) -> OrganizationConformancePackResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let delivery_s3_bucket_binding = args.delivery_s3_bucket.get_output(context);
         let delivery_s3_key_prefix_binding = args
             .delivery_s3_key_prefix

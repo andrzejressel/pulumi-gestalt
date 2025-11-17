@@ -46,7 +46,11 @@
 /// ```sh
 /// $ pulumi import aws:redshift/logging:Logging example cluster-id-12345678
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod logging {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -97,8 +101,6 @@ pub mod logging {
         name: &str,
         args: LoggingArgs,
     ) -> LoggingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_name_binding = args.bucket_name.get_output(context);
         let cluster_identifier_binding = args.cluster_identifier.get_output(context);
         let log_destination_type_binding = args.log_destination_type.get_output(context);

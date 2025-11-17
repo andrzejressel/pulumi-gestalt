@@ -27,7 +27,11 @@
 /// ```sh
 /// $ pulumi import aws:vpclattice/serviceNetworkVpcAssociation:ServiceNetworkVpcAssociation example snsa-05e2474658a88f6ba
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod service_network_vpc_association {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -85,8 +89,6 @@ pub mod service_network_vpc_association {
         name: &str,
         args: ServiceNetworkVpcAssociationArgs,
     ) -> ServiceNetworkVpcAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let security_group_ids_binding = args.security_group_ids.get_output(context);
         let service_network_identifier_binding = args
             .service_network_identifier

@@ -48,7 +48,11 @@
 /// ```sh
 /// $ pulumi import aws:sagemaker/model:Model test_model model-foo
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod model {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -136,8 +140,6 @@ pub mod model {
         name: &str,
         args: ModelArgs,
     ) -> ModelResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let containers_binding = args.containers.get_output(context);
         let enable_network_isolation_binding = args
             .enable_network_isolation

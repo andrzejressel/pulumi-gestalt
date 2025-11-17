@@ -37,7 +37,11 @@
 /// ```sh
 /// $ pulumi import aws:ec2/eipAssociation:EipAssociation test eipassoc-ab12c345
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod eip_association {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -107,8 +111,6 @@ pub mod eip_association {
         name: &str,
         args: EipAssociationArgs,
     ) -> EipAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allocation_id_binding = args.allocation_id.get_output(context);
         let allow_reassociation_binding = args.allow_reassociation.get_output(context);
         let instance_id_binding = args.instance_id.get_output(context);

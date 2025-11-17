@@ -58,7 +58,11 @@
 /// ```sh
 /// $ pulumi import aws:fsx/ontapVolume:OntapVolume example fsvol-12345678abcdef123
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod ontap_volume {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -215,8 +219,6 @@ pub mod ontap_volume {
         name: &str,
         args: OntapVolumeArgs,
     ) -> OntapVolumeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aggregate_configuration_binding = args
             .aggregate_configuration
             .get_output(context);

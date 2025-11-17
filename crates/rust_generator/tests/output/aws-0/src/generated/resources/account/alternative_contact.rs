@@ -36,7 +36,11 @@
 /// ```sh
 /// $ pulumi import aws:account/alternativeContact:AlternativeContact operations 1234567890/OPERATIONS
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod alternative_contact {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -88,8 +92,6 @@ pub mod alternative_contact {
         name: &str,
         args: AlternativeContactArgs,
     ) -> AlternativeContactResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let alternate_contact_type_binding = args
             .alternate_contact_type

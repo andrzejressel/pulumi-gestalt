@@ -12,9 +12,6 @@ members = [
     "crates/grpc",
     "crates/proto", 
     "crates/rust",
-    "crates/rust_adapter",
-    "crates/rust_adapter_native",
-    "crates/rust_adapter_wasm",
     "crates/rust_build",
     "crates/rust_generator",
     "crates/rust_integration",
@@ -38,6 +35,7 @@ members = [
     "examples/simple",
     "examples/test",
     "examples/typesystem",
+    "examples/wasm",
     "providers/aws-mini",
     "providers/azure-mini",
     "providers/cloudflare",
@@ -70,10 +68,7 @@ pulumi_gestalt_providers_test = { version = "=0.0.0-DEV", path = "providers/test
 pulumi_gestalt_providers_typesystem = { version = "=0.0.0-DEV", path = "providers/typesystem" }
 pulumi_gestalt_examples_common = { version = "=0.0.0-DEV", path = "examples/common" }
 pulumi_gestalt_grpc_connection = { version = "=0.0.0-DEV", path = "crates/grpc" }
-pulumi_gestalt_rust_adapter = { version = "=0.0.0-DEV", path = "crates/rust_adapter" }
-pulumi_gestalt_rust_adapter_wasm = { version = "=0.0.0-DEV", path = "crates/rust_adapter_wasm" }
 pulumi_gestalt_rust_integration = { version = "=0.0.0-DEV", path = "crates/rust_integration" }
-pulumi_gestalt_rust_adapter_native = { version = "=0.0.0-DEV", path = "crates/rust_adapter_native" }
 pulumi_gestalt_schema = { version = "=0.0.0-DEV", path = "crates/schema" }
 pulumi_gestalt_schema_protobuf = { version = "=0.0.0-DEV", path = "crates/schema_protobuf" }
 changelog_lib = { version = "=0.0.0-DEV", path = "changelog_lib" }
@@ -90,7 +85,7 @@ serde_json = { version = "1.0.140" }
 tonic = { version = "0.14.0", default-features = false }
 tonic-prost = "0.14.0"
 tonic-prost-build = "0.14.0"
-wasmtime = "38.0.3"
+wasmtime = "38.0.4"
 wasmtime-wasi = "38.0.3"
 log = { version = "0.4.27", features = ["kv"] }
 log4rs = "1.3.0"
@@ -103,7 +98,7 @@ quote = "1.0.40"
 assert_cmd = "2.0.17"
 itertools = "0.14.0"
 handlebars = "6.3.2"
-convert_case = "0.8.0"
+convert_case = "0.9.0"
 mockall = "0.13.1"
 serde_yaml = "0.9.34+deprecated"
 prettyplease = "0.2.32"

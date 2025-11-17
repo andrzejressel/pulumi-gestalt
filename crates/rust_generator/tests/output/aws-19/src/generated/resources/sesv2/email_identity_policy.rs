@@ -33,7 +33,11 @@
 /// ```sh
 /// $ pulumi import aws:sesv2/emailIdentityPolicy:EmailIdentityPolicy example example_email_identity|example_policy_name
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod email_identity_policy {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -70,8 +74,6 @@ pub mod email_identity_policy {
         name: &str,
         args: EmailIdentityPolicyArgs,
     ) -> EmailIdentityPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let email_identity_binding = args.email_identity.get_output(context);
         let policy_binding = args.policy.get_output(context);
         let policy_name_binding = args.policy_name.get_output(context);

@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_supported_instance_types {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -38,8 +42,6 @@ pub mod get_supported_instance_types {
         context: &pulumi_gestalt_rust::Context,
         args: GetSupportedInstanceTypesArgs,
     ) -> GetSupportedInstanceTypesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let release_label_binding = args.release_label.get_output(context);
         let supported_instance_types_binding = args
             .supported_instance_types

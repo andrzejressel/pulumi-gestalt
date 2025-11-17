@@ -43,7 +43,11 @@
 /// ```sh
 /// $ pulumi import aws:quicksight/theme:Theme example 123456789012,example-id
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod theme {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -135,8 +139,6 @@ pub mod theme {
         name: &str,
         args: ThemeArgs,
     ) -> ThemeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aws_account_id_binding = args.aws_account_id.get_output(context);
         let base_theme_id_binding = args.base_theme_id.get_output(context);
         let configuration_binding = args.configuration.get_output(context);

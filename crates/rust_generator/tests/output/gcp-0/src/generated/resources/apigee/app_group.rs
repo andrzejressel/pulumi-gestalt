@@ -161,7 +161,11 @@
 /// $ pulumi import gcp:apigee/appGroup:AppGroup default {{org_id}}/{{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod app_group {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -242,8 +246,6 @@ pub mod app_group {
         name: &str,
         args: AppGroupArgs,
     ) -> AppGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let attributes_binding = args.attributes.get_output(context);
         let channel_id_binding = args.channel_id.get_output(context);
         let channel_uri_binding = args.channel_uri.get_output(context);

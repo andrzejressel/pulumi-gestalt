@@ -87,7 +87,11 @@
 /// $ pulumi import gcp:clouddomains/registration:Registration default {{location}}/{{domain_name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod registration {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -210,8 +214,6 @@ pub mod registration {
         name: &str,
         args: RegistrationArgs,
     ) -> RegistrationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let contact_notices_binding = args.contact_notices.get_output(context);
         let contact_settings_binding = args.contact_settings.get_output(context);
         let dns_settings_binding = args.dns_settings.get_output(context);

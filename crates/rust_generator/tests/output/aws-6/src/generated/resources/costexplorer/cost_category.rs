@@ -43,7 +43,11 @@
 /// ```sh
 /// $ pulumi import aws:costexplorer/costCategory:CostCategory example costCategoryARN
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod cost_category {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -124,8 +128,6 @@ pub mod cost_category {
         name: &str,
         args: CostCategoryArgs,
     ) -> CostCategoryResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let default_value_binding = args.default_value.get_output(context);
         let effective_start_binding = args.effective_start.get_output(context);
         let name_binding = args.name.get_output(context);

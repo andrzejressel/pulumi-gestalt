@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_kms_secret_asymmetric {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -35,8 +39,6 @@ pub mod get_kms_secret_asymmetric {
         context: &pulumi_gestalt_rust::Context,
         args: GetKmsSecretAsymmetricArgs,
     ) -> GetKmsSecretAsymmetricResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let ciphertext_binding = args.ciphertext.get_output(context);
         let crc32_binding = args.crc32.get_output(context);
         let crypto_key_version_binding = args.crypto_key_version.get_output(context);

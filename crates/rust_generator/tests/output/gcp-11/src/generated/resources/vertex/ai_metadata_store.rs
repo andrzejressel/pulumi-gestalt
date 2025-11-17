@@ -49,7 +49,11 @@
 /// $ pulumi import gcp:vertex/aiMetadataStore:AiMetadataStore default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod ai_metadata_store {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -113,8 +117,6 @@ pub mod ai_metadata_store {
         name: &str,
         args: AiMetadataStoreArgs,
     ) -> AiMetadataStoreResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let encryption_spec_binding = args.encryption_spec.get_output(context);
         let name_binding = args.name.get_output(context);

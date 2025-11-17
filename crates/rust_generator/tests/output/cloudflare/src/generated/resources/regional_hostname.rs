@@ -27,7 +27,11 @@
 ///     );
 /// }
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod regional_hostname {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -66,8 +70,6 @@ pub mod regional_hostname {
         name: &str,
         args: RegionalHostnameArgs,
     ) -> RegionalHostnameResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let hostname_binding = args.hostname.get_output(context);
         let region_key_binding = args.region_key.get_output(context);
         let zone_id_binding = args.zone_id.get_output(context);

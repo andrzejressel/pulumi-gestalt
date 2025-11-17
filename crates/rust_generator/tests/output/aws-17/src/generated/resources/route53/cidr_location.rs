@@ -29,7 +29,11 @@
 /// ```sh
 /// $ pulumi import aws:route53/cidrLocation:CidrLocation example 9ac32814-3e67-0932-6048-8d779cc6f511,office
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod cidr_location {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -66,8 +70,6 @@ pub mod cidr_location {
         name: &str,
         args: CidrLocationArgs,
     ) -> CidrLocationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cidr_blocks_binding = args.cidr_blocks.get_output(context);
         let cidr_collection_id_binding = args.cidr_collection_id.get_output(context);
         let name_binding = args.name.get_output(context);

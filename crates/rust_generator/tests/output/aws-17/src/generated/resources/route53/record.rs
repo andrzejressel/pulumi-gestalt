@@ -179,7 +179,11 @@
 /// ```sh
 /// $ pulumi import aws:route53/record:Record myrecord Z4KAPRWWNC7JR_dev.example.com_NS_dev
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod record {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -319,8 +323,6 @@ pub mod record {
         name: &str,
         args: RecordArgs,
     ) -> RecordResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aliases_binding = args.aliases.get_output(context);
         let allow_overwrite_binding = args.allow_overwrite.get_output(context);
         let cidr_routing_policy_binding = args.cidr_routing_policy.get_output(context);

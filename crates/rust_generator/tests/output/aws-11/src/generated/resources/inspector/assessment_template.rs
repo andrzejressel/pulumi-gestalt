@@ -40,7 +40,11 @@
 /// ```sh
 /// $ pulumi import aws:inspector/assessmentTemplate:AssessmentTemplate example arn:aws:inspector:us-west-2:123456789012:target/0-9IaAzhGR/template/0-WEcjR8CH
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod assessment_template {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -110,8 +114,6 @@ pub mod assessment_template {
         name: &str,
         args: AssessmentTemplateArgs,
     ) -> AssessmentTemplateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let duration_binding = args.duration.get_output(context);
         let event_subscriptions_binding = args.event_subscriptions.get_output(context);
         let name_binding = args.name.get_output(context);

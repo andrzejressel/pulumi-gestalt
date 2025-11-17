@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_local_disk {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -32,8 +36,6 @@ pub mod get_local_disk {
         context: &pulumi_gestalt_rust::Context,
         args: GetLocalDiskArgs,
     ) -> GetLocalDiskResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let disk_node_binding = args.disk_node.get_output(context);
         let disk_path_binding = args.disk_path.get_output(context);
         let gateway_arn_binding = args.gateway_arn.get_output(context);

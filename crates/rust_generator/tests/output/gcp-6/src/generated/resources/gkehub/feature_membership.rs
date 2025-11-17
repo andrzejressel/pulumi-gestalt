@@ -375,7 +375,11 @@
 /// $ pulumi import gcp:gkehub/featureMembership:FeatureMembership default {{location}}/{{feature}}/{{membership}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod feature_membership {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -449,8 +453,6 @@ pub mod feature_membership {
         name: &str,
         args: FeatureMembershipArgs,
     ) -> FeatureMembershipResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let configmanagement_binding = args.configmanagement.get_output(context);
         let feature_binding = args.feature.get_output(context);
         let location_binding = args.location.get_output(context);

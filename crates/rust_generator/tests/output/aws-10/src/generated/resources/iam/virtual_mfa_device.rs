@@ -28,7 +28,11 @@
 /// ```sh
 /// $ pulumi import aws:iam/virtualMfaDevice:VirtualMfaDevice example arn:aws:iam::123456789012:mfa/example
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod virtual_mfa_device {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -83,8 +87,6 @@ pub mod virtual_mfa_device {
         name: &str,
         args: VirtualMfaDeviceArgs,
     ) -> VirtualMfaDeviceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let path_binding = args.path.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let virtual_mfa_device_name_binding = args

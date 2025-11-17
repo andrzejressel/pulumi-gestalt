@@ -143,7 +143,11 @@
 /// $ pulumi import gcp:securitycenter/folderCustomModule:FolderCustomModule default {{folder}}/{{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod folder_custom_module {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -214,8 +218,6 @@ pub mod folder_custom_module {
         name: &str,
         args: FolderCustomModuleArgs,
     ) -> FolderCustomModuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let custom_config_binding = args.custom_config.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let enablement_state_binding = args.enablement_state.get_output(context);

@@ -35,7 +35,11 @@
 /// $ pulumi import cloudflare:index/filter:Filter example <zone_id>/<filter_id>
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod filter {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -82,8 +86,6 @@ pub mod filter {
         name: &str,
         args: FilterArgs,
     ) -> FilterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let expression_binding = args.expression.get_output(context);
         let paused_binding = args.paused.get_output(context);

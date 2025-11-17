@@ -55,7 +55,11 @@
 /// $ pulumi import azure:network/virtualNetwork:VirtualNetwork exampleNetwork /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/mygroup1/providers/Microsoft.Network/virtualNetworks/myvnet1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod virtual_network {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -167,8 +171,6 @@ pub mod virtual_network {
         name: &str,
         args: VirtualNetworkArgs,
     ) -> VirtualNetworkResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let address_spaces_binding = args.address_spaces.get_output(context);
         let bgp_community_binding = args.bgp_community.get_output(context);
         let ddos_protection_plan_binding = args.ddos_protection_plan.get_output(context);

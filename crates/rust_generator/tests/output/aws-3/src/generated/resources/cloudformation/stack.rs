@@ -35,7 +35,11 @@
 /// ```sh
 /// $ pulumi import aws:cloudformation/stack:Stack stack networking-stack
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod stack {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -148,8 +152,6 @@ pub mod stack {
         name: &str,
         args: StackArgs,
     ) -> StackResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let capabilities_binding = args.capabilities.get_output(context);
         let disable_rollback_binding = args.disable_rollback.get_output(context);
         let iam_role_arn_binding = args.iam_role_arn.get_output(context);

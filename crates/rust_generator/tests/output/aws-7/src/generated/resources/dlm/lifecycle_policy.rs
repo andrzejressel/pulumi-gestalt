@@ -189,7 +189,11 @@
 /// ```sh
 /// $ pulumi import aws:dlm/lifecyclePolicy:LifecyclePolicy example policy-abcdef12345678901
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod lifecycle_policy {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -250,8 +254,6 @@ pub mod lifecycle_policy {
         name: &str,
         args: LifecyclePolicyArgs,
     ) -> LifecyclePolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let execution_role_arn_binding = args.execution_role_arn.get_output(context);
         let policy_details_binding = args.policy_details.get_output(context);

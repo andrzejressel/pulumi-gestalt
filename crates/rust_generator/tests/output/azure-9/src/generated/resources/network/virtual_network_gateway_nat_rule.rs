@@ -83,7 +83,11 @@
 /// $ pulumi import azure:network/virtualNetworkGatewayNatRule:VirtualNetworkGatewayNatRule example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/resGroup1/providers/Microsoft.Network/virtualNetworkGateways/gw1/natRules/rule1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod virtual_network_gateway_nat_rule {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -161,8 +165,6 @@ pub mod virtual_network_gateway_nat_rule {
         name: &str,
         args: VirtualNetworkGatewayNatRuleArgs,
     ) -> VirtualNetworkGatewayNatRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let external_mappings_binding = args.external_mappings.get_output(context);
         let internal_mappings_binding = args.internal_mappings.get_output(context);
         let ip_configuration_id_binding = args.ip_configuration_id.get_output(context);

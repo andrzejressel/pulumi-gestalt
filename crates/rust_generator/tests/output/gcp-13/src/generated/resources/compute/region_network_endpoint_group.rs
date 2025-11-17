@@ -397,7 +397,11 @@
 /// $ pulumi import gcp:compute/regionNetworkEndpointGroup:RegionNetworkEndpointGroup default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod region_network_endpoint_group {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -564,8 +568,6 @@ pub mod region_network_endpoint_group {
         name: &str,
         args: RegionNetworkEndpointGroupArgs,
     ) -> RegionNetworkEndpointGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_engine_binding = args.app_engine.get_output(context);
         let cloud_function_binding = args.cloud_function.get_output(context);
         let cloud_run_binding = args.cloud_run.get_output(context);

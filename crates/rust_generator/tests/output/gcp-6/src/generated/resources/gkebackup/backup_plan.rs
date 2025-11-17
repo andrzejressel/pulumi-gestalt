@@ -517,7 +517,11 @@
 /// $ pulumi import gcp:gkebackup/backupPlan:BackupPlan default {{location}}/{{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod backup_plan {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -659,8 +663,6 @@ pub mod backup_plan {
         name: &str,
         args: BackupPlanArgs,
     ) -> BackupPlanResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let backup_config_binding = args.backup_config.get_output(context);
         let backup_schedule_binding = args.backup_schedule.get_output(context);
         let cluster_binding = args.cluster.get_output(context);

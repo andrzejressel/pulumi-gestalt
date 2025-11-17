@@ -249,7 +249,11 @@
 /// $ pulumi import gcp:dataplex/datascan:Datascan default {{data_scan_id}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod datascan {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -373,8 +377,6 @@ pub mod datascan {
         name: &str,
         args: DatascanArgs,
     ) -> DatascanResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let data_binding = args.data.get_output(context);
         let data_profile_spec_binding = args.data_profile_spec.get_output(context);
         let data_quality_spec_binding = args.data_quality_spec.get_output(context);

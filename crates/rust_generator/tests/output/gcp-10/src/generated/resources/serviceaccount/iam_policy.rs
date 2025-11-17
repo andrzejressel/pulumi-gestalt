@@ -259,7 +259,11 @@
 /// $ pulumi import gcp:serviceaccount/iAMPolicy:IAMPolicy admin-account-iam "projects/{your-project-id}/serviceAccounts/{your-service-account-email} roles/iam.serviceAccountUser user:foo@example.com expires_after_2019_12_31"
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod iam_policy {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -295,8 +299,6 @@ pub mod iam_policy {
         name: &str,
         args: IAMPolicyArgs,
     ) -> IAMPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let policy_data_binding = args.policy_data.get_output(context);
         let service_account_id_binding = args.service_account_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

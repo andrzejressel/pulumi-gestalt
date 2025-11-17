@@ -55,7 +55,11 @@
 /// $ pulumi import gcp:kms/ekmConnection:EkmConnection default {{location}}/{{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod ekm_connection {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -125,8 +129,6 @@ pub mod ekm_connection {
         name: &str,
         args: EkmConnectionArgs,
     ) -> EkmConnectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let crypto_space_path_binding = args.crypto_space_path.get_output(context);
         let etag_binding = args.etag.get_output(context);
         let key_management_mode_binding = args.key_management_mode.get_output(context);

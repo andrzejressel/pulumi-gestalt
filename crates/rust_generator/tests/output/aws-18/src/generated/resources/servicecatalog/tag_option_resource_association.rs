@@ -28,7 +28,11 @@
 /// ```sh
 /// $ pulumi import aws:servicecatalog/tagOptionResourceAssociation:TagOptionResourceAssociation example tag-pjtvyakdlyo3m:prod-dnigbtea24ste
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod tag_option_resource_association {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -68,8 +72,6 @@ pub mod tag_option_resource_association {
         name: &str,
         args: TagOptionResourceAssociationArgs,
     ) -> TagOptionResourceAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let resource_id_binding = args.resource_id.get_output(context);
         let tag_option_id_binding = args.tag_option_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

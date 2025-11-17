@@ -10,7 +10,11 @@
 /// ```sh
 /// $ pulumi import aws:rds/proxyEndpoint:ProxyEndpoint example example/example
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod proxy_endpoint {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -79,8 +83,6 @@ pub mod proxy_endpoint {
         name: &str,
         args: ProxyEndpointArgs,
     ) -> ProxyEndpointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let db_proxy_endpoint_name_binding = args
             .db_proxy_endpoint_name
             .get_output(context);

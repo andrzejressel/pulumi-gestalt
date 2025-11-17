@@ -26,7 +26,11 @@
 /// ```sh
 /// $ pulumi import aws:route53domains/registeredDomain:RegisteredDomain example example.com
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod registered_domain {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -163,8 +167,6 @@ pub mod registered_domain {
         name: &str,
         args: RegisteredDomainArgs,
     ) -> RegisteredDomainResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let admin_contact_binding = args.admin_contact.get_output(context);
         let admin_privacy_binding = args.admin_privacy.get_output(context);
         let auto_renew_binding = args.auto_renew.get_output(context);

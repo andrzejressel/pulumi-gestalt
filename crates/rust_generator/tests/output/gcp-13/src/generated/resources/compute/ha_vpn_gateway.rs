@@ -161,7 +161,11 @@
 /// $ pulumi import gcp:compute/haVpnGateway:HaVpnGateway default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod ha_vpn_gateway {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -261,8 +265,6 @@ pub mod ha_vpn_gateway {
         name: &str,
         args: HaVpnGatewayArgs,
     ) -> HaVpnGatewayResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let gateway_ip_version_binding = args.gateway_ip_version.get_output(context);
         let name_binding = args.name.get_output(context);

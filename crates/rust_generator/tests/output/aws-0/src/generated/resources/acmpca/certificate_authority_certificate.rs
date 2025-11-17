@@ -87,7 +87,11 @@
 ///       function: aws:getPartition
 ///       arguments: {}
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod certificate_authority_certificate {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -124,8 +128,6 @@ pub mod certificate_authority_certificate {
         name: &str,
         args: CertificateAuthorityCertificateArgs,
     ) -> CertificateAuthorityCertificateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let certificate_binding = args.certificate.get_output(context);
         let certificate_authority_arn_binding = args
             .certificate_authority_arn

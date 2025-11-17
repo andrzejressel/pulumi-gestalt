@@ -11,7 +11,11 @@
 /// $ pulumi import cloudflare:index/fallbackDomain:FallbackDomain example <account_id>/<policy_id>
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod fallback_domain {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -50,8 +54,6 @@ pub mod fallback_domain {
         name: &str,
         args: FallbackDomainArgs,
     ) -> FallbackDomainResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let domains_binding = args.domains.get_output(context);
         let policy_id_binding = args.policy_id.get_output(context);

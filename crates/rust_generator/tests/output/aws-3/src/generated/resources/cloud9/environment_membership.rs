@@ -36,7 +36,11 @@
 /// ```sh
 /// $ pulumi import aws:cloud9/environmentMembership:EnvironmentMembership test environment-id#user-arn
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod environment_membership {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -75,8 +79,6 @@ pub mod environment_membership {
         name: &str,
         args: EnvironmentMembershipArgs,
     ) -> EnvironmentMembershipResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let environment_id_binding = args.environment_id.get_output(context);
         let permissions_binding = args.permissions.get_output(context);
         let user_arn_binding = args.user_arn.get_output(context);

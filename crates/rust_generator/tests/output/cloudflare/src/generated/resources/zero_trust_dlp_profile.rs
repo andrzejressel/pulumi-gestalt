@@ -69,7 +69,11 @@
 /// $ pulumi import cloudflare:index/zeroTrustDlpProfile:ZeroTrustDlpProfile example <account_id>/<dlp_profile_id>
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod zero_trust_dlp_profile {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -139,8 +143,6 @@ pub mod zero_trust_dlp_profile {
         name: &str,
         args: ZeroTrustDlpProfileArgs,
     ) -> ZeroTrustDlpProfileResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let allowed_match_count_binding = args.allowed_match_count.get_output(context);
         let context_awareness_binding = args.context_awareness.get_output(context);

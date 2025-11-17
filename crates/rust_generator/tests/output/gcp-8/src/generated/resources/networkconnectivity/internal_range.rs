@@ -181,7 +181,11 @@
 /// $ pulumi import gcp:networkconnectivity/internalRange:InternalRange default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod internal_range {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -310,8 +314,6 @@ pub mod internal_range {
         name: &str,
         args: InternalRangeArgs,
     ) -> InternalRangeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let ip_cidr_range_binding = args.ip_cidr_range.get_output(context);
         let labels_binding = args.labels.get_output(context);

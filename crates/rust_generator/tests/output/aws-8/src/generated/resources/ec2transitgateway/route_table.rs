@@ -23,7 +23,11 @@
 /// ```sh
 /// $ pulumi import aws:ec2transitgateway/routeTable:RouteTable example tgw-rtb-12345678
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod route_table {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -69,8 +73,6 @@ pub mod route_table {
         name: &str,
         args: RouteTableArgs,
     ) -> RouteTableResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let tags_binding = args.tags.get_output(context);
         let transit_gateway_id_binding = args.transit_gateway_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

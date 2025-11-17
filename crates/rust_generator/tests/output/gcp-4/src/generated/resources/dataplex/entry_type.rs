@@ -103,7 +103,11 @@
 /// $ pulumi import gcp:dataplex/entryType:EntryType default {{location}}/{{entry_type_id}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod entry_type {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -210,8 +214,6 @@ pub mod entry_type {
         name: &str,
         args: EntryTypeArgs,
     ) -> EntryTypeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let entry_type_id_binding = args.entry_type_id.get_output(context);

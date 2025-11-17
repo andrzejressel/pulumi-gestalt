@@ -89,7 +89,11 @@
 /// $ pulumi import azure:compute/restorePoint:RestorePoint example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/mygroup1/providers/Microsoft.Compute/restorePointCollections/collection1/restorePoints/restorePoint1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod restore_point {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -135,8 +139,6 @@ pub mod restore_point {
         name: &str,
         args: RestorePointArgs,
     ) -> RestorePointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let crash_consistency_mode_enabled_binding = args
             .crash_consistency_mode_enabled
             .get_output(context);

@@ -39,7 +39,11 @@
 /// ```sh
 /// $ pulumi import aws:ec2/ami:Ami example ami-12345678
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod ami {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -183,8 +187,6 @@ pub mod ami {
         name: &str,
         args: AmiArgs,
     ) -> AmiResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let architecture_binding = args.architecture.get_output(context);
         let boot_mode_binding = args.boot_mode.get_output(context);
         let deprecation_time_binding = args.deprecation_time.get_output(context);

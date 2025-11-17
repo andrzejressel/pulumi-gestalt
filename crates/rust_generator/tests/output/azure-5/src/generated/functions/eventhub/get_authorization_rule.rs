@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_authorization_rule {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -55,8 +59,6 @@ pub mod get_authorization_rule {
         context: &pulumi_gestalt_rust::Context,
         args: GetAuthorizationRuleArgs,
     ) -> GetAuthorizationRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let eventhub_name_binding = args.eventhub_name.get_output(context);
         let listen_binding = args.listen.get_output(context);
         let manage_binding = args.manage.get_output(context);

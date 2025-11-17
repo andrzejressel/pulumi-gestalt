@@ -38,7 +38,11 @@
 /// ```sh
 /// $ pulumi import aws:lakeformation/dataCellsFilter:DataCellsFilter example database_name,name,table_catalog_id,table_name
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod data_cells_filter {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -76,8 +80,6 @@ pub mod data_cells_filter {
         name: &str,
         args: DataCellsFilterArgs,
     ) -> DataCellsFilterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let table_data_binding = args.table_data.get_output(context);
         let timeouts_binding = args.timeouts.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

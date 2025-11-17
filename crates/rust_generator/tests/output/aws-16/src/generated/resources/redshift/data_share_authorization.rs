@@ -28,7 +28,11 @@
 /// ```sh
 /// $ pulumi import aws:redshift/dataShareAuthorization:DataShareAuthorization example arn:aws:redshift:us-west-2:123456789012:datashare:3072dae5-022b-4d45-9cd3-01f010aae4b2/example_share,123456789012
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod data_share_authorization {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -73,8 +77,6 @@ pub mod data_share_authorization {
         name: &str,
         args: DataShareAuthorizationArgs,
     ) -> DataShareAuthorizationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allow_writes_binding = args.allow_writes.get_output(context);
         let consumer_identifier_binding = args.consumer_identifier.get_output(context);
         let data_share_arn_binding = args.data_share_arn.get_output(context);

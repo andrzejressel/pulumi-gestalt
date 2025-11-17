@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_published_version {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -40,8 +44,6 @@ pub mod get_published_version {
         context: &pulumi_gestalt_rust::Context,
         args: GetPublishedVersionArgs,
     ) -> GetPublishedVersionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let blueprint_name_binding = args.blueprint_name.get_output(context);
         let scope_id_binding = args.scope_id.get_output(context);
         let version_binding = args.version.get_output(context);

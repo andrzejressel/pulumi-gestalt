@@ -53,7 +53,11 @@
 /// $ pulumi import azure:keyvault/secret:Secret example "https://example-keyvault.vault.azure.net/secrets/example/fdf067c93bbb4b22bff4d8b7a9a56217"
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod secret {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -126,8 +130,6 @@ pub mod secret {
         name: &str,
         args: SecretArgs,
     ) -> SecretResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let content_type_binding = args.content_type.get_output(context);
         let expiration_date_binding = args.expiration_date.get_output(context);
         let key_vault_id_binding = args.key_vault_id.get_output(context);

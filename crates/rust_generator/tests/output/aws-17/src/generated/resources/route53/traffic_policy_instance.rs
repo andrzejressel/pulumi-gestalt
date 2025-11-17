@@ -27,7 +27,11 @@
 /// ```sh
 /// $ pulumi import aws:route53/trafficPolicyInstance:TrafficPolicyInstance test df579d9a-6396-410e-ac22-e7ad60cf9e7e
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod traffic_policy_instance {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -74,8 +78,6 @@ pub mod traffic_policy_instance {
         name: &str,
         args: TrafficPolicyInstanceArgs,
     ) -> TrafficPolicyInstanceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let hosted_zone_id_binding = args.hosted_zone_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let traffic_policy_id_binding = args.traffic_policy_id.get_output(context);

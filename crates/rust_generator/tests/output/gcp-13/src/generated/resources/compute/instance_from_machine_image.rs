@@ -22,7 +22,11 @@
 ///       labels:
 ///         my_key: my_value
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod instance_from_machine_image {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -339,8 +343,6 @@ pub mod instance_from_machine_image {
         name: &str,
         args: InstanceFromMachineImageArgs,
     ) -> InstanceFromMachineImageResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let advanced_machine_features_binding = args
             .advanced_machine_features
             .get_output(context);

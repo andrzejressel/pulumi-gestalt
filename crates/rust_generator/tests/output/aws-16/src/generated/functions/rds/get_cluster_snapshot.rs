@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_cluster_snapshot {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -83,8 +87,6 @@ pub mod get_cluster_snapshot {
         context: &pulumi_gestalt_rust::Context,
         args: GetClusterSnapshotArgs,
     ) -> GetClusterSnapshotResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let db_cluster_identifier_binding = args
             .db_cluster_identifier
             .get_output(context);

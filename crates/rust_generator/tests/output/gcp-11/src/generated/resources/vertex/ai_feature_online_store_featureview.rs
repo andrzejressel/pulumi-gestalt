@@ -450,7 +450,11 @@
 /// $ pulumi import gcp:vertex/aiFeatureOnlineStoreFeatureview:AiFeatureOnlineStoreFeatureview default {{feature_online_store}}/{{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod ai_feature_online_store_featureview {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -588,8 +592,6 @@ pub mod ai_feature_online_store_featureview {
         name: &str,
         args: AiFeatureOnlineStoreFeatureviewArgs,
     ) -> AiFeatureOnlineStoreFeatureviewResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let big_query_source_binding = args.big_query_source.get_output(context);
         let feature_online_store_binding = args.feature_online_store.get_output(context);
         let feature_registry_source_binding = args

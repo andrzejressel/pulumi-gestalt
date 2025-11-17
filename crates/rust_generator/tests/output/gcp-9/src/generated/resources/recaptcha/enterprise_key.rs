@@ -137,7 +137,11 @@
 /// $ pulumi import gcp:recaptcha/enterpriseKey:EnterpriseKey default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod enterprise_key {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -249,8 +253,6 @@ pub mod enterprise_key {
         name: &str,
         args: EnterpriseKeyArgs,
     ) -> EnterpriseKeyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let android_settings_binding = args.android_settings.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let ios_settings_binding = args.ios_settings.get_output(context);

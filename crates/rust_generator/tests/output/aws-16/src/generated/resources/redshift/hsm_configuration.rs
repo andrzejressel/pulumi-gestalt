@@ -28,7 +28,11 @@
 /// ```sh
 /// $ pulumi import aws:redshift/hsmConfiguration:HsmConfiguration example example
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod hsm_configuration {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -95,8 +99,6 @@ pub mod hsm_configuration {
         name: &str,
         args: HsmConfigurationArgs,
     ) -> HsmConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let hsm_configuration_identifier_binding = args
             .hsm_configuration_identifier

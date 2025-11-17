@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_api_token_permission_groups {
     #[allow(dead_code)]
     pub struct GetApiTokenPermissionGroupsResult {
@@ -26,8 +30,6 @@ pub mod get_api_token_permission_groups {
     pub fn invoke(
         context: &pulumi_gestalt_rust::Context,
     ) -> GetApiTokenPermissionGroupsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "cloudflare:index/getApiTokenPermissionGroups:getApiTokenPermissionGroups"
                 .into(),

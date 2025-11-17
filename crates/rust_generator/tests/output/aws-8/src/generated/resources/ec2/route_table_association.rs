@@ -49,7 +49,11 @@
 /// ```sh
 /// $ pulumi import aws:ec2/routeTableAssociation:RouteTableAssociation assoc igw-01b3a60780f8d034a/rtb-656c65616e6f72
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod route_table_association {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -86,8 +90,6 @@ pub mod route_table_association {
         name: &str,
         args: RouteTableAssociationArgs,
     ) -> RouteTableAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let gateway_id_binding = args.gateway_id.get_output(context);
         let route_table_id_binding = args.route_table_id.get_output(context);
         let subnet_id_binding = args.subnet_id.get_output(context);

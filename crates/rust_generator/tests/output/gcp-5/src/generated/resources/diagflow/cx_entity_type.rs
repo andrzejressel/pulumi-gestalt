@@ -77,7 +77,11 @@
 /// $ pulumi import gcp:diagflow/cxEntityType:CxEntityType default {{parent}}/{{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod cx_entity_type {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -179,8 +183,6 @@ pub mod cx_entity_type {
         name: &str,
         args: CxEntityTypeArgs,
     ) -> CxEntityTypeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_expansion_mode_binding = args.auto_expansion_mode.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let enable_fuzzy_extraction_binding = args

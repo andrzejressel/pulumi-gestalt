@@ -117,7 +117,11 @@
 /// $ pulumi import gcp:networkservices/grpcRoute:GrpcRoute default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod grpc_route {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -206,8 +210,6 @@ pub mod grpc_route {
         name: &str,
         args: GrpcRouteArgs,
     ) -> GrpcRouteResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let gateways_binding = args.gateways.get_output(context);
         let hostnames_binding = args.hostnames.get_output(context);

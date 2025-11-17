@@ -49,7 +49,11 @@
 /// ```sh
 /// $ pulumi import aws:directconnect/hostedTransitVirtualInterfaceAcceptor:HostedTransitVirtualInterfaceAcceptor test dxvif-33cc44dd
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod hosted_transit_virtual_interface_acceptor {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -96,8 +100,6 @@ pub mod hosted_transit_virtual_interface_acceptor {
         name: &str,
         args: HostedTransitVirtualInterfaceAcceptorArgs,
     ) -> HostedTransitVirtualInterfaceAcceptorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dx_gateway_id_binding = args.dx_gateway_id.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let virtual_interface_id_binding = args.virtual_interface_id.get_output(context);

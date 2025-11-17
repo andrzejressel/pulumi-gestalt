@@ -100,7 +100,11 @@
 /// $ pulumi import azure:appservice/staticWebAppCustomDomain:StaticWebAppCustomDomain example /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/group1/providers/Microsoft.Web/staticSites/my-static-site1/customDomains/name.contoso.com
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod static_web_app_custom_domain {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -137,8 +141,6 @@ pub mod static_web_app_custom_domain {
         name: &str,
         args: StaticWebAppCustomDomainArgs,
     ) -> StaticWebAppCustomDomainResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let domain_name_binding = args.domain_name.get_output(context);
         let static_web_app_id_binding = args.static_web_app_id.get_output(context);
         let validation_type_binding = args.validation_type.get_output(context);

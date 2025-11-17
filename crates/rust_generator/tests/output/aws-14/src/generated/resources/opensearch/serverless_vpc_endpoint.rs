@@ -27,7 +27,11 @@
 /// ```sh
 /// $ pulumi import aws:opensearch/serverlessVpcEndpoint:ServerlessVpcEndpoint example vpce-8012925589
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod serverless_vpc_endpoint {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -80,8 +84,6 @@ pub mod serverless_vpc_endpoint {
         name: &str,
         args: ServerlessVpcEndpointArgs,
     ) -> ServerlessVpcEndpointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let security_group_ids_binding = args.security_group_ids.get_output(context);
         let subnet_ids_binding = args.subnet_ids.get_output(context);

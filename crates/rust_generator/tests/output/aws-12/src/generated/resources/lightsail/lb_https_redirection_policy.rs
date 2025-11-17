@@ -40,7 +40,11 @@
 /// ```sh
 /// $ pulumi import aws:lightsail/lbHttpsRedirectionPolicy:LbHttpsRedirectionPolicy test example-load-balancer
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod lb_https_redirection_policy {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -72,8 +76,6 @@ pub mod lb_https_redirection_policy {
         name: &str,
         args: LbHttpsRedirectionPolicyArgs,
     ) -> LbHttpsRedirectionPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let enabled_binding = args.enabled.get_output(context);
         let lb_name_binding = args.lb_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

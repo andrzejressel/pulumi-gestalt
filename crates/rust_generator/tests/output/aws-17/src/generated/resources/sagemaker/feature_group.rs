@@ -39,7 +39,11 @@
 /// ```sh
 /// $ pulumi import aws:sagemaker/featureGroup:FeatureGroup test_feature_group feature_group-foo
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod feature_group {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -135,8 +139,6 @@ pub mod feature_group {
         name: &str,
         args: FeatureGroupArgs,
     ) -> FeatureGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let event_time_feature_name_binding = args
             .event_time_feature_name

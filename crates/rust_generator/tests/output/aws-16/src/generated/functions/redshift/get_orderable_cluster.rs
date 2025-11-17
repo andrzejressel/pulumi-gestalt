@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_orderable_cluster {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -38,8 +42,6 @@ pub mod get_orderable_cluster {
         context: &pulumi_gestalt_rust::Context,
         args: GetOrderableClusterArgs,
     ) -> GetOrderableClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_type_binding = args.cluster_type.get_output(context);
         let cluster_version_binding = args.cluster_version.get_output(context);
         let node_type_binding = args.node_type.get_output(context);

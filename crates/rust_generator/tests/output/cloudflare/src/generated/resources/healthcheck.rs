@@ -68,7 +68,11 @@
 /// $ pulumi import cloudflare:index/healthcheck:Healthcheck example <zone_id>/<healthcheck_id>
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod healthcheck {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -198,8 +202,6 @@ pub mod healthcheck {
         name: &str,
         args: HealthcheckArgs,
     ) -> HealthcheckResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let address_binding = args.address.get_output(context);
         let allow_insecure_binding = args.allow_insecure.get_output(context);
         let check_regions_binding = args.check_regions.get_output(context);

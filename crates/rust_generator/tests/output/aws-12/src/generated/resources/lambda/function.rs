@@ -244,7 +244,11 @@
 /// ```sh
 /// $ pulumi import aws:lambda/function:Function test_lambda my_test_lambda_function
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod function {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -517,8 +521,6 @@ pub mod function {
         name: &str,
         args: FunctionArgs,
     ) -> FunctionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let architectures_binding = args.architectures.get_output(context);
         let code_binding = args.code.get_output(context);
         let code_signing_config_arn_binding = args

@@ -99,7 +99,11 @@
 /// $ pulumi import azure:mobile/networkAttachedDataNetwork:NetworkAttachedDataNetwork example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/resourceGroup1/providers/Microsoft.MobileNetwork/packetCoreControlPlanes/packetCoreControlPlane1/packetCoreDataPlanes/packetCoreDataPlane1/attachedDataNetworks/attachedDataNetwork1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod network_attached_data_network {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -215,8 +219,6 @@ pub mod network_attached_data_network {
         name: &str,
         args: NetworkAttachedDataNetworkArgs,
     ) -> NetworkAttachedDataNetworkResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dns_addresses_binding = args.dns_addresses.get_output(context);
         let location_binding = args.location.get_output(context);
         let mobile_network_data_network_name_binding = args

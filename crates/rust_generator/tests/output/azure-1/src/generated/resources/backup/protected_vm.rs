@@ -56,7 +56,11 @@
 ///
 /// Note the ID requires quoting as there are semicolons
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod protected_vm {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -119,8 +123,6 @@ pub mod protected_vm {
         name: &str,
         args: ProtectedVMArgs,
     ) -> ProtectedVMResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let backup_policy_id_binding = args.backup_policy_id.get_output(context);
         let exclude_disk_luns_binding = args.exclude_disk_luns.get_output(context);
         let include_disk_luns_binding = args.include_disk_luns.get_output(context);

@@ -90,7 +90,11 @@
 /// $ pulumi import gcp:dns/responsePolicy:ResponsePolicy default {{response_policy_name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod response_policy {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -157,8 +161,6 @@ pub mod response_policy {
         name: &str,
         args: ResponsePolicyArgs,
     ) -> ResponsePolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let gke_clusters_binding = args.gke_clusters.get_output(context);
         let networks_binding = args.networks.get_output(context);

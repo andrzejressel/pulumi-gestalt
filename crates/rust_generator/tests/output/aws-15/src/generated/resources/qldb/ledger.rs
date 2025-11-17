@@ -20,7 +20,11 @@
 /// ```sh
 /// $ pulumi import aws:qldb/ledger:Ledger sample-ledger sample-ledger
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod ledger {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -77,8 +81,6 @@ pub mod ledger {
         name: &str,
         args: LedgerArgs,
     ) -> LedgerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let deletion_protection_binding = args.deletion_protection.get_output(context);
         let kms_key_binding = args.kms_key.get_output(context);
         let name_binding = args.name.get_output(context);

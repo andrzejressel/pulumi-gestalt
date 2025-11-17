@@ -62,7 +62,11 @@
 /// ```sh
 /// $ pulumi import aws:connect/phoneNumber:PhoneNumber example 12345678-abcd-1234-efgh-9876543210ab
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod phone_number {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -130,8 +134,6 @@ pub mod phone_number {
         name: &str,
         args: PhoneNumberArgs,
     ) -> PhoneNumberResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let country_code_binding = args.country_code.get_output(context);
         let description_binding = args.description.get_output(context);
         let prefix_binding = args.prefix.get_output(context);

@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_key_pair {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -55,8 +59,6 @@ pub mod get_key_pair {
         context: &pulumi_gestalt_rust::Context,
         args: GetKeyPairArgs,
     ) -> GetKeyPairResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filters_binding = args.filters.get_output(context);
         let include_public_key_binding = args.include_public_key.get_output(context);
         let key_name_binding = args.key_name.get_output(context);

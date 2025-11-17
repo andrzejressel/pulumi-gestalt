@@ -41,7 +41,11 @@
 /// ```sh
 /// $ pulumi import aws:lightsail/containerServiceDeploymentVersion:ContainerServiceDeploymentVersion example container-service-1/1
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod container_service_deployment_version {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -100,8 +104,6 @@ pub mod container_service_deployment_version {
         name: &str,
         args: ContainerServiceDeploymentVersionArgs,
     ) -> ContainerServiceDeploymentVersionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let containers_binding = args.containers.get_output(context);
         let public_endpoint_binding = args.public_endpoint.get_output(context);
         let service_name_binding = args.service_name.get_output(context);

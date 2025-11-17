@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod catalog {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -43,8 +47,6 @@ pub mod catalog {
         name: &str,
         args: CatalogArgs,
     ) -> CatalogResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let catalog_adogit_binding = args.catalog_adogit.get_output(context);
         let catalog_github_binding = args.catalog_github.get_output(context);
         let dev_center_id_binding = args.dev_center_id.get_output(context);

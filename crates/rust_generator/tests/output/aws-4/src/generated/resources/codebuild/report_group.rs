@@ -59,7 +59,11 @@
 /// ```sh
 /// $ pulumi import aws:codebuild/reportGroup:ReportGroup example arn:aws:codebuild:us-west-2:123456789:report-group/report-group-name
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod report_group {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -122,8 +126,6 @@ pub mod report_group {
         name: &str,
         args: ReportGroupArgs,
     ) -> ReportGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let delete_reports_binding = args.delete_reports.get_output(context);
         let export_config_binding = args.export_config.get_output(context);
         let name_binding = args.name.get_output(context);

@@ -137,7 +137,11 @@
 /// $ pulumi import gcp:healthcare/fhirStore:FhirStore default {{dataset}}/{{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod fhir_store {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -370,8 +374,6 @@ pub mod fhir_store {
         name: &str,
         args: FhirStoreArgs,
     ) -> FhirStoreResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let complex_data_type_reference_parsing_binding = args
             .complex_data_type_reference_parsing
             .get_output(context);

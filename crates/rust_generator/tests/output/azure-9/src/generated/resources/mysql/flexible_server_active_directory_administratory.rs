@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod flexible_server_active_directory_administratory {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -35,8 +39,6 @@ pub mod flexible_server_active_directory_administratory {
         name: &str,
         args: FlexibleServerActiveDirectoryAdministratoryArgs,
     ) -> FlexibleServerActiveDirectoryAdministratoryResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let identity_id_binding = args.identity_id.get_output(context);
         let login_binding = args.login.get_output(context);
         let object_id_binding = args.object_id.get_output(context);

@@ -105,7 +105,11 @@
 /// $ pulumi import gcp:tpu/node:Node default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod node {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -251,8 +255,6 @@ pub mod node {
         name: &str,
         args: NodeArgs,
     ) -> NodeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let accelerator_type_binding = args.accelerator_type.get_output(context);
         let cidr_block_binding = args.cidr_block.get_output(context);
         let description_binding = args.description.get_output(context);

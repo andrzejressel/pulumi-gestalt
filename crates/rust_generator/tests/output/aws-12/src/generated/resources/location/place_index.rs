@@ -24,7 +24,11 @@
 /// ```sh
 /// $ pulumi import aws:location/placeIndex:PlaceIndex example example
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod place_index {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -93,8 +97,6 @@ pub mod place_index {
         name: &str,
         args: PlaceIndexArgs,
     ) -> PlaceIndexResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let data_source_binding = args.data_source.get_output(context);
         let data_source_configuration_binding = args
             .data_source_configuration

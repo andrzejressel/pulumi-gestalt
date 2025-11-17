@@ -40,7 +40,11 @@
 /// ```sh
 /// $ pulumi import aws:cloudsearch/domain:Domain example example-domain
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod domain {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -107,8 +111,6 @@ pub mod domain {
         name: &str,
         args: DomainArgs,
     ) -> DomainResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let endpoint_options_binding = args.endpoint_options.get_output(context);
         let index_fields_binding = args.index_fields.get_output(context);
         let multi_az_binding = args.multi_az.get_output(context);

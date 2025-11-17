@@ -72,7 +72,11 @@
 /// $ pulumi import gcp:pubsub/liteTopic:LiteTopic default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod lite_topic {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -155,8 +159,6 @@ pub mod lite_topic {
         name: &str,
         args: LiteTopicArgs,
     ) -> LiteTopicResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let partition_config_binding = args.partition_config.get_output(context);
         let project_binding = args.project.get_output(context);

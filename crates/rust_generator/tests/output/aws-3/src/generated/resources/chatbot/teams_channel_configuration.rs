@@ -27,7 +27,11 @@
 /// ```sh
 /// $ pulumi import aws:chatbot/teamsChannelConfiguration:TeamsChannelConfiguration example 5f4f15d2-b958-522a-8333-124aa8bf0925
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod teams_channel_configuration {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -134,8 +138,6 @@ pub mod teams_channel_configuration {
         name: &str,
         args: TeamsChannelConfigurationArgs,
     ) -> TeamsChannelConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let channel_id_binding = args.channel_id.get_output(context);
         let channel_name_binding = args.channel_name.get_output(context);
         let configuration_name_binding = args.configuration_name.get_output(context);

@@ -63,7 +63,11 @@
 /// ```sh
 /// $ pulumi import aws:scheduler/schedule:Schedule example my-schedule-group/my-schedule
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod schedule {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -161,8 +165,6 @@ pub mod schedule {
         name: &str,
         args: ScheduleArgs,
     ) -> ScheduleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let end_date_binding = args.end_date.get_output(context);
         let flexible_time_window_binding = args.flexible_time_window.get_output(context);

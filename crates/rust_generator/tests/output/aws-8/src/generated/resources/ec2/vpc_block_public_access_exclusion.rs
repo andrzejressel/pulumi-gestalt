@@ -58,7 +58,11 @@
 /// ```sh
 /// $ pulumi import aws:ec2/vpcBlockPublicAccessExclusion:VpcBlockPublicAccessExclusion example vpcbpa-exclude-1234abcd
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod vpc_block_public_access_exclusion {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -121,8 +125,6 @@ pub mod vpc_block_public_access_exclusion {
         name: &str,
         args: VpcBlockPublicAccessExclusionArgs,
     ) -> VpcBlockPublicAccessExclusionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let internet_gateway_exclusion_mode_binding = args
             .internet_gateway_exclusion_mode
             .get_output(context);

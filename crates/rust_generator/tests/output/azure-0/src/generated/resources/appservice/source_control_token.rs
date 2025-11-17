@@ -23,7 +23,11 @@
 /// $ pulumi import azure:appservice/sourceControlToken:SourceControlToken example /providers/Microsoft.Web/sourceControls/GitHub
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod source_control_token {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -64,8 +68,6 @@ pub mod source_control_token {
         name: &str,
         args: SourceControlTokenArgs,
     ) -> SourceControlTokenResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let token_binding = args.token.get_output(context);
         let token_secret_binding = args.token_secret.get_output(context);
         let type__binding = args.type_.get_output(context);

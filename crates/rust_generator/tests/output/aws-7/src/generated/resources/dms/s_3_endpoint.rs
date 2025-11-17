@@ -94,7 +94,11 @@
 /// ```sh
 /// $ pulumi import aws:dms/s3Endpoint:S3Endpoint example example-dms-endpoint-tf
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod s_3_endpoint {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -394,8 +398,6 @@ pub mod s_3_endpoint {
         name: &str,
         args: S3EndpointArgs,
     ) -> S3EndpointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let add_column_name_binding = args.add_column_name.get_output(context);
         let add_trailing_padding_character_binding = args
             .add_trailing_padding_character

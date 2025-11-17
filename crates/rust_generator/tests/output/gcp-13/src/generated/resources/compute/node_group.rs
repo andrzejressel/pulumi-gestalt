@@ -146,7 +146,11 @@
 /// $ pulumi import gcp:compute/nodeGroup:NodeGroup default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod node_group {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -265,8 +269,6 @@ pub mod node_group {
         name: &str,
         args: NodeGroupArgs,
     ) -> NodeGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let autoscaling_policy_binding = args.autoscaling_policy.get_output(context);
         let description_binding = args.description.get_output(context);
         let initial_size_binding = args.initial_size.get_output(context);

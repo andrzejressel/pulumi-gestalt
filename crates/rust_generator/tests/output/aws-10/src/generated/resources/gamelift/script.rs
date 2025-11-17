@@ -30,7 +30,11 @@
 /// ```sh
 /// $ pulumi import aws:gamelift/script:Script example <script-id>
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod script {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -91,8 +95,6 @@ pub mod script {
         name: &str,
         args: ScriptArgs,
     ) -> ScriptResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let storage_location_binding = args.storage_location.get_output(context);
         let tags_binding = args.tags.get_output(context);

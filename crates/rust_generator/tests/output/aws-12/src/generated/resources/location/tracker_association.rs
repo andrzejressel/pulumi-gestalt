@@ -32,7 +32,11 @@
 /// ```sh
 /// $ pulumi import aws:location/trackerAssociation:TrackerAssociation example "tracker_name|consumer_arn"
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod tracker_association {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -64,8 +68,6 @@ pub mod tracker_association {
         name: &str,
         args: TrackerAssociationArgs,
     ) -> TrackerAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let consumer_arn_binding = args.consumer_arn.get_output(context);
         let tracker_name_binding = args.tracker_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

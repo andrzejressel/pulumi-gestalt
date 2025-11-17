@@ -60,7 +60,11 @@
 /// ```sh
 /// $ pulumi import aws:sagemaker/codeRepository:CodeRepository test_code_repository my-code-repo
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod code_repository {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -111,8 +115,6 @@ pub mod code_repository {
         name: &str,
         args: CodeRepositoryArgs,
     ) -> CodeRepositoryResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let code_repository_name_binding = args.code_repository_name.get_output(context);
         let git_config_binding = args.git_config.get_output(context);
         let tags_binding = args.tags.get_output(context);

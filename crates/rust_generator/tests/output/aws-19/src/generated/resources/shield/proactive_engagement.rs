@@ -62,7 +62,11 @@
 /// ```sh
 /// $ pulumi import aws:shield/proactiveEngagement:ProactiveEngagement example 123456789012
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod proactive_engagement {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -98,8 +102,6 @@ pub mod proactive_engagement {
         name: &str,
         args: ProactiveEngagementArgs,
     ) -> ProactiveEngagementResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let emergency_contacts_binding = args.emergency_contacts.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

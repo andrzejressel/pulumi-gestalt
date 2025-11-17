@@ -23,7 +23,11 @@
 /// ```sh
 /// $ pulumi import aws:sesv2/accountSuppressionAttributes:AccountSuppressionAttributes example 123456789012
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod account_suppression_attributes {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -50,8 +54,6 @@ pub mod account_suppression_attributes {
         name: &str,
         args: AccountSuppressionAttributesArgs,
     ) -> AccountSuppressionAttributesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let suppressed_reasons_binding = args.suppressed_reasons.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:sesv2/accountSuppressionAttributes:AccountSuppressionAttributes"

@@ -36,7 +36,11 @@
 /// ```sh
 /// $ pulumi import aws:efs/mountTarget:MountTarget alpha fsmt-52a643fb
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod mount_target {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -96,8 +100,6 @@ pub mod mount_target {
         name: &str,
         args: MountTargetArgs,
     ) -> MountTargetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let file_system_id_binding = args.file_system_id.get_output(context);
         let ip_address_binding = args.ip_address.get_output(context);
         let security_groups_binding = args.security_groups.get_output(context);

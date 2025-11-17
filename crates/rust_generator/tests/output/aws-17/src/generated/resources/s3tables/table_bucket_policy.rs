@@ -32,7 +32,11 @@
 /// ```sh
 /// $ pulumi import aws:s3tables/tableBucketPolicy:TableBucketPolicy example 'arn:aws:s3tables:us-west-2:123456789012:bucket/example-bucket;example-namespace'
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod table_bucket_policy {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -64,8 +68,6 @@ pub mod table_bucket_policy {
         name: &str,
         args: TableBucketPolicyArgs,
     ) -> TableBucketPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let resource_policy_binding = args.resource_policy.get_output(context);
         let table_bucket_arn_binding = args.table_bucket_arn.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

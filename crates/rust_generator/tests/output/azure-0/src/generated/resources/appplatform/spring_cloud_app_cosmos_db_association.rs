@@ -72,7 +72,11 @@
 /// $ pulumi import azure:appplatform/springCloudAppCosmosDBAssociation:SpringCloudAppCosmosDBAssociation example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/resourcegroup1/providers/Microsoft.AppPlatform/spring/service1/apps/app1/bindings/bind1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod spring_cloud_app_cosmos_db_association {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -156,8 +160,6 @@ pub mod spring_cloud_app_cosmos_db_association {
         name: &str,
         args: SpringCloudAppCosmosDBAssociationArgs,
     ) -> SpringCloudAppCosmosDBAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_type_binding = args.api_type.get_output(context);
         let cosmosdb_access_key_binding = args.cosmosdb_access_key.get_output(context);
         let cosmosdb_account_id_binding = args.cosmosdb_account_id.get_output(context);

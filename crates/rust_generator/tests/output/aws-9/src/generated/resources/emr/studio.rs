@@ -31,7 +31,11 @@
 /// ```sh
 /// $ pulumi import aws:emr/studio:Studio studio es-123456ABCDEF
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod studio {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -135,8 +139,6 @@ pub mod studio {
         name: &str,
         args: StudioArgs,
     ) -> StudioResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auth_mode_binding = args.auth_mode.get_output(context);
         let default_s3_location_binding = args.default_s3_location.get_output(context);
         let description_binding = args.description.get_output(context);

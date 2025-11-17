@@ -152,7 +152,11 @@
 /// $ pulumi import gcp:osconfig/guestPolicies:GuestPolicies default {{guest_policy_id}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod guest_policies {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -264,8 +268,6 @@ pub mod guest_policies {
         name: &str,
         args: GuestPoliciesArgs,
     ) -> GuestPoliciesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let assignment_binding = args.assignment.get_output(context);
         let description_binding = args.description.get_output(context);
         let etag_binding = args.etag.get_output(context);

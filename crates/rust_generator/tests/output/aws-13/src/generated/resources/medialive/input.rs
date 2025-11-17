@@ -32,7 +32,11 @@
 /// ```sh
 /// $ pulumi import aws:medialive/input:Input example 12345678
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod input {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -147,8 +151,6 @@ pub mod input {
         name: &str,
         args: InputArgs,
     ) -> InputResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let destinations_binding = args.destinations.get_output(context);
         let input_devices_binding = args.input_devices.get_output(context);
         let input_security_groups_binding = args

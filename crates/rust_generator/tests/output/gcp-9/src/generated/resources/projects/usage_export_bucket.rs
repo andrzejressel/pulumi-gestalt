@@ -83,7 +83,11 @@
 /// $ pulumi import gcp:projects/usageExportBucket:UsageExportBucket default {{project_id}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod usage_export_bucket {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -120,8 +124,6 @@ pub mod usage_export_bucket {
         name: &str,
         args: UsageExportBucketArgs,
     ) -> UsageExportBucketResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_name_binding = args.bucket_name.get_output(context);
         let prefix_binding = args.prefix.get_output(context);
         let project_binding = args.project.get_output(context);

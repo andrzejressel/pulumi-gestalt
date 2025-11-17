@@ -58,7 +58,11 @@
 /// $ pulumi import gcp:securitycenter/notificationConfig:NotificationConfig default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod notification_config {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -121,8 +125,6 @@ pub mod notification_config {
         name: &str,
         args: NotificationConfigArgs,
     ) -> NotificationConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let config_id_binding = args.config_id.get_output(context);
         let description_binding = args.description.get_output(context);
         let organization_binding = args.organization.get_output(context);

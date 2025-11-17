@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_images {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -34,8 +38,6 @@ pub mod get_images {
         context: &pulumi_gestalt_rust::Context,
         args: GetImagesArgs,
     ) -> GetImagesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let resource_group_name_binding = args.resource_group_name.get_output(context);
         let tags_filter_binding = args.tags_filter.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

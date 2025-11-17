@@ -58,7 +58,11 @@
 /// ```sh
 /// $ pulumi import aws:elasticache/userGroupAssociation:UserGroupAssociation example userGoupId1,userId
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod user_group_association {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -90,8 +94,6 @@ pub mod user_group_association {
         name: &str,
         args: UserGroupAssociationArgs,
     ) -> UserGroupAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let user_group_id_binding = args.user_group_id.get_output(context);
         let user_id_binding = args.user_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

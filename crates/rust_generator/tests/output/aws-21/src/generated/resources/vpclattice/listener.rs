@@ -153,7 +153,11 @@
 /// ```sh
 /// $ pulumi import aws:vpclattice/listener:Listener example svc-1a2b3c4d/listener-987654321
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod listener {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -230,8 +234,6 @@ pub mod listener {
         name: &str,
         args: ListenerArgs,
     ) -> ListenerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let default_action_binding = args.default_action.get_output(context);
         let name_binding = args.name.get_output(context);
         let port_binding = args.port.get_output(context);

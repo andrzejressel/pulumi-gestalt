@@ -123,7 +123,11 @@
 /// $ pulumi import azure:cdn/frontdoorCustomDomainAssociation:FrontdoorCustomDomainAssociation example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/resourceGroup1/providers/Microsoft.Cdn/profiles/profile1/associations/assoc1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod frontdoor_custom_domain_association {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -159,8 +163,6 @@ pub mod frontdoor_custom_domain_association {
         name: &str,
         args: FrontdoorCustomDomainAssociationArgs,
     ) -> FrontdoorCustomDomainAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cdn_frontdoor_custom_domain_id_binding = args
             .cdn_frontdoor_custom_domain_id
             .get_output(context);

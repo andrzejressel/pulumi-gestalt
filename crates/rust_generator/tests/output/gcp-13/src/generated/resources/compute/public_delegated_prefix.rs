@@ -69,7 +69,11 @@
 /// $ pulumi import gcp:compute/publicDelegatedPrefix:PublicDelegatedPrefix default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod public_delegated_prefix {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -146,8 +150,6 @@ pub mod public_delegated_prefix {
         name: &str,
         args: PublicDelegatedPrefixArgs,
     ) -> PublicDelegatedPrefixResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let ip_cidr_range_binding = args.ip_cidr_range.get_output(context);
         let is_live_migration_binding = args.is_live_migration.get_output(context);

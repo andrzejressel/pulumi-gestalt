@@ -28,7 +28,11 @@
 /// $ pulumi import cloudflare:index/workersRoute:WorkersRoute example <zone_id>/<route_id>
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod workers_route {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -65,8 +69,6 @@ pub mod workers_route {
         name: &str,
         args: WorkersRouteArgs,
     ) -> WorkersRouteResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let pattern_binding = args.pattern.get_output(context);
         let script_name_binding = args.script_name.get_output(context);
         let zone_id_binding = args.zone_id.get_output(context);

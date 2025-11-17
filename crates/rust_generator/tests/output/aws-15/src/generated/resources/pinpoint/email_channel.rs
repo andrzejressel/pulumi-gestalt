@@ -60,7 +60,11 @@
 /// ```sh
 /// $ pulumi import aws:pinpoint/emailChannel:EmailChannel email application-id
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod email_channel {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -114,8 +118,6 @@ pub mod email_channel {
         name: &str,
         args: EmailChannelArgs,
     ) -> EmailChannelResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_id_binding = args.application_id.get_output(context);
         let configuration_set_binding = args.configuration_set.get_output(context);
         let enabled_binding = args.enabled.get_output(context);

@@ -33,7 +33,11 @@
 /// ```sh
 /// $ pulumi import aws:synthetics/canary:Canary some some-canary
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod canary {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -185,8 +189,6 @@ pub mod canary {
         name: &str,
         args: CanaryArgs,
     ) -> CanaryResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let artifact_config_binding = args.artifact_config.get_output(context);
         let artifact_s3_location_binding = args.artifact_s3_location.get_output(context);
         let delete_lambda_binding = args.delete_lambda.get_output(context);

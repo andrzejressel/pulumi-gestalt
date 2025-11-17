@@ -37,7 +37,11 @@
 /// ```sh
 /// $ pulumi import aws:datasync/fsxOpenZfsFileSystem:FsxOpenZfsFileSystem example arn:aws:datasync:us-west-2:123456789012:location/loc-12345678901234567#arn:aws:fsx:us-west-2:123456789012:file-system/fs-08e04cd442c1bb94a
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod fsx_open_zfs_file_system {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -102,8 +106,6 @@ pub mod fsx_open_zfs_file_system {
         name: &str,
         args: FsxOpenZfsFileSystemArgs,
     ) -> FsxOpenZfsFileSystemResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let fsx_filesystem_arn_binding = args.fsx_filesystem_arn.get_output(context);
         let protocol_binding = args.protocol.get_output(context);
         let security_group_arns_binding = args.security_group_arns.get_output(context);

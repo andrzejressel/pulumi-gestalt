@@ -30,7 +30,11 @@
 /// ```sh
 /// $ pulumi import aws:iot/thingGroup:ThingGroup example example
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod thing_group {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -90,8 +94,6 @@ pub mod thing_group {
         name: &str,
         args: ThingGroupArgs,
     ) -> ThingGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let parent_group_name_binding = args.parent_group_name.get_output(context);
         let properties_binding = args.properties.get_output(context);

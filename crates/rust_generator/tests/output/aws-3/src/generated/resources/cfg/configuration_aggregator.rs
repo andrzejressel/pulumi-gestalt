@@ -72,7 +72,11 @@
 /// ```sh
 /// $ pulumi import aws:cfg/configurationAggregator:ConfigurationAggregator example foo
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod configuration_aggregator {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -144,8 +148,6 @@ pub mod configuration_aggregator {
         name: &str,
         args: ConfigurationAggregatorArgs,
     ) -> ConfigurationAggregatorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_aggregation_source_binding = args
             .account_aggregation_source
             .get_output(context);

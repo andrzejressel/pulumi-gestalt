@@ -30,7 +30,11 @@
 /// ```sh
 /// $ pulumi import aws:apigateway/model:Model example 12345abcde/example
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod model {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -77,8 +81,6 @@ pub mod model {
         name: &str,
         args: ModelArgs,
     ) -> ModelResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let content_type_binding = args.content_type.get_output(context);
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);

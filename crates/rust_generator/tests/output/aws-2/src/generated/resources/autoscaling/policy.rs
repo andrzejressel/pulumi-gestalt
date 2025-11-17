@@ -222,7 +222,11 @@
 /// ```sh
 /// $ pulumi import aws:autoscaling/policy:Policy test-policy asg-name/policy-name
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod policy {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -423,8 +427,6 @@ pub mod policy {
         name: &str,
         args: PolicyArgs,
     ) -> PolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let adjustment_type_binding = args.adjustment_type.get_output(context);
         let autoscaling_group_name_binding = args
             .autoscaling_group_name

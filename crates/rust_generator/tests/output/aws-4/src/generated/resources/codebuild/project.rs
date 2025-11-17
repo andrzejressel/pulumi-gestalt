@@ -170,7 +170,11 @@
 /// ```sh
 /// $ pulumi import aws:codebuild/project:Project name project-name
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod project {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -369,8 +373,6 @@ pub mod project {
         name: &str,
         args: ProjectArgs,
     ) -> ProjectResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let artifacts_binding = args.artifacts.get_output(context);
         let badge_enabled_binding = args.badge_enabled.get_output(context);
         let build_batch_config_binding = args.build_batch_config.get_output(context);

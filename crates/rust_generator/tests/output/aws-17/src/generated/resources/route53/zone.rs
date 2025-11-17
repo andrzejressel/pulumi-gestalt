@@ -72,7 +72,11 @@
 /// ```sh
 /// $ pulumi import aws:route53/zone:Zone myzone Z1D633PJN98FT9
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod zone {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -145,8 +149,6 @@ pub mod zone {
         name: &str,
         args: ZoneArgs,
     ) -> ZoneResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let comment_binding = args.comment.get_output(context);
         let delegation_set_id_binding = args.delegation_set_id.get_output(context);
         let force_destroy_binding = args.force_destroy.get_output(context);

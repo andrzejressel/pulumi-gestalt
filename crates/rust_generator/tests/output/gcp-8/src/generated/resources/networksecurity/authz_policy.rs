@@ -196,7 +196,11 @@
 /// $ pulumi import gcp:networksecurity/authzPolicy:AuthzPolicy default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod authz_policy {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -318,8 +322,6 @@ pub mod authz_policy {
         name: &str,
         args: AuthzPolicyArgs,
     ) -> AuthzPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let action_binding = args.action.get_output(context);
         let custom_provider_binding = args.custom_provider.get_output(context);
         let description_binding = args.description.get_output(context);

@@ -28,7 +28,11 @@
 /// ```sh
 /// $ pulumi import aws:ec2/egressOnlyInternetGateway:EgressOnlyInternetGateway example eigw-015e0e244e24dfe8a
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod egress_only_internet_gateway {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -68,8 +72,6 @@ pub mod egress_only_internet_gateway {
         name: &str,
         args: EgressOnlyInternetGatewayArgs,
     ) -> EgressOnlyInternetGatewayResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let tags_binding = args.tags.get_output(context);
         let vpc_id_binding = args.vpc_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

@@ -33,7 +33,11 @@
 ///       destinationCidrBlock: 192.168.10.0/24
 ///       vpnConnectionId: ${main.id}
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod vpn_connection_route {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -65,8 +69,6 @@ pub mod vpn_connection_route {
         name: &str,
         args: VpnConnectionRouteArgs,
     ) -> VpnConnectionRouteResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let destination_cidr_block_binding = args
             .destination_cidr_block
             .get_output(context);

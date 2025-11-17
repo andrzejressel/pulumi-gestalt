@@ -24,7 +24,11 @@
 /// ```sh
 /// $ pulumi import aws:s3/directoryBucket:DirectoryBucket example example--usw2-az1--x-s3
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod directory_bucket {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -77,8 +81,6 @@ pub mod directory_bucket {
         name: &str,
         args: DirectoryBucketArgs,
     ) -> DirectoryBucketResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_binding = args.bucket.get_output(context);
         let data_redundancy_binding = args.data_redundancy.get_output(context);
         let force_destroy_binding = args.force_destroy.get_output(context);

@@ -29,7 +29,11 @@
 /// ```sh
 /// $ pulumi import aws:dms/replicationTask:ReplicationTask test test-dms-replication-task-tf
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod replication_task {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -125,8 +129,6 @@ pub mod replication_task {
         name: &str,
         args: ReplicationTaskArgs,
     ) -> ReplicationTaskResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cdc_start_position_binding = args.cdc_start_position.get_output(context);
         let cdc_start_time_binding = args.cdc_start_time.get_output(context);
         let migration_type_binding = args.migration_type.get_output(context);

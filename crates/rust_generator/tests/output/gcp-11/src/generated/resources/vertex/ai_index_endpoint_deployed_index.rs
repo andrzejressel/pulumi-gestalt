@@ -214,7 +214,11 @@
 /// $ pulumi import gcp:vertex/aiIndexEndpointDeployedIndex:AiIndexEndpointDeployedIndex default {{index_endpoint}}/{{deployed_index_id}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod ai_index_endpoint_deployed_index {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -352,8 +356,6 @@ pub mod ai_index_endpoint_deployed_index {
         name: &str,
         args: AiIndexEndpointDeployedIndexArgs,
     ) -> AiIndexEndpointDeployedIndexResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let automatic_resources_binding = args.automatic_resources.get_output(context);
         let dedicated_resources_binding = args.dedicated_resources.get_output(context);
         let deployed_index_auth_config_binding = args

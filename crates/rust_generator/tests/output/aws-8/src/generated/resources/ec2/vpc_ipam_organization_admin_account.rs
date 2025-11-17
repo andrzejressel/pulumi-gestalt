@@ -24,7 +24,11 @@
 /// ```sh
 /// $ pulumi import aws:ec2/vpcIpamOrganizationAdminAccount:VpcIpamOrganizationAdminAccount example 12345678901
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod vpc_ipam_organization_admin_account {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -57,8 +61,6 @@ pub mod vpc_ipam_organization_admin_account {
         name: &str,
         args: VpcIpamOrganizationAdminAccountArgs,
     ) -> VpcIpamOrganizationAdminAccountResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let delegated_admin_account_id_binding = args
             .delegated_admin_account_id
             .get_output(context);

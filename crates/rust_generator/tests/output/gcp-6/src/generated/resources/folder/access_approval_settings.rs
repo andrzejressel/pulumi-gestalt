@@ -124,7 +124,11 @@
 /// $ pulumi import gcp:folder/accessApprovalSettings:AccessApprovalSettings default {{folder_id}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod access_approval_settings {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -197,8 +201,6 @@ pub mod access_approval_settings {
         name: &str,
         args: AccessApprovalSettingsArgs,
     ) -> AccessApprovalSettingsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let active_key_version_binding = args.active_key_version.get_output(context);
         let enrolled_services_binding = args.enrolled_services.get_output(context);
         let folder_id_binding = args.folder_id.get_output(context);

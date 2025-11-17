@@ -88,7 +88,11 @@
 /// $ pulumi import gcp:blockchainnodeengine/blockchainNodes:BlockchainNodes default {{location}}/{{blockchain_node_id}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod blockchain_nodes {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -190,8 +194,6 @@ pub mod blockchain_nodes {
         name: &str,
         args: BlockchainNodesArgs,
     ) -> BlockchainNodesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let blockchain_node_id_binding = args.blockchain_node_id.get_output(context);
         let blockchain_type_binding = args.blockchain_type.get_output(context);
         let ethereum_details_binding = args.ethereum_details.get_output(context);

@@ -106,7 +106,11 @@
 /// $ pulumi import gcp:clouddeploy/target:Target default {{location}}/{{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod target {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -284,8 +288,6 @@ pub mod target {
         name: &str,
         args: TargetArgs,
     ) -> TargetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let annotations_binding = args.annotations.get_output(context);
         let anthos_cluster_binding = args.anthos_cluster.get_output(context);
         let associated_entities_binding = args.associated_entities.get_output(context);

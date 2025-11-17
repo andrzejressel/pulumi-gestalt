@@ -29,7 +29,11 @@
 /// ```sh
 /// $ pulumi import aws:cloudwatch/compositeAlarm:CompositeAlarm test my-alarm
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod composite_alarm {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -112,8 +116,6 @@ pub mod composite_alarm {
         name: &str,
         args: CompositeAlarmArgs,
     ) -> CompositeAlarmResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let actions_enabled_binding = args.actions_enabled.get_output(context);
         let actions_suppressor_binding = args.actions_suppressor.get_output(context);
         let alarm_actions_binding = args.alarm_actions.get_output(context);

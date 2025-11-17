@@ -75,7 +75,11 @@
 /// ```sh
 /// $ pulumi import aws:lex/intent:Intent order_flowers_intent OrderFlowers
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod intent {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -240,8 +244,6 @@ pub mod intent {
         name: &str,
         args: IntentArgs,
     ) -> IntentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let conclusion_statement_binding = args.conclusion_statement.get_output(context);
         let confirmation_prompt_binding = args.confirmation_prompt.get_output(context);
         let create_version_binding = args.create_version.get_output(context);

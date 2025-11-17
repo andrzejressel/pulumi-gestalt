@@ -26,7 +26,11 @@
 /// ```sh
 /// $ pulumi import aws:auditmanager/assessmentReport:AssessmentReport example abc123-de45
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod assessment_report {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -71,8 +75,6 @@ pub mod assessment_report {
         name: &str,
         args: AssessmentReportArgs,
     ) -> AssessmentReportResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let assessment_id_binding = args.assessment_id.get_output(context);
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);

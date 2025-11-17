@@ -70,7 +70,11 @@
 /// $ pulumi import gcp:siteverification/webResource:WebResource default {{web_resource_id}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod web_resource {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -117,8 +121,6 @@ pub mod web_resource {
         name: &str,
         args: WebResourceArgs,
     ) -> WebResourceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let site_binding = args.site.get_output(context);
         let verification_method_binding = args.verification_method.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

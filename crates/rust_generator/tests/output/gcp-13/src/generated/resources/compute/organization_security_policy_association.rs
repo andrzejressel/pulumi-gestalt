@@ -81,7 +81,11 @@
 /// $ pulumi import gcp:compute/organizationSecurityPolicyAssociation:OrganizationSecurityPolicyAssociation default {{policy_id}}/association/{{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod organization_security_policy_association {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -126,8 +130,6 @@ pub mod organization_security_policy_association {
         name: &str,
         args: OrganizationSecurityPolicyAssociationArgs,
     ) -> OrganizationSecurityPolicyAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let attachment_id_binding = args.attachment_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let policy_id_binding = args.policy_id.get_output(context);

@@ -143,7 +143,11 @@
 /// $ pulumi import gcp:appengine/flexibleAppVersion:FlexibleAppVersion default {{service}}/{{version_id}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod flexible_app_version {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -407,8 +411,6 @@ pub mod flexible_app_version {
         name: &str,
         args: FlexibleAppVersionArgs,
     ) -> FlexibleAppVersionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_config_binding = args.api_config.get_output(context);
         let automatic_scaling_binding = args.automatic_scaling.get_output(context);
         let beta_settings_binding = args.beta_settings.get_output(context);

@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_virtual_machine_configuration_assignment {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -42,8 +46,6 @@ pub mod get_virtual_machine_configuration_assignment {
         context: &pulumi_gestalt_rust::Context,
         args: GetVirtualMachineConfigurationAssignmentArgs,
     ) -> GetVirtualMachineConfigurationAssignmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let resource_group_name_binding = args.resource_group_name.get_output(context);
         let virtual_machine_name_binding = args.virtual_machine_name.get_output(context);

@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod rubber_tree {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -65,8 +69,6 @@ pub mod rubber_tree {
         name: &str,
         args: RubberTreeArgs,
     ) -> RubberTreeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let container_binding = args.container.get_output(context);
         let diameter_binding = args.diameter.get_output(context);
         let farm_binding = args.farm.get_output(context);

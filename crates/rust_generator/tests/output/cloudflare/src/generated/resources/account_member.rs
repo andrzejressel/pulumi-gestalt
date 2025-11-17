@@ -29,7 +29,11 @@
 /// $ pulumi import cloudflare:index/accountMember:AccountMember example <account_id>/<member_id>
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod account_member {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -71,8 +75,6 @@ pub mod account_member {
         name: &str,
         args: AccountMemberArgs,
     ) -> AccountMemberResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let email_address_binding = args.email_address.get_output(context);
         let role_ids_binding = args.role_ids.get_output(context);

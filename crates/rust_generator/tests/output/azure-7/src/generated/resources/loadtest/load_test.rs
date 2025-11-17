@@ -49,7 +49,11 @@
 ///
 /// * Where `{loadTestName}` is the name of the Load Test. For example `loadTestValue`.
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod load_test {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -120,8 +124,6 @@ pub mod load_test {
         name: &str,
         args: LoadTestArgs,
     ) -> LoadTestResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let encryption_binding = args.encryption.get_output(context);
         let identity_binding = args.identity.get_output(context);

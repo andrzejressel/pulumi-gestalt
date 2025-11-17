@@ -34,7 +34,11 @@
 /// $ pulumi import gcp:spanner/instanceConfig:InstanceConfig default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod instance_config {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -115,8 +119,6 @@ pub mod instance_config {
         name: &str,
         args: InstanceConfigArgs,
     ) -> InstanceConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let base_config_binding = args.base_config.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let labels_binding = args.labels.get_output(context);

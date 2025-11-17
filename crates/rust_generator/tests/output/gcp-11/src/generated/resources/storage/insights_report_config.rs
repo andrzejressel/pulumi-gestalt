@@ -91,7 +91,11 @@
 /// $ pulumi import gcp:storage/insightsReportConfig:InsightsReportConfig default {{location}}/{{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod insights_report_config {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -163,8 +167,6 @@ pub mod insights_report_config {
         name: &str,
         args: InsightsReportConfigArgs,
     ) -> InsightsReportConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let csv_options_binding = args.csv_options.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let frequency_options_binding = args.frequency_options.get_output(context);

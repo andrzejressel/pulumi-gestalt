@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_route_table_propagations {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -45,8 +49,6 @@ pub mod get_route_table_propagations {
         context: &pulumi_gestalt_rust::Context,
         args: GetRouteTablePropagationsArgs,
     ) -> GetRouteTablePropagationsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filters_binding = args.filters.get_output(context);
         let transit_gateway_route_table_id_binding = args
             .transit_gateway_route_table_id

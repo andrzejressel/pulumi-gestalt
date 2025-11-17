@@ -31,7 +31,11 @@
 /// ```sh
 /// $ pulumi import aws:datasync/efsLocation:EfsLocation example arn:aws:datasync:us-east-1:123456789012:location/loc-12345678901234567
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod efs_location {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -105,8 +109,6 @@ pub mod efs_location {
         name: &str,
         args: EfsLocationArgs,
     ) -> EfsLocationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_point_arn_binding = args.access_point_arn.get_output(context);
         let ec2_config_binding = args.ec2_config.get_output(context);
         let efs_file_system_arn_binding = args.efs_file_system_arn.get_output(context);

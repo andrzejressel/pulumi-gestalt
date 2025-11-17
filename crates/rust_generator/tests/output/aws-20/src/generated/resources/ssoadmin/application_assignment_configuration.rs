@@ -31,7 +31,11 @@
 /// ```sh
 /// $ pulumi import aws:ssoadmin/applicationAssignmentConfiguration:ApplicationAssignmentConfiguration example arn:aws:sso::123456789012:application/id-12345678
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod application_assignment_configuration {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -63,8 +67,6 @@ pub mod application_assignment_configuration {
         name: &str,
         args: ApplicationAssignmentConfigurationArgs,
     ) -> ApplicationAssignmentConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_arn_binding = args.application_arn.get_output(context);
         let assignment_required_binding = args.assignment_required.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

@@ -31,7 +31,11 @@
 /// ```sh
 /// $ pulumi import aws:chime/sdkvoiceSipMediaApplication:SdkvoiceSipMediaApplication example abcdef123456
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod sdkvoice_sip_media_application {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -91,8 +95,6 @@ pub mod sdkvoice_sip_media_application {
         name: &str,
         args: SdkvoiceSipMediaApplicationArgs,
     ) -> SdkvoiceSipMediaApplicationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aws_region_binding = args.aws_region.get_output(context);
         let endpoints_binding = args.endpoints.get_output(context);
         let name_binding = args.name.get_output(context);

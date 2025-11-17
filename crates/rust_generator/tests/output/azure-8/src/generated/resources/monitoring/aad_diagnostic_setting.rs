@@ -56,7 +56,11 @@
 /// $ pulumi import azure:monitoring/aadDiagnosticSetting:AadDiagnosticSetting example /providers/Microsoft.AADIAM/diagnosticSettings/setting1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod aad_diagnostic_setting {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -124,8 +128,6 @@ pub mod aad_diagnostic_setting {
         name: &str,
         args: AadDiagnosticSettingArgs,
     ) -> AadDiagnosticSettingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let enabled_logs_binding = args.enabled_logs.get_output(context);
         let eventhub_authorization_rule_id_binding = args
             .eventhub_authorization_rule_id

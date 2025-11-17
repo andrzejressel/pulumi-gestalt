@@ -45,7 +45,11 @@
 /// ```sh
 /// $ pulumi import aws:appstream/stack:Stack example stackID
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod stack {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -172,8 +176,6 @@ pub mod stack {
         name: &str,
         args: StackArgs,
     ) -> StackResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_endpoints_binding = args.access_endpoints.get_output(context);
         let application_settings_binding = args.application_settings.get_output(context);
         let description_binding = args.description.get_output(context);

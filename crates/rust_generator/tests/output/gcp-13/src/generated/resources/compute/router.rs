@@ -97,7 +97,11 @@
 /// $ pulumi import gcp:compute/router:Router default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod router {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -186,8 +190,6 @@ pub mod router {
         name: &str,
         args: RouterArgs,
     ) -> RouterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bgp_binding = args.bgp.get_output(context);
         let description_binding = args.description.get_output(context);
         let encrypted_interconnect_router_binding = args

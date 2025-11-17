@@ -96,7 +96,11 @@
 /// ```sh
 /// $ pulumi import aws:redshift/scheduledAction:ScheduledAction example tf-redshift-scheduled-action
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod scheduled_action {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -162,8 +166,6 @@ pub mod scheduled_action {
         name: &str,
         args: ScheduledActionArgs,
     ) -> ScheduledActionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let enable_binding = args.enable.get_output(context);
         let end_time_binding = args.end_time.get_output(context);

@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_local_gateway_route_table {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -53,8 +57,6 @@ pub mod get_local_gateway_route_table {
         context: &pulumi_gestalt_rust::Context,
         args: GetLocalGatewayRouteTableArgs,
     ) -> GetLocalGatewayRouteTableResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filters_binding = args.filters.get_output(context);
         let local_gateway_id_binding = args.local_gateway_id.get_output(context);
         let local_gateway_route_table_id_binding = args

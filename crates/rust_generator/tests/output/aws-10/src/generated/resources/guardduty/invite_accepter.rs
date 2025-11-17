@@ -38,7 +38,11 @@
 /// ```sh
 /// $ pulumi import aws:guardduty/inviteAccepter:InviteAccepter member 00b00fd5aecc0ab60a708659477e9617
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod invite_accepter {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -70,8 +74,6 @@ pub mod invite_accepter {
         name: &str,
         args: InviteAccepterArgs,
     ) -> InviteAccepterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let detector_id_binding = args.detector_id.get_output(context);
         let master_account_id_binding = args.master_account_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

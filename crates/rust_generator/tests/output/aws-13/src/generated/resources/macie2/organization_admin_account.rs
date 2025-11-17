@@ -24,7 +24,11 @@
 /// ```sh
 /// $ pulumi import aws:macie2/organizationAdminAccount:OrganizationAdminAccount example abcd1
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod organization_admin_account {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -51,8 +55,6 @@ pub mod organization_admin_account {
         name: &str,
         args: OrganizationAdminAccountArgs,
     ) -> OrganizationAdminAccountResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let admin_account_id_binding = args.admin_account_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:macie2/organizationAdminAccount:OrganizationAdminAccount".into(),

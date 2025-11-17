@@ -107,7 +107,11 @@
 /// $ pulumi import gcp:vmwareengine/privateCloud:PrivateCloud default {{location}}/{{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod private_cloud {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -212,8 +216,6 @@ pub mod private_cloud {
         name: &str,
         args: PrivateCloudArgs,
     ) -> PrivateCloudResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let deletion_delay_hours_binding = args.deletion_delay_hours.get_output(context);
         let description_binding = args.description.get_output(context);
         let location_binding = args.location.get_output(context);

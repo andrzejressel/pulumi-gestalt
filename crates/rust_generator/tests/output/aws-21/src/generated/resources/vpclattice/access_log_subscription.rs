@@ -26,7 +26,11 @@
 /// ```sh
 /// $ pulumi import aws:vpclattice/accessLogSubscription:AccessLogSubscription example rft-8012925589
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod access_log_subscription {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -72,8 +76,6 @@ pub mod access_log_subscription {
         name: &str,
         args: AccessLogSubscriptionArgs,
     ) -> AccessLogSubscriptionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let destination_arn_binding = args.destination_arn.get_output(context);
         let resource_identifier_binding = args.resource_identifier.get_output(context);
         let tags_binding = args.tags.get_output(context);

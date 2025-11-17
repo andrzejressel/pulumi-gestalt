@@ -23,7 +23,11 @@
 /// ```sh
 /// $ pulumi import aws:route53recoveryreadiness/recoveryGroup:RecoveryGroup my-high-availability-app my-high-availability-app
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod recovery_group {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -74,8 +78,6 @@ pub mod recovery_group {
         name: &str,
         args: RecoveryGroupArgs,
     ) -> RecoveryGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cells_binding = args.cells.get_output(context);
         let recovery_group_name_binding = args.recovery_group_name.get_output(context);
         let tags_binding = args.tags.get_output(context);

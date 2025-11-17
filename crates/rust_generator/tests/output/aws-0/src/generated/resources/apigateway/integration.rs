@@ -205,7 +205,11 @@
 /// ```sh
 /// $ pulumi import aws:apigateway/integration:Integration example 12345abcde/67890fghij/GET
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod integration {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -342,8 +346,6 @@ pub mod integration {
         name: &str,
         args: IntegrationArgs,
     ) -> IntegrationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cache_key_parameters_binding = args.cache_key_parameters.get_output(context);
         let cache_namespace_binding = args.cache_namespace.get_output(context);
         let connection_id_binding = args.connection_id.get_output(context);

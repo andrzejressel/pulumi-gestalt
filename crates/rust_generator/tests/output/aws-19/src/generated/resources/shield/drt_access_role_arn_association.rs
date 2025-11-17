@@ -40,7 +40,11 @@
 /// ```sh
 /// $ pulumi import aws:shield/drtAccessRoleArnAssociation:DrtAccessRoleArnAssociation example 123456789012
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod drt_access_role_arn_association {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -74,8 +78,6 @@ pub mod drt_access_role_arn_association {
         name: &str,
         args: DrtAccessRoleArnAssociationArgs,
     ) -> DrtAccessRoleArnAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let role_arn_binding = args.role_arn.get_output(context);
         let timeouts_binding = args.timeouts.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

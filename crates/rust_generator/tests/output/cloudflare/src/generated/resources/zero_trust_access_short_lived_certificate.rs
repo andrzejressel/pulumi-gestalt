@@ -46,7 +46,11 @@
 /// $ pulumi import cloudflare:index/zeroTrustAccessShortLivedCertificate:ZeroTrustAccessShortLivedCertificate example account/<zone_id>/<application_id>
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod zero_trust_access_short_lived_certificate {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -87,8 +91,6 @@ pub mod zero_trust_access_short_lived_certificate {
         name: &str,
         args: ZeroTrustAccessShortLivedCertificateArgs,
     ) -> ZeroTrustAccessShortLivedCertificateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let application_id_binding = args.application_id.get_output(context);
         let zone_id_binding = args.zone_id.get_output(context);

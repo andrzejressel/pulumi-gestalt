@@ -213,7 +213,11 @@
 /// ```sh
 /// $ pulumi import aws:batch/jobDefinition:JobDefinition test arn:aws:batch:us-east-1:123456789012:job-definition/sample
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod job_definition {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -341,8 +345,6 @@ pub mod job_definition {
         name: &str,
         args: JobDefinitionArgs,
     ) -> JobDefinitionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let container_properties_binding = args.container_properties.get_output(context);
         let deregister_on_new_revision_binding = args
             .deregister_on_new_revision

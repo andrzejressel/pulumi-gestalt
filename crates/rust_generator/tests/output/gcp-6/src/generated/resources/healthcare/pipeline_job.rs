@@ -281,7 +281,11 @@
 /// $ pulumi import gcp:healthcare/pipelineJob:PipelineJob default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod pipeline_job {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -406,8 +410,6 @@ pub mod pipeline_job {
         name: &str,
         args: PipelineJobArgs,
     ) -> PipelineJobResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let backfill_pipeline_job_binding = args
             .backfill_pipeline_job
             .get_output(context);

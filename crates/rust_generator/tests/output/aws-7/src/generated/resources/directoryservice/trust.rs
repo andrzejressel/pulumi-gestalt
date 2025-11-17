@@ -83,7 +83,11 @@
 /// ```sh
 /// $ pulumi import aws:directoryservice/trust:Trust example d-926724cf57/directory.example.com
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod trust {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -180,8 +184,6 @@ pub mod trust {
         name: &str,
         args: TrustArgs,
     ) -> TrustResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let conditional_forwarder_ip_addrs_binding = args
             .conditional_forwarder_ip_addrs
             .get_output(context);

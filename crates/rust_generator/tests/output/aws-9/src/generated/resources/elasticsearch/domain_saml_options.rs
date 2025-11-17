@@ -41,7 +41,11 @@
 /// ```sh
 /// $ pulumi import aws:elasticsearch/domainSamlOptions:DomainSamlOptions example domain_name
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod domain_saml_options {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -81,8 +85,6 @@ pub mod domain_saml_options {
         name: &str,
         args: DomainSamlOptionsArgs,
     ) -> DomainSamlOptionsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let domain_name_binding = args.domain_name.get_output(context);
         let saml_options_binding = args.saml_options.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

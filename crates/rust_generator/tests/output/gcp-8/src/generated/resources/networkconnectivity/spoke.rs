@@ -379,7 +379,11 @@
 /// $ pulumi import gcp:networkconnectivity/spoke:Spoke default {{location}}/{{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod spoke {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -531,8 +535,6 @@ pub mod spoke {
         name: &str,
         args: SpokeArgs,
     ) -> SpokeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let hub_binding = args.hub.get_output(context);
         let labels_binding = args.labels.get_output(context);

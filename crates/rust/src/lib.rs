@@ -1,5 +1,6 @@
-mod output;
-pub use output::ToOutput;
+mod macros;
+pub use macros::ToOutput;
+mod native;
 
 #[doc(hidden)]
 #[path = "private/mod.rs"]
@@ -13,23 +14,27 @@ pub use oneof::OneOf2;
 pub use oneof::OneOf3;
 pub use oneof::OneOf4;
 
-pub use pulumi_gestalt_rust_adapter::ConfigValue;
-pub use pulumi_gestalt_rust_adapter::GestaltCompositeOutput;
-pub use pulumi_gestalt_rust_adapter::GestaltContext;
-pub use pulumi_gestalt_rust_adapter::GestaltOutput;
-pub use pulumi_gestalt_rust_adapter::InvokeResourceRequest;
-pub use pulumi_gestalt_rust_adapter::RegisterResourceRequest;
-pub use pulumi_gestalt_rust_adapter::ResourceRequestObjectField;
+use anyhow::{Context as AnyhowContext, Result};
 
-#[cfg(target_arch = "wasm32")]
-pub type Context = pulumi_gestalt_rust_adapter_wasm::WasmContext;
-#[cfg(target_arch = "wasm32")]
-pub type Output<T> = pulumi_gestalt_rust_adapter_wasm::WasmOutput<T>;
+pub use native::{
+    CompositeOutput, ConfigValue, Context, InvokeResourceRequest, Output, RegisterResourceRequest,
+    ResourceRequestObjectField,
+};
 
-#[cfg(not(target_arch = "wasm32"))]
-pub type Context = pulumi_gestalt_rust_adapter_native::NativeContext;
-#[cfg(not(target_arch = "wasm32"))]
-pub type Output<T> = pulumi_gestalt_rust_adapter_native::NativeOutput<T>;
+/// Entrypoint for execution
+/// ```rust,no_run
+/// pulumi_gestalt_rust::run(|ctx| {
+///     // your code here
+///     let output = ctx.new_output(&"Hello, Pulumi!");
+///     pulumi_gestalt_rust::add_export("greeting", &output);
+///     Ok(())
+/// }).unwrap();
+pub fn run<F: Fn(&Context) -> Result<()>>(f: F) -> Result<()> {
+    let context = Context::new();
+    f(&context).context("Failed to run Pulumi program")?;
+    context.finish();
+    Ok(())
+}
 
 /// Add the given [Output] to [Stack Output](https://www.pulumi.com/tutorials/building-with-pulumi/stack-outputs/)
 pub fn add_export<T>(name: &str, output: &Output<T>) {
@@ -55,38 +60,5 @@ pub fn add_export<T>(name: &str, output: &Output<T>) {
 macro_rules! include_provider {
     ($file:expr) => {
         include!(concat!(env!("OUT_DIR"), "/pulumi/", $file, "/main.rs"));
-    };
-}
-
-/// Generate boilerplate for Wasm entrypoint
-///
-/// ```rust,no_run
-/// use pulumi_gestalt_rust::*;
-/// use anyhow::Result;
-///
-/// pulumi_main!();
-///
-/// fn pulumi_main(context: &Context) -> Result<()> {
-///    Ok(())
-/// }
-/// ```
-#[macro_export]
-macro_rules! pulumi_main {
-    () => {
-        #[cfg(target_arch = "wasm32")]
-        #[unsafe(export_name = "component:pulumi-gestalt/pulumi-main@0.0.0-DEV#main")]
-        unsafe extern "C" fn __exported() {
-            pulumi_gestalt_rust::__private::pulumi_gestalt_rust_adapter_wasm::runner::run(
-                |engine| pulumi_main(&engine),
-            )
-            .unwrap();
-        }
-
-        #[cfg(not(target_arch = "wasm32"))]
-        fn main() {
-            let context = Context::new();
-            pulumi_main(&context).unwrap();
-            context.finish();
-        }
     };
 }

@@ -2,7 +2,11 @@
 /// used to ignore DNS requests to a given list of domains. These DNS
 /// requests will be passed back to other DNS servers configured on
 /// existing network interfaces on the device.
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod zero_trust_local_fallback_domain {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -41,8 +45,6 @@ pub mod zero_trust_local_fallback_domain {
         name: &str,
         args: ZeroTrustLocalFallbackDomainArgs,
     ) -> ZeroTrustLocalFallbackDomainResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let domains_binding = args.domains.get_output(context);
         let policy_id_binding = args.policy_id.get_output(context);

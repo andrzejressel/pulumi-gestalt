@@ -258,7 +258,11 @@
 ///
 /// no diff isn't sufficient to know that your config could reproduce the imported resource.
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod database_instance {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -461,8 +465,6 @@ pub mod database_instance {
         name: &str,
         args: DatabaseInstanceArgs,
     ) -> DatabaseInstanceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let clone_binding = args.clone.get_output(context);
         let database_version_binding = args.database_version.get_output(context);
         let deletion_protection_binding = args.deletion_protection.get_output(context);

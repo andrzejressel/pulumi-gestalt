@@ -94,7 +94,11 @@
 /// ```sh
 /// $ pulumi import aws:medialive/channel:Channel example 1234567
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod channel {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -224,8 +228,6 @@ pub mod channel {
         name: &str,
         args: ChannelArgs,
     ) -> ChannelResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cdi_input_specification_binding = args
             .cdi_input_specification
             .get_output(context);

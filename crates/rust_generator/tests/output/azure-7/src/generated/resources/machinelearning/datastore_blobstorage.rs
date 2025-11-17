@@ -79,7 +79,11 @@
 /// $ pulumi import azure:machinelearning/datastoreBlobstorage:DatastoreBlobstorage example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group1/providers/Microsoft.MachineLearningServices/workspaces/mlw1/dataStores/datastore1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod datastore_blobstorage {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -160,8 +164,6 @@ pub mod datastore_blobstorage {
         name: &str,
         args: DatastoreBlobstorageArgs,
     ) -> DatastoreBlobstorageResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_key_binding = args.account_key.get_output(context);
         let description_binding = args.description.get_output(context);
         let is_default_binding = args.is_default.get_output(context);

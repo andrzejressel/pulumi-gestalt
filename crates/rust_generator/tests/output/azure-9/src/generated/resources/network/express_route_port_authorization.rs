@@ -44,7 +44,11 @@
 /// $ pulumi import azure:network/expressRoutePortAuthorization:ExpressRoutePortAuthorization auth1 /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/mygroup1/providers/Microsoft.Network/expressRoutePorts/myExpressPort/authorizations/auth1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod express_route_port_authorization {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -85,8 +89,6 @@ pub mod express_route_port_authorization {
         name: &str,
         args: ExpressRoutePortAuthorizationArgs,
     ) -> ExpressRoutePortAuthorizationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let express_route_port_name_binding = args
             .express_route_port_name
             .get_output(context);

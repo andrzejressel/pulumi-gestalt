@@ -135,7 +135,11 @@
 /// ```sh
 /// $ pulumi import aws:sagemaker/flowDefinition:FlowDefinition example example
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod flow_definition {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -222,8 +226,6 @@ pub mod flow_definition {
         name: &str,
         args: FlowDefinitionArgs,
     ) -> FlowDefinitionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let flow_definition_name_binding = args.flow_definition_name.get_output(context);
         let human_loop_activation_config_binding = args
             .human_loop_activation_config

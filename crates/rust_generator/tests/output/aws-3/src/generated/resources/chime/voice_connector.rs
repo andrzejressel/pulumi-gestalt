@@ -25,7 +25,11 @@
 /// ```sh
 /// $ pulumi import aws:chime/voiceConnector:VoiceConnector test example
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod voice_connector {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -83,8 +87,6 @@ pub mod voice_connector {
         name: &str,
         args: VoiceConnectorArgs,
     ) -> VoiceConnectorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aws_region_binding = args.aws_region.get_output(context);
         let name_binding = args.name.get_output(context);
         let require_encryption_binding = args.require_encryption.get_output(context);

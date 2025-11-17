@@ -40,7 +40,11 @@
 /// $ pulumi import gcp:cloudquota/sQuotaPreference:SQuotaPreference default {{parent}}/locations/global/quotaPreferences/{{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod s_quota_preference {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -147,8 +151,6 @@ pub mod s_quota_preference {
         name: &str,
         args: SQuotaPreferenceArgs,
     ) -> SQuotaPreferenceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let contact_email_binding = args.contact_email.get_output(context);
         let dimensions_binding = args.dimensions.get_output(context);
         let ignore_safety_checks_binding = args.ignore_safety_checks.get_output(context);

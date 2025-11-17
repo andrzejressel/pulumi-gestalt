@@ -39,7 +39,11 @@
 /// ```sh
 /// $ pulumi import aws:chime/voiceConnectorOrganization:VoiceConnectorOrganization default abcdef1ghij2klmno3pqr4
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod voice_connector_organization {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -80,8 +84,6 @@ pub mod voice_connector_organization {
         name: &str,
         args: VoiceConnectorOrganizationArgs,
     ) -> VoiceConnectorOrganizationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let disabled_binding = args.disabled.get_output(context);
         let routes_binding = args.routes.get_output(context);
         let voice_connector_id_binding = args.voice_connector_id.get_output(context);

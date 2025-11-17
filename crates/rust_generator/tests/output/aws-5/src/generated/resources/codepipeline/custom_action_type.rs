@@ -37,7 +37,11 @@
 /// ```sh
 /// $ pulumi import aws:codepipeline/customActionType:CustomActionType example Build:pulumi:1
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod custom_action_type {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -123,8 +127,6 @@ pub mod custom_action_type {
         name: &str,
         args: CustomActionTypeArgs,
     ) -> CustomActionTypeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let category_binding = args.category.get_output(context);
         let configuration_properties_binding = args
             .configuration_properties

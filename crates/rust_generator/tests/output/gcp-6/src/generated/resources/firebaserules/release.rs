@@ -80,7 +80,11 @@
 /// ```sh
 /// $ pulumi import gcp:firebaserules/release:Release default projects/{{project}}/releases/{{name}}
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod release {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -131,8 +135,6 @@ pub mod release {
         name: &str,
         args: ReleaseArgs,
     ) -> ReleaseResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let project_binding = args.project.get_output(context);
         let ruleset_name_binding = args.ruleset_name.get_output(context);

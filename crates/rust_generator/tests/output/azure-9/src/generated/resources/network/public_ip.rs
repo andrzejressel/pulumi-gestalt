@@ -31,7 +31,11 @@
 /// $ pulumi import azure:network/publicIp:PublicIp myPublicIp /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/mygroup1/providers/Microsoft.Network/publicIPAddresses/myPublicIpAddress1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod public_ip {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -183,8 +187,6 @@ pub mod public_ip {
         name: &str,
         args: PublicIpArgs,
     ) -> PublicIpResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allocation_method_binding = args.allocation_method.get_output(context);
         let ddos_protection_mode_binding = args.ddos_protection_mode.get_output(context);
         let ddos_protection_plan_id_binding = args

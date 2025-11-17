@@ -160,7 +160,11 @@
 /// ```sh
 /// $ pulumi import aws:cloudwatch/metricAlarm:MetricAlarm test alarm-12345
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod metric_alarm {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -332,8 +336,6 @@ pub mod metric_alarm {
         name: &str,
         args: MetricAlarmArgs,
     ) -> MetricAlarmResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let actions_enabled_binding = args.actions_enabled.get_output(context);
         let alarm_actions_binding = args.alarm_actions.get_output(context);
         let alarm_description_binding = args.alarm_description.get_output(context);

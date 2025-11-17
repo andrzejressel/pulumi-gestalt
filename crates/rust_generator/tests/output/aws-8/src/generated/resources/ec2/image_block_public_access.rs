@@ -21,7 +21,11 @@
 ///
 /// You cannot import this resource.
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod image_block_public_access {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -48,8 +52,6 @@ pub mod image_block_public_access {
         name: &str,
         args: ImageBlockPublicAccessArgs,
     ) -> ImageBlockPublicAccessResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let state_binding = args.state.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/imageBlockPublicAccess:ImageBlockPublicAccess".into(),

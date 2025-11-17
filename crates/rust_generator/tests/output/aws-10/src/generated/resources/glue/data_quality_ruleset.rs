@@ -80,7 +80,11 @@
 /// ```sh
 /// $ pulumi import aws:glue/dataQualityRuleset:DataQualityRuleset example exampleName
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod data_quality_ruleset {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -147,8 +151,6 @@ pub mod data_quality_ruleset {
         name: &str,
         args: DataQualityRulesetArgs,
     ) -> DataQualityRulesetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let ruleset_binding = args.ruleset.get_output(context);

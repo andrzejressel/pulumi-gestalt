@@ -36,7 +36,11 @@
 /// ```sh
 /// $ pulumi import aws:vpc/securityGroupIngressRule:SecurityGroupIngressRule example sgr-02108b27edd666983
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod security_group_ingress_rule {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -122,8 +126,6 @@ pub mod security_group_ingress_rule {
         name: &str,
         args: SecurityGroupIngressRuleArgs,
     ) -> SecurityGroupIngressRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cidr_ipv4_binding = args.cidr_ipv4.get_output(context);
         let cidr_ipv6_binding = args.cidr_ipv6.get_output(context);
         let description_binding = args.description.get_output(context);

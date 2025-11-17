@@ -28,7 +28,11 @@
 /// this original table as the Main Route Table for the VPC. You'll see this
 /// additional Route Table in the AWS console; it must remain intact in order for
 /// the `main_route_table_association` delete to work properly.
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod main_route_table_association {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -64,8 +68,6 @@ pub mod main_route_table_association {
         name: &str,
         args: MainRouteTableAssociationArgs,
     ) -> MainRouteTableAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let route_table_id_binding = args.route_table_id.get_output(context);
         let vpc_id_binding = args.vpc_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

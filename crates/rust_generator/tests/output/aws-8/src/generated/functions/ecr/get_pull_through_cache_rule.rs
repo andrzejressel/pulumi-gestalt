@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_pull_through_cache_rule {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -28,8 +32,6 @@ pub mod get_pull_through_cache_rule {
         context: &pulumi_gestalt_rust::Context,
         args: GetPullThroughCacheRuleArgs,
     ) -> GetPullThroughCacheRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let ecr_repository_prefix_binding = args
             .ecr_repository_prefix
             .get_output(context);

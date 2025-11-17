@@ -26,7 +26,11 @@
 /// ```sh
 /// $ pulumi import aws:sagemaker/imageVersion:ImageVersion test_image my-code-repo
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod image_version {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -65,8 +69,6 @@ pub mod image_version {
         name: &str,
         args: ImageVersionArgs,
     ) -> ImageVersionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let base_image_binding = args.base_image.get_output(context);
         let image_name_binding = args.image_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

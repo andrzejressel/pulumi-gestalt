@@ -134,7 +134,11 @@
 /// $ pulumi import azure:cognitive/accountCustomerManagedKey:AccountCustomerManagedKey example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group1/providers/Microsoft.CognitiveServices/accounts/account1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod account_customer_managed_key {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -171,8 +175,6 @@ pub mod account_customer_managed_key {
         name: &str,
         args: AccountCustomerManagedKeyArgs,
     ) -> AccountCustomerManagedKeyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cognitive_account_id_binding = args.cognitive_account_id.get_output(context);
         let identity_client_id_binding = args.identity_client_id.get_output(context);
         let key_vault_key_id_binding = args.key_vault_key_id.get_output(context);

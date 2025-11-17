@@ -95,7 +95,11 @@
 ///
 /// verified owners is to delete the web resource itself.
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod owner {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -133,8 +137,6 @@ pub mod owner {
         name: &str,
         args: OwnerArgs,
     ) -> OwnerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let email_binding = args.email.get_output(context);
         let web_resource_id_binding = args.web_resource_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

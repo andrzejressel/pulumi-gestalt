@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod web_acl {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -128,8 +132,6 @@ pub mod web_acl {
         name: &str,
         args: WebAclArgs,
     ) -> WebAclResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let association_config_binding = args.association_config.get_output(context);
         let captcha_config_binding = args.captcha_config.get_output(context);
         let challenge_config_binding = args.challenge_config.get_output(context);

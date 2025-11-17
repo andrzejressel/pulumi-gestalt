@@ -118,7 +118,11 @@
 /// $ pulumi import gcp:dataform/repositoryWorkflowConfig:RepositoryWorkflowConfig default {{repository}}/{{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod repository_workflow_config {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -205,8 +209,6 @@ pub mod repository_workflow_config {
         name: &str,
         args: RepositoryWorkflowConfigArgs,
     ) -> RepositoryWorkflowConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cron_schedule_binding = args.cron_schedule.get_output(context);
         let invocation_config_binding = args.invocation_config.get_output(context);
         let name_binding = args.name.get_output(context);

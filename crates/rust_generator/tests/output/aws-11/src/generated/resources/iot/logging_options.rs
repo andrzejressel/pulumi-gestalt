@@ -16,7 +16,11 @@
 ///     );
 /// }
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod logging_options {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -53,8 +57,6 @@ pub mod logging_options {
         name: &str,
         args: LoggingOptionsArgs,
     ) -> LoggingOptionsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let default_log_level_binding = args.default_log_level.get_output(context);
         let disable_all_logs_binding = args.disable_all_logs.get_output(context);
         let role_arn_binding = args.role_arn.get_output(context);

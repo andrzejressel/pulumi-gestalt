@@ -76,7 +76,11 @@
 /// $ pulumi import gcp:netapp/storagePool:StoragePool default {{location}}/{{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod storage_pool {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -217,8 +221,6 @@ pub mod storage_pool {
         name: &str,
         args: StoragePoolArgs,
     ) -> StoragePoolResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let active_directory_binding = args.active_directory.get_output(context);
         let allow_auto_tiering_binding = args.allow_auto_tiering.get_output(context);
         let capacity_gib_binding = args.capacity_gib.get_output(context);

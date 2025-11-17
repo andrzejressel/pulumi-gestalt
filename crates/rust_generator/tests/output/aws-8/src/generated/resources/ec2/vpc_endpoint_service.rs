@@ -50,7 +50,11 @@
 /// ```sh
 /// $ pulumi import aws:ec2/vpcEndpointService:VpcEndpointService foo vpce-svc-0f97a19d3fa8220bc
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod vpc_endpoint_service {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -144,8 +148,6 @@ pub mod vpc_endpoint_service {
         name: &str,
         args: VpcEndpointServiceArgs,
     ) -> VpcEndpointServiceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let acceptance_required_binding = args.acceptance_required.get_output(context);
         let allowed_principals_binding = args.allowed_principals.get_output(context);
         let gateway_load_balancer_arns_binding = args

@@ -9,7 +9,11 @@
 /// ```sh
 /// $ pulumi import aws:imagebuilder/imagePipeline:ImagePipeline example arn:aws:imagebuilder:us-east-1:123456789012:image-pipeline/example
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod image_pipeline {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -149,8 +153,6 @@ pub mod image_pipeline {
         name: &str,
         args: ImagePipelineArgs,
     ) -> ImagePipelineResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let container_recipe_arn_binding = args.container_recipe_arn.get_output(context);
         let description_binding = args.description.get_output(context);
         let distribution_configuration_arn_binding = args

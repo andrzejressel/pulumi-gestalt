@@ -44,7 +44,11 @@
 /// ```sh
 /// $ pulumi import aws:glue/devEndpoint:DevEndpoint example foo
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod dev_endpoint {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -173,8 +177,6 @@ pub mod dev_endpoint {
         name: &str,
         args: DevEndpointArgs,
     ) -> DevEndpointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let arguments_binding = args.arguments.get_output(context);
         let extra_jars_s3_path_binding = args.extra_jars_s3_path.get_output(context);
         let extra_python_libs_s3_path_binding = args

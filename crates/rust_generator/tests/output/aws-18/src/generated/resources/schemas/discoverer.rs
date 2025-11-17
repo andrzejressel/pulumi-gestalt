@@ -30,7 +30,11 @@
 /// ```sh
 /// $ pulumi import aws:schemas/discoverer:Discoverer test 123
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod discoverer {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -77,8 +81,6 @@ pub mod discoverer {
         name: &str,
         args: DiscovererArgs,
     ) -> DiscovererResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let source_arn_binding = args.source_arn.get_output(context);
         let tags_binding = args.tags.get_output(context);

@@ -63,7 +63,11 @@
 /// ```sh
 /// $ pulumi import aws:cognito/userPoolDomain:UserPoolDomain main auth.example.org
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod user_pool_domain {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -112,8 +116,6 @@ pub mod user_pool_domain {
         name: &str,
         args: UserPoolDomainArgs,
     ) -> UserPoolDomainResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let certificate_arn_binding = args.certificate_arn.get_output(context);
         let domain_binding = args.domain.get_output(context);
         let user_pool_id_binding = args.user_pool_id.get_output(context);

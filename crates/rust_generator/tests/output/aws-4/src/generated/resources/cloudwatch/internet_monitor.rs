@@ -21,7 +21,11 @@
 /// ```sh
 /// $ pulumi import aws:cloudwatch/internetMonitor:InternetMonitor some some-monitor
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod internet_monitor {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -113,8 +117,6 @@ pub mod internet_monitor {
         name: &str,
         args: InternetMonitorArgs,
     ) -> InternetMonitorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let health_events_config_binding = args.health_events_config.get_output(context);
         let internet_measurements_log_delivery_binding = args
             .internet_measurements_log_delivery

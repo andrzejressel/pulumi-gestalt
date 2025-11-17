@@ -113,7 +113,11 @@
 /// $ pulumi import gcp:securesourcemanager/branchRule:BranchRule default {{branch_rule_id}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod branch_rule {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -211,8 +215,6 @@ pub mod branch_rule {
         name: &str,
         args: BranchRuleArgs,
     ) -> BranchRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allow_stale_reviews_binding = args.allow_stale_reviews.get_output(context);
         let branch_rule_id_binding = args.branch_rule_id.get_output(context);
         let disabled_binding = args.disabled.get_output(context);

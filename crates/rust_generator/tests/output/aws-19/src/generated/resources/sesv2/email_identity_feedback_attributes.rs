@@ -30,7 +30,11 @@
 /// ```sh
 /// $ pulumi import aws:sesv2/emailIdentityFeedbackAttributes:EmailIdentityFeedbackAttributes example example.com
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod email_identity_feedback_attributes {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -62,8 +66,6 @@ pub mod email_identity_feedback_attributes {
         name: &str,
         args: EmailIdentityFeedbackAttributesArgs,
     ) -> EmailIdentityFeedbackAttributesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let email_forwarding_enabled_binding = args
             .email_forwarding_enabled
             .get_output(context);

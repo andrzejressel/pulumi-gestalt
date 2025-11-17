@@ -24,7 +24,11 @@
 /// $ pulumi import cloudflare:index/zoneHold:ZoneHold example <zone_id>
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod zone_hold {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -66,8 +70,6 @@ pub mod zone_hold {
         name: &str,
         args: ZoneHoldArgs,
     ) -> ZoneHoldResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let hold_binding = args.hold.get_output(context);
         let hold_after_binding = args.hold_after.get_output(context);
         let include_subdomains_binding = args.include_subdomains.get_output(context);

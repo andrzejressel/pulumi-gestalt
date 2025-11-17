@@ -180,7 +180,11 @@
 /// ```sh
 /// $ pulumi import aws:s3/bucketObjectv2:BucketObjectv2 example s3://some-bucket-name/some/key.txt
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod bucket_objectv_2 {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -376,8 +380,6 @@ pub mod bucket_objectv_2 {
         name: &str,
         args: BucketObjectv2Args,
     ) -> BucketObjectv2Result {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let acl_binding = args.acl.get_output(context);
         let bucket_binding = args.bucket.get_output(context);
         let bucket_key_enabled_binding = args.bucket_key_enabled.get_output(context);

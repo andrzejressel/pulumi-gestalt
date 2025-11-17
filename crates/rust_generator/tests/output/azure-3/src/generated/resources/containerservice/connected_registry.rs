@@ -71,7 +71,11 @@
 /// $ pulumi import azure:containerservice/connectedRegistry:ConnectedRegistry example /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/group1/providers/Microsoft.ContainerRegistry/registries/registry1/connectedRegistries/registry1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod connected_registry {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -165,8 +169,6 @@ pub mod connected_registry {
         name: &str,
         args: ConnectedRegistryArgs,
     ) -> ConnectedRegistryResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let audit_log_enabled_binding = args.audit_log_enabled.get_output(context);
         let client_token_ids_binding = args.client_token_ids.get_output(context);
         let container_registry_id_binding = args

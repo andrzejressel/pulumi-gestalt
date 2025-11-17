@@ -16,16 +16,15 @@ housekeeping-ci-flow: regenerator regenerate-pulumi-test-schema regenerate-gener
 # Runs all amd64 unit and doc tests tests
 base-ci-flow: test
 
-# Runs all examples/*
-examples-ci-flow: build-language-plugin build-pulumi-test build-wasm-components build-wasm-components-release test-examples
+c-ci-flow: build-language-plugin build-static-library test-examples-c
+
+native-ci-flow: build-language-plugin build-pulumi-test test-examples-native
+
+wasm-ci-flow: build-language-plugin build-wasm-components build-wasm-components-release test-examples-wasm
 
 # Regenerates provider from generator's integration test
 generator-ci-flow COMPILATION_NAME:
     just test-provider-compilation {{COMPILATION_NAME}}
-
-c-ci-flow: build-language-plugin build-static-library test-c
-
-native-ci-flow: build-language-plugin build-pulumi-test build-native-examples test-native
 
 # Test docs examples and creates docs
 test-docs-ci-flow: test-docs
@@ -50,33 +49,16 @@ install-requirements:
     cargo binstall --no-confirm sd@{{SD_VERSION}}
     cargo binstall --no-confirm cargo-llvm-cov@{{CARGO_LLVM_COV_VERSION}}
 
-build-native-examples:
-    cargo build \
-     -p pulumi_gestalt_example_native \
-     -p pulumi_gestalt_example_raw_rust \
-     -p pulumi_gestalt_example_raw_rust_async \
-     -p pulumi_gestalt_example_test
-
 # Compiling everything together causes linking issues
 build-wasm-components:
     cargo build -p pulumi_gestalt_wasm_runner
-    cargo build -p pulumi_gestalt_example_dependencies --target={{WASI_TARGET}}
-    cargo build -p pulumi_gestalt_example_docker --target={{WASI_TARGET}}
-    cargo build -p pulumi_gestalt_example_failure --target={{WASI_TARGET}}
-    cargo build -p pulumi_gestalt_example_multiple_providers --target={{WASI_TARGET}}
     cargo build -p pulumi_gestalt_example_plugins --target={{WASI_TARGET}}
-    cargo build -p pulumi_gestalt_example_secret --target={{WASI_TARGET}}
-    cargo build -p pulumi_gestalt_example_simple --target={{WASI_TARGET}}
+    cargo build -p pulumi_gestalt_example_wasm --target={{WASI_TARGET}}
 
 build-wasm-components-release:
     cargo build -p pulumi_gestalt_wasm_runner --release
-    cargo build -p pulumi_gestalt_example_dependencies --target={{WASI_TARGET}} --release
-    cargo build -p pulumi_gestalt_example_docker --target={{WASI_TARGET}} --release
-    cargo build -p pulumi_gestalt_example_failure --target={{WASI_TARGET}} --release
-    cargo build -p pulumi_gestalt_example_multiple_providers --target={{WASI_TARGET}} --release
     cargo build -p pulumi_gestalt_example_plugins --target={{WASI_TARGET}} --release
-    cargo build -p pulumi_gestalt_example_secret --target={{WASI_TARGET}} --release
-    cargo build -p pulumi_gestalt_example_simple --target={{WASI_TARGET}} --release
+    cargo build -p pulumi_gestalt_example_wasm --target={{WASI_TARGET}} --release
 
 build-static-library:
     cargo build -p pulumi_native_c
@@ -113,29 +95,30 @@ publish:
 test-provider-compilation COMPILATION_NAME:
     cargo llvm-cov nextest -p pulumi_gestalt_generator --cobertura --output-path covertura.xml --features generator_{{COMPILATION_NAME}} --test '*'
 
-test-examples:
-    cargo llvm-cov nextest \
+test-examples-wasm:
+    cargo nextest run \
+        -p pulumi_gestalt_example_plugins \
+        -p pulumi_gestalt_example_wasm \
+        --features example_test
+
+test-examples-c:
+    cargo nextest run \
+        -p pulumi_gestalt_example_c \
+        --features example_test
+
+test-examples-native:
+    cargo nextest run \
         -p pulumi_gestalt_example_dependencies \
         -p pulumi_gestalt_example_docker \
         -p pulumi_gestalt_example_multiple_providers \
-        -p pulumi_gestalt_example_plugins \
-        -p pulumi_gestalt_example_secret \
-        -p pulumi_gestalt_example_simple \
-        -p pulumi_gestalt_example_typesystem \
-        --cobertura --output-path covertura.xml --features example_test
-
-test-c:
-    cargo llvm-cov nextest \
-        -p pulumi_gestalt_example_c \
-        --cobertura --output-path covertura.xml --features example_test
-
-test-native:
-    cargo llvm-cov nextest \
         -p pulumi_gestalt_example_native \
         -p pulumi_gestalt_example_raw_rust \
         -p pulumi_gestalt_example_raw_rust_async \
+        -p pulumi_gestalt_example_secret \
+        -p pulumi_gestalt_example_simple \
         -p pulumi_gestalt_example_test \
-        --cobertura --output-path covertura.xml --features example_test
+        -p pulumi_gestalt_example_typesystem \
+        --features example_test
 
 generator-tests:
     cargo nextest run --all-features -p pulumi_gestalt_generator
@@ -163,26 +146,12 @@ docs:
 test-docs:
     cargo test --doc
     just rust-docs
-    just rust-docs-wasm
 
 rust-docs:
     cargo doc --no-deps \
         -p pulumi_gestalt_serde_constant_string \
         -p pulumi_gestalt_build \
         -p pulumi_gestalt_rust \
-        -p pulumi_gestalt_rust_adapter \
-        -p pulumi_gestalt_rust_adapter_native \
-        -p pulumi_gestalt_rust_integration \
-        -p pulumi_gestalt_providers_cloudflare \
-        -p pulumi_gestalt_providers_docker \
-        -p pulumi_gestalt_providers_random
-
-rust-docs-wasm:
-    cargo doc --no-deps --target {{WASI_TARGET}} \
-        -p pulumi_gestalt_serde_constant_string \
-        -p pulumi_gestalt_rust \
-        -p pulumi_gestalt_rust_adapter \
-        -p pulumi_gestalt_rust_adapter_wasm \
         -p pulumi_gestalt_providers_cloudflare \
         -p pulumi_gestalt_providers_docker \
         -p pulumi_gestalt_providers_random
@@ -190,11 +159,8 @@ rust-docs-wasm:
 rust-docs-release $RUSTDOCFLAGS="--html-in-header docs_additions/umami.html":
     just rust-docs
 
-rust-docs-wasm-release $RUSTDOCFLAGS="--html-in-header docs_additions/umami.html":
-    just rust-docs-wasm
-
 update-version NEW_VERSION:
-    sd "0.0.0-DEV" "{{NEW_VERSION}}" "crates/wit/wit/world.wit" "crates/rust/src/lib.rs" \
+    sd "0.0.0-DEV" "{{NEW_VERSION}}" "crates/wit/wit/world.wit" "examples/wasm/src/lib.rs" "examples/plugins/src/lib.rs" \
     "Cargo.toml"
 
 changelog-generate-for-repo NEW_VERSION:

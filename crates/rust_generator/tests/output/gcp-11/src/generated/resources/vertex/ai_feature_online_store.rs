@@ -109,7 +109,11 @@
 /// $ pulumi import gcp:vertex/aiFeatureOnlineStore:AiFeatureOnlineStore default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod ai_feature_online_store {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -237,8 +241,6 @@ pub mod ai_feature_online_store {
         name: &str,
         args: AiFeatureOnlineStoreArgs,
     ) -> AiFeatureOnlineStoreResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bigtable_binding = args.bigtable.get_output(context);
         let dedicated_serving_endpoint_binding = args
             .dedicated_serving_endpoint

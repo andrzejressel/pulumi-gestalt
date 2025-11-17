@@ -63,7 +63,11 @@
 /// $ pulumi import azure:appplatform/springCloudApiPortal:SpringCloudApiPortal example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/resourceGroup1/providers/Microsoft.AppPlatform/spring/service1/apiPortals/apiPortal1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod spring_cloud_api_portal {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -133,8 +137,6 @@ pub mod spring_cloud_api_portal {
         name: &str,
         args: SpringCloudApiPortalArgs,
     ) -> SpringCloudApiPortalResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_try_out_enabled_binding = args.api_try_out_enabled.get_output(context);
         let gateway_ids_binding = args.gateway_ids.get_output(context);
         let https_only_enabled_binding = args.https_only_enabled.get_output(context);

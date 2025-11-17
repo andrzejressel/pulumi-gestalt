@@ -56,7 +56,11 @@
 /// ```sh
 /// $ pulumi import aws:eks/podIdentityAssociation:PodIdentityAssociation example example,a-12345678
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod pod_identity_association {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -119,8 +123,6 @@ pub mod pod_identity_association {
         name: &str,
         args: PodIdentityAssociationArgs,
     ) -> PodIdentityAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_name_binding = args.cluster_name.get_output(context);
         let namespace_binding = args.namespace.get_output(context);
         let role_arn_binding = args.role_arn.get_output(context);

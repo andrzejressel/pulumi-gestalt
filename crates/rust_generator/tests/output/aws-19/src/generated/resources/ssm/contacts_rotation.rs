@@ -115,7 +115,11 @@
 /// ```sh
 /// $ pulumi import aws:ssm/contactsRotation:ContactsRotation example arn:aws:ssm-contacts:us-east-1:012345678910:rotation/example
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod contacts_rotation {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -185,8 +189,6 @@ pub mod contacts_rotation {
         name: &str,
         args: ContactsRotationArgs,
     ) -> ContactsRotationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let contact_ids_binding = args.contact_ids.get_output(context);
         let name_binding = args.name.get_output(context);
         let recurrence_binding = args.recurrence.get_output(context);

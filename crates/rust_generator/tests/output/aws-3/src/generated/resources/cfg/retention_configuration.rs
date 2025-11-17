@@ -22,7 +22,11 @@
 /// ```sh
 /// $ pulumi import aws:cfg/retentionConfiguration:RetentionConfiguration example default
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod retention_configuration {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -51,8 +55,6 @@ pub mod retention_configuration {
         name: &str,
         args: RetentionConfigurationArgs,
     ) -> RetentionConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let retention_period_in_days_binding = args
             .retention_period_in_days
             .get_output(context);

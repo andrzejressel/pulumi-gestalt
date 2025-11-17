@@ -27,7 +27,11 @@
 /// ```sh
 /// $ pulumi import aws:servicecatalog/constraint:Constraint example cons-nmdkb6cgxfcrs
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod constraint {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -86,8 +90,6 @@ pub mod constraint {
         name: &str,
         args: ConstraintArgs,
     ) -> ConstraintResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let accept_language_binding = args.accept_language.get_output(context);
         let description_binding = args.description.get_output(context);
         let parameters_binding = args.parameters.get_output(context);

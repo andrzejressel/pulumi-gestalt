@@ -42,7 +42,11 @@
 /// $ pulumi import azure:compute/managedDiskSasToken:ManagedDiskSasToken example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/mygroup1/providers/Microsoft.Compute/disks/manageddisk1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod managed_disk_sas_token {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -87,8 +91,6 @@ pub mod managed_disk_sas_token {
         name: &str,
         args: ManagedDiskSasTokenArgs,
     ) -> ManagedDiskSasTokenResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_level_binding = args.access_level.get_output(context);
         let duration_in_seconds_binding = args.duration_in_seconds.get_output(context);
         let managed_disk_id_binding = args.managed_disk_id.get_output(context);

@@ -37,7 +37,11 @@
 /// ```sh
 /// $ pulumi import aws:cognito/riskConfiguration:RiskConfiguration main example:example
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod risk_configuration {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -108,8 +112,6 @@ pub mod risk_configuration {
         name: &str,
         args: RiskConfigurationArgs,
     ) -> RiskConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_takeover_risk_configuration_binding = args
             .account_takeover_risk_configuration
             .get_output(context);

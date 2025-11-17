@@ -40,7 +40,11 @@
 /// ```sh
 /// $ pulumi import aws:elb/appCookieStickinessPolicy:AppCookieStickinessPolicy example my-elb:80:my-policy
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod app_cookie_stickiness_policy {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -88,8 +92,6 @@ pub mod app_cookie_stickiness_policy {
         name: &str,
         args: AppCookieStickinessPolicyArgs,
     ) -> AppCookieStickinessPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cookie_name_binding = args.cookie_name.get_output(context);
         let lb_port_binding = args.lb_port.get_output(context);
         let load_balancer_binding = args.load_balancer.get_output(context);

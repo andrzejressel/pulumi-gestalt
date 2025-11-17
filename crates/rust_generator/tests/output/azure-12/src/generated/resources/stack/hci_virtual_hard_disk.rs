@@ -42,7 +42,11 @@
 /// $ pulumi import azure:stack/hciVirtualHardDisk:HciVirtualHardDisk example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg1/providers/Microsoft.AzureStackHCI/virtualHardDisks/disk1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod hci_virtual_hard_disk {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -137,8 +141,6 @@ pub mod hci_virtual_hard_disk {
         name: &str,
         args: HciVirtualHardDiskArgs,
     ) -> HciVirtualHardDiskResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let block_size_in_bytes_binding = args.block_size_in_bytes.get_output(context);
         let custom_location_id_binding = args.custom_location_id.get_output(context);
         let disk_file_format_binding = args.disk_file_format.get_output(context);

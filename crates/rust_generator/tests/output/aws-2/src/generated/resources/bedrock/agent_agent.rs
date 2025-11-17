@@ -76,7 +76,11 @@
 /// ```sh
 /// $ pulumi import aws:bedrock/agentAgent:AgentAgent example GGRRAED6JP
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod agent_agent {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -200,8 +204,6 @@ pub mod agent_agent {
         name: &str,
         args: AgentAgentArgs,
     ) -> AgentAgentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let agent_collaboration_binding = args.agent_collaboration.get_output(context);
         let agent_name_binding = args.agent_name.get_output(context);
         let agent_resource_role_arn_binding = args

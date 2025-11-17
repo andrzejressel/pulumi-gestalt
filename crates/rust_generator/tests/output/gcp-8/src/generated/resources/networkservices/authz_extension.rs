@@ -74,7 +74,11 @@
 /// $ pulumi import gcp:networkservices/authzExtension:AuthzExtension default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod authz_extension {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -216,8 +220,6 @@ pub mod authz_extension {
         name: &str,
         args: AuthzExtensionArgs,
     ) -> AuthzExtensionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authority_binding = args.authority.get_output(context);
         let description_binding = args.description.get_output(context);
         let fail_open_binding = args.fail_open.get_output(context);

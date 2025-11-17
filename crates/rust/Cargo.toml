@@ -10,22 +10,13 @@ description = "UNOFFICIAL Rust Pulumi support based on Pulumi Gestalt"
 [package.metadata.pulumi]
 related_crate = "pulumi_gestalt"
 
-[package.metadata.docs.rs]
-default-target = "x86_64-unknown-linux-gnu"
-targets = ["x86_64-apple-darwin", "x86_64-pc-windows-msvc", "i686-unknown-linux-gnu", "i686-pc-windows-msvc", "wasm32-wasip2"]
-
 [dependencies]
 anyhow.workspace = true
 serde.workspace = true
+serde_json.workspace = true
 bon.workspace = true
-pulumi_gestalt_rust_adapter.workspace = true
 pulumi_gestalt_serde_constant_string.workspace = true
-
-[target.'cfg(target_arch = "wasm32")'.dependencies]
-pulumi_gestalt_rust_adapter_wasm.workspace = true
-
-[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
-pulumi_gestalt_rust_adapter_native.workspace = true
+pulumi_gestalt_rust_integration.workspace = true
 
 [dev-dependencies]
 pulumi_gestalt_build = { path = "../rust_build" }

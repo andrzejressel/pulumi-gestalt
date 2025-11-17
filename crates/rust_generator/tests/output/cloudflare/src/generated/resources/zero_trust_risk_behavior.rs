@@ -1,5 +1,9 @@
 /// The [Risk Behavior](https://developers.cloudflare.com/cloudflare-one/insights/risk-score/) resource allows you to configure Cloudflare Risk Behaviors for an account.
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod zero_trust_risk_behavior {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -35,8 +39,6 @@ pub mod zero_trust_risk_behavior {
         name: &str,
         args: ZeroTrustRiskBehaviorArgs,
     ) -> ZeroTrustRiskBehaviorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let behaviors_binding = args.behaviors.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

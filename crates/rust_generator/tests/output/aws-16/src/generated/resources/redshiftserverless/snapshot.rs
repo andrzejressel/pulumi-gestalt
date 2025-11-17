@@ -24,7 +24,11 @@
 /// ```sh
 /// $ pulumi import aws:redshiftserverless/snapshot:Snapshot example example
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod snapshot {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -77,8 +81,6 @@ pub mod snapshot {
         name: &str,
         args: SnapshotArgs,
     ) -> SnapshotResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let namespace_name_binding = args.namespace_name.get_output(context);
         let retention_period_binding = args.retention_period.get_output(context);
         let snapshot_name_binding = args.snapshot_name.get_output(context);

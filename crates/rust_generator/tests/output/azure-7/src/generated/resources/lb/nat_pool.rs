@@ -66,7 +66,11 @@
 /// $ pulumi import azure:lb/natPool:NatPool example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group1/providers/Microsoft.Network/loadBalancers/lb1/inboundNatPools/pool1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod nat_pool {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -144,8 +148,6 @@ pub mod nat_pool {
         name: &str,
         args: NatPoolArgs,
     ) -> NatPoolResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let backend_port_binding = args.backend_port.get_output(context);
         let floating_ip_enabled_binding = args.floating_ip_enabled.get_output(context);
         let frontend_ip_configuration_name_binding = args

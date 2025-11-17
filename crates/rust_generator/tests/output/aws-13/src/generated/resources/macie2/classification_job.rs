@@ -36,7 +36,11 @@
 /// ```sh
 /// $ pulumi import aws:macie2/classificationJob:ClassificationJob example abcd1
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod classification_job {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -138,8 +142,6 @@ pub mod classification_job {
         name: &str,
         args: ClassificationJobArgs,
     ) -> ClassificationJobResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let custom_data_identifier_ids_binding = args
             .custom_data_identifier_ids
             .get_output(context);

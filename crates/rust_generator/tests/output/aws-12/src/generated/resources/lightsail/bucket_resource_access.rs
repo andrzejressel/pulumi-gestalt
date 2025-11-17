@@ -7,7 +7,11 @@
 /// ```sh
 /// $ pulumi import aws:lightsail/bucketResourceAccess:BucketResourceAccess test example-bucket,example-instance
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod bucket_resource_access {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -39,8 +43,6 @@ pub mod bucket_resource_access {
         name: &str,
         args: BucketResourceAccessArgs,
     ) -> BucketResourceAccessResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_name_binding = args.bucket_name.get_output(context);
         let resource_name_binding = args.resource_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

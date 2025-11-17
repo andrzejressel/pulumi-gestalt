@@ -40,7 +40,11 @@
 /// ```sh
 /// $ pulumi import aws:costoptimizationhub/preferences:Preferences example 111222333444
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod preferences {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -74,8 +78,6 @@ pub mod preferences {
         name: &str,
         args: PreferencesArgs,
     ) -> PreferencesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let member_account_discount_visibility_binding = args
             .member_account_discount_visibility
             .get_output(context);

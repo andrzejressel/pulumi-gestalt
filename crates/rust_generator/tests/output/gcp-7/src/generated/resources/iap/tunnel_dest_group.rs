@@ -70,7 +70,11 @@
 /// $ pulumi import gcp:iap/tunnelDestGroup:TunnelDestGroup default {{group_name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod tunnel_dest_group {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -127,8 +131,6 @@ pub mod tunnel_dest_group {
         name: &str,
         args: TunnelDestGroupArgs,
     ) -> TunnelDestGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cidrs_binding = args.cidrs.get_output(context);
         let fqdns_binding = args.fqdns.get_output(context);
         let group_name_binding = args.group_name.get_output(context);

@@ -53,7 +53,11 @@
 /// ```sh
 /// $ pulumi import aws:rds/optionGroup:OptionGroup example mysql-option-group
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod option_group {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -129,8 +133,6 @@ pub mod option_group {
         name: &str,
         args: OptionGroupArgs,
     ) -> OptionGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let engine_name_binding = args.engine_name.get_output(context);
         let major_engine_version_binding = args.major_engine_version.get_output(context);
         let name_binding = args.name.get_output(context);

@@ -8,7 +8,11 @@
 /// ```sh
 /// $ pulumi import aws:controltower/landingZone:LandingZone example 1A2B3C4D5E6F7G8H
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod landing_zone {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -61,8 +65,6 @@ pub mod landing_zone {
         name: &str,
         args: LandingZoneArgs,
     ) -> LandingZoneResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let manifest_json_binding = args.manifest_json.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let version_binding = args.version.get_output(context);

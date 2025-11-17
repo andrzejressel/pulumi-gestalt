@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_default_scraper_configuration {
     #[allow(dead_code)]
     pub struct GetDefaultScraperConfigurationResult {
@@ -14,8 +18,6 @@ pub mod get_default_scraper_configuration {
     pub fn invoke(
         context: &pulumi_gestalt_rust::Context,
     ) -> GetDefaultScraperConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:amp/getDefaultScraperConfiguration:getDefaultScraperConfiguration"
                 .into(),

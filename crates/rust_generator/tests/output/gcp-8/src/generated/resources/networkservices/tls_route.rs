@@ -162,7 +162,11 @@
 /// $ pulumi import gcp:networkservices/tlsRoute:TlsRoute default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod tls_route {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -232,8 +236,6 @@ pub mod tls_route {
         name: &str,
         args: TlsRouteArgs,
     ) -> TlsRouteResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let gateways_binding = args.gateways.get_output(context);
         let meshes_binding = args.meshes.get_output(context);

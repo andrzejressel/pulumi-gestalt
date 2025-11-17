@@ -28,7 +28,11 @@
 /// ```sh
 /// $ pulumi import aws:lightsail/lbStickinessPolicy:LbStickinessPolicy test example-load-balancer
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod lb_stickiness_policy {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -65,8 +69,6 @@ pub mod lb_stickiness_policy {
         name: &str,
         args: LbStickinessPolicyArgs,
     ) -> LbStickinessPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cookie_duration_binding = args.cookie_duration.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
         let lb_name_binding = args.lb_name.get_output(context);

@@ -52,7 +52,11 @@
 /// $ pulumi import azure:containerservice/registryTask:RegistryTask example /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/group1/providers/Microsoft.ContainerRegistry/registries/registry1/tasks/task1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod registry_task {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -212,8 +216,6 @@ pub mod registry_task {
         name: &str,
         args: RegistryTaskArgs,
     ) -> RegistryTaskResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let agent_pool_name_binding = args.agent_pool_name.get_output(context);
         let agent_setting_binding = args.agent_setting.get_output(context);
         let base_image_trigger_binding = args.base_image_trigger.get_output(context);

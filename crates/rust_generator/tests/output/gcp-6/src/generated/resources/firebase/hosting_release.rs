@@ -148,7 +148,11 @@
 /// $ pulumi import gcp:firebase/hostingRelease:HostingRelease default {{site_id}}/{{release_id}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod hosting_release {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -225,8 +229,6 @@ pub mod hosting_release {
         name: &str,
         args: HostingReleaseArgs,
     ) -> HostingReleaseResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let channel_id_binding = args.channel_id.get_output(context);
         let message_binding = args.message.get_output(context);
         let site_id_binding = args.site_id.get_output(context);

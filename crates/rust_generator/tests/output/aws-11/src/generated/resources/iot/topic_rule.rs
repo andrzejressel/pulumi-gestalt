@@ -73,7 +73,11 @@
 /// ```sh
 /// $ pulumi import aws:iot/topicRule:TopicRule rule <name>
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod topic_rule {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -277,8 +281,6 @@ pub mod topic_rule {
         name: &str,
         args: TopicRuleArgs,
     ) -> TopicRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cloudwatch_alarms_binding = args.cloudwatch_alarms.get_output(context);
         let cloudwatch_logs_binding = args.cloudwatch_logs.get_output(context);
         let cloudwatch_metrics_binding = args.cloudwatch_metrics.get_output(context);

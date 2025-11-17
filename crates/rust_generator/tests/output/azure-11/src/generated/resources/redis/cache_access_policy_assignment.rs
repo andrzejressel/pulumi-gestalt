@@ -48,7 +48,11 @@
 /// $ pulumi import azure:redis/cacheAccessPolicyAssignment:CacheAccessPolicyAssignment example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group1/providers/Microsoft.Cache/redis/cache1/accessPolicyAssignments/assignment1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod cache_access_policy_assignment {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -95,8 +99,6 @@ pub mod cache_access_policy_assignment {
         name: &str,
         args: CacheAccessPolicyAssignmentArgs,
     ) -> CacheAccessPolicyAssignmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_policy_name_binding = args.access_policy_name.get_output(context);
         let name_binding = args.name.get_output(context);
         let object_id_binding = args.object_id.get_output(context);

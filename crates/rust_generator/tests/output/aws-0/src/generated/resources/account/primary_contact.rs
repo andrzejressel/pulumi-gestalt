@@ -32,7 +32,11 @@
 /// ```sh
 /// $ pulumi import aws:account/primaryContact:PrimaryContact test 1234567890
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod primary_contact {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -119,8 +123,6 @@ pub mod primary_contact {
         name: &str,
         args: PrimaryContactArgs,
     ) -> PrimaryContactResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let address_line1_binding = args.address_line1.get_output(context);
         let address_line2_binding = args.address_line2.get_output(context);

@@ -33,7 +33,11 @@
 /// $ pulumi import cloudflare:index/zeroTrustDexTest:ZeroTrustDexTest example <account_id>/<device_dex_test_id>
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod zero_trust_dex_test {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -89,8 +93,6 @@ pub mod zero_trust_dex_test {
         name: &str,
         args: ZeroTrustDexTestArgs,
     ) -> ZeroTrustDexTestResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let data_binding = args.data.get_output(context);
         let description_binding = args.description.get_output(context);

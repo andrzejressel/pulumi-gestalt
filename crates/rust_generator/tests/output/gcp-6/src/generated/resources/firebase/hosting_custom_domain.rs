@@ -151,7 +151,11 @@
 /// $ pulumi import gcp:firebase/hostingCustomDomain:HostingCustomDomain default {{site_id}}/{{custom_domain}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod hosting_custom_domain {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -317,8 +321,6 @@ pub mod hosting_custom_domain {
         name: &str,
         args: HostingCustomDomainArgs,
     ) -> HostingCustomDomainResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cert_preference_binding = args.cert_preference.get_output(context);
         let custom_domain_binding = args.custom_domain.get_output(context);
         let project_binding = args.project.get_output(context);

@@ -53,7 +53,11 @@
 /// ```sh
 /// $ pulumi import aws:iam/rolePoliciesExclusive:RolePoliciesExclusive example MyRole
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod role_policies_exclusive {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -85,8 +89,6 @@ pub mod role_policies_exclusive {
         name: &str,
         args: RolePoliciesExclusiveArgs,
     ) -> RolePoliciesExclusiveResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let policy_names_binding = args.policy_names.get_output(context);
         let role_name_binding = args.role_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

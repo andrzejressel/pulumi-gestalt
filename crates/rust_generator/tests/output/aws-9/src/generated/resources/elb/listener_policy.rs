@@ -79,7 +79,11 @@
 /// ```
 ///
 /// This example shows how to add a [Predefined Security Policy for ELBs](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-security-policy-table.html)
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod listener_policy {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -125,8 +129,6 @@ pub mod listener_policy {
         name: &str,
         args: ListenerPolicyArgs,
     ) -> ListenerPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let load_balancer_name_binding = args.load_balancer_name.get_output(context);
         let load_balancer_port_binding = args.load_balancer_port.get_output(context);
         let policy_names_binding = args.policy_names.get_output(context);

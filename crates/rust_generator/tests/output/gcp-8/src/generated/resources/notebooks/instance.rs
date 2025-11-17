@@ -178,7 +178,11 @@
 /// $ pulumi import gcp:notebooks/instance:Instance default {{location}}/{{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod instance {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -501,8 +505,6 @@ pub mod instance {
         name: &str,
         args: InstanceArgs,
     ) -> InstanceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let accelerator_config_binding = args.accelerator_config.get_output(context);
         let boot_disk_size_gb_binding = args.boot_disk_size_gb.get_output(context);
         let boot_disk_type_binding = args.boot_disk_type.get_output(context);

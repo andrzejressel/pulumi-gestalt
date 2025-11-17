@@ -82,7 +82,11 @@
 /// ```sh
 /// $ pulumi import aws:quicksight/analysis:Analysis example 123456789012,example-id
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod analysis {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -182,8 +186,6 @@ pub mod analysis {
         name: &str,
         args: AnalysisArgs,
     ) -> AnalysisResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let analysis_id_binding = args.analysis_id.get_output(context);
         let aws_account_id_binding = args.aws_account_id.get_output(context);
         let name_binding = args.name.get_output(context);

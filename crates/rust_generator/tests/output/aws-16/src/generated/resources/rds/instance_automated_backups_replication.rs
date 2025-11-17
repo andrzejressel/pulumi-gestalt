@@ -86,7 +86,11 @@
 /// ```sh
 /// $ pulumi import aws:rds/instanceAutomatedBackupsReplication:InstanceAutomatedBackupsReplication default arn:aws:rds:us-east-1:123456789012:auto-backup:ab-faaa2mgdj1vmp4xflr7yhsrmtbtob7ltrzzz2my
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod instance_automated_backups_replication {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -128,8 +132,6 @@ pub mod instance_automated_backups_replication {
         name: &str,
         args: InstanceAutomatedBackupsReplicationArgs,
     ) -> InstanceAutomatedBackupsReplicationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let kms_key_id_binding = args.kms_key_id.get_output(context);
         let pre_signed_url_binding = args.pre_signed_url.get_output(context);
         let retention_period_binding = args.retention_period.get_output(context);

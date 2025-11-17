@@ -153,7 +153,11 @@
 /// ```sh
 /// $ pulumi import aws:backup/selection:Selection example plan-id|selection-id
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod selection {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -218,8 +222,6 @@ pub mod selection {
         name: &str,
         args: SelectionArgs,
     ) -> SelectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let conditions_binding = args.conditions.get_output(context);
         let iam_role_arn_binding = args.iam_role_arn.get_output(context);
         let name_binding = args.name.get_output(context);

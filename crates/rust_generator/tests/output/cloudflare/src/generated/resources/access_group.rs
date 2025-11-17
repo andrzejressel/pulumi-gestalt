@@ -14,7 +14,11 @@
 /// $ pulumi import cloudflare:index/accessGroup:AccessGroup example <account_id>/<group_id>
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod access_group {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -68,8 +72,6 @@ pub mod access_group {
         name: &str,
         args: AccessGroupArgs,
     ) -> AccessGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let excludes_binding = args.excludes.get_output(context);
         let includes_binding = args.includes.get_output(context);

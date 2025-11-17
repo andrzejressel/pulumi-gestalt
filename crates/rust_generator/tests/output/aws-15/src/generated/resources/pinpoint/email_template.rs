@@ -32,7 +32,11 @@
 /// ```sh
 /// $ pulumi import aws:pinpoint/emailTemplate:EmailTemplate reset template_name
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod email_template {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -80,8 +84,6 @@ pub mod email_template {
         name: &str,
         args: EmailTemplateArgs,
     ) -> EmailTemplateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let email_templates_binding = args.email_templates.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let template_name_binding = args.template_name.get_output(context);

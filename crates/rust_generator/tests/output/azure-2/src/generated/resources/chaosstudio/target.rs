@@ -48,7 +48,11 @@
 ///
 /// * Where `{targetName}` is the name of the Target. For example `targetValue`.
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod target {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -85,8 +89,6 @@ pub mod target {
         name: &str,
         args: TargetArgs,
     ) -> TargetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let location_binding = args.location.get_output(context);
         let target_resource_id_binding = args.target_resource_id.get_output(context);
         let target_type_binding = args.target_type.get_output(context);

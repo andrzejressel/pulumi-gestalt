@@ -15,7 +15,11 @@
 /// ```
 /// ~> __NOTE:__ Resource import does not currently support the `body` attribute.
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod rest_api {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -130,8 +134,6 @@ pub mod rest_api {
         name: &str,
         args: RestApiArgs,
     ) -> RestApiResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_key_source_binding = args.api_key_source.get_output(context);
         let binary_media_types_binding = args.binary_media_types.get_output(context);
         let body_binding = args.body.get_output(context);

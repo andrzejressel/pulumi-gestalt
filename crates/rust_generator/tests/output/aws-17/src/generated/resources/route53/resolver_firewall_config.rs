@@ -32,7 +32,11 @@
 /// ```sh
 /// $ pulumi import aws:route53/resolverFirewallConfig:ResolverFirewallConfig example rdsc-be1866ecc1683e95
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod resolver_firewall_config {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -66,8 +70,6 @@ pub mod resolver_firewall_config {
         name: &str,
         args: ResolverFirewallConfigArgs,
     ) -> ResolverFirewallConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let firewall_fail_open_binding = args.firewall_fail_open.get_output(context);
         let resource_id_binding = args.resource_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

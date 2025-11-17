@@ -151,7 +151,11 @@
 /// $ pulumi import gcp:oracledatabase/cloudVmCluster:CloudVmCluster default {{location}}/{{cloud_vm_cluster_id}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod cloud_vm_cluster {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -277,8 +281,6 @@ pub mod cloud_vm_cluster {
         name: &str,
         args: CloudVmClusterArgs,
     ) -> CloudVmClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let backup_subnet_cidr_binding = args.backup_subnet_cidr.get_output(context);
         let cidr_binding = args.cidr.get_output(context);
         let cloud_vm_cluster_id_binding = args.cloud_vm_cluster_id.get_output(context);

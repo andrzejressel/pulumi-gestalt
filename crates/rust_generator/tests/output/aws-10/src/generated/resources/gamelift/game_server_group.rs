@@ -108,7 +108,11 @@
 /// ```sh
 /// $ pulumi import aws:gamelift/gameServerGroup:GameServerGroup example example
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod game_server_group {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -224,8 +228,6 @@ pub mod game_server_group {
         name: &str,
         args: GameServerGroupArgs,
     ) -> GameServerGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_scaling_policy_binding = args.auto_scaling_policy.get_output(context);
         let balancing_strategy_binding = args.balancing_strategy.get_output(context);
         let game_server_group_name_binding = args

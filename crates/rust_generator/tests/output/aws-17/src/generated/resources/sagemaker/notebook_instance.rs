@@ -44,7 +44,11 @@
 /// ```sh
 /// $ pulumi import aws:sagemaker/notebookInstance:NotebookInstance test_notebook_instance my-notebook-instance
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod notebook_instance {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -174,8 +178,6 @@ pub mod notebook_instance {
         name: &str,
         args: NotebookInstanceArgs,
     ) -> NotebookInstanceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let accelerator_types_binding = args.accelerator_types.get_output(context);
         let additional_code_repositories_binding = args
             .additional_code_repositories

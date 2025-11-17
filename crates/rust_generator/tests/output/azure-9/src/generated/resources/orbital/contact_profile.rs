@@ -80,7 +80,11 @@
 /// $ pulumi import azure:orbital/contactProfile:ContactProfile example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group1/providers/Microsoft.Orbital/contactProfiles/contactProfile1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod contact_profile {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -162,8 +166,6 @@ pub mod contact_profile {
         name: &str,
         args: ContactProfileArgs,
     ) -> ContactProfileResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_tracking_binding = args.auto_tracking.get_output(context);
         let event_hub_uri_binding = args.event_hub_uri.get_output(context);
         let links_binding = args.links.get_output(context);

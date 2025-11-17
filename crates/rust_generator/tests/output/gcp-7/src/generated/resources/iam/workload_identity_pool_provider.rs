@@ -318,7 +318,11 @@
 /// $ pulumi import gcp:iam/workloadIdentityPoolProvider:WorkloadIdentityPoolProvider default {{workload_identity_pool_id}}/{{workload_identity_pool_provider_id}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod workload_identity_pool_provider {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -569,8 +573,6 @@ pub mod workload_identity_pool_provider {
         name: &str,
         args: WorkloadIdentityPoolProviderArgs,
     ) -> WorkloadIdentityPoolProviderResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let attribute_condition_binding = args.attribute_condition.get_output(context);
         let attribute_mapping_binding = args.attribute_mapping.get_output(context);
         let aws_binding = args.aws.get_output(context);

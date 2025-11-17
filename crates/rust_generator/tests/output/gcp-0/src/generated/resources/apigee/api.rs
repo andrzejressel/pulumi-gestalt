@@ -23,7 +23,11 @@
 /// $ pulumi import gcp:apigee/api:Api default {{org_id}}/{{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod api {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -78,8 +82,6 @@ pub mod api {
         name: &str,
         args: ApiArgs,
     ) -> ApiResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let config_bundle_binding = args.config_bundle.get_output(context);
         let detect_md5hash_binding = args.detect_md5hash.get_output(context);
         let name_binding = args.name.get_output(context);

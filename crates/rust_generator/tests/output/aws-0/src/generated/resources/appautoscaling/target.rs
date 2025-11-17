@@ -133,7 +133,11 @@
 /// ```sh
 /// $ pulumi import aws:appautoscaling/target:Target test-target service-namespace/resource-id/scalable-dimension
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod target {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -209,8 +213,6 @@ pub mod target {
         name: &str,
         args: TargetArgs,
     ) -> TargetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let max_capacity_binding = args.max_capacity.get_output(context);
         let min_capacity_binding = args.min_capacity.get_output(context);
         let resource_id_binding = args.resource_id.get_output(context);

@@ -83,7 +83,11 @@
 /// ```sh
 /// $ pulumi import aws:bedrock/agentAgentAlias:AgentAgentAlias example 66IVY0GUTF,GGRRAED6JP
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod agent_agent_alias {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -159,8 +163,6 @@ pub mod agent_agent_alias {
         name: &str,
         args: AgentAgentAliasArgs,
     ) -> AgentAgentAliasResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let agent_alias_name_binding = args.agent_alias_name.get_output(context);
         let agent_id_binding = args.agent_id.get_output(context);
         let description_binding = args.description.get_output(context);

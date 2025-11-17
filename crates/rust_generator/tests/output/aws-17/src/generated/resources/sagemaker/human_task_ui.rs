@@ -24,7 +24,11 @@
 /// ```sh
 /// $ pulumi import aws:sagemaker/humanTaskUI:HumanTaskUI example example
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod human_task_ui {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -75,8 +79,6 @@ pub mod human_task_ui {
         name: &str,
         args: HumanTaskUIArgs,
     ) -> HumanTaskUIResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let human_task_ui_name_binding = args.human_task_ui_name.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let ui_template_binding = args.ui_template.get_output(context);

@@ -122,7 +122,11 @@
 /// $ pulumi import azure:iot/ioTHub:IoTHub hub1 /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/mygroup1/providers/Microsoft.Devices/iotHubs/hub1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod io_t_hub {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -283,8 +287,6 @@ pub mod io_t_hub {
         name: &str,
         args: IoTHubArgs,
     ) -> IoTHubResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cloud_to_device_binding = args.cloud_to_device.get_output(context);
         let endpoints_binding = args.endpoints.get_output(context);
         let enrichments_binding = args.enrichments.get_output(context);

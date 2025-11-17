@@ -70,7 +70,11 @@
 /// $ pulumi import gcp:networkservices/serviceLbPolicies:ServiceLbPolicies default {{location}}/{{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod service_lb_policies {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -179,8 +183,6 @@ pub mod service_lb_policies {
         name: &str,
         args: ServiceLbPoliciesArgs,
     ) -> ServiceLbPoliciesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_capacity_drain_binding = args.auto_capacity_drain.get_output(context);
         let description_binding = args.description.get_output(context);
         let failover_config_binding = args.failover_config.get_output(context);

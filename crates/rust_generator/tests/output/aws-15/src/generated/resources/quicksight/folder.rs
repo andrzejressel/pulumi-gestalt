@@ -73,7 +73,11 @@
 /// ```sh
 /// $ pulumi import aws:quicksight/folder:Folder example 123456789012,example-id
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod folder {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -154,8 +158,6 @@ pub mod folder {
         name: &str,
         args: FolderArgs,
     ) -> FolderResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aws_account_id_binding = args.aws_account_id.get_output(context);
         let folder_id_binding = args.folder_id.get_output(context);
         let folder_type_binding = args.folder_type.get_output(context);

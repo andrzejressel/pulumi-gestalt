@@ -36,7 +36,11 @@
 /// ```sh
 /// $ pulumi import aws:appmesh/mesh:Mesh simple simpleapp
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod mesh {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -95,8 +99,6 @@ pub mod mesh {
         name: &str,
         args: MeshArgs,
     ) -> MeshResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let spec_binding = args.spec.get_output(context);
         let tags_binding = args.tags.get_output(context);

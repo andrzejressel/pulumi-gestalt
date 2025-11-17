@@ -45,7 +45,11 @@
 /// ```sh
 /// $ pulumi import aws:apigateway/usagePlanKey:UsagePlanKey key 12345abcde/zzz
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod usage_plan_key {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -86,8 +90,6 @@ pub mod usage_plan_key {
         name: &str,
         args: UsagePlanKeyArgs,
     ) -> UsagePlanKeyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let key_id_binding = args.key_id.get_output(context);
         let key_type_binding = args.key_type.get_output(context);
         let usage_plan_id_binding = args.usage_plan_id.get_output(context);

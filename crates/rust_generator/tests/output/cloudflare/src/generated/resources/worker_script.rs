@@ -58,7 +58,11 @@
 /// $ pulumi import cloudflare:index/workerScript:WorkerScript example <account_id>/<script_name>
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod worker_script {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -200,8 +204,6 @@ pub mod worker_script {
         name: &str,
         args: WorkerScriptArgs,
     ) -> WorkerScriptResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let analytics_engine_bindings_binding = args
             .analytics_engine_bindings

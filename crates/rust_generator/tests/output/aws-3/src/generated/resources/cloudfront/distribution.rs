@@ -216,7 +216,11 @@
 /// ```sh
 /// $ pulumi import aws:cloudfront/distribution:Distribution distribution E74FTE3EXAMPLE
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod distribution {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -373,8 +377,6 @@ pub mod distribution {
         name: &str,
         args: DistributionArgs,
     ) -> DistributionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aliases_binding = args.aliases.get_output(context);
         let comment_binding = args.comment.get_output(context);
         let continuous_deployment_policy_id_binding = args

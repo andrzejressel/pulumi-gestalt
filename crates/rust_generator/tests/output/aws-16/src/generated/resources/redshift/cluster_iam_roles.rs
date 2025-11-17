@@ -26,7 +26,11 @@
 /// ```sh
 /// $ pulumi import aws:redshift/clusterIamRoles:ClusterIamRoles examplegroup1 example
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod cluster_iam_roles {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -63,8 +67,6 @@ pub mod cluster_iam_roles {
         name: &str,
         args: ClusterIamRolesArgs,
     ) -> ClusterIamRolesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_identifier_binding = args.cluster_identifier.get_output(context);
         let default_iam_role_arn_binding = args.default_iam_role_arn.get_output(context);
         let iam_role_arns_binding = args.iam_role_arns.get_output(context);

@@ -108,7 +108,11 @@
 /// ```sh
 /// $ pulumi import aws:appsync/resolver:Resolver example abcdef123456-exampleType-exampleField
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod resolver {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -213,8 +217,6 @@ pub mod resolver {
         name: &str,
         args: ResolverArgs,
     ) -> ResolverResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_id_binding = args.api_id.get_output(context);
         let caching_config_binding = args.caching_config.get_output(context);
         let code_binding = args.code.get_output(context);

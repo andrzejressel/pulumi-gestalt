@@ -160,7 +160,11 @@
 /// ```sh
 /// $ pulumi import aws:ec2/spotFleetRequest:SpotFleetRequest fleet sfr-005e9ec8-5546-4c31-b317-31a62325411e
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod spot_fleet_request {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -406,8 +410,6 @@ pub mod spot_fleet_request {
         name: &str,
         args: SpotFleetRequestArgs,
     ) -> SpotFleetRequestResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allocation_strategy_binding = args.allocation_strategy.get_output(context);
         let context_binding = args.context.get_output(context);
         let excess_capacity_termination_policy_binding = args

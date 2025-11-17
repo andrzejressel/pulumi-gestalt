@@ -139,7 +139,11 @@
 /// ```sh
 /// $ pulumi import aws:securityhub/configurationPolicy:ConfigurationPolicy example "00000000-1111-2222-3333-444444444444"
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod configuration_policy {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -181,8 +185,6 @@ pub mod configuration_policy {
         name: &str,
         args: ConfigurationPolicyArgs,
     ) -> ConfigurationPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let configuration_policy_binding = args.configuration_policy.get_output(context);
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);

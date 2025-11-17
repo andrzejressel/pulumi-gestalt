@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_policy_document {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -56,8 +60,6 @@ pub mod get_policy_document {
         context: &pulumi_gestalt_rust::Context,
         args: GetPolicyDocumentArgs,
     ) -> GetPolicyDocumentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let override_json_binding = args.override_json.get_output(context);
         let override_policy_documents_binding = args
             .override_policy_documents

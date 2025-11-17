@@ -24,7 +24,11 @@
 ///
 /// ## Example Usage
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod service_perimeter_ingress_policy {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -91,8 +95,6 @@ pub mod service_perimeter_ingress_policy {
         name: &str,
         args: ServicePerimeterIngressPolicyArgs,
     ) -> ServicePerimeterIngressPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let ingress_from_binding = args.ingress_from.get_output(context);
         let ingress_to_binding = args.ingress_to.get_output(context);
         let perimeter_binding = args.perimeter.get_output(context);

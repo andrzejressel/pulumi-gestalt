@@ -111,7 +111,11 @@
 /// ```sh
 /// $ pulumi import aws:ec2/peeringConnectionOptions:PeeringConnectionOptions foo pcx-111aaa111
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod peering_connection_options {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -156,8 +160,6 @@ pub mod peering_connection_options {
         name: &str,
         args: PeeringConnectionOptionsArgs,
     ) -> PeeringConnectionOptionsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let accepter_binding = args.accepter.get_output(context);
         let requester_binding = args.requester.get_output(context);
         let vpc_peering_connection_id_binding = args

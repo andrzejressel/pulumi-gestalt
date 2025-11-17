@@ -93,7 +93,11 @@
 /// $ pulumi import azure:mobile/networkSimPolicy:NetworkSimPolicy example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/resourceGroup1/providers/Microsoft.MobileNetwork/mobileNetworks/mobileNetwork1/simPolicies/simPolicy1
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod network_sim_policy {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -178,8 +182,6 @@ pub mod network_sim_policy {
         name: &str,
         args: NetworkSimPolicyArgs,
     ) -> NetworkSimPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let default_slice_id_binding = args.default_slice_id.get_output(context);
         let location_binding = args.location.get_output(context);
         let mobile_network_id_binding = args.mobile_network_id.get_output(context);

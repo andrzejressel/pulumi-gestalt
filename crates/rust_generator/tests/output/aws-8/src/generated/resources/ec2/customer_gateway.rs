@@ -21,7 +21,11 @@
 /// ```sh
 /// $ pulumi import aws:ec2/customerGateway:CustomerGateway main cgw-b4dc3961
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod customer_gateway {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -90,8 +94,6 @@ pub mod customer_gateway {
         name: &str,
         args: CustomerGatewayArgs,
     ) -> CustomerGatewayResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bgp_asn_binding = args.bgp_asn.get_output(context);
         let bgp_asn_extended_binding = args.bgp_asn_extended.get_output(context);
         let certificate_arn_binding = args.certificate_arn.get_output(context);

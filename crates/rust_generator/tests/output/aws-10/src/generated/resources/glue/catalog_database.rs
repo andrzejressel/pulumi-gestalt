@@ -46,7 +46,11 @@
 /// ```sh
 /// $ pulumi import aws:glue/catalogDatabase:CatalogDatabase database 123456789012:my_database
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod catalog_database {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -143,8 +147,6 @@ pub mod catalog_database {
         name: &str,
         args: CatalogDatabaseArgs,
     ) -> CatalogDatabaseResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let catalog_id_binding = args.catalog_id.get_output(context);
         let create_table_default_permissions_binding = args
             .create_table_default_permissions

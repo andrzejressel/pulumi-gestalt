@@ -169,7 +169,11 @@
 /// $ pulumi import gcp:compute/address:Address default {{name}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod address {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -367,8 +371,6 @@ pub mod address {
         name: &str,
         args: AddressArgs,
     ) -> AddressResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let address_binding = args.address.get_output(context);
         let address_type_binding = args.address_type.get_output(context);
         let description_binding = args.description.get_output(context);

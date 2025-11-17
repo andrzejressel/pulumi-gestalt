@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_logs {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -59,8 +63,6 @@ pub mod get_logs {
         context: &pulumi_gestalt_rust::Context,
         args: GetLogsArgs,
     ) -> GetLogsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let details_binding = args.details.get_output(context);
         let discard_headers_binding = args.discard_headers.get_output(context);
         let follow_binding = args.follow.get_output(context);

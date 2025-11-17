@@ -34,7 +34,11 @@
 /// ```sh
 /// $ pulumi import aws:lightsail/lbCertificateAttachment:LbCertificateAttachment test example-load-balancer,example-certificate
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod lb_certificate_attachment {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -66,8 +70,6 @@ pub mod lb_certificate_attachment {
         name: &str,
         args: LbCertificateAttachmentArgs,
     ) -> LbCertificateAttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let certificate_name_binding = args.certificate_name.get_output(context);
         let lb_name_binding = args.lb_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

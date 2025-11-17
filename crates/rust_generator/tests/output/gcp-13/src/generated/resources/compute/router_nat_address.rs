@@ -43,7 +43,11 @@
 /// $ pulumi import gcp:compute/routerNatAddress:RouterNatAddress default {{router}}/{{router_nat}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod router_nat_address {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -107,8 +111,6 @@ pub mod router_nat_address {
         name: &str,
         args: RouterNatAddressArgs,
     ) -> RouterNatAddressResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let drain_nat_ips_binding = args.drain_nat_ips.get_output(context);
         let nat_ips_binding = args.nat_ips.get_output(context);
         let project_binding = args.project.get_output(context);

@@ -51,7 +51,11 @@
 /// ```sh
 /// $ pulumi import aws:storagegateway/cachesIscsiVolume:CachesIscsiVolume example arn:aws:storagegateway:us-east-1:123456789012:gateway/sgw-12345678/volume/vol-12345678
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod caches_iscsi_volume {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -140,8 +144,6 @@ pub mod caches_iscsi_volume {
         name: &str,
         args: CachesIscsiVolumeArgs,
     ) -> CachesIscsiVolumeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let gateway_arn_binding = args.gateway_arn.get_output(context);
         let kms_encrypted_binding = args.kms_encrypted.get_output(context);
         let kms_key_binding = args.kms_key.get_output(context);

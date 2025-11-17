@@ -8,7 +8,11 @@
 /// $ pulumi import cloudflare:index/zeroTrustTunnelRoute:ZeroTrustTunnelRoute example <account_id>/<network_cidr>/<virtual_network_id>
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod zero_trust_tunnel_route {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -55,8 +59,6 @@ pub mod zero_trust_tunnel_route {
         name: &str,
         args: ZeroTrustTunnelRouteArgs,
     ) -> ZeroTrustTunnelRouteResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let comment_binding = args.comment.get_output(context);
         let network_binding = args.network.get_output(context);

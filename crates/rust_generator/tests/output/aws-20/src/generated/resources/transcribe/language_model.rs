@@ -76,7 +76,11 @@
 /// ```sh
 /// $ pulumi import aws:transcribe/languageModel:LanguageModel example example-name
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod language_model {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -134,8 +138,6 @@ pub mod language_model {
         name: &str,
         args: LanguageModelArgs,
     ) -> LanguageModelResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let base_model_name_binding = args.base_model_name.get_output(context);
         let input_data_config_binding = args.input_data_config.get_output(context);
         let language_code_binding = args.language_code.get_output(context);

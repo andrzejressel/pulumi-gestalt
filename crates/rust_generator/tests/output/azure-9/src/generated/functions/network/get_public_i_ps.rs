@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_public_i_ps {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -38,8 +42,6 @@ pub mod get_public_i_ps {
         context: &pulumi_gestalt_rust::Context,
         args: GetPublicIPsArgs,
     ) -> GetPublicIPsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allocation_type_binding = args.allocation_type.get_output(context);
         let attachment_status_binding = args.attachment_status.get_output(context);
         let name_prefix_binding = args.name_prefix.get_output(context);

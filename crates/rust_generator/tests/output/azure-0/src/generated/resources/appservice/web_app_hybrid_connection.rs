@@ -71,7 +71,11 @@
 /// $ pulumi import azure:appservice/webAppHybridConnection:WebAppHybridConnection example "/subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.Web/sites/site1/hybridConnectionNamespaces/hybridConnectionNamespace1/relays/relay1"
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod web_app_hybrid_connection {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -128,8 +132,6 @@ pub mod web_app_hybrid_connection {
         name: &str,
         args: WebAppHybridConnectionArgs,
     ) -> WebAppHybridConnectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let hostname_binding = args.hostname.get_output(context);
         let port_binding = args.port.get_output(context);
         let relay_id_binding = args.relay_id.get_output(context);

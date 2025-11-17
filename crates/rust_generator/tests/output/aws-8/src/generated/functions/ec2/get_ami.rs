@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_ami {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
@@ -147,8 +151,6 @@ pub mod get_ami {
         context: &pulumi_gestalt_rust::Context,
         args: GetAmiArgs,
     ) -> GetAmiResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let executable_users_binding = args.executable_users.get_output(context);
         let filters_binding = args.filters.get_output(context);
         let include_deprecated_binding = args.include_deprecated.get_output(context);
