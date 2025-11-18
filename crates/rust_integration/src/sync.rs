@@ -169,7 +169,6 @@ impl Context {
 
     pub fn get_config_value(&self, name: Option<&str>, key: &str) -> Option<ConfigValue> {
         let pulumi_engine = &self.inner;
-        let name = name.unwrap_or(&self.project_name);
 
         match pulumi_engine
             .borrow_mut()

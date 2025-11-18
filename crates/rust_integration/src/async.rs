@@ -49,7 +49,6 @@ static_assertions::assert_impl_all!(InnerPulumiEngine: Send);
 
 pub struct Context {
     inner: Arc<Mutex<InnerPulumiEngine>>,
-    project_name: String
 }
 
 
@@ -71,14 +70,12 @@ pub struct InvokeResourceRequest<'a> {
 impl Context {
     pub async fn create_context() -> Context {
         let engine = get_engine().await;
-        let project_name = std::env::var("PULUMI_PROJECT").unwrap();
         let inner = InnerPulumiEngine {
             engine,
             functions: HashMap::new(),
         };
         Context {
-            inner: Arc::new(Mutex::new(inner)),
-            project_name
+            inner: Arc::new(Mutex::new(inner))
         }
     }
 
@@ -171,7 +168,6 @@ impl Context {
 
     pub fn get_config_value(&self, name: Option<&str>, key: &str) -> Option<ConfigValue> {
         let pulumi_engine = &self.inner;
-        let name = name.unwrap_or(&self.project_name);
 
         match pulumi_engine
             .lock()

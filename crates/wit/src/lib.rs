@@ -21,14 +21,12 @@ pub mod bindings_runner {
 
     pub struct SingleThreadedContext {
         pub engine: Rc<RefCell<pulumi_gestalt_core::Engine>>,
-        pub project_name: String,
     }
 
     impl SingleThreadedContext {
-        pub fn new(engine: pulumi_gestalt_core::Engine, project_name: String) -> Self {
+        pub fn new(engine: pulumi_gestalt_core::Engine) -> Self {
             Self {
                 engine: Rc::new(RefCell::new(engine)),
-                project_name,
             }
         }
     }
