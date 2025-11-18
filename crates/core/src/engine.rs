@@ -518,7 +518,7 @@ mod tests {
                 "project".to_string(),
             );
             let mut engine = Engine::new(MockPulumiConnector::new(), config);
-            let value = engine.get_config_value("name", "key");
+            let value = engine.get_config_value(Some("name"), "key");
             match value {
                 None => {
                     panic!("Expected Some, got None");
@@ -539,9 +539,19 @@ mod tests {
                 HashSet::new(),
                 "project".to_string(),
             );
-            let mut engine = Engine::new(MockPulumiService::new(), config);
+            let mut engine = Engine::new(MockPulumiConnector::new(), config);
             let value = engine.get_config_value(None, "key");
-            assert_eq!(value, Some(ConfigValue::PlainText("value".to_string())));
+            match value {
+                None => {
+                    panic!("Expected Some, got None");
+                }
+                Some(ConfigValue::PlainText(text)) => {
+                    assert_eq!(text, "value");
+                }
+                Some(_) => {
+                    panic!("Expected PlainText, got Secret");
+                }
+            }
         }
         
         #[tokio::test]
