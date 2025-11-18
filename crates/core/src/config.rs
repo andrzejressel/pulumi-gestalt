@@ -47,7 +47,8 @@ impl Config {
         let secret: HashSet<String> = serde_json::from_str(&secret).with_context(|| {
             format!("{} is not a valid secret list", CONFIG_SECRET_KEYS_ENV_KEY)
         })?;
-        let project_name = std::env::var("PULUMI_PROJECT").unwrap();
+        let project_name = std::env::var("PULUMI_PROJECT")
+            .with_context(|| "PULUMI_PROJECT environment variable must be set")?;
 
         Ok(Self::new(config_map, secret, project_name))
     }
