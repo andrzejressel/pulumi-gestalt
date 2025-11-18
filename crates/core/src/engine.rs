@@ -113,7 +113,7 @@ impl Engine {
 
     #[cfg(test)]
     pub fn new_without_configs(pulumi: impl PulumiService + 'static) -> Self {
-        let config = Config::new(HashMap::new(), HashSet::new());
+        let config = Config::new(HashMap::new(), HashSet::new(), "project".to_string());
         Self::new(pulumi, config)
     }
 
@@ -854,7 +854,7 @@ impl Engine {
         output_id
     }
 
-    pub fn get_config_value(&mut self, name: &str, key: &str) -> Option<ConfigValue> {
+    pub fn get_config_value(&mut self, name: Option<&str>, key: &str) -> Option<ConfigValue> {
         match self.config.get(name, key) {
             None => None,
             Some(RawConfigValue::PlainText(value)) => Some(ConfigValue::PlainText(value.clone())),
@@ -1389,9 +1389,9 @@ mod tests {
 
         #[test]
         fn should_return_none_when_config_is_not_set() {
-            let config = Config::new(HashMap::new(), HashSet::new());
+            let config = Config::new(HashMap::new(), HashSet::new(), "project".to_string());
             let mut engine = Engine::new(MockPulumiService::new(), config);
-            let value = engine.get_config_value("name", "key");
+            let value = engine.get_config_value(Some("name"), "key");
             assert_eq!(value, None);
         }
 
@@ -1400,9 +1400,22 @@ mod tests {
             let config = Config::new(
                 HashMap::from([("name:key".to_string(), "value".to_string())]),
                 HashSet::new(),
+                "project".to_string(),
             );
             let mut engine = Engine::new(MockPulumiService::new(), config);
-            let value = engine.get_config_value("name", "key");
+            let value = engine.get_config_value(Some("name"), "key");
+            assert_eq!(value, Some(ConfigValue::PlainText("value".to_string())));
+        }
+
+        #[test]
+        fn passing_none_will_use_project_name() {
+            let config = Config::new(
+                HashMap::from([("project:key".to_string(), "value".to_string())]),
+                HashSet::new(),
+                "project".to_string(),
+            );
+            let mut engine = Engine::new(MockPulumiService::new(), config);
+            let value = engine.get_config_value(None, "key");
             assert_eq!(value, Some(ConfigValue::PlainText("value".to_string())));
         }
 
@@ -1411,9 +1424,10 @@ mod tests {
             let config = Config::new(
                 HashMap::from([("name:key".to_string(), "secret".to_string())]),
                 HashSet::from(["name:key".to_string()]),
+                "project".to_string(),
             );
             let mut engine = Engine::new(MockPulumiService::new(), config);
-            let value = engine.get_config_value("name", "key");
+            let value = engine.get_config_value(Some("name"), "key");
             assert!(matches!(value, Some(ConfigValue::Secret(_))));
             let output_id = match value {
                 Some(ConfigValue::Secret(output_id)) => output_id,

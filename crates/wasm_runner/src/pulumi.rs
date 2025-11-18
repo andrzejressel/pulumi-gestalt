@@ -39,9 +39,8 @@ struct MyState {
 impl HostContext for MyState {
     fn new(&mut self) -> anyhow::Result<Resource<Context>> {
         let engine = pulumi_gestalt_rust_integration::get_engine();
-        let project_name = std::env::var("PULUMI_PROJECT").unwrap();
 
-        let context = SingleThreadedContext::new(engine, project_name);
+        let context = SingleThreadedContext::new(engine);
         let id = self.table.push(context)?;
         Ok(id)
     }
@@ -164,12 +163,11 @@ impl HostContext for MyState {
     ) -> anyhow::Result<Option<ConfigValue>> {
         assert!(!context.owned());
         let context = self.table.get_mut(&context)?;
-        let project_name = context.project_name.clone();
         let engine = &context.engine.clone();
         let result = engine
             .clone()
             .borrow_mut()
-            .get_config_value(&name.unwrap_or(project_name), &key);
+            .get_config_value(name.as_deref(), &key);
         let result = result.map(|value| match value {
             pulumi_gestalt_core::ConfigValue::PlainText(pt) => ConfigValue::Plaintext(pt.clone()),
             pulumi_gestalt_core::ConfigValue::Secret(s) => {
