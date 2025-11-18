@@ -146,6 +146,7 @@ rust-docs:
         -p pulumi_gestalt_serde_constant_string \
         -p pulumi_gestalt_build \
         -p pulumi_gestalt_rust \
+        -p pulumi_gestalt_core \
         -p pulumi_gestalt_providers_cloudflare \
         -p pulumi_gestalt_providers_docker \
         -p pulumi_gestalt_providers_random
