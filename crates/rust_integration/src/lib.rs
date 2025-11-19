@@ -5,8 +5,10 @@ use pulumi_gestalt_grpc_connection::RealPulumiConnector;
 
 pub mod r#async;
 pub mod sync;
+pub mod enginev2;
+pub use pulumi_gestalt_core::*;
 
-pub(crate) async fn get_engine() -> Engine {
+pub(crate) async fn get_engine<FunctionContext>() -> Engine<FunctionContext> {
     let pulumi_engine_url = std::env::var("PULUMI_ENGINE").unwrap();
     let pulumi_monitor_url = std::env::var("PULUMI_MONITOR").unwrap();
     let pulumi_stack = std::env::var("PULUMI_STACK").unwrap();
@@ -34,7 +36,6 @@ pub(crate) async fn get_engine() -> Engine {
 
     Engine::new(pulumi_connector, config)
 }
-
 
 /// Requires `pulumi` CLI to be installed and available in PATH
 /// Modules for provider can be found in Pulumi registry on left side with (M) icon:

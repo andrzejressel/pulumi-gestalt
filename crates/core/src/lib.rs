@@ -15,7 +15,7 @@ pub use engine::NativeFunctionRequest;
 pub type RawOutput = Output<NodeValue>;
 
 impl RawOutput {
-    pub fn from_node_value(value: NodeValue) -> Self {
+    pub(crate) fn from_node_value(value: NodeValue) -> Self {
         let f = async move { value };
         Self {
             value: f.boxed().shared(),
@@ -31,7 +31,7 @@ pub struct Output<T> {
 }
 
 impl<T: Clone + 'static + Send + Sync> Output<T> {
-    pub fn from_future<F>(future: F) -> Output<T>
+    pub(crate) fn from_future<F>(future: F) -> Output<T>
     where
         F: Future<Output = T> + Send + 'static,
     {
@@ -41,7 +41,7 @@ impl<T: Clone + 'static + Send + Sync> Output<T> {
     }
 
     // Used for mappings to ensure they will be invoked (even if the result is not needed)
-    pub fn invoke_void(self) -> Shared<BoxFuture<'static, ()>> {
+    pub(crate) fn invoke_void(self) -> Shared<BoxFuture<'static, ()>> {
         async move {
             self.value.await;
         }.boxed().shared()

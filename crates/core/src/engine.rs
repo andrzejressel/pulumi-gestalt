@@ -11,14 +11,15 @@ use pulumi_gestalt_domain::connector::{
 use pulumi_gestalt_domain::{ExistingNodeValue, FieldName, NodeValue};
 use serde_json::Value;
 use std::collections::{HashMap, HashSet};
+use std::rc::Rc;
 use std::sync::atomic::AtomicBool;
 use std::sync::atomic::Ordering::SeqCst;
-use std::sync::Arc;
+use std::sync::{Arc, RwLock};
 use futures::stream::{StreamExt};
 
 
-pub struct NativeFunctionRequest {
-    pub function_name: FunctionName,
+pub struct NativeFunctionRequest<FunctionContext> {
+    pub context: FunctionContext,
     pub data: Value,
     pub return_mailbox: Sender<Value>,
 }
@@ -28,20 +29,20 @@ pub enum ConfigValue {
     Secret(RawOutput),
 }
 
-pub struct Engine {
+pub struct Engine<FunctionContext> {
     outputs: HashMap<FieldName, RawOutput>,
     join_set: FuturesUnordered<Shared<BoxFuture<'static, ()>>>,
-    native_function_queue_sender: UnboundedSender<NativeFunctionRequest>,
-    native_function_queue_receiver: UnboundedReceiver<NativeFunctionRequest>,
+    native_function_queue_sender: UnboundedSender<NativeFunctionRequest<FunctionContext>>,
+    native_function_queue_receiver: UnboundedReceiver<NativeFunctionRequest<FunctionContext>>,
 
     output_task_created: AtomicBool,
     pulumi: Arc<Box<dyn PulumiConnector>>,
     config: Config,
 }
 
-static_assertions::assert_impl_all!(Engine: Send, Sync);
+type UnitEngine = Engine<()>;
 
-impl Engine {
+impl<FunctionContext: Send + 'static> Engine<FunctionContext> {
     pub fn new(pulumi: impl PulumiConnector + 'static, config: Config) -> Self {
         let (tx, rx) = unbounded();
         Self {
@@ -61,12 +62,12 @@ impl Engine {
         Self::new(pulumi, config)
     }
 
-    pub fn add_output(&mut self, field_name: FieldName, output_id: RawOutput) {
+    pub fn add_output(&self, field_name: FieldName, output_id: RawOutput) {
         self.outputs.insert(field_name, output_id);
     }
 
     pub fn create_register_resource_node(
-        &mut self,
+        &self,
         r#type: String,
         name: String,
         inputs: HashMap<FieldName, RawOutput>,
@@ -99,7 +100,7 @@ impl Engine {
     }
 
     pub fn create_resource_invoke_node(
-        &mut self,
+        &self,
         token: String,
         inputs: HashMap<FieldName, RawOutput>,
         version: String
@@ -130,8 +131,8 @@ impl Engine {
     }
 
     pub fn create_native_function_node(
-        &mut self,
-        function_name: FunctionName,
+        &self,
+        function_context: FunctionContext,
         source: RawOutput,
     ) -> RawOutput {
         let mut request_receiver = self.native_function_queue_sender.clone();
@@ -142,7 +143,7 @@ impl Engine {
                 NodeValue::Exists(ExistingNodeValue { value, secret }) => {
                     let (tx, rx) = channel();
                     let request = NativeFunctionRequest {
-                        function_name,
+                        context: function_context,
                         data: value,
                         return_mailbox: tx,
                     };
@@ -151,13 +152,13 @@ impl Engine {
                     let result = rx.await.unwrap();
                     NodeValue::exists(result, secret)
                 }
-            }
+            } 
         });
         self.join_set.push(output.clone().invoke_void());
         output
     }
 
-    pub fn create_combine_outputs(&mut self, outputs: Vec<RawOutput>) -> RawOutput {
+    pub fn create_combine_outputs(&self, outputs: Vec<RawOutput>) -> RawOutput {
         use futures::StreamExt;
         RawOutput::from_future(async move {
             let mut combined = FuturesOrdered::new();
@@ -188,12 +189,12 @@ impl Engine {
         })
     }
 
-    pub fn create_done_node(&mut self, value: Value, secret: bool) -> RawOutput {
+    pub fn create_done_node(value: Value, secret: bool) -> RawOutput {
         let node_value = NodeValue::exists(value, secret);
         RawOutput::from_node_value(node_value)
     }
     
-    pub fn create_extract_field(&mut self, field_name: FieldName, source: RegisterResourceOutput) -> RawOutput {
+    pub fn create_extract_field(field_name: FieldName, source: RegisterResourceOutput) -> RawOutput {
         let output = RawOutput::from_future(async move {
             let resource_fields = source.value.await;
             resource_fields.get_field_value(&field_name)
@@ -202,11 +203,11 @@ impl Engine {
     }
 
     #[cfg(test)]
-    fn create_nothing_node(&mut self) -> RawOutput {
+    fn create_nothing_node() -> RawOutput {
         RawOutput::from_node_value(NodeValue::Nothing)
     }
 
-    pub async fn run(&mut self) -> Option<NativeFunctionRequest> {
+    pub async fn run(&mut self) -> Option<NativeFunctionRequest<FunctionContext>> {
         if self
             .output_task_created
             .compare_exchange(false, true, SeqCst, SeqCst)
@@ -267,13 +268,13 @@ impl Engine {
         }
     }
 
-    pub fn get_config_value(&mut self, name: Option<&str>, key: &str) -> Option<ConfigValue> {
+    pub fn get_config_value(&self, name: Option<&str>, key: &str) -> Option<ConfigValue> {
         match self.config.get(name, key) {
             None => None,
             Some(RawConfigValue::PlainText(value)) => Some(ConfigValue::PlainText(value.clone())),
             Some(RawConfigValue::Secret(secret)) => {
                 let value = Value::String(secret.clone());
-                let output_id = self.create_done_node(value, true);
+                let output_id = UnitEngine::create_done_node(value, true);
                 Some(ConfigValue::Secret(output_id))
             }
         }
@@ -285,7 +286,13 @@ mod tests {
     use super::*;
     use mockall::predicate::eq;
     use std::collections::HashMap;
+    use std::fmt::Debug;
+    use std::sync::RwLock;
 
+    static_assertions::assert_impl_all!(Engine<RwLock<()>>: Send, Sync);
+
+    type StrEngine = Engine<&'static str>;
+    
     mod register_outputs {
         use super::*;
         use pulumi_gestalt_domain::connector::MockPulumiConnector;
@@ -301,9 +308,9 @@ mod tests {
                 )]))))
                 .returning(|_| ());
 
-            let mut engine = Engine::new_without_configs(mock);
+            let mut engine = StrEngine::new_without_configs(mock);
 
-            let output_id = engine.create_done_node(1.into(), false);
+            let output_id = StrEngine::create_done_node(1.into(), false);
             engine.add_output("output".into(), output_id);
 
             let result = engine.run().await;
@@ -321,9 +328,9 @@ mod tests {
                 )]))))
                 .returning(|_| ());
 
-            let mut engine = Engine::new_without_configs(mock);
+            let mut engine = StrEngine::new_without_configs(mock);
 
-            let output_id = engine.create_done_node(1.into(), false);
+            let output_id = StrEngine::create_done_node(1.into(), false);
             engine.add_output("output".into(), output_id.clone());
             engine.create_native_function_node("nativeFunc".into(), output_id.clone());
             engine.create_native_function_node("nativeFunc2".into(), output_id);
@@ -347,9 +354,9 @@ mod tests {
             use serde_json::json;
 
             let mock = MockPulumiConnector::new();
-            let mut engine = Engine::new_without_configs(mock);
+            let mut engine = StrEngine::new_without_configs(mock);
 
-            let source_output = engine.create_done_node(json!("value"), false);
+            let source_output = StrEngine::create_done_node(json!("value"), false);
             let mapped_output =
                 engine.create_native_function_node("nativeFunc".into(), source_output);
             _ = engine.add_output("mapped_output".into(), mapped_output);
@@ -361,7 +368,7 @@ mod tests {
                     panic!("Expected NativeFunctionRequest, got None");
                 }
                 Some(request) => {
-                    assert_eq!(request.function_name, "nativeFunc".into());
+                    assert_eq!(request.context, "nativeFunc");
                     assert_eq!(request.data, json!("value"));
                 }
             }
@@ -376,9 +383,9 @@ mod tests {
                 .times(1)
                 .with(eq(RegisterOutputsRequest::new(HashMap::new())))
                 .returning(|_| ());
-            let mut engine = Engine::new_without_configs(mock);
+            let mut engine = StrEngine::new_without_configs(mock);
 
-            let source_output = engine.create_done_node(json!("value"), false);
+            let source_output = StrEngine::create_done_node(json!("value"), false);
             let _ = engine.create_native_function_node("nativeFunc".into(), source_output);
 
             let result = engine.run().await;
@@ -388,7 +395,7 @@ mod tests {
                     panic!("Expected NativeFunctionRequest, got None");
                 }
                 Some(request) => {
-                    assert_eq!(request.function_name, "nativeFunc".into());
+                    assert_eq!(request.context, "nativeFunc");
                     assert_eq!(request.data, json!("value"));
                 }
             }
@@ -406,9 +413,9 @@ mod tests {
                     NodeValue::exists("result", false),
                 )]))))
                 .returning(|_| ());
-            let mut engine = Engine::new_without_configs(mock);
+            let mut engine = StrEngine::new_without_configs(mock);
 
-            let source_output = engine.create_done_node("value".into(), false);
+            let source_output = StrEngine::create_done_node("value".into(), false);
             let mapped_output =
                 engine.create_native_function_node("nativeFunc".into(), source_output);
             engine.add_output("mapped_output".into(), mapped_output);
@@ -446,10 +453,10 @@ mod tests {
 
             let mut mock = MockPulumiConnector::new();
 
-            let mut engine = Engine::new_without_configs(mock);
+            let mut engine = StrEngine::new_without_configs(mock);
 
-            let output1 = engine.create_done_node(json!("1"), false);
-            let output2 = engine.create_done_node(json!(2), false);
+            let output1 = StrEngine::create_done_node(json!("1"), false);
+            let output2 = StrEngine::create_done_node(json!(2), false);
 
             let combined_output = engine.create_combine_outputs(vec![output1, output2]);
             let result = combined_output.value.await;
@@ -460,10 +467,10 @@ mod tests {
         async fn single_nothing_output_results_in_nothing() {
             let mut mock = MockPulumiConnector::new();
 
-            let mut engine = Engine::new_without_configs(mock);
+            let mut engine = StrEngine::new_without_configs(mock);
 
-            let output1 = engine.create_nothing_node();
-            let output2 = engine.create_done_node(json!(2), false);
+            let output1 = StrEngine::create_nothing_node();
+            let output2 = StrEngine::create_done_node(json!(2), false);
 
             let combined_output = engine.create_combine_outputs(vec![output1, output2]);
             let result = combined_output.value.await;
@@ -476,10 +483,10 @@ mod tests {
 
             let mut mock = MockPulumiConnector::new();
 
-            let mut engine = Engine::new_without_configs(mock);
+            let mut engine = StrEngine::new_without_configs(mock);
 
-            let output1 = engine.create_done_node(json!("1"), false);
-            let output2 = engine.create_done_node(json!(2), true);
+            let output1 = StrEngine::create_done_node(json!("1"), false);
+            let output2 = StrEngine::create_done_node(json!(2), true);
 
             let combined_output = engine.create_combine_outputs(vec![output1, output2]);
             let result = combined_output.value.await;
@@ -500,7 +507,7 @@ mod tests {
         #[test]
         fn should_return_none_when_config_is_not_set() {
             let config = Config::new(HashMap::new(), HashSet::new(), "project".to_string());
-            let mut engine = Engine::new(MockPulumiConnector::new(), config);
+            let mut engine = StrEngine::new(MockPulumiConnector::new(), config);
             let value = engine.get_config_value(Some("name"), "key");
             match value {
                 None => {}
@@ -517,7 +524,7 @@ mod tests {
                 HashSet::new(),
                 "project".to_string(),
             );
-            let mut engine = Engine::new(MockPulumiConnector::new(), config);
+            let mut engine = StrEngine::new(MockPulumiConnector::new(), config);
             let value = engine.get_config_value(Some("name"), "key");
             match value {
                 None => {
@@ -539,7 +546,7 @@ mod tests {
                 HashSet::new(),
                 "project".to_string(),
             );
-            let mut engine = Engine::new(MockPulumiConnector::new(), config);
+            let mut engine = StrEngine::new(MockPulumiConnector::new(), config);
             let value = engine.get_config_value(None, "key");
             match value {
                 None => {
@@ -561,7 +568,7 @@ mod tests {
                 HashSet::from(["name:key".to_string()]),
                 "project".to_string(),
             );
-            let mut engine = Engine::new(MockPulumiConnector::new(), config);
+            let mut engine = StrEngine::new(MockPulumiConnector::new(), config);
             let value = engine.get_config_value(Some("name"), "key");
             match value {
                 None => {

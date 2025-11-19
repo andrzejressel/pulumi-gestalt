@@ -14,10 +14,10 @@ futures.workspace = true
 anyhow.workspace = true
 uuid.workspace = true
 serde_json.workspace = true
-static_assertions.workspace = true
 pulumi_gestalt_domain.workspace = true
 
 [dev-dependencies]
 mockall.workspace = true
 pulumi_gestalt_domain = { workspace = true, features = ["test-utils"] }
 tokio.workspace = true
+static_assertions.workspace = true

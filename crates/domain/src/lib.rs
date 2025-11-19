@@ -78,6 +78,7 @@ impl ResourceFields {
     }
 }
 
+#[cfg(test)]
 mod tests {
     use super::{ExistingNodeValue, FieldName, NodeValue, ResourceFields};
     use NodeValue::Nothing;
