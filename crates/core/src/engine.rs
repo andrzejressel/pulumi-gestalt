@@ -48,7 +48,7 @@ pub struct Engine<FunctionContext> {
 
 type UnitEngine = Engine<()>;
 
-impl<FunctionContext: Send + 'static> Engine<FunctionContext> {
+impl<FunctionContext> Engine<FunctionContext> {
     pub fn new(pulumi: impl PulumiConnector + 'static, config: Config) -> Self {
         let (tx, rx) = unbounded();
         Self {

@@ -1,50 +1,47 @@
+use std::collections::HashMap;
+use serde_json::json;
 use pulumi_gestalt_rust_integration::get_schema;
-use pulumi_gestalt_rust_integration::sync::{
-    ConfigValue, Context, InvokeResourceRequest, ObjectField, RegisterResourceRequest,
-};
+use pulumi_gestalt_rust_integration::*;
+
+type Context = pulumi_gestalt_rust_integration::Context<Box<dyn Fn(String) -> String>>;
 
 fn generate_random_value(ctx: &Context) {
-    let output = ctx.create_output("16".to_string(), false);
-    let inputs = vec![ObjectField {
-        name: "length".to_string(),
-        value: &output,
-    }];
+    let output = Context::create_output(json!(16), false);
 
     let register_resource_request = RegisterResourceRequest {
-        type_: "random:index/randomString:RandomString".to_string(),
+        r#type: "random:index/randomString:RandomString".to_string(),
         name: "my_name".to_string(),
         version: "4.15.1".to_string(),
-        inputs: &inputs,
+        inputs: HashMap::from([
+            ("length".into(), output.clone())
+        ]),
     };
 
     let composite_output = ctx.register_resource(register_resource_request);
-    let output_result = composite_output.get_field("result".to_string());
-    output_result.add_export("result".to_string());
+    let output_result = composite_output.get_field("result".into());
+    output_result.add_export("result".into());
 }
 
 fn run_command(ctx: &Context) {
-    let output = ctx.create_output("\"whoami\"".to_string(), false);
-
-    let inputs = vec![ObjectField {
-        name: "command".to_string(),
-        value: &output,
-    }];
+    let output = Context::create_output(json!("whoami"), false);
 
     let register_resource_request = InvokeResourceRequest {
         token: "command:local:run".to_string(),
         version: "1.0.2".to_string(),
-        inputs: &inputs,
+        inputs: HashMap::from([
+            ("command".into(), output)
+        ]),
     };
 
     let compose_output = ctx.invoke_resource(register_resource_request);
 
-    let stdout_output = compose_output.get_field("stdout".to_string());
+    let stdout_output = compose_output.get_field("stdout".into());
 
-    stdout_output.add_export("whoami_stdout".to_string());
+    stdout_output.add_export("whoami_stdout".into());
 }
 
 fn perform_operations_on_outputs(ctx: &Context) {
-    let output = ctx.create_output("16".to_string(), false);
+    let output = Context::create_output(json!(16), false);
 
     let output_2 = output.map(Box::new(|s| {
         let i = s.parse::<i32>().unwrap();

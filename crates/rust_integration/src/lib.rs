@@ -1,17 +1,14 @@
+use std::sync::{Arc, Mutex};
 use pulumi_gestalt_schema::model::Package;
-use anyhow::{Context, Result};
+use anyhow::{Context as anyhowContext, Result};
 use pulumi_gestalt_core::{Config, Engine};
 use pulumi_gestalt_grpc_connection::RealPulumiConnector;
 
-pub mod r#async;
-pub mod sync;
-pub mod enginev2;
-pub mod engine;
+mod engine;
 pub use engine::*;
 
-pub use pulumi_gestalt_core::*;
 
-pub(crate) async fn get_engine<FunctionContext>() -> engine::Engine<FunctionContext> {
+pub(crate) async fn get_engine<FunctionContext>() -> engine::Context<FunctionContext> {
     let pulumi_engine_url = std::env::var("PULUMI_ENGINE").unwrap();
     let pulumi_monitor_url = std::env::var("PULUMI_MONITOR").unwrap();
     let pulumi_stack = std::env::var("PULUMI_STACK").unwrap();
@@ -37,8 +34,8 @@ pub(crate) async fn get_engine<FunctionContext>() -> engine::Engine<FunctionCont
         .context("Failed to create config instance")
         .unwrap();
 
-    engine::Engine {
-        inner: Engine::new(pulumi_connector, config)
+    engine::Context {
+        inner: Arc::new(Mutex::new(Engine::new(pulumi_connector, config)))
     }
 }
 
