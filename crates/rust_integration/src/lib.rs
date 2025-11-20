@@ -6,9 +6,12 @@ use pulumi_gestalt_grpc_connection::RealPulumiConnector;
 pub mod r#async;
 pub mod sync;
 pub mod enginev2;
+pub mod engine;
+pub use engine::*;
+
 pub use pulumi_gestalt_core::*;
 
-pub(crate) async fn get_engine<FunctionContext>() -> Engine<FunctionContext> {
+pub(crate) async fn get_engine<FunctionContext>() -> engine::Engine<FunctionContext> {
     let pulumi_engine_url = std::env::var("PULUMI_ENGINE").unwrap();
     let pulumi_monitor_url = std::env::var("PULUMI_MONITOR").unwrap();
     let pulumi_stack = std::env::var("PULUMI_STACK").unwrap();
@@ -34,7 +37,9 @@ pub(crate) async fn get_engine<FunctionContext>() -> Engine<FunctionContext> {
         .context("Failed to create config instance")
         .unwrap();
 
-    Engine::new(pulumi_connector, config)
+    engine::Engine {
+        inner: Engine::new(pulumi_connector, config)
+    }
 }
 
 /// Requires `pulumi` CLI to be installed and available in PATH

@@ -1,9 +1,10 @@
 use crate::config::{Config, RawConfigValue};
-use crate::{FunctionName, RawOutput, RegisterResourceOutput};
+use crate::{RawOutput, RegisterResourceOutput};
 use futures::channel::mpsc::{unbounded, UnboundedReceiver, UnboundedSender};
 use futures::channel::oneshot::{channel, Sender};
 use futures::future::{BoxFuture, Shared};
 use futures::stream::{FuturesOrdered, FuturesUnordered};
+use futures::stream::StreamExt;
 use futures::{FutureExt, Stream};
 use pulumi_gestalt_domain::connector::{
     PulumiConnector, RegisterOutputsRequest, RegisterResourceRequest, ResourceInvokeRequest,
@@ -11,12 +12,16 @@ use pulumi_gestalt_domain::connector::{
 use pulumi_gestalt_domain::{ExistingNodeValue, FieldName, NodeValue};
 use serde_json::Value;
 use std::collections::{HashMap, HashSet};
-use std::rc::Rc;
-use std::sync::atomic::AtomicBool;
 use std::sync::atomic::Ordering::SeqCst;
-use std::sync::{Arc, RwLock};
-use futures::stream::{StreamExt};
+use std::sync::atomic::AtomicBool;
+use std::sync::{Arc, Mutex, RwLock};
+use uuid::Uuid;
 
+struct InternalNativeFunctionRequest {
+    pub context_key: Uuid,
+    pub data: Value,
+    pub return_mailbox: Sender<Value>,
+}
 
 pub struct NativeFunctionRequest<FunctionContext> {
     pub context: FunctionContext,
@@ -31,9 +36,10 @@ pub enum ConfigValue {
 
 pub struct Engine<FunctionContext> {
     outputs: HashMap<FieldName, RawOutput>,
+    function_contexts: Mutex<HashMap<Uuid, FunctionContext>>,
     join_set: FuturesUnordered<Shared<BoxFuture<'static, ()>>>,
-    native_function_queue_sender: UnboundedSender<NativeFunctionRequest<FunctionContext>>,
-    native_function_queue_receiver: UnboundedReceiver<NativeFunctionRequest<FunctionContext>>,
+    native_function_queue_sender: UnboundedSender<InternalNativeFunctionRequest>,
+    native_function_queue_receiver: UnboundedReceiver<InternalNativeFunctionRequest>,
 
     output_task_created: AtomicBool,
     pulumi: Arc<Box<dyn PulumiConnector>>,
@@ -47,6 +53,7 @@ impl<FunctionContext: Send + 'static> Engine<FunctionContext> {
         let (tx, rx) = unbounded();
         Self {
             outputs: HashMap::new(),
+            function_contexts: Mutex::new(HashMap::new()),
             join_set: FuturesUnordered::new(),
             pulumi: Arc::new(Box::new(pulumi)),
             output_task_created: AtomicBool::new(false),
@@ -62,7 +69,7 @@ impl<FunctionContext: Send + 'static> Engine<FunctionContext> {
         Self::new(pulumi, config)
     }
 
-    pub fn add_output(&self, field_name: FieldName, output_id: RawOutput) {
+    pub fn add_output(&mut self, field_name: FieldName, output_id: RawOutput) {
         self.outputs.insert(field_name, output_id);
     }
 
@@ -135,6 +142,10 @@ impl<FunctionContext: Send + 'static> Engine<FunctionContext> {
         function_context: FunctionContext,
         source: RawOutput,
     ) -> RawOutput {
+        let function_context_key = Uuid::now_v7();
+        let mut function_contexts = self.function_contexts.lock().unwrap();
+        function_contexts.insert(function_context_key, function_context);
+        drop(function_contexts);
         let mut request_receiver = self.native_function_queue_sender.clone();
         let output = RawOutput::from_future(async move {
             let source_value = source.value.await;
@@ -142,8 +153,8 @@ impl<FunctionContext: Send + 'static> Engine<FunctionContext> {
                 NodeValue::Nothing => NodeValue::Nothing,
                 NodeValue::Exists(ExistingNodeValue { value, secret }) => {
                     let (tx, rx) = channel();
-                    let request = NativeFunctionRequest {
-                        context: function_context,
+                    let request = InternalNativeFunctionRequest {
+                        context_key: function_context_key,
                         data: value,
                         return_mailbox: tx,
                     };
@@ -257,7 +268,13 @@ impl<FunctionContext: Send + 'static> Engine<FunctionContext> {
                 request = self.native_function_queue_receiver.next() => {
                     match request {
                         Some(request) => {
-                            return Some(request)
+                            let mut function_contexts = self.function_contexts.lock().unwrap();
+                            let function_context = function_contexts.remove(&request.context_key).unwrap();
+                            return Some(NativeFunctionRequest {
+                                context: function_context,
+                                data: request.data,
+                                return_mailbox: request.return_mailbox,
+                            });
                         }
                         None => {
                             continue;
@@ -403,8 +420,6 @@ mod tests {
 
         #[tokio::test]
         async fn should_handle_function_result() {
-            use crate::Engine;
-
             let mut mock = MockPulumiConnector::new();
             mock.expect_register_outputs()
                 .times(1)
