@@ -35,7 +35,7 @@ pub enum ConfigValue {
 }
 
 pub struct Engine<FunctionContext> {
-    outputs: HashMap<FieldName, RawOutput>,
+    outputs: Mutex<HashMap<FieldName, RawOutput>>,
     function_contexts: Mutex<HashMap<Uuid, FunctionContext>>,
     join_set: FuturesUnordered<Shared<BoxFuture<'static, ()>>>,
     native_function_queue_sender: UnboundedSender<InternalNativeFunctionRequest>,
@@ -52,9 +52,9 @@ impl<FunctionContext: Send + 'static> Engine<FunctionContext> {
     pub fn new(pulumi: impl PulumiConnector + 'static, config: Config) -> Self {
         let (tx, rx) = unbounded();
         Self {
-            outputs: HashMap::new(),
-            function_contexts: Mutex::new(HashMap::new()),
-            join_set: FuturesUnordered::new(),
+            outputs: Default::default(),
+            function_contexts: Default::default(),
+            join_set: Default::default(),
             pulumi: Arc::new(Box::new(pulumi)),
             output_task_created: AtomicBool::new(false),
             native_function_queue_sender: tx,
@@ -69,8 +69,9 @@ impl<FunctionContext: Send + 'static> Engine<FunctionContext> {
         Self::new(pulumi, config)
     }
 
-    pub fn add_output(&mut self, field_name: FieldName, output_id: RawOutput) {
-        self.outputs.insert(field_name, output_id);
+    pub fn add_output(&self, field_name: FieldName, output_id: RawOutput) {
+        let mut outputs = self.outputs.lock().unwrap();
+        outputs.insert(field_name, output_id);
     }
 
     pub fn create_register_resource_node(
@@ -224,12 +225,14 @@ impl<FunctionContext: Send + 'static> Engine<FunctionContext> {
             .compare_exchange(false, true, SeqCst, SeqCst)
             .is_ok()
         {
-            let outputs = self.outputs.clone();
+            let outputs = self.outputs.lock().unwrap();
+            let outputs_map = outputs.clone();
+            drop(outputs);
             let pulumi = self.pulumi.clone();
 
             let f = async move {
                 let mut resolved_outputs = HashMap::new();
-                for (key, output) in outputs {
+                for (key, output) in outputs_map {
                     let value = output.value.await;
                     resolved_outputs.insert(key, value);
                 }
