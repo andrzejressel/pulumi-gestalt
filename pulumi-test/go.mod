@@ -2,7 +2,7 @@ module github.com/andrzejressel/pulumi-gestalt/pulumi-test
 
 go 1.25.3
 
-require github.com/pulumi/pulumi-go-provider v1.1.2
+require github.com/pulumi/pulumi-go-provider v1.2.0
 
 require (
 	dario.cat/mergo v1.0.0 // indirect
