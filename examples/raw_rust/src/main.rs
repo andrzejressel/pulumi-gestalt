@@ -1,12 +1,11 @@
 use std::collections::HashMap;
-use serde_json::json;
-use pulumi_gestalt_rust_integration::get_schema;
-use pulumi_gestalt_rust_integration::*;
+use serde_json::{json, Value};
+use pulumi_gestalt_rust_integration::{get_schema, ConfigValue, InvokeResourceRequest, RegisterResourceRequest};
 
-type Context = pulumi_gestalt_rust_integration::Context<Box<dyn Fn(String) -> String>>;
+type Context = pulumi_gestalt_rust_integration::Context<Box<dyn Fn(Value) -> Value>>;
 
 fn generate_random_value(ctx: &Context) {
-    let output = Context::create_output(json!(16), false);
+    let output = ctx.create_output(json!(16), false);
 
     let register_resource_request = RegisterResourceRequest {
         r#type: "random:index/randomString:RandomString".to_string(),
@@ -23,7 +22,7 @@ fn generate_random_value(ctx: &Context) {
 }
 
 fn run_command(ctx: &Context) {
-    let output = Context::create_output(json!("whoami"), false);
+    let output = ctx.create_output(json!("whoami"), false);
 
     let register_resource_request = InvokeResourceRequest {
         token: "command:local:run".to_string(),
@@ -41,19 +40,19 @@ fn run_command(ctx: &Context) {
 }
 
 fn perform_operations_on_outputs(ctx: &Context) {
-    let output = Context::create_output(json!(16), false);
+    let output = ctx.create_output(json!(16), false);
 
     let output_2 = output.map(Box::new(|s| {
-        let i = s.parse::<i32>().unwrap();
-        (i * 2).to_string()
+        let i = s.as_i64().unwrap();
+        (i * 2).to_string().into()
     }));
-    let output_3 = output_2.map(Box::new(|_| "\"my_string\"".to_string()));
+    let output_3 = output_2.map(Box::new(|_| json!("my_string")));
 
     let output_4 = output.combine(&[&output_2, &output_3]);
 
-    output_2.add_export("double_length".to_string());
-    output_3.add_export("static_string".to_string());
-    output_4.add_export("combined".to_string());
+    output_2.add_export("double_length".into());
+    output_3.add_export("static_string".into());
+    output_4.add_export("combined".into());
 }
 
 fn perform_operations_on_default_config(ctx: &Context) {
@@ -79,7 +78,7 @@ fn perform_operations_on_default_config(ctx: &Context) {
         .get_config_value(None, "secret")
         .expect("Expected secret value");
     if let ConfigValue::Secret(secret_output) = secret {
-        secret_output.add_export("secret".to_string());
+        secret_output.add_export("secret".into());
     } else {
         panic!("Secret tag was expected but not returned");
     }
@@ -108,7 +107,7 @@ fn perform_operations_on_custom_config(ctx: &Context) {
         .get_config_value(Some("namespace"), "secret")
         .expect("Expected secret value");
     if let ConfigValue::Secret(secret_output) = secret {
-        secret_output.add_export("secret_namespace".to_string());
+        secret_output.add_export("secret_namespace".into());
     } else {
         panic!("Secret tag was expected but not returned");
     }
@@ -119,7 +118,8 @@ fn obtain_schema() {
 }
 
 fn main() {
-    let ctx = Context::create_context();
+    let runtime = tokio::runtime::Runtime::new().unwrap();
+    let ctx = runtime.block_on(Context::new());
 
     generate_random_value(&ctx);
     run_command(&ctx);
@@ -128,5 +128,5 @@ fn main() {
     perform_operations_on_custom_config(&ctx);
     obtain_schema();
 
-    ctx.finish();
+    runtime.block_on(pulumi_gestalt_rust_integration::finish::finish_lambdas_sequentially(ctx));
 }

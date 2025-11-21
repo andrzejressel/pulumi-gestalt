@@ -3438,6 +3438,7 @@ dependencies = [
  "pulumi_gestalt_examples_common",
  "pulumi_gestalt_rust_integration",
  "serde_json",
+ "tokio",
 ]
 
 [[package]]
