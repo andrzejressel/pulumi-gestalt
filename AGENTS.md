@@ -10,7 +10,7 @@ This file contains global instructions for AI agents working with the `pulumi-ge
 
 The development environment is managed by `devenv`.
 
-1.  **Activate environment**:
+1.  **Activate environment** (only on Linux/Unix systems):
     ```bash
     devenv shell
     ```
