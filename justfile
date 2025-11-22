@@ -166,3 +166,31 @@ changelog-generate-for-docs:
 
 changelog-dry-run:
     cargo run -p changelog -- dry-run
+
+# Validate Renovate configuration syntax without running
+renovate-validate:
+    #!/usr/bin/env bash
+    echo "Validating Renovate configuration syntax..."
+    docker run --rm \
+        -v $(pwd)/renovate.json:/usr/src/app/renovate.json:ro \
+        renovate/renovate:latest \
+        renovate-config-validator /usr/src/app/renovate.json
+
+# Run Renovate locally in dry-run mode to test configuration
+# This runs in dry-run mode and only checks what would be updated without making changes
+# Note: External preset fetching may fail due to GitHub API rate limits - this is expected
+renovate-local:
+    #!/usr/bin/env bash
+    echo "Running Renovate locally in dry-run mode..."
+    echo "This will test the renovate.json configuration without making any changes."
+    echo ""
+    echo "⚠️  Note: GitHub API rate limits may cause preset fetching to fail."
+    echo "   This is expected for local runs without authentication tokens."
+    echo "   The tool will still process local configuration and show what would be updated."
+    echo ""
+    docker run --rm \
+        -v $(pwd):/usr/src/app \
+        -w /usr/src/app \
+        -e LOG_LEVEL=info \
+        renovate/renovate:latest \
+        bash -c "git config --global --add safe.directory /usr/src/app && renovate --platform=local --dry-run=full"
