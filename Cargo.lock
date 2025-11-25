@@ -3692,7 +3692,7 @@ dependencies = [
  "pulumi_gestalt_wit",
  "serde",
  "serde_json",
- "wasmparser 0.240.0",
+ "wasmparser 0.241.2",
  "wasmtime",
  "wasmtime-wasi",
  "wat",
@@ -4904,19 +4904,6 @@ dependencies = [
 
 [[package]]
 name = "wasmparser"
-version = "0.240.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b722dcf61e0ea47440b53ff83ccb5df8efec57a69d150e4f24882e4eba7e24a4"
-dependencies = [
- "bitflags",
- "hashbrown 0.15.4",
- "indexmap",
- "semver",
- "serde",
-]
-
-[[package]]
-name = "wasmparser"
 version = "0.241.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "46d90019b1afd4b808c263e428de644f3003691f243387d30d673211ee0cb8e8"
@@ -4925,6 +4912,7 @@ dependencies = [
  "hashbrown 0.15.4",
  "indexmap",
  "semver",
+ "serde",
 ]
 
 [[package]]
