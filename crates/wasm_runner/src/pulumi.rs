@@ -38,7 +38,7 @@ struct MyState {
 
 impl HostContext for MyState {
     fn new(&mut self) -> anyhow::Result<Resource<Context>> {
-        let engine = pulumi_gestalt_rust_integration::get_engine();
+        let engine = pulumi_gestalt_rust_integration::Context::new();
 
         let context = SingleThreadedContext::new(engine);
         let id = self.table.push(context)?;
@@ -163,15 +163,15 @@ impl HostContext for MyState {
     ) -> anyhow::Result<Option<ConfigValue>> {
         assert!(!context.owned());
         let context = self.table.get_mut(&context)?;
-        let engine = &context.engine.clone();
+        let engine = &context.engine;
         let result = engine
             .clone()
             .borrow_mut()
             .get_config_value(name.as_deref(), &key);
         let result = result.map(|value| match value {
-            pulumi_gestalt_core::ConfigValue::PlainText(pt) => ConfigValue::Plaintext(pt.clone()),
-            pulumi_gestalt_core::ConfigValue::Secret(s) => {
-                let output = SingleThreadedOutput::new(s, engine.clone());
+            pulumi_gestalt_rust_integration::ConfigValue::PlainText(pt) => ConfigValue::Plaintext(pt.clone()),
+            pulumi_gestalt_rust_integration::ConfigValue::Secret(s) => {
+                let output = SingleThreadedOutput::new(s);
                 let id = self.table.push(output).unwrap();
                 ConfigValue::Secret(id)
             }

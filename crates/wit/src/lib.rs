@@ -18,45 +18,37 @@ pub mod client_bindings {
 pub mod bindings_runner {
     use std::cell::RefCell;
     use std::rc::Rc;
+    use std::sync::Arc;
+
+    type FunctionType = String;
 
     pub struct SingleThreadedContext {
-        pub engine: Rc<RefCell<pulumi_gestalt_core::Engine>>,
+        pub engine: pulumi_gestalt_rust_integration::Context<FunctionType>,
     }
 
     impl SingleThreadedContext {
-        pub fn new(engine: pulumi_gestalt_core::Engine) -> Self {
-            Self {
-                engine: Rc::new(RefCell::new(engine)),
-            }
+        pub fn new(engine: pulumi_gestalt_rust_integration::Context<FunctionType>) -> Self {
+            Self { engine: engine }
         }
     }
-    unsafe impl Send for SingleThreadedContext {}
 
     pub struct SingleThreadedOutput {
-        pub output_id: pulumi_gestalt_core::OutputId,
-        pub engine: Rc<RefCell<pulumi_gestalt_core::Engine>>,
+        pub output: pulumi_gestalt_rust_integration::Output<FunctionType>,
     }
-    unsafe impl Send for SingleThreadedOutput {}
     impl SingleThreadedOutput {
-        pub fn new(
-            output_id: pulumi_gestalt_core::OutputId,
-            engine: Rc<RefCell<pulumi_gestalt_core::Engine>>,
-        ) -> Self {
-            Self { output_id, engine }
+        pub fn new(output: pulumi_gestalt_rust_integration::Output<FunctionType>) -> Self {
+            Self { output }
         }
     }
 
     pub struct SingleThreadedCompositeOutput {
-        pub output_id: pulumi_gestalt_core::OutputId,
-        pub engine: Rc<RefCell<pulumi_gestalt_core::Engine>>,
+        pub output: pulumi_gestalt_rust_integration::RegisterResourceOutput<FunctionType>,
     }
-    unsafe impl Send for SingleThreadedCompositeOutput {}
     impl SingleThreadedCompositeOutput {
         pub fn new(
-            output_id: pulumi_gestalt_core::OutputId,
-            engine: Rc<RefCell<pulumi_gestalt_core::Engine>>,
+            output: pulumi_gestalt_rust_integration::RegisterResourceOutput<FunctionType>,
         ) -> Self {
-            Self { output_id, engine }
+            Self { output }
         }
     }
 
@@ -64,7 +56,7 @@ pub mod bindings_runner {
         world: "pulumi-gestalt",
         imports: {
             default: async | trappable
-            // "component": trappable
+            // "component": async | trappable
         },
         with: {
             "component:pulumi-gestalt/context/context":SingleThreadedContext,

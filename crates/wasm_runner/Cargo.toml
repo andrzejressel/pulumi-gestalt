@@ -20,7 +20,6 @@ pulumi_gestalt_wit = { workspace = true, features = ["runner"] }
 wasmparser.workspace = true
 serde.workspace = true
 serde_json.workspace = true
-pulumi_gestalt_core.workspace = true
 pulumi_gestalt_rust_integration.workspace = true
 
 [dev-dependencies]

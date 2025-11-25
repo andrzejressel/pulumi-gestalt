@@ -1,10 +1,10 @@
 use crate::config::{Config, RawConfigValue};
 use crate::{RawOutput, RegisterResourceOutput};
-use futures::channel::mpsc::{unbounded, UnboundedReceiver, UnboundedSender};
-use futures::channel::oneshot::{channel, Sender};
+use futures::channel::mpsc::{UnboundedReceiver, UnboundedSender, unbounded};
+use futures::channel::oneshot::{Sender, channel};
 use futures::future::{BoxFuture, Shared};
-use futures::stream::{FuturesOrdered, FuturesUnordered};
 use futures::stream::StreamExt;
+use futures::stream::{FuturesOrdered, FuturesUnordered};
 use futures::{FutureExt, Stream};
 use pulumi_gestalt_domain::connector::{
     PulumiConnector, RegisterOutputsRequest, RegisterResourceRequest, ResourceInvokeRequest,
@@ -12,8 +12,8 @@ use pulumi_gestalt_domain::connector::{
 use pulumi_gestalt_domain::{ExistingNodeValue, FieldName, NodeValue};
 use serde_json::Value;
 use std::collections::{HashMap, HashSet};
-use std::sync::atomic::Ordering::SeqCst;
 use std::sync::atomic::AtomicBool;
+use std::sync::atomic::Ordering::SeqCst;
 use std::sync::{Arc, Mutex, RwLock};
 use uuid::Uuid;
 
@@ -111,7 +111,7 @@ impl<FunctionContext> Engine<FunctionContext> {
         &self,
         token: String,
         inputs: HashMap<FieldName, RawOutput>,
-        version: String
+        version: String,
     ) -> RegisterResourceOutput {
         let pulumi = self.pulumi.clone();
         let output = RegisterResourceOutput::from_future(async move {
@@ -164,7 +164,7 @@ impl<FunctionContext> Engine<FunctionContext> {
                     let result = rx.await.unwrap();
                     NodeValue::exists(result, secret)
                 }
-            } 
+            }
         });
         self.join_set.push(output.clone().invoke_void());
         output
@@ -205,8 +205,11 @@ impl<FunctionContext> Engine<FunctionContext> {
         let node_value = NodeValue::exists(value, secret);
         RawOutput::from_node_value(node_value)
     }
-    
-    pub fn create_extract_field(field_name: FieldName, source: RegisterResourceOutput) -> RawOutput {
+
+    pub fn create_extract_field(
+        field_name: FieldName,
+        source: RegisterResourceOutput,
+    ) -> RawOutput {
         let output = RawOutput::from_future(async move {
             let resource_fields = source.value.await;
             resource_fields.get_field_value(&field_name)
@@ -312,7 +315,7 @@ mod tests {
     static_assertions::assert_impl_all!(Engine<RwLock<()>>: Send, Sync);
 
     type StrEngine = Engine<&'static str>;
-    
+
     mod register_outputs {
         use super::*;
         use pulumi_gestalt_domain::connector::MockPulumiConnector;
@@ -354,7 +357,7 @@ mod tests {
             engine.add_output("output".into(), output_id.clone());
             engine.create_native_function_node("nativeFunc".into(), output_id.clone());
             engine.create_native_function_node("nativeFunc2".into(), output_id);
-            
+
             let result = engine.run().await;
             // nativeFunc
             assert!(result.is_some());
@@ -512,7 +515,6 @@ mod tests {
         }
     }
 
-
     mod config {
         use super::*;
         use crate::config::Config;
@@ -578,7 +580,7 @@ mod tests {
                 }
             }
         }
-        
+
         #[tokio::test]
         async fn should_return_secret_output_when_config_is_secret() {
             let config = Config::new(

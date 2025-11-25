@@ -46,7 +46,7 @@ fn run_command(ctx: &Context) {
 fn perform_operations_on_outputs(ctx: &Context) {
     let output = ctx.create_output("16".to_string(), false);
 
-    let output_2 = output.map(|s| async move  {
+    let output_2 = output.map(|s| async move {
         let i = s.parse::<i32>().unwrap();
         (i * 2).to_string()
     });

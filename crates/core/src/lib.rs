@@ -2,15 +2,15 @@ mod config;
 mod engine;
 mod model;
 
-pub use engine::ConfigValue;
 pub use config::Config;
+pub use engine::ConfigValue;
 pub use engine::Engine;
-pub use model::FunctionName;
-use futures::future::{BoxFuture, Shared};
+pub use engine::NativeFunctionRequest;
 use futures::FutureExt;
+use futures::future::{BoxFuture, Shared};
+pub use model::FunctionName;
 use pulumi_gestalt_domain::{NodeValue, ResourceFields};
 use std::sync::Arc;
-pub use engine::NativeFunctionRequest;
 
 pub type RawOutput = Output<NodeValue>;
 
@@ -44,6 +44,8 @@ impl<T: Clone + 'static + Send + Sync> Output<T> {
     pub(crate) fn invoke_void(self) -> Shared<BoxFuture<'static, ()>> {
         async move {
             self.value.await;
-        }.boxed().shared()
+        }
+        .boxed()
+        .shared()
     }
 }

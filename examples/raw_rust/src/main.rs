@@ -1,6 +1,8 @@
+use pulumi_gestalt_rust_integration::{
+    ConfigValue, InvokeResourceRequest, RegisterResourceRequest, get_schema,
+};
+use serde_json::{Value, json};
 use std::collections::HashMap;
-use serde_json::{json, Value};
-use pulumi_gestalt_rust_integration::{get_schema, ConfigValue, InvokeResourceRequest, RegisterResourceRequest};
 
 type Context = pulumi_gestalt_rust_integration::Context<Box<dyn Fn(Value) -> Value>>;
 
@@ -11,9 +13,7 @@ fn generate_random_value(ctx: &Context) {
         r#type: "random:index/randomString:RandomString".to_string(),
         name: "my_name".to_string(),
         version: "4.15.1".to_string(),
-        inputs: HashMap::from([
-            ("length".into(), output.clone())
-        ]),
+        inputs: HashMap::from([("length".into(), output.clone())]),
     };
 
     let composite_output = ctx.register_resource(register_resource_request);
@@ -27,9 +27,7 @@ fn run_command(ctx: &Context) {
     let register_resource_request = InvokeResourceRequest {
         token: "command:local:run".to_string(),
         version: "1.0.2".to_string(),
-        inputs: HashMap::from([
-            ("command".into(), output)
-        ]),
+        inputs: HashMap::from([("command".into(), output)]),
     };
 
     let compose_output = ctx.invoke_resource(register_resource_request);

@@ -6,7 +6,6 @@ pub mod finish;
 
 pub use engine::*;
 
-
 /// Requires `pulumi` CLI to be installed and available in PATH
 /// Modules for provider can be found in Pulumi registry on left side with (M) icon:
 /// - [AWS](https://www.pulumi.com/registry/packages/aws/)
