@@ -37,15 +37,14 @@ struct MyState {
 }
 
 impl HostContext for MyState {
-    fn new(&mut self) -> anyhow::Result<Resource<Context>> {
-        let engine = pulumi_gestalt_rust_integration::Context::new();
-
+    async fn new(&mut self) -> anyhow::Result<Resource<Context>> {
+        let engine = pulumi_gestalt_rust_integration::Context::new().await;
         let context = SingleThreadedContext::new(engine);
         let id = self.table.push(context)?;
         Ok(id)
     }
 
-    fn create_output(
+    async fn create_output(
         &mut self,
         context: Resource<Context>,
         value: String,
@@ -54,14 +53,13 @@ impl HostContext for MyState {
         assert!(!context.owned());
         let context = self.table.get_mut(&context)?;
         let value = serde_json::from_str(&value).unwrap();
-        let refcell = &context.engine;
-        let output_id = refcell.borrow_mut().create_done_node(value, secret);
-        let output = SingleThreadedOutput::new(output_id, context.engine.clone());
+        let output = context.engine.create_output(value, secret);
+        let output = SingleThreadedOutput::new(output);
         let id = self.table.push(output)?;
         Ok(id)
     }
 
-    fn register_resource(
+    async fn register_resource(
         &mut self,
         context: Resource<Context>,
         request: context::RegisterResourceRequest,
@@ -73,17 +71,19 @@ impl HostContext for MyState {
         let mut inputs = HashMap::new();
         for field in request.object {
             let output = table.get(&field.value)?;
-            inputs.insert(field.name.clone().into(), output.output_id);
+            inputs.insert(field.name.clone().into(), output.output.clone());
         }
 
-        let result = context.engine.borrow_mut().create_register_resource_node(
-            request.type_,
-            request.name,
-            inputs,
-            request.version,
+        let result = context.engine.register_resource(
+            pulumi_gestalt_rust_integration::RegisterResourceRequest {
+                r#type: request.type_,
+                name: request.name,
+                inputs,
+                version: request.version,
+            }
         );
 
-        let output = SingleThreadedCompositeOutput::new(result, context.engine.clone());
+        let output = SingleThreadedCompositeOutput::new(result);
         let id = self.table.push(output)?;
         Ok(id)
     }
@@ -99,63 +99,62 @@ impl HostContext for MyState {
         let mut inputs = HashMap::new();
         for field in request.object {
             let output = table.get(&field.value)?;
-            inputs.insert(field.name.clone().into(), output.output_id);
+            inputs.insert(field.name.clone().into(), output.output.clone());
         }
 
         let context = table.get(&context)?;
 
-        let result = context.engine.borrow_mut().create_resource_invoke_node(
-            request.token,
-            inputs,
-            request.version,
+        let result = context.engine.invoke_resource(
+            pulumi_gestalt_rust_integration::InvokeResourceRequest {
+                token: request.token,
+                inputs,
+                version: request.version,
+            }
         );
 
-        let output = SingleThreadedCompositeOutput::new(result, context.engine.clone());
+        let output = SingleThreadedCompositeOutput::new(result);
         let id = self.table.push(output)?;
         Ok(id)
     }
 
-    fn finish(
+    async fn finish(
         &mut self,
         self_: Resource<Context>,
         functions: Vec<FunctionInvocationResult>,
     ) -> anyhow::Result<Vec<FunctionInvocationRequest>> {
         assert!(!self_.owned());
-        let table = &mut self.table;
-        let mut function_invocations = HashMap::new();
-        for function in functions {
-            let v = serde_json::from_str(function.value.as_str()).unwrap();
-            let output = function.id;
-            let output = table.get(&output)?;
-            function_invocations.insert(output.output_id, v);
-        }
-
-        let context = table.get_mut(&self_)?;
-        let engine = context.engine.clone();
-
-        let results = context
-            .engine
-            .borrow_mut()
-            .run(function_invocations)
-            .unwrap_or_default()
-            .clone();
-
-        Ok(results
-            .into_iter()
-            .map(|result| {
-                let v = serde_json::to_string(&result.value).unwrap();
-                let output = SingleThreadedOutput::new(result.output_id, engine.clone());
-                let id = table.push(output).unwrap();
-                FunctionInvocationRequest {
+        
+        let context = self.table.get(&self_)?;
+        
+        let result = context.engine.finish().await;
+        
+        match result {
+            None => Ok(Vec::new()),
+            Some(request) => {
+                // Process the single request
+                let v = serde_json::to_string(&request.data).unwrap();
+                let output = context.engine.create_native_function_node(
+                    request.context,
+                    // We need a dummy output here - this API doesn't quite match
+                    // Will need refactoring for proper async support
+                    context.engine.create_output(serde_json::Value::Null, false)
+                );
+                let output = SingleThreadedOutput::new(output);
+                let id = self.table.push(output)?;
+                
+                // Send back the result (not implemented - needs mailbox)
+                // request.return_mailbox.send(...).unwrap();
+                
+                Ok(vec![FunctionInvocationRequest {
                     id,
-                    function_name: result.function_name.into(),
+                    function_name: "placeholder".to_string(), // Need to extract from context
                     value: v,
-                }
-            })
-            .collect())
+                }])
+            }
+        }
     }
 
-    fn get_config(
+    async fn get_config(
         &mut self,
         context: Resource<Context>,
         name: Option<String>,
@@ -163,13 +162,9 @@ impl HostContext for MyState {
     ) -> anyhow::Result<Option<ConfigValue>> {
         assert!(!context.owned());
         let context = self.table.get_mut(&context)?;
-        let engine = &context.engine;
-        let result = engine
-            .clone()
-            .borrow_mut()
-            .get_config_value(name.as_deref(), &key);
+        let result = context.engine.get_config_value(name.as_deref(), &key);
         let result = result.map(|value| match value {
-            pulumi_gestalt_rust_integration::ConfigValue::PlainText(pt) => ConfigValue::Plaintext(pt.clone()),
+            pulumi_gestalt_rust_integration::ConfigValue::PlainText(pt) => ConfigValue::Plaintext(pt),
             pulumi_gestalt_rust_integration::ConfigValue::Secret(s) => {
                 let output = SingleThreadedOutput::new(s);
                 let id = self.table.push(output).unwrap();
@@ -179,7 +174,7 @@ impl HostContext for MyState {
         Ok(result)
     }
 
-    fn drop(&mut self, context: Resource<Context>) -> anyhow::Result<()> {
+    async fn drop(&mut self, context: Resource<Context>) -> anyhow::Result<()> {
         assert!(context.owned());
         self.table.delete(context)?;
         Ok(())
@@ -191,78 +186,65 @@ impl types::Host for MyState {}
 impl context::Host for MyState {}
 
 impl HostOutput for MyState {
-    fn map(
+    async fn map(
         &mut self,
         self_: Resource<SingleThreadedOutput>,
         function_name: String,
     ) -> anyhow::Result<Resource<SingleThreadedOutput>> {
         let table = &mut self.table;
-        let output = table.get_mut(&self_)?;
-        let engine = &output.engine;
-        let output = &output.output_id;
-        let output = engine
-            .borrow_mut()
-            .create_native_function_node(function_name.clone().into(), *output);
-
-        let output = SingleThreadedOutput::new(output, engine.clone());
+        let st_output = table.get(&self_)?;
+        let output = st_output.output.map(function_name);
+        let output = SingleThreadedOutput::new(output);
         let id = table.push(output)?;
         Ok(id)
     }
 
-    fn clone(
+    async fn clone(
         &mut self,
         self_: Resource<output_interface::Output>,
     ) -> anyhow::Result<Resource<output_interface::Output>> {
         assert!(!self_.owned());
-        let output = self.table.get_mut(&self_)?;
-        let output_id = output.output_id;
-        let output = SingleThreadedOutput::new(output_id, output.engine.clone());
+        let st_output = self.table.get(&self_)?;
+        let output = st_output.output.clone();
+        let output = SingleThreadedOutput::new(output);
         let id = self.table.push(output)?;
         Ok(id)
     }
 
-    fn combine(
+    async fn combine(
         &mut self,
         self_: Resource<output_interface::Output>,
         outputs: Vec<Resource<output_interface::Output>>,
     ) -> anyhow::Result<Resource<output_interface::Output>> {
         assert!(!self_.owned());
-        let table = &mut self.table;
+        let table = &self.table;
         let st_output = table.get(&self_)?;
-        let output = &st_output.output_id;
 
-        let mut outputs2 = Vec::new();
-        outputs2.push(*output);
-        for field in outputs {
-            let output = table.get(&field)?;
-            let output = &output.output_id;
-            outputs2.push(*output)
+        let mut output_refs = Vec::new();
+        for output_res in &outputs {
+            let output = table.get(output_res)?;
+            output_refs.push(&output.output);
         }
 
-        let result = st_output
-            .engine
-            .borrow_mut()
-            .create_combine_outputs(outputs2);
-        let output = SingleThreadedOutput::new(result, st_output.engine.clone());
-        let id = table.push(output)?;
+        let result = st_output.output.combine(&output_refs);
+        let output = SingleThreadedOutput::new(result);
+        let id = self.table.push(output)?;
         Ok(id)
     }
 
-    fn add_to_export(
+    async fn add_to_export(
         &mut self,
         self_: Resource<output_interface::Output>,
         name: String,
     ) -> anyhow::Result<()> {
         assert!(!self_.owned());
-        let table = &mut self.table;
-        let output = table.get_mut(&self_)?;
-        let engine = &output.engine;
-        let output = &output.output_id;
-        engine.borrow_mut().add_output(name.clone().into(), *output);
+        let table = &self.table;
+        let output = table.get(&self_)?;
+        output.output.add_export(name.into());
         Ok(())
     }
 
-    fn drop(&mut self, rep: Resource<output_interface::Output>) -> anyhow::Result<()> {
+    async fn drop(&mut self, rep: Resource<output_interface::Output>) -> anyhow::Result<()> {
         assert!(rep.owned());
         self.table.delete(rep)?;
         Ok(())
@@ -270,24 +252,20 @@ impl HostOutput for MyState {
 }
 
 impl HostCompositeOutput for MyState {
-    fn get_field(
+    async fn get_field(
         &mut self,
         self_: Resource<output_interface::CompositeOutput>,
         field_name: String,
     ) -> anyhow::Result<Resource<output_interface::Output>> {
         assert!(!self_.owned());
-        let output = self.table.get_mut(&self_)?;
-        let engine = &output.engine;
-        let output = &output.output_id;
-        let output = engine
-            .borrow_mut()
-            .create_extract_field(field_name.clone().into(), *output);
-        let output = SingleThreadedOutput::new(output, engine.clone());
+        let composite_output = self.table.get(&self_)?;
+        let output = composite_output.output.get_field(field_name.into());
+        let output = SingleThreadedOutput::new(output);
         let id = self.table.push(output)?;
         Ok(id)
     }
 
-    fn drop(&mut self, rep: Resource<output_interface::CompositeOutput>) -> anyhow::Result<()> {
+    async fn drop(&mut self, rep: Resource<output_interface::CompositeOutput>) -> anyhow::Result<()> {
         assert!(rep.owned());
         self.table.delete(rep)?;
         Ok(())
