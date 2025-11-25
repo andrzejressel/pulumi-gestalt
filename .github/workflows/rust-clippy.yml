@@ -40,14 +40,14 @@ jobs:
     - run: git config --system core.longpaths true
       if: runner.os == 'Windows'
     - name: Checkout code
-      uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
       with:
         submodules: true
     - uses: Swatinem/rust-cache@f13886b937689c021905a6b90929199931d60db1 # v2.8.1
     - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - uses: cargo-bins/cargo-binstall@ae04fb5e853ae6cd3ad7de4a1d554a8b646d12aa # v1.15.11
+    - uses: cargo-bins/cargo-binstall@ac8496113671719ef3f12282bc9f41d86322e0d7 # v1.16.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Install requirements
@@ -72,7 +72,7 @@ jobs:
     - name: Run rust-clippy
       run: just clippy-to-file
     - name: Upload analysis results to GitHub
-      uses: github/codeql-action/upload-sarif@0499de31b99561a6d14a36a5f662c2a54f91beee # v4.31.2
+      uses: github/codeql-action/upload-sarif@e12f0178983d466f2f6028f5cc7a6d786fd97f4b # v4.31.4
       with:
         sarif_file: rust-clippy-results.sarif
         wait-for-processing: true
