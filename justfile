@@ -113,7 +113,6 @@ test-examples-native:
         -p pulumi_gestalt_example_multiple_providers \
         -p pulumi_gestalt_example_native \
         -p pulumi_gestalt_example_raw_rust \
-        -p pulumi_gestalt_example_raw_rust_async \
         -p pulumi_gestalt_example_secret \
         -p pulumi_gestalt_example_simple \
         -p pulumi_gestalt_example_test \

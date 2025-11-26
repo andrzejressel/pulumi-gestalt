@@ -65,6 +65,7 @@ impl<FunctionContext> Engine<FunctionContext> {
 
     #[cfg(test)]
     pub fn new_without_configs(pulumi: impl PulumiConnector + 'static) -> Self {
+        use std::collections::HashSet;
         let config = Config::new(HashMap::new(), HashSet::new(), "project".to_string());
         Self::new(pulumi, config)
     }

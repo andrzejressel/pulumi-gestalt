@@ -1,15 +1,18 @@
+use std::collections::HashMap;
+use pulumi_gestalt_rust_integration as integration;
+use pulumi_gestalt_rust_integration::FieldName;
 use serde::{Serialize, de::DeserializeOwned};
 use serde_json::{Value, from_value, to_value};
 use std::marker::PhantomData;
+use std::rc::Rc;
 use tokio::runtime::Runtime;
-use pulumi_gestalt_rust_integration as integration;
-use pulumi_gestalt_rust_integration::FieldName;
 
 pub type FunctionContext = Box<dyn Fn(Value) -> Value + Send>;
 
 pub struct Output<T> {
     inner: integration::Output<FunctionContext>,
     phantom: PhantomData<T>,
+    runtime: Rc<Runtime>,
 }
 
 impl<T> Output<T> {
@@ -19,20 +22,23 @@ impl<T> Output<T> {
         T: DeserializeOwned,
         B: Serialize,
     {
-        // Closure converting Value JSON -> T, applying user function, returning Value JSON
         let function: FunctionContext = Box::new(move |v: Value| {
             let t: T = from_value(v).unwrap();
             let b = f(t);
             to_value(b).unwrap()
         });
-        let res = block_on(self.inner.map(function));
+        let res = self.runtime.block_on(self.inner.map(function));
         Output {
             inner: res,
             phantom: PhantomData,
+            runtime: self.runtime.clone(),
         }
     }
     pub fn add_to_export(&self, key: &str) {
-        block_on(self.inner.add_export(FieldName::from(key.to_string())));
+        self.runtime.block_on(
+            self.inner
+                .add_export(FieldName::from(key.to_string()))
+        );
     }
     pub fn combine<RESULT>(&self, others: &[&Output<()>]) -> Output<RESULT> {
         let mut all: Vec<&integration::Output<FunctionContext>> =
@@ -41,10 +47,11 @@ impl<T> Output<T> {
         for o in others {
             all.push(&o.inner);
         }
-        let combined = block_on(self.inner.combine(&all));
+        let combined = self.runtime.block_on(self.inner.combine(&all));
         Output {
             inner: combined,
             phantom: PhantomData,
+            runtime: self.runtime.clone(),
         }
     }
     pub fn drop_type(self) -> Output<()> {
@@ -54,6 +61,7 @@ impl<T> Output<T> {
         Output {
             inner: self.inner,
             phantom: PhantomData,
+            runtime: self.runtime,
         }
     }
 }
@@ -63,29 +71,32 @@ impl<T> Clone for Output<T> {
         Self {
             inner: self.inner.clone(),
             phantom: PhantomData,
+            runtime: self.runtime.clone(),
         }
     }
 }
 
 pub struct CompositeOutput {
     inner: integration::RegisterResourceOutput<FunctionContext>,
+    runtime: Rc<Runtime>,
 }
 impl CompositeOutput {
     pub fn get_field<T>(&self, key: &str) -> Output<T>
     where
         T: DeserializeOwned,
     {
-        let res = block_on(self.inner.get_field(FieldName::from(key.to_string())));
+        let res = self.runtime.block_on(self.inner.get_field(FieldName::from(key.to_string())));
         Output {
             inner: res,
             phantom: PhantomData,
+            runtime: self.runtime.clone(),
         }
     }
 }
 
 pub struct Context {
     inner: integration::Context<FunctionContext>,
-    runtime: Runtime
+    runtime: Rc<Runtime>,
 }
 impl Default for Context {
     fn default() -> Self {
@@ -95,32 +106,23 @@ impl Default for Context {
 impl Context {
     pub fn new() -> Self {
         let runtime = Runtime::new().unwrap();
+        let context = runtime.block_on(integration::Context::new());
         Self {
-            inner: runtime.block_on(integration::Context::new()),
-            runtime
+            inner: context,
+            runtime: Rc::new(runtime),
         }
     }
     pub fn finish(&self) {
-        loop {
-            let result = block_on(self.inner.finish());
-            match result {
-                None => break,
-                Some(NativeFunctionRequest {
-                    context,
-                    data,
-                    return_mailbox,
-                }) => {
-                    let value = context(data);
-                    return_mailbox.send(value).unwrap();
-                }
-            }
-        }
+        self.runtime.block_on(
+            pulumi_gestalt_rust_integration::finish::finish_lambdas_sequentially(&self.inner)
+        )
     }
     pub fn new_output<T: Serialize>(&self, value: &T) -> Output<T> {
         let json_value = to_value(value).unwrap();
         Output {
             inner: self.inner.create_output(json_value, false),
             phantom: PhantomData,
+            runtime: self.runtime.clone(),
         }
     }
     pub fn new_secret<T: Serialize>(&self, value: &T) -> Output<T> {
@@ -128,60 +130,78 @@ impl Context {
         Output {
             inner: self.inner.create_output(json_value, true),
             phantom: PhantomData,
+            runtime: self.runtime.clone(),
         }
     }
     pub fn register_resource(
         &self,
         request: RegisterResourceRequest<Output<()>>,
     ) -> CompositeOutput {
-        let mut inputs = std::collections::HashMap::new();
+        let mut inputs = HashMap::new();
         for object in request.object {
             inputs.insert(
                 FieldName::from(object.name.clone()),
                 object.value.inner.clone(),
             );
         }
-        let result = block_on(
-            self.inner
+        let result = self.runtime.block_on(
+            self
+                .inner
                 .register_resource(integration::RegisterResourceRequest {
                     r#type: request.type_.clone(),
                     name: request.name.clone(),
                     version: request.version.clone(),
                     inputs,
-                }),
+                })
         );
-        CompositeOutput { inner: result }
+        CompositeOutput { 
+            inner: result,
+            runtime: self.runtime.clone(),
+        }
     }
-    pub fn invoke_resource(&self, request: InvokeResourceRequest<Output<()>>) -> CompositeOutput {
-        let mut inputs = std::collections::HashMap::new();
+    pub fn invoke_resource(
+        &self,
+        request: InvokeResourceRequest<Output<()>>,
+    ) -> CompositeOutput {
+        let mut inputs = HashMap::new();
         for object in request.object {
             inputs.insert(
                 FieldName::from(object.name.clone()),
                 object.value.inner.clone(),
             );
         }
-        let result = block_on(
-            self.inner
+        let result = self.runtime.block_on(
+            self
+                .inner
                 .invoke_resource(integration::InvokeResourceRequest {
                     token: request.token.clone(),
                     version: request.version.clone(),
                     inputs,
-                }),
-        );
-        CompositeOutput { inner: result }
-    }
-    pub fn get_config(&self, name: Option<&str>, key: &str) -> Option<ConfigValue<Output<String>>> {
-        block_on(self.inner.get_config_value(name, key)).map(|v| match v {
-            pulumi_gestalt_rust_integration::ConfigValue::PlainText(pt) => {
-                ConfigValue::PlainText(pt)
-            }
-            pulumi_gestalt_rust_integration::ConfigValue::Secret(sec) => {
-                ConfigValue::Secret(Output {
-                    inner: sec,
-                    phantom: PhantomData,
                 })
-            }
-        })
+        );
+        CompositeOutput { 
+            inner: result,
+            runtime: self.runtime.clone(),
+        }
+    }
+    pub fn get_config(
+        &self,
+        name: Option<&str>,
+        key: &str,
+    ) -> Option<ConfigValue<Output<String>>> {
+        self.runtime.block_on(self.inner.get_config_value(name, key))
+            .map(|v| match v {
+                pulumi_gestalt_rust_integration::ConfigValue::PlainText(pt) => {
+                    ConfigValue::PlainText(pt)
+                }
+                pulumi_gestalt_rust_integration::ConfigValue::Secret(sec) => {
+                    ConfigValue::Secret(Output {
+                        inner: sec,
+                        phantom: PhantomData,
+                        runtime: self.runtime.clone(),
+                    })
+                }
+            })
     }
 }
 

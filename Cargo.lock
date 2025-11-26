@@ -3442,17 +3442,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "pulumi_gestalt_example_raw_rust_async"
-version = "0.0.0-DEV"
-dependencies = [
- "anyhow",
- "futures",
- "pulumi_gestalt_examples_common",
- "pulumi_gestalt_rust_integration",
- "tokio",
-]
-
-[[package]]
 name = "pulumi_gestalt_example_secret"
 version = "0.0.0-DEV"
 dependencies = [
