@@ -196,10 +196,7 @@ impl<T> Output<T> {
     }
 
     pub async fn add_export(&self, key: FieldName) {
-        self.engine
-            .lock()
-            .await
-            .add_output(key, self.inner.clone());
+        self.engine.lock().await.add_output(key, self.inner.clone());
     }
 }
 

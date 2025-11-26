@@ -40,10 +40,12 @@ async fn run_command(ctx: &Context) {
 async fn perform_operations_on_outputs(ctx: &Context) {
     let output = ctx.create_output(json!(16), false);
 
-    let output_2 = output.map(Box::new(|s| {
-        let i = s.as_i64().unwrap();
-        (i * 2).to_string().into()
-    })).await;
+    let output_2 = output
+        .map(Box::new(|s| {
+            let i = s.as_i64().unwrap();
+            (i * 2).to_string().into()
+        }))
+        .await;
     let output_3 = output_2.map(Box::new(|_| json!("my_string"))).await;
 
     let output_4 = output.combine(&[&output_2, &output_3]).await;
@@ -85,7 +87,11 @@ async fn perform_operations_on_default_config(ctx: &Context) {
 }
 
 async fn perform_operations_on_custom_config(ctx: &Context) {
-    if ctx.get_config_value(Some("namespace"), "test").await.is_some() {
+    if ctx
+        .get_config_value(Some("namespace"), "test")
+        .await
+        .is_some()
+    {
         panic!("NULL was expected but not returned");
     }
 

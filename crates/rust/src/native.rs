@@ -1,4 +1,3 @@
-use futures::executor::block_on;
 use pulumi_gestalt_core::NativeFunctionRequest;
 use pulumi_gestalt_domain::FieldName;
 use serde::{Serialize, de::DeserializeOwned};

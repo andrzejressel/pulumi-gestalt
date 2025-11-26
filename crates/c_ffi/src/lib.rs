@@ -1,24 +1,30 @@
 use anyhow::Context;
 use pulumi_gestalt_rust_integration as integration;
+use serde_json::Value;
 use std::cell::RefCell;
+use std::collections::HashMap;
 use std::ffi::{CStr, CString, c_char, c_void};
 use std::ptr::null_mut;
 use std::rc::{Rc, Weak};
+use tokio::runtime::Runtime;
+
+type FunctionType = Box<dyn Fn(Value) -> Value>;
 
 pub struct CustomOutputId {
-    native: integration::Output,
+    native: integration::Output<FunctionType>,
     ctx: Weak<RefCell<InnerPulumiContext>>,
 }
 
 pub struct CustomCompositeOutputId {
-    native: integration::CompositeOutput,
+    native: integration::RegisterResourceOutput<FunctionType>,
     ctx: Weak<RefCell<InnerPulumiContext>>,
 }
 
 pub struct InnerPulumiContext {
-    ctx: integration::Context,
+    ctx: integration::Context<FunctionType>,
     outputs: Vec<*mut CustomOutputId>,
     context: *const c_void,
+    runtime: Runtime,
 }
 
 pub struct PulumiContext {
@@ -95,11 +101,16 @@ type MappingFunction = extern "C" fn(*const c_void, *const c_void, *const c_char
 
 #[unsafe(no_mangle)]
 extern "C" fn pulumi_create_context(context: *const c_void) -> *mut PulumiContext {
-    let engine = integration::Context::create_context();
+    let runtime = tokio::runtime::Builder::new_multi_thread()
+        .enable_all()
+        .build()
+        .unwrap();
+    let engine = runtime.block_on(integration::Context::new());
     let t = InnerPulumiContext {
         ctx: engine,
         outputs: Vec::new(),
         context,
+        runtime,
     };
     let t = PulumiContext {
         inner: Rc::new(RefCell::new(t)),
@@ -110,7 +121,10 @@ extern "C" fn pulumi_create_context(context: *const c_void) -> *mut PulumiContex
 #[unsafe(no_mangle)]
 extern "C" fn pulumi_finish(ctx: *mut PulumiContext) {
     let pulumi_context = unsafe { &mut *ctx };
-    pulumi_context.inner.borrow_mut().ctx.finish();
+    let engine = pulumi_context.inner.borrow_mut();
+    engine.runtime.block_on(
+        pulumi_gestalt_rust_integration::finish::finish_lambdas_sequentially(&engine.ctx),
+    );
 }
 
 #[unsafe(no_mangle)]
@@ -133,6 +147,7 @@ extern "C" fn pulumi_create_output(
         .to_str()
         .unwrap()
         .to_string();
+    let value = serde_json::from_str(&value).unwrap();
     let pulumi_context = unsafe { &mut *ctx };
     let mut inner_engine = pulumi_context.inner.borrow_mut();
     let output_id = inner_engine.ctx.create_output(value, secret);
@@ -173,12 +188,14 @@ extern "C" fn pulumi_register_resource(
     let inner = &pulumi_context.inner;
     let inner_engine = pulumi_context.inner.borrow_mut();
     let request = integration::RegisterResourceRequest {
-        type_,
+        r#type: type_,
         name,
-        inputs: &objects,
+        inputs: objects,
         version,
     };
-    let output_id = inner_engine.ctx.register_resource(request);
+    let output_id = inner_engine
+        .runtime
+        .block_on(inner_engine.ctx.register_resource(request));
 
     let output = CustomCompositeOutputId {
         native: output_id,
@@ -213,10 +230,12 @@ extern "C" fn pulumi_invoke_resource(
     let inner_engine = pulumi_context.inner.borrow_mut();
     let request = integration::InvokeResourceRequest {
         token,
-        inputs: &objects,
+        inputs: objects,
         version,
     };
-    let output_id = inner_engine.ctx.invoke_resource(request);
+    let output_id = inner_engine
+        .runtime
+        .block_on(inner_engine.ctx.invoke_resource(request));
 
     let output = CustomCompositeOutputId {
         native: output_id,
@@ -239,7 +258,8 @@ extern "C" fn pulumi_output_map(
     let mut inner_engine = engine.inner.borrow_mut();
     let context = inner_engine.context;
 
-    let f = move |value: String| {
+    let f = move |value: Value| {
+        let value = serde_json::to_string(&value).unwrap();
         let c_string = CString::new(value).unwrap();
         let str = function(context, function_context, c_string.as_ptr());
         let result = unsafe { CStr::from_ptr(str) }.to_str().unwrap();
@@ -247,10 +267,12 @@ extern "C" fn pulumi_output_map(
         unsafe {
             libc::free(str as *mut c_void);
         }
-        v
+        serde_json::from_str(&v).unwrap()
     };
 
-    let second_output = output.native.map(Box::new(f));
+    let second_output = inner_engine
+        .runtime
+        .block_on(output.native.map(Box::new(f)));
 
     let output = CustomOutputId {
         native: second_output,
@@ -283,7 +305,9 @@ extern "C" fn pulumi_output_combine(
     let binding = output.ctx.upgrade().unwrap();
     let mut engine = binding.borrow_mut();
 
-    let new_output = output.native.combine(&other_outputs);
+    let new_output = engine
+        .runtime
+        .block_on(output.native.combine(&other_outputs));
 
     let output = CustomOutputId {
         native: new_output,
@@ -302,7 +326,11 @@ extern "C" fn pulumi_output_add_to_export(value: *const CustomOutputId, name: *c
         .unwrap()
         .to_string();
     let value = unsafe { &*value };
-    value.native.add_export(name);
+    let binding = value.ctx.upgrade().unwrap();
+    let engine = binding.borrow_mut();
+    engine
+        .runtime
+        .block_on(value.native.add_export(name.into()));
 }
 
 #[unsafe(no_mangle)]
@@ -315,10 +343,16 @@ extern "C" fn pulumi_composite_output_get_field(
         .unwrap()
         .to_string();
     let custom_register_output_id = unsafe { &*output };
-    let new_output = custom_register_output_id.native.get_field(field_name);
-
     let binding = custom_register_output_id.ctx.upgrade().unwrap();
     let mut engine = binding.borrow_mut();
+
+    let new_output = engine.runtime.block_on(
+        custom_register_output_id
+            .native
+            .get_field(field_name.into()),
+    );
+
+    let binding = custom_register_output_id.ctx.upgrade().unwrap();
 
     let output = CustomOutputId {
         native: new_output,
@@ -350,8 +384,11 @@ extern "C" fn pulumi_config_get_value(
     let key = unsafe { CStr::from_ptr(key) }.to_str().unwrap();
 
     let inner_engine = engine.inner.borrow_mut();
+    let config_value = inner_engine
+        .runtime
+        .block_on(inner_engine.ctx.get_config_value(name, key));
 
-    match inner_engine.ctx.get_config_value(name, key) {
+    match config_value {
         None => null_mut(),
         Some(pulumi_gestalt_rust_integration::ConfigValue::PlainText(s)) => {
             let value = CString::new(s).unwrap();
@@ -428,18 +465,15 @@ extern "C" fn pulumi_get_schema(
 fn extract_field<'a>(
     inputs: *const ObjectField,
     inputs_len: usize,
-) -> Vec<integration::ObjectField<'a>> {
-    let mut objects = Vec::new();
+) -> HashMap<integration::FieldName, integration::Output<FunctionType>> {
+    let mut objects = HashMap::new();
     unsafe {
         std::slice::from_raw_parts(inputs, inputs_len)
             .iter()
             .for_each(|field| {
                 let name = CStr::from_ptr(field.name).to_str().unwrap().to_owned();
                 let output = &(*field.value).native;
-                objects.push(integration::ObjectField {
-                    name,
-                    value: output,
-                });
+                objects.insert(name.into(), output.clone());
             });
     }
     objects

@@ -3753,6 +3753,8 @@ dependencies = [
  "libc",
  "pulumi_gestalt_rust_integration",
  "pulumi_gestalt_schema_protobuf",
+ "serde_json",
+ "tokio",
 ]
 
 [[package]]
