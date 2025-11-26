@@ -1,6 +1,5 @@
 use crate::constants::UNKNOWN_VALUE;
 use anyhow::{Context, Error, Result};
-use futures::FutureExt;
 use log::error;
 use prost::Message;
 use prost_types::value::Kind;

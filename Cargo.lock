@@ -3654,7 +3654,6 @@ dependencies = [
  "anyhow",
  "bon",
  "futures",
- "pulumi_gestalt_build",
  "pulumi_gestalt_core",
  "pulumi_gestalt_domain",
  "pulumi_gestalt_rust_integration",
