@@ -1,20 +1,20 @@
 use crate::config::{Config, RawConfigValue};
 use crate::{RawOutput, RegisterResourceOutput};
+use futures::FutureExt;
 use futures::channel::mpsc::{UnboundedReceiver, UnboundedSender, unbounded};
 use futures::channel::oneshot::{Sender, channel};
 use futures::future::{BoxFuture, Shared};
 use futures::stream::StreamExt;
 use futures::stream::{FuturesOrdered, FuturesUnordered};
-use futures::{FutureExt, Stream};
 use pulumi_gestalt_domain::connector::{
     PulumiConnector, RegisterOutputsRequest, RegisterResourceRequest, ResourceInvokeRequest,
 };
 use pulumi_gestalt_domain::{ExistingNodeValue, FieldName, NodeValue};
 use serde_json::Value;
-use std::collections::{HashMap, HashSet};
+use std::collections::HashMap;
 use std::sync::atomic::AtomicBool;
 use std::sync::atomic::Ordering::SeqCst;
-use std::sync::{Arc, Mutex, RwLock};
+use std::sync::{Arc, Mutex};
 use uuid::Uuid;
 
 struct InternalNativeFunctionRequest {
@@ -147,7 +147,7 @@ impl<FunctionContext> Engine<FunctionContext> {
         let mut function_contexts = self.function_contexts.lock().unwrap();
         function_contexts.insert(function_context_key, function_context);
         drop(function_contexts);
-        let mut request_receiver = self.native_function_queue_sender.clone();
+        let request_receiver = self.native_function_queue_sender.clone();
         let output = RawOutput::from_future(async move {
             let source_value = source.value.await;
             match source_value {
@@ -210,11 +210,10 @@ impl<FunctionContext> Engine<FunctionContext> {
         field_name: FieldName,
         source: RegisterResourceOutput,
     ) -> RawOutput {
-        let output = RawOutput::from_future(async move {
+        RawOutput::from_future(async move {
             let resource_fields = source.value.await;
             resource_fields.get_field_value(&field_name)
-        });
-        output
+        })
     }
 
     #[cfg(test)]

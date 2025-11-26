@@ -1,5 +1,4 @@
 use crate::constants::UNKNOWN_VALUE;
-use crate::output_id::OutputId;
 use anyhow::{Context, Error, Result};
 use futures::FutureExt;
 use log::error;
@@ -20,7 +19,6 @@ use pulumi_gestalt_proto::pulumi::pulumirpc::{
 };
 use serde_json::{Number, Value, json};
 use std::collections::{BTreeMap, HashMap};
-use tonic::async_trait;
 use tonic::transport::Channel;
 
 pub struct RealPulumiConnector {

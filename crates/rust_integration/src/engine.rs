@@ -199,7 +199,7 @@ impl<T> Output<T> {
         self.engine
             .lock()
             .await
-            .add_output(key.into(), self.inner.clone());
+            .add_output(key, self.inner.clone());
     }
 }
 

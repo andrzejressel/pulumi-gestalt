@@ -30,7 +30,7 @@ pub mod bindings_runner {
     }
 
     pub struct SingleThreadedOutput {
-        pub output: pulumi_gestalt_rust_integration::Output<FunctionType>
+        pub output: pulumi_gestalt_rust_integration::Output<FunctionType>,
     }
     impl SingleThreadedOutput {
         pub fn new(output: pulumi_gestalt_rust_integration::Output<FunctionType>) -> Self {

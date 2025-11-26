@@ -1,5 +1,6 @@
 use crate::pulumi::runner::PulumiGestalt;
 use anyhow::Error;
+use futures::channel::oneshot::Sender;
 use log::info;
 use pulumi_gestalt_wit::bindings_runner as runner;
 use pulumi_gestalt_wit::bindings_runner::component::pulumi_gestalt::context::{
@@ -15,14 +16,13 @@ use pulumi_gestalt_wit::bindings_runner::component::pulumi_gestalt::{
 use pulumi_gestalt_wit::bindings_runner::{
     SingleThreadedCompositeOutput, SingleThreadedContext, SingleThreadedOutput,
 };
+use serde_json::Value;
 use std::collections::HashMap;
 use std::path::Path;
-use futures::channel::oneshot::Sender;
-use serde_json::Value;
+use uuid::Uuid;
 use wasmtime::Store;
 use wasmtime::component::{Component, HasSelf, Linker, Resource, ResourceTable};
 use wasmtime_wasi::{WasiCtx, WasiCtxBuilder, WasiCtxView, WasiView};
-use uuid::Uuid;
 
 pub struct Pulumi {
     plugin: PulumiGestalt,
@@ -78,14 +78,15 @@ impl HostContext for MyState {
             inputs.insert(field.name.clone().into(), output.output.clone());
         }
 
-        let result = context.engine.register_resource(
-            pulumi_gestalt_rust_integration::RegisterResourceRequest {
+        let result = context
+            .engine
+            .register_resource(pulumi_gestalt_rust_integration::RegisterResourceRequest {
                 r#type: request.type_,
                 name: request.name,
                 inputs,
                 version: request.version,
-            }
-        ).await;
+            })
+            .await;
 
         let output = SingleThreadedCompositeOutput::new(result);
         let id = self.table.push(output)?;
@@ -108,13 +109,14 @@ impl HostContext for MyState {
 
         let context = table.get(&context)?;
 
-        let result = context.engine.invoke_resource(
-            pulumi_gestalt_rust_integration::InvokeResourceRequest {
+        let result = context
+            .engine
+            .invoke_resource(pulumi_gestalt_rust_integration::InvokeResourceRequest {
                 token: request.token,
                 inputs,
                 version: request.version,
-            }
-        ).await;
+            })
+            .await;
 
         let output = SingleThreadedCompositeOutput::new(result);
         let id = self.table.push(output)?;
@@ -127,26 +129,26 @@ impl HostContext for MyState {
         functions: Vec<FunctionInvocationResult>,
     ) -> anyhow::Result<Vec<FunctionInvocationRequest>> {
         assert!(!self_.owned());
-        
+
         for FunctionInvocationResult { id, value } in functions {
             if let Some(sender) = self.mailboxes.remove(&id) {
                 let _ = sender.send(serde_json::from_str(&value).unwrap());
             }
         }
-        
+
         let context = self.table.get(&self_)?;
-        
+
         let result = context.engine.finish().await;
-        
+
         match result {
             None => Ok(Vec::new()),
             Some(request) => {
                 let v = serde_json::to_string(&request.data).unwrap();
-                
+
                 let id = Uuid::now_v7().to_string();
-                
+
                 self.mailboxes.insert(id.clone(), request.return_mailbox);
-         
+
                 Ok(vec![FunctionInvocationRequest {
                     id,
                     function_name: request.context,
@@ -166,7 +168,9 @@ impl HostContext for MyState {
         let context = self.table.get_mut(&context)?;
         let result = context.engine.get_config_value(name.as_deref(), &key).await;
         let result = result.map(|value| match value {
-            pulumi_gestalt_rust_integration::ConfigValue::PlainText(pt) => ConfigValue::Plaintext(pt),
+            pulumi_gestalt_rust_integration::ConfigValue::PlainText(pt) => {
+                ConfigValue::Plaintext(pt)
+            }
             pulumi_gestalt_rust_integration::ConfigValue::Secret(s) => {
                 let output = SingleThreadedOutput::new(s);
                 let id = self.table.push(output).unwrap();
@@ -267,7 +271,10 @@ impl HostCompositeOutput for MyState {
         Ok(id)
     }
 
-    async fn drop(&mut self, rep: Resource<output_interface::CompositeOutput>) -> anyhow::Result<()> {
+    async fn drop(
+        &mut self,
+        rep: Resource<output_interface::CompositeOutput>,
+    ) -> anyhow::Result<()> {
         assert!(rep.owned());
         self.table.delete(rep)?;
         Ok(())
@@ -314,7 +321,10 @@ impl Pulumi {
             SimplePluginCtx {
                 table,
                 context: wasi_ctx,
-                my_state: MyState { table: table2, mailboxes: Default::default() },
+                my_state: MyState {
+                    table: table2,
+                    mailboxes: Default::default(),
+                },
             },
         );
 
@@ -330,7 +340,8 @@ impl Pulumi {
     pub async fn start(&mut self) -> Result<(), Error> {
         self.plugin
             .component_pulumi_gestalt_pulumi_main()
-            .call_main(&mut self.store).await?;
+            .call_main(&mut self.store)
+            .await?;
 
         Ok(())
     }

@@ -6,7 +6,7 @@ use std::collections::HashMap;
 
 type Context = pulumi_gestalt_rust_integration::Context<Box<dyn Fn(Value) -> Value>>;
 
-fn generate_random_value(ctx: &Context) {
+async fn generate_random_value(ctx: &Context) {
     let output = ctx.create_output(json!(16), false);
 
     let register_resource_request = RegisterResourceRequest {
@@ -21,7 +21,7 @@ fn generate_random_value(ctx: &Context) {
     output_result.add_export("result".into());
 }
 
-fn run_command(ctx: &Context) {
+async fn run_command(ctx: &Context) {
     let output = ctx.create_output(json!("whoami"), false);
 
     let register_resource_request = InvokeResourceRequest {
@@ -37,7 +37,7 @@ fn run_command(ctx: &Context) {
     stdout_output.add_export("whoami_stdout".into());
 }
 
-fn perform_operations_on_outputs(ctx: &Context) {
+async fn perform_operations_on_outputs(ctx: &Context) {
     let output = ctx.create_output(json!(16), false);
 
     let output_2 = output.map(Box::new(|s| {
