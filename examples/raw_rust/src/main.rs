@@ -136,5 +136,5 @@ async fn main() {
     perform_operations_on_custom_config(&ctx).await;
     obtain_schema();
 
-    pulumi_gestalt_rust_integration::finish::finish_lambdas_sequentially(ctx).await;
+    pulumi_gestalt_rust_integration::finish::finish_lambdas_sequentially(&ctx).await;
 }

@@ -80,12 +80,13 @@ mod tests {
     use crate::sync_pulumi_state::PulumiStateSync;
     use crate::test_server::{MyResourceEngineServer, MyResourceMonitorServer};
     use anyhow::Result;
+    use tokio::runtime::Runtime;
     use pulumi_gestalt_proto::pulumi::pulumirpc::RegisterResourceRequest;
     use pulumi_gestalt_proto::pulumi::pulumirpc::resource_monitor_server::ResourceMonitorServer;
 
     #[test]
     fn test() -> Result<()> {
-        let runtime = tokio::runtime::Runtime::new()?;
+        let runtime = Runtime::new()?;
 
         let monitor_listener = runtime.block_on(TcpListener::bind("127.0.0.1:0"))?;
         let engine_listener = runtime.block_on(TcpListener::bind("127.0.0.1:0"))?;

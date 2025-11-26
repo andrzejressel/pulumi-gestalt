@@ -3653,13 +3653,11 @@ version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
  "bon",
- "futures",
- "pulumi_gestalt_core",
- "pulumi_gestalt_domain",
  "pulumi_gestalt_rust_integration",
  "pulumi_gestalt_serde_constant_string",
  "serde",
  "serde_json",
+ "tokio",
 ]
 
 [[package]]

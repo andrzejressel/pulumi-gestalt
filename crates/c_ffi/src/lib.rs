@@ -31,6 +31,18 @@ pub struct PulumiContext {
     inner: Rc<RefCell<InnerPulumiContext>>,
 }
 
+// Invoking Drop on PulumiContext means that Pulumi program has ended
+// We clean up C resources and drop all outputs from InnerPulumiContext
+// to remove cycles between Context and Outputs
+impl Drop for PulumiContext {
+    fn drop(&mut self) {
+        let mut inner_engine = self.inner.borrow_mut();
+        for output in inner_engine.outputs.iter() {
+            let _ = unsafe { Box::from_raw(*output) };
+        }
+    }
+}
+
 #[repr(C)]
 pub enum ConfigValue {
     PlainValue(*mut c_char),
@@ -101,10 +113,7 @@ type MappingFunction = extern "C" fn(*const c_void, *const c_void, *const c_char
 
 #[unsafe(no_mangle)]
 extern "C" fn pulumi_create_context(context: *const c_void) -> *mut PulumiContext {
-    let runtime = tokio::runtime::Builder::new_multi_thread()
-        .enable_all()
-        .build()
-        .unwrap();
+    let runtime = Runtime::new().unwrap();
     let engine = runtime.block_on(integration::Context::new());
     let t = InnerPulumiContext {
         ctx: engine,
@@ -130,10 +139,7 @@ extern "C" fn pulumi_finish(ctx: *mut PulumiContext) {
 #[unsafe(no_mangle)]
 extern "C" fn pulumi_destroy_context(ctx: *mut PulumiContext) {
     unsafe {
-        let b = Box::from_raw(ctx);
-        for output in b.inner.borrow_mut().outputs.iter() {
-            let _ = Box::from_raw(*output);
-        }
+        let _ = Box::from_raw(ctx);
     }
 }
 
@@ -263,11 +269,11 @@ extern "C" fn pulumi_output_map(
         let c_string = CString::new(value).unwrap();
         let str = function(context, function_context, c_string.as_ptr());
         let result = unsafe { CStr::from_ptr(str) }.to_str().unwrap();
-        let v = result.to_owned();
+        let result = serde_json::from_str(result).unwrap();
         unsafe {
             libc::free(str as *mut c_void);
         }
-        serde_json::from_str(&v).unwrap()
+        result
     };
 
     let second_output = inner_engine
@@ -290,7 +296,6 @@ extern "C" fn pulumi_output_combine(
     outputs_size: usize,
 ) -> *mut CustomOutputId {
     let output = unsafe { &*output };
-    // let mut inner_engine = output.native.inner.borrow_mut();
 
     let mut other_outputs = Vec::new();
     unsafe {
@@ -383,7 +388,7 @@ extern "C" fn pulumi_config_get_value(
     };
     let key = unsafe { CStr::from_ptr(key) }.to_str().unwrap();
 
-    let inner_engine = engine.inner.borrow_mut();
+    let inner_engine = engine.inner.borrow();
     let config_value = inner_engine
         .runtime
         .block_on(inner_engine.ctx.get_config_value(name, key));

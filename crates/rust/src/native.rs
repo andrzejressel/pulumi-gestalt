@@ -1,15 +1,12 @@
-use pulumi_gestalt_core::NativeFunctionRequest;
-use pulumi_gestalt_domain::FieldName;
 use serde::{Serialize, de::DeserializeOwned};
 use serde_json::{Value, from_value, to_value};
 use std::marker::PhantomData;
-
+use tokio::runtime::Runtime;
 use pulumi_gestalt_rust_integration as integration;
+use pulumi_gestalt_rust_integration::FieldName;
 
-// Internal function context type
 pub type FunctionContext = Box<dyn Fn(Value) -> Value + Send>;
 
-// Core types merged from former adapter crates
 pub struct Output<T> {
     inner: integration::Output<FunctionContext>,
     phantom: PhantomData<T>,
@@ -88,6 +85,7 @@ impl CompositeOutput {
 
 pub struct Context {
     inner: integration::Context<FunctionContext>,
+    runtime: Runtime
 }
 impl Default for Context {
     fn default() -> Self {
@@ -96,8 +94,10 @@ impl Default for Context {
 }
 impl Context {
     pub fn new() -> Self {
+        let runtime = Runtime::new().unwrap();
         Self {
-            inner: block_on(integration::Context::new()),
+            inner: runtime.block_on(integration::Context::new()),
+            runtime
         }
     }
     pub fn finish(&self) {
