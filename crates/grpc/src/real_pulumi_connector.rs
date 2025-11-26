@@ -309,7 +309,7 @@ fn json_to_protobuf(json: Value) -> prost_types::Value {
             kind: Some(Kind::NumberValue(n.as_f64().unwrap())),
         },
         Value::String(s) => prost_types::Value {
-            kind: Some(Kind::StringValue(s.clone())),
+            kind: Some(Kind::StringValue(s)),
         },
         Value::Array(arr) => {
             let list_value = ListValue {
