@@ -43,7 +43,7 @@ async fn perform_operations_on_outputs(ctx: &Context) {
     let output_2 = output
         .map(Box::new(|s| {
             let i = s.as_i64().unwrap();
-            (i * 2).to_string().into()
+            (i * 2).into()
         }))
         .await;
     let output_3 = output_2.map(Box::new(|_| json!("my_string"))).await;

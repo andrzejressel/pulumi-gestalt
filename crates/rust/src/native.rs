@@ -41,13 +41,11 @@ impl<T> Output<T> {
         );
     }
     pub fn combine<RESULT>(&self, others: &[&Output<()>]) -> Output<RESULT> {
-        let mut all: Vec<&integration::Output<FunctionContext>> =
-            Vec::with_capacity(others.len() + 1);
-        all.push(&self.inner);
-        for o in others {
-            all.push(&o.inner);
-        }
-        let combined = self.runtime.block_on(self.inner.combine(&all));
+        let outputs = others
+            .iter()
+            .map(|o| &o.inner)
+            .collect::<Vec<_>>();
+        let combined = self.runtime.block_on(self.inner.combine(&outputs));
         Output {
             inner: combined,
             phantom: PhantomData,

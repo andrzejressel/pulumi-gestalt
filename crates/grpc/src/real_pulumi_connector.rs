@@ -181,6 +181,10 @@ impl PulumiConnector for RealPulumiConnector {
 
         let obj = response.object;
 
+        if (!self.in_preview) {
+            panic!("{:?}", obj);
+        }
+        
         let map = match obj {
             Some(s) => create_map_of_node_values(s),
             None => HashMap::new(),
@@ -242,17 +246,19 @@ fn create_map_of_node_values(s: Struct) -> HashMap<FieldName, ExistingNodeValue>
         .into_iter()
         .map(|(k, v)| {
             let json_value = protobuf_to_json(&v);
+
             let node_value = match &json_value {
-                Value::Object(obj) if obj.contains_key(crate::constants::SPECIAL_SIG_KEY) => {
-                    let secret_value = obj
-                        .get(crate::constants::SECRET_VALUE_NAME)
-                        .cloned()
-                        .unwrap_or(Value::Null);
-                    ExistingNodeValue {
-                        value: secret_value,
-                        secret: true,
-                    }
-                }
+
+                // Value::Object(obj) if obj.contains_key(crate::constants::SPECIAL_SIG_KEY) => {
+                //     let secret_value = obj
+                //         .get(crate::constants::SECRET_VALUE_NAME)
+                //         .cloned()
+                //         .unwrap_or(Value::Null);
+                //     ExistingNodeValue {
+                //         value: secret_value,
+                //         secret: true,
+                //     }
+                // }
                 _ => ExistingNodeValue {
                     value: json_value,
                     secret: false,
