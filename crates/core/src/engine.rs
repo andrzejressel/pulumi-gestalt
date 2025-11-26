@@ -309,7 +309,7 @@ mod tests {
     use super::*;
     use mockall::predicate::eq;
     use std::collections::HashMap;
-    use std::fmt::Debug;
+    
     use std::sync::RwLock;
 
     static_assertions::assert_impl_all!(Engine<RwLock<()>>: Send, Sync);
@@ -355,8 +355,8 @@ mod tests {
 
             let output_id = StrEngine::create_done_node(1.into(), false);
             engine.add_output("output".into(), output_id.clone());
-            engine.create_native_function_node("nativeFunc".into(), output_id.clone());
-            engine.create_native_function_node("nativeFunc2".into(), output_id);
+            engine.create_native_function_node("nativeFunc", output_id.clone());
+            engine.create_native_function_node("nativeFunc2", output_id);
 
             let result = engine.run().await;
             // nativeFunc
@@ -381,8 +381,8 @@ mod tests {
 
             let source_output = StrEngine::create_done_node(json!("value"), false);
             let mapped_output =
-                engine.create_native_function_node("nativeFunc".into(), source_output);
-            _ = engine.add_output("mapped_output".into(), mapped_output);
+                engine.create_native_function_node("nativeFunc", source_output);
+            engine.add_output("mapped_output".into(), mapped_output);;
 
             let result = engine.run().await;
 
@@ -409,7 +409,7 @@ mod tests {
             let mut engine = StrEngine::new_without_configs(mock);
 
             let source_output = StrEngine::create_done_node(json!("value"), false);
-            let _ = engine.create_native_function_node("nativeFunc".into(), source_output);
+            let _ = engine.create_native_function_node("nativeFunc", source_output);
 
             let result = engine.run().await;
 
@@ -438,7 +438,7 @@ mod tests {
 
             let source_output = StrEngine::create_done_node("value".into(), false);
             let mapped_output =
-                engine.create_native_function_node("nativeFunc".into(), source_output);
+                engine.create_native_function_node("nativeFunc", source_output);
             engine.add_output("mapped_output".into(), mapped_output);
 
             let result = engine.run().await;
@@ -472,9 +472,9 @@ mod tests {
         async fn should_combine_outputs() {
             use serde_json::json;
 
-            let mut mock = MockPulumiConnector::new();
+            let mock = MockPulumiConnector::new();
 
-            let mut engine = StrEngine::new_without_configs(mock);
+            let engine = StrEngine::new_without_configs(mock);
 
             let output1 = StrEngine::create_done_node(json!("1"), false);
             let output2 = StrEngine::create_done_node(json!(2), false);
@@ -486,9 +486,9 @@ mod tests {
 
         #[tokio::test]
         async fn single_nothing_output_results_in_nothing() {
-            let mut mock = MockPulumiConnector::new();
+            let mock = MockPulumiConnector::new();
 
-            let mut engine = StrEngine::new_without_configs(mock);
+            let engine = StrEngine::new_without_configs(mock);
 
             let output1 = StrEngine::create_nothing_node();
             let output2 = StrEngine::create_done_node(json!(2), false);
@@ -502,9 +502,9 @@ mod tests {
         async fn single_secret_output_is_secret() {
             use serde_json::json;
 
-            let mut mock = MockPulumiConnector::new();
+            let mock = MockPulumiConnector::new();
 
-            let mut engine = StrEngine::new_without_configs(mock);
+            let engine = StrEngine::new_without_configs(mock);
 
             let output1 = StrEngine::create_done_node(json!("1"), false);
             let output2 = StrEngine::create_done_node(json!(2), true);
@@ -527,7 +527,7 @@ mod tests {
         #[test]
         fn should_return_none_when_config_is_not_set() {
             let config = Config::new(HashMap::new(), HashSet::new(), "project".to_string());
-            let mut engine = StrEngine::new(MockPulumiConnector::new(), config);
+            let engine = StrEngine::new(MockPulumiConnector::new(), config);
             let value = engine.get_config_value(Some("name"), "key");
             match value {
                 None => {}
@@ -544,7 +544,7 @@ mod tests {
                 HashSet::new(),
                 "project".to_string(),
             );
-            let mut engine = StrEngine::new(MockPulumiConnector::new(), config);
+            let engine = StrEngine::new(MockPulumiConnector::new(), config);
             let value = engine.get_config_value(Some("name"), "key");
             match value {
                 None => {
@@ -566,7 +566,7 @@ mod tests {
                 HashSet::new(),
                 "project".to_string(),
             );
-            let mut engine = StrEngine::new(MockPulumiConnector::new(), config);
+            let engine = StrEngine::new(MockPulumiConnector::new(), config);
             let value = engine.get_config_value(None, "key");
             match value {
                 None => {
@@ -588,7 +588,7 @@ mod tests {
                 HashSet::from(["name:key".to_string()]),
                 "project".to_string(),
             );
-            let mut engine = StrEngine::new(MockPulumiConnector::new(), config);
+            let engine = StrEngine::new(MockPulumiConnector::new(), config);
             let value = engine.get_config_value(Some("name"), "key");
             match value {
                 None => {

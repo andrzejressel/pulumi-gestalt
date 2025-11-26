@@ -36,7 +36,7 @@ pub struct PulumiContext {
 // to remove cycles between Context and Outputs
 impl Drop for PulumiContext {
     fn drop(&mut self) {
-        let mut inner_engine = self.inner.borrow_mut();
+        let inner_engine = self.inner.borrow_mut();
         for output in inner_engine.outputs.iter() {
             let _ = unsafe { Box::from_raw(*output) };
         }
@@ -467,7 +467,7 @@ extern "C" fn pulumi_get_schema(
     Box::into_raw(Box::new(CFFIString::from_string(protobuf)))
 }
 
-fn extract_field<'a>(
+fn extract_field(
     inputs: *const ObjectField,
     inputs_len: usize,
 ) -> HashMap<integration::FieldName, integration::Output<FunctionType>> {

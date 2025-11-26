@@ -1,8 +1,8 @@
-use std::collections::HashMap;
 use pulumi_gestalt_rust_integration as integration;
 use pulumi_gestalt_rust_integration::FieldName;
 use serde::{Serialize, de::DeserializeOwned};
 use serde_json::{Value, from_value, to_value};
+use std::collections::HashMap;
 use std::marker::PhantomData;
 use std::rc::Rc;
 use tokio::runtime::Runtime;
@@ -35,16 +35,11 @@ impl<T> Output<T> {
         }
     }
     pub fn add_to_export(&self, key: &str) {
-        self.runtime.block_on(
-            self.inner
-                .add_export(FieldName::from(key.to_string()))
-        );
+        self.runtime
+            .block_on(self.inner.add_export(FieldName::from(key.to_string())));
     }
     pub fn combine<RESULT>(&self, others: &[&Output<()>]) -> Output<RESULT> {
-        let outputs = others
-            .iter()
-            .map(|o| &o.inner)
-            .collect::<Vec<_>>();
+        let outputs = others.iter().map(|o| &o.inner).collect::<Vec<_>>();
         let combined = self.runtime.block_on(self.inner.combine(&outputs));
         Output {
             inner: combined,
@@ -83,7 +78,9 @@ impl CompositeOutput {
     where
         T: DeserializeOwned,
     {
-        let res = self.runtime.block_on(self.inner.get_field(FieldName::from(key.to_string())));
+        let res = self
+            .runtime
+            .block_on(self.inner.get_field(FieldName::from(key.to_string())));
         Output {
             inner: res,
             phantom: PhantomData,
@@ -112,7 +109,7 @@ impl Context {
     }
     pub fn finish(&self) {
         self.runtime.block_on(
-            pulumi_gestalt_rust_integration::finish::finish_lambdas_sequentially(&self.inner)
+            pulumi_gestalt_rust_integration::finish::finish_lambdas_sequentially(&self.inner),
         )
     }
     pub fn new_output<T: Serialize>(&self, value: &T) -> Output<T> {
@@ -142,25 +139,20 @@ impl Context {
                 object.value.inner.clone(),
             );
         }
-        let result = self.runtime.block_on(
-            self
-                .inner
-                .register_resource(integration::RegisterResourceRequest {
-                    r#type: request.type_.clone(),
-                    name: request.name.clone(),
-                    version: request.version.clone(),
-                    inputs,
-                })
-        );
-        CompositeOutput { 
+        let result = self.runtime.block_on(self.inner.register_resource(
+            integration::RegisterResourceRequest {
+                r#type: request.type_.clone(),
+                name: request.name.clone(),
+                version: request.version.clone(),
+                inputs,
+            },
+        ));
+        CompositeOutput {
             inner: result,
             runtime: self.runtime.clone(),
         }
     }
-    pub fn invoke_resource(
-        &self,
-        request: InvokeResourceRequest<Output<()>>,
-    ) -> CompositeOutput {
+    pub fn invoke_resource(&self, request: InvokeResourceRequest<Output<()>>) -> CompositeOutput {
         let mut inputs = HashMap::new();
         for object in request.object {
             inputs.insert(
@@ -168,26 +160,21 @@ impl Context {
                 object.value.inner.clone(),
             );
         }
-        let result = self.runtime.block_on(
-            self
-                .inner
-                .invoke_resource(integration::InvokeResourceRequest {
-                    token: request.token.clone(),
-                    version: request.version.clone(),
-                    inputs,
-                })
-        );
-        CompositeOutput { 
+        let result = self.runtime.block_on(self.inner.invoke_resource(
+            integration::InvokeResourceRequest {
+                token: request.token.clone(),
+                version: request.version.clone(),
+                inputs,
+            },
+        ));
+        CompositeOutput {
             inner: result,
             runtime: self.runtime.clone(),
         }
     }
-    pub fn get_config(
-        &self,
-        name: Option<&str>,
-        key: &str,
-    ) -> Option<ConfigValue<Output<String>>> {
-        self.runtime.block_on(self.inner.get_config_value(name, key))
+    pub fn get_config(&self, name: Option<&str>, key: &str) -> Option<ConfigValue<Output<String>>> {
+        self.runtime
+            .block_on(self.inner.get_config_value(name, key))
             .map(|v| match v {
                 pulumi_gestalt_rust_integration::ConfigValue::PlainText(pt) => {
                     ConfigValue::PlainText(pt)
