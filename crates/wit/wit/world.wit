@@ -29,12 +29,12 @@ interface types {
     use output-interface.{output};
 
     record function-invocation-request {
-        id: output,
+        id: string,
         function-name: string,
         value: string,
     }
     record function-invocation-result {
-        id: borrow<output>,
+        id: string,
         value: string,
     }
     

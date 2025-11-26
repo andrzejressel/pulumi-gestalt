@@ -17,9 +17,12 @@ use pulumi_gestalt_wit::bindings_runner::{
 };
 use std::collections::HashMap;
 use std::path::Path;
+use futures::channel::oneshot::Sender;
+use serde_json::Value;
 use wasmtime::Store;
 use wasmtime::component::{Component, HasSelf, Linker, Resource, ResourceTable};
 use wasmtime_wasi::{WasiCtx, WasiCtxBuilder, WasiCtxView, WasiView};
+use uuid::Uuid;
 
 pub struct Pulumi {
     plugin: PulumiGestalt,
@@ -34,6 +37,7 @@ struct SimplePluginCtx {
 
 struct MyState {
     table: ResourceTable,
+    mailboxes: HashMap<String, Sender<Value>>,
 }
 
 impl HostContext for MyState {
@@ -81,14 +85,14 @@ impl HostContext for MyState {
                 inputs,
                 version: request.version,
             }
-        );
+        ).await;
 
         let output = SingleThreadedCompositeOutput::new(result);
         let id = self.table.push(output)?;
         Ok(id)
     }
 
-    fn invoke_resource(
+    async fn invoke_resource(
         &mut self,
         context: Resource<Context>,
         request: context::ResourceInvokeRequest,
@@ -110,7 +114,7 @@ impl HostContext for MyState {
                 inputs,
                 version: request.version,
             }
-        );
+        ).await;
 
         let output = SingleThreadedCompositeOutput::new(result);
         let id = self.table.push(output)?;
@@ -124,6 +128,12 @@ impl HostContext for MyState {
     ) -> anyhow::Result<Vec<FunctionInvocationRequest>> {
         assert!(!self_.owned());
         
+        for FunctionInvocationResult { id, value } in functions {
+            if let Some(sender) = self.mailboxes.remove(&id) {
+                let _ = sender.send(serde_json::from_str(&value).unwrap());
+            }
+        }
+        
         let context = self.table.get(&self_)?;
         
         let result = context.engine.finish().await;
@@ -131,23 +141,15 @@ impl HostContext for MyState {
         match result {
             None => Ok(Vec::new()),
             Some(request) => {
-                // Process the single request
                 let v = serde_json::to_string(&request.data).unwrap();
-                let output = context.engine.create_native_function_node(
-                    request.context,
-                    // We need a dummy output here - this API doesn't quite match
-                    // Will need refactoring for proper async support
-                    context.engine.create_output(serde_json::Value::Null, false)
-                );
-                let output = SingleThreadedOutput::new(output);
-                let id = self.table.push(output)?;
                 
-                // Send back the result (not implemented - needs mailbox)
-                // request.return_mailbox.send(...).unwrap();
+                let id = Uuid::now_v7().to_string();
                 
+                self.mailboxes.insert(id.clone(), request.return_mailbox);
+         
                 Ok(vec![FunctionInvocationRequest {
                     id,
-                    function_name: "placeholder".to_string(), // Need to extract from context
+                    function_name: request.context,
                     value: v,
                 }])
             }
@@ -162,7 +164,7 @@ impl HostContext for MyState {
     ) -> anyhow::Result<Option<ConfigValue>> {
         assert!(!context.owned());
         let context = self.table.get_mut(&context)?;
-        let result = context.engine.get_config_value(name.as_deref(), &key);
+        let result = context.engine.get_config_value(name.as_deref(), &key).await;
         let result = result.map(|value| match value {
             pulumi_gestalt_rust_integration::ConfigValue::PlainText(pt) => ConfigValue::Plaintext(pt),
             pulumi_gestalt_rust_integration::ConfigValue::Secret(s) => {
@@ -193,7 +195,7 @@ impl HostOutput for MyState {
     ) -> anyhow::Result<Resource<SingleThreadedOutput>> {
         let table = &mut self.table;
         let st_output = table.get(&self_)?;
-        let output = st_output.output.map(function_name);
+        let output = st_output.output.map(function_name).await;
         let output = SingleThreadedOutput::new(output);
         let id = table.push(output)?;
         Ok(id)
@@ -226,7 +228,7 @@ impl HostOutput for MyState {
             output_refs.push(&output.output);
         }
 
-        let result = st_output.output.combine(&output_refs);
+        let result = st_output.output.combine(&output_refs).await;
         let output = SingleThreadedOutput::new(result);
         let id = self.table.push(output)?;
         Ok(id)
@@ -240,7 +242,7 @@ impl HostOutput for MyState {
         assert!(!self_.owned());
         let table = &self.table;
         let output = table.get(&self_)?;
-        output.output.add_export(name.into());
+        output.output.add_export(name.into()).await;
         Ok(())
     }
 
@@ -259,7 +261,7 @@ impl HostCompositeOutput for MyState {
     ) -> anyhow::Result<Resource<output_interface::Output>> {
         assert!(!self_.owned());
         let composite_output = self.table.get(&self_)?;
-        let output = composite_output.output.get_field(field_name.into());
+        let output = composite_output.output.get_field(field_name.into()).await;
         let output = SingleThreadedOutput::new(output);
         let id = self.table.push(output)?;
         Ok(id)
@@ -284,10 +286,10 @@ impl WasiView for SimplePluginCtx {
 }
 
 impl Pulumi {
-    pub fn create(program: &Path) -> Result<Pulumi, Error> {
+    pub async fn create(program: &Path) -> Result<Pulumi, Error> {
         let mut engine_config = wasmtime::Config::new();
         engine_config.wasm_component_model(true);
-        // engine_config.async_support(true);
+        engine_config.async_support(true);
         engine_config.wasm_backtrace_details(wasmtime::WasmBacktraceDetails::Enable);
         engine_config.debug_info(true);
 
@@ -296,7 +298,7 @@ impl Pulumi {
         let mut linker: Linker<SimplePluginCtx> = Linker::new(&engine);
         PulumiGestalt::add_to_linker::<_, HasSelf<_>>(&mut linker, |state| &mut state.my_state)?;
 
-        wasmtime_wasi::p2::add_to_linker_sync(&mut linker)?;
+        wasmtime_wasi::p2::add_to_linker_async(&mut linker)?;
 
         let table = ResourceTable::new();
         let table2 = ResourceTable::new();
@@ -312,23 +314,23 @@ impl Pulumi {
             SimplePluginCtx {
                 table,
                 context: wasi_ctx,
-                my_state: MyState { table: table2 },
+                my_state: MyState { table: table2, mailboxes: Default::default() },
             },
         );
 
         info!("Creating Wasm component");
         let component = Component::from_file(&engine, program)?;
         info!("Instantiating Wasm component");
-        let plugin = PulumiGestalt::instantiate(&mut store, &component, &linker)?;
+        let plugin = PulumiGestalt::instantiate_async(&mut store, &component, &linker).await?;
         info!("Wasm component instantiated");
 
         Ok(Pulumi { plugin, store })
     }
 
-    pub fn start(&mut self) -> Result<(), Error> {
+    pub async fn start(&mut self) -> Result<(), Error> {
         self.plugin
             .component_pulumi_gestalt_pulumi_main()
-            .call_main(&mut self.store)?;
+            .call_main(&mut self.store).await?;
 
         Ok(())
     }

@@ -141,7 +141,7 @@ fn run_loop(context: &Context) {
             return;
         }
         let function_results: Vec<_> = function_requests
-            .iter()
+            .into_iter()
             .map(
                 |FunctionInvocationRequest {
                      id,

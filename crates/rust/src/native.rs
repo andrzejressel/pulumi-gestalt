@@ -1,11 +1,18 @@
 use serde::{Serialize, de::DeserializeOwned};
+use serde_json::{Value, to_value, from_value};
 use std::marker::PhantomData;
+use futures::executor::block_on;
+use pulumi_gestalt_core::NativeFunctionRequest;
+use pulumi_gestalt_domain::FieldName;
 
 use pulumi_gestalt_rust_integration as integration;
 
+// Internal function context type
+pub type FunctionContext = Box<dyn Fn(Value) -> Value + Send>;
+
 // Core types merged from former adapter crates
 pub struct Output<T> {
-    inner: integration::Output,
+    inner: integration::Output<FunctionContext>,
     phantom: PhantomData<T>,
 }
 
@@ -16,161 +23,90 @@ impl<T> Output<T> {
         T: DeserializeOwned,
         B: Serialize,
     {
-        let function = move |v: String| {
-            let v: T = serde_json::from_str(&v).unwrap();
-            let v = f(v);
-            serde_json::to_string(&v).unwrap()
-        };
-        let res = self.inner.map(Box::new(function));
-        Output {
-            inner: res,
-            phantom: PhantomData,
-        }
+        // Closure converting Value JSON -> T, applying user function, returning Value JSON
+        let function: FunctionContext = Box::new(move |v: Value| {
+            let t: T = from_value(v).unwrap();
+            let b = f(t);
+            to_value(b).unwrap()
+        });
+        let res = block_on(self.inner.map(function));
+        Output { inner: res, phantom: PhantomData }
     }
     pub fn add_to_export(&self, key: &str) {
-        self.inner.add_export(key.to_string());
+        block_on(self.inner.add_export(FieldName::from(key.to_string())));
     }
     pub fn combine<RESULT>(&self, others: &[&Output<()>]) -> Output<RESULT> {
-        let all = others.iter().map(|o| &o.inner).collect::<Vec<_>>();
-        let combined = self.inner.combine(&all);
-        Output {
-            inner: combined,
-            phantom: PhantomData,
-        }
+        let mut all: Vec<&integration::Output<FunctionContext>> = Vec::with_capacity(others.len() + 1);
+        all.push(&self.inner);
+        for o in others { all.push(&o.inner); }
+        let combined = block_on(self.inner.combine(&all));
+        Output { inner: combined, phantom: PhantomData }
     }
-    pub fn drop_type(self) -> Output<()> {
-        unsafe { self.transmute::<()>() }
-    }
-    unsafe fn transmute<F>(self) -> Output<F> {
-        Output {
-            inner: self.inner,
-            phantom: PhantomData,
-        }
-    }
+    pub fn drop_type(self) -> Output<()> { unsafe { self.transmute::<()>() } }
+    unsafe fn transmute<F>(self) -> Output<F> { Output { inner: self.inner, phantom: PhantomData } }
 }
 
 impl<T> Clone for Output<T> {
-    fn clone(&self) -> Self {
-        Self {
-            inner: self.inner.clone(),
-            phantom: PhantomData,
-        }
-    }
+    fn clone(&self) -> Self { Self { inner: self.inner.clone(), phantom: PhantomData } }
 }
 
-pub struct CompositeOutput {
-    inner: integration::CompositeOutput,
-}
+pub struct CompositeOutput { inner: integration::RegisterResourceOutput<FunctionContext> }
 impl CompositeOutput {
-    pub fn get_field<T>(&self, key: &str) -> Output<T> {
-        let res = self.inner.get_field(key.to_string());
-        Output {
-            inner: res,
-            phantom: PhantomData,
-        }
+    pub fn get_field<T>(&self, key: &str) -> Output<T> where T: DeserializeOwned {
+        let res = block_on(self.inner.get_field(FieldName::from(key.to_string())));
+        Output { inner: res, phantom: PhantomData }
     }
 }
 
-pub struct Context {
-    inner: integration::Context,
-}
-impl Default for Context {
-    fn default() -> Self {
-        Self::new()
-    }
-}
+pub struct Context { inner: integration::Context<FunctionContext> }
+impl Default for Context { fn default() -> Self { Self::new() } }
 impl Context {
-    pub fn new() -> Self {
-        Self {
-            inner: integration::Context::create_context_sync(),
-        }
-    }
+    pub fn new() -> Self { Self { inner: block_on(integration::Context::new()) } }
     pub fn finish(&self) {
-        self.inner.finish();
+        loop {
+            let result = block_on(self.inner.finish());
+            match result {
+                None => break,
+                Some(NativeFunctionRequest { context, data, return_mailbox }) => {
+                    let value = context(data);
+                    return_mailbox.send(value).unwrap();
+                }
+            }
+        }
     }
     pub fn new_output<T: Serialize>(&self, value: &T) -> Output<T> {
-        let json = serde_json::to_string(value).unwrap();
-        Output {
-            inner: self.inner.create_output(json, false),
-            phantom: PhantomData,
-        }
+        let json_value = to_value(value).unwrap();
+        Output { inner: self.inner.create_output(json_value, false), phantom: PhantomData }
     }
     pub fn new_secret<T: Serialize>(&self, value: &T) -> Output<T> {
-        let json = serde_json::to_string(value).unwrap();
-        Output {
-            inner: self.inner.create_output(json, true),
-            phantom: PhantomData,
-        }
+        let json_value = to_value(value).unwrap();
+        Output { inner: self.inner.create_output(json_value, true), phantom: PhantomData }
     }
-    pub fn register_resource(
-        &self,
-        request: RegisterResourceRequest<Output<()>>,
-    ) -> CompositeOutput {
-        let mut objects = Vec::new();
-        for object in request.object {
-            objects.push(integration::ObjectField {
-                name: object.name.clone(),
-                value: &object.value.inner,
-            });
-        }
-        let result = self
-            .inner
-            .register_resource(integration::RegisterResourceRequest {
-                type_: request.type_,
-                name: request.name,
-                version: request.version,
-                inputs: &objects,
-            });
+    pub fn register_resource(&self, request: RegisterResourceRequest<Output<()>>) -> CompositeOutput {
+        let mut inputs = std::collections::HashMap::new();
+        for object in request.object { inputs.insert(FieldName::from(object.name.clone()), object.value.inner.clone()); }
+        let result = block_on(self.inner.register_resource(integration::RegisterResourceRequest {
+            r#type: request.type_.clone(), name: request.name.clone(), version: request.version.clone(), inputs,
+        }));
         CompositeOutput { inner: result }
     }
     pub fn invoke_resource(&self, request: InvokeResourceRequest<Output<()>>) -> CompositeOutput {
-        let mut objects = Vec::new();
-        for object in request.object {
-            objects.push(integration::ObjectField {
-                name: object.name.clone(),
-                value: &object.value.inner,
-            });
-        }
-        let result = self
-            .inner
-            .invoke_resource(integration::InvokeResourceRequest {
-                token: request.token,
-                version: request.version,
-                inputs: &objects,
-            });
+        let mut inputs = std::collections::HashMap::new();
+        for object in request.object { inputs.insert(FieldName::from(object.name.clone()), object.value.inner.clone()); }
+        let result = block_on(self.inner.invoke_resource(integration::InvokeResourceRequest {
+            token: request.token.clone(), version: request.version.clone(), inputs,
+        }));
         CompositeOutput { inner: result }
     }
     pub fn get_config(&self, name: Option<&str>, key: &str) -> Option<ConfigValue<Output<String>>> {
-        self.inner.get_config_value(name, key).map(|v| match v {
-            pulumi_gestalt_rust_integration::ConfigValue::PlainText(pt) => {
-                ConfigValue::PlainText(pt)
-            }
-            pulumi_gestalt_rust_integration::ConfigValue::Secret(sec) => {
-                ConfigValue::Secret(Output {
-                    inner: sec,
-                    phantom: PhantomData,
-                })
-            }
+        block_on(self.inner.get_config_value(name, key)).map(|v| match v {
+            pulumi_gestalt_rust_integration::ConfigValue::PlainText(pt) => ConfigValue::PlainText(pt),
+            pulumi_gestalt_rust_integration::ConfigValue::Secret(sec) => ConfigValue::Secret(Output { inner: sec, phantom: PhantomData }),
         })
     }
 }
 
-pub struct RegisterResourceRequest<'a, OUTPUT> {
-    pub type_: String,
-    pub name: String,
-    pub version: String,
-    pub object: &'a [ResourceRequestObjectField<'a, OUTPUT>],
-}
-pub struct InvokeResourceRequest<'a, OUTPUT> {
-    pub token: String,
-    pub version: String,
-    pub object: &'a [ResourceRequestObjectField<'a, OUTPUT>],
-}
-pub struct ResourceRequestObjectField<'a, OUTPUT> {
-    pub name: String,
-    pub value: &'a OUTPUT,
-}
-pub enum ConfigValue<OUTPUT> {
-    PlainText(String),
-    Secret(OUTPUT),
-}
+pub struct RegisterResourceRequest<'a, OUTPUT> { pub type_: String, pub name: String, pub version: String, pub object: &'a [ResourceRequestObjectField<'a, OUTPUT>] }
+pub struct InvokeResourceRequest<'a, OUTPUT> { pub token: String, pub version: String, pub object: &'a [ResourceRequestObjectField<'a, OUTPUT>] }
+pub struct ResourceRequestObjectField<'a, OUTPUT> { pub name: String, pub value: &'a OUTPUT }
+pub enum ConfigValue<OUTPUT> { PlainText(String), Secret(OUTPUT) }

@@ -17,6 +17,9 @@ serde_json.workspace = true
 bon.workspace = true
 pulumi_gestalt_serde_constant_string.workspace = true
 pulumi_gestalt_rust_integration.workspace = true
+futures.workspace = true
+pulumi_gestalt_core.workspace = true
+pulumi_gestalt_domain.workspace = true
 
 [dev-dependencies]
 pulumi_gestalt_build = { path = "../rust_build" }

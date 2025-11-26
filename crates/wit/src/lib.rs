@@ -16,9 +16,6 @@ pub mod client_bindings {
 #[allow(unused_unsafe)]
 #[cfg(feature = "runner")]
 pub mod bindings_runner {
-    use std::cell::RefCell;
-    use std::rc::Rc;
-    use std::sync::Arc;
 
     type FunctionType = String;
 
@@ -33,7 +30,7 @@ pub mod bindings_runner {
     }
 
     pub struct SingleThreadedOutput {
-        pub output: pulumi_gestalt_rust_integration::Output<FunctionType>,
+        pub output: pulumi_gestalt_rust_integration::Output<FunctionType>
     }
     impl SingleThreadedOutput {
         pub fn new(output: pulumi_gestalt_rust_integration::Output<FunctionType>) -> Self {
@@ -57,6 +54,9 @@ pub mod bindings_runner {
         imports: {
             default: async | trappable
             // "component": async | trappable
+        },
+        exports: {
+            default: async | trappable
         },
         with: {
             "component:pulumi-gestalt/context/context":SingleThreadedContext,
