@@ -323,7 +323,7 @@ fn json_to_protobuf(json: Value) -> prost_types::Value {
             let struct_value = Struct {
                 fields: obj
                     .into_iter()
-                    .map(|(k, v)| (k.clone(), json_to_protobuf(v)))
+                    .map(|(k, v)| (k, json_to_protobuf(v)))
                     .collect(),
             };
             prost_types::Value {
