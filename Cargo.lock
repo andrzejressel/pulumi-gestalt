@@ -3642,6 +3642,7 @@ version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
  "bon",
+ "pulumi_gestalt_build",
  "pulumi_gestalt_rust_integration",
  "pulumi_gestalt_serde_constant_string",
  "serde",
