@@ -309,7 +309,7 @@ mod tests {
     use super::*;
     use mockall::predicate::eq;
     use std::collections::HashMap;
-    
+
     use std::sync::RwLock;
 
     static_assertions::assert_impl_all!(Engine<RwLock<()>>: Send, Sync);
@@ -380,9 +380,8 @@ mod tests {
             let mut engine = StrEngine::new_without_configs(mock);
 
             let source_output = StrEngine::create_done_node(json!("value"), false);
-            let mapped_output =
-                engine.create_native_function_node("nativeFunc", source_output);
-            engine.add_output("mapped_output".into(), mapped_output);;
+            let mapped_output = engine.create_native_function_node("nativeFunc", source_output);
+            engine.add_output("mapped_output".into(), mapped_output);
 
             let result = engine.run().await;
 
@@ -437,8 +436,7 @@ mod tests {
             let mut engine = StrEngine::new_without_configs(mock);
 
             let source_output = StrEngine::create_done_node("value".into(), false);
-            let mapped_output =
-                engine.create_native_function_node("nativeFunc", source_output);
+            let mapped_output = engine.create_native_function_node("nativeFunc", source_output);
             engine.add_output("mapped_output".into(), mapped_output);
 
             let result = engine.run().await;
