@@ -599,12 +599,19 @@ name = "pulumi_gestalt_core"
 version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
- "log",
- "prost",
- "prost-types",
- "pulumi_gestalt_proto",
+ "futures",
+ "pulumi_gestalt_domain",
  "serde_json",
  "uuid",
+]
+
+[[package]]
+name = "pulumi_gestalt_domain"
+version = "0.0.0-DEV"
+dependencies = [
+ "async-trait",
+ "bon",
+ "serde_json",
 ]
 
 [[package]]
@@ -612,9 +619,14 @@ name = "pulumi_gestalt_grpc_connection"
 version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
+ "async-trait",
  "futures",
+ "log",
  "prost",
+ "prost-types",
+ "pulumi_gestalt_domain",
  "pulumi_gestalt_proto",
+ "serde_json",
  "tokio",
  "tokio-stream",
  "tonic",
@@ -640,6 +652,7 @@ dependencies = [
  "pulumi_gestalt_serde_constant_string",
  "serde",
  "serde_json",
+ "tokio",
 ]
 
 [[package]]
@@ -647,11 +660,16 @@ name = "pulumi_gestalt_rust_integration"
 version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
+ "bon",
+ "futures",
  "pulumi_gestalt_core",
+ "pulumi_gestalt_domain",
  "pulumi_gestalt_grpc_connection",
  "pulumi_gestalt_proto",
  "pulumi_gestalt_schema",
  "serde_json",
+ "static_assertions",
+ "tokio",
  "uuid",
 ]
 
@@ -779,6 +797,12 @@ dependencies = [
  "libc",
  "windows-sys 0.60.2",
 ]
+
+[[package]]
+name = "static_assertions"
+version = "1.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a2eb9349b6444b326872e140eb1cf5e7c522154d69e7a0ffb0fb81c06b37543f"
 
 [[package]]
 name = "strsim"

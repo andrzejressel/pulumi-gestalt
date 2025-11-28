@@ -91,12 +91,10 @@ impl ResourceMonitor for MyResourceMonitorServer {
                 };
                 Ok(Response::new(response))
             }
-            _ => {
-                return Err(Status::aborted(format!(
-                    "unknown resource name: {}",
-                    request.name
-                )));
-            }
+            _ => Err(Status::aborted(format!(
+                "unknown resource name: {}",
+                request.name
+            ))),
         }
     }
 

@@ -11,9 +11,10 @@ crate-type = ["cdylib", "staticlib"]
 [dependencies]
 libc.workspace = true
 pulumi_gestalt_rust_integration.workspace = true
-pulumi_gestalt_schema.workspace = true
 pulumi_gestalt_schema_protobuf.workspace = true
 anyhow.workspace = true
+tokio.workspace = true
+serde_json.workspace = true
 
 [build-dependencies]
 cbindgen.workspace = true

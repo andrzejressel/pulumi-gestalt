@@ -515,9 +515,9 @@ dependencies = [
 
 [[package]]
 name = "clap"
-version = "4.5.53"
+version = "4.5.52"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c9e340e012a1bf4935f5282ed1436d1489548e8f72308207ea5df0e23d2d03f8"
+checksum = "aa8120877db0e5c011242f96806ce3c94e0737ab8108532a76a3300a01db2ab8"
 dependencies = [
  "clap_builder",
  "clap_derive",
@@ -525,9 +525,9 @@ dependencies = [
 
 [[package]]
 name = "clap_builder"
-version = "4.5.53"
+version = "4.5.52"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d76b5d13eaa18c901fd2f7fca939fefe3a0727a953561fefdf3b2922b8569d00"
+checksum = "02576b399397b659c26064fbc92a75fede9d18ffd5f80ca1cd74ddab167016e1"
 dependencies = [
  "anstream",
  "anstyle",
@@ -3386,12 +3386,12 @@ name = "pulumi_gestalt_core"
 version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
- "log",
+ "futures",
  "mockall",
- "prost",
- "prost-types",
- "pulumi_gestalt_proto",
+ "pulumi_gestalt_domain",
  "serde_json",
+ "static_assertions",
+ "tokio",
  "uuid",
 ]
 
@@ -3406,6 +3406,16 @@ dependencies = [
  "pulumi_gestalt_rust",
  "serde",
  "serde_yaml",
+]
+
+[[package]]
+name = "pulumi_gestalt_domain"
+version = "0.0.0-DEV"
+dependencies = [
+ "async-trait",
+ "bon",
+ "mockall",
+ "serde_json",
 ]
 
 [[package]]
@@ -3483,6 +3493,8 @@ dependencies = [
  "anyhow",
  "pulumi_gestalt_examples_common",
  "pulumi_gestalt_rust_integration",
+ "serde_json",
+ "tokio",
 ]
 
 [[package]]
@@ -3569,9 +3581,14 @@ name = "pulumi_gestalt_grpc_connection"
 version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
+ "async-trait",
  "futures",
+ "log",
  "prost",
+ "prost-types",
+ "pulumi_gestalt_domain",
  "pulumi_gestalt_proto",
+ "serde_json",
  "tokio",
  "tokio-stream",
  "tonic",
@@ -3686,6 +3703,7 @@ dependencies = [
  "pulumi_gestalt_serde_constant_string",
  "serde",
  "serde_json",
+ "tokio",
 ]
 
 [[package]]
@@ -3693,11 +3711,16 @@ name = "pulumi_gestalt_rust_integration"
 version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
+ "bon",
+ "futures",
  "pulumi_gestalt_core",
+ "pulumi_gestalt_domain",
  "pulumi_gestalt_grpc_connection",
  "pulumi_gestalt_proto",
  "pulumi_gestalt_schema",
  "serde_json",
+ "static_assertions",
+ "tokio",
  "uuid",
 ]
 
@@ -3741,13 +3764,15 @@ version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
  "clap",
+ "futures",
  "log",
  "log4rs",
- "pulumi_gestalt_core",
  "pulumi_gestalt_rust_integration",
  "pulumi_gestalt_wit",
  "serde",
  "serde_json",
+ "tokio",
+ "uuid",
  "wasmparser 0.241.2",
  "wasmtime",
  "wasmtime-wasi",
@@ -3758,7 +3783,7 @@ dependencies = [
 name = "pulumi_gestalt_wit"
 version = "0.0.0-DEV"
 dependencies = [
- "pulumi_gestalt_core",
+ "pulumi_gestalt_rust_integration",
  "wasmtime",
  "wit-bindgen",
 ]
@@ -3771,8 +3796,9 @@ dependencies = [
  "cbindgen",
  "libc",
  "pulumi_gestalt_rust_integration",
- "pulumi_gestalt_schema",
  "pulumi_gestalt_schema_protobuf",
+ "serde_json",
+ "tokio",
 ]
 
 [[package]]

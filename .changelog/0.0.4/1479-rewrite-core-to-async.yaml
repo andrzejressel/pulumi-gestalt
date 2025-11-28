@@ -1,0 +1,2 @@
+type: Changed
+title: Rewrite core to be fully asynchronous. Does not affect user API, but overhauls integration APIs.

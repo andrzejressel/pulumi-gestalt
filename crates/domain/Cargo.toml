@@ -1,0 +1,20 @@
+[package]
+name = "pulumi_gestalt_domain"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+readme.workspace = true
+
+[features]
+default = []
+test-utils = ["mockall"]
+
+[dependencies]
+serde_json.workspace = true
+bon.workspace = true
+mockall = { workspace = true, optional = true }
+async-trait.workspace = true
+
+[lints]
+workspace = true

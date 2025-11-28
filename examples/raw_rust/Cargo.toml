@@ -10,6 +10,8 @@ example_test = []
 [dependencies]
 pulumi_gestalt_rust_integration.workspace = true
 anyhow.workspace = true
+serde_json.workspace = true
+tokio.workspace = true
 
 [dev-dependencies]
 pulumi_gestalt_examples_common.workspace = true

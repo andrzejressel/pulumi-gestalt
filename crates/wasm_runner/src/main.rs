@@ -41,7 +41,8 @@ struct GlobalOpts {
     cwasm: Option<String>,
 }
 
-fn main() -> Result<(), Error> {
+#[tokio::main]
+async fn main() -> Result<(), Error> {
     let args = App::parse();
 
     let logfile = FileAppender::builder()
@@ -57,9 +58,9 @@ fn main() -> Result<(), Error> {
 
     match &args.command {
         Command::Run { program } => {
-            let mut pulumi = Pulumi::create(program)?;
+            let mut pulumi = Pulumi::create(program).await?;
             log::info!("Invoking main");
-            pulumi.start()?;
+            pulumi.start().await?;
         }
         Command::Plugins {
             program,

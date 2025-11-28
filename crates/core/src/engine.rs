@@ -1,866 +1,303 @@
-use std::cell::{Ref, RefCell, RefMut};
-use std::collections::{HashMap, HashSet, VecDeque};
-use std::ops::Deref;
-
 use crate::config::{Config, RawConfigValue};
-use crate::model::NodeValue::Exists;
-use crate::model::{FieldName, FunctionName, MaybeNodeValue, NodeValue, OutputId};
-use crate::nodes::{
-    AbstractResourceNode, Callback, CombineOutputsNode, DoneNode, ExtractFieldNode,
-    NativeFunctionNode, RegisterResourceRequestOperation, ResourceInvokeRequestOperation,
-    ResourceRequestOperation,
+use crate::{RawOutput, RegisterResourceOutput};
+use futures::FutureExt;
+use futures::channel::mpsc::{UnboundedReceiver, UnboundedSender, unbounded};
+use futures::channel::oneshot::{Sender, channel};
+use futures::future::{BoxFuture, Shared};
+use futures::stream::StreamExt;
+use futures::stream::{FuturesOrdered, FuturesUnordered};
+use pulumi_gestalt_domain::connector::{
+    PulumiConnector, RegisterOutputsRequest, RegisterResourceRequest, ResourceInvokeRequest,
 };
-use crate::pulumi::service::PulumiService;
-use log::error;
-use serde_json::{Value, json};
+use pulumi_gestalt_domain::{ExistingNodeValue, FieldName, NodeValue};
+use serde_json::Value;
+use std::collections::HashMap;
+use std::sync::atomic::AtomicBool;
+use std::sync::atomic::Ordering::SeqCst;
+use std::sync::{Arc, Mutex};
 use uuid::Uuid;
 
-#[derive(Clone, Debug, PartialEq)]
-pub struct ForeignFunctionToInvoke {
-    pub output_id: OutputId,
-    pub function_name: FunctionName,
-    pub value: Value,
+struct InternalNativeFunctionRequest {
+    pub context_key: Uuid,
+    pub data: Value,
+    pub return_mailbox: Sender<Value>,
 }
 
-#[derive(Debug, PartialEq, Eq)]
+pub struct NativeFunctionRequest<FunctionContext> {
+    pub context: FunctionContext,
+    pub data: Value,
+    pub return_mailbox: Sender<Value>,
+}
+
 pub enum ConfigValue {
     PlainText(String),
-    Secret(OutputId),
+    Secret(RawOutput),
 }
 
-enum EngineNode {
-    Done(DoneNode),
-    NativeFunction(NativeFunctionNode),
-    RegisterResource(AbstractResourceNode),
-    ExtractField(ExtractFieldNode),
-    CombineOutputs(CombineOutputsNode),
-}
+pub struct Engine<FunctionContext> {
+    outputs: Mutex<HashMap<FieldName, RawOutput>>,
+    function_contexts: Mutex<HashMap<Uuid, FunctionContext>>,
+    join_set: FuturesUnordered<Shared<BoxFuture<'static, ()>>>,
+    native_function_queue_sender: UnboundedSender<InternalNativeFunctionRequest>,
+    native_function_queue_receiver: UnboundedReceiver<InternalNativeFunctionRequest>,
 
-pub(crate) struct Holder<A: ?Sized>(RefCell<A>);
-
-impl<A> From<A> for Holder<A> {
-    fn from(value: A) -> Self {
-        Holder(RefCell::new(value))
-    }
-}
-
-impl<A: ?Sized> Holder<A> {
-    fn map<U, F>(&self, f: F) -> Ref<'_, U>
-    where
-        F: FnOnce(&A) -> &U,
-    {
-        Ref::map(self.get(), f)
-    }
-
-    fn map_mut<U, F>(&self, f: F) -> RefMut<'_, U>
-    where
-        F: FnOnce(&mut A) -> &mut U,
-    {
-        RefMut::map(self.get_mut(), f)
-    }
-
-    fn foreach_mut<F>(&self, f: F)
-    where
-        F: FnOnce(&mut A),
-    {
-        RefMut::map(self.get_mut(), |x| {
-            f(x);
-            x
-        });
-    }
-
-    fn get(&self) -> Ref<'_, A> {
-        self.0.borrow()
-    }
-
-    fn get_mut(&self) -> RefMut<'_, A> {
-        self.0.borrow_mut()
-    }
-}
-
-type NodesMap = HashMap<OutputId, Holder<EngineNode>>;
-
-struct EngineView<'a> {
-    ready_foreign_function_ids: &'a mut HashSet<OutputId>,
-    register_resource_ids: &'a mut HashSet<OutputId>,
-    pulumi: &'a dyn PulumiService,
-}
-
-pub struct Engine {
-    done_node_ids: VecDeque<OutputId>,
-    ready_foreign_function_ids: HashSet<OutputId>,
-    register_resource_ids: HashSet<OutputId>,
-
-    outputs: HashMap<FieldName, OutputId>,
-
-    pulumi: Box<dyn PulumiService>,
-    nodes: NodesMap,
+    output_task_created: AtomicBool,
+    pulumi: Arc<Box<dyn PulumiConnector>>,
     config: Config,
 }
 
-impl Engine {
-    pub fn new(pulumi: impl PulumiService + 'static, config: Config) -> Self {
+type UnitEngine = Engine<()>;
+
+impl<FunctionContext> Engine<FunctionContext> {
+    pub fn new(pulumi: impl PulumiConnector + 'static, config: Config) -> Self {
+        let (tx, rx) = unbounded();
         Self {
-            done_node_ids: VecDeque::new(),
-            ready_foreign_function_ids: HashSet::new(),
-            register_resource_ids: HashSet::new(),
-            outputs: HashMap::new(),
-            nodes: HashMap::new(),
-            pulumi: Box::new(pulumi),
+            outputs: Default::default(),
+            function_contexts: Default::default(),
+            join_set: Default::default(),
+            pulumi: Arc::new(Box::new(pulumi)),
+            output_task_created: AtomicBool::new(false),
+            native_function_queue_sender: tx,
+            native_function_queue_receiver: rx,
             config,
         }
     }
 
     #[cfg(test)]
-    pub fn new_without_configs(pulumi: impl PulumiService + 'static) -> Self {
+    pub fn new_without_configs(pulumi: impl PulumiConnector + 'static) -> Self {
+        use std::collections::HashSet;
         let config = Config::new(HashMap::new(), HashSet::new(), "project".to_string());
         Self::new(pulumi, config)
     }
 
-    pub fn run(
-        &mut self,
-        native_function_results: HashMap<OutputId, Value>,
-    ) -> Option<Vec<ForeignFunctionToInvoke>> {
-        self.loop_over_dones();
-        self.loop_over_native_function_results(native_function_results);
-
-        loop {
-            if !self.ready_foreign_function_ids.is_empty() {
-                return Some(self.prepare_foreign_function_results());
-            }
-
-            if self.register_resource_ids.is_empty() {
-                break;
-            }
-            self.handle_creating_resources();
-        }
-
-        if !self.outputs.is_empty() {
-            let mut value = HashMap::new();
-
-            for (field_name, output_id) in self.outputs.iter() {
-                if let Some(output_id) = self.get_value(*output_id) {
-                    value.insert(field_name.clone(), output_id);
-                }
-            }
-
-            self.pulumi.register_outputs(value); //FIXME: Secrets
-        }
-
-        None
-    }
-
-    pub fn add_output(&mut self, field_name: FieldName, output_id: OutputId) {
-        self.outputs.insert(field_name, output_id);
-    }
-
-    fn get_value(&self, output_id: OutputId) -> Option<Value> {
-        match self.nodes.get(&output_id) {
-            None => {
-                error!("Cannot find node with id {}", output_id);
-                panic!("Cannot find node with id {}", output_id)
-                // Maybe in the future?
-                // unsafe { unreachable_unchecked() }
-            }
-            Some(r) => {
-                let ndv = match r.0.borrow().deref() {
-                    EngineNode::Done(node) => MaybeNodeValue::Set(node.get_value().clone()),
-                    EngineNode::NativeFunction(node) => node.get_value().clone(),
-                    EngineNode::RegisterResource(node) => node.get_value().clone(),
-                    EngineNode::ExtractField(node) => node.get_value().clone(),
-                    EngineNode::CombineOutputs(node) => node.get_value().clone(),
-                };
-
-                match ndv {
-                    MaybeNodeValue::NotYetCalculated => None,
-                    MaybeNodeValue::Set(NodeValue::Nothing) => None,
-                    MaybeNodeValue::Set(NodeValue::Exists {
-                        value: v,
-                        secret: false,
-                    }) => Some(v),
-                    MaybeNodeValue::Set(NodeValue::Exists {
-                        value: v,
-                        secret: true,
-                    }) => Some(json!({
-                        crate::constants::SPECIAL_SIG_KEY: crate::constants::SPECIAL_SECRET_SIG,
-                        crate::constants::SECRET_VALUE_NAME: v
-                    })),
-                }
-            }
-        }
-    }
-
-    fn prepare_foreign_function_results(&self) -> Vec<ForeignFunctionToInvoke> {
-        self.ready_foreign_function_ids
-            .iter()
-            .map(|output_id| {
-                let node = self.get_native_function(*output_id);
-                ForeignFunctionToInvoke {
-                    output_id: *output_id,
-                    function_name: node.get_function_name().clone(),
-                    value: node.get_argument_value().clone(),
-                }
-            })
-            .collect()
-    }
-
-    fn loop_over_dones(&mut self) {
-        loop {
-            let output_id = match self.done_node_ids.pop_back() {
-                None => break,
-                Some(output_id) => output_id,
-            };
-
-            let node = Self::get_done_free(&self.nodes, output_id);
-
-            let value = node.get_value();
-            let callbacks = node.get_callbacks();
-            let mut sets = EngineView {
-                ready_foreign_function_ids: &mut self.ready_foreign_function_ids,
-                register_resource_ids: &mut self.register_resource_ids,
-                pulumi: self.pulumi.deref(),
-            };
-
-            for callback in callbacks {
-                Engine::handle_callback(value, callback, &self.nodes, &mut sets);
-            }
-        }
-    }
-
-    fn loop_over_native_function_results(
-        &mut self,
-        native_function_results: HashMap<OutputId, Value>,
-    ) {
-        let nodes = &self.nodes;
-
-        for (output_id, value) in native_function_results {
-            let mut node = Self::get_native_function_free_mut(nodes, output_id);
-            let value = node.set_value(value);
-            self.ready_foreign_function_ids.remove(&output_id);
-
-            let mut sets = EngineView {
-                ready_foreign_function_ids: &mut self.ready_foreign_function_ids,
-                register_resource_ids: &mut self.register_resource_ids,
-                pulumi: self.pulumi.deref(),
-            };
-
-            Self::run_callbacks(node.get_callbacks(), &value, nodes, &mut sets);
-        }
-    }
-
-    fn handle_creating_resources(&mut self) {
-        let output = self
-            .pulumi
-            .poll_resource_operations(&self.register_resource_ids);
-
-        for (output_id, response) in output {
-            self.register_resource_ids.remove(&output_id);
-            let mut node = Self::get_create_resource_free_mut(&self.nodes, output_id);
-            let value = node.set_value(&response);
-            let mut sets = EngineView {
-                ready_foreign_function_ids: &mut self.ready_foreign_function_ids,
-                register_resource_ids: &mut self.register_resource_ids,
-                pulumi: self.pulumi.deref(),
-            };
-            Self::run_callbacks(node.get_callbacks(), &value, &self.nodes, &mut sets);
-        }
-    }
-
-    fn run_callbacks(
-        callbacks: &[Callback],
-        node_value: &NodeValue,
-        nodes: &NodesMap,
-        sets: &mut EngineView,
-    ) {
-        callbacks
-            .iter()
-            .for_each(|callback| Self::handle_callback(node_value, callback, nodes, sets));
-    }
-
-    fn handle_callback(
-        value: &NodeValue,
-        callback: &Callback,
-        nodes: &NodesMap,
-        sets: &mut EngineView,
-    ) {
-        match callback {
-            Callback::CreateResource(output_id, field_name) => {
-                Self::handle_create_resource_callback(value, nodes, output_id, field_name, sets)
-            }
-            Callback::ExtractField(output_id) => {
-                Self::handle_extract_field_callback(value, nodes, sets, output_id);
-            }
-            Callback::NativeFunction(output_id) => {
-                Self::handle_native_function_callback(value, nodes, sets, output_id);
-            }
-            Callback::CombineOutputs(output_id, idx) => {
-                Self::handle_combine_outputs_callback(value, nodes, sets, output_id, *idx);
-            }
-        }
-    }
-
-    fn handle_create_resource_callback(
-        value: &NodeValue,
-        nodes: &NodesMap,
-        output_id: &OutputId,
-        field_name: &FieldName,
-        engine_view: &mut EngineView,
-    ) {
-        let mut create_resource_node = Self::get_create_resource_free_mut(nodes, *output_id);
-
-        let registration_request =
-            create_resource_node.set_input(field_name.clone(), value.clone());
-
-        match registration_request {
-            None => {}
-            Some(rr) => {
-                engine_view
-                    .pulumi
-                    .perform_resource_operation(*output_id, rr);
-                engine_view.register_resource_ids.insert(*output_id);
-            }
-        }
-    }
-
-    fn handle_native_function_callback(
-        value: &NodeValue,
-        nodes: &NodesMap,
-        sets: &mut EngineView,
-        output_id: &OutputId,
-    ) {
-        let mut node = Self::get_native_function_free_mut(nodes, *output_id);
-        node.set_argument(value.clone());
-        match value {
-            NodeValue::Nothing => {
-                node.set_nothing();
-                Self::run_callbacks(node.get_callbacks(), value, nodes, sets);
-            }
-            Exists {
-                value: _,
-                secret: _,
-            } => {
-                sets.ready_foreign_function_ids.insert(*output_id);
-            }
-        }
-    }
-
-    fn handle_combine_outputs_callback(
-        value: &NodeValue,
-        nodes: &NodesMap,
-        sets: &mut EngineView,
-        output_id: &OutputId,
-        idx: u32,
-    ) {
-        let mut node = Self::get_combine_outputs_free_mut(nodes, *output_id);
-        let result = node.set_node_value(idx, value.clone());
-        match result {
-            None => {}
-            Some(v) => {
-                Self::run_callbacks(node.get_callbacks(), &v, nodes, sets);
-            }
-        }
-    }
-
-    fn handle_extract_field_callback(
-        value: &NodeValue,
-        nodes: &NodesMap,
-        mutable_sets: &mut EngineView,
-        output_id: &OutputId,
-    ) {
-        let mut node = Self::get_extract_field_free_mut(nodes, *output_id);
-        let new_value = node.extract_field(value);
-        Self::run_callbacks(node.get_callbacks(), &new_value, nodes, mutable_sets)
-    }
-
-    #[cfg(test)]
-    fn get_done(&self, output_id: OutputId) -> Ref<'_, DoneNode> {
-        Self::get_done_free(&self.nodes, output_id)
-    }
-
-    fn get_done_free(nodes: &NodesMap, output_id: OutputId) -> Ref<'_, DoneNode> {
-        match nodes.get(&output_id) {
-            None => {
-                error!("Cannot find node with id {}", output_id);
-                panic!("Cannot find node with id {}", output_id)
-                // Maybe in the future?
-                // unsafe { unreachable_unchecked() }
-            }
-            Some(r) => r.map(|t| match t {
-                EngineNode::Done(node) => node,
-                EngineNode::NativeFunction(_) => {
-                    error!("Node with id [{}] is native function, not done", output_id);
-                    panic!("Node with id [{}] is native function, not done", output_id)
-                }
-                EngineNode::RegisterResource(_) => {
-                    error!(
-                        "Node with id [{}] is register resource, not done",
-                        output_id
-                    );
-                    panic!(
-                        "Node with id [{}] is register resource, not done",
-                        output_id
-                    )
-                }
-                EngineNode::ExtractField(_) => {
-                    error!("Node with id [{}] is extract field, not done", output_id);
-                    panic!("Node with id [{}] is extract field, not done", output_id)
-                }
-                EngineNode::CombineOutputs(_) => {
-                    error!("Node with id [{}] is combine outputs, not done", output_id);
-                    panic!("Node with id [{}] is combine outputs, not done", output_id)
-                }
-            }),
-        }
-    }
-
-    fn get_native_function(&self, output_id: OutputId) -> Ref<'_, NativeFunctionNode> {
-        Self::get_native_function_free(&self.nodes, output_id)
-    }
-
-    fn get_native_function_free(
-        nodes: &NodesMap,
-        output_id: OutputId,
-    ) -> Ref<'_, NativeFunctionNode> {
-        match nodes.get(&output_id) {
-            None => {
-                error!("Cannot find node with id {}", output_id);
-                panic!("Cannot find node with id {}", output_id)
-                // Maybe in the future?
-                // unsafe { unreachable_unchecked() }
-            }
-            Some(r) => r.map(|t| match t {
-                EngineNode::NativeFunction(node) => node,
-                EngineNode::Done(_) => {
-                    error!("Node with id [{}] is done, not native function", output_id);
-                    panic!("Node with id [{}] is done, not native function", output_id)
-                }
-                EngineNode::RegisterResource(_) => {
-                    error!(
-                        "Node with id [{}] is register resource, not native function",
-                        output_id
-                    );
-                    panic!(
-                        "Node with id [{}] is register resource, not native function",
-                        output_id
-                    )
-                }
-                EngineNode::ExtractField(_) => {
-                    error!(
-                        "Node with id [{}] is extract field, not native function",
-                        output_id
-                    );
-                    panic!(
-                        "Node with id [{}] is extract field, not native function",
-                        output_id
-                    )
-                }
-                EngineNode::CombineOutputs(_) => {
-                    error!(
-                        "Node with id [{}] is combine outputs, not native function",
-                        output_id
-                    );
-                    panic!(
-                        "Node with id [{}] is combine outputs, not native function",
-                        output_id
-                    )
-                }
-            }),
-        }
-    }
-
-    fn get_native_function_free_mut(
-        nodes: &NodesMap,
-        output_id: OutputId,
-    ) -> RefMut<'_, NativeFunctionNode> {
-        match nodes.get(&output_id) {
-            None => {
-                error!("Cannot find node with id {}", output_id);
-                panic!("Cannot find node with id {}", output_id)
-                // Maybe in the future?
-                // unsafe { unreachable_unchecked() }
-            }
-            Some(r) => r.map_mut(|t| match t {
-                EngineNode::NativeFunction(node) => node,
-                EngineNode::Done(_) => {
-                    error!("Node with id [{}] is done, not native function", output_id);
-                    panic!("Node with id [{}] is done, not native function", output_id)
-                }
-                EngineNode::RegisterResource(_) => {
-                    error!(
-                        "Node with id [{}] is register resource, not native function",
-                        output_id
-                    );
-                    panic!(
-                        "Node with id [{}] is register resource, not native function",
-                        output_id
-                    )
-                }
-                EngineNode::ExtractField(_) => {
-                    error!(
-                        "Node with id [{}] is extract field, not native function",
-                        output_id
-                    );
-                    panic!(
-                        "Node with id [{}] is extract field, not native function",
-                        output_id
-                    )
-                }
-                EngineNode::CombineOutputs(_) => {
-                    error!(
-                        "Node with id [{}] is combine outputs, not native function",
-                        output_id
-                    );
-                    panic!(
-                        "Node with id [{}] is combine outputs, not native function",
-                        output_id
-                    )
-                }
-            }),
-        }
-    }
-
-    #[cfg(test)]
-    fn get_extract_field_mut(&self, output_id: OutputId) -> RefMut<'_, ExtractFieldNode> {
-        Self::get_extract_field_free_mut(&self.nodes, output_id)
-    }
-
-    fn get_extract_field_free_mut(
-        nodes: &NodesMap,
-        output_id: OutputId,
-    ) -> RefMut<'_, ExtractFieldNode> {
-        match nodes.get(&output_id) {
-            None => {
-                error!("Cannot find node with id {}", output_id);
-                panic!("Cannot find node with id {}", output_id)
-                // Maybe in the future?
-                // unsafe { unreachable_unchecked() }
-            }
-            Some(r) => r.map_mut(|t| match t {
-                EngineNode::ExtractField(node) => node,
-                EngineNode::NativeFunction(_) => {
-                    error!(
-                        "Node with id [{}] is native function, not extract field",
-                        output_id
-                    );
-                    panic!(
-                        "Node with id [{}] is native function, not extract field",
-                        output_id
-                    )
-                }
-                EngineNode::Done(_) => {
-                    error!("Node with id [{}] is done, not extract field", output_id);
-                    panic!("Node with id [{}] is done, not extract field", output_id)
-                }
-                EngineNode::RegisterResource(_) => {
-                    error!(
-                        "Node with id [{}] is register resource, not extract field",
-                        output_id
-                    );
-                    panic!(
-                        "Node with id [{}] is register resource, not extract field",
-                        output_id
-                    )
-                }
-                EngineNode::CombineOutputs(_) => {
-                    error!(
-                        "Node with id [{}] is combine outputs, not extract field",
-                        output_id
-                    );
-                    panic!(
-                        "Node with id [{}] is combine outputs, not extract field",
-                        output_id
-                    )
-                }
-            }),
-        }
-    }
-
-    fn get_combine_outputs_free_mut(
-        nodes: &NodesMap,
-        output_id: OutputId,
-    ) -> RefMut<'_, CombineOutputsNode> {
-        match nodes.get(&output_id) {
-            None => {
-                error!("Cannot find node with id {}", output_id);
-                panic!("Cannot find node with id {}", output_id)
-                // Maybe in the future?
-                // unsafe { unreachable_unchecked() }
-            }
-            Some(r) => r.map_mut(|t| match t {
-                EngineNode::CombineOutputs(node) => node,
-                EngineNode::NativeFunction(_) => {
-                    error!(
-                        "Node with id [{}] is native function, not combine outputs",
-                        output_id
-                    );
-                    panic!(
-                        "Node with id [{}] is native function, not combine outputs",
-                        output_id
-                    )
-                }
-                EngineNode::Done(_) => {
-                    error!("Node with id [{}] is done, not combine outputs", output_id);
-                    panic!("Node with id [{}] is done, not combine outputs", output_id)
-                }
-                EngineNode::RegisterResource(_) => {
-                    error!(
-                        "Node with id [{}] is register resource, not combine outputs",
-                        output_id
-                    );
-                    panic!(
-                        "Node with id [{}] is register resource, not combine outputs",
-                        output_id
-                    )
-                }
-                EngineNode::ExtractField(_) => {
-                    error!(
-                        "Node with id [{}] is extract field, not combine outputs",
-                        output_id
-                    );
-                    panic!(
-                        "Node with id [{}] is extract field, not combine outputs",
-                        output_id
-                    )
-                }
-            }),
-        }
-    }
-
-    #[cfg(test)]
-    fn get_create_resource(&self, output_id: OutputId) -> Ref<'_, AbstractResourceNode> {
-        Self::get_create_resource_free(&self.nodes, output_id)
-    }
-
-    #[cfg(test)]
-    fn get_create_resource_free(
-        nodes: &NodesMap,
-        output_id: OutputId,
-    ) -> Ref<'_, AbstractResourceNode> {
-        match nodes.get(&output_id) {
-            None => {
-                error!("Cannot find node with id {}", output_id);
-                panic!("Cannot find node with id {}", output_id)
-                // Maybe in the future?
-                // unsafe { unreachable_unchecked() }
-            }
-            Some(r) => r.map(|t| match t {
-                EngineNode::RegisterResource(node) => node,
-                EngineNode::NativeFunction(_) => {
-                    error!(
-                        "Node with id [{}] is native function, not create resource",
-                        output_id
-                    );
-                    panic!(
-                        "Node with id [{}] is native function, not create resource",
-                        output_id
-                    )
-                }
-                EngineNode::Done(_) => {
-                    error!("Node with id [{}] is done, not create resource", output_id);
-                    panic!("Node with id [{}] is done, not create resource", output_id)
-                }
-
-                EngineNode::ExtractField(_) => {
-                    error!(
-                        "Node with id [{}] is extract field, not create resource",
-                        output_id
-                    );
-                    panic!(
-                        "Node with id [{}] is extract field, not create resource",
-                        output_id
-                    )
-                }
-                EngineNode::CombineOutputs(_) => {
-                    error!(
-                        "Node with id [{}] is combine outputs, not create resource",
-                        output_id
-                    );
-                    panic!(
-                        "Node with id [{}] is combine outputs, not create resource",
-                        output_id
-                    )
-                }
-            }),
-        }
-    }
-
-    fn get_create_resource_free_mut(
-        nodes: &NodesMap,
-        output_id: OutputId,
-    ) -> RefMut<'_, AbstractResourceNode> {
-        match nodes.get(&output_id) {
-            None => {
-                error!("Cannot find node with id {}", output_id);
-                panic!("Cannot find node with id {}", output_id)
-                // Maybe in the future?
-                // unsafe { unreachable_unchecked() }
-            }
-            Some(r) => r.map_mut(|t| match t {
-                EngineNode::RegisterResource(node) => node,
-                EngineNode::NativeFunction(_) => {
-                    error!(
-                        "Node with id [{}] is native function, not create resource",
-                        output_id
-                    );
-                    panic!(
-                        "Node with id [{}] is native function, not create resource",
-                        output_id
-                    )
-                }
-                EngineNode::Done(_) => {
-                    error!("Node with id [{}] is done, not create resource", output_id);
-                    panic!("Node with id [{}] is done, not create resource", output_id)
-                }
-
-                EngineNode::ExtractField(_) => {
-                    error!(
-                        "Node with id [{}] is extract field, not create resource",
-                        output_id
-                    );
-                    panic!(
-                        "Node with id [{}] is extract field, not create resource",
-                        output_id
-                    )
-                }
-                EngineNode::CombineOutputs(_) => {
-                    error!(
-                        "Node with id [{}] is combine outputs, not create resource",
-                        output_id
-                    );
-                    panic!(
-                        "Node with id [{}] is combine outputs, not create resource",
-                        output_id
-                    )
-                }
-            }),
-        }
-    }
-
-    fn add_callback(&self, output_id: OutputId, callback: Callback) {
-        match self.nodes.get(&output_id) {
-            None => {
-                error!("Cannot find node with id {}", output_id);
-                panic!("Cannot find node with id {}", output_id)
-                // Maybe in the future?
-                // unsafe { unreachable_unchecked() }
-            }
-            Some(r) => {
-                r.foreach_mut(|t| {
-                    match t {
-                        EngineNode::Done(node) => node.add_callback(callback),
-                        EngineNode::NativeFunction(node) => node.add_callback(callback),
-                        EngineNode::RegisterResource(node) => node.add_callback(callback),
-                        EngineNode::ExtractField(node) => node.add_callback(callback),
-                        EngineNode::CombineOutputs(node) => node.add_callback(callback),
-                    };
-                });
-            }
-        }
-    }
-
-    pub fn create_done_node(&mut self, value: Value, secret: bool) -> OutputId {
-        let output_id = Uuid::now_v7().into();
-        let node = DoneNode::new(value, secret);
-        self.done_node_ids.push_back(output_id);
-        self.nodes.insert(output_id, EngineNode::Done(node).into());
-
-        output_id
-    }
-
-    pub fn create_native_function_node(
-        &mut self,
-        function_name: FunctionName,
-        source: OutputId,
-    ) -> OutputId {
-        let output_id = Uuid::now_v7().into();
-        let node = NativeFunctionNode::new(function_name);
-        let callback = Callback::native_function(output_id);
-        self.nodes
-            .insert(output_id, EngineNode::NativeFunction(node).into());
-        self.add_callback(source, callback);
-        output_id
-    }
-
-    pub fn create_resource_invoke_node(
-        &mut self,
-        token: String,
-        inputs: HashMap<FieldName, OutputId>,
-        version: String,
-    ) -> OutputId {
-        let operation =
-            ResourceRequestOperation::Invoke(ResourceInvokeRequestOperation::new(token));
-        self.create_register_or_read_resource_node(operation, inputs, version)
+    pub fn add_output(&self, field_name: FieldName, output_id: RawOutput) {
+        let mut outputs = self.outputs.lock().unwrap();
+        outputs.insert(field_name, output_id);
     }
 
     pub fn create_register_resource_node(
-        &mut self,
+        &self,
         r#type: String,
         name: String,
-        inputs: HashMap<FieldName, OutputId>,
+        inputs: HashMap<FieldName, RawOutput>,
         version: String,
-    ) -> OutputId {
-        let operation =
-            ResourceRequestOperation::Register(RegisterResourceRequestOperation::new(r#type, name));
-        self.create_register_or_read_resource_node(operation, inputs, version)
+    ) -> RegisterResourceOutput {
+        let pulumi = self.pulumi.clone();
+        let output = RegisterResourceOutput::from_future(async move {
+            let mut resolved_inputs = HashMap::new();
+            for (key, output) in inputs {
+                let value = output.value.await;
+                resolved_inputs.insert(key, value);
+            }
+
+            let result = pulumi
+                .register_resource(
+                    RegisterResourceRequest::builder()
+                        .r#type(r#type)
+                        .name(name)
+                        .version(version)
+                        .object(resolved_inputs)
+                        .build(),
+                )
+                .await;
+
+            Arc::new(result.fields)
+        });
+        self.join_set.push(output.clone().invoke_void());
+
+        output
     }
 
-    fn create_register_or_read_resource_node(
-        &mut self,
-        operation: ResourceRequestOperation,
-        inputs: HashMap<FieldName, OutputId>,
+    pub fn create_resource_invoke_node(
+        &self,
+        token: String,
+        inputs: HashMap<FieldName, RawOutput>,
         version: String,
-    ) -> OutputId {
-        let output_id = Uuid::now_v7().into();
-        let node = AbstractResourceNode::new(operation, inputs.keys().cloned().collect(), version);
-        self.nodes
-            .insert(output_id, EngineNode::RegisterResource(node).into());
+    ) -> RegisterResourceOutput {
+        let pulumi = self.pulumi.clone();
+        let output = RegisterResourceOutput::from_future(async move {
+            let mut resolved_inputs = HashMap::new();
+            for (key, output) in inputs {
+                let value = output.value.await;
+                resolved_inputs.insert(key, value);
+            }
 
-        inputs.iter().for_each(|(field_name, source_output_id)| {
-            let callback = Callback::create_resource(output_id, field_name.clone());
-            self.add_callback(*source_output_id, callback);
+            let result = pulumi
+                .resource_invoke(
+                    ResourceInvokeRequest::builder()
+                        .token(token)
+                        .version(version)
+                        .object(resolved_inputs)
+                        .build(),
+                )
+                .await;
+
+            Arc::new(result.fields)
         });
+        self.join_set.push(output.clone().invoke_void());
 
-        output_id
+        output
+    }
+
+    pub fn create_native_function_node(
+        &self,
+        function_context: FunctionContext,
+        source: RawOutput,
+    ) -> RawOutput {
+        let function_context_key = Uuid::now_v7();
+        let mut function_contexts = self.function_contexts.lock().unwrap();
+        function_contexts.insert(function_context_key, function_context);
+        drop(function_contexts);
+        let request_receiver = self.native_function_queue_sender.clone();
+        let output = RawOutput::from_future(async move {
+            let source_value = source.value.await;
+            match source_value {
+                NodeValue::Nothing => NodeValue::Nothing,
+                NodeValue::Exists(ExistingNodeValue { value, secret }) => {
+                    let (tx, rx) = channel();
+                    let request = InternalNativeFunctionRequest {
+                        context_key: function_context_key,
+                        data: value,
+                        return_mailbox: tx,
+                    };
+                    request_receiver.unbounded_send(request).unwrap();
+
+                    let result = rx.await.unwrap();
+                    NodeValue::exists(result, secret)
+                }
+            }
+        });
+        self.join_set.push(output.clone().invoke_void());
+        output
+    }
+
+    pub fn create_combine_outputs(&self, outputs: Vec<RawOutput>) -> RawOutput {
+        use futures::StreamExt;
+        RawOutput::from_future(async move {
+            let mut combined = FuturesOrdered::new();
+            for output in outputs {
+                combined.push_back(output.value);
+            }
+
+            let results: Vec<_> = combined.collect().await;
+
+            let mut combined = Vec::with_capacity(results.len());
+            let secret = results.iter().any(|res| match res {
+                NodeValue::Exists(ExistingNodeValue { secret, .. }) => *secret,
+                NodeValue::Nothing => false,
+            });
+
+            for result in results {
+                match result {
+                    NodeValue::Nothing => {
+                        return NodeValue::Nothing;
+                    }
+                    NodeValue::Exists(ExistingNodeValue { value, .. }) => {
+                        combined.push(value);
+                    }
+                }
+            }
+
+            NodeValue::exists(Value::Array(combined), secret)
+        })
+    }
+
+    pub fn create_done_node(value: Value, secret: bool) -> RawOutput {
+        let node_value = NodeValue::exists(value, secret);
+        RawOutput::from_node_value(node_value)
     }
 
     pub fn create_extract_field(
-        &mut self,
         field_name: FieldName,
-        source_output_id: OutputId,
-    ) -> OutputId {
-        let in_preview = self.pulumi.is_in_preview();
-        let output_id = Uuid::now_v7().into();
-        let node = ExtractFieldNode::new(field_name, in_preview);
-        let callback = Callback::extract_field(output_id);
-        self.nodes
-            .insert(output_id, EngineNode::ExtractField(node).into());
-        self.add_callback(source_output_id, callback);
-        output_id
+        source: RegisterResourceOutput,
+    ) -> RawOutput {
+        RawOutput::from_future(async move {
+            let resource_fields = source.value.await;
+            resource_fields.get_field_value(&field_name)
+        })
     }
 
-    pub fn create_combine_outputs(&mut self, outputs: Vec<OutputId>) -> OutputId {
-        let output_id = Uuid::now_v7().into();
-        let node = CombineOutputsNode::new(outputs.len() as u32);
-
-        outputs
-            .iter()
-            .enumerate()
-            .for_each(|(index, source_output_id)| {
-                let callback = Callback::combine_outputs(output_id, index as u32);
-                self.add_callback(*source_output_id, callback);
-            });
-        self.nodes
-            .insert(output_id, EngineNode::CombineOutputs(node).into());
-        output_id
+    #[cfg(test)]
+    fn create_nothing_node() -> RawOutput {
+        RawOutput::from_node_value(NodeValue::Nothing)
     }
 
-    pub fn get_config_value(&mut self, name: Option<&str>, key: &str) -> Option<ConfigValue> {
+    pub async fn run(&mut self) -> Option<NativeFunctionRequest<FunctionContext>> {
+        if self
+            .output_task_created
+            .compare_exchange(false, true, SeqCst, SeqCst)
+            .is_ok()
+        {
+            let outputs = self.outputs.lock().unwrap();
+            let outputs_map = outputs.clone();
+            drop(outputs);
+            let pulumi = self.pulumi.clone();
+
+            let f = async move {
+                let mut resolved_outputs = HashMap::new();
+                for (key, output) in outputs_map {
+                    let value = output.value.await;
+                    resolved_outputs.insert(key, value);
+                }
+
+                pulumi
+                    .register_outputs(
+                        RegisterOutputsRequest::builder()
+                            .outputs(resolved_outputs)
+                            .build(),
+                    )
+                    .await;
+            };
+
+            self.join_set.push(f.boxed().shared());
+        }
+
+        loop {
+            futures::select! {
+                res = self.join_set.next() => {
+                    match res {
+                        Some(_) => {
+                            continue
+                        }
+                        None => {
+                            // All tasks complete
+                            // Tokio and futures structs have different behaviors when streams complete
+                            // Tokio will be returning None, but futures will not return anything anymore
+                            // Due to that if someone calls run again the select will wait for receiver - and since
+                            // there is no more tasks it will be stuck forever. To avoid that we close the receiver here.
+                            // That way futures will panic
+                            self.native_function_queue_receiver.close();
+                            return None;
+                        }
+                    }
+                }
+                request = self.native_function_queue_receiver.next() => {
+                    match request {
+                        Some(request) => {
+                            let mut function_contexts = self.function_contexts.lock().unwrap();
+                            let function_context = function_contexts.remove(&request.context_key).unwrap();
+                            return Some(NativeFunctionRequest {
+                                context: function_context,
+                                data: request.data,
+                                return_mailbox: request.return_mailbox,
+                            });
+                        }
+                        None => {
+                            continue;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    pub fn get_config_value(&self, name: Option<&str>, key: &str) -> Option<ConfigValue> {
         match self.config.get(name, key) {
             None => None,
             Some(RawConfigValue::PlainText(value)) => Some(ConfigValue::PlainText(value.clone())),
             Some(RawConfigValue::Secret(secret)) => {
                 let value = Value::String(secret.clone());
-                let output_id = self.create_done_node(value, true);
+                let output_id = UnitEngine::create_done_node(value, true);
                 Some(ConfigValue::Secret(output_id))
             }
         }
@@ -869,513 +306,210 @@ impl Engine {
 
 #[cfg(test)]
 mod tests {
+    use super::*;
+    use mockall::predicate::eq;
     use std::collections::HashMap;
-    use std::ops::Deref;
 
-    use serde_json::Value;
+    use std::sync::RwLock;
 
-    use crate::engine::{Engine, ForeignFunctionToInvoke};
-    use crate::nodes::{Callback, DoneNode, NativeFunctionNode};
-    use crate::pulumi::service::MockPulumiService;
+    static_assertions::assert_impl_all!(Engine<RwLock<()>>: Send, Sync);
 
-    #[test]
-    fn create_done_node_create_node_in_map() {
-        let mut engine = Engine::new_without_configs(MockPulumiService::new());
-        let value: Value = 1.into();
-        let output_id = engine.create_done_node(value.clone(), false);
-
-        assert_eq!(engine.done_node_ids, vec![output_id]);
-        assert_eq!(
-            engine.get_done(output_id).deref(),
-            &DoneNode::create(value, false, Vec::new())
-        );
-    }
-
-    #[test]
-    fn create_native_function_node_create_node_in_map() {
-        let mut engine = Engine::new_without_configs(MockPulumiService::new());
-        let value: Value = 1.into();
-        let done_node_output_id = engine.create_done_node(value.clone(), false);
-        let native_node_output_id =
-            engine.create_native_function_node("func".into(), done_node_output_id);
-
-        assert_eq!(engine.done_node_ids, vec![done_node_output_id]);
-        assert_eq!(engine.ready_foreign_function_ids, [].into());
-
-        assert_eq!(
-            engine.get_done(done_node_output_id).deref(),
-            &DoneNode::create(
-                value,
-                false,
-                vec![Callback::NativeFunction(native_node_output_id)]
-            )
-        );
-        assert_eq!(
-            engine.get_native_function(native_node_output_id).deref(),
-            &NativeFunctionNode::new("func".into())
-        );
-    }
-
-    mod native_function {
-        use super::*;
-        use crate::model::MaybeNodeValue;
-
-        #[test]
-        fn run_return_native_functions() {
-            let mut engine = Engine::new_without_configs(MockPulumiService::new());
-            let value: Value = 1.into();
-            let done_node_output_id = engine.create_done_node(value.clone(), false);
-            let native_node_output_id =
-                engine.create_native_function_node("func".into(), done_node_output_id);
-
-            let result = engine.run(HashMap::new());
-            assert_eq!(
-                engine.ready_foreign_function_ids,
-                [native_node_output_id].into()
-            );
-            assert_eq!(
-                result,
-                Some(vec![ForeignFunctionToInvoke {
-                    output_id: native_node_output_id,
-                    function_name: "func".into(),
-                    value: 1.into(),
-                }])
-            );
-        }
-
-        #[test]
-        fn sets_native_function_results() {
-            let mut engine = Engine::new_without_configs(MockPulumiService::new());
-            let value: Value = 1.into();
-            let done_node_output_id = engine.create_done_node(value.clone(), false);
-            let native_node_output_id =
-                engine.create_native_function_node("func".into(), done_node_output_id);
-            let result_value: Value = 2.into();
-
-            let result = engine.run(HashMap::from([(
-                native_node_output_id,
-                result_value.clone(),
-            )]));
-
-            assert_eq!(engine.ready_foreign_function_ids, [].into());
-            assert_eq!(
-                engine
-                    .get_native_function(native_node_output_id)
-                    .get_value(),
-                &MaybeNodeValue::set_value(result_value, false)
-            );
-            assert_eq!(result, None);
-        }
-
-        #[test]
-        fn native_function_passes_unknown_value_downstream() {
-            let mut engine = Engine::new_without_configs(MockPulumiService::new());
-            let value: Value = 1.into();
-            let done_node_output_id = engine.create_done_node(value.clone(), false);
-            let native_node_output_id =
-                engine.create_native_function_node("func".into(), done_node_output_id);
-            let result_value: Value = 2.into();
-
-            let result = engine.run(HashMap::from([(
-                native_node_output_id,
-                result_value.clone(),
-            )]));
-
-            assert_eq!(engine.ready_foreign_function_ids, [].into());
-            assert_eq!(
-                engine
-                    .get_native_function(native_node_output_id)
-                    .get_value(),
-                &MaybeNodeValue::set_value(result_value, false)
-            );
-            assert_eq!(result, None);
-        }
-
-        #[test]
-        fn native_function_can_be_run_from_another_native_function() {
-            let mut engine = Engine::new_without_configs(MockPulumiService::new());
-            let value: Value = 1.into();
-            let done_node_output_id = engine.create_done_node(value.clone(), false);
-            let native_node_output_id_1 =
-                engine.create_native_function_node("func".into(), done_node_output_id);
-            let native_node_output_id_2 =
-                engine.create_native_function_node("func2".into(), native_node_output_id_1);
-
-            let result = engine.run(HashMap::from([(native_node_output_id_1, 2.into())]));
-
-            assert_eq!(
-                engine.ready_foreign_function_ids,
-                [native_node_output_id_2].into()
-            );
-            assert_eq!(
-                result,
-                Some(vec![ForeignFunctionToInvoke {
-                    output_id: native_node_output_id_2,
-                    function_name: "func2".into(),
-                    value: 2.into(),
-                }])
-            );
-        }
-    }
-
-    mod extract_field {
-        use crate::model::MaybeNodeValue::Set;
-        use crate::model::NodeValue;
-
-        use crate::nodes::Callback::NativeFunction;
-        use crate::nodes::ExtractFieldNode;
-
-        use super::*;
-
-        #[test]
-        fn extract_field_extract_field_from_map() {
-            let mut mock = MockPulumiService::new();
-            mock.expect_is_in_preview().times(1).returning(|| true);
-            let mut engine = Engine::new_without_configs(mock);
-            let value = Value::Object([("key".into(), 1.into())].into_iter().collect());
-            let done_node_output_id = engine.create_done_node(value.clone(), false);
-            let extract_field_node_output_id =
-                engine.create_extract_field("key".into(), done_node_output_id);
-            let native_function_node_output_id =
-                engine.create_native_function_node("func".into(), extract_field_node_output_id);
-
-            let result = engine.run(HashMap::new());
-
-            assert_eq!(
-                engine.ready_foreign_function_ids,
-                [native_function_node_output_id].into()
-            );
-            assert_eq!(
-                result,
-                Some(vec![ForeignFunctionToInvoke {
-                    output_id: native_function_node_output_id,
-                    function_name: "func".into(),
-                    value: 1.into(),
-                }])
-            );
-            assert_eq!(
-                engine
-                    .get_extract_field_mut(extract_field_node_output_id)
-                    .deref(),
-                &ExtractFieldNode::create(
-                    Set(NodeValue::exists(1.into(), false)),
-                    "key".into(),
-                    vec![NativeFunction(native_function_node_output_id)],
-                    true,
-                )
-            );
-        }
-    }
-
-    mod register_resource {
-        use std::collections::{HashMap, HashSet};
-        use std::ops::Deref;
-        use std::sync::{Arc, OnceLock};
-
-        use crate::engine::Engine;
-        use crate::model::MaybeNodeValue;
-        use crate::model::MaybeNodeValue::NotYetCalculated;
-        use crate::nodes::{
-            AbstractResourceNode, Callback, DoneNode, RegisterResourceRequestOperation,
-            ResourceRequestOperation,
-        };
-        use crate::pulumi::service::{
-            MockPulumiService, PerformResourceRequest, RegisterResourceResponse,
-        };
-        use mockall::predicate::{eq, function};
-        use serde_json::json;
-
-        #[test]
-        fn should_create_required_nodes() {
-            let mut engine = Engine::new_without_configs(MockPulumiService::new());
-            let done_node_output_id = engine.create_done_node(1.into(), false);
-            let register_resource_node_output_id = engine.create_register_resource_node(
-                "type".into(),
-                "name".into(),
-                HashMap::from([("input".into(), done_node_output_id)]),
-                "1.0.0".into(),
-            );
-
-            assert_eq!(
-                engine.get_done(done_node_output_id).deref(),
-                &DoneNode::create(
-                    1.into(),
-                    false,
-                    vec![Callback::create_resource(
-                        register_resource_node_output_id,
-                        "input".into(),
-                    )],
-                )
-            );
-            assert_eq!(
-                engine
-                    .get_create_resource(register_resource_node_output_id)
-                    .deref(),
-                &AbstractResourceNode::create(
-                    NotYetCalculated,
-                    ResourceRequestOperation::Register(RegisterResourceRequestOperation::new(
-                        "type".into(),
-                        "name".into()
-                    )),
-                    HashSet::from(["input".into()]),
-                    HashMap::new(),
-                    vec![],
-                    "1.0.0".into()
-                )
-            );
-        }
-
-        #[test]
-        fn should_create_resource_when_all_inputs_are_set() {
-            let mut mock = MockPulumiService::new();
-
-            let register_resource_node_output_id_once_cell = Arc::new(OnceLock::new());
-
-            let register_resource_node_output_id_once_cell_2 =
-                register_resource_node_output_id_once_cell.clone();
-            mock.expect_perform_resource_operation()
-                .times(1)
-                .with(
-                    function(move |output_id| {
-                        output_id
-                            == register_resource_node_output_id_once_cell_2
-                                .deref()
-                                .get()
-                                .unwrap()
-                    }),
-                    eq(PerformResourceRequest {
-                        operation: ResourceRequestOperation::Register(
-                            RegisterResourceRequestOperation::new("type".into(), "name".into()),
-                        ),
-                        object: HashMap::from([("input".into(), Some(1.into()))]),
-                        version: "1.0.0".into(),
-                    }),
-                )
-                .returning(|_, _| ());
-
-            let register_resource_node_output_id_once_cell_2 =
-                register_resource_node_output_id_once_cell.clone();
-            mock.expect_poll_resource_operations()
-                .times(1)
-                .with(function(move |output_ids| {
-                    output_ids
-                        == &([*register_resource_node_output_id_once_cell_2
-                            .deref()
-                            .get()
-                            .unwrap()]
-                        .into())
-                }))
-                .returning(|output_ids| {
-                    let output_id = output_ids.iter().next().unwrap();
-
-                    HashMap::from([(
-                        *output_id,
-                        RegisterResourceResponse {
-                            outputs: HashMap::from([("output".into(), true.into())]),
-                        },
-                    )])
-                });
-
-            let mut engine = Engine::new_without_configs(mock);
-            let done_node_output_id = engine.create_done_node(1.into(), false);
-            let register_resource_node_output_id = engine.create_register_resource_node(
-                "type".into(),
-                "name".into(),
-                HashMap::from([("input".into(), done_node_output_id)]),
-                "1.0.0".into(),
-            );
-            register_resource_node_output_id_once_cell
-                .set(register_resource_node_output_id)
-                .unwrap();
-            let result = engine.run(HashMap::new());
-            assert_eq!(result, None);
-
-            let output_node = engine.get_create_resource(register_resource_node_output_id);
-            assert_eq!(
-                output_node.get_value(),
-                &MaybeNodeValue::set_value(json!({ "output": true }), false)
-            );
-        }
-    }
-    mod invoke_resource {
-        use std::collections::{HashMap, HashSet};
-        use std::ops::Deref;
-        use std::sync::{Arc, OnceLock};
-
-        use crate::engine::Engine;
-        use crate::model::MaybeNodeValue;
-        use crate::model::MaybeNodeValue::NotYetCalculated;
-        use crate::nodes::{
-            AbstractResourceNode, Callback, DoneNode, ResourceInvokeRequestOperation,
-            ResourceRequestOperation,
-        };
-        use crate::pulumi::service::{
-            MockPulumiService, PerformResourceRequest, RegisterResourceResponse,
-        };
-        use mockall::predicate::{eq, function};
-        use serde_json::json;
-
-        #[test]
-        fn should_create_required_nodes() {
-            let mut engine = Engine::new_without_configs(MockPulumiService::new());
-            let done_node_output_id = engine.create_done_node(1.into(), false);
-            let invoke_resource_node_output_id = engine.create_resource_invoke_node(
-                "token".into(),
-                HashMap::from([("input".into(), done_node_output_id)]),
-                "1.0.0".into(),
-            );
-
-            assert_eq!(
-                engine.get_done(done_node_output_id).deref(),
-                &DoneNode::create(
-                    1.into(),
-                    false,
-                    vec![Callback::create_resource(
-                        invoke_resource_node_output_id,
-                        "input".into(),
-                    )],
-                )
-            );
-            assert_eq!(
-                engine
-                    .get_create_resource(invoke_resource_node_output_id)
-                    .deref(),
-                &AbstractResourceNode::create(
-                    NotYetCalculated,
-                    ResourceRequestOperation::Invoke(ResourceInvokeRequestOperation::new(
-                        "token".into(),
-                    )),
-                    HashSet::from(["input".into()]),
-                    HashMap::new(),
-                    vec![],
-                    "1.0.0".into()
-                )
-            );
-        }
-
-        #[test]
-        fn should_create_resource_when_all_inputs_are_set() {
-            let mut mock = MockPulumiService::new();
-
-            let invoke_resource_node_output_id_once_cell = Arc::new(OnceLock::new());
-
-            let invoke_resource_node_output_id_once_cell_2 =
-                invoke_resource_node_output_id_once_cell.clone();
-            mock.expect_perform_resource_operation()
-                .times(1)
-                .with(
-                    function(move |output_id| {
-                        output_id
-                            == invoke_resource_node_output_id_once_cell_2
-                                .deref()
-                                .get()
-                                .unwrap()
-                    }),
-                    eq(PerformResourceRequest {
-                        operation: ResourceRequestOperation::Invoke(
-                            ResourceInvokeRequestOperation::new("token".into()),
-                        ),
-                        object: HashMap::from([("input".into(), Some(1.into()))]),
-                        version: "1.0.0".into(),
-                    }),
-                )
-                .returning(|_, _| ());
-
-            let invoke_resource_node_output_id_once_cell_2 =
-                invoke_resource_node_output_id_once_cell.clone();
-            mock.expect_poll_resource_operations()
-                .times(1)
-                .with(function(move |output_ids| {
-                    output_ids
-                        == &([*invoke_resource_node_output_id_once_cell_2
-                            .deref()
-                            .get()
-                            .unwrap()]
-                        .into())
-                }))
-                .returning(|output_ids| {
-                    let output_id = output_ids.iter().next().unwrap();
-
-                    HashMap::from([(
-                        *output_id,
-                        RegisterResourceResponse {
-                            outputs: HashMap::from([("output".into(), true.into())]),
-                        },
-                    )])
-                });
-
-            let mut engine = Engine::new_without_configs(mock);
-            let done_node_output_id = engine.create_done_node(1.into(), false);
-            let invoke_resource_node_output_id = engine.create_resource_invoke_node(
-                "token".into(),
-                HashMap::from([("input".into(), done_node_output_id)]),
-                "1.0.0".into(),
-            );
-            invoke_resource_node_output_id_once_cell
-                .set(invoke_resource_node_output_id)
-                .unwrap();
-            let result = engine.run(HashMap::new());
-            assert_eq!(result, None);
-
-            let output_node = engine.get_create_resource(invoke_resource_node_output_id);
-            assert_eq!(
-                output_node.get_value(),
-                &MaybeNodeValue::set_value(json!({ "output": true }), false)
-            );
-        }
-    }
-
-    mod combine_outputs {
-        use super::*;
-        use serde_json::json;
-
-        #[test]
-        fn combine_outputs_with_done_node() {
-            let mut engine = Engine::new_without_configs(MockPulumiService::new());
-            let value1 = engine.create_done_node("key".into(), false);
-            let value2 = engine.create_done_node(1.into(), false);
-
-            let combined = engine.create_combine_outputs(vec![value1, value2]);
-
-            let native_function_node_output_id =
-                engine.create_native_function_node("func".into(), combined);
-
-            let result = engine.run(HashMap::new());
-
-            assert_eq!(
-                engine.ready_foreign_function_ids,
-                [native_function_node_output_id].into()
-            );
-            assert_eq!(
-                result,
-                Some(vec![ForeignFunctionToInvoke {
-                    output_id: native_function_node_output_id,
-                    function_name: "func".into(),
-                    value: json!(["key", 1])
-                }])
-            );
-        }
-    }
+    type StrEngine = Engine<&'static str>;
 
     mod register_outputs {
         use super::*;
-        use mockall::predicate::eq;
+        use pulumi_gestalt_domain::connector::MockPulumiConnector;
 
-        #[test]
-        fn should_register_outputs() {
-            let mut mock = MockPulumiService::new();
+        #[tokio::test]
+        async fn should_register_outputs() {
+            let mut mock = MockPulumiConnector::new();
             mock.expect_register_outputs()
                 .times(1)
-                .with(eq(HashMap::from([("output".into(), 1.into())])))
+                .with(eq(RegisterOutputsRequest::new(HashMap::from([(
+                    "output".into(),
+                    NodeValue::exists(1, false),
+                )]))))
                 .returning(|_| ());
 
-            let mut engine = Engine::new_without_configs(mock);
+            let mut engine = StrEngine::new_without_configs(mock);
 
-            let output_id = engine.create_done_node(1.into(), false);
+            let output_id = StrEngine::create_done_node(1.into(), false);
             engine.add_output("output".into(), output_id);
 
-            let result = engine.run(HashMap::new());
-            assert_eq!(result, None);
+            let result = engine.run().await;
+            assert!(result.is_none());
+        }
+
+        #[tokio::test]
+        async fn should_only_create_output_task_once() {
+            let mut mock = MockPulumiConnector::new();
+            mock.expect_register_outputs()
+                .times(1)
+                .with(eq(RegisterOutputsRequest::new(HashMap::from([(
+                    "output".into(),
+                    NodeValue::exists(1, false),
+                )]))))
+                .returning(|_| ());
+
+            let mut engine = StrEngine::new_without_configs(mock);
+
+            let output_id = StrEngine::create_done_node(1.into(), false);
+            engine.add_output("output".into(), output_id.clone());
+            engine.create_native_function_node("nativeFunc", output_id.clone());
+            engine.create_native_function_node("nativeFunc2", output_id);
+
+            let result = engine.run().await;
+            // nativeFunc
+            assert!(result.is_some());
+
+            let result = engine.run().await;
+            // nativeFunc2
+            assert!(result.is_some());
+        }
+    }
+
+    mod mapping {
+        use super::*;
+        use pulumi_gestalt_domain::connector::MockPulumiConnector;
+
+        #[tokio::test]
+        async fn should_return_map_function() {
+            use serde_json::json;
+
+            let mock = MockPulumiConnector::new();
+            let mut engine = StrEngine::new_without_configs(mock);
+
+            let source_output = StrEngine::create_done_node(json!("value"), false);
+            let mapped_output = engine.create_native_function_node("nativeFunc", source_output);
+            engine.add_output("mapped_output".into(), mapped_output);
+
+            let result = engine.run().await;
+
+            match result {
+                None => {
+                    panic!("Expected NativeFunctionRequest, got None");
+                }
+                Some(request) => {
+                    assert_eq!(request.context, "nativeFunc");
+                    assert_eq!(request.data, json!("value"));
+                }
+            }
+        }
+
+        #[tokio::test]
+        async fn should_invoke_map_even_if_it_is_not_in_output() {
+            use serde_json::json;
+
+            let mut mock = MockPulumiConnector::new();
+            mock.expect_register_outputs()
+                .times(1)
+                .with(eq(RegisterOutputsRequest::new(HashMap::new())))
+                .returning(|_| ());
+            let mut engine = StrEngine::new_without_configs(mock);
+
+            let source_output = StrEngine::create_done_node(json!("value"), false);
+            let _ = engine.create_native_function_node("nativeFunc", source_output);
+
+            let result = engine.run().await;
+
+            match result {
+                None => {
+                    panic!("Expected NativeFunctionRequest, got None");
+                }
+                Some(request) => {
+                    assert_eq!(request.context, "nativeFunc");
+                    assert_eq!(request.data, json!("value"));
+                }
+            }
+        }
+
+        #[tokio::test]
+        async fn should_handle_function_result() {
+            let mut mock = MockPulumiConnector::new();
+            mock.expect_register_outputs()
+                .times(1)
+                .with(eq(RegisterOutputsRequest::new(HashMap::from([(
+                    "mapped_output".into(),
+                    NodeValue::exists("result", false),
+                )]))))
+                .returning(|_| ());
+            let mut engine = StrEngine::new_without_configs(mock);
+
+            let source_output = StrEngine::create_done_node("value".into(), false);
+            let mapped_output = engine.create_native_function_node("nativeFunc", source_output);
+            engine.add_output("mapped_output".into(), mapped_output);
+
+            let result = engine.run().await;
+
+            match result {
+                None => {
+                    panic!("Expected NativeFunctionRequest, got None");
+                }
+                Some(request) => {
+                    request.return_mailbox.send("result".into()).unwrap();
+                }
+            }
+
+            let result = engine.run().await;
+
+            match result {
+                None => {}
+                Some(_) => {
+                    panic!("Expected None, got NativeFunctionRequest");
+                }
+            }
+        }
+    }
+
+    mod create_combine_outputs {
+        use super::*;
+        use pulumi_gestalt_domain::connector::MockPulumiConnector;
+        use serde_json::json;
+
+        #[tokio::test]
+        async fn should_combine_outputs() {
+            use serde_json::json;
+
+            let mock = MockPulumiConnector::new();
+
+            let engine = StrEngine::new_without_configs(mock);
+
+            let output1 = StrEngine::create_done_node(json!("1"), false);
+            let output2 = StrEngine::create_done_node(json!(2), false);
+
+            let combined_output = engine.create_combine_outputs(vec![output1, output2]);
+            let result = combined_output.value.await;
+            assert_eq!(result, NodeValue::exists(json!(["1", 2]), false));
+        }
+
+        #[tokio::test]
+        async fn single_nothing_output_results_in_nothing() {
+            let mock = MockPulumiConnector::new();
+
+            let engine = StrEngine::new_without_configs(mock);
+
+            let output1 = StrEngine::create_nothing_node();
+            let output2 = StrEngine::create_done_node(json!(2), false);
+
+            let combined_output = engine.create_combine_outputs(vec![output1, output2]);
+            let result = combined_output.value.await;
+            assert_eq!(result, NodeValue::Nothing);
+        }
+
+        #[tokio::test]
+        async fn single_secret_output_is_secret() {
+            use serde_json::json;
+
+            let mock = MockPulumiConnector::new();
+
+            let engine = StrEngine::new_without_configs(mock);
+
+            let output1 = StrEngine::create_done_node(json!("1"), false);
+            let output2 = StrEngine::create_done_node(json!(2), true);
+
+            let combined_output = engine.create_combine_outputs(vec![output1, output2]);
+            let result = combined_output.value.await;
+            assert_eq!(result, NodeValue::exists(json!(["1", 2]), true));
         }
     }
 
@@ -1383,16 +517,22 @@ mod tests {
         use super::*;
         use crate::config::Config;
         use crate::engine::ConfigValue;
-        use crate::model::NodeValue;
+        use pulumi_gestalt_domain::NodeValue;
 
+        use pulumi_gestalt_domain::connector::MockPulumiConnector;
         use std::collections::HashSet;
 
         #[test]
         fn should_return_none_when_config_is_not_set() {
             let config = Config::new(HashMap::new(), HashSet::new(), "project".to_string());
-            let mut engine = Engine::new(MockPulumiService::new(), config);
+            let engine = StrEngine::new(MockPulumiConnector::new(), config);
             let value = engine.get_config_value(Some("name"), "key");
-            assert_eq!(value, None);
+            match value {
+                None => {}
+                Some(_) => {
+                    panic!("Expected None, got Some");
+                }
+            }
         }
 
         #[test]
@@ -1402,9 +542,19 @@ mod tests {
                 HashSet::new(),
                 "project".to_string(),
             );
-            let mut engine = Engine::new(MockPulumiService::new(), config);
+            let engine = StrEngine::new(MockPulumiConnector::new(), config);
             let value = engine.get_config_value(Some("name"), "key");
-            assert_eq!(value, Some(ConfigValue::PlainText("value".to_string())));
+            match value {
+                None => {
+                    panic!("Expected Some, got None");
+                }
+                Some(ConfigValue::PlainText(text)) => {
+                    assert_eq!(text, "value");
+                }
+                Some(_) => {
+                    panic!("Expected PlainText, got Secret");
+                }
+            }
         }
 
         #[test]
@@ -1414,33 +564,50 @@ mod tests {
                 HashSet::new(),
                 "project".to_string(),
             );
-            let mut engine = Engine::new(MockPulumiService::new(), config);
+            let engine = StrEngine::new(MockPulumiConnector::new(), config);
             let value = engine.get_config_value(None, "key");
-            assert_eq!(value, Some(ConfigValue::PlainText("value".to_string())));
+            match value {
+                None => {
+                    panic!("Expected Some, got None");
+                }
+                Some(ConfigValue::PlainText(text)) => {
+                    assert_eq!(text, "value");
+                }
+                Some(_) => {
+                    panic!("Expected PlainText, got Secret");
+                }
+            }
         }
 
-        #[test]
-        fn should_return_secret_output_when_config_is_secret() {
+        #[tokio::test]
+        async fn should_return_secret_output_when_config_is_secret() {
             let config = Config::new(
                 HashMap::from([("name:key".to_string(), "secret".to_string())]),
                 HashSet::from(["name:key".to_string()]),
                 "project".to_string(),
             );
-            let mut engine = Engine::new(MockPulumiService::new(), config);
+            let engine = StrEngine::new(MockPulumiConnector::new(), config);
             let value = engine.get_config_value(Some("name"), "key");
-            assert!(matches!(value, Some(ConfigValue::Secret(_))));
-            let output_id = match value {
-                Some(ConfigValue::Secret(output_id)) => output_id,
-                _ => panic!("Expected secret output"),
-            };
-            let output = engine.get_done(output_id);
-            assert_eq!(
-                output.get_value(),
-                &NodeValue::Exists {
-                    value: "secret".into(),
-                    secret: true,
+            match value {
+                None => {
+                    panic!("Expected Some, got None");
                 }
-            );
+                Some(ConfigValue::Secret(output)) => {
+                    let result = output.value.await;
+                    match result {
+                        NodeValue::Exists(ExistingNodeValue { value, secret }) => {
+                            assert_eq!(value, Value::String("secret".to_string()));
+                            assert!(secret);
+                        }
+                        _ => {
+                            panic!("Expected Exists, got Nothing");
+                        }
+                    }
+                }
+                Some(_) => {
+                    panic!("Expected Secret, got PlainText");
+                }
+            }
         }
     }
 }

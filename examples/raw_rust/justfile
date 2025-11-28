@@ -6,7 +6,7 @@ run:
     ../../target/debug/pulumi_gestalt_example_{{test_name}}
 
 [windows]
-local-test:
+local-test $RUST_BACKTRACE="full":
     #!pwsh
     Set-StrictMode -Version Latest
     $ErrorActionPreference = "Stop"
