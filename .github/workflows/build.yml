@@ -28,7 +28,7 @@ jobs:
     steps:
       - run: git config --system core.longpaths true
         if: runner.os == 'Windows'
-      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
         with:
           submodules: true
 #      - uses: testspace-com/setup-testspace@v1
@@ -37,7 +37,7 @@ jobs:
       - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: cargo-bins/cargo-binstall@ac8496113671719ef3f12282bc9f41d86322e0d7 # v1.16.0
+      - uses: cargo-bins/cargo-binstall@e4f51cb9fe5ddea39ccab776aaf6f11678c110a5 # v1.16.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Install requirements
@@ -92,7 +92,7 @@ jobs:
         provider: [array-of-enum-map, azure-native-nested-types, cloudflare, cyclic-types, different-enum, docker, functions-secrets, mini-awsnative, nested-module, nested-module-thirdparty, output-funcs, output-funcs-edgeorder, plain-object-defaults, plain-object-disable-defaults, random, reserved_names, unions-inline, unions-inside-arrays, workarounds, aws-0, aws-1, aws-2, aws-3, aws-4, aws-5, aws-6, aws-7, aws-8, aws-9, aws-10, aws-11, aws-12, aws-13, aws-14, aws-15, aws-16, aws-17, aws-18, aws-19, aws-20, aws-21, azure-0, azure-1, azure-2, azure-3, azure-4, azure-5, azure-6, azure-7, azure-8, azure-9, azure-10, azure-11, azure-12, azure-13, filtering-0, filtering-1, filtering-2, gcp-0, gcp-1, gcp-2, gcp-3, gcp-4, gcp-5, gcp-6, gcp-7, gcp-8, gcp-9, gcp-10, gcp-11, gcp-12, gcp-13]
 # DO NOT EDIT - PROVIDER END
     steps:
-      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
         with:
           submodules: true
 #      - uses: testspace-com/setup-testspace@v1
@@ -101,7 +101,7 @@ jobs:
       - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: cargo-bins/cargo-binstall@ac8496113671719ef3f12282bc9f41d86322e0d7 # v1.16.0
+      - uses: cargo-bins/cargo-binstall@e4f51cb9fe5ddea39ccab776aaf6f11678c110a5 # v1.16.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Install requirements
@@ -149,13 +149,13 @@ jobs:
     steps:
       - run: git config --system core.longpaths true
         if: runner.os == 'Windows'
-      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
         with:
           submodules: true
       - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: cargo-bins/cargo-binstall@ac8496113671719ef3f12282bc9f41d86322e0d7 # v1.16.0
+      - uses: cargo-bins/cargo-binstall@e4f51cb9fe5ddea39ccab776aaf6f11678c110a5 # v1.16.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Install requirements
@@ -166,7 +166,7 @@ jobs:
         if: runner.os == 'macOS'
       - run: pulumi version
       - run: pulumi login --local
-      - uses: actions/setup-go@44694675825211faa026b3c33043df3e48a5fa00 # v6.0.0
+      - uses: actions/setup-go@4dc6199c7b1a012772edbd06daecab0f50c9053c # v6.1.0
         with:
           go-version: '^1.22.0'
           cache-dependency-path: "**/go.sum"
@@ -198,13 +198,13 @@ jobs:
     steps:
       - run: git config --system core.longpaths true
         if: runner.os == 'Windows'
-      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
         with:
           submodules: true
       - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: cargo-bins/cargo-binstall@ac8496113671719ef3f12282bc9f41d86322e0d7 # v1.16.0
+      - uses: cargo-bins/cargo-binstall@e4f51cb9fe5ddea39ccab776aaf6f11678c110a5 # v1.16.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Install requirements
@@ -215,7 +215,7 @@ jobs:
         if: runner.os == 'macOS'
       - run: pulumi version
       - run: pulumi login --local
-      - uses: actions/setup-go@44694675825211faa026b3c33043df3e48a5fa00 # v6.0.0
+      - uses: actions/setup-go@4dc6199c7b1a012772edbd06daecab0f50c9053c # v6.1.0
         with:
           go-version: '^1.22.0'
           cache-dependency-path: "**/go.sum"
@@ -251,7 +251,7 @@ jobs:
     steps:
       - run: git config --system core.longpaths true
         if: runner.os == 'Windows'
-      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
         with:
           submodules: true
 #      - uses: testspace-com/setup-testspace@v1
@@ -260,7 +260,7 @@ jobs:
       - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: cargo-bins/cargo-binstall@ac8496113671719ef3f12282bc9f41d86322e0d7 # v1.16.0
+      - uses: cargo-bins/cargo-binstall@e4f51cb9fe5ddea39ccab776aaf6f11678c110a5 # v1.16.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: brew install pulumi
@@ -274,7 +274,7 @@ jobs:
           timeout_minutes: 10
           max_attempts: 10
           command: docker pull public.ecr.aws/ubuntu/ubuntu:latest
-      - uses: actions/setup-go@44694675825211faa026b3c33043df3e48a5fa00 # v6.0.0
+      - uses: actions/setup-go@4dc6199c7b1a012772edbd06daecab0f50c9053c # v6.1.0
         with:
           go-version: '^1.22.0'
           cache-dependency-path: "**/go.sum"
@@ -311,13 +311,13 @@ jobs:
     steps:
       - run: git config --system core.longpaths true
         if: runner.os == 'Windows'
-      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
         with:
           submodules: true
       - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: cargo-bins/cargo-binstall@ac8496113671719ef3f12282bc9f41d86322e0d7 # v1.16.0
+      - uses: cargo-bins/cargo-binstall@e4f51cb9fe5ddea39ccab776aaf6f11678c110a5 # v1.16.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Install requirements
@@ -328,7 +328,7 @@ jobs:
         if: runner.os == 'macOS'
       - run: pulumi version
       - run: pulumi login --local
-      - uses: actions/setup-go@44694675825211faa026b3c33043df3e48a5fa00 # v6.0.0
+      - uses: actions/setup-go@4dc6199c7b1a012772edbd06daecab0f50c9053c # v6.1.0
         with:
           go-version: '^1.22.0'
           cache-dependency-path: "**/go.sum"
@@ -358,13 +358,13 @@ jobs:
     steps:
       - run: git config --system core.longpaths true
         if: runner.os == 'Windows'
-      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
         with:
           submodules: true
       - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: cargo-bins/cargo-binstall@ac8496113671719ef3f12282bc9f41d86322e0d7 # v1.16.0
+      - uses: cargo-bins/cargo-binstall@e4f51cb9fe5ddea39ccab776aaf6f11678c110a5 # v1.16.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Install requirements
@@ -375,7 +375,7 @@ jobs:
         if: runner.os == 'macOS'
       - run: pulumi version
       - run: pulumi login --local
-      - uses: actions/setup-go@44694675825211faa026b3c33043df3e48a5fa00 # v6.0.0
+      - uses: actions/setup-go@4dc6199c7b1a012772edbd06daecab0f50c9053c # v6.1.0
         with:
           go-version: '^1.22.0'
           cache-dependency-path: "**/go.sum"

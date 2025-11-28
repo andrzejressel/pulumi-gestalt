@@ -59,9 +59,9 @@ pub mod bindings_runner {
             default: async | trappable
         },
         with: {
-            "component:pulumi-gestalt/context/context":SingleThreadedContext,
-            "component:pulumi-gestalt/output-interface/output": SingleThreadedOutput,
-            "component:pulumi-gestalt/output-interface/composite-output": SingleThreadedCompositeOutput,
+            "component:pulumi-gestalt/context.context":SingleThreadedContext,
+            "component:pulumi-gestalt/output-interface.output": SingleThreadedOutput,
+            "component:pulumi-gestalt/output-interface.composite-output": SingleThreadedCompositeOutput,
         }
     });
 }
