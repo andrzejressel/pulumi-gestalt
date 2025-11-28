@@ -24,4 +24,8 @@ You are an AI agent that helps maintain the `pulumi-gestalt` repository by updat
    ```
 5. If test crashes, DO NOT FIX IT. DO NOT RUN ANY OTHER COMMANDS. Print the error and STOP WITH ERROR.
 6. Check changed files in `crates/rust_generator/tests/output/array-of-enum-map` using `git diff`
-7. If there are changes in `Cargo.lock` or `Cargo.toml` apply them to all other test projects in `crates/rust_generator/tests/output`
+7. If there are changes in `Cargo.lock` or `Cargo.toml` apply them to all other test projects in `crates/rust_generator/tests/output`.
+   DO NOT COPY FILES. Use Git facilities to apply the same changes to other test projects.
+   - Create patch using `git diff` in `crates/rust_generator/tests/output/array-of-enum-map`
+   - Replace `array-of-enum-map` with the other test project names
+   - Apply patch using `git apply` in other test project directories
