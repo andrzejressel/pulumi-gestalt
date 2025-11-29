@@ -31,6 +31,12 @@ jobs:
       - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
         with:
           submodules: true
+      # See https://github.com/actions/runner-images/issues/13358
+      - name: Unlock another CPU core on x86_64 MacOS
+        if: matrix.os == 'macos-15-intel'
+        run: |
+          sudo defaults -currentHost write /Library/Preferences/com.apple.powerlogd SMCMonitorCadence 0
+          sudo killall PerfPowerServices || true
 #      - uses: testspace-com/setup-testspace@v1
 #        with:
 #          domain: ${{github.repository_owner}}
@@ -152,6 +158,12 @@ jobs:
       - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
         with:
           submodules: true
+      # See https://github.com/actions/runner-images/issues/13358
+      - name: Unlock another CPU core on x86_64 MacOS
+        if: matrix.os == 'macos-15-intel'
+        run: |
+          sudo defaults -currentHost write /Library/Preferences/com.apple.powerlogd SMCMonitorCadence 0
+          sudo killall PerfPowerServices || true
       - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -254,6 +266,12 @@ jobs:
       - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
         with:
           submodules: true
+      # See https://github.com/actions/runner-images/issues/13358
+      - name: Unlock another CPU core on x86_64 MacOS
+        if: matrix.os == 'macos-15-intel'
+        run: |
+          sudo defaults -currentHost write /Library/Preferences/com.apple.powerlogd SMCMonitorCadence 0
+          sudo killall PerfPowerServices || true
 #      - uses: testspace-com/setup-testspace@v1
 #        with:
 #          domain: ${{github.repository_owner}}
@@ -314,6 +332,12 @@ jobs:
       - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
         with:
           submodules: true
+      # See https://github.com/actions/runner-images/issues/13358
+      - name: Unlock another CPU core on x86_64 MacOS
+        if: matrix.os == 'macos-15-intel'
+        run: |
+          sudo defaults -currentHost write /Library/Preferences/com.apple.powerlogd SMCMonitorCadence 0
+          sudo killall PerfPowerServices || true
       - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -361,6 +385,12 @@ jobs:
       - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
         with:
           submodules: true
+      # See https://github.com/actions/runner-images/issues/13358
+      - name: Unlock another CPU core on x86_64 MacOS
+        if: matrix.os == 'macos-15-intel'
+        run: |
+          sudo defaults -currentHost write /Library/Preferences/com.apple.powerlogd SMCMonitorCadence 0
+          sudo killall PerfPowerServices || true
       - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

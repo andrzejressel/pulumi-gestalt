@@ -43,6 +43,12 @@ jobs:
       uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
       with:
         submodules: true
+    # See https://github.com/actions/runner-images/issues/13358
+    - name: Unlock another CPU core on x86_64 MacOS
+      if: matrix.os == 'macos-15-intel'
+      run: |
+        sudo defaults -currentHost write /Library/Preferences/com.apple.powerlogd SMCMonitorCadence 0
+        sudo killall PerfPowerServices || true
     - uses: Swatinem/rust-cache@f13886b937689c021905a6b90929199931d60db1 # v2.8.1
     - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3
       env:
