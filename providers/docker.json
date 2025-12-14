@@ -83,7 +83,7 @@
       "registryAuth": {
         "type": "array",
         "items": {
-          "$ref": "#/types/docker:config%2FregistryAuth:registryAuth"
+          "$ref": "#/types/docker:config/registryAuth:registryAuth"
         }
       },
       "sshOpts": {
@@ -252,7 +252,7 @@
     "docker:index/ContainerMount:ContainerMount": {
       "properties": {
         "bindOptions": {
-          "$ref": "#/types/docker:index%2FContainerMountBindOptions:ContainerMountBindOptions",
+          "$ref": "#/types/docker:index/ContainerMountBindOptions:ContainerMountBindOptions",
           "description": "Optional configuration for the bind type.\n"
         },
         "readOnly": {
@@ -268,7 +268,7 @@
           "description": "Container path\n"
         },
         "tmpfsOptions": {
-          "$ref": "#/types/docker:index%2FContainerMountTmpfsOptions:ContainerMountTmpfsOptions",
+          "$ref": "#/types/docker:index/ContainerMountTmpfsOptions:ContainerMountTmpfsOptions",
           "description": "Optional configuration for the tmpfs type.\n",
           "willReplaceOnChanges": true
         },
@@ -277,7 +277,7 @@
           "description": "The mount type\n"
         },
         "volumeOptions": {
-          "$ref": "#/types/docker:index%2FContainerMountVolumeOptions:ContainerMountVolumeOptions",
+          "$ref": "#/types/docker:index/ContainerMountVolumeOptions:ContainerMountVolumeOptions",
           "description": "Optional configuration for the volume type.\n"
         }
       },
@@ -325,7 +325,7 @@
         "labels": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FContainerMountVolumeOptionsLabel:ContainerMountVolumeOptionsLabel"
+            "$ref": "#/types/docker:index/ContainerMountVolumeOptionsLabel:ContainerMountVolumeOptionsLabel"
           },
           "description": "User-defined key/value metadata.\n"
         },
@@ -675,7 +675,7 @@
         "authConfigs": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FRemoteImageBuildAuthConfig:RemoteImageBuildAuthConfig"
+            "$ref": "#/types/docker:index/RemoteImageBuildAuthConfig:RemoteImageBuildAuthConfig"
           },
           "description": "The configuration for the authentication\n"
         },
@@ -863,7 +863,7 @@
         "ulimits": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FRemoteImageBuildUlimit:RemoteImageBuildUlimit"
+            "$ref": "#/types/docker:index/RemoteImageBuildUlimit:RemoteImageBuildUlimit"
           },
           "description": "Configuration for ulimits\n"
         },
@@ -1008,7 +1008,7 @@
         "ports": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FServiceEndpointSpecPort:ServiceEndpointSpecPort"
+            "$ref": "#/types/docker:index/ServiceEndpointSpecPort:ServiceEndpointSpecPort"
           },
           "description": "List of exposed ports that this service is accessible on from the outside. Ports can only be provided if 'vip' resolution mode is used\n"
         }
@@ -1084,7 +1084,7 @@
           "description": "When `true`, tasks will run on every worker node. Conflicts with `replicated`\n"
         },
         "replicated": {
-          "$ref": "#/types/docker:index%2FServiceModeReplicated:ServiceModeReplicated",
+          "$ref": "#/types/docker:index/ServiceModeReplicated:ServiceModeReplicated",
           "description": "The replicated service mode\n"
         }
       },
@@ -1138,7 +1138,7 @@
     "docker:index/ServiceTaskSpec:ServiceTaskSpec": {
       "properties": {
         "containerSpec": {
-          "$ref": "#/types/docker:index%2FServiceTaskSpecContainerSpec:ServiceTaskSpecContainerSpec",
+          "$ref": "#/types/docker:index/ServiceTaskSpecContainerSpec:ServiceTaskSpecContainerSpec",
           "description": "The spec for each container\n"
         },
         "forceUpdate": {
@@ -1146,26 +1146,26 @@
           "description": "A counter that triggers an update even if no relevant parameters have been changed. See the [spec](https://github.com/docker/swarmkit/blob/master/api/specs.proto#L126).\n"
         },
         "logDriver": {
-          "$ref": "#/types/docker:index%2FServiceTaskSpecLogDriver:ServiceTaskSpecLogDriver",
+          "$ref": "#/types/docker:index/ServiceTaskSpecLogDriver:ServiceTaskSpecLogDriver",
           "description": "Specifies the log driver to use for tasks created from this spec. If not present, the default one for the swarm will be used, finally falling back to the engine default if not specified\n"
         },
         "networksAdvanceds": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FServiceTaskSpecNetworksAdvanced:ServiceTaskSpecNetworksAdvanced"
+            "$ref": "#/types/docker:index/ServiceTaskSpecNetworksAdvanced:ServiceTaskSpecNetworksAdvanced"
           },
           "description": "The networks the container is attached to\n"
         },
         "placement": {
-          "$ref": "#/types/docker:index%2FServiceTaskSpecPlacement:ServiceTaskSpecPlacement",
+          "$ref": "#/types/docker:index/ServiceTaskSpecPlacement:ServiceTaskSpecPlacement",
           "description": "The placement preferences\n"
         },
         "resources": {
-          "$ref": "#/types/docker:index%2FServiceTaskSpecResources:ServiceTaskSpecResources",
+          "$ref": "#/types/docker:index/ServiceTaskSpecResources:ServiceTaskSpecResources",
           "description": "Resource requirements which apply to each individual container created as part of the service\n"
         },
         "restartPolicy": {
-          "$ref": "#/types/docker:index%2FServiceTaskSpecRestartPolicy:ServiceTaskSpecRestartPolicy",
+          "$ref": "#/types/docker:index/ServiceTaskSpecRestartPolicy:ServiceTaskSpecRestartPolicy",
           "description": "Specification for the restart policy which applies to containers created as part of this service.\n"
         },
         "runtime": {
@@ -1209,7 +1209,7 @@
         "configs": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FServiceTaskSpecContainerSpecConfig:ServiceTaskSpecContainerSpecConfig"
+            "$ref": "#/types/docker:index/ServiceTaskSpecContainerSpecConfig:ServiceTaskSpecContainerSpecConfig"
           },
           "description": "References to zero or more configs that will be exposed to the service\n"
         },
@@ -1218,7 +1218,7 @@
           "description": "The working directory for commands to run in\n"
         },
         "dnsConfig": {
-          "$ref": "#/types/docker:index%2FServiceTaskSpecContainerSpecDnsConfig:ServiceTaskSpecContainerSpecDnsConfig",
+          "$ref": "#/types/docker:index/ServiceTaskSpecContainerSpecDnsConfig:ServiceTaskSpecContainerSpecDnsConfig",
           "description": "Specification for DNS related configurations in resolver configuration file (`resolv.conf`)\n"
         },
         "env": {
@@ -1236,7 +1236,7 @@
           "description": "A list of additional groups that the container process will run as\n"
         },
         "healthcheck": {
-          "$ref": "#/types/docker:index%2FServiceTaskSpecContainerSpecHealthcheck:ServiceTaskSpecContainerSpecHealthcheck",
+          "$ref": "#/types/docker:index/ServiceTaskSpecContainerSpecHealthcheck:ServiceTaskSpecContainerSpecHealthcheck",
           "description": "A test to perform to check that the container is healthy\n"
         },
         "hostname": {
@@ -1246,7 +1246,7 @@
         "hosts": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FServiceTaskSpecContainerSpecHost:ServiceTaskSpecContainerSpecHost"
+            "$ref": "#/types/docker:index/ServiceTaskSpecContainerSpecHost:ServiceTaskSpecContainerSpecHost"
           },
           "description": "A list of hostname/IP mappings to add to the container's hosts file\n",
           "willReplaceOnChanges": true
@@ -1262,19 +1262,19 @@
         "labels": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FServiceTaskSpecContainerSpecLabel:ServiceTaskSpecContainerSpecLabel"
+            "$ref": "#/types/docker:index/ServiceTaskSpecContainerSpecLabel:ServiceTaskSpecContainerSpecLabel"
           },
           "description": "User-defined key/value metadata\n"
         },
         "mounts": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FServiceTaskSpecContainerSpecMount:ServiceTaskSpecContainerSpecMount"
+            "$ref": "#/types/docker:index/ServiceTaskSpecContainerSpecMount:ServiceTaskSpecContainerSpecMount"
           },
           "description": "Specification for mounts to be added to containers created as part of the service\n"
         },
         "privileges": {
-          "$ref": "#/types/docker:index%2FServiceTaskSpecContainerSpecPrivileges:ServiceTaskSpecContainerSpecPrivileges",
+          "$ref": "#/types/docker:index/ServiceTaskSpecContainerSpecPrivileges:ServiceTaskSpecContainerSpecPrivileges",
           "description": "Security options for the container\n"
         },
         "readOnly": {
@@ -1284,7 +1284,7 @@
         "secrets": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FServiceTaskSpecContainerSpecSecret:ServiceTaskSpecContainerSpecSecret"
+            "$ref": "#/types/docker:index/ServiceTaskSpecContainerSpecSecret:ServiceTaskSpecContainerSpecSecret"
           },
           "description": "References to zero or more secrets that will be exposed to the service\n"
         },
@@ -1458,7 +1458,7 @@
     "docker:index/ServiceTaskSpecContainerSpecMount:ServiceTaskSpecContainerSpecMount": {
       "properties": {
         "bindOptions": {
-          "$ref": "#/types/docker:index%2FServiceTaskSpecContainerSpecMountBindOptions:ServiceTaskSpecContainerSpecMountBindOptions",
+          "$ref": "#/types/docker:index/ServiceTaskSpecContainerSpecMountBindOptions:ServiceTaskSpecContainerSpecMountBindOptions",
           "description": "Optional configuration for the bind type\n"
         },
         "readOnly": {
@@ -1474,7 +1474,7 @@
           "description": "Container path\n"
         },
         "tmpfsOptions": {
-          "$ref": "#/types/docker:index%2FServiceTaskSpecContainerSpecMountTmpfsOptions:ServiceTaskSpecContainerSpecMountTmpfsOptions",
+          "$ref": "#/types/docker:index/ServiceTaskSpecContainerSpecMountTmpfsOptions:ServiceTaskSpecContainerSpecMountTmpfsOptions",
           "description": "Optional configuration for the tmpfs type\n"
         },
         "type": {
@@ -1482,7 +1482,7 @@
           "description": "The mount type\n"
         },
         "volumeOptions": {
-          "$ref": "#/types/docker:index%2FServiceTaskSpecContainerSpecMountVolumeOptions:ServiceTaskSpecContainerSpecMountVolumeOptions",
+          "$ref": "#/types/docker:index/ServiceTaskSpecContainerSpecMountVolumeOptions:ServiceTaskSpecContainerSpecMountVolumeOptions",
           "description": "Optional configuration for the volume type\n"
         }
       },
@@ -1530,7 +1530,7 @@
         "labels": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FServiceTaskSpecContainerSpecMountVolumeOptionsLabel:ServiceTaskSpecContainerSpecMountVolumeOptionsLabel"
+            "$ref": "#/types/docker:index/ServiceTaskSpecContainerSpecMountVolumeOptionsLabel:ServiceTaskSpecContainerSpecMountVolumeOptionsLabel"
           },
           "description": "User-defined key/value metadata\n"
         },
@@ -1563,11 +1563,11 @@
     "docker:index/ServiceTaskSpecContainerSpecPrivileges:ServiceTaskSpecContainerSpecPrivileges": {
       "properties": {
         "credentialSpec": {
-          "$ref": "#/types/docker:index%2FServiceTaskSpecContainerSpecPrivilegesCredentialSpec:ServiceTaskSpecContainerSpecPrivilegesCredentialSpec",
+          "$ref": "#/types/docker:index/ServiceTaskSpecContainerSpecPrivilegesCredentialSpec:ServiceTaskSpecContainerSpecPrivilegesCredentialSpec",
           "description": "CredentialSpec for managed service account (Windows only)\n"
         },
         "seLinuxContext": {
-          "$ref": "#/types/docker:index%2FServiceTaskSpecContainerSpecPrivilegesSeLinuxContext:ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext",
+          "$ref": "#/types/docker:index/ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext:ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext",
           "description": "SELinux labels of the container\n"
         }
       },
@@ -1708,7 +1708,7 @@
         "platforms": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FServiceTaskSpecPlacementPlatform:ServiceTaskSpecPlacementPlatform"
+            "$ref": "#/types/docker:index/ServiceTaskSpecPlacementPlatform:ServiceTaskSpecPlacementPlatform"
           },
           "description": "Platforms stores all the platforms that the service's image can run on\n"
         },
@@ -1742,11 +1742,11 @@
     "docker:index/ServiceTaskSpecResources:ServiceTaskSpecResources": {
       "properties": {
         "limits": {
-          "$ref": "#/types/docker:index%2FServiceTaskSpecResourcesLimits:ServiceTaskSpecResourcesLimits",
+          "$ref": "#/types/docker:index/ServiceTaskSpecResourcesLimits:ServiceTaskSpecResourcesLimits",
           "description": "Describes the resources which can be advertised by a node and requested by a task\n"
         },
         "reservation": {
-          "$ref": "#/types/docker:index%2FServiceTaskSpecResourcesReservation:ServiceTaskSpecResourcesReservation",
+          "$ref": "#/types/docker:index/ServiceTaskSpecResourcesReservation:ServiceTaskSpecResourcesReservation",
           "description": "An object describing the resources which can be advertised by a node and requested by a task\n"
         }
       },
@@ -1768,7 +1768,7 @@
     "docker:index/ServiceTaskSpecResourcesReservation:ServiceTaskSpecResourcesReservation": {
       "properties": {
         "genericResources": {
-          "$ref": "#/types/docker:index%2FServiceTaskSpecResourcesReservationGenericResources:ServiceTaskSpecResourcesReservationGenericResources",
+          "$ref": "#/types/docker:index/ServiceTaskSpecResourcesReservationGenericResources:ServiceTaskSpecResourcesReservationGenericResources",
           "description": "User-defined resources can be either Integer resources (e.g, `SSD=3`) or String resources (e.g, GPU=UUID1)\n"
         },
         "memoryBytes": {
@@ -1917,11 +1917,11 @@
           "description": "An optional map of named build-time argument variables to set during the Docker build. This flag allows you to pass build-time variables that can be accessed like environment variables inside the RUN instruction."
         },
         "builderVersion": {
-          "$ref": "#/types/docker:index%2FbuilderVersion:BuilderVersion",
+          "$ref": "#/types/docker:index/builderVersion:BuilderVersion",
           "description": "The version of the Docker builder."
         },
         "cacheFrom": {
-          "$ref": "#/types/docker:index%2FcacheFrom:CacheFrom",
+          "$ref": "#/types/docker:index/cacheFrom:CacheFrom",
           "description": "A list of image names to use as build cache. Images provided must have a cache manifest. Must provide authentication to cache registry."
         },
         "context": {
@@ -2013,9 +2013,21 @@
       "keyMaterial": {
         "type": "string",
         "description": "PEM-encoded content of Docker client private key\n"
+      },
+      "registryAuth": {
+        "type": "array",
+        "items": {
+          "$ref": "#/types/docker:index/ProviderRegistryAuth:ProviderRegistryAuth"
+        }
+      },
+      "sshOpts": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "Additional SSH option flags to be appended when using `ssh://` protocol\n"
       }
     },
-    "type": "object",
     "inputProperties": {
       "caMaterial": {
         "type": "string",
@@ -2045,7 +2057,7 @@
       "registryAuth": {
         "type": "array",
         "items": {
-          "$ref": "#/types/docker:index%2FProviderRegistryAuth:ProviderRegistryAuth"
+          "$ref": "#/types/docker:index/ProviderRegistryAuth:ProviderRegistryAuth"
         }
       },
       "sshOpts": {
@@ -2070,7 +2082,7 @@
           "description": "The network bridge of the container as read from its NetworkSettings.\n"
         },
         "capabilities": {
-          "$ref": "#/types/docker:index%2FContainerCapabilities:ContainerCapabilities",
+          "$ref": "#/types/docker:index/ContainerCapabilities:ContainerCapabilities",
           "description": "Add or drop certrain linux capabilities.\n"
         },
         "cgroupnsMode": {
@@ -2107,7 +2119,7 @@
         "devices": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FContainerDevice:ContainerDevice"
+            "$ref": "#/types/docker:index/ContainerDevice:ContainerDevice"
           },
           "description": "Bind devices to the container.\n"
         },
@@ -2166,7 +2178,7 @@
           "description": "Additional groups for the container user\n"
         },
         "healthcheck": {
-          "$ref": "#/types/docker:index%2FContainerHealthcheck:ContainerHealthcheck",
+          "$ref": "#/types/docker:index/ContainerHealthcheck:ContainerHealthcheck",
           "description": "A test to perform to check that the container is healthy\n"
         },
         "hostname": {
@@ -2176,7 +2188,7 @@
         "hosts": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FContainerHost:ContainerHost"
+            "$ref": "#/types/docker:index/ContainerHost:ContainerHost"
           },
           "description": "Hostname to add\n"
         },
@@ -2195,7 +2207,7 @@
         "labels": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FContainerLabel:ContainerLabel"
+            "$ref": "#/types/docker:index/ContainerLabel:ContainerLabel"
           },
           "description": "User-defined key/value metadata.\n"
         },
@@ -2229,7 +2241,7 @@
         "mounts": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FContainerMount:ContainerMount"
+            "$ref": "#/types/docker:index/ContainerMount:ContainerMount"
           },
           "description": "Specification for mounts to be added to containers created as part of the service.\n"
         },
@@ -2244,7 +2256,7 @@
         "networkDatas": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FContainerNetworkData:ContainerNetworkData"
+            "$ref": "#/types/docker:index/ContainerNetworkData:ContainerNetworkData"
           },
           "description": "The data of the networks the container is connected to.\n"
         },
@@ -2255,7 +2267,7 @@
         "networksAdvanced": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FContainerNetworksAdvanced:ContainerNetworksAdvanced"
+            "$ref": "#/types/docker:index/ContainerNetworksAdvanced:ContainerNetworksAdvanced"
           },
           "description": "The networks the container is attached to\n"
         },
@@ -2266,7 +2278,7 @@
         "ports": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FContainerPort:ContainerPort"
+            "$ref": "#/types/docker:index/ContainerPort:ContainerPort"
           },
           "description": "Publish a container's port(s) to the host.\n"
         },
@@ -2353,14 +2365,14 @@
         "ulimits": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FContainerUlimit:ContainerUlimit"
+            "$ref": "#/types/docker:index/ContainerUlimit:ContainerUlimit"
           },
           "description": "Ulimit options to add.\n"
         },
         "uploads": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FContainerUpload:ContainerUpload"
+            "$ref": "#/types/docker:index/ContainerUpload:ContainerUpload"
           },
           "description": "Specifies files to upload to the container before starting it. Only one of `content` or `content_base64` can be set and at least one of them has to be set.\n"
         },
@@ -2375,7 +2387,7 @@
         "volumes": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FContainerVolume:ContainerVolume"
+            "$ref": "#/types/docker:index/ContainerVolume:ContainerVolume"
           },
           "description": "Spec for mounting volumes in the container.\n"
         },
@@ -2392,7 +2404,6 @@
           "description": "The working directory for commands to run in.\n"
         }
       },
-      "type": "object",
       "required": [
         "bridge",
         "command",
@@ -2421,7 +2432,7 @@
           "description": "If `true` attach to the container after its creation and waits the end of its execution. Defaults to `false`.\n"
         },
         "capabilities": {
-          "$ref": "#/types/docker:index%2FContainerCapabilities:ContainerCapabilities",
+          "$ref": "#/types/docker:index/ContainerCapabilities:ContainerCapabilities",
           "description": "Add or drop certrain linux capabilities.\n",
           "willReplaceOnChanges": true
         },
@@ -2457,7 +2468,7 @@
         "devices": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FContainerDevice:ContainerDevice"
+            "$ref": "#/types/docker:index/ContainerDevice:ContainerDevice"
           },
           "description": "Bind devices to the container.\n",
           "willReplaceOnChanges": true
@@ -2521,7 +2532,7 @@
           "willReplaceOnChanges": true
         },
         "healthcheck": {
-          "$ref": "#/types/docker:index%2FContainerHealthcheck:ContainerHealthcheck",
+          "$ref": "#/types/docker:index/ContainerHealthcheck:ContainerHealthcheck",
           "description": "A test to perform to check that the container is healthy\n"
         },
         "hostname": {
@@ -2532,7 +2543,7 @@
         "hosts": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FContainerHost:ContainerHost"
+            "$ref": "#/types/docker:index/ContainerHost:ContainerHost"
           },
           "description": "Hostname to add\n",
           "willReplaceOnChanges": true
@@ -2554,7 +2565,7 @@
         "labels": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FContainerLabel:ContainerLabel"
+            "$ref": "#/types/docker:index/ContainerLabel:ContainerLabel"
           },
           "description": "User-defined key/value metadata.\n",
           "willReplaceOnChanges": true
@@ -2591,7 +2602,7 @@
         "mounts": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FContainerMount:ContainerMount"
+            "$ref": "#/types/docker:index/ContainerMount:ContainerMount"
           },
           "description": "Specification for mounts to be added to containers created as part of the service.\n",
           "willReplaceOnChanges": true
@@ -2613,7 +2624,7 @@
         "networksAdvanced": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FContainerNetworksAdvanced:ContainerNetworksAdvanced"
+            "$ref": "#/types/docker:index/ContainerNetworksAdvanced:ContainerNetworksAdvanced"
           },
           "description": "The networks the container is attached to\n",
           "willReplaceOnChanges": true
@@ -2626,7 +2637,7 @@
         "ports": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FContainerPort:ContainerPort"
+            "$ref": "#/types/docker:index/ContainerPort:ContainerPort"
           },
           "description": "Publish a container's port(s) to the host.\n",
           "willReplaceOnChanges": true
@@ -2726,7 +2737,7 @@
         "ulimits": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FContainerUlimit:ContainerUlimit"
+            "$ref": "#/types/docker:index/ContainerUlimit:ContainerUlimit"
           },
           "description": "Ulimit options to add.\n",
           "willReplaceOnChanges": true
@@ -2734,7 +2745,7 @@
         "uploads": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FContainerUpload:ContainerUpload"
+            "$ref": "#/types/docker:index/ContainerUpload:ContainerUpload"
           },
           "description": "Specifies files to upload to the container before starting it. Only one of `content` or `content_base64` can be set and at least one of them has to be set.\n",
           "willReplaceOnChanges": true
@@ -2752,7 +2763,7 @@
         "volumes": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FContainerVolume:ContainerVolume"
+            "$ref": "#/types/docker:index/ContainerVolume:ContainerVolume"
           },
           "description": "Spec for mounting volumes in the container.\n",
           "willReplaceOnChanges": true
@@ -2786,7 +2797,7 @@
             "description": "The network bridge of the container as read from its NetworkSettings.\n"
           },
           "capabilities": {
-            "$ref": "#/types/docker:index%2FContainerCapabilities:ContainerCapabilities",
+            "$ref": "#/types/docker:index/ContainerCapabilities:ContainerCapabilities",
             "description": "Add or drop certrain linux capabilities.\n",
             "willReplaceOnChanges": true
           },
@@ -2826,7 +2837,7 @@
           "devices": {
             "type": "array",
             "items": {
-              "$ref": "#/types/docker:index%2FContainerDevice:ContainerDevice"
+              "$ref": "#/types/docker:index/ContainerDevice:ContainerDevice"
             },
             "description": "Bind devices to the container.\n",
             "willReplaceOnChanges": true
@@ -2894,7 +2905,7 @@
             "willReplaceOnChanges": true
           },
           "healthcheck": {
-            "$ref": "#/types/docker:index%2FContainerHealthcheck:ContainerHealthcheck",
+            "$ref": "#/types/docker:index/ContainerHealthcheck:ContainerHealthcheck",
             "description": "A test to perform to check that the container is healthy\n"
           },
           "hostname": {
@@ -2905,7 +2916,7 @@
           "hosts": {
             "type": "array",
             "items": {
-              "$ref": "#/types/docker:index%2FContainerHost:ContainerHost"
+              "$ref": "#/types/docker:index/ContainerHost:ContainerHost"
             },
             "description": "Hostname to add\n",
             "willReplaceOnChanges": true
@@ -2927,7 +2938,7 @@
           "labels": {
             "type": "array",
             "items": {
-              "$ref": "#/types/docker:index%2FContainerLabel:ContainerLabel"
+              "$ref": "#/types/docker:index/ContainerLabel:ContainerLabel"
             },
             "description": "User-defined key/value metadata.\n",
             "willReplaceOnChanges": true
@@ -2964,7 +2975,7 @@
           "mounts": {
             "type": "array",
             "items": {
-              "$ref": "#/types/docker:index%2FContainerMount:ContainerMount"
+              "$ref": "#/types/docker:index/ContainerMount:ContainerMount"
             },
             "description": "Specification for mounts to be added to containers created as part of the service.\n",
             "willReplaceOnChanges": true
@@ -2981,7 +2992,7 @@
           "networkDatas": {
             "type": "array",
             "items": {
-              "$ref": "#/types/docker:index%2FContainerNetworkData:ContainerNetworkData"
+              "$ref": "#/types/docker:index/ContainerNetworkData:ContainerNetworkData"
             },
             "description": "The data of the networks the container is connected to.\n"
           },
@@ -2993,7 +3004,7 @@
           "networksAdvanced": {
             "type": "array",
             "items": {
-              "$ref": "#/types/docker:index%2FContainerNetworksAdvanced:ContainerNetworksAdvanced"
+              "$ref": "#/types/docker:index/ContainerNetworksAdvanced:ContainerNetworksAdvanced"
             },
             "description": "The networks the container is attached to\n",
             "willReplaceOnChanges": true
@@ -3006,7 +3017,7 @@
           "ports": {
             "type": "array",
             "items": {
-              "$ref": "#/types/docker:index%2FContainerPort:ContainerPort"
+              "$ref": "#/types/docker:index/ContainerPort:ContainerPort"
             },
             "description": "Publish a container's port(s) to the host.\n",
             "willReplaceOnChanges": true
@@ -3106,7 +3117,7 @@
           "ulimits": {
             "type": "array",
             "items": {
-              "$ref": "#/types/docker:index%2FContainerUlimit:ContainerUlimit"
+              "$ref": "#/types/docker:index/ContainerUlimit:ContainerUlimit"
             },
             "description": "Ulimit options to add.\n",
             "willReplaceOnChanges": true
@@ -3114,7 +3125,7 @@
           "uploads": {
             "type": "array",
             "items": {
-              "$ref": "#/types/docker:index%2FContainerUpload:ContainerUpload"
+              "$ref": "#/types/docker:index/ContainerUpload:ContainerUpload"
             },
             "description": "Specifies files to upload to the container before starting it. Only one of `content` or `content_base64` can be set and at least one of them has to be set.\n",
             "willReplaceOnChanges": true
@@ -3132,7 +3143,7 @@
           "volumes": {
             "type": "array",
             "items": {
-              "$ref": "#/types/docker:index%2FContainerVolume:ContainerVolume"
+              "$ref": "#/types/docker:index/ContainerVolume:ContainerVolume"
             },
             "description": "Spec for mounting volumes in the container.\n",
             "willReplaceOnChanges": true
@@ -3188,16 +3199,16 @@
       },
       "type": "object",
       "required": [
-        "baseImageName",
-        "context",
         "dockerfile",
-        "imageName",
+        "context",
+        "baseImageName",
         "registryServer",
+        "imageName",
         "repoDigest"
       ],
       "inputProperties": {
         "build": {
-          "$ref": "#/types/docker:index%2FdockerBuild:DockerBuild",
+          "$ref": "#/types/docker:index/dockerBuild:DockerBuild",
           "description": "The Docker build context"
         },
         "buildOnPreview": {
@@ -3210,7 +3221,7 @@
           "description": "The image name, of the format repository[:tag], e.g. `docker.io/username/demo-image:v1`.\nThis reference is not unique to each build and push.For the unique manifest SHA of a pushed docker image, or the local image ID, please use `repoDigest`."
         },
         "registry": {
-          "$ref": "#/types/docker:index%2Fregistry:Registry",
+          "$ref": "#/types/docker:index/registry:Registry",
           "description": "The registry to push the image to"
         },
         "skipPush": {
@@ -3254,7 +3265,7 @@
         "ipamConfigs": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FNetworkIpamConfig:NetworkIpamConfig"
+            "$ref": "#/types/docker:index/NetworkIpamConfig:NetworkIpamConfig"
           },
           "description": "The IPAM configuration options\n"
         },
@@ -3276,7 +3287,7 @@
         "labels": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FNetworkLabel:NetworkLabel"
+            "$ref": "#/types/docker:index/NetworkLabel:NetworkLabel"
           },
           "description": "User-defined key/value metadata\n"
         },
@@ -3296,7 +3307,6 @@
           "description": "Scope of the network. One of `swarm`, `global`, or `local`.\n"
         }
       },
-      "type": "object",
       "required": [
         "driver",
         "internal",
@@ -3334,7 +3344,7 @@
         "ipamConfigs": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FNetworkIpamConfig:NetworkIpamConfig"
+            "$ref": "#/types/docker:index/NetworkIpamConfig:NetworkIpamConfig"
           },
           "description": "The IPAM configuration options\n",
           "willReplaceOnChanges": true
@@ -3360,7 +3370,7 @@
         "labels": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FNetworkLabel:NetworkLabel"
+            "$ref": "#/types/docker:index/NetworkLabel:NetworkLabel"
           },
           "description": "User-defined key/value metadata\n",
           "willReplaceOnChanges": true
@@ -3410,7 +3420,7 @@
           "ipamConfigs": {
             "type": "array",
             "items": {
-              "$ref": "#/types/docker:index%2FNetworkIpamConfig:NetworkIpamConfig"
+              "$ref": "#/types/docker:index/NetworkIpamConfig:NetworkIpamConfig"
             },
             "description": "The IPAM configuration options\n",
             "willReplaceOnChanges": true
@@ -3436,7 +3446,7 @@
           "labels": {
             "type": "array",
             "items": {
-              "$ref": "#/types/docker:index%2FNetworkLabel:NetworkLabel"
+              "$ref": "#/types/docker:index/NetworkLabel:NetworkLabel"
             },
             "description": "User-defined key/value metadata\n",
             "willReplaceOnChanges": true
@@ -3499,7 +3509,7 @@
         "grantPermissions": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FPluginGrantPermission:PluginGrantPermission"
+            "$ref": "#/types/docker:index/PluginGrantPermission:PluginGrantPermission"
           },
           "description": "Grant specific permissions only\n"
         },
@@ -3512,7 +3522,6 @@
           "description": "Docker Plugin Reference\n"
         }
       },
-      "type": "object",
       "required": [
         "alias",
         "envs",
@@ -3555,7 +3564,7 @@
         "grantPermissions": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FPluginGrantPermission:PluginGrantPermission"
+            "$ref": "#/types/docker:index/PluginGrantPermission:PluginGrantPermission"
           },
           "description": "Grant specific permissions only\n"
         },
@@ -3603,7 +3612,7 @@
           "grantPermissions": {
             "type": "array",
             "items": {
-              "$ref": "#/types/docker:index%2FPluginGrantPermission:PluginGrantPermission"
+              "$ref": "#/types/docker:index/PluginGrantPermission:PluginGrantPermission"
             },
             "description": "Grant specific permissions only\n"
           },
@@ -3647,7 +3656,6 @@
           "description": "A map of arbitrary strings that, when changed, will force the `docker.RegistryImage` resource to be replaced. This can be used to repush a local image\n"
         }
       },
-      "type": "object",
       "required": [
         "name",
         "sha256Digest"
@@ -3711,7 +3719,7 @@
       "description": "\u003c!-- Bug: Type and Name are switched --\u003e\nPulls a Docker image to a given Docker host from a Docker Registry.\n This resource will *not* pull new layers of the image automatically unless used in conjunction with docker.RegistryImage data source to update the `pull_triggers` field.\n\n## Example Usage\n\n### Basic\n\nFinds and downloads the latest `ubuntu:precise` image but does not check\nfor further updates of the image\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as docker from \"@pulumi/docker\";\n\nconst ubuntu = new docker.RemoteImage(\"ubuntu\", {name: \"ubuntu:precise\"});\n```\n```python\nimport pulumi\nimport pulumi_docker as docker\n\nubuntu = docker.RemoteImage(\"ubuntu\", name=\"ubuntu:precise\")\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Docker = Pulumi.Docker;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var ubuntu = new Docker.RemoteImage(\"ubuntu\", new()\n    {\n        Name = \"ubuntu:precise\",\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-docker/sdk/v4/go/docker\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := docker.NewRemoteImage(ctx, \"ubuntu\", \u0026docker.RemoteImageArgs{\n\t\t\tName: pulumi.String(\"ubuntu:precise\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.docker.RemoteImage;\nimport com.pulumi.docker.RemoteImageArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var ubuntu = new RemoteImage(\"ubuntu\", RemoteImageArgs.builder()        \n            .name(\"ubuntu:precise\")\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  ubuntu:\n    type: docker:RemoteImage\n    properties:\n      name: ubuntu:precise\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n### Dynamic updates\n\nTo be able to update an image dynamically when the `sha256` sum changes,\nyou need to use it in combination with `docker.RegistryImage` as follows:\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as docker from \"@pulumi/docker\";\n\nconst ubuntuRegistryImage = docker.getRegistryImage({\n    name: \"ubuntu:precise\",\n});\nconst ubuntuRemoteImage = new docker.RemoteImage(\"ubuntuRemoteImage\", {\n    name: ubuntuRegistryImage.then(ubuntuRegistryImage =\u003e ubuntuRegistryImage.name),\n    pullTriggers: [ubuntuRegistryImage.then(ubuntuRegistryImage =\u003e ubuntuRegistryImage.sha256Digest)],\n});\n```\n```python\nimport pulumi\nimport pulumi_docker as docker\n\nubuntu_registry_image = docker.get_registry_image(name=\"ubuntu:precise\")\nubuntu_remote_image = docker.RemoteImage(\"ubuntuRemoteImage\",\n    name=ubuntu_registry_image.name,\n    pull_triggers=[ubuntu_registry_image.sha256_digest])\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Docker = Pulumi.Docker;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var ubuntuRegistryImage = Docker.GetRegistryImage.Invoke(new()\n    {\n        Name = \"ubuntu:precise\",\n    });\n\n    var ubuntuRemoteImage = new Docker.RemoteImage(\"ubuntuRemoteImage\", new()\n    {\n        Name = ubuntuRegistryImage.Apply(getRegistryImageResult =\u003e getRegistryImageResult.Name),\n        PullTriggers = new[]\n        {\n            ubuntuRegistryImage.Apply(getRegistryImageResult =\u003e getRegistryImageResult.Sha256Digest),\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-docker/sdk/v4/go/docker\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\tubuntuRegistryImage, err := docker.LookupRegistryImage(ctx, \u0026docker.LookupRegistryImageArgs{\n\t\t\tName: \"ubuntu:precise\",\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\t_, err = docker.NewRemoteImage(ctx, \"ubuntuRemoteImage\", \u0026docker.RemoteImageArgs{\n\t\t\tName: pulumi.String(ubuntuRegistryImage.Name),\n\t\t\tPullTriggers: pulumi.StringArray{\n\t\t\t\tpulumi.String(ubuntuRegistryImage.Sha256Digest),\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.docker.DockerFunctions;\nimport com.pulumi.docker.inputs.GetRegistryImageArgs;\nimport com.pulumi.docker.RemoteImage;\nimport com.pulumi.docker.RemoteImageArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        final var ubuntuRegistryImage = DockerFunctions.getRegistryImage(GetRegistryImageArgs.builder()\n            .name(\"ubuntu:precise\")\n            .build());\n\n        var ubuntuRemoteImage = new RemoteImage(\"ubuntuRemoteImage\", RemoteImageArgs.builder()        \n            .name(ubuntuRegistryImage.applyValue(getRegistryImageResult -\u003e getRegistryImageResult.name()))\n            .pullTriggers(ubuntuRegistryImage.applyValue(getRegistryImageResult -\u003e getRegistryImageResult.sha256Digest()))\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  ubuntuRemoteImage:\n    type: docker:RemoteImage\n    properties:\n      name: ${ubuntuRegistryImage.name}\n      pullTriggers:\n        - ${ubuntuRegistryImage.sha256Digest}\nvariables:\n  ubuntuRegistryImage:\n    fn::invoke:\n      Function: docker:getRegistryImage\n      Arguments:\n        name: ubuntu:precise\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n### Build\n\nYou can also use the resource to build an image.\nIn this case the image \"zoo\" and \"zoo:develop\" are built.\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as docker from \"@pulumi/docker\";\n\nconst zoo = new docker.RemoteImage(\"zoo\", {\n    name: \"zoo\",\n    build: {\n        context: \".\",\n        tags: [\"zoo:develop\"],\n        buildArg: {\n            foo: \"zoo\",\n        },\n        label: {\n            author: \"zoo\",\n        },\n    },\n});\n```\n```python\nimport pulumi\nimport pulumi_docker as docker\n\nzoo = docker.RemoteImage(\"zoo\",\n    name=\"zoo\",\n    build=docker.RemoteImageBuildArgs(\n        context=\".\",\n        tags=[\"zoo:develop\"],\n        build_arg={\n            \"foo\": \"zoo\",\n        },\n        label={\n            \"author\": \"zoo\",\n        },\n    ))\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Docker = Pulumi.Docker;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var zoo = new Docker.RemoteImage(\"zoo\", new()\n    {\n        Name = \"zoo\",\n        Build = new Docker.Inputs.RemoteImageBuildArgs\n        {\n            Context = \".\",\n            Tags = new[]\n            {\n                \"zoo:develop\",\n            },\n            BuildArg = \n            {\n                { \"foo\", \"zoo\" },\n            },\n            Label = \n            {\n                { \"author\", \"zoo\" },\n            },\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-docker/sdk/v4/go/docker\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := docker.NewRemoteImage(ctx, \"zoo\", \u0026docker.RemoteImageArgs{\n\t\t\tName: pulumi.String(\"zoo\"),\n\t\t\tBuild: \u0026docker.RemoteImageBuildArgs{\n\t\t\t\tContext: pulumi.String(\".\"),\n\t\t\t\tTags: pulumi.StringArray{\n\t\t\t\t\tpulumi.String(\"zoo:develop\"),\n\t\t\t\t},\n\t\t\t\tBuildArg: pulumi.StringMap{\n\t\t\t\t\t\"foo\": pulumi.String(\"zoo\"),\n\t\t\t\t},\n\t\t\t\tLabel: pulumi.StringMap{\n\t\t\t\t\t\"author\": pulumi.String(\"zoo\"),\n\t\t\t\t},\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.docker.RemoteImage;\nimport com.pulumi.docker.RemoteImageArgs;\nimport com.pulumi.docker.inputs.RemoteImageBuildArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var zoo = new RemoteImage(\"zoo\", RemoteImageArgs.builder()        \n            .name(\"zoo\")\n            .build(RemoteImageBuildArgs.builder()\n                .context(\".\")\n                .tags(\"zoo:develop\")\n                .buildArg(Map.of(\"foo\", \"zoo\"))\n                .label(Map.of(\"author\", \"zoo\"))\n                .build())\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  zoo:\n    type: docker:RemoteImage\n    properties:\n      name: zoo\n      build:\n        context: .\n        tags:\n          - zoo:develop\n        buildArg:\n          foo: zoo\n        label:\n          author: zoo\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\nYou can use the `triggers` argument to specify when the image should be rebuild. This is for example helpful when you want to rebuild the docker image whenever the source code changes.\n\n",
       "properties": {
         "build": {
-          "$ref": "#/types/docker:index%2FRemoteImageBuild:RemoteImageBuild",
+          "$ref": "#/types/docker:index/RemoteImageBuild:RemoteImageBuild",
           "description": "Configuration to build an image. Please see [docker build command reference](https://docs.docker.com/engine/reference/commandline/build/#options) too.\n"
         },
         "forceRemove": {
@@ -3753,7 +3761,6 @@
           "description": "A map of arbitrary strings that, when changed, will force the `docker.RemoteImage` resource to be replaced. This can be used to rebuild an image when contents of source code folders change\n"
         }
       },
-      "type": "object",
       "required": [
         "imageId",
         "name",
@@ -3761,7 +3768,7 @@
       ],
       "inputProperties": {
         "build": {
-          "$ref": "#/types/docker:index%2FRemoteImageBuild:RemoteImageBuild",
+          "$ref": "#/types/docker:index/RemoteImageBuild:RemoteImageBuild",
           "description": "Configuration to build an image. Please see [docker build command reference](https://docs.docker.com/engine/reference/commandline/build/#options) too.\n"
         },
         "forceRemove": {
@@ -3806,7 +3813,7 @@
         "description": "Input properties used for looking up and filtering RemoteImage resources.\n",
         "properties": {
           "build": {
-            "$ref": "#/types/docker:index%2FRemoteImageBuild:RemoteImageBuild",
+            "$ref": "#/types/docker:index/RemoteImageBuild:RemoteImageBuild",
             "description": "Configuration to build an image. Please see [docker build command reference](https://docs.docker.com/engine/reference/commandline/build/#options) too.\n"
           },
           "forceRemove": {
@@ -3866,7 +3873,7 @@
         "labels": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FSecretLabel:SecretLabel"
+            "$ref": "#/types/docker:index/SecretLabel:SecretLabel"
           },
           "description": "User-defined key/value metadata\n"
         },
@@ -3875,7 +3882,6 @@
           "description": "User-defined name of the secret\n"
         }
       },
-      "type": "object",
       "required": [
         "data",
         "name"
@@ -3890,7 +3896,7 @@
         "labels": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FSecretLabel:SecretLabel"
+            "$ref": "#/types/docker:index/SecretLabel:SecretLabel"
           },
           "description": "User-defined key/value metadata\n",
           "willReplaceOnChanges": true
@@ -3916,7 +3922,7 @@
           "labels": {
             "type": "array",
             "items": {
-              "$ref": "#/types/docker:index%2FSecretLabel:SecretLabel"
+              "$ref": "#/types/docker:index/SecretLabel:SecretLabel"
             },
             "description": "User-defined key/value metadata\n",
             "willReplaceOnChanges": true
@@ -3934,26 +3940,26 @@
       "description": "\u003c!-- Bug: Type and Name are switched --\u003e\nThis resource manages the lifecycle of a Docker service. By default, the creation, update and delete of services are detached.\n With the Converge Config Name of the service\n- `task_spec` (Block List, Min: 1, Max: 1) User modifiable task configuration (see below for nested schema)\n\n## Import\n\n### Example\n\nAssuming you created a `service` as follows\n\n#!/bin/bash\n\ndocker service create --name foo -p 8080:80 nginx\n\nprints th ID\n\n4pcphbxkfn2rffhbhe6czytgi\n\nyou provide the definition for the resource as follows\n\nterraform\n\nresource \"docker_service\" \"foo\" {\n\n  name = \"foo\"\n\n  task_spec {\n\n    container_spec {\n\n      image = \"nginx\"\n\n    }\n\n  }\n\n  endpoint_spec {\n\n    ports {\n\n      target_port    = \"80\"\n\n      published_port = \"8080\"\n\n    }\n\n  }\n\n}\n\nthen the import command is as follows\n\n#!/bin/bash\n\n```sh\n$ pulumi import docker:index/service:Service foo 4pcphbxkfn2rffhbhe6czytgi\n```\n\n",
       "properties": {
         "auth": {
-          "$ref": "#/types/docker:index%2FServiceAuth:ServiceAuth",
+          "$ref": "#/types/docker:index/ServiceAuth:ServiceAuth",
           "description": "Configuration for the authentication for pulling the images of the service\n"
         },
         "convergeConfig": {
-          "$ref": "#/types/docker:index%2FServiceConvergeConfig:ServiceConvergeConfig",
+          "$ref": "#/types/docker:index/ServiceConvergeConfig:ServiceConvergeConfig",
           "description": "A configuration to ensure that a service converges aka reaches the desired that of all task up and running\n"
         },
         "endpointSpec": {
-          "$ref": "#/types/docker:index%2FServiceEndpointSpec:ServiceEndpointSpec",
+          "$ref": "#/types/docker:index/ServiceEndpointSpec:ServiceEndpointSpec",
           "description": "Properties that can be configured to access and load balance a service\n"
         },
         "labels": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FServiceLabel:ServiceLabel"
+            "$ref": "#/types/docker:index/ServiceLabel:ServiceLabel"
           },
           "description": "User-defined key/value metadata\n"
         },
         "mode": {
-          "$ref": "#/types/docker:index%2FServiceMode:ServiceMode",
+          "$ref": "#/types/docker:index/ServiceMode:ServiceMode",
           "description": "Scheduling mode for the service\n"
         },
         "name": {
@@ -3961,19 +3967,18 @@
           "description": "Name of the service\n"
         },
         "rollbackConfig": {
-          "$ref": "#/types/docker:index%2FServiceRollbackConfig:ServiceRollbackConfig",
+          "$ref": "#/types/docker:index/ServiceRollbackConfig:ServiceRollbackConfig",
           "description": "Specification for the rollback strategy of the service\n"
         },
         "taskSpec": {
-          "$ref": "#/types/docker:index%2FServiceTaskSpec:ServiceTaskSpec",
+          "$ref": "#/types/docker:index/ServiceTaskSpec:ServiceTaskSpec",
           "description": "User modifiable task configuration\n"
         },
         "updateConfig": {
-          "$ref": "#/types/docker:index%2FServiceUpdateConfig:ServiceUpdateConfig",
+          "$ref": "#/types/docker:index/ServiceUpdateConfig:ServiceUpdateConfig",
           "description": "Specification for the update strategy of the service\n"
         }
       },
-      "type": "object",
       "required": [
         "endpointSpec",
         "labels",
@@ -3983,27 +3988,27 @@
       ],
       "inputProperties": {
         "auth": {
-          "$ref": "#/types/docker:index%2FServiceAuth:ServiceAuth",
+          "$ref": "#/types/docker:index/ServiceAuth:ServiceAuth",
           "description": "Configuration for the authentication for pulling the images of the service\n",
           "willReplaceOnChanges": true
         },
         "convergeConfig": {
-          "$ref": "#/types/docker:index%2FServiceConvergeConfig:ServiceConvergeConfig",
+          "$ref": "#/types/docker:index/ServiceConvergeConfig:ServiceConvergeConfig",
           "description": "A configuration to ensure that a service converges aka reaches the desired that of all task up and running\n"
         },
         "endpointSpec": {
-          "$ref": "#/types/docker:index%2FServiceEndpointSpec:ServiceEndpointSpec",
+          "$ref": "#/types/docker:index/ServiceEndpointSpec:ServiceEndpointSpec",
           "description": "Properties that can be configured to access and load balance a service\n"
         },
         "labels": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FServiceLabel:ServiceLabel"
+            "$ref": "#/types/docker:index/ServiceLabel:ServiceLabel"
           },
           "description": "User-defined key/value metadata\n"
         },
         "mode": {
-          "$ref": "#/types/docker:index%2FServiceMode:ServiceMode",
+          "$ref": "#/types/docker:index/ServiceMode:ServiceMode",
           "description": "Scheduling mode for the service\n",
           "willReplaceOnChanges": true
         },
@@ -4013,15 +4018,15 @@
           "willReplaceOnChanges": true
         },
         "rollbackConfig": {
-          "$ref": "#/types/docker:index%2FServiceRollbackConfig:ServiceRollbackConfig",
+          "$ref": "#/types/docker:index/ServiceRollbackConfig:ServiceRollbackConfig",
           "description": "Specification for the rollback strategy of the service\n"
         },
         "taskSpec": {
-          "$ref": "#/types/docker:index%2FServiceTaskSpec:ServiceTaskSpec",
+          "$ref": "#/types/docker:index/ServiceTaskSpec:ServiceTaskSpec",
           "description": "User modifiable task configuration\n"
         },
         "updateConfig": {
-          "$ref": "#/types/docker:index%2FServiceUpdateConfig:ServiceUpdateConfig",
+          "$ref": "#/types/docker:index/ServiceUpdateConfig:ServiceUpdateConfig",
           "description": "Specification for the update strategy of the service\n"
         }
       },
@@ -4032,27 +4037,27 @@
         "description": "Input properties used for looking up and filtering Service resources.\n",
         "properties": {
           "auth": {
-            "$ref": "#/types/docker:index%2FServiceAuth:ServiceAuth",
+            "$ref": "#/types/docker:index/ServiceAuth:ServiceAuth",
             "description": "Configuration for the authentication for pulling the images of the service\n",
             "willReplaceOnChanges": true
           },
           "convergeConfig": {
-            "$ref": "#/types/docker:index%2FServiceConvergeConfig:ServiceConvergeConfig",
+            "$ref": "#/types/docker:index/ServiceConvergeConfig:ServiceConvergeConfig",
             "description": "A configuration to ensure that a service converges aka reaches the desired that of all task up and running\n"
           },
           "endpointSpec": {
-            "$ref": "#/types/docker:index%2FServiceEndpointSpec:ServiceEndpointSpec",
+            "$ref": "#/types/docker:index/ServiceEndpointSpec:ServiceEndpointSpec",
             "description": "Properties that can be configured to access and load balance a service\n"
           },
           "labels": {
             "type": "array",
             "items": {
-              "$ref": "#/types/docker:index%2FServiceLabel:ServiceLabel"
+              "$ref": "#/types/docker:index/ServiceLabel:ServiceLabel"
             },
             "description": "User-defined key/value metadata\n"
           },
           "mode": {
-            "$ref": "#/types/docker:index%2FServiceMode:ServiceMode",
+            "$ref": "#/types/docker:index/ServiceMode:ServiceMode",
             "description": "Scheduling mode for the service\n",
             "willReplaceOnChanges": true
           },
@@ -4062,15 +4067,15 @@
             "willReplaceOnChanges": true
           },
           "rollbackConfig": {
-            "$ref": "#/types/docker:index%2FServiceRollbackConfig:ServiceRollbackConfig",
+            "$ref": "#/types/docker:index/ServiceRollbackConfig:ServiceRollbackConfig",
             "description": "Specification for the rollback strategy of the service\n"
           },
           "taskSpec": {
-            "$ref": "#/types/docker:index%2FServiceTaskSpec:ServiceTaskSpec",
+            "$ref": "#/types/docker:index/ServiceTaskSpec:ServiceTaskSpec",
             "description": "User modifiable task configuration\n"
           },
           "updateConfig": {
-            "$ref": "#/types/docker:index%2FServiceUpdateConfig:ServiceUpdateConfig",
+            "$ref": "#/types/docker:index/ServiceUpdateConfig:ServiceUpdateConfig",
             "description": "Specification for the update strategy of the service\n"
           }
         },
@@ -4089,7 +4094,6 @@
           "description": "User-defined name of the config\n"
         }
       },
-      "type": "object",
       "required": [
         "data",
         "name"
@@ -4142,7 +4146,6 @@
           "description": "Name of the target image.\n"
         }
       },
-      "type": "object",
       "required": [
         "sourceImage",
         "sourceImageId",
@@ -4202,7 +4205,7 @@
         "labels": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FVolumeLabel:VolumeLabel"
+            "$ref": "#/types/docker:index/VolumeLabel:VolumeLabel"
           },
           "description": "User-defined key/value metadata\n"
         },
@@ -4215,7 +4218,6 @@
           "description": "The name of the Docker volume (will be generated if not provided).\n"
         }
       },
-      "type": "object",
       "required": [
         "driver",
         "mountpoint",
@@ -4238,7 +4240,7 @@
         "labels": {
           "type": "array",
           "items": {
-            "$ref": "#/types/docker:index%2FVolumeLabel:VolumeLabel"
+            "$ref": "#/types/docker:index/VolumeLabel:VolumeLabel"
           },
           "description": "User-defined key/value metadata\n",
           "willReplaceOnChanges": true
@@ -4268,7 +4270,7 @@
           "labels": {
             "type": "array",
             "items": {
-              "$ref": "#/types/docker:index%2FVolumeLabel:VolumeLabel"
+              "$ref": "#/types/docker:index/VolumeLabel:VolumeLabel"
             },
             "description": "User-defined key/value metadata\n",
             "willReplaceOnChanges": true
@@ -4387,9 +4389,9 @@
           }
         },
         "required": [
-          "id",
           "logsListStrings",
-          "name"
+          "name",
+          "id"
         ],
         "type": "object"
       }
@@ -4427,7 +4429,7 @@
           "ipamConfigs": {
             "description": "The IPAM configuration options\n",
             "items": {
-              "$ref": "#/types/docker:index%2FgetNetworkIpamConfig:getNetworkIpamConfig"
+              "$ref": "#/types/docker:index/getNetworkIpamConfig:getNetworkIpamConfig"
             },
             "type": "array"
           },
@@ -4560,9 +4562,9 @@
           }
         },
         "required": [
-          "id",
           "name",
-          "sha256Digest"
+          "sha256Digest",
+          "id"
         ],
         "type": "object"
       }
@@ -4599,9 +4601,9 @@
           }
         },
         "required": [
-          "id",
           "name",
-          "repoDigest"
+          "repoDigest",
+          "id"
         ],
         "type": "object"
       }
