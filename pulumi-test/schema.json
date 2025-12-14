@@ -3,9 +3,6 @@
   "displayName": "yourdisplayname",
   "version": "0.1.0",
   "namespace": "yournamespace",
-  "meta": {
-    "moduleFormat": "(.*)"
-  },
   "language": {
     "csharp": {
       "respectSchemaVersion": true
@@ -38,7 +35,6 @@
         "type": "string"
       }
     },
-    "type": "object",
     "inputProperties": {
       "prefix": {
         "type": "string"
@@ -56,10 +52,9 @@
           "type": "string"
         }
       },
-      "type": "object",
       "required": [
-        "result",
-        "suffix"
+        "suffix",
+        "result"
       ],
       "inputProperties": {
         "suffix": {
