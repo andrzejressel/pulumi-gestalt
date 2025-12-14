@@ -53,8 +53,7 @@
   },
   "config": {},
   "provider": {
-    "description": "The provider type for the random package. By default, resources use package-wide configuration\nsettings, however an explicit `Provider` instance may be created and passed during resource\nconstruction to achieve fine-grained programmatic control over provider settings. See the\n[documentation](https://www.pulumi.com/docs/reference/programming-model/#providers) for more information.\n",
-    "type": "object"
+    "description": "The provider type for the random package. By default, resources use package-wide configuration\nsettings, however an explicit `Provider` instance may be created and passed during resource\nconstruction to achieve fine-grained programmatic control over provider settings. See the\n[documentation](https://www.pulumi.com/docs/reference/programming-model/#providers) for more information.\n"
   },
   "resources": {
     "random:index/randomBytes:RandomBytes": {
@@ -82,7 +81,6 @@
           "description": "The number of bytes requested. The minimum value for length is 1.\n"
         }
       },
-      "type": "object",
       "required": [
         "base64",
         "hex",
@@ -167,7 +165,6 @@
           "description": "Arbitrary string to prefix the output value with. This string is supplied as-is, meaning it is not guaranteed to be URL-safe or base64 encoded.\n"
         }
       },
-      "type": "object",
       "required": [
         "b64Std",
         "b64Url",
@@ -260,7 +257,6 @@
           "description": "A custom seed to always produce the same value.\n"
         }
       },
-      "type": "object",
       "required": [
         "max",
         "min",
@@ -387,7 +383,6 @@
           "description": "Include uppercase alphabet characters in the result. Default value is `true`.\n"
         }
       },
-      "type": "object",
       "required": [
         "bcryptHash",
         "length",
@@ -551,7 +546,6 @@
           "description": "The character to separate words in the pet name. Defaults to \"-\"\n"
         }
       },
-      "type": "object",
       "required": [
         "length",
         "separator"
@@ -636,7 +630,6 @@
           "description": "Arbitrary string with which to seed the random number generator, in order to produce less-volatile permutations of the list.\n"
         }
       },
-      "type": "object",
       "required": [
         "inputs",
         "results"
@@ -764,7 +757,6 @@
           "description": "Include uppercase alphabet characters in the result. Default value is `true`.\n"
         }
       },
-      "type": "object",
       "required": [
         "length",
         "lower",
@@ -913,7 +905,6 @@
           "description": "The generated uuid presented in string format.\n"
         }
       },
-      "type": "object",
       "required": [
         "result"
       ],
