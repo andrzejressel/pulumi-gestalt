@@ -4,7 +4,7 @@ NEXTEST_VERSION := "0.9.72"
 # renovate: datasource=crate depName=sd packageName=sd
 SD_VERSION := "1.0.0"
 # renovate: datasource=crate depName=cargo-llvm-cov packageName=cargo-llvm-cov
-CARGO_LLVM_COV_VERSION := "0.7.0"
+CARGO_LLVM_COV_VERSION := "0.8.0"
 
 WASI_TARGET := "wasm32-wasip2"
 
