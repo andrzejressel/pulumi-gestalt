@@ -5,6 +5,7 @@ edition.workspace = true
 license.workspace = true
 repository.workspace = true
 readme.workspace = true
+description = "Domain models and abstractions for Pulumi Gestalt"
 
 [features]
 default = []
