@@ -4,12 +4,14 @@ set windows-shell := ["pwsh.exe", "-c"]
 pulumi-test-regenerate-schema-json:
     pulumi plugin rm resource test -y
     go build
+    ls -alh
     pulumi package get-schema ./pulumi-test.exe > schema.json
 
 [unix]
 pulumi-test-regenerate-schema-json:
     pulumi plugin rm resource test -y
     go build
+    ls -alh
     pulumi package get-schema ./pulumi-test > schema.json
 
 [windows]
