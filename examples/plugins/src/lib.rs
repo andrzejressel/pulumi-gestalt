@@ -1,7 +1,7 @@
 use pulumi_gestalt_wit::client_bindings::component::pulumi_gestalt::context::Context;
 
 #[cfg(target_arch = "wasm32")]
-#[unsafe(export_name = "component:pulumi-gestalt/pulumi-main@0.0.0-DEV#main")]
+#[unsafe(export_name = "component:pulumi-gestalt/pulumi-main@0.0.5#main")]
 unsafe extern "C" fn __wasm_main() {
     main();
 }
