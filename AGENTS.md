@@ -91,6 +91,17 @@ Commands are run using `just`. Run `just --list` for all available commands.
     just rust-docs
     ```
 
+## Dependency Management
+
+*   **Validate Renovate configuration**:
+    ```bash
+    just renovate-validate
+    ```
+*   **Run Renovate locally** (dry-run mode):
+    ```bash
+    just renovate-local
+    ```
+
 ## Key Directories
 
 *   `crates/`: Contains all the Rust crates for this project. See the `AGENTS.md` in each crate's directory for more details.
