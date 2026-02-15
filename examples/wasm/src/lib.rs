@@ -117,7 +117,7 @@ fn perform_operations_on_custom_config(ctx: &Context) {
 }
 
 #[cfg(target_arch = "wasm32")]
-#[unsafe(export_name = "component:pulumi-gestalt/pulumi-main@0.0.5#main")]
+#[unsafe(export_name = "component:pulumi-gestalt/pulumi-main@0.0.0-DEV#main")]
 unsafe extern "C" fn __wasm_main() {
     main();
 }
