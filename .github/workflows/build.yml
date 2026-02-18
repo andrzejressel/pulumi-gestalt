@@ -46,10 +46,6 @@ jobs:
           version: "25.3"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - run: protoc --version
-      - run: brew install pulumi
-        if: runner.os == 'macOS'
-      - run: pulumi version
-      - run: pulumi login --local
       - name: Cache Pulumi providers
         uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
         with:
@@ -148,10 +144,6 @@ jobs:
         run: just install-requirements
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: brew install pulumi
-        if: runner.os == 'macOS'
-      - run: pulumi version
-      - run: pulumi login --local
       - uses: actions/setup-go@7a3fe6cf4cb3a834922a1244abfce67bcef6a0c5 # v6.2.0
         with:
           go-version: '^1.22.0'
@@ -162,6 +154,7 @@ jobs:
           version: "25.3"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - run: protoc --version
+      - run: pulumi login --local
       - name: Cache Pulumi providers
         uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
         with:
@@ -192,9 +185,6 @@ jobs:
         run: just install-requirements
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: brew install pulumi
-        if: runner.os == 'macOS'
-      - run: pulumi version
       - run: pulumi login --local
       - uses: actions/setup-go@7a3fe6cf4cb3a834922a1244abfce67bcef6a0c5 # v6.2.0
         with:
@@ -241,9 +231,6 @@ jobs:
         with:
           shared-key: build-examples
       - uses: jdx/mise-action@6d1e696aa24c1aa1bcc1adea0212707c71ab78a8 # v3.6.1
-      - run: brew install pulumi
-        if: runner.os == 'macOS'
-      - run: pulumi version
       - run: pulumi login --local
       - name: Pull required docker images
         if: runner.os == 'Linux'
@@ -295,9 +282,6 @@ jobs:
         run: just install-requirements
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: brew install pulumi
-        if: runner.os == 'macOS'
-      - run: pulumi version
       - run: pulumi login --local
       - uses: actions/setup-go@7a3fe6cf4cb3a834922a1244abfce67bcef6a0c5 # v6.2.0
         with:
@@ -337,9 +321,6 @@ jobs:
         run: just install-requirements
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: brew install pulumi
-        if: runner.os == 'macOS'
-      - run: pulumi version
       - run: pulumi login --local
       - uses: actions/setup-go@7a3fe6cf4cb3a834922a1244abfce67bcef6a0c5 # v6.2.0
         with:

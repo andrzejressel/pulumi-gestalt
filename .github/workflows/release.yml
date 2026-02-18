@@ -73,9 +73,6 @@ jobs:
           version: "25.3"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - run: protoc --version
-      - run: brew install pulumi
-        if: runner.os == 'macOS'
-      - run: pulumi version
       - run: pulumi login --local
 
       - name: Replace version
