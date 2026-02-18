@@ -45,6 +45,11 @@ jobs:
           submodules: true
           ssh-key: ${{ secrets.DEPLOY_KEY }}
           fetch-depth: '0'
+      - uses: Swatinem/rust-cache@779680da715d629ac1d338a641029a2f4372abb5 # v2.8.2
+        with:
+          shared-key: build-examples
+          save-if: false
+
       - uses: jdx/mise-action@6d1e696aa24c1aa1bcc1adea0212707c71ab78a8 # v3.6.1
       - name: Install requirements
         run: just install-requirements
@@ -72,11 +77,6 @@ jobs:
         if: runner.os == 'macOS'
       - run: pulumi version
       - run: pulumi login --local
-
-      - uses: Swatinem/rust-cache@779680da715d629ac1d338a641029a2f4372abb5 # v2.8.2
-        with:
-          shared-key: build-examples
-          save-if: false
 
       - name: Replace version
         run: just update-version "${{ github.event.inputs.version }}"
