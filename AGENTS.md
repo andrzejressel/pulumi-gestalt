@@ -8,14 +8,12 @@ This file contains global instructions for AI agents working with the `pulumi-ge
 
 ## Environment Setup
 
-The development environment is managed by `devenv`.
+The development environment is managed by `mise`.
 
-1.  **Activate environment** (only on Linux/Unix systems):
+1. **Install `mise`**: Follow instructions at https://mise.jdx.dev/getting-started.html.
+2. **Bootstrap environment**:
     ```bash
-    devenv shell
-    ```
-2.  **Install Rust tools**:
-    ```bash
+    mise install
     just install-requirements
     ```
 

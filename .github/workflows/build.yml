@@ -34,12 +34,8 @@ jobs:
 #      - uses: testspace-com/setup-testspace@v1
 #        with:
 #          domain: ${{github.repository_owner}}
-      - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: cargo-bins/cargo-binstall@ec80feb9e330418e014932e5982599255eff6dbb # v1.17.4
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: Swatinem/rust-cache@779680da715d629ac1d338a641029a2f4372abb5 # v2.8.2
+      - uses: jdx/mise-action@6d1e696aa24c1aa1bcc1adea0212707c71ab78a8 # v3.6.1
       - name: Install requirements
         run: just install-requirements
         env:
@@ -50,11 +46,6 @@ jobs:
           version: "25.3"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - run: protoc --version
-      - run: brew install pulumi
-        if: runner.os == 'macOS'
-      - run: pulumi version
-      - run: pulumi login --local
-      - uses: Swatinem/rust-cache@779680da715d629ac1d338a641029a2f4372abb5 # v2.8.2
       - name: Cache Pulumi providers
         uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
         with:
@@ -98,20 +89,15 @@ jobs:
 #      - uses: testspace-com/setup-testspace@v1
 #        with:
 #          domain: ${{github.repository_owner}}
-      - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: cargo-bins/cargo-binstall@ec80feb9e330418e014932e5982599255eff6dbb # v1.17.4
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Install requirements
-        run: just install-requirements
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: Swatinem/rust-cache@779680da715d629ac1d338a641029a2f4372abb5 # v2.8.2
         with:
           lookup-only: "true"
           save-if: "false"
+      - uses: jdx/mise-action@6d1e696aa24c1aa1bcc1adea0212707c71ab78a8 # v3.6.1
+      - name: Install requirements
+        run: just install-requirements
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Install Protoc
         uses: arduino/setup-protoc@c65c819552d16ad3c9b72d9dfd5ba5237b9c906b # v3.0.0
         with:
@@ -152,31 +138,23 @@ jobs:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           submodules: true
-      - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: cargo-bins/cargo-binstall@ec80feb9e330418e014932e5982599255eff6dbb # v1.17.4
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: Swatinem/rust-cache@779680da715d629ac1d338a641029a2f4372abb5 # v2.8.2
+      - uses: jdx/mise-action@6d1e696aa24c1aa1bcc1adea0212707c71ab78a8 # v3.6.1
       - name: Install requirements
         run: just install-requirements
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: brew install pulumi
-        if: runner.os == 'macOS'
-      - run: pulumi version
-      - run: pulumi login --local
       - uses: actions/setup-go@7a3fe6cf4cb3a834922a1244abfce67bcef6a0c5 # v6.2.0
         with:
           go-version: '^1.22.0'
           cache-dependency-path: "**/go.sum"
-      - uses: Swatinem/rust-cache@779680da715d629ac1d338a641029a2f4372abb5 # v2.8.2
       - name: Install Protoc
         uses: arduino/setup-protoc@c65c819552d16ad3c9b72d9dfd5ba5237b9c906b # v3.0.0
         with:
           version: "25.3"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - run: protoc --version
+      - run: pulumi login --local
       - name: Cache Pulumi providers
         uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
         with:
@@ -201,19 +179,12 @@ jobs:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           submodules: true
-      - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: cargo-bins/cargo-binstall@ec80feb9e330418e014932e5982599255eff6dbb # v1.17.4
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: Swatinem/rust-cache@779680da715d629ac1d338a641029a2f4372abb5 # v2.8.2
+      - uses: jdx/mise-action@6d1e696aa24c1aa1bcc1adea0212707c71ab78a8 # v3.6.1
       - name: Install requirements
         run: just install-requirements
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: brew install pulumi
-        if: runner.os == 'macOS'
-      - run: pulumi version
       - run: pulumi login --local
       - uses: actions/setup-go@7a3fe6cf4cb3a834922a1244abfce67bcef6a0c5 # v6.2.0
         with:
@@ -225,7 +196,6 @@ jobs:
           version: "25.3"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - run: protoc --version
-      - uses: Swatinem/rust-cache@779680da715d629ac1d338a641029a2f4372abb5 # v2.8.2
       - name: Cache Pulumi providers
         uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
         with:
@@ -257,15 +227,10 @@ jobs:
 #      - uses: testspace-com/setup-testspace@v1
 #        with:
 #          domain: ${{github.repository_owner}}
-      - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: cargo-bins/cargo-binstall@ec80feb9e330418e014932e5982599255eff6dbb # v1.17.4
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: brew install pulumi
-        if: runner.os == 'macOS'
-      - run: pulumi version
+      - uses: Swatinem/rust-cache@779680da715d629ac1d338a641029a2f4372abb5 # v2.8.2
+        with:
+          shared-key: build-examples
+      - uses: jdx/mise-action@6d1e696aa24c1aa1bcc1adea0212707c71ab78a8 # v3.6.1
       - run: pulumi login --local
       - name: Pull required docker images
         if: runner.os == 'Linux'
@@ -289,9 +254,6 @@ jobs:
         run: just install-requirements
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: Swatinem/rust-cache@779680da715d629ac1d338a641029a2f4372abb5 # v2.8.2
-        with:
-          shared-key: build-examples
       - run: just wasm-ci-flow
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -314,19 +276,12 @@ jobs:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           submodules: true
-      - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: cargo-bins/cargo-binstall@ec80feb9e330418e014932e5982599255eff6dbb # v1.17.4
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: Swatinem/rust-cache@779680da715d629ac1d338a641029a2f4372abb5 # v2.8.2
+      - uses: jdx/mise-action@6d1e696aa24c1aa1bcc1adea0212707c71ab78a8 # v3.6.1
       - name: Install requirements
         run: just install-requirements
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: brew install pulumi
-        if: runner.os == 'macOS'
-      - run: pulumi version
       - run: pulumi login --local
       - uses: actions/setup-go@7a3fe6cf4cb3a834922a1244abfce67bcef6a0c5 # v6.2.0
         with:
@@ -338,7 +293,6 @@ jobs:
           version: "25.3"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - run: protoc --version
-      - uses: Swatinem/rust-cache@779680da715d629ac1d338a641029a2f4372abb5 # v2.8.2
       - run: just c-ci-flow
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -361,19 +315,12 @@ jobs:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           submodules: true
-      - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: cargo-bins/cargo-binstall@ec80feb9e330418e014932e5982599255eff6dbb # v1.17.4
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: Swatinem/rust-cache@779680da715d629ac1d338a641029a2f4372abb5 # v2.8.2
+      - uses: jdx/mise-action@6d1e696aa24c1aa1bcc1adea0212707c71ab78a8 # v3.6.1
       - name: Install requirements
         run: just install-requirements
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: brew install pulumi
-        if: runner.os == 'macOS'
-      - run: pulumi version
       - run: pulumi login --local
       - uses: actions/setup-go@7a3fe6cf4cb3a834922a1244abfce67bcef6a0c5 # v6.2.0
         with:
@@ -392,7 +339,6 @@ jobs:
           version: "25.3"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - run: protoc --version
-      - uses: Swatinem/rust-cache@779680da715d629ac1d338a641029a2f4372abb5 # v2.8.2
       - run: just native-ci-flow
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

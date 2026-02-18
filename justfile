@@ -1,10 +1,4 @@
 set windows-shell := ["pwsh.exe", "-c"]
-# renovate: datasource=crate depName=cargo-nextest packageName=cargo-nextest
-NEXTEST_VERSION := "0.9.72"
-# renovate: datasource=crate depName=sd packageName=sd
-SD_VERSION := "1.0.0"
-# renovate: datasource=crate depName=cargo-llvm-cov packageName=cargo-llvm-cov
-CARGO_LLVM_COV_VERSION := "0.8.0"
 
 WASI_TARGET := "wasm32-wasip2"
 
@@ -45,9 +39,7 @@ package-language-plugin VERSION:
 install-requirements:
     rustup component add rustfmt
     rustup component add llvm-tools-preview
-    cargo binstall --no-confirm cargo-nextest@{{NEXTEST_VERSION}}
-    cargo binstall --no-confirm sd@{{SD_VERSION}}
-    cargo binstall --no-confirm cargo-llvm-cov@{{CARGO_LLVM_COV_VERSION}}
+    mise install
 
 # Compiling everything together causes linking issues
 build-wasm-components:
