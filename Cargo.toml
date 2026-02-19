@@ -47,31 +47,31 @@ members = [
 ]
 
 [workspace.package]
-version = "0.0.5"
+version = "0.0.0-DEV"
 edition = "2024"
 license = "MPL-2.0"
 repository = "https://github.com/andrzejressel/pulumi-gestalt"
 readme = "README.md"
 
 [workspace.dependencies]
-pulumi_gestalt_core = { version = "=0.0.5", path = "crates/core" }
-pulumi_gestalt_domain = { version = "=0.0.5", path = "crates/domain" }
-pulumi_gestalt_build = { version = "=0.0.5", path = "crates/rust_build" }
-pulumi_gestalt_generator = { version = "=0.0.5", path = "crates/rust_generator" }
-pulumi_gestalt_rust = { version = "=0.0.5", path = "crates/rust" }
-pulumi_gestalt_proto = { version = "=0.0.5", path = "crates/proto" }
-pulumi_gestalt_wit = { version = "=0.0.5", path = "crates/wit" }
-pulumi_gestalt_providers_docker = { version = "=0.0.5", path = "providers/docker" }
-pulumi_gestalt_providers_random = { version = "=0.0.5", path = "providers/random" }
-pulumi_gestalt_providers_test = { version = "=0.0.5", path = "providers/test" }
-pulumi_gestalt_providers_typesystem = { version = "=0.0.5", path = "providers/typesystem" }
-pulumi_gestalt_examples_common = { version = "=0.0.5", path = "examples/common" }
-pulumi_gestalt_grpc_connection = { version = "=0.0.5", path = "crates/grpc" }
-pulumi_gestalt_rust_integration = { version = "=0.0.5", path = "crates/rust_integration" }
-pulumi_gestalt_schema = { version = "=0.0.5", path = "crates/schema" }
-pulumi_gestalt_schema_protobuf = { version = "=0.0.5", path = "crates/schema_protobuf" }
-changelog_lib = { version = "=0.0.5", path = "changelog_lib" }
-pulumi_gestalt_serde_constant_string = { version = "=0.0.5", path = "crates/serde_constant_string" }
+pulumi_gestalt_core = { version = "=0.0.0-DEV", path = "crates/core" }
+pulumi_gestalt_domain = { version = "=0.0.0-DEV", path = "crates/domain" }
+pulumi_gestalt_build = { version = "=0.0.0-DEV", path = "crates/rust_build" }
+pulumi_gestalt_generator = { version = "=0.0.0-DEV", path = "crates/rust_generator" }
+pulumi_gestalt_rust = { version = "=0.0.0-DEV", path = "crates/rust" }
+pulumi_gestalt_proto = { version = "=0.0.0-DEV", path = "crates/proto" }
+pulumi_gestalt_wit = { version = "=0.0.0-DEV", path = "crates/wit" }
+pulumi_gestalt_providers_docker = { version = "=0.0.0-DEV", path = "providers/docker" }
+pulumi_gestalt_providers_random = { version = "=0.0.0-DEV", path = "providers/random" }
+pulumi_gestalt_providers_test = { version = "=0.0.0-DEV", path = "providers/test" }
+pulumi_gestalt_providers_typesystem = { version = "=0.0.0-DEV", path = "providers/typesystem" }
+pulumi_gestalt_examples_common = { version = "=0.0.0-DEV", path = "examples/common" }
+pulumi_gestalt_grpc_connection = { version = "=0.0.0-DEV", path = "crates/grpc" }
+pulumi_gestalt_rust_integration = { version = "=0.0.0-DEV", path = "crates/rust_integration" }
+pulumi_gestalt_schema = { version = "=0.0.0-DEV", path = "crates/schema" }
+pulumi_gestalt_schema_protobuf = { version = "=0.0.0-DEV", path = "crates/schema_protobuf" }
+changelog_lib = { version = "=0.0.0-DEV", path = "changelog_lib" }
+pulumi_gestalt_serde_constant_string = { version = "=0.0.0-DEV", path = "crates/serde_constant_string" }
 
 anyhow = "1.0.98"
 prost = "0.14.1"
@@ -110,7 +110,7 @@ wat = "1.230.0"
 wasmparser = "0.243.0"
 cbindgen = "0.29.0"
 libc = "0.2.172"
-gix = "0.78.0"
+gix = "0.79.0"
 once_cell = "1.21.3"
 proptest = "1.6.0"
 static_assertions = "1.1.0"
