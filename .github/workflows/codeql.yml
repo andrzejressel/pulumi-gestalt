@@ -24,13 +24,13 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - name: Initialize CodeQL for Go
-        uses: github/codeql-action/init@45cbd0c69e560cd9e7cd7f8c32362050c9b7ded2 # v4.32.2
+        uses: github/codeql-action/init@9e907b5e64f6b83e7804b09294d44122997950d6 # v4.32.3
         with:
           languages: go
           build-mode: autobuild
 
       - name: Perform CodeQL Analysis for Go
-        uses: github/codeql-action/analyze@45cbd0c69e560cd9e7cd7f8c32362050c9b7ded2 # v4.32.2
+        uses: github/codeql-action/analyze@9e907b5e64f6b83e7804b09294d44122997950d6 # v4.32.3
         with:
           category: "/language:go"
 
@@ -68,7 +68,7 @@ jobs:
       - run: just build-static-library
 
       - name: Initialize CodeQL for C/C++
-        uses: github/codeql-action/init@45cbd0c69e560cd9e7cd7f8c32362050c9b7ded2 # v4.32.2
+        uses: github/codeql-action/init@9e907b5e64f6b83e7804b09294d44122997950d6 # v4.32.3
         with:
           languages: c
           build-mode: manual
@@ -82,6 +82,6 @@ jobs:
           cmake --build .
 
       - name: Perform CodeQL Analysis for C/C++
-        uses: github/codeql-action/analyze@45cbd0c69e560cd9e7cd7f8c32362050c9b7ded2 # v4.32.2
+        uses: github/codeql-action/analyze@9e907b5e64f6b83e7804b09294d44122997950d6 # v4.32.3
         with:
           category: "/language:c-c"
