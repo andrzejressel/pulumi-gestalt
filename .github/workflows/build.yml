@@ -24,7 +24,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-24.04, windows-2022, macos-15-intel, macos-15]
+        os: [ubuntu-24.04, windows-2022, macos-15]
     steps:
       - run: git config --system core.longpaths true
         if: runner.os == 'Windows'
@@ -119,7 +119,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-24.04, windows-2022, macos-15-intel, macos-15]
+        os: [ubuntu-24.04, windows-2022, macos-15]
     steps:
       - run: git config --system core.longpaths true
         if: runner.os == 'Windows'
@@ -193,7 +193,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-24.04, windows-2022, macos-15-intel, macos-15]
+        os: [ubuntu-24.04, windows-2022, macos-15]
     steps:
       - run: git config --system core.longpaths true
         if: runner.os == 'Windows'
@@ -238,7 +238,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-24.04, windows-2022, macos-15-intel, macos-15]
+        os: [ubuntu-24.04, windows-2022, macos-15]
 
     steps:
       - run: git config --system core.longpaths true
@@ -271,7 +271,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-24.04, windows-2022, macos-15-intel, macos-15]
+        os: [ubuntu-24.04, windows-2022, macos-15]
 
     steps:
       - run: git config --system core.longpaths true
