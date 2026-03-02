@@ -1,0 +1,4 @@
+type: Removed
+title: Remove support for x86 Mac (Intel)
+description: |
+  Support for x86 Mac (Intel) has been removed. Only ARM64 Mac (Apple Silicon) is now supported.
