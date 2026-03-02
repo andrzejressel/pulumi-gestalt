@@ -118,6 +118,50 @@ Commands are run using `just`. Run `just --list` for all available commands.
 - Environment issues: Exit and re-run `devenv shell`
 - Test failures: Run individual test suites to isolate
 
+## Changelog Management
+
+The project uses a structured changelog system located in the `.changelog/` directory.
+
+### Creating a Changelog Entry
+
+When making changes that should be documented in the changelog:
+
+1. **Create a YAML file** in `.changelog/unreleased/` with a descriptive name (e.g., `add_new_feature.yaml`)
+
+2. **Use the following format**:
+   ```yaml
+   type: <Type>
+   title: <Short description>
+   description: |
+     <Optional longer description>
+     Can be multi-line
+   ```
+
+3. **Available types**:
+   - `Added` - New features
+   - `Changed` - Changes to existing functionality
+   - `Deprecated` - Soon-to-be removed features
+   - `Removed` - Removed features
+   - `Fixed` - Bug fixes
+   - `Security` - Security-related changes
+
+4. **Example entries**:
+   ```yaml
+   type: Added
+   title: Added example for Wasm integration
+   ```
+
+   ```yaml
+   type: Removed
+   title: Remove Rust abstraction over Wasm
+   description: |
+     This change simplifies code and documentation by removing the Rust abstraction layer over Wasm.
+   ```
+
+5. **File naming**: Use descriptive names with underscores (e.g., `remove_x86_mac_support.yaml`)
+
+The changelog entries are automatically processed during release to generate the final `CHANGELOG.md` file.
+
 # Rust Style Guide for Agents
 
 ## Code Formatting
