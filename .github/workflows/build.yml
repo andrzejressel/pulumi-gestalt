@@ -40,12 +40,6 @@ jobs:
         run: just install-requirements
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Install Protoc
-        uses: arduino/setup-protoc@c65c819552d16ad3c9b72d9dfd5ba5237b9c906b # v3.0.0
-        with:
-          version: "25.3"
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-      - run: protoc --version
       - name: Cache Pulumi providers
         uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
         with:
@@ -98,12 +92,6 @@ jobs:
         run: just install-requirements
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Install Protoc
-        uses: arduino/setup-protoc@c65c819552d16ad3c9b72d9dfd5ba5237b9c906b # v3.0.0
-        with:
-          version: "25.3"
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-      - run: protoc --version
       - run: just test-provider-compilation ${{ matrix.provider }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -148,12 +136,6 @@ jobs:
         with:
           go-version: '^1.22.0'
           cache-dependency-path: "**/go.sum"
-      - name: Install Protoc
-        uses: arduino/setup-protoc@c65c819552d16ad3c9b72d9dfd5ba5237b9c906b # v3.0.0
-        with:
-          version: "25.3"
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-      - run: protoc --version
       - run: pulumi login --local
       - name: Cache Pulumi providers
         uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
@@ -190,12 +172,6 @@ jobs:
         with:
           go-version: '^1.22.0'
           cache-dependency-path: "**/go.sum"
-      - name: Install Protoc
-        uses: arduino/setup-protoc@c65c819552d16ad3c9b72d9dfd5ba5237b9c906b # v3.0.0
-        with:
-          version: "25.3"
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-      - run: protoc --version
       - name: Cache Pulumi providers
         uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
         with:
@@ -244,12 +220,6 @@ jobs:
           go-version: '^1.22.0'
           cache-dependency-path: "**/go.sum"
       - run: go version
-      - name: Install Protoc
-        uses: arduino/setup-protoc@c65c819552d16ad3c9b72d9dfd5ba5237b9c906b # v3.0.0
-        with:
-          version: "25.3"
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-      - run: protoc --version
       - name: Install requirements
         run: just install-requirements
         env:
@@ -287,12 +257,6 @@ jobs:
         with:
           go-version: '^1.22.0'
           cache-dependency-path: "**/go.sum"
-      - name: Install Protoc
-        uses: arduino/setup-protoc@c65c819552d16ad3c9b72d9dfd5ba5237b9c906b # v3.0.0
-        with:
-          version: "25.3"
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-      - run: protoc --version
       - run: just c-ci-flow
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -333,12 +297,6 @@ jobs:
           timeout_minutes: 10
           max_attempts: 10
           command: docker pull public.ecr.aws/ubuntu/ubuntu:latest
-      - name: Install Protoc
-        uses: arduino/setup-protoc@c65c819552d16ad3c9b72d9dfd5ba5237b9c906b # v3.0.0
-        with:
-          version: "25.3"
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-      - run: protoc --version
       - run: just native-ci-flow
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
