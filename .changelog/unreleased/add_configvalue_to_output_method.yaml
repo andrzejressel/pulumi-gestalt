@@ -1,5 +1,4 @@
 type: Added
 title: Add to_output method to ConfigValue<Output<String>>
 description: |
-  Added a convenience method to convert ConfigValue<Output<String>> to Output<String>,
-  handling both PlainText and Secret variants uniformly.
+  Added a convenience method to convert ConfigValue<Output<String>> to Output<String>
