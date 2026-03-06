@@ -81,6 +81,13 @@ pub struct Resource {
     pub output_properties: Vec<OutputProperty>,
 }
 
+#[derive(Debug, Default, PartialEq, Hash, Ord, PartialOrd, Eq)]
+pub struct Provider {
+    pub description: Option<String>,
+    pub input_properties: Vec<InputProperty>,
+    pub output_properties: Vec<OutputProperty>,
+}
+
 #[derive(Debug, PartialEq, Hash, Ord, PartialOrd, Eq)]
 pub struct Function {
     pub element_id: ElementId,
@@ -96,6 +103,7 @@ pub struct Package {
     pub display_name: Option<String>,
     pub plugin_download_url: Option<String>,
     pub version: String,
+    pub provider: Provider,
     pub resources: BTreeMap<ElementId, Rc<Resource>>,
     pub functions: BTreeMap<ElementId, Rc<Function>>,
     pub types: BTreeMap<ElementId, Rc<GlobalType>>,
@@ -111,6 +119,7 @@ impl Package {
         display_name: Option<String>,
         plugin_download_url: Option<String>,
         version: String,
+        provider: Provider,
         resources: BTreeMap<ElementId, Resource>,
         functions: BTreeMap<ElementId, Function>,
         types: BTreeMap<ElementId, GlobalType>,
@@ -154,6 +163,7 @@ impl Package {
             display_name,
             version,
             plugin_download_url,
+            provider,
             resources: new_resources,
             functions: new_function,
             types: new_types.clone(),

@@ -1,6 +1,6 @@
 use anyhow::{Context, Result};
 use pulumi_gestalt_proto::pulumi_gestalt::pulumi_model as pulumi;
-use pulumi_gestalt_schema::model::*;
+use pulumi_gestalt_schema::model::{self, *};
 #[cfg(test)]
 use std::collections::BTreeMap;
 use std::rc::Rc;
@@ -27,6 +27,8 @@ pub fn package_to_proto(package: &Package) -> Result<pulumi::Package> {
         })
         .collect::<Result<Vec<_>>>()?;
 
+    let provider = Some(provider_to_proto(&package.provider)?);
+
     let proto_package = pulumi::Package {
         name: package.name.clone(),
         display_name: package.display_name.clone(),
@@ -35,6 +37,7 @@ pub fn package_to_proto(package: &Package) -> Result<pulumi::Package> {
         resources,
         functions,
         types,
+        provider,
     };
 
     Ok(proto_package)
@@ -71,12 +74,21 @@ pub fn proto_to_package(proto: &pulumi::Package) -> Result<Package> {
         types.insert(id, global_type);
     }
 
+    let provider = proto
+        .provider
+        .as_ref()
+        .map(proto_to_provider)
+        .transpose()
+        .context("Failed to convert proto provider")?
+        .unwrap_or_default();
+
     // Create the package
     Ok(Package::new(
         proto.name.clone(),
         proto.display_name.clone(),
         proto.plugin_download_url.clone(),
         proto.version.clone(),
+        provider,
         resources,
         functions,
         types,
@@ -84,6 +96,43 @@ pub fn proto_to_package(proto: &pulumi::Package) -> Result<Package> {
 }
 
 // Helper functions for converting between Rust and protobuf types
+
+fn provider_to_proto(provider: &model::Provider) -> Result<pulumi::Provider> {
+    let mut input_properties = Vec::new();
+    for prop in &provider.input_properties {
+        input_properties.push(input_property_to_proto(prop)?);
+    }
+
+    let mut output_properties = Vec::new();
+    for prop in &provider.output_properties {
+        output_properties.push(output_property_to_proto(prop)?);
+    }
+
+    Ok(pulumi::Provider {
+        description: provider.description.clone(),
+        input_properties,
+        output_properties,
+    })
+}
+
+#[cfg(test)]
+fn proto_to_provider(proto: &pulumi::Provider) -> Result<model::Provider> {
+    let mut input_properties = Vec::new();
+    for prop in &proto.input_properties {
+        input_properties.push(proto_to_input_property(prop)?);
+    }
+
+    let mut output_properties = Vec::new();
+    for prop in &proto.output_properties {
+        output_properties.push(proto_to_output_property(prop)?);
+    }
+
+    Ok(model::Provider {
+        description: proto.description.clone(),
+        input_properties,
+        output_properties,
+    })
+}
 
 fn resource_to_proto(resource: &Rc<Resource>) -> Result<pulumi::Resource> {
     let mut input_properties = Vec::new();

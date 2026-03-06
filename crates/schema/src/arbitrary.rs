@@ -43,6 +43,7 @@ impl Arbitrary for model::Package {
             prop::option::of(string_strategy()),
             prop::option::of(string_strategy()),
             string_strategy(),
+            any::<Provider>(),
             vec_strategy::<Resource>(),
             vec_strategy::<Function>(),
             vec_strategy::<GlobalType>(),
@@ -53,6 +54,7 @@ impl Arbitrary for model::Package {
                     display_name,
                     plugin_download_url,
                     version,
+                    provider,
                     resources,
                     functions,
                     types,
@@ -77,10 +79,32 @@ impl Arbitrary for model::Package {
                         display_name,
                         plugin_download_url,
                         version,
+                        provider,
                         resource_name_map,
                         function_name_map,
                         types_map,
                     )
+                },
+            )
+            .boxed()
+    }
+}
+
+impl Arbitrary for Provider {
+    type Parameters = ();
+    type Strategy = BoxedStrategy<Self>;
+
+    fn arbitrary_with(_args: Self::Parameters) -> Self::Strategy {
+        (
+            prop::option::of(string_strategy()),
+            vec_strategy::<InputProperty>(),
+            vec_strategy::<OutputProperty>(),
+        )
+            .prop_map(
+                |(description, input_properties, output_properties)| Provider {
+                    description,
+                    input_properties,
+                    output_properties,
                 },
             )
             .boxed()
