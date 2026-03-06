@@ -119,28 +119,7 @@ impl Package {
         display_name: Option<String>,
         plugin_download_url: Option<String>,
         version: String,
-        resources: BTreeMap<ElementId, Resource>,
-        functions: BTreeMap<ElementId, Function>,
-        types: BTreeMap<ElementId, GlobalType>,
-    ) -> Self {
-        Self::new_with_provider(
-            name,
-            display_name,
-            plugin_download_url,
-            version,
-            None,
-            resources,
-            functions,
-            types,
-        )
-    }
-
-    pub fn new_with_provider(
-        name: String,
-        display_name: Option<String>,
-        plugin_download_url: Option<String>,
-        version: String,
-        provider: Option<Provider>,
+        provider: Provider,
         resources: BTreeMap<ElementId, Resource>,
         functions: BTreeMap<ElementId, Function>,
         types: BTreeMap<ElementId, GlobalType>,
@@ -178,8 +157,6 @@ impl Package {
             let rc = Rc::new(t);
             new_types.insert(element_id.clone(), rc.clone());
         }
-
-        let provider = provider.unwrap_or_default();
 
         Self {
             name,

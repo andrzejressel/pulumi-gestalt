@@ -341,9 +341,7 @@ fn provider_to_model(provider: Option<&Resource>) -> Result<Provider> {
 
     Ok(Provider {
         description: provider.object_type.description.clone(),
-        input_properties: convert_input_property_object_type(
-            &provider.object_type,
-        )?,
+        input_properties: convert_input_property_object_type(&provider.object_type)?,
         output_properties: convert_output_property_object_type_without_forced(
             &provider.object_type,
         )?,
@@ -443,12 +441,12 @@ pub(crate) fn to_model(package: &Package) -> Result<crate::model::Package> {
         })
         .collect::<Result<BTreeMap<_, _>>>()
         .context("Cannot handle types")?;
-    Ok(crate::model::Package::new_with_provider(
+    Ok(crate::model::Package::new(
         package.name.clone(),
         package.display_name.clone(),
         package.plugin_download_url.clone(),
         package.version.clone().unwrap_or("0.0.1".to_string()),
-        Some(provider),
+        provider,
         resources,
         functions,
         types,
