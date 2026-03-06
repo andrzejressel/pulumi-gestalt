@@ -1,112 +1,64 @@
 # Agent Instructions for `rust_integration`
 
-## Overview
+## Purpose
 
-The `pulumi_gestalt_rust_integration` crate provides **Rust helper functions for Pulumi Gestalt** - a high-level async API for integrating with Pulumi's infrastructure platform.
+The `rust_integration` crate provides **mid-level Rust integration with the Pulumi engine**. It sits between the low-level `core` engine and the high-level `rust` API, offering async-first functions for creating resources and managing execution.
 
-**Description:** Rust helper functions for Pulumi Gestalt
+**What it does:** Async Rust API for Pulumi integration, managing the engine lifecycle and resource operations.
 
-## Key Modules
+## Architecture Concepts
 
-### `engine.rs` - Core Integration
+### Context as Central Manager
+The `Context` type encapsulates everything needed to run a Pulumi program:
+- Connection to Pulumi runtime (via gRPC connector)
+- The execution engine
+- Configuration
+- Async runtime coordination
 
-**Core Types:**
-- `Context<T>` - Central struct managing Pulumi execution context
-- `Output<T>` - Asynchronous value in the resource graph
-- `RegisterResourceOutput<T>` - Output from resource registration
-- `ConfigValue<T>` - Configuration values (PlainText or Secret)
-
-**Context Methods:**
-- `new()` - Creates context by reading Pulumi environment variables
-- `add_output()` - Exports output for stack output
-- `register_resource()` - Creates infrastructure resources
-- `invoke_resource()` - Calls resource functions/data sources
-- `create_native_function_node()` - Creates transformation node
-- `create_combine_outputs()` - Combines multiple outputs
-- `get_config_value()` - Retrieves configuration values
-- `finish()` - Processes pending function requests
-
-### `finish.rs` - Execution Utility
-- `finish_lambdas_sequentially()` - Main execution loop
-- Polls engine for pending requests
-- Executes them sequentially
-- Continues until all work completes
-
-### `lib.rs` - Public API
-- `get_schema()` - Retrieves provider schema from Pulumi registry
-
-## Integration Patterns
-
-### Basic Resource Creation
-```rust
-let ctx = Context::new().await;
-let output = ctx.create_output(json!(16), false);
-
-let req = RegisterResourceRequest {
-    r#type: "random:index/randomString:RandomString".to_string(),
-    name: "my_resource".to_string(),
-    version: "4.15.1".to_string(),
-    inputs: HashMap::from([("length".into(), output)]),
-};
-
-let result = ctx.register_resource(req).await;
-```
-
-### Output Transformations
-```rust
-let doubled = output.map(Box::new(|v| {
-    let i = v.as_i64().unwrap();
-    (i * 2).into()
-})).await;
-```
-
-### Program Lifecycle
-```rust
-#[tokio::main]
-async fn main() {
-    let ctx = Context::new().await;
-    // Define resources
-    generate_resources(&ctx).await;
-    // Process all pending work
-    finish_lambdas_sequentially(&ctx).await;
-}
-```
-
-## Dependencies
-
-**Key Dependencies:**
-- `pulumi_gestalt_core` - Low-level engine
-- `pulumi_gestalt_domain` - Domain types
-- `pulumi_gestalt_grpc_connection` - gRPC bridge
-- `pulumi_gestalt_schema` - Schema fetching
-- `tokio` - Async runtime (1.45.0+)
-- `futures` - Async utilities
-- `serde_json` - JSON handling
-- `anyhow` - Error handling
-
-## Special Considerations
+Programs create a context, use it to define resources, then call `finish()` to execute everything.
 
 ### Async-First Design
-- All operations are async, require tokio runtime
-- Use `#[tokio::main]` for entry points
+Everything is async. Resource creation returns immediately with an `Output<T>`, and the actual work happens when you call `finish_lambdas_sequentially()`. This allows:
+- Defining all resources upfront
+- Parallel execution where possible
+- Proper dependency ordering
 
-### Environment Variables
-Required environment variables (set by Pulumi CLI):
-- `PULUMI_ENGINE` - gRPC endpoint for engine
-- `PULUMI_MONITOR` - gRPC endpoint for monitor
-- `PULUMI_STACK` - Current stack name
-- `PULUMI_PROJECT` - Current project name
-- `PULUMI_DRY_RUN` - Preview mode flag
+### Output Transformations
+The `Output<T>` type supports transformations (map, combine, extract fields). This crate provides the machinery to create these transformations and execute them when the engine runs.
 
-### Generic Type Parameter
-- `T` represents function context type
-- For simple programs, use `Box<dyn Fn(Value) -> Value>`
+### Environment-Driven Configuration
+The context reads Pulumi environment variables automatically. This means programs don't need command-line arguments or config files - they just work when run by Pulumi.
 
-### Arc<Mutex> Wrapping
-- Engine wrapped in `Arc<Mutex>` for shared ownership
-- Thread-safe concurrent access
-- Synchronization overhead to consider
+## Key Concepts
 
-### Secret Handling
-- Configuration distinguishes plaintext and secret types
-- Always use `ConfigValue::Secret` for sensitive data
+- **Context**: Main manager for a Pulumi program's execution
+- **Output<T>**: Async value that can be transformed and combined
+- **finish_lambdas_sequentially**: The execution loop that actually runs everything
+- **Environment variables**: PULUMI_ENGINE, PULUMI_MONITOR, etc. configure connections
+- **ConfigValue**: Distinguishes plain text from secret configuration
+
+## When to Modify
+
+Modify this crate when:
+- Adding new operations to the integration layer
+- Changing how the engine lifecycle is managed
+- Modifying the async execution model
+- Adding convenience methods for common patterns
+- Supporting new Pulumi runtime features
+
+## Testing Philosophy
+
+Tests verify the integration layer works correctly:
+- Context creation from environment
+- Resource registration flows through to engine
+- Configuration loading works
+- Outputs can be created and transformed
+
+Most complex logic is in `core`, so these tests focus on the integration glue.
+
+## Integration Points
+
+- **Wraps `core`**: Uses the execution engine internally
+- **Uses `grpc`**: Connects to Pulumi runtime via gRPC
+- **Wrapped by `rust`**: The high-level API builds on this
+- **Used by `c_ffi`**: The C FFI uses this for its implementation

@@ -1,116 +1,58 @@
 # Agent Instructions for `rust_generator`
 
-## Overview
+## Purpose
 
-The `rust_generator` crate (`pulumi_gestalt_generator`) is the **Pulumi Gestalt Codegen library** - a sophisticated code generation system that transforms Pulumi provider schemas into idiomatic Rust code.
+The `rust_generator` crate **generates idiomatic Rust code from Pulumi provider schemas**. It's the bridge that transforms a provider's JSON schema into type-safe Rust APIs that developers can use in their infrastructure code.
 
-**Description:** Pulumi Gestalt Codegen library
+**What it does:** Reads provider schemas and outputs complete Rust crates with resources, functions, and types.
 
-## Key Modules
+## Architecture Concepts
 
-### `lib.rs` - Entry Point
-- `generate_rust(package, result_path)` - Main code generation function
+### Code Generation Philosophy
+The generator produces Rust code that feels native - using `Option<T>` for optional fields, `Vec<T>` for arrays, builder patterns for complex construction, and proper documentation. It doesn't just wrap the provider API; it makes it idiomatic Rust.
 
-### `code_generation/` - Example Code
-- Converts YAML examples to Rust code
-- Used for documentation generation
+### Template-Based Generation
+The crate uses two templating approaches:
+- **Handlebars templates** for repetitive patterns (resources, functions, types)
+- **Askama templates** for more complex logic (main library file)
 
-### `model.rs` - Schema Extensions
-Trait extensions for schema types:
-- `TypeExt` - Maps schema types to Rust types
-- `ElementIdExt` - Converts names to Rust identifiers
-- `InputPropertyExt/OutputPropertyExt` - Property conversions
+This separation allows easy modification of generated code structure without touching the core logic.
 
-### `description.rs` - Documentation Processing
-- State machine for processing Markdown/HTML documentation
-- Converts YAML examples to Rust examples
-- Handles code blocks in multiple languages
+### Type System Mapping
+Pulumi schemas describe types in provider-specific ways. The generator maps these to appropriate Rust types (primitives to primitives, arrays to `Vec`, objects to structs, unions to enums). It handles special cases like discriminated unions, constant string types, and cyclic type references.
 
-### `output/` - Code Generation
-Largest module - generates final Rust code:
-- `functions/` - Function generation with Handlebars templates
-- `resources/` - Resource generation with Handlebars templates
-- `types/` - Type definitions (objects, enums)
-- `main.rs` - Main library entry point generation
+### Provider Validation
+The crate includes 100+ tests that generate code for real providers (AWS, Azure, GCP, Kubernetes, etc.). This validates that the generator handles the full diversity of schema patterns in the Pulumi ecosystem.
 
-### `utils.rs` - Helper Functions
-- `escape_rust_name()` - Escapes Rust keywords
-- `sanitize_rust_identifier()` - Converts to valid identifiers
-- `reformat_code()` - Formats Rust code using syn/prettyplease
+## Key Concepts
 
-## Type System Mapping
+- **Schema → Rust mapping**: Transforming provider types to idiomatic Rust
+- **Builder pattern**: All complex types get builder-based construction
+- **Handlebars templates**: Define structure of generated code
+- **Code formatting**: Generated code is properly formatted and readable
+- **Documentation conversion**: Schema docs → Rust doc comments, YAML examples → Rust examples
 
-| Pulumi Type | Rust Type |
-|-------------|-----------|
-| Boolean | `bool` |
-| Integer | `i32` |
-| Number | `f64` |
-| String | `String` |
-| Array<T> | `Vec<T>` |
-| Object<K,V> | `HashMap<String, V>` |
-| Option<T> | `Option<T>` |
-| Ref(Type) | `types::TypeName` |
-| DiscriminatedUnion | `OneOf{N}<T1, T2, ...>` |
-| ConstString | `ConstString{NAME}` |
+## When to Modify
 
-## Code Generation Pipeline
+Modify this crate when:
+- Adding support for new Pulumi schema features
+- Changing the structure or style of generated code
+- Fixing code generation bugs for specific providers
+- Improving documentation or example generation
+- Updating to new Rust idioms or patterns
 
-```
-Pulumi Package Schema (JSON)
-    ↓
-Parse/Deserialize (pulumi_gestalt_schema)
-    ↓
-Generate Combined Code:
-    ├── Functions → function_*.rs
-    ├── Resources → resource_*.rs
-    ├── Types → type_*.rs
-    └── Main → main.rs (with includes)
-    ↓
-Output Rust Provider Crate
-```
+## Testing Philosophy
 
-## Testing
+The test suite generates code for 100+ provider schemas and verifies:
+- Generated code compiles successfully
+- Output is deterministic (same input produces same output)
+- All provider schema patterns are handled
+- Edge cases like cyclic types work correctly
 
-**Test Infrastructure:**
-- 100+ feature-gated tests with real provider schemas
-- Property-based testing using proptest
-- Tests organized in `tests/` directory
+Tests are feature-gated - run specific providers or all of them.
 
-**Test Providers:**
-- AWS (22 partitions), Azure (13 partitions), GCP (13 partitions)
-- Cloudflare, Docker, Random, Kubernetes, etc.
+## Integration Points
 
-## Dependencies
-
-**Code Generation:**
-- `handlebars` - Template engine for resources/functions/types
-- `askama` - Template engine for main.rs (Jinja2-like)
-- `syn` & `quote` - AST parsing and code generation
-- `prettyplease` - Rust code formatting
-
-**Schema Processing:**
-- `serde` & `serde_json` - Serialization
-- `pulumi_gestalt_schema` - Schema definitions
-
-**String Processing:**
-- `convert_case` - Case conversion (Snake, Pascal, etc.)
-- `regex` - Pattern matching
-- `itertools` - Iterator utilities
-
-## Special Considerations
-
-### Generated Code Characteristics
-- Uses `bon` builder pattern for all Args structures
-- Handles cyclic types via Box wrapping
-- Escapes 60+ Rust keywords automatically
-- Deterministic output (UNIX_EPOCH timestamps)
-
-### Development Workflow
-1. Modify TypeExt trait for new type handling
-2. Update Handlebars templates for output changes
-3. Run tests to verify against all providers
-
-### Debugging
-- Generated code stored in `tests/output/<provider>/src/generated/`
-- Compare against expected outputs
-- Use `reformat_code()` for syntax validation
+- **Depends on `schema`**: Reads parsed provider schemas
+- **Used by `rust_build`**: Provides the generation API for build scripts
+- **Generates code for**: Developers using Pulumi Gestalt with Rust

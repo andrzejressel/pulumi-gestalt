@@ -1,96 +1,55 @@
 # Agent Instructions for `serde_constant_string`
 
-## Overview
+## Purpose
 
-This crate provides a procedural macro for generating constant string types that integrate with Serde serialization and deserialization, enabling type-safe enforcement of specific string values.
+The `serde_constant_string` crate provides a **procedural macro for type-safe constant strings**. It creates zero-sized types that serialize to a specific string value and only deserialize from that exact value.
 
-**Description:** Const string values for serde
+**What it does:** Generates types that enforce string constants in serde serialization/deserialization.
 
-## Main Macro
+## Architecture Concepts
 
-### `generate_string_const!`
+### Type-Safe String Constants
+Sometimes you need a field that must always have a specific string value (like type discriminators in JSON). Instead of using `String` and checking at runtime, this macro creates a type that enforces the value at compile time.
 
-**Syntax:**
-```rust
-generate_string_const!(StructName, "constant_value");
-```
+### Zero-Cost Abstraction
+The generated types are zero-sized - they take no memory at runtime. The constant string is embedded in the type itself, not stored in each instance. This means you get type safety without any runtime cost.
 
-**Generates:**
-- Zero-sized struct
-- `Serialize` - Always serializes to the constant string
-- `Deserialize` - Only accepts the exact constant string
-- Derives: `Debug`, `PartialEq`, `Eq`, `Copy`, `Clone`, `Hash`, `Default`
+### Serde Integration
+The macro generates proper `Serialize` and `Deserialize` implementations:
+- Serialization always outputs the constant string
+- Deserialization succeeds only if the input matches exactly
+- Clear error messages when deserialization fails
 
-**Example:**
-```rust
-use pulumi_gestalt_serde_constant_string::generate_string_const;
-generate_string_const!(ObjectType, "object");
+### Use in Discriminated Unions
+Perfect for `#[serde(untagged)]` enums where you need to distinguish variants by a constant field value. Each variant gets its own type for the discriminator field.
 
-#[derive(Serialize, Deserialize)]
-struct Schema {
-    #[serde(rename = "type")]
-    schema_type: ObjectType,
-}
-```
+## Key Concepts
 
-## Usage
+- **generate_string_const!** macro: Creates a zero-sized type for a constant string
+- **Zero-sized type**: No memory overhead, pure type safety
+- **Compile-time enforcement**: Wrong values cause compilation errors, not runtime errors
+- **Serde integration**: Seamless serialization/deserialization
 
-### Schema Discrimination
-Useful for discriminating union types:
-```rust
-generate_string_const!(ObjectType, "object");
-generate_string_const!(ArrayType, "array");
+## When to Modify
 
-#[derive(Deserialize)]
-#[serde(untagged)]
-enum Schema {
-    Object(ObjectSchema),  // Has type: ObjectType
-    Array(ArraySchema),     // Has type: ArrayType
-}
-```
+Modify this crate when:
+- Changing the generated code structure
+- Adding new derive traits or implementations
+- Improving error messages
+- Supporting new serde features
 
-## Testing
+This is a small, stable crate that rarely needs changes.
 
-Comprehensive tests cover:
-- Serialization to exact constant
-- Successful deserialization with matching string
-- Deserialization failure with non-matching strings
-- Clear error messages
+## Testing Philosophy
 
-## Dependencies
+Tests verify the generated code works correctly:
+- Serializes to the exact constant
+- Deserializes successfully from matching strings
+- Rejects non-matching strings with clear errors
+- Zero-sized property (compile-time check)
 
-- `serde` - Serialization framework
-- `serde_json` (dev) - JSON support for tests
+## Integration Points
 
-## Special Considerations
-
-### Zero-Sized Type Optimization
-- No runtime memory overhead
-- No heap allocation
-- Safe to copy without performance concerns
-
-### Case Sensitivity
-- String matching is case-sensitive
-- `"Object"` ≠ `"object"`
-
-### Type Uniqueness
-- Each macro call creates a distinct type
-- Different types cannot be assigned to each other, even with same value
-
-### Error Messages
-Deserialization failures provide clear messages:
-```
-invalid value: string `"unexpected"`, expected the string 'constant_value'
-```
-
-### Performance
-- Serialization: O(1) - writes constant directly
-- Deserialization: O(n) - compares input string
-- Memory: 0 bytes per instance
-
-## Related Crates
-
-Used by:
-- `pulumi_gestalt_schema` - For type discriminators
-- `pulumi_gestalt_rust_generator` - For generated SDK code
-- `pulumi_gestalt_rust` - Exported via `__private` for SDK consumers
+- **Used by `schema`**: For type discriminators in schema model
+- **Used by `rust_generator`**: Generated code uses these types
+- **Re-exported by `rust`**: Available to Pulumi programs

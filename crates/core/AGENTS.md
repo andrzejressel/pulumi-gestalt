@@ -1,190 +1,56 @@
 # Agent Instructions for `core`
 
-## Overview
+## Purpose
 
-The `pulumi_gestalt_core` crate provides the **execution engine** for Pulumi Gestalt. It orchestrates the creation and management of cloud infrastructure through an async computation graph model, bridging language-specific resource definitions with Pulumi's runtime infrastructure.
+The `core` crate is the **execution engine** that orchestrates infrastructure-as-code programs. It manages the async computation graph that represents resources, data sources, and transformations, coordinating their execution and reporting results to the Pulumi runtime.
 
-**Description:** Core Pulumi Gestalt implementation
+**What it does:** Provides the event loop and async task orchestration for executing Pulumi programs written in any language.
 
-## Architecture
+## Architecture Concepts
 
-### Design Pattern
-Event-driven async engine coordinating concurrent operations:
-- Resources created as async futures resolving to outputs
-- Functions invoked asynchronously with context-specific callbacks
-- Output values tracked and reported to Pulumi
-- Task orchestration via event loop
+### Event-Driven Async Model
+Programs are expressed as directed acyclic graphs of async computations. The engine schedules and executes these computations concurrently, handling dependencies automatically. Language-specific code creates nodes (resources, invocations, transformations), and the engine resolves them in dependency order.
 
-### Execution Model
-1. Users create computation nodes (resources, functions, etc.)
-2. Each node returns `Output<T>` - a shared, cloneable async future
-3. `Engine::run()` processes events (completed tasks, pending function requests)
-4. Native functions invoked with context and data, results flow back
-5. Final outputs collected and reported to Pulumi runtime
+### Output Values
+Everything is an `Output<T>` - a shared, lazy async future. This allows multiple parts of the program to depend on the same resource field without duplicating work. Outputs can be transformed, combined, and extracted from, building up the computation graph.
 
-## Key Modules
+### Two-Way Communication
+The engine runs a loop that:
+1. Executes pending async tasks (resource creation, provider invocations)
+2. Yields control back to the language runtime when custom transformations are needed
+3. Receives transformation results and continues execution
+4. Completes when all outputs are resolved
 
-### `engine.rs` - Core Orchestration Engine
+This design enables any programming language to integrate with Pulumi Gestalt - they just need to implement the transformation callback mechanism.
 
-Main orchestrator managing the async computation graph and event loop.
+### Configuration & Secrets
+Configuration is loaded from environment variables at startup. Secret values are wrapped in outputs to defer their evaluation, and the secret flag propagates through the computation graph automatically. This ensures sensitive data is handled correctly throughout the program lifecycle.
 
-**Key Types:**
-- `Engine<FunctionContext>` - Generic over user-defined context type
-- `Output<T>` - Shared async future wrapper
-- `NativeFunctionRequest<FunctionContext>` - Callback requests
-- `ConfigValue` - Enum for plain text or secret config values
+## Key Components
 
-**Key Methods:**
-- `new(pulumi, config)` - Initialize with connector and configuration
-- `add_output()` - Register top-level output for final reporting
-- `create_register_resource_node()` - Queue resource creation
-- `create_resource_invoke_node()` - Queue resource invocation
-- `create_native_function_node()` - Create transformation with callback
-- `create_combine_outputs()` - Merge multiple outputs into array
-- `create_extract_field()` - Extract field from resource output
-- `run()` - Main event loop (async) - returns pending requests or None
+- **Engine**: The main orchestrator managing the event loop and computation graph
+- **Output**: Lazy async values that can be cloned, transformed, and combined
+- **Config**: Configuration loader with secret-aware value handling
+- **Preview Mode**: Support for dry-run mode where some values don't exist yet
 
-**Implementation:**
-- Uses `FuturesUnordered` for concurrent task execution
-- Channels for native function request queueing
-- Atomic flags for single-execution guarantees
-- `futures::select!` for event multiplexing
+## When to Modify
 
-### `config.rs` - Configuration Management
+Modify this crate when changing:
+- How async computations are scheduled and executed
+- Output value semantics and transformation behavior
+- The contract between the engine and language runtimes
+- Configuration loading or secret propagation logic
 
-Loads and provides access to Pulumi configuration.
+## Testing Philosophy
 
-**Key Types:**
-- `Config` - Configuration container
+Tests use mock Pulumi connectors to verify:
+- Computation graph execution order is correct
+- Secrets propagate through transformations properly
+- Preview mode handles missing values correctly
+- The engine properly coordinates with language callbacks
 
-**Methods:**
-- `from_env_vars()` - Load from environment (recommended)
-- `get(namespace, key)` - Retrieve value (namespace defaults to project)
+## Integration Points
 
-**Environment Variables:**
-- `PULUMI_CONFIG` - JSON object of config values
-- `PULUMI_CONFIG_SECRET_KEYS` - JSON array of secret keys
-- `PULUMI_PROJECT` - Project name (default namespace)
-
-**Concepts:**
-- Keys follow format: `{namespace}:{key}` (e.g., `aws:region`)
-- Secrets wrapped in `Output<String>` for deferred evaluation
-
-### `model.rs` - Domain Types
-
-Lightweight type definitions:
-- `FunctionName` - Newtype wrapper around String for type safety
-
-## Important Types
-
-### Output Types
-```rust
-pub type RawOutput = Output<NodeValue>;
-pub type RegisterResourceOutput = Output<Arc<ResourceFields>>;
-pub struct Output<T> { value: Shared<BoxFuture<'static, T>> }
-```
-
-**Properties:**
-- Cloneable (multiple consumers of same async result)
-- Generic over result type T
-- Lazy evaluation (futures execute in event loop)
-
-### Configuration Types
-```rust
-pub enum ConfigValue {
-    PlainText(String),
-    Secret(RawOutput),
-}
-```
-
-## Testing Approaches
-
-Comprehensive test coverage using:
-- `mockall::MockPulumiConnector` - Mock Pulumi connector
-- `tokio::test` - Async test support
-- `static_assertions` - Compile-time trait verification
-
-**Test Areas:**
-- Output registration and reporting
-- Function transformation node behavior
-- Array combination with secrets and Nothing values
-- Configuration retrieval (plain text, secrets, namespaces)
-
-## Dependencies
-
-**Production:**
-- `futures` - Async primitives (select, FuturesUnordered, BoxFuture, Shared)
-- `anyhow` - Error handling
-- `uuid` - Unique identifiers (v7)
-- `serde_json` - JSON value handling
-- `pulumi_gestalt_domain` - Core types and connector trait
-
-**Development:**
-- `mockall` - Mock trait generation
-- `tokio` - Async runtime for tests
-- `static_assertions` - Compile-time assertions
-
-## Special Considerations
-
-### Async Execution Model
-- `Engine::run()` IS the event loop
-- Callers must repeatedly invoke `run()` until it returns `None`
-- Between calls, handle returned function requests
-- Enables language-specific runtime integration
-
-### Ownership and Cloning
-- `Output<T>` uses `Shared<BoxFuture>` for multiple ownership
-- All clones share same underlying future (computed once)
-- Safe to pass to different threads (Arc-based)
-
-### Context Type Parameter
-- `Engine<FunctionContext>` allows arbitrary user context type
-- Context captured when creating function nodes via UUID
-- Retrieved and returned when function invoked
-- Enables language-specific callback patterns
-
-### Secret Handling
-- Secrets marked at config load time
-- Secret flag propagates through computation graph
-- Output array is secret if ANY input is secret
-- Secrets remain JSON values - encryption by Pulumi runtime
-
-### Preview Mode Support
-- `NodeValue::Nothing` represents preview-mode missing values
-- Any combine touching `Nothing` returns `Nothing`
-- Proper handling of uncertain preview values
-
-### Thread Safety
-- `Engine<T>` is Send + Sync (verified by static assertions)
-- Can be wrapped in Arc and shared across threads
-- Interior mutability via Mutex protects internal state
-
-## Usage Patterns
-
-### Basic Resource Creation
-```rust
-let resource_output = engine.create_register_resource_node(
-    "aws:s3/bucket:Bucket".to_string(),
-    "my-bucket".to_string(),
-    inputs_map,
-    "4.0.0".to_string()
-);
-```
-
-### Main Loop
-```rust
-loop {
-    match engine.run().await {
-        Some(request) => {
-            let result = invoke_user_function(&request.context, &request.data);
-            request.return_mailbox.send(result)?;
-        }
-        None => break,
-    }
-}
-```
-
-## Related Crates
-
-- `pulumi_gestalt_domain` - Domain types and Pulumi connector interface
-- Generated language bindings - Use this engine via public API
+- **Depends on `domain`**: Uses the `PulumiConnector` trait to communicate with Pulumi runtime
+- **Used by language SDKs**: C FFI, WASM runner, and native Rust APIs all build on this engine
+- **Coordinates with `grpc`**: The gRPC connector implements the Pulumi communication protocol

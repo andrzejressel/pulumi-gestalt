@@ -1,70 +1,58 @@
 # Agent Instructions for `schema_protobuf`
 
-## Overview
+## Purpose
 
-The `schema_protobuf` crate converts Pulumi schema models to and from Protocol Buffer format, acting as a bridge between the Pulumi schema representation and efficient binary serialization.
+The `schema_protobuf` crate **converts provider schemas to protobuf format**. This enables efficient binary serialization of schemas for transmission over FFI boundaries or network protocols.
 
-**Description:** Pulumi schema returned as protobuf
+**What it does:** Transforms in-memory schema models to protocol buffer binary format.
 
-## Public API
+## Architecture Concepts
 
-- `convert_to_protobuf(package: &Package) -> Result<Vec<u8>>` - Converts Package to binary protobuf
+### Binary Schema Transmission
+Sometimes you need to send a provider schema across a boundary where JSON isn't ideal:
+- C FFI (transferring to C/C++ code)
+- Network protocols
+- Efficient storage
 
-## Key Modules
+Protobuf provides a compact, versioned binary format that's faster and smaller than JSON.
 
-### `lib.rs` - Main Entry Point
-Public function wrapping converter module
+### One-Way Conversion
+The crate focuses on Rust → Protobuf conversion. The reverse conversion (Protobuf → Rust) exists only in tests to verify correctness. In production, schemas flow from the schema reader to protobuf, not back.
 
-### `converter.rs` - Core Conversion Logic
-**Main Functions:**
-- `package_to_proto()` - Converts Rust Package to protobuf
-- `proto_to_package()` - Reverse conversion (test-only)
-- Type converters for all schema elements
+### Round-Trip Testing
+The crate includes extensive tests with 90+ real provider schemas, verifying that:
+- Every schema element converts correctly
+- No data is lost in conversion
+- The reverse conversion matches the original (for test-only validation)
 
-**Type Mappings:**
-| Rust | Protobuf |
-|------|----------|
-| `Package` | `pulumi::Package` |
-| `Resource` / `Function` | `pulumi::Resource` / `Function` |
-| `Type` enum | `pulumi::Type` oneof |
-| `GlobalType` | `pulumi::GlobalType` |
+## Key Concepts
 
-## Testing
+- **convert_to_protobuf**: Main API that converts Package to binary bytes
+- **Round-trip verification**: Tests ensure lossless conversion
+- **Real provider testing**: Validates against actual AWS, Azure, GCP schemas
+- **Binary output**: Returns `Vec<u8>` for efficient transmission
 
-**Integration Tests:**
-- 90+ tests with real provider schemas
-- Property-based testing with proptest for round-trip verification
-- Providers: AWS (22 chunks), Azure (14 chunks), GCP (13 chunks)
+## When to Modify
 
-**Test Process:**
-1. Load schema file
-2. Deserialize to Rust Package
-3. Convert to protobuf
-4. Write binary to `tests/output/{provider}/package.pb`
-5. Verify against reference files
+Modify this crate when:
+- Schema model adds new type variants or fields
+- Protobuf schema definition changes
+- Need to optimize serialization performance
+- Adding new schema features that need protobuf representation
 
-## Dependencies
+## Testing Philosophy
 
-- `pulumi_gestalt_schema` - Rust schema model
-- `pulumi_gestalt_proto` (with `pulumi_gestalt` feature) - Protobuf bindings
-- `prost` - Protocol Buffer serialization
-- `anyhow` - Error handling
-- `proptest` (dev) - Property-based testing
+Testing is comprehensive with real providers:
+- Load real schema files
+- Convert to protobuf
+- Convert back to Rust (test-only)
+- Verify they match
+- Save binary output for reference
 
-## Special Considerations
+This catches any conversion bugs with real-world schema complexity.
 
-### Round-Trip Verification
-- Proto-to-model converters are test-only (`#[cfg(test)]`)
-- Crate is one-way (Rust → Proto) in production
-- Tests verify lossless conversion
+## Integration Points
 
-### Adding New Type Variants
-1. Add variant to `proto/pulumi_gestalt.proto` Type oneof
-2. Add case in `type_to_proto()` match
-3. Add case in `proto_to_type()` match (test-only)
-4. Add test case
-
-### Error Handling
-- Uses `anyhow::Result<T>` consistently
-- Add context at each conversion level
-- `.context("Failed to convert X to proto")` pattern
+- **Uses `schema`**: Converts its Package type
+- **Uses `proto`**: Outputs its protobuf types
+- **Used by `c_ffi`**: Provides schema to C clients via protobuf

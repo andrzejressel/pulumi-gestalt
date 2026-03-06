@@ -1,99 +1,55 @@
 # Agent Instructions for `rust`
 
-## Overview
+## Purpose
 
-The `pulumi_gestalt_rust` crate provides **UNOFFICIAL Rust Pulumi support** built on Pulumi Gestalt. It offers a high-level API that abstracts the complexity of the lower-level integration crate, making it easy for Rust developers to write infrastructure-as-code programs.
+The `rust` crate provides the **high-level Rust API for writing Pulumi programs**. It's designed for Rust developers who want a clean, idiomatic way to define infrastructure without dealing with the lower-level engine details.
 
-**Description:** UNOFFICIAL Rust Pulumi support based on Pulumi Gestalt
+**What it does:** Offers a friendly Rust API for infrastructure-as-code, wrapping the complexity of the engine and runtime.
 
-## Key Modules
+## Architecture Concepts
 
-### `lib.rs` - Main Entry Point
-- `run()` - Main entrypoint for executing Pulumi programs
-- `add_export()` - Exports outputs to stack outputs
-- `include_provider!()` macro - Loads generated provider code
+### Type-Safe Outputs
+Infrastructure resources are created asynchronously, and their properties aren't known until deployment. The `Output<T>` type captures this - it's a typed future value that you can transform, combine, and export. The type parameter ensures compile-time safety even for values that don't exist yet.
 
-### `native.rs` - Core Types
-- `Context` - Manages Pulumi execution context
-- `Output<T>` - Generic wrapper for Pulumi outputs with type safety
-- `CompositeOutput` - Resource outputs with field access
-- `ConfigValue<T>` - Configuration values (PlainText or Secret)
-- Request types: `RegisterResourceRequest`, `InvokeResourceRequest`
-
-### `macros.rs` - Convenience Macros
-- `pulumi_format!` - Creates formatted Output<String> from multiple outputs (up to 16 args)
-- `pulumi_combine!` - Combines multiple Output values into tuple Output (up to 16 args)
-- `ToOutput` trait - Helper for value conversion
-
-### `input_or_output.rs` - Flexible Input
-- `InputOrOutput<T>` enum - Allows either static values or Outputs
-- Used by generated provider code for flexible APIs
-
-### `oneof.rs` - Discriminated Unions
-- `OneOf2<A, B>`, `OneOf3<A, B, C>`, `OneOf4<A, B, C, D>` - Union types
-- Uses `#[serde(untagged)]` for untagged serialization
-
-## Public API
-
-**Entry Points:**
-```rust
-pulumi_gestalt_rust::run(|ctx| { ... })
-pulumi_gestalt_rust::add_export(name, &output)
-pulumi_gestalt_rust::include_provider!(provider_name)
-```
-
-**Core Types:**
-- `Context`, `Output<T>`, `CompositeOutput`, `ConfigValue<T>`
-- `RegisterResourceRequest`, `InvokeResourceRequest`
-- `InputOrOutput<T>`, `OneOf2/3/4`
-
-## Dependencies
-
-**Core:**
-- `anyhow` - Error handling
-- `serde` / `serde_json` - Serialization
-- `tokio` - Async runtime
-- `bon` - Builder pattern support
-- `pulumi_gestalt_rust_integration` - Lower-level runtime
-- `pulumi_gestalt_serde_constant_string` - Constant string support
-
-## Special Considerations
-
-### Type Safety
-- `Output<T>` provides compile-time type safety for async values
-- All values must implement `Serialize`
-
-### Async Runtime
-- Each `Context` manages its own `tokio` runtime
-- Outputs hold `Rc<Runtime>` for synchronous operations
-- Uses `block_on()` to bridge async/sync code
-
-### Macro Limitations
-- `pulumi_format!` and `pulumi_combine!` support max 16 arguments
-- Enforced at compile time
-
-### Secret Handling
-- `Context::new_secret()` marks values as sensitive
-- Configuration can return `ConfigValue::Secret` wrapping an Output
+### Context-Managed Execution
+The `Context` object manages the execution lifecycle. It owns the async runtime, tracks outputs, and coordinates with the Pulumi engine. Users create resources through the context, and the runtime handles all the async coordination automatically.
 
 ### Provider Integration
-- Use `include_provider!()` macro to include generated code
-- Generated from `pulumi_gestalt_build::generate(provider, version)`
+Generated provider code (from `rust_generator`) integrates seamlessly. The `include_provider!` macro brings in thousands of resource types with full type safety, builder patterns, and documentation - all generated from provider schemas.
 
-## Usage Example
+### Macro Convenience
+Infrastructure code often needs to combine multiple async values (format strings, combine outputs). The `pulumi_format!` and `pulumi_combine!` macros make this ergonomic, handling the async complexity behind simple syntax.
 
-```rust
-fn pulumi_main(context: &Context) -> Result<()> {
-    let length: Output<i32> = context.new_output(&12).map(|i: i32| i * 3);
+## Key Concepts
 
-    let random_string = random_string::create(
-        context,
-        "test",
-        RandomStringArgs::builder().length(length).build_struct(),
-    );
+- **Context**: The execution manager (create once per program)
+- **Output<T>**: Type-safe async values that can be transformed and combined
+- **CompositeOutput**: Resource results with field extraction
+- **ConfigValue**: Configuration that might be plain text or secret
+- **Macros**: `pulumi_format!`, `pulumi_combine!` for convenient async operations
+- **include_provider!**: Macro to include generated provider code
 
-    let formatted = pulumi_format!(&context, "Values: {}", random_string);
-    add_export("output", &formatted);
-    Ok(())
-}
-```
+## When to Modify
+
+Modify this crate when:
+- Adding new convenience features to the Rust API
+- Changing how outputs are created or transformed
+- Adding new macros for common patterns
+- Improving error messages or ergonomics
+- Supporting new Pulumi features at the API level
+
+## Testing Philosophy
+
+Tests focus on the developer experience:
+- Macros expand correctly
+- Output transformations work as expected
+- Type conversions are correct
+- Integration with generated provider code works
+
+The crate is thin wrapper over `rust_integration`, so most logic is tested there.
+
+## Integration Points
+
+- **Wraps `rust_integration`**: Uses the lower-level integration layer
+- **Used with generated providers**: Works with code from `rust_generator`
+- **Used by Rust developers**: The public API for writing Pulumi programs in Rust

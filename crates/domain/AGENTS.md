@@ -1,95 +1,56 @@
 # Agent Instructions for `domain`
 
-## Overview
+## Purpose
 
-The `pulumi_gestalt_domain` crate provides core domain models and abstractions for Pulumi Gestalt. It defines the foundational types, traits, and data structures that enable communication between the Pulumi runtime and Rust-based providers.
+The `domain` crate defines the **core abstractions and types** that form the contract between different parts of Pulumi Gestalt. It's the shared vocabulary that enables the execution engine, language SDKs, and Pulumi runtime to communicate.
 
-**Description:** Domain models and abstractions for Pulumi Gestalt
+**What it does:** Provides foundational types and the `PulumiConnector` trait that defines how to interact with the Pulumi runtime.
 
-## Key Modules
+## Architecture Concepts
 
-### 1. Core Types (`lib.rs`)
+### Type-Safe Field Management
+Resources in Pulumi have fields (properties), and those fields have values. This crate provides typed wrappers (`FieldName`, `NodeValue`, `ResourceFields`) that prevent common mistakes like mixing up field names with other strings or accessing nonexistent fields incorrectly.
 
-Provides type-safe wrappers and value representations for resource field management:
+### Preview vs Actual Execution
+Infrastructure-as-code programs can run in two modes:
+- **Preview mode**: A dry-run where you see what *would* happen (some values don't exist yet)
+- **Actual mode**: The real execution where resources are created
 
-- **`FieldName`** - Type-safe wrapper around `String` for field names
-  - Prevents accidental string misuse through strong typing
-  - Methods: `as_string()` (borrow), `get_inner()` (consume)
+The domain types model this difference explicitly. Missing fields behave differently in each mode, ensuring programs handle uncertainty correctly.
 
-- **`ExistingNodeValue`** - Represents an existing resource field value
-  - `value: Value` - The actual field value (serde_json)
-  - `secret: bool` - Indicates if the value is sensitive data
+### Connector Abstraction
+The `PulumiConnector` trait defines the operations needed to interact with Pulumi: register resources, invoke provider functions, and report outputs. This abstraction allows multiple implementations (gRPC for production, mocks for testing, etc.) without changing the core engine.
 
-- **`NodeValue`** - Enum representing field state in the computation graph
-  - `Nothing` - Field doesn't exist (used in preview mode)
-  - `Exists(ExistingNodeValue)` - Field has an actual value
+### Secret Tracking
+Some configuration values are sensitive (passwords, API keys). The domain types track which values are secrets so they can be handled appropriately throughout the system - never logged, always encrypted when persisted.
 
-- **`ResourceFields`** - Container for resource field data
-  - `object: HashMap<FieldName, ExistingNodeValue>` - Field values
-  - `is_in_preview: bool` - Whether in preview/dry-run mode
-  - `get_field_value()` - Returns `Nothing` in preview if missing, `Null` otherwise
+## Key Concepts
 
-### 2. Connector Interface (`connector.rs`)
+- **FieldName**: Type-safe wrapper preventing string confusion
+- **NodeValue**: Represents field states (exists with a value, or doesn't exist in preview)
+- **ResourceFields**: Container for all fields of a resource, with preview-aware field access
+- **PulumiConnector**: The async trait defining how to talk to Pulumi runtime
+- **Builder Pattern**: Request types use `bon` builders for clear, type-safe construction
 
-Defines the async trait and request/response types for Pulumi runtime interaction:
+## When to Modify
 
-- **`PulumiConnector`** - Core async trait (mockable with `test-utils` feature)
-  - `async fn register_resource()` - Create managed resources
-  - `async fn resource_invoke()` - Call resource methods
-  - `async fn register_outputs()` - Register final stack outputs
+Modify this crate when:
+- Adding new operations that need to communicate with Pulumi runtime
+- Changing the contract between engine and runtime
+- Adding new domain concepts that multiple crates need to understand
+- Modifying how preview mode or secrets are represented
 
-- **Request/Response Types** - Built with `bon::Builder` pattern:
-  - `RegisterResourceRequest` / `RegisterResourceResult`
-  - `ResourceInvokeRequest` / `ResourceInvokeResult`
-  - `RegisterOutputsRequest`
+## Testing Philosophy
 
-## Testing Approaches
+The domain types are simple data structures, so tests focus on behavior:
+- Field access returns correct values in preview vs actual mode
+- Type safety is enforced at compile time
+- Mock connector trait works correctly for testing other crates
 
-Unit tests in `lib.rs` cover `ResourceFields` behavior:
-- Field retrieval from HashMap
-- Preview mode returns `Nothing` for missing fields
-- Actual mode returns `Null` for missing fields
+Enable the `test-utils` feature to get mock implementations of the `PulumiConnector` trait.
 
-Enable `test-utils` feature for mock support:
-```toml
-[dev-dependencies]
-pulumi_gestalt_domain = { version = "*", features = ["test-utils"] }
-```
+## Integration Points
 
-## Dependencies and Features
-
-**Dependencies:**
-- `serde_json` - JSON value handling
-- `bon` - Builder pattern support
-- `async-trait` - Async trait syntax
-- `mockall` (optional) - Mock trait generation
-
-**Features:**
-- `default` - Empty feature set
-- `test-utils` - Enables mockall for `PulumiConnector` mocking
-
-## Special Considerations
-
-### Preview vs. Actual Mode
-- **Preview mode** (`is_in_preview: true`): Missing fields return `NodeValue::Nothing`
-- **Actual mode** (`is_in_preview: false`): Missing fields return `NodeValue::Exists(Null)`
-- Code must handle both variants appropriately
-
-### Secret Handling
-- Check `secret` flag before logging or serializing values
-- Implementations should mask or omit secret values from logs
-
-### Builder Pattern Usage
-Request types require explicit construction via builder:
-```rust
-let req = RegisterResourceRequest::builder()
-    .name("my-resource".to_string())
-    .r#type("aws:s3:Bucket".to_string())
-    .object(HashMap::new())
-    .version("1.0".to_string())
-    .build();
-```
-
-### Thread Safety
-- `PulumiConnector` requires `Send + Sync`
-- All implementations must be safe for concurrent access
+- **Used by `core`**: The engine depends on these types and the connector trait
+- **Implemented by `grpc`**: Provides the real Pulumi runtime connection
+- **Used by all language SDKs**: Types flow through FFI boundaries and WASM interfaces

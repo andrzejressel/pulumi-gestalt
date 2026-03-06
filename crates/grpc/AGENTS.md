@@ -1,163 +1,64 @@
 # Agent Instructions for `grpc`
 
-## Overview
-
-The `grpc` crate provides an abstraction layer for gRPC connections in Pulumi Gestalt. It handles all communication with Pulumi's resource monitor and engine services via Tonic gRPC client, bridging the gap between Pulumi Gestalt's domain model and Pulumi's gRPC-based IPC protocol.
-
-**Description:** Abstraction layer for gRPC connections in Pulumi Gestalt
-
 ## Purpose
 
-This crate is responsible for:
-- Establishing and managing gRPC connections to Pulumi services
-- Converting between domain-level types and Protocol Buffer (protobuf) types
-- Handling asynchronous resource registration and invocation requests
-- Managing Pulumi stack lifecycle (root stack creation and tracking)
-- Processing secret values and unknown values in a Pulumi-compatible way
+The `grpc` crate **implements the Pulumi runtime communication protocol**. It's the bridge between Pulumi Gestalt's engine and the actual Pulumi CLI/runtime, translating domain operations into gRPC calls and protocol buffer messages.
 
-## Key Modules
+**What it does:** Implements the `PulumiConnector` trait using gRPC to talk to the Pulumi runtime over IPC.
 
-### 1. `output_id` - Output Tracking
+## Architecture Concepts
 
-- **`OutputId`** - Type-safe wrapper for unique identification of resource outputs
-- Implements `Clone`, `Debug`, `Hash`, `PartialEq`, `Eq`, `Ord`, `PartialOrd`
-- Used in `PulumiState` to correlate async responses with their originating requests
+### Protocol Translation
+Pulumi's runtime communicates via gRPC using protocol buffers. This crate translates between:
+- Clean domain types (from the `domain` crate) ↔ Protobuf messages
+- Rust async/await ↔ gRPC streaming protocols
+- Pulumi's secret marking format ↔ Domain secret flags
 
-### 2. `real_pulumi_connector` - Main Connector
+### Two-Level Design
+The crate has two abstraction levels:
+- **PulumiState**: Lower-level, manages concurrent gRPC tasks with manual polling
+- **RealPulumiConnector**: Higher-level, provides clean async API matching the connector trait
 
-**`RealPulumiConnector`** - Implements `PulumiConnector` trait from domain crate
+Most code uses the connector; the state layer enables advanced concurrent patterns.
 
-**Methods:**
-- `new()` - Creates connector, connects to services, creates root stack
-- `register_resource()` - Registers a resource with Pulumi
-- `resource_invoke()` - Invokes a resource function
-- `register_outputs()` - Registers stack outputs
+### Secret Handling
+Pulumi has a specific JSON structure for marking sensitive values. This crate knows how to:
+- Wrap secret values when sending to Pulumi (using special signature keys)
+- Detect secret markers when receiving from Pulumi
+- Preserve the secret flag throughout the conversion process
 
-**Type conversion utilities:**
-- `create_protobuf_struct()` - Converts `NodeValue` to protobuf `Struct`
-  - Handles `NodeValue::Nothing` by converting to UNKNOWN_VALUE UUID
-  - Wraps secret values in special signature container
-- `create_map_of_node_values()` - Converts protobuf `Struct` to domain types
-  - Detects secret markers in JSON structure
-- `json_to_protobuf()` / `protobuf_to_json()` - Recursive value conversion
+### Unknown Values
+In preview mode, some values don't exist yet. Pulumi represents these with a special UUID. The crate converts between this UUID representation and the domain's `NodeValue::Nothing` enum variant.
 
-### 3. `pulumi_state` - Lower-Level gRPC Manager
+## Key Concepts
 
-**`PulumiState`** - Lower-level gRPC state manager for concurrent operations
+- **RealPulumiConnector**: The production implementation of `PulumiConnector`
+- **Protocol conversion**: Domain types ↔ Protobuf messages
+- **Secret wrapping**: Special JSON structure for sensitive data
+- **Root stack**: Every Pulumi program has a root Stack resource created automatically
+- **Async coordination**: Managing concurrent resource operations via gRPC
 
-**Methods:**
-- `new()` - Creates state by connecting to monitor and engine
-- `send_register_resource_request()` - Queues resource registration
-- `send_resource_invoke_request()` - Queues resource invocation
-- `register_resource_outputs()` - Synchronously registers stack outputs
-- `get_created_resources()` - Non-blocking poll for completed operations
+## When to Modify
 
-**Internal coordination:**
-- Uses `tokio::task::JoinSet` to manage background async tasks
-- Responses encoded as protobuf byte vectors and tagged with `OutputId`
-- Provides non-blocking retrieval of completed results
+Modify this crate when:
+- Pulumi's gRPC protocol changes or adds new operations
+- Secret handling requirements change
+- Adding support for new Pulumi features (plugins, aliases, etc.)
+- Improving error handling or logging for gRPC communication
+- Changing how concurrency is managed
 
-### 4. `constants` - Pulumi-Specific Constants
+## Testing Philosophy
 
-Defines Pulumi-specific constants for secret handling:
-- `SPECIAL_SIG_KEY` - Marker key for secret values in JSON
-- `SPECIAL_SECRET_SIG` - Marker value confirming something is a secret
-- `SECRET_VALUE_NAME` - Field name containing the actual secret value
-- `UNKNOWN_VALUE` - UUID for undefined/unknown values
+Tests use mock gRPC servers that simulate Pulumi's runtime:
+- Verify protocol messages are correctly formatted
+- Test concurrent resource operations
+- Validate secret and unknown value handling
+- Ensure type conversions are bidirectional (round-trip correctly)
 
-### 5. `test_server` - Mock gRPC Servers
+The mock servers let tests run without a real Pulumi CLI installation.
 
-Mock gRPC servers for testing:
-- `MyResourceMonitorServer` - Implements `ResourceMonitor` trait
-- `MyResourceEngineServer` - Implements `Engine` trait
-- Simulates async operation completion timing
+## Integration Points
 
-## Important Types and Traits
-
-### From This Crate
-
-1. **OutputId** - Type-safe wrapper for output identification
-2. **RealPulumiConnector** - Main connector implementation
-
-### From Dependencies
-
-1. **PulumiConnector** trait (from `pulumi_gestalt_domain::connector`)
-2. **Tonic gRPC Clients** (from `pulumi_gestalt_proto`)
-   - `ResourceMonitorClient<Channel>`
-   - `EngineClient<Channel>`
-3. **Protobuf Types** (from `pulumi_gestalt_proto::pulumi::pulumirpc`)
-   - `RegisterResourceRequest` / `RegisterResourceResponse`
-   - `ResourceInvokeRequest` / `InvokeResponse`
-   - `RegisterResourceOutputsRequest`
-
-## Testing Approaches
-
-Comprehensive async tests in both `pulumi_state.rs` and `real_pulumi_connector.rs`:
-
-1. **Mock Server Setup** - Spawns local Tonic servers on random ports
-2. **Async Concurrency Testing** - Verifies concurrent request handling
-3. **Type Conversion Testing** - Validates serialization round-trips
-
-## Dependencies
-
-**Core Dependencies:**
-- `tonic` - gRPC framework
-- `prost` - Protocol Buffer serialization
-- `tokio` - Async runtime and task management
-- `futures` - Future utilities
-- `anyhow` - Error handling
-- `async-trait` - Async trait method support
-
-**Domain Dependencies:**
-- `pulumi_gestalt_proto` - Pre-generated protobuf code
-- `pulumi_gestalt_domain` - Domain types and connector trait
-
-**Utilities:**
-- `serde_json` - JSON value handling
-- `prost-types` - Additional protobuf utilities
-- `log` - Structured logging
-
-## Special Considerations
-
-### Secret Value Handling
-Pulumi marks sensitive values with special JSON structure:
-- **Outbound:** Wrap secret values in struct with marker keys
-- **Inbound:** Detect marker keys to identify secrets
-- **Critical for security** - always preserve the secret flag
-
-### Unknown/Nothing Values
-- UUID constant `UNKNOWN_VALUE` represents undefined values
-- Must be preserved in round-trip conversions
-- Different from null values (which are valid)
-
-### Async Coordination Patterns
-
-**PulumiState (Lower-level):**
-- Fire-and-forget request queuing with `JoinSet`
-- Manual polling for results
-- Non-blocking completion detection
-
-**RealPulumiConnector (Higher-level):**
-- Awaitable request methods
-- Direct response return
-- Automatic type conversion
-
-### gRPC Connection Management
-- TCP connections specified as `tcp://host:port` format
-- Connections cloned for each request (Tonic handles multiplexing)
-- Always initialize with `new()` to ensure proper stack setup
-
-### Root Stack Management
-- Every Pulumi state requires a root Stack resource
-- Automatically created during `new()`
-- Used as parent context for resource registration
-
-### Error Context
-Uses `anyhow::Context` for clear error chains:
-- Always add context when propagating errors
-- Helps with debugging across async boundaries
-
-## Related Crates
-
-- `pulumi_gestalt_domain` - Domain types and connector trait
-- `pulumi_gestalt_proto` - Generated protobuf code
+- **Implements `domain::PulumiConnector`**: The production implementation used by the engine
+- **Depends on `proto`**: Uses generated gRPC client stubs and protobuf types
+- **Used by `rust_integration`**: Provides the real connector for high-level Rust API

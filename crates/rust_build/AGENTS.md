@@ -1,89 +1,58 @@
 # Agent Instructions for `rust_build`
 
-## Overview
+## Purpose
 
-The `pulumi_gestalt_build` crate is a **codegen module for Pulumi Gestalt** - a build-time code generation tool that automatically generates Rust bindings for Pulumi providers from their schemas.
+The `rust_build` crate **integrates code generation into Rust build scripts**. It provides simple functions you call from `build.rs` to automatically generate provider bindings at compile time.
 
-**Description:** Codegen module for Pulumi Gestalt
+**What it does:** Build-time code generation API for including Pulumi providers in Rust projects.
 
-## Public API Functions
+## Architecture Concepts
 
-| Function | Purpose | Usage |
-|----------|---------|-------|
-| `generate(provider, version)` | Generate from Pulumi registry | `pulumi_gestalt_build::generate("random", "4.15.0")?` |
-| `generate_with_filter(provider, version, modules)` | Generate specific modules | `generate_with_filter("aws", "6.0.0", &["ec2", "s3"])?` |
-| `generate_from_schema(path)` | Generate from local schema file | `generate_from_schema(Path::new("schema.json"))?` |
-| `generate_from_schema_with_filter(path, modules)` | Generate from local schema with filtering | Both schema file and module filtering |
+### Build Script Integration
+Rust's `build.rs` runs before compilation. This crate provides functions that:
+- Fetch provider schemas (from Pulumi registry or local files)
+- Generate Rust code using the generator
+- Write output to `OUT_DIR` where it can be included in your crate
 
-## How to Use in build.rs
+This means provider bindings are always up-to-date and match your declared versions.
 
-### Basic Usage
-```rust
-// build.rs
-fn main() -> Result<(), Box<dyn Error>> {
-    pulumi_gestalt_build::generate("github", "5.26.0")?;
-    Ok(())
-}
-```
-
-### With Module Filtering
-```rust
-fn main() -> Result<(), Box<dyn Error>> {
-    pulumi_gestalt_build::generate_with_filter(
-        "aws", "6.0.0", &["ec2", "s3", "rds"]
-    )?;
-    Ok(())
-}
-```
-
-### Using Local Schema
-```rust
-fn main() -> Result<(), Box<dyn Error>> {
-    pulumi_gestalt_build::generate_from_schema(
-        Path::new("../provider.json")
-    )?;
-    Ok(())
-}
-```
-
-## Integration with lib.rs
-
-```rust
-// lib.rs
-mod provider {
-    include_provider!("provider_name");
-}
-
-use provider::resource::ResourceArgs;
-```
-
-## Dependencies
-
-- `pulumi_gestalt_schema` - Schema retrieval and deserialization
-- `pulumi_gestalt_generator` - Actual code generation logic
-- `anyhow` - Error handling
-- `tempfile` - Temporary file handling
-
-## Special Considerations
-
-### CLI Dependency
-- `generate()` requires `pulumi` CLI installed and in PATH
-- Sets `PULUMI_AWS_MINIMAL_SCHEMA=true` for AWS to reduce schema size
+### Two Schema Sources
+You can generate from:
+1. **Pulumi registry**: Fetch the schema automatically by provider name and version
+2. **Local file**: Use a schema file you have locally (useful for custom providers or offline development)
 
 ### Module Filtering
-- Module names must match exactly as in Pulumi Registry
-- Use filtering for large providers (especially AWS) to reduce code size and compilation time
+Large providers like AWS have thousands of resource types. You can filter to specific modules (e.g., only S3 and EC2) to:
+- Reduce generated code size
+- Speed up compilation
+- Make IDE autocomplete more manageable
 
-### Best Practices
-- Pin provider versions for reproducible builds
-- Use module filtering for large providers
-- Consider separating generated code into a different crate for large providers
+## Key Concepts
 
-### Generated Output
-Code placed in: `{OUT_DIR}/pulumi/{provider_name}/`
+- **build.rs integration**: Called from build scripts, not regular code
+- **Automatic schema fetching**: Can download schemas from Pulumi registry
+- **Code generation**: Wraps the `rust_generator` crate
+- **Module filtering**: Extract only needed parts of large providers
+- **OUT_DIR placement**: Generated code goes where Rust expects it
 
-## Related Crates
+## When to Modify
 
-- `pulumi_gestalt_schema` - Schema model
-- `pulumi_gestalt_generator` - Code generation logic
-- `pulumi_gestalt_rust` - Runtime support
+Modify this crate when:
+- Changing how schemas are fetched or cached
+- Adding new code generation options (e.g., feature flags, customization)
+- Supporting new schema sources
+- Improving build script error messages or diagnostics
+
+## Testing Philosophy
+
+Testing happens at two levels:
+- Unit tests verify API surface and parameter handling
+- Integration tests in example projects verify generated code compiles and works
+
+Most validation comes from the generator tests, which this crate wraps.
+
+## Integration Points
+
+- **Calls `schema`**: Fetches and parses provider schemas
+- **Calls `rust_generator`**: Performs the actual code generation
+- **Used in `build.rs`**: Rust projects call these functions from build scripts
