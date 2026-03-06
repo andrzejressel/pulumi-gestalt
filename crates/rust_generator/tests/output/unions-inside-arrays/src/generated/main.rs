@@ -1,4 +1,7 @@
 include!("resources/example_server.rs");
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {}
 pub mod types {
     include!("types/server_properties_for_replica.rs");

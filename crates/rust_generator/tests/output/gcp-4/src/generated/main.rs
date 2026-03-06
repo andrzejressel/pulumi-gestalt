@@ -119,6 +119,9 @@ pub mod datastream {
     include!("resources/datastream/private_connection.rs");
     include!("resources/datastream/stream.rs");
 }
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {
     pub mod containeranalysis {
         include!("functions/containeranalysis/get_note_iam_policy.rs");
@@ -1970,6 +1973,7 @@ pub mod types {
             "types/datastream/stream_source_config_sql_server_source_config_transaction_logs.rs"
         );
     }
+    include!("types/provider_batching.rs");
 }
 #[doc(hidden)]
 pub mod constants {}

@@ -67,6 +67,9 @@ pub mod pubsub {
 pub mod recaptcha {
     include!("resources/recaptcha/enterprise_key.rs");
 }
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {
     pub mod oracledatabase {
         include!("functions/oracledatabase/get_autonomous_database.rs");
@@ -650,6 +653,7 @@ pub mod types {
         include!("types/recaptcha/enterprise_key_waf_settings.rs");
         include!("types/recaptcha/enterprise_key_web_settings.rs");
     }
+    include!("types/provider_batching.rs");
 }
 #[doc(hidden)]
 pub mod constants {}

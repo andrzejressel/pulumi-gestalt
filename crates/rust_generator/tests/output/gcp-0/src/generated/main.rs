@@ -104,6 +104,9 @@ pub mod artifactregistry {
     include!("resources/artifactregistry/repository_iam_policy.rs");
     include!("resources/artifactregistry/vpcsc_config.rs");
 }
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {
     pub mod accessapproval {
         include!("functions/accessapproval/get_folder_service_account.rs");
@@ -772,6 +775,7 @@ pub mod types {
             "types/artifactregistry/get_repository_virtual_repository_config_upstream_policy.rs"
         );
     }
+    include!("types/provider_batching.rs");
 }
 #[doc(hidden)]
 pub mod constants {}

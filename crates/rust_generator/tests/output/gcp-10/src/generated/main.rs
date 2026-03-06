@@ -108,6 +108,9 @@ pub mod servicenetworking {
     include!("resources/servicenetworking/peered_dns_domain.rs");
     include!("resources/servicenetworking/vpc_service_controls.rs");
 }
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {
     pub mod redis {
         include!("functions/redis/get_instance.rs");
@@ -481,6 +484,7 @@ pub mod types {
         include!("types/servicedirectory/service_iam_binding_condition.rs");
         include!("types/servicedirectory/service_iam_member_condition.rs");
     }
+    include!("types/provider_batching.rs");
 }
 #[doc(hidden)]
 pub mod constants {}

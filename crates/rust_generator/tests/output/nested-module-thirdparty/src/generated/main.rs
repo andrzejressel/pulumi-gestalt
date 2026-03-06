@@ -5,6 +5,9 @@ pub mod deeply {
         }
     }
 }
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {}
 pub mod types {}
 #[doc(hidden)]

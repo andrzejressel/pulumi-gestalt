@@ -1,4 +1,7 @@
 include!("resources/pulumi_terraform_bridge_2801.rs");
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {}
 pub mod types {}
 #[doc(hidden)]
