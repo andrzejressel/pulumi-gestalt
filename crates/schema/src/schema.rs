@@ -341,37 +341,13 @@ fn provider_to_model(provider: Option<&Resource>) -> Result<Provider> {
 
     Ok(Provider {
         description: provider.object_type.description.clone(),
-        input_properties: convert_resource_input_properties(
-            &provider.input_properties,
-            &provider.required_inputs,
+        input_properties: convert_input_property_object_type(
+            &provider.object_type,
         )?,
         output_properties: convert_output_property_object_type_without_forced(
             &provider.object_type,
         )?,
     })
-}
-
-fn convert_resource_input_properties(
-    input_properties: &PulumiMap<Property>,
-    required_inputs: &BTreeSet<String>,
-) -> Result<Vec<InputProperty>> {
-    input_properties
-        .iter()
-        .map(|(input_name, input_property)| {
-            let mut type_ = new_type_mapper(&input_property.r#type)
-                .context(format!("Cannot handle [{input_name}] type"))?;
-
-            if !required_inputs.contains(input_name) {
-                type_ = crate::model::Type::Option(Box::new(type_));
-            }
-
-            Ok(InputProperty {
-                name: input_name.clone(),
-                r#type: type_,
-                description: input_property.r#type.description.clone(),
-            })
-        })
-        .collect::<Result<Vec<_>>>()
 }
 
 fn convert_input_property_object_type(object_type: &ObjectType) -> Result<Vec<InputProperty>> {
@@ -779,7 +755,7 @@ mod test {
     }
 
     #[test]
-    fn provider_is_mapped_to_resources() -> Result<()> {
+    fn provider_is_mapped_to_model() -> Result<()> {
         let json = json!({
             "name": "aws",
             "version": "0.0.0-DEV",
@@ -820,15 +796,18 @@ mod test {
 
         let package = to_model(&serde_json::from_value(json)?)?;
 
-        assert_eq!(package.provider, Provider {
-            description: None,
-            input_properties: vec![],
-            output_properties: vec![],
-        });
-        
+        assert_eq!(
+            package.provider,
+            Provider {
+                description: None,
+                input_properties: vec![],
+                output_properties: vec![],
+            }
+        );
+
         Ok(())
     }
-    
+
     #[test]
     fn provider_is_not_filtered_out() -> Result<()> {
         let json = json!({
