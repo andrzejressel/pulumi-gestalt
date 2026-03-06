@@ -17,8 +17,10 @@ fn test_integration() -> Result<()> {
     let stack = export_stack()?;
 
     let result = stack.get_string("/result")?;
+    let provider_prefix = stack.get_string("/provider_prefix")?;
 
     assert_eq!(result, "SUFFIX");
+    assert_eq!(provider_prefix, "MY_PREFIX");
 
     Ok(())
 }

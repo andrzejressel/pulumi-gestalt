@@ -1,0 +1,72 @@
+{{#each resource.description_lines}}
+    /// {{&this}}
+{{/each}}
+#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
+pub mod {{resource.package_name}} {
+
+{{#if resource.input_properties}}
+#[derive(pulumi_gestalt_rust::__private::bon::Builder)]
+#[builder(finish_fn = build_struct)]
+#[allow(dead_code)]
+pub struct {{resource.struct_name}}Args {
+{{#each resource.input_properties}}
+    {{#each description_lines}}
+    /// {{&this}}
+    {{/each}}
+    {{#if default}}
+    #[builder(into, default)]
+    {{else if skip}}
+    #[builder(skip)]
+    {{else}}
+    #[builder(into)]
+    {{/if}}
+    {{#unless private}}pub {{/unless}}{{arg_name}}: pulumi_gestalt_rust::InputOrOutput<{{&type_}}>,
+{{/each}}
+}
+{{/if}}
+
+#[allow(dead_code)]
+pub struct {{resource.struct_name}}Result {
+{{#each resource.output_properties}}
+    {{#each description_lines}}
+        /// {{&this}}
+    {{/each}}
+    pub {{arg_name}}: pulumi_gestalt_rust::Output<{{&type_}}>,
+{{/each}}
+}
+
+///
+/// Registers a new resource with the given unique name and arguments
+///
+#[allow(non_snake_case, unused_imports, dead_code)]
+pub fn {{resource.function_name}}(
+    context: &pulumi_gestalt_rust::Context,
+    name: &str,
+{{#if resource.input_properties}}
+    args: {{resource.struct_name}}Args
+{{/if}}
+) -> {{resource.struct_name}}Result {
+
+{{#each resource.input_properties}}
+    let {{arg_name}}_binding = args.{{arg_name}}.get_output(context);
+{{/each}}
+
+    let request = pulumi_gestalt_rust::RegisterResourceRequest {
+        type_: "{{resource.type}}".into(),
+        name: name.to_string(),
+        version: {{resource.get_version}},
+        object: &[
+            {{#each resource.input_properties}}
+                pulumi_gestalt_rust::ResourceRequestObjectField { name: "{{name}}".into(), value: &{{arg_name}}_binding.drop_type() },
+            {{/each}}
+        ]
+    };
+
+    let o = context.register_resource(request);
+    {{resource.struct_name}}Result {
+    {{#each resource.output_properties}}
+        {{arg_name}}: o.get_field("{{name}}"),
+    {{/each}}
+    }
+}
+}
