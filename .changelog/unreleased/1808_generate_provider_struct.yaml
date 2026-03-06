@@ -1,0 +1,4 @@
+type: Added
+title: Generate provider struct
+description: |
+  Generate a provider struct
