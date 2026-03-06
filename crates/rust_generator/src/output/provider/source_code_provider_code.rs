@@ -1,5 +1,4 @@
 use crate::model::{InputPropertyExt, OutputPropertyExt, TypeExt};
-use crate::utils::access_root;
 use handlebars::Handlebars;
 use pulumi_gestalt_schema::model::{Package, Type};
 use serde::Serialize;
@@ -41,8 +40,8 @@ struct Provider {
 
 fn convert_provider(package: &Package) -> Provider {
     let provider = &package.provider;
-    let depth = 1; // It will be inside 'pub mod provider'
-    let get_version = format!("{}get_version()", access_root(depth));
+    let depth = 1; // It will be inside 'pub mod provider' WHICH IS in main.rs
+    let get_version = "super::get_version()".to_string();
     Provider {
         name: "provider".to_string(),
         r#type: format!("pulumi:providers:{}", package.name),

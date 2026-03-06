@@ -63,8 +63,11 @@ pub(crate) fn generate_combined_code(package: &Package, result_path: &std::path:
     );
     generate_types_code(package, &result_path.join("types"));
 
+    let provider_path = result_path.join("provider");
+    std::fs::create_dir_all(&provider_path).unwrap();
+
     let provider_code = provider::generate_code(package);
-    let mut provider_file = File::create(result_path.join("provider.rs")).unwrap();
+    let mut provider_file = File::create(provider_path.join("provider.rs")).unwrap();
     provider_file.write_all(provider_code.as_bytes()).unwrap();
     let times = FileTimes::new().set_modified(SystemTime::UNIX_EPOCH);
     provider_file.set_times(times).unwrap();
@@ -74,7 +77,6 @@ pub(crate) fn generate_combined_code(package: &Package, result_path: &std::path:
         generate_includes("resources", &package.resources),
         types::generate_module_imports(package),
         find_consts(package),
-        "include!(\"provider.rs\");".to_string(),
         package,
     )
     .unwrap();

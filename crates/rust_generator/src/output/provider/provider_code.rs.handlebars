@@ -2,7 +2,6 @@
     /// {{&this}}
 {{/each}}
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
-pub mod {{resource.package_name}} {
 
 {{#if resource.input_properties}}
 #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
@@ -62,11 +61,10 @@ pub fn {{resource.function_name}}(
         ]
     };
 
-    let o = context.register_resource(request);
+    let _o = context.register_resource(request);
     {{resource.struct_name}}Result {
     {{#each resource.output_properties}}
-        {{arg_name}}: o.get_field("{{name}}"),
+        {{arg_name}}: _o.get_field("{{name}}"),
     {{/each}}
     }
-}
 }
