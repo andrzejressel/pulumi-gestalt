@@ -209,3 +209,13 @@ pub enum ConfigValue<OUTPUT> {
     PlainText(String),
     Secret(OUTPUT),
 }
+
+impl ConfigValue<Output<String>> {
+    #[allow(clippy::wrong_self_convention)]
+    pub fn to_output(self, context: &Context) -> Output<String> {
+        match self {
+            ConfigValue::PlainText(s) => context.new_output(&s),
+            ConfigValue::Secret(output) => output,
+        }
+    }
+}
