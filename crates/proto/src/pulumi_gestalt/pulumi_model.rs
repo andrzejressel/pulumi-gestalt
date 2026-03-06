@@ -25,6 +25,23 @@ pub struct Package {
     /// A map of type tokens to complex type definitions.
     #[prost(message, repeated, tag = "7")]
     pub types: ::prost::alloc::vec::Vec<GlobalType>,
+    /// The provider definition for this package.
+    #[prost(message, optional, tag = "8")]
+    pub provider: ::core::option::Option<Provider>,
+}
+/// Provider definition
+/// Describes the provider resource for the package.
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct Provider {
+    /// A human-friendly description of the provider.
+    #[prost(string, optional, tag = "1")]
+    pub description: ::core::option::Option<::prost::alloc::string::String>,
+    /// A map of input property names to their definitions.
+    #[prost(message, repeated, tag = "2")]
+    pub input_properties: ::prost::alloc::vec::Vec<InputProperty>,
+    /// A map of output property names to their definitions.
+    #[prost(message, repeated, tag = "3")]
+    pub output_properties: ::prost::alloc::vec::Vec<OutputProperty>,
 }
 /// Resource definition
 /// Describes a resource provided by the package.
