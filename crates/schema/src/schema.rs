@@ -1,6 +1,6 @@
 use crate::model::{
     ElementId, GlobalType, GlobalTypeProperty, GlobalTypeValue, InputProperty, IntegerEnumElement,
-    NumberEnumElement, OutputProperty, Ref, StringEnumElement,
+    NumberEnumElement, OutputProperty, Provider, Ref, StringEnumElement,
 };
 use crate::utils::fix_description;
 use anyhow::{Context, Result, anyhow};
@@ -169,6 +169,8 @@ pub(crate) struct Package {
     plugin_download_url: Option<String>,
     #[serde(default)]
     resources: PulumiMap<Resource>,
+    #[serde(default)]
+    provider: Option<Resource>,
     version: Option<String>,
     #[serde(default)]
     types: PulumiMap<ComplexType>,
@@ -332,6 +334,20 @@ fn function_to_model(
     ))
 }
 
+fn provider_to_model(provider: Option<&Resource>) -> Result<Provider> {
+    let Some(provider) = provider else {
+        return Ok(Provider::default());
+    };
+
+    Ok(Provider {
+        description: provider.object_type.description.clone(),
+        input_properties: convert_input_property_object_type(&provider.object_type)?,
+        output_properties: convert_output_property_object_type_without_forced(
+            &provider.object_type,
+        )?,
+    })
+}
+
 fn convert_input_property_object_type(object_type: &ObjectType) -> Result<Vec<InputProperty>> {
     object_type
         .properties
@@ -376,6 +392,27 @@ fn convert_output_property_object_type(
         .collect::<Result<Vec<_>>>()
 }
 
+fn convert_output_property_object_type_without_forced(
+    object_type: &ObjectType,
+) -> Result<Vec<OutputProperty>> {
+    object_type
+        .properties
+        .iter()
+        .map(|(output_name, output_property)| {
+            let mut type_ = new_type_mapper(&output_property.r#type)
+                .context(format!("Cannot handle [{output_name}] type"))?;
+            if !object_type.required.contains(output_name) {
+                type_ = crate::model::Type::Option(Box::new(type_));
+            }
+            Ok(OutputProperty {
+                name: output_name.clone(),
+                r#type: type_,
+                description: output_property.r#type.description.clone(),
+            })
+        })
+        .collect::<Result<Vec<_>>>()
+}
+
 pub(crate) fn to_model(package: &Package) -> Result<crate::model::Package> {
     let resources = package
         .resources
@@ -383,6 +420,9 @@ pub(crate) fn to_model(package: &Package) -> Result<crate::model::Package> {
         .map(|(resource_name, resource)| resource_to_model(resource_name, resource))
         .collect::<Result<BTreeMap<_, _>>>()
         .context("Cannot handle resources")?;
+
+    let provider =
+        provider_to_model(package.provider.as_ref()).context("Cannot handle provider")?;
 
     let functions = package
         .functions
@@ -406,6 +446,7 @@ pub(crate) fn to_model(package: &Package) -> Result<crate::model::Package> {
         package.display_name.clone(),
         package.plugin_download_url.clone(),
         package.version.clone().unwrap_or("0.0.1".to_string()),
+        provider,
         resources,
         functions,
         types,
@@ -598,6 +639,8 @@ fn invalid_required_complextype_required_fields() -> HashSet<(ElementId, String)
 
 #[cfg(test)]
 mod test {
+    use crate::filter::filter_package;
+    use crate::model::{ElementId, Provider};
     use crate::schema::to_model;
     use anyhow::Result;
     use serde_json::json;
@@ -705,6 +748,91 @@ mod test {
             ],
             chain
         );
+
+        Ok(())
+    }
+
+    #[test]
+    fn provider_is_mapped_to_model() -> Result<()> {
+        let json = json!({
+            "name": "aws",
+            "version": "0.0.0-DEV",
+            "provider": {
+                "description": "provider",
+                "inputProperties": {
+                    "region": {
+                        "type": "string"
+                    }
+                },
+                "requiredInputs": ["region"],
+                "properties": {
+                    "region": {
+                        "type": "string"
+                    }
+                },
+                "required": ["region"]
+            }
+        });
+
+        let package = to_model(&serde_json::from_value(json)?)?;
+        let provider = package.provider;
+
+        assert_eq!(provider.description, Some("provider".to_string()));
+        assert_eq!(provider.input_properties.len(), 1);
+        assert_eq!(provider.output_properties.len(), 1);
+        assert!(!package.resource_name_map.contains_key("aws:providers:aws"));
+
+        Ok(())
+    }
+
+    #[test]
+    fn provider_is_created_even_if_not_in_schema() -> Result<()> {
+        let json = json!({
+            "name": "aws",
+            "version": "0.0.0-DEV",
+        });
+
+        let package = to_model(&serde_json::from_value(json)?)?;
+
+        assert_eq!(
+            package.provider,
+            Provider {
+                description: None,
+                input_properties: vec![],
+                output_properties: vec![],
+            }
+        );
+
+        Ok(())
+    }
+
+    #[test]
+    fn provider_is_not_filtered_out() -> Result<()> {
+        let json = json!({
+            "name": "aws",
+            "version": "0.0.0-DEV",
+            "resources": {
+                "aws:s3/bucket:Bucket": {
+                    "properties": {},
+                    "inputProperties": {}
+                }
+            },
+            "provider": {
+                "properties": {},
+                "inputProperties": {}
+            }
+        });
+
+        let mut package = to_model(&serde_json::from_value(json)?)?;
+        filter_package(&mut package, &["ec2"]);
+
+        assert!(
+            !package
+                .resources
+                .contains_key(&ElementId::new("aws:s3/bucket:Bucket")?)
+        );
+        assert!(package.provider.input_properties.is_empty());
+        assert!(package.provider.output_properties.is_empty());
 
         Ok(())
     }

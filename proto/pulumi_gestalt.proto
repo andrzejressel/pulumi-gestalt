@@ -20,6 +20,19 @@ message Package {
   repeated Function functions = 6;
   // A map of type tokens to complex type definitions.
   repeated GlobalType types = 7;
+  // The provider definition for this package.
+  optional Provider provider = 8;
+}
+
+// Provider definition
+// Describes the provider resource for the package.
+message Provider {
+  // A human-friendly description of the provider.
+  optional string description = 1;
+  // A map of input property names to their definitions.
+  repeated InputProperty input_properties = 2;
+  // A map of output property names to their definitions.
+  repeated OutputProperty output_properties = 3;
 }
 
 // Resource definition
