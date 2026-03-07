@@ -120,6 +120,8 @@ pub mod environment_ec_2 {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the environment.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The number of minutes until the running instance is shut down after the environment has last been used.
@@ -223,6 +225,7 @@ pub mod environment_ec_2 {
         let o = context.register_resource(request);
         EnvironmentEC2Result {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             automatic_stop_time_minutes: o.get_field("automaticStopTimeMinutes"),
             connection_type: o.get_field("connectionType"),

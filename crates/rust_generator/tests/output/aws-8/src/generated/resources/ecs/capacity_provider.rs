@@ -64,6 +64,8 @@ pub mod capacity_provider {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ARN that identifies the capacity provider.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Configuration block for the provider for the ECS auto scaling group. Detailed below.
@@ -117,6 +119,7 @@ pub mod capacity_provider {
         let o = context.register_resource(request);
         CapacityProviderResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             auto_scaling_group_provider: o.get_field("autoScalingGroupProvider"),
             name: o.get_field("name"),

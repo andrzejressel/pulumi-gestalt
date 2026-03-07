@@ -97,6 +97,8 @@ pub mod option_group {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ARN of the DB option group.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the name of the engine that this option group should be associated with.
@@ -185,6 +187,7 @@ pub mod option_group {
         let o = context.register_resource(request);
         OptionGroupResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             engine_name: o.get_field("engineName"),
             major_engine_version: o.get_field("majorEngineVersion"),

@@ -288,6 +288,8 @@ pub mod frontdoor_origin {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Front Door Origin Group within which this Front Door Origin should exist. Changing this forces a new Front Door Origin to be created.
         pub cdn_frontdoor_origin_group_id: pulumi_gestalt_rust::Output<String>,
         /// Specifies whether certificate name checks are enabled for this origin.
@@ -397,6 +399,7 @@ pub mod frontdoor_origin {
         let o = context.register_resource(request);
         FrontdoorOriginResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             cdn_frontdoor_origin_group_id: o.get_field("cdnFrontdoorOriginGroupId"),
             certificate_name_check_enabled: o.get_field("certificateNameCheckEnabled"),
             enabled: o.get_field("enabled"),

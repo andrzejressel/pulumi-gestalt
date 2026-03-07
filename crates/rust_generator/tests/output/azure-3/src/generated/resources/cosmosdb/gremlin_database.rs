@@ -66,6 +66,8 @@ pub mod gremlin_database {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The name of the CosmosDB Account to create the Gremlin Database within. Changing this forces a new resource to be created.
         pub account_name: pulumi_gestalt_rust::Output<String>,
         /// An `autoscale_settings` block as defined below. This must be set upon database creation otherwise it cannot be updated without a manual destroy-apply.
@@ -127,6 +129,7 @@ pub mod gremlin_database {
         let o = context.register_resource(request);
         GremlinDatabaseResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             account_name: o.get_field("accountName"),
             autoscale_settings: o.get_field("autoscaleSettings"),
             name: o.get_field("name"),

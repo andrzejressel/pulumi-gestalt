@@ -52,6 +52,8 @@ pub mod link_association {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the device.
         pub device_id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the global network.
@@ -93,6 +95,7 @@ pub mod link_association {
         let o = context.register_resource(request);
         LinkAssociationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             device_id: o.get_field("deviceId"),
             global_network_id: o.get_field("globalNetworkId"),
             link_id: o.get_field("linkId"),

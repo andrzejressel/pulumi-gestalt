@@ -50,6 +50,8 @@ pub mod event_sources_config {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Configuration information about the integration of DevOps Guru as the Consumer via EventBridge with another AWS Service. See `event_sources` below.
         pub event_sources: pulumi_gestalt_rust::Output<
             Option<Vec<super::super::types::devopsguru::EventSourcesConfigEventSource>>,
@@ -79,6 +81,7 @@ pub mod event_sources_config {
         let o = context.register_resource(request);
         EventSourcesConfigResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             event_sources: o.get_field("eventSources"),
         }
     }

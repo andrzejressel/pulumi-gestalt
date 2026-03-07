@@ -120,6 +120,8 @@ pub mod firewall_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Whether enable auto learn private ip range.
         pub auto_learn_private_ranges_enabled: pulumi_gestalt_rust::Output<Option<bool>>,
         /// The ID of the base Firewall Policy.
@@ -289,6 +291,7 @@ pub mod firewall_policy {
         let o = context.register_resource(request);
         FirewallPolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             auto_learn_private_ranges_enabled: o
                 .get_field("autoLearnPrivateRangesEnabled"),
             base_policy_id: o.get_field("basePolicyId"),

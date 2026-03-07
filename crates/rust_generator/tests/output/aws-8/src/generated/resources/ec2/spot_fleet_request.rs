@@ -303,6 +303,8 @@ pub mod spot_fleet_request {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Indicates how to allocate the target capacity across
         /// the Spot pools specified by the Spot fleet request. Valid values: `lowestPrice`, `diversified`, `capacityOptimized`, `capacityOptimizedPrioritized`, and `priceCapacityOptimized`. The default is
         /// `lowestPrice`.
@@ -571,6 +573,7 @@ pub mod spot_fleet_request {
         let o = context.register_resource(request);
         SpotFleetRequestResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             allocation_strategy: o.get_field("allocationStrategy"),
             client_token: o.get_field("clientToken"),
             context: o.get_field("context"),

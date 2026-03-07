@@ -151,6 +151,8 @@ pub mod autokey_config {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The folder for which to retrieve config.
         ///
         ///
@@ -190,6 +192,7 @@ pub mod autokey_config {
         let o = context.register_resource(request);
         AutokeyConfigResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             folder: o.get_field("folder"),
             key_project: o.get_field("keyProject"),
         }

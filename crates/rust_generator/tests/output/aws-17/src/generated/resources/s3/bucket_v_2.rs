@@ -135,6 +135,8 @@ pub mod bucket_v_2 {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Sets the accelerate configuration of an existing bucket. Can be `Enabled` or `Suspended`. Cannot be used in `cn-north-1` or `us-gov-west-1`. This provider will only perform drift detection if a configuration value is provided.
         /// Use the resource `aws.s3.BucketAccelerateConfigurationV2` instead.
         pub acceleration_status: pulumi_gestalt_rust::Output<String>,
@@ -342,6 +344,7 @@ pub mod bucket_v_2 {
         let o = context.register_resource(request);
         BucketV2Result {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             acceleration_status: o.get_field("accelerationStatus"),
             acl: o.get_field("acl"),
             arn: o.get_field("arn"),

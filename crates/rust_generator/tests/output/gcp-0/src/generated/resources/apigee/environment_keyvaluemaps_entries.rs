@@ -147,6 +147,8 @@ pub mod environment_keyvaluemaps_entries {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Apigee environment keyvalumaps Id associated with the Apigee environment,
         /// in the format `organizations/{{org_name}}/environments/{{env_name}}/keyvaluemaps/{{keyvaluemap_name}}`.
         ///
@@ -193,6 +195,7 @@ pub mod environment_keyvaluemaps_entries {
         let o = context.register_resource(request);
         EnvironmentKeyvaluemapsEntriesResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             env_keyvaluemap_id: o.get_field("envKeyvaluemapId"),
             name: o.get_field("name"),
             value: o.get_field("value"),

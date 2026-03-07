@@ -73,6 +73,8 @@ pub mod instance_profile {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ARN assigned by AWS to the instance profile.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Creation timestamp of the instance profile.
@@ -140,6 +142,7 @@ pub mod instance_profile {
         let o = context.register_resource(request);
         InstanceProfileResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             create_date: o.get_field("createDate"),
             name: o.get_field("name"),

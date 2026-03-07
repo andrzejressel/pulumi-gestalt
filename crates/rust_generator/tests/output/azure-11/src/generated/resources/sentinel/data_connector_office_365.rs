@@ -87,6 +87,8 @@ pub mod data_connector_office_365 {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Should the Exchange data connector be enabled? Defaults to `true`.
         pub exchange_enabled: pulumi_gestalt_rust::Output<Option<bool>>,
         /// The ID of the Log Analytics Workspace that this Office 365 Data Connector resides in. Changing this forces a new Office 365 Data Connector to be created.
@@ -155,6 +157,7 @@ pub mod data_connector_office_365 {
         let o = context.register_resource(request);
         DataConnectorOffice365Result {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             exchange_enabled: o.get_field("exchangeEnabled"),
             log_analytics_workspace_id: o.get_field("logAnalyticsWorkspaceId"),
             name: o.get_field("name"),

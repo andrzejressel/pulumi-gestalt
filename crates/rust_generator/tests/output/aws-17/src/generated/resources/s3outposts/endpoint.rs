@@ -56,6 +56,8 @@ pub mod endpoint {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Type of access for the network connectivity. Valid values are `Private` or `CustomerOwnedIp`.
         pub access_type: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the endpoint.
@@ -123,6 +125,7 @@ pub mod endpoint {
         let o = context.register_resource(request);
         EndpointResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             access_type: o.get_field("accessType"),
             arn: o.get_field("arn"),
             cidr_block: o.get_field("cidrBlock"),

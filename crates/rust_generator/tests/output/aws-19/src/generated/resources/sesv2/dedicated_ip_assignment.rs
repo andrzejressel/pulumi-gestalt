@@ -50,6 +50,8 @@ pub mod dedicated_ip_assignment {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Dedicated IP address.
         pub destination_pool_name: pulumi_gestalt_rust::Output<String>,
         /// Dedicated IP address.
@@ -86,6 +88,7 @@ pub mod dedicated_ip_assignment {
         let o = context.register_resource(request);
         DedicatedIpAssignmentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             destination_pool_name: o.get_field("destinationPoolName"),
             ip: o.get_field("ip"),
         }

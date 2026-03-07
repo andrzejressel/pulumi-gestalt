@@ -109,6 +109,8 @@ pub mod endpoint_servicebus_queue {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Type used to authenticate against the Service Bus Queue endpoint. Possible values are `keyBased` and `identityBased`. Defaults to `keyBased`.
         pub authentication_type: pulumi_gestalt_rust::Output<Option<String>>,
         /// The connection string for the endpoint. This attribute can only be specified and is mandatory when `authentication_type` is `keyBased`.
@@ -187,6 +189,7 @@ pub mod endpoint_servicebus_queue {
         let o = context.register_resource(request);
         EndpointServicebusQueueResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             authentication_type: o.get_field("authenticationType"),
             connection_string: o.get_field("connectionString"),
             endpoint_uri: o.get_field("endpointUri"),

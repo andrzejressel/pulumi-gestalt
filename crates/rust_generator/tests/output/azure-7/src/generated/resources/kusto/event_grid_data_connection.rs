@@ -185,6 +185,8 @@ pub mod event_grid_data_connection {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the blob storage event type that needs to be processed. Possible Values are `Microsoft.Storage.BlobCreated` and `Microsoft.Storage.BlobRenamed`. Defaults to `Microsoft.Storage.BlobCreated`.
         pub blob_storage_event_type: pulumi_gestalt_rust::Output<Option<String>>,
         /// Specifies the name of the Kusto Cluster this data connection will be added to. Changing this forces a new resource to be created.
@@ -327,6 +329,7 @@ pub mod event_grid_data_connection {
         let o = context.register_resource(request);
         EventGridDataConnectionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             blob_storage_event_type: o.get_field("blobStorageEventType"),
             cluster_name: o.get_field("clusterName"),
             data_format: o.get_field("dataFormat"),

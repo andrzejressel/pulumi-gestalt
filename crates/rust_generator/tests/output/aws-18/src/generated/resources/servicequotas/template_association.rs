@@ -43,6 +43,8 @@ pub mod template_association {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         pub skip_destroy: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Association status. Creating this resource will result in an `ASSOCIATED` status, and quota increase requests in the template are automatically applied to new AWS accounts in the organization.
         pub status: pulumi_gestalt_rust::Output<String>,
@@ -71,6 +73,7 @@ pub mod template_association {
         let o = context.register_resource(request);
         TemplateAssociationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             skip_destroy: o.get_field("skipDestroy"),
             status: o.get_field("status"),
         }

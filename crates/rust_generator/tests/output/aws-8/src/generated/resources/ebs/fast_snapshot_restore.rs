@@ -52,6 +52,8 @@ pub mod fast_snapshot_restore {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Availability zone in which to enable fast snapshot restores.
         pub availability_zone: pulumi_gestalt_rust::Output<String>,
         /// ID of the snapshot.
@@ -96,6 +98,7 @@ pub mod fast_snapshot_restore {
         let o = context.register_resource(request);
         FastSnapshotRestoreResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             availability_zone: o.get_field("availabilityZone"),
             snapshot_id: o.get_field("snapshotId"),
             state: o.get_field("state"),

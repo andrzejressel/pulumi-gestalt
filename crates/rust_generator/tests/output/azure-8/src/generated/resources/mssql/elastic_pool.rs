@@ -132,6 +132,8 @@ pub mod elastic_pool {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the type of enclave to be used by the elastic pool. When `enclave_type` is not specified (e.g., the default) enclaves are not enabled on the elastic pool. <!-- TODO: Uncomment in 4.0: Once enabled (e.g., by specifying `Default` or `VBS`) removing the `enclave_type` field from the configuration file will force the creation of a new resource.-> Possible values are `Default` or `VBS`.
         ///
         /// > **NOTE:** All databases that are added to the elastic pool must have the same `enclave_type` as the elastic pool.
@@ -259,6 +261,7 @@ pub mod elastic_pool {
         let o = context.register_resource(request);
         ElasticPoolResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             enclave_type: o.get_field("enclaveType"),
             license_type: o.get_field("licenseType"),
             location: o.get_field("location"),

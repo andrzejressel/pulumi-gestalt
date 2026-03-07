@@ -45,6 +45,8 @@ pub mod auto_provisioning {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Should the security agent be automatically provisioned on Virtual Machines in this subscription? Possible values are `On` (to install the security agent automatically, if it's missing) or `Off` (to not install the security agent automatically).
         pub auto_provision: pulumi_gestalt_rust::Output<String>,
     }
@@ -72,6 +74,7 @@ pub mod auto_provisioning {
         let o = context.register_resource(request);
         AutoProvisioningResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             auto_provision: o.get_field("autoProvision"),
         }
     }

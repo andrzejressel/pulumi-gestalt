@@ -77,6 +77,8 @@ pub mod flexible_database {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the Charset for the MySQL Database, which needs [to be a valid MySQL Charset](https://dev.mysql.com/doc/refman/5.7/en/charset-charsets.html). Changing this forces a new resource to be created.
         pub charset: pulumi_gestalt_rust::Output<String>,
         /// Specifies the Collation for the MySQL Database, which needs [to be a valid MySQL Collation](https://dev.mysql.com/doc/refman/5.7/en/charset-mysql.html). Changing this forces a new resource to be created.
@@ -132,6 +134,7 @@ pub mod flexible_database {
         let o = context.register_resource(request);
         FlexibleDatabaseResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             charset: o.get_field("charset"),
             collation: o.get_field("collation"),
             name: o.get_field("name"),

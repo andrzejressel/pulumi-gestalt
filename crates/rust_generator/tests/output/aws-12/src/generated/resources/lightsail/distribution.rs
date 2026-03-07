@@ -229,6 +229,8 @@ pub mod distribution {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The alternate domain names of the distribution.
         pub alternative_domain_names: pulumi_gestalt_rust::Output<Vec<String>>,
         /// The Amazon Resource Name (ARN) of the distribution.
@@ -359,6 +361,7 @@ pub mod distribution {
         let o = context.register_resource(request);
         DistributionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             alternative_domain_names: o.get_field("alternativeDomainNames"),
             arn: o.get_field("arn"),
             bundle_id: o.get_field("bundleId"),

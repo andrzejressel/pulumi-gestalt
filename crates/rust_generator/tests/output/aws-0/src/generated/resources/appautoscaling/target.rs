@@ -177,6 +177,8 @@ pub mod target {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the scalable target.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Max capacity of the scalable target.
@@ -263,6 +265,7 @@ pub mod target {
         let o = context.register_resource(request);
         TargetResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             max_capacity: o.get_field("maxCapacity"),
             min_capacity: o.get_field("minCapacity"),

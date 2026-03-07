@@ -85,6 +85,8 @@ pub mod virtual_machine_manager_virtual_machine_template {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Custom Location for the System Center Virtual Machine Manager Virtual Machine Template. Changing this forces a new resource to be created.
         pub custom_location_id: pulumi_gestalt_rust::Output<String>,
         /// The Azure Region where the System Center Virtual Machine Manager Virtual Machine Template should exist. Changing this forces a new resource to be created.
@@ -156,6 +158,7 @@ pub mod virtual_machine_manager_virtual_machine_template {
         let o = context.register_resource(request);
         VirtualMachineManagerVirtualMachineTemplateResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             custom_location_id: o.get_field("customLocationId"),
             location: o.get_field("location"),
             name: o.get_field("name"),

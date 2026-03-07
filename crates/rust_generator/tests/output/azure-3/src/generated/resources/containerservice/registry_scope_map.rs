@@ -85,6 +85,8 @@ pub mod registry_scope_map {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A list of actions to attach to the scope map (e.g. `repo/content/read`, `repo2/content/delete`).
         pub actions: pulumi_gestalt_rust::Output<Vec<String>>,
         /// The name of the Container Registry. Changing this forces a new resource to be created.
@@ -142,6 +144,7 @@ pub mod registry_scope_map {
         let o = context.register_resource(request);
         RegistryScopeMapResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             actions: o.get_field("actions"),
             container_registry_name: o.get_field("containerRegistryName"),
             description: o.get_field("description"),

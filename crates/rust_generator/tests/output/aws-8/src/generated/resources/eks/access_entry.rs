@@ -64,6 +64,8 @@ pub mod access_entry {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the Access Entry.
         pub access_entry_arn: pulumi_gestalt_rust::Output<String>,
         /// Name of the EKS Cluster.
@@ -140,6 +142,7 @@ pub mod access_entry {
         let o = context.register_resource(request);
         AccessEntryResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             access_entry_arn: o.get_field("accessEntryArn"),
             cluster_name: o.get_field("clusterName"),
             created_at: o.get_field("createdAt"),

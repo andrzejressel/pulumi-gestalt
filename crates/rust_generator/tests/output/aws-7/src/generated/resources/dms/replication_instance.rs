@@ -172,6 +172,8 @@ pub mod replication_instance {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The amount of storage (in gigabytes) to be initially allocated for the replication instance.
         pub allocated_storage: pulumi_gestalt_rust::Output<i32>,
         /// Indicates that major version upgrades are allowed.
@@ -340,6 +342,7 @@ pub mod replication_instance {
         let o = context.register_resource(request);
         ReplicationInstanceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             allocated_storage: o.get_field("allocatedStorage"),
             allow_major_version_upgrade: o.get_field("allowMajorVersionUpgrade"),
             apply_immediately: o.get_field("applyImmediately"),

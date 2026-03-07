@@ -73,6 +73,8 @@ pub mod voice_connector_group {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Chime Voice Connectors to route inbound calls to.
         pub connectors: pulumi_gestalt_rust::Output<
             Option<Vec<super::super::types::chime::VoiceConnectorGroupConnector>>,
@@ -109,6 +111,7 @@ pub mod voice_connector_group {
         let o = context.register_resource(request);
         VoiceConnectorGroupResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             connectors: o.get_field("connectors"),
             name: o.get_field("name"),
         }

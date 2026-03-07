@@ -122,6 +122,8 @@ pub mod memcached_layer {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Amount of memory to allocate for the cache on each instance, in megabytes. Defaults to 512MB.
         pub allocated_memory: pulumi_gestalt_rust::Output<Option<i32>>,
         /// The Amazon Resource Name(ARN) of the layer.
@@ -351,6 +353,7 @@ pub mod memcached_layer {
         let o = context.register_resource(request);
         MemcachedLayerResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             allocated_memory: o.get_field("allocatedMemory"),
             arn: o.get_field("arn"),
             auto_assign_elastic_ips: o.get_field("autoAssignElasticIps"),

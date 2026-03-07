@@ -67,6 +67,8 @@ pub mod ddos_protection_plan {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         pub location: pulumi_gestalt_rust::Output<String>,
         /// Specifies the name of the Network DDoS Protection Plan. Changing this forces a new resource to be created.
@@ -119,6 +121,7 @@ pub mod ddos_protection_plan {
         let o = context.register_resource(request);
         DdosProtectionPlanResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             location: o.get_field("location"),
             name: o.get_field("name"),
             resource_group_name: o.get_field("resourceGroupName"),

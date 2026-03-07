@@ -124,6 +124,8 @@ pub mod virtual_machine {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// An `assessment` block as defined below.
         pub assessment: pulumi_gestalt_rust::Output<
             Option<super::super::types::mssql::VirtualMachineAssessment>,
@@ -290,6 +292,7 @@ pub mod virtual_machine {
         let o = context.register_resource(request);
         VirtualMachineResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             assessment: o.get_field("assessment"),
             auto_backup: o.get_field("autoBackup"),
             auto_patching: o.get_field("autoPatching"),

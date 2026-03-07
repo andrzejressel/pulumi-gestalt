@@ -84,6 +84,8 @@ pub mod custom_provider {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Any number of `action` block as defined below. One of `resource_type` or `action` must be specified.
         pub actions: pulumi_gestalt_rust::Output<
             Option<Vec<super::super::types::core::CustomProviderAction>>,
@@ -161,6 +163,7 @@ pub mod custom_provider {
         let o = context.register_resource(request);
         CustomProviderResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             actions: o.get_field("actions"),
             location: o.get_field("location"),
             name: o.get_field("name"),

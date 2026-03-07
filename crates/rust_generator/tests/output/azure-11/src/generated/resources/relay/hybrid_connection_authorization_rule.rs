@@ -86,6 +86,8 @@ pub mod hybrid_connection_authorization_rule {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Name of the Azure Relay Hybrid Connection for which this Azure Relay Hybrid Connection Authorization Rule will be created. Changing this forces a new Azure Relay Hybrid Connection Authorization Rule to be created.
         pub hybrid_connection_name: pulumi_gestalt_rust::Output<String>,
         /// Grants listen access to this Authorization Rule. Defaults to `false`.
@@ -166,6 +168,7 @@ pub mod hybrid_connection_authorization_rule {
         let o = context.register_resource(request);
         HybridConnectionAuthorizationRuleResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             hybrid_connection_name: o.get_field("hybridConnectionName"),
             listen: o.get_field("listen"),
             manage: o.get_field("manage"),

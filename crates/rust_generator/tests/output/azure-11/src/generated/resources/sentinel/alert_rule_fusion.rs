@@ -81,6 +81,8 @@ pub mod alert_rule_fusion {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The GUID of the alert rule template which is used for this Sentinel Fusion Alert Rule. Changing this forces a new Sentinel Fusion Alert Rule to be created.
         pub alert_rule_template_guid: pulumi_gestalt_rust::Output<String>,
         /// Should this Sentinel Fusion Alert Rule be enabled? Defaults to `true`.
@@ -141,6 +143,7 @@ pub mod alert_rule_fusion {
         let o = context.register_resource(request);
         AlertRuleFusionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             alert_rule_template_guid: o.get_field("alertRuleTemplateGuid"),
             enabled: o.get_field("enabled"),
             log_analytics_workspace_id: o.get_field("logAnalyticsWorkspaceId"),

@@ -126,6 +126,8 @@ pub mod network_manager_connectivity_configuration {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// One or more `applies_to_group` blocks as defined below.
         pub applies_to_groups: pulumi_gestalt_rust::Output<
             Vec<
@@ -215,6 +217,7 @@ pub mod network_manager_connectivity_configuration {
         let o = context.register_resource(request);
         NetworkManagerConnectivityConfigurationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             applies_to_groups: o.get_field("appliesToGroups"),
             connectivity_topology: o.get_field("connectivityTopology"),
             delete_existing_peering_enabled: o.get_field("deleteExistingPeeringEnabled"),

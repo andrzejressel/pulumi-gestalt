@@ -54,6 +54,8 @@ pub mod stream_consumer {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the stream consumer.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Approximate timestamp in [RFC3339 format](https://tools.ietf.org/html/rfc3339#section-5.8) of when the stream consumer was created.
@@ -92,6 +94,7 @@ pub mod stream_consumer {
         let o = context.register_resource(request);
         StreamConsumerResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             creation_timestamp: o.get_field("creationTimestamp"),
             name: o.get_field("name"),

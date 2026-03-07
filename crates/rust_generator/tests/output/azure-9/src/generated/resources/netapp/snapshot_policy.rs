@@ -128,6 +128,8 @@ pub mod snapshot_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The name of the NetApp Account in which the NetApp Snapshot Policy should be created. Changing this forces a new resource to be created.
         pub account_name: pulumi_gestalt_rust::Output<String>,
         /// Sets a daily snapshot schedule. A `daily_schedule` block as defined below.
@@ -228,6 +230,7 @@ pub mod snapshot_policy {
         let o = context.register_resource(request);
         SnapshotPolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             account_name: o.get_field("accountName"),
             daily_schedule: o.get_field("dailySchedule"),
             enabled: o.get_field("enabled"),

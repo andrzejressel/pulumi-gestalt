@@ -57,6 +57,8 @@ pub mod voice_connector {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ARN (Amazon Resource Name) of the Amazon Chime Voice Connector.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The AWS Region in which the Amazon Chime Voice Connector is created. Default value: `us-east-1`
@@ -117,6 +119,7 @@ pub mod voice_connector {
         let o = context.register_resource(request);
         VoiceConnectorResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             aws_region: o.get_field("awsRegion"),
             name: o.get_field("name"),

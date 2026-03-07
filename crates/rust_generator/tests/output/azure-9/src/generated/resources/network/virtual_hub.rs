@@ -95,6 +95,8 @@ pub mod virtual_hub {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Address Prefix which should be used for this Virtual Hub. Changing this forces a new resource to be created. [The address prefix subnet cannot be smaller than a `/24`. Azure recommends using a `/23`](https://docs.microsoft.com/azure/virtual-wan/virtual-wan-faq#what-is-the-recommended-hub-address-space-during-hub-creation).
         pub address_prefix: pulumi_gestalt_rust::Output<Option<String>>,
         /// The ID of the default Route Table in the Virtual Hub.
@@ -201,6 +203,7 @@ pub mod virtual_hub {
         let o = context.register_resource(request);
         VirtualHubResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             address_prefix: o.get_field("addressPrefix"),
             default_route_table_id: o.get_field("defaultRouteTableId"),
             hub_routing_preference: o.get_field("hubRoutingPreference"),

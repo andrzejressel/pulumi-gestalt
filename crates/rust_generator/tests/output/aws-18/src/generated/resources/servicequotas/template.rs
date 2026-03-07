@@ -52,6 +52,8 @@ pub mod template {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Indicates whether the quota is global.
         pub global_quota: pulumi_gestalt_rust::Output<bool>,
         /// Quota identifier. To find the quota code for a specific quota, use the aws.servicequotas.ServiceQuota data source.
@@ -108,6 +110,7 @@ pub mod template {
         let o = context.register_resource(request);
         TemplateResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             global_quota: o.get_field("globalQuota"),
             quota_code: o.get_field("quotaCode"),
             quota_name: o.get_field("quotaName"),

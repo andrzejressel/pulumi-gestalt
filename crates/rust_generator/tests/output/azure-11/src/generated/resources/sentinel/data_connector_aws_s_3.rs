@@ -83,6 +83,8 @@ pub mod data_connector_aws_s_3 {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the AWS role, which is connected to this AWS CloudTrail Data Connector. See the [Azure document](https://docs.microsoft.com/azure/sentinel/connect-aws?tabs=s3#create-an-aws-assumed-role-and-grant-access-to-the-aws-sentinel-account) for details.
         pub aws_role_arn: pulumi_gestalt_rust::Output<String>,
         /// The name of the Log Analytics table that will store the ingested data.
@@ -140,6 +142,7 @@ pub mod data_connector_aws_s_3 {
         let o = context.register_resource(request);
         DataConnectorAwsS3Result {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             aws_role_arn: o.get_field("awsRoleArn"),
             destination_table: o.get_field("destinationTable"),
             log_analytics_workspace_id: o.get_field("logAnalyticsWorkspaceId"),

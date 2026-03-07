@@ -118,6 +118,8 @@ pub mod integration_account_agreement {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The type of the Logic App Integration Account Agreement. Possible values are `AS2`, `X12` and `Edifact`.
         pub agreement_type: pulumi_gestalt_rust::Output<String>,
         /// The content of the Logic App Integration Account Agreement.
@@ -217,6 +219,7 @@ pub mod integration_account_agreement {
         let o = context.register_resource(request);
         IntegrationAccountAgreementResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             agreement_type: o.get_field("agreementType"),
             content: o.get_field("content"),
             guest_identity: o.get_field("guestIdentity"),

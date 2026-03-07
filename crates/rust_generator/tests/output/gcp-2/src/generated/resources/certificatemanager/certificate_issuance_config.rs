@@ -148,6 +148,8 @@ pub mod certificate_issuance_config {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The CA that issues the workload certificate. It includes the CA address, type, authentication to CA service, etc.
         /// Structure is documented below.
         pub certificate_authority_config: pulumi_gestalt_rust::Output<
@@ -266,6 +268,7 @@ pub mod certificate_issuance_config {
         let o = context.register_resource(request);
         CertificateIssuanceConfigResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             certificate_authority_config: o.get_field("certificateAuthorityConfig"),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),

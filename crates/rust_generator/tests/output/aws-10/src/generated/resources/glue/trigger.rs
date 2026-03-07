@@ -216,6 +216,8 @@ pub mod trigger {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// List of actions initiated by this trigger when it fires. See Actions Below.
         pub actions: pulumi_gestalt_rust::Output<
             Vec<super::super::types::glue::TriggerAction>,
@@ -331,6 +333,7 @@ pub mod trigger {
         let o = context.register_resource(request);
         TriggerResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             actions: o.get_field("actions"),
             arn: o.get_field("arn"),
             description: o.get_field("description"),

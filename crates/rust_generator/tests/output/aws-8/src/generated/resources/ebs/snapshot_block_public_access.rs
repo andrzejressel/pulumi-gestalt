@@ -40,6 +40,8 @@ pub mod snapshot_block_public_access {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The mode in which to enable "Block public access for snapshots" for the region. Allowed values are `block-all-sharing`, `block-new-sharing`, `unblocked`.
         pub state: pulumi_gestalt_rust::Output<String>,
     }
@@ -67,6 +69,7 @@ pub mod snapshot_block_public_access {
         let o = context.register_resource(request);
         SnapshotBlockPublicAccessResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             state: o.get_field("state"),
         }
     }

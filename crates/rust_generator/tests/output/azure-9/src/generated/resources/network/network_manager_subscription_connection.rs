@@ -72,6 +72,8 @@ pub mod network_manager_subscription_connection {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Connection state of the Network Manager Subscription Connection.
         pub connection_state: pulumi_gestalt_rust::Output<String>,
         /// A description of the Network Manager Subscription Connection.
@@ -123,6 +125,7 @@ pub mod network_manager_subscription_connection {
         let o = context.register_resource(request);
         NetworkManagerSubscriptionConnectionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             connection_state: o.get_field("connectionState"),
             description: o.get_field("description"),
             name: o.get_field("name"),

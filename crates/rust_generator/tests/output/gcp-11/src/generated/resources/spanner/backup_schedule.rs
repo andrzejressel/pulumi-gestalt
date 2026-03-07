@@ -164,6 +164,8 @@ pub mod backup_schedule {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The database to create the backup schedule on.
         ///
         ///
@@ -256,6 +258,7 @@ pub mod backup_schedule {
         let o = context.register_resource(request);
         BackupScheduleResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             database: o.get_field("database"),
             full_backup_spec: o.get_field("fullBackupSpec"),
             incremental_backup_spec: o.get_field("incrementalBackupSpec"),

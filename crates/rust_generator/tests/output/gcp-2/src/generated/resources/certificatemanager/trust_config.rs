@@ -149,6 +149,8 @@ pub mod trust_config {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Allowlisted PEM-encoded certificates. A certificate matching an allowlisted certificate is always considered valid as long as
         /// the certificate is parseable, proof of private key possession is established, and constraints on the certificate's SAN field are met.
         /// Structure is documented below.
@@ -257,6 +259,7 @@ pub mod trust_config {
         let o = context.register_resource(request);
         TrustConfigResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             allowlisted_certificates: o.get_field("allowlistedCertificates"),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),

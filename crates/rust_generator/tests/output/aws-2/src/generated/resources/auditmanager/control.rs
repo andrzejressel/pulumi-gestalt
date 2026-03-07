@@ -75,6 +75,8 @@ pub mod control {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Recommended actions to carry out if the control isn't fulfilled.
         pub action_plan_instructions: pulumi_gestalt_rust::Output<Option<String>>,
         /// Title of the action plan for remediating the control.
@@ -162,6 +164,7 @@ pub mod control {
         let o = context.register_resource(request);
         ControlResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             action_plan_instructions: o.get_field("actionPlanInstructions"),
             action_plan_title: o.get_field("actionPlanTitle"),
             arn: o.get_field("arn"),

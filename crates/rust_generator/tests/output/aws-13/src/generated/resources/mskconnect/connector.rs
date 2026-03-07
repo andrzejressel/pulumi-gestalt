@@ -127,6 +127,8 @@ pub mod connector {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the connector.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Information about the capacity allocated to the connector. See `capacity` Block for details.
@@ -274,6 +276,7 @@ pub mod connector {
         let o = context.register_resource(request);
         ConnectorResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             capacity: o.get_field("capacity"),
             connector_configuration: o.get_field("connectorConfiguration"),

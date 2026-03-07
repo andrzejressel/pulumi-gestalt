@@ -118,6 +118,8 @@ pub mod search_engine {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The collection ID.
         pub collection_id: pulumi_gestalt_rust::Output<String>,
         /// Common config spec that specifies the metadata of the engine.
@@ -216,6 +218,7 @@ pub mod search_engine {
         let o = context.register_resource(request);
         SearchEngineResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             collection_id: o.get_field("collectionId"),
             common_config: o.get_field("commonConfig"),
             create_time: o.get_field("createTime"),

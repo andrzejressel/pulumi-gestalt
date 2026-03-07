@@ -262,6 +262,8 @@ pub mod instance {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Annotations to allow client tools to store small amount of arbitrary data. This is distinct from labels.
         /// **Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
         /// Please refer to the field `effective_annotations` for all of the annotations present on the resource.
@@ -472,6 +474,7 @@ pub mod instance {
         let o = context.register_resource(request);
         InstanceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             annotations: o.get_field("annotations"),
             availability_type: o.get_field("availabilityType"),
             client_connection_config: o.get_field("clientConnectionConfig"),

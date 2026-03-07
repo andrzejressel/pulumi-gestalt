@@ -57,6 +57,8 @@ pub mod capacity_block_reservation {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the reservation.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The Availability Zone in which to create the Capacity Block Reservation.
@@ -140,6 +142,7 @@ pub mod capacity_block_reservation {
         let o = context.register_resource(request);
         CapacityBlockReservationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             availability_zone: o.get_field("availabilityZone"),
             capacity_block_offering_id: o.get_field("capacityBlockOfferingId"),

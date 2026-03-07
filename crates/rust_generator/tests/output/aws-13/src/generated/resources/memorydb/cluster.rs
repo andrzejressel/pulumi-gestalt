@@ -133,6 +133,8 @@ pub mod cluster {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The name of the Access Control List to associate with the cluster.
         pub acl_name: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the cluster.
@@ -362,6 +364,7 @@ pub mod cluster {
         let o = context.register_resource(request);
         ClusterResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             acl_name: o.get_field("aclName"),
             arn: o.get_field("arn"),
             auto_minor_version_upgrade: o.get_field("autoMinorVersionUpgrade"),

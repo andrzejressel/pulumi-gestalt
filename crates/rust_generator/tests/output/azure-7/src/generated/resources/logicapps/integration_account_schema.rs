@@ -74,6 +74,8 @@ pub mod integration_account_schema {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The content of the Logic App Integration Account Schema.
         pub content: pulumi_gestalt_rust::Output<String>,
         /// The file name of the Logic App Integration Account Schema.
@@ -139,6 +141,7 @@ pub mod integration_account_schema {
         let o = context.register_resource(request);
         IntegrationAccountSchemaResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             content: o.get_field("content"),
             file_name: o.get_field("fileName"),
             integration_account_name: o.get_field("integrationAccountName"),

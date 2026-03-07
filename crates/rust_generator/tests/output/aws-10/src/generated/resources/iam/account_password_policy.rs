@@ -81,6 +81,8 @@ pub mod account_password_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Whether to allow users to change their own password
         pub allow_users_to_change_password: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Indicates whether passwords in the account expire. Returns `true` if `max_password_age` contains a value greater than `0`. Returns `false` if it is `0` or _not present_.
@@ -176,6 +178,7 @@ pub mod account_password_policy {
         let o = context.register_resource(request);
         AccountPasswordPolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             allow_users_to_change_password: o.get_field("allowUsersToChangePassword"),
             expire_passwords: o.get_field("expirePasswords"),
             hard_expiry: o.get_field("hardExpiry"),

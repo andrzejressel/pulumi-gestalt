@@ -260,6 +260,8 @@ pub mod authz_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// When the action is CUSTOM, customProvider must be specified.
         /// When the action is ALLOW, only requests matching the policy will be allowed.
         /// When the action is DENY, only requests matching the policy will be denied.
@@ -377,6 +379,7 @@ pub mod authz_policy {
         let o = context.register_resource(request);
         AuthzPolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             action: o.get_field("action"),
             create_time: o.get_field("createTime"),
             custom_provider: o.get_field("customProvider"),

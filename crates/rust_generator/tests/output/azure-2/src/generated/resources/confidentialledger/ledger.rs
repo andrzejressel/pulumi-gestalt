@@ -84,6 +84,8 @@ pub mod ledger {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A list of `azuread_based_service_principal` blocks as defined below.
         pub azuread_based_service_principals: pulumi_gestalt_rust::Output<
             Vec<
@@ -173,6 +175,7 @@ pub mod ledger {
         let o = context.register_resource(request);
         LedgerResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             azuread_based_service_principals: o
                 .get_field("azureadBasedServicePrincipals"),
             certificate_based_security_principals: o

@@ -95,6 +95,8 @@ pub mod share_file {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Sets the file’s Content-Disposition header.
         pub content_disposition: pulumi_gestalt_rust::Output<Option<String>>,
         /// Specifies which content encodings have been applied to the file.
@@ -183,6 +185,7 @@ pub mod share_file {
         let o = context.register_resource(request);
         ShareFileResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             content_disposition: o.get_field("contentDisposition"),
             content_encoding: o.get_field("contentEncoding"),
             content_length: o.get_field("contentLength"),

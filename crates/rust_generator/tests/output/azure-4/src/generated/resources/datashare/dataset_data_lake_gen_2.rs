@@ -111,6 +111,8 @@ pub mod dataset_data_lake_gen_2 {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The name of the Data Share Dataset.
         pub display_name: pulumi_gestalt_rust::Output<String>,
         /// The path of the file in the data lake file system to be shared with the receiver. Conflicts with `folder_path` Changing this forces a new Data Share Data Lake Gen2 Dataset to be created.
@@ -175,6 +177,7 @@ pub mod dataset_data_lake_gen_2 {
         let o = context.register_resource(request);
         DatasetDataLakeGen2Result {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             display_name: o.get_field("displayName"),
             file_path: o.get_field("filePath"),
             file_system_name: o.get_field("fileSystemName"),

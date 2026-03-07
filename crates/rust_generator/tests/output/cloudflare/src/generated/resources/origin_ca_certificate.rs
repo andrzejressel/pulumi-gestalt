@@ -67,6 +67,8 @@ pub mod origin_ca_certificate {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Origin CA certificate.
         pub certificate: pulumi_gestalt_rust::Output<String>,
         /// The Certificate Signing Request. Must be newline-encoded. **Modifying this attribute will force creation of a new resource.**
@@ -125,6 +127,7 @@ pub mod origin_ca_certificate {
         let o = context.register_resource(request);
         OriginCaCertificateResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             certificate: o.get_field("certificate"),
             csr: o.get_field("csr"),
             expires_on: o.get_field("expiresOn"),

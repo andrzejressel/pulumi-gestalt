@@ -81,6 +81,8 @@ pub mod runtime_management_config {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ARN of the function.
         pub function_arn: pulumi_gestalt_rust::Output<String>,
         /// Name or ARN of the Lambda function.
@@ -133,6 +135,7 @@ pub mod runtime_management_config {
         let o = context.register_resource(request);
         RuntimeManagementConfigResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             function_arn: o.get_field("functionArn"),
             function_name: o.get_field("functionName"),
             qualifier: o.get_field("qualifier"),

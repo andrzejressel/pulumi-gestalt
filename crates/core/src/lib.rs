@@ -23,7 +23,21 @@ impl RawOutput {
     }
 }
 
-pub type RegisterResourceOutput = Output<Arc<ResourceFields>>;
+#[derive(Clone)]
+pub struct RegisterResourceOutput {
+    pub(crate) fields: Output<Arc<ResourceFields>>,
+    pub(crate) urn: RawOutput,
+}
+
+impl RegisterResourceOutput {
+    pub fn get_urn(&self) -> RawOutput {
+        self.urn.clone()
+    }
+
+    pub(crate) fn invoke_void(self) -> Shared<BoxFuture<'static, ()>> {
+        self.fields.invoke_void()
+    }
+}
 
 #[derive(Clone)]
 pub struct Output<T> {

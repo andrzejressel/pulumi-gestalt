@@ -432,6 +432,8 @@ pub mod workspace {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Application Insights associated with this Machine Learning Workspace. Changing this forces a new resource to be created.
         pub application_insights_id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the container registry associated with this Machine Learning Workspace. Changing this forces a new resource to be created.
@@ -640,6 +642,7 @@ pub mod workspace {
         let o = context.register_resource(request);
         WorkspaceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             application_insights_id: o.get_field("applicationInsightsId"),
             container_registry_id: o.get_field("containerRegistryId"),
             description: o.get_field("description"),

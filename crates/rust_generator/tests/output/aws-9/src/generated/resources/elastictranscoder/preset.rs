@@ -120,6 +120,8 @@ pub mod preset {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the Elastic Transcoder Preset.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Audio parameters object (documented below).
@@ -223,6 +225,7 @@ pub mod preset {
         let o = context.register_resource(request);
         PresetResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             audio: o.get_field("audio"),
             audio_codec_options: o.get_field("audioCodecOptions"),

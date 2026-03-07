@@ -84,6 +84,8 @@ pub mod secret_version {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the secret.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Specifies binary data that you want to encrypt and store in this version of the secret. This is required if `secret_string` is not set. Needs to be encoded to base64.
@@ -138,6 +140,7 @@ pub mod secret_version {
         let o = context.register_resource(request);
         SecretVersionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             secret_binary: o.get_field("secretBinary"),
             secret_id: o.get_field("secretId"),

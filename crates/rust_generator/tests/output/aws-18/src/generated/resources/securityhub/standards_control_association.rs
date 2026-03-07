@@ -58,6 +58,8 @@ pub mod standards_control_association {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The desired enablement status of the control in the standard. Valid values: `ENABLED`, `DISABLED`.
         pub association_status: pulumi_gestalt_rust::Output<String>,
         /// The unique identifier for the security control whose enablement status you want to update.
@@ -109,6 +111,7 @@ pub mod standards_control_association {
         let o = context.register_resource(request);
         StandardsControlAssociationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             association_status: o.get_field("associationStatus"),
             security_control_id: o.get_field("securityControlId"),
             standards_arn: o.get_field("standardsArn"),

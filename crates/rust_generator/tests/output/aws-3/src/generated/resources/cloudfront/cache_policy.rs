@@ -97,6 +97,8 @@ pub mod cache_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Description for the cache policy.
         pub comment: pulumi_gestalt_rust::Output<Option<String>>,
         /// Amount of time, in seconds, that objects are allowed to remain in the CloudFront cache before CloudFront sends a new request to the origin server to check if the object has been updated.
@@ -166,6 +168,7 @@ pub mod cache_policy {
         let o = context.register_resource(request);
         CachePolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             comment: o.get_field("comment"),
             default_ttl: o.get_field("defaultTtl"),
             etag: o.get_field("etag"),

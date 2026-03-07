@@ -61,6 +61,8 @@ pub mod assessment_delegation {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Identifier for the assessment.
         pub assessment_id: pulumi_gestalt_rust::Output<String>,
         /// Comment describing the delegation request.
@@ -122,6 +124,7 @@ pub mod assessment_delegation {
         let o = context.register_resource(request);
         AssessmentDelegationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             assessment_id: o.get_field("assessmentId"),
             comment: o.get_field("comment"),
             control_set_id: o.get_field("controlSetId"),

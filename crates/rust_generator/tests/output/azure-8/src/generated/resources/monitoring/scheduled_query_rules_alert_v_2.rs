@@ -199,6 +199,8 @@ pub mod scheduled_query_rules_alert_v_2 {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// An `action` block as defined below.
         pub action: pulumi_gestalt_rust::Output<
             Option<super::super::types::monitoring::ScheduledQueryRulesAlertV2Action>,
@@ -396,6 +398,7 @@ pub mod scheduled_query_rules_alert_v_2 {
         let o = context.register_resource(request);
         ScheduledQueryRulesAlertV2Result {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             action: o.get_field("action"),
             auto_mitigation_enabled: o.get_field("autoMitigationEnabled"),
             created_with_api_version: o.get_field("createdWithApiVersion"),

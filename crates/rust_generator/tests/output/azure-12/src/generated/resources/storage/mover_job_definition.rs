@@ -144,6 +144,8 @@ pub mod mover_job_definition {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the name of the Storage Mover Agent to assign for new Job Runs of this Storage Mover Job Definition.
         pub agent_name: pulumi_gestalt_rust::Output<Option<String>>,
         /// Specifies the strategy to use for copy. Possible values are `Additive` and `Mirror`.
@@ -229,6 +231,7 @@ pub mod mover_job_definition {
         let o = context.register_resource(request);
         MoverJobDefinitionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             agent_name: o.get_field("agentName"),
             copy_mode: o.get_field("copyMode"),
             description: o.get_field("description"),

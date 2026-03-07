@@ -72,6 +72,8 @@ pub mod postgresql_coordinator_configuration {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The resource ID of the Azure Cosmos DB for PostgreSQL Cluster where we want to change configuration. Changing this forces a new resource to be created.
         pub cluster_id: pulumi_gestalt_rust::Output<String>,
         /// The name of the Coordinator Configuration on Azure Cosmos DB for PostgreSQL Cluster. Changing this forces a new resource to be created.
@@ -114,6 +116,7 @@ pub mod postgresql_coordinator_configuration {
         let o = context.register_resource(request);
         PostgresqlCoordinatorConfigurationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             cluster_id: o.get_field("clusterId"),
             name: o.get_field("name"),
             value: o.get_field("value"),

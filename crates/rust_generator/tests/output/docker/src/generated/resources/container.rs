@@ -298,6 +298,8 @@ pub mod container {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// If `true` attach to the container after its creation and waits the end of its execution. Defaults to `false`.
         pub attach: pulumi_gestalt_rust::Output<Option<bool>>,
         /// The network bridge of the container as read from its NetworkSettings.
@@ -794,6 +796,7 @@ pub mod container {
         let o = context.register_resource(request);
         ContainerResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             attach: o.get_field("attach"),
             bridge: o.get_field("bridge"),
             capabilities: o.get_field("capabilities"),

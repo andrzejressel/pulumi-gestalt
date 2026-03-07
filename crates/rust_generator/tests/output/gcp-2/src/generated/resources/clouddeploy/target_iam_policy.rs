@@ -22,6 +22,8 @@ pub mod target_iam_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         pub etag: pulumi_gestalt_rust::Output<String>,
         pub location: pulumi_gestalt_rust::Output<String>,
         pub name: pulumi_gestalt_rust::Output<String>,
@@ -67,6 +69,7 @@ pub mod target_iam_policy {
         let o = context.register_resource(request);
         TargetIamPolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             etag: o.get_field("etag"),
             location: o.get_field("location"),
             name: o.get_field("name"),

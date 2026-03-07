@@ -93,6 +93,8 @@ pub mod cluster_managed_private_endpoint {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The name of the Kusto Cluster. Changing this forces a new resource to be created.
         pub cluster_name: pulumi_gestalt_rust::Output<String>,
         /// The group id in which the managed private endpoint is created. Changing this forces a new resource to be created.
@@ -167,6 +169,7 @@ pub mod cluster_managed_private_endpoint {
         let o = context.register_resource(request);
         ClusterManagedPrivateEndpointResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             cluster_name: o.get_field("clusterName"),
             group_id: o.get_field("groupId"),
             name: o.get_field("name"),

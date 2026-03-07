@@ -112,6 +112,8 @@ pub mod project_environment_type {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A list of roles to assign to the environment creator.
         pub creator_role_assignment_roles: pulumi_gestalt_rust::Output<
             Option<Vec<String>>,
@@ -207,6 +209,7 @@ pub mod project_environment_type {
         let o = context.register_resource(request);
         ProjectEnvironmentTypeResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             creator_role_assignment_roles: o.get_field("creatorRoleAssignmentRoles"),
             deployment_target_id: o.get_field("deploymentTargetId"),
             dev_center_project_id: o.get_field("devCenterProjectId"),

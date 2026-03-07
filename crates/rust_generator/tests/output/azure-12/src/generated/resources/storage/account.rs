@@ -281,6 +281,8 @@ pub mod account {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Defines the access tier for `BlobStorage`, `FileStorage` and `StorageV2` accounts. Valid options are `Hot` and `Cool`, defaults to `Hot`.
         pub access_tier: pulumi_gestalt_rust::Output<String>,
         /// Defines the Kind of account. Valid options are `BlobStorage`, `BlockBlobStorage`, `FileStorage`, `Storage` and `StorageV2`. Defaults to `StorageV2`.
@@ -792,6 +794,7 @@ pub mod account {
         let o = context.register_resource(request);
         AccountResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             access_tier: o.get_field("accessTier"),
             account_kind: o.get_field("accountKind"),
             account_replication_type: o.get_field("accountReplicationType"),

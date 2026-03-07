@@ -62,6 +62,8 @@ pub mod user {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ARN of the appstream user.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Authentication type for the user. You must specify USERPOOL. Valid values: `API`, `SAML`, `USERPOOL`
@@ -132,6 +134,7 @@ pub mod user {
         let o = context.register_resource(request);
         UserResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             authentication_type: o.get_field("authenticationType"),
             created_time: o.get_field("createdTime"),

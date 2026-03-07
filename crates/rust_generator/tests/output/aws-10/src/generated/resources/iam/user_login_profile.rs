@@ -60,6 +60,8 @@ pub mod user_login_profile {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The encrypted password, base64 encoded. Only available if password was handled on resource creation, not import.
         pub encrypted_password: pulumi_gestalt_rust::Output<String>,
         /// The fingerprint of the PGP key used to encrypt the password. Only available if password was handled on this provider resource creation, not import.
@@ -116,6 +118,7 @@ pub mod user_login_profile {
         let o = context.register_resource(request);
         UserLoginProfileResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             encrypted_password: o.get_field("encryptedPassword"),
             key_fingerprint: o.get_field("keyFingerprint"),
             password: o.get_field("password"),

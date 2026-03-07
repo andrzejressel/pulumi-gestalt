@@ -128,6 +128,8 @@ pub mod policy_file_share {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Configures the Policy backup frequency and times as documented in the `backup` block below.
         pub backup: pulumi_gestalt_rust::Output<
             super::super::types::backup::PolicyFileShareBackup,
@@ -223,6 +225,7 @@ pub mod policy_file_share {
         let o = context.register_resource(request);
         PolicyFileShareResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             backup: o.get_field("backup"),
             name: o.get_field("name"),
             recovery_vault_name: o.get_field("recoveryVaultName"),

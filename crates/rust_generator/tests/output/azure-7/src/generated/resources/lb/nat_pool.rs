@@ -115,6 +115,8 @@ pub mod nat_pool {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The port used for the internal endpoint. Possible values range between 1 and 65535, inclusive.
         pub backend_port: pulumi_gestalt_rust::Output<i32>,
         /// Are the floating IPs enabled for this Load Balancer Rule? A floating IP is reassigned to a secondary server in case the primary server fails. Required to configure a SQL AlwaysOn Availability Group.
@@ -217,6 +219,7 @@ pub mod nat_pool {
         let o = context.register_resource(request);
         NatPoolResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             backend_port: o.get_field("backendPort"),
             floating_ip_enabled: o.get_field("floatingIpEnabled"),
             frontend_ip_configuration_id: o.get_field("frontendIpConfigurationId"),

@@ -44,6 +44,8 @@ pub mod logpush_ownership_challenge {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The account identifier to target for the resource. Must provide only one of `account_id`, `zone_id`.
         pub account_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// Uniquely identifies a resource (such as an s3 bucket) where data will be pushed. Additional configuration parameters supported by the destination may be included. See [Logpush destination documentation](https://developers.cloudflare.com/logs/logpush/logpush-configuration-api/understanding-logpush-api/#destination). **Modifying this attribute will force creation of a new resource.**
@@ -88,6 +90,7 @@ pub mod logpush_ownership_challenge {
         let o = context.register_resource(request);
         LogpushOwnershipChallengeResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             destination_conf: o.get_field("destinationConf"),
             ownership_challenge_filename: o.get_field("ownershipChallengeFilename"),

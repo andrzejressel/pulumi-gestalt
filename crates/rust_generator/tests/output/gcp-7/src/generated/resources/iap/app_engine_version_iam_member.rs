@@ -420,6 +420,8 @@ pub mod app_engine_version_iam_member {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Id of the App Engine application. Used to find the parent resource to bind the IAM policy to
         pub app_id: pulumi_gestalt_rust::Output<String>,
         /// An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
@@ -507,6 +509,7 @@ pub mod app_engine_version_iam_member {
         let o = context.register_resource(request);
         AppEngineVersionIamMemberResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             app_id: o.get_field("appId"),
             condition: o.get_field("condition"),
             etag: o.get_field("etag"),

@@ -90,6 +90,8 @@ pub mod lake {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Output only. Aggregated status of the underlying assets of the lake.
         pub asset_statuses: pulumi_gestalt_rust::Output<
             Vec<super::super::types::dataplex::LakeAssetStatus>,
@@ -196,6 +198,7 @@ pub mod lake {
         let o = context.register_resource(request);
         LakeResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             asset_statuses: o.get_field("assetStatuses"),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),

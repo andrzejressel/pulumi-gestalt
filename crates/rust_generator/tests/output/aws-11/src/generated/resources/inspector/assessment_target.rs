@@ -46,6 +46,8 @@ pub mod assessment_target {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The target assessment ARN.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The name of the assessment target.
@@ -82,6 +84,7 @@ pub mod assessment_target {
         let o = context.register_resource(request);
         AssessmentTargetResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             name: o.get_field("name"),
             resource_group_arn: o.get_field("resourceGroupArn"),

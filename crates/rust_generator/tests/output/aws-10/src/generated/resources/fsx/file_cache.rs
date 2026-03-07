@@ -104,6 +104,8 @@ pub mod file_cache {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) for the resource.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// A boolean flag indicating whether tags for the cache should be copied to data repository associations. This value defaults to false.
@@ -229,6 +231,7 @@ pub mod file_cache {
         let o = context.register_resource(request);
         FileCacheResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             copy_tags_to_data_repository_associations: o
                 .get_field("copyTagsToDataRepositoryAssociations"),

@@ -69,6 +69,8 @@ pub mod bucket_public_access_block {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Whether Amazon S3 should block public ACLs for this bucket. Defaults to `false`. Enabling this setting does not affect existing policies or ACLs. When set to `true` causes the following behavior:
         /// * PUT Bucket acl and PUT Object acl calls will fail if the specified ACL allows public access.
         /// * PUT Object calls will fail if the request includes an object ACL.
@@ -131,6 +133,7 @@ pub mod bucket_public_access_block {
         let o = context.register_resource(request);
         BucketPublicAccessBlockResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             block_public_acls: o.get_field("blockPublicAcls"),
             block_public_policy: o.get_field("blockPublicPolicy"),
             bucket: o.get_field("bucket"),

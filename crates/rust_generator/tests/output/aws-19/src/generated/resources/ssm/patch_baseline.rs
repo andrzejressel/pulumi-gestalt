@@ -206,6 +206,8 @@ pub mod patch_baseline {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Set of rules used to include patches in the baseline. Up to 10 approval rules can be specified. See `approval_rule` below.
         pub approval_rules: pulumi_gestalt_rust::Output<
             Option<Vec<super::super::types::ssm::PatchBaselineApprovalRule>>,
@@ -338,6 +340,7 @@ pub mod patch_baseline {
         let o = context.register_resource(request);
         PatchBaselineResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             approval_rules: o.get_field("approvalRules"),
             approved_patches: o.get_field("approvedPatches"),
             approved_patches_compliance_level: o

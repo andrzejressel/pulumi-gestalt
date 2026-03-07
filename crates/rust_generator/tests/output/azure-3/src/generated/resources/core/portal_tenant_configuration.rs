@@ -53,6 +53,8 @@ pub mod portal_tenant_configuration {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Is the private tile markdown storage which used to display custom dynamic and static content enabled?
         ///
         /// > **Note:** When `private_markdown_storage_enforced` is set to `true`, only external storage configuration (URI) is allowed for Markdown tiles. Inline content configuration will be prohibited.
@@ -85,6 +87,7 @@ pub mod portal_tenant_configuration {
         let o = context.register_resource(request);
         PortalTenantConfigurationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             private_markdown_storage_enforced: o
                 .get_field("privateMarkdownStorageEnforced"),
         }

@@ -73,6 +73,8 @@ pub mod iot_hub_device_update_account {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The API host name of the IoT Hub Device Update Account.
         pub host_name: pulumi_gestalt_rust::Output<String>,
         /// An `identity` block as defined below.
@@ -151,6 +153,7 @@ pub mod iot_hub_device_update_account {
         let o = context.register_resource(request);
         IotHubDeviceUpdateAccountResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             host_name: o.get_field("hostName"),
             identity: o.get_field("identity"),
             location: o.get_field("location"),

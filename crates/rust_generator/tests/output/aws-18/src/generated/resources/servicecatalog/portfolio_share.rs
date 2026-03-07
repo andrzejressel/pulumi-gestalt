@@ -74,6 +74,8 @@ pub mod portfolio_share {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Language code. Valid values: `en` (English), `jp` (Japanese), `zh` (Chinese). Default value is `en`.
         pub accept_language: pulumi_gestalt_rust::Output<Option<String>>,
         /// Whether the shared portfolio is imported by the recipient account. If the recipient is organizational, the share is automatically imported, and the field is always set to true.
@@ -147,6 +149,7 @@ pub mod portfolio_share {
         let o = context.register_resource(request);
         PortfolioShareResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             accept_language: o.get_field("acceptLanguage"),
             accepted: o.get_field("accepted"),
             portfolio_id: o.get_field("portfolioId"),

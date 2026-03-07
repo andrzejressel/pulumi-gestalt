@@ -171,6 +171,8 @@ pub mod health_check {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the Health Check.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The minimum number of child health checks that must be healthy for Route 53 to consider the parent health check to be healthy. Valid values are integers between 0 and 256, inclusive
@@ -360,6 +362,7 @@ pub mod health_check {
         let o = context.register_resource(request);
         HealthCheckResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             child_health_threshold: o.get_field("childHealthThreshold"),
             child_healthchecks: o.get_field("childHealthchecks"),

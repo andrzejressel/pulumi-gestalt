@@ -53,6 +53,8 @@ pub mod spot_datafeed_subscription {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Amazon S3 bucket in which to store the Spot instance data feed.
         pub bucket: pulumi_gestalt_rust::Output<String>,
         /// Path of folder inside bucket to place spot pricing data.
@@ -87,6 +89,7 @@ pub mod spot_datafeed_subscription {
         let o = context.register_resource(request);
         SpotDatafeedSubscriptionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             bucket: o.get_field("bucket"),
             prefix: o.get_field("prefix"),
         }

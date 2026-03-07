@@ -69,6 +69,8 @@ pub mod dedicated_ip_pool {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ARN of the Dedicated IP Pool.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Name of the dedicated IP pool.
@@ -119,6 +121,7 @@ pub mod dedicated_ip_pool {
         let o = context.register_resource(request);
         DedicatedIpPoolResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             pool_name: o.get_field("poolName"),
             scaling_mode: o.get_field("scalingMode"),

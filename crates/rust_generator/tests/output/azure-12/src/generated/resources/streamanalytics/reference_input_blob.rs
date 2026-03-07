@@ -109,6 +109,8 @@ pub mod reference_input_blob {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The authentication mode for the Stream Analytics Reference Input. Possible values are `Msi` and `ConnectionString`. Defaults to `ConnectionString`.
         pub authentication_mode: pulumi_gestalt_rust::Output<Option<String>>,
         /// The date format. Wherever `{date}` appears in `path_pattern`, the value of this property is used as the date format instead.
@@ -212,6 +214,7 @@ pub mod reference_input_blob {
         let o = context.register_resource(request);
         ReferenceInputBlobResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             authentication_mode: o.get_field("authenticationMode"),
             date_format: o.get_field("dateFormat"),
             name: o.get_field("name"),

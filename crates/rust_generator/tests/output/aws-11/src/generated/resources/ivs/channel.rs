@@ -61,6 +61,8 @@ pub mod channel {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ARN of the Channel.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// If `true`, channel is private (enabled for playback authorization).
@@ -137,6 +139,7 @@ pub mod channel {
         let o = context.register_resource(request);
         ChannelResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             authorized: o.get_field("authorized"),
             ingest_endpoint: o.get_field("ingestEndpoint"),

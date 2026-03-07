@@ -187,6 +187,8 @@ pub mod keystores_aliases_self_signed_cert {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Alias for the key/certificate pair. Values must match the regular expression [\w\s-.]{1,255}.
         /// This must be provided for all formats except selfsignedcert; self-signed certs may specify the alias in either
         /// this parameter or the JSON body.
@@ -291,6 +293,7 @@ pub mod keystores_aliases_self_signed_cert {
         let o = context.register_resource(request);
         KeystoresAliasesSelfSignedCertResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             alias: o.get_field("alias"),
             cert_validity_in_days: o.get_field("certValidityInDays"),
             certs_infos: o.get_field("certsInfos"),

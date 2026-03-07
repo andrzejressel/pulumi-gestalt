@@ -57,6 +57,8 @@ pub mod voice_connector_logging {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// When true, enables logging of detailed media metrics for Voice Connectors to Amazon CloudWatch logs.
         pub enable_media_metric_logs: pulumi_gestalt_rust::Output<Option<bool>>,
         /// When true, enables SIP message logs for sending to Amazon CloudWatch Logs.
@@ -100,6 +102,7 @@ pub mod voice_connector_logging {
         let o = context.register_resource(request);
         VoiceConnectorLoggingResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             enable_media_metric_logs: o.get_field("enableMediaMetricLogs"),
             enable_sip_logs: o.get_field("enableSipLogs"),
             voice_connector_id: o.get_field("voiceConnectorId"),

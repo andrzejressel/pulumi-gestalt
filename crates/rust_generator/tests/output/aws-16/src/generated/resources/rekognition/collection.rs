@@ -49,6 +49,8 @@ pub mod collection {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ARN of the Collection.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The name of the collection
@@ -103,6 +105,7 @@ pub mod collection {
         let o = context.register_resource(request);
         CollectionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             collection_id: o.get_field("collectionId"),
             face_model_version: o.get_field("faceModelVersion"),

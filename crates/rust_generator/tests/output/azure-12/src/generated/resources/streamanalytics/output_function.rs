@@ -122,6 +122,8 @@ pub mod output_function {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The API key for the Function.
         pub api_key: pulumi_gestalt_rust::Output<String>,
         /// The maximum number of events in each batch that's sent to the function. Defaults to `100`.
@@ -200,6 +202,7 @@ pub mod output_function {
         let o = context.register_resource(request);
         OutputFunctionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             api_key: o.get_field("apiKey"),
             batch_max_count: o.get_field("batchMaxCount"),
             batch_max_in_bytes: o.get_field("batchMaxInBytes"),

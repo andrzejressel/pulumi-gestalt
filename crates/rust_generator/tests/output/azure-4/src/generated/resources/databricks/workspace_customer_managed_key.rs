@@ -29,6 +29,8 @@ pub mod workspace_customer_managed_key {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         pub key_vault_key_id: pulumi_gestalt_rust::Output<String>,
         /// The unique identifier of the databricks workspace in Databricks control plane.
         pub workspace_id: pulumi_gestalt_rust::Output<String>,
@@ -63,6 +65,7 @@ pub mod workspace_customer_managed_key {
         let o = context.register_resource(request);
         WorkspaceCustomerManagedKeyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             key_vault_key_id: o.get_field("keyVaultKeyId"),
             workspace_id: o.get_field("workspaceId"),
         }

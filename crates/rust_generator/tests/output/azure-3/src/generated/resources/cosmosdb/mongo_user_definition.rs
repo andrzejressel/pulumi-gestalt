@@ -101,6 +101,8 @@ pub mod mongo_user_definition {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The resource ID of the Mongo DB. Changing this forces a new resource to be created.
         pub cosmos_mongo_database_id: pulumi_gestalt_rust::Output<String>,
         /// A list of Mongo Roles that are inherited to the Mongo User Definition.
@@ -153,6 +155,7 @@ pub mod mongo_user_definition {
         let o = context.register_resource(request);
         MongoUserDefinitionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             cosmos_mongo_database_id: o.get_field("cosmosMongoDatabaseId"),
             inherited_role_names: o.get_field("inheritedRoleNames"),
             password: o.get_field("password"),

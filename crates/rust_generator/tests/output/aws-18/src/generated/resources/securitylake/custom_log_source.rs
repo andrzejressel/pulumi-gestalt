@@ -76,6 +76,8 @@ pub mod custom_log_source {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The attributes of a third-party custom source.
         pub attributes: pulumi_gestalt_rust::Output<
             Vec<super::super::types::securitylake::CustomLogSourceAttribute>,
@@ -136,6 +138,7 @@ pub mod custom_log_source {
         let o = context.register_resource(request);
         CustomLogSourceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             attributes: o.get_field("attributes"),
             configuration: o.get_field("configuration"),
             event_classes: o.get_field("eventClasses"),

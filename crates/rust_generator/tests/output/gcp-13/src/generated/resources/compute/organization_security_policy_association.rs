@@ -109,6 +109,8 @@ pub mod organization_security_policy_association {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The resource that the security policy is attached to.
         pub attachment_id: pulumi_gestalt_rust::Output<String>,
         /// The display name of the security policy of the association.
@@ -156,6 +158,7 @@ pub mod organization_security_policy_association {
         let o = context.register_resource(request);
         OrganizationSecurityPolicyAssociationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             attachment_id: o.get_field("attachmentId"),
             display_name: o.get_field("displayName"),
             name: o.get_field("name"),

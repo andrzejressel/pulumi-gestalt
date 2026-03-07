@@ -144,6 +144,8 @@ pub mod endpoint {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// IPv4 or IPv6 address of the endpoint.
         pub address: pulumi_gestalt_rust::Output<Option<String>>,
         /// The Resource ID must be 1-63 characters long, including digits,
@@ -219,6 +221,7 @@ pub mod endpoint {
         let o = context.register_resource(request);
         EndpointResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             address: o.get_field("address"),
             endpoint_id: o.get_field("endpointId"),
             metadata: o.get_field("metadata"),

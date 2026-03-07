@@ -170,6 +170,8 @@ pub mod autonomous_database {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The password for the default ADMIN user.
         pub admin_password: pulumi_gestalt_rust::Output<Option<String>>,
         /// The ID of the Autonomous Database to create. This value is restricted
@@ -297,6 +299,7 @@ pub mod autonomous_database {
         let o = context.register_resource(request);
         AutonomousDatabaseResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             admin_password: o.get_field("adminPassword"),
             autonomous_database_id: o.get_field("autonomousDatabaseId"),
             cidr: o.get_field("cidr"),

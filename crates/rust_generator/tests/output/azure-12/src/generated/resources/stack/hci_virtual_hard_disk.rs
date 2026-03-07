@@ -101,6 +101,8 @@ pub mod hci_virtual_hard_disk {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The block size of the disk in bytes. Changing this forces a new Azure Stack HCI Virtual Hard Disk to be created.
         pub block_size_in_bytes: pulumi_gestalt_rust::Output<Option<i32>>,
         /// The ID of the Custom Location where the Azure Stack HCI Virtual Hard Disk should exist. Changing this forces a new Azure Stack HCI Virtual Hard Disk to be created.
@@ -220,6 +222,7 @@ pub mod hci_virtual_hard_disk {
         let o = context.register_resource(request);
         HciVirtualHardDiskResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             block_size_in_bytes: o.get_field("blockSizeInBytes"),
             custom_location_id: o.get_field("customLocationId"),
             disk_file_format: o.get_field("diskFileFormat"),

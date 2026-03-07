@@ -64,6 +64,8 @@ pub mod key_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A flag to indicate whether to bypass the key policy lockout safety check.
         /// Setting this value to true increases the risk that the KMS key becomes unmanageable. Do not set this value to true indiscriminately. If this value is set, and the resource is destroyed, a warning will be shown, and the resource will be removed from state.
         /// For more information, refer to the scenario in the [Default Key Policy](https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam) section in the _AWS Key Management Service Developer Guide_.
@@ -113,6 +115,7 @@ pub mod key_policy {
         let o = context.register_resource(request);
         KeyPolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             bypass_policy_lockout_safety_check: o
                 .get_field("bypassPolicyLockoutSafetyCheck"),
             key_id: o.get_field("keyId"),

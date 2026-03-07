@@ -128,6 +128,8 @@ pub mod job {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the compatibility level for this job - which controls certain runtime behaviours of the streaming job. Possible values are `1.0`, `1.1` and `1.2`.
         ///
         /// > **NOTE:** Support for Compatibility Level 1.2 is dependent on a new version of the Stream Analytics API, which [being tracked in this issue](https://github.com/Azure/azure-rest-api-specs/issues/5604).
@@ -300,6 +302,7 @@ pub mod job {
         let o = context.register_resource(request);
         JobResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             compatibility_level: o.get_field("compatibilityLevel"),
             content_storage_policy: o.get_field("contentStoragePolicy"),
             data_locale: o.get_field("dataLocale"),

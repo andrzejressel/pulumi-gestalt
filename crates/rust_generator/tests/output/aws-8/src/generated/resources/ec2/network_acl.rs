@@ -81,6 +81,8 @@ pub mod network_acl {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the network ACL
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Specifies an egress rule. Parameters defined below.
@@ -150,6 +152,7 @@ pub mod network_acl {
         let o = context.register_resource(request);
         NetworkAclResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             egress: o.get_field("egress"),
             ingress: o.get_field("ingress"),

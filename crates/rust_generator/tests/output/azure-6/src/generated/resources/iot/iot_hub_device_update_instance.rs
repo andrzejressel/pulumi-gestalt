@@ -98,6 +98,8 @@ pub mod iot_hub_device_update_instance {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the ID of the IoT Hub Device Update Account where the IoT Hub Device Update Instance exists. Changing this forces a new resource to be created.
         pub device_update_account_id: pulumi_gestalt_rust::Output<String>,
         /// Whether the diagnostic log collection is enabled. Possible values are `true` and `false`. Defaults to `false`.
@@ -171,6 +173,7 @@ pub mod iot_hub_device_update_instance {
         let o = context.register_resource(request);
         IotHubDeviceUpdateInstanceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             device_update_account_id: o.get_field("deviceUpdateAccountId"),
             diagnostic_enabled: o.get_field("diagnosticEnabled"),
             diagnostic_storage_account: o.get_field("diagnosticStorageAccount"),

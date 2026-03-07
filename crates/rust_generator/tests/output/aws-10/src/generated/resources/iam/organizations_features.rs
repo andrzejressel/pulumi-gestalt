@@ -51,6 +51,8 @@ pub mod organizations_features {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// List of IAM features to enable. Valid values are `RootCredentialsManagement` and `RootSessions`.
         pub enabled_features: pulumi_gestalt_rust::Output<Vec<String>>,
     }
@@ -78,6 +80,7 @@ pub mod organizations_features {
         let o = context.register_resource(request);
         OrganizationsFeaturesResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             enabled_features: o.get_field("enabledFeatures"),
         }
     }

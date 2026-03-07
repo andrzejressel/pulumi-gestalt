@@ -87,6 +87,8 @@ pub mod extension {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The action points defined in the extension. Detailed below.
         pub action_points: pulumi_gestalt_rust::Output<
             Vec<super::super::types::appconfig::ExtensionActionPoint>,
@@ -155,6 +157,7 @@ pub mod extension {
         let o = context.register_resource(request);
         ExtensionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             action_points: o.get_field("actionPoints"),
             arn: o.get_field("arn"),
             description: o.get_field("description"),

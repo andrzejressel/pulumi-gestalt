@@ -70,6 +70,8 @@ pub mod cluster {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The GUID of the cluster.
         pub cluster_id: pulumi_gestalt_rust::Output<String>,
         /// An `identity` block as defined below. Changing this forces a new Log Analytics Cluster to be created.
@@ -140,6 +142,7 @@ pub mod cluster {
         let o = context.register_resource(request);
         ClusterResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             cluster_id: o.get_field("clusterId"),
             identity: o.get_field("identity"),
             location: o.get_field("location"),
