@@ -73,6 +73,9 @@ pub mod ssmincidents {
     include!("resources/ssmincidents/replication_set.rs");
     include!("resources/ssmincidents/response_plan.rs");
 }
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {
     pub mod sesv2 {
         include!("functions/sesv2/get_configuration_set.rs");
@@ -336,6 +339,11 @@ pub mod types {
         include!("types/ssmincidents/get_response_plan_integration.rs");
         include!("types/ssmincidents/get_response_plan_integration_pagerduty.rs");
     }
+    include!("types/provider_assume_role.rs");
+    include!("types/provider_assume_role_with_web_identity.rs");
+    include!("types/provider_default_tags.rs");
+    include!("types/provider_endpoint.rs");
+    include!("types/provider_ignore_tags.rs");
     include!("types/get_availability_zone_filter.rs");
     include!("types/get_availability_zones_filter.rs");
     include!("types/get_regions_filter.rs");

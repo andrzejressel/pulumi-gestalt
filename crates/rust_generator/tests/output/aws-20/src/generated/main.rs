@@ -72,6 +72,9 @@ pub mod verifiedpermissions {
     include!("resources/verifiedpermissions/policy_template.rs");
     include!("resources/verifiedpermissions/schema.rs");
 }
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {
     pub mod ssoadmin {
         include!("functions/ssoadmin/get_application.rs");
@@ -316,6 +319,11 @@ pub mod types {
         include!("types/verifiedpermissions/schema_definition.rs");
         include!("types/verifiedpermissions/get_policy_store_validation_setting.rs");
     }
+    include!("types/provider_assume_role.rs");
+    include!("types/provider_assume_role_with_web_identity.rs");
+    include!("types/provider_default_tags.rs");
+    include!("types/provider_endpoint.rs");
+    include!("types/provider_ignore_tags.rs");
     include!("types/get_availability_zone_filter.rs");
     include!("types/get_availability_zones_filter.rs");
     include!("types/get_regions_filter.rs");

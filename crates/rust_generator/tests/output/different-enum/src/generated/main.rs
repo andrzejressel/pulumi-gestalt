@@ -4,6 +4,9 @@ pub mod tree {
         include!("resources/tree/v1/rubber_tree.rs");
     }
 }
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {}
 pub mod types {
     pub mod tree {

@@ -287,23 +287,10 @@ fn resource_to_model(
             element_id: element_id.clone(),
             // name: resource_name.clone(),
             description: fix_description(resource.object_type.description.clone(), &element_id),
-            input_properties: resource
-                .input_properties
-                .iter()
-                .map(|(input_name, input_property)| {
-                    let mut type_ = new_type_mapper(&input_property.r#type)
-                        .context(format!("Cannot handle [{input_name}] type"))?;
-                    // Forced options are not for inputs
-                    if !resource.required_inputs.contains(input_name) {
-                        type_ = crate::model::Type::Option(Box::new(type_));
-                    }
-                    Ok(InputProperty {
-                        name: input_name.clone(),
-                        r#type: type_,
-                        description: input_property.r#type.description.clone(),
-                    })
-                })
-                .collect::<Result<Vec<_>>>()?,
+            input_properties: convert_input_properties(
+                &resource.input_properties,
+                &resource.required_inputs,
+            )?,
             output_properties: convert_output_property_object_type(
                 &element_id,
                 &resource.object_type,
@@ -341,30 +328,39 @@ fn provider_to_model(provider: Option<&Resource>) -> Result<Provider> {
 
     Ok(Provider {
         description: provider.object_type.description.clone(),
-        input_properties: convert_input_property_object_type(&provider.object_type)?,
+        input_properties: convert_input_properties(
+            &provider.input_properties,
+            &provider.required_inputs,
+        )?,
         output_properties: convert_output_property_object_type_without_forced(
             &provider.object_type,
         )?,
     })
 }
 
-fn convert_input_property_object_type(object_type: &ObjectType) -> Result<Vec<InputProperty>> {
-    object_type
-        .properties
+fn convert_input_properties(
+    properties: &PulumiMap<Property>,
+    required: &BTreeSet<String>,
+) -> Result<Vec<InputProperty>> {
+    properties
         .iter()
-        .map(|(output_name, output_property)| {
-            let mut type_ = new_type_mapper(&output_property.r#type)
-                .context(format!("Cannot handle [{output_name}] type"))?;
-            if !object_type.required.contains(output_name) {
+        .map(|(input_name, input_property)| {
+            let mut type_ = new_type_mapper(&input_property.r#type)
+                .context(format!("Cannot handle [{input_name}] type"))?;
+            if !required.contains(input_name) {
                 type_ = crate::model::Type::Option(Box::new(type_));
             }
             Ok(InputProperty {
-                name: output_name.clone(),
+                name: input_name.clone(),
                 r#type: type_,
-                description: output_property.r#type.description.clone(),
+                description: input_property.r#type.description.clone(),
             })
         })
         .collect::<Result<Vec<_>>>()
+}
+
+fn convert_input_property_object_type(object_type: &ObjectType) -> Result<Vec<InputProperty>> {
+    convert_input_properties(&object_type.properties, &object_type.required)
 }
 
 fn convert_output_property_object_type(
@@ -834,6 +830,40 @@ mod test {
         assert!(package.provider.input_properties.is_empty());
         assert!(package.provider.output_properties.is_empty());
 
+        Ok(())
+    }
+
+    #[test]
+    fn provider_types_are_kept() -> Result<()> {
+        let json = json!({
+            "name": "aws",
+            "version": "0.0.0-DEV",
+            "provider": {
+                "inputProperties": {
+                    "some_type": {
+                        "$ref": "#/types/aws:index:SomeType"
+                    }
+                },
+                "properties": {},
+            },
+            "types": {
+                "aws:index:SomeType": {
+                    "type": "object",
+                    "properties": {
+                        "foo": { "type": "string" }
+                    }
+                }
+            }
+        });
+
+        let mut package = to_model(&serde_json::from_value(json)?)?;
+        filter_package(&mut package, &["ec2"]);
+
+        assert!(
+            package
+                .types
+                .contains_key(&ElementId::new("aws:index:SomeType")?)
+        );
         Ok(())
     }
 }
