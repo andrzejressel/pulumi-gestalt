@@ -180,6 +180,7 @@ pub enum Ref {
     Archive,
     Asset,
     Any,
+    CurrentProvider,
 }
 
 #[derive(Clone, Debug, PartialEq, Hash, Ord, PartialOrd, Eq)]
@@ -202,6 +203,8 @@ impl Ref {
                 raw.strip_prefix("#/types/")
                     .context(format!("Cannot strip types prefix from {raw}"))?,
             )?))
+        } else if raw == "#/provider" {
+            Ok(Ref::CurrentProvider)
         } else {
             Err(anyhow::anyhow!("Cannot generate ref from [{raw}]."))
         }

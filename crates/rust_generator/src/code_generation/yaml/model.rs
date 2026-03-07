@@ -2,8 +2,8 @@ use crate::code_generation::yaml::model::Variable::FnInvokeVariable;
 use crate::code_generation::yaml::yaml_model::{
     YamlExpression, YamlFile, YamlFnInvoke, YamlResource, YamlVariable,
 };
-use anyhow::Result;
 use anyhow::{Context, anyhow};
+use anyhow::{Result, bail};
 use pulumi_gestalt_schema::model::*;
 use std::collections::BTreeMap;
 use std::ops::Deref;
@@ -250,6 +250,7 @@ fn map_type(
         Ref::Archive => return Err(anyhow!("Archive ref is not supported")),
         Ref::Asset => return Err(anyhow!("Asset ref is not supported")),
         Ref::Any => return Err(anyhow!("Any ref is not supported")),
+        Ref::CurrentProvider => bail!("Current ref is not supported"),
     };
 
     let tpe = &context.all_types[element_id];

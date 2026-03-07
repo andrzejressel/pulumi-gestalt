@@ -84,6 +84,15 @@ fn plain_object_disable_defaults() -> Result<()> {
 }
 
 #[test]
+fn provider_as_function_parameter() -> Result<()> {
+    run_pulumi_generator_test(
+        "provider_as_function_parameter",
+        "provider_as_function_parameter",
+        None,
+    )
+}
+
+#[test]
 fn random() -> Result<()> {
     run_pulumi_generator_test("random", "random", None)
 }

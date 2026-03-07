@@ -36,7 +36,15 @@ impl TypeExt for Type {
                 }
                 Ref::Archive => "String".to_string(), //FIXME
                 Ref::Asset => "String".to_string(),   //FIXME
-                Ref::Any => "String".to_string(),     //FIXME
+                Ref::Any => "String".to_string(),     //FIXME,
+                Ref::CurrentProvider => {
+                    "String".to_string() // FIXME - it should be implicit conversion like when sending to resources
+                    // format!(
+                    //     "{}{}",
+                    //     access_root(depth),
+                    //     "provider::ProviderResult".to_string()
+                    // )
+                }
             },
             Type::Option(type_) => format!("Option<{}>", type_.get_rust_type(depth)),
             Type::DiscriminatedUnion(refs) => format!(
@@ -84,7 +92,9 @@ impl TypeExt for Type {
             | Type::Array(_)
             | Type::Object(_)
             | Type::ConstString(_)
-            | Type::Ref(Ref::Asset | Ref::Any | Ref::Archive) => self.get_rust_type(depth),
+            | Type::Ref(Ref::Asset | Ref::Any | Ref::Archive | Ref::CurrentProvider) => {
+                self.get_rust_type(depth)
+            }
         }
     }
 
@@ -152,7 +162,7 @@ pub(crate) trait ElementIdExt {
 
 impl ElementIdExt for ElementId {
     fn get_rust_struct_name(&self) -> String {
-        self.name.clone().to_case(Case::Pascal)
+        self.name.clone().replace("/", "_").to_case(Case::Pascal)
     }
 
     fn get_rust_absolute_name(&self) -> String {
@@ -171,7 +181,7 @@ impl ElementIdExt for ElementId {
     }
 
     fn get_rust_package_name(&self) -> String {
-        escape_rust_name(&self.name.clone().to_case(Case::Snake)).to_string()
+        escape_rust_name(&self.name.clone().replace("/", "_").to_case(Case::Snake)).to_string()
     }
 
     fn get_rust_namespace_name(&self) -> String {
