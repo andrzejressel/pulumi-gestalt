@@ -107,6 +107,8 @@ pub mod resolver_dns_forwarding_ruleset {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the Azure Region where the Private DNS Resolver Dns Forwarding Ruleset should exist. Changing this forces a new Private DNS Resolver Dns Forwarding Ruleset to be created.
         pub location: pulumi_gestalt_rust::Output<String>,
         /// Specifies the name which should be used for this Private DNS Resolver Dns Forwarding Ruleset. Changing this forces a new Private DNS Resolver Dns Forwarding Ruleset to be created.
@@ -170,6 +172,7 @@ pub mod resolver_dns_forwarding_ruleset {
         let o = context.register_resource(request);
         ResolverDnsForwardingRulesetResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             location: o.get_field("location"),
             name: o.get_field("name"),
             private_dns_resolver_outbound_endpoint_ids: o

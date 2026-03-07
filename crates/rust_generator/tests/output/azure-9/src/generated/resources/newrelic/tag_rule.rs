@@ -111,6 +111,8 @@ pub mod tag_rule {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Whether activity logs from Azure resources should be sent for the Monitor resource. Defaults to `false`.
         pub activity_log_enabled: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Whether Azure Active Directory logs should be sent for the Monitor resource. Defaults to `false`.
@@ -190,6 +192,7 @@ pub mod tag_rule {
         let o = context.register_resource(request);
         TagRuleResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             activity_log_enabled: o.get_field("activityLogEnabled"),
             azure_active_directory_log_enabled: o
                 .get_field("azureActiveDirectoryLogEnabled"),

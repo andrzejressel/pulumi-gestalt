@@ -53,6 +53,8 @@ pub mod application_assignment_configuration {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ARN of the application.
         pub application_arn: pulumi_gestalt_rust::Output<String>,
         /// Indicates whether users must have an explicit assignment to access the application. If `false`, all users have access to the application.
@@ -88,6 +90,7 @@ pub mod application_assignment_configuration {
         let o = context.register_resource(request);
         ApplicationAssignmentConfigurationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             application_arn: o.get_field("applicationArn"),
             assignment_required: o.get_field("assignmentRequired"),
         }

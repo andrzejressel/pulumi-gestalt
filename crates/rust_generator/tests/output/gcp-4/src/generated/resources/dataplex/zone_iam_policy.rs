@@ -235,6 +235,8 @@ pub mod zone_iam_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Used to find the parent resource to bind the IAM policy to
         pub dataplex_zone: pulumi_gestalt_rust::Output<String>,
         /// (Computed) The etag of the IAM policy.
@@ -292,6 +294,7 @@ pub mod zone_iam_policy {
         let o = context.register_resource(request);
         ZoneIamPolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             dataplex_zone: o.get_field("dataplexZone"),
             etag: o.get_field("etag"),
             lake: o.get_field("lake"),

@@ -165,6 +165,8 @@ pub mod stack_set_instance {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Target AWS Account ID to create a Stack based on the StackSet. Defaults to current account.
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account. Valid values: `SELF` (default), `DELEGATED_ADMIN`.
@@ -263,6 +265,7 @@ pub mod stack_set_instance {
         let o = context.register_resource(request);
         StackSetInstanceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             call_as: o.get_field("callAs"),
             deployment_targets: o.get_field("deploymentTargets"),

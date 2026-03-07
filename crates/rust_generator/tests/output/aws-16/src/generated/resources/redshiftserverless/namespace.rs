@@ -76,6 +76,8 @@ pub mod namespace {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         pub admin_password_secret_arn: pulumi_gestalt_rust::Output<String>,
         /// ID of the KMS key used to encrypt the namespace's admin credentials secret.
         pub admin_password_secret_kms_key_id: pulumi_gestalt_rust::Output<String>,
@@ -190,6 +192,7 @@ pub mod namespace {
         let o = context.register_resource(request);
         NamespaceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             admin_password_secret_arn: o.get_field("adminPasswordSecretArn"),
             admin_password_secret_kms_key_id: o.get_field("adminPasswordSecretKmsKeyId"),
             admin_user_password: o.get_field("adminUserPassword"),

@@ -64,6 +64,8 @@ pub mod preferences {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Customize whether the member accounts can see the "After Discounts" savings estimates. Valid values are `All` and `None`. Default value is `All`.
         pub member_account_discount_visibility: pulumi_gestalt_rust::Output<String>,
         /// Customize how estimated monthly savings are calculated. Valid values are `BeforeDiscounts` and `AfterDiscounts`. Default value is `BeforeDiscounts`.
@@ -102,6 +104,7 @@ pub mod preferences {
         let o = context.register_resource(request);
         PreferencesResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             member_account_discount_visibility: o
                 .get_field("memberAccountDiscountVisibility"),
             savings_estimation_mode: o.get_field("savingsEstimationMode"),

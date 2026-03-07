@@ -202,6 +202,8 @@ pub mod tls_route {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Time the TlsRoute was created in UTC.
         pub create_time: pulumi_gestalt_rust::Output<String>,
         /// A free-text description of the resource. Max length 1024 characters.
@@ -276,6 +278,7 @@ pub mod tls_route {
         let o = context.register_resource(request);
         TlsRouteResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),
             gateways: o.get_field("gateways"),

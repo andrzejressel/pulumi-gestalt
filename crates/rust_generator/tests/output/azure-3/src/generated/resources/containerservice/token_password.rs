@@ -85,6 +85,8 @@ pub mod token_password {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Container Registry Token that this Container Registry Token Password resides in. Changing this forces a new Container Registry Token Password to be created.
         pub container_registry_token_id: pulumi_gestalt_rust::Output<String>,
         /// One `password` block as defined below.
@@ -132,6 +134,7 @@ pub mod token_password {
         let o = context.register_resource(request);
         TokenPasswordResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             container_registry_token_id: o.get_field("containerRegistryTokenId"),
             password1: o.get_field("password1"),
             password2: o.get_field("password2"),

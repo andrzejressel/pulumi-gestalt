@@ -79,6 +79,8 @@ pub mod shared_access_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Adds `DeviceConnect` permission to this Shared Access Account. It allows sending and receiving on the device-side endpoints.
         ///
         /// > **NOTE** At least one of `registry_read`, `registry_write`, `service_connect`, `device_connect` permissions must be set to `true`.
@@ -160,6 +162,7 @@ pub mod shared_access_policy {
         let o = context.register_resource(request);
         SharedAccessPolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             device_connect: o.get_field("deviceConnect"),
             iothub_name: o.get_field("iothubName"),
             name: o.get_field("name"),

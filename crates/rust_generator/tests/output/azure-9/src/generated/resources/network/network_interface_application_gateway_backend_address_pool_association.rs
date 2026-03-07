@@ -33,6 +33,8 @@ pub mod network_interface_application_gateway_backend_address_pool_association {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Application Gateway's Backend Address Pool which this Network Interface which should be connected to. Changing this forces a new resource to be created.
         pub backend_address_pool_id: pulumi_gestalt_rust::Output<String>,
         /// The Name of the IP Configuration within the Network Interface which should be connected to the Backend Address Pool. Changing this forces a new resource to be created.
@@ -79,6 +81,7 @@ pub mod network_interface_application_gateway_backend_address_pool_association {
         let o = context.register_resource(request);
         NetworkInterfaceApplicationGatewayBackendAddressPoolAssociationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             backend_address_pool_id: o.get_field("backendAddressPoolId"),
             ip_configuration_name: o.get_field("ipConfigurationName"),
             network_interface_id: o.get_field("networkInterfaceId"),

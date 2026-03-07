@@ -96,6 +96,8 @@ pub mod hub {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A `apns_credential` block as defined below.
         ///
         /// > **NOTE:** Removing the `apns_credential` block will currently force a recreation of this resource [due to this bug in the Azure SDK for Go](https://github.com/Azure/azure-sdk-for-go/issues/2246) - we'll remove this limitation when the SDK bug is fixed.
@@ -184,6 +186,7 @@ pub mod hub {
         let o = context.register_resource(request);
         HubResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             apns_credential: o.get_field("apnsCredential"),
             browser_credential: o.get_field("browserCredential"),
             gcm_credential: o.get_field("gcmCredential"),

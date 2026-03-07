@@ -297,6 +297,8 @@ pub mod distribution {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         pub aliases: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// ARN for the distribution. For example: `arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5`, where `123456789012` is your AWS account ID.
         pub arn: pulumi_gestalt_rust::Output<String>,
@@ -500,6 +502,7 @@ pub mod distribution {
         let o = context.register_resource(request);
         DistributionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             aliases: o.get_field("aliases"),
             arn: o.get_field("arn"),
             caller_reference: o.get_field("callerReference"),

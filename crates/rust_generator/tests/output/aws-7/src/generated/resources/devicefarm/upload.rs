@@ -59,6 +59,8 @@ pub mod upload {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name of this upload.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The upload's category.
@@ -115,6 +117,7 @@ pub mod upload {
         let o = context.register_resource(request);
         UploadResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             category: o.get_field("category"),
             content_type: o.get_field("contentType"),

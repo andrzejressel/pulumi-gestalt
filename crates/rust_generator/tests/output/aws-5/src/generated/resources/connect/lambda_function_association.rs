@@ -47,6 +47,8 @@ pub mod lambda_function_association {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the Lambda Function, omitting any version or alias qualifier.
         pub function_arn: pulumi_gestalt_rust::Output<String>,
         /// The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
@@ -82,6 +84,7 @@ pub mod lambda_function_association {
         let o = context.register_resource(request);
         LambdaFunctionAssociationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             function_arn: o.get_field("functionArn"),
             instance_id: o.get_field("instanceId"),
         }

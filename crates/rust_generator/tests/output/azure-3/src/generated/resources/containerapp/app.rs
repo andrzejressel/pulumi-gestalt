@@ -135,6 +135,8 @@ pub mod app {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Container App Environment within which this Container App should exist. Changing this forces a new resource to be created.
         pub container_app_environment_id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Custom Domain Verification for this Container App.
@@ -278,6 +280,7 @@ pub mod app {
         let o = context.register_resource(request);
         AppResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             container_app_environment_id: o.get_field("containerAppEnvironmentId"),
             custom_domain_verification_id: o.get_field("customDomainVerificationId"),
             dapr: o.get_field("dapr"),

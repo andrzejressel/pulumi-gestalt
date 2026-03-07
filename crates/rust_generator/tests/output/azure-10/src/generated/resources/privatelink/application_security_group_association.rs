@@ -135,6 +135,8 @@ pub mod application_security_group_association {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The id of application security group to associate. Changing this forces a new resource to be created.
         pub application_security_group_id: pulumi_gestalt_rust::Output<String>,
         /// The id of private endpoint to associate. Changing this forces a new resource to be created.
@@ -172,6 +174,7 @@ pub mod application_security_group_association {
         let o = context.register_resource(request);
         ApplicationSecurityGroupAssociationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             application_security_group_id: o.get_field("applicationSecurityGroupId"),
             private_endpoint_id: o.get_field("privateEndpointId"),
         }

@@ -54,6 +54,8 @@ pub mod website_certificate_authority_association {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The root certificate of the Certificate Authority.
         pub certificate: pulumi_gestalt_rust::Output<String>,
         /// The certificate name to display.
@@ -98,6 +100,7 @@ pub mod website_certificate_authority_association {
         let o = context.register_resource(request);
         WebsiteCertificateAuthorityAssociationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             certificate: o.get_field("certificate"),
             display_name: o.get_field("displayName"),
             fleet_arn: o.get_field("fleetArn"),

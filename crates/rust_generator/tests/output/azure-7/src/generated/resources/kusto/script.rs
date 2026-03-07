@@ -129,6 +129,8 @@ pub mod script {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Flag that indicates whether to continue if one of the command fails.
         pub continue_on_errors_enabled: pulumi_gestalt_rust::Output<Option<bool>>,
         /// The ID of the Kusto Database. Changing this forces a new Kusto Script to be created.
@@ -202,6 +204,7 @@ pub mod script {
         let o = context.register_resource(request);
         ScriptResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             continue_on_errors_enabled: o.get_field("continueOnErrorsEnabled"),
             database_id: o.get_field("databaseId"),
             force_an_update_when_value_changed: o

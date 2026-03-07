@@ -134,6 +134,8 @@ pub mod pipeline {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Key-value pairs to configure persistent buffering for the pipeline. See `buffer_options` below.
         pub buffer_options: pulumi_gestalt_rust::Output<
             Option<super::super::types::opensearchingest::PipelineBufferOptions>,
@@ -252,6 +254,7 @@ pub mod pipeline {
         let o = context.register_resource(request);
         PipelineResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             buffer_options: o.get_field("bufferOptions"),
             encryption_at_rest_options: o.get_field("encryptionAtRestOptions"),
             ingest_endpoint_urls: o.get_field("ingestEndpointUrls"),

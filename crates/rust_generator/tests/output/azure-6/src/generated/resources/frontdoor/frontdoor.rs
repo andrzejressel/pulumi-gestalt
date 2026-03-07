@@ -149,6 +149,8 @@ pub mod frontdoor {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A `backend_pool_health_probe` block as defined below.
         pub backend_pool_health_probes: pulumi_gestalt_rust::Output<
             Vec<super::super::types::frontdoor::FrontdoorBackendPoolHealthProbe>,
@@ -297,6 +299,7 @@ pub mod frontdoor {
         let o = context.register_resource(request);
         FrontdoorResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             backend_pool_health_probes: o.get_field("backendPoolHealthProbes"),
             backend_pool_health_probes_map: o.get_field("backendPoolHealthProbesMap"),
             backend_pool_load_balancing_settings_map: o

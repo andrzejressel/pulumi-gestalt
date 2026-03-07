@@ -137,6 +137,8 @@ pub mod spring_cloud_service {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the size for this Spring Cloud Service's default build agent pool. Possible values are `S1`, `S2`, `S3`, `S4` and `S5`. This field is applicable only for Spring Cloud Service with enterprise tier.
         pub build_agent_pool_size: pulumi_gestalt_rust::Output<Option<String>>,
         /// A `config_server_git_setting` block as defined below. This field is applicable only for Spring Cloud Service with basic and standard tier.
@@ -322,6 +324,7 @@ pub mod spring_cloud_service {
         let o = context.register_resource(request);
         SpringCloudServiceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             build_agent_pool_size: o.get_field("buildAgentPoolSize"),
             config_server_git_setting: o.get_field("configServerGitSetting"),
             container_registries: o.get_field("containerRegistries"),

@@ -135,6 +135,8 @@ pub mod network_security_rule {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies whether network traffic is allowed or denied. Possible values are `Allow` and `Deny`.
         pub access: pulumi_gestalt_rust::Output<String>,
         /// A description for this rule. Restricted to 140 characters.
@@ -306,6 +308,7 @@ pub mod network_security_rule {
         let o = context.register_resource(request);
         NetworkSecurityRuleResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             access: o.get_field("access"),
             description: o.get_field("description"),
             destination_address_prefix: o.get_field("destinationAddressPrefix"),

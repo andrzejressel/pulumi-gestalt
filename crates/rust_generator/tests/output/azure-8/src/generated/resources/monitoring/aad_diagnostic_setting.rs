@@ -100,6 +100,8 @@ pub mod aad_diagnostic_setting {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// One or more `enabled_log` blocks as defined below.
         pub enabled_logs: pulumi_gestalt_rust::Output<
             Option<Vec<super::super::types::monitoring::AadDiagnosticSettingEnabledLog>>,
@@ -172,6 +174,7 @@ pub mod aad_diagnostic_setting {
         let o = context.register_resource(request);
         AadDiagnosticSettingResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             enabled_logs: o.get_field("enabledLogs"),
             eventhub_authorization_rule_id: o.get_field("eventhubAuthorizationRuleId"),
             eventhub_name: o.get_field("eventhubName"),

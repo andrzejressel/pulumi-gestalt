@@ -121,6 +121,8 @@ pub mod resolver_forwarding_rule {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the ID of the Private DNS Resolver Forwarding Ruleset. Changing this forces a new Private DNS Resolver Forwarding Rule to be created.
         pub dns_forwarding_ruleset_id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the domain name for the Private DNS Resolver Forwarding Rule. Changing this forces a new Private DNS Resolver Forwarding Rule to be created.
@@ -190,6 +192,7 @@ pub mod resolver_forwarding_rule {
         let o = context.register_resource(request);
         ResolverForwardingRuleResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             dns_forwarding_ruleset_id: o.get_field("dnsForwardingRulesetId"),
             domain_name: o.get_field("domainName"),
             enabled: o.get_field("enabled"),

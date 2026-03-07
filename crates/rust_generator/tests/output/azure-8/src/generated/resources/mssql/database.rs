@@ -313,6 +313,8 @@ pub mod database {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Time in minutes after which database is automatically paused. A value of `-1` means that automatic pause is disabled. This property is only settable for Serverless databases.
         pub auto_pause_delay_in_minutes: pulumi_gestalt_rust::Output<i32>,
         /// Specifies the collation of the database. Changing this forces a new resource to be created.
@@ -648,6 +650,7 @@ pub mod database {
         let o = context.register_resource(request);
         DatabaseResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             auto_pause_delay_in_minutes: o.get_field("autoPauseDelayInMinutes"),
             collation: o.get_field("collation"),
             create_mode: o.get_field("createMode"),

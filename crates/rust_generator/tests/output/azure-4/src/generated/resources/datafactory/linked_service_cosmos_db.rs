@@ -99,6 +99,8 @@ pub mod linked_service_cosmos_db {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The endpoint of the Azure CosmosDB account. Required if `connection_string` is unspecified.
         pub account_endpoint: pulumi_gestalt_rust::Output<Option<String>>,
         /// The account key of the Azure Cosmos DB account. Required if `connection_string` is unspecified.
@@ -207,6 +209,7 @@ pub mod linked_service_cosmos_db {
         let o = context.register_resource(request);
         LinkedServiceCosmosDbResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             account_endpoint: o.get_field("accountEndpoint"),
             account_key: o.get_field("accountKey"),
             additional_properties: o.get_field("additionalProperties"),

@@ -75,6 +75,8 @@ pub mod trusted_token_issuer {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ARN of the trusted token issuer.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// A unique, case-sensitive ID that you provide to ensure the idempotency of the request. AWS generates a random value when not provided.
@@ -155,6 +157,7 @@ pub mod trusted_token_issuer {
         let o = context.register_resource(request);
         TrustedTokenIssuerResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             client_token: o.get_field("clientToken"),
             instance_arn: o.get_field("instanceArn"),

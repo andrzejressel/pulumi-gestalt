@@ -86,6 +86,8 @@ pub mod analytics_solution {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         pub location: pulumi_gestalt_rust::Output<String>,
         /// A `plan` block as documented below.
@@ -162,6 +164,7 @@ pub mod analytics_solution {
         let o = context.register_resource(request);
         AnalyticsSolutionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             location: o.get_field("location"),
             plan: o.get_field("plan"),
             resource_group_name: o.get_field("resourceGroupName"),

@@ -133,6 +133,8 @@ pub mod trigger {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Optional. The name of the channel associated with the trigger in
         /// `projects/{project}/locations/{location}/channels/{channel}` format. You must provide a channel to receive events from
         /// Eventarc SaaS partners.
@@ -265,6 +267,7 @@ pub mod trigger {
         let o = context.register_resource(request);
         TriggerResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             channel: o.get_field("channel"),
             conditions: o.get_field("conditions"),
             create_time: o.get_field("createTime"),

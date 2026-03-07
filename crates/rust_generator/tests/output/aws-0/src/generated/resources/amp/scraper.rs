@@ -50,6 +50,8 @@ pub mod scraper {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// a name to associate with the managed scraper. This is for your use, and does not need to be unique.
         pub alias: pulumi_gestalt_rust::Output<Option<String>>,
         /// The Amazon Resource Name (ARN) of the new scraper.
@@ -127,6 +129,7 @@ pub mod scraper {
         let o = context.register_resource(request);
         ScraperResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             alias: o.get_field("alias"),
             arn: o.get_field("arn"),
             destination: o.get_field("destination"),

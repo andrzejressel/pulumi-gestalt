@@ -119,6 +119,8 @@ pub mod pipeline {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A JSON object that contains the activities that will be associated with the Data Factory Pipeline.
         pub activities_json: pulumi_gestalt_rust::Output<Option<String>>,
         /// List of tags that can be used for describing the Data Factory Pipeline.
@@ -215,6 +217,7 @@ pub mod pipeline {
         let o = context.register_resource(request);
         PipelineResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             activities_json: o.get_field("activitiesJson"),
             annotations: o.get_field("annotations"),
             concurrency: o.get_field("concurrency"),

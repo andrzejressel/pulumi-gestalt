@@ -208,4 +208,12 @@ impl<T> RegisterResourceOutput<T> {
             engine: Arc::clone(&self.engine),
         }
     }
+
+    pub async fn get_urn(&self) -> Output<T> {
+        let raw_output = core::Engine::<T>::create_extract_urn(self.inner.clone());
+        Output {
+            inner: raw_output,
+            engine: Arc::clone(&self.engine),
+        }
+    }
 }

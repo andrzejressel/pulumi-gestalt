@@ -107,6 +107,8 @@ pub mod spring_cloud_api_portal {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies whether the API try-out feature is enabled. When enabled, users can try out the API by sending requests and viewing responses in API portal.
         pub api_try_out_enabled: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Specifies a list of Spring Cloud Gateway.
@@ -191,6 +193,7 @@ pub mod spring_cloud_api_portal {
         let o = context.register_resource(request);
         SpringCloudApiPortalResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             api_try_out_enabled: o.get_field("apiTryOutEnabled"),
             gateway_ids: o.get_field("gatewayIds"),
             https_only_enabled: o.get_field("httpsOnlyEnabled"),

@@ -152,6 +152,8 @@ pub mod network_packet_core_control_plane {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The IPv4 address for the control plane interface. This should match one of the interfaces configured on your Azure Stack Edge device.
         pub control_plane_access_ipv4_address: pulumi_gestalt_rust::Output<
             Option<String>,
@@ -322,6 +324,7 @@ pub mod network_packet_core_control_plane {
         let o = context.register_resource(request);
         NetworkPacketCoreControlPlaneResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             control_plane_access_ipv4_address: o
                 .get_field("controlPlaneAccessIpv4Address"),
             control_plane_access_ipv4_gateway: o

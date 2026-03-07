@@ -238,6 +238,8 @@ pub mod authority {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// URLs for accessing content published by this CA, such as the CA certificate and CRLs.
         /// Structure is documented below.
         pub access_urls: pulumi_gestalt_rust::Output<
@@ -432,6 +434,7 @@ pub mod authority {
         let o = context.register_resource(request);
         AuthorityResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             access_urls: o.get_field("accessUrls"),
             certificate_authority_id: o.get_field("certificateAuthorityId"),
             config: o.get_field("config"),

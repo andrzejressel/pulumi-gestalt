@@ -68,6 +68,8 @@ pub mod ip_group_cidr {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         pub cidr: pulumi_gestalt_rust::Output<String>,
         /// The ID of the destination IP Group.
         /// Changing this forces a new IP Group CIDR to be created.
@@ -102,6 +104,7 @@ pub mod ip_group_cidr {
         let o = context.register_resource(request);
         IPGroupCIDRResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             cidr: o.get_field("cidr"),
             ip_group_id: o.get_field("ipGroupId"),
         }

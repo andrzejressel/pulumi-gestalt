@@ -114,6 +114,8 @@ pub mod endpoint_storage_container {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Type used to authenticate against the storage endpoint. Possible values are `keyBased` and `identityBased`. Defaults to `keyBased`.
         pub authentication_type: pulumi_gestalt_rust::Output<Option<String>>,
         /// Time interval at which blobs are written to storage. Value should be between 60 and 720 seconds. Default value is 300 seconds.
@@ -224,6 +226,7 @@ pub mod endpoint_storage_container {
         let o = context.register_resource(request);
         EndpointStorageContainerResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             authentication_type: o.get_field("authenticationType"),
             batch_frequency_in_seconds: o.get_field("batchFrequencyInSeconds"),
             connection_string: o.get_field("connectionString"),

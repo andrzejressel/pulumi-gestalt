@@ -277,6 +277,8 @@ pub mod regional_secret {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Custom metadata about the regional secret.
         /// Annotations are distinct from various forms of labels. Annotations exist to allow
         /// client tools to store their own state information without requiring a database.
@@ -460,6 +462,7 @@ pub mod regional_secret {
         let o = context.register_resource(request);
         RegionalSecretResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             annotations: o.get_field("annotations"),
             create_time: o.get_field("createTime"),
             customer_managed_encryption: o.get_field("customerManagedEncryption"),

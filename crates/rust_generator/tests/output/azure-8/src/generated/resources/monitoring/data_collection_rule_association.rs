@@ -171,6 +171,8 @@ pub mod data_collection_rule_association {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Data Collection Endpoint which will be associated to the target resource.
         pub data_collection_endpoint_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// The ID of the Data Collection Rule which will be associated to the target resource.
@@ -235,6 +237,7 @@ pub mod data_collection_rule_association {
         let o = context.register_resource(request);
         DataCollectionRuleAssociationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             data_collection_endpoint_id: o.get_field("dataCollectionEndpointId"),
             data_collection_rule_id: o.get_field("dataCollectionRuleId"),
             description: o.get_field("description"),

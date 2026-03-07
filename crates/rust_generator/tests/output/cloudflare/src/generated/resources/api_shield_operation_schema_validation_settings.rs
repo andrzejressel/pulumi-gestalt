@@ -51,6 +51,8 @@ pub mod api_shield_operation_schema_validation_settings {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The mitigation action to apply to this operation.
         pub mitigation_action: pulumi_gestalt_rust::Output<Option<String>>,
         /// Operation ID these settings should apply to. **Modifying this attribute will force creation of a new resource.**
@@ -93,6 +95,7 @@ pub mod api_shield_operation_schema_validation_settings {
         let o = context.register_resource(request);
         ApiShieldOperationSchemaValidationSettingsResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             mitigation_action: o.get_field("mitigationAction"),
             operation_id: o.get_field("operationId"),
             zone_id: o.get_field("zoneId"),

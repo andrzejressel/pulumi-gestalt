@@ -98,6 +98,8 @@ pub mod custom_service {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Name used for UI elements listing this Service.
         pub display_name: pulumi_gestalt_rust::Output<Option<String>>,
         /// The full resource name for this service. The syntax is:
@@ -168,6 +170,7 @@ pub mod custom_service {
         let o = context.register_resource(request);
         CustomServiceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             display_name: o.get_field("displayName"),
             name: o.get_field("name"),
             project: o.get_field("project"),

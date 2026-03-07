@@ -180,6 +180,8 @@ pub mod instance {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// OpsWorks agent to install. Default is `INHERIT`.
         pub agent_version: pulumi_gestalt_rust::Output<Option<String>>,
         /// AMI to use for the instance.  If an AMI is specified, `os` must be `Custom`.
@@ -452,6 +454,7 @@ pub mod instance {
         let o = context.register_resource(request);
         InstanceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             agent_version: o.get_field("agentVersion"),
             ami_id: o.get_field("amiId"),
             architecture: o.get_field("architecture"),

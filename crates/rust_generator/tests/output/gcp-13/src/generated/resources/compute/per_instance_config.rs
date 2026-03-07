@@ -175,6 +175,8 @@ pub mod per_instance_config {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The instance group manager this instance config is part of.
         ///
         ///
@@ -286,6 +288,7 @@ pub mod per_instance_config {
         let o = context.register_resource(request);
         PerInstanceConfigResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             instance_group_manager: o.get_field("instanceGroupManager"),
             minimal_action: o.get_field("minimalAction"),
             most_disruptive_allowed_action: o.get_field("mostDisruptiveAllowedAction"),

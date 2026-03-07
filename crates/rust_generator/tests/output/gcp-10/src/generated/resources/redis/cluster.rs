@@ -483,6 +483,8 @@ pub mod cluster {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Optional. The authorization mode of the Redis cluster. If not provided, auth feature is disabled for the cluster.
         /// Default value: "AUTH_MODE_DISABLED" Possible values: ["AUTH_MODE_UNSPECIFIED", "AUTH_MODE_IAM_AUTH",
         /// "AUTH_MODE_DISABLED"]
@@ -673,6 +675,7 @@ pub mod cluster {
         let o = context.register_resource(request);
         ClusterResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             authorization_mode: o.get_field("authorizationMode"),
             create_time: o.get_field("createTime"),
             cross_cluster_replication_config: o

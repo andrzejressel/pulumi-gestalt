@@ -70,6 +70,8 @@ pub mod keystores_aliases_key_cert_file {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Alias Name
         pub alias: pulumi_gestalt_rust::Output<String>,
         /// Cert content
@@ -155,6 +157,7 @@ pub mod keystores_aliases_key_cert_file {
         let o = context.register_resource(request);
         KeystoresAliasesKeyCertFileResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             alias: o.get_field("alias"),
             cert: o.get_field("cert"),
             certs_info: o.get_field("certsInfo"),

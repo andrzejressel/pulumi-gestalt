@@ -37,6 +37,8 @@ pub mod role_association {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// DB Instance Identifier to associate with the IAM Role.
         pub db_instance_identifier: pulumi_gestalt_rust::Output<String>,
         /// Name of the feature for association. This can be found in the AWS documentation relevant to the integration or a full list is available in the `SupportedFeatureNames` list returned by [AWS CLI rds describe-db-engine-versions](https://docs.aws.amazon.com/cli/latest/reference/rds/describe-db-engine-versions.html).
@@ -80,6 +82,7 @@ pub mod role_association {
         let o = context.register_resource(request);
         RoleAssociationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             db_instance_identifier: o.get_field("dbInstanceIdentifier"),
             feature_name: o.get_field("featureName"),
             role_arn: o.get_field("roleArn"),

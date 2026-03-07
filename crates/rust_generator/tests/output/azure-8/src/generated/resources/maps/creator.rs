@@ -71,6 +71,8 @@ pub mod creator {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Azure Region where the Azure Maps Creator should exist. Changing this forces a new resource to be created.
         pub location: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Azure Maps Creator. Changing this forces a new resource to be created.
@@ -128,6 +130,7 @@ pub mod creator {
         let o = context.register_resource(request);
         CreatorResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             location: o.get_field("location"),
             maps_account_id: o.get_field("mapsAccountId"),
             name: o.get_field("name"),

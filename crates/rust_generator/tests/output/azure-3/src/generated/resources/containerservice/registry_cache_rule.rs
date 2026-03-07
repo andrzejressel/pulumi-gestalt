@@ -78,6 +78,8 @@ pub mod registry_cache_rule {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Container Registry where the Cache Rule should apply. Changing this forces a new resource to be created.
         pub container_registry_id: pulumi_gestalt_rust::Output<String>,
         /// The ARM resource ID of the Credential Store which is associated with the Cache Rule.
@@ -135,6 +137,7 @@ pub mod registry_cache_rule {
         let o = context.register_resource(request);
         RegistryCacheRuleResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             container_registry_id: o.get_field("containerRegistryId"),
             credential_set_id: o.get_field("credentialSetId"),
             name: o.get_field("name"),

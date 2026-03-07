@@ -247,6 +247,8 @@ pub mod db_instance {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Amount of storage in GiB (gibibytes). The minimum value is 20, the maximum value is 16384.
         pub allocated_storage: pulumi_gestalt_rust::Output<i32>,
         /// ARN of the Timestream for InfluxDB Instance.
@@ -408,6 +410,7 @@ pub mod db_instance {
         let o = context.register_resource(request);
         DbInstanceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             allocated_storage: o.get_field("allocatedStorage"),
             arn: o.get_field("arn"),
             availability_zone: o.get_field("availabilityZone"),

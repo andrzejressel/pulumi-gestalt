@@ -63,6 +63,8 @@ pub mod usage_limit {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The limit amount. If time-based, this amount is in Redshift Processing Units (RPU) consumed per hour. If data-based, this amount is in terabytes (TB) of data transferred between Regions in cross-account sharing. The value must be a positive number.
         pub amount: pulumi_gestalt_rust::Output<i32>,
         /// Amazon Resource Name (ARN) of the Redshift Serverless Usage Limit.
@@ -120,6 +122,7 @@ pub mod usage_limit {
         let o = context.register_resource(request);
         UsageLimitResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             amount: o.get_field("amount"),
             arn: o.get_field("arn"),
             breach_action: o.get_field("breachAction"),

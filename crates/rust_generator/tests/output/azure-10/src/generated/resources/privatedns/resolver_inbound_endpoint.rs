@@ -98,6 +98,8 @@ pub mod resolver_inbound_endpoint {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// One `ip_configurations` block as defined below. Changing this forces a new Private DNS Resolver Inbound Endpoint to be created.
         pub ip_configurations: pulumi_gestalt_rust::Output<
             super::super::types::privatedns::ResolverInboundEndpointIpConfigurations,
@@ -160,6 +162,7 @@ pub mod resolver_inbound_endpoint {
         let o = context.register_resource(request);
         ResolverInboundEndpointResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             ip_configurations: o.get_field("ipConfigurations"),
             location: o.get_field("location"),
             name: o.get_field("name"),

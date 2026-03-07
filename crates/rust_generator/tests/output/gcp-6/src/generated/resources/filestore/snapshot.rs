@@ -150,6 +150,8 @@ pub mod snapshot {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The time when the snapshot was created in RFC3339 text format.
         pub create_time: pulumi_gestalt_rust::Output<String>,
         /// A description of the snapshot with 2048 characters or less. Requests with longer descriptions will be rejected.
@@ -242,6 +244,7 @@ pub mod snapshot {
         let o = context.register_resource(request);
         SnapshotResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),
             effective_labels: o.get_field("effectiveLabels"),

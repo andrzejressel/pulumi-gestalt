@@ -79,6 +79,8 @@ pub mod findings_filter {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The action to perform on findings that meet the filter criteria (`finding_criteria`). Valid values are: `ARCHIVE`, suppress (automatically archive) the findings; and, `NOOP`, don't perform any action on the findings.
         pub action: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the Findings Filter.
@@ -157,6 +159,7 @@ pub mod findings_filter {
         let o = context.register_resource(request);
         FindingsFilterResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             action: o.get_field("action"),
             arn: o.get_field("arn"),
             description: o.get_field("description"),

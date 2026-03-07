@@ -109,6 +109,8 @@ pub mod database_extended_auditing_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the SQL database to set the extended auditing policy. Changing this forces a new resource to be created.
         pub database_id: pulumi_gestalt_rust::Output<String>,
         /// Whether to enable the extended auditing policy. Possible values are `true` and `false`. Defaults to `true`.
@@ -192,6 +194,7 @@ pub mod database_extended_auditing_policy {
         let o = context.register_resource(request);
         DatabaseExtendedAuditingPolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             database_id: o.get_field("databaseId"),
             enabled: o.get_field("enabled"),
             log_monitoring_enabled: o.get_field("logMonitoringEnabled"),

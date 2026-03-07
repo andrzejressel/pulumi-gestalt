@@ -60,6 +60,8 @@ pub mod domain_topic {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the name of the EventGrid Domain. Changing this forces a new resource to be created.
         pub domain_name: pulumi_gestalt_rust::Output<String>,
         /// Specifies the name of the EventGrid Domain Topic resource. Changing this forces a new resource to be created.
@@ -101,6 +103,7 @@ pub mod domain_topic {
         let o = context.register_resource(request);
         DomainTopicResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             domain_name: o.get_field("domainName"),
             name: o.get_field("name"),
             resource_group_name: o.get_field("resourceGroupName"),

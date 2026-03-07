@@ -82,6 +82,8 @@ pub mod core_network_policy_attachment {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the core network that a policy will be attached to and made `LIVE`.
         pub core_network_id: pulumi_gestalt_rust::Output<String>,
         /// Policy document for creating a core network. Note that updating this argument will result in the new policy document version being set as the `LATEST` and `LIVE` policy document. Refer to the [Core network policies documentation](https://docs.aws.amazon.com/network-manager/latest/cloudwan/cloudwan-policy-change-sets.html) for more information.
@@ -119,6 +121,7 @@ pub mod core_network_policy_attachment {
         let o = context.register_resource(request);
         CoreNetworkPolicyAttachmentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             core_network_id: o.get_field("coreNetworkId"),
             policy_document: o.get_field("policyDocument"),
             state: o.get_field("state"),

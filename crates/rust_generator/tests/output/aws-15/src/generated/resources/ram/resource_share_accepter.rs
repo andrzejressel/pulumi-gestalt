@@ -60,6 +60,8 @@ pub mod resource_share_accepter {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the resource share invitation.
         pub invitation_arn: pulumi_gestalt_rust::Output<String>,
         /// The account ID of the receiver account which accepts the invitation.
@@ -101,6 +103,7 @@ pub mod resource_share_accepter {
         let o = context.register_resource(request);
         ResourceShareAccepterResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             invitation_arn: o.get_field("invitationArn"),
             receiver_account_id: o.get_field("receiverAccountId"),
             resources: o.get_field("resources"),

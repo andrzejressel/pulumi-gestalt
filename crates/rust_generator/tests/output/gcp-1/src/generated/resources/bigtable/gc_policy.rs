@@ -187,6 +187,8 @@ pub mod gc_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The name of the column family.
         pub column_family: pulumi_gestalt_rust::Output<String>,
         /// The deletion policy for the GC policy.
@@ -288,6 +290,7 @@ pub mod gc_policy {
         let o = context.register_resource(request);
         GCPolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             column_family: o.get_field("columnFamily"),
             deletion_policy: o.get_field("deletionPolicy"),
             gc_rules: o.get_field("gcRules"),

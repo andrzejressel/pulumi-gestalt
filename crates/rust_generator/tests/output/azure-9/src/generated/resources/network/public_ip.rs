@@ -119,6 +119,8 @@ pub mod public_ip {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Defines the allocation method for this IP address. Possible values are `Static` or `Dynamic`.
         ///
         /// > **Note** `Dynamic` Public IP Addresses aren't allocated until they're assigned to a resource (such as a Virtual Machine or a Load Balancer) by design within Azure. See `ip_address` argument.
@@ -293,6 +295,7 @@ pub mod public_ip {
         let o = context.register_resource(request);
         PublicIpResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             allocation_method: o.get_field("allocationMethod"),
             ddos_protection_mode: o.get_field("ddosProtectionMode"),
             ddos_protection_plan_id: o.get_field("ddosProtectionPlanId"),

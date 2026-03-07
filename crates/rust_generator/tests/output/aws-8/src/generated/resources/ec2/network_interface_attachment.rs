@@ -50,6 +50,8 @@ pub mod network_interface_attachment {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ENI Attachment ID.
         pub attachment_id: pulumi_gestalt_rust::Output<String>,
         /// Network interface index (int).
@@ -96,6 +98,7 @@ pub mod network_interface_attachment {
         let o = context.register_resource(request);
         NetworkInterfaceAttachmentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             attachment_id: o.get_field("attachmentId"),
             device_index: o.get_field("deviceIndex"),
             instance_id: o.get_field("instanceId"),

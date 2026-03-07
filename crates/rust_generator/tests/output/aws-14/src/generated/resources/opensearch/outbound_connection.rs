@@ -79,6 +79,8 @@ pub mod outbound_connection {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Accepts the connection.
         pub accept_connection: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Specifies the connection alias that will be used by the customer for this connection.
@@ -151,6 +153,7 @@ pub mod outbound_connection {
         let o = context.register_resource(request);
         OutboundConnectionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             accept_connection: o.get_field("acceptConnection"),
             connection_alias: o.get_field("connectionAlias"),
             connection_mode: o.get_field("connectionMode"),

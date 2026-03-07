@@ -119,6 +119,8 @@ pub mod automanage_configuration_assignment {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ARM resource ID of the Automanage Configuration to assign to the Virtual Machine. Changing this forces a new resource to be created.
         pub configuration_id: pulumi_gestalt_rust::Output<String>,
         /// The ARM resource ID of the Virtual Machine to assign the Automanage Configuration to. Changing this forces a new resource to be created.
@@ -154,6 +156,7 @@ pub mod automanage_configuration_assignment {
         let o = context.register_resource(request);
         AutomanageConfigurationAssignmentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             configuration_id: o.get_field("configurationId"),
             virtual_machine_id: o.get_field("virtualMachineId"),
         }

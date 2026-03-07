@@ -108,6 +108,8 @@ pub mod remote_image {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Configuration to build an image. Please see [docker build command reference](https://docs.docker.com/engine/reference/commandline/build/#options) too.
         pub build: pulumi_gestalt_rust::Output<Option<super::types::RemoteImageBuild>>,
         /// Always remove intermediate containers
@@ -183,6 +185,7 @@ pub mod remote_image {
         let o = context.register_resource(request);
         RemoteImageResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             build: o.get_field("build"),
             force_remove: o.get_field("forceRemove"),
             image_id: o.get_field("imageId"),

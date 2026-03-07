@@ -68,6 +68,8 @@ pub mod voice_connector_termination {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The countries to which calls are allowed, in ISO 3166-1 alpha-2 format.
         pub calling_regions: pulumi_gestalt_rust::Output<Vec<String>>,
         /// The IP addresses allowed to make calls, in CIDR format.
@@ -131,6 +133,7 @@ pub mod voice_connector_termination {
         let o = context.register_resource(request);
         VoiceConnectorTerminationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             calling_regions: o.get_field("callingRegions"),
             cidr_allow_lists: o.get_field("cidrAllowLists"),
             cps_limit: o.get_field("cpsLimit"),

@@ -174,6 +174,8 @@ pub mod export_task {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Data to be exported from the snapshot. If this parameter is not provided, all the snapshot data is exported. Valid values are documented in the [AWS StartExportTask API documentation](https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StartExportTask.html#API_StartExportTask_RequestParameters).
         pub export_onlies: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// Unique identifier for the snapshot export task.
@@ -271,6 +273,7 @@ pub mod export_task {
         let o = context.register_resource(request);
         ExportTaskResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             export_onlies: o.get_field("exportOnlies"),
             export_task_identifier: o.get_field("exportTaskIdentifier"),
             failure_cause: o.get_field("failureCause"),

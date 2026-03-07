@@ -135,6 +135,8 @@ pub mod contact {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ID of the orbital contact profile. Changing this forces a new resource to be created.
         pub contact_profile_id: pulumi_gestalt_rust::Output<String>,
         /// Name of the Azure ground station. Changing this forces a new resource to be created.
@@ -199,6 +201,7 @@ pub mod contact {
         let o = context.register_resource(request);
         ContactResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             contact_profile_id: o.get_field("contactProfileId"),
             ground_station_name: o.get_field("groundStationName"),
             name: o.get_field("name"),

@@ -67,6 +67,8 @@ pub mod dx_gateway_attachment {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Policy rule number associated with the attachment.
         pub attachment_policy_rule_number: pulumi_gestalt_rust::Output<i32>,
@@ -146,6 +148,7 @@ pub mod dx_gateway_attachment {
         let o = context.register_resource(request);
         DxGatewayAttachmentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             attachment_policy_rule_number: o.get_field("attachmentPolicyRuleNumber"),
             attachment_type: o.get_field("attachmentType"),

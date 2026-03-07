@@ -92,6 +92,8 @@ pub mod query_pack_query {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The additional properties that can be set for the Log Analytics Query Pack Query.
         pub additional_settings_json: pulumi_gestalt_rust::Output<Option<String>>,
         /// The body of the Log Analytics Query Pack Query.
@@ -186,6 +188,7 @@ pub mod query_pack_query {
         let o = context.register_resource(request);
         QueryPackQueryResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             additional_settings_json: o.get_field("additionalSettingsJson"),
             body: o.get_field("body"),
             categories: o.get_field("categories"),

@@ -408,6 +408,8 @@ pub mod router_nat {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The network tier to use when automatically reserving NAT IP addresses.
         /// Must be one of: PREMIUM, STANDARD. If not specified, then the current
         /// project-level default tier is used.
@@ -667,6 +669,7 @@ pub mod router_nat {
         let o = context.register_resource(request);
         RouterNatResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             auto_network_tier: o.get_field("autoNetworkTier"),
             drain_nat_ips: o.get_field("drainNatIps"),
             enable_dynamic_port_allocation: o.get_field("enableDynamicPortAllocation"),

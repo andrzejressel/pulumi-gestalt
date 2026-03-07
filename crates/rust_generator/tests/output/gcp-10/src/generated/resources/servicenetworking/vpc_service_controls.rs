@@ -138,6 +138,8 @@ pub mod vpc_service_controls {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Desired VPC Service Controls state service producer VPC network, as
         /// described at the top of this page.
         pub enabled: pulumi_gestalt_rust::Output<bool>,
@@ -192,6 +194,7 @@ pub mod vpc_service_controls {
         let o = context.register_resource(request);
         VpcServiceControlsResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             enabled: o.get_field("enabled"),
             network: o.get_field("network"),
             project: o.get_field("project"),

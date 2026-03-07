@@ -93,6 +93,8 @@ pub mod security_partner_provider {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Azure Region where the Security Partner Provider should exist. Changing this forces a new resource to be created.
         pub location: pulumi_gestalt_rust::Output<String>,
         /// The name which should be used for this Security Partner Provider. Changing this forces a new resource to be created.
@@ -160,6 +162,7 @@ pub mod security_partner_provider {
         let o = context.register_resource(request);
         SecurityPartnerProviderResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             location: o.get_field("location"),
             name: o.get_field("name"),
             resource_group_name: o.get_field("resourceGroupName"),

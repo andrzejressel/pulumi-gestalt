@@ -78,6 +78,8 @@ pub mod channel_email {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The name of the Bot Resource this channel will be associated with. Changing this forces a new resource to be created.
         pub bot_name: pulumi_gestalt_rust::Output<String>,
         /// The email address that the Bot will authenticate with.
@@ -140,6 +142,7 @@ pub mod channel_email {
         let o = context.register_resource(request);
         ChannelEmailResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             bot_name: o.get_field("botName"),
             email_address: o.get_field("emailAddress"),
             email_password: o.get_field("emailPassword"),

@@ -46,6 +46,8 @@ pub mod api_shield_schema_validation_settings {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The default mitigation action used when there is no mitigation action defined on the operation.
         pub validation_default_mitigation_action: pulumi_gestalt_rust::Output<String>,
         /// When set, this overrides both zone level and operation level mitigation actions.
@@ -94,6 +96,7 @@ pub mod api_shield_schema_validation_settings {
         let o = context.register_resource(request);
         ApiShieldSchemaValidationSettingsResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             validation_default_mitigation_action: o
                 .get_field("validationDefaultMitigationAction"),
             validation_override_mitigation_action: o

@@ -152,6 +152,8 @@ pub mod stack_instances {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Accounts where you want to create stack instances in the specified `regions`. You can specify either `accounts` or `deployment_targets`, but not both.
         pub accounts: pulumi_gestalt_rust::Output<Vec<String>>,
         /// Whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account. Valid values: `SELF` (default), `DELEGATED_ADMIN`.
@@ -246,6 +248,7 @@ pub mod stack_instances {
         let o = context.register_resource(request);
         StackInstancesResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             accounts: o.get_field("accounts"),
             call_as: o.get_field("callAs"),
             deployment_targets: o.get_field("deploymentTargets"),

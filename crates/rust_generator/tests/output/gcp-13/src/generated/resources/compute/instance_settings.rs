@@ -80,6 +80,8 @@ pub mod instance_settings {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The fingerprint used for optimistic locking of this resource.  Used
         /// internally during updates.
         pub fingerprint: pulumi_gestalt_rust::Output<String>,
@@ -131,6 +133,7 @@ pub mod instance_settings {
         let o = context.register_resource(request);
         InstanceSettingsResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             fingerprint: o.get_field("fingerprint"),
             metadata: o.get_field("metadata"),
             project: o.get_field("project"),

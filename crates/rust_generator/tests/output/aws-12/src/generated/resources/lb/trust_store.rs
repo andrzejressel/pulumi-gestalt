@@ -47,6 +47,8 @@ pub mod trust_store {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ARN of the Trust Store (matches `id`).
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// ARN suffix for use with CloudWatch Metrics.
@@ -127,6 +129,7 @@ pub mod trust_store {
         let o = context.register_resource(request);
         TrustStoreResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             arn_suffix: o.get_field("arnSuffix"),
             ca_certificates_bundle_s3_bucket: o

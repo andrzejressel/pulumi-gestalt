@@ -76,6 +76,8 @@ pub mod active_directory_administrator {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The login name of the principal to set as the server administrator
         pub login: pulumi_gestalt_rust::Output<String>,
         /// The ID of the principal to set as the server administrator. For a managed identity this should be the Client ID of the identity.
@@ -132,6 +134,7 @@ pub mod active_directory_administrator {
         let o = context.register_resource(request);
         ActiveDirectoryAdministratorResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             login: o.get_field("login"),
             object_id: o.get_field("objectId"),
             resource_group_name: o.get_field("resourceGroupName"),

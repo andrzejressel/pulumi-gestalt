@@ -81,6 +81,8 @@ pub mod stream {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) specifying the Stream (same as `id`)
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The encryption type to use. The only acceptable values are `NONE` or `KMS`. The default value is `NONE`.
@@ -182,6 +184,7 @@ pub mod stream {
         let o = context.register_resource(request);
         StreamResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             encryption_type: o.get_field("encryptionType"),
             enforce_consumer_deletion: o.get_field("enforceConsumerDeletion"),

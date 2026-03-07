@@ -52,6 +52,8 @@ pub mod schedule_group {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ARN of the schedule group.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Time at which the schedule group was created.
@@ -107,6 +109,7 @@ pub mod schedule_group {
         let o = context.register_resource(request);
         ScheduleGroupResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             creation_date: o.get_field("creationDate"),
             last_modification_date: o.get_field("lastModificationDate"),

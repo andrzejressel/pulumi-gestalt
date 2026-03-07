@@ -134,6 +134,8 @@ pub mod data_disk_attachment {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the caching requirements for this Data Disk. Possible values include `None`, `ReadOnly` and `ReadWrite`.
         pub caching: pulumi_gestalt_rust::Output<String>,
         /// The Create Option of the Data Disk, such as `Empty` or `Attach`. Defaults to `Attach`. Changing this forces a new resource to be created.
@@ -198,6 +200,7 @@ pub mod data_disk_attachment {
         let o = context.register_resource(request);
         DataDiskAttachmentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             caching: o.get_field("caching"),
             create_option: o.get_field("createOption"),
             lun: o.get_field("lun"),

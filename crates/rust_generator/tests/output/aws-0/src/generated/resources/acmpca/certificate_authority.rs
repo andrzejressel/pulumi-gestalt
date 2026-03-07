@@ -171,6 +171,8 @@ pub mod certificate_authority {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ARN of the certificate authority.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Base64-encoded certificate authority (CA) certificate. Only available after the certificate authority certificate has been imported.
@@ -281,6 +283,7 @@ pub mod certificate_authority {
         let o = context.register_resource(request);
         CertificateAuthorityResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             certificate: o.get_field("certificate"),
             certificate_authority_configuration: o

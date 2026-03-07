@@ -97,6 +97,8 @@ pub mod workspace_network_outbound_rule_fqdn {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the fully qualified domain name to allow for outbound traffic.
         pub destination_fqdn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the name of the Machine Learning Workspace FQDN Network Outbound Rule. Changing this forces a new resource to be created.
@@ -139,6 +141,7 @@ pub mod workspace_network_outbound_rule_fqdn {
         let o = context.register_resource(request);
         WorkspaceNetworkOutboundRuleFqdnResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             destination_fqdn: o.get_field("destinationFqdn"),
             name: o.get_field("name"),
             workspace_id: o.get_field("workspaceId"),

@@ -255,6 +255,8 @@ pub mod function {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Memory (in MB), available to the function. Default value is `256`. Possible values include `128`, `256`, `512`, `1024`, etc.
         pub available_memory_mb: pulumi_gestalt_rust::Output<Option<i32>>,
         /// A set of key/value environment variable pairs available during build time.
@@ -552,6 +554,7 @@ pub mod function {
         let o = context.register_resource(request);
         FunctionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             available_memory_mb: o.get_field("availableMemoryMb"),
             build_environment_variables: o.get_field("buildEnvironmentVariables"),
             build_service_account: o.get_field("buildServiceAccount"),

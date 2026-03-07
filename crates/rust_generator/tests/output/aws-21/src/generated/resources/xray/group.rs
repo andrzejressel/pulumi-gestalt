@@ -62,6 +62,8 @@ pub mod group {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the Group.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The filter expression defining criteria by which to group traces. more info can be found in official [docs](https://docs.aws.amazon.com/xray/latest/devguide/xray-console-filters.html).
@@ -122,6 +124,7 @@ pub mod group {
         let o = context.register_resource(request);
         GroupResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             filter_expression: o.get_field("filterExpression"),
             group_name: o.get_field("groupName"),

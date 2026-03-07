@@ -63,6 +63,8 @@ pub mod service {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The location where the Communication service stores its data at rest. Possible values are `Africa`, `Asia Pacific`, `Australia`, `Brazil`, `Canada`, `Europe`, `France`, `Germany`, `India`, `Japan`, `Korea`, `Norway`, `Switzerland`, `UAE`, `UK`, `usgov` and `United States`. Defaults to `United States`. Changing this forces a new Communication Service to be created.
         pub data_location: pulumi_gestalt_rust::Output<Option<String>>,
         /// The name of the Communication Service resource. Changing this forces a new Communication Service to be created.
@@ -121,6 +123,7 @@ pub mod service {
         let o = context.register_resource(request);
         ServiceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             data_location: o.get_field("dataLocation"),
             name: o.get_field("name"),
             primary_connection_string: o.get_field("primaryConnectionString"),

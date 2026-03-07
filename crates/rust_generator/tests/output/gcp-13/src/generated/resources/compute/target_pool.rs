@@ -122,6 +122,8 @@ pub mod target_pool {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// URL to the backup target pool. Must also set
         /// failover_ratio.
         pub backup_pool: pulumi_gestalt_rust::Output<Option<String>>,
@@ -228,6 +230,7 @@ pub mod target_pool {
         let o = context.register_resource(request);
         TargetPoolResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             backup_pool: o.get_field("backupPool"),
             description: o.get_field("description"),
             failover_ratio: o.get_field("failoverRatio"),

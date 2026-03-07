@@ -108,6 +108,8 @@ pub mod spring_cloud_app_mysql_association {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the name of the MySQL Database which the Spring Cloud App should be associated with.
         pub database_name: pulumi_gestalt_rust::Output<String>,
         /// Specifies the ID of the MySQL Server. Changing this forces a new resource to be created.
@@ -171,6 +173,7 @@ pub mod spring_cloud_app_mysql_association {
         let o = context.register_resource(request);
         SpringCloudAppMysqlAssociationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             database_name: o.get_field("databaseName"),
             mysql_server_id: o.get_field("mysqlServerId"),
             name: o.get_field("name"),

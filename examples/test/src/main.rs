@@ -22,6 +22,7 @@ fn pulumi_main(context: &Context) -> Result<()> {
 
     add_export("provider_prefix", &provider.prefix);
     add_export("result", &combine_string_res.result);
+    add_export("provider_urn", &provider.urn);
 
     Ok(())
 }

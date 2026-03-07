@@ -405,6 +405,8 @@ pub mod subnetwork {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Typically packets destined to IPs within the subnetwork range that do not match
         /// existing resources are dropped and prevented from leaving the VPC.
         /// Setting this field to true will allow these packets to match dynamic routes injected
@@ -631,6 +633,7 @@ pub mod subnetwork {
         let o = context.register_resource(request);
         SubnetworkResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             allow_subnet_cidr_routes_overlap: o
                 .get_field("allowSubnetCidrRoutesOverlap"),
             creation_timestamp: o.get_field("creationTimestamp"),

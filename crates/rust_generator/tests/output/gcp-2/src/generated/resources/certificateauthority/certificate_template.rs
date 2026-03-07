@@ -171,6 +171,8 @@ pub mod certificate_template {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Output only. The time at which this CertificateTemplate was created.
         pub create_time: pulumi_gestalt_rust::Output<String>,
         /// Optional. A human-readable description of scenarios this template is intended for.
@@ -293,6 +295,7 @@ pub mod certificate_template {
         let o = context.register_resource(request);
         CertificateTemplateResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),
             effective_labels: o.get_field("effectiveLabels"),

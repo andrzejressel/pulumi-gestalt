@@ -134,6 +134,8 @@ pub mod java_app_layer {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Keyword for the application container to use. Defaults to "tomcat".
         pub app_server: pulumi_gestalt_rust::Output<Option<String>>,
         /// Version of the selected application container to use. Defaults to "7".
@@ -391,6 +393,7 @@ pub mod java_app_layer {
         let o = context.register_resource(request);
         JavaAppLayerResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             app_server: o.get_field("appServer"),
             app_server_version: o.get_field("appServerVersion"),
             arn: o.get_field("arn"),

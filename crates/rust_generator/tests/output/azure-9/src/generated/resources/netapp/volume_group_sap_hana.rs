@@ -248,6 +248,8 @@ pub mod volume_group_sap_hana {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Name of the account where the application volume group belong to. Changing this forces a new Application Volume Group to be created and data will be lost.
         pub account_name: pulumi_gestalt_rust::Output<String>,
         /// The SAP System ID, maximum 3 characters, e.g. `SH9`. Changing this forces a new Application Volume Group to be created and data will be lost.
@@ -321,6 +323,7 @@ pub mod volume_group_sap_hana {
         let o = context.register_resource(request);
         VolumeGroupSapHanaResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             account_name: o.get_field("accountName"),
             application_identifier: o.get_field("applicationIdentifier"),
             group_description: o.get_field("groupDescription"),

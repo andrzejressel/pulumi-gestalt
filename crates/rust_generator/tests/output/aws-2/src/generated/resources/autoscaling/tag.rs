@@ -35,6 +35,8 @@ pub mod tag {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Name of the Autoscaling Group to apply the tag to.
         pub autoscaling_group_name: pulumi_gestalt_rust::Output<String>,
         /// Tag to create. The `tag` block is documented below.
@@ -71,6 +73,7 @@ pub mod tag {
         let o = context.register_resource(request);
         TagResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             autoscaling_group_name: o.get_field("autoscalingGroupName"),
             tag: o.get_field("tag"),
         }

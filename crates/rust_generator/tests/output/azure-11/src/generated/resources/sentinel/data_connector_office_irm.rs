@@ -76,6 +76,8 @@ pub mod data_connector_office_irm {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Log Analytics Workspace that this Office IRM Data Connector resides in. Changing this forces a new Office IRM Data Connector to be created.
         pub log_analytics_workspace_id: pulumi_gestalt_rust::Output<String>,
         /// The name which should be used for this Office IRM Data Connector. Changing this forces a new Office IRM Data Connector to be created.
@@ -121,6 +123,7 @@ pub mod data_connector_office_irm {
         let o = context.register_resource(request);
         DataConnectorOfficeIrmResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             log_analytics_workspace_id: o.get_field("logAnalyticsWorkspaceId"),
             name: o.get_field("name"),
             tenant_id: o.get_field("tenantId"),

@@ -82,6 +82,8 @@ pub mod gateway {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the API Management Resource in which the gateway will be created. Changing this forces a new API Management Gateway resource to be created.
         pub api_management_id: pulumi_gestalt_rust::Output<String>,
         /// The description of the API Management Gateway.
@@ -132,6 +134,7 @@ pub mod gateway {
         let o = context.register_resource(request);
         GatewayResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             api_management_id: o.get_field("apiManagementId"),
             description: o.get_field("description"),
             location_data: o.get_field("locationData"),

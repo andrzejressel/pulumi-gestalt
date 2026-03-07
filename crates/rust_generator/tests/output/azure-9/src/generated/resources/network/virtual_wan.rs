@@ -79,6 +79,8 @@ pub mod virtual_wan {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Boolean flag to specify whether branch to branch traffic is allowed. Defaults to `true`.
         pub allow_branch_to_branch_traffic: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Boolean flag to specify whether VPN encryption is disabled. Defaults to `false`.
@@ -165,6 +167,7 @@ pub mod virtual_wan {
         let o = context.register_resource(request);
         VirtualWanResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             allow_branch_to_branch_traffic: o.get_field("allowBranchToBranchTraffic"),
             disable_vpn_encryption: o.get_field("disableVpnEncryption"),
             location: o.get_field("location"),

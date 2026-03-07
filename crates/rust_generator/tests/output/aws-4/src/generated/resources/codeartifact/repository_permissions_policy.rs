@@ -83,6 +83,8 @@ pub mod repository_permissions_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The name of the domain on which to set the resource policy.
         pub domain: pulumi_gestalt_rust::Output<String>,
         /// The account number of the AWS account that owns the domain.
@@ -141,6 +143,7 @@ pub mod repository_permissions_policy {
         let o = context.register_resource(request);
         RepositoryPermissionsPolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             domain: o.get_field("domain"),
             domain_owner: o.get_field("domainOwner"),
             policy_document: o.get_field("policyDocument"),

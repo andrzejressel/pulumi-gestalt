@@ -59,6 +59,8 @@ pub mod iam_audit_config {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The configuration for logging of each type of permission.  This can be specified multiple times.  Structure is documented below.
         pub audit_log_configs: pulumi_gestalt_rust::Output<
             Vec<super::super::types::organizations::IamAuditConfigAuditLogConfig>,
@@ -104,6 +106,7 @@ pub mod iam_audit_config {
         let o = context.register_resource(request);
         IamAuditConfigResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             audit_log_configs: o.get_field("auditLogConfigs"),
             etag: o.get_field("etag"),
             org_id: o.get_field("orgId"),

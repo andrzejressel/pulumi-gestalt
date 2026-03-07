@@ -32,6 +32,8 @@ pub mod resource_group {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The resource group ARN.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Key-value map of tags that are used to select the EC2 instances to be included in an Amazon Inspector assessment target.
@@ -61,6 +63,7 @@ pub mod resource_group {
         let o = context.register_resource(request);
         ResourceGroupResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             tags: o.get_field("tags"),
         }

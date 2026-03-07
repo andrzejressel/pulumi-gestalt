@@ -149,6 +149,8 @@ pub mod service {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ARN of the App Runner service.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// ARN of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.
@@ -272,6 +274,7 @@ pub mod service {
         let o = context.register_resource(request);
         ServiceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             auto_scaling_configuration_arn: o.get_field("autoScalingConfigurationArn"),
             encryption_configuration: o.get_field("encryptionConfiguration"),

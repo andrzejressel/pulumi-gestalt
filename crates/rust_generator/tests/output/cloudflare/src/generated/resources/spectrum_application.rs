@@ -93,6 +93,8 @@ pub mod spectrum_application {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Enables Argo Smart Routing.
         pub argo_smart_routing: pulumi_gestalt_rust::Output<bool>,
         /// The name and type of DNS record for the Spectrum application.
@@ -210,6 +212,7 @@ pub mod spectrum_application {
         let o = context.register_resource(request);
         SpectrumApplicationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             argo_smart_routing: o.get_field("argoSmartRouting"),
             dns: o.get_field("dns"),
             edge_ips: o.get_field("edgeIps"),

@@ -53,6 +53,8 @@ pub mod approval_rule_template {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the approval rule template
         pub approval_rule_template_id: pulumi_gestalt_rust::Output<String>,
         /// The content of the approval rule template. Maximum of 3000 characters.
@@ -104,6 +106,7 @@ pub mod approval_rule_template {
         let o = context.register_resource(request);
         ApprovalRuleTemplateResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             approval_rule_template_id: o.get_field("approvalRuleTemplateId"),
             content: o.get_field("content"),
             creation_date: o.get_field("creationDate"),

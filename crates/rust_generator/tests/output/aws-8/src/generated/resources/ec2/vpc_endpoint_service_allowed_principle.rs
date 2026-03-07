@@ -46,6 +46,8 @@ pub mod vpc_endpoint_service_allowed_principle {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the principal to allow permissions.
         pub principal_arn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the VPC endpoint service to allow permission.
@@ -83,6 +85,7 @@ pub mod vpc_endpoint_service_allowed_principle {
         let o = context.register_resource(request);
         VpcEndpointServiceAllowedPrincipleResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             principal_arn: o.get_field("principalArn"),
             vpc_endpoint_service_id: o.get_field("vpcEndpointServiceId"),
         }

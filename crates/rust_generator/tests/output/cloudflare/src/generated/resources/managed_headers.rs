@@ -58,6 +58,8 @@ pub mod managed_headers {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The list of managed request headers.
         pub managed_request_headers: pulumi_gestalt_rust::Output<
             Option<Vec<super::types::ManagedHeadersManagedRequestHeader>>,
@@ -107,6 +109,7 @@ pub mod managed_headers {
         let o = context.register_resource(request);
         ManagedHeadersResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             managed_request_headers: o.get_field("managedRequestHeaders"),
             managed_response_headers: o.get_field("managedResponseHeaders"),
             zone_id: o.get_field("zoneId"),

@@ -71,6 +71,8 @@ pub mod accelerator {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The attributes of the accelerator. Fields documented below.
         pub attributes: pulumi_gestalt_rust::Output<
             Option<super::super::types::globalaccelerator::AcceleratorAttributes>,
@@ -153,6 +155,7 @@ pub mod accelerator {
         let o = context.register_resource(request);
         AcceleratorResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             attributes: o.get_field("attributes"),
             dns_name: o.get_field("dnsName"),
             dual_stack_dns_name: o.get_field("dualStackDnsName"),

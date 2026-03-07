@@ -83,6 +83,8 @@ pub mod organization_bucket_config {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The name of the logging bucket. Logging automatically creates two log buckets: `_Required` and `_Default`.
         pub bucket_id: pulumi_gestalt_rust::Output<String>,
         /// The CMEK settings of the log bucket. If present, new log entries written to this log bucket are encrypted using the CMEK
@@ -163,6 +165,7 @@ pub mod organization_bucket_config {
         let o = context.register_resource(request);
         OrganizationBucketConfigResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             bucket_id: o.get_field("bucketId"),
             cmek_settings: o.get_field("cmekSettings"),
             description: o.get_field("description"),

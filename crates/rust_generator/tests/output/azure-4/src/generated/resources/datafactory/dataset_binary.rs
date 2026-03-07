@@ -127,6 +127,8 @@ pub mod dataset_binary {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A map of additional properties to associate with the Data Factory Binary Dataset.
         pub additional_properties: pulumi_gestalt_rust::Output<
             Option<std::collections::HashMap<String, String>>,
@@ -251,6 +253,7 @@ pub mod dataset_binary {
         let o = context.register_resource(request);
         DatasetBinaryResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             additional_properties: o.get_field("additionalProperties"),
             annotations: o.get_field("annotations"),
             azure_blob_storage_location: o.get_field("azureBlobStorageLocation"),

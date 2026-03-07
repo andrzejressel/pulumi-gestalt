@@ -52,6 +52,8 @@ pub mod zone_hold {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Enablement status of the zone hold.
         pub hold: pulumi_gestalt_rust::Output<bool>,
         /// The RFC3339 compatible timestamp when to automatically re-enable the zone hold.
@@ -100,6 +102,7 @@ pub mod zone_hold {
         let o = context.register_resource(request);
         ZoneHoldResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             hold: o.get_field("hold"),
             hold_after: o.get_field("holdAfter"),
             include_subdomains: o.get_field("includeSubdomains"),

@@ -66,6 +66,8 @@ pub mod repository {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Full ARN of the repository.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Catalog data configuration for the repository. See below for schema.
@@ -127,6 +129,7 @@ pub mod repository {
         let o = context.register_resource(request);
         RepositoryResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             catalog_data: o.get_field("catalogData"),
             force_destroy: o.get_field("forceDestroy"),

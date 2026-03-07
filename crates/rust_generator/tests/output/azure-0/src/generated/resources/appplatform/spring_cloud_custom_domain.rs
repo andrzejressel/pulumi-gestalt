@@ -92,6 +92,8 @@ pub mod spring_cloud_custom_domain {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the name of the Spring Cloud Certificate that binds to the Spring Cloud Custom Domain. Required when `thumbprint` is specified
         pub certificate_name: pulumi_gestalt_rust::Output<Option<String>>,
         /// Specifies the name of the Spring Cloud Custom Domain. Changing this forces a new resource to be created.
@@ -141,6 +143,7 @@ pub mod spring_cloud_custom_domain {
         let o = context.register_resource(request);
         SpringCloudCustomDomainResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             certificate_name: o.get_field("certificateName"),
             name: o.get_field("name"),
             spring_cloud_app_id: o.get_field("springCloudAppId"),

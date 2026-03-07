@@ -95,6 +95,8 @@ pub mod registered_domain {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Email address to contact to report incorrect contact information for a domain, to report that the domain is being used to send spam, to report that someone is cybersquatting on a domain name, or report some other type of abuse.
         pub abuse_contact_email: pulumi_gestalt_rust::Output<String>,
         /// Phone number for reporting abuse.
@@ -242,6 +244,7 @@ pub mod registered_domain {
         let o = context.register_resource(request);
         RegisteredDomainResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             abuse_contact_email: o.get_field("abuseContactEmail"),
             abuse_contact_phone: o.get_field("abuseContactPhone"),
             admin_contact: o.get_field("adminContact"),

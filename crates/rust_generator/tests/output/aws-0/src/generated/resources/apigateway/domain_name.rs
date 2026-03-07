@@ -184,6 +184,8 @@ pub mod domain_name {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ARN of domain name.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// ARN for an AWS-managed certificate. AWS Certificate Manager is the only supported source. Used when an edge-optimized domain name is desired. Conflicts with `certificate_name`, `certificate_body`, `certificate_chain`, `certificate_private_key`, `regional_certificate_arn`, and `regional_certificate_name`.
@@ -342,6 +344,7 @@ pub mod domain_name {
         let o = context.register_resource(request);
         DomainNameResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             certificate_arn: o.get_field("certificateArn"),
             certificate_body: o.get_field("certificateBody"),

@@ -115,6 +115,8 @@ pub mod scaling_plan_host_pool_association {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Should the Scaling Plan be enabled on this Host Pool.
         pub enabled: pulumi_gestalt_rust::Output<bool>,
         /// The resource ID for the Virtual Desktop Host Pool. Changing this forces a new resource to be created.
@@ -157,6 +159,7 @@ pub mod scaling_plan_host_pool_association {
         let o = context.register_resource(request);
         ScalingPlanHostPoolAssociationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             enabled: o.get_field("enabled"),
             host_pool_id: o.get_field("hostPoolId"),
             scaling_plan_id: o.get_field("scalingPlanId"),

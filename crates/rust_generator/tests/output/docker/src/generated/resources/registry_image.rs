@@ -57,6 +57,8 @@ pub mod registry_image {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// If `true`, the verification of TLS certificates of the server/registry is disabled. Defaults to `false`
         pub insecure_skip_verify: pulumi_gestalt_rust::Output<Option<bool>>,
         /// If true, then the Docker image won't be deleted on destroy operation. If this is false, it will delete the image from the docker registry on destroy operation. Defaults to `false`
@@ -109,6 +111,7 @@ pub mod registry_image {
         let o = context.register_resource(request);
         RegistryImageResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             insecure_skip_verify: o.get_field("insecureSkipVerify"),
             keep_remotely: o.get_field("keepRemotely"),
             name: o.get_field("name"),
