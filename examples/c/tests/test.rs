@@ -36,7 +36,7 @@ fn test_integration() -> Result<()> {
     assert_eq!(resource_id.len(), 16);
     assert_eq!(double_length, 32);
     assert_eq!(static_string, "my_string");
-    assert_eq!(whoami_stdout.is_empty(), false);
+    assert!(!whoami_stdout.is_empty());
     assert_eq!(combined, "[16,32,\"my_string\"]");
     assert_eq!(secret, "[secret]");
     assert_eq!(secret_plaintext, "secret_value");
