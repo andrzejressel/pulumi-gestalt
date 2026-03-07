@@ -76,6 +76,9 @@ pub mod cloudfront {
     include!("resources/cloudfront/response_headers_policy.rs");
     include!("resources/cloudfront/vpc_origin.rs");
 }
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {
     pub mod budgets {
         include!("functions/budgets/get_budget.rs");
@@ -501,6 +504,11 @@ pub mod types {
             "types/cloudfront/get_response_headers_policy_server_timing_headers_config.rs"
         );
     }
+    include!("types/provider_assume_role.rs");
+    include!("types/provider_assume_role_with_web_identity.rs");
+    include!("types/provider_default_tags.rs");
+    include!("types/provider_endpoint.rs");
+    include!("types/provider_ignore_tags.rs");
     include!("types/get_availability_zone_filter.rs");
     include!("types/get_availability_zones_filter.rs");
     include!("types/get_regions_filter.rs");

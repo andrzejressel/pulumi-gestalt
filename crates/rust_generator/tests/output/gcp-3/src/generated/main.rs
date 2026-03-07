@@ -50,6 +50,9 @@ pub mod container {
     include!("resources/container/node_pool.rs");
     include!("resources/container/registry.rs");
 }
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {
     pub mod cloudidentity {
         include!("functions/cloudidentity/get_group_lookup.rs");
@@ -1252,6 +1255,7 @@ pub mod types {
         include!("types/container/get_cluster_workload_alts_config.rs");
         include!("types/container/get_cluster_workload_identity_config.rs");
     }
+    include!("types/provider_batching.rs");
 }
 #[doc(hidden)]
 pub mod constants {}

@@ -1,6 +1,9 @@
 pub mod documentdb {
     include!("resources/documentdb/sql_resource_sql_container.rs");
 }
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {}
 pub mod types {
     pub mod documentdb {

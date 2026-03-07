@@ -9,6 +9,9 @@ include!("resources/service.rs");
 include!("resources/service_config.rs");
 include!("resources/tag.rs");
 include!("resources/volume.rs");
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {
     include!("functions/get_logs.rs");
     include!("functions/get_network.rs");

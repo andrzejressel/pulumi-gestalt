@@ -4,6 +4,9 @@ pub mod ns1 {
 pub mod ns2 {
     include!("resources/ns2/resource_2.rs");
 }
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {
     pub mod ns1 {
         include!("functions/ns1/function_1.rs");

@@ -162,6 +162,9 @@ include!("resources/zone_dnssec.rs");
 include!("resources/zone_hold.rs");
 include!("resources/zone_lockdown.rs");
 include!("resources/zone_settings_override.rs");
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {
     include!("functions/get_access_application.rs");
     include!("functions/get_access_identity_provider.rs");

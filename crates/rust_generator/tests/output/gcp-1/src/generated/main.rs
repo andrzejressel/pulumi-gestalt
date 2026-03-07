@@ -83,6 +83,9 @@ pub mod binaryauthorization {
     include!("resources/binaryauthorization/attestor_iam_policy.rs");
     include!("resources/binaryauthorization/policy.rs");
 }
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {
     pub mod backupdisasterrecovery {
         include!("functions/backupdisasterrecovery/get_backup.rs");
@@ -378,6 +381,7 @@ pub mod types {
         include!("types/binaryauthorization/policy_cluster_admission_rule.rs");
         include!("types/binaryauthorization/policy_default_admission_rule.rs");
     }
+    include!("types/provider_batching.rs");
 }
 #[doc(hidden)]
 pub mod constants {}

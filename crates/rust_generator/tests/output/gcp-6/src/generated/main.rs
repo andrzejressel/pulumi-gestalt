@@ -111,6 +111,9 @@ pub mod healthcare {
     include!("resources/healthcare/pipeline_job.rs");
     include!("resources/healthcare/workspace.rs");
 }
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {
     pub mod filestore {
         include!("functions/filestore/get_instance.rs");
@@ -697,6 +700,7 @@ pub mod types {
         );
         include!("types/healthcare/workspace_settings.rs");
     }
+    include!("types/provider_batching.rs");
 }
 #[doc(hidden)]
 pub mod constants {}

@@ -12,6 +12,14 @@ pub(crate) fn filter_package(package: &mut Package, modules: &[&str]) {
     filter_elements(&mut package.functions, &modules_set);
 
     let mut used_types = HashSet::new();
+
+    collect_used_types_input(package, &package.provider.input_properties, &mut used_types);
+    collect_used_types_output(
+        package,
+        &package.provider.output_properties,
+        &mut used_types,
+    );
+
     for resource in package.resources.values() {
         collect_used_types_input(package, &resource.input_properties, &mut used_types);
         collect_used_types_output(package, &resource.output_properties, &mut used_types);

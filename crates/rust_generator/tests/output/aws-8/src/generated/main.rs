@@ -193,6 +193,9 @@ pub mod elasticache {
     include!("resources/elasticache/user_group.rs");
     include!("resources/elasticache/user_group_association.rs");
 }
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {
     pub mod ebs {
         include!("functions/ebs/get_default_kms_key.rs");
@@ -1366,6 +1369,11 @@ pub mod types {
         include!("types/elasticache/get_serverless_cache_reader_endpoint.rs");
         include!("types/elasticache/get_user_authentication_mode.rs");
     }
+    include!("types/provider_assume_role.rs");
+    include!("types/provider_assume_role_with_web_identity.rs");
+    include!("types/provider_default_tags.rs");
+    include!("types/provider_endpoint.rs");
+    include!("types/provider_ignore_tags.rs");
     include!("types/get_availability_zone_filter.rs");
     include!("types/get_availability_zones_filter.rs");
     include!("types/get_regions_filter.rs");

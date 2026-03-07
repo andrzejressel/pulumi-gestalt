@@ -67,6 +67,9 @@ pub mod appsync {
     include!("resources/appsync/source_api_association.rs");
     include!("resources/appsync/type.rs");
 }
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {
     pub mod appconfig {
         include!("functions/appconfig/get_configuration_profile.rs");
@@ -1270,6 +1273,11 @@ pub mod types {
         );
         include!("types/appsync/source_api_association_timeouts.rs");
     }
+    include!("types/provider_assume_role.rs");
+    include!("types/provider_assume_role_with_web_identity.rs");
+    include!("types/provider_default_tags.rs");
+    include!("types/provider_endpoint.rs");
+    include!("types/provider_ignore_tags.rs");
     include!("types/get_availability_zone_filter.rs");
     include!("types/get_availability_zones_filter.rs");
     include!("types/get_regions_filter.rs");
