@@ -68,7 +68,7 @@ fn create_provider_and_use_it(ctx: &Context) {
     };
 
     let _ = ctx.register_resource(&register_resource_request);
-    provider_id.add_to_export("resource_provider_id");
+    provider_id.add_to_export("provider_id");
 }
 
 fn run_command(ctx: &Context) {

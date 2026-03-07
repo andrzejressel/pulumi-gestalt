@@ -88,9 +88,9 @@ static void create_provider_and_use_it(pulumi_context_t* ctx) {
 	};
 
 	pulumi_composite_output_t* composite_output = pulumi_register_resource(ctx, &register_resource_request);
-	pulumi_output_add_to_export(provider_id, "resource_provider_id");
+	pulumi_output_add_to_export(provider_id, "provider_id");
 }
-	
+
 static void run_command(pulumi_context_t* ctx) {
 	pulumi_output_t* output = pulumi_create_output(ctx, "\"whoami\"", false);
 

@@ -49,7 +49,7 @@ async fn create_provider_and_use_it(ctx: &Context) {
     };
 
     let _ = ctx.register_resource(register_resource_request).await;
-    provider_id.add_export("resource_provider_id".into()).await;
+    provider_id.add_export("provider_id".into()).await;
 }
 
 async fn run_command(ctx: &Context) {

@@ -1,6 +1,6 @@
 type: Added
 title: Allow passing provider information to resource requests
 description: |
-  This change adds new Rust struct `CustomResourceOptions` that allows passing provider information to resource requests.
+  This change adds new Rust struct `CustomResourceOptions` that allows passing provider id in resource requests.
   Other integrations receive something similar - they got field for providing provider_id and method for receiving it
   from new provider.
