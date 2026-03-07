@@ -133,6 +133,8 @@ pub mod endpoint_cosmosdb_account {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The type used to authenticate against the Cosmos DB Account endpoint. Possible values are `keyBased` and `identityBased`. Defaults to `keyBased`.
         pub authentication_type: pulumi_gestalt_rust::Output<Option<String>>,
         /// The name of the Cosmos DB Container in the Cosmos DB Database. Changing this forces a new resource to be created.
@@ -245,6 +247,7 @@ pub mod endpoint_cosmosdb_account {
         let o = context.register_resource(request);
         EndpointCosmosdbAccountResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             authentication_type: o.get_field("authenticationType"),
             container_name: o.get_field("containerName"),
             database_name: o.get_field("databaseName"),

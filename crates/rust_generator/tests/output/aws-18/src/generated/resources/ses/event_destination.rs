@@ -129,6 +129,8 @@ pub mod event_destination {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The SES event destination ARN.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// CloudWatch destination for the events
@@ -212,6 +214,7 @@ pub mod event_destination {
         let o = context.register_resource(request);
         EventDestinationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             cloudwatch_destinations: o.get_field("cloudwatchDestinations"),
             configuration_set_name: o.get_field("configurationSetName"),

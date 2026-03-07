@@ -139,6 +139,8 @@ pub mod web_acl {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the WAF Regional WebACL.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The action that you want AWS WAF Regional to take when a request doesn't match the criteria in any of the rules that are associated with the web ACL.
@@ -217,6 +219,7 @@ pub mod web_acl {
         let o = context.register_resource(request);
         WebAclResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             default_action: o.get_field("defaultAction"),
             logging_configuration: o.get_field("loggingConfiguration"),

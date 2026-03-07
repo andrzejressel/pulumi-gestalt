@@ -65,6 +65,8 @@ pub mod connection {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the connection.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the second device in the connection.
@@ -142,6 +144,7 @@ pub mod connection {
         let o = context.register_resource(request);
         ConnectionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             connected_device_id: o.get_field("connectedDeviceId"),
             connected_link_id: o.get_field("connectedLinkId"),

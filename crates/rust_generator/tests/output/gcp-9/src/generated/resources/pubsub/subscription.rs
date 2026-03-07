@@ -595,6 +595,8 @@ pub mod subscription {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// This value is the maximum time after a subscriber receives a message
         /// before the subscriber should acknowledge the message. After message
         /// delivery but before the ack deadline expires and before the message is
@@ -827,6 +829,7 @@ pub mod subscription {
         let o = context.register_resource(request);
         SubscriptionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             ack_deadline_seconds: o.get_field("ackDeadlineSeconds"),
             bigquery_config: o.get_field("bigqueryConfig"),
             cloud_storage_config: o.get_field("cloudStorageConfig"),

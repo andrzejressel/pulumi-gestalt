@@ -109,6 +109,8 @@ pub mod tenant_inbound_saml_config {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Human friendly display name.
         pub display_name: pulumi_gestalt_rust::Output<String>,
         /// If this config allows users to sign in with the provider.
@@ -187,6 +189,7 @@ pub mod tenant_inbound_saml_config {
         let o = context.register_resource(request);
         TenantInboundSamlConfigResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             display_name: o.get_field("displayName"),
             enabled: o.get_field("enabled"),
             idp_config: o.get_field("idpConfig"),

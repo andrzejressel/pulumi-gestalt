@@ -82,6 +82,8 @@ pub mod ip_set {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies whether GuardDuty is to start using the uploaded IPSet.
         pub activate: pulumi_gestalt_rust::Output<bool>,
         /// Amazon Resource Name (ARN) of the GuardDuty IPSet.
@@ -152,6 +154,7 @@ pub mod ip_set {
         let o = context.register_resource(request);
         IPSetResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             activate: o.get_field("activate"),
             arn: o.get_field("arn"),
             detector_id: o.get_field("detectorId"),

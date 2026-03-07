@@ -255,6 +255,8 @@ pub mod app {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Personal access token for a third-party source control system for an Amplify app. This token must have write access to the relevant repo to create a webhook and a read-only deploy key for the Amplify project. The token is not stored, so after applying this attribute can be removed and the setup token deleted.
         pub access_token: pulumi_gestalt_rust::Output<Option<String>>,
         /// ARN of the Amplify app.
@@ -453,6 +455,7 @@ pub mod app {
         let o = context.register_resource(request);
         AppResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             access_token: o.get_field("accessToken"),
             arn: o.get_field("arn"),
             auto_branch_creation_config: o.get_field("autoBranchCreationConfig"),

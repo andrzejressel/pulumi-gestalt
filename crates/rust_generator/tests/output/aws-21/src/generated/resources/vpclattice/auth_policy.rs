@@ -62,6 +62,8 @@ pub mod auth_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The auth policy. The policy string in JSON must not contain newlines or blank lines.
         pub policy: pulumi_gestalt_rust::Output<String>,
         /// The ID or Amazon Resource Name (ARN) of the service network or service for which the policy is created.
@@ -103,6 +105,7 @@ pub mod auth_policy {
         let o = context.register_resource(request);
         AuthPolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             policy: o.get_field("policy"),
             resource_identifier: o.get_field("resourceIdentifier"),
             state: o.get_field("state"),

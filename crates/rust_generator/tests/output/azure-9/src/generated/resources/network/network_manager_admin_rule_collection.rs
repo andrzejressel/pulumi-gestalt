@@ -86,6 +86,8 @@ pub mod network_manager_admin_rule_collection {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A description of the Network Manager Admin Rule Collection.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// Specifies the name which should be used for this Network Manager Admin Rule Collection. Changing this forces a new Network Manager Admin Rule Collection to be created.
@@ -137,6 +139,7 @@ pub mod network_manager_admin_rule_collection {
         let o = context.register_resource(request);
         NetworkManagerAdminRuleCollectionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             description: o.get_field("description"),
             name: o.get_field("name"),
             network_group_ids: o.get_field("networkGroupIds"),

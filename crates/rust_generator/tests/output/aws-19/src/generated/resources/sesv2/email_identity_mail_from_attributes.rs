@@ -56,6 +56,8 @@ pub mod email_identity_mail_from_attributes {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The action to take if the required MX record isn't found when you send an email. Valid values: `USE_DEFAULT_VALUE`, `REJECT_MESSAGE`.
         pub behavior_on_mx_failure: pulumi_gestalt_rust::Output<Option<String>>,
         /// The verified email identity.
@@ -100,6 +102,7 @@ pub mod email_identity_mail_from_attributes {
         let o = context.register_resource(request);
         EmailIdentityMailFromAttributesResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             behavior_on_mx_failure: o.get_field("behaviorOnMxFailure"),
             email_identity: o.get_field("emailIdentity"),
             mail_from_domain: o.get_field("mailFromDomain"),

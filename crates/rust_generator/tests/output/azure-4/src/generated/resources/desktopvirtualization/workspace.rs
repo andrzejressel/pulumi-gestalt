@@ -76,6 +76,8 @@ pub mod workspace {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A description for the Virtual Desktop Workspace.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// A friendly name for the Virtual Desktop Workspace.
@@ -149,6 +151,7 @@ pub mod workspace {
         let o = context.register_resource(request);
         WorkspaceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             description: o.get_field("description"),
             friendly_name: o.get_field("friendlyName"),
             location: o.get_field("location"),

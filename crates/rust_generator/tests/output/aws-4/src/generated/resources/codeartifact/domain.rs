@@ -48,6 +48,8 @@ pub mod domain {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the Domain.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The total size of all assets in the domain.
@@ -107,6 +109,7 @@ pub mod domain {
         let o = context.register_resource(request);
         DomainResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             asset_size_bytes: o.get_field("assetSizeBytes"),
             created_time: o.get_field("createdTime"),

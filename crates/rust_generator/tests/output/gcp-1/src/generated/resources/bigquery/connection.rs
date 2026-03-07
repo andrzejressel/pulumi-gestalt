@@ -413,6 +413,8 @@ pub mod connection {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Connection properties specific to Amazon Web Services.
         /// Structure is documented below.
         pub aws: pulumi_gestalt_rust::Output<
@@ -548,6 +550,7 @@ pub mod connection {
         let o = context.register_resource(request);
         ConnectionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             aws: o.get_field("aws"),
             azure: o.get_field("azure"),
             cloud_resource: o.get_field("cloudResource"),

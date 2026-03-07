@@ -69,6 +69,8 @@ pub mod web_acl {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The URL to use in SDK integrations with managed rule groups.
         pub application_integration_url: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the WAF WebACL.
@@ -209,6 +211,7 @@ pub mod web_acl {
         let o = context.register_resource(request);
         WebAclResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             application_integration_url: o.get_field("applicationIntegrationUrl"),
             arn: o.get_field("arn"),
             association_config: o.get_field("associationConfig"),

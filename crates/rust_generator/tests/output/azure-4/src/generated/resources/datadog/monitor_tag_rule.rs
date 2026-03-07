@@ -80,6 +80,8 @@ pub mod monitor_tag_rule {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Datadog Monitor Id which should be used for this Datadog Monitor Tag Rule. Changing this forces a new Datadog Monitor Tag Rule to be created.
         pub datadog_monitor_id: pulumi_gestalt_rust::Output<String>,
         /// A `log` block as defined below.
@@ -132,6 +134,7 @@ pub mod monitor_tag_rule {
         let o = context.register_resource(request);
         MonitorTagRuleResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             datadog_monitor_id: o.get_field("datadogMonitorId"),
             logs: o.get_field("logs"),
             metrics: o.get_field("metrics"),

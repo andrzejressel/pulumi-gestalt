@@ -167,6 +167,8 @@ pub mod custom_db_engine_version {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) for the custom engine version.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The date and time that the CEV was created.
@@ -298,6 +300,7 @@ pub mod custom_db_engine_version {
         let o = context.register_resource(request);
         CustomDbEngineVersionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             create_time: o.get_field("createTime"),
             database_installation_files_s3_bucket_name: o

@@ -125,6 +125,8 @@ pub mod custom_domain {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the custom domain name of the Web PubSub Custom Domain. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** Please ensure the custom domain name is included in the Subject Alternative Names of the selected Web PubSub Custom Certificate.
@@ -177,6 +179,7 @@ pub mod custom_domain {
         let o = context.register_resource(request);
         CustomDomainResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             domain_name: o.get_field("domainName"),
             name: o.get_field("name"),
             web_pubsub_custom_certificate_id: o

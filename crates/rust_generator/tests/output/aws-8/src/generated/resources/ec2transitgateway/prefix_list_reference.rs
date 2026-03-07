@@ -83,6 +83,8 @@ pub mod prefix_list_reference {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Indicates whether to drop traffic that matches the Prefix List. Defaults to `false`.
         pub blackhole: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Identifier of EC2 Prefix List.
@@ -139,6 +141,7 @@ pub mod prefix_list_reference {
         let o = context.register_resource(request);
         PrefixListReferenceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             blackhole: o.get_field("blackhole"),
             prefix_list_id: o.get_field("prefixListId"),
             prefix_list_owner_id: o.get_field("prefixListOwnerId"),

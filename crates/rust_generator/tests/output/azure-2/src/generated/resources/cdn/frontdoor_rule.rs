@@ -301,6 +301,8 @@ pub mod frontdoor_rule {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// An `actions` block as defined below.
         pub actions: pulumi_gestalt_rust::Output<
             super::super::types::cdn::FrontdoorRuleActions,
@@ -373,6 +375,7 @@ pub mod frontdoor_rule {
         let o = context.register_resource(request);
         FrontdoorRuleResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             actions: o.get_field("actions"),
             behavior_on_match: o.get_field("behaviorOnMatch"),
             cdn_frontdoor_rule_set_id: o.get_field("cdnFrontdoorRuleSetId"),

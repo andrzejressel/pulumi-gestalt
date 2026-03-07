@@ -59,6 +59,8 @@ pub mod suppression {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Name which should be used for this Advisor suppression. Changing this forces a new Advisor suppression to be created.
         pub name: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Advisor recommendation to suppress. Changing this forces a new Advisor suppression to be created.
@@ -109,6 +111,7 @@ pub mod suppression {
         let o = context.register_resource(request);
         SuppressionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             name: o.get_field("name"),
             recommendation_id: o.get_field("recommendationId"),
             resource_id: o.get_field("resourceId"),

@@ -152,6 +152,8 @@ pub mod managed_instance_failover_group {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Azure Region where the Managed Instance Failover Group should exist. Changing this forces a new resource to be created.
         pub location: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Azure SQL Managed Instance which will be replicated using a Managed Instance Failover Group. Changing this forces a new resource to be created.
@@ -231,6 +233,7 @@ pub mod managed_instance_failover_group {
         let o = context.register_resource(request);
         ManagedInstanceFailoverGroupResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             location: o.get_field("location"),
             managed_instance_id: o.get_field("managedInstanceId"),
             name: o.get_field("name"),

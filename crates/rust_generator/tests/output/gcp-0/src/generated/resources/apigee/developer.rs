@@ -200,6 +200,8 @@ pub mod developer {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Developer attributes (name/value pairs). The custom attribute limit is 18.
         /// Structure is documented below.
         pub attributes: pulumi_gestalt_rust::Output<
@@ -277,6 +279,7 @@ pub mod developer {
         let o = context.register_resource(request);
         DeveloperResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             attributes: o.get_field("attributes"),
             created_at: o.get_field("createdAt"),
             email: o.get_field("email"),

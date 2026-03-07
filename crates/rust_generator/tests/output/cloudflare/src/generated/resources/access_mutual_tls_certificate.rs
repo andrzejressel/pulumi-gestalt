@@ -76,6 +76,8 @@ pub mod access_mutual_tls_certificate {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The account identifier to target for the resource. Conflicts with `zone_id`.
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// The hostnames that will be prompted for this certificate.
@@ -133,6 +135,7 @@ pub mod access_mutual_tls_certificate {
         let o = context.register_resource(request);
         AccessMutualTlsCertificateResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             associated_hostnames: o.get_field("associatedHostnames"),
             certificate: o.get_field("certificate"),

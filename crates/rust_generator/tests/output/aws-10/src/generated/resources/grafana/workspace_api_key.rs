@@ -48,6 +48,8 @@ pub mod workspace_api_key {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The key token in JSON format. Use this value as a bearer token to authenticate HTTP requests to the workspace.
         pub key: pulumi_gestalt_rust::Output<String>,
         /// Specifies the name of the API key. Key names must be unique to the workspace.
@@ -98,6 +100,7 @@ pub mod workspace_api_key {
         let o = context.register_resource(request);
         WorkspaceApiKeyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             key: o.get_field("key"),
             key_name: o.get_field("keyName"),
             key_role: o.get_field("keyRole"),

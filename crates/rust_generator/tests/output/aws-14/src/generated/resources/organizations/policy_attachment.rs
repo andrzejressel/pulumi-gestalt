@@ -87,6 +87,8 @@ pub mod policy_attachment {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The unique identifier (ID) of the policy that you want to attach to the target.
         pub policy_id: pulumi_gestalt_rust::Output<String>,
         /// If set to `true`, destroy will **not** detach the policy and instead just remove the resource from state. This can be useful in situations where the attachment must be preserved to meet the AWS minimum requirement of 1 attached policy.
@@ -128,6 +130,7 @@ pub mod policy_attachment {
         let o = context.register_resource(request);
         PolicyAttachmentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             policy_id: o.get_field("policyId"),
             skip_destroy: o.get_field("skipDestroy"),
             target_id: o.get_field("targetId"),

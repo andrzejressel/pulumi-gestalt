@@ -52,6 +52,8 @@ pub mod email_identity_feedback_attributes {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Sets the feedback forwarding configuration for the identity.
         pub email_forwarding_enabled: pulumi_gestalt_rust::Output<Option<bool>>,
         /// The email identity.
@@ -89,6 +91,7 @@ pub mod email_identity_feedback_attributes {
         let o = context.register_resource(request);
         EmailIdentityFeedbackAttributesResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             email_forwarding_enabled: o.get_field("emailForwardingEnabled"),
             email_identity: o.get_field("emailIdentity"),
         }

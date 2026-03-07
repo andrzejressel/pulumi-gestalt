@@ -245,6 +245,8 @@ pub mod backup_instance_kubernetes_cluster {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A `backup_datasource_parameters` block as defined below.
         pub backup_datasource_parameters: pulumi_gestalt_rust::Output<
             Option<
@@ -325,6 +327,7 @@ pub mod backup_instance_kubernetes_cluster {
         let o = context.register_resource(request);
         BackupInstanceKubernetesClusterResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             backup_datasource_parameters: o.get_field("backupDatasourceParameters"),
             backup_policy_id: o.get_field("backupPolicyId"),
             kubernetes_cluster_id: o.get_field("kubernetesClusterId"),

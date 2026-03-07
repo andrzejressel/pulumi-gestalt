@@ -237,6 +237,8 @@ pub mod node_pool {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Configuration required by cluster autoscaler to adjust
         /// the size of the node pool to the current cluster usage. Structure is documented below.
         pub autoscaling: pulumi_gestalt_rust::Output<
@@ -433,6 +435,7 @@ pub mod node_pool {
         let o = context.register_resource(request);
         NodePoolResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             autoscaling: o.get_field("autoscaling"),
             cluster: o.get_field("cluster"),
             initial_node_count: o.get_field("initialNodeCount"),

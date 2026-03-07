@@ -94,6 +94,8 @@ pub mod vpc_block_public_access_exclusion {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Mode of exclusion from Block Public Access. The allowed values are `allow-egress` and `allow-bidirectional`.
         ///
         /// The following arguments are optional:
@@ -163,6 +165,7 @@ pub mod vpc_block_public_access_exclusion {
         let o = context.register_resource(request);
         VpcBlockPublicAccessExclusionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             internet_gateway_exclusion_mode: o.get_field("internetGatewayExclusionMode"),
             resource_arn: o.get_field("resourceArn"),
             subnet_id: o.get_field("subnetId"),

@@ -86,6 +86,8 @@ pub mod provisioning_artifact {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Language code. Valid values: `en` (English), `jp` (Japanese), `zh` (Chinese). The default value is `en`.
         pub accept_language: pulumi_gestalt_rust::Output<Option<String>>,
         /// Whether the product version is active. Inactive provisioning artifacts are invisible to end users. End users cannot launch or update a provisioned product from an inactive provisioning artifact. Default is `true`.
@@ -184,6 +186,7 @@ pub mod provisioning_artifact {
         let o = context.register_resource(request);
         ProvisioningArtifactResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             accept_language: o.get_field("acceptLanguage"),
             active: o.get_field("active"),
             created_time: o.get_field("createdTime"),

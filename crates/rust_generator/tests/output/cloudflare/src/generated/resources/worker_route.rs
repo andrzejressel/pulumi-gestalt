@@ -53,6 +53,8 @@ pub mod worker_route {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The [route pattern](https://developers.cloudflare.com/workers/about/routes/) to associate the Worker with.
         pub pattern: pulumi_gestalt_rust::Output<String>,
         /// Worker script name to invoke for requests that match the route pattern.
@@ -94,6 +96,7 @@ pub mod worker_route {
         let o = context.register_resource(request);
         WorkerRouteResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             pattern: o.get_field("pattern"),
             script_name: o.get_field("scriptName"),
             zone_id: o.get_field("zoneId"),

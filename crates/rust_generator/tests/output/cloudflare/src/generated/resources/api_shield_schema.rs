@@ -50,6 +50,8 @@ pub mod api_shield_schema {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Kind of schema. Defaults to `openapi_v3`. **Modifying this attribute will force creation of a new resource.**
         pub kind: pulumi_gestalt_rust::Output<Option<String>>,
         /// Name of the schema. **Modifying this attribute will force creation of a new resource.**
@@ -105,6 +107,7 @@ pub mod api_shield_schema {
         let o = context.register_resource(request);
         ApiShieldSchemaResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             kind: o.get_field("kind"),
             name: o.get_field("name"),
             source: o.get_field("source"),

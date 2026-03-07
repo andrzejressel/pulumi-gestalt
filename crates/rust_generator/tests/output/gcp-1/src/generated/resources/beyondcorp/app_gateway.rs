@@ -129,6 +129,8 @@ pub mod app_gateway {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A list of connections allocated for the Gateway.
         /// Structure is documented below.
         pub allocated_connections: pulumi_gestalt_rust::Output<
@@ -229,6 +231,7 @@ pub mod app_gateway {
         let o = context.register_resource(request);
         AppGatewayResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             allocated_connections: o.get_field("allocatedConnections"),
             display_name: o.get_field("displayName"),
             effective_labels: o.get_field("effectiveLabels"),

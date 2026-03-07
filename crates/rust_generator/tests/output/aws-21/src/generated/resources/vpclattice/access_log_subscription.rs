@@ -52,6 +52,8 @@ pub mod access_log_subscription {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the access log subscription.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the log destination.
@@ -101,6 +103,7 @@ pub mod access_log_subscription {
         let o = context.register_resource(request);
         AccessLogSubscriptionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             destination_arn: o.get_field("destinationArn"),
             resource_arn: o.get_field("resourceArn"),

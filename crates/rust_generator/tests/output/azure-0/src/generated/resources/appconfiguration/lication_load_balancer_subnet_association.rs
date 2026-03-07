@@ -100,6 +100,8 @@ pub mod lication_load_balancer_subnet_association {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Application Gateway for Containers. Changing this forces a new resource to be created.
         pub application_load_balancer_id: pulumi_gestalt_rust::Output<String>,
         /// The name which should be used for this Application Gateway for Containers Association. Changing this forces a new resource to be created.
@@ -155,6 +157,7 @@ pub mod lication_load_balancer_subnet_association {
         let o = context.register_resource(request);
         LicationLoadBalancerSubnetAssociationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             application_load_balancer_id: o.get_field("applicationLoadBalancerId"),
             name: o.get_field("name"),
             subnet_id: o.get_field("subnetId"),

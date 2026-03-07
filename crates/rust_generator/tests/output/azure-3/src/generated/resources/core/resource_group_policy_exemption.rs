@@ -91,6 +91,8 @@ pub mod resource_group_policy_exemption {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A description to use for this Policy Exemption.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// A friendly display name to use for this Policy Exemption.
@@ -179,6 +181,7 @@ pub mod resource_group_policy_exemption {
         let o = context.register_resource(request);
         ResourceGroupPolicyExemptionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             description: o.get_field("description"),
             display_name: o.get_field("displayName"),
             exemption_category: o.get_field("exemptionCategory"),

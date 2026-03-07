@@ -64,6 +64,8 @@ pub mod iam_member_remove {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The IAM principal that should not have the target role.
         /// Each entry can have one of the following values:
         /// * **user:{emailid}**: An email address that represents a specific Google account. For example, alice@gmail.com or joe@example.com.
@@ -110,6 +112,7 @@ pub mod iam_member_remove {
         let o = context.register_resource(request);
         IamMemberRemoveResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             member: o.get_field("member"),
             project: o.get_field("project"),
             role: o.get_field("role"),

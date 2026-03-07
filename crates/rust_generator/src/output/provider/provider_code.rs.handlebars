@@ -26,6 +26,8 @@ pub struct {{resource.struct_name}}Args {
 
 #[allow(dead_code)]
 pub struct {{resource.struct_name}}Result {
+    /// Pulumi URN is the stable logical identity of this provider resource in the Pulumi stack.
+    pub urn: pulumi_gestalt_rust::Output<String>,
 {{#each resource.output_properties}}
     {{#each description_lines}}
         /// {{&this}}
@@ -61,10 +63,11 @@ pub fn {{resource.function_name}}(
         ]
     };
 
-    let _o = context.register_resource(request);
+    let o = context.register_resource(request);
     {{resource.struct_name}}Result {
+        urn: o.get_urn(),
     {{#each resource.output_properties}}
-        {{arg_name}}: _o.get_field("{{name}}"),
+        {{arg_name}}: o.get_field("{{name}}"),
     {{/each}}
     }
 }

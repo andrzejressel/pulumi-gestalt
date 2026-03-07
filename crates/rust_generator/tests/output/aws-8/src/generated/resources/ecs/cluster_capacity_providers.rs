@@ -67,6 +67,8 @@ pub mod cluster_capacity_providers {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Set of names of one or more capacity providers to associate with the cluster. Valid values also include `FARGATE` and `FARGATE_SPOT`.
         pub capacity_providers: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// Name of the ECS cluster to manage capacity providers for.
@@ -116,6 +118,7 @@ pub mod cluster_capacity_providers {
         let o = context.register_resource(request);
         ClusterCapacityProvidersResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             capacity_providers: o.get_field("capacityProviders"),
             cluster_name: o.get_field("clusterName"),
             default_capacity_provider_strategies: o

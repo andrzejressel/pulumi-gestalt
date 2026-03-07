@@ -76,6 +76,8 @@ pub mod email_service_domain {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Describes how a Domains resource is being managed. Possible values are `AzureManaged`, `CustomerManaged`, `CustomerManagedInExchangeOnline`. Changing this forces a new Email Communication Service to be created.
         pub domain_management: pulumi_gestalt_rust::Output<String>,
         /// The resource ID of the Email Communication Service where the Domain belongs to. Changing this forces a new Email Communication Service to be created.
@@ -143,6 +145,7 @@ pub mod email_service_domain {
         let o = context.register_resource(request);
         EmailServiceDomainResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             domain_management: o.get_field("domainManagement"),
             email_service_id: o.get_field("emailServiceId"),
             from_sender_domain: o.get_field("fromSenderDomain"),

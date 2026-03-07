@@ -86,6 +86,8 @@ pub mod dps_shared_access_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Adds `EnrollmentRead` permission to this Shared Access Account. It allows read access to enrollment data.
         ///
         /// > **NOTE** When `enrollment_read` is set to `true`, `registration_read` must also be set to true. This is a limitation of the Azure REST API
@@ -178,6 +180,7 @@ pub mod dps_shared_access_policy {
         let o = context.register_resource(request);
         DpsSharedAccessPolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             enrollment_read: o.get_field("enrollmentRead"),
             enrollment_write: o.get_field("enrollmentWrite"),
             iothub_dps_name: o.get_field("iothubDpsName"),

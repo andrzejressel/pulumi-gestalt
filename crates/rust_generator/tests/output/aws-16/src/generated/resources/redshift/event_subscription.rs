@@ -82,6 +82,8 @@ pub mod event_subscription {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the Redshift event notification subscription
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The AWS customer account associated with the Redshift event notification subscription
@@ -169,6 +171,7 @@ pub mod event_subscription {
         let o = context.register_resource(request);
         EventSubscriptionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             customer_aws_id: o.get_field("customerAwsId"),
             enabled: o.get_field("enabled"),

@@ -47,6 +47,8 @@ pub mod application_snapshot {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The name of an existing  Kinesis Analytics v2 Application. Note that the application must be running for a snapshot to be created.
         pub application_name: pulumi_gestalt_rust::Output<String>,
         /// The current application version ID when the snapshot was created.
@@ -86,6 +88,7 @@ pub mod application_snapshot {
         let o = context.register_resource(request);
         ApplicationSnapshotResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             application_name: o.get_field("applicationName"),
             application_version_id: o.get_field("applicationVersionId"),
             snapshot_creation_timestamp: o.get_field("snapshotCreationTimestamp"),

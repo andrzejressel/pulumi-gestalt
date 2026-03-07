@@ -53,6 +53,8 @@ pub mod env_group_attachment {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Apigee environment group associated with the Apigee environment,
         /// in the format `organizations/{{org_name}}/envgroups/{{envgroup_name}}`.
         ///
@@ -93,6 +95,7 @@ pub mod env_group_attachment {
         let o = context.register_resource(request);
         EnvGroupAttachmentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             envgroup_id: o.get_field("envgroupId"),
             environment: o.get_field("environment"),
             name: o.get_field("name"),

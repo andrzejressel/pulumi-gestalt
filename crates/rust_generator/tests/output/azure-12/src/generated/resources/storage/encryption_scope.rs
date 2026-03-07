@@ -72,6 +72,8 @@ pub mod encryption_scope {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Is a secondary layer of encryption with Platform Managed Keys for data applied? Changing this forces a new resource to be created.
         pub infrastructure_encryption_required: pulumi_gestalt_rust::Output<
             Option<bool>,
@@ -131,6 +133,7 @@ pub mod encryption_scope {
         let o = context.register_resource(request);
         EncryptionScopeResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             infrastructure_encryption_required: o
                 .get_field("infrastructureEncryptionRequired"),
             key_vault_key_id: o.get_field("keyVaultKeyId"),

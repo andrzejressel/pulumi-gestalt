@@ -81,6 +81,8 @@ pub mod linked_storage_account {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The data source type which should be used for this Log Analytics Linked Storage Account. Possible values are `CustomLogs`, `AzureWatson`, `Query`, `Ingestion` and `Alerts`. Changing this forces a new Log Analytics Linked Storage Account to be created.
         pub data_source_type: pulumi_gestalt_rust::Output<String>,
         /// The name of the Resource Group where the Log Analytics Linked Storage Account should exist. Changing this forces a new Log Analytics Linked Storage Account to be created.
@@ -131,6 +133,7 @@ pub mod linked_storage_account {
         let o = context.register_resource(request);
         LinkedStorageAccountResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             data_source_type: o.get_field("dataSourceType"),
             resource_group_name: o.get_field("resourceGroupName"),
             storage_account_ids: o.get_field("storageAccountIds"),

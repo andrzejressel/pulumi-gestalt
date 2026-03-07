@@ -244,6 +244,8 @@ pub mod pool {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the name of the Batch account in which the pool will be created. Changing this forces a new resource to be created.
         pub account_name: pulumi_gestalt_rust::Output<String>,
         /// A `auto_scale` block that describes the scale settings when using auto scale as defined below.
@@ -519,6 +521,7 @@ pub mod pool {
         let o = context.register_resource(request);
         PoolResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             account_name: o.get_field("accountName"),
             auto_scale: o.get_field("autoScale"),
             certificates: o.get_field("certificates"),

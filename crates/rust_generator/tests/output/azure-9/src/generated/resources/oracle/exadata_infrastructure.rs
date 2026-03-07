@@ -93,6 +93,8 @@ pub mod exadata_infrastructure {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The number of compute servers for the Cloud Exadata Infrastructure. Changing this forces a new Cloud Exadata Infrastructure to be created.
         pub compute_count: pulumi_gestalt_rust::Output<i32>,
         /// The email address used by Oracle to send notifications regarding databases and infrastructure. Changing this forces a new Cloud Exadata Infrastructure to be created.
@@ -194,6 +196,7 @@ pub mod exadata_infrastructure {
         let o = context.register_resource(request);
         ExadataInfrastructureResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             compute_count: o.get_field("computeCount"),
             customer_contacts: o.get_field("customerContacts"),
             display_name: o.get_field("displayName"),

@@ -99,6 +99,8 @@ pub mod domain {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Whether to create the domain topic when the first event subscription at the scope of the domain topic is created. Defaults to `true`.
         pub auto_create_topic_with_first_subscription: pulumi_gestalt_rust::Output<
             Option<bool>,
@@ -238,6 +240,7 @@ pub mod domain {
         let o = context.register_resource(request);
         DomainResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             auto_create_topic_with_first_subscription: o
                 .get_field("autoCreateTopicWithFirstSubscription"),
             auto_delete_topic_with_last_subscription: o

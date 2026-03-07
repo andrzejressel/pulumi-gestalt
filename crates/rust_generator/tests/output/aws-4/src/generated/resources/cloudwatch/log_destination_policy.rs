@@ -66,6 +66,8 @@ pub mod log_destination_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The policy document. This is a JSON formatted string.
         pub access_policy: pulumi_gestalt_rust::Output<String>,
         /// A name for the subscription filter
@@ -107,6 +109,7 @@ pub mod log_destination_policy {
         let o = context.register_resource(request);
         LogDestinationPolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             access_policy: o.get_field("accessPolicy"),
             destination_name: o.get_field("destinationName"),
             force_update: o.get_field("forceUpdate"),

@@ -136,6 +136,8 @@ pub mod workspace {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The type of account access for the workspace. Valid values are `CURRENT_ACCOUNT` and `ORGANIZATION`. If `ORGANIZATION` is specified, then `organizational_units` must also be present.
         pub account_access_type: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the Grafana workspace.
@@ -293,6 +295,7 @@ pub mod workspace {
         let o = context.register_resource(request);
         WorkspaceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             account_access_type: o.get_field("accountAccessType"),
             arn: o.get_field("arn"),
             authentication_providers: o.get_field("authenticationProviders"),

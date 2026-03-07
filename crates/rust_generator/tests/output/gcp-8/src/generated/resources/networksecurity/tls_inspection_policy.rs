@@ -280,6 +280,8 @@ pub mod tls_inspection_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A CA pool resource used to issue interception certificates.
         pub ca_pool: pulumi_gestalt_rust::Output<String>,
         /// The timestamp when the resource was created.
@@ -382,6 +384,7 @@ pub mod tls_inspection_policy {
         let o = context.register_resource(request);
         TlsInspectionPolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             ca_pool: o.get_field("caPool"),
             create_time: o.get_field("createTime"),
             custom_tls_features: o.get_field("customTlsFeatures"),

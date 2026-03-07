@@ -238,6 +238,8 @@ pub mod certificate {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A `certificate` block as defined below, used to Import an existing certificate. Changing this will create a new version of the Key Vault Certificate.
         pub certificate: pulumi_gestalt_rust::Output<
             Option<super::super::types::keyvault::CertificateCertificate>,
@@ -323,6 +325,7 @@ pub mod certificate {
         let o = context.register_resource(request);
         CertificateResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             certificate: o.get_field("certificate"),
             certificate_attributes: o.get_field("certificateAttributes"),
             certificate_data: o.get_field("certificateData"),

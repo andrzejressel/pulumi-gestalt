@@ -368,6 +368,8 @@ pub mod web_type_app_enging_iam_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Id of the App Engine application. Used to find the parent resource to bind the IAM policy to
         pub app_id: pulumi_gestalt_rust::Output<String>,
         /// (Computed) The etag of the IAM policy.
@@ -413,6 +415,7 @@ pub mod web_type_app_enging_iam_policy {
         let o = context.register_resource(request);
         WebTypeAppEngingIamPolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             app_id: o.get_field("appId"),
             etag: o.get_field("etag"),
             policy_data: o.get_field("policyData"),

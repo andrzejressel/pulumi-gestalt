@@ -101,6 +101,8 @@ pub mod domain_trust {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The fully qualified domain name. e.g. mydomain.myorganization.com, with the restrictions
         /// of https://cloud.google.com/managed-microsoft-ad/reference/rest/v1/projects.locations.global.domains.
         ///
@@ -191,6 +193,7 @@ pub mod domain_trust {
         let o = context.register_resource(request);
         DomainTrustResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             domain: o.get_field("domain"),
             project: o.get_field("project"),
             selective_authentication: o.get_field("selectiveAuthentication"),

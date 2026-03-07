@@ -488,6 +488,8 @@ pub mod service_attachment {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// An array of the consumer forwarding rules connected to this service
         /// attachment.
         /// Structure is documented below.
@@ -650,6 +652,7 @@ pub mod service_attachment {
         let o = context.register_resource(request);
         ServiceAttachmentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             connected_endpoints: o.get_field("connectedEndpoints"),
             connection_preference: o.get_field("connectionPreference"),
             consumer_accept_lists: o.get_field("consumerAcceptLists"),

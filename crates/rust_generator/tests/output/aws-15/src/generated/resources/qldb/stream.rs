@@ -58,6 +58,8 @@ pub mod stream {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the QLDB Stream.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The exclusive date and time that specifies when the stream ends. If you don't define this parameter, the stream runs indefinitely until you cancel it. It must be in ISO 8601 date and time format and in Universal Coordinated Time (UTC). For example: `"2019-06-13T21:36:34Z"`.
@@ -139,6 +141,7 @@ pub mod stream {
         let o = context.register_resource(request);
         StreamResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             exclusive_end_time: o.get_field("exclusiveEndTime"),
             inclusive_start_time: o.get_field("inclusiveStartTime"),

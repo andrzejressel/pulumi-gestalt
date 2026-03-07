@@ -264,6 +264,8 @@ pub mod table {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ARN of the table
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Set of nested attribute definitions. Only required for `hash_key` and `range_key` attributes. See below.
@@ -498,6 +500,7 @@ pub mod table {
         let o = context.register_resource(request);
         TableResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             attributes: o.get_field("attributes"),
             billing_mode: o.get_field("billingMode"),

@@ -53,6 +53,8 @@ pub mod classification_export_configuration {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Configuration block for a S3 Destination. Defined below
         pub s3_destination: pulumi_gestalt_rust::Output<
             Option<
@@ -85,6 +87,7 @@ pub mod classification_export_configuration {
         let o = context.register_resource(request);
         ClassificationExportConfigurationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             s3_destination: o.get_field("s3Destination"),
         }
     }

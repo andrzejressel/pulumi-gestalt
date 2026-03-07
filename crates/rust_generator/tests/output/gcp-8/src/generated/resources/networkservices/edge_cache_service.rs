@@ -410,6 +410,8 @@ pub mod edge_cache_service {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A human-readable description of the resource.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// Disables HTTP/2. HTTP/2 (h2) is enabled by default and recommended for performance. HTTP/2 improves connection re-use
@@ -548,6 +550,7 @@ pub mod edge_cache_service {
         let o = context.register_resource(request);
         EdgeCacheServiceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             description: o.get_field("description"),
             disable_http2: o.get_field("disableHttp2"),
             disable_quic: o.get_field("disableQuic"),

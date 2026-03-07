@@ -123,6 +123,8 @@ pub mod cluster_instance {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The hostname of the instance. See also `endpoint` and `port`.
         pub address: pulumi_gestalt_rust::Output<String>,
         /// Specifies whether any instance modifications
@@ -303,6 +305,7 @@ pub mod cluster_instance {
         let o = context.register_resource(request);
         ClusterInstanceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             address: o.get_field("address"),
             apply_immediately: o.get_field("applyImmediately"),
             arn: o.get_field("arn"),

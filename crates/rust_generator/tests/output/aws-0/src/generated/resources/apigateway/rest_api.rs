@@ -78,6 +78,8 @@ pub mod rest_api {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Source of the API key for requests. Valid values are `HEADER` (default) and `AUTHORIZER`. If importing an OpenAPI specification via the `body` argument, this corresponds to the [`x-amazon-apigateway-api-key-source` extension](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-api-key-source.html). If the argument value is provided and is different than the OpenAPI value, the argument value will override the OpenAPI value.
         pub api_key_source: pulumi_gestalt_rust::Output<String>,
         /// ARN
@@ -215,6 +217,7 @@ pub mod rest_api {
         let o = context.register_resource(request);
         RestApiResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             api_key_source: o.get_field("apiKeySource"),
             arn: o.get_field("arn"),
             binary_media_types: o.get_field("binaryMediaTypes"),

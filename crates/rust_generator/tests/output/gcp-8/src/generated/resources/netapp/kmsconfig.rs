@@ -109,6 +109,8 @@ pub mod kmsconfig {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Resource name of the KMS key to use. Only regional keys are supported. Format: `projects/{{project}}/locations/{{location}}/keyRings/{{key_ring}}/cryptoKeys/{{key}}`.
         pub crypto_key_name: pulumi_gestalt_rust::Output<String>,
         /// Description for the CMEK policy.
@@ -194,6 +196,7 @@ pub mod kmsconfig {
         let o = context.register_resource(request);
         KmsconfigResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             crypto_key_name: o.get_field("cryptoKeyName"),
             description: o.get_field("description"),
             effective_labels: o.get_field("effectiveLabels"),

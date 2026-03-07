@@ -104,6 +104,8 @@ pub mod configuration_set {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// SES configuration set ARN.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Whether messages that use the configuration set are required to use TLS. See below.
@@ -171,6 +173,7 @@ pub mod configuration_set {
         let o = context.register_resource(request);
         ConfigurationSetResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             delivery_options: o.get_field("deliveryOptions"),
             last_fresh_start: o.get_field("lastFreshStart"),

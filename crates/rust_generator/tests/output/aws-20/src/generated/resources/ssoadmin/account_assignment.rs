@@ -125,6 +125,8 @@ pub mod account_assignment {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the SSO Instance.
         pub instance_arn: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the Permission Set that the admin wants to grant the principal access to.
@@ -187,6 +189,7 @@ pub mod account_assignment {
         let o = context.register_resource(request);
         AccountAssignmentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             instance_arn: o.get_field("instanceArn"),
             permission_set_arn: o.get_field("permissionSetArn"),
             principal_id: o.get_field("principalId"),

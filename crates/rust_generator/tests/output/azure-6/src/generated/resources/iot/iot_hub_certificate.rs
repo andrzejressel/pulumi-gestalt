@@ -73,6 +73,8 @@ pub mod iot_hub_certificate {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Base-64 representation of the X509 leaf certificate .cer file or just a .pem file content.
         pub certificate_content: pulumi_gestalt_rust::Output<String>,
         /// The name of the IoT Device Provisioning Service that this certificate will be attached to. Changing this forces a new resource to be created.
@@ -128,6 +130,7 @@ pub mod iot_hub_certificate {
         let o = context.register_resource(request);
         IotHubCertificateResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             certificate_content: o.get_field("certificateContent"),
             iot_dps_name: o.get_field("iotDpsName"),
             is_verified: o.get_field("isVerified"),

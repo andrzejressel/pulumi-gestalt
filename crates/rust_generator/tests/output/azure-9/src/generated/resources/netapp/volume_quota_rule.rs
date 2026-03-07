@@ -170,6 +170,8 @@ pub mod volume_quota_rule {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Azure Region where the Volume Quota Rule should exist. Changing this forces a new Volume Quota Rule to be created.
         pub location: pulumi_gestalt_rust::Output<String>,
         /// The name which should be used for this Volume Quota Rule. Changing this forces a new Volume Quota Rule to be created.
@@ -236,6 +238,7 @@ pub mod volume_quota_rule {
         let o = context.register_resource(request);
         VolumeQuotaRuleResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             location: o.get_field("location"),
             name: o.get_field("name"),
             quota_size_in_kib: o.get_field("quotaSizeInKib"),

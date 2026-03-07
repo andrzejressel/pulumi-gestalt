@@ -133,6 +133,8 @@ pub mod firewall_policy_rule_collection_group {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// One or more `application_rule_collection` blocks as defined below.
         pub application_rule_collections: pulumi_gestalt_rust::Output<
             Option<
@@ -218,6 +220,7 @@ pub mod firewall_policy_rule_collection_group {
         let o = context.register_resource(request);
         FirewallPolicyRuleCollectionGroupResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             application_rule_collections: o.get_field("applicationRuleCollections"),
             firewall_policy_id: o.get_field("firewallPolicyId"),
             name: o.get_field("name"),

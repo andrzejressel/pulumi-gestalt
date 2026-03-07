@@ -116,6 +116,8 @@ pub mod custom_certificate {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The certificate version of the Web PubSub Custom Certificate.
         pub certificate_version: pulumi_gestalt_rust::Output<String>,
         /// The certificate ID of the Web PubSub Custom Certificate. Changing this forces a new resource to be created.
@@ -165,6 +167,7 @@ pub mod custom_certificate {
         let o = context.register_resource(request);
         CustomCertificateResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             certificate_version: o.get_field("certificateVersion"),
             custom_certificate_id: o.get_field("customCertificateId"),
             name: o.get_field("name"),

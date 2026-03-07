@@ -53,6 +53,8 @@ pub mod default_vpc_dhcp_options {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the DHCP Options Set.
         pub arn: pulumi_gestalt_rust::Output<String>,
         pub domain_name: pulumi_gestalt_rust::Output<String>,
@@ -102,6 +104,7 @@ pub mod default_vpc_dhcp_options {
         let o = context.register_resource(request);
         DefaultVpcDhcpOptionsResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             domain_name: o.get_field("domainName"),
             domain_name_servers: o.get_field("domainNameServers"),

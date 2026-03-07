@@ -70,6 +70,8 @@ pub mod hybrid_runbook_worker_group {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The name of the Automation Account in which the Runbook Worker Group is created. Changing this forces a new resource to be created.
         pub automation_account_name: pulumi_gestalt_rust::Output<String>,
         /// The name of resource type `azure.automation.Credential` to use for hybrid worker.
@@ -121,6 +123,7 @@ pub mod hybrid_runbook_worker_group {
         let o = context.register_resource(request);
         HybridRunbookWorkerGroupResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             automation_account_name: o.get_field("automationAccountName"),
             credential_name: o.get_field("credentialName"),
             name: o.get_field("name"),

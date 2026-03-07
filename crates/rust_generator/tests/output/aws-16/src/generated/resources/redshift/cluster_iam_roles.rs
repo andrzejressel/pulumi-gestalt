@@ -51,6 +51,8 @@ pub mod cluster_iam_roles {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The name of the Redshift Cluster IAM Roles.
         pub cluster_identifier: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was created.
@@ -92,6 +94,7 @@ pub mod cluster_iam_roles {
         let o = context.register_resource(request);
         ClusterIamRolesResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             cluster_identifier: o.get_field("clusterIdentifier"),
             default_iam_role_arn: o.get_field("defaultIamRoleArn"),
             iam_role_arns: o.get_field("iamRoleArns"),

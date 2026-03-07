@@ -226,6 +226,8 @@ pub mod compute_environment {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the compute environment.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The name for your compute environment. Up to 128 letters (uppercase and lowercase), numbers, and underscores are allowed. If omitted, the provider will assign a random, unique name.
@@ -333,6 +335,7 @@ pub mod compute_environment {
         let o = context.register_resource(request);
         ComputeEnvironmentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             compute_environment_name: o.get_field("computeEnvironmentName"),
             compute_environment_name_prefix: o.get_field("computeEnvironmentNamePrefix"),

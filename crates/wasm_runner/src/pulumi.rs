@@ -271,6 +271,18 @@ impl HostCompositeOutput for MyState {
         Ok(id)
     }
 
+    async fn get_urn(
+        &mut self,
+        self_: Resource<output_interface::CompositeOutput>,
+    ) -> anyhow::Result<Resource<output_interface::Output>> {
+        assert!(!self_.owned());
+        let composite_output = self.table.get(&self_)?;
+        let output = composite_output.output.get_urn().await;
+        let output = SingleThreadedOutput::new(output);
+        let id = self.table.push(output)?;
+        Ok(id)
+    }
+
     async fn drop(
         &mut self,
         rep: Resource<output_interface::CompositeOutput>,

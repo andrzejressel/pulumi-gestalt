@@ -147,6 +147,8 @@ pub mod client {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Cloud KMS config for AuthModule to encrypt/decrypt credentials.
         /// Structure is documented below.
         pub cloud_kms_config: pulumi_gestalt_rust::Output<
@@ -213,6 +215,7 @@ pub mod client {
         let o = context.register_resource(request);
         ClientResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             cloud_kms_config: o.get_field("cloudKmsConfig"),
             create_sample_integrations: o.get_field("createSampleIntegrations"),
             location: o.get_field("location"),

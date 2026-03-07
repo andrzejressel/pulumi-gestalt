@@ -96,6 +96,8 @@ pub mod cluster_snapshot_copy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the allocated storage size in gigabytes (GB).
         pub allocated_storage: pulumi_gestalt_rust::Output<i32>,
         /// Whether to copy existing tags. Defaults to `false`.
@@ -209,6 +211,7 @@ pub mod cluster_snapshot_copy {
         let o = context.register_resource(request);
         ClusterSnapshotCopyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             allocated_storage: o.get_field("allocatedStorage"),
             copy_tags: o.get_field("copyTags"),
             db_cluster_snapshot_arn: o.get_field("dbClusterSnapshotArn"),

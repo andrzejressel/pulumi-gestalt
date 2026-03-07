@@ -197,6 +197,8 @@ pub mod pipeline {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The codepipeline ARN.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// One or more artifact_store blocks. Artifact stores are documented below.
@@ -298,6 +300,7 @@ pub mod pipeline {
         let o = context.register_resource(request);
         PipelineResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             artifact_stores: o.get_field("artifactStores"),
             execution_mode: o.get_field("executionMode"),

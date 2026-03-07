@@ -182,6 +182,8 @@ pub mod windows_web_app_slot {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Windows Web App this Deployment Slot will be part of. Changing this forces a new Windows Web App to be created.
         pub app_service_id: pulumi_gestalt_rust::Output<String>,
         /// A map of key-value pairs of App Settings.
@@ -448,6 +450,7 @@ pub mod windows_web_app_slot {
         let o = context.register_resource(request);
         WindowsWebAppSlotResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             app_service_id: o.get_field("appServiceId"),
             app_settings: o.get_field("appSettings"),
             auth_settings: o.get_field("authSettings"),

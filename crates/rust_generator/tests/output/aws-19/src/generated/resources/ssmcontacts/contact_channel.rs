@@ -91,6 +91,8 @@ pub mod contact_channel {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Whether the contact channel is activated. The contact channel must be activated to use it to engage the contact. One of `ACTIVATED` or `NOT_ACTIVATED`.
         pub activation_status: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the contact channel.
@@ -145,6 +147,7 @@ pub mod contact_channel {
         let o = context.register_resource(request);
         ContactChannelResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             activation_status: o.get_field("activationStatus"),
             arn: o.get_field("arn"),
             contact_id: o.get_field("contactId"),

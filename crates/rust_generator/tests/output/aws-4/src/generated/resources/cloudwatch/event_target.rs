@@ -652,6 +652,8 @@ pub mod event_target {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Parameters used when you are using the rule to invoke an AppSync GraphQL API mutation. Documented below. A maximum of 1 are allowed.
         pub appsync_target: pulumi_gestalt_rust::Output<
             Option<super::super::types::cloudwatch::EventTargetAppsyncTarget>,
@@ -841,6 +843,7 @@ pub mod event_target {
         let o = context.register_resource(request);
         EventTargetResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             appsync_target: o.get_field("appsyncTarget"),
             arn: o.get_field("arn"),
             batch_target: o.get_field("batchTarget"),

@@ -141,6 +141,8 @@ pub struct ProviderArgs {
 }
 #[allow(dead_code)]
 pub struct ProviderResult {
+    /// Pulumi URN is the stable logical identity of this provider resource in the Pulumi stack.
+    pub urn: pulumi_gestalt_rust::Output<String>,
     /// The access key for API operations. You can retrieve this from the 'Security & Credentials' section of the AWS console.
     pub access_key: pulumi_gestalt_rust::Output<Option<String>>,
     pub allowed_account_ids: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
@@ -425,42 +427,43 @@ pub fn create(
             },
         ],
     };
-    let _o = context.register_resource(request);
+    let o = context.register_resource(request);
     ProviderResult {
-        access_key: _o.get_field("accessKey"),
-        allowed_account_ids: _o.get_field("allowedAccountIds"),
-        assume_role: _o.get_field("assumeRole"),
-        assume_role_with_web_identity: _o.get_field("assumeRoleWithWebIdentity"),
-        custom_ca_bundle: _o.get_field("customCaBundle"),
-        default_tags: _o.get_field("defaultTags"),
-        ec2_metadata_service_endpoint: _o.get_field("ec2MetadataServiceEndpoint"),
-        ec2_metadata_service_endpoint_mode: _o
+        urn: o.get_urn(),
+        access_key: o.get_field("accessKey"),
+        allowed_account_ids: o.get_field("allowedAccountIds"),
+        assume_role: o.get_field("assumeRole"),
+        assume_role_with_web_identity: o.get_field("assumeRoleWithWebIdentity"),
+        custom_ca_bundle: o.get_field("customCaBundle"),
+        default_tags: o.get_field("defaultTags"),
+        ec2_metadata_service_endpoint: o.get_field("ec2MetadataServiceEndpoint"),
+        ec2_metadata_service_endpoint_mode: o
             .get_field("ec2MetadataServiceEndpointMode"),
-        endpoints: _o.get_field("endpoints"),
-        forbidden_account_ids: _o.get_field("forbiddenAccountIds"),
-        http_proxy: _o.get_field("httpProxy"),
-        https_proxy: _o.get_field("httpsProxy"),
-        ignore_tags: _o.get_field("ignoreTags"),
-        insecure: _o.get_field("insecure"),
-        max_retries: _o.get_field("maxRetries"),
-        no_proxy: _o.get_field("noProxy"),
-        profile: _o.get_field("profile"),
-        region: _o.get_field("region"),
-        retry_mode: _o.get_field("retryMode"),
-        s3_us_east1_regional_endpoint: _o.get_field("s3UsEast1RegionalEndpoint"),
-        s3_use_path_style: _o.get_field("s3UsePathStyle"),
-        secret_key: _o.get_field("secretKey"),
-        shared_config_files: _o.get_field("sharedConfigFiles"),
-        shared_credentials_files: _o.get_field("sharedCredentialsFiles"),
-        skip_credentials_validation: _o.get_field("skipCredentialsValidation"),
-        skip_metadata_api_check: _o.get_field("skipMetadataApiCheck"),
-        skip_region_validation: _o.get_field("skipRegionValidation"),
-        skip_requesting_account_id: _o.get_field("skipRequestingAccountId"),
-        sts_region: _o.get_field("stsRegion"),
-        token: _o.get_field("token"),
-        token_bucket_rate_limiter_capacity: _o
+        endpoints: o.get_field("endpoints"),
+        forbidden_account_ids: o.get_field("forbiddenAccountIds"),
+        http_proxy: o.get_field("httpProxy"),
+        https_proxy: o.get_field("httpsProxy"),
+        ignore_tags: o.get_field("ignoreTags"),
+        insecure: o.get_field("insecure"),
+        max_retries: o.get_field("maxRetries"),
+        no_proxy: o.get_field("noProxy"),
+        profile: o.get_field("profile"),
+        region: o.get_field("region"),
+        retry_mode: o.get_field("retryMode"),
+        s3_us_east1_regional_endpoint: o.get_field("s3UsEast1RegionalEndpoint"),
+        s3_use_path_style: o.get_field("s3UsePathStyle"),
+        secret_key: o.get_field("secretKey"),
+        shared_config_files: o.get_field("sharedConfigFiles"),
+        shared_credentials_files: o.get_field("sharedCredentialsFiles"),
+        skip_credentials_validation: o.get_field("skipCredentialsValidation"),
+        skip_metadata_api_check: o.get_field("skipMetadataApiCheck"),
+        skip_region_validation: o.get_field("skipRegionValidation"),
+        skip_requesting_account_id: o.get_field("skipRequestingAccountId"),
+        sts_region: o.get_field("stsRegion"),
+        token: o.get_field("token"),
+        token_bucket_rate_limiter_capacity: o
             .get_field("tokenBucketRateLimiterCapacity"),
-        use_dualstack_endpoint: _o.get_field("useDualstackEndpoint"),
-        use_fips_endpoint: _o.get_field("useFipsEndpoint"),
+        use_dualstack_endpoint: o.get_field("useDualstackEndpoint"),
+        use_fips_endpoint: o.get_field("useFipsEndpoint"),
     }
 }

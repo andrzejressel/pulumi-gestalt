@@ -56,6 +56,8 @@ pub mod api_mapping {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// API identifier.
         pub api_id: pulumi_gestalt_rust::Output<String>,
         /// The API mapping key. Refer to [REST API](https://docs.aws.amazon.com/apigateway/latest/developerguide/rest-api-mappings.html), [HTTP API](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-mappings.html) or [WebSocket API](https://docs.aws.amazon.com/apigateway/latest/developerguide/websocket-api-mappings.html).
@@ -104,6 +106,7 @@ pub mod api_mapping {
         let o = context.register_resource(request);
         ApiMappingResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             api_id: o.get_field("apiId"),
             api_mapping_key: o.get_field("apiMappingKey"),
             domain_name: o.get_field("domainName"),

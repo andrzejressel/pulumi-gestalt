@@ -95,6 +95,8 @@ pub mod network_interface_security_group_association {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Network Interface. Changing this forces a new resource to be created.
         pub network_interface_id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Network Security Group which should be attached to the Network Interface. Changing this forces a new resource to be created.
@@ -132,6 +134,7 @@ pub mod network_interface_security_group_association {
         let o = context.register_resource(request);
         NetworkInterfaceSecurityGroupAssociationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             network_interface_id: o.get_field("networkInterfaceId"),
             network_security_group_id: o.get_field("networkSecurityGroupId"),
         }

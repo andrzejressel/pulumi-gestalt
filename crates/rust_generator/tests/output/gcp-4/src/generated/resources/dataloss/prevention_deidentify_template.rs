@@ -191,6 +191,8 @@ pub mod prevention_deidentify_template {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The creation timestamp of an deidentifyTemplate. Set by the server.
         pub create_time: pulumi_gestalt_rust::Output<String>,
         /// Configuration of the deidentify template
@@ -261,6 +263,7 @@ pub mod prevention_deidentify_template {
         let o = context.register_resource(request);
         PreventionDeidentifyTemplateResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             create_time: o.get_field("createTime"),
             deidentify_config: o.get_field("deidentifyConfig"),
             description: o.get_field("description"),

@@ -87,6 +87,8 @@ pub mod dataset_kusto_cluster {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The name of the Data Share Dataset.
         pub display_name: pulumi_gestalt_rust::Output<String>,
         /// The resource ID of the Kusto Cluster to be shared with the receiver. Changing this forces a new Data Share Kusto Cluster Dataset to be created.
@@ -132,6 +134,7 @@ pub mod dataset_kusto_cluster {
         let o = context.register_resource(request);
         DatasetKustoClusterResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             display_name: o.get_field("displayName"),
             kusto_cluster_id: o.get_field("kustoClusterId"),
             kusto_cluster_location: o.get_field("kustoClusterLocation"),

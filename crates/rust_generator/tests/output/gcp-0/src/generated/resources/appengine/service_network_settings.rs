@@ -98,6 +98,8 @@ pub mod service_network_settings {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Ingress settings for this service. Will apply to all versions.
         /// Structure is documented below.
         pub network_settings: pulumi_gestalt_rust::Output<
@@ -141,6 +143,7 @@ pub mod service_network_settings {
         let o = context.register_resource(request);
         ServiceNetworkSettingsResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             network_settings: o.get_field("networkSettings"),
             project: o.get_field("project"),
             service: o.get_field("service"),

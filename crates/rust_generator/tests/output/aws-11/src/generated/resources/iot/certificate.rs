@@ -83,6 +83,8 @@ pub mod certificate {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Boolean flag to indicate if the certificate should be active
         pub active: pulumi_gestalt_rust::Output<bool>,
         /// The ARN of the created certificate.
@@ -147,6 +149,7 @@ pub mod certificate {
         let o = context.register_resource(request);
         CertificateResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             active: o.get_field("active"),
             arn: o.get_field("arn"),
             ca_certificate_id: o.get_field("caCertificateId"),

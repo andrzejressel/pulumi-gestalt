@@ -68,6 +68,8 @@ pub mod reserved_cache_node {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ARN for the reserved cache node.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Number of cache node instances to reserve.
@@ -151,6 +153,7 @@ pub mod reserved_cache_node {
         let o = context.register_resource(request);
         ReservedCacheNodeResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             cache_node_count: o.get_field("cacheNodeCount"),
             cache_node_type: o.get_field("cacheNodeType"),

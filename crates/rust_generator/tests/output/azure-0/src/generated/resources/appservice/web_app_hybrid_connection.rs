@@ -102,6 +102,8 @@ pub mod web_app_hybrid_connection {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The hostname of the endpoint.
         pub hostname: pulumi_gestalt_rust::Output<String>,
         /// The name of the Relay Namespace.
@@ -168,6 +170,7 @@ pub mod web_app_hybrid_connection {
         let o = context.register_resource(request);
         WebAppHybridConnectionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             hostname: o.get_field("hostname"),
             namespace_name: o.get_field("namespaceName"),
             port: o.get_field("port"),

@@ -491,6 +491,8 @@ pub mod region_network_endpoint_group {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// This field is only used for SERVERLESS NEGs.
         /// Only one of cloud_run, app_engine, cloud_function or serverless_deployment may be set.
         /// Structure is documented below.
@@ -648,6 +650,7 @@ pub mod region_network_endpoint_group {
         let o = context.register_resource(request);
         RegionNetworkEndpointGroupResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             app_engine: o.get_field("appEngine"),
             cloud_function: o.get_field("cloudFunction"),
             cloud_run: o.get_field("cloudRun"),

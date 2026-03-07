@@ -250,6 +250,8 @@ pub mod internal_range {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// An optional description of this resource.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
@@ -384,6 +386,7 @@ pub mod internal_range {
         let o = context.register_resource(request);
         InternalRangeResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             description: o.get_field("description"),
             effective_labels: o.get_field("effectiveLabels"),
             ip_cidr_range: o.get_field("ipCidrRange"),

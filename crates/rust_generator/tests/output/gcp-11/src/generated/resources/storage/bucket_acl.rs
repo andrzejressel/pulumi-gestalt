@@ -63,6 +63,8 @@ pub mod bucket_acl {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The name of the bucket it applies to.
         ///
         /// - - -
@@ -113,6 +115,7 @@ pub mod bucket_acl {
         let o = context.register_resource(request);
         BucketACLResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             bucket: o.get_field("bucket"),
             default_acl: o.get_field("defaultAcl"),
             predefined_acl: o.get_field("predefinedAcl"),

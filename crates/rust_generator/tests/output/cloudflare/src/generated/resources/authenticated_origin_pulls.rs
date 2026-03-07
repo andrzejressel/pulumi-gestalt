@@ -104,6 +104,8 @@ pub mod authenticated_origin_pulls {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of an uploaded Authenticated Origin Pulls certificate. If no hostname is provided, this certificate will be used zone wide as Per-Zone Authenticated Origin Pulls.
         pub authenticated_origin_pulls_certificate: pulumi_gestalt_rust::Output<
             Option<String>,
@@ -157,6 +159,7 @@ pub mod authenticated_origin_pulls {
         let o = context.register_resource(request);
         AuthenticatedOriginPullsResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             authenticated_origin_pulls_certificate: o
                 .get_field("authenticatedOriginPullsCertificate"),
             enabled: o.get_field("enabled"),

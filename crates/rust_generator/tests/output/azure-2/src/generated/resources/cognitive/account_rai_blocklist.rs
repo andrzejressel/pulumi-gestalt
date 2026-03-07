@@ -68,6 +68,8 @@ pub mod account_rai_blocklist {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Cognitive Services Account. Changing this forces a new Cognitive Account Rai Blocklist to be created.
         pub cognitive_account_id: pulumi_gestalt_rust::Output<String>,
         /// A short description for the Cognitive Account Rai Blocklist.
@@ -109,6 +111,7 @@ pub mod account_rai_blocklist {
         let o = context.register_resource(request);
         AccountRaiBlocklistResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             cognitive_account_id: o.get_field("cognitiveAccountId"),
             description: o.get_field("description"),
             name: o.get_field("name"),

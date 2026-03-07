@@ -126,6 +126,8 @@ pub mod stack {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// If set to `"LATEST"`, OpsWorks will automatically install the latest version.
         pub agent_version: pulumi_gestalt_rust::Output<String>,
         pub arn: pulumi_gestalt_rust::Output<String>,
@@ -328,6 +330,7 @@ pub mod stack {
         let o = context.register_resource(request);
         StackResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             agent_version: o.get_field("agentVersion"),
             arn: o.get_field("arn"),
             berkshelf_version: o.get_field("berkshelfVersion"),

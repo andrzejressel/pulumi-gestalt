@@ -87,6 +87,8 @@ pub mod managed_private_endpoint {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Data Factory on which to create the Managed Private Endpoint. Changing this forces a new resource to be created.
         pub data_factory_id: pulumi_gestalt_rust::Output<String>,
         /// Fully qualified domain names. Changing this forces a new resource to be created.
@@ -145,6 +147,7 @@ pub mod managed_private_endpoint {
         let o = context.register_resource(request);
         ManagedPrivateEndpointResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             data_factory_id: o.get_field("dataFactoryId"),
             fqdns: o.get_field("fqdns"),
             name: o.get_field("name"),

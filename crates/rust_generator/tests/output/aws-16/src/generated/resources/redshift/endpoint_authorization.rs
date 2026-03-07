@@ -52,6 +52,8 @@ pub mod endpoint_authorization {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Web Services account ID to grant access to.
         pub account: pulumi_gestalt_rust::Output<String>,
         /// Indicates whether all VPCs in the grantee account are allowed access to the cluster.
@@ -108,6 +110,7 @@ pub mod endpoint_authorization {
         let o = context.register_resource(request);
         EndpointAuthorizationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             account: o.get_field("account"),
             allowed_all_vpcs: o.get_field("allowedAllVpcs"),
             cluster_identifier: o.get_field("clusterIdentifier"),

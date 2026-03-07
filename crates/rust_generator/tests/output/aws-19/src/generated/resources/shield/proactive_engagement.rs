@@ -86,6 +86,8 @@ pub mod proactive_engagement {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// One or more emergency contacts. You must provide at least one phone number in the emergency contact list. See `emergency_contacts`.
         pub emergency_contacts: pulumi_gestalt_rust::Output<
             Option<Vec<super::super::types::shield::ProactiveEngagementEmergencyContact>>,
@@ -122,6 +124,7 @@ pub mod proactive_engagement {
         let o = context.register_resource(request);
         ProactiveEngagementResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             emergency_contacts: o.get_field("emergencyContacts"),
             enabled: o.get_field("enabled"),
         }

@@ -57,6 +57,8 @@ pub mod resource {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ID of the parent API resource
         pub parent_id: pulumi_gestalt_rust::Output<String>,
         /// Complete path for this API resource, including all parent paths.
@@ -100,6 +102,7 @@ pub mod resource {
         let o = context.register_resource(request);
         ResourceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             parent_id: o.get_field("parentId"),
             path: o.get_field("path"),
             path_part: o.get_field("pathPart"),

@@ -50,6 +50,8 @@ pub mod custom_ssl {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The certificate associated parameters. **Modifying this attribute will force creation of a new resource.**
         pub custom_ssl_options: pulumi_gestalt_rust::Output<
             Option<super::types::CustomSslCustomSslOptions>,
@@ -104,6 +106,7 @@ pub mod custom_ssl {
         let o = context.register_resource(request);
         CustomSslResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             custom_ssl_options: o.get_field("customSslOptions"),
             custom_ssl_priorities: o.get_field("customSslPriorities"),
             expires_on: o.get_field("expiresOn"),

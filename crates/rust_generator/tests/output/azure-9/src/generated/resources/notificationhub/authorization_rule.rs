@@ -95,6 +95,8 @@ pub mod authorization_rule {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Does this Authorization Rule have Listen access to the Notification Hub? Defaults to `false`.
         pub listen: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Does this Authorization Rule have Manage access to the Notification Hub? Defaults to `false`.
@@ -176,6 +178,7 @@ pub mod authorization_rule {
         let o = context.register_resource(request);
         AuthorizationRuleResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             listen: o.get_field("listen"),
             manage: o.get_field("manage"),
             name: o.get_field("name"),

@@ -201,6 +201,8 @@ pub mod api_key {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Human-readable display name of this API key. Modifiable by user.
         pub display_name: pulumi_gestalt_rust::Output<Option<String>>,
         /// Output only. An encrypted and signed value held by this key. This field can be accessed only through the `GetKeyString` method.
@@ -255,6 +257,7 @@ pub mod api_key {
         let o = context.register_resource(request);
         ApiKeyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             display_name: o.get_field("displayName"),
             key_string: o.get_field("keyString"),
             name: o.get_field("name"),

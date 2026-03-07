@@ -68,6 +68,8 @@ pub mod management_group {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A friendly name for this Management Group. If not specified, this will be the same as the `name`.
         pub display_name: pulumi_gestalt_rust::Output<String>,
         /// The name or UUID for this Management Group, which needs to be unique across your tenant. A new UUID will be generated if not provided. Changing this forces a new resource to be created.
@@ -122,6 +124,7 @@ pub mod management_group {
         let o = context.register_resource(request);
         ManagementGroupResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             display_name: o.get_field("displayName"),
             name: o.get_field("name"),
             parent_management_group_id: o.get_field("parentManagementGroupId"),

@@ -120,6 +120,8 @@ pub mod profile {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A unique account number that you have given to the customer.
         pub account_number: pulumi_gestalt_rust::Output<Option<String>>,
         /// Any additional information relevant to the customer’s profile.
@@ -314,6 +316,7 @@ pub mod profile {
         let o = context.register_resource(request);
         ProfileResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             account_number: o.get_field("accountNumber"),
             additional_information: o.get_field("additionalInformation"),
             address: o.get_field("address"),

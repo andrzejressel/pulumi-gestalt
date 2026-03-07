@@ -48,6 +48,8 @@ pub mod resolver_dns_sec_config {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ARN for a configuration for DNSSEC validation.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The owner account ID of the virtual private cloud (VPC) for a configuration for DNSSEC validation.
@@ -81,6 +83,7 @@ pub mod resolver_dns_sec_config {
         let o = context.register_resource(request);
         ResolverDnsSecConfigResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             owner_id: o.get_field("ownerId"),
             resource_id: o.get_field("resourceId"),

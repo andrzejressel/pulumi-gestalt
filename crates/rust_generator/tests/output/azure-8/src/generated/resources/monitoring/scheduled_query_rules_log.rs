@@ -127,6 +127,8 @@ pub mod scheduled_query_rules_log {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A list of IDs of Resources referred into query.
         pub authorized_resource_ids: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// A `criteria` block as defined below.
@@ -217,6 +219,7 @@ pub mod scheduled_query_rules_log {
         let o = context.register_resource(request);
         ScheduledQueryRulesLogResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             authorized_resource_ids: o.get_field("authorizedResourceIds"),
             criteria: o.get_field("criteria"),
             data_source_id: o.get_field("dataSourceId"),

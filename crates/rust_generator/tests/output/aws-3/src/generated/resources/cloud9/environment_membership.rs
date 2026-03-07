@@ -61,6 +61,8 @@ pub mod environment_membership {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the environment that contains the environment member you want to add.
         pub environment_id: pulumi_gestalt_rust::Output<String>,
         /// The type of environment member permissions you want to associate with this environment member. Allowed values are `read-only` and `read-write` .
@@ -104,6 +106,7 @@ pub mod environment_membership {
         let o = context.register_resource(request);
         EnvironmentMembershipResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             environment_id: o.get_field("environmentId"),
             permissions: o.get_field("permissions"),
             user_arn: o.get_field("userArn"),

@@ -112,6 +112,8 @@ pub mod standard_web_test {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Application Insights instance on which the WebTest operates. Changing this forces a new Application Insights Standard WebTest to be created.
         pub application_insights_id: pulumi_gestalt_rust::Output<String>,
         /// Purpose/user defined descriptive test for this WebTest.
@@ -235,6 +237,7 @@ pub mod standard_web_test {
         let o = context.register_resource(request);
         StandardWebTestResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             application_insights_id: o.get_field("applicationInsightsId"),
             description: o.get_field("description"),
             enabled: o.get_field("enabled"),

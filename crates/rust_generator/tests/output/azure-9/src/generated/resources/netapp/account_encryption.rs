@@ -128,6 +128,8 @@ pub mod account_encryption {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specify the versionless ID of the encryption key.
         pub encryption_key: pulumi_gestalt_rust::Output<String>,
         /// The ID of the NetApp account where volume under it will have customer managed keys-based encryption enabled.
@@ -182,6 +184,7 @@ pub mod account_encryption {
         let o = context.register_resource(request);
         AccountEncryptionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             encryption_key: o.get_field("encryptionKey"),
             netapp_account_id: o.get_field("netappAccountId"),
             system_assigned_identity_principal_id: o

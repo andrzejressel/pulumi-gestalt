@@ -61,6 +61,8 @@ pub mod resource {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Name or ARN of the resource group to add resources to.
         pub group_arn: pulumi_gestalt_rust::Output<String>,
         /// ARN of the resource to be added to the group.
@@ -97,6 +99,7 @@ pub mod resource {
         let o = context.register_resource(request);
         ResourceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             group_arn: o.get_field("groupArn"),
             resource_arn: o.get_field("resourceArn"),
             resource_type: o.get_field("resourceType"),

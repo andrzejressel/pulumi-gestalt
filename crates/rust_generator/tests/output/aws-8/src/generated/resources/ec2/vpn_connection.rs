@@ -357,6 +357,8 @@ pub mod vpn_connection {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the VPN Connection.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the core network.
@@ -915,6 +917,7 @@ pub mod vpn_connection {
         let o = context.register_resource(request);
         VpnConnectionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             core_network_arn: o.get_field("coreNetworkArn"),
             core_network_attachment_arn: o.get_field("coreNetworkAttachmentArn"),

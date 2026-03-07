@@ -248,6 +248,8 @@ pub mod aspect_type_iam_member {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         pub aspect_type_id: pulumi_gestalt_rust::Output<String>,
         pub condition: pulumi_gestalt_rust::Output<
             Option<super::super::types::dataplex::AspectTypeIamMemberCondition>,
@@ -328,6 +330,7 @@ pub mod aspect_type_iam_member {
         let o = context.register_resource(request);
         AspectTypeIamMemberResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             aspect_type_id: o.get_field("aspectTypeId"),
             condition: o.get_field("condition"),
             etag: o.get_field("etag"),

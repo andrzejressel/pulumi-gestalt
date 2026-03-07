@@ -96,6 +96,8 @@ pub mod access {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The SID of a group in the directory connected to the Transfer Server (e.g., `S-1-1-12-1234567890-123456789-1234567890-1234`)
         pub external_id: pulumi_gestalt_rust::Output<String>,
         /// The landing directory (folder) for a user when they log in to the server using their SFTP client.  It should begin with a `/`.  The first item in the path is the name of the home bucket (accessible as `${Transfer:HomeBucket}` in the policy) and the rest is the home directory (accessible as `${Transfer:HomeDirectory}` in the policy). For example, `/example-bucket-1234/username` would set the home bucket to `example-bucket-1234` and the home directory to `username`.
@@ -178,6 +180,7 @@ pub mod access {
         let o = context.register_resource(request);
         AccessResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             external_id: o.get_field("externalId"),
             home_directory: o.get_field("homeDirectory"),
             home_directory_mappings: o.get_field("homeDirectoryMappings"),

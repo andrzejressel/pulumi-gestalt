@@ -101,6 +101,8 @@ pub mod traffic_manager_profile {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// This block specifies the DNS configuration of the Profile. One `dns_config` block as defined below.
         pub dns_config: pulumi_gestalt_rust::Output<
             super::super::types::network::TrafficManagerProfileDnsConfig,
@@ -202,6 +204,7 @@ pub mod traffic_manager_profile {
         let o = context.register_resource(request);
         TrafficManagerProfileResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             dns_config: o.get_field("dnsConfig"),
             fqdn: o.get_field("fqdn"),
             max_return: o.get_field("maxReturn"),

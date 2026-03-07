@@ -52,6 +52,8 @@ pub mod query_definition {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specific log groups to use with the query.
         pub log_group_names: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// The name of the query.
@@ -95,6 +97,7 @@ pub mod query_definition {
         let o = context.register_resource(request);
         QueryDefinitionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             log_group_names: o.get_field("logGroupNames"),
             name: o.get_field("name"),
             query_definition_id: o.get_field("queryDefinitionId"),

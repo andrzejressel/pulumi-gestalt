@@ -269,6 +269,8 @@ pub mod listing {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Shared dataset i.e. BigQuery dataset source.
         /// Structure is documented below.
         pub bigquery_dataset: pulumi_gestalt_rust::Output<
@@ -409,6 +411,7 @@ pub mod listing {
         let o = context.register_resource(request);
         ListingResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             bigquery_dataset: o.get_field("bigqueryDataset"),
             categories: o.get_field("categories"),
             data_exchange_id: o.get_field("dataExchangeId"),

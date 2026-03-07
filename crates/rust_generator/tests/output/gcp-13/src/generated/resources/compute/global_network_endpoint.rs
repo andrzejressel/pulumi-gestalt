@@ -90,6 +90,8 @@ pub mod global_network_endpoint {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Fully qualified domain name of network endpoint.
         /// This can only be specified when network_endpoint_type of the NEG is INTERNET_FQDN_PORT.
         pub fqdn: pulumi_gestalt_rust::Output<Option<String>>,
@@ -152,6 +154,7 @@ pub mod global_network_endpoint {
         let o = context.register_resource(request);
         GlobalNetworkEndpointResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             fqdn: o.get_field("fqdn"),
             global_network_endpoint_group: o.get_field("globalNetworkEndpointGroup"),
             ip_address: o.get_field("ipAddress"),

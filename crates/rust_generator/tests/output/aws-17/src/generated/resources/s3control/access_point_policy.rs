@@ -66,6 +66,8 @@ pub mod access_point_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the access point that you want to associate with the specified policy.
         pub access_point_arn: pulumi_gestalt_rust::Output<String>,
         /// Indicates whether this access point currently has a policy that allows public access.
@@ -102,6 +104,7 @@ pub mod access_point_policy {
         let o = context.register_resource(request);
         AccessPointPolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             access_point_arn: o.get_field("accessPointArn"),
             has_public_access_policy: o.get_field("hasPublicAccessPolicy"),
             policy: o.get_field("policy"),

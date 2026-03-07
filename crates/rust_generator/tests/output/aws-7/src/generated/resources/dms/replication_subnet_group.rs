@@ -100,6 +100,8 @@ pub mod replication_subnet_group {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         pub replication_subnet_group_arn: pulumi_gestalt_rust::Output<String>,
         /// Description for the subnet group.
         pub replication_subnet_group_description: pulumi_gestalt_rust::Output<String>,
@@ -161,6 +163,7 @@ pub mod replication_subnet_group {
         let o = context.register_resource(request);
         ReplicationSubnetGroupResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             replication_subnet_group_arn: o.get_field("replicationSubnetGroupArn"),
             replication_subnet_group_description: o
                 .get_field("replicationSubnetGroupDescription"),

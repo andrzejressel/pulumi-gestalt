@@ -68,6 +68,8 @@ pub mod document_ai_processor_default_version {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The processor to set the version on.
         ///
         ///
@@ -107,6 +109,7 @@ pub mod document_ai_processor_default_version {
         let o = context.register_resource(request);
         DocumentAiProcessorDefaultVersionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             processor: o.get_field("processor"),
             version: o.get_field("version"),
         }

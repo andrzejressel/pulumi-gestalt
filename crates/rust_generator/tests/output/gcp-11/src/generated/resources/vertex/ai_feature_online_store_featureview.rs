@@ -522,6 +522,8 @@ pub mod ai_feature_online_store_featureview {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Configures how data is supposed to be extracted from a BigQuery source to be loaded onto the FeatureOnlineStore.
         /// Structure is documented below.
         pub big_query_source: pulumi_gestalt_rust::Output<
@@ -650,6 +652,7 @@ pub mod ai_feature_online_store_featureview {
         let o = context.register_resource(request);
         AiFeatureOnlineStoreFeatureviewResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             big_query_source: o.get_field("bigQuerySource"),
             create_time: o.get_field("createTime"),
             effective_labels: o.get_field("effectiveLabels"),
