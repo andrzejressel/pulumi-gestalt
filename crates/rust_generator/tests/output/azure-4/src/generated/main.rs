@@ -137,6 +137,9 @@ pub mod dns {
     include!("resources/dns/txt_record.rs");
     include!("resources/dns/zone.rs");
 }
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {
     pub mod databricks {
         include!("functions/databricks/get_access_connector.rs");
@@ -475,6 +478,25 @@ pub mod types {
         include!("types/dns/get_srv_record_record.rs");
         include!("types/dns/get_txt_record_record.rs");
     }
+    include!("types/provider_features.rs");
+    include!("types/provider_features_api_management.rs");
+    include!("types/provider_features_app_configuration.rs");
+    include!("types/provider_features_application_insights.rs");
+    include!("types/provider_features_cognitive_account.rs");
+    include!("types/provider_features_key_vault.rs");
+    include!("types/provider_features_log_analytics_workspace.rs");
+    include!("types/provider_features_machine_learning.rs");
+    include!("types/provider_features_managed_disk.rs");
+    include!("types/provider_features_netapp.rs");
+    include!("types/provider_features_postgresql_flexible_server.rs");
+    include!("types/provider_features_recovery_service.rs");
+    include!("types/provider_features_recovery_services_vaults.rs");
+    include!("types/provider_features_resource_group.rs");
+    include!("types/provider_features_storage.rs");
+    include!("types/provider_features_subscription.rs");
+    include!("types/provider_features_template_deployment.rs");
+    include!("types/provider_features_virtual_machine.rs");
+    include!("types/provider_features_virtual_machine_scale_set.rs");
 }
 #[doc(hidden)]
 pub mod constants {}

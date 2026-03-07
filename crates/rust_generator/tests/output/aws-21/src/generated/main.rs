@@ -70,6 +70,9 @@ pub mod xray {
     include!("resources/xray/group.rs");
     include!("resources/xray/sampling_rule.rs");
 }
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {
     pub mod vpc {
         include!("functions/vpc/get_security_group_rule.rs");
@@ -2624,6 +2627,11 @@ pub mod types {
     pub mod xray {
         include!("types/xray/group_insights_configuration.rs");
     }
+    include!("types/provider_assume_role.rs");
+    include!("types/provider_assume_role_with_web_identity.rs");
+    include!("types/provider_default_tags.rs");
+    include!("types/provider_endpoint.rs");
+    include!("types/provider_ignore_tags.rs");
     include!("types/get_availability_zone_filter.rs");
     include!("types/get_availability_zones_filter.rs");
     include!("types/get_regions_filter.rs");

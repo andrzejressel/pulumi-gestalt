@@ -68,6 +68,9 @@ pub mod cloudfunctionsv2 {
     include!("resources/cloudfunctionsv2/function_iam_member.rs");
     include!("resources/cloudfunctionsv2/function_iam_policy.rs");
 }
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {
     pub mod certificateauthority {
         include!("functions/certificateauthority/get_authority.rs");
@@ -761,6 +764,7 @@ pub mod types {
             "types/cloudfunctionsv2/get_function_service_config_secret_volume_version.rs"
         );
     }
+    include!("types/provider_batching.rs");
 }
 #[doc(hidden)]
 pub mod constants {}

@@ -68,6 +68,9 @@ pub mod eventarc {
     include!("resources/eventarc/google_channel_config.rs");
     include!("resources/eventarc/trigger.rs");
 }
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {
     pub mod dns {
         include!("functions/dns/get_keys.rs");
@@ -607,6 +610,7 @@ pub mod types {
         include!("types/eventarc/trigger_transport.rs");
         include!("types/eventarc/trigger_transport_pubsub.rs");
     }
+    include!("types/provider_batching.rs");
 }
 #[doc(hidden)]
 pub mod constants {}

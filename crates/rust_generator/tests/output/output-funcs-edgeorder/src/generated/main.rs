@@ -1,3 +1,6 @@
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {
     include!("functions/list_configurations.rs");
     include!("functions/list_product_families.rs");

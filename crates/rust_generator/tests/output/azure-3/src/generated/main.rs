@@ -107,6 +107,9 @@ pub mod databasemigration {
 pub mod databoxedge {
     include!("resources/databoxedge/device.rs");
 }
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {
     pub mod consumption {
         include!("functions/consumption/get_budget_resource_group.rs");
@@ -679,6 +682,25 @@ pub mod types {
         include!("types/databoxedge/device_device_property.rs");
         include!("types/databoxedge/get_device_device_property.rs");
     }
+    include!("types/provider_features.rs");
+    include!("types/provider_features_api_management.rs");
+    include!("types/provider_features_app_configuration.rs");
+    include!("types/provider_features_application_insights.rs");
+    include!("types/provider_features_cognitive_account.rs");
+    include!("types/provider_features_key_vault.rs");
+    include!("types/provider_features_log_analytics_workspace.rs");
+    include!("types/provider_features_machine_learning.rs");
+    include!("types/provider_features_managed_disk.rs");
+    include!("types/provider_features_netapp.rs");
+    include!("types/provider_features_postgresql_flexible_server.rs");
+    include!("types/provider_features_recovery_service.rs");
+    include!("types/provider_features_recovery_services_vaults.rs");
+    include!("types/provider_features_resource_group.rs");
+    include!("types/provider_features_storage.rs");
+    include!("types/provider_features_subscription.rs");
+    include!("types/provider_features_template_deployment.rs");
+    include!("types/provider_features_virtual_machine.rs");
+    include!("types/provider_features_virtual_machine_scale_set.rs");
 }
 #[doc(hidden)]
 pub mod constants {}

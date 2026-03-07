@@ -1,3 +1,6 @@
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {}
 pub mod types {
     pub mod config {

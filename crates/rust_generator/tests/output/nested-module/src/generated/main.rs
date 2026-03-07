@@ -3,6 +3,9 @@ pub mod nested {
         include!("resources/nested/module/resource.rs");
     }
 }
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {}
 pub mod types {}
 #[doc(hidden)]

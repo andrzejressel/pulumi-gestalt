@@ -104,6 +104,9 @@ pub mod m2 {
     include!("resources/m2/deployment.rs");
     include!("resources/m2/environment.rs");
 }
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {
     pub mod kms {
         include!("functions/kms/get_alias.rs");
@@ -3722,6 +3725,11 @@ pub mod types {
         include!("types/m2/environment_storage_configuration_fsx.rs");
         include!("types/m2/environment_timeouts.rs");
     }
+    include!("types/provider_assume_role.rs");
+    include!("types/provider_assume_role_with_web_identity.rs");
+    include!("types/provider_default_tags.rs");
+    include!("types/provider_endpoint.rs");
+    include!("types/provider_ignore_tags.rs");
     include!("types/get_availability_zone_filter.rs");
     include!("types/get_availability_zones_filter.rs");
     include!("types/get_regions_filter.rs");

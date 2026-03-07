@@ -1,3 +1,6 @@
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {
     include!("functions/func_with_all_optional_inputs.rs");
     include!("functions/func_with_const_input.rs");

@@ -31,6 +31,9 @@ pub mod workstations {
     include!("resources/workstations/workstation_iam_member.rs");
     include!("resources/workstations/workstation_iam_policy.rs");
 }
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {
     pub mod vmwareengine {
         include!("functions/vmwareengine/get_cluster.rs");
@@ -207,6 +210,7 @@ pub mod types {
         include!("types/workstations/workstation_iam_binding_condition.rs");
         include!("types/workstations/workstation_iam_member_condition.rs");
     }
+    include!("types/provider_batching.rs");
 }
 #[doc(hidden)]
 pub mod constants {}

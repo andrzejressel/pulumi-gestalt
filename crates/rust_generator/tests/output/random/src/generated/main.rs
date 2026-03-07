@@ -6,6 +6,9 @@ include!("resources/random_pet.rs");
 include!("resources/random_shuffle.rs");
 include!("resources/random_string.rs");
 include!("resources/random_uuid.rs");
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {}
 pub mod types {}
 #[doc(hidden)]

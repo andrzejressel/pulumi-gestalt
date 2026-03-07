@@ -13,6 +13,7 @@ use std::time::SystemTime;
 
 pub(crate) mod functions;
 mod main;
+pub(crate) mod provider;
 pub(crate) mod resources;
 pub(crate) mod types;
 
@@ -61,6 +62,15 @@ pub(crate) fn generate_combined_code(package: &Package, result_path: &std::path:
         &resources::generate_single_file,
     );
     generate_types_code(package, &result_path.join("types"));
+
+    let provider_path = result_path.join("provider");
+    std::fs::create_dir_all(&provider_path).unwrap();
+
+    let provider_code = provider::generate_code(package);
+    let mut provider_file = File::create(provider_path.join("provider.rs")).unwrap();
+    provider_file.write_all(provider_code.as_bytes()).unwrap();
+    let times = FileTimes::new().set_modified(SystemTime::UNIX_EPOCH);
+    provider_file.set_times(times).unwrap();
 
     let main = main::generate(
         generate_includes("functions", &package.functions),
@@ -166,6 +176,12 @@ fn find_consts(package: &Package) -> Vec<String> {
         for output in &resource.output_properties {
             consts.extend(output.r#type.get_consts().clone());
         }
+    }
+    for input in &package.provider.input_properties {
+        consts.extend(input.r#type.get_consts().clone());
+    }
+    for output in &package.provider.output_properties {
+        consts.extend(output.r#type.get_consts().clone());
     }
     for function in package.functions.values() {
         for input in &function.input_properties {
