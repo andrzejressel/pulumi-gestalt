@@ -108,7 +108,7 @@ pub mod access_policy_association {
         };
         let o = context.register_resource(request);
         AccessPolicyAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_scope: o.get_field("accessScope"),
             associated_at: o.get_field("associatedAt"),

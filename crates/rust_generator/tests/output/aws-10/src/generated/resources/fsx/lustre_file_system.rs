@@ -398,7 +398,7 @@ pub mod lustre_file_system {
         };
         let o = context.register_resource(request);
         LustreFileSystemResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             auto_import_policy: o.get_field("autoImportPolicy"),

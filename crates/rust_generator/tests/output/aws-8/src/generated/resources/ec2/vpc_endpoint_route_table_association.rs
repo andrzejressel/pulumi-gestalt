@@ -82,7 +82,7 @@ pub mod vpc_endpoint_route_table_association {
         };
         let o = context.register_resource(request);
         VpcEndpointRouteTableAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             route_table_id: o.get_field("routeTableId"),
             vpc_endpoint_id: o.get_field("vpcEndpointId"),

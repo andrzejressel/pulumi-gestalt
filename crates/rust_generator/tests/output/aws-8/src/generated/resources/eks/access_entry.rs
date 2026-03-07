@@ -141,7 +141,7 @@ pub mod access_entry {
         };
         let o = context.register_resource(request);
         AccessEntryResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_entry_arn: o.get_field("accessEntryArn"),
             cluster_name: o.get_field("clusterName"),

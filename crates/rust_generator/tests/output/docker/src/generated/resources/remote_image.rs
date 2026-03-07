@@ -184,7 +184,7 @@ pub mod remote_image {
         };
         let o = context.register_resource(request);
         RemoteImageResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             build: o.get_field("build"),
             force_remove: o.get_field("forceRemove"),

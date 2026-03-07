@@ -158,7 +158,7 @@ pub mod owner {
         };
         let o = context.register_resource(request);
         OwnerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             email: o.get_field("email"),
             web_resource_id: o.get_field("webResourceId"),

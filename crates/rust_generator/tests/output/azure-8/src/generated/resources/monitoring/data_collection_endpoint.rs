@@ -153,7 +153,7 @@ pub mod data_collection_endpoint {
         };
         let o = context.register_resource(request);
         DataCollectionEndpointResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             configuration_access_endpoint: o.get_field("configurationAccessEndpoint"),
             description: o.get_field("description"),

@@ -115,7 +115,7 @@ pub mod permission {
         };
         let o = context.register_resource(request);
         PermissionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             actions: o.get_field("actions"),
             certificate_authority_arn: o.get_field("certificateAuthorityArn"),

@@ -81,7 +81,7 @@ pub mod thing_principal_attachment {
         };
         let o = context.register_resource(request);
         ThingPrincipalAttachmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             principal: o.get_field("principal"),
             thing: o.get_field("thing"),

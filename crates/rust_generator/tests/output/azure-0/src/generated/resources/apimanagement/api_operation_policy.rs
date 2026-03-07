@@ -166,7 +166,7 @@ pub mod api_operation_policy {
         };
         let o = context.register_resource(request);
         ApiOperationPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_management_name: o.get_field("apiManagementName"),
             api_name: o.get_field("apiName"),

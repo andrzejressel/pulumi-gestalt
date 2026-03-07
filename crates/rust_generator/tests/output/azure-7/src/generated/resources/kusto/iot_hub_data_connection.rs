@@ -259,7 +259,7 @@ pub mod iot_hub_data_connection {
         };
         let o = context.register_resource(request);
         IotHubDataConnectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cluster_name: o.get_field("clusterName"),
             consumer_group: o.get_field("consumerGroup"),

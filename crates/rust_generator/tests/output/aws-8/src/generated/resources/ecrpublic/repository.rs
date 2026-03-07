@@ -128,7 +128,7 @@ pub mod repository {
         };
         let o = context.register_resource(request);
         RepositoryResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             catalog_data: o.get_field("catalogData"),

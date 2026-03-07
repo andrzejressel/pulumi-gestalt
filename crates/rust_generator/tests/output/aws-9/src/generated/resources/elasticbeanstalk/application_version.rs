@@ -173,7 +173,7 @@ pub mod application_version {
         };
         let o = context.register_resource(request);
         ApplicationVersionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             application: o.get_field("application"),
             arn: o.get_field("arn"),

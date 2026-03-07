@@ -121,7 +121,7 @@ pub mod service_trust {
         };
         let o = context.register_resource(request);
         ServiceTrustResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             domain_service_id: o.get_field("domainServiceId"),
             name: o.get_field("name"),

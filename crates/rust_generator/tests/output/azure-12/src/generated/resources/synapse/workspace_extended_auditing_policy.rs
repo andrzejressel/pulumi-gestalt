@@ -175,7 +175,7 @@ pub mod workspace_extended_auditing_policy {
         };
         let o = context.register_resource(request);
         WorkspaceExtendedAuditingPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             log_monitoring_enabled: o.get_field("logMonitoringEnabled"),
             retention_in_days: o.get_field("retentionInDays"),

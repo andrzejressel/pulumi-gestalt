@@ -141,7 +141,7 @@ pub mod dataset_kusto_database {
         };
         let o = context.register_resource(request);
         DatasetKustoDatabaseResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             display_name: o.get_field("displayName"),
             kusto_cluster_location: o.get_field("kustoClusterLocation"),

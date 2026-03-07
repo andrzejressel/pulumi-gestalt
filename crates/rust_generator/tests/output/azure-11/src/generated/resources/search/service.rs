@@ -360,7 +360,7 @@ pub mod service {
         };
         let o = context.register_resource(request);
         ServiceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allowed_ips: o.get_field("allowedIps"),
             authentication_failure_mode: o.get_field("authenticationFailureMode"),

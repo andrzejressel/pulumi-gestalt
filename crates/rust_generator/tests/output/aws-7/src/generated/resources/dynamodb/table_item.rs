@@ -119,7 +119,7 @@ pub mod table_item {
         };
         let o = context.register_resource(request);
         TableItemResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             hash_key: o.get_field("hashKey"),
             item: o.get_field("item"),

@@ -260,7 +260,7 @@ pub mod environment_v_3 {
         };
         let o = context.register_resource(request);
         EnvironmentV3Result {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allow_new_private_endpoint_connections: o
                 .get_field("allowNewPrivateEndpointConnections"),

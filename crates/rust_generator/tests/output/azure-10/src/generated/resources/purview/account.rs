@@ -171,7 +171,7 @@ pub mod account {
         };
         let o = context.register_resource(request);
         AccountResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             atlas_kafka_endpoint_primary_connection_string: o
                 .get_field("atlasKafkaEndpointPrimaryConnectionString"),

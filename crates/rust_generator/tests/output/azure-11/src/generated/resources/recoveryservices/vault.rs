@@ -254,7 +254,7 @@ pub mod vault {
         };
         let o = context.register_resource(request);
         VaultResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             classic_vmware_replication_enabled: o
                 .get_field("classicVmwareReplicationEnabled"),

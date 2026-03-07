@@ -239,7 +239,7 @@ pub mod function_event_invoke_config {
         };
         let o = context.register_resource(request);
         FunctionEventInvokeConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             destination_config: o.get_field("destinationConfig"),
             function_name: o.get_field("functionName"),

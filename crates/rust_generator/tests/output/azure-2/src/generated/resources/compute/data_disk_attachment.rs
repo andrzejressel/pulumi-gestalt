@@ -199,7 +199,7 @@ pub mod data_disk_attachment {
         };
         let o = context.register_resource(request);
         DataDiskAttachmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             caching: o.get_field("caching"),
             create_option: o.get_field("createOption"),

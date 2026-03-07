@@ -145,7 +145,7 @@ pub mod service {
         };
         let o = context.register_resource(request);
         ServiceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             check_if_service_has_usage_on_destroy: o
                 .get_field("checkIfServiceHasUsageOnDestroy"),

@@ -305,7 +305,7 @@ pub mod autonomous_database {
         };
         let o = context.register_resource(request);
         AutonomousDatabaseResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             admin_password: o.get_field("adminPassword"),
             auto_scaling_enabled: o.get_field("autoScalingEnabled"),

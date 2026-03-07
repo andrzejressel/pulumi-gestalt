@@ -203,7 +203,7 @@ pub mod table {
         };
         let o = context.register_resource(request);
         TableResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             create_time: o.get_field("createTime"),
             database: o.get_field("database"),

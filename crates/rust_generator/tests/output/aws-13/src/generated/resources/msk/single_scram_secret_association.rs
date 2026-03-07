@@ -82,7 +82,7 @@ pub mod single_scram_secret_association {
         };
         let o = context.register_resource(request);
         SingleScramSecretAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cluster_arn: o.get_field("clusterArn"),
             secret_arn: o.get_field("secretArn"),

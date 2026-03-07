@@ -236,7 +236,7 @@ pub mod service_lb_policies {
         };
         let o = context.register_resource(request);
         ServiceLbPoliciesResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             auto_capacity_drain: o.get_field("autoCapacityDrain"),
             create_time: o.get_field("createTime"),

@@ -1020,7 +1020,7 @@ pub mod firehose_delivery_stream {
         };
         let o = context.register_resource(request);
         FirehoseDeliveryStreamResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             destination: o.get_field("destination"),

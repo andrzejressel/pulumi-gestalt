@@ -109,7 +109,7 @@ pub mod vault_policy {
         };
         let o = context.register_resource(request);
         VaultPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             backup_vault_arn: o.get_field("backupVaultArn"),
             backup_vault_name: o.get_field("backupVaultName"),

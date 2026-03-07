@@ -211,7 +211,7 @@ pub mod schedule {
         };
         let o = context.register_resource(request);
         ScheduleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             automation_account_name: o.get_field("automationAccountName"),
             description: o.get_field("description"),

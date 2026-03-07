@@ -184,7 +184,7 @@ pub mod backup_policy {
         };
         let o = context.register_resource(request);
         BackupPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_name: o.get_field("accountName"),
             daily_backups_to_keep: o.get_field("dailyBackupsToKeep"),

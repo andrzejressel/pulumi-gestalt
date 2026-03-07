@@ -179,7 +179,7 @@ pub mod access {
         };
         let o = context.register_resource(request);
         AccessResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             external_id: o.get_field("externalId"),
             home_directory: o.get_field("homeDirectory"),

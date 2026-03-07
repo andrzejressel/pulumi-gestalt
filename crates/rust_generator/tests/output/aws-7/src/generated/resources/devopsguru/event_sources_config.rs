@@ -80,7 +80,7 @@ pub mod event_sources_config {
         };
         let o = context.register_resource(request);
         EventSourcesConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             event_sources: o.get_field("eventSources"),
         }

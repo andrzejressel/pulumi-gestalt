@@ -299,7 +299,7 @@ pub mod data_lake_settings {
         };
         let o = context.register_resource(request);
         DataLakeSettingsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             admins: o.get_field("admins"),
             allow_external_data_filtering: o.get_field("allowExternalDataFiltering"),

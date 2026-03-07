@@ -126,7 +126,7 @@ pub mod rule_group {
         };
         let o = context.register_resource(request);
         RuleGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             activated_rules: o.get_field("activatedRules"),
             arn: o.get_field("arn"),

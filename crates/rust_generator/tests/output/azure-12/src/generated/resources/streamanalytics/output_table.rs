@@ -194,7 +194,7 @@ pub mod output_table {
         };
         let o = context.register_resource(request);
         OutputTableResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             batch_size: o.get_field("batchSize"),
             columns_to_removes: o.get_field("columnsToRemoves"),

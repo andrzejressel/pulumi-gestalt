@@ -117,7 +117,7 @@ pub mod domain_name_access_association {
         };
         let o = context.register_resource(request);
         DomainNameAccessAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_association_source: o.get_field("accessAssociationSource"),
             access_association_source_type: o.get_field("accessAssociationSourceType"),

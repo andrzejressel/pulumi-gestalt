@@ -117,7 +117,7 @@ pub mod random_integer {
         };
         let o = context.register_resource(request);
         RandomIntegerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             keepers: o.get_field("keepers"),
             max: o.get_field("max"),

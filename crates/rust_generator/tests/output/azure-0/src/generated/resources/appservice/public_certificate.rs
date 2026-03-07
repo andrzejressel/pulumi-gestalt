@@ -140,7 +140,7 @@ pub mod public_certificate {
         };
         let o = context.register_resource(request);
         PublicCertificateResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             app_service_name: o.get_field("appServiceName"),
             blob: o.get_field("blob"),

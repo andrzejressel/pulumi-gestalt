@@ -97,7 +97,7 @@ pub mod serverless_security_config {
         };
         let o = context.register_resource(request);
         ServerlessSecurityConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             config_version: o.get_field("configVersion"),
             description: o.get_field("description"),

@@ -129,7 +129,7 @@ pub mod hosted_zone_dns_sec {
         };
         let o = context.register_resource(request);
         HostedZoneDnsSecResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             hosted_zone_id: o.get_field("hostedZoneId"),
             signing_status: o.get_field("signingStatus"),

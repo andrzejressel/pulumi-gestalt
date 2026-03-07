@@ -155,7 +155,7 @@ pub mod segment {
         };
         let o = context.register_resource(request);
         SegmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             created_time: o.get_field("createdTime"),

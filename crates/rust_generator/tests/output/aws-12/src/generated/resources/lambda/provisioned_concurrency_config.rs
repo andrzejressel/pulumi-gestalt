@@ -131,7 +131,7 @@ pub mod provisioned_concurrency_config {
         };
         let o = context.register_resource(request);
         ProvisionedConcurrencyConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             function_name: o.get_field("functionName"),
             provisioned_concurrent_executions: o

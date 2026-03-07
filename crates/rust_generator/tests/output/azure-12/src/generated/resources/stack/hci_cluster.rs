@@ -180,7 +180,7 @@ pub mod hci_cluster {
         };
         let o = context.register_resource(request);
         HciClusterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             automanage_configuration_id: o.get_field("automanageConfigurationId"),
             client_id: o.get_field("clientId"),

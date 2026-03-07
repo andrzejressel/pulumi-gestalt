@@ -96,7 +96,7 @@ pub mod virtual_network_dns_servers {
         };
         let o = context.register_resource(request);
         VirtualNetworkDnsServersResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             dns_servers: o.get_field("dnsServers"),
             virtual_network_id: o.get_field("virtualNetworkId"),

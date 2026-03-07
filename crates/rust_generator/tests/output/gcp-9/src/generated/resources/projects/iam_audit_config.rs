@@ -439,7 +439,7 @@ pub mod iam_audit_config {
         };
         let o = context.register_resource(request);
         IAMAuditConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             audit_log_configs: o.get_field("auditLogConfigs"),
             etag: o.get_field("etag"),

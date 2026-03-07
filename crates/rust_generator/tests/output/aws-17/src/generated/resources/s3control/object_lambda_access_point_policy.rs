@@ -120,7 +120,7 @@ pub mod object_lambda_access_point_policy {
         };
         let o = context.register_resource(request);
         ObjectLambdaAccessPointPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             has_public_access_policy: o.get_field("hasPublicAccessPolicy"),

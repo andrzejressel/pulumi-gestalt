@@ -299,7 +299,7 @@ pub mod dataset_iam_member {
         };
         let o = context.register_resource(request);
         DatasetIamMemberResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             condition: o.get_field("condition"),
             dataset_id: o.get_field("datasetId"),

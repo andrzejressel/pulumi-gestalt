@@ -135,7 +135,7 @@ pub mod mover_agent {
         };
         let o = context.register_resource(request);
         MoverAgentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arc_virtual_machine_id: o.get_field("arcVirtualMachineId"),
             arc_virtual_machine_uuid: o.get_field("arcVirtualMachineUuid"),

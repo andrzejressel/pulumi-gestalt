@@ -156,7 +156,7 @@ pub mod virtual_machine_availability_group_listener {
         };
         let o = context.register_resource(request);
         VirtualMachineAvailabilityGroupListenerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             availability_group_name: o.get_field("availabilityGroupName"),
             load_balancer_configuration: o.get_field("loadBalancerConfiguration"),

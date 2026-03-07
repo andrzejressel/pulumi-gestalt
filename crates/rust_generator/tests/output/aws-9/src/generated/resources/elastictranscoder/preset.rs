@@ -224,7 +224,7 @@ pub mod preset {
         };
         let o = context.register_resource(request);
         PresetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             audio: o.get_field("audio"),

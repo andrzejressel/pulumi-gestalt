@@ -212,7 +212,7 @@ pub mod namespace {
         };
         let o = context.register_resource(request);
         NamespaceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             create_time: o.get_field("createTime"),
             delete_time: o.get_field("deleteTime"),

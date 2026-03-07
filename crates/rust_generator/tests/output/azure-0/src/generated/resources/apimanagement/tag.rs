@@ -110,7 +110,7 @@ pub mod tag {
         };
         let o = context.register_resource(request);
         TagResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_management_id: o.get_field("apiManagementId"),
             display_name: o.get_field("displayName"),

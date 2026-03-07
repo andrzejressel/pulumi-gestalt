@@ -187,7 +187,7 @@ pub mod output_synapse {
         };
         let o = context.register_resource(request);
         OutputSynapseResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             database: o.get_field("database"),
             name: o.get_field("name"),

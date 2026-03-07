@@ -95,7 +95,7 @@ pub mod bucket_ownership_controls {
         };
         let o = context.register_resource(request);
         BucketOwnershipControlsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bucket: o.get_field("bucket"),
             rule: o.get_field("rule"),

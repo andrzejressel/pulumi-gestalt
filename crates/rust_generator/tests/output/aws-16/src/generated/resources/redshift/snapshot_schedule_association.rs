@@ -98,7 +98,7 @@ pub mod snapshot_schedule_association {
         };
         let o = context.register_resource(request);
         SnapshotScheduleAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cluster_identifier: o.get_field("clusterIdentifier"),
             schedule_identifier: o.get_field("scheduleIdentifier"),

@@ -140,7 +140,7 @@ pub mod spring_cloud_build_pack_binding {
         };
         let o = context.register_resource(request);
         SpringCloudBuildPackBindingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             binding_type: o.get_field("bindingType"),
             launch: o.get_field("launch"),

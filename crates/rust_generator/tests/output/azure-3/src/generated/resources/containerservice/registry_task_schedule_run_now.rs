@@ -99,7 +99,7 @@ pub mod registry_task_schedule_run_now {
         };
         let o = context.register_resource(request);
         RegistryTaskScheduleRunNowResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             container_registry_task_id: o.get_field("containerRegistryTaskId"),
         }

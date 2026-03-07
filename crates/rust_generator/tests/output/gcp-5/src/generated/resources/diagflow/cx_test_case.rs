@@ -263,7 +263,7 @@ pub mod cx_test_case {
         };
         let o = context.register_resource(request);
         CxTestCaseResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             creation_time: o.get_field("creationTime"),
             display_name: o.get_field("displayName"),

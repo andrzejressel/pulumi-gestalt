@@ -294,7 +294,7 @@ pub mod canary {
         };
         let o = context.register_resource(request);
         CanaryResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             artifact_config: o.get_field("artifactConfig"),

@@ -203,7 +203,7 @@ pub mod traffic_manager_profile {
         };
         let o = context.register_resource(request);
         TrafficManagerProfileResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             dns_config: o.get_field("dnsConfig"),
             fqdn: o.get_field("fqdn"),

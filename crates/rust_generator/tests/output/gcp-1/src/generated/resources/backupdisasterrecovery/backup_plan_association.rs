@@ -214,7 +214,7 @@ pub mod backup_plan_association {
         };
         let o = context.register_resource(request);
         BackupPlanAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             backup_plan: o.get_field("backupPlan"),
             backup_plan_association_id: o.get_field("backupPlanAssociationId"),

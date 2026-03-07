@@ -147,7 +147,7 @@ pub mod spring_cloud_elastic_application_performance_monitoring {
         };
         let o = context.register_resource(request);
         SpringCloudElasticApplicationPerformanceMonitoringResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             application_packages: o.get_field("applicationPackages"),
             globally_enabled: o.get_field("globallyEnabled"),

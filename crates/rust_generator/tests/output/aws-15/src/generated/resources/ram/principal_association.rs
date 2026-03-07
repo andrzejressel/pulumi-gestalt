@@ -114,7 +114,7 @@ pub mod principal_association {
         };
         let o = context.register_resource(request);
         PrincipalAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             principal: o.get_field("principal"),
             resource_share_arn: o.get_field("resourceShareArn"),

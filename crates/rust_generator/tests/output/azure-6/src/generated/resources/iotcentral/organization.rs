@@ -128,7 +128,7 @@ pub mod organization {
         };
         let o = context.register_resource(request);
         OrganizationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             display_name: o.get_field("displayName"),
             iotcentral_application_id: o.get_field("iotcentralApplicationId"),

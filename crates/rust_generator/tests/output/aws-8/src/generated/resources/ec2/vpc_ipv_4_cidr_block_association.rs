@@ -109,7 +109,7 @@ pub mod vpc_ipv_4_cidr_block_association {
         };
         let o = context.register_resource(request);
         VpcIpv4CidrBlockAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cidr_block: o.get_field("cidrBlock"),
             ipv4_ipam_pool_id: o.get_field("ipv4IpamPoolId"),

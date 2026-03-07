@@ -92,7 +92,7 @@ pub mod env_keystore {
         };
         let o = context.register_resource(request);
         EnvKeystoreResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             aliases: o.get_field("aliases"),
             env_id: o.get_field("envId"),

@@ -128,7 +128,7 @@ pub mod mongo_database {
         };
         let o = context.register_resource(request);
         MongoDatabaseResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_name: o.get_field("accountName"),
             autoscale_settings: o.get_field("autoscaleSettings"),

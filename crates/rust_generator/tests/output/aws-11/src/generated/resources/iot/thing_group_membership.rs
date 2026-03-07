@@ -94,7 +94,7 @@ pub mod thing_group_membership {
         };
         let o = context.register_resource(request);
         ThingGroupMembershipResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             override_dynamic_group: o.get_field("overrideDynamicGroup"),
             thing_group_name: o.get_field("thingGroupName"),

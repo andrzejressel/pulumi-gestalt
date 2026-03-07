@@ -284,7 +284,7 @@ pub mod response_headers_policy {
         };
         let o = context.register_resource(request);
         ResponseHeadersPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             comment: o.get_field("comment"),
             cors_config: o.get_field("corsConfig"),

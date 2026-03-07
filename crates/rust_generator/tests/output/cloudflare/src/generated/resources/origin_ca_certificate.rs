@@ -126,7 +126,7 @@ pub mod origin_ca_certificate {
         };
         let o = context.register_resource(request);
         OriginCaCertificateResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             certificate: o.get_field("certificate"),
             csr: o.get_field("csr"),

@@ -122,7 +122,7 @@ pub mod fleet_update_strategy {
         };
         let o = context.register_resource(request);
         FleetUpdateStrategyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             kubernetes_fleet_manager_id: o.get_field("kubernetesFleetManagerId"),
             name: o.get_field("name"),

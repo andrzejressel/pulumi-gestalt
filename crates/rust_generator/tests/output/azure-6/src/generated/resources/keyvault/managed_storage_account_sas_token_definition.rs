@@ -211,7 +211,7 @@ pub mod managed_storage_account_sas_token_definition {
         };
         let o = context.register_resource(request);
         ManagedStorageAccountSasTokenDefinitionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             managed_storage_account_id: o.get_field("managedStorageAccountId"),
             name: o.get_field("name"),

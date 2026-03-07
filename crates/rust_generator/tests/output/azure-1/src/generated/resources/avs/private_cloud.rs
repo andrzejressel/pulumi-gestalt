@@ -216,7 +216,7 @@ pub mod private_cloud {
         };
         let o = context.register_resource(request);
         PrivateCloudResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             circuits: o.get_field("circuits"),
             hcx_cloud_manager_endpoint: o.get_field("hcxCloudManagerEndpoint"),

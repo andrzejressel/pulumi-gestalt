@@ -444,7 +444,7 @@ pub mod integration {
         };
         let o = context.register_resource(request);
         IntegrationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cache_key_parameters: o.get_field("cacheKeyParameters"),
             cache_namespace: o.get_field("cacheNamespace"),

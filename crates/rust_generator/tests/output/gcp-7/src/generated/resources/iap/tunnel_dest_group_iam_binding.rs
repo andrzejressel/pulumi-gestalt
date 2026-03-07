@@ -492,7 +492,7 @@ pub mod tunnel_dest_group_iam_binding {
         };
         let o = context.register_resource(request);
         TunnelDestGroupIamBindingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             condition: o.get_field("condition"),
             dest_group: o.get_field("destGroup"),

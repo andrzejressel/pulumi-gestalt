@@ -123,7 +123,7 @@ pub mod customer_managed_policy_attachment {
         };
         let o = context.register_resource(request);
         CustomerManagedPolicyAttachmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             customer_managed_policy_reference: o
                 .get_field("customerManagedPolicyReference"),

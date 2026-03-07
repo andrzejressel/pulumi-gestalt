@@ -196,7 +196,7 @@ pub mod data_connector_threat_intelligence_taxii {
         };
         let o = context.register_resource(request);
         DataConnectorThreatIntelligenceTaxiiResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_root_url: o.get_field("apiRootUrl"),
             collection_id: o.get_field("collectionId"),

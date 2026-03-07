@@ -195,7 +195,7 @@ pub mod kmsconfig {
         };
         let o = context.register_resource(request);
         KmsconfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             crypto_key_name: o.get_field("cryptoKeyName"),
             description: o.get_field("description"),

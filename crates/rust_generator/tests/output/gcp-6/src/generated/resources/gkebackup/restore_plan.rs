@@ -892,7 +892,7 @@ pub mod restore_plan {
         };
         let o = context.register_resource(request);
         RestorePlanResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             backup_plan: o.get_field("backupPlan"),
             cluster: o.get_field("cluster"),

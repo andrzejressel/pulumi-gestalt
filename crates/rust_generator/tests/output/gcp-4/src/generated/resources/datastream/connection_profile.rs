@@ -531,7 +531,7 @@ pub mod connection_profile {
         };
         let o = context.register_resource(request);
         ConnectionProfileResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bigquery_profile: o.get_field("bigqueryProfile"),
             connection_profile_id: o.get_field("connectionProfileId"),

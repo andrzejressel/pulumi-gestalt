@@ -100,7 +100,7 @@ pub mod certificate_validation {
         };
         let o = context.register_resource(request);
         CertificateValidationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             certificate_arn: o.get_field("certificateArn"),
             validation_record_fqdns: o.get_field("validationRecordFqdns"),

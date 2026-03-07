@@ -177,7 +177,7 @@ pub mod account_password_policy {
         };
         let o = context.register_resource(request);
         AccountPasswordPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allow_users_to_change_password: o.get_field("allowUsersToChangePassword"),
             expire_passwords: o.get_field("expirePasswords"),

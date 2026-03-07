@@ -356,7 +356,7 @@ pub mod cloud_vm_cluster {
         };
         let o = context.register_resource(request);
         CloudVmClusterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             backup_subnet_cidr: o.get_field("backupSubnetCidr"),
             cloud_exadata_infrastructure_id: o.get_field("cloudExadataInfrastructureId"),

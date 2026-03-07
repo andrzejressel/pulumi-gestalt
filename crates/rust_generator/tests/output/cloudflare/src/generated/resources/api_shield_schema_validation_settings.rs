@@ -95,7 +95,7 @@ pub mod api_shield_schema_validation_settings {
         };
         let o = context.register_resource(request);
         ApiShieldSchemaValidationSettingsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             validation_default_mitigation_action: o
                 .get_field("validationDefaultMitigationAction"),

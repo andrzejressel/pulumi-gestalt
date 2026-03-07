@@ -196,7 +196,7 @@ pub mod sql_pool_workload_group {
         };
         let o = context.register_resource(request);
         SqlPoolWorkloadGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             importance: o.get_field("importance"),
             max_resource_percent: o.get_field("maxResourcePercent"),

@@ -550,7 +550,7 @@ pub mod instance_group_manager {
         };
         let o = context.register_resource(request);
         InstanceGroupManagerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             all_instances_config: o.get_field("allInstancesConfig"),
             auto_healing_policies: o.get_field("autoHealingPolicies"),

@@ -376,7 +376,7 @@ pub mod environment {
         };
         let o = context.register_resource(request);
         EnvironmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             airflow_configuration_options: o.get_field("airflowConfigurationOptions"),
             airflow_version: o.get_field("airflowVersion"),

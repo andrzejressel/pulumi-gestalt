@@ -219,7 +219,7 @@ pub mod secret_version {
         };
         let o = context.register_resource(request);
         SecretVersionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             create_time: o.get_field("createTime"),
             deletion_policy: o.get_field("deletionPolicy"),

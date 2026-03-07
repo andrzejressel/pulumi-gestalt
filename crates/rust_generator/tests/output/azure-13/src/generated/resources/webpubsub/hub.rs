@@ -188,7 +188,7 @@ pub mod hub {
         };
         let o = context.register_resource(request);
         HubResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             anonymous_connections_enabled: o.get_field("anonymousConnectionsEnabled"),
             event_handlers: o.get_field("eventHandlers"),

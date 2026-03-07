@@ -178,7 +178,7 @@ pub mod database_principal_assignment {
         };
         let o = context.register_resource(request);
         DatabasePrincipalAssignmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cluster_name: o.get_field("clusterName"),
             database_name: o.get_field("databaseName"),

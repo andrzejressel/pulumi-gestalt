@@ -211,7 +211,7 @@ pub mod certificate {
         };
         let o = context.register_resource(request);
         CertificateResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             certificate_virtual_path: o.get_field("certificateVirtualPath"),
             key_vault_secret_id: o.get_field("keyVaultSecretId"),

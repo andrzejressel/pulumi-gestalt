@@ -131,7 +131,7 @@ pub mod macsec_key_association {
         };
         let o = context.register_resource(request);
         MacsecKeyAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cak: o.get_field("cak"),
             ckn: o.get_field("ckn"),

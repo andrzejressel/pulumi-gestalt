@@ -148,7 +148,7 @@ pub mod slot_custom_hostname_binding {
         };
         let o = context.register_resource(request);
         SlotCustomHostnameBindingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             app_service_slot_id: o.get_field("appServiceSlotId"),
             hostname: o.get_field("hostname"),

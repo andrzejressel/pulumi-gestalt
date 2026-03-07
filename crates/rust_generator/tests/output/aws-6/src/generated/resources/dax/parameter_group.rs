@@ -101,7 +101,7 @@ pub mod parameter_group {
         };
         let o = context.register_resource(request);
         ParameterGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             description: o.get_field("description"),
             name: o.get_field("name"),

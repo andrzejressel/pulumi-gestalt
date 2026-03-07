@@ -83,7 +83,7 @@ pub mod function_recursion_config {
         };
         let o = context.register_resource(request);
         FunctionRecursionConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             function_name: o.get_field("functionName"),
             recursive_loop: o.get_field("recursiveLoop"),

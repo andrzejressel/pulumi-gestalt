@@ -193,7 +193,7 @@ pub mod zero_trust_access_organization {
         };
         let o = context.register_resource(request);
         ZeroTrustAccessOrganizationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             allow_authenticate_via_warp: o.get_field("allowAuthenticateViaWarp"),

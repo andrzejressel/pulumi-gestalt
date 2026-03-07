@@ -134,7 +134,7 @@ pub mod access_mutual_tls_certificate {
         };
         let o = context.register_resource(request);
         AccessMutualTlsCertificateResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             associated_hostnames: o.get_field("associatedHostnames"),

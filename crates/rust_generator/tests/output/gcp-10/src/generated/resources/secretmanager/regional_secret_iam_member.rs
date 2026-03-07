@@ -491,7 +491,7 @@ pub mod regional_secret_iam_member {
         };
         let o = context.register_resource(request);
         RegionalSecretIamMemberResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             condition: o.get_field("condition"),
             etag: o.get_field("etag"),

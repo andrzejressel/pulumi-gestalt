@@ -310,7 +310,7 @@ pub mod network_attached_data_network {
         };
         let o = context.register_resource(request);
         NetworkAttachedDataNetworkResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             dns_addresses: o.get_field("dnsAddresses"),
             location: o.get_field("location"),

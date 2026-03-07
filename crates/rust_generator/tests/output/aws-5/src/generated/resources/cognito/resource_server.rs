@@ -143,7 +143,7 @@ pub mod resource_server {
         };
         let o = context.register_resource(request);
         ResourceServerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             identifier: o.get_field("identifier"),
             name: o.get_field("name"),

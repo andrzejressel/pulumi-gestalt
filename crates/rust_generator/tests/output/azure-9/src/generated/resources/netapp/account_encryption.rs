@@ -183,7 +183,7 @@ pub mod account_encryption {
         };
         let o = context.register_resource(request);
         AccountEncryptionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             encryption_key: o.get_field("encryptionKey"),
             netapp_account_id: o.get_field("netappAccountId"),

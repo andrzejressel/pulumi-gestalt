@@ -115,7 +115,7 @@ pub mod snapshot_copy_grant {
         };
         let o = context.register_resource(request);
         SnapshotCopyGrantResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             kms_key_id: o.get_field("kmsKeyId"),

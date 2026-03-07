@@ -106,7 +106,7 @@ pub mod ca_external_account_key {
         };
         let o = context.register_resource(request);
         CaExternalAccountKeyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             b64_mac_key: o.get_field("b64MacKey"),
             key_id: o.get_field("keyId"),

@@ -161,7 +161,7 @@ pub mod plugin {
         };
         let o = context.register_resource(request);
         PluginResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             alias: o.get_field("alias"),
             enable_timeout: o.get_field("enableTimeout"),

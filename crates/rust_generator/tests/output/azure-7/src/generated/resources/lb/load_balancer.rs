@@ -184,7 +184,7 @@ pub mod load_balancer {
         };
         let o = context.register_resource(request);
         LoadBalancerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             edge_zone: o.get_field("edgeZone"),
             frontend_ip_configurations: o.get_field("frontendIpConfigurations"),

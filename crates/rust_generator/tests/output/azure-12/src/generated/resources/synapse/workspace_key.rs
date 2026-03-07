@@ -207,7 +207,7 @@ pub mod workspace_key {
         };
         let o = context.register_resource(request);
         WorkspaceKeyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             active: o.get_field("active"),
             customer_managed_key_name: o.get_field("customerManagedKeyName"),

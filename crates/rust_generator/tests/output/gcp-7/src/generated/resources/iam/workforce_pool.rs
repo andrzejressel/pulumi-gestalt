@@ -242,7 +242,7 @@ pub mod workforce_pool {
         };
         let o = context.register_resource(request);
         WorkforcePoolResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_restrictions: o.get_field("accessRestrictions"),
             description: o.get_field("description"),

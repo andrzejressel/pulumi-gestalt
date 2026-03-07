@@ -239,7 +239,7 @@ pub mod policy {
         };
         let o = context.register_resource(request);
         PolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             boolean_policy: o.get_field("booleanPolicy"),
             constraint: o.get_field("constraint"),

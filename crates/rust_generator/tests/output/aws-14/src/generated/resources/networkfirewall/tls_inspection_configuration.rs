@@ -431,7 +431,7 @@ pub mod tls_inspection_configuration {
         };
         let o = context.register_resource(request);
         TlsInspectionConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             certificate_authorities: o.get_field("certificateAuthorities"),

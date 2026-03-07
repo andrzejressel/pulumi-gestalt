@@ -191,7 +191,7 @@ pub mod tag_rule {
         };
         let o = context.register_resource(request);
         TagRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             activity_log_enabled: o.get_field("activityLogEnabled"),
             azure_active_directory_log_enabled: o

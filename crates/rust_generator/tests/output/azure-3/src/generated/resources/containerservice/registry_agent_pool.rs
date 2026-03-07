@@ -170,7 +170,7 @@ pub mod registry_agent_pool {
         };
         let o = context.register_resource(request);
         RegistryAgentPoolResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             container_registry_name: o.get_field("containerRegistryName"),
             instance_count: o.get_field("instanceCount"),

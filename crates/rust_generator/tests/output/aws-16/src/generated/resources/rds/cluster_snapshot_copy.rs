@@ -210,7 +210,7 @@ pub mod cluster_snapshot_copy {
         };
         let o = context.register_resource(request);
         ClusterSnapshotCopyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allocated_storage: o.get_field("allocatedStorage"),
             copy_tags: o.get_field("copyTags"),

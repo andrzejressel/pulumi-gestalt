@@ -268,7 +268,7 @@ pub mod selection {
         };
         let o = context.register_resource(request);
         SelectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             conditions: o.get_field("conditions"),
             iam_role_arn: o.get_field("iamRoleArn"),

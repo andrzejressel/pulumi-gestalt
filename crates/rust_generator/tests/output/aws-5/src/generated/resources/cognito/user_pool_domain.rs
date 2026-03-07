@@ -142,7 +142,7 @@ pub mod user_pool_domain {
         };
         let o = context.register_resource(request);
         UserPoolDomainResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             aws_account_id: o.get_field("awsAccountId"),
             certificate_arn: o.get_field("certificateArn"),

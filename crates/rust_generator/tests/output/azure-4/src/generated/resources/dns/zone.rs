@@ -115,7 +115,7 @@ pub mod zone {
         };
         let o = context.register_resource(request);
         ZoneResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             max_number_of_record_sets: o.get_field("maxNumberOfRecordSets"),
             name: o.get_field("name"),

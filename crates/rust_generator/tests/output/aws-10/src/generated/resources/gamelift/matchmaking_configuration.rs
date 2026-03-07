@@ -226,7 +226,7 @@ pub mod matchmaking_configuration {
         };
         let o = context.register_resource(request);
         MatchmakingConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             acceptance_required: o.get_field("acceptanceRequired"),
             acceptance_timeout_seconds: o.get_field("acceptanceTimeoutSeconds"),

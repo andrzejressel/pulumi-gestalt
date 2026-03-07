@@ -364,7 +364,7 @@ pub mod cx_security_settings {
         };
         let o = context.register_resource(request);
         CxSecuritySettingsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             audio_export_settings: o.get_field("audioExportSettings"),
             deidentify_template: o.get_field("deidentifyTemplate"),

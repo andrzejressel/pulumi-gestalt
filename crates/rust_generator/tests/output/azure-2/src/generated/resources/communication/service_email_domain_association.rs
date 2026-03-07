@@ -118,7 +118,7 @@ pub mod service_email_domain_association {
         };
         let o = context.register_resource(request);
         ServiceEmailDomainAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             communication_service_id: o.get_field("communicationServiceId"),
             email_service_domain_id: o.get_field("emailServiceDomainId"),

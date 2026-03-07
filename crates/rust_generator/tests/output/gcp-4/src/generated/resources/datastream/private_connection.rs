@@ -197,7 +197,7 @@ pub mod private_connection {
         };
         let o = context.register_resource(request);
         PrivateConnectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             create_without_validation: o.get_field("createWithoutValidation"),
             display_name: o.get_field("displayName"),

@@ -143,6 +143,8 @@ pub struct ProviderArgs {
 pub struct ProviderResult {
     /// Pulumi URN is the stable logical identity of this provider resource in the Pulumi stack.
     pub urn: pulumi_gestalt_rust::Output<String>,
+    /// Pulumi ID is the unique identifier assigned by the provider to this resource.
+    pub id: pulumi_gestalt_rust::Output<String>,
     /// The access key for API operations. You can retrieve this from the 'Security & Credentials' section of the AWS console.
     pub access_key: pulumi_gestalt_rust::Output<Option<String>>,
     pub allowed_account_ids: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
@@ -430,6 +432,7 @@ pub fn create(
     let o = context.register_resource(request);
     ProviderResult {
         urn: o.get_urn(),
+        id: o.get_id(),
         access_key: o.get_field("accessKey"),
         allowed_account_ids: o.get_field("allowedAccountIds"),
         assume_role: o.get_field("assumeRole"),

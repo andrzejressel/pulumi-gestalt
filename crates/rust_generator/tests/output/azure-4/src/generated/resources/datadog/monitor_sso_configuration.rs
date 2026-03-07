@@ -127,7 +127,7 @@ pub mod monitor_sso_configuration {
         };
         let o = context.register_resource(request);
         MonitorSsoConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             datadog_monitor_id: o.get_field("datadogMonitorId"),
             enterprise_application_id: o.get_field("enterpriseApplicationId"),

@@ -114,7 +114,7 @@ pub mod managed_hardware_security_module_key_rotation_policy {
         };
         let o = context.register_resource(request);
         ManagedHardwareSecurityModuleKeyRotationPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             expire_after: o.get_field("expireAfter"),
             managed_hsm_key_id: o.get_field("managedHsmKeyId"),

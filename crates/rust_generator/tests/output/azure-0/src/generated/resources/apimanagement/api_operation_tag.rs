@@ -115,7 +115,7 @@ pub mod api_operation_tag {
         };
         let o = context.register_resource(request);
         ApiOperationTagResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_operation_id: o.get_field("apiOperationId"),
             display_name: o.get_field("displayName"),

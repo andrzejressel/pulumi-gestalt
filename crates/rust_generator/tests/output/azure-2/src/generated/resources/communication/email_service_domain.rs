@@ -144,7 +144,7 @@ pub mod email_service_domain {
         };
         let o = context.register_resource(request);
         EmailServiceDomainResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             domain_management: o.get_field("domainManagement"),
             email_service_id: o.get_field("emailServiceId"),

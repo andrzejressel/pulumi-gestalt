@@ -145,7 +145,7 @@ pub mod secret_ciphertext {
         };
         let o = context.register_resource(request);
         SecretCiphertextResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             additional_authenticated_data: o.get_field("additionalAuthenticatedData"),
             ciphertext: o.get_field("ciphertext"),

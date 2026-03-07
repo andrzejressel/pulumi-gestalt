@@ -170,7 +170,7 @@ pub mod load_test {
         };
         let o = context.register_resource(request);
         LoadTestResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             data_plane_uri: o.get_field("dataPlaneUri"),
             description: o.get_field("description"),

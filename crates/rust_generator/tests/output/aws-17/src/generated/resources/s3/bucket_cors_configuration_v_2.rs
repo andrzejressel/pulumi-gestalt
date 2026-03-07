@@ -124,7 +124,7 @@ pub mod bucket_cors_configuration_v_2 {
         };
         let o = context.register_resource(request);
         BucketCorsConfigurationV2Result {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bucket: o.get_field("bucket"),
             cors_rules: o.get_field("corsRules"),

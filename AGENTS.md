@@ -56,6 +56,7 @@ Commands are run using `just`. Run `just --list` for all available commands.
     ```bash
     just regenerate-generator-tests
     ```
+*   **IMPORTANT**: Always run `just regenerate-generator-tests` after modifying Handlebars (`.handlebars`) or Jinja (`.jinja`) templates to ensure all generator tests are up-to-date with the latest template changes.
 
 ## Testing Commands
 

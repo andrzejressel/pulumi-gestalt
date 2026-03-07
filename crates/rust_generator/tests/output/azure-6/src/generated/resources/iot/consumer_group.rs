@@ -118,7 +118,7 @@ pub mod consumer_group {
         };
         let o = context.register_resource(request);
         ConsumerGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             eventhub_endpoint_name: o.get_field("eventhubEndpointName"),
             iothub_name: o.get_field("iothubName"),

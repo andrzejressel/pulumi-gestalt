@@ -161,7 +161,7 @@ pub mod environment_blueprint_configuration {
         };
         let o = context.register_resource(request);
         EnvironmentBlueprintConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             domain_id: o.get_field("domainId"),
             enabled_regions: o.get_field("enabledRegions"),

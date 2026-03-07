@@ -198,7 +198,7 @@ pub mod backup_schedule {
         };
         let o = context.register_resource(request);
         BackupScheduleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             daily_recurrence: o.get_field("dailyRecurrence"),
             database: o.get_field("database"),

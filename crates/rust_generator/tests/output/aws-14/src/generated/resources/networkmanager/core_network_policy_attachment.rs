@@ -120,7 +120,7 @@ pub mod core_network_policy_attachment {
         };
         let o = context.register_resource(request);
         CoreNetworkPolicyAttachmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             core_network_id: o.get_field("coreNetworkId"),
             policy_document: o.get_field("policyDocument"),

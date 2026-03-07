@@ -151,7 +151,7 @@ pub mod sync_authorization {
         };
         let o = context.register_resource(request);
         SyncAuthorizationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             etag: o.get_field("etag"),
             identities: o.get_field("identities"),

@@ -617,7 +617,7 @@ pub mod target_https_proxy {
         };
         let o = context.register_resource(request);
         TargetHttpsProxyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             certificate_manager_certificates: o
                 .get_field("certificateManagerCertificates"),

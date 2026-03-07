@@ -95,7 +95,7 @@ pub mod monitoring_subscription {
         };
         let o = context.register_resource(request);
         MonitoringSubscriptionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             distribution_id: o.get_field("distributionId"),
             monitoring_subscription: o.get_field("monitoringSubscription"),

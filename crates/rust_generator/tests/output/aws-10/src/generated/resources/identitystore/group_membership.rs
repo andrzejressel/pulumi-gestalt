@@ -111,7 +111,7 @@ pub mod group_membership {
         };
         let o = context.register_resource(request);
         GroupMembershipResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             group_id: o.get_field("groupId"),
             identity_store_id: o.get_field("identityStoreId"),

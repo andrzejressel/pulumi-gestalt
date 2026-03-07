@@ -384,7 +384,7 @@ pub mod budget {
         };
         let o = context.register_resource(request);
         BudgetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             all_updates_rule: o.get_field("allUpdatesRule"),
             amount: o.get_field("amount"),

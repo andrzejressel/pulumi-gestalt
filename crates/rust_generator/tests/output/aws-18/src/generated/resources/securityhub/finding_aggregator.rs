@@ -123,7 +123,7 @@ pub mod finding_aggregator {
         };
         let o = context.register_resource(request);
         FindingAggregatorResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             linking_mode: o.get_field("linkingMode"),
             specified_regions: o.get_field("specifiedRegions"),

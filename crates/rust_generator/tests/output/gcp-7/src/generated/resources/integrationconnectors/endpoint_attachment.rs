@@ -192,7 +192,7 @@ pub mod endpoint_attachment {
         };
         let o = context.register_resource(request);
         EndpointAttachmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),

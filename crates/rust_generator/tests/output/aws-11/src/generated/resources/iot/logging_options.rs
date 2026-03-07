@@ -83,7 +83,7 @@ pub mod logging_options {
         };
         let o = context.register_resource(request);
         LoggingOptionsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             default_log_level: o.get_field("defaultLogLevel"),
             disable_all_logs: o.get_field("disableAllLogs"),

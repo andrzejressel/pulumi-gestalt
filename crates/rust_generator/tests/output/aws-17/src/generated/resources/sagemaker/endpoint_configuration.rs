@@ -189,7 +189,7 @@ pub mod endpoint_configuration {
         };
         let o = context.register_resource(request);
         EndpointConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             async_inference_config: o.get_field("asyncInferenceConfig"),

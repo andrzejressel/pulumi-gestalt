@@ -411,7 +411,7 @@ pub mod managed_folder_iam_policy {
         };
         let o = context.register_resource(request);
         ManagedFolderIamPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bucket: o.get_field("bucket"),
             etag: o.get_field("etag"),

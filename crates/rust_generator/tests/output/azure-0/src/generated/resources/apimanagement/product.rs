@@ -195,7 +195,7 @@ pub mod product {
         };
         let o = context.register_resource(request);
         ProductResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_management_name: o.get_field("apiManagementName"),
             approval_required: o.get_field("approvalRequired"),

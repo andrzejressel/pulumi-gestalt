@@ -227,7 +227,7 @@ pub mod spring_cloud_container_deployment {
         };
         let o = context.register_resource(request);
         SpringCloudContainerDeploymentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             addon_json: o.get_field("addonJson"),
             application_performance_monitoring_ids: o

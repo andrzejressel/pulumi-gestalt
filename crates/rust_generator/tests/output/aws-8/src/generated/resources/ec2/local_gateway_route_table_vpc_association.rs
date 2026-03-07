@@ -113,7 +113,7 @@ pub mod local_gateway_route_table_vpc_association {
         };
         let o = context.register_resource(request);
         LocalGatewayRouteTableVpcAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             local_gateway_id: o.get_field("localGatewayId"),
             local_gateway_route_table_id: o.get_field("localGatewayRouteTableId"),

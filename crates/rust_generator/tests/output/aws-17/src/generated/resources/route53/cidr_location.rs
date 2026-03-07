@@ -96,7 +96,7 @@ pub mod cidr_location {
         };
         let o = context.register_resource(request);
         CidrLocationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cidr_blocks: o.get_field("cidrBlocks"),
             cidr_collection_id: o.get_field("cidrCollectionId"),

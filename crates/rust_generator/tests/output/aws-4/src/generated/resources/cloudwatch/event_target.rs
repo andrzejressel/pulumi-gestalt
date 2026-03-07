@@ -842,7 +842,7 @@ pub mod event_target {
         };
         let o = context.register_resource(request);
         EventTargetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             appsync_target: o.get_field("appsyncTarget"),
             arn: o.get_field("arn"),

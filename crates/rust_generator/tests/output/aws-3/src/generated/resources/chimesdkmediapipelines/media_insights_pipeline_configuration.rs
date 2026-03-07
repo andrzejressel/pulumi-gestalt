@@ -385,7 +385,7 @@ pub mod media_insights_pipeline_configuration {
         };
         let o = context.register_resource(request);
         MediaInsightsPipelineConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             elements: o.get_field("elements"),

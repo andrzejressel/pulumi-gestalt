@@ -123,7 +123,7 @@ pub mod sync {
         };
         let o = context.register_resource(request);
         SyncResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             incoming_traffic_policy: o.get_field("incomingTrafficPolicy"),
             location: o.get_field("location"),

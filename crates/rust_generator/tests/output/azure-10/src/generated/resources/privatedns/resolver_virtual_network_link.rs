@@ -165,7 +165,7 @@ pub mod resolver_virtual_network_link {
         };
         let o = context.register_resource(request);
         ResolverVirtualNetworkLinkResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             dns_forwarding_ruleset_id: o.get_field("dnsForwardingRulesetId"),
             metadata: o.get_field("metadata"),

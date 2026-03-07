@@ -275,7 +275,7 @@ pub mod bucket_replication_config {
         };
         let o = context.register_resource(request);
         BucketReplicationConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bucket: o.get_field("bucket"),
             role: o.get_field("role"),

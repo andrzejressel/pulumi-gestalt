@@ -101,7 +101,7 @@ pub mod metrics_destination {
         };
         let o = context.register_resource(request);
         MetricsDestinationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             app_monitor_name: o.get_field("appMonitorName"),
             destination: o.get_field("destination"),

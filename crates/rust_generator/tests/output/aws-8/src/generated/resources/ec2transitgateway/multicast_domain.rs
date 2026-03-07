@@ -244,7 +244,7 @@ pub mod multicast_domain {
         };
         let o = context.register_resource(request);
         MulticastDomainResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             auto_accept_shared_associations: o.get_field("autoAcceptSharedAssociations"),

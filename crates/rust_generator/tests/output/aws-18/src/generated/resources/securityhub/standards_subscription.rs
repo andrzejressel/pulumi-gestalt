@@ -112,7 +112,7 @@ pub mod standards_subscription {
         };
         let o = context.register_resource(request);
         StandardsSubscriptionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             standards_arn: o.get_field("standardsArn"),
         }

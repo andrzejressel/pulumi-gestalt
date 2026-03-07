@@ -187,7 +187,7 @@ pub mod glossary {
         };
         let o = context.register_resource(request);
         GlossaryResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             description: o.get_field("description"),
             domain_identifier: o.get_field("domainIdentifier"),

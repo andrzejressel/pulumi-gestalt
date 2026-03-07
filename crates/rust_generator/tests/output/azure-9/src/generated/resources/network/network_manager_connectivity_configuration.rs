@@ -216,7 +216,7 @@ pub mod network_manager_connectivity_configuration {
         };
         let o = context.register_resource(request);
         NetworkManagerConnectivityConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             applies_to_groups: o.get_field("appliesToGroups"),
             connectivity_topology: o.get_field("connectivityTopology"),

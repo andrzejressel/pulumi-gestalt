@@ -311,7 +311,7 @@ pub mod directory {
         };
         let o = context.register_resource(request);
         DirectoryResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             alias: o.get_field("alias"),
             customer_user_name: o.get_field("customerUserName"),

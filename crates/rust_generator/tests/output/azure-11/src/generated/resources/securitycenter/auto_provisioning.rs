@@ -73,7 +73,7 @@ pub mod auto_provisioning {
         };
         let o = context.register_resource(request);
         AutoProvisioningResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             auto_provision: o.get_field("autoProvision"),
         }

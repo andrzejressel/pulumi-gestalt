@@ -134,7 +134,7 @@ pub mod service_integration {
         };
         let o = context.register_resource(request);
         ServiceIntegrationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             kms_server_side_encryption: o.get_field("kmsServerSideEncryption"),
             logs_anomaly_detection: o.get_field("logsAnomalyDetection"),

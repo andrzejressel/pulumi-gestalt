@@ -388,7 +388,7 @@ pub mod endpoint {
         };
         let o = context.register_resource(request);
         EndpointResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             custom_dns_configs: o.get_field("customDnsConfigs"),
             custom_network_interface_name: o.get_field("customNetworkInterfaceName"),

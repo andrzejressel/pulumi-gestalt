@@ -204,7 +204,7 @@ pub mod budget_resource_group {
         };
         let o = context.register_resource(request);
         BudgetResourceGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             amount: o.get_field("amount"),
             etag: o.get_field("etag"),

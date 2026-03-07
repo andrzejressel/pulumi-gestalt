@@ -193,7 +193,7 @@ pub mod iot_hub_dps {
         };
         let o = context.register_resource(request);
         IotHubDpsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allocation_policy: o.get_field("allocationPolicy"),
             data_residency_enabled: o.get_field("dataResidencyEnabled"),

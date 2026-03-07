@@ -289,7 +289,7 @@ pub mod route {
         };
         let o = context.register_resource(request);
         RouteResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             carrier_gateway_id: o.get_field("carrierGatewayId"),
             core_network_arn: o.get_field("coreNetworkArn"),

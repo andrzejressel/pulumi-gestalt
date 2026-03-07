@@ -158,7 +158,7 @@ pub mod log_anomaly_detector {
         };
         let o = context.register_resource(request);
         LogAnomalyDetectorResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             anomaly_visibility_time: o.get_field("anomalyVisibilityTime"),
             arn: o.get_field("arn"),

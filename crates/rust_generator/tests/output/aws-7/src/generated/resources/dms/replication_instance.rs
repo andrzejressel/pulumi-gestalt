@@ -341,7 +341,7 @@ pub mod replication_instance {
         };
         let o = context.register_resource(request);
         ReplicationInstanceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allocated_storage: o.get_field("allocatedStorage"),
             allow_major_version_upgrade: o.get_field("allowMajorVersionUpgrade"),

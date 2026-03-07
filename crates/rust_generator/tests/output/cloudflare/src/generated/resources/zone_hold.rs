@@ -101,7 +101,7 @@ pub mod zone_hold {
         };
         let o = context.register_resource(request);
         ZoneHoldResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             hold: o.get_field("hold"),
             hold_after: o.get_field("holdAfter"),

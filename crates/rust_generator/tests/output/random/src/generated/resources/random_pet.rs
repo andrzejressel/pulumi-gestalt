@@ -104,7 +104,7 @@ pub mod random_pet {
         };
         let o = context.register_resource(request);
         RandomPetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             keepers: o.get_field("keepers"),
             length: o.get_field("length"),

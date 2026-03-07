@@ -198,7 +198,7 @@ pub mod hosting_channel {
         };
         let o = context.register_resource(request);
         HostingChannelResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             channel_id: o.get_field("channelId"),
             effective_labels: o.get_field("effectiveLabels"),

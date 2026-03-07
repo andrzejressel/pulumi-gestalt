@@ -204,7 +204,7 @@ pub mod stream_input_blob {
         };
         let o = context.register_resource(request);
         StreamInputBlobResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             date_format: o.get_field("dateFormat"),
             name: o.get_field("name"),

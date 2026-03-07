@@ -77,7 +77,7 @@ pub mod attachment {
         };
         let o = context.register_resource(request);
         AttachmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             elb: o.get_field("elb"),
             instance: o.get_field("instance"),

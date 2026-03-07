@@ -170,7 +170,7 @@ pub mod static_site {
         };
         let o = context.register_resource(request);
         StaticSiteResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_key: o.get_field("apiKey"),
             app_settings: o.get_field("appSettings"),

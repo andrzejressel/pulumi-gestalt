@@ -214,7 +214,7 @@ pub mod spring_cloud_new_relic_application_performance_monitoring {
         };
         let o = context.register_resource(request);
         SpringCloudNewRelicApplicationPerformanceMonitoringResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             agent_enabled: o.get_field("agentEnabled"),
             app_name: o.get_field("appName"),

@@ -120,7 +120,7 @@ pub mod encryption_config {
         };
         let o = context.register_resource(request);
         EncryptionConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             key_id: o.get_field("keyId"),
             type_: o.get_field("type"),

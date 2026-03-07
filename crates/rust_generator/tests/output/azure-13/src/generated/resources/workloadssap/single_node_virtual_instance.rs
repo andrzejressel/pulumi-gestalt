@@ -176,7 +176,7 @@ pub mod single_node_virtual_instance {
         };
         let o = context.register_resource(request);
         SingleNodeVirtualInstanceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             app_location: o.get_field("appLocation"),
             environment: o.get_field("environment"),

@@ -163,7 +163,7 @@ pub mod analytics_solution {
         };
         let o = context.register_resource(request);
         AnalyticsSolutionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             location: o.get_field("location"),
             plan: o.get_field("plan"),

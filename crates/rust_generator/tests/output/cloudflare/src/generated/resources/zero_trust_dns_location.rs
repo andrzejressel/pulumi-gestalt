@@ -133,7 +133,7 @@ pub mod zero_trust_dns_location {
         };
         let o = context.register_resource(request);
         ZeroTrustDnsLocationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             anonymized_logs_enabled: o.get_field("anonymizedLogsEnabled"),

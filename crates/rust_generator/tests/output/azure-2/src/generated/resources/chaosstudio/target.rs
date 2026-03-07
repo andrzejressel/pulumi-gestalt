@@ -115,7 +115,7 @@ pub mod target {
         };
         let o = context.register_resource(request);
         TargetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             location: o.get_field("location"),
             target_resource_id: o.get_field("targetResourceId"),

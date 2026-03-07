@@ -92,7 +92,7 @@ pub mod vpn_connection_route {
         };
         let o = context.register_resource(request);
         VpnConnectionRouteResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             destination_cidr_block: o.get_field("destinationCidrBlock"),
             vpn_connection_id: o.get_field("vpnConnectionId"),

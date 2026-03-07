@@ -159,7 +159,7 @@ pub mod log_account_policy {
         };
         let o = context.register_resource(request);
         LogAccountPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             policy_document: o.get_field("policyDocument"),
             policy_name: o.get_field("policyName"),

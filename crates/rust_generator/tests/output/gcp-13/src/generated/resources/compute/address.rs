@@ -452,7 +452,7 @@ pub mod address {
         };
         let o = context.register_resource(request);
         AddressResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             address: o.get_field("address"),
             address_type: o.get_field("addressType"),

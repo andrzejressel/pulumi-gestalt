@@ -368,7 +368,7 @@ pub mod stream_processor {
         };
         let o = context.register_resource(request);
         StreamProcessorResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             data_sharing_preference: o.get_field("dataSharingPreference"),
             input: o.get_field("input"),

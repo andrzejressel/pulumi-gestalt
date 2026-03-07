@@ -1033,7 +1033,7 @@ pub mod trigger {
         };
         let o = context.register_resource(request);
         TriggerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             approval_config: o.get_field("approvalConfig"),
             bitbucket_server_trigger_config: o.get_field("bitbucketServerTriggerConfig"),

@@ -465,7 +465,7 @@ pub mod vmware_replicated_vm {
         };
         let o = context.register_resource(request);
         VmwareReplicatedVmResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             appliance_name: o.get_field("applianceName"),
             default_log_storage_account_id: o.get_field("defaultLogStorageAccountId"),

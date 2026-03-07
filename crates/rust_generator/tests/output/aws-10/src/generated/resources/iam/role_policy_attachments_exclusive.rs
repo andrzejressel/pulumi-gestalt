@@ -111,7 +111,7 @@ pub mod role_policy_attachments_exclusive {
         };
         let o = context.register_resource(request);
         RolePolicyAttachmentsExclusiveResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             policy_arns: o.get_field("policyArns"),
             role_name: o.get_field("roleName"),

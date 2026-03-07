@@ -152,7 +152,7 @@ pub mod iot_hub_device_update_account {
         };
         let o = context.register_resource(request);
         IotHubDeviceUpdateAccountResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             host_name: o.get_field("hostName"),
             identity: o.get_field("identity"),

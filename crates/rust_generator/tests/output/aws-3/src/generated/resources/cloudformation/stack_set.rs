@@ -294,7 +294,7 @@ pub mod stack_set {
         };
         let o = context.register_resource(request);
         StackSetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             administration_role_arn: o.get_field("administrationRoleArn"),
             arn: o.get_field("arn"),

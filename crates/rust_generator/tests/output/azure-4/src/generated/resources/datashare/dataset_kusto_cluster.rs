@@ -133,7 +133,7 @@ pub mod dataset_kusto_cluster {
         };
         let o = context.register_resource(request);
         DatasetKustoClusterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             display_name: o.get_field("displayName"),
             kusto_cluster_id: o.get_field("kustoClusterId"),

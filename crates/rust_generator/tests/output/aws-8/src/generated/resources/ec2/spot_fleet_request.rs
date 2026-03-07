@@ -572,7 +572,7 @@ pub mod spot_fleet_request {
         };
         let o = context.register_resource(request);
         SpotFleetRequestResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allocation_strategy: o.get_field("allocationStrategy"),
             client_token: o.get_field("clientToken"),

@@ -186,7 +186,7 @@ pub mod account {
         };
         let o = context.register_resource(request);
         AccountResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cors: o.get_field("cors"),
             data_stores: o.get_field("dataStores"),

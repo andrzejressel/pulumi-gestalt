@@ -286,7 +286,7 @@ pub mod prevention_stored_info_type {
         };
         let o = context.register_resource(request);
         PreventionStoredInfoTypeResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             description: o.get_field("description"),
             dictionary: o.get_field("dictionary"),

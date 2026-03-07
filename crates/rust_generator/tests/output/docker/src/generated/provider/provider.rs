@@ -38,6 +38,8 @@ pub struct ProviderArgs {
 pub struct ProviderResult {
     /// Pulumi URN is the stable logical identity of this provider resource in the Pulumi stack.
     pub urn: pulumi_gestalt_rust::Output<String>,
+    /// Pulumi ID is the unique identifier assigned by the provider to this resource.
+    pub id: pulumi_gestalt_rust::Output<String>,
     /// PEM-encoded content of Docker host CA certificate
     pub ca_material: pulumi_gestalt_rust::Output<Option<String>>,
     /// PEM-encoded content of Docker client certificate
@@ -108,6 +110,7 @@ pub fn create(
     let o = context.register_resource(request);
     ProviderResult {
         urn: o.get_urn(),
+        id: o.get_id(),
         ca_material: o.get_field("caMaterial"),
         cert_material: o.get_field("certMaterial"),
         cert_path: o.get_field("certPath"),

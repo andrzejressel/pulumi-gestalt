@@ -266,7 +266,7 @@ pub mod shared_image_version {
         };
         let o = context.register_resource(request);
         SharedImageVersionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             blob_uri: o.get_field("blobUri"),
             deletion_of_replicated_locations_enabled: o

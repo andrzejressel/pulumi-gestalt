@@ -354,7 +354,7 @@ pub mod database_iam_policy {
         };
         let o = context.register_resource(request);
         DatabaseIAMPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             database: o.get_field("database"),
             etag: o.get_field("etag"),

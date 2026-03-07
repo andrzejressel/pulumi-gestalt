@@ -228,7 +228,7 @@ pub mod parameter {
         };
         let o = context.register_resource(request);
         ParameterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allowed_pattern: o.get_field("allowedPattern"),
             arn: o.get_field("arn"),

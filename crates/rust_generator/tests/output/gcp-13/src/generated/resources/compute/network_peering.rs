@@ -184,7 +184,7 @@ pub mod network_peering {
         };
         let o = context.register_resource(request);
         NetworkPeeringResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             export_custom_routes: o.get_field("exportCustomRoutes"),
             export_subnet_routes_with_public_ip: o

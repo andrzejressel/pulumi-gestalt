@@ -161,7 +161,7 @@ pub mod subnet_service_endpoint_storage_policy {
         };
         let o = context.register_resource(request);
         SubnetServiceEndpointStoragePolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             definitions: o.get_field("definitions"),
             location: o.get_field("location"),

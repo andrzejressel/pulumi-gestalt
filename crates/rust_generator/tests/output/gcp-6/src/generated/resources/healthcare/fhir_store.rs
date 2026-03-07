@@ -467,7 +467,7 @@ pub mod fhir_store {
         };
         let o = context.register_resource(request);
         FhirStoreResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             complex_data_type_reference_parsing: o
                 .get_field("complexDataTypeReferenceParsing"),

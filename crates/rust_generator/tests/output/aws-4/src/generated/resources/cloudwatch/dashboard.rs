@@ -101,7 +101,7 @@ pub mod dashboard {
         };
         let o = context.register_resource(request);
         DashboardResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             dashboard_arn: o.get_field("dashboardArn"),
             dashboard_body: o.get_field("dashboardBody"),

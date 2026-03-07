@@ -127,7 +127,7 @@ pub mod organization {
         };
         let o = context.register_resource(request);
         OrganizationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             accounts: o.get_field("accounts"),
             arn: o.get_field("arn"),

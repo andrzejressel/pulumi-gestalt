@@ -273,7 +273,7 @@ pub mod eventhub_data_connection {
         };
         let o = context.register_resource(request);
         EventhubDataConnectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cluster_name: o.get_field("clusterName"),
             compression: o.get_field("compression"),

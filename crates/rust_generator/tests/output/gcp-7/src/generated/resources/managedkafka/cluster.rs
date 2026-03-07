@@ -253,7 +253,7 @@ pub mod cluster {
         };
         let o = context.register_resource(request);
         ClusterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             capacity_config: o.get_field("capacityConfig"),
             cluster_id: o.get_field("clusterId"),

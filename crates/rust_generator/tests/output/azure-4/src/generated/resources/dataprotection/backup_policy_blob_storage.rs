@@ -189,7 +189,7 @@ pub mod backup_policy_blob_storage {
         };
         let o = context.register_resource(request);
         BackupPolicyBlobStorageResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             backup_repeating_time_intervals: o.get_field("backupRepeatingTimeIntervals"),
             name: o.get_field("name"),

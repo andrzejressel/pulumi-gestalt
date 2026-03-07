@@ -300,7 +300,7 @@ pub mod express_route_circuit_peering {
         };
         let o = context.register_resource(request);
         ExpressRouteCircuitPeeringResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             azure_asn: o.get_field("azureAsn"),
             express_route_circuit_name: o.get_field("expressRouteCircuitName"),

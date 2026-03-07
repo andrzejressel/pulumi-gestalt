@@ -239,7 +239,7 @@ pub mod trigger_blob_event {
         };
         let o = context.register_resource(request);
         TriggerBlobEventResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             activated: o.get_field("activated"),
             additional_properties: o.get_field("additionalProperties"),

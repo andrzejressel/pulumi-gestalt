@@ -158,7 +158,7 @@ pub mod scaling_plan_host_pool_association {
         };
         let o = context.register_resource(request);
         ScalingPlanHostPoolAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             enabled: o.get_field("enabled"),
             host_pool_id: o.get_field("hostPoolId"),

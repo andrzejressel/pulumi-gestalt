@@ -295,7 +295,7 @@ pub mod maintenance_window_task {
         };
         let o = context.register_resource(request);
         MaintenanceWindowTaskResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             cutoff_behavior: o.get_field("cutoffBehavior"),

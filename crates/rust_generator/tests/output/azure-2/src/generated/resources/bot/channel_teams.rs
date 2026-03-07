@@ -141,7 +141,7 @@ pub mod channel_teams {
         };
         let o = context.register_resource(request);
         ChannelTeamsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bot_name: o.get_field("botName"),
             calling_web_hook: o.get_field("callingWebHook"),

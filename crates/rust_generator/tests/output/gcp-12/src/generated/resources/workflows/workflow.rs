@@ -276,7 +276,7 @@ pub mod workflow {
         };
         let o = context.register_resource(request);
         WorkflowResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             call_log_level: o.get_field("callLogLevel"),
             create_time: o.get_field("createTime"),

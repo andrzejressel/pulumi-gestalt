@@ -214,7 +214,7 @@ pub mod table {
         };
         let o = context.register_resource(request);
         TableResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             automated_backup_policy: o.get_field("automatedBackupPolicy"),
             change_stream_retention: o.get_field("changeStreamRetention"),

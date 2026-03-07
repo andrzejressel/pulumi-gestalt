@@ -186,7 +186,7 @@ pub mod webhook {
         };
         let o = context.register_resource(request);
         WebhookResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             automation_account_name: o.get_field("automationAccountName"),
             enabled: o.get_field("enabled"),

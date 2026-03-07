@@ -138,7 +138,7 @@ pub mod vpc_origin {
         };
         let o = context.register_resource(request);
         VpcOriginResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             etag: o.get_field("etag"),

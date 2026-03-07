@@ -75,7 +75,7 @@ pub mod default_kms_key {
         };
         let o = context.register_resource(request);
         DefaultKmsKeyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             key_arn: o.get_field("keyArn"),
         }

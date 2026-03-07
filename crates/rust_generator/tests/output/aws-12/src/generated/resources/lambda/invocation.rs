@@ -200,7 +200,7 @@ pub mod invocation {
         };
         let o = context.register_resource(request);
         InvocationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             function_name: o.get_field("functionName"),
             input: o.get_field("input"),

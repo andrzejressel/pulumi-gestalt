@@ -49,6 +49,8 @@ The test suite generates code for 100+ provider schemas and verifies:
 - All provider schema patterns are handled
 - Edge cases like cyclic types work correctly
 
+**IMPORTANT**: Always run `just regenerate-generator-tests` from the project root after modifying Handlebars (`.handlebars`) or Jinja/Rinja (`.jinja`) templates to ensure all generator tests are updated with the latest changes.
+
 Tests are feature-gated - run specific providers or all of them.
 
 ## Integration Points

@@ -370,7 +370,7 @@ pub mod smb_file_share {
         };
         let o = context.register_resource(request);
         SmbFileShareResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_based_enumeration: o.get_field("accessBasedEnumeration"),
             admin_user_lists: o.get_field("adminUserLists"),

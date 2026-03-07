@@ -117,7 +117,7 @@ pub mod zero_trust_access_custom_page {
         };
         let o = context.register_resource(request);
         ZeroTrustAccessCustomPageResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             app_count: o.get_field("appCount"),

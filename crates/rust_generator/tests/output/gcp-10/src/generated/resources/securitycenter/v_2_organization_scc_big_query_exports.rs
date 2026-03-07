@@ -236,7 +236,7 @@ pub mod v_2_organization_scc_big_query_exports {
         };
         let o = context.register_resource(request);
         V2OrganizationSccBigQueryExportsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             big_query_export_id: o.get_field("bigQueryExportId"),
             create_time: o.get_field("createTime"),

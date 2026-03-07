@@ -108,7 +108,7 @@ pub mod vault_resource_guard_association {
         };
         let o = context.register_resource(request);
         VaultResourceGuardAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             resource_guard_id: o.get_field("resourceGuardId"),
             vault_id: o.get_field("vaultId"),

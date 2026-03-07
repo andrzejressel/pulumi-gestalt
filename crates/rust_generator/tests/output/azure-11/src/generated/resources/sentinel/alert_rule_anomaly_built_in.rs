@@ -185,7 +185,7 @@ pub mod alert_rule_anomaly_built_in {
         };
         let o = context.register_resource(request);
         AlertRuleAnomalyBuiltInResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             anomaly_settings_version: o.get_field("anomalySettingsVersion"),
             anomaly_version: o.get_field("anomalyVersion"),

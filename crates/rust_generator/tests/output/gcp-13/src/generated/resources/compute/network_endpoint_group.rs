@@ -271,7 +271,7 @@ pub mod network_endpoint_group {
         };
         let o = context.register_resource(request);
         NetworkEndpointGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             default_port: o.get_field("defaultPort"),
             description: o.get_field("description"),

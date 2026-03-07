@@ -112,7 +112,7 @@ pub mod guardrail_version {
         };
         let o = context.register_resource(request);
         GuardrailVersionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             description: o.get_field("description"),
             guardrail_arn: o.get_field("guardrailArn"),

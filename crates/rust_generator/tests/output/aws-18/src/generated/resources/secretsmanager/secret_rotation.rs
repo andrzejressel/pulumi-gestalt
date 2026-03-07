@@ -122,7 +122,7 @@ pub mod secret_rotation {
         };
         let o = context.register_resource(request);
         SecretRotationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             rotate_immediately: o.get_field("rotateImmediately"),
             rotation_enabled: o.get_field("rotationEnabled"),

@@ -71,7 +71,7 @@ pub mod servicecatalog_portfolio_status {
         };
         let o = context.register_resource(request);
         ServicecatalogPortfolioStatusResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             status: o.get_field("status"),
         }

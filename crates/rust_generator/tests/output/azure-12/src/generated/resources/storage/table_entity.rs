@@ -124,7 +124,7 @@ pub mod table_entity {
         };
         let o = context.register_resource(request);
         TableEntityResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             entity: o.get_field("entity"),
             partition_key: o.get_field("partitionKey"),

@@ -369,7 +369,7 @@ pub mod workload {
         };
         let o = context.register_resource(request);
         WorkloadResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             billing_account: o.get_field("billingAccount"),
             compliance_regime: o.get_field("complianceRegime"),

@@ -319,7 +319,7 @@ pub mod api_config_iam_member {
         };
         let o = context.register_resource(request);
         ApiConfigIamMemberResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api: o.get_field("api"),
             api_config: o.get_field("apiConfig"),

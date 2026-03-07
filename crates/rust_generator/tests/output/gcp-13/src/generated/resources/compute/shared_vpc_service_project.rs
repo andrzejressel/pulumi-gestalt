@@ -108,7 +108,7 @@ pub mod shared_vpc_service_project {
         };
         let o = context.register_resource(request);
         SharedVPCServiceProjectResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             deletion_policy: o.get_field("deletionPolicy"),
             host_project: o.get_field("hostProject"),

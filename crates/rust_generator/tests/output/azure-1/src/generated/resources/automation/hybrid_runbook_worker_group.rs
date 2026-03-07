@@ -122,7 +122,7 @@ pub mod hybrid_runbook_worker_group {
         };
         let o = context.register_resource(request);
         HybridRunbookWorkerGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             automation_account_name: o.get_field("automationAccountName"),
             credential_name: o.get_field("credentialName"),

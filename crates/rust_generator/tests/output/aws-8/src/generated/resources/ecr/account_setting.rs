@@ -81,7 +81,7 @@ pub mod account_setting {
         };
         let o = context.register_resource(request);
         AccountSettingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             name: o.get_field("name"),
             value: o.get_field("value"),

@@ -92,7 +92,7 @@ pub mod web_3_hostname {
         };
         let o = context.register_resource(request);
         Web3HostnameResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             created_on: o.get_field("createdOn"),
             description: o.get_field("description"),

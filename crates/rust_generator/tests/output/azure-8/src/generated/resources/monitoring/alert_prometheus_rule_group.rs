@@ -231,7 +231,7 @@ pub mod alert_prometheus_rule_group {
         };
         let o = context.register_resource(request);
         AlertPrometheusRuleGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cluster_name: o.get_field("clusterName"),
             description: o.get_field("description"),

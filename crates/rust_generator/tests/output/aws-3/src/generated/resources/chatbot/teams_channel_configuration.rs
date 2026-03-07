@@ -219,7 +219,7 @@ pub mod teams_channel_configuration {
         };
         let o = context.register_resource(request);
         TeamsChannelConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             channel_id: o.get_field("channelId"),
             channel_name: o.get_field("channelName"),

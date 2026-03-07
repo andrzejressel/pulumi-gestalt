@@ -674,7 +674,7 @@ pub mod cluster {
         };
         let o = context.register_resource(request);
         ClusterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             authorization_mode: o.get_field("authorizationMode"),
             create_time: o.get_field("createTime"),

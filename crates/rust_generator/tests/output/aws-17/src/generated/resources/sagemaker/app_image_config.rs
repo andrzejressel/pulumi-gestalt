@@ -161,7 +161,7 @@ pub mod app_image_config {
         };
         let o = context.register_resource(request);
         AppImageConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             app_image_config_name: o.get_field("appImageConfigName"),
             arn: o.get_field("arn"),

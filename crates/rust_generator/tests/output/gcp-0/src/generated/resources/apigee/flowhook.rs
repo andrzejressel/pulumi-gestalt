@@ -122,7 +122,7 @@ pub mod flowhook {
         };
         let o = context.register_resource(request);
         FlowhookResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             continue_on_error: o.get_field("continueOnError"),
             description: o.get_field("description"),

@@ -110,7 +110,7 @@ pub mod role_policies_exclusive {
         };
         let o = context.register_resource(request);
         RolePoliciesExclusiveResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             policy_names: o.get_field("policyNames"),
             role_name: o.get_field("roleName"),

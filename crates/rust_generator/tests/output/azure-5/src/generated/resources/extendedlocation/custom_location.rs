@@ -143,7 +143,7 @@ pub mod custom_location {
         };
         let o = context.register_resource(request);
         CustomLocationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             authentication: o.get_field("authentication"),
             cluster_extension_ids: o.get_field("clusterExtensionIds"),

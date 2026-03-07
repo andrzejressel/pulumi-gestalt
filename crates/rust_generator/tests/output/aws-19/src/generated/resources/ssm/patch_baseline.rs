@@ -339,7 +339,7 @@ pub mod patch_baseline {
         };
         let o = context.register_resource(request);
         PatchBaselineResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             approval_rules: o.get_field("approvalRules"),
             approved_patches: o.get_field("approvedPatches"),

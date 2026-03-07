@@ -119,7 +119,7 @@ pub mod route_calculation {
         };
         let o = context.register_resource(request);
         RouteCalculationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             calculator_arn: o.get_field("calculatorArn"),
             calculator_name: o.get_field("calculatorName"),

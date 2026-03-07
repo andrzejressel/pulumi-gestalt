@@ -128,7 +128,7 @@ pub mod distribution_configuration {
         };
         let o = context.register_resource(request);
         DistributionConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             date_created: o.get_field("dateCreated"),

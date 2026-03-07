@@ -282,7 +282,7 @@ pub mod user {
         };
         let o = context.register_resource(request);
         UserResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             deletion_policy: o.get_field("deletionPolicy"),
             host: o.get_field("host"),

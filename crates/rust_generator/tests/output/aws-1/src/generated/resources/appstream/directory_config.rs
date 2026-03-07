@@ -111,7 +111,7 @@ pub mod directory_config {
         };
         let o = context.register_resource(request);
         DirectoryConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             created_time: o.get_field("createdTime"),
             directory_name: o.get_field("directoryName"),

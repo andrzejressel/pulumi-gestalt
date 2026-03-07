@@ -160,7 +160,7 @@ pub mod document_ai_warehouse_document_schema {
         };
         let o = context.register_resource(request);
         DocumentAiWarehouseDocumentSchemaResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             display_name: o.get_field("displayName"),
             document_is_folder: o.get_field("documentIsFolder"),

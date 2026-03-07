@@ -166,7 +166,7 @@ pub mod bucket_access_control {
         };
         let o = context.register_resource(request);
         BucketAccessControlResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bucket: o.get_field("bucket"),
             domain: o.get_field("domain"),

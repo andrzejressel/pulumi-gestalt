@@ -163,7 +163,7 @@ pub mod python_3_package {
         };
         let o = context.register_resource(request);
         Python3PackageResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             automation_account_name: o.get_field("automationAccountName"),
             content_uri: o.get_field("contentUri"),

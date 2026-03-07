@@ -303,7 +303,7 @@ pub mod guardrail {
         };
         let o = context.register_resource(request);
         GuardrailResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             blocked_input_messaging: o.get_field("blockedInputMessaging"),
             blocked_outputs_messaging: o.get_field("blockedOutputsMessaging"),

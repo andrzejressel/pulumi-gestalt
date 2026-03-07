@@ -127,7 +127,7 @@ pub mod account_public_access_block {
         };
         let o = context.register_resource(request);
         AccountPublicAccessBlockResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             block_public_acls: o.get_field("blockPublicAcls"),

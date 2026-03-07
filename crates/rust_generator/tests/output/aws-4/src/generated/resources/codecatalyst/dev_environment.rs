@@ -167,7 +167,7 @@ pub mod dev_environment {
         };
         let o = context.register_resource(request);
         DevEnvironmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             alias: o.get_field("alias"),
             ides: o.get_field("ides"),

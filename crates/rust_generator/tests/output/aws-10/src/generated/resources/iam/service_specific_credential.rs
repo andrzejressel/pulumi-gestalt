@@ -101,7 +101,7 @@ pub mod service_specific_credential {
         };
         let o = context.register_resource(request);
         ServiceSpecificCredentialResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             service_name: o.get_field("serviceName"),
             service_password: o.get_field("servicePassword"),

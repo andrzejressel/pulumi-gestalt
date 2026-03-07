@@ -648,7 +648,7 @@ pub mod application_gateway {
         };
         let o = context.register_resource(request);
         ApplicationGatewayResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             authentication_certificates: o.get_field("authenticationCertificates"),
             autoscale_configuration: o.get_field("autoscaleConfiguration"),

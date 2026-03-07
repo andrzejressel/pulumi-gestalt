@@ -205,7 +205,7 @@ pub mod settings {
         };
         let o = context.register_resource(request);
         SettingsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_settings: o.get_field("accessSettings"),
             application_settings: o.get_field("applicationSettings"),

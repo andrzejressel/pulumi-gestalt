@@ -131,7 +131,7 @@ pub mod teams_list {
         };
         let o = context.register_resource(request);
         TeamsListResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             description: o.get_field("description"),

@@ -171,7 +171,7 @@ pub mod named_value {
         };
         let o = context.register_resource(request);
         NamedValueResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_management_name: o.get_field("apiManagementName"),
             display_name: o.get_field("displayName"),

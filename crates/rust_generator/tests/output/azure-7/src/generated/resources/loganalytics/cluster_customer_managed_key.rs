@@ -140,7 +140,7 @@ pub mod cluster_customer_managed_key {
         };
         let o = context.register_resource(request);
         ClusterCustomerManagedKeyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             key_vault_key_id: o.get_field("keyVaultKeyId"),
             log_analytics_cluster_id: o.get_field("logAnalyticsClusterId"),

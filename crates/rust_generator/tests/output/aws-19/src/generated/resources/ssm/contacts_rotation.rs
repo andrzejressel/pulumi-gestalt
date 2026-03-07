@@ -230,7 +230,7 @@ pub mod contacts_rotation {
         };
         let o = context.register_resource(request);
         ContactsRotationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             contact_ids: o.get_field("contactIds"),

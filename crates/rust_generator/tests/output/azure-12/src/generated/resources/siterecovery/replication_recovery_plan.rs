@@ -175,7 +175,7 @@ pub mod replication_recovery_plan {
         };
         let o = context.register_resource(request);
         ReplicationRecoveryPlanResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             azure_to_azure_settings: o.get_field("azureToAzureSettings"),
             boot_recovery_groups: o.get_field("bootRecoveryGroups"),

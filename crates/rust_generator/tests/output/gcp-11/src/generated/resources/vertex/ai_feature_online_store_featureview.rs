@@ -651,7 +651,7 @@ pub mod ai_feature_online_store_featureview {
         };
         let o = context.register_resource(request);
         AiFeatureOnlineStoreFeatureviewResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             big_query_source: o.get_field("bigQuerySource"),
             create_time: o.get_field("createTime"),

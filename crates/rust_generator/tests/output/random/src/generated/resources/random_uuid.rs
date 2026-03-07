@@ -76,7 +76,7 @@ pub mod random_uuid {
         };
         let o = context.register_resource(request);
         RandomUuidResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             keepers: o.get_field("keepers"),
             result: o.get_field("result"),

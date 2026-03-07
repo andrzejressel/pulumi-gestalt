@@ -105,7 +105,7 @@ pub mod api_mapping {
         };
         let o = context.register_resource(request);
         ApiMappingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_id: o.get_field("apiId"),
             api_mapping_key: o.get_field("apiMappingKey"),

@@ -456,7 +456,7 @@ pub mod service {
         };
         let o = context.register_resource(request);
         ServiceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             autogenerate_revision_name: o.get_field("autogenerateRevisionName"),
             location: o.get_field("location"),

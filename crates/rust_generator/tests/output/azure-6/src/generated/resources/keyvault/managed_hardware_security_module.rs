@@ -239,7 +239,7 @@ pub mod managed_hardware_security_module {
         };
         let o = context.register_resource(request);
         ManagedHardwareSecurityModuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             admin_object_ids: o.get_field("adminObjectIds"),
             hsm_uri: o.get_field("hsmUri"),

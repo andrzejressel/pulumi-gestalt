@@ -192,7 +192,7 @@ pub mod spring_cloud_api_portal {
         };
         let o = context.register_resource(request);
         SpringCloudApiPortalResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_try_out_enabled: o.get_field("apiTryOutEnabled"),
             gateway_ids: o.get_field("gatewayIds"),

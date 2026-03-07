@@ -176,7 +176,7 @@ pub mod domain_name {
         };
         let o = context.register_resource(request);
         DomainNameResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_mapping_selection_expression: o
                 .get_field("apiMappingSelectionExpression"),

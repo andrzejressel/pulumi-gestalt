@@ -146,7 +146,7 @@ pub mod permissions_boundary_attachment {
         };
         let o = context.register_resource(request);
         PermissionsBoundaryAttachmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             instance_arn: o.get_field("instanceArn"),
             permission_set_arn: o.get_field("permissionSetArn"),

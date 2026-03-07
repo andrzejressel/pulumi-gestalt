@@ -181,7 +181,7 @@ pub mod default_vpc {
         };
         let o = context.register_resource(request);
         DefaultVpcResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             assign_generated_ipv6_cidr_block: o

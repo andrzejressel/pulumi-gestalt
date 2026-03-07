@@ -78,7 +78,7 @@ pub mod contributor_insights {
         };
         let o = context.register_resource(request);
         ContributorInsightsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             index_name: o.get_field("indexName"),
             table_name: o.get_field("tableName"),

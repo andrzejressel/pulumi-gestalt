@@ -468,7 +468,7 @@ pub mod ca_pool_iam_member {
         };
         let o = context.register_resource(request);
         CaPoolIamMemberResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             ca_pool: o.get_field("caPool"),
             condition: o.get_field("condition"),

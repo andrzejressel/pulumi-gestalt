@@ -504,7 +504,7 @@ pub mod feature_membership {
         };
         let o = context.register_resource(request);
         FeatureMembershipResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             configmanagement: o.get_field("configmanagement"),
             feature: o.get_field("feature"),

@@ -162,7 +162,7 @@ pub mod safety_rule {
         };
         let o = context.register_resource(request);
         SafetyRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             asserted_controls: o.get_field("assertedControls"),

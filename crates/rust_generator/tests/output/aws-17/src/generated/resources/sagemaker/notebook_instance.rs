@@ -279,7 +279,7 @@ pub mod notebook_instance {
         };
         let o = context.register_resource(request);
         NotebookInstanceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             accelerator_types: o.get_field("acceleratorTypes"),
             additional_code_repositories: o.get_field("additionalCodeRepositories"),

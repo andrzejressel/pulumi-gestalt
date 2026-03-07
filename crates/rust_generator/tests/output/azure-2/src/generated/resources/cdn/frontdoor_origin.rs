@@ -398,7 +398,7 @@ pub mod frontdoor_origin {
         };
         let o = context.register_resource(request);
         FrontdoorOriginResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cdn_frontdoor_origin_group_id: o.get_field("cdnFrontdoorOriginGroupId"),
             certificate_name_check_enabled: o.get_field("certificateNameCheckEnabled"),

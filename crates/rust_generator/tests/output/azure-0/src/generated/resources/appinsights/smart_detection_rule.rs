@@ -147,7 +147,7 @@ pub mod smart_detection_rule {
         };
         let o = context.register_resource(request);
         SmartDetectionRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             additional_email_recipients: o.get_field("additionalEmailRecipients"),
             application_insights_id: o.get_field("applicationInsightsId"),

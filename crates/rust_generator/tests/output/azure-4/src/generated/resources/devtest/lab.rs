@@ -121,7 +121,7 @@ pub mod lab {
         };
         let o = context.register_resource(request);
         LabResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             artifacts_storage_account_id: o.get_field("artifactsStorageAccountId"),
             default_premium_storage_account_id: o

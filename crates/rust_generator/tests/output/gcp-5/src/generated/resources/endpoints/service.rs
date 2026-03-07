@@ -149,7 +149,7 @@ pub mod service {
         };
         let o = context.register_resource(request);
         ServiceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             apis: o.get_field("apis"),
             config_id: o.get_field("configId"),

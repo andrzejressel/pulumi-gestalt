@@ -102,7 +102,7 @@ pub mod resource_share_accepter {
         };
         let o = context.register_resource(request);
         ResourceShareAccepterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             invitation_arn: o.get_field("invitationArn"),
             receiver_account_id: o.get_field("receiverAccountId"),

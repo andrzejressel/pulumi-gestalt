@@ -103,7 +103,7 @@ pub mod preferences {
         };
         let o = context.register_resource(request);
         PreferencesResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             member_account_discount_visibility: o
                 .get_field("memberAccountDiscountVisibility"),

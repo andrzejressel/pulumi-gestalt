@@ -160,7 +160,7 @@ pub mod fulfillment {
         };
         let o = context.register_resource(request);
         FulfillmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             display_name: o.get_field("displayName"),
             enabled: o.get_field("enabled"),

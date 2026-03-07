@@ -282,7 +282,7 @@ pub mod cassandra_cluster {
         };
         let o = context.register_resource(request);
         CassandraClusterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             authentication_method: o.get_field("authenticationMethod"),
             client_certificate_pems: o.get_field("clientCertificatePems"),

@@ -102,7 +102,7 @@ pub mod lb_attachment {
         };
         let o = context.register_resource(request);
         LbAttachmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             instance_name: o.get_field("instanceName"),
             lb_name: o.get_field("lbName"),

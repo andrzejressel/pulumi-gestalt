@@ -232,7 +232,7 @@ pub mod ai_feature_store_entity_type {
         };
         let o = context.register_resource(request);
         AiFeatureStoreEntityTypeResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),

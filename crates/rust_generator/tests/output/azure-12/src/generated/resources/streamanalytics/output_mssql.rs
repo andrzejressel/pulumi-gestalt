@@ -210,7 +210,7 @@ pub mod output_mssql {
         };
         let o = context.register_resource(request);
         OutputMssqlResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             authentication_mode: o.get_field("authenticationMode"),
             database: o.get_field("database"),

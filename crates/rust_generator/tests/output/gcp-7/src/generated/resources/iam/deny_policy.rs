@@ -159,7 +159,7 @@ pub mod deny_policy {
         };
         let o = context.register_resource(request);
         DenyPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             display_name: o.get_field("displayName"),
             etag: o.get_field("etag"),

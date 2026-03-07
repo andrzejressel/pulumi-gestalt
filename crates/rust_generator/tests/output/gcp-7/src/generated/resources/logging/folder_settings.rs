@@ -152,7 +152,7 @@ pub mod folder_settings {
         };
         let o = context.register_resource(request);
         FolderSettingsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             disable_default_sink: o.get_field("disableDefaultSink"),
             folder: o.get_field("folder"),

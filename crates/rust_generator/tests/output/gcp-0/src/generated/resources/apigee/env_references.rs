@@ -120,7 +120,7 @@ pub mod env_references {
         };
         let o = context.register_resource(request);
         EnvReferencesResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             description: o.get_field("description"),
             env_id: o.get_field("envId"),

@@ -176,7 +176,7 @@ pub mod app_check_debug_token {
         };
         let o = context.register_resource(request);
         AppCheckDebugTokenResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             app_id: o.get_field("appId"),
             debug_token_id: o.get_field("debugTokenId"),

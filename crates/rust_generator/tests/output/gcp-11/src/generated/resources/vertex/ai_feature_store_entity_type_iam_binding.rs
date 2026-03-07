@@ -154,7 +154,7 @@ pub mod ai_feature_store_entity_type_iam_binding {
         };
         let o = context.register_resource(request);
         AiFeatureStoreEntityTypeIamBindingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             condition: o.get_field("condition"),
             entitytype: o.get_field("entitytype"),

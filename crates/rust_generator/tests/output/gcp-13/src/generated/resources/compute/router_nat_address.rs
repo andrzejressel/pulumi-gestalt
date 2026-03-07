@@ -152,7 +152,7 @@ pub mod router_nat_address {
         };
         let o = context.register_resource(request);
         RouterNatAddressResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             drain_nat_ips: o.get_field("drainNatIps"),
             nat_ips: o.get_field("natIps"),

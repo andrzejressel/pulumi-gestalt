@@ -598,7 +598,7 @@ pub mod kubernetes_cluster_node_pool {
         };
         let o = context.register_resource(request);
         KubernetesClusterNodePoolResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             auto_scaling_enabled: o.get_field("autoScalingEnabled"),
             capacity_reservation_group_id: o.get_field("capacityReservationGroupId"),

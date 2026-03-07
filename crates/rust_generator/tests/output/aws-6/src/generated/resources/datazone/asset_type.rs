@@ -143,7 +143,7 @@ pub mod asset_type {
         };
         let o = context.register_resource(request);
         AssetTypeResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             created_at: o.get_field("createdAt"),
             created_by: o.get_field("createdBy"),

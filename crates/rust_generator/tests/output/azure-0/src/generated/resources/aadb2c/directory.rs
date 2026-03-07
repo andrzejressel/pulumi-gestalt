@@ -148,7 +148,7 @@ pub mod directory {
         };
         let o = context.register_resource(request);
         DirectoryResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             billing_type: o.get_field("billingType"),
             country_code: o.get_field("countryCode"),

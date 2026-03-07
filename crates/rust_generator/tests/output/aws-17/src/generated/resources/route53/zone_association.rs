@@ -129,7 +129,7 @@ pub mod zone_association {
         };
         let o = context.register_resource(request);
         ZoneAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             owning_account: o.get_field("owningAccount"),
             vpc_id: o.get_field("vpcId"),

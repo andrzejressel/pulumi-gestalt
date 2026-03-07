@@ -174,7 +174,7 @@ pub mod instance_fleet {
         };
         let o = context.register_resource(request);
         InstanceFleetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cluster_id: o.get_field("clusterId"),
             instance_type_configs: o.get_field("instanceTypeConfigs"),

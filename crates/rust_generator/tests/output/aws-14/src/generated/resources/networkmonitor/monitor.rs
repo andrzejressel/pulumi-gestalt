@@ -107,7 +107,7 @@ pub mod monitor {
         };
         let o = context.register_resource(request);
         MonitorResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             aggregation_period: o.get_field("aggregationPeriod"),
             arn: o.get_field("arn"),

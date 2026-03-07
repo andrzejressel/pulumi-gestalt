@@ -138,7 +138,7 @@ pub mod vault_lock {
         };
         let o = context.register_resource(request);
         VaultLockResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             complete_lock: o.get_field("completeLock"),
             ignore_deletion_error: o.get_field("ignoreDeletionError"),

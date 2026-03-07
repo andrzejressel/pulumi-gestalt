@@ -146,7 +146,7 @@ pub mod embedded {
         };
         let o = context.register_resource(request);
         EmbeddedResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             administrators: o.get_field("administrators"),
             location: o.get_field("location"),

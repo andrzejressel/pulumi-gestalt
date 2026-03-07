@@ -222,7 +222,7 @@ pub mod consent_store {
         };
         let o = context.register_resource(request);
         ConsentStoreResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             dataset: o.get_field("dataset"),
             default_consent_ttl: o.get_field("defaultConsentTtl"),

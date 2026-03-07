@@ -239,7 +239,7 @@ pub mod regional_secret_version {
         };
         let o = context.register_resource(request);
         RegionalSecretVersionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             create_time: o.get_field("createTime"),
             customer_managed_encryptions: o.get_field("customerManagedEncryptions"),

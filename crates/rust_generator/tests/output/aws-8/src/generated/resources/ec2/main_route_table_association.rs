@@ -89,7 +89,7 @@ pub mod main_route_table_association {
         };
         let o = context.register_resource(request);
         MainRouteTableAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             original_route_table_id: o.get_field("originalRouteTableId"),
             route_table_id: o.get_field("routeTableId"),

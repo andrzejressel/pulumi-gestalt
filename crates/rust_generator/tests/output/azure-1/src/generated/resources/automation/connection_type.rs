@@ -136,7 +136,7 @@ pub mod connection_type {
         };
         let o = context.register_resource(request);
         ConnectionTypeResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             automation_account_name: o.get_field("automationAccountName"),
             fields: o.get_field("fields"),

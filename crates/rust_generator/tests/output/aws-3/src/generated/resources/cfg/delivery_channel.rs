@@ -173,7 +173,7 @@ pub mod delivery_channel {
         };
         let o = context.register_resource(request);
         DeliveryChannelResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             name: o.get_field("name"),
             s3_bucket_name: o.get_field("s3BucketName"),

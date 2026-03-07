@@ -184,7 +184,7 @@ pub mod spring_cloud_dynatrace_application_performance_monitoring {
         };
         let o = context.register_resource(request);
         SpringCloudDynatraceApplicationPerformanceMonitoringResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_token: o.get_field("apiToken"),
             api_url: o.get_field("apiUrl"),

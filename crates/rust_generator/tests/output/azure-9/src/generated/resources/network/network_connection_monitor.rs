@@ -314,7 +314,7 @@ pub mod network_connection_monitor {
         };
         let o = context.register_resource(request);
         NetworkConnectionMonitorResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             endpoints: o.get_field("endpoints"),
             location: o.get_field("location"),

@@ -436,7 +436,7 @@ pub mod bucket_iam_member {
         };
         let o = context.register_resource(request);
         BucketIAMMemberResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bucket: o.get_field("bucket"),
             condition: o.get_field("condition"),

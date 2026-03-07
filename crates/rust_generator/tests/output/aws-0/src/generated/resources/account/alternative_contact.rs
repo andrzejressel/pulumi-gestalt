@@ -135,7 +135,7 @@ pub mod alternative_contact {
         };
         let o = context.register_resource(request);
         AlternativeContactResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             alternate_contact_type: o.get_field("alternateContactType"),

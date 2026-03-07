@@ -95,7 +95,7 @@ pub mod rds_db_instance {
         };
         let o = context.register_resource(request);
         RdsDbInstanceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             db_password: o.get_field("dbPassword"),
             db_user: o.get_field("dbUser"),

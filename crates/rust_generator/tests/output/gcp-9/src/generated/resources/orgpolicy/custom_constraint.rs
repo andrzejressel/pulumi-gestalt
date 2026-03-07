@@ -199,7 +199,7 @@ pub mod custom_constraint {
         };
         let o = context.register_resource(request);
         CustomConstraintResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             action_type: o.get_field("actionType"),
             condition: o.get_field("condition"),

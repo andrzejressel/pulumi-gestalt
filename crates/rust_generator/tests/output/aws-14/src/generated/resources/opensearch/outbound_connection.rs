@@ -152,7 +152,7 @@ pub mod outbound_connection {
         };
         let o = context.register_resource(request);
         OutboundConnectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             accept_connection: o.get_field("acceptConnection"),
             connection_alias: o.get_field("connectionAlias"),

@@ -246,7 +246,7 @@ pub mod cache_nfs_target {
         };
         let o = context.register_resource(request);
         CacheNfsTargetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cache_name: o.get_field("cacheName"),
             name: o.get_field("name"),

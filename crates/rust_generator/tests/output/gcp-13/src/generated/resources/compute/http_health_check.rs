@@ -241,7 +241,7 @@ pub mod http_health_check {
         };
         let o = context.register_resource(request);
         HttpHealthCheckResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             check_interval_sec: o.get_field("checkIntervalSec"),
             creation_timestamp: o.get_field("creationTimestamp"),

@@ -100,7 +100,7 @@ pub mod resource_policy {
         };
         let o = context.register_resource(request);
         ResourcePolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             enable_hybrid: o.get_field("enableHybrid"),
             policy: o.get_field("policy"),

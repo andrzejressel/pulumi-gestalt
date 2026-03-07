@@ -102,7 +102,7 @@ pub mod attachment {
         };
         let o = context.register_resource(request);
         AttachmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             autoscaling_group_name: o.get_field("autoscalingGroupName"),
             elb: o.get_field("elb"),

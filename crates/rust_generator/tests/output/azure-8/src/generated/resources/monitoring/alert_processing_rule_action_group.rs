@@ -209,7 +209,7 @@ pub mod alert_processing_rule_action_group {
         };
         let o = context.register_resource(request);
         AlertProcessingRuleActionGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             add_action_group_ids: o.get_field("addActionGroupIds"),
             condition: o.get_field("condition"),

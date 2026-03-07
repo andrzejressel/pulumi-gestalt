@@ -613,7 +613,7 @@ pub mod event_source_mapping {
         };
         let o = context.register_resource(request);
         EventSourceMappingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             amazon_managed_kafka_event_source_config: o
                 .get_field("amazonManagedKafkaEventSourceConfig"),

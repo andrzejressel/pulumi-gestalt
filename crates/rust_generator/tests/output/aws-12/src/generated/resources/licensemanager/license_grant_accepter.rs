@@ -88,7 +88,7 @@ pub mod license_grant_accepter {
         };
         let o = context.register_resource(request);
         LicenseGrantAccepterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allowed_operations: o.get_field("allowedOperations"),
             grant_arn: o.get_field("grantArn"),

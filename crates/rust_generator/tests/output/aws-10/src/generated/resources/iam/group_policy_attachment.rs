@@ -87,7 +87,7 @@ pub mod group_policy_attachment {
         };
         let o = context.register_resource(request);
         GroupPolicyAttachmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             group: o.get_field("group"),
             policy_arn: o.get_field("policyArn"),

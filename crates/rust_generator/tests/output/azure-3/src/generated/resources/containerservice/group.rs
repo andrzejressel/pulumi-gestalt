@@ -382,7 +382,7 @@ pub mod group {
         };
         let o = context.register_resource(request);
         GroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             containers: o.get_field("containers"),
             diagnostics: o.get_field("diagnostics"),

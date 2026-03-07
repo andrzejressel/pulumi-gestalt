@@ -244,7 +244,7 @@ pub mod network_sim_policy {
         };
         let o = context.register_resource(request);
         NetworkSimPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             default_slice_id: o.get_field("defaultSliceId"),
             location: o.get_field("location"),

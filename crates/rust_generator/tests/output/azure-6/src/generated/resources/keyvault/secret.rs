@@ -176,7 +176,7 @@ pub mod secret {
         };
         let o = context.register_resource(request);
         SecretResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             content_type: o.get_field("contentType"),
             expiration_date: o.get_field("expirationDate"),

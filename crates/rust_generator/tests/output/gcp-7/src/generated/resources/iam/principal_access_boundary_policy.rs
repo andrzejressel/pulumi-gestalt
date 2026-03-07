@@ -183,7 +183,7 @@ pub mod principal_access_boundary_policy {
         };
         let o = context.register_resource(request);
         PrincipalAccessBoundaryPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             annotations: o.get_field("annotations"),
             create_time: o.get_field("createTime"),

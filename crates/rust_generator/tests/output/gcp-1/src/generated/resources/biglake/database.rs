@@ -160,7 +160,7 @@ pub mod database {
         };
         let o = context.register_resource(request);
         DatabaseResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             catalog: o.get_field("catalog"),
             create_time: o.get_field("createTime"),

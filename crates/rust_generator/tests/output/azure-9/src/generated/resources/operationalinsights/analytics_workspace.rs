@@ -291,7 +291,7 @@ pub mod analytics_workspace {
         };
         let o = context.register_resource(request);
         AnalyticsWorkspaceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allow_resource_only_permissions: o.get_field("allowResourceOnlyPermissions"),
             cmk_for_query_forced: o.get_field("cmkForQueryForced"),

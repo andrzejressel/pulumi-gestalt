@@ -228,7 +228,7 @@ pub mod stack {
         };
         let o = context.register_resource(request);
         StackResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             capabilities: o.get_field("capabilities"),
             disable_rollback: o.get_field("disableRollback"),

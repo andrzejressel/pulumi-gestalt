@@ -137,7 +137,7 @@ pub mod kubernetes_fleet_manager {
         };
         let o = context.register_resource(request);
         KubernetesFleetManagerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             hub_profile: o.get_field("hubProfile"),
             location: o.get_field("location"),

@@ -110,7 +110,7 @@ pub mod notification_policy_webhooks {
         };
         let o = context.register_resource(request);
         NotificationPolicyWebhooksResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             created_at: o.get_field("createdAt"),

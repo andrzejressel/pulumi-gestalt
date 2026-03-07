@@ -520,7 +520,7 @@ pub mod pool {
         };
         let o = context.register_resource(request);
         PoolResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_name: o.get_field("accountName"),
             auto_scale: o.get_field("autoScale"),

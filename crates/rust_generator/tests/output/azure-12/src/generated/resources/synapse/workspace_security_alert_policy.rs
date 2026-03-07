@@ -201,7 +201,7 @@ pub mod workspace_security_alert_policy {
         };
         let o = context.register_resource(request);
         WorkspaceSecurityAlertPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             disabled_alerts: o.get_field("disabledAlerts"),
             email_account_admins_enabled: o.get_field("emailAccountAdminsEnabled"),

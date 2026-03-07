@@ -119,7 +119,7 @@ pub mod data_connector_azure_security_center {
         };
         let o = context.register_resource(request);
         DataConnectorAzureSecurityCenterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             log_analytics_workspace_id: o.get_field("logAnalyticsWorkspaceId"),
             name: o.get_field("name"),

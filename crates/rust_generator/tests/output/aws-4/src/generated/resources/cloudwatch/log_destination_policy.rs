@@ -108,7 +108,7 @@ pub mod log_destination_policy {
         };
         let o = context.register_resource(request);
         LogDestinationPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_policy: o.get_field("accessPolicy"),
             destination_name: o.get_field("destinationName"),

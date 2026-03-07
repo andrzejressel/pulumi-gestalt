@@ -129,7 +129,7 @@ pub mod workspace {
         };
         let o = context.register_resource(request);
         WorkspaceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             default_data_collection_endpoint_id: o
                 .get_field("defaultDataCollectionEndpointId"),

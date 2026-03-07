@@ -280,7 +280,7 @@ pub mod access_level_condition {
         };
         let o = context.register_resource(request);
         AccessLevelConditionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_level: o.get_field("accessLevel"),
             device_policy: o.get_field("devicePolicy"),

@@ -308,7 +308,7 @@ pub mod consent_store_iam_member {
         };
         let o = context.register_resource(request);
         ConsentStoreIamMemberResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             condition: o.get_field("condition"),
             consent_store_id: o.get_field("consentStoreId"),

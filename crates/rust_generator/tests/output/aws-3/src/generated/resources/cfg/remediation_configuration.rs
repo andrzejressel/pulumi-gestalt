@@ -222,7 +222,7 @@ pub mod remediation_configuration {
         };
         let o = context.register_resource(request);
         RemediationConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             automatic: o.get_field("automatic"),

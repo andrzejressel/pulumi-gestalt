@@ -329,7 +329,7 @@ pub mod agent_agent_action_group {
         };
         let o = context.register_resource(request);
         AgentAgentActionGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             action_group_executor: o.get_field("actionGroupExecutor"),
             action_group_id: o.get_field("actionGroupId"),

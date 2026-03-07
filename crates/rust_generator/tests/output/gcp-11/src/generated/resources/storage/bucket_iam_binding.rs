@@ -436,7 +436,7 @@ pub mod bucket_iam_binding {
         };
         let o = context.register_resource(request);
         BucketIAMBindingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bucket: o.get_field("bucket"),
             condition: o.get_field("condition"),

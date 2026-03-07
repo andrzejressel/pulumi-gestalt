@@ -122,7 +122,7 @@ pub mod data_connector_office_irm {
         };
         let o = context.register_resource(request);
         DataConnectorOfficeIrmResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             log_analytics_workspace_id: o.get_field("logAnalyticsWorkspaceId"),
             name: o.get_field("name"),

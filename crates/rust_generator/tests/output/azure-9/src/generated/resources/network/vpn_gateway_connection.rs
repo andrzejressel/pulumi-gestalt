@@ -215,7 +215,7 @@ pub mod vpn_gateway_connection {
         };
         let o = context.register_resource(request);
         VpnGatewayConnectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             internet_security_enabled: o.get_field("internetSecurityEnabled"),
             name: o.get_field("name"),

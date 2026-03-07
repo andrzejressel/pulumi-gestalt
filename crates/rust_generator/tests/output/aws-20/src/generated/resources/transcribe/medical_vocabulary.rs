@@ -132,7 +132,7 @@ pub mod medical_vocabulary {
         };
         let o = context.register_resource(request);
         MedicalVocabularyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             download_uri: o.get_field("downloadUri"),

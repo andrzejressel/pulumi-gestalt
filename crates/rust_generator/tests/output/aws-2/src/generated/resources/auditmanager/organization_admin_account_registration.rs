@@ -75,7 +75,7 @@ pub mod organization_admin_account_registration {
         };
         let o = context.register_resource(request);
         OrganizationAdminAccountRegistrationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             admin_account_id: o.get_field("adminAccountId"),
             organization_id: o.get_field("organizationId"),

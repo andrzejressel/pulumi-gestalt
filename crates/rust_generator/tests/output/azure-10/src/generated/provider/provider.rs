@@ -115,6 +115,8 @@ pub struct ProviderArgs {
 pub struct ProviderResult {
     /// Pulumi URN is the stable logical identity of this provider resource in the Pulumi stack.
     pub urn: pulumi_gestalt_rust::Output<String>,
+    /// Pulumi ID is the unique identifier assigned by the provider to this resource.
+    pub id: pulumi_gestalt_rust::Output<String>,
     pub auxiliary_tenant_ids: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
     /// Base64 encoded PKCS#12 certificate bundle to use when authenticating as a Service Principal using a Client Certificate
     pub client_certificate: pulumi_gestalt_rust::Output<Option<String>>,
@@ -364,6 +366,7 @@ pub fn create(
     let o = context.register_resource(request);
     ProviderResult {
         urn: o.get_urn(),
+        id: o.get_id(),
         auxiliary_tenant_ids: o.get_field("auxiliaryTenantIds"),
         client_certificate: o.get_field("clientCertificate"),
         client_certificate_password: o.get_field("clientCertificatePassword"),

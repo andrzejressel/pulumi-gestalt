@@ -125,7 +125,7 @@ pub mod thing_group {
         };
         let o = context.register_resource(request);
         ThingGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             metadatas: o.get_field("metadatas"),

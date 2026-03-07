@@ -83,7 +83,7 @@ pub mod cost_allocation_tag {
         };
         let o = context.register_resource(request);
         CostAllocationTagResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             status: o.get_field("status"),
             tag_key: o.get_field("tagKey"),

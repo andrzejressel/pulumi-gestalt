@@ -236,7 +236,7 @@ pub mod security_scan_config {
         };
         let o = context.register_resource(request);
         SecurityScanConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             authentication: o.get_field("authentication"),
             blacklist_patterns: o.get_field("blacklistPatterns"),

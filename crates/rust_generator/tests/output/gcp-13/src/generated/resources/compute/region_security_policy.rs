@@ -286,7 +286,7 @@ pub mod region_security_policy {
         };
         let o = context.register_resource(request);
         RegionSecurityPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             ddos_protection_config: o.get_field("ddosProtectionConfig"),
             description: o.get_field("description"),

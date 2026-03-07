@@ -123,7 +123,7 @@ pub mod postgresql_firewall_rule {
         };
         let o = context.register_resource(request);
         PostgresqlFirewallRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cluster_id: o.get_field("clusterId"),
             end_ip_address: o.get_field("endIpAddress"),

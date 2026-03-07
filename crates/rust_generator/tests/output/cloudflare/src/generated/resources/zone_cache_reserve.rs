@@ -84,7 +84,7 @@ pub mod zone_cache_reserve {
         };
         let o = context.register_resource(request);
         ZoneCacheReserveResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             enabled: o.get_field("enabled"),
             zone_id: o.get_field("zoneId"),

@@ -173,7 +173,7 @@ pub mod application_security_group_association {
         };
         let o = context.register_resource(request);
         ApplicationSecurityGroupAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             application_security_group_id: o.get_field("applicationSecurityGroupId"),
             private_endpoint_id: o.get_field("privateEndpointId"),

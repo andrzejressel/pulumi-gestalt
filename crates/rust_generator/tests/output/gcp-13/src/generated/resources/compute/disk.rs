@@ -664,7 +664,7 @@ pub mod disk {
         };
         let o = context.register_resource(request);
         DiskResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_mode: o.get_field("accessMode"),
             async_primary_disk: o.get_field("asyncPrimaryDisk"),

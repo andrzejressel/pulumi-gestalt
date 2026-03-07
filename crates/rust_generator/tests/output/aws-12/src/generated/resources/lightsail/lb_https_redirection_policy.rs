@@ -98,7 +98,7 @@ pub mod lb_https_redirection_policy {
         };
         let o = context.register_resource(request);
         LbHttpsRedirectionPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             enabled: o.get_field("enabled"),
             lb_name: o.get_field("lbName"),

@@ -243,7 +243,7 @@ pub mod recommendation_preferences {
         };
         let o = context.register_resource(request);
         RecommendationPreferencesResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             enhanced_infrastructure_metrics: o
                 .get_field("enhancedInfrastructureMetrics"),

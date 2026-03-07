@@ -155,7 +155,7 @@ pub mod origin_request_policy {
         };
         let o = context.register_resource(request);
         OriginRequestPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             comment: o.get_field("comment"),
             cookies_config: o.get_field("cookiesConfig"),

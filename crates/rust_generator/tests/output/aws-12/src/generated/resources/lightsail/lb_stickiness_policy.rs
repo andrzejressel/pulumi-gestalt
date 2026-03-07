@@ -95,7 +95,7 @@ pub mod lb_stickiness_policy {
         };
         let o = context.register_resource(request);
         LbStickinessPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cookie_duration: o.get_field("cookieDuration"),
             enabled: o.get_field("enabled"),

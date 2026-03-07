@@ -155,7 +155,7 @@ pub mod risk_configuration {
         };
         let o = context.register_resource(request);
         RiskConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_takeover_risk_configuration: o
                 .get_field("accountTakeoverRiskConfiguration"),

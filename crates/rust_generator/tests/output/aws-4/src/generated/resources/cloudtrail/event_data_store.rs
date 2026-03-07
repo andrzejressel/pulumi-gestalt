@@ -214,7 +214,7 @@ pub mod event_data_store {
         };
         let o = context.register_resource(request);
         EventDataStoreResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             advanced_event_selectors: o.get_field("advancedEventSelectors"),
             arn: o.get_field("arn"),

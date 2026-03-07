@@ -109,7 +109,7 @@ pub mod web_analytics_site {
         };
         let o = context.register_resource(request);
         WebAnalyticsSiteResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             auto_install: o.get_field("autoInstall"),

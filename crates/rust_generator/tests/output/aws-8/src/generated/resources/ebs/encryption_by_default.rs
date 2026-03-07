@@ -70,7 +70,7 @@ pub mod encryption_by_default {
         };
         let o = context.register_resource(request);
         EncryptionByDefaultResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             enabled: o.get_field("enabled"),
         }

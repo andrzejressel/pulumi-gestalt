@@ -128,7 +128,7 @@ pub mod linked_service {
         };
         let o = context.register_resource(request);
         LinkedServiceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             name: o.get_field("name"),
             read_access_id: o.get_field("readAccessId"),

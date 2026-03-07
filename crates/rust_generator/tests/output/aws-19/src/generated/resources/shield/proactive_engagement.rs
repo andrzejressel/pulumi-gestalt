@@ -123,7 +123,7 @@ pub mod proactive_engagement {
         };
         let o = context.register_resource(request);
         ProactiveEngagementResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             emergency_contacts: o.get_field("emergencyContacts"),
             enabled: o.get_field("enabled"),

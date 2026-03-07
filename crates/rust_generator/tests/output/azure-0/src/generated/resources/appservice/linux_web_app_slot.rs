@@ -449,7 +449,7 @@ pub mod linux_web_app_slot {
         };
         let o = context.register_resource(request);
         LinuxWebAppSlotResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             app_metadata: o.get_field("appMetadata"),
             app_service_id: o.get_field("appServiceId"),

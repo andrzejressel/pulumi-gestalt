@@ -104,7 +104,7 @@ pub mod tunnel_virtual_network {
         };
         let o = context.register_resource(request);
         TunnelVirtualNetworkResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             comment: o.get_field("comment"),

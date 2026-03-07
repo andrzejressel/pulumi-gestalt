@@ -401,7 +401,7 @@ pub mod ai_endpoint {
         };
         let o = context.register_resource(request);
         AiEndpointResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             create_time: o.get_field("createTime"),
             dedicated_endpoint_dns: o.get_field("dedicatedEndpointDns"),

@@ -107,7 +107,7 @@ pub mod identity_policy {
         };
         let o = context.register_resource(request);
         IdentityPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             identity: o.get_field("identity"),
             name: o.get_field("name"),

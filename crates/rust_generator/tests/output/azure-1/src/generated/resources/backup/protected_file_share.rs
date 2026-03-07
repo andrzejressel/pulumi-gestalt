@@ -164,7 +164,7 @@ pub mod protected_file_share {
         };
         let o = context.register_resource(request);
         ProtectedFileShareResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             backup_policy_id: o.get_field("backupPolicyId"),
             recovery_vault_name: o.get_field("recoveryVaultName"),

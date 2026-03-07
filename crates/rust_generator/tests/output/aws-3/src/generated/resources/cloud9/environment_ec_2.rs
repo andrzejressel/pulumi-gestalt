@@ -224,7 +224,7 @@ pub mod environment_ec_2 {
         };
         let o = context.register_resource(request);
         EnvironmentEC2Result {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             automatic_stop_time_minutes: o.get_field("automaticStopTimeMinutes"),

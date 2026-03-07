@@ -350,7 +350,7 @@ pub mod replicated_vm {
         };
         let o = context.register_resource(request);
         ReplicatedVMResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             managed_disks: o.get_field("managedDisks"),
             multi_vm_group_name: o.get_field("multiVmGroupName"),

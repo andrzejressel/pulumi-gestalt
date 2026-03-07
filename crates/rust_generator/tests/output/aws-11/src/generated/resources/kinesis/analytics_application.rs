@@ -359,7 +359,7 @@ pub mod analytics_application {
         };
         let o = context.register_resource(request);
         AnalyticsApplicationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             cloudwatch_logging_options: o.get_field("cloudwatchLoggingOptions"),

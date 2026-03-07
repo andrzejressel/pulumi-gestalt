@@ -466,7 +466,7 @@ pub mod organization {
         };
         let o = context.register_resource(request);
         OrganizationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             analytics_region: o.get_field("analyticsRegion"),
             api_consumer_data_encryption_key_name: o

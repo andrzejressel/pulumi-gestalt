@@ -132,7 +132,7 @@ pub mod voice_connector_termination {
         };
         let o = context.register_resource(request);
         VoiceConnectorTerminationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             calling_regions: o.get_field("callingRegions"),
             cidr_allow_lists: o.get_field("cidrAllowLists"),

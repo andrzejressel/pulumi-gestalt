@@ -104,7 +104,7 @@ pub mod domain_service_access_policy {
         };
         let o = context.register_resource(request);
         DomainServiceAccessPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_policy: o.get_field("accessPolicy"),
             domain_name: o.get_field("domainName"),

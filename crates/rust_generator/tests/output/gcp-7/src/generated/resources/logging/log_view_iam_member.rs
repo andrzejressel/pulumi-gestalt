@@ -507,7 +507,7 @@ pub mod log_view_iam_member {
         };
         let o = context.register_resource(request);
         LogViewIamMemberResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bucket: o.get_field("bucket"),
             condition: o.get_field("condition"),

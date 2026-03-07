@@ -486,7 +486,7 @@ pub mod app_engine_service_iam_member {
         };
         let o = context.register_resource(request);
         AppEngineServiceIamMemberResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             app_id: o.get_field("appId"),
             condition: o.get_field("condition"),

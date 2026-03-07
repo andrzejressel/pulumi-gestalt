@@ -151,7 +151,7 @@ pub mod anomaly_monitor {
         };
         let o = context.register_resource(request);
         AnomalyMonitorResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             monitor_dimension: o.get_field("monitorDimension"),

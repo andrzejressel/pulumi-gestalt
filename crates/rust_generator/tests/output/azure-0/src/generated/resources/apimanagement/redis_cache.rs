@@ -149,7 +149,7 @@ pub mod redis_cache {
         };
         let o = context.register_resource(request);
         RedisCacheResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_management_id: o.get_field("apiManagementId"),
             cache_location: o.get_field("cacheLocation"),

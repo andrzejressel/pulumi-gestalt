@@ -352,7 +352,7 @@ pub mod snapshot {
         };
         let o = context.register_resource(request);
         SnapshotResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             chain_name: o.get_field("chainName"),
             creation_timestamp: o.get_field("creationTimestamp"),

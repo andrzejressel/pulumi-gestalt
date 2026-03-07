@@ -110,7 +110,7 @@ pub mod account_rai_blocklist {
         };
         let o = context.register_resource(request);
         AccountRaiBlocklistResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cognitive_account_id: o.get_field("cognitiveAccountId"),
             description: o.get_field("description"),

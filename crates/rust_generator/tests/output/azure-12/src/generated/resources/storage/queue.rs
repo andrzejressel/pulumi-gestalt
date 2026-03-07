@@ -115,7 +115,7 @@ pub mod queue {
         };
         let o = context.register_resource(request);
         QueueResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             metadata: o.get_field("metadata"),
             name: o.get_field("name"),

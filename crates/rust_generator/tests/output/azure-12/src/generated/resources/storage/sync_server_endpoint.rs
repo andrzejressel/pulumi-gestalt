@@ -225,7 +225,7 @@ pub mod sync_server_endpoint {
         };
         let o = context.register_resource(request);
         SyncServerEndpointResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cloud_tiering_enabled: o.get_field("cloudTieringEnabled"),
             initial_download_policy: o.get_field("initialDownloadPolicy"),

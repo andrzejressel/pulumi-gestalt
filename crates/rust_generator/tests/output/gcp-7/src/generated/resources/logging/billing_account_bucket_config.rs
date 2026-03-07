@@ -177,7 +177,7 @@ pub mod billing_account_bucket_config {
         };
         let o = context.register_resource(request);
         BillingAccountBucketConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             billing_account: o.get_field("billingAccount"),
             bucket_id: o.get_field("bucketId"),

@@ -102,7 +102,7 @@ pub mod registry {
         };
         let o = context.register_resource(request);
         RegistryResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bucket_self_link: o.get_field("bucketSelfLink"),
             location: o.get_field("location"),

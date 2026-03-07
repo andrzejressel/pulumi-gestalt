@@ -205,7 +205,7 @@ pub mod catalog_database {
         };
         let o = context.register_resource(request);
         CatalogDatabaseResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             catalog_id: o.get_field("catalogId"),

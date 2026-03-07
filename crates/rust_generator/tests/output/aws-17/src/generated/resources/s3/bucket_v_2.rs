@@ -343,7 +343,7 @@ pub mod bucket_v_2 {
         };
         let o = context.register_resource(request);
         BucketV2Result {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             acceleration_status: o.get_field("accelerationStatus"),
             acl: o.get_field("acl"),

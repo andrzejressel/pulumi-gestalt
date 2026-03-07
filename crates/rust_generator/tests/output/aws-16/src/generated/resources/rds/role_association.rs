@@ -81,7 +81,7 @@ pub mod role_association {
         };
         let o = context.register_resource(request);
         RoleAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             db_instance_identifier: o.get_field("dbInstanceIdentifier"),
             feature_name: o.get_field("featureName"),

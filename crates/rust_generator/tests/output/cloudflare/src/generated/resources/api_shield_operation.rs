@@ -95,7 +95,7 @@ pub mod api_shield_operation {
         };
         let o = context.register_resource(request);
         ApiShieldOperationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             endpoint: o.get_field("endpoint"),
             host: o.get_field("host"),

@@ -330,7 +330,7 @@ pub mod node_template {
         };
         let o = context.register_resource(request);
         NodeTemplateResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             accelerators: o.get_field("accelerators"),
             cpu_overcommit_type: o.get_field("cpuOvercommitType"),

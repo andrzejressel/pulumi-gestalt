@@ -119,7 +119,7 @@ pub mod frontdoor_endpoint {
         };
         let o = context.register_resource(request);
         FrontdoorEndpointResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cdn_frontdoor_profile_id: o.get_field("cdnFrontdoorProfileId"),
             enabled: o.get_field("enabled"),

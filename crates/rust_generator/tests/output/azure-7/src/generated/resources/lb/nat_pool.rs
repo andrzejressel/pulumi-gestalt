@@ -218,7 +218,7 @@ pub mod nat_pool {
         };
         let o = context.register_resource(request);
         NatPoolResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             backend_port: o.get_field("backendPort"),
             floating_ip_enabled: o.get_field("floatingIpEnabled"),

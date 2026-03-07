@@ -236,7 +236,7 @@ pub mod account_subscription {
         };
         let o = context.register_resource(request);
         AccountSubscriptionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_name: o.get_field("accountName"),
             account_subscription_status: o.get_field("accountSubscriptionStatus"),

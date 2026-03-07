@@ -276,7 +276,7 @@ pub mod assignment_virtual_machine_scale_set {
         };
         let o = context.register_resource(request);
         AssignmentVirtualMachineScaleSetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             location: o.get_field("location"),
             maintenance_configuration_id: o.get_field("maintenanceConfigurationId"),

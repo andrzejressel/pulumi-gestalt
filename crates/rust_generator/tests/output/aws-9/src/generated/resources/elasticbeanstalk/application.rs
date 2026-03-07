@@ -125,7 +125,7 @@ pub mod application {
         };
         let o = context.register_resource(request);
         ApplicationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             appversion_lifecycle: o.get_field("appversionLifecycle"),
             arn: o.get_field("arn"),

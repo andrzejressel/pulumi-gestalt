@@ -156,7 +156,7 @@ pub mod pipeline_definition {
         };
         let o = context.register_resource(request);
         PipelineDefinitionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             parameter_objects: o.get_field("parameterObjects"),
             parameter_values: o.get_field("parameterValues"),

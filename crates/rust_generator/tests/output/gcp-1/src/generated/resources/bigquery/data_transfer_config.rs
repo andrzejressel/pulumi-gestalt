@@ -464,7 +464,7 @@ pub mod data_transfer_config {
         };
         let o = context.register_resource(request);
         DataTransferConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             data_refresh_window_days: o.get_field("dataRefreshWindowDays"),
             data_source_id: o.get_field("dataSourceId"),

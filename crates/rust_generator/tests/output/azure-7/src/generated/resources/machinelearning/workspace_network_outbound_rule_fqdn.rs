@@ -140,7 +140,7 @@ pub mod workspace_network_outbound_rule_fqdn {
         };
         let o = context.register_resource(request);
         WorkspaceNetworkOutboundRuleFqdnResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             destination_fqdn: o.get_field("destinationFqdn"),
             name: o.get_field("name"),

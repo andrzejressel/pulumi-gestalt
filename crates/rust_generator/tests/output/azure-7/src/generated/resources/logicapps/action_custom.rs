@@ -114,7 +114,7 @@ pub mod action_custom {
         };
         let o = context.register_resource(request);
         ActionCustomResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             body: o.get_field("body"),
             logic_app_id: o.get_field("logicAppId"),

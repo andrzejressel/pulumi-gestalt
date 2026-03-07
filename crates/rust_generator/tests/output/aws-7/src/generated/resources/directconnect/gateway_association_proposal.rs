@@ -123,7 +123,7 @@ pub mod gateway_association_proposal {
         };
         let o = context.register_resource(request);
         GatewayAssociationProposalResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allowed_prefixes: o.get_field("allowedPrefixes"),
             associated_gateway_id: o.get_field("associatedGatewayId"),

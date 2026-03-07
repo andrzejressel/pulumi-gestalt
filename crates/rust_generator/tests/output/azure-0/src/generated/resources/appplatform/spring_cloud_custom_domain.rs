@@ -142,7 +142,7 @@ pub mod spring_cloud_custom_domain {
         };
         let o = context.register_resource(request);
         SpringCloudCustomDomainResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             certificate_name: o.get_field("certificateName"),
             name: o.get_field("name"),

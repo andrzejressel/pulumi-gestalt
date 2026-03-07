@@ -188,7 +188,7 @@ pub mod tenant_inbound_saml_config {
         };
         let o = context.register_resource(request);
         TenantInboundSamlConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             display_name: o.get_field("displayName"),
             enabled: o.get_field("enabled"),

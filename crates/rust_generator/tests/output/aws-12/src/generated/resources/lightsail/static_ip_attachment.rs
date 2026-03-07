@@ -91,7 +91,7 @@ pub mod static_ip_attachment {
         };
         let o = context.register_resource(request);
         StaticIpAttachmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             instance_name: o.get_field("instanceName"),
             ip_address: o.get_field("ipAddress"),

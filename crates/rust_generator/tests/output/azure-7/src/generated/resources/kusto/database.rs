@@ -144,7 +144,7 @@ pub mod database {
         };
         let o = context.register_resource(request);
         DatabaseResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cluster_name: o.get_field("clusterName"),
             hot_cache_period: o.get_field("hotCachePeriod"),

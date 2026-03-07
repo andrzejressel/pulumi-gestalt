@@ -127,7 +127,7 @@ pub mod sms_preferences {
         };
         let o = context.register_resource(request);
         SmsPreferencesResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             default_sender_id: o.get_field("defaultSenderId"),
             default_sms_type: o.get_field("defaultSmsType"),

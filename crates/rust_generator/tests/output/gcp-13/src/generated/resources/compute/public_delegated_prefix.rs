@@ -196,7 +196,7 @@ pub mod public_delegated_prefix {
         };
         let o = context.register_resource(request);
         PublicDelegatedPrefixResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             description: o.get_field("description"),
             ip_cidr_range: o.get_field("ipCidrRange"),

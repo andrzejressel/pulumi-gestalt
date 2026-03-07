@@ -156,7 +156,7 @@ pub mod spring_cloud_configuration_service {
         };
         let o = context.register_resource(request);
         SpringCloudConfigurationServiceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             generation: o.get_field("generation"),
             name: o.get_field("name"),

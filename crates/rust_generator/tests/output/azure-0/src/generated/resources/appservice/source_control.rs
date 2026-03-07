@@ -194,7 +194,7 @@ pub mod source_control {
         };
         let o = context.register_resource(request);
         SourceControlResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             app_id: o.get_field("appId"),
             branch: o.get_field("branch"),

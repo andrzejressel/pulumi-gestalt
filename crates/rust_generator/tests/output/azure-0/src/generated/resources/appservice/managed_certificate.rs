@@ -174,7 +174,7 @@ pub mod managed_certificate {
         };
         let o = context.register_resource(request);
         ManagedCertificateResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             canonical_name: o.get_field("canonicalName"),
             custom_hostname_binding_id: o.get_field("customHostnameBindingId"),

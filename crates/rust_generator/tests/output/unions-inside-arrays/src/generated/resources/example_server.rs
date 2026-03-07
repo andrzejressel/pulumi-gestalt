@@ -54,7 +54,7 @@ pub mod example_server {
         };
         let o = context.register_resource(request);
         ExampleServerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             name: o.get_field("name"),
         }

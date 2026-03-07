@@ -307,7 +307,7 @@ pub mod network_security_rule {
         };
         let o = context.register_resource(request);
         NetworkSecurityRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access: o.get_field("access"),
             description: o.get_field("description"),

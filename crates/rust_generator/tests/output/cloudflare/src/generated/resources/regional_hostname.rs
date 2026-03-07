@@ -96,7 +96,7 @@ pub mod regional_hostname {
         };
         let o = context.register_resource(request);
         RegionalHostnameResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             created_on: o.get_field("createdOn"),
             hostname: o.get_field("hostname"),

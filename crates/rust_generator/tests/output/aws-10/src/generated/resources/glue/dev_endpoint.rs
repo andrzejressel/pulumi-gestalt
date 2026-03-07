@@ -267,7 +267,7 @@ pub mod dev_endpoint {
         };
         let o = context.register_resource(request);
         DevEndpointResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arguments: o.get_field("arguments"),
             arn: o.get_field("arn"),

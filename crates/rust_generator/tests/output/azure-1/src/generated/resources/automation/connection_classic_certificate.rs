@@ -155,7 +155,7 @@ pub mod connection_classic_certificate {
         };
         let o = context.register_resource(request);
         ConnectionClassicCertificateResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             automation_account_name: o.get_field("automationAccountName"),
             certificate_asset_name: o.get_field("certificateAssetName"),

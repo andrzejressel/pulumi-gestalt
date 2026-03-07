@@ -340,7 +340,7 @@ pub mod cluster {
         };
         let o = context.register_resource(request);
         ClusterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allowed_fqdns: o.get_field("allowedFqdns"),
             allowed_ip_ranges: o.get_field("allowedIpRanges"),

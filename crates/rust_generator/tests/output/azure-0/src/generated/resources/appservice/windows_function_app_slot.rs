@@ -556,7 +556,7 @@ pub mod windows_function_app_slot {
         };
         let o = context.register_resource(request);
         WindowsFunctionAppSlotResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             app_settings: o.get_field("appSettings"),
             auth_settings: o.get_field("authSettings"),

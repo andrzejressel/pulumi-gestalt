@@ -112,7 +112,7 @@ pub mod ssh_key {
         };
         let o = context.register_resource(request);
         SshKeyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             encoding: o.get_field("encoding"),
             fingerprint: o.get_field("fingerprint"),

@@ -102,7 +102,7 @@ pub mod application_layer_automatic_response {
         };
         let o = context.register_resource(request);
         ApplicationLayerAutomaticResponseResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             action: o.get_field("action"),
             resource_arn: o.get_field("resourceArn"),

@@ -140,7 +140,7 @@ pub mod integration_account_schema {
         };
         let o = context.register_resource(request);
         IntegrationAccountSchemaResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             content: o.get_field("content"),
             file_name: o.get_field("fileName"),

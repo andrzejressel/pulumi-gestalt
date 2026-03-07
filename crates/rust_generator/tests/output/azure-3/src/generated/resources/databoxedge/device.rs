@@ -129,7 +129,7 @@ pub mod device {
         };
         let o = context.register_resource(request);
         DeviceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             device_properties: o.get_field("deviceProperties"),
             location: o.get_field("location"),

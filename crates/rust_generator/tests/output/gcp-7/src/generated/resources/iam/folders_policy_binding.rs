@@ -252,7 +252,7 @@ pub mod folders_policy_binding {
         };
         let o = context.register_resource(request);
         FoldersPolicyBindingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             annotations: o.get_field("annotations"),
             condition: o.get_field("condition"),

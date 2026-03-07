@@ -136,7 +136,7 @@ pub mod profiles_association {
         };
         let o = context.register_resource(request);
         ProfilesAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             name: o.get_field("name"),

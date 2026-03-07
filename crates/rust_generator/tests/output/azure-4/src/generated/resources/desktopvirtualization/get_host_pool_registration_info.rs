@@ -103,7 +103,7 @@ pub mod get_host_pool_registration_info {
         };
         let o = context.register_resource(request);
         getHostPoolRegistrationInfoResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             expiration_date: o.get_field("expirationDate"),
             hostpool_id: o.get_field("hostpoolId"),

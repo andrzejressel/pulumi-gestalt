@@ -91,7 +91,7 @@ pub mod group_subscription_association {
         };
         let o = context.register_resource(request);
         GroupSubscriptionAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             management_group_id: o.get_field("managementGroupId"),
             subscription_id: o.get_field("subscriptionId"),

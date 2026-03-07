@@ -175,7 +175,7 @@ pub mod managed_instance_active_directory_administrator {
         };
         let o = context.register_resource(request);
         ManagedInstanceActiveDirectoryAdministratorResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             azuread_authentication_only: o.get_field("azureadAuthenticationOnly"),
             login_username: o.get_field("loginUsername"),

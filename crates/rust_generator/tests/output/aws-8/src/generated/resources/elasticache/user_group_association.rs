@@ -115,7 +115,7 @@ pub mod user_group_association {
         };
         let o = context.register_resource(request);
         UserGroupAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             user_group_id: o.get_field("userGroupId"),
             user_id: o.get_field("userId"),

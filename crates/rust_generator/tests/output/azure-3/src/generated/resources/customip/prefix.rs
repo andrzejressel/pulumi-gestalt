@@ -252,7 +252,7 @@ pub mod prefix {
         };
         let o = context.register_resource(request);
         PrefixResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cidr: o.get_field("cidr"),
             commissioning_enabled: o.get_field("commissioningEnabled"),

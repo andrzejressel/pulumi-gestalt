@@ -247,7 +247,7 @@ pub mod stack_instances {
         };
         let o = context.register_resource(request);
         StackInstancesResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             accounts: o.get_field("accounts"),
             call_as: o.get_field("callAs"),

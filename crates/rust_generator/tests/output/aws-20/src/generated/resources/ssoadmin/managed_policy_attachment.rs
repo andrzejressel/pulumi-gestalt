@@ -150,7 +150,7 @@ pub mod managed_policy_attachment {
         };
         let o = context.register_resource(request);
         ManagedPolicyAttachmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             instance_arn: o.get_field("instanceArn"),
             managed_policy_arn: o.get_field("managedPolicyArn"),

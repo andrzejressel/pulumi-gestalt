@@ -179,7 +179,7 @@ pub mod management_server {
         };
         let o = context.register_resource(request);
         ManagementServerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             location: o.get_field("location"),
             management_uris: o.get_field("managementUris"),

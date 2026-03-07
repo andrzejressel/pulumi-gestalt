@@ -60,7 +60,7 @@ pub mod risk_behavior {
         };
         let o = context.register_resource(request);
         RiskBehaviorResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             behaviors: o.get_field("behaviors"),

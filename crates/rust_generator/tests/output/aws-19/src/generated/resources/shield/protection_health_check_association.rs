@@ -119,7 +119,7 @@ pub mod protection_health_check_association {
         };
         let o = context.register_resource(request);
         ProtectionHealthCheckAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             health_check_arn: o.get_field("healthCheckArn"),
             shield_protection_id: o.get_field("shieldProtectionId"),

@@ -185,7 +185,7 @@ pub mod access_identity_provider {
         };
         let o = context.register_resource(request);
         AccessIdentityProviderResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             configs: o.get_field("configs"),

@@ -201,7 +201,7 @@ pub mod extension {
         };
         let o = context.register_resource(request);
         ExtensionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arc_machine_id: o.get_field("arcMachineId"),
             automatic_upgrade_enabled: o.get_field("automaticUpgradeEnabled"),

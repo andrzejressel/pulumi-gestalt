@@ -114,7 +114,7 @@ pub mod role_policy_attachment {
         };
         let o = context.register_resource(request);
         RolePolicyAttachmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             policy_arn: o.get_field("policyArn"),
             role: o.get_field("role"),

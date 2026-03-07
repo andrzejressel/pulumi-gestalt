@@ -100,7 +100,7 @@ pub mod managed_hardware_security_module_role_assignment {
         };
         let o = context.register_resource(request);
         ManagedHardwareSecurityModuleRoleAssignmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             managed_hsm_id: o.get_field("managedHsmId"),
             name: o.get_field("name"),

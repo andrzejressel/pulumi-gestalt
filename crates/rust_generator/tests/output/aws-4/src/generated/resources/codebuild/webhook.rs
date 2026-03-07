@@ -170,7 +170,7 @@ pub mod webhook {
         };
         let o = context.register_resource(request);
         WebhookResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             branch_filter: o.get_field("branchFilter"),
             build_type: o.get_field("buildType"),

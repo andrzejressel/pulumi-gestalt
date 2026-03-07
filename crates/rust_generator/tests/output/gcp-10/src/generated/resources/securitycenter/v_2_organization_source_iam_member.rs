@@ -303,7 +303,7 @@ pub mod v_2_organization_source_iam_member {
         };
         let o = context.register_resource(request);
         V2OrganizationSourceIamMemberResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             condition: o.get_field("condition"),
             etag: o.get_field("etag"),

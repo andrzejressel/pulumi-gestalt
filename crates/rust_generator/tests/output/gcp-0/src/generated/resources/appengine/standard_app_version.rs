@@ -434,7 +434,7 @@ pub mod standard_app_version {
         };
         let o = context.register_resource(request);
         StandardAppVersionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             app_engine_apis: o.get_field("appEngineApis"),
             automatic_scaling: o.get_field("automaticScaling"),

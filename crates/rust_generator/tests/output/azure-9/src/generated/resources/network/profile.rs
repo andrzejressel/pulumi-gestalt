@@ -171,7 +171,7 @@ pub mod profile {
         };
         let o = context.register_resource(request);
         ProfileResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             container_network_interface: o.get_field("containerNetworkInterface"),
             container_network_interface_ids: o.get_field("containerNetworkInterfaceIds"),

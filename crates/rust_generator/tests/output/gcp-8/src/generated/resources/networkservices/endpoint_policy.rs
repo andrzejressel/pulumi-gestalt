@@ -248,7 +248,7 @@ pub mod endpoint_policy {
         };
         let o = context.register_resource(request);
         EndpointPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             authorization_policy: o.get_field("authorizationPolicy"),
             client_tls_policy: o.get_field("clientTlsPolicy"),

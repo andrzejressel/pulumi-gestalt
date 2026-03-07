@@ -916,7 +916,7 @@ pub mod vpn_connection {
         };
         let o = context.register_resource(request);
         VpnConnectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             core_network_arn: o.get_field("coreNetworkArn"),

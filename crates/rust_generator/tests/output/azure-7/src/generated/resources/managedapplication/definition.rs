@@ -207,7 +207,7 @@ pub mod definition {
         };
         let o = context.register_resource(request);
         DefinitionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             authorizations: o.get_field("authorizations"),
             create_ui_definition: o.get_field("createUiDefinition"),

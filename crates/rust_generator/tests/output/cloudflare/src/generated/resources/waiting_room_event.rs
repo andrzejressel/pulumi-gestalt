@@ -223,7 +223,7 @@ pub mod waiting_room_event {
         };
         let o = context.register_resource(request);
         WaitingRoomEventResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             created_on: o.get_field("createdOn"),
             custom_page_html: o.get_field("customPageHtml"),

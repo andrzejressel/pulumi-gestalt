@@ -90,7 +90,7 @@ pub mod connection_association {
         };
         let o = context.register_resource(request);
         ConnectionAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             connection_id: o.get_field("connectionId"),
             lag_id: o.get_field("lagId"),

@@ -265,7 +265,7 @@ pub mod network_firewall_policy_with_rules {
         };
         let o = context.register_resource(request);
         NetworkFirewallPolicyWithRulesResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             creation_timestamp: o.get_field("creationTimestamp"),
             description: o.get_field("description"),

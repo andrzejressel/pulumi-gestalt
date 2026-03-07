@@ -236,7 +236,7 @@ pub mod serverless_cache {
         };
         let o = context.register_resource(request);
         ServerlessCacheResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             cache_usage_limits: o.get_field("cacheUsageLimits"),

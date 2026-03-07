@@ -194,7 +194,7 @@ pub mod policy_tag {
         };
         let o = context.register_resource(request);
         PolicyTagResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             child_policy_tags: o.get_field("childPolicyTags"),
             description: o.get_field("description"),

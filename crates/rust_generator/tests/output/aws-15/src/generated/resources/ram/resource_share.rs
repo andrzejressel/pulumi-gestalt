@@ -109,7 +109,7 @@ pub mod resource_share {
         };
         let o = context.register_resource(request);
         ResourceShareResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allow_external_principals: o.get_field("allowExternalPrincipals"),
             arn: o.get_field("arn"),

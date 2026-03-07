@@ -116,7 +116,7 @@ pub mod billing_account_exclusion {
         };
         let o = context.register_resource(request);
         BillingAccountExclusionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             billing_account: o.get_field("billingAccount"),
             description: o.get_field("description"),

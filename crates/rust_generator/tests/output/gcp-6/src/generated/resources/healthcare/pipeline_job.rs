@@ -465,7 +465,7 @@ pub mod pipeline_job {
         };
         let o = context.register_resource(request);
         PipelineJobResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             backfill_pipeline_job: o.get_field("backfillPipelineJob"),
             dataset: o.get_field("dataset"),

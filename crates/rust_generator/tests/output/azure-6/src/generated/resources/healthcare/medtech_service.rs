@@ -191,7 +191,7 @@ pub mod medtech_service {
         };
         let o = context.register_resource(request);
         MedtechServiceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             device_mapping_json: o.get_field("deviceMappingJson"),
             eventhub_consumer_group_name: o.get_field("eventhubConsumerGroupName"),

@@ -120,7 +120,7 @@ pub mod channel_alexa {
         };
         let o = context.register_resource(request);
         ChannelAlexaResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bot_name: o.get_field("botName"),
             location: o.get_field("location"),

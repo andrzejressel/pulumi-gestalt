@@ -221,7 +221,7 @@ pub mod role_management_policy {
         };
         let o = context.register_resource(request);
         RoleManagementPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             activation_rules: o.get_field("activationRules"),
             active_assignment_rules: o.get_field("activeAssignmentRules"),

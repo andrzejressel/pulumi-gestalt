@@ -179,7 +179,7 @@ pub mod dps_shared_access_policy {
         };
         let o = context.register_resource(request);
         DpsSharedAccessPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             enrollment_read: o.get_field("enrollmentRead"),
             enrollment_write: o.get_field("enrollmentWrite"),

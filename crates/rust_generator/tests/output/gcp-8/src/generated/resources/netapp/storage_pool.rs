@@ -302,7 +302,7 @@ pub mod storage_pool {
         };
         let o = context.register_resource(request);
         StoragePoolResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             active_directory: o.get_field("activeDirectory"),
             allow_auto_tiering: o.get_field("allowAutoTiering"),

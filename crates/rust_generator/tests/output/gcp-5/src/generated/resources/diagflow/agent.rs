@@ -277,7 +277,7 @@ pub mod agent {
         };
         let o = context.register_resource(request);
         AgentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_version: o.get_field("apiVersion"),
             avatar_uri: o.get_field("avatarUri"),

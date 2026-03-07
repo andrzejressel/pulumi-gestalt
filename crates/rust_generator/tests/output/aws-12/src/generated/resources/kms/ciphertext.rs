@@ -98,7 +98,7 @@ pub mod ciphertext {
         };
         let o = context.register_resource(request);
         CiphertextResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             ciphertext_blob: o.get_field("ciphertextBlob"),
             context: o.get_field("context"),

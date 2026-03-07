@@ -174,7 +174,7 @@ pub mod block_public_access_configuration {
         };
         let o = context.register_resource(request);
         BlockPublicAccessConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             block_public_security_group_rules: o
                 .get_field("blockPublicSecurityGroupRules"),

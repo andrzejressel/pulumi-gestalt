@@ -230,7 +230,7 @@ pub mod app_gateway {
         };
         let o = context.register_resource(request);
         AppGatewayResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allocated_connections: o.get_field("allocatedConnections"),
             display_name: o.get_field("displayName"),

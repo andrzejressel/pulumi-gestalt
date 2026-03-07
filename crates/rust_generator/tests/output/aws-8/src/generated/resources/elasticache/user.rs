@@ -193,7 +193,7 @@ pub mod user {
         };
         let o = context.register_resource(request);
         UserResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_string: o.get_field("accessString"),
             arn: o.get_field("arn"),

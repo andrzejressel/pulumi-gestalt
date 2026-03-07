@@ -127,7 +127,7 @@ pub mod account {
         };
         let o = context.register_resource(request);
         AccountResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_uri: o.get_field("accountUri"),
             location: o.get_field("location"),

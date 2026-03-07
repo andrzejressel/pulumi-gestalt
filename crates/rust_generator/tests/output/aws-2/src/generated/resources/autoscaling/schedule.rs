@@ -183,7 +183,7 @@ pub mod schedule {
         };
         let o = context.register_resource(request);
         ScheduleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             autoscaling_group_name: o.get_field("autoscalingGroupName"),

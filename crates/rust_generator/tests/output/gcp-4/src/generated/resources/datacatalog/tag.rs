@@ -347,7 +347,7 @@ pub mod tag {
         };
         let o = context.register_resource(request);
         TagResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             column: o.get_field("column"),
             fields: o.get_field("fields"),

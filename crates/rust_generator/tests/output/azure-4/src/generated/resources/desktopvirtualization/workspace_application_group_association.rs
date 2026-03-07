@@ -118,7 +118,7 @@ pub mod workspace_application_group_association {
         };
         let o = context.register_resource(request);
         WorkspaceApplicationGroupAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             application_group_id: o.get_field("applicationGroupId"),
             workspace_id: o.get_field("workspaceId"),

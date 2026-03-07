@@ -114,7 +114,7 @@ pub mod bucket_acl {
         };
         let o = context.register_resource(request);
         BucketACLResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bucket: o.get_field("bucket"),
             default_acl: o.get_field("defaultAcl"),

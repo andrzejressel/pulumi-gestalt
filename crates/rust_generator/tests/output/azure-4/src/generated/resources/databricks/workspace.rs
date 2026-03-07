@@ -344,7 +344,7 @@ pub mod workspace {
         };
         let o = context.register_resource(request);
         WorkspaceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_connector_id: o.get_field("accessConnectorId"),
             custom_parameters: o.get_field("customParameters"),

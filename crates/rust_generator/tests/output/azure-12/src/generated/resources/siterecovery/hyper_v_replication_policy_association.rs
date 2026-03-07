@@ -127,7 +127,7 @@ pub mod hyper_v_replication_policy_association {
         };
         let o = context.register_resource(request);
         HyperVReplicationPolicyAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             hyperv_site_id: o.get_field("hypervSiteId"),
             name: o.get_field("name"),

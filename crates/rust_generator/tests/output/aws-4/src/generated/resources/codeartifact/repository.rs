@@ -223,7 +223,7 @@ pub mod repository {
         };
         let o = context.register_resource(request);
         RepositoryResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             administrator_account: o.get_field("administratorAccount"),
             arn: o.get_field("arn"),

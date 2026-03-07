@@ -431,7 +431,7 @@ pub mod system_topic_event_subscription {
         };
         let o = context.register_resource(request);
         SystemTopicEventSubscriptionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             advanced_filter: o.get_field("advancedFilter"),
             advanced_filtering_on_arrays_enabled: o

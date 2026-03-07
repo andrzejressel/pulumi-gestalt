@@ -101,7 +101,7 @@ pub mod outbound_firewall_rule {
         };
         let o = context.register_resource(request);
         OutboundFirewallRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             name: o.get_field("name"),
             server_id: o.get_field("serverId"),

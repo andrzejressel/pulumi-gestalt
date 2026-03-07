@@ -147,7 +147,7 @@ pub mod dx_gateway_attachment {
         };
         let o = context.register_resource(request);
         DxGatewayAttachmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             attachment_policy_rule_number: o.get_field("attachmentPolicyRuleNumber"),

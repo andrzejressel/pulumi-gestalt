@@ -294,7 +294,7 @@ pub mod public_ip {
         };
         let o = context.register_resource(request);
         PublicIpResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allocation_method: o.get_field("allocationMethod"),
             ddos_protection_mode: o.get_field("ddosProtectionMode"),

@@ -142,7 +142,7 @@ pub mod location_fsx_ontap_file_system {
         };
         let o = context.register_resource(request);
         LocationFsxOntapFileSystemResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             creation_time: o.get_field("creationTime"),

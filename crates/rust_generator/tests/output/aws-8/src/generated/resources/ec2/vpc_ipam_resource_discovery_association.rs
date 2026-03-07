@@ -114,7 +114,7 @@ pub mod vpc_ipam_resource_discovery_association {
         };
         let o = context.register_resource(request);
         VpcIpamResourceDiscoveryAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             ipam_arn: o.get_field("ipamArn"),

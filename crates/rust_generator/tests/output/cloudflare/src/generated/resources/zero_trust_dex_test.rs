@@ -134,7 +134,7 @@ pub mod zero_trust_dex_test {
         };
         let o = context.register_resource(request);
         ZeroTrustDexTestResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             created: o.get_field("created"),

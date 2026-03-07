@@ -141,7 +141,7 @@ pub mod security_device_group {
         };
         let o = context.register_resource(request);
         SecurityDeviceGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allow_rule: o.get_field("allowRule"),
             iothub_id: o.get_field("iothubId"),

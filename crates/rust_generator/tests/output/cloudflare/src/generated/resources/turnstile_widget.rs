@@ -136,7 +136,7 @@ pub mod turnstile_widget {
         };
         let o = context.register_resource(request);
         TurnstileWidgetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             bot_fight_mode: o.get_field("botFightMode"),

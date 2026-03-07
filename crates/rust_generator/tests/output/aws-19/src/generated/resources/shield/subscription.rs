@@ -84,7 +84,7 @@ pub mod subscription {
         };
         let o = context.register_resource(request);
         SubscriptionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             auto_renew: o.get_field("autoRenew"),
             skip_destroy: o.get_field("skipDestroy"),

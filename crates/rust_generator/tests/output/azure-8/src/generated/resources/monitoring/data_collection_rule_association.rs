@@ -236,7 +236,7 @@ pub mod data_collection_rule_association {
         };
         let o = context.register_resource(request);
         DataCollectionRuleAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             data_collection_endpoint_id: o.get_field("dataCollectionEndpointId"),
             data_collection_rule_id: o.get_field("dataCollectionRuleId"),

@@ -166,7 +166,7 @@ pub mod instance_automated_backups_replication {
         };
         let o = context.register_resource(request);
         InstanceAutomatedBackupsReplicationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             kms_key_id: o.get_field("kmsKeyId"),
             pre_signed_url: o.get_field("preSignedUrl"),

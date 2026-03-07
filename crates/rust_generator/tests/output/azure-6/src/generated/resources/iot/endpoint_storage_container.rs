@@ -225,7 +225,7 @@ pub mod endpoint_storage_container {
         };
         let o = context.register_resource(request);
         EndpointStorageContainerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             authentication_type: o.get_field("authenticationType"),
             batch_frequency_in_seconds: o.get_field("batchFrequencyInSeconds"),

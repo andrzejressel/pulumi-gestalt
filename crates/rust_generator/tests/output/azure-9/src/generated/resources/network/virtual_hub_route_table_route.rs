@@ -208,7 +208,7 @@ pub mod virtual_hub_route_table_route {
         };
         let o = context.register_resource(request);
         VirtualHubRouteTableRouteResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             destinations: o.get_field("destinations"),
             destinations_type: o.get_field("destinationsType"),

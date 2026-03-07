@@ -140,7 +140,7 @@ pub mod prefix_list_reference {
         };
         let o = context.register_resource(request);
         PrefixListReferenceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             blackhole: o.get_field("blackhole"),
             prefix_list_id: o.get_field("prefixListId"),

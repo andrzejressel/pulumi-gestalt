@@ -330,7 +330,7 @@ pub mod service {
         };
         let o = context.register_resource(request);
         ServiceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             deployment_id: o.get_field("deploymentId"),
             domain_configuration_type: o.get_field("domainConfigurationType"),

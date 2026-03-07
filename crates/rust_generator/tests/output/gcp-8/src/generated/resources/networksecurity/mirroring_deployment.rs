@@ -244,7 +244,7 @@ pub mod mirroring_deployment {
         };
         let o = context.register_resource(request);
         MirroringDeploymentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             create_time: o.get_field("createTime"),
             effective_labels: o.get_field("effectiveLabels"),

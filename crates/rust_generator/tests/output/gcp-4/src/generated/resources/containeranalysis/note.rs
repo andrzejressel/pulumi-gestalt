@@ -245,7 +245,7 @@ pub mod note {
         };
         let o = context.register_resource(request);
         NoteResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             attestation_authority: o.get_field("attestationAuthority"),
             create_time: o.get_field("createTime"),

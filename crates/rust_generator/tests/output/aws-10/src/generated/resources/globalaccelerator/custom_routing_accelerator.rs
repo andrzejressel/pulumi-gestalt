@@ -157,7 +157,7 @@ pub mod custom_routing_accelerator {
         };
         let o = context.register_resource(request);
         CustomRoutingAcceleratorResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             attributes: o.get_field("attributes"),
             dns_name: o.get_field("dnsName"),

@@ -263,7 +263,7 @@ pub mod dns_managed_zone_iam_policy {
         };
         let o = context.register_resource(request);
         DnsManagedZoneIamPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             etag: o.get_field("etag"),
             managed_zone: o.get_field("managedZone"),

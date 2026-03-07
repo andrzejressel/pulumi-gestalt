@@ -170,7 +170,7 @@ pub mod endpoint_custom_domain {
         };
         let o = context.register_resource(request);
         EndpointCustomDomainResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cdn_endpoint_id: o.get_field("cdnEndpointId"),
             cdn_managed_https: o.get_field("cdnManagedHttps"),

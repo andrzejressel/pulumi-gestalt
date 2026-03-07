@@ -187,7 +187,7 @@ pub mod data_quality_ruleset {
         };
         let o = context.register_resource(request);
         DataQualityRulesetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             created_on: o.get_field("createdOn"),

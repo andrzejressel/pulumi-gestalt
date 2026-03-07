@@ -323,7 +323,7 @@ pub mod metric_alert {
         };
         let o = context.register_resource(request);
         MetricAlertResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             actions: o.get_field("actions"),
             application_insights_web_test_location_availability_criteria: o

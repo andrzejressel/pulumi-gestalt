@@ -221,7 +221,7 @@ pub mod folder_sink {
         };
         let o = context.register_resource(request);
         FolderSinkResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bigquery_options: o.get_field("bigqueryOptions"),
             description: o.get_field("description"),

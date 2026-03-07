@@ -196,7 +196,7 @@ pub mod project_sink {
         };
         let o = context.register_resource(request);
         ProjectSinkResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bigquery_options: o.get_field("bigqueryOptions"),
             custom_writer_identity: o.get_field("customWriterIdentity"),

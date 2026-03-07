@@ -299,7 +299,7 @@ pub mod ai_feature_online_store {
         };
         let o = context.register_resource(request);
         AiFeatureOnlineStoreResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bigtable: o.get_field("bigtable"),
             create_time: o.get_field("createTime"),

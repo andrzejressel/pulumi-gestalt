@@ -173,7 +173,7 @@ pub mod endpoint_attachment {
         };
         let o = context.register_resource(request);
         EndpointAttachmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             connection_state: o.get_field("connectionState"),
             endpoint_attachment_id: o.get_field("endpointAttachmentId"),

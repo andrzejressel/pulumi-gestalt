@@ -136,7 +136,7 @@ pub mod integration_account {
         };
         let o = context.register_resource(request);
         IntegrationAccountResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             integration_service_environment_id: o
                 .get_field("integrationServiceEnvironmentId"),

@@ -210,7 +210,7 @@ pub mod network_acl_rule {
         };
         let o = context.register_resource(request);
         NetworkAclRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cidr_block: o.get_field("cidrBlock"),
             egress: o.get_field("egress"),

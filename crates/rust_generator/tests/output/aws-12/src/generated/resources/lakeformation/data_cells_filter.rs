@@ -101,7 +101,7 @@ pub mod data_cells_filter {
         };
         let o = context.register_resource(request);
         DataCellsFilterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             table_data: o.get_field("tableData"),
             timeouts: o.get_field("timeouts"),

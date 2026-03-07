@@ -293,7 +293,7 @@ pub mod zone_iam_policy {
         };
         let o = context.register_resource(request);
         ZoneIamPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             dataplex_zone: o.get_field("dataplexZone"),
             etag: o.get_field("etag"),

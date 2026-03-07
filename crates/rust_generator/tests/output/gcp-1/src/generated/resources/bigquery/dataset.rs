@@ -631,7 +631,7 @@ pub mod dataset {
         };
         let o = context.register_resource(request);
         DatasetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             accesses: o.get_field("accesses"),
             creation_time: o.get_field("creationTime"),

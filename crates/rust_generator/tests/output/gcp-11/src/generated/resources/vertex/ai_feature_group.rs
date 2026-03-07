@@ -216,7 +216,7 @@ pub mod ai_feature_group {
         };
         let o = context.register_resource(request);
         AiFeatureGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             big_query: o.get_field("bigQuery"),
             create_time: o.get_field("createTime"),

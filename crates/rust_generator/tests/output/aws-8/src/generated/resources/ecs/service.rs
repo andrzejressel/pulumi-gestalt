@@ -596,7 +596,7 @@ pub mod service {
         };
         let o = context.register_resource(request);
         ServiceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             alarms: o.get_field("alarms"),
             availability_zone_rebalancing: o.get_field("availabilityZoneRebalancing"),

@@ -407,7 +407,7 @@ pub mod gateway {
         };
         let o = context.register_resource(request);
         GatewayResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             activation_key: o.get_field("activationKey"),
             arn: o.get_field("arn"),

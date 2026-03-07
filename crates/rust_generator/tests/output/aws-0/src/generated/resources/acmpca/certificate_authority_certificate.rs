@@ -157,7 +157,7 @@ pub mod certificate_authority_certificate {
         };
         let o = context.register_resource(request);
         CertificateAuthorityCertificateResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             certificate: o.get_field("certificate"),
             certificate_authority_arn: o.get_field("certificateAuthorityArn"),

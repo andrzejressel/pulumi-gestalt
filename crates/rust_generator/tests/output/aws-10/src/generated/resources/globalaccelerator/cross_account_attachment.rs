@@ -157,7 +157,7 @@ pub mod cross_account_attachment {
         };
         let o = context.register_resource(request);
         CrossAccountAttachmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             created_time: o.get_field("createdTime"),

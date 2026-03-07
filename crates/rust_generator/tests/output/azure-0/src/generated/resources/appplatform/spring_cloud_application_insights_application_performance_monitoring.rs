@@ -182,7 +182,7 @@ pub mod spring_cloud_application_insights_application_performance_monitoring {
         };
         let o = context.register_resource(request);
         SpringCloudApplicationInsightsApplicationPerformanceMonitoringResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             connection_string: o.get_field("connectionString"),
             globally_enabled: o.get_field("globallyEnabled"),

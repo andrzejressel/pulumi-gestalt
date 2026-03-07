@@ -262,7 +262,7 @@ pub mod assignment {
         };
         let o = context.register_resource(request);
         AssignmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             blueprint_name: o.get_field("blueprintName"),
             description: o.get_field("description"),

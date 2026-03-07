@@ -133,7 +133,7 @@ pub mod repository_group_iam_policy {
         };
         let o = context.register_resource(request);
         RepositoryGroupIamPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             code_repository_index: o.get_field("codeRepositoryIndex"),
             etag: o.get_field("etag"),

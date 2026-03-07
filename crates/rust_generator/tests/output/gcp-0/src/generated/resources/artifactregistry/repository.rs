@@ -878,7 +878,7 @@ pub mod repository {
         };
         let o = context.register_resource(request);
         RepositoryResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cleanup_policies: o.get_field("cleanupPolicies"),
             cleanup_policy_dry_run: o.get_field("cleanupPolicyDryRun"),

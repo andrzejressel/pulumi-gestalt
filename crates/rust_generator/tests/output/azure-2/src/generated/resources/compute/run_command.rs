@@ -416,7 +416,7 @@ pub mod run_command {
         };
         let o = context.register_resource(request);
         RunCommandResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             error_blob_managed_identity: o.get_field("errorBlobManagedIdentity"),
             error_blob_uri: o.get_field("errorBlobUri"),

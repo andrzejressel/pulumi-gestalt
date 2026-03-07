@@ -504,7 +504,7 @@ pub mod bare_metal_admin_cluster {
         };
         let o = context.register_resource(request);
         BareMetalAdminClusterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             annotations: o.get_field("annotations"),
             bare_metal_version: o.get_field("bareMetalVersion"),

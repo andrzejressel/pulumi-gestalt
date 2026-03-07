@@ -872,7 +872,7 @@ pub mod linux_virtual_machine_scale_set {
         };
         let o = context.register_resource(request);
         LinuxVirtualMachineScaleSetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             additional_capabilities: o.get_field("additionalCapabilities"),
             admin_password: o.get_field("adminPassword"),

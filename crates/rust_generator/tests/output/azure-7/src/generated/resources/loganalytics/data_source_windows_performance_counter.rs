@@ -154,7 +154,7 @@ pub mod data_source_windows_performance_counter {
         };
         let o = context.register_resource(request);
         DataSourceWindowsPerformanceCounterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             counter_name: o.get_field("counterName"),
             instance_name: o.get_field("instanceName"),

@@ -141,7 +141,7 @@ pub mod analyzer {
         };
         let o = context.register_resource(request);
         AnalyzerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             analyzer_name: o.get_field("analyzerName"),
             arn: o.get_field("arn"),

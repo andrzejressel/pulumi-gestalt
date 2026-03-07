@@ -151,7 +151,7 @@ pub mod bucket_intelligent_tiering_configuration {
         };
         let o = context.register_resource(request);
         BucketIntelligentTieringConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bucket: o.get_field("bucket"),
             filter: o.get_field("filter"),

@@ -202,7 +202,7 @@ pub mod backup_vault {
         };
         let o = context.register_resource(request);
         BackupVaultResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cross_region_restore_enabled: o.get_field("crossRegionRestoreEnabled"),
             datastore_type: o.get_field("datastoreType"),

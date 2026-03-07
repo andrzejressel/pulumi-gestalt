@@ -183,7 +183,7 @@ pub mod fleet {
         };
         let o = context.register_resource(request);
         FleetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             audit_stream_arn: o.get_field("auditStreamArn"),

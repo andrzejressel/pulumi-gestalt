@@ -310,7 +310,7 @@ pub mod key_vault {
         };
         let o = context.register_resource(request);
         KeyVaultResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_policies: o.get_field("accessPolicies"),
             contacts: o.get_field("contacts"),

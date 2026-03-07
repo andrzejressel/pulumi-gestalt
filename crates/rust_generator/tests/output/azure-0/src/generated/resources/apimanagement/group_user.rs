@@ -107,7 +107,7 @@ pub mod group_user {
         };
         let o = context.register_resource(request);
         GroupUserResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_management_name: o.get_field("apiManagementName"),
             group_name: o.get_field("groupName"),

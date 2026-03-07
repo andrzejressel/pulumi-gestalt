@@ -116,7 +116,7 @@ pub mod appregistry_attribute_group {
         };
         let o = context.register_resource(request);
         AppregistryAttributeGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             attributes: o.get_field("attributes"),

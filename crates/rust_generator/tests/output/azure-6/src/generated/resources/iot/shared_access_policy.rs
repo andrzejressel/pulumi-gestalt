@@ -161,7 +161,7 @@ pub mod shared_access_policy {
         };
         let o = context.register_resource(request);
         SharedAccessPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             device_connect: o.get_field("deviceConnect"),
             iothub_name: o.get_field("iothubName"),

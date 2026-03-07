@@ -310,7 +310,7 @@ pub mod deployment {
         };
         let o = context.register_resource(request);
         DeploymentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             auto_scale_profiles: o.get_field("autoScaleProfiles"),
             automatic_upgrade_channel: o.get_field("automaticUpgradeChannel"),

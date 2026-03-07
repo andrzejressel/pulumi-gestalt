@@ -94,7 +94,7 @@ pub mod route_table {
         };
         let o = context.register_resource(request);
         RouteTableResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             default_association_route_table: o.get_field("defaultAssociationRouteTable"),

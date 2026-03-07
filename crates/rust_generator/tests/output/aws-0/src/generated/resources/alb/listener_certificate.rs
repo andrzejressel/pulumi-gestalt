@@ -97,7 +97,7 @@ pub mod listener_certificate {
         };
         let o = context.register_resource(request);
         ListenerCertificateResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             certificate_arn: o.get_field("certificateArn"),
             listener_arn: o.get_field("listenerArn"),

@@ -92,7 +92,7 @@ pub mod backup_policy {
         };
         let o = context.register_resource(request);
         BackupPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             backup_policy: o.get_field("backupPolicy"),
             file_system_id: o.get_field("fileSystemId"),

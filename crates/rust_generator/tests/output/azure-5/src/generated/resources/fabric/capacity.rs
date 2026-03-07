@@ -145,7 +145,7 @@ pub mod capacity {
         };
         let o = context.register_resource(request);
         CapacityResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             administration_members: o.get_field("administrationMembers"),
             location: o.get_field("location"),

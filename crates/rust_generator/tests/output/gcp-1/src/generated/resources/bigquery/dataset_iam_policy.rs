@@ -253,7 +253,7 @@ pub mod dataset_iam_policy {
         };
         let o = context.register_resource(request);
         DatasetIamPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             dataset_id: o.get_field("datasetId"),
             etag: o.get_field("etag"),

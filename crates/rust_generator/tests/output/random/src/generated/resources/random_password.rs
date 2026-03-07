@@ -196,7 +196,7 @@ pub mod random_password {
         };
         let o = context.register_resource(request);
         RandomPasswordResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bcrypt_hash: o.get_field("bcryptHash"),
             keepers: o.get_field("keepers"),

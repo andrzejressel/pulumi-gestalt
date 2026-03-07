@@ -249,7 +249,7 @@ pub mod stack {
         };
         let o = context.register_resource(request);
         StackResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_endpoints: o.get_field("accessEndpoints"),
             application_settings: o.get_field("applicationSettings"),

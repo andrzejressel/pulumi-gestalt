@@ -187,7 +187,7 @@ pub mod cluster_trusted_access_role_binding {
         };
         let o = context.register_resource(request);
         ClusterTrustedAccessRoleBindingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             kubernetes_cluster_id: o.get_field("kubernetesClusterId"),
             name: o.get_field("name"),

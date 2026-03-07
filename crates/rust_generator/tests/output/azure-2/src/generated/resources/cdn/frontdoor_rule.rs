@@ -374,7 +374,7 @@ pub mod frontdoor_rule {
         };
         let o = context.register_resource(request);
         FrontdoorRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             actions: o.get_field("actions"),
             behavior_on_match: o.get_field("behaviorOnMatch"),

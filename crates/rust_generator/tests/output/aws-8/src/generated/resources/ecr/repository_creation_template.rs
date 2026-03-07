@@ -219,7 +219,7 @@ pub mod repository_creation_template {
         };
         let o = context.register_resource(request);
         RepositoryCreationTemplateResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             applied_fors: o.get_field("appliedFors"),
             custom_role_arn: o.get_field("customRoleArn"),

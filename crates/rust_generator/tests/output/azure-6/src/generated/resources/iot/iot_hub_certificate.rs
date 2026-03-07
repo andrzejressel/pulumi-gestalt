@@ -129,7 +129,7 @@ pub mod iot_hub_certificate {
         };
         let o = context.register_resource(request);
         IotHubCertificateResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             certificate_content: o.get_field("certificateContent"),
             iot_dps_name: o.get_field("iotDpsName"),

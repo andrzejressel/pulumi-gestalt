@@ -188,7 +188,7 @@ pub mod collector_policy {
         };
         let o = context.register_resource(request);
         CollectorPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             ipfx_emission: o.get_field("ipfxEmission"),
             ipfx_ingestion: o.get_field("ipfxIngestion"),

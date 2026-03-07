@@ -90,7 +90,7 @@ pub mod vpc_endpoint_subnet_association {
         };
         let o = context.register_resource(request);
         VpcEndpointSubnetAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             subnet_id: o.get_field("subnetId"),
             vpc_endpoint_id: o.get_field("vpcEndpointId"),

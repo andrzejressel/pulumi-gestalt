@@ -649,7 +649,7 @@ pub mod workload_identity_pool_provider {
         };
         let o = context.register_resource(request);
         WorkloadIdentityPoolProviderResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             attribute_condition: o.get_field("attributeCondition"),
             attribute_mapping: o.get_field("attributeMapping"),

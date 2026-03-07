@@ -110,7 +110,7 @@ pub mod account_registration {
         };
         let o = context.register_resource(request);
         AccountRegistrationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             delegated_admin_account: o.get_field("delegatedAdminAccount"),
             deregister_on_destroy: o.get_field("deregisterOnDestroy"),

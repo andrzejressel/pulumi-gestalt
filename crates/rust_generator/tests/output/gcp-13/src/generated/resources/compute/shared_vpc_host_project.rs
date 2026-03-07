@@ -93,7 +93,7 @@ pub mod shared_vpc_host_project {
         };
         let o = context.register_resource(request);
         SharedVPCHostProjectResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             project: o.get_field("project"),
         }

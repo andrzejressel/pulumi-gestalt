@@ -177,7 +177,7 @@ pub mod frontdoor_origin_group {
         };
         let o = context.register_resource(request);
         FrontdoorOriginGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cdn_frontdoor_profile_id: o.get_field("cdnFrontdoorProfileId"),
             health_probe: o.get_field("healthProbe"),

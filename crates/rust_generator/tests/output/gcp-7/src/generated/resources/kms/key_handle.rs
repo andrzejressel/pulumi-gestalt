@@ -248,7 +248,7 @@ pub mod key_handle {
         };
         let o = context.register_resource(request);
         KeyHandleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             kms_key: o.get_field("kmsKey"),
             location: o.get_field("location"),

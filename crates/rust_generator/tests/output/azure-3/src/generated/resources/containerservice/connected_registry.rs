@@ -242,7 +242,7 @@ pub mod connected_registry {
         };
         let o = context.register_resource(request);
         ConnectedRegistryResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             audit_log_enabled: o.get_field("auditLogEnabled"),
             client_token_ids: o.get_field("clientTokenIds"),

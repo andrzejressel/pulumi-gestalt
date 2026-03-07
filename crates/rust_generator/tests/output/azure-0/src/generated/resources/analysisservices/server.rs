@@ -194,7 +194,7 @@ pub mod server {
         };
         let o = context.register_resource(request);
         ServerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             admin_users: o.get_field("adminUsers"),
             backup_blob_container_uri: o.get_field("backupBlobContainerUri"),

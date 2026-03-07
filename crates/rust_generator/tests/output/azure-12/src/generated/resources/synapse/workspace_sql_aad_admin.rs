@@ -176,7 +176,7 @@ pub mod workspace_sql_aad_admin {
         };
         let o = context.register_resource(request);
         WorkspaceSqlAadAdminResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             login: o.get_field("login"),
             object_id: o.get_field("objectId"),

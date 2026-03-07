@@ -63,7 +63,7 @@ pub mod connection_confirmation {
         };
         let o = context.register_resource(request);
         ConnectionConfirmationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             connection_id: o.get_field("connectionId"),
         }

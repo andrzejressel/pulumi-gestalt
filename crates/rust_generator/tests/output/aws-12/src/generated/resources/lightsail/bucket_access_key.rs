@@ -78,7 +78,7 @@ pub mod bucket_access_key {
         };
         let o = context.register_resource(request);
         BucketAccessKeyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_key_id: o.get_field("accessKeyId"),
             bucket_name: o.get_field("bucketName"),

@@ -194,7 +194,7 @@ pub mod activity_log_alert {
         };
         let o = context.register_resource(request);
         ActivityLogAlertResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             actions: o.get_field("actions"),
             criteria: o.get_field("criteria"),

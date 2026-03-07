@@ -145,7 +145,7 @@ pub mod data_share_consumer_association {
         };
         let o = context.register_resource(request);
         DataShareConsumerAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allow_writes: o.get_field("allowWrites"),
             associate_entire_account: o.get_field("associateEntireAccount"),

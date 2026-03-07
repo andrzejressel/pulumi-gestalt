@@ -139,7 +139,7 @@ pub mod key_ring_import_job {
         };
         let o = context.register_resource(request);
         KeyRingImportJobResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             attestations: o.get_field("attestations"),
             expire_time: o.get_field("expireTime"),

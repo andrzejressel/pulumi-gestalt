@@ -226,7 +226,7 @@ pub mod output_service_bus_queue {
         };
         let o = context.register_resource(request);
         OutputServiceBusQueueResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             authentication_mode: o.get_field("authenticationMode"),
             name: o.get_field("name"),

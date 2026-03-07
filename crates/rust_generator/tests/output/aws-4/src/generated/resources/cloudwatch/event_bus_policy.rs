@@ -184,7 +184,7 @@ pub mod event_bus_policy {
         };
         let o = context.register_resource(request);
         EventBusPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             event_bus_name: o.get_field("eventBusName"),
             policy: o.get_field("policy"),

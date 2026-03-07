@@ -82,7 +82,7 @@ pub mod domain_policy {
         };
         let o = context.register_resource(request);
         DomainPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_policies: o.get_field("accessPolicies"),
             domain_name: o.get_field("domainName"),

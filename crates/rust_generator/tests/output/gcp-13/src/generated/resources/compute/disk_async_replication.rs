@@ -94,7 +94,7 @@ pub mod disk_async_replication {
         };
         let o = context.register_resource(request);
         DiskAsyncReplicationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             primary_disk: o.get_field("primaryDisk"),
             secondary_disk: o.get_field("secondaryDisk"),

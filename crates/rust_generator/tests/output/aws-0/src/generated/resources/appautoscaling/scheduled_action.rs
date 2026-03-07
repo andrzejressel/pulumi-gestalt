@@ -208,7 +208,7 @@ pub mod scheduled_action {
         };
         let o = context.register_resource(request);
         ScheduledActionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             end_time: o.get_field("endTime"),

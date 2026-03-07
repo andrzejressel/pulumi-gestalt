@@ -126,7 +126,7 @@ pub mod plan {
         };
         let o = context.register_resource(request);
         PlanResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             advanced_backup_settings: o.get_field("advancedBackupSettings"),
             arn: o.get_field("arn"),

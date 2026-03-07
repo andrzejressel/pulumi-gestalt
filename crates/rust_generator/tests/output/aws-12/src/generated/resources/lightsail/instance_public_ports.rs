@@ -95,7 +95,7 @@ pub mod instance_public_ports {
         };
         let o = context.register_resource(request);
         InstancePublicPortsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             instance_name: o.get_field("instanceName"),
             port_infos: o.get_field("portInfos"),

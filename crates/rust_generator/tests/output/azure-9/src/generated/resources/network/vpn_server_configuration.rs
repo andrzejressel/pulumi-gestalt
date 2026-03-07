@@ -237,7 +237,7 @@ pub mod vpn_server_configuration {
         };
         let o = context.register_resource(request);
         VpnServerConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             azure_active_directory_authentications: o
                 .get_field("azureActiveDirectoryAuthentications"),

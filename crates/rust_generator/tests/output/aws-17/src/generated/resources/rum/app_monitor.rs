@@ -142,7 +142,7 @@ pub mod app_monitor {
         };
         let o = context.register_resource(request);
         AppMonitorResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             app_monitor_configuration: o.get_field("appMonitorConfiguration"),
             app_monitor_id: o.get_field("appMonitorId"),

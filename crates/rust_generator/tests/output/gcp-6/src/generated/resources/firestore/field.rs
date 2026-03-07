@@ -272,7 +272,7 @@ pub mod field {
         };
         let o = context.register_resource(request);
         FieldResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             collection: o.get_field("collection"),
             database: o.get_field("database"),

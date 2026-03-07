@@ -169,7 +169,7 @@ pub mod sync_cloud_endpoint {
         };
         let o = context.register_resource(request);
         SyncCloudEndpointResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             file_share_name: o.get_field("fileShareName"),
             name: o.get_field("name"),

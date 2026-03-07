@@ -371,7 +371,7 @@ pub mod windows_file_system {
         };
         let o = context.register_resource(request);
         WindowsFileSystemResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             active_directory_id: o.get_field("activeDirectoryId"),
             aliases: o.get_field("aliases"),

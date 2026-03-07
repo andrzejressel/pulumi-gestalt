@@ -108,7 +108,7 @@ pub mod zero_trust_tunnel_cloudflared {
         };
         let o = context.register_resource(request);
         ZeroTrustTunnelCloudflaredResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             cname: o.get_field("cname"),

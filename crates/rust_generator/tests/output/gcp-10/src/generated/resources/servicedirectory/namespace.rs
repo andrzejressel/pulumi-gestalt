@@ -165,7 +165,7 @@ pub mod namespace {
         };
         let o = context.register_resource(request);
         NamespaceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             effective_labels: o.get_field("effectiveLabels"),
             labels: o.get_field("labels"),

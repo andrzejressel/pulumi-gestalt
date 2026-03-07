@@ -127,7 +127,7 @@ pub mod healthbot {
         };
         let o = context.register_resource(request);
         HealthbotResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bot_management_portal_url: o.get_field("botManagementPortalUrl"),
             location: o.get_field("location"),

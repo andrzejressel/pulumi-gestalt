@@ -261,7 +261,7 @@ pub mod service {
         };
         let o = context.register_resource(request);
         ServiceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_policy_object_ids: o.get_field("accessPolicyObjectIds"),
             authentication_configuration: o.get_field("authenticationConfiguration"),

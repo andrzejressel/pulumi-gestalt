@@ -279,7 +279,7 @@ pub mod provisioned_product {
         };
         let o = context.register_resource(request);
         ProvisionedProductResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             accept_language: o.get_field("acceptLanguage"),
             arn: o.get_field("arn"),

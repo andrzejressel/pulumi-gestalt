@@ -45,7 +45,7 @@ pub mod pulumi_terraform_bridge_2801 {
         };
         let o = context.register_resource(request);
         PulumiTerraformBridge2801Result {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
         }
     }

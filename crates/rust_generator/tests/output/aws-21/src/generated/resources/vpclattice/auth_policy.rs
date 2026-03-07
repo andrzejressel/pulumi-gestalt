@@ -104,7 +104,7 @@ pub mod auth_policy {
         };
         let o = context.register_resource(request);
         AuthPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             policy: o.get_field("policy"),
             resource_identifier: o.get_field("resourceIdentifier"),

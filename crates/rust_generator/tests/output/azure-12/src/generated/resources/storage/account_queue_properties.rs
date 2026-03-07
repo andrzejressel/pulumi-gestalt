@@ -165,7 +165,7 @@ pub mod account_queue_properties {
         };
         let o = context.register_resource(request);
         AccountQueuePropertiesResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cors_rules: o.get_field("corsRules"),
             hour_metrics: o.get_field("hourMetrics"),

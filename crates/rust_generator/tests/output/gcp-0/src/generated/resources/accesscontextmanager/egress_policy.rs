@@ -80,7 +80,7 @@ pub mod egress_policy {
         };
         let o = context.register_resource(request);
         EgressPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             egress_policy_name: o.get_field("egressPolicyName"),
             resource: o.get_field("resource"),

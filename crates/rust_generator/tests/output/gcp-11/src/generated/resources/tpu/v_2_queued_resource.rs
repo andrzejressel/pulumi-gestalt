@@ -156,7 +156,7 @@ pub mod v_2_queued_resource {
         };
         let o = context.register_resource(request);
         V2QueuedResourceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             name: o.get_field("name"),
             project: o.get_field("project"),

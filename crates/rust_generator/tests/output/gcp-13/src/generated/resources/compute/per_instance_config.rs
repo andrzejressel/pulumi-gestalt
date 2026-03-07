@@ -287,7 +287,7 @@ pub mod per_instance_config {
         };
         let o = context.register_resource(request);
         PerInstanceConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             instance_group_manager: o.get_field("instanceGroupManager"),
             minimal_action: o.get_field("minimalAction"),

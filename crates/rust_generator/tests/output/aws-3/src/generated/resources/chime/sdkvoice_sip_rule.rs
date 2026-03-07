@@ -129,7 +129,7 @@ pub mod sdkvoice_sip_rule {
         };
         let o = context.register_resource(request);
         SdkvoiceSipRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             disabled: o.get_field("disabled"),
             name: o.get_field("name"),

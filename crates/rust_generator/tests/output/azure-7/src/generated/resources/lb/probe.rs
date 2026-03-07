@@ -177,7 +177,7 @@ pub mod probe {
         };
         let o = context.register_resource(request);
         ProbeResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             interval_in_seconds: o.get_field("intervalInSeconds"),
             load_balancer_rules: o.get_field("loadBalancerRules"),

@@ -57,7 +57,7 @@ pub mod resource_1 {
         };
         let o = context.register_resource(request);
         Resource1Result {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             common_type: o.get_field("commonType"),
             type1: o.get_field("type1"),

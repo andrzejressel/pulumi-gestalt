@@ -248,7 +248,7 @@ pub mod route {
         };
         let o = context.register_resource(request);
         RouteResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_id: o.get_field("apiId"),
             api_key_required: o.get_field("apiKeyRequired"),

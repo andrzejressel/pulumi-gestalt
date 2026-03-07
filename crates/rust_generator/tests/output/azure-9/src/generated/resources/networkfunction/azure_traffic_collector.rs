@@ -114,7 +114,7 @@ pub mod azure_traffic_collector {
         };
         let o = context.register_resource(request);
         AzureTrafficCollectorResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             collector_policy_ids: o.get_field("collectorPolicyIds"),
             location: o.get_field("location"),

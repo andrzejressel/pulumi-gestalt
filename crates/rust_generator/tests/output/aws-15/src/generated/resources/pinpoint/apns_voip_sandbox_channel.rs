@@ -182,7 +182,7 @@ pub mod apns_voip_sandbox_channel {
         };
         let o = context.register_resource(request);
         ApnsVoipSandboxChannelResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             application_id: o.get_field("applicationId"),
             bundle_id: o.get_field("bundleId"),

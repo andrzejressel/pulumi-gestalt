@@ -217,7 +217,7 @@ pub mod backup_policy {
         };
         let o = context.register_resource(request);
         BackupPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             assigned_volume_count: o.get_field("assignedVolumeCount"),
             create_time: o.get_field("createTime"),

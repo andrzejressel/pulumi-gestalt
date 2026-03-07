@@ -170,7 +170,7 @@ pub mod enrichment {
         };
         let o = context.register_resource(request);
         EnrichmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             endpoint_names: o.get_field("endpointNames"),
             iothub_name: o.get_field("iothubName"),

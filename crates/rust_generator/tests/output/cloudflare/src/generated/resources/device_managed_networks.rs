@@ -113,7 +113,7 @@ pub mod device_managed_networks {
         };
         let o = context.register_resource(request);
         DeviceManagedNetworksResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             config: o.get_field("config"),

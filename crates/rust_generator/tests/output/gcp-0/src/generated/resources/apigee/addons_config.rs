@@ -207,7 +207,7 @@ pub mod addons_config {
         };
         let o = context.register_resource(request);
         AddonsConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             addons_config: o.get_field("addonsConfig"),
             org: o.get_field("org"),

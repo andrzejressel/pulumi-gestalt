@@ -119,7 +119,7 @@ pub mod vault_notifications {
         };
         let o = context.register_resource(request);
         VaultNotificationsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             backup_vault_arn: o.get_field("backupVaultArn"),
             backup_vault_events: o.get_field("backupVaultEvents"),

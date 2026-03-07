@@ -207,7 +207,7 @@ pub mod s_quota_preference {
         };
         let o = context.register_resource(request);
         SQuotaPreferenceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             contact_email: o.get_field("contactEmail"),
             create_time: o.get_field("createTime"),

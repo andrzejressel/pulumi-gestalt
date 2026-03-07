@@ -102,7 +102,7 @@ pub mod sql_injection_match_set {
         };
         let o = context.register_resource(request);
         SqlInjectionMatchSetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             name: o.get_field("name"),
             sql_injection_match_tuples: o.get_field("sqlInjectionMatchTuples"),

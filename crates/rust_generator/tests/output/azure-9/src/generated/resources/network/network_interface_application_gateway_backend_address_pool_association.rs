@@ -80,7 +80,7 @@ pub mod network_interface_application_gateway_backend_address_pool_association {
         };
         let o = context.register_resource(request);
         NetworkInterfaceApplicationGatewayBackendAddressPoolAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             backend_address_pool_id: o.get_field("backendAddressPoolId"),
             ip_configuration_name: o.get_field("ipConfigurationName"),

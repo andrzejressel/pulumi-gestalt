@@ -88,7 +88,7 @@ pub mod policy_table {
         };
         let o = context.register_resource(request);
         PolicyTableResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             state: o.get_field("state"),

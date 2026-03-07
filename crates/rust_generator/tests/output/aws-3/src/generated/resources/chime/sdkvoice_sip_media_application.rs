@@ -127,7 +127,7 @@ pub mod sdkvoice_sip_media_application {
         };
         let o = context.register_resource(request);
         SdkvoiceSipMediaApplicationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             aws_region: o.get_field("awsRegion"),

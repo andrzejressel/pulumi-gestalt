@@ -151,7 +151,7 @@ pub mod dedicated_host_group {
         };
         let o = context.register_resource(request);
         DedicatedHostGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             automatic_placement_enabled: o.get_field("automaticPlacementEnabled"),
             location: o.get_field("location"),

@@ -436,7 +436,7 @@ pub mod job {
         };
         let o = context.register_resource(request);
         JobResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             app_engine_http_target: o.get_field("appEngineHttpTarget"),
             attempt_deadline: o.get_field("attemptDeadline"),

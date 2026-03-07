@@ -95,7 +95,7 @@ pub mod user_profile {
         };
         let o = context.register_resource(request);
         UserProfileResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allow_self_management: o.get_field("allowSelfManagement"),
             ssh_public_key: o.get_field("sshPublicKey"),

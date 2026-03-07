@@ -133,7 +133,7 @@ pub mod open_id_connect_provider {
         };
         let o = context.register_resource(request);
         OpenIdConnectProviderResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             client_id_lists: o.get_field("clientIdLists"),

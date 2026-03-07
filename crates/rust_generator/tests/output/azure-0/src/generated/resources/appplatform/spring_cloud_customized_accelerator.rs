@@ -185,7 +185,7 @@ pub mod spring_cloud_customized_accelerator {
         };
         let o = context.register_resource(request);
         SpringCloudCustomizedAcceleratorResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             accelerator_tags: o.get_field("acceleratorTags"),
             accelerator_type: o.get_field("acceleratorType"),

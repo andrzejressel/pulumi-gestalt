@@ -283,7 +283,7 @@ pub mod application {
         };
         let o = context.register_resource(request);
         ApplicationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             architecture: o.get_field("architecture"),
             arn: o.get_field("arn"),

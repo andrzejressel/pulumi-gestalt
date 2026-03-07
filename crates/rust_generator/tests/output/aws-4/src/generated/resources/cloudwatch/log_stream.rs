@@ -87,7 +87,7 @@ pub mod log_stream {
         };
         let o = context.register_resource(request);
         LogStreamResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             log_group_name: o.get_field("logGroupName"),

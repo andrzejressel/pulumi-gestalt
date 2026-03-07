@@ -115,7 +115,7 @@ pub mod standards_control {
         };
         let o = context.register_resource(request);
         StandardsControlResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             control_id: o.get_field("controlId"),
             control_status: o.get_field("controlStatus"),

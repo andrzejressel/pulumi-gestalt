@@ -209,7 +209,7 @@ pub mod autoscaling_policy {
         };
         let o = context.register_resource(request);
         AutoscalingPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             basic_algorithm: o.get_field("basicAlgorithm"),
             location: o.get_field("location"),

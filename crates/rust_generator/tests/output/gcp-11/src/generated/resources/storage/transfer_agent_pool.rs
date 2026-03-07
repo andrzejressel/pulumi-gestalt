@@ -170,7 +170,7 @@ pub mod transfer_agent_pool {
         };
         let o = context.register_resource(request);
         TransferAgentPoolResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bandwidth_limit: o.get_field("bandwidthLimit"),
             display_name: o.get_field("displayName"),

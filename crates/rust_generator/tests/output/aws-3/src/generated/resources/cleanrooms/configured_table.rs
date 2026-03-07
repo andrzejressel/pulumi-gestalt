@@ -149,7 +149,7 @@ pub mod configured_table {
         };
         let o = context.register_resource(request);
         ConfiguredTableResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allowed_columns: o.get_field("allowedColumns"),
             analysis_method: o.get_field("analysisMethod"),

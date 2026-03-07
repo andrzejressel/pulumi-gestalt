@@ -175,7 +175,7 @@ pub mod agent_data_source {
         };
         let o = context.register_resource(request);
         AgentDataSourceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             data_deletion_policy: o.get_field("dataDeletionPolicy"),
             data_source_configuration: o.get_field("dataSourceConfiguration"),

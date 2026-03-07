@@ -105,7 +105,7 @@ pub mod approval_rule_template {
         };
         let o = context.register_resource(request);
         ApprovalRuleTemplateResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             approval_rule_template_id: o.get_field("approvalRuleTemplateId"),
             content: o.get_field("content"),

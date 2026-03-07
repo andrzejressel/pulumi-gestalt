@@ -101,7 +101,7 @@ pub mod partner {
         };
         let o = context.register_resource(request);
         PartnerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             cluster_identifier: o.get_field("clusterIdentifier"),

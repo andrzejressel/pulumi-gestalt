@@ -120,7 +120,7 @@ pub mod load_balancer_cookie_stickiness_policy {
         };
         let o = context.register_resource(request);
         LoadBalancerCookieStickinessPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cookie_expiration_period: o.get_field("cookieExpirationPeriod"),
             lb_port: o.get_field("lbPort"),

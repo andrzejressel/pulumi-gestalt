@@ -359,7 +359,7 @@ pub mod disk_encryption_set {
         };
         let o = context.register_resource(request);
         DiskEncryptionSetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             auto_key_rotation_enabled: o.get_field("autoKeyRotationEnabled"),
             encryption_type: o.get_field("encryptionType"),

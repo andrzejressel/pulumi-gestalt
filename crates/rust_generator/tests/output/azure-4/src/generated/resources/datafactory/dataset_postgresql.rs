@@ -202,7 +202,7 @@ pub mod dataset_postgresql {
         };
         let o = context.register_resource(request);
         DatasetPostgresqlResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             additional_properties: o.get_field("additionalProperties"),
             annotations: o.get_field("annotations"),

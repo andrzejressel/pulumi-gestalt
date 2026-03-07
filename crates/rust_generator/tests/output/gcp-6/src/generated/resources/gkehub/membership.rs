@@ -299,7 +299,7 @@ pub mod membership {
         };
         let o = context.register_resource(request);
         MembershipResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             authority: o.get_field("authority"),
             description: o.get_field("description"),

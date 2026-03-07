@@ -89,7 +89,7 @@ pub mod authorize_vpc_endpoint_access {
         };
         let o = context.register_resource(request);
         AuthorizeVpcEndpointAccessResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account: o.get_field("account"),
             authorized_principals: o.get_field("authorizedPrincipals"),

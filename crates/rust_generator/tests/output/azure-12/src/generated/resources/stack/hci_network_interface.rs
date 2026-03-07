@@ -185,7 +185,7 @@ pub mod hci_network_interface {
         };
         let o = context.register_resource(request);
         HciNetworkInterfaceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             custom_location_id: o.get_field("customLocationId"),
             dns_servers: o.get_field("dnsServers"),

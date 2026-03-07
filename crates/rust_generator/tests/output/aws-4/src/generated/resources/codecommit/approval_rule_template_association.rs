@@ -86,7 +86,7 @@ pub mod approval_rule_template_association {
         };
         let o = context.register_resource(request);
         ApprovalRuleTemplateAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             approval_rule_template_name: o.get_field("approvalRuleTemplateName"),
             repository_name: o.get_field("repositoryName"),

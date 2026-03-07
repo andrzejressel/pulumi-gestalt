@@ -156,7 +156,7 @@ pub mod lication_load_balancer_subnet_association {
         };
         let o = context.register_resource(request);
         LicationLoadBalancerSubnetAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             application_load_balancer_id: o.get_field("applicationLoadBalancerId"),
             name: o.get_field("name"),

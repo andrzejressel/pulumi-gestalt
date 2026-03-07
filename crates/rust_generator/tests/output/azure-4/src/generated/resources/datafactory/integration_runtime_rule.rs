@@ -171,7 +171,7 @@ pub mod integration_runtime_rule {
         };
         let o = context.register_resource(request);
         IntegrationRuntimeRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cleanup_enabled: o.get_field("cleanupEnabled"),
             compute_type: o.get_field("computeType"),

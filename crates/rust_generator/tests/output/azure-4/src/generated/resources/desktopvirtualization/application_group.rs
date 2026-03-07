@@ -206,7 +206,7 @@ pub mod application_group {
         };
         let o = context.register_resource(request);
         ApplicationGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             default_desktop_display_name: o.get_field("defaultDesktopDisplayName"),
             description: o.get_field("description"),

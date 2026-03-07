@@ -101,7 +101,7 @@ pub mod voice_connector_logging {
         };
         let o = context.register_resource(request);
         VoiceConnectorLoggingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             enable_media_metric_logs: o.get_field("enableMediaMetricLogs"),
             enable_sip_logs: o.get_field("enableSipLogs"),

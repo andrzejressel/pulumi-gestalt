@@ -194,7 +194,7 @@ pub mod environment_keyvaluemaps_entries {
         };
         let o = context.register_resource(request);
         EnvironmentKeyvaluemapsEntriesResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             env_keyvaluemap_id: o.get_field("envKeyvaluemapId"),
             name: o.get_field("name"),

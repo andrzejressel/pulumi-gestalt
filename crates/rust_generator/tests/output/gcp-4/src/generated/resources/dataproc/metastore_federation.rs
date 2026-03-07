@@ -234,7 +234,7 @@ pub mod metastore_federation {
         };
         let o = context.register_resource(request);
         MetastoreFederationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             backend_metastores: o.get_field("backendMetastores"),
             effective_labels: o.get_field("effectiveLabels"),

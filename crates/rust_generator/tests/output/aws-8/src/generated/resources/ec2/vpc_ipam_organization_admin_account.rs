@@ -80,7 +80,7 @@ pub mod vpc_ipam_organization_admin_account {
         };
         let o = context.register_resource(request);
         VpcIpamOrganizationAdminAccountResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             delegated_admin_account_id: o.get_field("delegatedAdminAccountId"),

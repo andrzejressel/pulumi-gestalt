@@ -127,7 +127,7 @@ pub mod code_signing_config {
         };
         let o = context.register_resource(request);
         CodeSigningConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allowed_publishers: o.get_field("allowedPublishers"),
             arn: o.get_field("arn"),

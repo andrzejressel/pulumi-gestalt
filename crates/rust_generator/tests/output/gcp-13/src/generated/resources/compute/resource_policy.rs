@@ -396,7 +396,7 @@ pub mod resource_policy {
         };
         let o = context.register_resource(request);
         ResourcePolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             description: o.get_field("description"),
             disk_consistency_group_policy: o.get_field("diskConsistencyGroupPolicy"),

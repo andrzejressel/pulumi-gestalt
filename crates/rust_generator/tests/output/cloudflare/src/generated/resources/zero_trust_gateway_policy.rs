@@ -187,7 +187,7 @@ pub mod zero_trust_gateway_policy {
         };
         let o = context.register_resource(request);
         ZeroTrustGatewayPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             action: o.get_field("action"),

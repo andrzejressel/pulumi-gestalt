@@ -91,7 +91,7 @@ pub mod control_panel {
         };
         let o = context.register_resource(request);
         ControlPanelResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             cluster_arn: o.get_field("clusterArn"),

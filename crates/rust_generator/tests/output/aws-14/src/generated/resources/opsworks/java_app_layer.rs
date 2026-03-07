@@ -392,7 +392,7 @@ pub mod java_app_layer {
         };
         let o = context.register_resource(request);
         JavaAppLayerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             app_server: o.get_field("appServer"),
             app_server_version: o.get_field("appServerVersion"),

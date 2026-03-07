@@ -315,7 +315,7 @@ pub mod profile {
         };
         let o = context.register_resource(request);
         ProfileResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_number: o.get_field("accountNumber"),
             additional_information: o.get_field("additionalInformation"),

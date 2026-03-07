@@ -116,7 +116,7 @@ pub mod services_account {
         };
         let o = context.register_resource(request);
         ServicesAccountResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             application_id: o.get_field("applicationId"),
             billing_plan_id: o.get_field("billingPlanId"),

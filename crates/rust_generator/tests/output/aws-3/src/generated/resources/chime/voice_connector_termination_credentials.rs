@@ -114,7 +114,7 @@ pub mod voice_connector_termination_credentials {
         };
         let o = context.register_resource(request);
         VoiceConnectorTerminationCredentialsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             credentials: o.get_field("credentials"),
             voice_connector_id: o.get_field("voiceConnectorId"),

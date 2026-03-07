@@ -327,7 +327,7 @@ pub mod bare_metal_node_pool {
         };
         let o = context.register_resource(request);
         BareMetalNodePoolResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             annotations: o.get_field("annotations"),
             bare_metal_cluster: o.get_field("bareMetalCluster"),

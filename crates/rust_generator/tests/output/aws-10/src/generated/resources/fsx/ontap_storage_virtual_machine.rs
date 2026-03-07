@@ -191,7 +191,7 @@ pub mod ontap_storage_virtual_machine {
         };
         let o = context.register_resource(request);
         OntapStorageVirtualMachineResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             active_directory_configuration: o.get_field("activeDirectoryConfiguration"),
             arn: o.get_field("arn"),

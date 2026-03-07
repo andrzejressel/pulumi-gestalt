@@ -339,7 +339,7 @@ pub mod alert_policy {
         };
         let o = context.register_resource(request);
         AlertPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             alert_strategy: o.get_field("alertStrategy"),
             combiner: o.get_field("combiner"),

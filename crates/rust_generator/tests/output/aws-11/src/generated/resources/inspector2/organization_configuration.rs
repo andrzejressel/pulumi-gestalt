@@ -82,7 +82,7 @@ pub mod organization_configuration {
         };
         let o = context.register_resource(request);
         OrganizationConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             auto_enable: o.get_field("autoEnable"),
             max_account_limit_reached: o.get_field("maxAccountLimitReached"),

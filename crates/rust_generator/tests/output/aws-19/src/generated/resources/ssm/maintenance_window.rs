@@ -193,7 +193,7 @@ pub mod maintenance_window {
         };
         let o = context.register_resource(request);
         MaintenanceWindowResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allow_unassociated_targets: o.get_field("allowUnassociatedTargets"),
             cutoff: o.get_field("cutoff"),

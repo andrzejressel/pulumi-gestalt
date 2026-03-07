@@ -132,7 +132,7 @@ pub mod instance_settings {
         };
         let o = context.register_resource(request);
         InstanceSettingsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             fingerprint: o.get_field("fingerprint"),
             metadata: o.get_field("metadata"),

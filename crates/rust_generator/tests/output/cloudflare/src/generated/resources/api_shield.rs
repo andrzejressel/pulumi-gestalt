@@ -84,7 +84,7 @@ pub mod api_shield {
         };
         let o = context.register_resource(request);
         ApiShieldResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             auth_id_characteristics: o.get_field("authIdCharacteristics"),
             zone_id: o.get_field("zoneId"),

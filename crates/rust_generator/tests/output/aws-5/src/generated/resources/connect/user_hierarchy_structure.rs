@@ -141,7 +141,7 @@ pub mod user_hierarchy_structure {
         };
         let o = context.register_resource(request);
         UserHierarchyStructureResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             hierarchy_structure: o.get_field("hierarchyStructure"),
             instance_id: o.get_field("instanceId"),

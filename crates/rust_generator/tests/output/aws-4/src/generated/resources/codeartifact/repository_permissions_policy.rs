@@ -142,7 +142,7 @@ pub mod repository_permissions_policy {
         };
         let o = context.register_resource(request);
         RepositoryPermissionsPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             domain: o.get_field("domain"),
             domain_owner: o.get_field("domainOwner"),

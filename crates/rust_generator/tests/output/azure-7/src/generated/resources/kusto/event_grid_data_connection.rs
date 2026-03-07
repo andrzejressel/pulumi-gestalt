@@ -328,7 +328,7 @@ pub mod event_grid_data_connection {
         };
         let o = context.register_resource(request);
         EventGridDataConnectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             blob_storage_event_type: o.get_field("blobStorageEventType"),
             cluster_name: o.get_field("clusterName"),

@@ -142,7 +142,7 @@ pub mod bucket_metric {
         };
         let o = context.register_resource(request);
         BucketMetricResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bucket: o.get_field("bucket"),
             filter: o.get_field("filter"),

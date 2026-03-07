@@ -181,7 +181,7 @@ pub mod backup_policy_kubernetes_cluster {
         };
         let o = context.register_resource(request);
         BackupPolicyKubernetesClusterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             backup_repeating_time_intervals: o.get_field("backupRepeatingTimeIntervals"),
             default_retention_rule: o.get_field("defaultRetentionRule"),

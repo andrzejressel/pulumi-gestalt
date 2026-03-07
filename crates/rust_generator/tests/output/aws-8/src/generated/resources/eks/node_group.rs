@@ -340,7 +340,7 @@ pub mod node_group {
         };
         let o = context.register_resource(request);
         NodeGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             ami_type: o.get_field("amiType"),
             arn: o.get_field("arn"),

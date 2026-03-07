@@ -161,7 +161,7 @@ pub mod notification_config {
         };
         let o = context.register_resource(request);
         NotificationConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             config_id: o.get_field("configId"),
             description: o.get_field("description"),

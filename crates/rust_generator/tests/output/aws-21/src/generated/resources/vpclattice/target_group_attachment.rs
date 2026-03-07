@@ -86,7 +86,7 @@ pub mod target_group_attachment {
         };
         let o = context.register_resource(request);
         TargetGroupAttachmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             target: o.get_field("target"),
             target_group_identifier: o.get_field("targetGroupIdentifier"),

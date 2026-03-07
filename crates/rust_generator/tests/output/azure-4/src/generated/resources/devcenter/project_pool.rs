@@ -225,7 +225,7 @@ pub mod project_pool {
         };
         let o = context.register_resource(request);
         ProjectPoolResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             dev_box_definition_name: o.get_field("devBoxDefinitionName"),
             dev_center_attached_network_name: o

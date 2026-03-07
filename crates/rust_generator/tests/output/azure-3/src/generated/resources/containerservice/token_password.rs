@@ -133,7 +133,7 @@ pub mod token_password {
         };
         let o = context.register_resource(request);
         TokenPasswordResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             container_registry_token_id: o.get_field("containerRegistryTokenId"),
             password1: o.get_field("password1"),

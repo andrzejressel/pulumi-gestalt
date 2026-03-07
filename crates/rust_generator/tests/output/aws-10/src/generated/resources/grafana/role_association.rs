@@ -118,7 +118,7 @@ pub mod role_association {
         };
         let o = context.register_resource(request);
         RoleAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             group_ids: o.get_field("groupIds"),
             role: o.get_field("role"),

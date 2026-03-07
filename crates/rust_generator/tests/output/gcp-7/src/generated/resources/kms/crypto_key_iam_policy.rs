@@ -231,7 +231,7 @@ pub mod crypto_key_iam_policy {
         };
         let o = context.register_resource(request);
         CryptoKeyIAMPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             crypto_key_id: o.get_field("cryptoKeyId"),
             etag: o.get_field("etag"),

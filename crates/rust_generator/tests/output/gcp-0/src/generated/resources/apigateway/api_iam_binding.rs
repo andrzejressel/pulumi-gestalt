@@ -305,7 +305,7 @@ pub mod api_iam_binding {
         };
         let o = context.register_resource(request);
         ApiIamBindingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api: o.get_field("api"),
             condition: o.get_field("condition"),

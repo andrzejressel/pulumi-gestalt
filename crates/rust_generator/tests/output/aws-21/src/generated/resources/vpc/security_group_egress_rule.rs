@@ -186,7 +186,7 @@ pub mod security_group_egress_rule {
         };
         let o = context.register_resource(request);
         SecurityGroupEgressRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             cidr_ipv4: o.get_field("cidrIpv4"),

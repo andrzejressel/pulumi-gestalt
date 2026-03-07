@@ -159,7 +159,7 @@ pub mod network_manager {
         };
         let o = context.register_resource(request);
         NetworkManagerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cross_tenant_scopes: o.get_field("crossTenantScopes"),
             description: o.get_field("description"),

@@ -178,7 +178,7 @@ pub mod resource_collection {
         };
         let o = context.register_resource(request);
         ResourceCollectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cloudformation: o.get_field("cloudformation"),
             tags: o.get_field("tags"),

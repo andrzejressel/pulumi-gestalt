@@ -275,7 +275,7 @@ pub mod trigger_tumbling_window {
         };
         let o = context.register_resource(request);
         TriggerTumblingWindowResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             activated: o.get_field("activated"),
             additional_properties: o.get_field("additionalProperties"),

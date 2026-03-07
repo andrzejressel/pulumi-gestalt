@@ -108,7 +108,7 @@ pub mod custom_key_store {
         };
         let o = context.register_resource(request);
         CustomKeyStoreResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cloud_hsm_cluster_id: o.get_field("cloudHsmClusterId"),
             custom_key_store_name: o.get_field("customKeyStoreName"),

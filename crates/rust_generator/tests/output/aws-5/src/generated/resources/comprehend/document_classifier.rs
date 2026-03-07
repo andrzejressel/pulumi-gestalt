@@ -261,7 +261,7 @@ pub mod document_classifier {
         };
         let o = context.register_resource(request);
         DocumentClassifierResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             data_access_role_arn: o.get_field("dataAccessRoleArn"),

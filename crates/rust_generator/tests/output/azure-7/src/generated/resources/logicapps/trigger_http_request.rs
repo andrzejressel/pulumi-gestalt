@@ -140,7 +140,7 @@ pub mod trigger_http_request {
         };
         let o = context.register_resource(request);
         TriggerHttpRequestResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             callback_url: o.get_field("callbackUrl"),
             logic_app_id: o.get_field("logicAppId"),

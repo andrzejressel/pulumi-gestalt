@@ -181,7 +181,7 @@ pub mod gallery_application_assignment {
         };
         let o = context.register_resource(request);
         GalleryApplicationAssignmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             configuration_blob_uri: o.get_field("configurationBlobUri"),
             gallery_application_version_id: o.get_field("galleryApplicationVersionId"),

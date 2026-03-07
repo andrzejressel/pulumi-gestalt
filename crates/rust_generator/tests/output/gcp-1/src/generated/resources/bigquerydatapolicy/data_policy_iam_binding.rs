@@ -334,7 +334,7 @@ pub mod data_policy_iam_binding {
         };
         let o = context.register_resource(request);
         DataPolicyIamBindingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             condition: o.get_field("condition"),
             data_policy_id: o.get_field("dataPolicyId"),

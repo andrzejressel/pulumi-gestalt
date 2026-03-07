@@ -212,7 +212,7 @@ pub mod scheduled_action {
         };
         let o = context.register_resource(request);
         ScheduledActionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             day_of_month: o.get_field("dayOfMonth"),
             days_of_weeks: o.get_field("daysOfWeeks"),

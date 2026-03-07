@@ -431,7 +431,7 @@ pub mod edge_cache_origin {
         };
         let o = context.register_resource(request);
         EdgeCacheOriginResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             aws_v4_authentication: o.get_field("awsV4Authentication"),
             description: o.get_field("description"),

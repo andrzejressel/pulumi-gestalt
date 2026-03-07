@@ -107,7 +107,7 @@ pub mod snapshot {
         };
         let o = context.register_resource(request);
         SnapshotResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             accounts_with_provisioned_restore_accesses: o
                 .get_field("accountsWithProvisionedRestoreAccesses"),

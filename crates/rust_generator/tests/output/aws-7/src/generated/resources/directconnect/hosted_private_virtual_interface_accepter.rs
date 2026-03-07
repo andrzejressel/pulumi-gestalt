@@ -133,7 +133,7 @@ pub mod hosted_private_virtual_interface_accepter {
         };
         let o = context.register_resource(request);
         HostedPrivateVirtualInterfaceAccepterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             dx_gateway_id: o.get_field("dxGatewayId"),

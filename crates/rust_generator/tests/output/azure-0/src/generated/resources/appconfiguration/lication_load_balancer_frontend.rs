@@ -109,7 +109,7 @@ pub mod lication_load_balancer_frontend {
         };
         let o = context.register_resource(request);
         LicationLoadBalancerFrontendResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             application_load_balancer_id: o.get_field("applicationLoadBalancerId"),
             fully_qualified_domain_name: o.get_field("fullyQualifiedDomainName"),

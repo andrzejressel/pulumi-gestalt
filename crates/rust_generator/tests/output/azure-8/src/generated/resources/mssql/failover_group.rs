@@ -187,7 +187,7 @@ pub mod failover_group {
         };
         let o = context.register_resource(request);
         FailoverGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             databases: o.get_field("databases"),
             name: o.get_field("name"),

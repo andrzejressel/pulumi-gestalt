@@ -149,7 +149,7 @@ pub mod function_java_script_udf {
         };
         let o = context.register_resource(request);
         FunctionJavaScriptUDFResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             inputs: o.get_field("inputs"),
             name: o.get_field("name"),

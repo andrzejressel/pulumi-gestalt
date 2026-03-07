@@ -153,7 +153,7 @@ pub mod identity_provider_aad {
         };
         let o = context.register_resource(request);
         IdentityProviderAadResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allowed_tenants: o.get_field("allowedTenants"),
             api_management_name: o.get_field("apiManagementName"),

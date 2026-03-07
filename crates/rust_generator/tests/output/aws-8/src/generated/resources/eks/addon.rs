@@ -351,7 +351,7 @@ pub mod addon {
         };
         let o = context.register_resource(request);
         AddonResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             addon_name: o.get_field("addonName"),
             addon_version: o.get_field("addonVersion"),

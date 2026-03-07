@@ -164,7 +164,7 @@ pub mod storage_insights {
         };
         let o = context.register_resource(request);
         StorageInsightsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             blob_container_names: o.get_field("blobContainerNames"),
             name: o.get_field("name"),

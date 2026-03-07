@@ -292,7 +292,7 @@ pub mod keystores_aliases_self_signed_cert {
         };
         let o = context.register_resource(request);
         KeystoresAliasesSelfSignedCertResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             alias: o.get_field("alias"),
             cert_validity_in_days: o.get_field("certValidityInDays"),

@@ -174,7 +174,7 @@ pub mod replica_key {
         };
         let o = context.register_resource(request);
         ReplicaKeyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             bypass_policy_lockout_safety_check: o

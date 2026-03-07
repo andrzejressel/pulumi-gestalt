@@ -94,7 +94,7 @@ pub mod source_control_token {
         };
         let o = context.register_resource(request);
         SourceControlTokenResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             token: o.get_field("token"),
             token_secret: o.get_field("tokenSecret"),

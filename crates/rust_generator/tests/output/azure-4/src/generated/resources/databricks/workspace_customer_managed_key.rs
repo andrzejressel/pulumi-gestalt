@@ -64,7 +64,7 @@ pub mod workspace_customer_managed_key {
         };
         let o = context.register_resource(request);
         WorkspaceCustomerManagedKeyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             key_vault_key_id: o.get_field("keyVaultKeyId"),
             workspace_id: o.get_field("workspaceId"),

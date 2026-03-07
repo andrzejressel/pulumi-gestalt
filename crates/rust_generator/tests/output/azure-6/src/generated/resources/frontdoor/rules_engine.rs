@@ -193,7 +193,7 @@ pub mod rules_engine {
         };
         let o = context.register_resource(request);
         RulesEngineResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             enabled: o.get_field("enabled"),
             frontdoor_name: o.get_field("frontdoorName"),

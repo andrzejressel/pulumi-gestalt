@@ -11,6 +11,8 @@
 pub struct ProviderResult {
     /// Pulumi URN is the stable logical identity of this provider resource in the Pulumi stack.
     pub urn: pulumi_gestalt_rust::Output<String>,
+    /// Pulumi ID is the unique identifier assigned by the provider to this resource.
+    pub id: pulumi_gestalt_rust::Output<String>,
 }
 ///
 /// Registers a new resource with the given unique name and arguments
@@ -24,5 +26,8 @@ pub fn create(context: &pulumi_gestalt_rust::Context, name: &str) -> ProviderRes
         object: &[],
     };
     let o = context.register_resource(request);
-    ProviderResult { urn: o.get_urn() }
+    ProviderResult {
+        urn: o.get_urn(),
+        id: o.get_id(),
+    }
 }

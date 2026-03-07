@@ -96,7 +96,7 @@ pub mod instance_access_control_attributes {
         };
         let o = context.register_resource(request);
         InstanceAccessControlAttributesResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             attributes: o.get_field("attributes"),
             instance_arn: o.get_field("instanceArn"),

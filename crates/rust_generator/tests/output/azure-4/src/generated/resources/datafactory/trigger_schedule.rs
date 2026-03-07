@@ -239,7 +239,7 @@ pub mod trigger_schedule {
         };
         let o = context.register_resource(request);
         TriggerScheduleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             activated: o.get_field("activated"),
             annotations: o.get_field("annotations"),

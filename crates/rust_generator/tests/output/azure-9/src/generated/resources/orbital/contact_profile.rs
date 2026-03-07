@@ -233,7 +233,7 @@ pub mod contact_profile {
         };
         let o = context.register_resource(request);
         ContactProfileResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             auto_tracking: o.get_field("autoTracking"),
             event_hub_uri: o.get_field("eventHubUri"),

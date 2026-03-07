@@ -267,7 +267,7 @@ pub mod vpc_peering_connection {
         };
         let o = context.register_resource(request);
         VpcPeeringConnectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             accept_status: o.get_field("acceptStatus"),
             accepter: o.get_field("accepter"),

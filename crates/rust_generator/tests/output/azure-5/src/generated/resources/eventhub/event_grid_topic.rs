@@ -213,7 +213,7 @@ pub mod event_grid_topic {
         };
         let o = context.register_resource(request);
         EventGridTopicResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             endpoint: o.get_field("endpoint"),
             identity: o.get_field("identity"),

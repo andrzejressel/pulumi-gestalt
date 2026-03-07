@@ -117,7 +117,7 @@ pub mod cluster_capacity_providers {
         };
         let o = context.register_resource(request);
         ClusterCapacityProvidersResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             capacity_providers: o.get_field("capacityProviders"),
             cluster_name: o.get_field("clusterName"),

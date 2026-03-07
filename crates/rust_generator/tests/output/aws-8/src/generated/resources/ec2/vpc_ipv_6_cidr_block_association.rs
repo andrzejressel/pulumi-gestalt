@@ -136,7 +136,7 @@ pub mod vpc_ipv_6_cidr_block_association {
         };
         let o = context.register_resource(request);
         VpcIpv6CidrBlockAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             assign_generated_ipv6_cidr_block: o
                 .get_field("assignGeneratedIpv6CidrBlock"),

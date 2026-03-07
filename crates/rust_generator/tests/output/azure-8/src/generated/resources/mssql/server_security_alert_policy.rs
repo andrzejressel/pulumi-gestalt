@@ -189,7 +189,7 @@ pub mod server_security_alert_policy {
         };
         let o = context.register_resource(request);
         ServerSecurityAlertPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             disabled_alerts: o.get_field("disabledAlerts"),
             email_account_admins: o.get_field("emailAccountAdmins"),

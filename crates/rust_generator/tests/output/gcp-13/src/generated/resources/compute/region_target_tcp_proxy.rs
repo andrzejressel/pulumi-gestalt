@@ -217,7 +217,7 @@ pub mod region_target_tcp_proxy {
         };
         let o = context.register_resource(request);
         RegionTargetTcpProxyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             backend_service: o.get_field("backendService"),
             creation_timestamp: o.get_field("creationTimestamp"),

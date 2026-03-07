@@ -438,7 +438,7 @@ pub mod tunnel_iam_binding {
         };
         let o = context.register_resource(request);
         TunnelIamBindingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             condition: o.get_field("condition"),
             etag: o.get_field("etag"),

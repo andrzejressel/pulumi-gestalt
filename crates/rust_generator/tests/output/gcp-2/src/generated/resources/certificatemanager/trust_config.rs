@@ -258,7 +258,7 @@ pub mod trust_config {
         };
         let o = context.register_resource(request);
         TrustConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allowlisted_certificates: o.get_field("allowlistedCertificates"),
             create_time: o.get_field("createTime"),

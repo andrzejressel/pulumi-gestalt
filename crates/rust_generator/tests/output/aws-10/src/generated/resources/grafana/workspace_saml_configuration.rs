@@ -224,7 +224,7 @@ pub mod workspace_saml_configuration {
         };
         let o = context.register_resource(request);
         WorkspaceSamlConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             admin_role_values: o.get_field("adminRoleValues"),
             allowed_organizations: o.get_field("allowedOrganizations"),

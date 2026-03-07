@@ -131,7 +131,7 @@ pub mod assignment_dedicated_host {
         };
         let o = context.register_resource(request);
         AssignmentDedicatedHostResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             dedicated_host_id: o.get_field("dedicatedHostId"),
             location: o.get_field("location"),

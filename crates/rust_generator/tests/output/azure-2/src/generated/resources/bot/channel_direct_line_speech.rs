@@ -178,7 +178,7 @@ pub mod channel_direct_line_speech {
         };
         let o = context.register_resource(request);
         ChannelDirectLineSpeechResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bot_name: o.get_field("botName"),
             cognitive_account_id: o.get_field("cognitiveAccountId"),

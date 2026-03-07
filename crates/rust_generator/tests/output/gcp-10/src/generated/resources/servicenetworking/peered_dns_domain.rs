@@ -125,7 +125,7 @@ pub mod peered_dns_domain {
         };
         let o = context.register_resource(request);
         PeeredDnsDomainResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             dns_suffix: o.get_field("dnsSuffix"),
             name: o.get_field("name"),

@@ -193,7 +193,7 @@ pub mod application {
         };
         let o = context.register_resource(request);
         ApplicationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             application_account: o.get_field("applicationAccount"),
             application_arn: o.get_field("applicationArn"),

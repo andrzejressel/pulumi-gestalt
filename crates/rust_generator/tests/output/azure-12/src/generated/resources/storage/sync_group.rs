@@ -97,7 +97,7 @@ pub mod sync_group {
         };
         let o = context.register_resource(request);
         SyncGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             name: o.get_field("name"),
             storage_sync_id: o.get_field("storageSyncId"),

@@ -165,7 +165,7 @@ pub mod filter {
         };
         let o = context.register_resource(request);
         FilterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             action: o.get_field("action"),
             arn: o.get_field("arn"),

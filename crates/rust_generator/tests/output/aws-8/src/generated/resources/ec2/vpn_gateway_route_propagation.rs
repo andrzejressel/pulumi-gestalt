@@ -78,7 +78,7 @@ pub mod vpn_gateway_route_propagation {
         };
         let o = context.register_resource(request);
         VpnGatewayRoutePropagationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             route_table_id: o.get_field("routeTableId"),
             vpn_gateway_id: o.get_field("vpnGatewayId"),

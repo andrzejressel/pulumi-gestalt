@@ -142,7 +142,7 @@ pub mod federated_identity_credential {
         };
         let o = context.register_resource(request);
         FederatedIdentityCredentialResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             audience: o.get_field("audience"),
             issuer: o.get_field("issuer"),

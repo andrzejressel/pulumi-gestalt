@@ -176,7 +176,7 @@ pub mod virtual_hub_ip {
         };
         let o = context.register_resource(request);
         VirtualHubIpResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             name: o.get_field("name"),
             private_ip_address: o.get_field("privateIpAddress"),

@@ -119,7 +119,7 @@ pub mod studio_lifecycle_config {
         };
         let o = context.register_resource(request);
         StudioLifecycleConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             studio_lifecycle_config_app_type: o

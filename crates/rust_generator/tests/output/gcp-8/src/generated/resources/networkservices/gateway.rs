@@ -541,7 +541,7 @@ pub mod gateway {
         };
         let o = context.register_resource(request);
         GatewayResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             addresses: o.get_field("addresses"),
             certificate_urls: o.get_field("certificateUrls"),

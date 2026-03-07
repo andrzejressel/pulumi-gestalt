@@ -150,7 +150,7 @@ pub mod usage_export_bucket {
         };
         let o = context.register_resource(request);
         UsageExportBucketResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bucket_name: o.get_field("bucketName"),
             prefix: o.get_field("prefix"),

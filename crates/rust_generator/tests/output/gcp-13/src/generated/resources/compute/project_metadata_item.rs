@@ -105,7 +105,7 @@ pub mod project_metadata_item {
         };
         let o = context.register_resource(request);
         ProjectMetadataItemResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             key: o.get_field("key"),
             project: o.get_field("project"),
