@@ -25,9 +25,6 @@ pub struct CustomResourceOptions {
     pub provider: Option<Output<String>>,
 }
 
-#[derive(Default)]
-pub struct ResourceOptions {}
-
 pub type FunctionContext = Box<dyn Fn(Value) -> Value + Send>;
 
 pub struct Output<T> {
