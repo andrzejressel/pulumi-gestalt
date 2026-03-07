@@ -87,6 +87,22 @@ pub mod tape_pool {
         name: &str,
         args: TapePoolArgs,
     ) -> TapePoolResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TapePoolArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TapePoolResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TapePoolArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TapePoolResult {
         let pool_name_binding = args.pool_name.get_output(context);
         let retention_lock_time_in_days_binding = args
             .retention_lock_time_in_days
@@ -120,6 +136,7 @@ pub mod tape_pool {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TapePoolResult {

@@ -131,6 +131,22 @@ pub mod replication_task {
         name: &str,
         args: ReplicationTaskArgs,
     ) -> ReplicationTaskResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReplicationTaskArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ReplicationTaskResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReplicationTaskArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ReplicationTaskResult {
         let cdc_start_position_binding = args.cdc_start_position.get_output(context);
         let cdc_start_time_binding = args.cdc_start_time.get_output(context);
         let migration_type_binding = args.migration_type.get_output(context);
@@ -203,6 +219,7 @@ pub mod replication_task {
                     value: &target_endpoint_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ReplicationTaskResult {

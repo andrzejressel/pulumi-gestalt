@@ -115,6 +115,22 @@ pub mod local_network_gateway {
         name: &str,
         args: LocalNetworkGatewayArgs,
     ) -> LocalNetworkGatewayResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LocalNetworkGatewayArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LocalNetworkGatewayResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LocalNetworkGatewayArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LocalNetworkGatewayResult {
         let address_spaces_binding = args.address_spaces.get_output(context);
         let bgp_settings_binding = args.bgp_settings.get_output(context);
         let gateway_address_binding = args.gateway_address.get_output(context);
@@ -161,6 +177,7 @@ pub mod local_network_gateway {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LocalNetworkGatewayResult {

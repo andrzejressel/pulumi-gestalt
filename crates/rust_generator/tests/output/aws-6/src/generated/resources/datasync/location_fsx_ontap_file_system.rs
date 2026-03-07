@@ -105,6 +105,22 @@ pub mod location_fsx_ontap_file_system {
         name: &str,
         args: LocationFsxOntapFileSystemArgs,
     ) -> LocationFsxOntapFileSystemResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LocationFsxOntapFileSystemArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LocationFsxOntapFileSystemResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LocationFsxOntapFileSystemArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LocationFsxOntapFileSystemResult {
         let protocol_binding = args.protocol.get_output(context);
         let security_group_arns_binding = args.security_group_arns.get_output(context);
         let storage_virtual_machine_arn_binding = args
@@ -139,6 +155,7 @@ pub mod location_fsx_ontap_file_system {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LocationFsxOntapFileSystemResult {

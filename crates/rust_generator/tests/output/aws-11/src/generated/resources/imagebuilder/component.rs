@@ -141,6 +141,22 @@ pub mod component {
         name: &str,
         args: ComponentArgs,
     ) -> ComponentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ComponentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ComponentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ComponentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ComponentResult {
         let change_description_binding = args.change_description.get_output(context);
         let data_binding = args.data.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -204,6 +220,7 @@ pub mod component {
                     value: &version_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ComponentResult {

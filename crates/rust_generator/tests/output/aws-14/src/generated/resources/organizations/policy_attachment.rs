@@ -105,6 +105,22 @@ pub mod policy_attachment {
         name: &str,
         args: PolicyAttachmentArgs,
     ) -> PolicyAttachmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PolicyAttachmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PolicyAttachmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PolicyAttachmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PolicyAttachmentResult {
         let policy_id_binding = args.policy_id.get_output(context);
         let skip_destroy_binding = args.skip_destroy.get_output(context);
         let target_id_binding = args.target_id.get_output(context);
@@ -126,6 +142,7 @@ pub mod policy_attachment {
                     value: &target_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PolicyAttachmentResult {

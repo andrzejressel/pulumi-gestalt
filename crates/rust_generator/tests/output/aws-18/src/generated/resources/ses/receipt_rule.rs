@@ -167,6 +167,22 @@ pub mod receipt_rule {
         name: &str,
         args: ReceiptRuleArgs,
     ) -> ReceiptRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReceiptRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ReceiptRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReceiptRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ReceiptRuleResult {
         let add_header_actions_binding = args.add_header_actions.get_output(context);
         let after_binding = args.after.get_output(context);
         let bounce_actions_binding = args.bounce_actions.get_output(context);
@@ -243,6 +259,7 @@ pub mod receipt_rule {
                     value: &workmail_actions_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ReceiptRuleResult {

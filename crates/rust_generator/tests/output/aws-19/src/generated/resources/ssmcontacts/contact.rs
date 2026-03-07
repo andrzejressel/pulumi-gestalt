@@ -104,6 +104,22 @@ pub mod contact {
         name: &str,
         args: ContactArgs,
     ) -> ContactResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ContactArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ContactResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ContactArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ContactResult {
         let alias_binding = args.alias.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let tags_binding = args.tags.get_output(context);
@@ -130,6 +146,7 @@ pub mod contact {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ContactResult {

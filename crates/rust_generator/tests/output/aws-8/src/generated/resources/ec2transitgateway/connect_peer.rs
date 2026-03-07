@@ -104,6 +104,22 @@ pub mod connect_peer {
         name: &str,
         args: ConnectPeerArgs,
     ) -> ConnectPeerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConnectPeerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ConnectPeerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConnectPeerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ConnectPeerResult {
         let bgp_asn_binding = args.bgp_asn.get_output(context);
         let inside_cidr_blocks_binding = args.inside_cidr_blocks.get_output(context);
         let peer_address_binding = args.peer_address.get_output(context);
@@ -144,6 +160,7 @@ pub mod connect_peer {
                     value: &transit_gateway_attachment_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ConnectPeerResult {

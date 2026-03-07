@@ -147,6 +147,22 @@ pub mod workspace_sql_aad_admin {
         name: &str,
         args: WorkspaceSqlAadAdminArgs,
     ) -> WorkspaceSqlAadAdminResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkspaceSqlAadAdminArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WorkspaceSqlAadAdminResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkspaceSqlAadAdminArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WorkspaceSqlAadAdminResult {
         let login_binding = args.login.get_output(context);
         let object_id_binding = args.object_id.get_output(context);
         let synapse_workspace_id_binding = args.synapse_workspace_id.get_output(context);
@@ -173,6 +189,7 @@ pub mod workspace_sql_aad_admin {
                     value: &tenant_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WorkspaceSqlAadAdminResult {

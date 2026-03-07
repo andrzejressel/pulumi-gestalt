@@ -76,6 +76,22 @@ pub mod archive_rule {
         name: &str,
         args: ArchiveRuleArgs,
     ) -> ArchiveRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ArchiveRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ArchiveRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ArchiveRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ArchiveRuleResult {
         let analyzer_name_binding = args.analyzer_name.get_output(context);
         let filters_binding = args.filters.get_output(context);
         let rule_name_binding = args.rule_name.get_output(context);
@@ -97,6 +113,7 @@ pub mod archive_rule {
                     value: &rule_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ArchiveRuleResult {

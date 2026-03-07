@@ -173,6 +173,22 @@ pub mod sql_container {
         name: &str,
         args: SqlContainerArgs,
     ) -> SqlContainerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SqlContainerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SqlContainerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SqlContainerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SqlContainerResult {
         let account_name_binding = args.account_name.get_output(context);
         let analytical_storage_ttl_binding = args
             .analytical_storage_ttl
@@ -255,6 +271,7 @@ pub mod sql_container {
                     value: &unique_keys_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SqlContainerResult {

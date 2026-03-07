@@ -788,6 +788,22 @@ pub mod region_url_map {
         name: &str,
         args: RegionUrlMapArgs,
     ) -> RegionUrlMapResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionUrlMapArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RegionUrlMapResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionUrlMapArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RegionUrlMapResult {
         let default_route_action_binding = args.default_route_action.get_output(context);
         let default_service_binding = args.default_service.get_output(context);
         let default_url_redirect_binding = args.default_url_redirect.get_output(context);
@@ -844,6 +860,7 @@ pub mod region_url_map {
                     value: &tests_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RegionUrlMapResult {

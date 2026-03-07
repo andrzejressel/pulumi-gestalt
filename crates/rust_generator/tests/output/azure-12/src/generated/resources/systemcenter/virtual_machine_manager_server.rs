@@ -120,6 +120,22 @@ pub mod virtual_machine_manager_server {
         name: &str,
         args: VirtualMachineManagerServerArgs,
     ) -> VirtualMachineManagerServerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VirtualMachineManagerServerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VirtualMachineManagerServerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VirtualMachineManagerServerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VirtualMachineManagerServerResult {
         let custom_location_id_binding = args.custom_location_id.get_output(context);
         let fqdn_binding = args.fqdn.get_output(context);
         let location_binding = args.location.get_output(context);
@@ -172,6 +188,7 @@ pub mod virtual_machine_manager_server {
                     value: &username_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VirtualMachineManagerServerResult {

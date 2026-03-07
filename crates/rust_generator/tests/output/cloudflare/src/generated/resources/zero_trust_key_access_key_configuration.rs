@@ -38,6 +38,22 @@ pub mod zero_trust_key_access_key_configuration {
         name: &str,
         args: ZeroTrustKeyAccessKeyConfigurationArgs,
     ) -> ZeroTrustKeyAccessKeyConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZeroTrustKeyAccessKeyConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ZeroTrustKeyAccessKeyConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZeroTrustKeyAccessKeyConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ZeroTrustKeyAccessKeyConfigurationResult {
         let account_id_binding = args.account_id.get_output(context);
         let key_rotation_interval_days_binding = args
             .key_rotation_interval_days
@@ -57,6 +73,7 @@ pub mod zero_trust_key_access_key_configuration {
                     value: &key_rotation_interval_days_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ZeroTrustKeyAccessKeyConfigurationResult {

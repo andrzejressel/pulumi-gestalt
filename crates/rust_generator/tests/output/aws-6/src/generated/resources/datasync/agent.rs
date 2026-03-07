@@ -141,6 +141,22 @@ pub mod agent {
         name: &str,
         args: AgentArgs,
     ) -> AgentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AgentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AgentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AgentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AgentResult {
         let activation_key_binding = args.activation_key.get_output(context);
         let ip_address_binding = args.ip_address.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -189,6 +205,7 @@ pub mod agent {
                     value: &vpc_endpoint_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AgentResult {

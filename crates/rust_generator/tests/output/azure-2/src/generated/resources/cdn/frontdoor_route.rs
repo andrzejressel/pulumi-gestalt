@@ -273,6 +273,22 @@ pub mod frontdoor_route {
         name: &str,
         args: FrontdoorRouteArgs,
     ) -> FrontdoorRouteResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FrontdoorRouteArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FrontdoorRouteResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FrontdoorRouteArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FrontdoorRouteResult {
         let cache_binding = args.cache.get_output(context);
         let cdn_frontdoor_custom_domain_ids_binding = args
             .cdn_frontdoor_custom_domain_ids
@@ -365,6 +381,7 @@ pub mod frontdoor_route {
                     value: &supported_protocols_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FrontdoorRouteResult {

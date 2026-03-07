@@ -156,6 +156,22 @@ pub mod snapshot {
         name: &str,
         args: SnapshotArgs,
     ) -> SnapshotResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SnapshotArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SnapshotResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SnapshotArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SnapshotResult {
         let create_option_binding = args.create_option.get_output(context);
         let disk_access_id_binding = args.disk_access_id.get_output(context);
         let disk_size_gb_binding = args.disk_size_gb.get_output(context);
@@ -236,6 +252,7 @@ pub mod snapshot {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SnapshotResult {

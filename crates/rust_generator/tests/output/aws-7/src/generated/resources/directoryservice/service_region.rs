@@ -78,6 +78,22 @@ pub mod service_region {
         name: &str,
         args: ServiceRegionArgs,
     ) -> ServiceRegionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceRegionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServiceRegionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceRegionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServiceRegionResult {
         let desired_number_of_domain_controllers_binding = args
             .desired_number_of_domain_controllers
             .get_output(context);
@@ -111,6 +127,7 @@ pub mod service_region {
                     value: &vpc_settings_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServiceRegionResult {

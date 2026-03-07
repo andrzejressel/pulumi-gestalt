@@ -143,6 +143,22 @@ pub mod hci_virtual_hard_disk {
         name: &str,
         args: HciVirtualHardDiskArgs,
     ) -> HciVirtualHardDiskResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HciVirtualHardDiskArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> HciVirtualHardDiskResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HciVirtualHardDiskArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> HciVirtualHardDiskResult {
         let block_size_in_bytes_binding = args.block_size_in_bytes.get_output(context);
         let custom_location_id_binding = args.custom_location_id.get_output(context);
         let disk_file_format_binding = args.disk_file_format.get_output(context);
@@ -218,6 +234,7 @@ pub mod hci_virtual_hard_disk {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         HciVirtualHardDiskResult {

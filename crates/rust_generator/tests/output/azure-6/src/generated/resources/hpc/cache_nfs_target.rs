@@ -193,6 +193,22 @@ pub mod cache_nfs_target {
         name: &str,
         args: CacheNfsTargetArgs,
     ) -> CacheNfsTargetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CacheNfsTargetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CacheNfsTargetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CacheNfsTargetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CacheNfsTargetResult {
         let cache_name_binding = args.cache_name.get_output(context);
         let name_binding = args.name.get_output(context);
         let namespace_junctions_binding = args.namespace_junctions.get_output(context);
@@ -243,6 +259,7 @@ pub mod cache_nfs_target {
                     value: &write_back_timer_in_seconds_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CacheNfsTargetResult {

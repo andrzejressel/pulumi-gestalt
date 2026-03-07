@@ -49,6 +49,22 @@ pub mod catalog {
         name: &str,
         args: CatalogArgs,
     ) -> CatalogResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CatalogArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CatalogResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CatalogArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CatalogResult {
         let catalog_adogit_binding = args.catalog_adogit.get_output(context);
         let catalog_github_binding = args.catalog_github.get_output(context);
         let dev_center_id_binding = args.dev_center_id.get_output(context);
@@ -80,6 +96,7 @@ pub mod catalog {
                     value: &resource_group_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CatalogResult {

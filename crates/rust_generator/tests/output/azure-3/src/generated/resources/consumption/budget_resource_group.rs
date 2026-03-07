@@ -155,6 +155,22 @@ pub mod budget_resource_group {
         name: &str,
         args: BudgetResourceGroupArgs,
     ) -> BudgetResourceGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BudgetResourceGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BudgetResourceGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BudgetResourceGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BudgetResourceGroupResult {
         let amount_binding = args.amount.get_output(context);
         let etag_binding = args.etag.get_output(context);
         let filter_binding = args.filter.get_output(context);
@@ -201,6 +217,7 @@ pub mod budget_resource_group {
                     value: &time_period_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BudgetResourceGroupResult {

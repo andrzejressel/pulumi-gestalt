@@ -78,6 +78,22 @@ pub mod multicast_domain_association {
         name: &str,
         args: MulticastDomainAssociationArgs,
     ) -> MulticastDomainAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MulticastDomainAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MulticastDomainAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MulticastDomainAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MulticastDomainAssociationResult {
         let subnet_id_binding = args.subnet_id.get_output(context);
         let transit_gateway_attachment_id_binding = args
             .transit_gateway_attachment_id
@@ -104,6 +120,7 @@ pub mod multicast_domain_association {
                     value: &transit_gateway_multicast_domain_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MulticastDomainAssociationResult {

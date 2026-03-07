@@ -137,6 +137,22 @@ pub mod access_grant {
         name: &str,
         args: AccessGrantArgs,
     ) -> AccessGrantResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccessGrantArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AccessGrantResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccessGrantArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AccessGrantResult {
         let access_grants_location_configuration_binding = args
             .access_grants_location_configuration
             .get_output(context);
@@ -182,6 +198,7 @@ pub mod access_grant {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AccessGrantResult {

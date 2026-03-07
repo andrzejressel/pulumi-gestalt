@@ -435,6 +435,22 @@ pub mod trail {
         name: &str,
         args: TrailArgs,
     ) -> TrailResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TrailArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TrailResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TrailArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TrailResult {
         let advanced_event_selectors_binding = args
             .advanced_event_selectors
             .get_output(context);
@@ -535,6 +551,7 @@ pub mod trail {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TrailResult {

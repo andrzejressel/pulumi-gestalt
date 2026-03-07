@@ -143,6 +143,22 @@ pub mod default_security_group {
         name: &str,
         args: DefaultSecurityGroupArgs,
     ) -> DefaultSecurityGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DefaultSecurityGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DefaultSecurityGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DefaultSecurityGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DefaultSecurityGroupResult {
         let egress_binding = args.egress.get_output(context);
         let ingress_binding = args.ingress.get_output(context);
         let revoke_rules_on_delete_binding = args
@@ -176,6 +192,7 @@ pub mod default_security_group {
                     value: &vpc_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DefaultSecurityGroupResult {

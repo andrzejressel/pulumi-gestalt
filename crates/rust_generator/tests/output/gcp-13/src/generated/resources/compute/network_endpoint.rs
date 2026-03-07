@@ -179,6 +179,22 @@ pub mod network_endpoint {
         name: &str,
         args: NetworkEndpointArgs,
     ) -> NetworkEndpointResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkEndpointArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NetworkEndpointResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkEndpointArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NetworkEndpointResult {
         let instance_binding = args.instance.get_output(context);
         let ip_address_binding = args.ip_address.get_output(context);
         let network_endpoint_group_binding = args
@@ -217,6 +233,7 @@ pub mod network_endpoint {
                     value: &zone_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NetworkEndpointResult {

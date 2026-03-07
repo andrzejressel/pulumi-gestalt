@@ -69,6 +69,22 @@ pub mod email_routing_address {
         name: &str,
         args: EmailRoutingAddressArgs,
     ) -> EmailRoutingAddressResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EmailRoutingAddressArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EmailRoutingAddressResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EmailRoutingAddressArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EmailRoutingAddressResult {
         let account_id_binding = args.account_id.get_output(context);
         let email_binding = args.email.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -85,6 +101,7 @@ pub mod email_routing_address {
                     value: &email_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EmailRoutingAddressResult {

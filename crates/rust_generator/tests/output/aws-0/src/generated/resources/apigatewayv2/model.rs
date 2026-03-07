@@ -82,6 +82,22 @@ pub mod model {
         name: &str,
         args: ModelArgs,
     ) -> ModelResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ModelArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ModelResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ModelArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ModelResult {
         let api_id_binding = args.api_id.get_output(context);
         let content_type_binding = args.content_type.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -113,6 +129,7 @@ pub mod model {
                     value: &schema_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ModelResult {

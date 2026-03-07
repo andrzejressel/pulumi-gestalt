@@ -111,6 +111,22 @@ pub mod managed_prefix_list {
         name: &str,
         args: ManagedPrefixListArgs,
     ) -> ManagedPrefixListResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedPrefixListArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ManagedPrefixListResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedPrefixListArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ManagedPrefixListResult {
         let address_family_binding = args.address_family.get_output(context);
         let entries_binding = args.entries.get_output(context);
         let max_entries_binding = args.max_entries.get_output(context);
@@ -142,6 +158,7 @@ pub mod managed_prefix_list {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ManagedPrefixListResult {

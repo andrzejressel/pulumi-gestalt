@@ -109,6 +109,22 @@ pub mod user_defined_function {
         name: &str,
         args: UserDefinedFunctionArgs,
     ) -> UserDefinedFunctionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: UserDefinedFunctionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> UserDefinedFunctionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: UserDefinedFunctionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> UserDefinedFunctionResult {
         let catalog_id_binding = args.catalog_id.get_output(context);
         let class_name_binding = args.class_name.get_output(context);
         let database_name_binding = args.database_name.get_output(context);
@@ -150,6 +166,7 @@ pub mod user_defined_function {
                     value: &resource_uris_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         UserDefinedFunctionResult {

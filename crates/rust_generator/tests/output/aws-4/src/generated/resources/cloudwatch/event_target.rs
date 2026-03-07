@@ -731,6 +731,22 @@ pub mod event_target {
         name: &str,
         args: EventTargetArgs,
     ) -> EventTargetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EventTargetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EventTargetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EventTargetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EventTargetResult {
         let appsync_target_binding = args.appsync_target.get_output(context);
         let arn_binding = args.arn.get_output(context);
         let batch_target_binding = args.batch_target.get_output(context);
@@ -839,6 +855,7 @@ pub mod event_target {
                     value: &target_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EventTargetResult {

@@ -80,6 +80,22 @@ pub mod backend_environment {
         name: &str,
         args: BackendEnvironmentArgs,
     ) -> BackendEnvironmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackendEnvironmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BackendEnvironmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackendEnvironmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BackendEnvironmentResult {
         let app_id_binding = args.app_id.get_output(context);
         let deployment_artifacts_binding = args.deployment_artifacts.get_output(context);
         let environment_name_binding = args.environment_name.get_output(context);
@@ -106,6 +122,7 @@ pub mod backend_environment {
                     value: &stack_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BackendEnvironmentResult {

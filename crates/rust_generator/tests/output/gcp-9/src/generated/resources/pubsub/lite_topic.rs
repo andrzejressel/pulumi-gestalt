@@ -161,6 +161,22 @@ pub mod lite_topic {
         name: &str,
         args: LiteTopicArgs,
     ) -> LiteTopicResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LiteTopicArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LiteTopicResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LiteTopicArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LiteTopicResult {
         let name_binding = args.name.get_output(context);
         let partition_config_binding = args.partition_config.get_output(context);
         let project_binding = args.project.get_output(context);
@@ -202,6 +218,7 @@ pub mod lite_topic {
                     value: &zone_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LiteTopicResult {

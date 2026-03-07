@@ -212,6 +212,22 @@ pub mod cluster_iam_policy {
         name: &str,
         args: ClusterIAMPolicyArgs,
     ) -> ClusterIAMPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClusterIAMPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ClusterIAMPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClusterIAMPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ClusterIAMPolicyResult {
         let cluster_binding = args.cluster.get_output(context);
         let policy_data_binding = args.policy_data.get_output(context);
         let project_binding = args.project.get_output(context);
@@ -238,6 +254,7 @@ pub mod cluster_iam_policy {
                     value: &region_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ClusterIAMPolicyResult {

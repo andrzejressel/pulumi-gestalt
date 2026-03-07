@@ -118,6 +118,22 @@ pub mod composite_alarm {
         name: &str,
         args: CompositeAlarmArgs,
     ) -> CompositeAlarmResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CompositeAlarmArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CompositeAlarmResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CompositeAlarmArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CompositeAlarmResult {
         let actions_enabled_binding = args.actions_enabled.get_output(context);
         let actions_suppressor_binding = args.actions_suppressor.get_output(context);
         let alarm_actions_binding = args.alarm_actions.get_output(context);
@@ -171,6 +187,7 @@ pub mod composite_alarm {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CompositeAlarmResult {

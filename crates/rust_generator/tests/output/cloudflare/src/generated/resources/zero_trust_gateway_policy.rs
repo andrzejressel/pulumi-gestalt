@@ -122,6 +122,22 @@ pub mod zero_trust_gateway_policy {
         name: &str,
         args: ZeroTrustGatewayPolicyArgs,
     ) -> ZeroTrustGatewayPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZeroTrustGatewayPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ZeroTrustGatewayPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZeroTrustGatewayPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ZeroTrustGatewayPolicyResult {
         let account_id_binding = args.account_id.get_output(context);
         let action_binding = args.action.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -184,6 +200,7 @@ pub mod zero_trust_gateway_policy {
                     value: &traffic_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ZeroTrustGatewayPolicyResult {

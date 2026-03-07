@@ -172,6 +172,22 @@ pub mod key {
         name: &str,
         args: KeyArgs,
     ) -> KeyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: KeyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> KeyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: KeyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> KeyResult {
         let keepers_binding = args.keepers.get_output(context);
         let key_algorithm_binding = args.key_algorithm.get_output(context);
         let private_key_type_binding = args.private_key_type.get_output(context);
@@ -208,6 +224,7 @@ pub mod key {
                     value: &service_account_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         KeyResult {

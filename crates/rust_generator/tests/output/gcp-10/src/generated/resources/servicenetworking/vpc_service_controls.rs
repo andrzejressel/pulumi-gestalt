@@ -164,6 +164,22 @@ pub mod vpc_service_controls {
         name: &str,
         args: VpcServiceControlsArgs,
     ) -> VpcServiceControlsResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcServiceControlsArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VpcServiceControlsResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcServiceControlsArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VpcServiceControlsResult {
         let enabled_binding = args.enabled.get_output(context);
         let network_binding = args.network.get_output(context);
         let project_binding = args.project.get_output(context);
@@ -190,6 +206,7 @@ pub mod vpc_service_controls {
                     value: &service_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VpcServiceControlsResult {

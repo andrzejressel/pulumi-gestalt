@@ -90,6 +90,22 @@ pub mod log_metric_filter {
         name: &str,
         args: LogMetricFilterArgs,
     ) -> LogMetricFilterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LogMetricFilterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LogMetricFilterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LogMetricFilterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LogMetricFilterResult {
         let log_group_name_binding = args.log_group_name.get_output(context);
         let metric_transformation_binding = args
             .metric_transformation
@@ -118,6 +134,7 @@ pub mod log_metric_filter {
                     value: &pattern_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LogMetricFilterResult {

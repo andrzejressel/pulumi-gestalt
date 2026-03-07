@@ -162,6 +162,22 @@ pub mod spring_cloud_app_cosmos_db_association {
         name: &str,
         args: SpringCloudAppCosmosDBAssociationArgs,
     ) -> SpringCloudAppCosmosDBAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudAppCosmosDBAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SpringCloudAppCosmosDBAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudAppCosmosDBAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SpringCloudAppCosmosDBAssociationResult {
         let api_type_binding = args.api_type.get_output(context);
         let cosmosdb_access_key_binding = args.cosmosdb_access_key.get_output(context);
         let cosmosdb_account_id_binding = args.cosmosdb_account_id.get_output(context);
@@ -229,6 +245,7 @@ pub mod spring_cloud_app_cosmos_db_association {
                     value: &spring_cloud_app_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SpringCloudAppCosmosDBAssociationResult {

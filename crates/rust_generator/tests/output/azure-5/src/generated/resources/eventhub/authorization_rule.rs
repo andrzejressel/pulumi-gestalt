@@ -129,6 +129,22 @@ pub mod authorization_rule {
         name: &str,
         args: AuthorizationRuleArgs,
     ) -> AuthorizationRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AuthorizationRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AuthorizationRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AuthorizationRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AuthorizationRuleResult {
         let eventhub_name_binding = args.eventhub_name.get_output(context);
         let listen_binding = args.listen.get_output(context);
         let manage_binding = args.manage.get_output(context);
@@ -170,6 +186,7 @@ pub mod authorization_rule {
                     value: &send_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AuthorizationRuleResult {

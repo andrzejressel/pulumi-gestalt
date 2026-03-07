@@ -200,6 +200,22 @@ pub mod gdc_application_environment {
         name: &str,
         args: GdcApplicationEnvironmentArgs,
     ) -> GdcApplicationEnvironmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GdcApplicationEnvironmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GdcApplicationEnvironmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GdcApplicationEnvironmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GdcApplicationEnvironmentResult {
         let annotations_binding = args.annotations.get_output(context);
         let application_environment_id_binding = args
             .application_environment_id
@@ -256,6 +272,7 @@ pub mod gdc_application_environment {
                     value: &spark_application_environment_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GdcApplicationEnvironmentResult {

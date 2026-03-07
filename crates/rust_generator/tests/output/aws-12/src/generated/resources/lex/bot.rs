@@ -189,6 +189,22 @@ pub mod bot {
         name: &str,
         args: BotArgs,
     ) -> BotResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BotArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BotResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BotArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BotResult {
         let abort_statement_binding = args.abort_statement.get_output(context);
         let child_directed_binding = args.child_directed.get_output(context);
         let clarification_prompt_binding = args.clarification_prompt.get_output(context);
@@ -271,6 +287,7 @@ pub mod bot {
                     value: &voice_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BotResult {

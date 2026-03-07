@@ -93,6 +93,22 @@ pub mod regex_pattern_set {
         name: &str,
         args: RegexPatternSetArgs,
     ) -> RegexPatternSetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegexPatternSetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RegexPatternSetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegexPatternSetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RegexPatternSetResult {
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let regular_expressions_binding = args.regular_expressions.get_output(context);
@@ -124,6 +140,7 @@ pub mod regex_pattern_set {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RegexPatternSetResult {

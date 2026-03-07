@@ -212,6 +212,22 @@ pub mod diagnostic {
         name: &str,
         args: DiagnosticArgs,
     ) -> DiagnosticResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DiagnosticArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DiagnosticResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DiagnosticArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DiagnosticResult {
         let always_log_errors_binding = args.always_log_errors.get_output(context);
         let api_management_logger_id_binding = args
             .api_management_logger_id
@@ -294,6 +310,7 @@ pub mod diagnostic {
                     value: &verbosity_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DiagnosticResult {

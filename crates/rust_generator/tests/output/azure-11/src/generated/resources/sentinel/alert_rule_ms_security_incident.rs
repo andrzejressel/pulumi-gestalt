@@ -140,6 +140,22 @@ pub mod alert_rule_ms_security_incident {
         name: &str,
         args: AlertRuleMsSecurityIncidentArgs,
     ) -> AlertRuleMsSecurityIncidentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AlertRuleMsSecurityIncidentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AlertRuleMsSecurityIncidentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AlertRuleMsSecurityIncidentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AlertRuleMsSecurityIncidentResult {
         let alert_rule_template_guid_binding = args
             .alert_rule_template_guid
             .get_output(context);
@@ -203,6 +219,7 @@ pub mod alert_rule_ms_security_incident {
                     value: &severity_filters_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AlertRuleMsSecurityIncidentResult {

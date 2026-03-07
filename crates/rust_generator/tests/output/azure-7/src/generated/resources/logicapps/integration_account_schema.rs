@@ -98,6 +98,22 @@ pub mod integration_account_schema {
         name: &str,
         args: IntegrationAccountSchemaArgs,
     ) -> IntegrationAccountSchemaResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IntegrationAccountSchemaArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IntegrationAccountSchemaResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IntegrationAccountSchemaArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IntegrationAccountSchemaResult {
         let content_binding = args.content.get_output(context);
         let file_name_binding = args.file_name.get_output(context);
         let integration_account_name_binding = args
@@ -137,6 +153,7 @@ pub mod integration_account_schema {
                     value: &resource_group_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IntegrationAccountSchemaResult {

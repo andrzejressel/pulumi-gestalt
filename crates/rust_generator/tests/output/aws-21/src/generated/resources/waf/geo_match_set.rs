@@ -74,6 +74,22 @@ pub mod geo_match_set {
         name: &str,
         args: GeoMatchSetArgs,
     ) -> GeoMatchSetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GeoMatchSetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GeoMatchSetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GeoMatchSetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GeoMatchSetResult {
         let geo_match_constraints_binding = args
             .geo_match_constraints
             .get_output(context);
@@ -92,6 +108,7 @@ pub mod geo_match_set {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GeoMatchSetResult {

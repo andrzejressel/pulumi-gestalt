@@ -204,6 +204,22 @@ pub mod ai_feature_store {
         name: &str,
         args: AiFeatureStoreArgs,
     ) -> AiFeatureStoreResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AiFeatureStoreArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AiFeatureStoreResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AiFeatureStoreArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AiFeatureStoreResult {
         let encryption_spec_binding = args.encryption_spec.get_output(context);
         let force_destroy_binding = args.force_destroy.get_output(context);
         let labels_binding = args.labels.get_output(context);
@@ -254,6 +270,7 @@ pub mod ai_feature_store {
                     value: &region_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AiFeatureStoreResult {

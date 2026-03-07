@@ -108,6 +108,22 @@ pub mod custom_data_identifier {
         name: &str,
         args: CustomDataIdentifierArgs,
     ) -> CustomDataIdentifierResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomDataIdentifierArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CustomDataIdentifierResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomDataIdentifierArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CustomDataIdentifierResult {
         let description_binding = args.description.get_output(context);
         let ignore_words_binding = args.ignore_words.get_output(context);
         let keywords_binding = args.keywords.get_output(context);
@@ -156,6 +172,7 @@ pub mod custom_data_identifier {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CustomDataIdentifierResult {

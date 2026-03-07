@@ -108,6 +108,22 @@ pub mod data_share_consumer_association {
         name: &str,
         args: DataShareConsumerAssociationArgs,
     ) -> DataShareConsumerAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataShareConsumerAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DataShareConsumerAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataShareConsumerAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DataShareConsumerAssociationResult {
         let allow_writes_binding = args.allow_writes.get_output(context);
         let associate_entire_account_binding = args
             .associate_entire_account
@@ -142,6 +158,7 @@ pub mod data_share_consumer_association {
                     value: &data_share_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DataShareConsumerAssociationResult {

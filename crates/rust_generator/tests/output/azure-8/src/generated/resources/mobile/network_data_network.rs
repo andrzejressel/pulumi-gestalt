@@ -95,6 +95,22 @@ pub mod network_data_network {
         name: &str,
         args: NetworkDataNetworkArgs,
     ) -> NetworkDataNetworkResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkDataNetworkArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NetworkDataNetworkResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkDataNetworkArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NetworkDataNetworkResult {
         let description_binding = args.description.get_output(context);
         let location_binding = args.location.get_output(context);
         let mobile_network_id_binding = args.mobile_network_id.get_output(context);
@@ -126,6 +142,7 @@ pub mod network_data_network {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NetworkDataNetworkResult {

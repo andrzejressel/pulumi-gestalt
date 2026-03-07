@@ -59,6 +59,22 @@ pub mod delegated_admin_account {
         name: &str,
         args: DelegatedAdminAccountArgs,
     ) -> DelegatedAdminAccountResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DelegatedAdminAccountArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DelegatedAdminAccountResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DelegatedAdminAccountArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DelegatedAdminAccountResult {
         let account_id_binding = args.account_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:inspector2/delegatedAdminAccount:DelegatedAdminAccount".into(),
@@ -70,6 +86,7 @@ pub mod delegated_admin_account {
                     value: &account_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DelegatedAdminAccountResult {

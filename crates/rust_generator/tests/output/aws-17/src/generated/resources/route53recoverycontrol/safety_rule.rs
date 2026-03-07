@@ -118,6 +118,22 @@ pub mod safety_rule {
         name: &str,
         args: SafetyRuleArgs,
     ) -> SafetyRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SafetyRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SafetyRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SafetyRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SafetyRuleResult {
         let asserted_controls_binding = args.asserted_controls.get_output(context);
         let control_panel_arn_binding = args.control_panel_arn.get_output(context);
         let gating_controls_binding = args.gating_controls.get_output(context);
@@ -159,6 +175,7 @@ pub mod safety_rule {
                     value: &wait_period_ms_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SafetyRuleResult {

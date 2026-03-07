@@ -145,6 +145,22 @@ pub mod tenant_default_supported_idp_config {
         name: &str,
         args: TenantDefaultSupportedIdpConfigArgs,
     ) -> TenantDefaultSupportedIdpConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TenantDefaultSupportedIdpConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TenantDefaultSupportedIdpConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TenantDefaultSupportedIdpConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TenantDefaultSupportedIdpConfigResult {
         let client_id_binding = args.client_id.get_output(context);
         let client_secret_binding = args.client_secret.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
@@ -182,6 +198,7 @@ pub mod tenant_default_supported_idp_config {
                     value: &tenant_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TenantDefaultSupportedIdpConfigResult {

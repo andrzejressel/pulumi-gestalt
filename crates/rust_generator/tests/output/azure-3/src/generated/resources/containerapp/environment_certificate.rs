@@ -116,6 +116,22 @@ pub mod environment_certificate {
         name: &str,
         args: EnvironmentCertificateArgs,
     ) -> EnvironmentCertificateResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EnvironmentCertificateArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EnvironmentCertificateResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EnvironmentCertificateArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EnvironmentCertificateResult {
         let certificate_blob_base64_binding = args
             .certificate_blob_base64
             .get_output(context);
@@ -152,6 +168,7 @@ pub mod environment_certificate {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EnvironmentCertificateResult {

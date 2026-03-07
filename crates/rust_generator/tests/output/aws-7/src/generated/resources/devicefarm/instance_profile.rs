@@ -95,6 +95,22 @@ pub mod instance_profile {
         name: &str,
         args: InstanceProfileArgs,
     ) -> InstanceProfileResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InstanceProfileArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> InstanceProfileResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InstanceProfileArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> InstanceProfileResult {
         let description_binding = args.description.get_output(context);
         let exclude_app_packages_from_cleanups_binding = args
             .exclude_app_packages_from_cleanups
@@ -133,6 +149,7 @@ pub mod instance_profile {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         InstanceProfileResult {

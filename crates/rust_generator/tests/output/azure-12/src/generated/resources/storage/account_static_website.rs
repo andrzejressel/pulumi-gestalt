@@ -79,6 +79,22 @@ pub mod account_static_website {
         name: &str,
         args: AccountStaticWebsiteArgs,
     ) -> AccountStaticWebsiteResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccountStaticWebsiteArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AccountStaticWebsiteResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccountStaticWebsiteArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AccountStaticWebsiteResult {
         let error404_document_binding = args.error404_document.get_output(context);
         let index_document_binding = args.index_document.get_output(context);
         let storage_account_id_binding = args.storage_account_id.get_output(context);
@@ -100,6 +116,7 @@ pub mod account_static_website {
                     value: &storage_account_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AccountStaticWebsiteResult {

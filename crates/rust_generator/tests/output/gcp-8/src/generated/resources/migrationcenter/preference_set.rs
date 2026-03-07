@@ -216,6 +216,22 @@ pub mod preference_set {
         name: &str,
         args: PreferenceSetArgs,
     ) -> PreferenceSetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PreferenceSetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PreferenceSetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PreferenceSetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PreferenceSetResult {
         let description_binding = args.description.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let location_binding = args.location.get_output(context);
@@ -254,6 +270,7 @@ pub mod preference_set {
                     value: &virtual_machine_preferences_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PreferenceSetResult {

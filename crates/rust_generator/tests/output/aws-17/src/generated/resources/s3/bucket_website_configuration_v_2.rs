@@ -173,6 +173,22 @@ pub mod bucket_website_configuration_v_2 {
         name: &str,
         args: BucketWebsiteConfigurationV2Args,
     ) -> BucketWebsiteConfigurationV2Result {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BucketWebsiteConfigurationV2Args,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BucketWebsiteConfigurationV2Result {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BucketWebsiteConfigurationV2Args,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BucketWebsiteConfigurationV2Result {
         let bucket_binding = args.bucket.get_output(context);
         let error_document_binding = args.error_document.get_output(context);
         let expected_bucket_owner_binding = args
@@ -219,6 +235,7 @@ pub mod bucket_website_configuration_v_2 {
                     value: &routing_rules_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BucketWebsiteConfigurationV2Result {

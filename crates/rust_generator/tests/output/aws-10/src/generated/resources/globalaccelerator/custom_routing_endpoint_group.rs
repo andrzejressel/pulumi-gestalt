@@ -105,6 +105,22 @@ pub mod custom_routing_endpoint_group {
         name: &str,
         args: CustomRoutingEndpointGroupArgs,
     ) -> CustomRoutingEndpointGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomRoutingEndpointGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CustomRoutingEndpointGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomRoutingEndpointGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CustomRoutingEndpointGroupResult {
         let destination_configurations_binding = args
             .destination_configurations
             .get_output(context);
@@ -138,6 +154,7 @@ pub mod custom_routing_endpoint_group {
                     value: &listener_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CustomRoutingEndpointGroupResult {

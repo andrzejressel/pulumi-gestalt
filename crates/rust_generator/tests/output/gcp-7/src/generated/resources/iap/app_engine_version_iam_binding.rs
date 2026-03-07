@@ -464,6 +464,22 @@ pub mod app_engine_version_iam_binding {
         name: &str,
         args: AppEngineVersionIamBindingArgs,
     ) -> AppEngineVersionIamBindingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AppEngineVersionIamBindingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AppEngineVersionIamBindingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AppEngineVersionIamBindingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AppEngineVersionIamBindingResult {
         let app_id_binding = args.app_id.get_output(context);
         let condition_binding = args.condition.get_output(context);
         let members_binding = args.members.get_output(context);
@@ -506,6 +522,7 @@ pub mod app_engine_version_iam_binding {
                     value: &version_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AppEngineVersionIamBindingResult {

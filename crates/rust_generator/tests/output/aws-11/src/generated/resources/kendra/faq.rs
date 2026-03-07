@@ -158,6 +158,22 @@ pub mod faq {
         name: &str,
         args: FaqArgs,
     ) -> FaqResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FaqArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FaqResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FaqArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FaqResult {
         let description_binding = args.description.get_output(context);
         let file_format_binding = args.file_format.get_output(context);
         let index_id_binding = args.index_id.get_output(context);
@@ -204,6 +220,7 @@ pub mod faq {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FaqResult {

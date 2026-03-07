@@ -220,6 +220,22 @@ pub mod folder_custom_module {
         name: &str,
         args: FolderCustomModuleArgs,
     ) -> FolderCustomModuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FolderCustomModuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FolderCustomModuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FolderCustomModuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FolderCustomModuleResult {
         let custom_config_binding = args.custom_config.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let enablement_state_binding = args.enablement_state.get_output(context);
@@ -246,6 +262,7 @@ pub mod folder_custom_module {
                     value: &folder_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FolderCustomModuleResult {

@@ -141,6 +141,22 @@ pub mod stream_input_blob {
         name: &str,
         args: StreamInputBlobArgs,
     ) -> StreamInputBlobResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StreamInputBlobArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> StreamInputBlobResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StreamInputBlobArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> StreamInputBlobResult {
         let date_format_binding = args.date_format.get_output(context);
         let name_binding = args.name.get_output(context);
         let path_pattern_binding = args.path_pattern.get_output(context);
@@ -201,6 +217,7 @@ pub mod stream_input_blob {
                     value: &time_format_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         StreamInputBlobResult {

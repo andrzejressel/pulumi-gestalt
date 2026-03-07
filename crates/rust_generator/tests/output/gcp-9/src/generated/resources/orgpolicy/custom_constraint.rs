@@ -150,6 +150,22 @@ pub mod custom_constraint {
         name: &str,
         args: CustomConstraintArgs,
     ) -> CustomConstraintResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomConstraintArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CustomConstraintResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomConstraintArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CustomConstraintResult {
         let action_type_binding = args.action_type.get_output(context);
         let condition_binding = args.condition.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -196,6 +212,7 @@ pub mod custom_constraint {
                     value: &resource_types_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CustomConstraintResult {

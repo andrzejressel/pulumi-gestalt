@@ -122,6 +122,22 @@ pub mod detector {
         name: &str,
         args: DetectorArgs,
     ) -> DetectorResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DetectorArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DetectorResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DetectorArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DetectorResult {
         let datasources_binding = args.datasources.get_output(context);
         let enable_binding = args.enable.get_output(context);
         let finding_publishing_frequency_binding = args
@@ -150,6 +166,7 @@ pub mod detector {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DetectorResult {

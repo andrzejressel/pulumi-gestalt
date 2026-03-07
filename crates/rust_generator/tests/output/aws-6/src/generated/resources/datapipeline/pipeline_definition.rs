@@ -127,6 +127,22 @@ pub mod pipeline_definition {
         name: &str,
         args: PipelineDefinitionArgs,
     ) -> PipelineDefinitionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PipelineDefinitionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PipelineDefinitionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PipelineDefinitionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PipelineDefinitionResult {
         let parameter_objects_binding = args.parameter_objects.get_output(context);
         let parameter_values_binding = args.parameter_values.get_output(context);
         let pipeline_id_binding = args.pipeline_id.get_output(context);
@@ -153,6 +169,7 @@ pub mod pipeline_definition {
                     value: &pipeline_objects_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PipelineDefinitionResult {

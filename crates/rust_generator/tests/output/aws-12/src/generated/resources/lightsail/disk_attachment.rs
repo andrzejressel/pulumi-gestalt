@@ -87,6 +87,22 @@ pub mod disk_attachment {
         name: &str,
         args: Disk_attachmentArgs,
     ) -> Disk_attachmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: Disk_attachmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> Disk_attachmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: Disk_attachmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> Disk_attachmentResult {
         let disk_name_binding = args.disk_name.get_output(context);
         let disk_path_binding = args.disk_path.get_output(context);
         let instance_name_binding = args.instance_name.get_output(context);
@@ -108,6 +124,7 @@ pub mod disk_attachment {
                     value: &instance_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         Disk_attachmentResult {

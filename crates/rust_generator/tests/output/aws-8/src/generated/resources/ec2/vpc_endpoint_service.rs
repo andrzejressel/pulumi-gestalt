@@ -150,6 +150,22 @@ pub mod vpc_endpoint_service {
         name: &str,
         args: VpcEndpointServiceArgs,
     ) -> VpcEndpointServiceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcEndpointServiceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VpcEndpointServiceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcEndpointServiceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VpcEndpointServiceResult {
         let acceptance_required_binding = args.acceptance_required.get_output(context);
         let allowed_principals_binding = args.allowed_principals.get_output(context);
         let gateway_load_balancer_arns_binding = args
@@ -202,6 +218,7 @@ pub mod vpc_endpoint_service {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VpcEndpointServiceResult {

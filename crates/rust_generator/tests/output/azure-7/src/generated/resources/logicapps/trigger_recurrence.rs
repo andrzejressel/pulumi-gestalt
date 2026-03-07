@@ -113,6 +113,22 @@ pub mod trigger_recurrence {
         name: &str,
         args: TriggerRecurrenceArgs,
     ) -> TriggerRecurrenceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TriggerRecurrenceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TriggerRecurrenceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TriggerRecurrenceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TriggerRecurrenceResult {
         let frequency_binding = args.frequency.get_output(context);
         let interval_binding = args.interval.get_output(context);
         let logic_app_id_binding = args.logic_app_id.get_output(context);
@@ -154,6 +170,7 @@ pub mod trigger_recurrence {
                     value: &time_zone_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TriggerRecurrenceResult {

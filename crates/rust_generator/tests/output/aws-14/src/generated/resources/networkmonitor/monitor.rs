@@ -83,6 +83,22 @@ pub mod monitor {
         name: &str,
         args: MonitorArgs,
     ) -> MonitorResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MonitorArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MonitorResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MonitorArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MonitorResult {
         let aggregation_period_binding = args.aggregation_period.get_output(context);
         let monitor_name_binding = args.monitor_name.get_output(context);
         let tags_binding = args.tags.get_output(context);
@@ -104,6 +120,7 @@ pub mod monitor {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MonitorResult {

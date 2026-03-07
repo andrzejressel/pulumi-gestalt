@@ -162,6 +162,22 @@ pub mod folder_sink {
         name: &str,
         args: FolderSinkArgs,
     ) -> FolderSinkResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FolderSinkArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FolderSinkResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FolderSinkArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FolderSinkResult {
         let bigquery_options_binding = args.bigquery_options.get_output(context);
         let description_binding = args.description.get_output(context);
         let destination_binding = args.destination.get_output(context);
@@ -218,6 +234,7 @@ pub mod folder_sink {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FolderSinkResult {

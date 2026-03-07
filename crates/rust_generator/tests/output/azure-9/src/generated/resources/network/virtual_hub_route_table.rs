@@ -152,6 +152,22 @@ pub mod virtual_hub_route_table {
         name: &str,
         args: VirtualHubRouteTableArgs,
     ) -> VirtualHubRouteTableResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VirtualHubRouteTableArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VirtualHubRouteTableResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VirtualHubRouteTableArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VirtualHubRouteTableResult {
         let labels_binding = args.labels.get_output(context);
         let name_binding = args.name.get_output(context);
         let routes_binding = args.routes.get_output(context);
@@ -178,6 +194,7 @@ pub mod virtual_hub_route_table {
                     value: &virtual_hub_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VirtualHubRouteTableResult {

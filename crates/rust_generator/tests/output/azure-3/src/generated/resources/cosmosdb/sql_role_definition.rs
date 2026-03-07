@@ -122,6 +122,22 @@ pub mod sql_role_definition {
         name: &str,
         args: SqlRoleDefinitionArgs,
     ) -> SqlRoleDefinitionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SqlRoleDefinitionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SqlRoleDefinitionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SqlRoleDefinitionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SqlRoleDefinitionResult {
         let account_name_binding = args.account_name.get_output(context);
         let assignable_scopes_binding = args.assignable_scopes.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -163,6 +179,7 @@ pub mod sql_role_definition {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SqlRoleDefinitionResult {

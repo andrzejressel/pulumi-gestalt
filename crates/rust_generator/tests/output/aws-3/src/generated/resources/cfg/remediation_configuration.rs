@@ -159,6 +159,22 @@ pub mod remediation_configuration {
         name: &str,
         args: RemediationConfigurationArgs,
     ) -> RemediationConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RemediationConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RemediationConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RemediationConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RemediationConfigurationResult {
         let automatic_binding = args.automatic.get_output(context);
         let config_rule_name_binding = args.config_rule_name.get_output(context);
         let execution_controls_binding = args.execution_controls.get_output(context);
@@ -219,6 +235,7 @@ pub mod remediation_configuration {
                     value: &target_version_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RemediationConfigurationResult {

@@ -153,6 +153,22 @@ pub mod spring_cloud_container_deployment {
         name: &str,
         args: SpringCloudContainerDeploymentArgs,
     ) -> SpringCloudContainerDeploymentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudContainerDeploymentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SpringCloudContainerDeploymentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudContainerDeploymentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SpringCloudContainerDeploymentResult {
         let addon_json_binding = args.addon_json.get_output(context);
         let application_performance_monitoring_ids_binding = args
             .application_performance_monitoring_ids
@@ -224,6 +240,7 @@ pub mod spring_cloud_container_deployment {
                     value: &spring_cloud_app_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SpringCloudContainerDeploymentResult {

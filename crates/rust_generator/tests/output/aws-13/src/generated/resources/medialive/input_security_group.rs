@@ -79,6 +79,22 @@ pub mod input_security_group {
         name: &str,
         args: InputSecurityGroupArgs,
     ) -> InputSecurityGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InputSecurityGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> InputSecurityGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InputSecurityGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> InputSecurityGroupResult {
         let tags_binding = args.tags.get_output(context);
         let whitelist_rules_binding = args.whitelist_rules.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -95,6 +111,7 @@ pub mod input_security_group {
                     value: &whitelist_rules_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         InputSecurityGroupResult {

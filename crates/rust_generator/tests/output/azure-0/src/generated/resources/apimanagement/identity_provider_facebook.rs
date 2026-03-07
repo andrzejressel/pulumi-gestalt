@@ -93,6 +93,22 @@ pub mod identity_provider_facebook {
         name: &str,
         args: IdentityProviderFacebookArgs,
     ) -> IdentityProviderFacebookResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IdentityProviderFacebookArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IdentityProviderFacebookResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IdentityProviderFacebookArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IdentityProviderFacebookResult {
         let api_management_name_binding = args.api_management_name.get_output(context);
         let app_id_binding = args.app_id.get_output(context);
         let app_secret_binding = args.app_secret.get_output(context);
@@ -120,6 +136,7 @@ pub mod identity_provider_facebook {
                     value: &resource_group_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IdentityProviderFacebookResult {

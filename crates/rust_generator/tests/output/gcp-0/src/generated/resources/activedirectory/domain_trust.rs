@@ -137,6 +137,22 @@ pub mod domain_trust {
         name: &str,
         args: DomainTrustArgs,
     ) -> DomainTrustResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DomainTrustArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DomainTrustResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DomainTrustArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DomainTrustResult {
         let domain_binding = args.domain.get_output(context);
         let project_binding = args.project.get_output(context);
         let selective_authentication_binding = args
@@ -189,6 +205,7 @@ pub mod domain_trust {
                     value: &trust_type_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DomainTrustResult {

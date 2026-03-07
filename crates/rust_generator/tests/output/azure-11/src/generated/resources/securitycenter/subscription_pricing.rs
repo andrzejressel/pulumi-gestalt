@@ -103,6 +103,22 @@ pub mod subscription_pricing {
         name: &str,
         args: SubscriptionPricingArgs,
     ) -> SubscriptionPricingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SubscriptionPricingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SubscriptionPricingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SubscriptionPricingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SubscriptionPricingResult {
         let extensions_binding = args.extensions.get_output(context);
         let resource_type_binding = args.resource_type.get_output(context);
         let subplan_binding = args.subplan.get_output(context);
@@ -129,6 +145,7 @@ pub mod subscription_pricing {
                     value: &tier_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SubscriptionPricingResult {

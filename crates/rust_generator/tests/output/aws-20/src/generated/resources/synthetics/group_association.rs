@@ -67,6 +67,22 @@ pub mod group_association {
         name: &str,
         args: GroupAssociationArgs,
     ) -> GroupAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GroupAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GroupAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GroupAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GroupAssociationResult {
         let canary_arn_binding = args.canary_arn.get_output(context);
         let group_name_binding = args.group_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -83,6 +99,7 @@ pub mod group_association {
                     value: &group_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GroupAssociationResult {

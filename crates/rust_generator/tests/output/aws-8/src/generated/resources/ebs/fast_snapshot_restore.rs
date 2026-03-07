@@ -73,6 +73,22 @@ pub mod fast_snapshot_restore {
         name: &str,
         args: FastSnapshotRestoreArgs,
     ) -> FastSnapshotRestoreResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FastSnapshotRestoreArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FastSnapshotRestoreResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FastSnapshotRestoreArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FastSnapshotRestoreResult {
         let availability_zone_binding = args.availability_zone.get_output(context);
         let snapshot_id_binding = args.snapshot_id.get_output(context);
         let timeouts_binding = args.timeouts.get_output(context);
@@ -94,6 +110,7 @@ pub mod fast_snapshot_restore {
                     value: &timeouts_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FastSnapshotRestoreResult {

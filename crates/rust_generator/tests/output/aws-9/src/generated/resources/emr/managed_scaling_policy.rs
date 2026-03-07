@@ -89,6 +89,22 @@ pub mod managed_scaling_policy {
         name: &str,
         args: ManagedScalingPolicyArgs,
     ) -> ManagedScalingPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedScalingPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ManagedScalingPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedScalingPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ManagedScalingPolicyResult {
         let cluster_id_binding = args.cluster_id.get_output(context);
         let compute_limits_binding = args.compute_limits.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -105,6 +121,7 @@ pub mod managed_scaling_policy {
                     value: &compute_limits_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ManagedScalingPolicyResult {

@@ -197,6 +197,22 @@ pub mod data_collection_rule_association {
         name: &str,
         args: DataCollectionRuleAssociationArgs,
     ) -> DataCollectionRuleAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataCollectionRuleAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DataCollectionRuleAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataCollectionRuleAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DataCollectionRuleAssociationResult {
         let data_collection_endpoint_id_binding = args
             .data_collection_endpoint_id
             .get_output(context);
@@ -233,6 +249,7 @@ pub mod data_collection_rule_association {
                     value: &target_resource_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DataCollectionRuleAssociationResult {

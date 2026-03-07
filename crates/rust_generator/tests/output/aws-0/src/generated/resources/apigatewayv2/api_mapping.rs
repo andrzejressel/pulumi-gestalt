@@ -76,6 +76,22 @@ pub mod api_mapping {
         name: &str,
         args: ApiMappingArgs,
     ) -> ApiMappingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApiMappingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ApiMappingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApiMappingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ApiMappingResult {
         let api_id_binding = args.api_id.get_output(context);
         let api_mapping_key_binding = args.api_mapping_key.get_output(context);
         let domain_name_binding = args.domain_name.get_output(context);
@@ -102,6 +118,7 @@ pub mod api_mapping {
                     value: &stage_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ApiMappingResult {

@@ -72,6 +72,22 @@ pub mod transit_gateway_registration {
         name: &str,
         args: TransitGatewayRegistrationArgs,
     ) -> TransitGatewayRegistrationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TransitGatewayRegistrationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TransitGatewayRegistrationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TransitGatewayRegistrationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TransitGatewayRegistrationResult {
         let global_network_id_binding = args.global_network_id.get_output(context);
         let transit_gateway_arn_binding = args.transit_gateway_arn.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -89,6 +105,7 @@ pub mod transit_gateway_registration {
                     value: &transit_gateway_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TransitGatewayRegistrationResult {

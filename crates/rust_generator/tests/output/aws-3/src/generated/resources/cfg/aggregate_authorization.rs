@@ -77,6 +77,22 @@ pub mod aggregate_authorization {
         name: &str,
         args: AggregateAuthorizationArgs,
     ) -> AggregateAuthorizationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AggregateAuthorizationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AggregateAuthorizationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AggregateAuthorizationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AggregateAuthorizationResult {
         let account_id_binding = args.account_id.get_output(context);
         let region_binding = args.region.get_output(context);
         let tags_binding = args.tags.get_output(context);
@@ -98,6 +114,7 @@ pub mod aggregate_authorization {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AggregateAuthorizationResult {

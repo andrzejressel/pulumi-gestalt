@@ -102,6 +102,22 @@ pub mod access_entry {
         name: &str,
         args: AccessEntryArgs,
     ) -> AccessEntryResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccessEntryArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AccessEntryResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccessEntryArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AccessEntryResult {
         let cluster_name_binding = args.cluster_name.get_output(context);
         let kubernetes_groups_binding = args.kubernetes_groups.get_output(context);
         let principal_arn_binding = args.principal_arn.get_output(context);
@@ -138,6 +154,7 @@ pub mod access_entry {
                     value: &user_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AccessEntryResult {

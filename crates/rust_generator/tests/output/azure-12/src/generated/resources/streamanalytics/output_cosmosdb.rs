@@ -133,6 +133,22 @@ pub mod output_cosmosdb {
         name: &str,
         args: OutputCosmosdbArgs,
     ) -> OutputCosmosdbResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OutputCosmosdbArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OutputCosmosdbResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OutputCosmosdbArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OutputCosmosdbResult {
         let container_name_binding = args.container_name.get_output(context);
         let cosmosdb_account_key_binding = args.cosmosdb_account_key.get_output(context);
         let cosmosdb_sql_database_id_binding = args
@@ -178,6 +194,7 @@ pub mod output_cosmosdb {
                     value: &stream_analytics_job_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OutputCosmosdbResult {

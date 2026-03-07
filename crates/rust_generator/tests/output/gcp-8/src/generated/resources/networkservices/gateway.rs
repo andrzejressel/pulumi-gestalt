@@ -448,6 +448,22 @@ pub mod gateway {
         name: &str,
         args: GatewayArgs,
     ) -> GatewayResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GatewayArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GatewayResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GatewayArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GatewayResult {
         let addresses_binding = args.addresses.get_output(context);
         let certificate_urls_binding = args.certificate_urls.get_output(context);
         let delete_swg_autogen_router_on_destroy_binding = args
@@ -538,6 +554,7 @@ pub mod gateway {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GatewayResult {

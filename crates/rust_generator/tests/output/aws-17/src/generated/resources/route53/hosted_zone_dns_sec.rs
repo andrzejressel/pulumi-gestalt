@@ -110,6 +110,22 @@ pub mod hosted_zone_dns_sec {
         name: &str,
         args: HostedZoneDnsSecArgs,
     ) -> HostedZoneDnsSecResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HostedZoneDnsSecArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> HostedZoneDnsSecResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HostedZoneDnsSecArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> HostedZoneDnsSecResult {
         let hosted_zone_id_binding = args.hosted_zone_id.get_output(context);
         let signing_status_binding = args.signing_status.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -126,6 +142,7 @@ pub mod hosted_zone_dns_sec {
                     value: &signing_status_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         HostedZoneDnsSecResult {

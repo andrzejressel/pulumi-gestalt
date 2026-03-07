@@ -146,6 +146,22 @@ pub mod network_acl_rule {
         name: &str,
         args: NetworkAclRuleArgs,
     ) -> NetworkAclRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkAclRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NetworkAclRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkAclRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NetworkAclRuleResult {
         let cidr_block_binding = args.cidr_block.get_output(context);
         let egress_binding = args.egress.get_output(context);
         let from_port_binding = args.from_port.get_output(context);
@@ -207,6 +223,7 @@ pub mod network_acl_rule {
                     value: &to_port_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NetworkAclRuleResult {

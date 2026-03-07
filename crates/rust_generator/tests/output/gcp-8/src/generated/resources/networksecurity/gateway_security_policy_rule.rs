@@ -208,6 +208,22 @@ pub mod gateway_security_policy_rule {
         name: &str,
         args: GatewaySecurityPolicyRuleArgs,
     ) -> GatewaySecurityPolicyRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GatewaySecurityPolicyRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GatewaySecurityPolicyRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GatewaySecurityPolicyRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GatewaySecurityPolicyRuleResult {
         let application_matcher_binding = args.application_matcher.get_output(context);
         let basic_profile_binding = args.basic_profile.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -274,6 +290,7 @@ pub mod gateway_security_policy_rule {
                     value: &tls_inspection_enabled_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GatewaySecurityPolicyRuleResult {

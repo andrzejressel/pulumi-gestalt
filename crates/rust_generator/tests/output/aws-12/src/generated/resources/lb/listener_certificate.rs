@@ -78,6 +78,22 @@ pub mod listener_certificate {
         name: &str,
         args: ListenerCertificateArgs,
     ) -> ListenerCertificateResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ListenerCertificateArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ListenerCertificateResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ListenerCertificateArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ListenerCertificateResult {
         let certificate_arn_binding = args.certificate_arn.get_output(context);
         let listener_arn_binding = args.listener_arn.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -94,6 +110,7 @@ pub mod listener_certificate {
                     value: &listener_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ListenerCertificateResult {

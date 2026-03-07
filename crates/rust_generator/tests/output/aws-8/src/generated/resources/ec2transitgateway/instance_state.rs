@@ -90,6 +90,22 @@ pub mod instance_state {
         name: &str,
         args: InstanceStateArgs,
     ) -> InstanceStateResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InstanceStateArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> InstanceStateResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InstanceStateArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> InstanceStateResult {
         let force_binding = args.force.get_output(context);
         let instance_id_binding = args.instance_id.get_output(context);
         let state_binding = args.state.get_output(context);
@@ -111,6 +127,7 @@ pub mod instance_state {
                     value: &state_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         InstanceStateResult {

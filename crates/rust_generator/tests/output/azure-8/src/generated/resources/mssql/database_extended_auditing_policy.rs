@@ -142,6 +142,22 @@ pub mod database_extended_auditing_policy {
         name: &str,
         args: DatabaseExtendedAuditingPolicyArgs,
     ) -> DatabaseExtendedAuditingPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatabaseExtendedAuditingPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DatabaseExtendedAuditingPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatabaseExtendedAuditingPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DatabaseExtendedAuditingPolicyResult {
         let database_id_binding = args.database_id.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
         let log_monitoring_enabled_binding = args
@@ -190,6 +206,7 @@ pub mod database_extended_auditing_policy {
                     value: &storage_endpoint_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DatabaseExtendedAuditingPolicyResult {

@@ -109,6 +109,22 @@ pub mod deployment {
         name: &str,
         args: DeploymentArgs,
     ) -> DeploymentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DeploymentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DeploymentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DeploymentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DeploymentResult {
         let application_id_binding = args.application_id.get_output(context);
         let configuration_profile_id_binding = args
             .configuration_profile_id
@@ -161,6 +177,7 @@ pub mod deployment {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DeploymentResult {

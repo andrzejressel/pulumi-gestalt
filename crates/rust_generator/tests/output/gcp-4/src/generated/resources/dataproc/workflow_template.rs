@@ -230,6 +230,22 @@ pub mod workflow_template {
         name: &str,
         args: WorkflowTemplateArgs,
     ) -> WorkflowTemplateResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkflowTemplateArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WorkflowTemplateResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkflowTemplateArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WorkflowTemplateResult {
         let dag_timeout_binding = args.dag_timeout.get_output(context);
         let jobs_binding = args.jobs.get_output(context);
         let labels_binding = args.labels.get_output(context);
@@ -281,6 +297,7 @@ pub mod workflow_template {
                     value: &version_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WorkflowTemplateResult {

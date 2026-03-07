@@ -77,6 +77,22 @@ pub mod resource {
         name: &str,
         args: ResourceArgs,
     ) -> ResourceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResourceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ResourceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResourceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ResourceResult {
         let parent_id_binding = args.parent_id.get_output(context);
         let path_part_binding = args.path_part.get_output(context);
         let rest_api_binding = args.rest_api.get_output(context);
@@ -98,6 +114,7 @@ pub mod resource {
                     value: &rest_api_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ResourceResult {

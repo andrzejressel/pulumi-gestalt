@@ -186,6 +186,22 @@ pub mod network_endpoint_list {
         name: &str,
         args: NetworkEndpointListArgs,
     ) -> NetworkEndpointListResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkEndpointListArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NetworkEndpointListResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkEndpointListArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NetworkEndpointListResult {
         let network_endpoint_group_binding = args
             .network_endpoint_group
             .get_output(context);
@@ -214,6 +230,7 @@ pub mod network_endpoint_list {
                     value: &zone_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NetworkEndpointListResult {

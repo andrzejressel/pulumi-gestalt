@@ -242,6 +242,22 @@ pub mod cluster_iam_binding {
         name: &str,
         args: ClusterIAMBindingArgs,
     ) -> ClusterIAMBindingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClusterIAMBindingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ClusterIAMBindingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClusterIAMBindingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ClusterIAMBindingResult {
         let cluster_binding = args.cluster.get_output(context);
         let condition_binding = args.condition.get_output(context);
         let members_binding = args.members.get_output(context);
@@ -278,6 +294,7 @@ pub mod cluster_iam_binding {
                     value: &role_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ClusterIAMBindingResult {

@@ -125,6 +125,22 @@ pub mod pod_identity_association {
         name: &str,
         args: PodIdentityAssociationArgs,
     ) -> PodIdentityAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PodIdentityAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PodIdentityAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PodIdentityAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PodIdentityAssociationResult {
         let cluster_name_binding = args.cluster_name.get_output(context);
         let namespace_binding = args.namespace.get_output(context);
         let role_arn_binding = args.role_arn.get_output(context);
@@ -156,6 +172,7 @@ pub mod pod_identity_association {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PodIdentityAssociationResult {

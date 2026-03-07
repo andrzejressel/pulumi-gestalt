@@ -187,6 +187,22 @@ pub mod diagnostic_setting {
         name: &str,
         args: DiagnosticSettingArgs,
     ) -> DiagnosticSettingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DiagnosticSettingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DiagnosticSettingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DiagnosticSettingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DiagnosticSettingResult {
         let enabled_logs_binding = args.enabled_logs.get_output(context);
         let eventhub_authorization_rule_id_binding = args
             .eventhub_authorization_rule_id
@@ -249,6 +265,7 @@ pub mod diagnostic_setting {
                     value: &target_resource_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DiagnosticSettingResult {

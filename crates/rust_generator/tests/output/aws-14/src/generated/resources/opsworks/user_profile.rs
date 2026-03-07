@@ -64,6 +64,22 @@ pub mod user_profile {
         name: &str,
         args: UserProfileArgs,
     ) -> UserProfileResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: UserProfileArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> UserProfileResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: UserProfileArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> UserProfileResult {
         let allow_self_management_binding = args
             .allow_self_management
             .get_output(context);
@@ -92,6 +108,7 @@ pub mod user_profile {
                     value: &user_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         UserProfileResult {

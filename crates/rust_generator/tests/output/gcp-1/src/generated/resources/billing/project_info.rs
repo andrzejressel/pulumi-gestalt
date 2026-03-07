@@ -104,6 +104,22 @@ pub mod project_info {
         name: &str,
         args: ProjectInfoArgs,
     ) -> ProjectInfoResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProjectInfoArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ProjectInfoResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProjectInfoArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ProjectInfoResult {
         let billing_account_binding = args.billing_account.get_output(context);
         let project_binding = args.project.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -120,6 +136,7 @@ pub mod project_info {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ProjectInfoResult {

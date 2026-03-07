@@ -137,6 +137,22 @@ pub mod bgp_connection {
         name: &str,
         args: BgpConnectionArgs,
     ) -> BgpConnectionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BgpConnectionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BgpConnectionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BgpConnectionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BgpConnectionResult {
         let name_binding = args.name.get_output(context);
         let peer_asn_binding = args.peer_asn.get_output(context);
         let peer_ip_binding = args.peer_ip.get_output(context);
@@ -170,6 +186,7 @@ pub mod bgp_connection {
                     value: &virtual_network_connection_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BgpConnectionResult {

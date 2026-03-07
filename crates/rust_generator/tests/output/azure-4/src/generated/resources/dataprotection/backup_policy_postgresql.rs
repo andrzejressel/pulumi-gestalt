@@ -142,6 +142,22 @@ pub mod backup_policy_postgresql {
         name: &str,
         args: BackupPolicyPostgresqlArgs,
     ) -> BackupPolicyPostgresqlResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackupPolicyPostgresqlArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BackupPolicyPostgresqlResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackupPolicyPostgresqlArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BackupPolicyPostgresqlResult {
         let backup_repeating_time_intervals_binding = args
             .backup_repeating_time_intervals
             .get_output(context);
@@ -188,6 +204,7 @@ pub mod backup_policy_postgresql {
                     value: &vault_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BackupPolicyPostgresqlResult {

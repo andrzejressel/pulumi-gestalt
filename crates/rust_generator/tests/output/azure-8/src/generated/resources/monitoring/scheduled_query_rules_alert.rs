@@ -139,6 +139,22 @@ pub mod scheduled_query_rules_alert {
         name: &str,
         args: ScheduledQueryRulesAlertArgs,
     ) -> ScheduledQueryRulesAlertResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ScheduledQueryRulesAlertArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ScheduledQueryRulesAlertResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ScheduledQueryRulesAlertArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ScheduledQueryRulesAlertResult {
         let action_binding = args.action.get_output(context);
         let authorized_resource_ids_binding = args
             .authorized_resource_ids
@@ -235,6 +251,7 @@ pub mod scheduled_query_rules_alert {
                     value: &trigger_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ScheduledQueryRulesAlertResult {

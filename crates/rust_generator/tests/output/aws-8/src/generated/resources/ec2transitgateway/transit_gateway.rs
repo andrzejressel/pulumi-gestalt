@@ -138,6 +138,22 @@ pub mod transit_gateway {
         name: &str,
         args: TransitGatewayArgs,
     ) -> TransitGatewayResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TransitGatewayArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TransitGatewayResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TransitGatewayArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TransitGatewayResult {
         let amazon_side_asn_binding = args.amazon_side_asn.get_output(context);
         let auto_accept_shared_attachments_binding = args
             .auto_accept_shared_attachments
@@ -209,6 +225,7 @@ pub mod transit_gateway {
                     value: &vpn_ecmp_support_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TransitGatewayResult {

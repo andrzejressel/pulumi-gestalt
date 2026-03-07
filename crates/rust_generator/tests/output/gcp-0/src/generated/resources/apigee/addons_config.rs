@@ -188,6 +188,22 @@ pub mod addons_config {
         name: &str,
         args: AddonsConfigArgs,
     ) -> AddonsConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AddonsConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AddonsConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AddonsConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AddonsConfigResult {
         let addons_config_binding = args.addons_config.get_output(context);
         let org_binding = args.org.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -204,6 +220,7 @@ pub mod addons_config {
                     value: &org_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AddonsConfigResult {

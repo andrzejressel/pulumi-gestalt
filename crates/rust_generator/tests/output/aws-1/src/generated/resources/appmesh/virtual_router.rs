@@ -118,6 +118,22 @@ pub mod virtual_router {
         name: &str,
         args: VirtualRouterArgs,
     ) -> VirtualRouterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VirtualRouterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VirtualRouterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VirtualRouterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VirtualRouterResult {
         let mesh_name_binding = args.mesh_name.get_output(context);
         let mesh_owner_binding = args.mesh_owner.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -149,6 +165,7 @@ pub mod virtual_router {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VirtualRouterResult {

@@ -577,6 +577,22 @@ pub mod migration_job {
         name: &str,
         args: MigrationJobArgs,
     ) -> MigrationJobResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MigrationJobArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MigrationJobResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MigrationJobArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MigrationJobResult {
         let destination_binding = args.destination.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let dump_flags_binding = args.dump_flags.get_output(context);
@@ -664,6 +680,7 @@ pub mod migration_job {
                     value: &vpc_peering_connectivity_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MigrationJobResult {

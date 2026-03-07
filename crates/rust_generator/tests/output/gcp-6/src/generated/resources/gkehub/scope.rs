@@ -154,6 +154,22 @@ pub mod scope {
         name: &str,
         args: ScopeArgs,
     ) -> ScopeResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ScopeArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ScopeResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ScopeArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ScopeResult {
         let labels_binding = args.labels.get_output(context);
         let namespace_labels_binding = args.namespace_labels.get_output(context);
         let project_binding = args.project.get_output(context);
@@ -180,6 +196,7 @@ pub mod scope {
                     value: &scope_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ScopeResult {

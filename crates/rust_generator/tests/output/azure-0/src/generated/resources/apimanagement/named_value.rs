@@ -122,6 +122,22 @@ pub mod named_value {
         name: &str,
         args: NamedValueArgs,
     ) -> NamedValueResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NamedValueArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NamedValueResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NamedValueArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NamedValueResult {
         let api_management_name_binding = args.api_management_name.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -168,6 +184,7 @@ pub mod named_value {
                     value: &value_from_key_vault_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NamedValueResult {

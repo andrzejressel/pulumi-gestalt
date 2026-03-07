@@ -92,6 +92,22 @@ pub mod logically_air_gapped_vault {
         name: &str,
         args: LogicallyAirGappedVaultArgs,
     ) -> LogicallyAirGappedVaultResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LogicallyAirGappedVaultArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LogicallyAirGappedVaultResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LogicallyAirGappedVaultArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LogicallyAirGappedVaultResult {
         let max_retention_days_binding = args.max_retention_days.get_output(context);
         let min_retention_days_binding = args.min_retention_days.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -123,6 +139,7 @@ pub mod logically_air_gapped_vault {
                     value: &timeouts_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LogicallyAirGappedVaultResult {

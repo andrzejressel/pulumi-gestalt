@@ -138,6 +138,22 @@ pub mod definition {
         name: &str,
         args: DefinitionArgs,
     ) -> DefinitionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DefinitionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DefinitionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DefinitionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DefinitionResult {
         let authorizations_binding = args.authorizations.get_output(context);
         let create_ui_definition_binding = args.create_ui_definition.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -204,6 +220,7 @@ pub mod definition {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DefinitionResult {

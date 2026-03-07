@@ -105,6 +105,22 @@ pub mod notification_channel {
         name: &str,
         args: NotificationChannelArgs,
     ) -> NotificationChannelResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NotificationChannelArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NotificationChannelResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NotificationChannelArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NotificationChannelResult {
         let filters_binding = args.filters.get_output(context);
         let sns_binding = args.sns.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -121,6 +137,7 @@ pub mod notification_channel {
                     value: &sns_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NotificationChannelResult {

@@ -75,6 +75,22 @@ pub mod hostname_tls_setting {
         name: &str,
         args: HostnameTlsSettingArgs,
     ) -> HostnameTlsSettingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HostnameTlsSettingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> HostnameTlsSettingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HostnameTlsSettingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> HostnameTlsSettingResult {
         let hostname_binding = args.hostname.get_output(context);
         let setting_binding = args.setting.get_output(context);
         let value_binding = args.value.get_output(context);
@@ -101,6 +117,7 @@ pub mod hostname_tls_setting {
                     value: &zone_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         HostnameTlsSettingResult {

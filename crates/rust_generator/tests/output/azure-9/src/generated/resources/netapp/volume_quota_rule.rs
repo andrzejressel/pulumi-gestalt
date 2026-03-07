@@ -198,6 +198,22 @@ pub mod volume_quota_rule {
         name: &str,
         args: VolumeQuotaRuleArgs,
     ) -> VolumeQuotaRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VolumeQuotaRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VolumeQuotaRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VolumeQuotaRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VolumeQuotaRuleResult {
         let location_binding = args.location.get_output(context);
         let name_binding = args.name.get_output(context);
         let quota_size_in_kib_binding = args.quota_size_in_kib.get_output(context);
@@ -234,6 +250,7 @@ pub mod volume_quota_rule {
                     value: &volume_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VolumeQuotaRuleResult {

@@ -101,6 +101,22 @@ pub mod app_monitor {
         name: &str,
         args: AppMonitorArgs,
     ) -> AppMonitorResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AppMonitorArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AppMonitorResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AppMonitorArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AppMonitorResult {
         let app_monitor_configuration_binding = args
             .app_monitor_configuration
             .get_output(context);
@@ -139,6 +155,7 @@ pub mod app_monitor {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AppMonitorResult {

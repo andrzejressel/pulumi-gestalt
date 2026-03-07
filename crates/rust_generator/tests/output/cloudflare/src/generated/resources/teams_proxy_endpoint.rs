@@ -71,6 +71,22 @@ pub mod teams_proxy_endpoint {
         name: &str,
         args: TeamsProxyEndpointArgs,
     ) -> TeamsProxyEndpointResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TeamsProxyEndpointArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TeamsProxyEndpointResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TeamsProxyEndpointArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TeamsProxyEndpointResult {
         let account_id_binding = args.account_id.get_output(context);
         let ips_binding = args.ips.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -92,6 +108,7 @@ pub mod teams_proxy_endpoint {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TeamsProxyEndpointResult {

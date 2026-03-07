@@ -139,6 +139,22 @@ pub mod spring_cloud_api_portal {
         name: &str,
         args: SpringCloudApiPortalArgs,
     ) -> SpringCloudApiPortalResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudApiPortalArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SpringCloudApiPortalResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudApiPortalArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SpringCloudApiPortalResult {
         let api_try_out_enabled_binding = args.api_try_out_enabled.get_output(context);
         let gateway_ids_binding = args.gateway_ids.get_output(context);
         let https_only_enabled_binding = args.https_only_enabled.get_output(context);
@@ -189,6 +205,7 @@ pub mod spring_cloud_api_portal {
                     value: &sso_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SpringCloudApiPortalResult {

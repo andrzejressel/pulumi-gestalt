@@ -97,6 +97,22 @@ pub mod activity {
         name: &str,
         args: ActivityArgs,
     ) -> ActivityResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ActivityArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ActivityResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ActivityArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ActivityResult {
         let encryption_configuration_binding = args
             .encryption_configuration
             .get_output(context);
@@ -120,6 +136,7 @@ pub mod activity {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ActivityResult {

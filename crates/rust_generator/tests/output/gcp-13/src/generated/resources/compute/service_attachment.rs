@@ -565,6 +565,22 @@ pub mod service_attachment {
         name: &str,
         args: ServiceAttachmentArgs,
     ) -> ServiceAttachmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceAttachmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServiceAttachmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceAttachmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServiceAttachmentResult {
         let connection_preference_binding = args
             .connection_preference
             .get_output(context);
@@ -648,6 +664,7 @@ pub mod service_attachment {
                     value: &target_service_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServiceAttachmentResult {

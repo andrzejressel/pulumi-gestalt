@@ -132,6 +132,22 @@ pub mod data_collection_rule {
         name: &str,
         args: DataCollectionRuleArgs,
     ) -> DataCollectionRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataCollectionRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DataCollectionRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataCollectionRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DataCollectionRuleResult {
         let data_collection_endpoint_id_binding = args
             .data_collection_endpoint_id
             .get_output(context);
@@ -200,6 +216,7 @@ pub mod data_collection_rule {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DataCollectionRuleResult {

@@ -75,6 +75,22 @@ pub mod zero_trust_tunnel_virtual_network {
         name: &str,
         args: ZeroTrustTunnelVirtualNetworkArgs,
     ) -> ZeroTrustTunnelVirtualNetworkResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZeroTrustTunnelVirtualNetworkArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ZeroTrustTunnelVirtualNetworkResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZeroTrustTunnelVirtualNetworkArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ZeroTrustTunnelVirtualNetworkResult {
         let account_id_binding = args.account_id.get_output(context);
         let comment_binding = args.comment.get_output(context);
         let is_default_network_binding = args.is_default_network.get_output(context);
@@ -102,6 +118,7 @@ pub mod zero_trust_tunnel_virtual_network {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ZeroTrustTunnelVirtualNetworkResult {

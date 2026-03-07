@@ -94,6 +94,22 @@ pub mod proxy_default_target_group {
         name: &str,
         args: ProxyDefaultTargetGroupArgs,
     ) -> ProxyDefaultTargetGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProxyDefaultTargetGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ProxyDefaultTargetGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProxyDefaultTargetGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ProxyDefaultTargetGroupResult {
         let connection_pool_config_binding = args
             .connection_pool_config
             .get_output(context);
@@ -112,6 +128,7 @@ pub mod proxy_default_target_group {
                     value: &db_proxy_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ProxyDefaultTargetGroupResult {

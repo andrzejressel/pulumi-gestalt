@@ -95,6 +95,22 @@ pub mod flexible_server_firewall_rule {
         name: &str,
         args: FlexibleServerFirewallRuleArgs,
     ) -> FlexibleServerFirewallRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FlexibleServerFirewallRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FlexibleServerFirewallRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FlexibleServerFirewallRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FlexibleServerFirewallRuleResult {
         let end_ip_address_binding = args.end_ip_address.get_output(context);
         let name_binding = args.name.get_output(context);
         let server_id_binding = args.server_id.get_output(context);
@@ -122,6 +138,7 @@ pub mod flexible_server_firewall_rule {
                     value: &start_ip_address_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FlexibleServerFirewallRuleResult {

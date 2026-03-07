@@ -88,6 +88,22 @@ pub mod origin_access_control {
         name: &str,
         args: OriginAccessControlArgs,
     ) -> OriginAccessControlResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OriginAccessControlArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OriginAccessControlResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OriginAccessControlArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OriginAccessControlResult {
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let origin_access_control_origin_type_binding = args
@@ -121,6 +137,7 @@ pub mod origin_access_control {
                     value: &signing_protocol_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OriginAccessControlResult {

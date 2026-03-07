@@ -103,6 +103,22 @@ pub mod subnet_route_table_association {
         name: &str,
         args: SubnetRouteTableAssociationArgs,
     ) -> SubnetRouteTableAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SubnetRouteTableAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SubnetRouteTableAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SubnetRouteTableAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SubnetRouteTableAssociationResult {
         let route_table_id_binding = args.route_table_id.get_output(context);
         let subnet_id_binding = args.subnet_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -120,6 +136,7 @@ pub mod subnet_route_table_association {
                     value: &subnet_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SubnetRouteTableAssociationResult {

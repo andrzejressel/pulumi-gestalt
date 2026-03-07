@@ -188,6 +188,22 @@ pub mod key {
         name: &str,
         args: KeyArgs,
     ) -> KeyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: KeyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> KeyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: KeyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> KeyResult {
         let curve_binding = args.curve.get_output(context);
         let expiration_date_binding = args.expiration_date.get_output(context);
         let key_opts_binding = args.key_opts.get_output(context);
@@ -244,6 +260,7 @@ pub mod key {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         KeyResult {

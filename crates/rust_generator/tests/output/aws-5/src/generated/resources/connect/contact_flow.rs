@@ -162,6 +162,22 @@ pub mod contact_flow {
         name: &str,
         args: ContactFlowArgs,
     ) -> ContactFlowResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ContactFlowArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ContactFlowResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ContactFlowArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ContactFlowResult {
         let content_binding = args.content.get_output(context);
         let content_hash_binding = args.content_hash.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -208,6 +224,7 @@ pub mod contact_flow {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ContactFlowResult {

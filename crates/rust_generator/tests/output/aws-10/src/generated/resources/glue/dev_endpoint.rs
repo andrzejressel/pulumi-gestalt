@@ -179,6 +179,22 @@ pub mod dev_endpoint {
         name: &str,
         args: DevEndpointArgs,
     ) -> DevEndpointResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DevEndpointArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DevEndpointResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DevEndpointArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DevEndpointResult {
         let arguments_binding = args.arguments.get_output(context);
         let extra_jars_s3_path_binding = args.extra_jars_s3_path.get_output(context);
         let extra_python_libs_s3_path_binding = args
@@ -264,6 +280,7 @@ pub mod dev_endpoint {
                     value: &worker_type_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DevEndpointResult {

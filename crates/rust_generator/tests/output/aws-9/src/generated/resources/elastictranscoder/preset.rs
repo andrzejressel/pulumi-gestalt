@@ -165,6 +165,22 @@ pub mod preset {
         name: &str,
         args: PresetArgs,
     ) -> PresetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PresetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PresetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PresetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PresetResult {
         let audio_binding = args.audio.get_output(context);
         let audio_codec_options_binding = args.audio_codec_options.get_output(context);
         let container_binding = args.container.get_output(context);
@@ -221,6 +237,7 @@ pub mod preset {
                     value: &video_watermarks_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PresetResult {

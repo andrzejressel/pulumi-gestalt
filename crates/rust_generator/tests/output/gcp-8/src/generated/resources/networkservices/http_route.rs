@@ -326,6 +326,22 @@ pub mod http_route {
         name: &str,
         args: HttpRouteArgs,
     ) -> HttpRouteResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HttpRouteArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> HttpRouteResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HttpRouteArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> HttpRouteResult {
         let description_binding = args.description.get_output(context);
         let gateways_binding = args.gateways.get_output(context);
         let hostnames_binding = args.hostnames.get_output(context);
@@ -372,6 +388,7 @@ pub mod http_route {
                     value: &rules_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         HttpRouteResult {

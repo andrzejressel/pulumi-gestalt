@@ -390,6 +390,22 @@ pub mod server {
         name: &str,
         args: ServerArgs,
     ) -> ServerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServerResult {
         let certificate_binding = args.certificate.get_output(context);
         let directory_id_binding = args.directory_id.get_output(context);
         let domain_binding = args.domain.get_output(context);
@@ -516,6 +532,7 @@ pub mod server {
                     value: &workflow_details_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServerResult {

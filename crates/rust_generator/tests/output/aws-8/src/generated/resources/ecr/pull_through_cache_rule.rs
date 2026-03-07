@@ -75,6 +75,22 @@ pub mod pull_through_cache_rule {
         name: &str,
         args: PullThroughCacheRuleArgs,
     ) -> PullThroughCacheRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PullThroughCacheRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PullThroughCacheRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PullThroughCacheRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PullThroughCacheRuleResult {
         let credential_arn_binding = args.credential_arn.get_output(context);
         let ecr_repository_prefix_binding = args
             .ecr_repository_prefix
@@ -100,6 +116,7 @@ pub mod pull_through_cache_rule {
                     value: &upstream_registry_url_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PullThroughCacheRuleResult {

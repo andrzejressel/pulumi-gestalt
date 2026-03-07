@@ -75,6 +75,22 @@ pub mod hsm_client_certificate {
         name: &str,
         args: HsmClientCertificateArgs,
     ) -> HsmClientCertificateResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HsmClientCertificateArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> HsmClientCertificateResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HsmClientCertificateArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> HsmClientCertificateResult {
         let hsm_client_certificate_identifier_binding = args
             .hsm_client_certificate_identifier
             .get_output(context);
@@ -93,6 +109,7 @@ pub mod hsm_client_certificate {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         HsmClientCertificateResult {

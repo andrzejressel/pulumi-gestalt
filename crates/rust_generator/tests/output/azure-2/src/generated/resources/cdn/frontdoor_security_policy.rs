@@ -159,6 +159,22 @@ pub mod frontdoor_security_policy {
         name: &str,
         args: FrontdoorSecurityPolicyArgs,
     ) -> FrontdoorSecurityPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FrontdoorSecurityPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FrontdoorSecurityPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FrontdoorSecurityPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FrontdoorSecurityPolicyResult {
         let cdn_frontdoor_profile_id_binding = args
             .cdn_frontdoor_profile_id
             .get_output(context);
@@ -182,6 +198,7 @@ pub mod frontdoor_security_policy {
                     value: &security_policies_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FrontdoorSecurityPolicyResult {

@@ -141,6 +141,22 @@ pub mod express_route_port {
         name: &str,
         args: ExpressRoutePortArgs,
     ) -> ExpressRoutePortResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ExpressRoutePortArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ExpressRoutePortResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ExpressRoutePortArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ExpressRoutePortResult {
         let bandwidth_in_gbps_binding = args.bandwidth_in_gbps.get_output(context);
         let billing_type_binding = args.billing_type.get_output(context);
         let encapsulation_binding = args.encapsulation.get_output(context);
@@ -202,6 +218,7 @@ pub mod express_route_port {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ExpressRoutePortResult {

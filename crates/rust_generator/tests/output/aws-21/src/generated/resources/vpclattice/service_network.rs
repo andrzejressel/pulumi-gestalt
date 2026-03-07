@@ -80,6 +80,22 @@ pub mod service_network {
         name: &str,
         args: ServiceNetworkArgs,
     ) -> ServiceNetworkResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceNetworkArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServiceNetworkResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceNetworkArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServiceNetworkResult {
         let auth_type_binding = args.auth_type.get_output(context);
         let name_binding = args.name.get_output(context);
         let tags_binding = args.tags.get_output(context);
@@ -101,6 +117,7 @@ pub mod service_network {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServiceNetworkResult {

@@ -107,6 +107,22 @@ pub mod fleet_member {
         name: &str,
         args: FleetMemberArgs,
     ) -> FleetMemberResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FleetMemberArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FleetMemberResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FleetMemberArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FleetMemberResult {
         let group_binding = args.group.get_output(context);
         let kubernetes_cluster_id_binding = args
             .kubernetes_cluster_id
@@ -135,6 +151,7 @@ pub mod fleet_member {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FleetMemberResult {

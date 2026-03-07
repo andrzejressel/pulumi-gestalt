@@ -111,6 +111,22 @@ pub mod integration_account_certificate {
         name: &str,
         args: IntegrationAccountCertificateArgs,
     ) -> IntegrationAccountCertificateResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IntegrationAccountCertificateArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IntegrationAccountCertificateResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IntegrationAccountCertificateArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IntegrationAccountCertificateResult {
         let integration_account_name_binding = args
             .integration_account_name
             .get_output(context);
@@ -150,6 +166,7 @@ pub mod integration_account_certificate {
                     value: &resource_group_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IntegrationAccountCertificateResult {

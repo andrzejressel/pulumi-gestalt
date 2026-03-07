@@ -79,6 +79,22 @@ pub mod vpc_ipv_4_cidr_block_association {
         name: &str,
         args: VpcIpv4CidrBlockAssociationArgs,
     ) -> VpcIpv4CidrBlockAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcIpv4CidrBlockAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VpcIpv4CidrBlockAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcIpv4CidrBlockAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VpcIpv4CidrBlockAssociationResult {
         let cidr_block_binding = args.cidr_block.get_output(context);
         let ipv4_ipam_pool_id_binding = args.ipv4_ipam_pool_id.get_output(context);
         let ipv4_netmask_length_binding = args.ipv4_netmask_length.get_output(context);
@@ -106,6 +122,7 @@ pub mod vpc_ipv_4_cidr_block_association {
                     value: &vpc_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VpcIpv4CidrBlockAssociationResult {

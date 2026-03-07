@@ -236,6 +236,22 @@ pub mod data_store {
         name: &str,
         args: DataStoreArgs,
     ) -> DataStoreResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataStoreArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DataStoreResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataStoreArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DataStoreResult {
         let content_config_binding = args.content_config.get_output(context);
         let create_advanced_site_search_binding = args
             .create_advanced_site_search
@@ -298,6 +314,7 @@ pub mod data_store {
                     value: &solution_types_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DataStoreResult {

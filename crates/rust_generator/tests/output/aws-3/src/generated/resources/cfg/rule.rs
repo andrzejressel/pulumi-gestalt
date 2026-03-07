@@ -235,6 +235,22 @@ pub mod rule {
         name: &str,
         args: RuleArgs,
     ) -> RuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RuleResult {
         let description_binding = args.description.get_output(context);
         let evaluation_modes_binding = args.evaluation_modes.get_output(context);
         let input_parameters_binding = args.input_parameters.get_output(context);
@@ -283,6 +299,7 @@ pub mod rule {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RuleResult {

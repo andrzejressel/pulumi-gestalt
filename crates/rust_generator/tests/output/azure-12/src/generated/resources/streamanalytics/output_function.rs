@@ -150,6 +150,22 @@ pub mod output_function {
         name: &str,
         args: OutputFunctionArgs,
     ) -> OutputFunctionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OutputFunctionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OutputFunctionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OutputFunctionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OutputFunctionResult {
         let api_key_binding = args.api_key.get_output(context);
         let batch_max_count_binding = args.batch_max_count.get_output(context);
         let batch_max_in_bytes_binding = args.batch_max_in_bytes.get_output(context);
@@ -198,6 +214,7 @@ pub mod output_function {
                     value: &stream_analytics_job_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OutputFunctionResult {

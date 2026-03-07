@@ -130,6 +130,22 @@ pub mod cost_category {
         name: &str,
         args: CostCategoryArgs,
     ) -> CostCategoryResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CostCategoryArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CostCategoryResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CostCategoryArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CostCategoryResult {
         let default_value_binding = args.default_value.get_output(context);
         let effective_start_binding = args.effective_start.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -171,6 +187,7 @@ pub mod cost_category {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CostCategoryResult {

@@ -451,6 +451,22 @@ pub mod instance_iam_member {
         name: &str,
         args: InstanceIAMMemberArgs,
     ) -> InstanceIAMMemberResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InstanceIAMMemberArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> InstanceIAMMemberResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InstanceIAMMemberArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> InstanceIAMMemberResult {
         let condition_binding = args.condition.get_output(context);
         let instance_name_binding = args.instance_name.get_output(context);
         let member_binding = args.member.get_output(context);
@@ -487,6 +503,7 @@ pub mod instance_iam_member {
                     value: &zone_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         InstanceIAMMemberResult {

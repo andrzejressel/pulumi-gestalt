@@ -123,6 +123,22 @@ pub mod vpc_attachment {
         name: &str,
         args: VpcAttachmentArgs,
     ) -> VpcAttachmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcAttachmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VpcAttachmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcAttachmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VpcAttachmentResult {
         let appliance_mode_support_binding = args
             .appliance_mode_support
             .get_output(context);
@@ -189,6 +205,7 @@ pub mod vpc_attachment {
                     value: &vpc_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VpcAttachmentResult {

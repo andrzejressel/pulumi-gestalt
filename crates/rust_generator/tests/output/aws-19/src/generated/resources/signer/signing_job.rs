@@ -139,6 +139,22 @@ pub mod signing_job {
         name: &str,
         args: SigningJobArgs,
     ) -> SigningJobResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SigningJobArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SigningJobResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SigningJobArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SigningJobResult {
         let destination_binding = args.destination.get_output(context);
         let ignore_signing_job_failure_binding = args
             .ignore_signing_job_failure
@@ -167,6 +183,7 @@ pub mod signing_job {
                     value: &source_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SigningJobResult {

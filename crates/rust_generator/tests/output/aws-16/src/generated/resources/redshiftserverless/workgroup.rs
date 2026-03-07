@@ -133,6 +133,22 @@ pub mod workgroup {
         name: &str,
         args: WorkgroupArgs,
     ) -> WorkgroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkgroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WorkgroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkgroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WorkgroupResult {
         let base_capacity_binding = args.base_capacity.get_output(context);
         let config_parameters_binding = args.config_parameters.get_output(context);
         let enhanced_vpc_routing_binding = args.enhanced_vpc_routing.get_output(context);
@@ -194,6 +210,7 @@ pub mod workgroup {
                     value: &workgroup_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WorkgroupResult {

@@ -92,6 +92,22 @@ pub mod lb {
         name: &str,
         args: LbArgs,
     ) -> LbResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LbArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LbResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LbArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LbResult {
         let health_check_path_binding = args.health_check_path.get_output(context);
         let instance_port_binding = args.instance_port.get_output(context);
         let ip_address_type_binding = args.ip_address_type.get_output(context);
@@ -123,6 +139,7 @@ pub mod lb {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LbResult {

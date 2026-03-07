@@ -105,6 +105,22 @@ pub mod database {
         name: &str,
         args: DatabaseArgs,
     ) -> DatabaseResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatabaseArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DatabaseResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatabaseArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DatabaseResult {
         let cluster_name_binding = args.cluster_name.get_output(context);
         let hot_cache_period_binding = args.hot_cache_period.get_output(context);
         let location_binding = args.location.get_output(context);
@@ -141,6 +157,7 @@ pub mod database {
                     value: &soft_delete_period_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DatabaseResult {

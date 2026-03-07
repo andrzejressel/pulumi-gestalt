@@ -94,6 +94,22 @@ pub mod vpc_ipv_6_cidr_block_association {
         name: &str,
         args: VpcIpv6CidrBlockAssociationArgs,
     ) -> VpcIpv6CidrBlockAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcIpv6CidrBlockAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VpcIpv6CidrBlockAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcIpv6CidrBlockAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VpcIpv6CidrBlockAssociationResult {
         let assign_generated_ipv6_cidr_block_binding = args
             .assign_generated_ipv6_cidr_block
             .get_output(context);
@@ -133,6 +149,7 @@ pub mod vpc_ipv_6_cidr_block_association {
                     value: &vpc_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VpcIpv6CidrBlockAssociationResult {

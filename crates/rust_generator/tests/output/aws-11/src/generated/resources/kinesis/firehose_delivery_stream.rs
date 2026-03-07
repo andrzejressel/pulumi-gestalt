@@ -899,6 +899,22 @@ pub mod firehose_delivery_stream {
         name: &str,
         args: FirehoseDeliveryStreamArgs,
     ) -> FirehoseDeliveryStreamResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FirehoseDeliveryStreamArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FirehoseDeliveryStreamResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FirehoseDeliveryStreamArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FirehoseDeliveryStreamResult {
         let arn_binding = args.arn.get_output(context);
         let destination_binding = args.destination.get_output(context);
         let destination_id_binding = args.destination_id.get_output(context);
@@ -1017,6 +1033,7 @@ pub mod firehose_delivery_stream {
                     value: &version_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FirehoseDeliveryStreamResult {

@@ -215,6 +215,22 @@ pub mod network_peering_routes_config {
         name: &str,
         args: NetworkPeeringRoutesConfigArgs,
     ) -> NetworkPeeringRoutesConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkPeeringRoutesConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NetworkPeeringRoutesConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkPeeringRoutesConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NetworkPeeringRoutesConfigResult {
         let export_custom_routes_binding = args.export_custom_routes.get_output(context);
         let import_custom_routes_binding = args.import_custom_routes.get_output(context);
         let network_binding = args.network.get_output(context);
@@ -247,6 +263,7 @@ pub mod network_peering_routes_config {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NetworkPeeringRoutesConfigResult {

@@ -554,6 +554,22 @@ pub mod replication_group {
         name: &str,
         args: ReplicationGroupArgs,
     ) -> ReplicationGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReplicationGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ReplicationGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReplicationGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ReplicationGroupResult {
         let apply_immediately_binding = args.apply_immediately.get_output(context);
         let at_rest_encryption_enabled_binding = args
             .at_rest_encryption_enabled
@@ -781,6 +797,7 @@ pub mod replication_group {
                     value: &user_group_ids_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ReplicationGroupResult {

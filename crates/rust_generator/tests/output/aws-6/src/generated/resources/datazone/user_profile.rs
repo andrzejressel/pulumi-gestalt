@@ -92,6 +92,22 @@ pub mod user_profile {
         name: &str,
         args: UserProfileArgs,
     ) -> UserProfileResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: UserProfileArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> UserProfileResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: UserProfileArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> UserProfileResult {
         let domain_identifier_binding = args.domain_identifier.get_output(context);
         let status_binding = args.status.get_output(context);
         let timeouts_binding = args.timeouts.get_output(context);
@@ -123,6 +139,7 @@ pub mod user_profile {
                     value: &user_type_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         UserProfileResult {

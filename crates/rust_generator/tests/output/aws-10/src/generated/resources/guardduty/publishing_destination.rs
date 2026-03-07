@@ -161,6 +161,22 @@ pub mod publishing_destination {
         name: &str,
         args: PublishingDestinationArgs,
     ) -> PublishingDestinationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PublishingDestinationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PublishingDestinationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PublishingDestinationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PublishingDestinationResult {
         let destination_arn_binding = args.destination_arn.get_output(context);
         let destination_type_binding = args.destination_type.get_output(context);
         let detector_id_binding = args.detector_id.get_output(context);
@@ -187,6 +203,7 @@ pub mod publishing_destination {
                     value: &kms_key_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PublishingDestinationResult {

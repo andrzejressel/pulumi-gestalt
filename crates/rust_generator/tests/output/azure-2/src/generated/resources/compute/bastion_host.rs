@@ -220,6 +220,22 @@ pub mod bastion_host {
         name: &str,
         args: BastionHostArgs,
     ) -> BastionHostResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BastionHostArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BastionHostResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BastionHostArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BastionHostResult {
         let copy_paste_enabled_binding = args.copy_paste_enabled.get_output(context);
         let file_copy_enabled_binding = args.file_copy_enabled.get_output(context);
         let ip_configuration_binding = args.ip_configuration.get_output(context);
@@ -310,6 +326,7 @@ pub mod bastion_host {
                     value: &zones_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BastionHostResult {

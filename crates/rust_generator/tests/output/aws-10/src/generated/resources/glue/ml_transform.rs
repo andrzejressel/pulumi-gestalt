@@ -198,6 +198,22 @@ pub mod ml_transform {
         name: &str,
         args: MLTransformArgs,
     ) -> MLTransformResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MLTransformArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MLTransformResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MLTransformArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MLTransformResult {
         let description_binding = args.description.get_output(context);
         let glue_version_binding = args.glue_version.get_output(context);
         let input_record_tables_binding = args.input_record_tables.get_output(context);
@@ -264,6 +280,7 @@ pub mod ml_transform {
                     value: &worker_type_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MLTransformResult {

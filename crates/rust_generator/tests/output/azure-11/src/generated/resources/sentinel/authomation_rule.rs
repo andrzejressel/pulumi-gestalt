@@ -152,6 +152,22 @@ pub mod authomation_rule {
         name: &str,
         args: AuthomationRuleArgs,
     ) -> AuthomationRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AuthomationRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AuthomationRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AuthomationRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AuthomationRuleResult {
         let action_incidents_binding = args.action_incidents.get_output(context);
         let action_playbooks_binding = args.action_playbooks.get_output(context);
         let condition_json_binding = args.condition_json.get_output(context);
@@ -215,6 +231,7 @@ pub mod authomation_rule {
                     value: &triggers_when_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AuthomationRuleResult {

@@ -168,6 +168,22 @@ pub mod event_rule {
         name: &str,
         args: EventRuleArgs,
     ) -> EventRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EventRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EventRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EventRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EventRuleResult {
         let description_binding = args.description.get_output(context);
         let event_bus_name_binding = args.event_bus_name.get_output(context);
         let event_pattern_binding = args.event_pattern.get_output(context);
@@ -229,6 +245,7 @@ pub mod event_rule {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EventRuleResult {

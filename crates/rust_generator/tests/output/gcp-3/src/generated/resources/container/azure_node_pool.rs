@@ -239,6 +239,22 @@ pub mod azure_node_pool {
         name: &str,
         args: AzureNodePoolArgs,
     ) -> AzureNodePoolResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AzureNodePoolArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AzureNodePoolResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AzureNodePoolArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AzureNodePoolResult {
         let annotations_binding = args.annotations.get_output(context);
         let autoscaling_binding = args.autoscaling.get_output(context);
         let azure_availability_zone_binding = args
@@ -307,6 +323,7 @@ pub mod azure_node_pool {
                     value: &version_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AzureNodePoolResult {

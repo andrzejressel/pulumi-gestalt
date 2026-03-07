@@ -82,6 +82,22 @@ pub mod cluster_snapshot {
         name: &str,
         args: ClusterSnapshotArgs,
     ) -> ClusterSnapshotResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClusterSnapshotArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ClusterSnapshotResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClusterSnapshotArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ClusterSnapshotResult {
         let db_cluster_identifier_binding = args
             .db_cluster_identifier
             .get_output(context);
@@ -102,6 +118,7 @@ pub mod cluster_snapshot {
                     value: &db_cluster_snapshot_identifier_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ClusterSnapshotResult {

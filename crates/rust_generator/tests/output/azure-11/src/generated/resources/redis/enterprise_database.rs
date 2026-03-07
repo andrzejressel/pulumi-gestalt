@@ -152,6 +152,22 @@ pub mod enterprise_database {
         name: &str,
         args: EnterpriseDatabaseArgs,
     ) -> EnterpriseDatabaseResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EnterpriseDatabaseArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EnterpriseDatabaseResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EnterpriseDatabaseArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EnterpriseDatabaseResult {
         let client_protocol_binding = args.client_protocol.get_output(context);
         let cluster_id_binding = args.cluster_id.get_output(context);
         let clustering_policy_binding = args.clustering_policy.get_output(context);
@@ -205,6 +221,7 @@ pub mod enterprise_database {
                     value: &port_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EnterpriseDatabaseResult {

@@ -236,6 +236,22 @@ pub mod custom_target_type {
         name: &str,
         args: CustomTargetTypeArgs,
     ) -> CustomTargetTypeResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomTargetTypeArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CustomTargetTypeResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomTargetTypeArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CustomTargetTypeResult {
         let annotations_binding = args.annotations.get_output(context);
         let custom_actions_binding = args.custom_actions.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -277,6 +293,7 @@ pub mod custom_target_type {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CustomTargetTypeResult {

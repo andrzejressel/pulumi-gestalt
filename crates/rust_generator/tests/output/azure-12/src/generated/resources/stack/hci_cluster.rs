@@ -129,6 +129,22 @@ pub mod hci_cluster {
         name: &str,
         args: HciClusterArgs,
     ) -> HciClusterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HciClusterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> HciClusterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HciClusterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> HciClusterResult {
         let automanage_configuration_id_binding = args
             .automanage_configuration_id
             .get_output(context);
@@ -177,6 +193,7 @@ pub mod hci_cluster {
                     value: &tenant_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         HciClusterResult {

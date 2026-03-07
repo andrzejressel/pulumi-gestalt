@@ -76,6 +76,22 @@ pub mod documentation_part {
         name: &str,
         args: DocumentationPartArgs,
     ) -> DocumentationPartResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DocumentationPartArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DocumentationPartResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DocumentationPartArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DocumentationPartResult {
         let location_binding = args.location.get_output(context);
         let properties_binding = args.properties.get_output(context);
         let rest_api_id_binding = args.rest_api_id.get_output(context);
@@ -97,6 +113,7 @@ pub mod documentation_part {
                     value: &rest_api_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DocumentationPartResult {

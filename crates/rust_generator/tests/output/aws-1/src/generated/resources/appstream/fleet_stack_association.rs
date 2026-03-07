@@ -77,6 +77,22 @@ pub mod fleet_stack_association {
         name: &str,
         args: FleetStackAssociationArgs,
     ) -> FleetStackAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FleetStackAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FleetStackAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FleetStackAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FleetStackAssociationResult {
         let fleet_name_binding = args.fleet_name.get_output(context);
         let stack_name_binding = args.stack_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -93,6 +109,7 @@ pub mod fleet_stack_association {
                     value: &stack_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FleetStackAssociationResult {

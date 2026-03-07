@@ -188,6 +188,22 @@ pub mod ai_tensorboard {
         name: &str,
         args: AiTensorboardArgs,
     ) -> AiTensorboardResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AiTensorboardArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AiTensorboardResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AiTensorboardArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AiTensorboardResult {
         let description_binding = args.description.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let encryption_spec_binding = args.encryption_spec.get_output(context);
@@ -224,6 +240,7 @@ pub mod ai_tensorboard {
                     value: &region_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AiTensorboardResult {

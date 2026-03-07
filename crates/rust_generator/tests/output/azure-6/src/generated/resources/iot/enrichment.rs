@@ -136,6 +136,22 @@ pub mod enrichment {
         name: &str,
         args: EnrichmentArgs,
     ) -> EnrichmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EnrichmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EnrichmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EnrichmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EnrichmentResult {
         let endpoint_names_binding = args.endpoint_names.get_output(context);
         let iothub_name_binding = args.iothub_name.get_output(context);
         let key_binding = args.key.get_output(context);
@@ -167,6 +183,7 @@ pub mod enrichment {
                     value: &value_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EnrichmentResult {

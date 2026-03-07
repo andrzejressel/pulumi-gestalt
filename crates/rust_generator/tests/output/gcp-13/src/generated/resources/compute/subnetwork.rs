@@ -523,6 +523,22 @@ pub mod subnetwork {
         name: &str,
         args: SubnetworkArgs,
     ) -> SubnetworkResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SubnetworkArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SubnetworkResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SubnetworkArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SubnetworkResult {
         let allow_subnet_cidr_routes_overlap_binding = args
             .allow_subnet_cidr_routes_overlap
             .get_output(context);
@@ -629,6 +645,7 @@ pub mod subnetwork {
                     value: &stack_type_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SubnetworkResult {

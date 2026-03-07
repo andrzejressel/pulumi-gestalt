@@ -100,6 +100,22 @@ pub mod iam_policy_assignment {
         name: &str,
         args: IamPolicyAssignmentArgs,
     ) -> IamPolicyAssignmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IamPolicyAssignmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IamPolicyAssignmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IamPolicyAssignmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IamPolicyAssignmentResult {
         let assignment_name_binding = args.assignment_name.get_output(context);
         let assignment_status_binding = args.assignment_status.get_output(context);
         let aws_account_id_binding = args.aws_account_id.get_output(context);
@@ -136,6 +152,7 @@ pub mod iam_policy_assignment {
                     value: &policy_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IamPolicyAssignmentResult {

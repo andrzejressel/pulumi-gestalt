@@ -122,6 +122,22 @@ pub mod teams_rule {
         name: &str,
         args: TeamsRuleArgs,
     ) -> TeamsRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TeamsRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TeamsRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TeamsRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TeamsRuleResult {
         let account_id_binding = args.account_id.get_output(context);
         let action_binding = args.action.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -183,6 +199,7 @@ pub mod teams_rule {
                     value: &traffic_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TeamsRuleResult {

@@ -81,6 +81,11 @@ regenerate-generator-tests $DO_NOT_COMPILE="true":
 regenerate-pulumi-test-schema:
     cd pulumi-test && just pulumi-test-regenerate-schema-json
 
+regenerate-and-format:
+    just regenerator
+    just regenerate-generator-tests
+    just fmt
+
 publish:
     cargo publish --workspace --all-features
 

@@ -79,6 +79,22 @@ pub mod data_share_authorization {
         name: &str,
         args: DataShareAuthorizationArgs,
     ) -> DataShareAuthorizationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataShareAuthorizationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DataShareAuthorizationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataShareAuthorizationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DataShareAuthorizationResult {
         let allow_writes_binding = args.allow_writes.get_output(context);
         let consumer_identifier_binding = args.consumer_identifier.get_output(context);
         let data_share_arn_binding = args.data_share_arn.get_output(context);
@@ -100,6 +116,7 @@ pub mod data_share_authorization {
                     value: &data_share_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DataShareAuthorizationResult {

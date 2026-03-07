@@ -150,6 +150,22 @@ pub mod queue {
         name: &str,
         args: QueueArgs,
     ) -> QueueResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: QueueArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> QueueResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: QueueArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> QueueResult {
         let description_binding = args.description.get_output(context);
         let hours_of_operation_id_binding = args
             .hours_of_operation_id
@@ -205,6 +221,7 @@ pub mod queue {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         QueueResult {

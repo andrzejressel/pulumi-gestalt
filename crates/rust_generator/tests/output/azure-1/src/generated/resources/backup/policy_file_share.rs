@@ -170,6 +170,22 @@ pub mod policy_file_share {
         name: &str,
         args: PolicyFileShareArgs,
     ) -> PolicyFileShareResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PolicyFileShareArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PolicyFileShareResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PolicyFileShareArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PolicyFileShareResult {
         let backup_binding = args.backup.get_output(context);
         let name_binding = args.name.get_output(context);
         let recovery_vault_name_binding = args.recovery_vault_name.get_output(context);
@@ -221,6 +237,7 @@ pub mod policy_file_share {
                     value: &timezone_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PolicyFileShareResult {

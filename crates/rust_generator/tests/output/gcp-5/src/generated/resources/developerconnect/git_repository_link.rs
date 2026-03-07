@@ -204,6 +204,22 @@ pub mod git_repository_link {
         name: &str,
         args: GitRepositoryLinkArgs,
     ) -> GitRepositoryLinkResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GitRepositoryLinkArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GitRepositoryLinkResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GitRepositoryLinkArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GitRepositoryLinkResult {
         let annotations_binding = args.annotations.get_output(context);
         let clone_uri_binding = args.clone_uri.get_output(context);
         let etag_binding = args.etag.get_output(context);
@@ -252,6 +268,7 @@ pub mod git_repository_link {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GitRepositoryLinkResult {

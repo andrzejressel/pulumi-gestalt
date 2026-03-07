@@ -143,6 +143,22 @@ pub mod certificate_order {
         name: &str,
         args: CertificateOrderArgs,
     ) -> CertificateOrderResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CertificateOrderArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CertificateOrderResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CertificateOrderArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CertificateOrderResult {
         let auto_renew_binding = args.auto_renew.get_output(context);
         let csr_binding = args.csr.get_output(context);
         let distinguished_name_binding = args.distinguished_name.get_output(context);
@@ -199,6 +215,7 @@ pub mod certificate_order {
                     value: &validity_in_years_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CertificateOrderResult {

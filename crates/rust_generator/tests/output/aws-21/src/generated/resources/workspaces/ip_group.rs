@@ -92,6 +92,22 @@ pub mod ip_group {
         name: &str,
         args: IpGroupArgs,
     ) -> IpGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IpGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IpGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IpGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IpGroupResult {
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let rules_binding = args.rules.get_output(context);
@@ -118,6 +134,7 @@ pub mod ip_group {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IpGroupResult {

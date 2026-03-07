@@ -106,6 +106,22 @@ pub mod public_certificate {
         name: &str,
         args: PublicCertificateArgs,
     ) -> PublicCertificateResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PublicCertificateArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PublicCertificateResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PublicCertificateArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PublicCertificateResult {
         let app_service_name_binding = args.app_service_name.get_output(context);
         let blob_binding = args.blob.get_output(context);
         let certificate_location_binding = args.certificate_location.get_output(context);
@@ -137,6 +153,7 @@ pub mod public_certificate {
                     value: &resource_group_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PublicCertificateResult {

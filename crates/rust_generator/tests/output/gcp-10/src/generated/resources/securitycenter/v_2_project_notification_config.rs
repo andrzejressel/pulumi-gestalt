@@ -139,6 +139,22 @@ pub mod v_2_project_notification_config {
         name: &str,
         args: V2ProjectNotificationConfigArgs,
     ) -> V2ProjectNotificationConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: V2ProjectNotificationConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> V2ProjectNotificationConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: V2ProjectNotificationConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> V2ProjectNotificationConfigResult {
         let config_id_binding = args.config_id.get_output(context);
         let description_binding = args.description.get_output(context);
         let location_binding = args.location.get_output(context);
@@ -176,6 +192,7 @@ pub mod v_2_project_notification_config {
                     value: &streaming_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         V2ProjectNotificationConfigResult {

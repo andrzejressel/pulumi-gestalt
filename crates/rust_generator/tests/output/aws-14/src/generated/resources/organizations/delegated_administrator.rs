@@ -76,6 +76,22 @@ pub mod delegated_administrator {
         name: &str,
         args: DelegatedAdministratorArgs,
     ) -> DelegatedAdministratorResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DelegatedAdministratorArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DelegatedAdministratorResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DelegatedAdministratorArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DelegatedAdministratorResult {
         let account_id_binding = args.account_id.get_output(context);
         let service_principal_binding = args.service_principal.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -93,6 +109,7 @@ pub mod delegated_administrator {
                     value: &service_principal_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DelegatedAdministratorResult {

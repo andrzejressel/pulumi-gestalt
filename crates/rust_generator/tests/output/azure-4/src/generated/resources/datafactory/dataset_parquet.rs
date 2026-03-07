@@ -191,6 +191,22 @@ pub mod dataset_parquet {
         name: &str,
         args: DatasetParquetArgs,
     ) -> DatasetParquetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatasetParquetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DatasetParquetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatasetParquetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DatasetParquetResult {
         let additional_properties_binding = args
             .additional_properties
             .get_output(context);
@@ -273,6 +289,7 @@ pub mod dataset_parquet {
                     value: &schema_columns_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DatasetParquetResult {

@@ -96,6 +96,22 @@ pub mod namespace {
         name: &str,
         args: NamespaceArgs,
     ) -> NamespaceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NamespaceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NamespaceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NamespaceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NamespaceResult {
         let aws_account_id_binding = args.aws_account_id.get_output(context);
         let identity_store_binding = args.identity_store.get_output(context);
         let namespace_binding = args.namespace.get_output(context);
@@ -127,6 +143,7 @@ pub mod namespace {
                     value: &timeouts_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NamespaceResult {

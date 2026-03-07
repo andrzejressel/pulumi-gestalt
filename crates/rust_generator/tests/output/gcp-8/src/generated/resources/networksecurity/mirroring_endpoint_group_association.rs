@@ -188,6 +188,22 @@ pub mod mirroring_endpoint_group_association {
         name: &str,
         args: MirroringEndpointGroupAssociationArgs,
     ) -> MirroringEndpointGroupAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MirroringEndpointGroupAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MirroringEndpointGroupAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MirroringEndpointGroupAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MirroringEndpointGroupAssociationResult {
         let labels_binding = args.labels.get_output(context);
         let location_binding = args.location.get_output(context);
         let mirroring_endpoint_group_binding = args
@@ -229,6 +245,7 @@ pub mod mirroring_endpoint_group_association {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MirroringEndpointGroupAssociationResult {

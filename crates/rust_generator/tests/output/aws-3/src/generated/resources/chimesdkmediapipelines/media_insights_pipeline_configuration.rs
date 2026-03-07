@@ -346,6 +346,22 @@ pub mod media_insights_pipeline_configuration {
         name: &str,
         args: MediaInsightsPipelineConfigurationArgs,
     ) -> MediaInsightsPipelineConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MediaInsightsPipelineConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MediaInsightsPipelineConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MediaInsightsPipelineConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MediaInsightsPipelineConfigurationResult {
         let elements_binding = args.elements.get_output(context);
         let name_binding = args.name.get_output(context);
         let real_time_alert_configuration_binding = args
@@ -382,6 +398,7 @@ pub mod media_insights_pipeline_configuration {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MediaInsightsPipelineConfigurationResult {

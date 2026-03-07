@@ -233,6 +233,22 @@ pub mod field {
         name: &str,
         args: FieldArgs,
     ) -> FieldResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FieldArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FieldResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FieldArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FieldResult {
         let collection_binding = args.collection.get_output(context);
         let database_binding = args.database.get_output(context);
         let field_binding = args.field.get_output(context);
@@ -269,6 +285,7 @@ pub mod field {
                     value: &ttl_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FieldResult {

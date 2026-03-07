@@ -104,6 +104,22 @@ pub mod restore_testing_plan {
         name: &str,
         args: RestoreTestingPlanArgs,
     ) -> RestoreTestingPlanResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RestoreTestingPlanArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RestoreTestingPlanResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RestoreTestingPlanArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RestoreTestingPlanResult {
         let name_binding = args.name.get_output(context);
         let recovery_point_selection_binding = args
             .recovery_point_selection
@@ -144,6 +160,7 @@ pub mod restore_testing_plan {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RestoreTestingPlanResult {

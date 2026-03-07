@@ -172,6 +172,22 @@ pub mod autokey_config {
         name: &str,
         args: AutokeyConfigArgs,
     ) -> AutokeyConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AutokeyConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AutokeyConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AutokeyConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AutokeyConfigResult {
         let folder_binding = args.folder.get_output(context);
         let key_project_binding = args.key_project.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -188,6 +204,7 @@ pub mod autokey_config {
                     value: &key_project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AutokeyConfigResult {

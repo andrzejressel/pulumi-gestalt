@@ -135,6 +135,22 @@ pub mod waiting_room_event {
         name: &str,
         args: WaitingRoomEventArgs,
     ) -> WaitingRoomEventResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WaitingRoomEventArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WaitingRoomEventResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WaitingRoomEventArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WaitingRoomEventResult {
         let custom_page_html_binding = args.custom_page_html.get_output(context);
         let description_binding = args.description.get_output(context);
         let disable_session_renewal_binding = args
@@ -220,6 +236,7 @@ pub mod waiting_room_event {
                     value: &zone_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WaitingRoomEventResult {

@@ -115,6 +115,22 @@ pub mod vpc_ipam {
         name: &str,
         args: VpcIpamArgs,
     ) -> VpcIpamResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcIpamArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VpcIpamResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcIpamArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VpcIpamResult {
         let cascade_binding = args.cascade.get_output(context);
         let description_binding = args.description.get_output(context);
         let enable_private_gua_binding = args.enable_private_gua.get_output(context);
@@ -151,6 +167,7 @@ pub mod vpc_ipam {
                     value: &tier_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VpcIpamResult {

@@ -218,6 +218,22 @@ pub mod repository {
         name: &str,
         args: RepositoryArgs,
     ) -> RepositoryResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RepositoryArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RepositoryResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RepositoryArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RepositoryResult {
         let display_name_binding = args.display_name.get_output(context);
         let git_remote_settings_binding = args.git_remote_settings.get_output(context);
         let kms_key_name_binding = args.kms_key_name.get_output(context);
@@ -279,6 +295,7 @@ pub mod repository {
                     value: &workspace_compilation_overrides_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RepositoryResult {

@@ -168,6 +168,22 @@ pub mod gateway_association {
         name: &str,
         args: GatewayAssociationArgs,
     ) -> GatewayAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GatewayAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GatewayAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GatewayAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GatewayAssociationResult {
         let allowed_prefixes_binding = args.allowed_prefixes.get_output(context);
         let associated_gateway_id_binding = args
             .associated_gateway_id
@@ -208,6 +224,7 @@ pub mod gateway_association {
                     value: &vpn_gateway_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GatewayAssociationResult {

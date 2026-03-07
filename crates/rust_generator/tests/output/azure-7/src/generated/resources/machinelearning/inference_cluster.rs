@@ -201,6 +201,22 @@ pub mod inference_cluster {
         name: &str,
         args: InferenceClusterArgs,
     ) -> InferenceClusterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InferenceClusterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> InferenceClusterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InferenceClusterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> InferenceClusterResult {
         let cluster_purpose_binding = args.cluster_purpose.get_output(context);
         let description_binding = args.description.get_output(context);
         let identity_binding = args.identity.get_output(context);
@@ -256,6 +272,7 @@ pub mod inference_cluster {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         InferenceClusterResult {

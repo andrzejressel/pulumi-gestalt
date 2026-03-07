@@ -194,6 +194,22 @@ pub mod attached_disk {
         name: &str,
         args: AttachedDiskArgs,
     ) -> AttachedDiskResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AttachedDiskArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AttachedDiskResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AttachedDiskArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AttachedDiskResult {
         let device_name_binding = args.device_name.get_output(context);
         let disk_binding = args.disk.get_output(context);
         let instance_binding = args.instance.get_output(context);
@@ -235,6 +251,7 @@ pub mod attached_disk {
                     value: &zone_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AttachedDiskResult {

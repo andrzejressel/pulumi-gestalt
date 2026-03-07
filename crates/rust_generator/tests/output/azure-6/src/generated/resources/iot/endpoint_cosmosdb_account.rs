@@ -175,6 +175,22 @@ pub mod endpoint_cosmosdb_account {
         name: &str,
         args: EndpointCosmosdbAccountArgs,
     ) -> EndpointCosmosdbAccountResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EndpointCosmosdbAccountArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EndpointCosmosdbAccountResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EndpointCosmosdbAccountArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EndpointCosmosdbAccountResult {
         let authentication_type_binding = args.authentication_type.get_output(context);
         let container_name_binding = args.container_name.get_output(context);
         let database_name_binding = args.database_name.get_output(context);
@@ -243,6 +259,7 @@ pub mod endpoint_cosmosdb_account {
                     value: &secondary_key_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EndpointCosmosdbAccountResult {

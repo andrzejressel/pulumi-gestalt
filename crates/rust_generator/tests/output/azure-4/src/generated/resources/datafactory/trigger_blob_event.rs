@@ -166,6 +166,22 @@ pub mod trigger_blob_event {
         name: &str,
         args: TriggerBlobEventArgs,
     ) -> TriggerBlobEventResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TriggerBlobEventArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TriggerBlobEventResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TriggerBlobEventArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TriggerBlobEventResult {
         let activated_binding = args.activated.get_output(context);
         let additional_properties_binding = args
             .additional_properties
@@ -236,6 +252,7 @@ pub mod trigger_blob_event {
                     value: &storage_account_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TriggerBlobEventResult {

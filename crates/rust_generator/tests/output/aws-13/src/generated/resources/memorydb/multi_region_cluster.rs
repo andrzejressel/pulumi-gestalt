@@ -142,6 +142,22 @@ pub mod multi_region_cluster {
         name: &str,
         args: MultiRegionClusterArgs,
     ) -> MultiRegionClusterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MultiRegionClusterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MultiRegionClusterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MultiRegionClusterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MultiRegionClusterResult {
         let description_binding = args.description.get_output(context);
         let engine_binding = args.engine.get_output(context);
         let engine_version_binding = args.engine_version.get_output(context);
@@ -207,6 +223,7 @@ pub mod multi_region_cluster {
                     value: &update_strategy_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MultiRegionClusterResult {

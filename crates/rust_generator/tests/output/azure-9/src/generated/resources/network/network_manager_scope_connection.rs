@@ -109,6 +109,22 @@ pub mod network_manager_scope_connection {
         name: &str,
         args: NetworkManagerScopeConnectionArgs,
     ) -> NetworkManagerScopeConnectionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkManagerScopeConnectionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NetworkManagerScopeConnectionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkManagerScopeConnectionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NetworkManagerScopeConnectionResult {
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let network_manager_id_binding = args.network_manager_id.get_output(context);
@@ -141,6 +157,7 @@ pub mod network_manager_scope_connection {
                     value: &tenant_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NetworkManagerScopeConnectionResult {

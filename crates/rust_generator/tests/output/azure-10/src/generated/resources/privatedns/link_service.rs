@@ -188,6 +188,22 @@ pub mod link_service {
         name: &str,
         args: LinkServiceArgs,
     ) -> LinkServiceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LinkServiceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LinkServiceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LinkServiceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LinkServiceResult {
         let auto_approval_subscription_ids_binding = args
             .auto_approval_subscription_ids
             .get_output(context);
@@ -255,6 +271,7 @@ pub mod link_service {
                     value: &visibility_subscription_ids_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LinkServiceResult {

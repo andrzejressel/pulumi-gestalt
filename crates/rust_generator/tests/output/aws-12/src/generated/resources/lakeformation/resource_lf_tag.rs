@@ -116,6 +116,22 @@ pub mod resource_lf_tag {
         name: &str,
         args: ResourceLfTagArgs,
     ) -> ResourceLfTagResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResourceLfTagArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ResourceLfTagResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResourceLfTagArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ResourceLfTagResult {
         let catalog_id_binding = args.catalog_id.get_output(context);
         let database_binding = args.database.get_output(context);
         let lf_tag_binding = args.lf_tag.get_output(context);
@@ -152,6 +168,7 @@ pub mod resource_lf_tag {
                     value: &timeouts_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ResourceLfTagResult {

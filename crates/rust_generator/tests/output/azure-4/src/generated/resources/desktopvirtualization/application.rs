@@ -151,6 +151,22 @@ pub mod application {
         name: &str,
         args: ApplicationArgs,
     ) -> ApplicationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApplicationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ApplicationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApplicationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ApplicationResult {
         let application_group_id_binding = args.application_group_id.get_output(context);
         let command_line_argument_policy_binding = args
             .command_line_argument_policy
@@ -211,6 +227,7 @@ pub mod application {
                     value: &show_in_portal_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ApplicationResult {

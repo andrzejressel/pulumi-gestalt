@@ -130,6 +130,22 @@ pub mod certificate_authority_certificate {
         name: &str,
         args: CertificateAuthorityCertificateArgs,
     ) -> CertificateAuthorityCertificateResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CertificateAuthorityCertificateArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CertificateAuthorityCertificateResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CertificateAuthorityCertificateArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CertificateAuthorityCertificateResult {
         let certificate_binding = args.certificate.get_output(context);
         let certificate_authority_arn_binding = args
             .certificate_authority_arn
@@ -154,6 +170,7 @@ pub mod certificate_authority_certificate {
                     value: &certificate_chain_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CertificateAuthorityCertificateResult {

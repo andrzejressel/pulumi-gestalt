@@ -116,6 +116,22 @@ pub mod traffic_mirror_target {
         name: &str,
         args: TrafficMirrorTargetArgs,
     ) -> TrafficMirrorTargetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TrafficMirrorTargetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TrafficMirrorTargetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TrafficMirrorTargetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TrafficMirrorTargetResult {
         let description_binding = args.description.get_output(context);
         let gateway_load_balancer_endpoint_id_binding = args
             .gateway_load_balancer_endpoint_id
@@ -151,6 +167,7 @@ pub mod traffic_mirror_target {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TrafficMirrorTargetResult {

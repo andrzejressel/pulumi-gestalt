@@ -288,6 +288,22 @@ pub mod registry {
         name: &str,
         args: RegistryArgs,
     ) -> RegistryResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegistryArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RegistryResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegistryArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RegistryResult {
         let admin_enabled_binding = args.admin_enabled.get_output(context);
         let anonymous_pull_enabled_binding = args
             .anonymous_pull_enabled
@@ -405,6 +421,7 @@ pub mod registry {
                     value: &zone_redundancy_enabled_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RegistryResult {

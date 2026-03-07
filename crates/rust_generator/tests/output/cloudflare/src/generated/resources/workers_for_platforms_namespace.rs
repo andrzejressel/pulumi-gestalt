@@ -71,6 +71,22 @@ pub mod workers_for_platforms_namespace {
         name: &str,
         args: WorkersForPlatformsNamespaceArgs,
     ) -> WorkersForPlatformsNamespaceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkersForPlatformsNamespaceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WorkersForPlatformsNamespaceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkersForPlatformsNamespaceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WorkersForPlatformsNamespaceResult {
         let account_id_binding = args.account_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -88,6 +104,7 @@ pub mod workers_for_platforms_namespace {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WorkersForPlatformsNamespaceResult {

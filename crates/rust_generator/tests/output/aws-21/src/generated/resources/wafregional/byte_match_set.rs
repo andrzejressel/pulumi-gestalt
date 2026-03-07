@@ -74,6 +74,22 @@ pub mod byte_match_set {
         name: &str,
         args: ByteMatchSetArgs,
     ) -> ByteMatchSetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ByteMatchSetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ByteMatchSetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ByteMatchSetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ByteMatchSetResult {
         let byte_match_tuples_binding = args.byte_match_tuples.get_output(context);
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -90,6 +106,7 @@ pub mod byte_match_set {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ByteMatchSetResult {

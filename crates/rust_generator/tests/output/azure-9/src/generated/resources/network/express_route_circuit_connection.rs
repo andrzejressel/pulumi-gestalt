@@ -177,6 +177,22 @@ pub mod express_route_circuit_connection {
         name: &str,
         args: ExpressRouteCircuitConnectionArgs,
     ) -> ExpressRouteCircuitConnectionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ExpressRouteCircuitConnectionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ExpressRouteCircuitConnectionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ExpressRouteCircuitConnectionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ExpressRouteCircuitConnectionResult {
         let address_prefix_ipv4_binding = args.address_prefix_ipv4.get_output(context);
         let address_prefix_ipv6_binding = args.address_prefix_ipv6.get_output(context);
         let authorization_key_binding = args.authorization_key.get_output(context);
@@ -214,6 +230,7 @@ pub mod express_route_circuit_connection {
                     value: &peering_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ExpressRouteCircuitConnectionResult {

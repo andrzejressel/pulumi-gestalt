@@ -122,6 +122,22 @@ pub mod lien {
         name: &str,
         args: LienArgs,
     ) -> LienResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LienArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LienResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LienArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LienResult {
         let origin_binding = args.origin.get_output(context);
         let parent_binding = args.parent.get_output(context);
         let reason_binding = args.reason.get_output(context);
@@ -148,6 +164,7 @@ pub mod lien {
                     value: &restrictions_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LienResult {

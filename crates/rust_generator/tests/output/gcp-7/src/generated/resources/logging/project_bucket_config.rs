@@ -220,6 +220,22 @@ pub mod project_bucket_config {
         name: &str,
         args: ProjectBucketConfigArgs,
     ) -> ProjectBucketConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProjectBucketConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ProjectBucketConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProjectBucketConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ProjectBucketConfigResult {
         let bucket_id_binding = args.bucket_id.get_output(context);
         let cmek_settings_binding = args.cmek_settings.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -271,6 +287,7 @@ pub mod project_bucket_config {
                     value: &retention_days_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ProjectBucketConfigResult {

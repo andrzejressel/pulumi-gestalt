@@ -905,6 +905,22 @@ pub mod global_forwarding_rule {
         name: &str,
         args: GlobalForwardingRuleArgs,
     ) -> GlobalForwardingRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GlobalForwardingRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GlobalForwardingRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GlobalForwardingRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GlobalForwardingRuleResult {
         let allow_psc_global_access_binding = args
             .allow_psc_global_access
             .get_output(context);
@@ -1007,6 +1023,7 @@ pub mod global_forwarding_rule {
                     value: &target_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GlobalForwardingRuleResult {

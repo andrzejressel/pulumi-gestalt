@@ -92,6 +92,22 @@ pub mod product_api {
         name: &str,
         args: ProductApiArgs,
     ) -> ProductApiResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProductApiArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ProductApiResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProductApiArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ProductApiResult {
         let api_management_name_binding = args.api_management_name.get_output(context);
         let api_name_binding = args.api_name.get_output(context);
         let product_id_binding = args.product_id.get_output(context);
@@ -118,6 +134,7 @@ pub mod product_api {
                     value: &resource_group_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ProductApiResult {

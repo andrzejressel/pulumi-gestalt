@@ -101,6 +101,22 @@ pub mod spring_cloud_api_portal_custom_domain {
         name: &str,
         args: SpringCloudApiPortalCustomDomainArgs,
     ) -> SpringCloudApiPortalCustomDomainResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudApiPortalCustomDomainArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SpringCloudApiPortalCustomDomainResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudApiPortalCustomDomainArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SpringCloudApiPortalCustomDomainResult {
         let name_binding = args.name.get_output(context);
         let spring_cloud_api_portal_id_binding = args
             .spring_cloud_api_portal_id
@@ -125,6 +141,7 @@ pub mod spring_cloud_api_portal_custom_domain {
                     value: &thumbprint_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SpringCloudApiPortalCustomDomainResult {

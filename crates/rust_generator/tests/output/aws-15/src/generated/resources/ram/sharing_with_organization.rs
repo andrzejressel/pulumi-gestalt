@@ -45,11 +45,26 @@ pub mod sharing_with_organization {
         context: &pulumi_gestalt_rust::Context,
         name: &str,
     ) -> SharingWithOrganizationResult {
+        __create(context, name, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SharingWithOrganizationResult {
+        __create(context, name, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SharingWithOrganizationResult {
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ram/sharingWithOrganization:SharingWithOrganization".into(),
             name: name.to_string(),
             version: super::super::get_version(),
             object: &[],
+            options,
         };
         let o = context.register_resource(request);
         SharingWithOrganizationResult {

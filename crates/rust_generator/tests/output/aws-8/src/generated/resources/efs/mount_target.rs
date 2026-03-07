@@ -102,6 +102,22 @@ pub mod mount_target {
         name: &str,
         args: MountTargetArgs,
     ) -> MountTargetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MountTargetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MountTargetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MountTargetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MountTargetResult {
         let file_system_id_binding = args.file_system_id.get_output(context);
         let ip_address_binding = args.ip_address.get_output(context);
         let security_groups_binding = args.security_groups.get_output(context);
@@ -128,6 +144,7 @@ pub mod mount_target {
                     value: &subnet_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MountTargetResult {

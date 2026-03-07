@@ -155,6 +155,22 @@ pub mod private_cloud {
         name: &str,
         args: PrivateCloudArgs,
     ) -> PrivateCloudResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PrivateCloudArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PrivateCloudResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PrivateCloudArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PrivateCloudResult {
         let internet_connection_enabled_binding = args
             .internet_connection_enabled
             .get_output(context);
@@ -213,6 +229,7 @@ pub mod private_cloud {
                     value: &vcenter_password_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PrivateCloudResult {

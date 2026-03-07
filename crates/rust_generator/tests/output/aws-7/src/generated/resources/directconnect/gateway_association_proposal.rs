@@ -89,6 +89,22 @@ pub mod gateway_association_proposal {
         name: &str,
         args: GatewayAssociationProposalArgs,
     ) -> GatewayAssociationProposalResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GatewayAssociationProposalArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GatewayAssociationProposalResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GatewayAssociationProposalArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GatewayAssociationProposalResult {
         let allowed_prefixes_binding = args.allowed_prefixes.get_output(context);
         let associated_gateway_id_binding = args
             .associated_gateway_id
@@ -120,6 +136,7 @@ pub mod gateway_association_proposal {
                     value: &dx_gateway_owner_account_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GatewayAssociationProposalResult {

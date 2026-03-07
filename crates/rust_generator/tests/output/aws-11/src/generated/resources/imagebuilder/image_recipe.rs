@@ -142,6 +142,22 @@ pub mod image_recipe {
         name: &str,
         args: ImageRecipeArgs,
     ) -> ImageRecipeResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ImageRecipeArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ImageRecipeResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ImageRecipeArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ImageRecipeResult {
         let block_device_mappings_binding = args
             .block_device_mappings
             .get_output(context);
@@ -202,6 +218,7 @@ pub mod image_recipe {
                     value: &working_directory_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ImageRecipeResult {

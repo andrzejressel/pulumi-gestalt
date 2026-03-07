@@ -119,6 +119,22 @@ pub mod linked_server {
         name: &str,
         args: LinkedServerArgs,
     ) -> LinkedServerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LinkedServerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LinkedServerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LinkedServerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LinkedServerResult {
         let linked_redis_cache_id_binding = args
             .linked_redis_cache_id
             .get_output(context);
@@ -156,6 +172,7 @@ pub mod linked_server {
                     value: &target_redis_cache_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LinkedServerResult {

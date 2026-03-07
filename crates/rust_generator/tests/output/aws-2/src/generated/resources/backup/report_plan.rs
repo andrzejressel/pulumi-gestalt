@@ -102,6 +102,22 @@ pub mod report_plan {
         name: &str,
         args: ReportPlanArgs,
     ) -> ReportPlanResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReportPlanArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ReportPlanResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReportPlanArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ReportPlanResult {
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let report_delivery_channel_binding = args
@@ -135,6 +151,7 @@ pub mod report_plan {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ReportPlanResult {

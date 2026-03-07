@@ -171,6 +171,22 @@ pub mod linked_service_azure_sql_database {
         name: &str,
         args: LinkedServiceAzureSqlDatabaseArgs,
     ) -> LinkedServiceAzureSqlDatabaseResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LinkedServiceAzureSqlDatabaseArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LinkedServiceAzureSqlDatabaseResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LinkedServiceAzureSqlDatabaseArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LinkedServiceAzureSqlDatabaseResult {
         let additional_properties_binding = args
             .additional_properties
             .get_output(context);
@@ -261,6 +277,7 @@ pub mod linked_service_azure_sql_database {
                     value: &use_managed_identity_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LinkedServiceAzureSqlDatabaseResult {

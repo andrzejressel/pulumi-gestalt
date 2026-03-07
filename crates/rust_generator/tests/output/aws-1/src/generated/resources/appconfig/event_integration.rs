@@ -90,6 +90,22 @@ pub mod event_integration {
         name: &str,
         args: EventIntegrationArgs,
     ) -> EventIntegrationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EventIntegrationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EventIntegrationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EventIntegrationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EventIntegrationResult {
         let description_binding = args.description.get_output(context);
         let event_filter_binding = args.event_filter.get_output(context);
         let eventbridge_bus_binding = args.eventbridge_bus.get_output(context);
@@ -121,6 +137,7 @@ pub mod event_integration {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EventIntegrationResult {

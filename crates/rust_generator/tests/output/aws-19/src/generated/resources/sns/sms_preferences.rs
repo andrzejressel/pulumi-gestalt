@@ -82,6 +82,22 @@ pub mod sms_preferences {
         name: &str,
         args: SmsPreferencesArgs,
     ) -> SmsPreferencesResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SmsPreferencesArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SmsPreferencesResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SmsPreferencesArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SmsPreferencesResult {
         let default_sender_id_binding = args.default_sender_id.get_output(context);
         let default_sms_type_binding = args.default_sms_type.get_output(context);
         let delivery_status_iam_role_arn_binding = args
@@ -124,6 +140,7 @@ pub mod sms_preferences {
                     value: &usage_report_s3_bucket_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SmsPreferencesResult {

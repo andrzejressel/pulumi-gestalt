@@ -83,6 +83,22 @@ pub mod server_dns_alias {
         name: &str,
         args: ServerDnsAliasArgs,
     ) -> ServerDnsAliasResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServerDnsAliasArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServerDnsAliasResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServerDnsAliasArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServerDnsAliasResult {
         let mssql_server_id_binding = args.mssql_server_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -99,6 +115,7 @@ pub mod server_dns_alias {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServerDnsAliasResult {

@@ -412,6 +412,22 @@ pub mod slo {
         name: &str,
         args: SloArgs,
     ) -> SloResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SloArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SloResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SloArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SloResult {
         let basic_sli_binding = args.basic_sli.get_output(context);
         let calendar_period_binding = args.calendar_period.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
@@ -473,6 +489,7 @@ pub mod slo {
                     value: &windows_based_sli_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SloResult {

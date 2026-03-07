@@ -112,6 +112,22 @@ pub mod custom_plugin {
         name: &str,
         args: CustomPluginArgs,
     ) -> CustomPluginResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomPluginArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CustomPluginResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomPluginArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CustomPluginResult {
         let content_type_binding = args.content_type.get_output(context);
         let description_binding = args.description.get_output(context);
         let location_binding = args.location.get_output(context);
@@ -143,6 +159,7 @@ pub mod custom_plugin {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CustomPluginResult {

@@ -259,6 +259,22 @@ pub mod tag_key_iam_binding {
         name: &str,
         args: TagKeyIamBindingArgs,
     ) -> TagKeyIamBindingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TagKeyIamBindingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TagKeyIamBindingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TagKeyIamBindingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TagKeyIamBindingResult {
         let condition_binding = args.condition.get_output(context);
         let members_binding = args.members.get_output(context);
         let role_binding = args.role.get_output(context);
@@ -285,6 +301,7 @@ pub mod tag_key_iam_binding {
                     value: &tag_key_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TagKeyIamBindingResult {

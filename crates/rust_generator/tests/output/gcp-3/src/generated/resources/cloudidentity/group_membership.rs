@@ -158,6 +158,22 @@ pub mod group_membership {
         name: &str,
         args: GroupMembershipArgs,
     ) -> GroupMembershipResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GroupMembershipArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GroupMembershipResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GroupMembershipArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GroupMembershipResult {
         let group_binding = args.group.get_output(context);
         let member_key_binding = args.member_key.get_output(context);
         let preferred_member_key_binding = args.preferred_member_key.get_output(context);
@@ -184,6 +200,7 @@ pub mod group_membership {
                     value: &roles_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GroupMembershipResult {

@@ -178,6 +178,22 @@ pub mod organization_scc_big_query_export {
         name: &str,
         args: OrganizationSccBigQueryExportArgs,
     ) -> OrganizationSccBigQueryExportResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationSccBigQueryExportArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OrganizationSccBigQueryExportResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationSccBigQueryExportArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OrganizationSccBigQueryExportResult {
         let big_query_export_id_binding = args.big_query_export_id.get_output(context);
         let dataset_binding = args.dataset.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -210,6 +226,7 @@ pub mod organization_scc_big_query_export {
                     value: &organization_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OrganizationSccBigQueryExportResult {

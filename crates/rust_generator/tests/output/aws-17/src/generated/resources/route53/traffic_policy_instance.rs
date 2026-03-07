@@ -80,6 +80,22 @@ pub mod traffic_policy_instance {
         name: &str,
         args: TrafficPolicyInstanceArgs,
     ) -> TrafficPolicyInstanceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TrafficPolicyInstanceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TrafficPolicyInstanceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TrafficPolicyInstanceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TrafficPolicyInstanceResult {
         let hosted_zone_id_binding = args.hosted_zone_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let traffic_policy_id_binding = args.traffic_policy_id.get_output(context);
@@ -113,6 +129,7 @@ pub mod traffic_policy_instance {
                     value: &ttl_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TrafficPolicyInstanceResult {

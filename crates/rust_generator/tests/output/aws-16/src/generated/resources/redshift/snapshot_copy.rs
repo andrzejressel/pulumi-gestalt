@@ -85,6 +85,22 @@ pub mod snapshot_copy {
         name: &str,
         args: SnapshotCopyArgs,
     ) -> SnapshotCopyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SnapshotCopyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SnapshotCopyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SnapshotCopyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SnapshotCopyResult {
         let cluster_identifier_binding = args.cluster_identifier.get_output(context);
         let destination_region_binding = args.destination_region.get_output(context);
         let manual_snapshot_retention_period_binding = args
@@ -120,6 +136,7 @@ pub mod snapshot_copy {
                     value: &snapshot_copy_grant_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SnapshotCopyResult {

@@ -193,6 +193,22 @@ pub mod firewall {
         name: &str,
         args: FirewallArgs,
     ) -> FirewallResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FirewallArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FirewallResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FirewallArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FirewallResult {
         let dns_proxy_enabled_binding = args.dns_proxy_enabled.get_output(context);
         let dns_servers_binding = args.dns_servers.get_output(context);
         let firewall_policy_id_binding = args.firewall_policy_id.get_output(context);
@@ -276,6 +292,7 @@ pub mod firewall {
                     value: &zones_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FirewallResult {

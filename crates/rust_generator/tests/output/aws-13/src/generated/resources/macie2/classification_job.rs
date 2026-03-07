@@ -144,6 +144,22 @@ pub mod classification_job {
         name: &str,
         args: ClassificationJobArgs,
     ) -> ClassificationJobResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClassificationJobArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ClassificationJobResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClassificationJobArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ClassificationJobResult {
         let custom_data_identifier_ids_binding = args
             .custom_data_identifier_ids
             .get_output(context);
@@ -207,6 +223,7 @@ pub mod classification_job {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ClassificationJobResult {

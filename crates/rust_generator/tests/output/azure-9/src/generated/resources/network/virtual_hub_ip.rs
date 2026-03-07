@@ -135,6 +135,22 @@ pub mod virtual_hub_ip {
         name: &str,
         args: VirtualHubIpArgs,
     ) -> VirtualHubIpResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VirtualHubIpArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VirtualHubIpResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VirtualHubIpArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VirtualHubIpResult {
         let name_binding = args.name.get_output(context);
         let private_ip_address_binding = args.private_ip_address.get_output(context);
         let private_ip_allocation_method_binding = args
@@ -173,6 +189,7 @@ pub mod virtual_hub_ip {
                     value: &virtual_hub_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VirtualHubIpResult {

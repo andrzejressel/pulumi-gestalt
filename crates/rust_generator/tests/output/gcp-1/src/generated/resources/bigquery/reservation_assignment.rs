@@ -128,6 +128,22 @@ pub mod reservation_assignment {
         name: &str,
         args: ReservationAssignmentArgs,
     ) -> ReservationAssignmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReservationAssignmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ReservationAssignmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReservationAssignmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ReservationAssignmentResult {
         let assignee_binding = args.assignee.get_output(context);
         let job_type_binding = args.job_type.get_output(context);
         let location_binding = args.location.get_output(context);
@@ -159,6 +175,7 @@ pub mod reservation_assignment {
                     value: &reservation_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ReservationAssignmentResult {

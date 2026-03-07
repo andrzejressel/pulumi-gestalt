@@ -94,6 +94,22 @@ pub mod protection {
         name: &str,
         args: ProtectionArgs,
     ) -> ProtectionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProtectionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ProtectionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProtectionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ProtectionResult {
         let name_binding = args.name.get_output(context);
         let resource_arn_binding = args.resource_arn.get_output(context);
         let tags_binding = args.tags.get_output(context);
@@ -115,6 +131,7 @@ pub mod protection {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ProtectionResult {

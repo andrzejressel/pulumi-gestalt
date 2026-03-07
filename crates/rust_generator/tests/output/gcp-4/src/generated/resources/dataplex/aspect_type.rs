@@ -291,6 +291,22 @@ pub mod aspect_type {
         name: &str,
         args: AspectTypeArgs,
     ) -> AspectTypeResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AspectTypeArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AspectTypeResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AspectTypeArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AspectTypeResult {
         let aspect_type_id_binding = args.aspect_type_id.get_output(context);
         let description_binding = args.description.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
@@ -332,6 +348,7 @@ pub mod aspect_type {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AspectTypeResult {

@@ -216,6 +216,22 @@ pub mod configuration_set_event_destination {
         name: &str,
         args: ConfigurationSetEventDestinationArgs,
     ) -> ConfigurationSetEventDestinationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConfigurationSetEventDestinationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ConfigurationSetEventDestinationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConfigurationSetEventDestinationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ConfigurationSetEventDestinationResult {
         let configuration_set_name_binding = args
             .configuration_set_name
             .get_output(context);
@@ -242,6 +258,7 @@ pub mod configuration_set_event_destination {
                     value: &event_destination_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ConfigurationSetEventDestinationResult {

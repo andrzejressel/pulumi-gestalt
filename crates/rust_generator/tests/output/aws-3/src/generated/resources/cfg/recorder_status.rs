@@ -118,6 +118,22 @@ pub mod recorder_status {
         name: &str,
         args: RecorderStatusArgs,
     ) -> RecorderStatusResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RecorderStatusArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RecorderStatusResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RecorderStatusArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RecorderStatusResult {
         let is_enabled_binding = args.is_enabled.get_output(context);
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -134,6 +150,7 @@ pub mod recorder_status {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RecorderStatusResult {

@@ -247,6 +247,22 @@ pub mod assignment_virtual_machine_scale_set {
         name: &str,
         args: AssignmentVirtualMachineScaleSetArgs,
     ) -> AssignmentVirtualMachineScaleSetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AssignmentVirtualMachineScaleSetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AssignmentVirtualMachineScaleSetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AssignmentVirtualMachineScaleSetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AssignmentVirtualMachineScaleSetResult {
         let location_binding = args.location.get_output(context);
         let maintenance_configuration_id_binding = args
             .maintenance_configuration_id
@@ -273,6 +289,7 @@ pub mod assignment_virtual_machine_scale_set {
                     value: &virtual_machine_scale_set_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AssignmentVirtualMachineScaleSetResult {

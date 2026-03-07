@@ -67,6 +67,7 @@ pub struct RegisterResourceRequest {
     version: *const c_char,
     inputs: *const ObjectField,
     inputs_len: usize,
+    provider: *const CustomOutputId,
 }
 
 #[repr(C)]
@@ -191,6 +192,12 @@ extern "C" fn pulumi_register_resource(
 
     let objects = extract_field(request.inputs, request.inputs_len);
 
+    let provider = if request.provider.is_null() {
+        None
+    } else {
+        Some(unsafe { &*request.provider }.native.clone())
+    };
+
     let inner = &pulumi_context.inner;
     let inner_engine = pulumi_context.inner.borrow_mut();
     let request = integration::RegisterResourceRequest {
@@ -198,6 +205,7 @@ extern "C" fn pulumi_register_resource(
         name,
         inputs: objects,
         version,
+        provider,
     };
     let output_id = inner_engine
         .runtime
@@ -414,6 +422,30 @@ extern "C" fn pulumi_composite_output_get_id(
     raw
 }
 
+#[unsafe(no_mangle)]
+/// Pulumi Provider ID is the combination of URN and ID. It is used when creating a resource.
+extern "C" fn pulumi_composite_output_get_provider_id(
+    output: *mut CustomCompositeOutputId,
+) -> *mut CustomOutputId {
+    let custom_register_output_id = unsafe { &*output };
+    let binding = custom_register_output_id.ctx.upgrade().unwrap();
+    let mut engine = binding.borrow_mut();
+
+    let new_output = engine
+        .runtime
+        .block_on(custom_register_output_id.native.get_provider_id());
+
+    let binding = custom_register_output_id.ctx.upgrade().unwrap();
+
+    let output = CustomOutputId {
+        native: new_output,
+        ctx: Rc::downgrade(&binding),
+    };
+    let raw = Box::into_raw(Box::new(output));
+    engine.outputs.push(raw);
+    raw
+}
+
 /// Receives value from configuration
 /// `name`: Configuration bag's logical name. If null, the default (project name) is used.
 /// `key`: Config key. Cannot be null
@@ -517,6 +549,12 @@ fn extract_field(
     inputs: *const ObjectField,
     inputs_len: usize,
 ) -> HashMap<integration::FieldName, integration::Output<FunctionType>> {
+    if inputs.is_null() {
+        if inputs_len > 0 {
+            panic!("Inputs pointer is null but size is greater than 0");
+        }
+        return HashMap::new();
+    }
     let mut objects = HashMap::new();
     unsafe {
         std::slice::from_raw_parts(inputs, inputs_len)

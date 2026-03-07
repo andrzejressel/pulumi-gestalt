@@ -131,6 +131,22 @@ pub mod v_2_models_bot_locale {
         name: &str,
         args: V2modelsBotLocaleArgs,
     ) -> V2modelsBotLocaleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: V2modelsBotLocaleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> V2modelsBotLocaleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: V2modelsBotLocaleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> V2modelsBotLocaleResult {
         let bot_id_binding = args.bot_id.get_output(context);
         let bot_version_binding = args.bot_version.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -179,6 +195,7 @@ pub mod v_2_models_bot_locale {
                     value: &voice_settings_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         V2modelsBotLocaleResult {

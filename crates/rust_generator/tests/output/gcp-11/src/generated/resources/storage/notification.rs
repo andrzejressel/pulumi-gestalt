@@ -146,6 +146,22 @@ pub mod notification {
         name: &str,
         args: NotificationArgs,
     ) -> NotificationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NotificationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NotificationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NotificationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NotificationResult {
         let bucket_binding = args.bucket.get_output(context);
         let custom_attributes_binding = args.custom_attributes.get_output(context);
         let event_types_binding = args.event_types.get_output(context);
@@ -182,6 +198,7 @@ pub mod notification {
                     value: &topic_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NotificationResult {

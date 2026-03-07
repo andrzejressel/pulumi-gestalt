@@ -87,6 +87,22 @@ pub mod usage_limit {
         name: &str,
         args: UsageLimitArgs,
     ) -> UsageLimitResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: UsageLimitArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> UsageLimitResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: UsageLimitArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> UsageLimitResult {
         let amount_binding = args.amount.get_output(context);
         let breach_action_binding = args.breach_action.get_output(context);
         let period_binding = args.period.get_output(context);
@@ -118,6 +134,7 @@ pub mod usage_limit {
                     value: &usage_type_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         UsageLimitResult {

@@ -126,6 +126,22 @@ pub mod namespace {
         name: &str,
         args: NamespaceArgs,
     ) -> NamespaceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NamespaceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NamespaceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NamespaceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NamespaceResult {
         let capacity_binding = args.capacity.get_output(context);
         let identity_binding = args.identity.get_output(context);
         let inbound_ip_rules_binding = args.inbound_ip_rules.get_output(context);
@@ -186,6 +202,7 @@ pub mod namespace {
                     value: &topic_spaces_configurations_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NamespaceResult {

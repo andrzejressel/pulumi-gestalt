@@ -193,6 +193,22 @@ pub mod host_pool {
         name: &str,
         args: HostPoolArgs,
     ) -> HostPoolResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HostPoolArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> HostPoolResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HostPoolArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> HostPoolResult {
         let custom_rdp_properties_binding = args
             .custom_rdp_properties
             .get_output(context);
@@ -296,6 +312,7 @@ pub mod host_pool {
                     value: &vm_template_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         HostPoolResult {

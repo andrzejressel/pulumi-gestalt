@@ -98,6 +98,22 @@ pub mod distribution_configuration {
         name: &str,
         args: DistributionConfigurationArgs,
     ) -> DistributionConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DistributionConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DistributionConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DistributionConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DistributionConfigurationResult {
         let description_binding = args.description.get_output(context);
         let distributions_binding = args.distributions.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -125,6 +141,7 @@ pub mod distribution_configuration {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DistributionConfigurationResult {

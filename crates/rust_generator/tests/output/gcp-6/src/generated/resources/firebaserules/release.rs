@@ -137,6 +137,22 @@ pub mod release {
         name: &str,
         args: ReleaseArgs,
     ) -> ReleaseResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReleaseArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ReleaseResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReleaseArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ReleaseResult {
         let name_binding = args.name.get_output(context);
         let project_binding = args.project.get_output(context);
         let ruleset_name_binding = args.ruleset_name.get_output(context);
@@ -158,6 +174,7 @@ pub mod release {
                     value: &ruleset_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ReleaseResult {

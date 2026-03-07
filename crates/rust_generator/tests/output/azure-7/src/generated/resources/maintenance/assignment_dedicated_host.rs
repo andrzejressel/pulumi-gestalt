@@ -104,6 +104,22 @@ pub mod assignment_dedicated_host {
         name: &str,
         args: AssignmentDedicatedHostArgs,
     ) -> AssignmentDedicatedHostResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AssignmentDedicatedHostArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AssignmentDedicatedHostResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AssignmentDedicatedHostArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AssignmentDedicatedHostResult {
         let dedicated_host_id_binding = args.dedicated_host_id.get_output(context);
         let location_binding = args.location.get_output(context);
         let maintenance_configuration_id_binding = args
@@ -128,6 +144,7 @@ pub mod assignment_dedicated_host {
                     value: &maintenance_configuration_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AssignmentDedicatedHostResult {

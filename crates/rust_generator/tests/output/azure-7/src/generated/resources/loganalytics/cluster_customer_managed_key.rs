@@ -118,6 +118,22 @@ pub mod cluster_customer_managed_key {
         name: &str,
         args: ClusterCustomerManagedKeyArgs,
     ) -> ClusterCustomerManagedKeyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClusterCustomerManagedKeyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ClusterCustomerManagedKeyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClusterCustomerManagedKeyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ClusterCustomerManagedKeyResult {
         let key_vault_key_id_binding = args.key_vault_key_id.get_output(context);
         let log_analytics_cluster_id_binding = args
             .log_analytics_cluster_id
@@ -137,6 +153,7 @@ pub mod cluster_customer_managed_key {
                     value: &log_analytics_cluster_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ClusterCustomerManagedKeyResult {

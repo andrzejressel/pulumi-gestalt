@@ -186,6 +186,22 @@ pub mod occurence {
         name: &str,
         args: OccurenceArgs,
     ) -> OccurenceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OccurenceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OccurenceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OccurenceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OccurenceResult {
         let attestation_binding = args.attestation.get_output(context);
         let note_name_binding = args.note_name.get_output(context);
         let project_binding = args.project.get_output(context);
@@ -217,6 +233,7 @@ pub mod occurence {
                     value: &resource_uri_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OccurenceResult {

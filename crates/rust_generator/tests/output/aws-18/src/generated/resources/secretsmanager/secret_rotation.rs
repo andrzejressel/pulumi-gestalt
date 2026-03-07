@@ -93,6 +93,22 @@ pub mod secret_rotation {
         name: &str,
         args: SecretRotationArgs,
     ) -> SecretRotationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SecretRotationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SecretRotationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SecretRotationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SecretRotationResult {
         let rotate_immediately_binding = args.rotate_immediately.get_output(context);
         let rotation_lambda_arn_binding = args.rotation_lambda_arn.get_output(context);
         let rotation_rules_binding = args.rotation_rules.get_output(context);
@@ -119,6 +135,7 @@ pub mod secret_rotation {
                     value: &secret_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SecretRotationResult {

@@ -80,6 +80,22 @@ pub mod drt_access_role_arn_association {
         name: &str,
         args: DrtAccessRoleArnAssociationArgs,
     ) -> DrtAccessRoleArnAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DrtAccessRoleArnAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DrtAccessRoleArnAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DrtAccessRoleArnAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DrtAccessRoleArnAssociationResult {
         let role_arn_binding = args.role_arn.get_output(context);
         let timeouts_binding = args.timeouts.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -97,6 +113,7 @@ pub mod drt_access_role_arn_association {
                     value: &timeouts_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DrtAccessRoleArnAssociationResult {

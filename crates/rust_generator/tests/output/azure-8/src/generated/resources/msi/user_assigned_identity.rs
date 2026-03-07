@@ -99,6 +99,22 @@ pub mod user_assigned_identity {
         name: &str,
         args: UserAssignedIdentityArgs,
     ) -> UserAssignedIdentityResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: UserAssignedIdentityArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> UserAssignedIdentityResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: UserAssignedIdentityArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> UserAssignedIdentityResult {
         let location_binding = args.location.get_output(context);
         let name_binding = args.name.get_output(context);
         let resource_group_name_binding = args.resource_group_name.get_output(context);
@@ -125,6 +141,7 @@ pub mod user_assigned_identity {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         UserAssignedIdentityResult {

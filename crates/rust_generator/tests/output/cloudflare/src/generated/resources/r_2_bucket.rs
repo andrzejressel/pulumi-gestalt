@@ -67,6 +67,22 @@ pub mod r_2_bucket {
         name: &str,
         args: R2BucketArgs,
     ) -> R2BucketResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: R2BucketArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> R2BucketResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: R2BucketArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> R2BucketResult {
         let account_id_binding = args.account_id.get_output(context);
         let location_binding = args.location.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -88,6 +104,7 @@ pub mod r_2_bucket {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         R2BucketResult {

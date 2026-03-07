@@ -213,6 +213,22 @@ pub mod cache {
         name: &str,
         args: CacheArgs,
     ) -> CacheResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CacheArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CacheResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CacheArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CacheResult {
         let automatically_rotate_key_to_latest_enabled_binding = args
             .automatically_rotate_key_to_latest_enabled
             .get_output(context);
@@ -311,6 +327,7 @@ pub mod cache {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CacheResult {

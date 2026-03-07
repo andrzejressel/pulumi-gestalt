@@ -348,6 +348,22 @@ pub mod integration {
         name: &str,
         args: IntegrationArgs,
     ) -> IntegrationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IntegrationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IntegrationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IntegrationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IntegrationResult {
         let cache_key_parameters_binding = args.cache_key_parameters.get_output(context);
         let cache_namespace_binding = args.cache_namespace.get_output(context);
         let connection_id_binding = args.connection_id.get_output(context);
@@ -441,6 +457,7 @@ pub mod integration {
                     value: &uri_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IntegrationResult {

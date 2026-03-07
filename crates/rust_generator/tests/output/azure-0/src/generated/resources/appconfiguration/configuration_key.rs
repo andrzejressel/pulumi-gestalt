@@ -219,6 +219,22 @@ pub mod configuration_key {
         name: &str,
         args: ConfigurationKeyArgs,
     ) -> ConfigurationKeyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConfigurationKeyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ConfigurationKeyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConfigurationKeyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ConfigurationKeyResult {
         let configuration_store_id_binding = args
             .configuration_store_id
             .get_output(context);
@@ -277,6 +293,7 @@ pub mod configuration_key {
                     value: &vault_key_reference_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ConfigurationKeyResult {

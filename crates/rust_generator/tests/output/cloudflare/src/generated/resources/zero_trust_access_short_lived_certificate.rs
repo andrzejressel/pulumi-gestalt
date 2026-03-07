@@ -93,6 +93,22 @@ pub mod zero_trust_access_short_lived_certificate {
         name: &str,
         args: ZeroTrustAccessShortLivedCertificateArgs,
     ) -> ZeroTrustAccessShortLivedCertificateResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZeroTrustAccessShortLivedCertificateArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ZeroTrustAccessShortLivedCertificateResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZeroTrustAccessShortLivedCertificateArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ZeroTrustAccessShortLivedCertificateResult {
         let account_id_binding = args.account_id.get_output(context);
         let application_id_binding = args.application_id.get_output(context);
         let zone_id_binding = args.zone_id.get_output(context);
@@ -115,6 +131,7 @@ pub mod zero_trust_access_short_lived_certificate {
                     value: &zone_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ZeroTrustAccessShortLivedCertificateResult {

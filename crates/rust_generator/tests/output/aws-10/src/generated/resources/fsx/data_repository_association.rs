@@ -145,6 +145,22 @@ pub mod data_repository_association {
         name: &str,
         args: DataRepositoryAssociationArgs,
     ) -> DataRepositoryAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataRepositoryAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DataRepositoryAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataRepositoryAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DataRepositoryAssociationResult {
         let batch_import_meta_data_on_create_binding = args
             .batch_import_meta_data_on_create
             .get_output(context);
@@ -197,6 +213,7 @@ pub mod data_repository_association {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DataRepositoryAssociationResult {

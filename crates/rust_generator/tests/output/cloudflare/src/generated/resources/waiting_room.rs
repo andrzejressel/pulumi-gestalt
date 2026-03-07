@@ -171,6 +171,22 @@ pub mod waiting_room {
         name: &str,
         args: WaitingRoomArgs,
     ) -> WaitingRoomResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WaitingRoomArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WaitingRoomResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WaitingRoomArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WaitingRoomResult {
         let additional_routes_binding = args.additional_routes.get_output(context);
         let cookie_suffix_binding = args.cookie_suffix.get_output(context);
         let custom_page_html_binding = args.custom_page_html.get_output(context);
@@ -280,6 +296,7 @@ pub mod waiting_room {
                     value: &zone_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WaitingRoomResult {

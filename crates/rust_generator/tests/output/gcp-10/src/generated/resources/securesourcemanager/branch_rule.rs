@@ -217,6 +217,22 @@ pub mod branch_rule {
         name: &str,
         args: BranchRuleArgs,
     ) -> BranchRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BranchRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BranchRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BranchRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BranchRuleResult {
         let allow_stale_reviews_binding = args.allow_stale_reviews.get_output(context);
         let branch_rule_id_binding = args.branch_rule_id.get_output(context);
         let disabled_binding = args.disabled.get_output(context);
@@ -291,6 +307,7 @@ pub mod branch_rule {
                     value: &require_pull_request_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BranchRuleResult {

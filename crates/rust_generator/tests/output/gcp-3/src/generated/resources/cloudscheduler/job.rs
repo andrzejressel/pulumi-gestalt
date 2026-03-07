@@ -365,6 +365,22 @@ pub mod job {
         name: &str,
         args: JobArgs,
     ) -> JobResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: JobArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> JobResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: JobArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> JobResult {
         let app_engine_http_target_binding = args
             .app_engine_http_target
             .get_output(context);
@@ -433,6 +449,7 @@ pub mod job {
                     value: &time_zone_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         JobResult {

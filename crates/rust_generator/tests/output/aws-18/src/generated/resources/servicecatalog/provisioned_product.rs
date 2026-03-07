@@ -190,6 +190,22 @@ pub mod provisioned_product {
         name: &str,
         args: ProvisionedProductArgs,
     ) -> ProvisionedProductResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProvisionedProductArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ProvisionedProductResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProvisionedProductArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ProvisionedProductResult {
         let accept_language_binding = args.accept_language.get_output(context);
         let ignore_errors_binding = args.ignore_errors.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -276,6 +292,7 @@ pub mod provisioned_product {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ProvisionedProductResult {

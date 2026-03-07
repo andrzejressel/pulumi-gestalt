@@ -238,6 +238,22 @@ pub mod crypto_key {
         name: &str,
         args: CryptoKeyArgs,
     ) -> CryptoKeyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CryptoKeyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CryptoKeyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CryptoKeyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CryptoKeyResult {
         let crypto_key_backend_binding = args.crypto_key_backend.get_output(context);
         let destroy_scheduled_duration_binding = args
             .destroy_scheduled_duration
@@ -305,6 +321,7 @@ pub mod crypto_key {
                     value: &version_template_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CryptoKeyResult {

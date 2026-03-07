@@ -112,6 +112,22 @@ pub mod data_connector_microsoft_cloud_app_security {
         name: &str,
         args: DataConnectorMicrosoftCloudAppSecurityArgs,
     ) -> DataConnectorMicrosoftCloudAppSecurityResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataConnectorMicrosoftCloudAppSecurityArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DataConnectorMicrosoftCloudAppSecurityResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataConnectorMicrosoftCloudAppSecurityArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DataConnectorMicrosoftCloudAppSecurityResult {
         let alerts_enabled_binding = args.alerts_enabled.get_output(context);
         let discovery_logs_enabled_binding = args
             .discovery_logs_enabled
@@ -148,6 +164,7 @@ pub mod data_connector_microsoft_cloud_app_security {
                     value: &tenant_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DataConnectorMicrosoftCloudAppSecurityResult {

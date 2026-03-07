@@ -150,6 +150,22 @@ pub mod firewall_network_rule_collection {
         name: &str,
         args: FirewallNetworkRuleCollectionArgs,
     ) -> FirewallNetworkRuleCollectionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FirewallNetworkRuleCollectionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FirewallNetworkRuleCollectionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FirewallNetworkRuleCollectionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FirewallNetworkRuleCollectionResult {
         let action_binding = args.action.get_output(context);
         let azure_firewall_name_binding = args.azure_firewall_name.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -187,6 +203,7 @@ pub mod firewall_network_rule_collection {
                     value: &rules_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FirewallNetworkRuleCollectionResult {

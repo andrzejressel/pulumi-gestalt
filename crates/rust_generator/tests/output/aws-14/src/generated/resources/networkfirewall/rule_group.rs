@@ -297,6 +297,22 @@ pub mod rule_group {
         name: &str,
         args: RuleGroupArgs,
     ) -> RuleGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RuleGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RuleGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RuleGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RuleGroupResult {
         let capacity_binding = args.capacity.get_output(context);
         let description_binding = args.description.get_output(context);
         let encryption_configuration_binding = args
@@ -345,6 +361,7 @@ pub mod rule_group {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RuleGroupResult {

@@ -73,6 +73,22 @@ pub mod backup_policy {
         name: &str,
         args: BackupPolicyArgs,
     ) -> BackupPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackupPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BackupPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackupPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BackupPolicyResult {
         let backup_policy_binding = args.backup_policy.get_output(context);
         let file_system_id_binding = args.file_system_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -89,6 +105,7 @@ pub mod backup_policy {
                     value: &file_system_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BackupPolicyResult {

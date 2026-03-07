@@ -54,6 +54,22 @@ pub mod snapshot_block_public_access {
         name: &str,
         args: SnapshotBlockPublicAccessArgs,
     ) -> SnapshotBlockPublicAccessResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SnapshotBlockPublicAccessArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SnapshotBlockPublicAccessResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SnapshotBlockPublicAccessArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SnapshotBlockPublicAccessResult {
         let state_binding = args.state.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ebs/snapshotBlockPublicAccess:SnapshotBlockPublicAccess".into(),
@@ -65,6 +81,7 @@ pub mod snapshot_block_public_access {
                     value: &state_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SnapshotBlockPublicAccessResult {

@@ -71,6 +71,22 @@ pub mod device {
         name: &str,
         args: DeviceArgs,
     ) -> DeviceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DeviceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DeviceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DeviceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DeviceResult {
         let device_binding = args.device.get_output(context);
         let device_fleet_name_binding = args.device_fleet_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -87,6 +103,7 @@ pub mod device {
                     value: &device_fleet_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DeviceResult {

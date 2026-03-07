@@ -76,6 +76,22 @@ pub mod email_identity_policy {
         name: &str,
         args: EmailIdentityPolicyArgs,
     ) -> EmailIdentityPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EmailIdentityPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EmailIdentityPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EmailIdentityPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EmailIdentityPolicyResult {
         let email_identity_binding = args.email_identity.get_output(context);
         let policy_binding = args.policy.get_output(context);
         let policy_name_binding = args.policy_name.get_output(context);
@@ -97,6 +113,7 @@ pub mod email_identity_policy {
                     value: &policy_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EmailIdentityPolicyResult {

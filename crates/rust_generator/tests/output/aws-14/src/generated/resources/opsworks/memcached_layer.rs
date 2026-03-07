@@ -193,6 +193,22 @@ pub mod memcached_layer {
         name: &str,
         args: MemcachedLayerArgs,
     ) -> MemcachedLayerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MemcachedLayerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MemcachedLayerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MemcachedLayerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MemcachedLayerResult {
         let allocated_memory_binding = args.allocated_memory.get_output(context);
         let auto_assign_elastic_ips_binding = args
             .auto_assign_elastic_ips
@@ -349,6 +365,7 @@ pub mod memcached_layer {
                     value: &use_ebs_optimized_instances_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MemcachedLayerResult {

@@ -111,6 +111,22 @@ pub mod virtual_wan {
         name: &str,
         args: VirtualWanArgs,
     ) -> VirtualWanResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VirtualWanArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VirtualWanResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VirtualWanArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VirtualWanResult {
         let allow_branch_to_branch_traffic_binding = args
             .allow_branch_to_branch_traffic
             .get_output(context);
@@ -163,6 +179,7 @@ pub mod virtual_wan {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VirtualWanResult {

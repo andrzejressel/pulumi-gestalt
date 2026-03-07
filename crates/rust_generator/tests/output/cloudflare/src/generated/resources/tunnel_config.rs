@@ -105,6 +105,22 @@ pub mod tunnel_config {
         name: &str,
         args: TunnelConfigArgs,
     ) -> TunnelConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TunnelConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TunnelConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TunnelConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TunnelConfigResult {
         let account_id_binding = args.account_id.get_output(context);
         let config_binding = args.config.get_output(context);
         let tunnel_id_binding = args.tunnel_id.get_output(context);
@@ -126,6 +142,7 @@ pub mod tunnel_config {
                     value: &tunnel_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TunnelConfigResult {

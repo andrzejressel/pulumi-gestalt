@@ -117,6 +117,22 @@ pub mod lite_reservation {
         name: &str,
         args: LiteReservationArgs,
     ) -> LiteReservationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LiteReservationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LiteReservationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LiteReservationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LiteReservationResult {
         let name_binding = args.name.get_output(context);
         let project_binding = args.project.get_output(context);
         let region_binding = args.region.get_output(context);
@@ -143,6 +159,7 @@ pub mod lite_reservation {
                     value: &throughput_capacity_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LiteReservationResult {

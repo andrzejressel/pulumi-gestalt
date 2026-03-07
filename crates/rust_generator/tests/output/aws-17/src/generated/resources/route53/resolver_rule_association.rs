@@ -67,6 +67,22 @@ pub mod resolver_rule_association {
         name: &str,
         args: ResolverRuleAssociationArgs,
     ) -> ResolverRuleAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResolverRuleAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ResolverRuleAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResolverRuleAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ResolverRuleAssociationResult {
         let name_binding = args.name.get_output(context);
         let resolver_rule_id_binding = args.resolver_rule_id.get_output(context);
         let vpc_id_binding = args.vpc_id.get_output(context);
@@ -88,6 +104,7 @@ pub mod resolver_rule_association {
                     value: &vpc_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ResolverRuleAssociationResult {

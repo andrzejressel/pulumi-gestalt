@@ -86,6 +86,22 @@ pub mod log_subscription_filter {
         name: &str,
         args: LogSubscriptionFilterArgs,
     ) -> LogSubscriptionFilterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LogSubscriptionFilterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LogSubscriptionFilterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LogSubscriptionFilterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LogSubscriptionFilterResult {
         let destination_arn_binding = args.destination_arn.get_output(context);
         let distribution_binding = args.distribution.get_output(context);
         let filter_pattern_binding = args.filter_pattern.get_output(context);
@@ -122,6 +138,7 @@ pub mod log_subscription_filter {
                     value: &role_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LogSubscriptionFilterResult {

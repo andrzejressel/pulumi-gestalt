@@ -428,6 +428,22 @@ pub mod managed_zone {
         name: &str,
         args: ManagedZoneArgs,
     ) -> ManagedZoneResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedZoneArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ManagedZoneResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedZoneArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ManagedZoneResult {
         let cloud_logging_config_binding = args.cloud_logging_config.get_output(context);
         let description_binding = args.description.get_output(context);
         let dns_name_binding = args.dns_name.get_output(context);
@@ -508,6 +524,7 @@ pub mod managed_zone {
                     value: &visibility_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ManagedZoneResult {

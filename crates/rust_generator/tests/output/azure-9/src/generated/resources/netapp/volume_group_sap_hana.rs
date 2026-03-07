@@ -276,6 +276,22 @@ pub mod volume_group_sap_hana {
         name: &str,
         args: VolumeGroupSapHanaArgs,
     ) -> VolumeGroupSapHanaResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VolumeGroupSapHanaArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VolumeGroupSapHanaResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VolumeGroupSapHanaArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VolumeGroupSapHanaResult {
         let account_name_binding = args.account_name.get_output(context);
         let application_identifier_binding = args
             .application_identifier
@@ -319,6 +335,7 @@ pub mod volume_group_sap_hana {
                     value: &volumes_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VolumeGroupSapHanaResult {

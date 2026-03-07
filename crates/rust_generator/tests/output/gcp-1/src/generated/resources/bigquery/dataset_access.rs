@@ -314,6 +314,22 @@ pub mod dataset_access {
         name: &str,
         args: DatasetAccessArgs,
     ) -> DatasetAccessResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatasetAccessArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DatasetAccessResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatasetAccessArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DatasetAccessResult {
         let authorized_dataset_binding = args.authorized_dataset.get_output(context);
         let dataset_id_binding = args.dataset_id.get_output(context);
         let domain_binding = args.domain.get_output(context);
@@ -375,6 +391,7 @@ pub mod dataset_access {
                     value: &view_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DatasetAccessResult {

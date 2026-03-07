@@ -141,6 +141,22 @@ pub mod linked_service_azure_function {
         name: &str,
         args: LinkedServiceAzureFunctionArgs,
     ) -> LinkedServiceAzureFunctionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LinkedServiceAzureFunctionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LinkedServiceAzureFunctionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LinkedServiceAzureFunctionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LinkedServiceAzureFunctionResult {
         let additional_properties_binding = args
             .additional_properties
             .get_output(context);
@@ -202,6 +218,7 @@ pub mod linked_service_azure_function {
                     value: &url_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LinkedServiceAzureFunctionResult {

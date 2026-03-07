@@ -111,6 +111,22 @@ pub mod service_perimeter_dry_run_resource {
         name: &str,
         args: ServicePerimeterDryRunResourceArgs,
     ) -> ServicePerimeterDryRunResourceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServicePerimeterDryRunResourceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServicePerimeterDryRunResourceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServicePerimeterDryRunResourceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServicePerimeterDryRunResourceResult {
         let perimeter_name_binding = args.perimeter_name.get_output(context);
         let resource_binding = args.resource.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -128,6 +144,7 @@ pub mod service_perimeter_dry_run_resource {
                     value: &resource_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServicePerimeterDryRunResourceResult {

@@ -373,6 +373,22 @@ pub mod iam_policy {
         name: &str,
         args: IAMPolicyArgs,
     ) -> IAMPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IAMPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IAMPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IAMPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IAMPolicyResult {
         let org_id_binding = args.org_id.get_output(context);
         let policy_data_binding = args.policy_data.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -389,6 +405,7 @@ pub mod iam_policy {
                     value: &policy_data_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IAMPolicyResult {

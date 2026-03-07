@@ -74,6 +74,22 @@ pub mod resource {
         name: &str,
         args: ResourceArgs,
     ) -> ResourceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResourceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ResourceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResourceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ResourceResult {
         let desired_state_binding = args.desired_state.get_output(context);
         let role_arn_binding = args.role_arn.get_output(context);
         let schema_binding = args.schema.get_output(context);
@@ -105,6 +121,7 @@ pub mod resource {
                     value: &type_version_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ResourceResult {

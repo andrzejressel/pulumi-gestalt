@@ -185,6 +185,22 @@ pub mod mongo_cluster {
         name: &str,
         args: MongoClusterArgs,
     ) -> MongoClusterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MongoClusterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MongoClusterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MongoClusterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MongoClusterResult {
         let administrator_password_binding = args
             .administrator_password
             .get_output(context);
@@ -279,6 +295,7 @@ pub mod mongo_cluster {
                     value: &version_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MongoClusterResult {

@@ -72,6 +72,22 @@ pub mod replication_policy {
         name: &str,
         args: ReplicationPolicyArgs,
     ) -> ReplicationPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReplicationPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ReplicationPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReplicationPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ReplicationPolicyResult {
         let application_consistent_snapshot_frequency_in_minutes_binding = args
             .application_consistent_snapshot_frequency_in_minutes
             .get_output(context);
@@ -108,6 +124,7 @@ pub mod replication_policy {
                     value: &resource_group_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ReplicationPolicyResult {

@@ -99,6 +99,22 @@ pub mod protection_health_check_association {
         name: &str,
         args: ProtectionHealthCheckAssociationArgs,
     ) -> ProtectionHealthCheckAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProtectionHealthCheckAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ProtectionHealthCheckAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProtectionHealthCheckAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ProtectionHealthCheckAssociationResult {
         let health_check_arn_binding = args.health_check_arn.get_output(context);
         let shield_protection_id_binding = args.shield_protection_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -116,6 +132,7 @@ pub mod protection_health_check_association {
                     value: &shield_protection_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ProtectionHealthCheckAssociationResult {

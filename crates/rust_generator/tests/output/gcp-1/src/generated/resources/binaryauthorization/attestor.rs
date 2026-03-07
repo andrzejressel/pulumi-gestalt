@@ -172,6 +172,22 @@ pub mod attestor {
         name: &str,
         args: AttestorArgs,
     ) -> AttestorResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AttestorArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AttestorResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AttestorArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AttestorResult {
         let attestation_authority_note_binding = args
             .attestation_authority_note
             .get_output(context);
@@ -200,6 +216,7 @@ pub mod attestor {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AttestorResult {

@@ -106,6 +106,22 @@ pub mod dedicated_host {
         name: &str,
         args: DedicatedHostArgs,
     ) -> DedicatedHostResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DedicatedHostArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DedicatedHostResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DedicatedHostArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DedicatedHostResult {
         let asset_id_binding = args.asset_id.get_output(context);
         let auto_placement_binding = args.auto_placement.get_output(context);
         let availability_zone_binding = args.availability_zone.get_output(context);
@@ -152,6 +168,7 @@ pub mod dedicated_host {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DedicatedHostResult {

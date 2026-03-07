@@ -63,6 +63,22 @@ pub mod waiting_room_settings {
         name: &str,
         args: WaitingRoomSettingsArgs,
     ) -> WaitingRoomSettingsResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WaitingRoomSettingsArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WaitingRoomSettingsResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WaitingRoomSettingsArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WaitingRoomSettingsResult {
         let search_engine_crawler_bypass_binding = args
             .search_engine_crawler_bypass
             .get_output(context);
@@ -81,6 +97,7 @@ pub mod waiting_room_settings {
                     value: &zone_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WaitingRoomSettingsResult {

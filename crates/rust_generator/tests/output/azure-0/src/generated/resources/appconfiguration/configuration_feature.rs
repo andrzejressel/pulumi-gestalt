@@ -167,6 +167,22 @@ pub mod configuration_feature {
         name: &str,
         args: ConfigurationFeatureArgs,
     ) -> ConfigurationFeatureResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConfigurationFeatureArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ConfigurationFeatureResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConfigurationFeatureArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ConfigurationFeatureResult {
         let configuration_store_id_binding = args
             .configuration_store_id
             .get_output(context);
@@ -238,6 +254,7 @@ pub mod configuration_feature {
                     value: &timewindow_filters_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ConfigurationFeatureResult {

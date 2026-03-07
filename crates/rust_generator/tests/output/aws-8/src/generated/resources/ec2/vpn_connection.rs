@@ -555,6 +555,22 @@ pub mod vpn_connection {
         name: &str,
         args: VpnConnectionArgs,
     ) -> VpnConnectionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpnConnectionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VpnConnectionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpnConnectionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VpnConnectionResult {
         let customer_gateway_id_binding = args.customer_gateway_id.get_output(context);
         let enable_acceleration_binding = args.enable_acceleration.get_output(context);
         let local_ipv4_network_cidr_binding = args
@@ -913,6 +929,7 @@ pub mod vpn_connection {
                     value: &vpn_gateway_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VpnConnectionResult {

@@ -126,6 +126,22 @@ pub mod query_pack_query {
         name: &str,
         args: QueryPackQueryArgs,
     ) -> QueryPackQueryResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: QueryPackQueryArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> QueryPackQueryResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: QueryPackQueryArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> QueryPackQueryResult {
         let additional_settings_json_binding = args
             .additional_settings_json
             .get_output(context);
@@ -184,6 +200,7 @@ pub mod query_pack_query {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         QueryPackQueryResult {

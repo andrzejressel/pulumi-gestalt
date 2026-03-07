@@ -105,6 +105,22 @@ pub mod infrastructure_access_target {
         name: &str,
         args: InfrastructureAccessTargetArgs,
     ) -> InfrastructureAccessTargetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InfrastructureAccessTargetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> InfrastructureAccessTargetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InfrastructureAccessTargetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> InfrastructureAccessTargetResult {
         let account_id_binding = args.account_id.get_output(context);
         let hostname_binding = args.hostname.get_output(context);
         let ip_binding = args.ip.get_output(context);
@@ -127,6 +143,7 @@ pub mod infrastructure_access_target {
                     value: &ip_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         InfrastructureAccessTargetResult {

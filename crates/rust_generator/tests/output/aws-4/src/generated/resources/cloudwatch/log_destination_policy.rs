@@ -84,6 +84,22 @@ pub mod log_destination_policy {
         name: &str,
         args: LogDestinationPolicyArgs,
     ) -> LogDestinationPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LogDestinationPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LogDestinationPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LogDestinationPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LogDestinationPolicyResult {
         let access_policy_binding = args.access_policy.get_output(context);
         let destination_name_binding = args.destination_name.get_output(context);
         let force_update_binding = args.force_update.get_output(context);
@@ -105,6 +121,7 @@ pub mod log_destination_policy {
                     value: &force_update_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LogDestinationPolicyResult {

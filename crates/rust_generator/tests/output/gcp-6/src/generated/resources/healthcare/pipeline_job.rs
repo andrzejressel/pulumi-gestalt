@@ -412,6 +412,22 @@ pub mod pipeline_job {
         name: &str,
         args: PipelineJobArgs,
     ) -> PipelineJobResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PipelineJobArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PipelineJobResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PipelineJobArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PipelineJobResult {
         let backfill_pipeline_job_binding = args
             .backfill_pipeline_job
             .get_output(context);
@@ -462,6 +478,7 @@ pub mod pipeline_job {
                     value: &reconciliation_pipeline_job_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PipelineJobResult {

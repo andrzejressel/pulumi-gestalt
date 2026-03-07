@@ -49,6 +49,22 @@ pub mod repository_iam_member {
         name: &str,
         args: RepositoryIamMemberArgs,
     ) -> RepositoryIamMemberResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RepositoryIamMemberArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RepositoryIamMemberResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RepositoryIamMemberArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RepositoryIamMemberResult {
         let condition_binding = args.condition.get_output(context);
         let member_binding = args.member.get_output(context);
         let project_binding = args.project.get_output(context);
@@ -85,6 +101,7 @@ pub mod repository_iam_member {
                     value: &role_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RepositoryIamMemberResult {

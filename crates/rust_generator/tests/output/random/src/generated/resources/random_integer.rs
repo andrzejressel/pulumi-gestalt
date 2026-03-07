@@ -88,6 +88,22 @@ pub mod random_integer {
         name: &str,
         args: RandomIntegerArgs,
     ) -> RandomIntegerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RandomIntegerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RandomIntegerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RandomIntegerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RandomIntegerResult {
         let keepers_binding = args.keepers.get_output(context);
         let max_binding = args.max.get_output(context);
         let min_binding = args.min.get_output(context);
@@ -114,6 +130,7 @@ pub mod random_integer {
                     value: &seed_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RandomIntegerResult {

@@ -59,6 +59,22 @@ pub mod organization_configuration {
         name: &str,
         args: OrganizationConfigurationArgs,
     ) -> OrganizationConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OrganizationConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OrganizationConfigurationResult {
         let auto_enable_binding = args.auto_enable.get_output(context);
         let graph_arn_binding = args.graph_arn.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -76,6 +92,7 @@ pub mod organization_configuration {
                     value: &graph_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OrganizationConfigurationResult {

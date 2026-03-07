@@ -101,6 +101,22 @@ pub mod connect_attachment {
         name: &str,
         args: ConnectAttachmentArgs,
     ) -> ConnectAttachmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConnectAttachmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ConnectAttachmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConnectAttachmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ConnectAttachmentResult {
         let core_network_id_binding = args.core_network_id.get_output(context);
         let edge_location_binding = args.edge_location.get_output(context);
         let options_binding = args.options.get_output(context);
@@ -134,6 +150,7 @@ pub mod connect_attachment {
                     value: &transport_attachment_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ConnectAttachmentResult {

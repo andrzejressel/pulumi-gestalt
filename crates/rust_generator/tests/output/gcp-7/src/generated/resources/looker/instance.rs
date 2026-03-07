@@ -457,6 +457,22 @@ pub mod instance {
         name: &str,
         args: InstanceArgs,
     ) -> InstanceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InstanceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> InstanceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InstanceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> InstanceResult {
         let admin_settings_binding = args.admin_settings.get_output(context);
         let consumer_network_binding = args.consumer_network.get_output(context);
         let custom_domain_binding = args.custom_domain.get_output(context);
@@ -560,6 +576,7 @@ pub mod instance {
                     value: &user_metadata_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         InstanceResult {

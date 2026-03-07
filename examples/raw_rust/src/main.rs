@@ -14,6 +14,7 @@ async fn generate_random_value(ctx: &Context) {
         name: "my_name".to_string(),
         version: "4.15.1".to_string(),
         inputs: HashMap::from([("length".into(), output.clone())]),
+        provider: None,
     };
 
     let composite_output = ctx.register_resource(register_resource_request).await;
@@ -23,6 +24,32 @@ async fn generate_random_value(ctx: &Context) {
     output_result.add_export("result".into()).await;
     output_urn.add_export("resource_urn".into()).await;
     output_id.add_export("resource_id".into()).await;
+}
+
+async fn create_provider_and_use_it(ctx: &Context) {
+    let provider_request = RegisterResourceRequest {
+        r#type: "pulumi:providers:random".to_string(),
+        name: "custom-provider".to_string(),
+        version: "4.15.1".to_string(),
+        inputs: HashMap::new(),
+        provider: None,
+    };
+
+    let provider = ctx.register_resource(provider_request).await;
+    let provider_id = provider.get_provider_id().await;
+
+    let output = ctx.create_output(json!(16), false);
+
+    let register_resource_request = RegisterResourceRequest {
+        r#type: "random:index/randomString:RandomString".to_string(),
+        name: "my_name_with_provider".to_string(),
+        version: "4.15.1".to_string(),
+        inputs: HashMap::from([("length".into(), output)]),
+        provider: Some(provider_id.clone()),
+    };
+
+    let _ = ctx.register_resource(register_resource_request).await;
+    provider_id.add_export("provider_id".into()).await;
 }
 
 async fn run_command(ctx: &Context) {
@@ -134,6 +161,7 @@ async fn main() {
     let ctx = Context::new().await;
 
     generate_random_value(&ctx).await;
+    create_provider_and_use_it(&ctx).await;
     run_command(&ctx).await;
     perform_operations_on_outputs(&ctx).await;
     perform_operations_on_default_config(&ctx).await;

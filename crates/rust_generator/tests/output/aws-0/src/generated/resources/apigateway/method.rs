@@ -185,6 +185,22 @@ pub mod method {
         name: &str,
         args: MethodArgs,
     ) -> MethodResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MethodArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MethodResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MethodArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MethodResult {
         let api_key_required_binding = args.api_key_required.get_output(context);
         let authorization_binding = args.authorization.get_output(context);
         let authorization_scopes_binding = args.authorization_scopes.get_output(context);
@@ -246,6 +262,7 @@ pub mod method {
                     value: &rest_api_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MethodResult {

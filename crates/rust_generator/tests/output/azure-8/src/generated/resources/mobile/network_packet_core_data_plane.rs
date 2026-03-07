@@ -147,6 +147,22 @@ pub mod network_packet_core_data_plane {
         name: &str,
         args: NetworkPacketCoreDataPlaneArgs,
     ) -> NetworkPacketCoreDataPlaneResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkPacketCoreDataPlaneArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NetworkPacketCoreDataPlaneResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkPacketCoreDataPlaneArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NetworkPacketCoreDataPlaneResult {
         let location_binding = args.location.get_output(context);
         let mobile_network_packet_core_control_plane_id_binding = args
             .mobile_network_packet_core_control_plane_id
@@ -205,6 +221,7 @@ pub mod network_packet_core_data_plane {
                     value: &user_plane_access_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NetworkPacketCoreDataPlaneResult {

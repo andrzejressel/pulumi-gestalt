@@ -101,6 +101,22 @@ pub mod consumer_group {
         name: &str,
         args: ConsumerGroupArgs,
     ) -> ConsumerGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConsumerGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ConsumerGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConsumerGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ConsumerGroupResult {
         let eventhub_name_binding = args.eventhub_name.get_output(context);
         let name_binding = args.name.get_output(context);
         let namespace_name_binding = args.namespace_name.get_output(context);
@@ -132,6 +148,7 @@ pub mod consumer_group {
                     value: &user_metadata_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ConsumerGroupResult {

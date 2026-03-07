@@ -91,6 +91,22 @@ pub mod express_route_port_authorization {
         name: &str,
         args: ExpressRoutePortAuthorizationArgs,
     ) -> ExpressRoutePortAuthorizationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ExpressRoutePortAuthorizationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ExpressRoutePortAuthorizationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ExpressRoutePortAuthorizationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ExpressRoutePortAuthorizationResult {
         let express_route_port_name_binding = args
             .express_route_port_name
             .get_output(context);
@@ -115,6 +131,7 @@ pub mod express_route_port_authorization {
                     value: &resource_group_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ExpressRoutePortAuthorizationResult {

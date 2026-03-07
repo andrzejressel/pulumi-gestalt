@@ -129,6 +129,22 @@ pub mod user_workloads_config_map {
         name: &str,
         args: UserWorkloadsConfigMapArgs,
     ) -> UserWorkloadsConfigMapResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: UserWorkloadsConfigMapArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> UserWorkloadsConfigMapResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: UserWorkloadsConfigMapArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> UserWorkloadsConfigMapResult {
         let data_binding = args.data.get_output(context);
         let environment_binding = args.environment.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -160,6 +176,7 @@ pub mod user_workloads_config_map {
                     value: &region_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         UserWorkloadsConfigMapResult {

@@ -186,6 +186,22 @@ pub mod ssl_policy {
         name: &str,
         args: SSLPolicyArgs,
     ) -> SSLPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SSLPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SSLPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SSLPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SSLPolicyResult {
         let custom_features_binding = args.custom_features.get_output(context);
         let description_binding = args.description.get_output(context);
         let min_tls_version_binding = args.min_tls_version.get_output(context);
@@ -222,6 +238,7 @@ pub mod ssl_policy {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SSLPolicyResult {

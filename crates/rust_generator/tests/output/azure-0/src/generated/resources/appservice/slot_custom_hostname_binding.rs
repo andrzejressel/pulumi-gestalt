@@ -118,6 +118,22 @@ pub mod slot_custom_hostname_binding {
         name: &str,
         args: SlotCustomHostnameBindingArgs,
     ) -> SlotCustomHostnameBindingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SlotCustomHostnameBindingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SlotCustomHostnameBindingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SlotCustomHostnameBindingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SlotCustomHostnameBindingResult {
         let app_service_slot_id_binding = args.app_service_slot_id.get_output(context);
         let hostname_binding = args.hostname.get_output(context);
         let ssl_state_binding = args.ssl_state.get_output(context);
@@ -145,6 +161,7 @@ pub mod slot_custom_hostname_binding {
                     value: &thumbprint_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SlotCustomHostnameBindingResult {

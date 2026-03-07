@@ -68,6 +68,22 @@ pub mod conditional_forwader {
         name: &str,
         args: ConditionalForwaderArgs,
     ) -> ConditionalForwaderResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConditionalForwaderArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ConditionalForwaderResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConditionalForwaderArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ConditionalForwaderResult {
         let directory_id_binding = args.directory_id.get_output(context);
         let dns_ips_binding = args.dns_ips.get_output(context);
         let remote_domain_name_binding = args.remote_domain_name.get_output(context);
@@ -89,6 +105,7 @@ pub mod conditional_forwader {
                     value: &remote_domain_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ConditionalForwaderResult {

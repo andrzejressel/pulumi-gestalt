@@ -121,6 +121,22 @@ pub mod reserved_cache_node {
         name: &str,
         args: ReservedCacheNodeArgs,
     ) -> ReservedCacheNodeResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReservedCacheNodeArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ReservedCacheNodeResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReservedCacheNodeArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ReservedCacheNodeResult {
         let cache_node_count_binding = args.cache_node_count.get_output(context);
         let reserved_cache_nodes_offering_id_binding = args
             .reserved_cache_nodes_offering_id
@@ -149,6 +165,7 @@ pub mod reserved_cache_node {
                     value: &timeouts_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ReservedCacheNodeResult {

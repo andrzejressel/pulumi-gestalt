@@ -177,6 +177,22 @@ pub mod subnet {
         name: &str,
         args: SubnetArgs,
     ) -> SubnetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SubnetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SubnetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SubnetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SubnetResult {
         let address_prefixes_binding = args.address_prefixes.get_output(context);
         let default_outbound_access_enabled_binding = args
             .default_outbound_access_enabled
@@ -242,6 +258,7 @@ pub mod subnet {
                     value: &virtual_network_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SubnetResult {

@@ -121,6 +121,22 @@ pub mod origin_request_policy {
         name: &str,
         args: OriginRequestPolicyArgs,
     ) -> OriginRequestPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OriginRequestPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OriginRequestPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OriginRequestPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OriginRequestPolicyResult {
         let comment_binding = args.comment.get_output(context);
         let cookies_config_binding = args.cookies_config.get_output(context);
         let headers_config_binding = args.headers_config.get_output(context);
@@ -152,6 +168,7 @@ pub mod origin_request_policy {
                     value: &query_strings_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OriginRequestPolicyResult {

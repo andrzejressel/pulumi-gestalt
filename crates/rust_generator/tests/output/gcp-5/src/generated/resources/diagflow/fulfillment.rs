@@ -126,6 +126,22 @@ pub mod fulfillment {
         name: &str,
         args: FulfillmentArgs,
     ) -> FulfillmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FulfillmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FulfillmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FulfillmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FulfillmentResult {
         let display_name_binding = args.display_name.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
         let features_binding = args.features.get_output(context);
@@ -157,6 +173,7 @@ pub mod fulfillment {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FulfillmentResult {

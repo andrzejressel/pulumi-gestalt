@@ -94,6 +94,22 @@ pub mod service_email_domain_association {
         name: &str,
         args: ServiceEmailDomainAssociationArgs,
     ) -> ServiceEmailDomainAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceEmailDomainAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServiceEmailDomainAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceEmailDomainAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServiceEmailDomainAssociationResult {
         let communication_service_id_binding = args
             .communication_service_id
             .get_output(context);
@@ -115,6 +131,7 @@ pub mod service_email_domain_association {
                     value: &email_service_domain_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServiceEmailDomainAssociationResult {

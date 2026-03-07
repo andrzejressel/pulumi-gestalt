@@ -136,6 +136,22 @@ pub mod configuration_set {
         name: &str,
         args: ConfigurationSetArgs,
     ) -> ConfigurationSetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConfigurationSetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ConfigurationSetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConfigurationSetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ConfigurationSetResult {
         let delivery_options_binding = args.delivery_options.get_output(context);
         let name_binding = args.name.get_output(context);
         let reputation_metrics_enabled_binding = args
@@ -169,6 +185,7 @@ pub mod configuration_set {
                     value: &tracking_options_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ConfigurationSetResult {

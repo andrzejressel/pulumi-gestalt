@@ -448,6 +448,22 @@ pub mod application_gateway {
         name: &str,
         args: ApplicationGatewayArgs,
     ) -> ApplicationGatewayResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApplicationGatewayArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ApplicationGatewayResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApplicationGatewayArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ApplicationGatewayResult {
         let authentication_certificates_binding = args
             .authentication_certificates
             .get_output(context);
@@ -645,6 +661,7 @@ pub mod application_gateway {
                     value: &zones_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ApplicationGatewayResult {

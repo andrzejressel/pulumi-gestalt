@@ -136,6 +136,22 @@ pub mod endpoint_custom_domain {
         name: &str,
         args: EndpointCustomDomainArgs,
     ) -> EndpointCustomDomainResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EndpointCustomDomainArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EndpointCustomDomainResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EndpointCustomDomainArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EndpointCustomDomainResult {
         let cdn_endpoint_id_binding = args.cdn_endpoint_id.get_output(context);
         let cdn_managed_https_binding = args.cdn_managed_https.get_output(context);
         let host_name_binding = args.host_name.get_output(context);
@@ -167,6 +183,7 @@ pub mod endpoint_custom_domain {
                     value: &user_managed_https_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EndpointCustomDomainResult {

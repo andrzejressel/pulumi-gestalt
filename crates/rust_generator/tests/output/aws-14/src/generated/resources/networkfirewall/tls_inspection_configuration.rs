@@ -387,6 +387,22 @@ pub mod tls_inspection_configuration {
         name: &str,
         args: TlsInspectionConfigurationArgs,
     ) -> TlsInspectionConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TlsInspectionConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TlsInspectionConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TlsInspectionConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TlsInspectionConfigurationResult {
         let description_binding = args.description.get_output(context);
         let encryption_configurations_binding = args
             .encryption_configurations
@@ -428,6 +444,7 @@ pub mod tls_inspection_configuration {
                     value: &tls_inspection_configuration_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TlsInspectionConfigurationResult {

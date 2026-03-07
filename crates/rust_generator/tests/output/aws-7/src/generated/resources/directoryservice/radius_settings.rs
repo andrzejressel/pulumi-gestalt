@@ -103,6 +103,22 @@ pub mod radius_settings {
         name: &str,
         args: RadiusSettingsArgs,
     ) -> RadiusSettingsResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RadiusSettingsArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RadiusSettingsResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RadiusSettingsArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RadiusSettingsResult {
         let authentication_protocol_binding = args
             .authentication_protocol
             .get_output(context);
@@ -156,6 +172,7 @@ pub mod radius_settings {
                     value: &use_same_username_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RadiusSettingsResult {

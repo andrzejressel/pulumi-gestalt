@@ -169,6 +169,22 @@ pub mod classifier {
         name: &str,
         args: ClassifierArgs,
     ) -> ClassifierResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClassifierArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ClassifierResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClassifierArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ClassifierResult {
         let csv_classifier_binding = args.csv_classifier.get_output(context);
         let grok_classifier_binding = args.grok_classifier.get_output(context);
         let json_classifier_binding = args.json_classifier.get_output(context);
@@ -200,6 +216,7 @@ pub mod classifier {
                     value: &xml_classifier_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ClassifierResult {

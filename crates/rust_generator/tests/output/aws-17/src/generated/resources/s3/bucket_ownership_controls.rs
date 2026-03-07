@@ -76,6 +76,22 @@ pub mod bucket_ownership_controls {
         name: &str,
         args: BucketOwnershipControlsArgs,
     ) -> BucketOwnershipControlsResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BucketOwnershipControlsArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BucketOwnershipControlsResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BucketOwnershipControlsArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BucketOwnershipControlsResult {
         let bucket_binding = args.bucket.get_output(context);
         let rule_binding = args.rule.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -92,6 +108,7 @@ pub mod bucket_ownership_controls {
                     value: &rule_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BucketOwnershipControlsResult {

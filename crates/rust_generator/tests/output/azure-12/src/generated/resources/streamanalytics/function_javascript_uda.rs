@@ -111,6 +111,22 @@ pub mod function_javascript_uda {
         name: &str,
         args: FunctionJavascriptUdaArgs,
     ) -> FunctionJavascriptUdaResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FunctionJavascriptUdaArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FunctionJavascriptUdaResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FunctionJavascriptUdaArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FunctionJavascriptUdaResult {
         let inputs_binding = args.inputs.get_output(context);
         let name_binding = args.name.get_output(context);
         let output_binding = args.output.get_output(context);
@@ -145,6 +161,7 @@ pub mod function_javascript_uda {
                     value: &stream_analytics_job_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FunctionJavascriptUdaResult {

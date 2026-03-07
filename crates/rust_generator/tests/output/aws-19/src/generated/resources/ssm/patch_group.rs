@@ -61,6 +61,22 @@ pub mod patch_group {
         name: &str,
         args: PatchGroupArgs,
     ) -> PatchGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PatchGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PatchGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PatchGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PatchGroupResult {
         let baseline_id_binding = args.baseline_id.get_output(context);
         let patch_group_binding = args.patch_group.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -77,6 +93,7 @@ pub mod patch_group {
                     value: &patch_group_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PatchGroupResult {

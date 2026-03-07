@@ -36,6 +36,7 @@ pub struct RegisterResourceRequest<FunctionContext> {
     pub name: String,
     pub inputs: HashMap<FieldName, Output<FunctionContext>>,
     pub version: String,
+    pub provider: Option<Output<FunctionContext>>,
 }
 
 pub struct InvokeResourceRequest<FunctionContext> {
@@ -90,11 +91,13 @@ impl<T> Context<T> {
         args: RegisterResourceRequest<T>,
     ) -> RegisterResourceOutput<T> {
         let inputs = args.inputs.into_iter().map(|(k, v)| (k, v.inner)).collect();
+        let provider = args.provider.map(|p| p.inner);
         let inner = self.inner.lock().await.create_register_resource_node(
             args.r#type,
             args.name,
             inputs,
             args.version,
+            provider,
         );
         RegisterResourceOutput {
             inner,
@@ -219,6 +222,14 @@ impl<T> RegisterResourceOutput<T> {
 
     pub async fn get_id(&self) -> Output<T> {
         let raw_output = core::Engine::<T>::create_extract_id(self.inner.clone());
+        Output {
+            inner: raw_output,
+            engine: Arc::clone(&self.engine),
+        }
+    }
+
+    pub async fn get_provider_id(&self) -> Output<T> {
+        let raw_output = core::Engine::<T>::create_extract_provider_id(self.inner.clone());
         Output {
             inner: raw_output,
             engine: Arc::clone(&self.engine),

@@ -445,6 +445,22 @@ pub mod web_region_backend_service_iam_member {
         name: &str,
         args: WebRegionBackendServiceIamMemberArgs,
     ) -> WebRegionBackendServiceIamMemberResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WebRegionBackendServiceIamMemberArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WebRegionBackendServiceIamMemberResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WebRegionBackendServiceIamMemberArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WebRegionBackendServiceIamMemberResult {
         let condition_binding = args.condition.get_output(context);
         let member_binding = args.member.get_output(context);
         let project_binding = args.project.get_output(context);
@@ -484,6 +500,7 @@ pub mod web_region_backend_service_iam_member {
                     value: &web_region_backend_service_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WebRegionBackendServiceIamMemberResult {

@@ -216,6 +216,22 @@ pub mod registration {
         name: &str,
         args: RegistrationArgs,
     ) -> RegistrationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegistrationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RegistrationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegistrationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RegistrationResult {
         let contact_notices_binding = args.contact_notices.get_output(context);
         let contact_settings_binding = args.contact_settings.get_output(context);
         let dns_settings_binding = args.dns_settings.get_output(context);
@@ -272,6 +288,7 @@ pub mod registration {
                     value: &yearly_price_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RegistrationResult {

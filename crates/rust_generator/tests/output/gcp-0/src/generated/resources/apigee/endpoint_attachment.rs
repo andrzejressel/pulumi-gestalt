@@ -142,6 +142,22 @@ pub mod endpoint_attachment {
         name: &str,
         args: EndpointAttachmentArgs,
     ) -> EndpointAttachmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EndpointAttachmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EndpointAttachmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EndpointAttachmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EndpointAttachmentResult {
         let endpoint_attachment_id_binding = args
             .endpoint_attachment_id
             .get_output(context);
@@ -170,6 +186,7 @@ pub mod endpoint_attachment {
                     value: &service_attachment_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EndpointAttachmentResult {

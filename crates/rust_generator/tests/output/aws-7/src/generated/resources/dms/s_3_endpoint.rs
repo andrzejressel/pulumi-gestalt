@@ -400,6 +400,22 @@ pub mod s_3_endpoint {
         name: &str,
         args: S3EndpointArgs,
     ) -> S3EndpointResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: S3EndpointArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> S3EndpointResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: S3EndpointArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> S3EndpointResult {
         let add_column_name_binding = args.add_column_name.get_output(context);
         let add_trailing_padding_character_binding = args
             .add_trailing_padding_character
@@ -686,6 +702,7 @@ pub mod s_3_endpoint {
                         .drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         S3EndpointResult {

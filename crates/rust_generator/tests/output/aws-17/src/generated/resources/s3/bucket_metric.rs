@@ -118,6 +118,22 @@ pub mod bucket_metric {
         name: &str,
         args: BucketMetricArgs,
     ) -> BucketMetricResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BucketMetricArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BucketMetricResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BucketMetricArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BucketMetricResult {
         let bucket_binding = args.bucket.get_output(context);
         let filter_binding = args.filter.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -139,6 +155,7 @@ pub mod bucket_metric {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BucketMetricResult {

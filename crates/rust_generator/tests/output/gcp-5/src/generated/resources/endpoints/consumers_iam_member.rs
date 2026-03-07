@@ -127,6 +127,22 @@ pub mod consumers_iam_member {
         name: &str,
         args: ConsumersIamMemberArgs,
     ) -> ConsumersIamMemberResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConsumersIamMemberArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ConsumersIamMemberResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConsumersIamMemberArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ConsumersIamMemberResult {
         let condition_binding = args.condition.get_output(context);
         let consumer_project_binding = args.consumer_project.get_output(context);
         let member_binding = args.member.get_output(context);
@@ -158,6 +174,7 @@ pub mod consumers_iam_member {
                     value: &service_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ConsumersIamMemberResult {

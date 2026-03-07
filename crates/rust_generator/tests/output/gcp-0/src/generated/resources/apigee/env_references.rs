@@ -86,6 +86,22 @@ pub mod env_references {
         name: &str,
         args: EnvReferencesArgs,
     ) -> EnvReferencesResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EnvReferencesArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EnvReferencesResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EnvReferencesArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EnvReferencesResult {
         let description_binding = args.description.get_output(context);
         let env_id_binding = args.env_id.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -117,6 +133,7 @@ pub mod env_references {
                     value: &resource_type_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EnvReferencesResult {

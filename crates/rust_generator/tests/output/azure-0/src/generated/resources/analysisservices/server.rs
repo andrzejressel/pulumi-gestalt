@@ -129,6 +129,22 @@ pub mod server {
         name: &str,
         args: ServerArgs,
     ) -> ServerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServerResult {
         let admin_users_binding = args.admin_users.get_output(context);
         let backup_blob_container_uri_binding = args
             .backup_blob_container_uri
@@ -191,6 +207,7 @@ pub mod server {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServerResult {

@@ -793,6 +793,22 @@ pub mod repository {
         name: &str,
         args: RepositoryArgs,
     ) -> RepositoryResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RepositoryArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RepositoryResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RepositoryArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RepositoryResult {
         let cleanup_policies_binding = args.cleanup_policies.get_output(context);
         let cleanup_policy_dry_run_binding = args
             .cleanup_policy_dry_run
@@ -875,6 +891,7 @@ pub mod repository {
                     value: &virtual_repository_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RepositoryResult {

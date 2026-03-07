@@ -121,6 +121,22 @@ pub mod channel_direct_line_speech {
         name: &str,
         args: ChannelDirectLineSpeechArgs,
     ) -> ChannelDirectLineSpeechResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ChannelDirectLineSpeechArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ChannelDirectLineSpeechResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ChannelDirectLineSpeechArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ChannelDirectLineSpeechResult {
         let bot_name_binding = args.bot_name.get_output(context);
         let cognitive_account_id_binding = args.cognitive_account_id.get_output(context);
         let cognitive_service_access_key_binding = args
@@ -175,6 +191,7 @@ pub mod channel_direct_line_speech {
                     value: &resource_group_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ChannelDirectLineSpeechResult {

@@ -92,6 +92,22 @@ pub mod indexing_configuration {
         name: &str,
         args: IndexingConfigurationArgs,
     ) -> IndexingConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IndexingConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IndexingConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IndexingConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IndexingConfigurationResult {
         let thing_group_indexing_configuration_binding = args
             .thing_group_indexing_configuration
             .get_output(context);
@@ -112,6 +128,7 @@ pub mod indexing_configuration {
                     value: &thing_indexing_configuration_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IndexingConfigurationResult {

@@ -30,12 +30,20 @@ pub struct {{resource.struct_name}}Result {
     pub urn: pulumi_gestalt_rust::Output<String>,
     /// Pulumi ID is the unique identifier assigned by the provider to this resource.
     pub id: pulumi_gestalt_rust::Output<String>,
+    /// Pulumi Provider ID is the combination of URN and ID. It is used when creating a resource.
+    pub provider_id: pulumi_gestalt_rust::Output<String>,
 {{#each resource.output_properties}}
     {{#each description_lines}}
         /// {{&this}}
     {{/each}}
     pub {{arg_name}}: pulumi_gestalt_rust::Output<{{&type_}}>,
 {{/each}}
+}
+
+impl pulumi_gestalt_rust::Provider for {{resource.struct_name}}Result {
+    fn get_provider_id(&self) -> pulumi_gestalt_rust::Output<String> {
+        self.provider_id.clone()
+    }
 }
 
 ///
@@ -46,8 +54,30 @@ pub fn {{resource.function_name}}(
     context: &pulumi_gestalt_rust::Context,
     name: &str,
 {{#if resource.input_properties}}
-    args: {{resource.struct_name}}Args
+    args: {{resource.struct_name}}Args,
 {{/if}}
+) -> {{resource.struct_name}}Result {
+    {{resource.function_name}}_with_options(
+        context,
+        name,
+        {{#if resource.input_properties}}
+        args,
+        {{/if}}
+        None,
+    )
+}
+
+///
+/// Registers a new resource with the given unique name and arguments
+///
+#[allow(non_snake_case, unused_imports, dead_code)]
+pub fn {{resource.function_name}}_with_options(
+    context: &pulumi_gestalt_rust::Context,
+    name: &str,
+{{#if resource.input_properties}}
+    args: {{resource.struct_name}}Args,
+{{/if}}
+    options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
 ) -> {{resource.struct_name}}Result {
 
 {{#each resource.input_properties}}
@@ -62,13 +92,15 @@ pub fn {{resource.function_name}}(
             {{#each resource.input_properties}}
                 pulumi_gestalt_rust::ResourceRequestObjectField { name: "{{name}}".into(), value: &{{arg_name}}_binding.drop_type() },
             {{/each}}
-        ]
+        ],
+        options,
     };
 
     let o = context.register_resource(request);
     {{resource.struct_name}}Result {
         urn: o.get_urn(),
         id: o.get_id(),
+        provider_id: o.get_provider_id(),
     {{#each resource.output_properties}}
         {{arg_name}}: o.get_field("{{name}}"),
     {{/each}}

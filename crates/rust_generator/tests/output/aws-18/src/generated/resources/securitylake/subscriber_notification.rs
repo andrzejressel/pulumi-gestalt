@@ -101,6 +101,22 @@ pub mod subscriber_notification {
         name: &str,
         args: SubscriberNotificationArgs,
     ) -> SubscriberNotificationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SubscriberNotificationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SubscriberNotificationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SubscriberNotificationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SubscriberNotificationResult {
         let configuration_binding = args.configuration.get_output(context);
         let subscriber_id_binding = args.subscriber_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -118,6 +134,7 @@ pub mod subscriber_notification {
                     value: &subscriber_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SubscriberNotificationResult {

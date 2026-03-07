@@ -153,6 +153,22 @@ pub mod protection_group {
         name: &str,
         args: ProtectionGroupArgs,
     ) -> ProtectionGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProtectionGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ProtectionGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProtectionGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ProtectionGroupResult {
         let aggregation_binding = args.aggregation.get_output(context);
         let members_binding = args.members.get_output(context);
         let pattern_binding = args.pattern.get_output(context);
@@ -189,6 +205,7 @@ pub mod protection_group {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ProtectionGroupResult {

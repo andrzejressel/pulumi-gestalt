@@ -165,6 +165,22 @@ pub mod policy_tag {
         name: &str,
         args: PolicyTagArgs,
     ) -> PolicyTagResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PolicyTagArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PolicyTagResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PolicyTagArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PolicyTagResult {
         let description_binding = args.description.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let parent_policy_tag_binding = args.parent_policy_tag.get_output(context);
@@ -191,6 +207,7 @@ pub mod policy_tag {
                     value: &taxonomy_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PolicyTagResult {

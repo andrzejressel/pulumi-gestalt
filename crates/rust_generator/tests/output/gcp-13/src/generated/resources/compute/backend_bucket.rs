@@ -268,6 +268,22 @@ pub mod backend_bucket {
         name: &str,
         args: BackendBucketArgs,
     ) -> BackendBucketResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackendBucketArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BackendBucketResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackendBucketArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BackendBucketResult {
         let bucket_name_binding = args.bucket_name.get_output(context);
         let cdn_policy_binding = args.cdn_policy.get_output(context);
         let compression_mode_binding = args.compression_mode.get_output(context);
@@ -321,6 +337,7 @@ pub mod backend_bucket {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BackendBucketResult {

@@ -151,6 +151,22 @@ pub mod app_check_device_check_config {
         name: &str,
         args: AppCheckDeviceCheckConfigArgs,
     ) -> AppCheckDeviceCheckConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AppCheckDeviceCheckConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AppCheckDeviceCheckConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AppCheckDeviceCheckConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AppCheckDeviceCheckConfigResult {
         let app_id_binding = args.app_id.get_output(context);
         let key_id_binding = args.key_id.get_output(context);
         let private_key_binding = args.private_key.get_output(context);
@@ -183,6 +199,7 @@ pub mod app_check_device_check_config {
                     value: &token_ttl_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AppCheckDeviceCheckConfigResult {

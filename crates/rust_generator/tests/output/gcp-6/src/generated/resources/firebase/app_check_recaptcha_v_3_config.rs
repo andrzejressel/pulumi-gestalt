@@ -138,6 +138,22 @@ pub mod app_check_recaptcha_v_3_config {
         name: &str,
         args: AppCheckRecaptchaV3ConfigArgs,
     ) -> AppCheckRecaptchaV3ConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AppCheckRecaptchaV3ConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AppCheckRecaptchaV3ConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AppCheckRecaptchaV3ConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AppCheckRecaptchaV3ConfigResult {
         let app_id_binding = args.app_id.get_output(context);
         let project_binding = args.project.get_output(context);
         let site_secret_binding = args.site_secret.get_output(context);
@@ -165,6 +181,7 @@ pub mod app_check_recaptcha_v_3_config {
                     value: &token_ttl_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AppCheckRecaptchaV3ConfigResult {

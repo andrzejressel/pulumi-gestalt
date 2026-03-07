@@ -213,6 +213,22 @@ pub mod java_app_layer {
         name: &str,
         args: JavaAppLayerArgs,
     ) -> JavaAppLayerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: JavaAppLayerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> JavaAppLayerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: JavaAppLayerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> JavaAppLayerResult {
         let app_server_binding = args.app_server.get_output(context);
         let app_server_version_binding = args.app_server_version.get_output(context);
         let auto_assign_elastic_ips_binding = args
@@ -389,6 +405,7 @@ pub mod java_app_layer {
                     value: &use_ebs_optimized_instances_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         JavaAppLayerResult {

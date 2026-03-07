@@ -56,6 +56,22 @@ pub mod domain {
         name: &str,
         args: DomainArgs,
     ) -> DomainResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DomainArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DomainResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DomainArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DomainResult {
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:simpledb/domain:Domain".into(),
@@ -67,6 +83,7 @@ pub mod domain {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DomainResult {

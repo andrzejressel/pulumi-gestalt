@@ -449,6 +449,22 @@ pub mod region_security_policy_rule {
         name: &str,
         args: RegionSecurityPolicyRuleArgs,
     ) -> RegionSecurityPolicyRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionSecurityPolicyRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RegionSecurityPolicyRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionSecurityPolicyRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RegionSecurityPolicyRuleResult {
         let action_binding = args.action.get_output(context);
         let description_binding = args.description.get_output(context);
         let match__binding = args.match_.get_output(context);
@@ -513,6 +529,7 @@ pub mod region_security_policy_rule {
                     value: &security_policy_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RegionSecurityPolicyRuleResult {

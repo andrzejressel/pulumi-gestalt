@@ -120,6 +120,22 @@ pub mod server {
         name: &str,
         args: ServerArgs,
     ) -> ServerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServerResult {
         let customer_managed_key_binding = args.customer_managed_key.get_output(context);
         let identity_binding = args.identity.get_output(context);
         let location_binding = args.location.get_output(context);
@@ -161,6 +177,7 @@ pub mod server {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServerResult {

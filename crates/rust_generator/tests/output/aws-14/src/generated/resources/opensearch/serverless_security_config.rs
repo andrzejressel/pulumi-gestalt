@@ -67,6 +67,22 @@ pub mod serverless_security_config {
         name: &str,
         args: ServerlessSecurityConfigArgs,
     ) -> ServerlessSecurityConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServerlessSecurityConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServerlessSecurityConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServerlessSecurityConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServerlessSecurityConfigResult {
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let saml_options_binding = args.saml_options.get_output(context);
@@ -94,6 +110,7 @@ pub mod serverless_security_config {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServerlessSecurityConfigResult {

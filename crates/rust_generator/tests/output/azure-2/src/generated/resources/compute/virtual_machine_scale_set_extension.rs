@@ -192,6 +192,22 @@ pub mod virtual_machine_scale_set_extension {
         name: &str,
         args: VirtualMachineScaleSetExtensionArgs,
     ) -> VirtualMachineScaleSetExtensionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VirtualMachineScaleSetExtensionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VirtualMachineScaleSetExtensionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VirtualMachineScaleSetExtensionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VirtualMachineScaleSetExtensionResult {
         let auto_upgrade_minor_version_binding = args
             .auto_upgrade_minor_version
             .get_output(context);
@@ -276,6 +292,7 @@ pub mod virtual_machine_scale_set_extension {
                     value: &virtual_machine_scale_set_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VirtualMachineScaleSetExtensionResult {

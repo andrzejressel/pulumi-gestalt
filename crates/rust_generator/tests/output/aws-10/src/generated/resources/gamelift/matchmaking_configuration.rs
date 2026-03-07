@@ -133,6 +133,22 @@ pub mod matchmaking_configuration {
         name: &str,
         args: MatchmakingConfigurationArgs,
     ) -> MatchmakingConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MatchmakingConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MatchmakingConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MatchmakingConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MatchmakingConfigurationResult {
         let acceptance_required_binding = args.acceptance_required.get_output(context);
         let acceptance_timeout_seconds_binding = args
             .acceptance_timeout_seconds
@@ -223,6 +239,7 @@ pub mod matchmaking_configuration {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MatchmakingConfigurationResult {

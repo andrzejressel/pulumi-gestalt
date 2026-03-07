@@ -75,6 +75,22 @@ pub mod template_alias {
         name: &str,
         args: TemplateAliasArgs,
     ) -> TemplateAliasResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TemplateAliasArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TemplateAliasResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TemplateAliasArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TemplateAliasResult {
         let alias_name_binding = args.alias_name.get_output(context);
         let aws_account_id_binding = args.aws_account_id.get_output(context);
         let template_id_binding = args.template_id.get_output(context);
@@ -103,6 +119,7 @@ pub mod template_alias {
                     value: &template_version_number_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TemplateAliasResult {

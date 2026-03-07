@@ -64,6 +64,22 @@ pub mod control_tower_control {
         name: &str,
         args: ControlTowerControlArgs,
     ) -> ControlTowerControlResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ControlTowerControlArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ControlTowerControlResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ControlTowerControlArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ControlTowerControlResult {
         let control_identifier_binding = args.control_identifier.get_output(context);
         let parameters_binding = args.parameters.get_output(context);
         let target_identifier_binding = args.target_identifier.get_output(context);
@@ -85,6 +101,7 @@ pub mod control_tower_control {
                     value: &target_identifier_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ControlTowerControlResult {

@@ -142,6 +142,22 @@ pub mod engine_split_traffic {
         name: &str,
         args: EngineSplitTrafficArgs,
     ) -> EngineSplitTrafficResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EngineSplitTrafficArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EngineSplitTrafficResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EngineSplitTrafficArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EngineSplitTrafficResult {
         let migrate_traffic_binding = args.migrate_traffic.get_output(context);
         let project_binding = args.project.get_output(context);
         let service_binding = args.service.get_output(context);
@@ -168,6 +184,7 @@ pub mod engine_split_traffic {
                     value: &split_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EngineSplitTrafficResult {

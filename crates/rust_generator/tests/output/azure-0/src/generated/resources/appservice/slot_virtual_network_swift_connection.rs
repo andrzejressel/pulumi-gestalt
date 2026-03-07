@@ -119,6 +119,22 @@ pub mod slot_virtual_network_swift_connection {
         name: &str,
         args: SlotVirtualNetworkSwiftConnectionArgs,
     ) -> SlotVirtualNetworkSwiftConnectionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SlotVirtualNetworkSwiftConnectionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SlotVirtualNetworkSwiftConnectionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SlotVirtualNetworkSwiftConnectionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SlotVirtualNetworkSwiftConnectionResult {
         let app_service_id_binding = args.app_service_id.get_output(context);
         let slot_name_binding = args.slot_name.get_output(context);
         let subnet_id_binding = args.subnet_id.get_output(context);
@@ -141,6 +157,7 @@ pub mod slot_virtual_network_swift_connection {
                     value: &subnet_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SlotVirtualNetworkSwiftConnectionResult {

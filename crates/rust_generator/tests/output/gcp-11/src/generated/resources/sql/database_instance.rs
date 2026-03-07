@@ -467,6 +467,22 @@ pub mod database_instance {
         name: &str,
         args: DatabaseInstanceArgs,
     ) -> DatabaseInstanceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatabaseInstanceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DatabaseInstanceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatabaseInstanceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DatabaseInstanceResult {
         let clone_binding = args.clone.get_output(context);
         let database_version_binding = args.database_version.get_output(context);
         let deletion_protection_binding = args.deletion_protection.get_output(context);
@@ -552,6 +568,7 @@ pub mod database_instance {
                     value: &settings_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DatabaseInstanceResult {

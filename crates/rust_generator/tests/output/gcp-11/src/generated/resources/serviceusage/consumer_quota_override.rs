@@ -220,6 +220,22 @@ pub mod consumer_quota_override {
         name: &str,
         args: ConsumerQuotaOverrideArgs,
     ) -> ConsumerQuotaOverrideResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConsumerQuotaOverrideArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ConsumerQuotaOverrideResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConsumerQuotaOverrideArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ConsumerQuotaOverrideResult {
         let dimensions_binding = args.dimensions.get_output(context);
         let force_binding = args.force.get_output(context);
         let limit_binding = args.limit.get_output(context);
@@ -261,6 +277,7 @@ pub mod consumer_quota_override {
                     value: &service_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ConsumerQuotaOverrideResult {

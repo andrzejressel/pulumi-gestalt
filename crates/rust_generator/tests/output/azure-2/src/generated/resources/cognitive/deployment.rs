@@ -121,6 +121,22 @@ pub mod deployment {
         name: &str,
         args: DeploymentArgs,
     ) -> DeploymentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DeploymentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DeploymentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DeploymentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DeploymentResult {
         let cognitive_account_id_binding = args.cognitive_account_id.get_output(context);
         let dynamic_throttling_enabled_binding = args
             .dynamic_throttling_enabled
@@ -166,6 +182,7 @@ pub mod deployment {
                     value: &version_upgrade_option_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DeploymentResult {

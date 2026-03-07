@@ -312,6 +312,22 @@ pub mod virtual_machine {
         name: &str,
         args: VirtualMachineArgs,
     ) -> VirtualMachineResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VirtualMachineArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VirtualMachineResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VirtualMachineArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VirtualMachineResult {
         let additional_capabilities_binding = args
             .additional_capabilities
             .get_output(context);
@@ -456,6 +472,7 @@ pub mod virtual_machine {
                     value: &zones_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VirtualMachineResult {

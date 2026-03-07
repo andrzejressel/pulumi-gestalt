@@ -221,6 +221,22 @@ pub mod global_replication_group {
         name: &str,
         args: GlobalReplicationGroupArgs,
     ) -> GlobalReplicationGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GlobalReplicationGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GlobalReplicationGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GlobalReplicationGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GlobalReplicationGroupResult {
         let automatic_failover_enabled_binding = args
             .automatic_failover_enabled
             .get_output(context);
@@ -276,6 +292,7 @@ pub mod global_replication_group {
                     value: &primary_replication_group_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GlobalReplicationGroupResult {

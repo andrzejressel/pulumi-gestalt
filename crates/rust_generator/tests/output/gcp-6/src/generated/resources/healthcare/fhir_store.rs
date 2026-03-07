@@ -376,6 +376,22 @@ pub mod fhir_store {
         name: &str,
         args: FhirStoreArgs,
     ) -> FhirStoreResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FhirStoreArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FhirStoreResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FhirStoreArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FhirStoreResult {
         let complex_data_type_reference_parsing_binding = args
             .complex_data_type_reference_parsing
             .get_output(context);
@@ -464,6 +480,7 @@ pub mod fhir_store {
                     value: &version_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FhirStoreResult {

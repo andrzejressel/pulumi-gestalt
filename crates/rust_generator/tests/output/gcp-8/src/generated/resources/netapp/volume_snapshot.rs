@@ -168,6 +168,22 @@ pub mod volume_snapshot {
         name: &str,
         args: VolumeSnapshotArgs,
     ) -> VolumeSnapshotResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VolumeSnapshotArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VolumeSnapshotResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VolumeSnapshotArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VolumeSnapshotResult {
         let description_binding = args.description.get_output(context);
         let labels_binding = args.labels.get_output(context);
         let location_binding = args.location.get_output(context);
@@ -204,6 +220,7 @@ pub mod volume_snapshot {
                     value: &volume_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VolumeSnapshotResult {

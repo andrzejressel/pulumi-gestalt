@@ -85,6 +85,22 @@ pub mod prepared_statement {
         name: &str,
         args: PreparedStatementArgs,
     ) -> PreparedStatementResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PreparedStatementArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PreparedStatementResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PreparedStatementArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PreparedStatementResult {
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let query_statement_binding = args.query_statement.get_output(context);
@@ -111,6 +127,7 @@ pub mod prepared_statement {
                     value: &workgroup_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PreparedStatementResult {

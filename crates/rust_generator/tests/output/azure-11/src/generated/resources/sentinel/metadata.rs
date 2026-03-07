@@ -229,6 +229,22 @@ pub mod metadata {
         name: &str,
         args: MetadataArgs,
     ) -> MetadataResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MetadataArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MetadataResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MetadataArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MetadataResult {
         let author_binding = args.author.get_output(context);
         let category_binding = args.category.get_output(context);
         let content_id_binding = args.content_id.get_output(context);
@@ -346,6 +362,7 @@ pub mod metadata {
                     value: &workspace_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MetadataResult {

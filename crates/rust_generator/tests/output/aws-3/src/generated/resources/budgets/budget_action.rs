@@ -190,6 +190,22 @@ pub mod budget_action {
         name: &str,
         args: BudgetActionArgs,
     ) -> BudgetActionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BudgetActionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BudgetActionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BudgetActionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BudgetActionResult {
         let account_id_binding = args.account_id.get_output(context);
         let action_threshold_binding = args.action_threshold.get_output(context);
         let action_type_binding = args.action_type.get_output(context);
@@ -246,6 +262,7 @@ pub mod budget_action {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BudgetActionResult {

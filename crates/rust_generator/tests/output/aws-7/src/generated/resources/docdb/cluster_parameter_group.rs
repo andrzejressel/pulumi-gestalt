@@ -103,6 +103,22 @@ pub mod cluster_parameter_group {
         name: &str,
         args: ClusterParameterGroupArgs,
     ) -> ClusterParameterGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClusterParameterGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ClusterParameterGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClusterParameterGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ClusterParameterGroupResult {
         let description_binding = args.description.get_output(context);
         let family_binding = args.family.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -139,6 +155,7 @@ pub mod cluster_parameter_group {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ClusterParameterGroupResult {

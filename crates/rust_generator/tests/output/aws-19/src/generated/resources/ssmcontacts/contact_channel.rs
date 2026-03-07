@@ -117,6 +117,22 @@ pub mod contact_channel {
         name: &str,
         args: ContactChannelArgs,
     ) -> ContactChannelResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ContactChannelArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ContactChannelResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ContactChannelArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ContactChannelResult {
         let contact_id_binding = args.contact_id.get_output(context);
         let delivery_address_binding = args.delivery_address.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -143,6 +159,7 @@ pub mod contact_channel {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ContactChannelResult {

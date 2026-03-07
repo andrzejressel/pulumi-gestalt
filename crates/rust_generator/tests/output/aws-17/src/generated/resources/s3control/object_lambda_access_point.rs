@@ -98,6 +98,22 @@ pub mod object_lambda_access_point {
         name: &str,
         args: ObjectLambdaAccessPointArgs,
     ) -> ObjectLambdaAccessPointResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ObjectLambdaAccessPointArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ObjectLambdaAccessPointResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ObjectLambdaAccessPointArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ObjectLambdaAccessPointResult {
         let account_id_binding = args.account_id.get_output(context);
         let configuration_binding = args.configuration.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -120,6 +136,7 @@ pub mod object_lambda_access_point {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ObjectLambdaAccessPointResult {

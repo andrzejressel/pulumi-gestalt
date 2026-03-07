@@ -63,6 +63,22 @@ pub mod vpc_ipam_organization_admin_account {
         name: &str,
         args: VpcIpamOrganizationAdminAccountArgs,
     ) -> VpcIpamOrganizationAdminAccountResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcIpamOrganizationAdminAccountArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VpcIpamOrganizationAdminAccountResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcIpamOrganizationAdminAccountArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VpcIpamOrganizationAdminAccountResult {
         let delegated_admin_account_id_binding = args
             .delegated_admin_account_id
             .get_output(context);
@@ -77,6 +93,7 @@ pub mod vpc_ipam_organization_admin_account {
                     value: &delegated_admin_account_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VpcIpamOrganizationAdminAccountResult {

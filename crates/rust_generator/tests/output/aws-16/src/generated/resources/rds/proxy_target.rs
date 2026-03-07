@@ -126,6 +126,22 @@ pub mod proxy_target {
         name: &str,
         args: ProxyTargetArgs,
     ) -> ProxyTargetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProxyTargetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ProxyTargetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProxyTargetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ProxyTargetResult {
         let db_cluster_identifier_binding = args
             .db_cluster_identifier
             .get_output(context);
@@ -156,6 +172,7 @@ pub mod proxy_target {
                     value: &target_group_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ProxyTargetResult {

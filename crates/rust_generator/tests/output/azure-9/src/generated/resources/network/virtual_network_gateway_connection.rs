@@ -444,6 +444,22 @@ pub mod virtual_network_gateway_connection {
         name: &str,
         args: VirtualNetworkGatewayConnectionArgs,
     ) -> VirtualNetworkGatewayConnectionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VirtualNetworkGatewayConnectionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VirtualNetworkGatewayConnectionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VirtualNetworkGatewayConnectionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VirtualNetworkGatewayConnectionResult {
         let authorization_key_binding = args.authorization_key.get_output(context);
         let connection_mode_binding = args.connection_mode.get_output(context);
         let connection_protocol_binding = args.connection_protocol.get_output(context);
@@ -594,6 +610,7 @@ pub mod virtual_network_gateway_connection {
                     value: &virtual_network_gateway_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VirtualNetworkGatewayConnectionResult {

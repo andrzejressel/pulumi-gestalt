@@ -127,6 +127,22 @@ pub mod spring_cloud_dynatrace_application_performance_monitoring {
         name: &str,
         args: SpringCloudDynatraceApplicationPerformanceMonitoringArgs,
     ) -> SpringCloudDynatraceApplicationPerformanceMonitoringResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudDynatraceApplicationPerformanceMonitoringArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SpringCloudDynatraceApplicationPerformanceMonitoringResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudDynatraceApplicationPerformanceMonitoringArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SpringCloudDynatraceApplicationPerformanceMonitoringResult {
         let api_token_binding = args.api_token.get_output(context);
         let api_url_binding = args.api_url.get_output(context);
         let connection_point_binding = args.connection_point.get_output(context);
@@ -181,6 +197,7 @@ pub mod spring_cloud_dynatrace_application_performance_monitoring {
                     value: &tenant_token_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SpringCloudDynatraceApplicationPerformanceMonitoringResult {

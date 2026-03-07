@@ -896,6 +896,22 @@ pub mod url_map {
         name: &str,
         args: URLMapArgs,
     ) -> URLMapResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: URLMapArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> URLMapResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: URLMapArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> URLMapResult {
         let default_custom_error_response_policy_binding = args
             .default_custom_error_response_policy
             .get_output(context);
@@ -959,6 +975,7 @@ pub mod url_map {
                     value: &tests_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         URLMapResult {

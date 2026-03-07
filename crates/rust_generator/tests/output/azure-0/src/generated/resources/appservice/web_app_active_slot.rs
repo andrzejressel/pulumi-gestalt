@@ -144,6 +144,22 @@ pub mod web_app_active_slot {
         name: &str,
         args: WebAppActiveSlotArgs,
     ) -> WebAppActiveSlotResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WebAppActiveSlotArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WebAppActiveSlotResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WebAppActiveSlotArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WebAppActiveSlotResult {
         let overwrite_network_config_binding = args
             .overwrite_network_config
             .get_output(context);
@@ -162,6 +178,7 @@ pub mod web_app_active_slot {
                     value: &slot_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WebAppActiveSlotResult {

@@ -277,6 +277,22 @@ pub mod workload {
         name: &str,
         args: WorkloadArgs,
     ) -> WorkloadResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkloadArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WorkloadResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkloadArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WorkloadResult {
         let billing_account_binding = args.billing_account.get_output(context);
         let compliance_regime_binding = args.compliance_regime.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
@@ -366,6 +382,7 @@ pub mod workload {
                     value: &workload_options_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WorkloadResult {

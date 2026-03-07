@@ -94,6 +94,22 @@ pub mod voice_connector_termination_credentials {
         name: &str,
         args: VoiceConnectorTerminationCredentialsArgs,
     ) -> VoiceConnectorTerminationCredentialsResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VoiceConnectorTerminationCredentialsArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VoiceConnectorTerminationCredentialsResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VoiceConnectorTerminationCredentialsArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VoiceConnectorTerminationCredentialsResult {
         let credentials_binding = args.credentials.get_output(context);
         let voice_connector_id_binding = args.voice_connector_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -111,6 +127,7 @@ pub mod voice_connector_termination_credentials {
                     value: &voice_connector_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VoiceConnectorTerminationCredentialsResult {

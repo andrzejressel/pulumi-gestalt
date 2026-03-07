@@ -136,6 +136,22 @@ pub mod organization_custom_rule {
         name: &str,
         args: OrganizationCustomRuleArgs,
     ) -> OrganizationCustomRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationCustomRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OrganizationCustomRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationCustomRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OrganizationCustomRuleResult {
         let description_binding = args.description.get_output(context);
         let excluded_accounts_binding = args.excluded_accounts.get_output(context);
         let input_parameters_binding = args.input_parameters.get_output(context);
@@ -201,6 +217,7 @@ pub mod organization_custom_rule {
                     value: &trigger_types_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OrganizationCustomRuleResult {

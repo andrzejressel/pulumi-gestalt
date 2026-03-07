@@ -136,6 +136,22 @@ pub mod file_upload {
         name: &str,
         args: FileUploadArgs,
     ) -> FileUploadResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FileUploadArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FileUploadResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FileUploadArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FileUploadResult {
         let authentication_type_binding = args.authentication_type.get_output(context);
         let connection_string_binding = args.connection_string.get_output(context);
         let container_name_binding = args.container_name.get_output(context);
@@ -194,6 +210,7 @@ pub mod file_upload {
                     value: &sas_ttl_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FileUploadResult {

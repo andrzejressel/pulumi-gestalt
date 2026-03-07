@@ -279,6 +279,22 @@ pub mod addon {
         name: &str,
         args: AddonArgs,
     ) -> AddonResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AddonArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AddonResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AddonArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AddonResult {
         let addon_name_binding = args.addon_name.get_output(context);
         let addon_version_binding = args.addon_version.get_output(context);
         let cluster_name_binding = args.cluster_name.get_output(context);
@@ -348,6 +364,7 @@ pub mod addon {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AddonResult {

@@ -71,6 +71,22 @@ pub mod action_target {
         name: &str,
         args: ActionTargetArgs,
     ) -> ActionTargetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ActionTargetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ActionTargetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ActionTargetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ActionTargetResult {
         let description_binding = args.description.get_output(context);
         let identifier_binding = args.identifier.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -92,6 +108,7 @@ pub mod action_target {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ActionTargetResult {

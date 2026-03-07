@@ -140,6 +140,22 @@ pub mod origin_access_identity {
         name: &str,
         args: OriginAccessIdentityArgs,
     ) -> OriginAccessIdentityResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OriginAccessIdentityArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OriginAccessIdentityResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OriginAccessIdentityArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OriginAccessIdentityResult {
         let comment_binding = args.comment.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:cloudfront/originAccessIdentity:OriginAccessIdentity".into(),
@@ -151,6 +167,7 @@ pub mod origin_access_identity {
                     value: &comment_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OriginAccessIdentityResult {

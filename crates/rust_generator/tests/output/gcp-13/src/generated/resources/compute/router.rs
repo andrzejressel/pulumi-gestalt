@@ -192,6 +192,22 @@ pub mod router {
         name: &str,
         args: RouterArgs,
     ) -> RouterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RouterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RouterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RouterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RouterResult {
         let bgp_binding = args.bgp.get_output(context);
         let description_binding = args.description.get_output(context);
         let encrypted_interconnect_router_binding = args
@@ -235,6 +251,7 @@ pub mod router {
                     value: &region_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RouterResult {

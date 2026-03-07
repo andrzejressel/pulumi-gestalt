@@ -188,6 +188,22 @@ pub mod platform_application {
         name: &str,
         args: PlatformApplicationArgs,
     ) -> PlatformApplicationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PlatformApplicationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PlatformApplicationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PlatformApplicationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PlatformApplicationResult {
         let apple_platform_bundle_id_binding = args
             .apple_platform_bundle_id
             .get_output(context);
@@ -277,6 +293,7 @@ pub mod platform_application {
                     value: &success_feedback_sample_rate_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PlatformApplicationResult {

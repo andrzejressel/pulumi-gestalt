@@ -79,6 +79,22 @@ pub mod certificate_validation {
         name: &str,
         args: CertificateValidationArgs,
     ) -> CertificateValidationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CertificateValidationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CertificateValidationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CertificateValidationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CertificateValidationResult {
         let certificate_arn_binding = args.certificate_arn.get_output(context);
         let validation_record_fqdns_binding = args
             .validation_record_fqdns
@@ -97,6 +113,7 @@ pub mod certificate_validation {
                     value: &validation_record_fqdns_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CertificateValidationResult {

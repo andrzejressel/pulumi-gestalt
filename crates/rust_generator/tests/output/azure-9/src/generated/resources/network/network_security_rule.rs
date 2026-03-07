@@ -189,6 +189,22 @@ pub mod network_security_rule {
         name: &str,
         args: NetworkSecurityRuleArgs,
     ) -> NetworkSecurityRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkSecurityRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NetworkSecurityRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkSecurityRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NetworkSecurityRuleResult {
         let access_binding = args.access.get_output(context);
         let description_binding = args.description.get_output(context);
         let destination_address_prefix_binding = args
@@ -304,6 +320,7 @@ pub mod network_security_rule {
                     value: &source_port_ranges_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NetworkSecurityRuleResult {

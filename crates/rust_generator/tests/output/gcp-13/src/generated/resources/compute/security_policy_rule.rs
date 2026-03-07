@@ -312,6 +312,22 @@ pub mod security_policy_rule {
         name: &str,
         args: SecurityPolicyRuleArgs,
     ) -> SecurityPolicyRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SecurityPolicyRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SecurityPolicyRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SecurityPolicyRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SecurityPolicyRuleResult {
         let action_binding = args.action.get_output(context);
         let description_binding = args.description.get_output(context);
         let header_action_binding = args.header_action.get_output(context);
@@ -375,6 +391,7 @@ pub mod security_policy_rule {
                     value: &security_policy_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SecurityPolicyRuleResult {

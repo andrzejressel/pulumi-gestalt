@@ -243,6 +243,22 @@ pub mod ai_feature_online_store {
         name: &str,
         args: AiFeatureOnlineStoreArgs,
     ) -> AiFeatureOnlineStoreResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AiFeatureOnlineStoreArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AiFeatureOnlineStoreResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AiFeatureOnlineStoreArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AiFeatureOnlineStoreResult {
         let bigtable_binding = args.bigtable.get_output(context);
         let dedicated_serving_endpoint_binding = args
             .dedicated_serving_endpoint
@@ -296,6 +312,7 @@ pub mod ai_feature_online_store {
                     value: &region_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AiFeatureOnlineStoreResult {

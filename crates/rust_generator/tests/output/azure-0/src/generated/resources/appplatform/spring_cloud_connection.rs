@@ -148,6 +148,22 @@ pub mod spring_cloud_connection {
         name: &str,
         args: SpringCloudConnectionArgs,
     ) -> SpringCloudConnectionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudConnectionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SpringCloudConnectionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudConnectionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SpringCloudConnectionResult {
         let authentication_binding = args.authentication.get_output(context);
         let client_type_binding = args.client_type.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -190,6 +206,7 @@ pub mod spring_cloud_connection {
                     value: &vnet_solution_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SpringCloudConnectionResult {

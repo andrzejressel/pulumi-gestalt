@@ -116,6 +116,22 @@ pub mod flexible_server_virtual_endpoint {
         name: &str,
         args: FlexibleServerVirtualEndpointArgs,
     ) -> FlexibleServerVirtualEndpointResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FlexibleServerVirtualEndpointArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FlexibleServerVirtualEndpointResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FlexibleServerVirtualEndpointArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FlexibleServerVirtualEndpointResult {
         let name_binding = args.name.get_output(context);
         let replica_server_id_binding = args.replica_server_id.get_output(context);
         let source_server_id_binding = args.source_server_id.get_output(context);
@@ -143,6 +159,7 @@ pub mod flexible_server_virtual_endpoint {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FlexibleServerVirtualEndpointResult {

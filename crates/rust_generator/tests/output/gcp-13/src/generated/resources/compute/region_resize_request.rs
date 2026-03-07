@@ -189,6 +189,22 @@ pub mod region_resize_request {
         name: &str,
         args: RegionResizeRequestArgs,
     ) -> RegionResizeRequestResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionResizeRequestArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RegionResizeRequestResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionResizeRequestArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RegionResizeRequestResult {
         let description_binding = args.description.get_output(context);
         let instance_group_manager_binding = args
             .instance_group_manager
@@ -234,6 +250,7 @@ pub mod region_resize_request {
                     value: &resize_by_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RegionResizeRequestResult {

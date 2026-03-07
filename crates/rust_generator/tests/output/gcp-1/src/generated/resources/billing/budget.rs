@@ -340,6 +340,22 @@ pub mod budget {
         name: &str,
         args: BudgetArgs,
     ) -> BudgetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BudgetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BudgetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BudgetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BudgetResult {
         let all_updates_rule_binding = args.all_updates_rule.get_output(context);
         let amount_binding = args.amount.get_output(context);
         let billing_account_binding = args.billing_account.get_output(context);
@@ -381,6 +397,7 @@ pub mod budget {
                     value: &threshold_rules_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BudgetResult {

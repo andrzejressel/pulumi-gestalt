@@ -250,6 +250,22 @@ pub mod spring_cloud_gateway {
         name: &str,
         args: SpringCloudGatewayArgs,
     ) -> SpringCloudGatewayResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudGatewayArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SpringCloudGatewayResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudGatewayArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SpringCloudGatewayResult {
         let api_metadata_binding = args.api_metadata.get_output(context);
         let application_performance_monitoring_ids_binding = args
             .application_performance_monitoring_ids
@@ -352,6 +368,7 @@ pub mod spring_cloud_gateway {
                     value: &sso_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SpringCloudGatewayResult {

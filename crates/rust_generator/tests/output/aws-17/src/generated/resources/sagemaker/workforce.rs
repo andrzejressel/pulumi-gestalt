@@ -151,6 +151,22 @@ pub mod workforce {
         name: &str,
         args: WorkforceArgs,
     ) -> WorkforceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkforceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WorkforceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkforceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WorkforceResult {
         let cognito_config_binding = args.cognito_config.get_output(context);
         let oidc_config_binding = args.oidc_config.get_output(context);
         let source_ip_config_binding = args.source_ip_config.get_output(context);
@@ -182,6 +198,7 @@ pub mod workforce {
                     value: &workforce_vpc_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WorkforceResult {

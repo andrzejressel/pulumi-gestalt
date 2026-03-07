@@ -78,6 +78,22 @@ pub mod base_path_mapping {
         name: &str,
         args: BasePathMappingArgs,
     ) -> BasePathMappingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BasePathMappingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BasePathMappingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BasePathMappingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BasePathMappingResult {
         let base_path_binding = args.base_path.get_output(context);
         let domain_name_binding = args.domain_name.get_output(context);
         let domain_name_id_binding = args.domain_name_id.get_output(context);
@@ -109,6 +125,7 @@ pub mod base_path_mapping {
                     value: &stage_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BasePathMappingResult {

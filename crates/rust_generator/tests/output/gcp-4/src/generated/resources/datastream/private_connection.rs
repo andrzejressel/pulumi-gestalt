@@ -149,6 +149,22 @@ pub mod private_connection {
         name: &str,
         args: PrivateConnectionArgs,
     ) -> PrivateConnectionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PrivateConnectionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PrivateConnectionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PrivateConnectionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PrivateConnectionResult {
         let create_without_validation_binding = args
             .create_without_validation
             .get_output(context);
@@ -194,6 +210,7 @@ pub mod private_connection {
                     value: &vpc_peering_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PrivateConnectionResult {

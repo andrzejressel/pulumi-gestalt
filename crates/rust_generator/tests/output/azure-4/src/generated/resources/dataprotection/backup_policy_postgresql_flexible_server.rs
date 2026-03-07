@@ -150,6 +150,22 @@ pub mod backup_policy_postgresql_flexible_server {
         name: &str,
         args: BackupPolicyPostgresqlFlexibleServerArgs,
     ) -> BackupPolicyPostgresqlFlexibleServerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackupPolicyPostgresqlFlexibleServerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BackupPolicyPostgresqlFlexibleServerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackupPolicyPostgresqlFlexibleServerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BackupPolicyPostgresqlFlexibleServerResult {
         let backup_repeating_time_intervals_binding = args
             .backup_repeating_time_intervals
             .get_output(context);
@@ -191,6 +207,7 @@ pub mod backup_policy_postgresql_flexible_server {
                     value: &vault_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BackupPolicyPostgresqlFlexibleServerResult {

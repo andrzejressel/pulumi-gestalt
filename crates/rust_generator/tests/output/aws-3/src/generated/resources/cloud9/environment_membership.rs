@@ -81,6 +81,22 @@ pub mod environment_membership {
         name: &str,
         args: EnvironmentMembershipArgs,
     ) -> EnvironmentMembershipResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EnvironmentMembershipArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EnvironmentMembershipResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EnvironmentMembershipArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EnvironmentMembershipResult {
         let environment_id_binding = args.environment_id.get_output(context);
         let permissions_binding = args.permissions.get_output(context);
         let user_arn_binding = args.user_arn.get_output(context);
@@ -102,6 +118,7 @@ pub mod environment_membership {
                     value: &user_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EnvironmentMembershipResult {

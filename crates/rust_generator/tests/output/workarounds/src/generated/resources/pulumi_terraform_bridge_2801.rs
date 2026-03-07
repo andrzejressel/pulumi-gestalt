@@ -31,6 +31,22 @@ pub mod pulumi_terraform_bridge_2801 {
         name: &str,
         args: PulumiTerraformBridge2801Args,
     ) -> PulumiTerraformBridge2801Result {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PulumiTerraformBridge2801Args,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PulumiTerraformBridge2801Result {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PulumiTerraformBridge2801Args,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PulumiTerraformBridge2801Result {
         let type__binding = args.type_.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "example:index:PulumiTerraformBridge2801".into(),
@@ -42,6 +58,7 @@ pub mod pulumi_terraform_bridge_2801 {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PulumiTerraformBridge2801Result {

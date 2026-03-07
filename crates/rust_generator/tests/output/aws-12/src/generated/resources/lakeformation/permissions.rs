@@ -328,6 +328,22 @@ pub mod permissions {
         name: &str,
         args: PermissionsArgs,
     ) -> PermissionsResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PermissionsArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PermissionsResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PermissionsArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PermissionsResult {
         let catalog_id_binding = args.catalog_id.get_output(context);
         let catalog_resource_binding = args.catalog_resource.get_output(context);
         let data_cells_filter_binding = args.data_cells_filter.get_output(context);
@@ -396,6 +412,7 @@ pub mod permissions {
                     value: &table_with_columns_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PermissionsResult {

@@ -69,6 +69,22 @@ pub mod invitation_accepter {
         name: &str,
         args: InvitationAccepterArgs,
     ) -> InvitationAccepterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InvitationAccepterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> InvitationAccepterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InvitationAccepterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> InvitationAccepterResult {
         let administrator_account_id_binding = args
             .administrator_account_id
             .get_output(context);
@@ -82,6 +98,7 @@ pub mod invitation_accepter {
                     value: &administrator_account_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         InvitationAccepterResult {

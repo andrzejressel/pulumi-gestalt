@@ -162,6 +162,22 @@ pub mod catalog_table_optimizer {
         name: &str,
         args: CatalogTableOptimizerArgs,
     ) -> CatalogTableOptimizerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CatalogTableOptimizerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CatalogTableOptimizerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CatalogTableOptimizerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CatalogTableOptimizerResult {
         let catalog_id_binding = args.catalog_id.get_output(context);
         let configuration_binding = args.configuration.get_output(context);
         let database_name_binding = args.database_name.get_output(context);
@@ -193,6 +209,7 @@ pub mod catalog_table_optimizer {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CatalogTableOptimizerResult {

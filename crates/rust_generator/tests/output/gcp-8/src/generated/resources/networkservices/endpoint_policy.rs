@@ -187,6 +187,22 @@ pub mod endpoint_policy {
         name: &str,
         args: EndpointPolicyArgs,
     ) -> EndpointPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EndpointPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EndpointPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EndpointPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EndpointPolicyResult {
         let authorization_policy_binding = args.authorization_policy.get_output(context);
         let client_tls_policy_binding = args.client_tls_policy.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -245,6 +261,7 @@ pub mod endpoint_policy {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EndpointPolicyResult {

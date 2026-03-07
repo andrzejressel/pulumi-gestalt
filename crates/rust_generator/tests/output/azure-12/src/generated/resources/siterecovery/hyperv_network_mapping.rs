@@ -100,6 +100,22 @@ pub mod hyperv_network_mapping {
         name: &str,
         args: HypervNetworkMappingArgs,
     ) -> HypervNetworkMappingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HypervNetworkMappingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> HypervNetworkMappingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HypervNetworkMappingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> HypervNetworkMappingResult {
         let name_binding = args.name.get_output(context);
         let recovery_vault_id_binding = args.recovery_vault_id.get_output(context);
         let source_network_name_binding = args.source_network_name.get_output(context);
@@ -134,6 +150,7 @@ pub mod hyperv_network_mapping {
                     value: &target_network_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         HypervNetworkMappingResult {

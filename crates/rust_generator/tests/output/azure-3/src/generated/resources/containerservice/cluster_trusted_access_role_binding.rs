@@ -155,6 +155,22 @@ pub mod cluster_trusted_access_role_binding {
         name: &str,
         args: ClusterTrustedAccessRoleBindingArgs,
     ) -> ClusterTrustedAccessRoleBindingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClusterTrustedAccessRoleBindingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ClusterTrustedAccessRoleBindingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClusterTrustedAccessRoleBindingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ClusterTrustedAccessRoleBindingResult {
         let kubernetes_cluster_id_binding = args
             .kubernetes_cluster_id
             .get_output(context);
@@ -184,6 +200,7 @@ pub mod cluster_trusted_access_role_binding {
                     value: &source_resource_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ClusterTrustedAccessRoleBindingResult {

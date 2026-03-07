@@ -61,6 +61,22 @@ pub mod default_kms_key {
         name: &str,
         args: DefaultKmsKeyArgs,
     ) -> DefaultKmsKeyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DefaultKmsKeyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DefaultKmsKeyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DefaultKmsKeyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DefaultKmsKeyResult {
         let key_arn_binding = args.key_arn.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ebs/defaultKmsKey:DefaultKmsKey".into(),
@@ -72,6 +88,7 @@ pub mod default_kms_key {
                     value: &key_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DefaultKmsKeyResult {

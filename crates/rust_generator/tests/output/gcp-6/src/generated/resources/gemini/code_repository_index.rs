@@ -139,6 +139,22 @@ pub mod code_repository_index {
         name: &str,
         args: CodeRepositoryIndexArgs,
     ) -> CodeRepositoryIndexResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CodeRepositoryIndexArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CodeRepositoryIndexResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CodeRepositoryIndexArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CodeRepositoryIndexResult {
         let code_repository_index_id_binding = args
             .code_repository_index_id
             .get_output(context);
@@ -172,6 +188,7 @@ pub mod code_repository_index {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CodeRepositoryIndexResult {

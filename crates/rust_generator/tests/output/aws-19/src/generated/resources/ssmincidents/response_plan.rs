@@ -155,6 +155,22 @@ pub mod response_plan {
         name: &str,
         args: ResponsePlanArgs,
     ) -> ResponsePlanResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResponsePlanArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ResponsePlanResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResponsePlanArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ResponsePlanResult {
         let action_binding = args.action.get_output(context);
         let chat_channels_binding = args.chat_channels.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
@@ -201,6 +217,7 @@ pub mod response_plan {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ResponsePlanResult {

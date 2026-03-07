@@ -160,6 +160,22 @@ pub mod datastore_datalake_gen_2 {
         name: &str,
         args: DatastoreDatalakeGen2Args,
     ) -> DatastoreDatalakeGen2Result {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatastoreDatalakeGen2Args,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DatastoreDatalakeGen2Result {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatastoreDatalakeGen2Args,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DatastoreDatalakeGen2Result {
         let authority_url_binding = args.authority_url.get_output(context);
         let client_id_binding = args.client_id.get_output(context);
         let client_secret_binding = args.client_secret.get_output(context);
@@ -219,6 +235,7 @@ pub mod datastore_datalake_gen_2 {
                     value: &workspace_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DatastoreDatalakeGen2Result {

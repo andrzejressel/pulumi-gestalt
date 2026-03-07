@@ -113,6 +113,22 @@ pub mod invocation_logging_configuration {
         name: &str,
         args: InvocationLoggingConfigurationArgs,
     ) -> InvocationLoggingConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InvocationLoggingConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> InvocationLoggingConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InvocationLoggingConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> InvocationLoggingConfigurationResult {
         let logging_config_binding = args.logging_config.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:bedrockmodel/invocationLoggingConfiguration:InvocationLoggingConfiguration"
@@ -125,6 +141,7 @@ pub mod invocation_logging_configuration {
                     value: &logging_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         InvocationLoggingConfigurationResult {

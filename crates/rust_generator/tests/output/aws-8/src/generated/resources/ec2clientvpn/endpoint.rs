@@ -178,6 +178,22 @@ pub mod endpoint {
         name: &str,
         args: EndpointArgs,
     ) -> EndpointResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EndpointArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EndpointResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EndpointArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EndpointResult {
         let authentication_options_binding = args
             .authentication_options
             .get_output(context);
@@ -276,6 +292,7 @@ pub mod endpoint {
                     value: &vpn_port_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EndpointResult {

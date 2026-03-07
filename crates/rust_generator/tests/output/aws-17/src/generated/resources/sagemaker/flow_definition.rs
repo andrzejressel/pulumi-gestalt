@@ -228,6 +228,22 @@ pub mod flow_definition {
         name: &str,
         args: FlowDefinitionArgs,
     ) -> FlowDefinitionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FlowDefinitionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FlowDefinitionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FlowDefinitionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FlowDefinitionResult {
         let flow_definition_name_binding = args.flow_definition_name.get_output(context);
         let human_loop_activation_config_binding = args
             .human_loop_activation_config
@@ -273,6 +289,7 @@ pub mod flow_definition {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FlowDefinitionResult {

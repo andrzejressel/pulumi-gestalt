@@ -70,6 +70,22 @@ pub mod workspace_service_account {
         name: &str,
         args: WorkspaceServiceAccountArgs,
     ) -> WorkspaceServiceAccountResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkspaceServiceAccountArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WorkspaceServiceAccountResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkspaceServiceAccountArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WorkspaceServiceAccountResult {
         let grafana_role_binding = args.grafana_role.get_output(context);
         let name_binding = args.name.get_output(context);
         let workspace_id_binding = args.workspace_id.get_output(context);
@@ -91,6 +107,7 @@ pub mod workspace_service_account {
                     value: &workspace_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WorkspaceServiceAccountResult {

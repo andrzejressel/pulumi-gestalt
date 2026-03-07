@@ -210,6 +210,22 @@ pub mod scale_set_packet_capture {
         name: &str,
         args: ScaleSetPacketCaptureArgs,
     ) -> ScaleSetPacketCaptureResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ScaleSetPacketCaptureArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ScaleSetPacketCaptureResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ScaleSetPacketCaptureArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ScaleSetPacketCaptureResult {
         let filters_binding = args.filters.get_output(context);
         let machine_scope_binding = args.machine_scope.get_output(context);
         let maximum_bytes_per_packet_binding = args
@@ -269,6 +285,7 @@ pub mod scale_set_packet_capture {
                     value: &virtual_machine_scale_set_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ScaleSetPacketCaptureResult {

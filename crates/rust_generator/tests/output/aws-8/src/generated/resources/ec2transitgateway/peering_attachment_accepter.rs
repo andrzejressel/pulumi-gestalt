@@ -72,6 +72,22 @@ pub mod peering_attachment_accepter {
         name: &str,
         args: PeeringAttachmentAccepterArgs,
     ) -> PeeringAttachmentAccepterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PeeringAttachmentAccepterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PeeringAttachmentAccepterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PeeringAttachmentAccepterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PeeringAttachmentAccepterResult {
         let tags_binding = args.tags.get_output(context);
         let transit_gateway_attachment_id_binding = args
             .transit_gateway_attachment_id
@@ -91,6 +107,7 @@ pub mod peering_attachment_accepter {
                     value: &transit_gateway_attachment_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PeeringAttachmentAccepterResult {

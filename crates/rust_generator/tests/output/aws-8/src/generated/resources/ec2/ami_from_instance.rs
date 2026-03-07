@@ -165,6 +165,22 @@ pub mod ami_from_instance {
         name: &str,
         args: AmiFromInstanceArgs,
     ) -> AmiFromInstanceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AmiFromInstanceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AmiFromInstanceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AmiFromInstanceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AmiFromInstanceResult {
         let deprecation_time_binding = args.deprecation_time.get_output(context);
         let description_binding = args.description.get_output(context);
         let ebs_block_devices_binding = args.ebs_block_devices.get_output(context);
@@ -215,6 +231,7 @@ pub mod ami_from_instance {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AmiFromInstanceResult {

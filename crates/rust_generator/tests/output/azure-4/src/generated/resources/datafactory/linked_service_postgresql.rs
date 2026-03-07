@@ -119,6 +119,22 @@ pub mod linked_service_postgresql {
         name: &str,
         args: LinkedServicePostgresqlArgs,
     ) -> LinkedServicePostgresqlResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LinkedServicePostgresqlArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LinkedServicePostgresqlResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LinkedServicePostgresqlArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LinkedServicePostgresqlResult {
         let additional_properties_binding = args
             .additional_properties
             .get_output(context);
@@ -170,6 +186,7 @@ pub mod linked_service_postgresql {
                     value: &parameters_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LinkedServicePostgresqlResult {

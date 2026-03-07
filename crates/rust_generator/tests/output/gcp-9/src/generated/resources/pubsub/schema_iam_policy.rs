@@ -239,6 +239,22 @@ pub mod schema_iam_policy {
         name: &str,
         args: SchemaIamPolicyArgs,
     ) -> SchemaIamPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SchemaIamPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SchemaIamPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SchemaIamPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SchemaIamPolicyResult {
         let policy_data_binding = args.policy_data.get_output(context);
         let project_binding = args.project.get_output(context);
         let schema_binding = args.schema.get_output(context);
@@ -260,6 +276,7 @@ pub mod schema_iam_policy {
                     value: &schema_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SchemaIamPolicyResult {

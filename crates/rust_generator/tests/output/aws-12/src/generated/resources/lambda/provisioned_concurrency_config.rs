@@ -99,6 +99,22 @@ pub mod provisioned_concurrency_config {
         name: &str,
         args: ProvisionedConcurrencyConfigArgs,
     ) -> ProvisionedConcurrencyConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProvisionedConcurrencyConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ProvisionedConcurrencyConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProvisionedConcurrencyConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ProvisionedConcurrencyConfigResult {
         let function_name_binding = args.function_name.get_output(context);
         let provisioned_concurrent_executions_binding = args
             .provisioned_concurrent_executions
@@ -128,6 +144,7 @@ pub mod provisioned_concurrency_config {
                     value: &skip_destroy_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ProvisionedConcurrencyConfigResult {

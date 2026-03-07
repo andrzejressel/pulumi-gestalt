@@ -103,6 +103,22 @@ pub mod location_fsx_windows {
         name: &str,
         args: LocationFsxWindowsArgs,
     ) -> LocationFsxWindowsResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LocationFsxWindowsArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LocationFsxWindowsResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LocationFsxWindowsArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LocationFsxWindowsResult {
         let domain_binding = args.domain.get_output(context);
         let fsx_filesystem_arn_binding = args.fsx_filesystem_arn.get_output(context);
         let password_binding = args.password.get_output(context);
@@ -144,6 +160,7 @@ pub mod location_fsx_windows {
                     value: &user_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LocationFsxWindowsResult {

@@ -131,6 +131,22 @@ pub mod ekm_connection {
         name: &str,
         args: EkmConnectionArgs,
     ) -> EkmConnectionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EkmConnectionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EkmConnectionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EkmConnectionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EkmConnectionResult {
         let crypto_space_path_binding = args.crypto_space_path.get_output(context);
         let etag_binding = args.etag.get_output(context);
         let key_management_mode_binding = args.key_management_mode.get_output(context);
@@ -172,6 +188,7 @@ pub mod ekm_connection {
                     value: &service_resolvers_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EkmConnectionResult {

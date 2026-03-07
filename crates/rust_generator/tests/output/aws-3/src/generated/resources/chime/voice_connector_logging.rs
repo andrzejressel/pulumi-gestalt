@@ -75,6 +75,22 @@ pub mod voice_connector_logging {
         name: &str,
         args: VoiceConnectorLoggingArgs,
     ) -> VoiceConnectorLoggingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VoiceConnectorLoggingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VoiceConnectorLoggingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VoiceConnectorLoggingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VoiceConnectorLoggingResult {
         let enable_media_metric_logs_binding = args
             .enable_media_metric_logs
             .get_output(context);
@@ -98,6 +114,7 @@ pub mod voice_connector_logging {
                     value: &voice_connector_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VoiceConnectorLoggingResult {

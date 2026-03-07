@@ -570,6 +570,22 @@ pub mod region_network_endpoint_group {
         name: &str,
         args: RegionNetworkEndpointGroupArgs,
     ) -> RegionNetworkEndpointGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionNetworkEndpointGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RegionNetworkEndpointGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionNetworkEndpointGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RegionNetworkEndpointGroupResult {
         let app_engine_binding = args.app_engine.get_output(context);
         let cloud_function_binding = args.cloud_function.get_output(context);
         let cloud_run_binding = args.cloud_run.get_output(context);
@@ -646,6 +662,7 @@ pub mod region_network_endpoint_group {
                     value: &subnetwork_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RegionNetworkEndpointGroupResult {

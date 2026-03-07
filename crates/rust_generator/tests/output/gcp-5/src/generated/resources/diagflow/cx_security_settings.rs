@@ -289,6 +289,22 @@ pub mod cx_security_settings {
         name: &str,
         args: CxSecuritySettingsArgs,
     ) -> CxSecuritySettingsResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CxSecuritySettingsArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CxSecuritySettingsResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CxSecuritySettingsArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CxSecuritySettingsResult {
         let audio_export_settings_binding = args
             .audio_export_settings
             .get_output(context);
@@ -361,6 +377,7 @@ pub mod cx_security_settings {
                     value: &retention_window_days_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CxSecuritySettingsResult {

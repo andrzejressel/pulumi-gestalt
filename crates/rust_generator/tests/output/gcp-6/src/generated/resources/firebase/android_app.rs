@@ -190,6 +190,22 @@ pub mod android_app {
         name: &str,
         args: AndroidAppArgs,
     ) -> AndroidAppResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AndroidAppArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AndroidAppResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AndroidAppArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AndroidAppResult {
         let api_key_id_binding = args.api_key_id.get_output(context);
         let deletion_policy_binding = args.deletion_policy.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
@@ -231,6 +247,7 @@ pub mod android_app {
                     value: &sha256_hashes_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AndroidAppResult {

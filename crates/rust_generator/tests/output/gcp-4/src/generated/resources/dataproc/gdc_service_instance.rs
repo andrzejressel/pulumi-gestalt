@@ -195,6 +195,22 @@ pub mod gdc_service_instance {
         name: &str,
         args: GdcServiceInstanceArgs,
     ) -> GdcServiceInstanceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GdcServiceInstanceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GdcServiceInstanceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GdcServiceInstanceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GdcServiceInstanceResult {
         let display_name_binding = args.display_name.get_output(context);
         let gdce_cluster_binding = args.gdce_cluster.get_output(context);
         let labels_binding = args.labels.get_output(context);
@@ -243,6 +259,7 @@ pub mod gdc_service_instance {
                     value: &spark_service_instance_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GdcServiceInstanceResult {

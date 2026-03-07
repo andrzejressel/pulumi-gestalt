@@ -78,6 +78,22 @@ pub mod principal_portfolio_association {
         name: &str,
         args: PrincipalPortfolioAssociationArgs,
     ) -> PrincipalPortfolioAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PrincipalPortfolioAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PrincipalPortfolioAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PrincipalPortfolioAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PrincipalPortfolioAssociationResult {
         let accept_language_binding = args.accept_language.get_output(context);
         let portfolio_id_binding = args.portfolio_id.get_output(context);
         let principal_arn_binding = args.principal_arn.get_output(context);
@@ -105,6 +121,7 @@ pub mod principal_portfolio_association {
                     value: &principal_type_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PrincipalPortfolioAssociationResult {

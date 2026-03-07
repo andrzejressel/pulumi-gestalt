@@ -92,6 +92,22 @@ pub mod snapshot_schedule {
         name: &str,
         args: SnapshotScheduleArgs,
     ) -> SnapshotScheduleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SnapshotScheduleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SnapshotScheduleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SnapshotScheduleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SnapshotScheduleResult {
         let definitions_binding = args.definitions.get_output(context);
         let description_binding = args.description.get_output(context);
         let force_destroy_binding = args.force_destroy.get_output(context);
@@ -128,6 +144,7 @@ pub mod snapshot_schedule {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SnapshotScheduleResult {

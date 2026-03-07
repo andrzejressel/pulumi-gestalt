@@ -69,6 +69,22 @@ pub mod application_assignment_configuration {
         name: &str,
         args: ApplicationAssignmentConfigurationArgs,
     ) -> ApplicationAssignmentConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApplicationAssignmentConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ApplicationAssignmentConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApplicationAssignmentConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ApplicationAssignmentConfigurationResult {
         let application_arn_binding = args.application_arn.get_output(context);
         let assignment_required_binding = args.assignment_required.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -86,6 +102,7 @@ pub mod application_assignment_configuration {
                     value: &assignment_required_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ApplicationAssignmentConfigurationResult {

@@ -134,6 +134,22 @@ pub mod hosting_site {
         name: &str,
         args: HostingSiteArgs,
     ) -> HostingSiteResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HostingSiteArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> HostingSiteResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HostingSiteArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> HostingSiteResult {
         let app_id_binding = args.app_id.get_output(context);
         let project_binding = args.project.get_output(context);
         let site_id_binding = args.site_id.get_output(context);
@@ -155,6 +171,7 @@ pub mod hosting_site {
                     value: &site_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         HostingSiteResult {

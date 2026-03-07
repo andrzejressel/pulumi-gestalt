@@ -143,6 +143,22 @@ pub mod delegation_signer_record {
         name: &str,
         args: DelegationSignerRecordArgs,
     ) -> DelegationSignerRecordResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DelegationSignerRecordArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DelegationSignerRecordResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DelegationSignerRecordArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DelegationSignerRecordResult {
         let domain_name_binding = args.domain_name.get_output(context);
         let signing_attributes_binding = args.signing_attributes.get_output(context);
         let timeouts_binding = args.timeouts.get_output(context);
@@ -165,6 +181,7 @@ pub mod delegation_signer_record {
                     value: &timeouts_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DelegationSignerRecordResult {

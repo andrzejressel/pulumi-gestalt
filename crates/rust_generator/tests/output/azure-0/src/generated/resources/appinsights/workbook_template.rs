@@ -153,6 +153,22 @@ pub mod workbook_template {
         name: &str,
         args: WorkbookTemplateArgs,
     ) -> WorkbookTemplateResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkbookTemplateArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WorkbookTemplateResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkbookTemplateArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WorkbookTemplateResult {
         let author_binding = args.author.get_output(context);
         let galleries_binding = args.galleries.get_output(context);
         let localized_binding = args.localized.get_output(context);
@@ -204,6 +220,7 @@ pub mod workbook_template {
                     value: &template_data_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WorkbookTemplateResult {

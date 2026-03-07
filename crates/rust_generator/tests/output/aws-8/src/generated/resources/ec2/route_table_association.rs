@@ -92,6 +92,22 @@ pub mod route_table_association {
         name: &str,
         args: RouteTableAssociationArgs,
     ) -> RouteTableAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RouteTableAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RouteTableAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RouteTableAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RouteTableAssociationResult {
         let gateway_id_binding = args.gateway_id.get_output(context);
         let route_table_id_binding = args.route_table_id.get_output(context);
         let subnet_id_binding = args.subnet_id.get_output(context);
@@ -113,6 +129,7 @@ pub mod route_table_association {
                     value: &subnet_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RouteTableAssociationResult {

@@ -98,6 +98,22 @@ pub mod standards_subscription {
         name: &str,
         args: StandardsSubscriptionArgs,
     ) -> StandardsSubscriptionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StandardsSubscriptionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> StandardsSubscriptionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StandardsSubscriptionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> StandardsSubscriptionResult {
         let standards_arn_binding = args.standards_arn.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:securityhub/standardsSubscription:StandardsSubscription".into(),
@@ -109,6 +125,7 @@ pub mod standards_subscription {
                     value: &standards_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         StandardsSubscriptionResult {

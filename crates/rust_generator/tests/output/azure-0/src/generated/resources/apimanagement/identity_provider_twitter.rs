@@ -93,6 +93,22 @@ pub mod identity_provider_twitter {
         name: &str,
         args: IdentityProviderTwitterArgs,
     ) -> IdentityProviderTwitterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IdentityProviderTwitterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IdentityProviderTwitterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IdentityProviderTwitterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IdentityProviderTwitterResult {
         let api_key_binding = args.api_key.get_output(context);
         let api_management_name_binding = args.api_management_name.get_output(context);
         let api_secret_key_binding = args.api_secret_key.get_output(context);
@@ -120,6 +136,7 @@ pub mod identity_provider_twitter {
                     value: &resource_group_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IdentityProviderTwitterResult {

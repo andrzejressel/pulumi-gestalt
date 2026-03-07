@@ -141,6 +141,22 @@ pub mod firewall_endpoint {
         name: &str,
         args: FirewallEndpointArgs,
     ) -> FirewallEndpointResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FirewallEndpointArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FirewallEndpointResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FirewallEndpointArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FirewallEndpointResult {
         let billing_project_id_binding = args.billing_project_id.get_output(context);
         let labels_binding = args.labels.get_output(context);
         let location_binding = args.location.get_output(context);
@@ -172,6 +188,7 @@ pub mod firewall_endpoint {
                     value: &parent_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FirewallEndpointResult {

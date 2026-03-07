@@ -166,6 +166,22 @@ pub mod medtech_service_fhir_destination {
         name: &str,
         args: MedtechServiceFhirDestinationArgs,
     ) -> MedtechServiceFhirDestinationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MedtechServiceFhirDestinationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MedtechServiceFhirDestinationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MedtechServiceFhirDestinationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MedtechServiceFhirDestinationResult {
         let destination_fhir_mapping_json_binding = args
             .destination_fhir_mapping_json
             .get_output(context);
@@ -209,6 +225,7 @@ pub mod medtech_service_fhir_destination {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MedtechServiceFhirDestinationResult {

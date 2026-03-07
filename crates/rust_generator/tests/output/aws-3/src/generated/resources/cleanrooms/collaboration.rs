@@ -151,6 +151,22 @@ pub mod collaboration {
         name: &str,
         args: CollaborationArgs,
     ) -> CollaborationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CollaborationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CollaborationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CollaborationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CollaborationResult {
         let creator_display_name_binding = args.creator_display_name.get_output(context);
         let creator_member_abilities_binding = args
             .creator_member_abilities
@@ -201,6 +217,7 @@ pub mod collaboration {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CollaborationResult {

@@ -175,6 +175,22 @@ pub mod hl_7_store_iam_policy {
         name: &str,
         args: Hl7StoreIamPolicyArgs,
     ) -> Hl7StoreIamPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: Hl7StoreIamPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> Hl7StoreIamPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: Hl7StoreIamPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> Hl7StoreIamPolicyResult {
         let hl7_v2_store_id_binding = args.hl7_v2_store_id.get_output(context);
         let policy_data_binding = args.policy_data.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -191,6 +207,7 @@ pub mod hl_7_store_iam_policy {
                     value: &policy_data_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         Hl7StoreIamPolicyResult {

@@ -66,6 +66,22 @@ pub mod rds_db_instance {
         name: &str,
         args: RdsDbInstanceArgs,
     ) -> RdsDbInstanceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RdsDbInstanceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RdsDbInstanceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RdsDbInstanceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RdsDbInstanceResult {
         let db_password_binding = args.db_password.get_output(context);
         let db_user_binding = args.db_user.get_output(context);
         let rds_db_instance_arn_binding = args.rds_db_instance_arn.get_output(context);
@@ -92,6 +108,7 @@ pub mod rds_db_instance {
                     value: &stack_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RdsDbInstanceResult {

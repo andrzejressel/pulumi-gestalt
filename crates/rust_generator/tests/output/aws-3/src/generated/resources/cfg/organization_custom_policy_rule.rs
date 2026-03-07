@@ -139,6 +139,22 @@ pub mod organization_custom_policy_rule {
         name: &str,
         args: OrganizationCustomPolicyRuleArgs,
     ) -> OrganizationCustomPolicyRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationCustomPolicyRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OrganizationCustomPolicyRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationCustomPolicyRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OrganizationCustomPolicyRuleResult {
         let debug_log_delivery_accounts_binding = args
             .debug_log_delivery_accounts
             .get_output(context);
@@ -217,6 +233,7 @@ pub mod organization_custom_policy_rule {
                     value: &trigger_types_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OrganizationCustomPolicyRuleResult {

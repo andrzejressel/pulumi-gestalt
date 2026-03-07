@@ -67,6 +67,22 @@ pub mod vpc_dhcp_options_association {
         name: &str,
         args: VpcDhcpOptionsAssociationArgs,
     ) -> VpcDhcpOptionsAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcDhcpOptionsAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VpcDhcpOptionsAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcDhcpOptionsAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VpcDhcpOptionsAssociationResult {
         let dhcp_options_id_binding = args.dhcp_options_id.get_output(context);
         let vpc_id_binding = args.vpc_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -83,6 +99,7 @@ pub mod vpc_dhcp_options_association {
                     value: &vpc_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VpcDhcpOptionsAssociationResult {

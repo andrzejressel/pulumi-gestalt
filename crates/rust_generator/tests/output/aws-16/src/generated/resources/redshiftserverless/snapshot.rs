@@ -83,6 +83,22 @@ pub mod snapshot {
         name: &str,
         args: SnapshotArgs,
     ) -> SnapshotResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SnapshotArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SnapshotResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SnapshotArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SnapshotResult {
         let namespace_name_binding = args.namespace_name.get_output(context);
         let retention_period_binding = args.retention_period.get_output(context);
         let snapshot_name_binding = args.snapshot_name.get_output(context);
@@ -104,6 +120,7 @@ pub mod snapshot {
                     value: &snapshot_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SnapshotResult {

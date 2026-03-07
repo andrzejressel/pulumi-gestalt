@@ -202,6 +202,22 @@ pub mod cosmosdb_data_connection {
         name: &str,
         args: CosmosdbDataConnectionArgs,
     ) -> CosmosdbDataConnectionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CosmosdbDataConnectionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CosmosdbDataConnectionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CosmosdbDataConnectionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CosmosdbDataConnectionResult {
         let cosmosdb_container_id_binding = args
             .cosmosdb_container_id
             .get_output(context);
@@ -250,6 +266,7 @@ pub mod cosmosdb_data_connection {
                     value: &table_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CosmosdbDataConnectionResult {

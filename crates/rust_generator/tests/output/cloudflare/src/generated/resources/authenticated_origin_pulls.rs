@@ -126,6 +126,22 @@ pub mod authenticated_origin_pulls {
         name: &str,
         args: AuthenticatedOriginPullsArgs,
     ) -> AuthenticatedOriginPullsResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AuthenticatedOriginPullsArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AuthenticatedOriginPullsResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AuthenticatedOriginPullsArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AuthenticatedOriginPullsResult {
         let authenticated_origin_pulls_certificate_binding = args
             .authenticated_origin_pulls_certificate
             .get_output(context);
@@ -155,6 +171,7 @@ pub mod authenticated_origin_pulls {
                     value: &zone_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AuthenticatedOriginPullsResult {

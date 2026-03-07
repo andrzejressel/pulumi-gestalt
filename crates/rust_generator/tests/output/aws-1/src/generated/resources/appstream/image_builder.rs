@@ -153,6 +153,22 @@ pub mod image_builder {
         name: &str,
         args: ImageBuilderArgs,
     ) -> ImageBuilderResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ImageBuilderArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ImageBuilderResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ImageBuilderArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ImageBuilderResult {
         let access_endpoints_binding = args.access_endpoints.get_output(context);
         let appstream_agent_version_binding = args
             .appstream_agent_version
@@ -228,6 +244,7 @@ pub mod image_builder {
                     value: &vpc_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ImageBuilderResult {

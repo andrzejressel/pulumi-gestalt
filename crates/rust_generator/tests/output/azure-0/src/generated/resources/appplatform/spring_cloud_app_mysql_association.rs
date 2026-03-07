@@ -132,6 +132,22 @@ pub mod spring_cloud_app_mysql_association {
         name: &str,
         args: SpringCloudAppMysqlAssociationArgs,
     ) -> SpringCloudAppMysqlAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudAppMysqlAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SpringCloudAppMysqlAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudAppMysqlAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SpringCloudAppMysqlAssociationResult {
         let database_name_binding = args.database_name.get_output(context);
         let mysql_server_id_binding = args.mysql_server_id.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -169,6 +185,7 @@ pub mod spring_cloud_app_mysql_association {
                     value: &username_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SpringCloudAppMysqlAssociationResult {

@@ -147,6 +147,22 @@ pub mod output_event_hub {
         name: &str,
         args: OutputEventHubArgs,
     ) -> OutputEventHubResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OutputEventHubArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OutputEventHubResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OutputEventHubArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OutputEventHubResult {
         let authentication_mode_binding = args.authentication_mode.get_output(context);
         let eventhub_name_binding = args.eventhub_name.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -214,6 +230,7 @@ pub mod output_event_hub {
                     value: &stream_analytics_job_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OutputEventHubResult {

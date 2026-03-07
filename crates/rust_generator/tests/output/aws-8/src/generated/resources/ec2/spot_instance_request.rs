@@ -462,6 +462,22 @@ pub mod spot_instance_request {
         name: &str,
         args: SpotInstanceRequestArgs,
     ) -> SpotInstanceRequestResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpotInstanceRequestArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SpotInstanceRequestResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpotInstanceRequestArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SpotInstanceRequestResult {
         let ami_binding = args.ami.get_output(context);
         let associate_public_ip_address_binding = args
             .associate_public_ip_address
@@ -764,6 +780,7 @@ pub mod spot_instance_request {
                     value: &wait_for_fulfillment_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SpotInstanceRequestResult {

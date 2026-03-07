@@ -80,6 +80,22 @@ pub mod serverless_cluster {
         name: &str,
         args: ServerlessClusterArgs,
     ) -> ServerlessClusterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServerlessClusterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServerlessClusterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServerlessClusterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServerlessClusterResult {
         let client_authentication_binding = args
             .client_authentication
             .get_output(context);
@@ -108,6 +124,7 @@ pub mod serverless_cluster {
                     value: &vpc_configs_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServerlessClusterResult {

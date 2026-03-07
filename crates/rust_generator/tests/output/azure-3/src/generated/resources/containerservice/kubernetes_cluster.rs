@@ -732,6 +732,22 @@ pub mod kubernetes_cluster {
         name: &str,
         args: KubernetesClusterArgs,
     ) -> KubernetesClusterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: KubernetesClusterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> KubernetesClusterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: KubernetesClusterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> KubernetesClusterResult {
         let aci_connector_linux_binding = args.aci_connector_linux.get_output(context);
         let api_server_access_profile_binding = args
             .api_server_access_profile
@@ -1055,6 +1071,7 @@ pub mod kubernetes_cluster {
                     value: &workload_identity_enabled_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         KubernetesClusterResult {

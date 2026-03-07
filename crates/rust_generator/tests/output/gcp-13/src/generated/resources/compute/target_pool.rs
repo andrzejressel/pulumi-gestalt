@@ -170,6 +170,22 @@ pub mod target_pool {
         name: &str,
         args: TargetPoolArgs,
     ) -> TargetPoolResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TargetPoolArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TargetPoolResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TargetPoolArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TargetPoolResult {
         let backup_pool_binding = args.backup_pool.get_output(context);
         let description_binding = args.description.get_output(context);
         let failover_ratio_binding = args.failover_ratio.get_output(context);
@@ -226,6 +242,7 @@ pub mod target_pool {
                     value: &session_affinity_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TargetPoolResult {

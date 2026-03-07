@@ -120,6 +120,22 @@ pub mod log_view {
         name: &str,
         args: LogViewArgs,
     ) -> LogViewResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LogViewArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LogViewResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LogViewArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LogViewResult {
         let bucket_binding = args.bucket.get_output(context);
         let description_binding = args.description.get_output(context);
         let filter_binding = args.filter.get_output(context);
@@ -156,6 +172,7 @@ pub mod log_view {
                     value: &parent_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LogViewResult {

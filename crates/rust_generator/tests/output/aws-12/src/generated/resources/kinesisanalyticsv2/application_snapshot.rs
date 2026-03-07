@@ -67,6 +67,22 @@ pub mod application_snapshot {
         name: &str,
         args: ApplicationSnapshotArgs,
     ) -> ApplicationSnapshotResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApplicationSnapshotArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ApplicationSnapshotResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApplicationSnapshotArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ApplicationSnapshotResult {
         let application_name_binding = args.application_name.get_output(context);
         let snapshot_name_binding = args.snapshot_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -84,6 +100,7 @@ pub mod application_snapshot {
                     value: &snapshot_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ApplicationSnapshotResult {

@@ -83,6 +83,22 @@ pub mod discoverer {
         name: &str,
         args: DiscovererArgs,
     ) -> DiscovererResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DiscovererArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DiscovererResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DiscovererArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DiscovererResult {
         let description_binding = args.description.get_output(context);
         let source_arn_binding = args.source_arn.get_output(context);
         let tags_binding = args.tags.get_output(context);
@@ -104,6 +120,7 @@ pub mod discoverer {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DiscovererResult {

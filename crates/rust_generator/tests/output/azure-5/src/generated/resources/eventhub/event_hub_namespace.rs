@@ -162,6 +162,22 @@ pub mod event_hub_namespace {
         name: &str,
         args: EventHubNamespaceArgs,
     ) -> EventHubNamespaceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EventHubNamespaceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EventHubNamespaceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EventHubNamespaceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EventHubNamespaceResult {
         let auto_inflate_enabled_binding = args.auto_inflate_enabled.get_output(context);
         let capacity_binding = args.capacity.get_output(context);
         let dedicated_cluster_id_binding = args.dedicated_cluster_id.get_output(context);
@@ -244,6 +260,7 @@ pub mod event_hub_namespace {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EventHubNamespaceResult {

@@ -212,6 +212,22 @@ pub mod listener_rule {
         name: &str,
         args: ListenerRuleArgs,
     ) -> ListenerRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ListenerRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ListenerRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ListenerRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ListenerRuleResult {
         let actions_binding = args.actions.get_output(context);
         let conditions_binding = args.conditions.get_output(context);
         let listener_arn_binding = args.listener_arn.get_output(context);
@@ -243,6 +259,7 @@ pub mod listener_rule {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ListenerRuleResult {

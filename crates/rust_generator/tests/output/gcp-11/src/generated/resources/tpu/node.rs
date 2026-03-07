@@ -257,6 +257,22 @@ pub mod node {
         name: &str,
         args: NodeArgs,
     ) -> NodeResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NodeArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NodeResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NodeArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NodeResult {
         let accelerator_type_binding = args.accelerator_type.get_output(context);
         let cidr_block_binding = args.cidr_block.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -320,6 +336,7 @@ pub mod node {
                     value: &zone_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NodeResult {

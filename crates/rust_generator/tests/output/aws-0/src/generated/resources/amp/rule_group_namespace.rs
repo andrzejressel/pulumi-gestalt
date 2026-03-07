@@ -71,6 +71,22 @@ pub mod rule_group_namespace {
         name: &str,
         args: RuleGroupNamespaceArgs,
     ) -> RuleGroupNamespaceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RuleGroupNamespaceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RuleGroupNamespaceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RuleGroupNamespaceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RuleGroupNamespaceResult {
         let data_binding = args.data.get_output(context);
         let name_binding = args.name.get_output(context);
         let workspace_id_binding = args.workspace_id.get_output(context);
@@ -92,6 +108,7 @@ pub mod rule_group_namespace {
                     value: &workspace_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RuleGroupNamespaceResult {

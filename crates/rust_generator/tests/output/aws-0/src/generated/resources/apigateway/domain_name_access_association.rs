@@ -83,6 +83,22 @@ pub mod domain_name_access_association {
         name: &str,
         args: DomainNameAccessAssociationArgs,
     ) -> DomainNameAccessAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DomainNameAccessAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DomainNameAccessAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DomainNameAccessAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DomainNameAccessAssociationResult {
         let access_association_source_binding = args
             .access_association_source
             .get_output(context);
@@ -114,6 +130,7 @@ pub mod domain_name_access_association {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DomainNameAccessAssociationResult {

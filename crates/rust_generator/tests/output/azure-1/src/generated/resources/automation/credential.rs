@@ -103,6 +103,22 @@ pub mod credential {
         name: &str,
         args: CredentialArgs,
     ) -> CredentialResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CredentialArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CredentialResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CredentialArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CredentialResult {
         let automation_account_name_binding = args
             .automation_account_name
             .get_output(context);
@@ -141,6 +157,7 @@ pub mod credential {
                     value: &username_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CredentialResult {

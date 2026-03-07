@@ -95,6 +95,22 @@ pub mod api_key {
         name: &str,
         args: ApiKeyArgs,
     ) -> ApiKeyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApiKeyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ApiKeyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApiKeyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ApiKeyResult {
         let customer_id_binding = args.customer_id.get_output(context);
         let description_binding = args.description.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
@@ -131,6 +147,7 @@ pub mod api_key {
                     value: &value_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ApiKeyResult {

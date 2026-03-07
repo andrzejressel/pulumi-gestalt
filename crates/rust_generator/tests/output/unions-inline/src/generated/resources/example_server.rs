@@ -36,6 +36,22 @@ pub mod example_server {
         name: &str,
         args: ExampleServerArgs,
     ) -> ExampleServerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ExampleServerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ExampleServerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ExampleServerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ExampleServerResult {
         let properties_binding = args.properties.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "example:index:ExampleServer".into(),
@@ -47,6 +63,7 @@ pub mod example_server {
                     value: &properties_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ExampleServerResult {

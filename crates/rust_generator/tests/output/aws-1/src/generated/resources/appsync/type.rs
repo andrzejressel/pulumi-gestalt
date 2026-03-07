@@ -80,6 +80,22 @@ pub mod type_ {
         name: &str,
         args: TypeArgs,
     ) -> TypeResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TypeArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TypeResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TypeArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TypeResult {
         let api_id_binding = args.api_id.get_output(context);
         let definition_binding = args.definition.get_output(context);
         let format_binding = args.format.get_output(context);
@@ -101,6 +117,7 @@ pub mod type_ {
                     value: &format_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TypeResult {

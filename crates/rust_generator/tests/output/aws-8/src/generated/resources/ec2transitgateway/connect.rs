@@ -106,6 +106,22 @@ pub mod connect {
         name: &str,
         args: ConnectArgs,
     ) -> ConnectResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConnectArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ConnectResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConnectArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ConnectResult {
         let protocol_binding = args.protocol.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let transit_gateway_default_route_table_association_binding = args
@@ -150,6 +166,7 @@ pub mod connect {
                     value: &transport_attachment_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ConnectResult {

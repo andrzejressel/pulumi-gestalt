@@ -64,6 +64,22 @@ pub mod approval_rule_template_association {
         name: &str,
         args: ApprovalRuleTemplateAssociationArgs,
     ) -> ApprovalRuleTemplateAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApprovalRuleTemplateAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ApprovalRuleTemplateAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApprovalRuleTemplateAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ApprovalRuleTemplateAssociationResult {
         let approval_rule_template_name_binding = args
             .approval_rule_template_name
             .get_output(context);
@@ -83,6 +99,7 @@ pub mod approval_rule_template_association {
                     value: &repository_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ApprovalRuleTemplateAssociationResult {

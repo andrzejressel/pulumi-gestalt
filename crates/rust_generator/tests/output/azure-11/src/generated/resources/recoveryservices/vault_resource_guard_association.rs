@@ -88,6 +88,22 @@ pub mod vault_resource_guard_association {
         name: &str,
         args: VaultResourceGuardAssociationArgs,
     ) -> VaultResourceGuardAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VaultResourceGuardAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VaultResourceGuardAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VaultResourceGuardAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VaultResourceGuardAssociationResult {
         let resource_guard_id_binding = args.resource_guard_id.get_output(context);
         let vault_id_binding = args.vault_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -105,6 +121,7 @@ pub mod vault_resource_guard_association {
                     value: &vault_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VaultResourceGuardAssociationResult {

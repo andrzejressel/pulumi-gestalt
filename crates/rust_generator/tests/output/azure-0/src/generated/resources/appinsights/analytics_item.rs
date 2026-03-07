@@ -112,6 +112,22 @@ pub mod analytics_item {
         name: &str,
         args: AnalyticsItemArgs,
     ) -> AnalyticsItemResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AnalyticsItemArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AnalyticsItemResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AnalyticsItemArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AnalyticsItemResult {
         let application_insights_id_binding = args
             .application_insights_id
             .get_output(context);
@@ -150,6 +166,7 @@ pub mod analytics_item {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AnalyticsItemResult {

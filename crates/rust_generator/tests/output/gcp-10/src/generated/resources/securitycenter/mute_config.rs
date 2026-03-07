@@ -124,6 +124,22 @@ pub mod mute_config {
         name: &str,
         args: MuteConfigArgs,
     ) -> MuteConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MuteConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MuteConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MuteConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MuteConfigResult {
         let description_binding = args.description.get_output(context);
         let filter_binding = args.filter.get_output(context);
         let mute_config_id_binding = args.mute_config_id.get_output(context);
@@ -150,6 +166,7 @@ pub mod mute_config {
                     value: &parent_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MuteConfigResult {

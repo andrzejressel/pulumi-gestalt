@@ -97,6 +97,22 @@ pub mod routing_control {
         name: &str,
         args: RoutingControlArgs,
     ) -> RoutingControlResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RoutingControlArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RoutingControlResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RoutingControlArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RoutingControlResult {
         let cluster_arn_binding = args.cluster_arn.get_output(context);
         let control_panel_arn_binding = args.control_panel_arn.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -118,6 +134,7 @@ pub mod routing_control {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RoutingControlResult {

@@ -48,6 +48,22 @@ pub mod security_token_service_preferences {
         name: &str,
         args: SecurityTokenServicePreferencesArgs,
     ) -> SecurityTokenServicePreferencesResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SecurityTokenServicePreferencesArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SecurityTokenServicePreferencesResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SecurityTokenServicePreferencesArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SecurityTokenServicePreferencesResult {
         let global_endpoint_token_version_binding = args
             .global_endpoint_token_version
             .get_output(context);
@@ -62,6 +78,7 @@ pub mod security_token_service_preferences {
                     value: &global_endpoint_token_version_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SecurityTokenServicePreferencesResult {

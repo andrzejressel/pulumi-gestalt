@@ -64,6 +64,22 @@ pub mod resolver_query_log_config_association {
         name: &str,
         args: ResolverQueryLogConfigAssociationArgs,
     ) -> ResolverQueryLogConfigAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResolverQueryLogConfigAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ResolverQueryLogConfigAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResolverQueryLogConfigAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ResolverQueryLogConfigAssociationResult {
         let resolver_query_log_config_id_binding = args
             .resolver_query_log_config_id
             .get_output(context);
@@ -83,6 +99,7 @@ pub mod resolver_query_log_config_association {
                     value: &resource_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ResolverQueryLogConfigAssociationResult {

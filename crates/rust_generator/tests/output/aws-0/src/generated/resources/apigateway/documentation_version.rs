@@ -78,6 +78,22 @@ pub mod documentation_version {
         name: &str,
         args: DocumentationVersionArgs,
     ) -> DocumentationVersionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DocumentationVersionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DocumentationVersionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DocumentationVersionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DocumentationVersionResult {
         let description_binding = args.description.get_output(context);
         let rest_api_id_binding = args.rest_api_id.get_output(context);
         let version_binding = args.version.get_output(context);
@@ -99,6 +115,7 @@ pub mod documentation_version {
                     value: &version_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DocumentationVersionResult {

@@ -176,6 +176,22 @@ pub mod client {
         name: &str,
         args: ClientArgs,
     ) -> ClientResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClientArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ClientResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClientArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ClientResult {
         let cloud_kms_config_binding = args.cloud_kms_config.get_output(context);
         let create_sample_integrations_binding = args
             .create_sample_integrations
@@ -211,6 +227,7 @@ pub mod client {
                     value: &run_as_service_account_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ClientResult {

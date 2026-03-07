@@ -115,6 +115,22 @@ pub mod contact_list {
         name: &str,
         args: ContactListArgs,
     ) -> ContactListResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ContactListArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ContactListResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ContactListArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ContactListResult {
         let contact_list_name_binding = args.contact_list_name.get_output(context);
         let description_binding = args.description.get_output(context);
         let tags_binding = args.tags.get_output(context);
@@ -141,6 +157,7 @@ pub mod contact_list {
                     value: &topics_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ContactListResult {

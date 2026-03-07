@@ -146,6 +146,22 @@ pub mod express_route_circuit {
         name: &str,
         args: ExpressRouteCircuitArgs,
     ) -> ExpressRouteCircuitResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ExpressRouteCircuitArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ExpressRouteCircuitResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ExpressRouteCircuitArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ExpressRouteCircuitResult {
         let allow_classic_operations_binding = args
             .allow_classic_operations
             .get_output(context);
@@ -218,6 +234,7 @@ pub mod express_route_circuit {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ExpressRouteCircuitResult {

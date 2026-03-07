@@ -277,6 +277,22 @@ pub mod server {
         name: &str,
         args: ServerArgs,
     ) -> ServerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServerResult {
         let administrator_login_binding = args.administrator_login.get_output(context);
         let administrator_login_password_binding = args
             .administrator_login_password
@@ -371,6 +387,7 @@ pub mod server {
                     value: &version_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServerResult {

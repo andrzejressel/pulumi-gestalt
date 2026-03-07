@@ -206,6 +206,22 @@ pub mod project {
         name: &str,
         args: ProjectArgs,
     ) -> ProjectResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProjectArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ProjectResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProjectArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ProjectResult {
         let auto_create_network_binding = args.auto_create_network.get_output(context);
         let billing_account_binding = args.billing_account.get_output(context);
         let deletion_policy_binding = args.deletion_policy.get_output(context);
@@ -257,6 +273,7 @@ pub mod project {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ProjectResult {

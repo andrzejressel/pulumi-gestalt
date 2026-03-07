@@ -200,6 +200,22 @@ pub mod insight {
         name: &str,
         args: InsightArgs,
     ) -> InsightResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InsightArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> InsightResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InsightArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> InsightResult {
         let filters_binding = args.filters.get_output(context);
         let group_by_attribute_binding = args.group_by_attribute.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -221,6 +237,7 @@ pub mod insight {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         InsightResult {

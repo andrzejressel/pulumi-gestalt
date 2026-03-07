@@ -204,6 +204,22 @@ pub mod network_interface {
         name: &str,
         args: NetworkInterfaceArgs,
     ) -> NetworkInterfaceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkInterfaceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NetworkInterfaceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkInterfaceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NetworkInterfaceResult {
         let attachments_binding = args.attachments.get_output(context);
         let description_binding = args.description.get_output(context);
         let enable_primary_ipv6_binding = args.enable_primary_ipv6.get_output(context);
@@ -319,6 +335,7 @@ pub mod network_interface {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NetworkInterfaceResult {

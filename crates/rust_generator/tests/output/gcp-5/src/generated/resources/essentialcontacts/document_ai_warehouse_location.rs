@@ -114,6 +114,22 @@ pub mod document_ai_warehouse_location {
         name: &str,
         args: DocumentAiWarehouseLocationArgs,
     ) -> DocumentAiWarehouseLocationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DocumentAiWarehouseLocationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DocumentAiWarehouseLocationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DocumentAiWarehouseLocationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DocumentAiWarehouseLocationResult {
         let access_control_mode_binding = args.access_control_mode.get_output(context);
         let database_type_binding = args.database_type.get_output(context);
         let document_creator_default_role_binding = args
@@ -153,6 +169,7 @@ pub mod document_ai_warehouse_location {
                     value: &project_number_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DocumentAiWarehouseLocationResult {

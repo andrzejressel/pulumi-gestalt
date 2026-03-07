@@ -186,6 +186,22 @@ pub mod location_hdfs {
         name: &str,
         args: LocationHdfsArgs,
     ) -> LocationHdfsResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LocationHdfsArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LocationHdfsResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LocationHdfsArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LocationHdfsResult {
         let agent_arns_binding = args.agent_arns.get_output(context);
         let authentication_type_binding = args.authentication_type.get_output(context);
         let block_size_binding = args.block_size.get_output(context);
@@ -271,6 +287,7 @@ pub mod location_hdfs {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LocationHdfsResult {

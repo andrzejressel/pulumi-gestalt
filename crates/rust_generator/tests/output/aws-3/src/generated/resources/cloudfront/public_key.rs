@@ -80,6 +80,22 @@ pub mod public_key {
         name: &str,
         args: PublicKeyArgs,
     ) -> PublicKeyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PublicKeyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PublicKeyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PublicKeyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PublicKeyResult {
         let comment_binding = args.comment.get_output(context);
         let encoded_key_binding = args.encoded_key.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -106,6 +122,7 @@ pub mod public_key {
                     value: &name_prefix_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PublicKeyResult {

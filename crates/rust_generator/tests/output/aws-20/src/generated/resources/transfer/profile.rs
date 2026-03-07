@@ -81,6 +81,22 @@ pub mod profile {
         name: &str,
         args: ProfileArgs,
     ) -> ProfileResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProfileArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ProfileResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProfileArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ProfileResult {
         let as2_id_binding = args.as2_id.get_output(context);
         let certificate_ids_binding = args.certificate_ids.get_output(context);
         let profile_type_binding = args.profile_type.get_output(context);
@@ -107,6 +123,7 @@ pub mod profile {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ProfileResult {

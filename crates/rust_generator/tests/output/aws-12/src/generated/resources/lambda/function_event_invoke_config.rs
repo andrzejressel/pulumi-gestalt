@@ -200,6 +200,22 @@ pub mod function_event_invoke_config {
         name: &str,
         args: FunctionEventInvokeConfigArgs,
     ) -> FunctionEventInvokeConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FunctionEventInvokeConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FunctionEventInvokeConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FunctionEventInvokeConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FunctionEventInvokeConfigResult {
         let destination_config_binding = args.destination_config.get_output(context);
         let function_name_binding = args.function_name.get_output(context);
         let maximum_event_age_in_seconds_binding = args
@@ -236,6 +252,7 @@ pub mod function_event_invoke_config {
                     value: &qualifier_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FunctionEventInvokeConfigResult {

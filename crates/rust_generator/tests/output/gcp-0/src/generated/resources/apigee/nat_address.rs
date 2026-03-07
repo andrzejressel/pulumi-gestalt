@@ -258,6 +258,22 @@ pub mod nat_address {
         name: &str,
         args: NatAddressArgs,
     ) -> NatAddressResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NatAddressArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NatAddressResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NatAddressArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NatAddressResult {
         let activate_binding = args.activate.get_output(context);
         let instance_id_binding = args.instance_id.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -279,6 +295,7 @@ pub mod nat_address {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NatAddressResult {

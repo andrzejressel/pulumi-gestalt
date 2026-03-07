@@ -57,6 +57,22 @@ pub mod retention_configuration {
         name: &str,
         args: RetentionConfigurationArgs,
     ) -> RetentionConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RetentionConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RetentionConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RetentionConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RetentionConfigurationResult {
         let retention_period_in_days_binding = args
             .retention_period_in_days
             .get_output(context);
@@ -70,6 +86,7 @@ pub mod retention_configuration {
                     value: &retention_period_in_days_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RetentionConfigurationResult {

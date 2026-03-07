@@ -93,6 +93,22 @@ pub mod hybrid_connection {
         name: &str,
         args: HybridConnectionArgs,
     ) -> HybridConnectionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HybridConnectionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> HybridConnectionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HybridConnectionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> HybridConnectionResult {
         let name_binding = args.name.get_output(context);
         let relay_namespace_name_binding = args.relay_namespace_name.get_output(context);
         let requires_client_authorization_binding = args
@@ -126,6 +142,7 @@ pub mod hybrid_connection {
                     value: &user_metadata_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         HybridConnectionResult {

@@ -24,6 +24,8 @@ interface output-interface {
         get-field: func(field-name: string) -> output;
         get-urn: func() -> output;
         get-id: func() -> output;
+        // Pulumi Provider ID is the combination of URN and ID. It is used when creating a resource.
+        get-provider-id: func() -> output;
     }
 }
 
@@ -50,6 +52,7 @@ interface types {
         name: string,
         version: string,
         object: list<object-field>,
+        provider: option<borrow<output>>,
     }
 
     record resource-invoke-request {

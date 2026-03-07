@@ -79,6 +79,22 @@ pub mod studio_session_mapping {
         name: &str,
         args: StudioSessionMappingArgs,
     ) -> StudioSessionMappingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StudioSessionMappingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> StudioSessionMappingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StudioSessionMappingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> StudioSessionMappingResult {
         let identity_id_binding = args.identity_id.get_output(context);
         let identity_name_binding = args.identity_name.get_output(context);
         let identity_type_binding = args.identity_type.get_output(context);
@@ -110,6 +126,7 @@ pub mod studio_session_mapping {
                     value: &studio_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         StudioSessionMappingResult {

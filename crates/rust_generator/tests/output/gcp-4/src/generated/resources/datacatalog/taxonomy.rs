@@ -122,6 +122,22 @@ pub mod taxonomy {
         name: &str,
         args: TaxonomyArgs,
     ) -> TaxonomyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TaxonomyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TaxonomyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TaxonomyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TaxonomyResult {
         let activated_policy_types_binding = args
             .activated_policy_types
             .get_output(context);
@@ -155,6 +171,7 @@ pub mod taxonomy {
                     value: &region_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TaxonomyResult {

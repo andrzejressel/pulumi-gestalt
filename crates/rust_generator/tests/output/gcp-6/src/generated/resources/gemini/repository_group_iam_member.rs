@@ -131,6 +131,22 @@ pub mod repository_group_iam_member {
         name: &str,
         args: RepositoryGroupIamMemberArgs,
     ) -> RepositoryGroupIamMemberResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RepositoryGroupIamMemberArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RepositoryGroupIamMemberResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RepositoryGroupIamMemberArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RepositoryGroupIamMemberResult {
         let code_repository_index_binding = args
             .code_repository_index
             .get_output(context);
@@ -174,6 +190,7 @@ pub mod repository_group_iam_member {
                     value: &role_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RepositoryGroupIamMemberResult {

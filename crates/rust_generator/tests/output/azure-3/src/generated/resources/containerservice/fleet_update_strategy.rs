@@ -95,6 +95,22 @@ pub mod fleet_update_strategy {
         name: &str,
         args: FleetUpdateStrategyArgs,
     ) -> FleetUpdateStrategyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FleetUpdateStrategyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FleetUpdateStrategyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FleetUpdateStrategyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FleetUpdateStrategyResult {
         let kubernetes_fleet_manager_id_binding = args
             .kubernetes_fleet_manager_id
             .get_output(context);
@@ -119,6 +135,7 @@ pub mod fleet_update_strategy {
                     value: &stages_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FleetUpdateStrategyResult {

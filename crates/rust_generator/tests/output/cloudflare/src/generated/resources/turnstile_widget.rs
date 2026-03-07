@@ -92,6 +92,22 @@ pub mod turnstile_widget {
         name: &str,
         args: TurnstileWidgetArgs,
     ) -> TurnstileWidgetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TurnstileWidgetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TurnstileWidgetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TurnstileWidgetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TurnstileWidgetResult {
         let account_id_binding = args.account_id.get_output(context);
         let bot_fight_mode_binding = args.bot_fight_mode.get_output(context);
         let domains_binding = args.domains.get_output(context);
@@ -133,6 +149,7 @@ pub mod turnstile_widget {
                     value: &region_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TurnstileWidgetResult {

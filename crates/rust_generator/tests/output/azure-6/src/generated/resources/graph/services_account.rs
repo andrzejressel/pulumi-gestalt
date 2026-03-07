@@ -87,6 +87,22 @@ pub mod services_account {
         name: &str,
         args: ServicesAccountArgs,
     ) -> ServicesAccountResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServicesAccountArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServicesAccountResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServicesAccountArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServicesAccountResult {
         let application_id_binding = args.application_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let resource_group_name_binding = args.resource_group_name.get_output(context);
@@ -113,6 +129,7 @@ pub mod services_account {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServicesAccountResult {

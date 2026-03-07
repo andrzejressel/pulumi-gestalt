@@ -165,6 +165,22 @@ pub mod agent_agent_alias {
         name: &str,
         args: AgentAgentAliasArgs,
     ) -> AgentAgentAliasResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AgentAgentAliasArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AgentAgentAliasResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AgentAgentAliasArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AgentAgentAliasResult {
         let agent_alias_name_binding = args.agent_alias_name.get_output(context);
         let agent_id_binding = args.agent_id.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -203,6 +219,7 @@ pub mod agent_agent_alias {
                     value: &timeouts_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AgentAgentAliasResult {

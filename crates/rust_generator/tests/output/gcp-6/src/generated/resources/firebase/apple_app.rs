@@ -172,6 +172,22 @@ pub mod apple_app {
         name: &str,
         args: AppleAppArgs,
     ) -> AppleAppResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AppleAppArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AppleAppResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AppleAppArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AppleAppResult {
         let api_key_id_binding = args.api_key_id.get_output(context);
         let app_store_id_binding = args.app_store_id.get_output(context);
         let bundle_id_binding = args.bundle_id.get_output(context);
@@ -213,6 +229,7 @@ pub mod apple_app {
                     value: &team_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AppleAppResult {

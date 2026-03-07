@@ -161,6 +161,22 @@ pub mod table {
         name: &str,
         args: TableArgs,
     ) -> TableResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TableArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TableResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TableArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TableResult {
         let automated_backup_policy_binding = args
             .automated_backup_policy
             .get_output(context);
@@ -211,6 +227,7 @@ pub mod table {
                     value: &split_keys_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TableResult {

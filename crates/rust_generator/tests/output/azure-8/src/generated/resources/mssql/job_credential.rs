@@ -110,6 +110,22 @@ pub mod job_credential {
         name: &str,
         args: JobCredentialArgs,
     ) -> JobCredentialResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: JobCredentialArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> JobCredentialResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: JobCredentialArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> JobCredentialResult {
         let job_agent_id_binding = args.job_agent_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let password_binding = args.password.get_output(context);
@@ -136,6 +152,7 @@ pub mod job_credential {
                     value: &username_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         JobCredentialResult {

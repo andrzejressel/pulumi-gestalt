@@ -102,6 +102,22 @@ pub mod directory {
         name: &str,
         args: DirectoryArgs,
     ) -> DirectoryResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DirectoryArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DirectoryResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DirectoryArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DirectoryResult {
         let country_code_binding = args.country_code.get_output(context);
         let data_residency_location_binding = args
             .data_residency_location
@@ -145,6 +161,7 @@ pub mod directory {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DirectoryResult {

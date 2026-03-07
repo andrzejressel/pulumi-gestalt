@@ -117,6 +117,22 @@ pub mod virtual_hub_connection {
         name: &str,
         args: VirtualHubConnectionArgs,
     ) -> VirtualHubConnectionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VirtualHubConnectionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VirtualHubConnectionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VirtualHubConnectionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VirtualHubConnectionResult {
         let internet_security_enabled_binding = args
             .internet_security_enabled
             .get_output(context);
@@ -152,6 +168,7 @@ pub mod virtual_hub_connection {
                     value: &virtual_hub_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VirtualHubConnectionResult {

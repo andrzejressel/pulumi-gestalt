@@ -92,6 +92,22 @@ pub mod usage_plan_key {
         name: &str,
         args: UsagePlanKeyArgs,
     ) -> UsagePlanKeyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: UsagePlanKeyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> UsagePlanKeyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: UsagePlanKeyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> UsagePlanKeyResult {
         let key_id_binding = args.key_id.get_output(context);
         let key_type_binding = args.key_type.get_output(context);
         let usage_plan_id_binding = args.usage_plan_id.get_output(context);
@@ -113,6 +129,7 @@ pub mod usage_plan_key {
                     value: &usage_plan_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         UsagePlanKeyResult {

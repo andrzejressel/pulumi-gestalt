@@ -193,6 +193,22 @@ pub mod alert_rule_anomaly_duplicate {
         name: &str,
         args: AlertRuleAnomalyDuplicateArgs,
     ) -> AlertRuleAnomalyDuplicateResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AlertRuleAnomalyDuplicateArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AlertRuleAnomalyDuplicateResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AlertRuleAnomalyDuplicateArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AlertRuleAnomalyDuplicateResult {
         let built_in_rule_id_binding = args.built_in_rule_id.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
@@ -255,6 +271,7 @@ pub mod alert_rule_anomaly_duplicate {
                     value: &threshold_observations_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AlertRuleAnomalyDuplicateResult {

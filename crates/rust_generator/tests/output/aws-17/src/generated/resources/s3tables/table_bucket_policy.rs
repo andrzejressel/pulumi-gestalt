@@ -70,6 +70,22 @@ pub mod table_bucket_policy {
         name: &str,
         args: TableBucketPolicyArgs,
     ) -> TableBucketPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TableBucketPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TableBucketPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TableBucketPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TableBucketPolicyResult {
         let resource_policy_binding = args.resource_policy.get_output(context);
         let table_bucket_arn_binding = args.table_bucket_arn.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -86,6 +102,7 @@ pub mod table_bucket_policy {
                     value: &table_bucket_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TableBucketPolicyResult {

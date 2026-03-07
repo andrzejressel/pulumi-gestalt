@@ -105,6 +105,22 @@ pub mod data_connector_aws_s_3 {
         name: &str,
         args: DataConnectorAwsS3Args,
     ) -> DataConnectorAwsS3Result {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataConnectorAwsS3Args,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DataConnectorAwsS3Result {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataConnectorAwsS3Args,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DataConnectorAwsS3Result {
         let aws_role_arn_binding = args.aws_role_arn.get_output(context);
         let destination_table_binding = args.destination_table.get_output(context);
         let log_analytics_workspace_id_binding = args
@@ -138,6 +154,7 @@ pub mod data_connector_aws_s_3 {
                     value: &sqs_urls_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DataConnectorAwsS3Result {

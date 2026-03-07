@@ -83,6 +83,22 @@ pub mod identity_policy {
         name: &str,
         args: IdentityPolicyArgs,
     ) -> IdentityPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IdentityPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IdentityPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IdentityPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IdentityPolicyResult {
         let identity_binding = args.identity.get_output(context);
         let name_binding = args.name.get_output(context);
         let policy_binding = args.policy.get_output(context);
@@ -104,6 +120,7 @@ pub mod identity_policy {
                     value: &policy_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IdentityPolicyResult {

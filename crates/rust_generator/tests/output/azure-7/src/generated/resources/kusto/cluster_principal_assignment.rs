@@ -112,6 +112,22 @@ pub mod cluster_principal_assignment {
         name: &str,
         args: ClusterPrincipalAssignmentArgs,
     ) -> ClusterPrincipalAssignmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClusterPrincipalAssignmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ClusterPrincipalAssignmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClusterPrincipalAssignmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ClusterPrincipalAssignmentResult {
         let cluster_name_binding = args.cluster_name.get_output(context);
         let name_binding = args.name.get_output(context);
         let principal_id_binding = args.principal_id.get_output(context);
@@ -154,6 +170,7 @@ pub mod cluster_principal_assignment {
                     value: &tenant_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ClusterPrincipalAssignmentResult {

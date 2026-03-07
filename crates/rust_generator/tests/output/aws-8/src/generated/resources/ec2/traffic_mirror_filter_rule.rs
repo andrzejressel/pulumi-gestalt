@@ -156,6 +156,22 @@ pub mod traffic_mirror_filter_rule {
         name: &str,
         args: TrafficMirrorFilterRuleArgs,
     ) -> TrafficMirrorFilterRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TrafficMirrorFilterRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TrafficMirrorFilterRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TrafficMirrorFilterRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TrafficMirrorFilterRuleResult {
         let description_binding = args.description.get_output(context);
         let destination_cidr_block_binding = args
             .destination_cidr_block
@@ -218,6 +234,7 @@ pub mod traffic_mirror_filter_rule {
                     value: &traffic_mirror_filter_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TrafficMirrorFilterRuleResult {

@@ -107,6 +107,22 @@ pub mod event_archive {
         name: &str,
         args: EventArchiveArgs,
     ) -> EventArchiveResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EventArchiveArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EventArchiveResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EventArchiveArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EventArchiveResult {
         let description_binding = args.description.get_output(context);
         let event_pattern_binding = args.event_pattern.get_output(context);
         let event_source_arn_binding = args.event_source_arn.get_output(context);
@@ -138,6 +154,7 @@ pub mod event_archive {
                     value: &retention_days_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EventArchiveResult {

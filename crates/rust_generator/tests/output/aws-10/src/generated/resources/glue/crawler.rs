@@ -356,6 +356,22 @@ pub mod crawler {
         name: &str,
         args: CrawlerArgs,
     ) -> CrawlerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CrawlerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CrawlerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CrawlerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CrawlerResult {
         let catalog_targets_binding = args.catalog_targets.get_output(context);
         let classifiers_binding = args.classifiers.get_output(context);
         let configuration_binding = args.configuration.get_output(context);
@@ -478,6 +494,7 @@ pub mod crawler {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CrawlerResult {

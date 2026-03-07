@@ -233,6 +233,22 @@ pub mod dataset_delimited_text {
         name: &str,
         args: DatasetDelimitedTextArgs,
     ) -> DatasetDelimitedTextResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatasetDelimitedTextArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DatasetDelimitedTextResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatasetDelimitedTextArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DatasetDelimitedTextResult {
         let additional_properties_binding = args
             .additional_properties
             .get_output(context);
@@ -350,6 +366,7 @@ pub mod dataset_delimited_text {
                     value: &schema_columns_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DatasetDelimitedTextResult {

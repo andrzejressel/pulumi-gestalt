@@ -28,6 +28,8 @@ pub struct RegisterResourceOutput {
     pub(crate) fields: Output<Arc<ResourceFields>>,
     pub(crate) urn: RawOutput,
     pub(crate) id: RawOutput,
+    /// Pulumi Provider ID is the combination of URN and ID. It is used when creating a resource.
+    pub(crate) provider_id: RawOutput,
 }
 
 impl RegisterResourceOutput {
@@ -37,6 +39,10 @@ impl RegisterResourceOutput {
 
     pub fn get_id(&self) -> RawOutput {
         self.id.clone()
+    }
+
+    pub fn get_provider_id(&self) -> RawOutput {
+        self.provider_id.clone()
     }
 
     pub(crate) fn invoke_void(self) -> Shared<BoxFuture<'static, ()>> {

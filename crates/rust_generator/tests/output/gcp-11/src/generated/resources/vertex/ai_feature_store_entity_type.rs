@@ -191,6 +191,22 @@ pub mod ai_feature_store_entity_type {
         name: &str,
         args: AiFeatureStoreEntityTypeArgs,
     ) -> AiFeatureStoreEntityTypeResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AiFeatureStoreEntityTypeArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AiFeatureStoreEntityTypeResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AiFeatureStoreEntityTypeArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AiFeatureStoreEntityTypeResult {
         let description_binding = args.description.get_output(context);
         let featurestore_binding = args.featurestore.get_output(context);
         let labels_binding = args.labels.get_output(context);
@@ -229,6 +245,7 @@ pub mod ai_feature_store_entity_type {
                     value: &offline_storage_ttl_days_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AiFeatureStoreEntityTypeResult {

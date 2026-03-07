@@ -203,6 +203,22 @@ pub mod next_generation_firewall_virtual_network_panorama {
         name: &str,
         args: NextGenerationFirewallVirtualNetworkPanoramaArgs,
     ) -> NextGenerationFirewallVirtualNetworkPanoramaResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NextGenerationFirewallVirtualNetworkPanoramaArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NextGenerationFirewallVirtualNetworkPanoramaResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NextGenerationFirewallVirtualNetworkPanoramaArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NextGenerationFirewallVirtualNetworkPanoramaResult {
         let destination_nats_binding = args.destination_nats.get_output(context);
         let dns_settings_binding = args.dns_settings.get_output(context);
         let location_binding = args.location.get_output(context);
@@ -252,6 +268,7 @@ pub mod next_generation_firewall_virtual_network_panorama {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NextGenerationFirewallVirtualNetworkPanoramaResult {

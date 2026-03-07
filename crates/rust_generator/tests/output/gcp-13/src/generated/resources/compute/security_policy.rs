@@ -258,6 +258,22 @@ pub mod security_policy {
         name: &str,
         args: SecurityPolicyArgs,
     ) -> SecurityPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SecurityPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SecurityPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SecurityPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SecurityPolicyResult {
         let adaptive_protection_config_binding = args
             .adaptive_protection_config
             .get_output(context);
@@ -310,6 +326,7 @@ pub mod security_policy {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SecurityPolicyResult {

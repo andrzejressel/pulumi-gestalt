@@ -85,6 +85,22 @@ pub mod api_tag {
         name: &str,
         args: ApiTagArgs,
     ) -> ApiTagResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApiTagArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ApiTagResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApiTagArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ApiTagResult {
         let api_id_binding = args.api_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -101,6 +117,7 @@ pub mod api_tag {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ApiTagResult {

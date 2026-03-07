@@ -338,6 +338,22 @@ pub mod run_command {
         name: &str,
         args: RunCommandArgs,
     ) -> RunCommandResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RunCommandArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RunCommandResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RunCommandArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RunCommandResult {
         let error_blob_managed_identity_binding = args
             .error_blob_managed_identity
             .get_output(context);
@@ -413,6 +429,7 @@ pub mod run_command {
                     value: &virtual_machine_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RunCommandResult {

@@ -255,6 +255,22 @@ pub mod enterprise_key {
         name: &str,
         args: EnterpriseKeyArgs,
     ) -> EnterpriseKeyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EnterpriseKeyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EnterpriseKeyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EnterpriseKeyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EnterpriseKeyResult {
         let android_settings_binding = args.android_settings.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let ios_settings_binding = args.ios_settings.get_output(context);
@@ -301,6 +317,7 @@ pub mod enterprise_key {
                     value: &web_settings_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EnterpriseKeyResult {

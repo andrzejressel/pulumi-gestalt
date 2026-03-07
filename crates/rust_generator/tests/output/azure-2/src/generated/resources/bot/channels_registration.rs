@@ -165,6 +165,22 @@ pub mod channels_registration {
         name: &str,
         args: ChannelsRegistrationArgs,
     ) -> ChannelsRegistrationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ChannelsRegistrationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ChannelsRegistrationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ChannelsRegistrationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ChannelsRegistrationResult {
         let cmk_key_vault_url_binding = args.cmk_key_vault_url.get_output(context);
         let description_binding = args.description.get_output(context);
         let developer_app_insights_api_key_binding = args
@@ -261,6 +277,7 @@ pub mod channels_registration {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ChannelsRegistrationResult {

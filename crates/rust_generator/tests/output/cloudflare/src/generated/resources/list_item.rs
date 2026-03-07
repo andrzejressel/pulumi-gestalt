@@ -168,6 +168,22 @@ pub mod list_item {
         name: &str,
         args: ListItemArgs,
     ) -> ListItemResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ListItemArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ListItemResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ListItemArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ListItemResult {
         let account_id_binding = args.account_id.get_output(context);
         let asn_binding = args.asn.get_output(context);
         let comment_binding = args.comment.get_output(context);
@@ -209,6 +225,7 @@ pub mod list_item {
                     value: &redirect_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ListItemResult {

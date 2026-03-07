@@ -156,6 +156,22 @@ pub mod stage {
         name: &str,
         args: StageArgs,
     ) -> StageResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StageArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> StageResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StageArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> StageResult {
         let access_log_settings_binding = args.access_log_settings.get_output(context);
         let cache_cluster_enabled_binding = args
             .cache_cluster_enabled
@@ -233,6 +249,7 @@ pub mod stage {
                     value: &xray_tracing_enabled_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         StageResult {

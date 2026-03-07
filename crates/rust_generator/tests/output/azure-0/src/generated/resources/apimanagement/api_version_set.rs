@@ -122,6 +122,22 @@ pub mod api_version_set {
         name: &str,
         args: ApiVersionSetArgs,
     ) -> ApiVersionSetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApiVersionSetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ApiVersionSetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApiVersionSetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ApiVersionSetResult {
         let api_management_name_binding = args.api_management_name.get_output(context);
         let description_binding = args.description.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
@@ -168,6 +184,7 @@ pub mod api_version_set {
                     value: &versioning_scheme_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ApiVersionSetResult {

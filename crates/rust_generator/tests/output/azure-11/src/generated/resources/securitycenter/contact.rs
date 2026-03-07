@@ -83,6 +83,22 @@ pub mod contact {
         name: &str,
         args: ContactArgs,
     ) -> ContactResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ContactArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ContactResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ContactArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ContactResult {
         let alert_notifications_binding = args.alert_notifications.get_output(context);
         let alerts_to_admins_binding = args.alerts_to_admins.get_output(context);
         let email_binding = args.email.get_output(context);
@@ -114,6 +130,7 @@ pub mod contact {
                     value: &phone_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ContactResult {

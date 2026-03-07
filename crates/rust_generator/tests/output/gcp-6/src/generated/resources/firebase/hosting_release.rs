@@ -231,6 +231,22 @@ pub mod hosting_release {
         name: &str,
         args: HostingReleaseArgs,
     ) -> HostingReleaseResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HostingReleaseArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> HostingReleaseResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HostingReleaseArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> HostingReleaseResult {
         let channel_id_binding = args.channel_id.get_output(context);
         let message_binding = args.message.get_output(context);
         let site_id_binding = args.site_id.get_output(context);
@@ -262,6 +278,7 @@ pub mod hosting_release {
                     value: &version_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         HostingReleaseResult {

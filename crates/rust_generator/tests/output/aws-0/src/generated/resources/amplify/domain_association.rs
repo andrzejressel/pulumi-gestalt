@@ -121,6 +121,22 @@ pub mod domain_association {
         name: &str,
         args: DomainAssociationArgs,
     ) -> DomainAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DomainAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DomainAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DomainAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DomainAssociationResult {
         let app_id_binding = args.app_id.get_output(context);
         let certificate_settings_binding = args.certificate_settings.get_output(context);
         let domain_name_binding = args.domain_name.get_output(context);
@@ -161,6 +177,7 @@ pub mod domain_association {
                     value: &wait_for_verification_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DomainAssociationResult {

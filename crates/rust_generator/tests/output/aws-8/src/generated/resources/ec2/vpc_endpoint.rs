@@ -258,6 +258,22 @@ pub mod vpc_endpoint {
         name: &str,
         args: VpcEndpointArgs,
     ) -> VpcEndpointResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcEndpointArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VpcEndpointResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcEndpointArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VpcEndpointResult {
         let auto_accept_binding = args.auto_accept.get_output(context);
         let dns_options_binding = args.dns_options.get_output(context);
         let ip_address_type_binding = args.ip_address_type.get_output(context);
@@ -336,6 +352,7 @@ pub mod vpc_endpoint {
                     value: &vpc_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VpcEndpointResult {

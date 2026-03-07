@@ -139,6 +139,22 @@ pub mod linked_service_cosmos_db {
         name: &str,
         args: LinkedServiceCosmosDbArgs,
     ) -> LinkedServiceCosmosDbResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LinkedServiceCosmosDbArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LinkedServiceCosmosDbResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LinkedServiceCosmosDbArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LinkedServiceCosmosDbResult {
         let account_endpoint_binding = args.account_endpoint.get_output(context);
         let account_key_binding = args.account_key.get_output(context);
         let additional_properties_binding = args
@@ -205,6 +221,7 @@ pub mod linked_service_cosmos_db {
                     value: &parameters_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LinkedServiceCosmosDbResult {

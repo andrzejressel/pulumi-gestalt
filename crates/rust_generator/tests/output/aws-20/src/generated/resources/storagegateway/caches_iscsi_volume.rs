@@ -146,6 +146,22 @@ pub mod caches_iscsi_volume {
         name: &str,
         args: CachesIscsiVolumeArgs,
     ) -> CachesIscsiVolumeResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CachesIscsiVolumeArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CachesIscsiVolumeResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CachesIscsiVolumeArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CachesIscsiVolumeResult {
         let gateway_arn_binding = args.gateway_arn.get_output(context);
         let kms_encrypted_binding = args.kms_encrypted.get_output(context);
         let kms_key_binding = args.kms_key.get_output(context);
@@ -197,6 +213,7 @@ pub mod caches_iscsi_volume {
                     value: &volume_size_in_bytes_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CachesIscsiVolumeResult {

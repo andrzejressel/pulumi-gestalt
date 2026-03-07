@@ -96,6 +96,22 @@ pub mod customer_gateway {
         name: &str,
         args: CustomerGatewayArgs,
     ) -> CustomerGatewayResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomerGatewayArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CustomerGatewayResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomerGatewayArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CustomerGatewayResult {
         let bgp_asn_binding = args.bgp_asn.get_output(context);
         let bgp_asn_extended_binding = args.bgp_asn_extended.get_output(context);
         let certificate_arn_binding = args.certificate_arn.get_output(context);
@@ -137,6 +153,7 @@ pub mod customer_gateway {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CustomerGatewayResult {

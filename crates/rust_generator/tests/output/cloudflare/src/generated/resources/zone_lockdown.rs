@@ -88,6 +88,22 @@ pub mod zone_lockdown {
         name: &str,
         args: ZoneLockdownArgs,
     ) -> ZoneLockdownResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZoneLockdownArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ZoneLockdownResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZoneLockdownArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ZoneLockdownResult {
         let configurations_binding = args.configurations.get_output(context);
         let description_binding = args.description.get_output(context);
         let paused_binding = args.paused.get_output(context);
@@ -124,6 +140,7 @@ pub mod zone_lockdown {
                     value: &zone_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ZoneLockdownResult {

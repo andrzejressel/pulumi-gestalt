@@ -429,6 +429,22 @@ pub mod policy {
         name: &str,
         args: PolicyArgs,
     ) -> PolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PolicyResult {
         let adjustment_type_binding = args.adjustment_type.get_output(context);
         let autoscaling_group_name_binding = args
             .autoscaling_group_name
@@ -512,6 +528,7 @@ pub mod policy {
                     value: &target_tracking_configuration_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PolicyResult {

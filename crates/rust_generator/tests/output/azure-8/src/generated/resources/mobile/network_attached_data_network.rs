@@ -221,6 +221,22 @@ pub mod network_attached_data_network {
         name: &str,
         args: NetworkAttachedDataNetworkArgs,
     ) -> NetworkAttachedDataNetworkResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkAttachedDataNetworkArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NetworkAttachedDataNetworkResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkAttachedDataNetworkArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NetworkAttachedDataNetworkResult {
         let dns_addresses_binding = args.dns_addresses.get_output(context);
         let location_binding = args.location.get_output(context);
         let mobile_network_data_network_name_binding = args
@@ -307,6 +323,7 @@ pub mod network_attached_data_network {
                     value: &user_plane_access_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NetworkAttachedDataNetworkResult {

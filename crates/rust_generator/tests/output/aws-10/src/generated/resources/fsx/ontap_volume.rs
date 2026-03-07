@@ -221,6 +221,22 @@ pub mod ontap_volume {
         name: &str,
         args: OntapVolumeArgs,
     ) -> OntapVolumeResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OntapVolumeArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OntapVolumeResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OntapVolumeArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OntapVolumeResult {
         let aggregate_configuration_binding = args
             .aggregate_configuration
             .get_output(context);
@@ -332,6 +348,7 @@ pub mod ontap_volume {
                     value: &volume_type_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OntapVolumeResult {

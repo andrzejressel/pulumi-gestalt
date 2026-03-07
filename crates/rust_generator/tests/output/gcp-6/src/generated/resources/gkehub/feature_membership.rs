@@ -455,6 +455,22 @@ pub mod feature_membership {
         name: &str,
         args: FeatureMembershipArgs,
     ) -> FeatureMembershipResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FeatureMembershipArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FeatureMembershipResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FeatureMembershipArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FeatureMembershipResult {
         let configmanagement_binding = args.configmanagement.get_output(context);
         let feature_binding = args.feature.get_output(context);
         let location_binding = args.location.get_output(context);
@@ -501,6 +517,7 @@ pub mod feature_membership {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FeatureMembershipResult {

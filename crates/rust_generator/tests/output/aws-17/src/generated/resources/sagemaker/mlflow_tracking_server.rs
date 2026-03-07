@@ -111,6 +111,22 @@ pub mod mlflow_tracking_server {
         name: &str,
         args: MlflowTrackingServerArgs,
     ) -> MlflowTrackingServerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MlflowTrackingServerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MlflowTrackingServerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MlflowTrackingServerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MlflowTrackingServerResult {
         let artifact_store_uri_binding = args.artifact_store_uri.get_output(context);
         let automatic_model_registration_binding = args
             .automatic_model_registration
@@ -161,6 +177,7 @@ pub mod mlflow_tracking_server {
                     value: &weekly_maintenance_window_start_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MlflowTrackingServerResult {

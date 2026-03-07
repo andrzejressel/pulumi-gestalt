@@ -138,6 +138,22 @@ pub mod web_app {
         name: &str,
         args: WebAppArgs,
     ) -> WebAppResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WebAppArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WebAppResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WebAppArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WebAppResult {
         let developer_app_insights_api_key_binding = args
             .developer_app_insights_api_key
             .get_output(context);
@@ -215,6 +231,7 @@ pub mod web_app {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WebAppResult {

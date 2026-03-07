@@ -84,6 +84,22 @@ pub mod cache_access_policy {
         name: &str,
         args: CacheAccessPolicyArgs,
     ) -> CacheAccessPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CacheAccessPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CacheAccessPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CacheAccessPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CacheAccessPolicyResult {
         let name_binding = args.name.get_output(context);
         let permissions_binding = args.permissions.get_output(context);
         let redis_cache_id_binding = args.redis_cache_id.get_output(context);
@@ -105,6 +121,7 @@ pub mod cache_access_policy {
                     value: &redis_cache_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CacheAccessPolicyResult {

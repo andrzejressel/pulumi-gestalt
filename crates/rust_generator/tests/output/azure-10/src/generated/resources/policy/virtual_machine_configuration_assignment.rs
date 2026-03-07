@@ -155,6 +155,22 @@ pub mod virtual_machine_configuration_assignment {
         name: &str,
         args: VirtualMachineConfigurationAssignmentArgs,
     ) -> VirtualMachineConfigurationAssignmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VirtualMachineConfigurationAssignmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VirtualMachineConfigurationAssignmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VirtualMachineConfigurationAssignmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VirtualMachineConfigurationAssignmentResult {
         let configuration_binding = args.configuration.get_output(context);
         let location_binding = args.location.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -182,6 +198,7 @@ pub mod virtual_machine_configuration_assignment {
                     value: &virtual_machine_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VirtualMachineConfigurationAssignmentResult {

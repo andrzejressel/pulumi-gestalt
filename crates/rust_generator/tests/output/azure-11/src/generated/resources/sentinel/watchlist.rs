@@ -114,6 +114,22 @@ pub mod watchlist {
         name: &str,
         args: WatchlistArgs,
     ) -> WatchlistResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WatchlistArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WatchlistResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WatchlistArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WatchlistResult {
         let default_duration_binding = args.default_duration.get_output(context);
         let description_binding = args.description.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
@@ -157,6 +173,7 @@ pub mod watchlist {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WatchlistResult {

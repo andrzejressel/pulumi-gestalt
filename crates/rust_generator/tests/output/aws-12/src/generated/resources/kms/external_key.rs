@@ -118,6 +118,22 @@ pub mod external_key {
         name: &str,
         args: ExternalKeyArgs,
     ) -> ExternalKeyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ExternalKeyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ExternalKeyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ExternalKeyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ExternalKeyResult {
         let bypass_policy_lockout_safety_check_binding = args
             .bypass_policy_lockout_safety_check
             .get_output(context);
@@ -173,6 +189,7 @@ pub mod external_key {
                     value: &valid_to_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ExternalKeyResult {

@@ -92,6 +92,22 @@ pub mod event_api_destination {
         name: &str,
         args: EventApiDestinationArgs,
     ) -> EventApiDestinationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EventApiDestinationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EventApiDestinationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EventApiDestinationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EventApiDestinationResult {
         let connection_arn_binding = args.connection_arn.get_output(context);
         let description_binding = args.description.get_output(context);
         let http_method_binding = args.http_method.get_output(context);
@@ -130,6 +146,7 @@ pub mod event_api_destination {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EventApiDestinationResult {

@@ -167,6 +167,22 @@ pub mod vpn_gateway_connection {
         name: &str,
         args: VpnGatewayConnectionArgs,
     ) -> VpnGatewayConnectionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpnGatewayConnectionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VpnGatewayConnectionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpnGatewayConnectionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VpnGatewayConnectionResult {
         let internet_security_enabled_binding = args
             .internet_security_enabled
             .get_output(context);
@@ -212,6 +228,7 @@ pub mod vpn_gateway_connection {
                     value: &vpn_links_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VpnGatewayConnectionResult {

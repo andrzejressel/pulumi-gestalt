@@ -214,6 +214,22 @@ pub mod document {
         name: &str,
         args: DocumentArgs,
     ) -> DocumentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DocumentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DocumentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DocumentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DocumentResult {
         let collection_binding = args.collection.get_output(context);
         let database_binding = args.database.get_output(context);
         let document_id_binding = args.document_id.get_output(context);
@@ -245,6 +261,7 @@ pub mod document {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DocumentResult {

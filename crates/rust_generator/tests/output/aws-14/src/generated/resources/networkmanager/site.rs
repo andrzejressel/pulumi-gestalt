@@ -87,6 +87,22 @@ pub mod site {
         name: &str,
         args: SiteArgs,
     ) -> SiteResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SiteArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SiteResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SiteArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SiteResult {
         let description_binding = args.description.get_output(context);
         let global_network_id_binding = args.global_network_id.get_output(context);
         let location_binding = args.location.get_output(context);
@@ -113,6 +129,7 @@ pub mod site {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SiteResult {

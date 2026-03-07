@@ -185,6 +185,22 @@ pub mod cx_entity_type {
         name: &str,
         args: CxEntityTypeArgs,
     ) -> CxEntityTypeResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CxEntityTypeArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CxEntityTypeResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CxEntityTypeArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CxEntityTypeResult {
         let auto_expansion_mode_binding = args.auto_expansion_mode.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let enable_fuzzy_extraction_binding = args
@@ -238,6 +254,7 @@ pub mod cx_entity_type {
                     value: &redact_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CxEntityTypeResult {

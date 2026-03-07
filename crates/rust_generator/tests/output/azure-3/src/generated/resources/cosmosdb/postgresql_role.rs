@@ -88,6 +88,22 @@ pub mod postgresql_role {
         name: &str,
         args: PostgresqlRoleArgs,
     ) -> PostgresqlRoleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PostgresqlRoleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PostgresqlRoleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PostgresqlRoleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PostgresqlRoleResult {
         let cluster_id_binding = args.cluster_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let password_binding = args.password.get_output(context);
@@ -109,6 +125,7 @@ pub mod postgresql_role {
                     value: &password_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PostgresqlRoleResult {

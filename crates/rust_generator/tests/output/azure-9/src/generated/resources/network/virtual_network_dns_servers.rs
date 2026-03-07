@@ -76,6 +76,22 @@ pub mod virtual_network_dns_servers {
         name: &str,
         args: VirtualNetworkDnsServersArgs,
     ) -> VirtualNetworkDnsServersResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VirtualNetworkDnsServersArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VirtualNetworkDnsServersResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VirtualNetworkDnsServersArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VirtualNetworkDnsServersResult {
         let dns_servers_binding = args.dns_servers.get_output(context);
         let virtual_network_id_binding = args.virtual_network_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -93,6 +109,7 @@ pub mod virtual_network_dns_servers {
                     value: &virtual_network_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VirtualNetworkDnsServersResult {

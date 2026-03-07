@@ -102,6 +102,22 @@ pub mod services_communications_gateway_test_line {
         name: &str,
         args: ServicesCommunicationsGatewayTestLineArgs,
     ) -> ServicesCommunicationsGatewayTestLineResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServicesCommunicationsGatewayTestLineArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServicesCommunicationsGatewayTestLineResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServicesCommunicationsGatewayTestLineArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServicesCommunicationsGatewayTestLineResult {
         let location_binding = args.location.get_output(context);
         let name_binding = args.name.get_output(context);
         let phone_number_binding = args.phone_number.get_output(context);
@@ -141,6 +157,7 @@ pub mod services_communications_gateway_test_line {
                     value: &voice_services_communications_gateway_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServicesCommunicationsGatewayTestLineResult {

@@ -88,6 +88,22 @@ pub mod resource_share_accepter {
         name: &str,
         args: ResourceShareAccepterArgs,
     ) -> ResourceShareAccepterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResourceShareAccepterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ResourceShareAccepterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResourceShareAccepterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ResourceShareAccepterResult {
         let share_arn_binding = args.share_arn.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ram/resourceShareAccepter:ResourceShareAccepter".into(),
@@ -99,6 +115,7 @@ pub mod resource_share_accepter {
                     value: &share_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ResourceShareAccepterResult {

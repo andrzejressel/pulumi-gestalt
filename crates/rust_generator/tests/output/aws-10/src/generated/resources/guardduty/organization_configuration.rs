@@ -115,6 +115,22 @@ pub mod organization_configuration {
         name: &str,
         args: OrganizationConfigurationArgs,
     ) -> OrganizationConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OrganizationConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OrganizationConfigurationResult {
         let auto_enable_binding = args.auto_enable.get_output(context);
         let auto_enable_organization_members_binding = args
             .auto_enable_organization_members
@@ -144,6 +160,7 @@ pub mod organization_configuration {
                     value: &detector_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OrganizationConfigurationResult {

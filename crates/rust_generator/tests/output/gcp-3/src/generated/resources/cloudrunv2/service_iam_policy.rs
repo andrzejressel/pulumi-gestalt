@@ -256,6 +256,22 @@ pub mod service_iam_policy {
         name: &str,
         args: ServiceIamPolicyArgs,
     ) -> ServiceIamPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceIamPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServiceIamPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceIamPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServiceIamPolicyResult {
         let location_binding = args.location.get_output(context);
         let name_binding = args.name.get_output(context);
         let policy_data_binding = args.policy_data.get_output(context);
@@ -282,6 +298,7 @@ pub mod service_iam_policy {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServiceIamPolicyResult {

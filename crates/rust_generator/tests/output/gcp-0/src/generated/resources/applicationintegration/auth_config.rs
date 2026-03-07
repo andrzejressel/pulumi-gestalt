@@ -205,6 +205,22 @@ pub mod auth_config {
         name: &str,
         args: AuthConfigArgs,
     ) -> AuthConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AuthConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AuthConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AuthConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AuthConfigResult {
         let client_certificate_binding = args.client_certificate.get_output(context);
         let decrypted_credential_binding = args.decrypted_credential.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -258,6 +274,7 @@ pub mod auth_config {
                     value: &visibility_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AuthConfigResult {

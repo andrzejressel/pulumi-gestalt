@@ -141,6 +141,22 @@ pub mod spring_cloud_app_dynamics_application_performance_monitoring {
         name: &str,
         args: SpringCloudAppDynamicsApplicationPerformanceMonitoringArgs,
     ) -> SpringCloudAppDynamicsApplicationPerformanceMonitoringResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudAppDynamicsApplicationPerformanceMonitoringArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SpringCloudAppDynamicsApplicationPerformanceMonitoringResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudAppDynamicsApplicationPerformanceMonitoringArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SpringCloudAppDynamicsApplicationPerformanceMonitoringResult {
         let agent_account_access_key_binding = args
             .agent_account_access_key
             .get_output(context);
@@ -216,6 +232,7 @@ pub mod spring_cloud_app_dynamics_application_performance_monitoring {
                     value: &spring_cloud_service_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SpringCloudAppDynamicsApplicationPerformanceMonitoringResult {

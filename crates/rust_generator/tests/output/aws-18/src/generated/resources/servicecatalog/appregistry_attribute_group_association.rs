@@ -73,6 +73,22 @@ pub mod appregistry_attribute_group_association {
         name: &str,
         args: AppregistryAttributeGroupAssociationArgs,
     ) -> AppregistryAttributeGroupAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AppregistryAttributeGroupAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AppregistryAttributeGroupAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AppregistryAttributeGroupAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AppregistryAttributeGroupAssociationResult {
         let application_id_binding = args.application_id.get_output(context);
         let attribute_group_id_binding = args.attribute_group_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -90,6 +106,7 @@ pub mod appregistry_attribute_group_association {
                     value: &attribute_group_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AppregistryAttributeGroupAssociationResult {

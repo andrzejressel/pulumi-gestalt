@@ -141,6 +141,22 @@ pub mod account_subscription {
         name: &str,
         args: AccountSubscriptionArgs,
     ) -> AccountSubscriptionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccountSubscriptionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AccountSubscriptionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccountSubscriptionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AccountSubscriptionResult {
         let account_name_binding = args.account_name.get_output(context);
         let active_directory_name_binding = args
             .active_directory_name
@@ -233,6 +249,7 @@ pub mod account_subscription {
                     value: &realm_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AccountSubscriptionResult {

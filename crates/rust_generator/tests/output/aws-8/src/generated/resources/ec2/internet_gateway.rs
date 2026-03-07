@@ -99,6 +99,22 @@ pub mod internet_gateway {
         name: &str,
         args: InternetGatewayArgs,
     ) -> InternetGatewayResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InternetGatewayArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> InternetGatewayResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InternetGatewayArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> InternetGatewayResult {
         let tags_binding = args.tags.get_output(context);
         let vpc_id_binding = args.vpc_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -115,6 +131,7 @@ pub mod internet_gateway {
                     value: &vpc_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         InternetGatewayResult {

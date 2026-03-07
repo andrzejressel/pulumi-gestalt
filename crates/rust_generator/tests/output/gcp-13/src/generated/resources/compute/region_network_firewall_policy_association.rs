@@ -143,6 +143,22 @@ pub mod region_network_firewall_policy_association {
         name: &str,
         args: RegionNetworkFirewallPolicyAssociationArgs,
     ) -> RegionNetworkFirewallPolicyAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionNetworkFirewallPolicyAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RegionNetworkFirewallPolicyAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionNetworkFirewallPolicyAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RegionNetworkFirewallPolicyAssociationResult {
         let attachment_target_binding = args.attachment_target.get_output(context);
         let firewall_policy_binding = args.firewall_policy.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -175,6 +191,7 @@ pub mod region_network_firewall_policy_association {
                     value: &region_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RegionNetworkFirewallPolicyAssociationResult {

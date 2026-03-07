@@ -29,6 +29,22 @@ pub mod resource {
         name: &str,
         args: ResourceArgs,
     ) -> ResourceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResourceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ResourceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResourceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ResourceResult {
         let bar_binding = args.bar.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "foo:nested/module:Resource".into(),
@@ -40,6 +56,7 @@ pub mod resource {
                     value: &bar_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ResourceResult {

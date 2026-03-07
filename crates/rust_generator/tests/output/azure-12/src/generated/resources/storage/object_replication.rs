@@ -145,6 +145,22 @@ pub mod object_replication {
         name: &str,
         args: ObjectReplicationArgs,
     ) -> ObjectReplicationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ObjectReplicationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ObjectReplicationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ObjectReplicationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ObjectReplicationResult {
         let destination_storage_account_id_binding = args
             .destination_storage_account_id
             .get_output(context);
@@ -170,6 +186,7 @@ pub mod object_replication {
                     value: &source_storage_account_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ObjectReplicationResult {

@@ -56,6 +56,22 @@ pub mod account_suppression_attributes {
         name: &str,
         args: AccountSuppressionAttributesArgs,
     ) -> AccountSuppressionAttributesResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccountSuppressionAttributesArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AccountSuppressionAttributesResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccountSuppressionAttributesArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AccountSuppressionAttributesResult {
         let suppressed_reasons_binding = args.suppressed_reasons.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:sesv2/accountSuppressionAttributes:AccountSuppressionAttributes"
@@ -68,6 +84,7 @@ pub mod account_suppression_attributes {
                     value: &suppressed_reasons_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AccountSuppressionAttributesResult {

@@ -102,6 +102,22 @@ pub mod federated_identity_credential {
         name: &str,
         args: FederatedIdentityCredentialArgs,
     ) -> FederatedIdentityCredentialResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FederatedIdentityCredentialArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FederatedIdentityCredentialResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FederatedIdentityCredentialArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FederatedIdentityCredentialResult {
         let audience_binding = args.audience.get_output(context);
         let issuer_binding = args.issuer.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -139,6 +155,7 @@ pub mod federated_identity_credential {
                     value: &subject_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FederatedIdentityCredentialResult {

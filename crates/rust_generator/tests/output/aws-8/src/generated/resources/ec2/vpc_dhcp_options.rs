@@ -135,6 +135,22 @@ pub mod vpc_dhcp_options {
         name: &str,
         args: VpcDhcpOptionsArgs,
     ) -> VpcDhcpOptionsResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcDhcpOptionsArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VpcDhcpOptionsResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcDhcpOptionsArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VpcDhcpOptionsResult {
         let domain_name_binding = args.domain_name.get_output(context);
         let domain_name_servers_binding = args.domain_name_servers.get_output(context);
         let ipv6_address_preferred_lease_time_binding = args
@@ -178,6 +194,7 @@ pub mod vpc_dhcp_options {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VpcDhcpOptionsResult {

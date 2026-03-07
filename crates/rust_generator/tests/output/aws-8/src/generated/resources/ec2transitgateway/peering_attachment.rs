@@ -110,6 +110,22 @@ pub mod peering_attachment {
         name: &str,
         args: PeeringAttachmentArgs,
     ) -> PeeringAttachmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PeeringAttachmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PeeringAttachmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PeeringAttachmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PeeringAttachmentResult {
         let options_binding = args.options.get_output(context);
         let peer_account_id_binding = args.peer_account_id.get_output(context);
         let peer_region_binding = args.peer_region.get_output(context);
@@ -148,6 +164,7 @@ pub mod peering_attachment {
                     value: &transit_gateway_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PeeringAttachmentResult {

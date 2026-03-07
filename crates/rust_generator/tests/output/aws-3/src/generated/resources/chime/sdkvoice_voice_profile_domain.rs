@@ -89,6 +89,22 @@ pub mod sdkvoice_voice_profile_domain {
         name: &str,
         args: SdkvoiceVoiceProfileDomainArgs,
     ) -> SdkvoiceVoiceProfileDomainResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SdkvoiceVoiceProfileDomainArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SdkvoiceVoiceProfileDomainResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SdkvoiceVoiceProfileDomainArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SdkvoiceVoiceProfileDomainResult {
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let server_side_encryption_configuration_binding = args
@@ -118,6 +134,7 @@ pub mod sdkvoice_voice_profile_domain {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SdkvoiceVoiceProfileDomainResult {

@@ -129,6 +129,22 @@ pub mod access_rule {
         name: &str,
         args: AccessRuleArgs,
     ) -> AccessRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccessRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AccessRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccessRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AccessRuleResult {
         let account_id_binding = args.account_id.get_output(context);
         let configuration_binding = args.configuration.get_output(context);
         let mode_binding = args.mode.get_output(context);
@@ -160,6 +176,7 @@ pub mod access_rule {
                     value: &zone_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AccessRuleResult {

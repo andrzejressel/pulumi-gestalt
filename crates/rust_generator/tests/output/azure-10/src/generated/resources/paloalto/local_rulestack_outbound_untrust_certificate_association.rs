@@ -71,6 +71,22 @@ pub mod local_rulestack_outbound_untrust_certificate_association {
         name: &str,
         args: LocalRulestackOutboundUntrustCertificateAssociationArgs,
     ) -> LocalRulestackOutboundUntrustCertificateAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LocalRulestackOutboundUntrustCertificateAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LocalRulestackOutboundUntrustCertificateAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LocalRulestackOutboundUntrustCertificateAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LocalRulestackOutboundUntrustCertificateAssociationResult {
         let certificate_id_binding = args.certificate_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:paloalto/localRulestackOutboundUntrustCertificateAssociation:LocalRulestackOutboundUntrustCertificateAssociation"
@@ -83,6 +99,7 @@ pub mod local_rulestack_outbound_untrust_certificate_association {
                     value: &certificate_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LocalRulestackOutboundUntrustCertificateAssociationResult {

@@ -540,6 +540,22 @@ pub mod cx_page {
         name: &str,
         args: CxPageArgs,
     ) -> CxPageResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CxPageArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CxPageResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CxPageArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CxPageResult {
         let advanced_settings_binding = args.advanced_settings.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let entry_fulfillment_binding = args.entry_fulfillment.get_output(context);
@@ -593,6 +609,7 @@ pub mod cx_page {
                     value: &transition_routes_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CxPageResult {

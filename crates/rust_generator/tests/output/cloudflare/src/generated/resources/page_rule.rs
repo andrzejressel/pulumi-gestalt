@@ -90,6 +90,22 @@ pub mod page_rule {
         name: &str,
         args: PageRuleArgs,
     ) -> PageRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PageRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PageRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PageRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PageRuleResult {
         let actions_binding = args.actions.get_output(context);
         let priority_binding = args.priority.get_output(context);
         let status_binding = args.status.get_output(context);
@@ -121,6 +137,7 @@ pub mod page_rule {
                     value: &zone_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PageRuleResult {

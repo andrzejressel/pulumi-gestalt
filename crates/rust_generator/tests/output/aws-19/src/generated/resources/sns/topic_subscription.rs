@@ -271,6 +271,22 @@ pub mod topic_subscription {
         name: &str,
         args: TopicSubscriptionArgs,
     ) -> TopicSubscriptionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TopicSubscriptionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TopicSubscriptionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TopicSubscriptionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TopicSubscriptionResult {
         let confirmation_timeout_in_minutes_binding = args
             .confirmation_timeout_in_minutes
             .get_output(context);
@@ -343,6 +359,7 @@ pub mod topic_subscription {
                     value: &topic_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TopicSubscriptionResult {

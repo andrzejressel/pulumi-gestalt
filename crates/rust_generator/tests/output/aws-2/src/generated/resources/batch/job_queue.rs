@@ -179,6 +179,22 @@ pub mod job_queue {
         name: &str,
         args: JobQueueArgs,
     ) -> JobQueueResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: JobQueueArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> JobQueueResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: JobQueueArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> JobQueueResult {
         let compute_environment_orders_binding = args
             .compute_environment_orders
             .get_output(context);
@@ -236,6 +252,7 @@ pub mod job_queue {
                     value: &timeouts_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         JobQueueResult {

@@ -130,6 +130,22 @@ pub mod iot_hub_dps {
         name: &str,
         args: IotHubDpsArgs,
     ) -> IotHubDpsResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IotHubDpsArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IotHubDpsResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IotHubDpsArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IotHubDpsResult {
         let allocation_policy_binding = args.allocation_policy.get_output(context);
         let data_residency_enabled_binding = args
             .data_residency_enabled
@@ -190,6 +206,7 @@ pub mod iot_hub_dps {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IotHubDpsResult {

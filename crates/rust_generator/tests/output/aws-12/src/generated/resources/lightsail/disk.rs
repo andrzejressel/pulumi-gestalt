@@ -91,6 +91,22 @@ pub mod disk {
         name: &str,
         args: DiskArgs,
     ) -> DiskResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DiskArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DiskResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DiskArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DiskResult {
         let availability_zone_binding = args.availability_zone.get_output(context);
         let name_binding = args.name.get_output(context);
         let size_in_gb_binding = args.size_in_gb.get_output(context);
@@ -117,6 +133,7 @@ pub mod disk {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DiskResult {

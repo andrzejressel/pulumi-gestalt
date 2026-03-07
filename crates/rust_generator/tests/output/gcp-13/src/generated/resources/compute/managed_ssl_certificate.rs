@@ -207,6 +207,22 @@ pub mod managed_ssl_certificate {
         name: &str,
         args: ManagedSslCertificateArgs,
     ) -> ManagedSslCertificateResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedSslCertificateArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ManagedSslCertificateResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedSslCertificateArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ManagedSslCertificateResult {
         let description_binding = args.description.get_output(context);
         let managed_binding = args.managed.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -238,6 +254,7 @@ pub mod managed_ssl_certificate {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ManagedSslCertificateResult {

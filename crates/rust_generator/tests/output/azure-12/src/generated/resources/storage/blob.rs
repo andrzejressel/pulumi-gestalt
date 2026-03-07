@@ -162,6 +162,22 @@ pub mod blob {
         name: &str,
         args: BlobArgs,
     ) -> BlobResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BlobArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BlobResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BlobArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BlobResult {
         let access_tier_binding = args.access_tier.get_output(context);
         let cache_control_binding = args.cache_control.get_output(context);
         let content_md5_binding = args.content_md5.get_output(context);
@@ -245,6 +261,7 @@ pub mod blob {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BlobResult {

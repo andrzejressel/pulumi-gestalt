@@ -270,6 +270,22 @@ pub mod guest_policies {
         name: &str,
         args: GuestPoliciesArgs,
     ) -> GuestPoliciesResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GuestPoliciesArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GuestPoliciesResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GuestPoliciesArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GuestPoliciesResult {
         let assignment_binding = args.assignment.get_output(context);
         let description_binding = args.description.get_output(context);
         let etag_binding = args.etag.get_output(context);
@@ -316,6 +332,7 @@ pub mod guest_policies {
                     value: &recipes_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GuestPoliciesResult {

@@ -55,6 +55,22 @@ pub mod role_association {
         name: &str,
         args: RoleAssociationArgs,
     ) -> RoleAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RoleAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RoleAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RoleAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RoleAssociationResult {
         let db_instance_identifier_binding = args
             .db_instance_identifier
             .get_output(context);
@@ -78,6 +94,7 @@ pub mod role_association {
                     value: &role_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RoleAssociationResult {

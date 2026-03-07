@@ -83,6 +83,22 @@ pub mod trust_store {
         name: &str,
         args: TrustStoreArgs,
     ) -> TrustStoreResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TrustStoreArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TrustStoreResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TrustStoreArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TrustStoreResult {
         let ca_certificates_bundle_s3_bucket_binding = args
             .ca_certificates_bundle_s3_bucket
             .get_output(context);
@@ -125,6 +141,7 @@ pub mod trust_store {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TrustStoreResult {

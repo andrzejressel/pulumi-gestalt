@@ -81,6 +81,22 @@ pub mod iam_audit_config {
         name: &str,
         args: IamAuditConfigArgs,
     ) -> IamAuditConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IamAuditConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IamAuditConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IamAuditConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IamAuditConfigResult {
         let audit_log_configs_binding = args.audit_log_configs.get_output(context);
         let org_id_binding = args.org_id.get_output(context);
         let service_binding = args.service.get_output(context);
@@ -102,6 +118,7 @@ pub mod iam_audit_config {
                     value: &service_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IamAuditConfigResult {

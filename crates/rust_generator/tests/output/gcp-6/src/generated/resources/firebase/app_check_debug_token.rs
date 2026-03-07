@@ -147,6 +147,22 @@ pub mod app_check_debug_token {
         name: &str,
         args: AppCheckDebugTokenArgs,
     ) -> AppCheckDebugTokenResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AppCheckDebugTokenArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AppCheckDebugTokenResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AppCheckDebugTokenArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AppCheckDebugTokenResult {
         let app_id_binding = args.app_id.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let project_binding = args.project.get_output(context);
@@ -173,6 +189,7 @@ pub mod app_check_debug_token {
                     value: &token_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AppCheckDebugTokenResult {

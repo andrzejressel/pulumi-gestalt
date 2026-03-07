@@ -120,6 +120,22 @@ pub mod management_policy {
         name: &str,
         args: ManagementPolicyArgs,
     ) -> ManagementPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagementPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ManagementPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagementPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ManagementPolicyResult {
         let rules_binding = args.rules.get_output(context);
         let storage_account_id_binding = args.storage_account_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -136,6 +152,7 @@ pub mod management_policy {
                     value: &storage_account_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ManagementPolicyResult {

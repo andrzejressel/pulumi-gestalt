@@ -248,6 +248,22 @@ pub mod association {
         name: &str,
         args: AssociationArgs,
     ) -> AssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AssociationResult {
         let apply_only_at_cron_interval_binding = args
             .apply_only_at_cron_interval
             .get_output(context);
@@ -340,6 +356,7 @@ pub mod association {
                     value: &wait_for_success_timeout_seconds_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AssociationResult {

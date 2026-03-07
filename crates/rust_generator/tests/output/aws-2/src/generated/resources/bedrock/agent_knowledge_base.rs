@@ -127,6 +127,22 @@ pub mod agent_knowledge_base {
         name: &str,
         args: AgentKnowledgeBaseArgs,
     ) -> AgentKnowledgeBaseResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AgentKnowledgeBaseArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AgentKnowledgeBaseResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AgentKnowledgeBaseArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AgentKnowledgeBaseResult {
         let description_binding = args.description.get_output(context);
         let knowledge_base_configuration_binding = args
             .knowledge_base_configuration
@@ -172,6 +188,7 @@ pub mod agent_knowledge_base {
                     value: &timeouts_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AgentKnowledgeBaseResult {

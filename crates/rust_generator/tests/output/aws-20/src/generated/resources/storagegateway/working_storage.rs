@@ -64,6 +64,22 @@ pub mod working_storage {
         name: &str,
         args: WorkingStorageArgs,
     ) -> WorkingStorageResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkingStorageArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WorkingStorageResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkingStorageArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WorkingStorageResult {
         let disk_id_binding = args.disk_id.get_output(context);
         let gateway_arn_binding = args.gateway_arn.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -80,6 +96,7 @@ pub mod working_storage {
                     value: &gateway_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WorkingStorageResult {

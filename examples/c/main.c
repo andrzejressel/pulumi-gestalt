@@ -58,6 +58,39 @@ static void generate_random_value(pulumi_context_t* ctx) {
 	pulumi_output_add_to_export(output_id, "resource_id");
 }
 
+static void create_provider_and_use_it(pulumi_context_t* ctx) {
+	const pulumi_register_resource_request_t provider_request = {
+		.type_ = "pulumi:providers:random",
+		.name = "custom-provider",
+		.version = "4.15.1",
+		.inputs = NULL,
+		.inputs_len = 0,
+	};
+
+	pulumi_composite_output_t* provider = pulumi_register_resource(ctx, &provider_request);
+	pulumi_output_t* provider_id = pulumi_composite_output_get_provider_id(provider);
+
+	pulumi_output_t* output = pulumi_create_output(ctx, "16", false);
+	const pulumi_object_field_t inputs[] = {
+	{
+		.name = "length",
+		.value = output
+	}
+	};
+
+	const pulumi_register_resource_request_t register_resource_request = {
+		.type_ = "random:index/randomString:RandomString",
+		.name = "my_name_with_provider",
+		.version = "4.15.1",
+		.inputs = inputs,
+		.inputs_len = 1,
+		.provider = provider_id,
+	};
+
+	pulumi_composite_output_t* composite_output = pulumi_register_resource(ctx, &register_resource_request);
+	pulumi_output_add_to_export(provider_id, "provider_id");
+}
+
 static void run_command(pulumi_context_t* ctx) {
 	pulumi_output_t* output = pulumi_create_output(ctx, "\"whoami\"", false);
 
@@ -166,6 +199,7 @@ int main() {
 	run_command(ctx);
 	perform_operations_on_outputs(ctx);
 	generate_random_value(ctx);
+	create_provider_and_use_it(ctx);
 	perform_operations_on_default_config(ctx);
 	perform_operations_on_custom_config(ctx);
 	obtain_schema();

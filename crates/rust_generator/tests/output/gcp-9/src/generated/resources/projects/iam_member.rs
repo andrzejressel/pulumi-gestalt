@@ -436,6 +436,22 @@ pub mod iam_member {
         name: &str,
         args: IAMMemberArgs,
     ) -> IAMMemberResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IAMMemberArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IAMMemberResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IAMMemberArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IAMMemberResult {
         let condition_binding = args.condition.get_output(context);
         let member_binding = args.member.get_output(context);
         let project_binding = args.project.get_output(context);
@@ -462,6 +478,7 @@ pub mod iam_member {
                     value: &role_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IAMMemberResult {

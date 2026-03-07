@@ -155,6 +155,22 @@ pub mod stream_input_event_hub_v_2 {
         name: &str,
         args: StreamInputEventHubV2Args,
     ) -> StreamInputEventHubV2Result {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StreamInputEventHubV2Args,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> StreamInputEventHubV2Result {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StreamInputEventHubV2Args,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> StreamInputEventHubV2Result {
         let authentication_mode_binding = args.authentication_mode.get_output(context);
         let eventhub_consumer_group_name_binding = args
             .eventhub_consumer_group_name
@@ -220,6 +236,7 @@ pub mod stream_input_event_hub_v_2 {
                     value: &stream_analytics_job_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         StreamInputEventHubV2Result {

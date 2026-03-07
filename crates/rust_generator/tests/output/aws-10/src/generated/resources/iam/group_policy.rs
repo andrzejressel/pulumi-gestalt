@@ -87,6 +87,22 @@ pub mod group_policy {
         name: &str,
         args: GroupPolicyArgs,
     ) -> GroupPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GroupPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GroupPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GroupPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GroupPolicyResult {
         let group_binding = args.group.get_output(context);
         let name_binding = args.name.get_output(context);
         let name_prefix_binding = args.name_prefix.get_output(context);
@@ -113,6 +129,7 @@ pub mod group_policy {
                     value: &policy_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GroupPolicyResult {

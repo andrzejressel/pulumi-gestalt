@@ -136,6 +136,22 @@ pub mod hci_network_interface {
         name: &str,
         args: HciNetworkInterfaceArgs,
     ) -> HciNetworkInterfaceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HciNetworkInterfaceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> HciNetworkInterfaceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HciNetworkInterfaceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> HciNetworkInterfaceResult {
         let custom_location_id_binding = args.custom_location_id.get_output(context);
         let dns_servers_binding = args.dns_servers.get_output(context);
         let ip_configuration_binding = args.ip_configuration.get_output(context);
@@ -182,6 +198,7 @@ pub mod hci_network_interface {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         HciNetworkInterfaceResult {

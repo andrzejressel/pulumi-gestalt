@@ -76,6 +76,22 @@ pub mod instance_public_ports {
         name: &str,
         args: InstancePublicPortsArgs,
     ) -> InstancePublicPortsResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InstancePublicPortsArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> InstancePublicPortsResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InstancePublicPortsArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> InstancePublicPortsResult {
         let instance_name_binding = args.instance_name.get_output(context);
         let port_infos_binding = args.port_infos.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -92,6 +108,7 @@ pub mod instance_public_ports {
                     value: &port_infos_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         InstancePublicPortsResult {

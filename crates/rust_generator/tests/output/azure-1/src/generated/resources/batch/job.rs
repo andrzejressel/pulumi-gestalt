@@ -123,6 +123,22 @@ pub mod job {
         name: &str,
         args: JobArgs,
     ) -> JobResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: JobArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> JobResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: JobArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> JobResult {
         let batch_pool_id_binding = args.batch_pool_id.get_output(context);
         let common_environment_properties_binding = args
             .common_environment_properties
@@ -161,6 +177,7 @@ pub mod job {
                     value: &task_retry_maximum_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         JobResult {

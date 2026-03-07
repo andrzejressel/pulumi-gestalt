@@ -105,6 +105,22 @@ pub mod route {
         name: &str,
         args: RouteArgs,
     ) -> RouteResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RouteArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RouteResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RouteArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RouteResult {
         let address_prefix_binding = args.address_prefix.get_output(context);
         let name_binding = args.name.get_output(context);
         let next_hop_in_ip_address_binding = args
@@ -143,6 +159,7 @@ pub mod route {
                     value: &route_table_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RouteResult {

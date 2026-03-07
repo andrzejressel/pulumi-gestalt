@@ -375,6 +375,22 @@ pub mod project {
         name: &str,
         args: ProjectArgs,
     ) -> ProjectResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProjectArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ProjectResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProjectArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ProjectResult {
         let artifacts_binding = args.artifacts.get_output(context);
         let badge_enabled_binding = args.badge_enabled.get_output(context);
         let build_batch_config_binding = args.build_batch_config.get_output(context);
@@ -502,6 +518,7 @@ pub mod project {
                     value: &vpc_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ProjectResult {

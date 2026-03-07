@@ -84,6 +84,22 @@ pub mod sub_account {
         name: &str,
         args: SubAccountArgs,
     ) -> SubAccountResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SubAccountArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SubAccountResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SubAccountArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SubAccountResult {
         let deletion_policy_binding = args.deletion_policy.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let master_billing_account_binding = args
@@ -107,6 +123,7 @@ pub mod sub_account {
                     value: &master_billing_account_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SubAccountResult {

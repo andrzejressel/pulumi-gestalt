@@ -66,6 +66,22 @@ pub mod dedicated_ip_assignment {
         name: &str,
         args: DedicatedIpAssignmentArgs,
     ) -> DedicatedIpAssignmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DedicatedIpAssignmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DedicatedIpAssignmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DedicatedIpAssignmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DedicatedIpAssignmentResult {
         let destination_pool_name_binding = args
             .destination_pool_name
             .get_output(context);
@@ -84,6 +100,7 @@ pub mod dedicated_ip_assignment {
                     value: &ip_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DedicatedIpAssignmentResult {

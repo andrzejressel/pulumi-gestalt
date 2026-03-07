@@ -51,6 +51,22 @@ pub mod network_interface_application_gateway_backend_address_pool_association {
         name: &str,
         args: NetworkInterfaceApplicationGatewayBackendAddressPoolAssociationArgs,
     ) -> NetworkInterfaceApplicationGatewayBackendAddressPoolAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkInterfaceApplicationGatewayBackendAddressPoolAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NetworkInterfaceApplicationGatewayBackendAddressPoolAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkInterfaceApplicationGatewayBackendAddressPoolAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NetworkInterfaceApplicationGatewayBackendAddressPoolAssociationResult {
         let backend_address_pool_id_binding = args
             .backend_address_pool_id
             .get_output(context);
@@ -77,6 +93,7 @@ pub mod network_interface_application_gateway_backend_address_pool_association {
                     value: &network_interface_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NetworkInterfaceApplicationGatewayBackendAddressPoolAssociationResult {

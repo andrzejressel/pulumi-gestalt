@@ -120,6 +120,22 @@ pub mod routing_intent {
         name: &str,
         args: RoutingIntentArgs,
     ) -> RoutingIntentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RoutingIntentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RoutingIntentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RoutingIntentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RoutingIntentResult {
         let name_binding = args.name.get_output(context);
         let routing_policies_binding = args.routing_policies.get_output(context);
         let virtual_hub_id_binding = args.virtual_hub_id.get_output(context);
@@ -141,6 +157,7 @@ pub mod routing_intent {
                     value: &virtual_hub_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RoutingIntentResult {

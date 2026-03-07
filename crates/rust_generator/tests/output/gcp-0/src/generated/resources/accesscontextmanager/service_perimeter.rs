@@ -335,6 +335,22 @@ pub mod service_perimeter {
         name: &str,
         args: ServicePerimeterArgs,
     ) -> ServicePerimeterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServicePerimeterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServicePerimeterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServicePerimeterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServicePerimeterResult {
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let parent_binding = args.parent.get_output(context);
@@ -383,6 +399,7 @@ pub mod service_perimeter {
                     value: &use_explicit_dry_run_spec_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServicePerimeterResult {

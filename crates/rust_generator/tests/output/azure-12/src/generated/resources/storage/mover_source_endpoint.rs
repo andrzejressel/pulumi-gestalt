@@ -101,6 +101,22 @@ pub mod mover_source_endpoint {
         name: &str,
         args: MoverSourceEndpointArgs,
     ) -> MoverSourceEndpointResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MoverSourceEndpointArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MoverSourceEndpointResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MoverSourceEndpointArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MoverSourceEndpointResult {
         let description_binding = args.description.get_output(context);
         let export_binding = args.export.get_output(context);
         let host_binding = args.host.get_output(context);
@@ -137,6 +153,7 @@ pub mod mover_source_endpoint {
                     value: &storage_mover_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MoverSourceEndpointResult {

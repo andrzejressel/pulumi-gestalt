@@ -132,6 +132,22 @@ pub mod report_definition {
         name: &str,
         args: ReportDefinitionArgs,
     ) -> ReportDefinitionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReportDefinitionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ReportDefinitionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReportDefinitionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ReportDefinitionResult {
         let additional_artifacts_binding = args.additional_artifacts.get_output(context);
         let additional_schema_elements_binding = args
             .additional_schema_elements
@@ -202,6 +218,7 @@ pub mod report_definition {
                     value: &time_unit_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ReportDefinitionResult {

@@ -142,6 +142,22 @@ pub mod layer_version {
         name: &str,
         args: LayerVersionArgs,
     ) -> LayerVersionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LayerVersionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LayerVersionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LayerVersionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LayerVersionResult {
         let code_binding = args.code.get_output(context);
         let compatible_architectures_binding = args
             .compatible_architectures
@@ -205,6 +221,7 @@ pub mod layer_version {
                     value: &source_code_hash_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LayerVersionResult {

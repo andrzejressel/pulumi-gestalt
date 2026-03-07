@@ -134,6 +134,22 @@ pub mod certificate_map {
         name: &str,
         args: CertificateMapArgs,
     ) -> CertificateMapResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CertificateMapArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CertificateMapResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CertificateMapArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CertificateMapResult {
         let description_binding = args.description.get_output(context);
         let labels_binding = args.labels.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -160,6 +176,7 @@ pub mod certificate_map {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CertificateMapResult {

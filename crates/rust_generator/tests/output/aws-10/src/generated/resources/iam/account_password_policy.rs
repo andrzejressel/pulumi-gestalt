@@ -113,6 +113,22 @@ pub mod account_password_policy {
         name: &str,
         args: AccountPasswordPolicyArgs,
     ) -> AccountPasswordPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccountPasswordPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AccountPasswordPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccountPasswordPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AccountPasswordPolicyResult {
         let allow_users_to_change_password_binding = args
             .allow_users_to_change_password
             .get_output(context);
@@ -174,6 +190,7 @@ pub mod account_password_policy {
                     value: &require_uppercase_characters_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AccountPasswordPolicyResult {

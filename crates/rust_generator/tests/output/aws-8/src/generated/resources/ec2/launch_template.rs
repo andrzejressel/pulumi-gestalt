@@ -338,6 +338,22 @@ pub mod launch_template {
         name: &str,
         args: LaunchTemplateArgs,
     ) -> LaunchTemplateResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LaunchTemplateArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LaunchTemplateResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LaunchTemplateArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LaunchTemplateResult {
         let block_device_mappings_binding = args
             .block_device_mappings
             .get_output(context);
@@ -553,6 +569,7 @@ pub mod launch_template {
                     value: &vpc_security_group_ids_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LaunchTemplateResult {

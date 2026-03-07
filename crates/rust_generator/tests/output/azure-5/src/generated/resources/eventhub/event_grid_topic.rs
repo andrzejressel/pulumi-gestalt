@@ -145,6 +145,22 @@ pub mod event_grid_topic {
         name: &str,
         args: EventGridTopicArgs,
     ) -> EventGridTopicResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EventGridTopicArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EventGridTopicResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EventGridTopicArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EventGridTopicResult {
         let identity_binding = args.identity.get_output(context);
         let inbound_ip_rules_binding = args.inbound_ip_rules.get_output(context);
         let input_mapping_default_values_binding = args
@@ -210,6 +226,7 @@ pub mod event_grid_topic {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EventGridTopicResult {

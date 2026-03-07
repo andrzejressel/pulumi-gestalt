@@ -66,6 +66,22 @@ pub mod vpc_network_performance_metric_subscription {
         name: &str,
         args: VpcNetworkPerformanceMetricSubscriptionArgs,
     ) -> VpcNetworkPerformanceMetricSubscriptionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcNetworkPerformanceMetricSubscriptionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VpcNetworkPerformanceMetricSubscriptionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcNetworkPerformanceMetricSubscriptionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VpcNetworkPerformanceMetricSubscriptionResult {
         let destination_binding = args.destination.get_output(context);
         let metric_binding = args.metric.get_output(context);
         let source_binding = args.source.get_output(context);
@@ -93,6 +109,7 @@ pub mod vpc_network_performance_metric_subscription {
                     value: &statistic_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VpcNetworkPerformanceMetricSubscriptionResult {

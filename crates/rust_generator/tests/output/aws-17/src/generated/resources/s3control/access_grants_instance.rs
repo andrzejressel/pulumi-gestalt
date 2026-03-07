@@ -95,6 +95,22 @@ pub mod access_grants_instance {
         name: &str,
         args: AccessGrantsInstanceArgs,
     ) -> AccessGrantsInstanceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccessGrantsInstanceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AccessGrantsInstanceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccessGrantsInstanceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AccessGrantsInstanceResult {
         let account_id_binding = args.account_id.get_output(context);
         let identity_center_arn_binding = args.identity_center_arn.get_output(context);
         let tags_binding = args.tags.get_output(context);
@@ -116,6 +132,7 @@ pub mod access_grants_instance {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AccessGrantsInstanceResult {

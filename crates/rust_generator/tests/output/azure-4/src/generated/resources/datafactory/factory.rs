@@ -152,6 +152,22 @@ pub mod factory {
         name: &str,
         args: FactoryArgs,
     ) -> FactoryResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FactoryArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FactoryResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FactoryArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FactoryResult {
         let customer_managed_key_id_binding = args
             .customer_managed_key_id
             .get_output(context);
@@ -231,6 +247,7 @@ pub mod factory {
                     value: &vsts_configuration_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FactoryResult {

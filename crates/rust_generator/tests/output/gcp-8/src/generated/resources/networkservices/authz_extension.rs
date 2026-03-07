@@ -222,6 +222,22 @@ pub mod authz_extension {
         name: &str,
         args: AuthzExtensionArgs,
     ) -> AuthzExtensionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AuthzExtensionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AuthzExtensionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AuthzExtensionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AuthzExtensionResult {
         let authority_binding = args.authority.get_output(context);
         let description_binding = args.description.get_output(context);
         let fail_open_binding = args.fail_open.get_output(context);
@@ -295,6 +311,7 @@ pub mod authz_extension {
                     value: &wire_format_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AuthzExtensionResult {

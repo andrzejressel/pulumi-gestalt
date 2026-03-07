@@ -171,6 +171,22 @@ pub mod api_config {
         name: &str,
         args: ApiConfigArgs,
     ) -> ApiConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApiConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ApiConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApiConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ApiConfigResult {
         let api_binding = args.api.get_output(context);
         let api_config_id_binding = args.api_config_id.get_output(context);
         let api_config_id_prefix_binding = args.api_config_id_prefix.get_output(context);
@@ -229,6 +245,7 @@ pub mod api_config {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ApiConfigResult {

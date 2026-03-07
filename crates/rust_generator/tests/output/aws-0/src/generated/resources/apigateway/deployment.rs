@@ -115,6 +115,22 @@ pub mod deployment {
         name: &str,
         args: DeploymentArgs,
     ) -> DeploymentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DeploymentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DeploymentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DeploymentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DeploymentResult {
         let canary_settings_binding = args.canary_settings.get_output(context);
         let description_binding = args.description.get_output(context);
         let rest_api_binding = args.rest_api.get_output(context);
@@ -156,6 +172,7 @@ pub mod deployment {
                     value: &variables_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DeploymentResult {

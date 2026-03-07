@@ -364,6 +364,22 @@ pub mod region_instance_template {
         name: &str,
         args: RegionInstanceTemplateArgs,
     ) -> RegionInstanceTemplateResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionInstanceTemplateArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RegionInstanceTemplateResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionInstanceTemplateArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RegionInstanceTemplateResult {
         let advanced_machine_features_binding = args
             .advanced_machine_features
             .get_output(context);
@@ -524,6 +540,7 @@ pub mod region_instance_template {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RegionInstanceTemplateResult {

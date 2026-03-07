@@ -294,6 +294,22 @@ pub mod broker {
         name: &str,
         args: BrokerArgs,
     ) -> BrokerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BrokerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BrokerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BrokerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BrokerResult {
         let apply_immediately_binding = args.apply_immediately.get_output(context);
         let authentication_strategy_binding = args
             .authentication_strategy
@@ -415,6 +431,7 @@ pub mod broker {
                     value: &users_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BrokerResult {

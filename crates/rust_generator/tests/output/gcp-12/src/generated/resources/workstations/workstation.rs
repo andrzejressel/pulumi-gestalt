@@ -207,6 +207,22 @@ pub mod workstation {
         name: &str,
         args: WorkstationArgs,
     ) -> WorkstationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkstationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WorkstationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkstationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WorkstationResult {
         let annotations_binding = args.annotations.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let env_binding = args.env.get_output(context);
@@ -262,6 +278,7 @@ pub mod workstation {
                     value: &workstation_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WorkstationResult {

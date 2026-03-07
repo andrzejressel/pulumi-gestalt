@@ -188,6 +188,22 @@ pub mod trigger_tumbling_window {
         name: &str,
         args: TriggerTumblingWindowArgs,
     ) -> TriggerTumblingWindowResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TriggerTumblingWindowArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TriggerTumblingWindowResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TriggerTumblingWindowArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TriggerTumblingWindowResult {
         let activated_binding = args.activated.get_output(context);
         let additional_properties_binding = args
             .additional_properties
@@ -272,6 +288,7 @@ pub mod trigger_tumbling_window {
                     value: &trigger_dependencies_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TriggerTumblingWindowResult {

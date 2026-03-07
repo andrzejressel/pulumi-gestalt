@@ -226,6 +226,22 @@ pub mod job {
         name: &str,
         args: JobArgs,
     ) -> JobResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: JobArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> JobResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: JobArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> JobResult {
         let container_app_environment_id_binding = args
             .container_app_environment_id
             .get_output(context);
@@ -317,6 +333,7 @@ pub mod job {
                     value: &workload_profile_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         JobResult {

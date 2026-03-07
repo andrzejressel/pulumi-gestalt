@@ -119,6 +119,22 @@ pub mod entry_group {
         name: &str,
         args: EntryGroupArgs,
     ) -> EntryGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EntryGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EntryGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EntryGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EntryGroupResult {
         let description_binding = args.description.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let entry_group_id_binding = args.entry_group_id.get_output(context);
@@ -150,6 +166,7 @@ pub mod entry_group {
                     value: &region_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EntryGroupResult {

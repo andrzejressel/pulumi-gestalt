@@ -68,6 +68,22 @@ pub mod email_identity_feedback_attributes {
         name: &str,
         args: EmailIdentityFeedbackAttributesArgs,
     ) -> EmailIdentityFeedbackAttributesResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EmailIdentityFeedbackAttributesArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EmailIdentityFeedbackAttributesResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EmailIdentityFeedbackAttributesArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EmailIdentityFeedbackAttributesResult {
         let email_forwarding_enabled_binding = args
             .email_forwarding_enabled
             .get_output(context);
@@ -87,6 +103,7 @@ pub mod email_identity_feedback_attributes {
                     value: &email_identity_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EmailIdentityFeedbackAttributesResult {

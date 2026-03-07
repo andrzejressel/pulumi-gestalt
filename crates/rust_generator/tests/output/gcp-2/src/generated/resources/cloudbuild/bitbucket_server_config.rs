@@ -258,6 +258,22 @@ pub mod bitbucket_server_config {
         name: &str,
         args: BitbucketServerConfigArgs,
     ) -> BitbucketServerConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BitbucketServerConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BitbucketServerConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BitbucketServerConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BitbucketServerConfigResult {
         let api_key_binding = args.api_key.get_output(context);
         let config_id_binding = args.config_id.get_output(context);
         let connected_repositories_binding = args
@@ -316,6 +332,7 @@ pub mod bitbucket_server_config {
                     value: &username_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BitbucketServerConfigResult {

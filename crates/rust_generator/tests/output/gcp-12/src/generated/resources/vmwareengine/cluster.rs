@@ -188,6 +188,22 @@ pub mod cluster {
         name: &str,
         args: ClusterArgs,
     ) -> ClusterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClusterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ClusterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClusterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ClusterResult {
         let autoscaling_settings_binding = args.autoscaling_settings.get_output(context);
         let name_binding = args.name.get_output(context);
         let node_type_configs_binding = args.node_type_configs.get_output(context);
@@ -214,6 +230,7 @@ pub mod cluster {
                     value: &parent_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ClusterResult {

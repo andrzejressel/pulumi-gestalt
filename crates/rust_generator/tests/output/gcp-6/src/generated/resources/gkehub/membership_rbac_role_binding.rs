@@ -151,6 +151,22 @@ pub mod membership_rbac_role_binding {
         name: &str,
         args: MembershipRbacRoleBindingArgs,
     ) -> MembershipRbacRoleBindingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MembershipRbacRoleBindingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MembershipRbacRoleBindingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MembershipRbacRoleBindingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MembershipRbacRoleBindingResult {
         let location_binding = args.location.get_output(context);
         let membership_id_binding = args.membership_id.get_output(context);
         let membership_rbac_role_binding_id_binding = args
@@ -190,6 +206,7 @@ pub mod membership_rbac_role_binding {
                     value: &user_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MembershipRbacRoleBindingResult {

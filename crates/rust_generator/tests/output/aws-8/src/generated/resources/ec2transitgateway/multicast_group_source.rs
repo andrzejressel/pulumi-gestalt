@@ -65,6 +65,22 @@ pub mod multicast_group_source {
         name: &str,
         args: MulticastGroupSourceArgs,
     ) -> MulticastGroupSourceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MulticastGroupSourceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MulticastGroupSourceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MulticastGroupSourceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MulticastGroupSourceResult {
         let group_ip_address_binding = args.group_ip_address.get_output(context);
         let network_interface_id_binding = args.network_interface_id.get_output(context);
         let transit_gateway_multicast_domain_id_binding = args
@@ -89,6 +105,7 @@ pub mod multicast_group_source {
                     value: &transit_gateway_multicast_domain_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MulticastGroupSourceResult {

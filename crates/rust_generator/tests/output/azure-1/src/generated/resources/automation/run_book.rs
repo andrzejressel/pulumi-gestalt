@@ -163,6 +163,22 @@ pub mod run_book {
         name: &str,
         args: RunBookArgs,
     ) -> RunBookResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RunBookArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RunBookResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RunBookArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RunBookResult {
         let automation_account_name_binding = args
             .automation_account_name
             .get_output(context);
@@ -243,6 +259,7 @@ pub mod run_book {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RunBookResult {

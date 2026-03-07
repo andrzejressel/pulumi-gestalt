@@ -165,6 +165,22 @@ pub mod event_destination {
         name: &str,
         args: EventDestinationArgs,
     ) -> EventDestinationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EventDestinationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EventDestinationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EventDestinationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EventDestinationResult {
         let cloudwatch_destinations_binding = args
             .cloudwatch_destinations
             .get_output(context);
@@ -210,6 +226,7 @@ pub mod event_destination {
                     value: &sns_destination_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EventDestinationResult {

@@ -131,6 +131,22 @@ pub mod domain_mapping {
         name: &str,
         args: DomainMappingArgs,
     ) -> DomainMappingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DomainMappingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DomainMappingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DomainMappingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DomainMappingResult {
         let domain_name_binding = args.domain_name.get_output(context);
         let override_strategy_binding = args.override_strategy.get_output(context);
         let project_binding = args.project.get_output(context);
@@ -157,6 +173,7 @@ pub mod domain_mapping {
                     value: &ssl_settings_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DomainMappingResult {

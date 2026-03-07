@@ -144,6 +144,22 @@ pub mod output_mssql {
         name: &str,
         args: OutputMssqlArgs,
     ) -> OutputMssqlResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OutputMssqlArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OutputMssqlResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OutputMssqlArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OutputMssqlResult {
         let authentication_mode_binding = args.authentication_mode.get_output(context);
         let database_binding = args.database.get_output(context);
         let max_batch_count_binding = args.max_batch_count.get_output(context);
@@ -207,6 +223,7 @@ pub mod output_mssql {
                     value: &user_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OutputMssqlResult {

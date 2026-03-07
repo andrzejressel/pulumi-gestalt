@@ -93,6 +93,22 @@ pub mod data_connector_aws_cloud_trail {
         name: &str,
         args: DataConnectorAwsCloudTrailArgs,
     ) -> DataConnectorAwsCloudTrailResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataConnectorAwsCloudTrailArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DataConnectorAwsCloudTrailResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataConnectorAwsCloudTrailArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DataConnectorAwsCloudTrailResult {
         let aws_role_arn_binding = args.aws_role_arn.get_output(context);
         let log_analytics_workspace_id_binding = args
             .log_analytics_workspace_id
@@ -117,6 +133,7 @@ pub mod data_connector_aws_cloud_trail {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DataConnectorAwsCloudTrailResult {

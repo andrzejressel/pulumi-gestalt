@@ -96,6 +96,22 @@ pub mod placement_group {
         name: &str,
         args: PlacementGroupArgs,
     ) -> PlacementGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PlacementGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PlacementGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PlacementGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PlacementGroupResult {
         let name_binding = args.name.get_output(context);
         let partition_count_binding = args.partition_count.get_output(context);
         let spread_level_binding = args.spread_level.get_output(context);
@@ -127,6 +143,7 @@ pub mod placement_group {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PlacementGroupResult {

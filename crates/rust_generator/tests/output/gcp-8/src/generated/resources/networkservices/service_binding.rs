@@ -138,6 +138,22 @@ pub mod service_binding {
         name: &str,
         args: ServiceBindingArgs,
     ) -> ServiceBindingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceBindingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServiceBindingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceBindingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServiceBindingResult {
         let description_binding = args.description.get_output(context);
         let labels_binding = args.labels.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -169,6 +185,7 @@ pub mod service_binding {
                     value: &service_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServiceBindingResult {

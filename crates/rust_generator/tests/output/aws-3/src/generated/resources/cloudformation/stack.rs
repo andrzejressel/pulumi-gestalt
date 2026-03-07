@@ -154,6 +154,22 @@ pub mod stack {
         name: &str,
         args: StackArgs,
     ) -> StackResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StackArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> StackResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StackArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> StackResult {
         let capabilities_binding = args.capabilities.get_output(context);
         let disable_rollback_binding = args.disable_rollback.get_output(context);
         let iam_role_arn_binding = args.iam_role_arn.get_output(context);
@@ -225,6 +241,7 @@ pub mod stack {
                     value: &timeout_in_minutes_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         StackResult {

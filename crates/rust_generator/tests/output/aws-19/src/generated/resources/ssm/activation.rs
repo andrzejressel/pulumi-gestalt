@@ -122,6 +122,22 @@ pub mod activation {
         name: &str,
         args: ActivationArgs,
     ) -> ActivationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ActivationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ActivationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ActivationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ActivationResult {
         let description_binding = args.description.get_output(context);
         let expiration_date_binding = args.expiration_date.get_output(context);
         let iam_role_binding = args.iam_role.get_output(context);
@@ -158,6 +174,7 @@ pub mod activation {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ActivationResult {

@@ -341,6 +341,22 @@ pub mod task {
         name: &str,
         args: TaskArgs,
     ) -> TaskResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TaskArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TaskResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TaskArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TaskResult {
         let description_binding = args.description.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let execution_spec_binding = args.execution_spec.get_output(context);
@@ -402,6 +418,7 @@ pub mod task {
                     value: &trigger_spec_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TaskResult {

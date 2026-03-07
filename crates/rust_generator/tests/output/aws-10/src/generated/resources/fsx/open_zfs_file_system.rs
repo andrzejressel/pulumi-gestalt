@@ -213,6 +213,22 @@ pub mod open_zfs_file_system {
         name: &str,
         args: OpenZfsFileSystemArgs,
     ) -> OpenZfsFileSystemResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OpenZfsFileSystemArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OpenZfsFileSystemResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OpenZfsFileSystemArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OpenZfsFileSystemResult {
         let automatic_backup_retention_days_binding = args
             .automatic_backup_retention_days
             .get_output(context);
@@ -341,6 +357,7 @@ pub mod open_zfs_file_system {
                     value: &weekly_maintenance_start_time_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OpenZfsFileSystemResult {

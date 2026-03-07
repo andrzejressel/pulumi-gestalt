@@ -87,6 +87,22 @@ pub mod vpc_connector {
         name: &str,
         args: VpcConnectorArgs,
     ) -> VpcConnectorResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcConnectorArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VpcConnectorResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcConnectorArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VpcConnectorResult {
         let security_groups_binding = args.security_groups.get_output(context);
         let subnets_binding = args.subnets.get_output(context);
         let tags_binding = args.tags.get_output(context);
@@ -113,6 +129,7 @@ pub mod vpc_connector {
                     value: &vpc_connector_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VpcConnectorResult {

@@ -45,6 +45,22 @@ pub mod bucket_resource_access {
         name: &str,
         args: BucketResourceAccessArgs,
     ) -> BucketResourceAccessResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BucketResourceAccessArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BucketResourceAccessResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BucketResourceAccessArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BucketResourceAccessResult {
         let bucket_name_binding = args.bucket_name.get_output(context);
         let resource_name_binding = args.resource_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -61,6 +77,7 @@ pub mod bucket_resource_access {
                     value: &resource_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BucketResourceAccessResult {

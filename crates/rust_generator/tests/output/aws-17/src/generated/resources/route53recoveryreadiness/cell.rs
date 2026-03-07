@@ -80,6 +80,22 @@ pub mod cell {
         name: &str,
         args: CellArgs,
     ) -> CellResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CellArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CellResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CellArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CellResult {
         let cell_name_binding = args.cell_name.get_output(context);
         let cells_binding = args.cells.get_output(context);
         let tags_binding = args.tags.get_output(context);
@@ -101,6 +117,7 @@ pub mod cell {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CellResult {

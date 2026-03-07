@@ -104,6 +104,22 @@ pub mod capacity {
         name: &str,
         args: CapacityArgs,
     ) -> CapacityResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CapacityArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CapacityResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CapacityArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CapacityResult {
         let administration_members_binding = args
             .administration_members
             .get_output(context);
@@ -142,6 +158,7 @@ pub mod capacity {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CapacityResult {

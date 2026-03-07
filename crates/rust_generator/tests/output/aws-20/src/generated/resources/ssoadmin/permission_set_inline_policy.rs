@@ -83,6 +83,22 @@ pub mod permission_set_inline_policy {
         name: &str,
         args: PermissionSetInlinePolicyArgs,
     ) -> PermissionSetInlinePolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PermissionSetInlinePolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PermissionSetInlinePolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PermissionSetInlinePolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PermissionSetInlinePolicyResult {
         let inline_policy_binding = args.inline_policy.get_output(context);
         let instance_arn_binding = args.instance_arn.get_output(context);
         let permission_set_arn_binding = args.permission_set_arn.get_output(context);
@@ -105,6 +121,7 @@ pub mod permission_set_inline_policy {
                     value: &permission_set_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PermissionSetInlinePolicyResult {

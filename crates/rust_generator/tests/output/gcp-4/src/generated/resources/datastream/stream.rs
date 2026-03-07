@@ -1103,6 +1103,22 @@ pub mod stream {
         name: &str,
         args: StreamArgs,
     ) -> StreamResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StreamArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> StreamResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StreamArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> StreamResult {
         let backfill_all_binding = args.backfill_all.get_output(context);
         let backfill_none_binding = args.backfill_none.get_output(context);
         let create_without_validation_binding = args
@@ -1173,6 +1189,7 @@ pub mod stream {
                     value: &stream_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         StreamResult {

@@ -68,6 +68,22 @@ pub mod resolver_dns_sec_config {
         name: &str,
         args: ResolverDnsSecConfigArgs,
     ) -> ResolverDnsSecConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResolverDnsSecConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ResolverDnsSecConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResolverDnsSecConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ResolverDnsSecConfigResult {
         let resource_id_binding = args.resource_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:route53/resolverDnsSecConfig:ResolverDnsSecConfig".into(),
@@ -79,6 +95,7 @@ pub mod resolver_dns_sec_config {
                     value: &resource_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ResolverDnsSecConfigResult {

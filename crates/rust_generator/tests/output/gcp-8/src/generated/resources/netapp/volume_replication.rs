@@ -249,6 +249,22 @@ pub mod volume_replication {
         name: &str,
         args: VolumeReplicationArgs,
     ) -> VolumeReplicationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VolumeReplicationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VolumeReplicationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VolumeReplicationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VolumeReplicationResult {
         let delete_destination_volume_binding = args
             .delete_destination_volume
             .get_output(context);
@@ -319,6 +335,7 @@ pub mod volume_replication {
                     value: &wait_for_mirror_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VolumeReplicationResult {

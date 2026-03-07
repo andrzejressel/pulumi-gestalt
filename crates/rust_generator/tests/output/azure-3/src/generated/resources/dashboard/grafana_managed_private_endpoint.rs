@@ -125,6 +125,22 @@ pub mod grafana_managed_private_endpoint {
         name: &str,
         args: GrafanaManagedPrivateEndpointArgs,
     ) -> GrafanaManagedPrivateEndpointResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GrafanaManagedPrivateEndpointArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GrafanaManagedPrivateEndpointResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GrafanaManagedPrivateEndpointArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GrafanaManagedPrivateEndpointResult {
         let grafana_id_binding = args.grafana_id.get_output(context);
         let group_ids_binding = args.group_ids.get_output(context);
         let location_binding = args.location.get_output(context);
@@ -176,6 +192,7 @@ pub mod grafana_managed_private_endpoint {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GrafanaManagedPrivateEndpointResult {

@@ -74,6 +74,22 @@ pub mod monitoring_subscription {
         name: &str,
         args: MonitoringSubscriptionArgs,
     ) -> MonitoringSubscriptionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MonitoringSubscriptionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MonitoringSubscriptionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MonitoringSubscriptionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MonitoringSubscriptionResult {
         let distribution_id_binding = args.distribution_id.get_output(context);
         let monitoring_subscription_binding = args
             .monitoring_subscription
@@ -92,6 +108,7 @@ pub mod monitoring_subscription {
                     value: &monitoring_subscription_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MonitoringSubscriptionResult {

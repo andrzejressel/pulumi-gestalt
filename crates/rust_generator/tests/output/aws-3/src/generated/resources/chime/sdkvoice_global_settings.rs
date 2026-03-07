@@ -66,6 +66,22 @@ pub mod sdkvoice_global_settings {
         name: &str,
         args: SdkvoiceGlobalSettingsArgs,
     ) -> SdkvoiceGlobalSettingsResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SdkvoiceGlobalSettingsArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SdkvoiceGlobalSettingsResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SdkvoiceGlobalSettingsArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SdkvoiceGlobalSettingsResult {
         let voice_connector_binding = args.voice_connector.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:chime/sdkvoiceGlobalSettings:SdkvoiceGlobalSettings".into(),
@@ -77,6 +93,7 @@ pub mod sdkvoice_global_settings {
                     value: &voice_connector_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SdkvoiceGlobalSettingsResult {

@@ -190,6 +190,22 @@ pub mod traffic_manager_nested_endpoint {
         name: &str,
         args: TrafficManagerNestedEndpointArgs,
     ) -> TrafficManagerNestedEndpointResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TrafficManagerNestedEndpointArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TrafficManagerNestedEndpointResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TrafficManagerNestedEndpointArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TrafficManagerNestedEndpointResult {
         let custom_headers_binding = args.custom_headers.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
         let endpoint_location_binding = args.endpoint_location.get_output(context);
@@ -268,6 +284,7 @@ pub mod traffic_manager_nested_endpoint {
                     value: &weight_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TrafficManagerNestedEndpointResult {

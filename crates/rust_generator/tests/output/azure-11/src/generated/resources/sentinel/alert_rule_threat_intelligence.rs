@@ -102,6 +102,22 @@ pub mod alert_rule_threat_intelligence {
         name: &str,
         args: AlertRuleThreatIntelligenceArgs,
     ) -> AlertRuleThreatIntelligenceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AlertRuleThreatIntelligenceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AlertRuleThreatIntelligenceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AlertRuleThreatIntelligenceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AlertRuleThreatIntelligenceResult {
         let alert_rule_template_guid_binding = args
             .alert_rule_template_guid
             .get_output(context);
@@ -133,6 +149,7 @@ pub mod alert_rule_threat_intelligence {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AlertRuleThreatIntelligenceResult {

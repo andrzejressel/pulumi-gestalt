@@ -275,6 +275,22 @@ pub mod load_balancer {
         name: &str,
         args: LoadBalancerArgs,
     ) -> LoadBalancerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LoadBalancerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LoadBalancerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LoadBalancerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LoadBalancerResult {
         let access_logs_binding = args.access_logs.get_output(context);
         let client_keep_alive_binding = args.client_keep_alive.get_output(context);
         let connection_logs_binding = args.connection_logs.get_output(context);
@@ -438,6 +454,7 @@ pub mod load_balancer {
                     value: &xff_header_processing_mode_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LoadBalancerResult {

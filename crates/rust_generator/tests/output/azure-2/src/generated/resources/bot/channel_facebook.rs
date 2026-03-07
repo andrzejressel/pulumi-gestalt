@@ -109,6 +109,22 @@ pub mod channel_facebook {
         name: &str,
         args: ChannelFacebookArgs,
     ) -> ChannelFacebookResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ChannelFacebookArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ChannelFacebookResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ChannelFacebookArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ChannelFacebookResult {
         let bot_name_binding = args.bot_name.get_output(context);
         let facebook_application_id_binding = args
             .facebook_application_id
@@ -149,6 +165,7 @@ pub mod channel_facebook {
                     value: &resource_group_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ChannelFacebookResult {

@@ -108,6 +108,22 @@ pub mod email_service_domain {
         name: &str,
         args: EmailServiceDomainArgs,
     ) -> EmailServiceDomainResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EmailServiceDomainArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EmailServiceDomainResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EmailServiceDomainArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EmailServiceDomainResult {
         let domain_management_binding = args.domain_management.get_output(context);
         let email_service_id_binding = args.email_service_id.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -141,6 +157,7 @@ pub mod email_service_domain {
                     value: &user_engagement_tracking_enabled_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EmailServiceDomainResult {

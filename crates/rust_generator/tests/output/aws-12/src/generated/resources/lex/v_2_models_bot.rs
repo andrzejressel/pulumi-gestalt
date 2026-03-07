@@ -147,6 +147,22 @@ pub mod v_2_models_bot {
         name: &str,
         args: V2modelsBotArgs,
     ) -> V2modelsBotResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: V2modelsBotArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> V2modelsBotResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: V2modelsBotArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> V2modelsBotResult {
         let data_privacies_binding = args.data_privacies.get_output(context);
         let description_binding = args.description.get_output(context);
         let idle_session_ttl_in_seconds_binding = args
@@ -205,6 +221,7 @@ pub mod v_2_models_bot {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         V2modelsBotResult {

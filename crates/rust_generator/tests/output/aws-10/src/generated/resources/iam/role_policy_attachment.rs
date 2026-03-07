@@ -95,6 +95,22 @@ pub mod role_policy_attachment {
         name: &str,
         args: RolePolicyAttachmentArgs,
     ) -> RolePolicyAttachmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RolePolicyAttachmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RolePolicyAttachmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RolePolicyAttachmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RolePolicyAttachmentResult {
         let policy_arn_binding = args.policy_arn.get_output(context);
         let role_binding = args.role.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -111,6 +127,7 @@ pub mod role_policy_attachment {
                     value: &role_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RolePolicyAttachmentResult {

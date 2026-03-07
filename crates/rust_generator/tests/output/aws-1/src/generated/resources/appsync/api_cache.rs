@@ -91,6 +91,22 @@ pub mod api_cache {
         name: &str,
         args: ApiCacheArgs,
     ) -> ApiCacheResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApiCacheArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ApiCacheResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApiCacheArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ApiCacheResult {
         let api_caching_behavior_binding = args.api_caching_behavior.get_output(context);
         let api_id_binding = args.api_id.get_output(context);
         let at_rest_encryption_enabled_binding = args
@@ -131,6 +147,7 @@ pub mod api_cache {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ApiCacheResult {

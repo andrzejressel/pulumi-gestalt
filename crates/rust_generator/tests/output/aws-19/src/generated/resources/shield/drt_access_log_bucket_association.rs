@@ -80,6 +80,22 @@ pub mod drt_access_log_bucket_association {
         name: &str,
         args: DrtAccessLogBucketAssociationArgs,
     ) -> DrtAccessLogBucketAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DrtAccessLogBucketAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DrtAccessLogBucketAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DrtAccessLogBucketAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DrtAccessLogBucketAssociationResult {
         let log_bucket_binding = args.log_bucket.get_output(context);
         let role_arn_association_id_binding = args
             .role_arn_association_id
@@ -104,6 +120,7 @@ pub mod drt_access_log_bucket_association {
                     value: &timeouts_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DrtAccessLogBucketAssociationResult {

@@ -225,6 +225,22 @@ pub mod tag_value_iam_policy {
         name: &str,
         args: TagValueIamPolicyArgs,
     ) -> TagValueIamPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TagValueIamPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TagValueIamPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TagValueIamPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TagValueIamPolicyResult {
         let policy_data_binding = args.policy_data.get_output(context);
         let tag_value_binding = args.tag_value.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -241,6 +257,7 @@ pub mod tag_value_iam_policy {
                     value: &tag_value_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TagValueIamPolicyResult {

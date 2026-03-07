@@ -371,6 +371,22 @@ pub mod function {
         name: &str,
         args: FunctionArgs,
     ) -> FunctionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FunctionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FunctionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FunctionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FunctionResult {
         let available_memory_mb_binding = args.available_memory_mb.get_output(context);
         let build_environment_variables_binding = args
             .build_environment_variables
@@ -550,6 +566,7 @@ pub mod function {
                     value: &vpc_connector_egress_settings_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FunctionResult {

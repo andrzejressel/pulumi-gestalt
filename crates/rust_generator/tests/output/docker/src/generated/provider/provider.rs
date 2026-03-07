@@ -40,6 +40,8 @@ pub struct ProviderResult {
     pub urn: pulumi_gestalt_rust::Output<String>,
     /// Pulumi ID is the unique identifier assigned by the provider to this resource.
     pub id: pulumi_gestalt_rust::Output<String>,
+    /// Pulumi Provider ID is the combination of URN and ID. It is used when creating a resource.
+    pub provider_id: pulumi_gestalt_rust::Output<String>,
     /// PEM-encoded content of Docker host CA certificate
     pub ca_material: pulumi_gestalt_rust::Output<Option<String>>,
     /// PEM-encoded content of Docker client certificate
@@ -56,6 +58,11 @@ pub struct ProviderResult {
     /// Additional SSH option flags to be appended when using `ssh://` protocol
     pub ssh_opts: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
 }
+impl pulumi_gestalt_rust::Provider for ProviderResult {
+    fn get_provider_id(&self) -> pulumi_gestalt_rust::Output<String> {
+        self.provider_id.clone()
+    }
+}
 ///
 /// Registers a new resource with the given unique name and arguments
 ///
@@ -64,6 +71,18 @@ pub fn create(
     context: &pulumi_gestalt_rust::Context,
     name: &str,
     args: ProviderArgs,
+) -> ProviderResult {
+    create_with_options(context, name, args, None)
+}
+///
+/// Registers a new resource with the given unique name and arguments
+///
+#[allow(non_snake_case, unused_imports, dead_code)]
+pub fn create_with_options(
+    context: &pulumi_gestalt_rust::Context,
+    name: &str,
+    args: ProviderArgs,
+    options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
 ) -> ProviderResult {
     let ca_material_binding = args.ca_material.get_output(context);
     let cert_material_binding = args.cert_material.get_output(context);
@@ -106,11 +125,13 @@ pub fn create(
                 value: &ssh_opts_binding.drop_type(),
             },
         ],
+        options,
     };
     let o = context.register_resource(request);
     ProviderResult {
         urn: o.get_urn(),
         id: o.get_id(),
+        provider_id: o.get_provider_id(),
         ca_material: o.get_field("caMaterial"),
         cert_material: o.get_field("certMaterial"),
         cert_path: o.get_field("certPath"),

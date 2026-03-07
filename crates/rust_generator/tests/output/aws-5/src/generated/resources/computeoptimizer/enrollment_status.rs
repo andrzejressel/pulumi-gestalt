@@ -68,6 +68,22 @@ pub mod enrollment_status {
         name: &str,
         args: EnrollmentStatusArgs,
     ) -> EnrollmentStatusResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EnrollmentStatusArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EnrollmentStatusResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EnrollmentStatusArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EnrollmentStatusResult {
         let include_member_accounts_binding = args
             .include_member_accounts
             .get_output(context);
@@ -91,6 +107,7 @@ pub mod enrollment_status {
                     value: &timeouts_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EnrollmentStatusResult {

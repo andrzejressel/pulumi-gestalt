@@ -114,6 +114,22 @@ pub mod table_replica {
         name: &str,
         args: TableReplicaArgs,
     ) -> TableReplicaResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TableReplicaArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TableReplicaResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TableReplicaArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TableReplicaResult {
         let deletion_protection_enabled_binding = args
             .deletion_protection_enabled
             .get_output(context);
@@ -154,6 +170,7 @@ pub mod table_replica {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TableReplicaResult {

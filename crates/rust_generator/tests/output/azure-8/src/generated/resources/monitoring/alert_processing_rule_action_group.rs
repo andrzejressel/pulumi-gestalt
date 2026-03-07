@@ -154,6 +154,22 @@ pub mod alert_processing_rule_action_group {
         name: &str,
         args: AlertProcessingRuleActionGroupArgs,
     ) -> AlertProcessingRuleActionGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AlertProcessingRuleActionGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AlertProcessingRuleActionGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AlertProcessingRuleActionGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AlertProcessingRuleActionGroupResult {
         let add_action_group_ids_binding = args.add_action_group_ids.get_output(context);
         let condition_binding = args.condition.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -206,6 +222,7 @@ pub mod alert_processing_rule_action_group {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AlertProcessingRuleActionGroupResult {

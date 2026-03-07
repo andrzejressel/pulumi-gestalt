@@ -371,6 +371,22 @@ pub mod kubernetes_cluster_node_pool {
         name: &str,
         args: KubernetesClusterNodePoolArgs,
     ) -> KubernetesClusterNodePoolResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: KubernetesClusterNodePoolArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> KubernetesClusterNodePoolResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: KubernetesClusterNodePoolArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> KubernetesClusterNodePoolResult {
         let auto_scaling_enabled_binding = args.auto_scaling_enabled.get_output(context);
         let capacity_reservation_group_id_binding = args
             .capacity_reservation_group_id
@@ -595,6 +611,7 @@ pub mod kubernetes_cluster_node_pool {
                     value: &zones_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         KubernetesClusterNodePoolResult {

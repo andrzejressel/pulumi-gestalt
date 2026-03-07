@@ -83,6 +83,22 @@ pub mod bucket {
         name: &str,
         args: BucketArgs,
     ) -> BucketResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BucketArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BucketResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BucketArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BucketResult {
         let bucket_binding = args.bucket.get_output(context);
         let outpost_id_binding = args.outpost_id.get_output(context);
         let tags_binding = args.tags.get_output(context);
@@ -104,6 +120,7 @@ pub mod bucket {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BucketResult {

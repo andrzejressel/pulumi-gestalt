@@ -45,6 +45,22 @@ pub mod group_policies_exclusive {
         name: &str,
         args: GroupPoliciesExclusiveArgs,
     ) -> GroupPoliciesExclusiveResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GroupPoliciesExclusiveArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GroupPoliciesExclusiveResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GroupPoliciesExclusiveArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GroupPoliciesExclusiveResult {
         let group_name_binding = args.group_name.get_output(context);
         let policy_names_binding = args.policy_names.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -61,6 +77,7 @@ pub mod group_policies_exclusive {
                     value: &policy_names_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GroupPoliciesExclusiveResult {

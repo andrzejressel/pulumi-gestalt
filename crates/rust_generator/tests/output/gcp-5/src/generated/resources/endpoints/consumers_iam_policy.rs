@@ -93,6 +93,22 @@ pub mod consumers_iam_policy {
         name: &str,
         args: ConsumersIamPolicyArgs,
     ) -> ConsumersIamPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConsumersIamPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ConsumersIamPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConsumersIamPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ConsumersIamPolicyResult {
         let consumer_project_binding = args.consumer_project.get_output(context);
         let policy_data_binding = args.policy_data.get_output(context);
         let service_name_binding = args.service_name.get_output(context);
@@ -114,6 +130,7 @@ pub mod consumers_iam_policy {
                     value: &service_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ConsumersIamPolicyResult {

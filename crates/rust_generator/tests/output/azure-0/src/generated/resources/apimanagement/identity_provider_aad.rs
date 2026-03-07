@@ -109,6 +109,22 @@ pub mod identity_provider_aad {
         name: &str,
         args: IdentityProviderAadArgs,
     ) -> IdentityProviderAadResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IdentityProviderAadArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IdentityProviderAadResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IdentityProviderAadArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IdentityProviderAadResult {
         let allowed_tenants_binding = args.allowed_tenants.get_output(context);
         let api_management_name_binding = args.api_management_name.get_output(context);
         let client_id_binding = args.client_id.get_output(context);
@@ -150,6 +166,7 @@ pub mod identity_provider_aad {
                     value: &signin_tenant_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IdentityProviderAadResult {

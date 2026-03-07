@@ -143,6 +143,22 @@ pub mod record {
         name: &str,
         args: RecordArgs,
     ) -> RecordResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RecordArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RecordResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RecordArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RecordResult {
         let allow_overwrite_binding = args.allow_overwrite.get_output(context);
         let comment_binding = args.comment.get_output(context);
         let content_binding = args.content.get_output(context);
@@ -209,6 +225,7 @@ pub mod record {
                     value: &zone_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RecordResult {

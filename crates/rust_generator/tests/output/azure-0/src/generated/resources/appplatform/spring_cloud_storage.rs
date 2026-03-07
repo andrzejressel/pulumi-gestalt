@@ -100,6 +100,22 @@ pub mod spring_cloud_storage {
         name: &str,
         args: SpringCloudStorageArgs,
     ) -> SpringCloudStorageResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudStorageArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SpringCloudStorageResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudStorageArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SpringCloudStorageResult {
         let name_binding = args.name.get_output(context);
         let spring_cloud_service_id_binding = args
             .spring_cloud_service_id
@@ -128,6 +144,7 @@ pub mod spring_cloud_storage {
                     value: &storage_account_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SpringCloudStorageResult {

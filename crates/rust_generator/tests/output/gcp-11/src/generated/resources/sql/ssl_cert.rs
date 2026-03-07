@@ -97,6 +97,22 @@ pub mod ssl_cert {
         name: &str,
         args: SslCertArgs,
     ) -> SslCertResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SslCertArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SslCertResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SslCertArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SslCertResult {
         let common_name_binding = args.common_name.get_output(context);
         let instance_binding = args.instance.get_output(context);
         let project_binding = args.project.get_output(context);
@@ -118,6 +134,7 @@ pub mod ssl_cert {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SslCertResult {

@@ -119,6 +119,22 @@ pub mod repository_association {
         name: &str,
         args: RepositoryAssociationArgs,
     ) -> RepositoryAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RepositoryAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RepositoryAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RepositoryAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RepositoryAssociationResult {
         let kms_key_details_binding = args.kms_key_details.get_output(context);
         let repository_binding = args.repository.get_output(context);
         let tags_binding = args.tags.get_output(context);
@@ -141,6 +157,7 @@ pub mod repository_association {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RepositoryAssociationResult {

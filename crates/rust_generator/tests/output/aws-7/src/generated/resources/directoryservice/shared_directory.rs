@@ -68,6 +68,22 @@ pub mod shared_directory {
         name: &str,
         args: SharedDirectoryArgs,
     ) -> SharedDirectoryResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SharedDirectoryArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SharedDirectoryResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SharedDirectoryArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SharedDirectoryResult {
         let directory_id_binding = args.directory_id.get_output(context);
         let method_binding = args.method.get_output(context);
         let notes_binding = args.notes.get_output(context);
@@ -94,6 +110,7 @@ pub mod shared_directory {
                     value: &target_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SharedDirectoryResult {

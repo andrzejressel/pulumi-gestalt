@@ -78,6 +78,22 @@ pub mod namespace {
         name: &str,
         args: NamespaceArgs,
     ) -> NamespaceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NamespaceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NamespaceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NamespaceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NamespaceResult {
         let namespace_binding = args.namespace.get_output(context);
         let table_bucket_arn_binding = args.table_bucket_arn.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -94,6 +110,7 @@ pub mod namespace {
                     value: &table_bucket_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NamespaceResult {

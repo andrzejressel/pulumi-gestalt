@@ -169,6 +169,22 @@ pub mod managed_storage_account_sas_token_definition {
         name: &str,
         args: ManagedStorageAccountSasTokenDefinitionArgs,
     ) -> ManagedStorageAccountSasTokenDefinitionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedStorageAccountSasTokenDefinitionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ManagedStorageAccountSasTokenDefinitionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedStorageAccountSasTokenDefinitionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ManagedStorageAccountSasTokenDefinitionResult {
         let managed_storage_account_id_binding = args
             .managed_storage_account_id
             .get_output(context);
@@ -208,6 +224,7 @@ pub mod managed_storage_account_sas_token_definition {
                     value: &validity_period_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ManagedStorageAccountSasTokenDefinitionResult {

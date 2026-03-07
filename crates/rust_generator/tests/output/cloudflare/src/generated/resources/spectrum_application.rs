@@ -137,6 +137,22 @@ pub mod spectrum_application {
         name: &str,
         args: SpectrumApplicationArgs,
     ) -> SpectrumApplicationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpectrumApplicationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SpectrumApplicationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpectrumApplicationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SpectrumApplicationResult {
         let argo_smart_routing_binding = args.argo_smart_routing.get_output(context);
         let dns_binding = args.dns.get_output(context);
         let edge_ips_binding = args.edge_ips.get_output(context);
@@ -208,6 +224,7 @@ pub mod spectrum_application {
                     value: &zone_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SpectrumApplicationResult {

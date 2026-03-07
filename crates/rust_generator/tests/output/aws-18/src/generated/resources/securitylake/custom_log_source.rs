@@ -108,6 +108,22 @@ pub mod custom_log_source {
         name: &str,
         args: CustomLogSourceArgs,
     ) -> CustomLogSourceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomLogSourceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CustomLogSourceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomLogSourceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CustomLogSourceResult {
         let configuration_binding = args.configuration.get_output(context);
         let event_classes_binding = args.event_classes.get_output(context);
         let source_name_binding = args.source_name.get_output(context);
@@ -134,6 +150,7 @@ pub mod custom_log_source {
                     value: &source_version_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CustomLogSourceResult {

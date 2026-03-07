@@ -82,6 +82,22 @@ pub mod application_access_scope {
         name: &str,
         args: ApplicationAccessScopeArgs,
     ) -> ApplicationAccessScopeResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApplicationAccessScopeArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ApplicationAccessScopeResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApplicationAccessScopeArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ApplicationAccessScopeResult {
         let application_arn_binding = args.application_arn.get_output(context);
         let authorized_targets_binding = args.authorized_targets.get_output(context);
         let scope_binding = args.scope.get_output(context);
@@ -103,6 +119,7 @@ pub mod application_access_scope {
                     value: &scope_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ApplicationAccessScopeResult {

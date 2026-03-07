@@ -99,6 +99,22 @@ pub mod firewall_policy {
         name: &str,
         args: FirewallPolicyArgs,
     ) -> FirewallPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FirewallPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FirewallPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FirewallPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FirewallPolicyResult {
         let description_binding = args.description.get_output(context);
         let parent_binding = args.parent.get_output(context);
         let short_name_binding = args.short_name.get_output(context);
@@ -120,6 +136,7 @@ pub mod firewall_policy {
                     value: &short_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FirewallPolicyResult {

@@ -119,6 +119,22 @@ pub mod spring_cloud_dev_tool_portal {
         name: &str,
         args: SpringCloudDevToolPortalArgs,
     ) -> SpringCloudDevToolPortalResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudDevToolPortalArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SpringCloudDevToolPortalResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudDevToolPortalArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SpringCloudDevToolPortalResult {
         let application_accelerator_enabled_binding = args
             .application_accelerator_enabled
             .get_output(context);
@@ -164,6 +180,7 @@ pub mod spring_cloud_dev_tool_portal {
                     value: &sso_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SpringCloudDevToolPortalResult {

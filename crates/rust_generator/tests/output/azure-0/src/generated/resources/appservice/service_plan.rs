@@ -146,6 +146,22 @@ pub mod service_plan {
         name: &str,
         args: ServicePlanArgs,
     ) -> ServicePlanResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServicePlanArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServicePlanResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServicePlanArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServicePlanResult {
         let app_service_environment_id_binding = args
             .app_service_environment_id
             .get_output(context);
@@ -215,6 +231,7 @@ pub mod service_plan {
                     value: &zone_balancing_enabled_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServicePlanResult {

@@ -83,6 +83,22 @@ pub mod ingestion {
         name: &str,
         args: IngestionArgs,
     ) -> IngestionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IngestionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IngestionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IngestionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IngestionResult {
         let aws_account_id_binding = args.aws_account_id.get_output(context);
         let data_set_id_binding = args.data_set_id.get_output(context);
         let ingestion_id_binding = args.ingestion_id.get_output(context);
@@ -109,6 +125,7 @@ pub mod ingestion {
                     value: &ingestion_type_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IngestionResult {

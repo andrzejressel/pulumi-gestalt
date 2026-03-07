@@ -213,6 +213,22 @@ pub mod stack_set_instance {
         name: &str,
         args: StackSetInstanceArgs,
     ) -> StackSetInstanceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StackSetInstanceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> StackSetInstanceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StackSetInstanceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> StackSetInstanceResult {
         let account_id_binding = args.account_id.get_output(context);
         let call_as_binding = args.call_as.get_output(context);
         let deployment_targets_binding = args.deployment_targets.get_output(context);
@@ -261,6 +277,7 @@ pub mod stack_set_instance {
                     value: &stack_set_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         StackSetInstanceResult {

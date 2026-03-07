@@ -110,6 +110,22 @@ pub mod gateway_certificate_authority {
         name: &str,
         args: GatewayCertificateAuthorityArgs,
     ) -> GatewayCertificateAuthorityResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GatewayCertificateAuthorityArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GatewayCertificateAuthorityResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GatewayCertificateAuthorityArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GatewayCertificateAuthorityResult {
         let api_management_id_binding = args.api_management_id.get_output(context);
         let certificate_name_binding = args.certificate_name.get_output(context);
         let gateway_name_binding = args.gateway_name.get_output(context);
@@ -137,6 +153,7 @@ pub mod gateway_certificate_authority {
                     value: &is_trusted_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GatewayCertificateAuthorityResult {

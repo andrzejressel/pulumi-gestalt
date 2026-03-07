@@ -74,6 +74,22 @@ pub mod sms_channel {
         name: &str,
         args: SmsChannelArgs,
     ) -> SmsChannelResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SmsChannelArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SmsChannelResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SmsChannelArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SmsChannelResult {
         let application_id_binding = args.application_id.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
         let sender_id_binding = args.sender_id.get_output(context);
@@ -100,6 +116,7 @@ pub mod sms_channel {
                     value: &short_code_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SmsChannelResult {

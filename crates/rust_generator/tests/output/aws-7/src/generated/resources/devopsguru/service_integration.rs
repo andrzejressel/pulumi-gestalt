@@ -106,6 +106,22 @@ pub mod service_integration {
         name: &str,
         args: ServiceIntegrationArgs,
     ) -> ServiceIntegrationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceIntegrationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServiceIntegrationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceIntegrationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServiceIntegrationResult {
         let kms_server_side_encryption_binding = args
             .kms_server_side_encryption
             .get_output(context);
@@ -131,6 +147,7 @@ pub mod service_integration {
                     value: &ops_center_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServiceIntegrationResult {

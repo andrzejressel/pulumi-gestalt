@@ -163,6 +163,22 @@ pub mod infrastructure_configuration {
         name: &str,
         args: InfrastructureConfigurationArgs,
     ) -> InfrastructureConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InfrastructureConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> InfrastructureConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InfrastructureConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> InfrastructureConfigurationResult {
         let description_binding = args.description.get_output(context);
         let instance_metadata_options_binding = args
             .instance_metadata_options
@@ -241,6 +257,7 @@ pub mod infrastructure_configuration {
                     value: &terminate_instance_on_failure_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         InfrastructureConfigurationResult {

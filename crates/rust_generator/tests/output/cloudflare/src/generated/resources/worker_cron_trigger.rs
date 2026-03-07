@@ -79,6 +79,22 @@ pub mod worker_cron_trigger {
         name: &str,
         args: WorkerCronTriggerArgs,
     ) -> WorkerCronTriggerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkerCronTriggerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WorkerCronTriggerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkerCronTriggerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WorkerCronTriggerResult {
         let account_id_binding = args.account_id.get_output(context);
         let schedules_binding = args.schedules.get_output(context);
         let script_name_binding = args.script_name.get_output(context);
@@ -100,6 +116,7 @@ pub mod worker_cron_trigger {
                     value: &script_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WorkerCronTriggerResult {

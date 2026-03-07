@@ -428,6 +428,22 @@ pub mod web_type_app_enging_iam_member {
         name: &str,
         args: WebTypeAppEngingIamMemberArgs,
     ) -> WebTypeAppEngingIamMemberResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WebTypeAppEngingIamMemberArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WebTypeAppEngingIamMemberResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WebTypeAppEngingIamMemberArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WebTypeAppEngingIamMemberResult {
         let app_id_binding = args.app_id.get_output(context);
         let condition_binding = args.condition.get_output(context);
         let member_binding = args.member.get_output(context);
@@ -459,6 +475,7 @@ pub mod web_type_app_enging_iam_member {
                     value: &role_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WebTypeAppEngingIamMemberResult {

@@ -217,6 +217,22 @@ pub mod index {
         name: &str,
         args: IndexArgs,
     ) -> IndexResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IndexArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IndexResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IndexArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IndexResult {
         let api_scope_binding = args.api_scope.get_output(context);
         let collection_binding = args.collection.get_output(context);
         let database_binding = args.database.get_output(context);
@@ -253,6 +269,7 @@ pub mod index {
                     value: &query_scope_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IndexResult {

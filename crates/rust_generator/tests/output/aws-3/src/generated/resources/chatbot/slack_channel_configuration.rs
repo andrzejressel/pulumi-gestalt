@@ -126,6 +126,22 @@ pub mod slack_channel_configuration {
         name: &str,
         args: SlackChannelConfigurationArgs,
     ) -> SlackChannelConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SlackChannelConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SlackChannelConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SlackChannelConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SlackChannelConfigurationResult {
         let configuration_name_binding = args.configuration_name.get_output(context);
         let guardrail_policy_arns_binding = args
             .guardrail_policy_arns
@@ -187,6 +203,7 @@ pub mod slack_channel_configuration {
                     value: &user_authorization_required_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SlackChannelConfigurationResult {

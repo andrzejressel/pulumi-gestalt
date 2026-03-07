@@ -86,6 +86,22 @@ pub mod sharedflow {
         name: &str,
         args: SharedflowArgs,
     ) -> SharedflowResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SharedflowArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SharedflowResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SharedflowArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SharedflowResult {
         let config_bundle_binding = args.config_bundle.get_output(context);
         let detect_md5hash_binding = args.detect_md5hash.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -112,6 +128,7 @@ pub mod sharedflow {
                     value: &org_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SharedflowResult {

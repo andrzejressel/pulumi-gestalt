@@ -132,6 +132,22 @@ pub mod disk_resource_policy_attachment {
         name: &str,
         args: DiskResourcePolicyAttachmentArgs,
     ) -> DiskResourcePolicyAttachmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DiskResourcePolicyAttachmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DiskResourcePolicyAttachmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DiskResourcePolicyAttachmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DiskResourcePolicyAttachmentResult {
         let disk_binding = args.disk.get_output(context);
         let name_binding = args.name.get_output(context);
         let project_binding = args.project.get_output(context);
@@ -159,6 +175,7 @@ pub mod disk_resource_policy_attachment {
                     value: &zone_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DiskResourcePolicyAttachmentResult {

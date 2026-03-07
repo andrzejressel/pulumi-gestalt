@@ -115,6 +115,22 @@ pub mod endpoint_event_grid {
         name: &str,
         args: EndpointEventGridArgs,
     ) -> EndpointEventGridResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EndpointEventGridArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EndpointEventGridResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EndpointEventGridArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EndpointEventGridResult {
         let dead_letter_storage_secret_binding = args
             .dead_letter_storage_secret
             .get_output(context);
@@ -159,6 +175,7 @@ pub mod endpoint_event_grid {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EndpointEventGridResult {

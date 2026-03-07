@@ -130,6 +130,22 @@ pub mod user_pool_ui_customization {
         name: &str,
         args: UserPoolUICustomizationArgs,
     ) -> UserPoolUICustomizationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: UserPoolUICustomizationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> UserPoolUICustomizationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: UserPoolUICustomizationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> UserPoolUICustomizationResult {
         let client_id_binding = args.client_id.get_output(context);
         let css_binding = args.css.get_output(context);
         let image_file_binding = args.image_file.get_output(context);
@@ -156,6 +172,7 @@ pub mod user_pool_ui_customization {
                     value: &user_pool_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         UserPoolUICustomizationResult {

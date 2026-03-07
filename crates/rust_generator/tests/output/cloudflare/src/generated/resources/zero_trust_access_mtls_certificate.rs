@@ -99,6 +99,22 @@ pub mod zero_trust_access_mtls_certificate {
         name: &str,
         args: ZeroTrustAccessMtlsCertificateArgs,
     ) -> ZeroTrustAccessMtlsCertificateResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZeroTrustAccessMtlsCertificateArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ZeroTrustAccessMtlsCertificateResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZeroTrustAccessMtlsCertificateArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ZeroTrustAccessMtlsCertificateResult {
         let account_id_binding = args.account_id.get_output(context);
         let associated_hostnames_binding = args.associated_hostnames.get_output(context);
         let certificate_binding = args.certificate.get_output(context);
@@ -131,6 +147,7 @@ pub mod zero_trust_access_mtls_certificate {
                     value: &zone_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ZeroTrustAccessMtlsCertificateResult {

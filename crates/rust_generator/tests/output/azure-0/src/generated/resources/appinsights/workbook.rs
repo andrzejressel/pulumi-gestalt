@@ -135,6 +135,22 @@ pub mod workbook {
         name: &str,
         args: WorkbookArgs,
     ) -> WorkbookResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkbookArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WorkbookResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkbookArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WorkbookResult {
         let category_binding = args.category.get_output(context);
         let data_json_binding = args.data_json.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -196,6 +212,7 @@ pub mod workbook {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WorkbookResult {

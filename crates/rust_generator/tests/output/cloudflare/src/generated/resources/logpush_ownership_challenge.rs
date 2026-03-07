@@ -64,6 +64,22 @@ pub mod logpush_ownership_challenge {
         name: &str,
         args: LogpushOwnershipChallengeArgs,
     ) -> LogpushOwnershipChallengeResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LogpushOwnershipChallengeArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LogpushOwnershipChallengeResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LogpushOwnershipChallengeArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LogpushOwnershipChallengeResult {
         let account_id_binding = args.account_id.get_output(context);
         let destination_conf_binding = args.destination_conf.get_output(context);
         let zone_id_binding = args.zone_id.get_output(context);
@@ -86,6 +102,7 @@ pub mod logpush_ownership_challenge {
                     value: &zone_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LogpushOwnershipChallengeResult {

@@ -665,6 +665,22 @@ pub mod backup_plan {
         name: &str,
         args: BackupPlanArgs,
     ) -> BackupPlanResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackupPlanArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BackupPlanResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackupPlanArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BackupPlanResult {
         let backup_config_binding = args.backup_config.get_output(context);
         let backup_schedule_binding = args.backup_schedule.get_output(context);
         let cluster_binding = args.cluster.get_output(context);
@@ -721,6 +737,7 @@ pub mod backup_plan {
                     value: &retention_policy_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BackupPlanResult {

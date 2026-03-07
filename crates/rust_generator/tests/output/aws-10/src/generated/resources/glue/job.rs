@@ -288,6 +288,22 @@ pub mod job {
         name: &str,
         args: JobArgs,
     ) -> JobResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: JobArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> JobResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: JobArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> JobResult {
         let command_binding = args.command.get_output(context);
         let connections_binding = args.connections.get_output(context);
         let default_arguments_binding = args.default_arguments.get_output(context);
@@ -402,6 +418,7 @@ pub mod job {
                     value: &worker_type_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         JobResult {

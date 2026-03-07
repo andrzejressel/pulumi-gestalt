@@ -139,6 +139,22 @@ pub mod failover_group {
         name: &str,
         args: FailoverGroupArgs,
     ) -> FailoverGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FailoverGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FailoverGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FailoverGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FailoverGroupResult {
         let databases_binding = args.databases.get_output(context);
         let name_binding = args.name.get_output(context);
         let partner_servers_binding = args.partner_servers.get_output(context);
@@ -184,6 +200,7 @@ pub mod failover_group {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FailoverGroupResult {

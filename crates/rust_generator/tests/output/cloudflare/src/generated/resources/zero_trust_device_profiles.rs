@@ -164,6 +164,22 @@ pub mod zero_trust_device_profiles {
         name: &str,
         args: ZeroTrustDeviceProfilesArgs,
     ) -> ZeroTrustDeviceProfilesResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZeroTrustDeviceProfilesArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ZeroTrustDeviceProfilesResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZeroTrustDeviceProfilesArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ZeroTrustDeviceProfilesResult {
         let account_id_binding = args.account_id.get_output(context);
         let allow_mode_switch_binding = args.allow_mode_switch.get_output(context);
         let allow_updates_binding = args.allow_updates.get_output(context);
@@ -268,6 +284,7 @@ pub mod zero_trust_device_profiles {
                     value: &tunnel_protocol_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ZeroTrustDeviceProfilesResult {

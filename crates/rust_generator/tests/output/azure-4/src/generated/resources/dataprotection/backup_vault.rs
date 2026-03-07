@@ -139,6 +139,22 @@ pub mod backup_vault {
         name: &str,
         args: BackupVaultArgs,
     ) -> BackupVaultResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackupVaultArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BackupVaultResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackupVaultArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BackupVaultResult {
         let cross_region_restore_enabled_binding = args
             .cross_region_restore_enabled
             .get_output(context);
@@ -199,6 +215,7 @@ pub mod backup_vault {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BackupVaultResult {

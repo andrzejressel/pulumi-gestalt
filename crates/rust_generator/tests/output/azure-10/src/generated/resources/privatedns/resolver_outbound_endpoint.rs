@@ -118,6 +118,22 @@ pub mod resolver_outbound_endpoint {
         name: &str,
         args: ResolverOutboundEndpointArgs,
     ) -> ResolverOutboundEndpointResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResolverOutboundEndpointArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ResolverOutboundEndpointResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResolverOutboundEndpointArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ResolverOutboundEndpointResult {
         let location_binding = args.location.get_output(context);
         let name_binding = args.name.get_output(context);
         let private_dns_resolver_id_binding = args
@@ -152,6 +168,7 @@ pub mod resolver_outbound_endpoint {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ResolverOutboundEndpointResult {

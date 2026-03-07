@@ -62,6 +62,22 @@ pub mod vpc_endpoint_route_table_association {
         name: &str,
         args: VpcEndpointRouteTableAssociationArgs,
     ) -> VpcEndpointRouteTableAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcEndpointRouteTableAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VpcEndpointRouteTableAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcEndpointRouteTableAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VpcEndpointRouteTableAssociationResult {
         let route_table_id_binding = args.route_table_id.get_output(context);
         let vpc_endpoint_id_binding = args.vpc_endpoint_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -79,6 +95,7 @@ pub mod vpc_endpoint_route_table_association {
                     value: &vpc_endpoint_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VpcEndpointRouteTableAssociationResult {

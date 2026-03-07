@@ -100,6 +100,22 @@ pub mod connection_type {
         name: &str,
         args: ConnectionTypeArgs,
     ) -> ConnectionTypeResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConnectionTypeArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ConnectionTypeResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConnectionTypeArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ConnectionTypeResult {
         let automation_account_name_binding = args
             .automation_account_name
             .get_output(context);
@@ -133,6 +149,7 @@ pub mod connection_type {
                     value: &resource_group_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ConnectionTypeResult {

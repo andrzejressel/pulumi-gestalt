@@ -158,6 +158,22 @@ pub mod user {
         name: &str,
         args: UserArgs,
     ) -> UserResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: UserArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> UserResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: UserArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> UserResult {
         let addresses_binding = args.addresses.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let emails_binding = args.emails.get_output(context);
@@ -234,6 +250,7 @@ pub mod user {
                     value: &user_type_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         UserResult {

@@ -106,6 +106,22 @@ pub mod trigger_http_request {
         name: &str,
         args: TriggerHttpRequestArgs,
     ) -> TriggerHttpRequestResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TriggerHttpRequestArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TriggerHttpRequestResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TriggerHttpRequestArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TriggerHttpRequestResult {
         let logic_app_id_binding = args.logic_app_id.get_output(context);
         let method_binding = args.method.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -137,6 +153,7 @@ pub mod trigger_http_request {
                     value: &schema_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TriggerHttpRequestResult {

@@ -274,6 +274,22 @@ pub mod consent_store_iam_binding {
         name: &str,
         args: ConsentStoreIamBindingArgs,
     ) -> ConsentStoreIamBindingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConsentStoreIamBindingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ConsentStoreIamBindingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConsentStoreIamBindingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ConsentStoreIamBindingResult {
         let condition_binding = args.condition.get_output(context);
         let consent_store_id_binding = args.consent_store_id.get_output(context);
         let dataset_binding = args.dataset.get_output(context);
@@ -305,6 +321,7 @@ pub mod consent_store_iam_binding {
                     value: &role_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ConsentStoreIamBindingResult {

@@ -152,6 +152,22 @@ pub mod network {
         name: &str,
         args: NetworkArgs,
     ) -> NetworkResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NetworkResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NetworkResult {
         let attachable_binding = args.attachable.get_output(context);
         let check_duplicate_binding = args.check_duplicate.get_output(context);
         let driver_binding = args.driver.get_output(context);
@@ -218,6 +234,7 @@ pub mod network {
                     value: &options_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NetworkResult {

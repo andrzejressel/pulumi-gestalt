@@ -71,6 +71,22 @@ pub mod trigger {
         name: &str,
         args: TriggerArgs,
     ) -> TriggerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TriggerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TriggerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TriggerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TriggerResult {
         let repository_name_binding = args.repository_name.get_output(context);
         let triggers_binding = args.triggers.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -87,6 +103,7 @@ pub mod trigger {
                     value: &triggers_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TriggerResult {

@@ -81,6 +81,22 @@ pub mod readiness_check {
         name: &str,
         args: ReadinessCheckArgs,
     ) -> ReadinessCheckResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReadinessCheckArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ReadinessCheckResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReadinessCheckArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ReadinessCheckResult {
         let readiness_check_name_binding = args.readiness_check_name.get_output(context);
         let resource_set_name_binding = args.resource_set_name.get_output(context);
         let tags_binding = args.tags.get_output(context);
@@ -102,6 +118,7 @@ pub mod readiness_check {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ReadinessCheckResult {

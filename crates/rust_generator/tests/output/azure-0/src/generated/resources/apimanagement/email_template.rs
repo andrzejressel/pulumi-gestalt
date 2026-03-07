@@ -111,6 +111,22 @@ pub mod email_template {
         name: &str,
         args: EmailTemplateArgs,
     ) -> EmailTemplateResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EmailTemplateArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EmailTemplateResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EmailTemplateArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EmailTemplateResult {
         let api_management_name_binding = args.api_management_name.get_output(context);
         let body_binding = args.body.get_output(context);
         let resource_group_name_binding = args.resource_group_name.get_output(context);
@@ -142,6 +158,7 @@ pub mod email_template {
                     value: &template_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EmailTemplateResult {

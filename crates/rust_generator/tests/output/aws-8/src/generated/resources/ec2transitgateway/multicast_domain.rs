@@ -206,6 +206,22 @@ pub mod multicast_domain {
         name: &str,
         args: MulticastDomainArgs,
     ) -> MulticastDomainResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MulticastDomainArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MulticastDomainResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MulticastDomainArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MulticastDomainResult {
         let auto_accept_shared_associations_binding = args
             .auto_accept_shared_associations
             .get_output(context);
@@ -241,6 +257,7 @@ pub mod multicast_domain {
                     value: &transit_gateway_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MulticastDomainResult {

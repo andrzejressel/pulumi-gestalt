@@ -95,6 +95,22 @@ pub mod member {
         name: &str,
         args: MemberArgs,
     ) -> MemberResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MemberArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MemberResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MemberArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MemberResult {
         let account_id_binding = args.account_id.get_output(context);
         let detector_id_binding = args.detector_id.get_output(context);
         let disable_email_notification_binding = args
@@ -133,6 +149,7 @@ pub mod member {
                     value: &invite_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MemberResult {

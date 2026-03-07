@@ -107,6 +107,22 @@ pub mod link_aggregation_group {
         name: &str,
         args: LinkAggregationGroupArgs,
     ) -> LinkAggregationGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LinkAggregationGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LinkAggregationGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LinkAggregationGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LinkAggregationGroupResult {
         let connection_id_binding = args.connection_id.get_output(context);
         let connections_bandwidth_binding = args
             .connections_bandwidth
@@ -150,6 +166,7 @@ pub mod link_aggregation_group {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LinkAggregationGroupResult {

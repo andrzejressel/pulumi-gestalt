@@ -58,6 +58,22 @@ pub mod template_association {
         name: &str,
         args: TemplateAssociationArgs,
     ) -> TemplateAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TemplateAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TemplateAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TemplateAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TemplateAssociationResult {
         let skip_destroy_binding = args.skip_destroy.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:servicequotas/templateAssociation:TemplateAssociation".into(),
@@ -69,6 +85,7 @@ pub mod template_association {
                     value: &skip_destroy_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TemplateAssociationResult {

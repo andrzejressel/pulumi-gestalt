@@ -85,6 +85,22 @@ pub mod automanage_configuration_assignment {
         name: &str,
         args: AutomanageConfigurationAssignmentArgs,
     ) -> AutomanageConfigurationAssignmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AutomanageConfigurationAssignmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AutomanageConfigurationAssignmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AutomanageConfigurationAssignmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AutomanageConfigurationAssignmentResult {
         let arc_machine_id_binding = args.arc_machine_id.get_output(context);
         let configuration_id_binding = args.configuration_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -102,6 +118,7 @@ pub mod automanage_configuration_assignment {
                     value: &configuration_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AutomanageConfigurationAssignmentResult {

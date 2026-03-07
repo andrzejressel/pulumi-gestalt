@@ -102,6 +102,22 @@ pub mod zone {
         name: &str,
         args: ZoneArgs,
     ) -> ZoneResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZoneArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ZoneResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZoneArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ZoneResult {
         let name_binding = args.name.get_output(context);
         let resource_group_name_binding = args.resource_group_name.get_output(context);
         let soa_record_binding = args.soa_record.get_output(context);
@@ -128,6 +144,7 @@ pub mod zone {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ZoneResult {

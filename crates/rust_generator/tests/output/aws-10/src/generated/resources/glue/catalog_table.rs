@@ -198,6 +198,22 @@ pub mod catalog_table {
         name: &str,
         args: CatalogTableArgs,
     ) -> CatalogTableResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CatalogTableArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CatalogTableResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CatalogTableArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CatalogTableResult {
         let catalog_id_binding = args.catalog_id.get_output(context);
         let database_name_binding = args.database_name.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -281,6 +297,7 @@ pub mod catalog_table {
                     value: &view_original_text_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CatalogTableResult {

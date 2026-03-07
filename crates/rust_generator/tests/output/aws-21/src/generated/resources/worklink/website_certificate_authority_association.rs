@@ -74,6 +74,22 @@ pub mod website_certificate_authority_association {
         name: &str,
         args: WebsiteCertificateAuthorityAssociationArgs,
     ) -> WebsiteCertificateAuthorityAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WebsiteCertificateAuthorityAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WebsiteCertificateAuthorityAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WebsiteCertificateAuthorityAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WebsiteCertificateAuthorityAssociationResult {
         let certificate_binding = args.certificate.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let fleet_arn_binding = args.fleet_arn.get_output(context);
@@ -96,6 +112,7 @@ pub mod website_certificate_authority_association {
                     value: &fleet_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WebsiteCertificateAuthorityAssociationResult {

@@ -157,6 +157,22 @@ pub mod inventory {
         name: &str,
         args: InventoryArgs,
     ) -> InventoryResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InventoryArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> InventoryResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InventoryArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> InventoryResult {
         let bucket_binding = args.bucket.get_output(context);
         let destination_binding = args.destination.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
@@ -205,6 +221,7 @@ pub mod inventory {
                     value: &schedule_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         InventoryResult {

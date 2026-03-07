@@ -87,6 +87,22 @@ pub mod user_policy {
         name: &str,
         args: UserPolicyArgs,
     ) -> UserPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: UserPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> UserPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: UserPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> UserPolicyResult {
         let name_binding = args.name.get_output(context);
         let name_prefix_binding = args.name_prefix.get_output(context);
         let policy_binding = args.policy.get_output(context);
@@ -113,6 +129,7 @@ pub mod user_policy {
                     value: &user_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         UserPolicyResult {

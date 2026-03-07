@@ -81,6 +81,22 @@ pub mod registry_image {
         name: &str,
         args: RegistryImageArgs,
     ) -> RegistryImageResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegistryImageArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RegistryImageResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegistryImageArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RegistryImageResult {
         let insecure_skip_verify_binding = args.insecure_skip_verify.get_output(context);
         let keep_remotely_binding = args.keep_remotely.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -107,6 +123,7 @@ pub mod registry_image {
                     value: &triggers_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RegistryImageResult {

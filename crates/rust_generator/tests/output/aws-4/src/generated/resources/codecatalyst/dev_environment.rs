@@ -116,6 +116,22 @@ pub mod dev_environment {
         name: &str,
         args: DevEnvironmentArgs,
     ) -> DevEnvironmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DevEnvironmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DevEnvironmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DevEnvironmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DevEnvironmentResult {
         let alias_binding = args.alias.get_output(context);
         let ides_binding = args.ides.get_output(context);
         let inactivity_timeout_minutes_binding = args
@@ -164,6 +180,7 @@ pub mod dev_environment {
                     value: &space_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DevEnvironmentResult {

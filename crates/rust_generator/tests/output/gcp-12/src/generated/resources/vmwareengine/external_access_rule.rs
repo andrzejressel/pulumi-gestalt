@@ -225,6 +225,22 @@ pub mod external_access_rule {
         name: &str,
         args: ExternalAccessRuleArgs,
     ) -> ExternalAccessRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ExternalAccessRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ExternalAccessRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ExternalAccessRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ExternalAccessRuleResult {
         let action_binding = args.action.get_output(context);
         let description_binding = args.description.get_output(context);
         let destination_ip_ranges_binding = args
@@ -283,6 +299,7 @@ pub mod external_access_rule {
                     value: &source_ports_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ExternalAccessRuleResult {

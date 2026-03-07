@@ -169,6 +169,22 @@ pub mod registered_domain {
         name: &str,
         args: RegisteredDomainArgs,
     ) -> RegisteredDomainResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegisteredDomainArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RegisteredDomainResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegisteredDomainArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RegisteredDomainResult {
         let admin_contact_binding = args.admin_contact.get_output(context);
         let admin_privacy_binding = args.admin_privacy.get_output(context);
         let auto_renew_binding = args.auto_renew.get_output(context);
@@ -240,6 +256,7 @@ pub mod registered_domain {
                     value: &transfer_lock_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RegisteredDomainResult {

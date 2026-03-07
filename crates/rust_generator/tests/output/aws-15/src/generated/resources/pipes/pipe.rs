@@ -325,6 +325,22 @@ pub mod pipe {
         name: &str,
         args: PipeArgs,
     ) -> PipeResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PipeArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PipeResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PipeArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PipeResult {
         let description_binding = args.description.get_output(context);
         let desired_state_binding = args.desired_state.get_output(context);
         let enrichment_binding = args.enrichment.get_output(context);
@@ -398,6 +414,7 @@ pub mod pipe {
                     value: &target_parameters_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PipeResult {

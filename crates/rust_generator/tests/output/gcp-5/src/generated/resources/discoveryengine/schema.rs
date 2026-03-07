@@ -136,6 +136,22 @@ pub mod schema {
         name: &str,
         args: SchemaArgs,
     ) -> SchemaResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SchemaArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SchemaResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SchemaArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SchemaResult {
         let data_store_id_binding = args.data_store_id.get_output(context);
         let json_schema_binding = args.json_schema.get_output(context);
         let location_binding = args.location.get_output(context);
@@ -167,6 +183,7 @@ pub mod schema {
                     value: &schema_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SchemaResult {

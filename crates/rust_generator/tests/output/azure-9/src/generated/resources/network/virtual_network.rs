@@ -173,6 +173,22 @@ pub mod virtual_network {
         name: &str,
         args: VirtualNetworkArgs,
     ) -> VirtualNetworkResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VirtualNetworkArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VirtualNetworkResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VirtualNetworkArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VirtualNetworkResult {
         let address_spaces_binding = args.address_spaces.get_output(context);
         let bgp_community_binding = args.bgp_community.get_output(context);
         let ddos_protection_plan_binding = args.ddos_protection_plan.get_output(context);
@@ -241,6 +257,7 @@ pub mod virtual_network {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VirtualNetworkResult {

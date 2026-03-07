@@ -247,6 +247,22 @@ pub mod backup_vault {
         name: &str,
         args: BackupVaultArgs,
     ) -> BackupVaultResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackupVaultArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BackupVaultResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackupVaultArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BackupVaultResult {
         let access_restriction_binding = args.access_restriction.get_output(context);
         let allow_missing_binding = args.allow_missing.get_output(context);
         let annotations_binding = args.annotations.get_output(context);
@@ -330,6 +346,7 @@ pub mod backup_vault {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BackupVaultResult {

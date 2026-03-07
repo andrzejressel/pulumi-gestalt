@@ -209,6 +209,22 @@ pub mod database_instance {
         name: &str,
         args: DatabaseInstanceArgs,
     ) -> DatabaseInstanceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatabaseInstanceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DatabaseInstanceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatabaseInstanceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DatabaseInstanceResult {
         let desired_state_binding = args.desired_state.get_output(context);
         let instance_id_binding = args.instance_id.get_output(context);
         let project_binding = args.project.get_output(context);
@@ -240,6 +256,7 @@ pub mod database_instance {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DatabaseInstanceResult {

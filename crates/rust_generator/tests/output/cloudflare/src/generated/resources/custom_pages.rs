@@ -78,6 +78,22 @@ pub mod custom_pages {
         name: &str,
         args: CustomPagesArgs,
     ) -> CustomPagesResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomPagesArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CustomPagesResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomPagesArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CustomPagesResult {
         let account_id_binding = args.account_id.get_output(context);
         let state_binding = args.state.get_output(context);
         let type__binding = args.type_.get_output(context);
@@ -109,6 +125,7 @@ pub mod custom_pages {
                     value: &zone_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CustomPagesResult {

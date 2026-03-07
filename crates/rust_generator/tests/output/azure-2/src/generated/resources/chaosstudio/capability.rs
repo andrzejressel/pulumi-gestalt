@@ -92,6 +92,22 @@ pub mod capability {
         name: &str,
         args: CapabilityArgs,
     ) -> CapabilityResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CapabilityArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CapabilityResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CapabilityArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CapabilityResult {
         let capability_type_binding = args.capability_type.get_output(context);
         let chaos_studio_target_id_binding = args
             .chaos_studio_target_id
@@ -110,6 +126,7 @@ pub mod capability {
                     value: &chaos_studio_target_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CapabilityResult {

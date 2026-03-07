@@ -195,6 +195,22 @@ pub mod metastore_federation {
         name: &str,
         args: MetastoreFederationArgs,
     ) -> MetastoreFederationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MetastoreFederationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MetastoreFederationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MetastoreFederationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MetastoreFederationResult {
         let backend_metastores_binding = args.backend_metastores.get_output(context);
         let federation_id_binding = args.federation_id.get_output(context);
         let labels_binding = args.labels.get_output(context);
@@ -231,6 +247,7 @@ pub mod metastore_federation {
                     value: &version_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MetastoreFederationResult {

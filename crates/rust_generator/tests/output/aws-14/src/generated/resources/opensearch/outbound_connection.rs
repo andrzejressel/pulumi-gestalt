@@ -111,6 +111,22 @@ pub mod outbound_connection {
         name: &str,
         args: OutboundConnectionArgs,
     ) -> OutboundConnectionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OutboundConnectionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OutboundConnectionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OutboundConnectionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OutboundConnectionResult {
         let accept_connection_binding = args.accept_connection.get_output(context);
         let connection_alias_binding = args.connection_alias.get_output(context);
         let connection_mode_binding = args.connection_mode.get_output(context);
@@ -149,6 +165,7 @@ pub mod outbound_connection {
                     value: &remote_domain_info_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OutboundConnectionResult {

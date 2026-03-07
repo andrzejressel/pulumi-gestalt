@@ -297,6 +297,22 @@ pub mod role {
         name: &str,
         args: RoleArgs,
     ) -> RoleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RoleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RoleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RoleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RoleResult {
         let assume_role_policy_binding = args.assume_role_policy.get_output(context);
         let description_binding = args.description.get_output(context);
         let force_detach_policies_binding = args
@@ -360,6 +376,7 @@ pub mod role {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RoleResult {

@@ -130,6 +130,22 @@ pub mod ruleset {
         name: &str,
         args: RulesetArgs,
     ) -> RulesetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RulesetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RulesetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RulesetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RulesetResult {
         let project_binding = args.project.get_output(context);
         let source_binding = args.source.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -146,6 +162,7 @@ pub mod ruleset {
                     value: &source_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RulesetResult {

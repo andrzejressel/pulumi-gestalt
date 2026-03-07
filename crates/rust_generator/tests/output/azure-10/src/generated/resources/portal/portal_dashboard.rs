@@ -71,6 +71,22 @@ pub mod portal_dashboard {
         name: &str,
         args: PortalDashboardArgs,
     ) -> PortalDashboardResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PortalDashboardArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PortalDashboardResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PortalDashboardArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PortalDashboardResult {
         let dashboard_properties_binding = args.dashboard_properties.get_output(context);
         let location_binding = args.location.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -102,6 +118,7 @@ pub mod portal_dashboard {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PortalDashboardResult {

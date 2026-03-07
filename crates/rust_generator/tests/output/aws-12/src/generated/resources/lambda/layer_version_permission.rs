@@ -98,6 +98,22 @@ pub mod layer_version_permission {
         name: &str,
         args: LayerVersionPermissionArgs,
     ) -> LayerVersionPermissionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LayerVersionPermissionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LayerVersionPermissionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LayerVersionPermissionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LayerVersionPermissionResult {
         let action_binding = args.action.get_output(context);
         let layer_name_binding = args.layer_name.get_output(context);
         let organization_id_binding = args.organization_id.get_output(context);
@@ -139,6 +155,7 @@ pub mod layer_version_permission {
                     value: &version_number_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LayerVersionPermissionResult {

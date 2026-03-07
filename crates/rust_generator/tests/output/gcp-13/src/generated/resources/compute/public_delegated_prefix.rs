@@ -152,6 +152,22 @@ pub mod public_delegated_prefix {
         name: &str,
         args: PublicDelegatedPrefixArgs,
     ) -> PublicDelegatedPrefixResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PublicDelegatedPrefixArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PublicDelegatedPrefixResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PublicDelegatedPrefixArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PublicDelegatedPrefixResult {
         let description_binding = args.description.get_output(context);
         let ip_cidr_range_binding = args.ip_cidr_range.get_output(context);
         let is_live_migration_binding = args.is_live_migration.get_output(context);
@@ -193,6 +209,7 @@ pub mod public_delegated_prefix {
                     value: &region_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PublicDelegatedPrefixResult {

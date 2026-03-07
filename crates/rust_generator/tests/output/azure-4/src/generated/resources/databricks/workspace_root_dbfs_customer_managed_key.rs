@@ -156,6 +156,22 @@ pub mod workspace_root_dbfs_customer_managed_key {
         name: &str,
         args: WorkspaceRootDbfsCustomerManagedKeyArgs,
     ) -> WorkspaceRootDbfsCustomerManagedKeyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkspaceRootDbfsCustomerManagedKeyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WorkspaceRootDbfsCustomerManagedKeyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkspaceRootDbfsCustomerManagedKeyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WorkspaceRootDbfsCustomerManagedKeyResult {
         let key_vault_id_binding = args.key_vault_id.get_output(context);
         let key_vault_key_id_binding = args.key_vault_key_id.get_output(context);
         let workspace_id_binding = args.workspace_id.get_output(context);
@@ -178,6 +194,7 @@ pub mod workspace_root_dbfs_customer_managed_key {
                     value: &workspace_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WorkspaceRootDbfsCustomerManagedKeyResult {

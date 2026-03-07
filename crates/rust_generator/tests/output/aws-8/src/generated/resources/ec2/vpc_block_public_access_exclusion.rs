@@ -127,6 +127,22 @@ pub mod vpc_block_public_access_exclusion {
         name: &str,
         args: VpcBlockPublicAccessExclusionArgs,
     ) -> VpcBlockPublicAccessExclusionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcBlockPublicAccessExclusionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VpcBlockPublicAccessExclusionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcBlockPublicAccessExclusionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VpcBlockPublicAccessExclusionResult {
         let internet_gateway_exclusion_mode_binding = args
             .internet_gateway_exclusion_mode
             .get_output(context);
@@ -161,6 +177,7 @@ pub mod vpc_block_public_access_exclusion {
                     value: &vpc_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VpcBlockPublicAccessExclusionResult {

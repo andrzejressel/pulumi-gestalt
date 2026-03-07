@@ -85,6 +85,22 @@ pub mod domain_entry {
         name: &str,
         args: DomainEntryArgs,
     ) -> DomainEntryResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DomainEntryArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DomainEntryResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DomainEntryArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DomainEntryResult {
         let domain_name_binding = args.domain_name.get_output(context);
         let is_alias_binding = args.is_alias.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -116,6 +132,7 @@ pub mod domain_entry {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DomainEntryResult {

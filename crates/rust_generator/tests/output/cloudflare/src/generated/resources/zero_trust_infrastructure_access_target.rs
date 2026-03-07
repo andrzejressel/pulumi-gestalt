@@ -107,6 +107,22 @@ pub mod zero_trust_infrastructure_access_target {
         name: &str,
         args: ZeroTrustInfrastructureAccessTargetArgs,
     ) -> ZeroTrustInfrastructureAccessTargetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZeroTrustInfrastructureAccessTargetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ZeroTrustInfrastructureAccessTargetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZeroTrustInfrastructureAccessTargetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ZeroTrustInfrastructureAccessTargetResult {
         let account_id_binding = args.account_id.get_output(context);
         let hostname_binding = args.hostname.get_output(context);
         let ip_binding = args.ip.get_output(context);
@@ -129,6 +145,7 @@ pub mod zero_trust_infrastructure_access_target {
                     value: &ip_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ZeroTrustInfrastructureAccessTargetResult {

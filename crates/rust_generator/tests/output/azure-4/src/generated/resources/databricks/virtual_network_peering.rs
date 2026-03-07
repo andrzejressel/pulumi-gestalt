@@ -145,6 +145,22 @@ pub mod virtual_network_peering {
         name: &str,
         args: VirtualNetworkPeeringArgs,
     ) -> VirtualNetworkPeeringResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VirtualNetworkPeeringArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VirtualNetworkPeeringResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VirtualNetworkPeeringArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VirtualNetworkPeeringResult {
         let allow_forwarded_traffic_binding = args
             .allow_forwarded_traffic
             .get_output(context);
@@ -206,6 +222,7 @@ pub mod virtual_network_peering {
                     value: &workspace_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VirtualNetworkPeeringResult {

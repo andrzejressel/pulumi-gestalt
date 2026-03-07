@@ -89,6 +89,22 @@ pub mod voice_connector {
         name: &str,
         args: VoiceConnectorArgs,
     ) -> VoiceConnectorResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VoiceConnectorArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VoiceConnectorResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VoiceConnectorArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VoiceConnectorResult {
         let aws_region_binding = args.aws_region.get_output(context);
         let name_binding = args.name.get_output(context);
         let require_encryption_binding = args.require_encryption.get_output(context);
@@ -115,6 +131,7 @@ pub mod voice_connector {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VoiceConnectorResult {

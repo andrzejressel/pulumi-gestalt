@@ -307,6 +307,22 @@ pub mod interconnect {
         name: &str,
         args: InterconnectArgs,
     ) -> InterconnectResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InterconnectArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> InterconnectResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InterconnectArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> InterconnectResult {
         let admin_enabled_binding = args.admin_enabled.get_output(context);
         let customer_name_binding = args.customer_name.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -388,6 +404,7 @@ pub mod interconnect {
                     value: &requested_link_count_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         InterconnectResult {

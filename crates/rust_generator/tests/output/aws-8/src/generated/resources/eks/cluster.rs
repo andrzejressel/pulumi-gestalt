@@ -464,6 +464,22 @@ pub mod cluster {
         name: &str,
         args: ClusterArgs,
     ) -> ClusterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClusterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ClusterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClusterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ClusterResult {
         let access_config_binding = args.access_config.get_output(context);
         let bootstrap_self_managed_addons_binding = args
             .bootstrap_self_managed_addons
@@ -565,6 +581,7 @@ pub mod cluster {
                     value: &zonal_shift_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ClusterResult {

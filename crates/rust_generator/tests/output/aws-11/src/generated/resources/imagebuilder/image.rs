@@ -151,6 +151,22 @@ pub mod image {
         name: &str,
         args: ImageArgs,
     ) -> ImageResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ImageArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ImageResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ImageArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ImageResult {
         let container_recipe_arn_binding = args.container_recipe_arn.get_output(context);
         let distribution_configuration_arn_binding = args
             .distribution_configuration_arn
@@ -217,6 +233,7 @@ pub mod image {
                     value: &workflows_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ImageResult {

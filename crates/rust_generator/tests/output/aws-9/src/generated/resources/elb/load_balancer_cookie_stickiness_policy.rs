@@ -88,6 +88,22 @@ pub mod load_balancer_cookie_stickiness_policy {
         name: &str,
         args: LoadBalancerCookieStickinessPolicyArgs,
     ) -> LoadBalancerCookieStickinessPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LoadBalancerCookieStickinessPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LoadBalancerCookieStickinessPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LoadBalancerCookieStickinessPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LoadBalancerCookieStickinessPolicyResult {
         let cookie_expiration_period_binding = args
             .cookie_expiration_period
             .get_output(context);
@@ -117,6 +133,7 @@ pub mod load_balancer_cookie_stickiness_policy {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LoadBalancerCookieStickinessPolicyResult {

@@ -593,6 +593,22 @@ pub mod feature {
         name: &str,
         args: FeatureArgs,
     ) -> FeatureResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FeatureArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FeatureResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FeatureArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FeatureResult {
         let fleet_default_member_config_binding = args
             .fleet_default_member_config
             .get_output(context);
@@ -631,6 +647,7 @@ pub mod feature {
                     value: &spec_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FeatureResult {

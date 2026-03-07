@@ -112,6 +112,22 @@ pub mod snapshot {
         name: &str,
         args: SnapshotArgs,
     ) -> SnapshotResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SnapshotArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SnapshotResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SnapshotArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SnapshotResult {
         let description_binding = args.description.get_output(context);
         let outpost_arn_binding = args.outpost_arn.get_output(context);
         let permanent_restore_binding = args.permanent_restore.get_output(context);
@@ -155,6 +171,7 @@ pub mod snapshot {
                     value: &volume_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SnapshotResult {

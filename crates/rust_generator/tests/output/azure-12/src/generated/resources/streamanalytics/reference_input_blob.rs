@@ -145,6 +145,22 @@ pub mod reference_input_blob {
         name: &str,
         args: ReferenceInputBlobArgs,
     ) -> ReferenceInputBlobResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReferenceInputBlobArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ReferenceInputBlobResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReferenceInputBlobArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ReferenceInputBlobResult {
         let authentication_mode_binding = args.authentication_mode.get_output(context);
         let date_format_binding = args.date_format.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -210,6 +226,7 @@ pub mod reference_input_blob {
                     value: &time_format_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ReferenceInputBlobResult {

@@ -175,6 +175,22 @@ pub mod project_feed {
         name: &str,
         args: ProjectFeedArgs,
     ) -> ProjectFeedResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProjectFeedArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ProjectFeedResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProjectFeedArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ProjectFeedResult {
         let asset_names_binding = args.asset_names.get_output(context);
         let asset_types_binding = args.asset_types.get_output(context);
         let billing_project_binding = args.billing_project.get_output(context);
@@ -221,6 +237,7 @@ pub mod project_feed {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ProjectFeedResult {

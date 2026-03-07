@@ -182,6 +182,22 @@ pub mod data_exchange {
         name: &str,
         args: DataExchangeArgs,
     ) -> DataExchangeResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataExchangeArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DataExchangeResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataExchangeArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DataExchangeResult {
         let data_exchange_id_binding = args.data_exchange_id.get_output(context);
         let description_binding = args.description.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
@@ -235,6 +251,7 @@ pub mod data_exchange {
                     value: &sharing_environment_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DataExchangeResult {

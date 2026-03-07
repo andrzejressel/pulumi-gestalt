@@ -145,6 +145,22 @@ pub mod private_connection {
         name: &str,
         args: PrivateConnectionArgs,
     ) -> PrivateConnectionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PrivateConnectionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PrivateConnectionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PrivateConnectionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PrivateConnectionResult {
         let display_name_binding = args.display_name.get_output(context);
         let labels_binding = args.labels.get_output(context);
         let location_binding = args.location.get_output(context);
@@ -184,6 +200,7 @@ pub mod private_connection {
                     value: &vpc_peering_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PrivateConnectionResult {

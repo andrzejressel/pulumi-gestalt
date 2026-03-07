@@ -196,6 +196,22 @@ pub mod stack {
         name: &str,
         args: StackArgs,
     ) -> StackResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StackArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> StackResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StackArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> StackResult {
         let agent_version_binding = args.agent_version.get_output(context);
         let berkshelf_version_binding = args.berkshelf_version.get_output(context);
         let color_binding = args.color.get_output(context);
@@ -326,6 +342,7 @@ pub mod stack {
                     value: &vpc_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         StackResult {

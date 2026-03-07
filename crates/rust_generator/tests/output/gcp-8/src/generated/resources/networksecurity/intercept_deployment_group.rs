@@ -152,6 +152,22 @@ pub mod intercept_deployment_group {
         name: &str,
         args: InterceptDeploymentGroupArgs,
     ) -> InterceptDeploymentGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InterceptDeploymentGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> InterceptDeploymentGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InterceptDeploymentGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> InterceptDeploymentGroupResult {
         let intercept_deployment_group_id_binding = args
             .intercept_deployment_group_id
             .get_output(context);
@@ -186,6 +202,7 @@ pub mod intercept_deployment_group {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         InterceptDeploymentGroupResult {

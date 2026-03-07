@@ -106,6 +106,22 @@ pub mod api_release {
         name: &str,
         args: ApiReleaseArgs,
     ) -> ApiReleaseResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApiReleaseArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ApiReleaseResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApiReleaseArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ApiReleaseResult {
         let api_id_binding = args.api_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let notes_binding = args.notes.get_output(context);
@@ -127,6 +143,7 @@ pub mod api_release {
                     value: &notes_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ApiReleaseResult {

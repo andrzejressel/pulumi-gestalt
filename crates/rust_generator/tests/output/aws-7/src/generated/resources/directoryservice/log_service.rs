@@ -84,6 +84,22 @@ pub mod log_service {
         name: &str,
         args: LogServiceArgs,
     ) -> LogServiceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LogServiceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LogServiceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LogServiceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LogServiceResult {
         let directory_id_binding = args.directory_id.get_output(context);
         let log_group_name_binding = args.log_group_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -100,6 +116,7 @@ pub mod log_service {
                     value: &log_group_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LogServiceResult {

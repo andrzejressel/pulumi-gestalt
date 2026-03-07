@@ -84,6 +84,22 @@ pub mod ip_group_cidr {
         name: &str,
         args: IPGroupCIDRArgs,
     ) -> IPGroupCIDRResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IPGroupCIDRArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IPGroupCIDRResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IPGroupCIDRArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IPGroupCIDRResult {
         let cidr_binding = args.cidr.get_output(context);
         let ip_group_id_binding = args.ip_group_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -100,6 +116,7 @@ pub mod ip_group_cidr {
                     value: &ip_group_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IPGroupCIDRResult {

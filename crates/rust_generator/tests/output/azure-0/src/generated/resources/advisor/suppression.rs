@@ -81,6 +81,22 @@ pub mod suppression {
         name: &str,
         args: SuppressionArgs,
     ) -> SuppressionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SuppressionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SuppressionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SuppressionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SuppressionResult {
         let name_binding = args.name.get_output(context);
         let recommendation_id_binding = args.recommendation_id.get_output(context);
         let resource_id_binding = args.resource_id.get_output(context);
@@ -107,6 +123,7 @@ pub mod suppression {
                     value: &ttl_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SuppressionResult {

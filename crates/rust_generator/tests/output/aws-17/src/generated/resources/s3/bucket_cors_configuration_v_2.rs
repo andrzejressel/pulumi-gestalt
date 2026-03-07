@@ -98,6 +98,22 @@ pub mod bucket_cors_configuration_v_2 {
         name: &str,
         args: BucketCorsConfigurationV2Args,
     ) -> BucketCorsConfigurationV2Result {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BucketCorsConfigurationV2Args,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BucketCorsConfigurationV2Result {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BucketCorsConfigurationV2Args,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BucketCorsConfigurationV2Result {
         let bucket_binding = args.bucket.get_output(context);
         let cors_rules_binding = args.cors_rules.get_output(context);
         let expected_bucket_owner_binding = args
@@ -121,6 +137,7 @@ pub mod bucket_cors_configuration_v_2 {
                     value: &expected_bucket_owner_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BucketCorsConfigurationV2Result {

@@ -413,6 +413,22 @@ pub mod flexible_app_version {
         name: &str,
         args: FlexibleAppVersionArgs,
     ) -> FlexibleAppVersionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FlexibleAppVersionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FlexibleAppVersionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FlexibleAppVersionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FlexibleAppVersionResult {
         let api_config_binding = args.api_config.get_output(context);
         let automatic_scaling_binding = args.automatic_scaling.get_output(context);
         let beta_settings_binding = args.beta_settings.get_output(context);
@@ -577,6 +593,7 @@ pub mod flexible_app_version {
                     value: &vpc_access_connector_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FlexibleAppVersionResult {

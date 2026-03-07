@@ -88,6 +88,22 @@ pub mod service_quota {
         name: &str,
         args: ServiceQuotaArgs,
     ) -> ServiceQuotaResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceQuotaArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServiceQuotaResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceQuotaArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServiceQuotaResult {
         let quota_code_binding = args.quota_code.get_output(context);
         let service_code_binding = args.service_code.get_output(context);
         let value_binding = args.value.get_output(context);
@@ -109,6 +125,7 @@ pub mod service_quota {
                     value: &value_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServiceQuotaResult {

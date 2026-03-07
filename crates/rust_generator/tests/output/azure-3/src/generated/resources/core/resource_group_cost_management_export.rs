@@ -125,6 +125,22 @@ pub mod resource_group_cost_management_export {
         name: &str,
         args: ResourceGroupCostManagementExportArgs,
     ) -> ResourceGroupCostManagementExportResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResourceGroupCostManagementExportArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ResourceGroupCostManagementExportResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResourceGroupCostManagementExportArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ResourceGroupCostManagementExportResult {
         let active_binding = args.active.get_output(context);
         let export_data_options_binding = args.export_data_options.get_output(context);
         let export_data_storage_location_binding = args
@@ -178,6 +194,7 @@ pub mod resource_group_cost_management_export {
                     value: &resource_group_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ResourceGroupCostManagementExportResult {

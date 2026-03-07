@@ -59,6 +59,22 @@ pub mod auto_provisioning {
         name: &str,
         args: AutoProvisioningArgs,
     ) -> AutoProvisioningResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AutoProvisioningArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AutoProvisioningResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AutoProvisioningArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AutoProvisioningResult {
         let auto_provision_binding = args.auto_provision.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:securitycenter/autoProvisioning:AutoProvisioning".into(),
@@ -70,6 +86,7 @@ pub mod auto_provisioning {
                     value: &auto_provision_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AutoProvisioningResult {

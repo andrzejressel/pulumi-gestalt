@@ -105,6 +105,22 @@ pub mod attached_network {
         name: &str,
         args: AttachedNetworkArgs,
     ) -> AttachedNetworkResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AttachedNetworkArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AttachedNetworkResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AttachedNetworkArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AttachedNetworkResult {
         let dev_center_id_binding = args.dev_center_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let network_connection_id_binding = args
@@ -128,6 +144,7 @@ pub mod attached_network {
                     value: &network_connection_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AttachedNetworkResult {

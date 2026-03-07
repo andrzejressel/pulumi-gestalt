@@ -1020,6 +1020,22 @@ pub mod function {
         name: &str,
         args: FunctionArgs,
     ) -> FunctionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FunctionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FunctionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FunctionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FunctionResult {
         let build_config_binding = args.build_config.get_output(context);
         let description_binding = args.description.get_output(context);
         let event_trigger_binding = args.event_trigger.get_output(context);
@@ -1071,6 +1087,7 @@ pub mod function {
                     value: &service_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FunctionResult {

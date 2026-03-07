@@ -110,6 +110,22 @@ pub mod key_ring_import_job {
         name: &str,
         args: KeyRingImportJobArgs,
     ) -> KeyRingImportJobResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: KeyRingImportJobArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> KeyRingImportJobResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: KeyRingImportJobArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> KeyRingImportJobResult {
         let import_job_id_binding = args.import_job_id.get_output(context);
         let import_method_binding = args.import_method.get_output(context);
         let key_ring_binding = args.key_ring.get_output(context);
@@ -136,6 +152,7 @@ pub mod key_ring_import_job {
                     value: &protection_level_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         KeyRingImportJobResult {

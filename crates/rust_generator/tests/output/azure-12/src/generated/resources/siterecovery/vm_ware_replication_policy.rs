@@ -94,6 +94,22 @@ pub mod vm_ware_replication_policy {
         name: &str,
         args: VMWareReplicationPolicyArgs,
     ) -> VMWareReplicationPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VMWareReplicationPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VMWareReplicationPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VMWareReplicationPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VMWareReplicationPolicyResult {
         let application_consistent_snapshot_frequency_in_minutes_binding = args
             .application_consistent_snapshot_frequency_in_minutes
             .get_output(context);
@@ -126,6 +142,7 @@ pub mod vm_ware_replication_policy {
                     value: &recovery_vault_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VMWareReplicationPolicyResult {

@@ -292,6 +292,22 @@ pub mod connectivity_test {
         name: &str,
         args: ConnectivityTestArgs,
     ) -> ConnectivityTestResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConnectivityTestArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ConnectivityTestResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConnectivityTestArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ConnectivityTestResult {
         let description_binding = args.description.get_output(context);
         let destination_binding = args.destination.get_output(context);
         let labels_binding = args.labels.get_output(context);
@@ -338,6 +354,7 @@ pub mod connectivity_test {
                     value: &source_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ConnectivityTestResult {

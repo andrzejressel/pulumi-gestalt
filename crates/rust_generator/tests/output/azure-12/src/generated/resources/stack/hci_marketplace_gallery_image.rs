@@ -142,6 +142,22 @@ pub mod hci_marketplace_gallery_image {
         name: &str,
         args: HciMarketplaceGalleryImageArgs,
     ) -> HciMarketplaceGalleryImageResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HciMarketplaceGalleryImageArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> HciMarketplaceGalleryImageResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HciMarketplaceGalleryImageArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> HciMarketplaceGalleryImageResult {
         let custom_location_id_binding = args.custom_location_id.get_output(context);
         let hyperv_generation_binding = args.hyperv_generation.get_output(context);
         let identifier_binding = args.identifier.get_output(context);
@@ -199,6 +215,7 @@ pub mod hci_marketplace_gallery_image {
                     value: &version_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         HciMarketplaceGalleryImageResult {

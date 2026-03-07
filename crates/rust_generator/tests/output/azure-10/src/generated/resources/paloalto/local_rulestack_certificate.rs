@@ -103,6 +103,22 @@ pub mod local_rulestack_certificate {
         name: &str,
         args: LocalRulestackCertificateArgs,
     ) -> LocalRulestackCertificateResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LocalRulestackCertificateArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LocalRulestackCertificateResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LocalRulestackCertificateArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LocalRulestackCertificateResult {
         let audit_comment_binding = args.audit_comment.get_output(context);
         let description_binding = args.description.get_output(context);
         let key_vault_certificate_id_binding = args
@@ -142,6 +158,7 @@ pub mod local_rulestack_certificate {
                     value: &self_signed_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LocalRulestackCertificateResult {

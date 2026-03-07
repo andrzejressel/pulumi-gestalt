@@ -112,6 +112,22 @@ pub mod product_tag {
         name: &str,
         args: ProductTagArgs,
     ) -> ProductTagResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProductTagArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ProductTagResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProductTagArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ProductTagResult {
         let api_management_name_binding = args.api_management_name.get_output(context);
         let api_management_product_id_binding = args
             .api_management_product_id
@@ -140,6 +156,7 @@ pub mod product_tag {
                     value: &resource_group_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ProductTagResult {

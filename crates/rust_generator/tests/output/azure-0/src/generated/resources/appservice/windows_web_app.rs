@@ -300,6 +300,22 @@ pub mod windows_web_app {
         name: &str,
         args: WindowsWebAppArgs,
     ) -> WindowsWebAppResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WindowsWebAppArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WindowsWebAppResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WindowsWebAppArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WindowsWebAppResult {
         let app_settings_binding = args.app_settings.get_output(context);
         let auth_settings_binding = args.auth_settings.get_output(context);
         let auth_settings_v2_binding = args.auth_settings_v2.get_output(context);
@@ -460,6 +476,7 @@ pub mod windows_web_app {
                     value: &zip_deploy_file_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WindowsWebAppResult {

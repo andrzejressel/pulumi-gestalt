@@ -157,6 +157,22 @@ pub mod hosting_channel {
         name: &str,
         args: HostingChannelArgs,
     ) -> HostingChannelResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HostingChannelArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> HostingChannelResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HostingChannelArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> HostingChannelResult {
         let channel_id_binding = args.channel_id.get_output(context);
         let expire_time_binding = args.expire_time.get_output(context);
         let labels_binding = args.labels.get_output(context);
@@ -195,6 +211,7 @@ pub mod hosting_channel {
                     value: &ttl_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         HostingChannelResult {

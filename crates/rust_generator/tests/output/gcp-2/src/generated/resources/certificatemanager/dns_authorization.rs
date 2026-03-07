@@ -185,6 +185,22 @@ pub mod dns_authorization {
         name: &str,
         args: DnsAuthorizationArgs,
     ) -> DnsAuthorizationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DnsAuthorizationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DnsAuthorizationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DnsAuthorizationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DnsAuthorizationResult {
         let description_binding = args.description.get_output(context);
         let domain_binding = args.domain.get_output(context);
         let labels_binding = args.labels.get_output(context);
@@ -226,6 +242,7 @@ pub mod dns_authorization {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DnsAuthorizationResult {

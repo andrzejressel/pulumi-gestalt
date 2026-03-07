@@ -130,6 +130,22 @@ pub mod policy_vm_workload {
         name: &str,
         args: PolicyVMWorkloadArgs,
     ) -> PolicyVMWorkloadResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PolicyVMWorkloadArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PolicyVMWorkloadResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PolicyVMWorkloadArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PolicyVMWorkloadResult {
         let name_binding = args.name.get_output(context);
         let protection_policies_binding = args.protection_policies.get_output(context);
         let recovery_vault_name_binding = args.recovery_vault_name.get_output(context);
@@ -166,6 +182,7 @@ pub mod policy_vm_workload {
                     value: &workload_type_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PolicyVMWorkloadResult {

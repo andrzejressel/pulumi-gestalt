@@ -113,6 +113,22 @@ pub mod shared_private_link_service {
         name: &str,
         args: SharedPrivateLinkServiceArgs,
     ) -> SharedPrivateLinkServiceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SharedPrivateLinkServiceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SharedPrivateLinkServiceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SharedPrivateLinkServiceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SharedPrivateLinkServiceResult {
         let name_binding = args.name.get_output(context);
         let request_message_binding = args.request_message.get_output(context);
         let search_service_id_binding = args.search_service_id.get_output(context);
@@ -145,6 +161,7 @@ pub mod shared_private_link_service {
                     value: &target_resource_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SharedPrivateLinkServiceResult {

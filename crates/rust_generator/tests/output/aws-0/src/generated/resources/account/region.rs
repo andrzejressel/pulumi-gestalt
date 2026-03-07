@@ -66,6 +66,22 @@ pub mod region {
         name: &str,
         args: RegionArgs,
     ) -> RegionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RegionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RegionResult {
         let account_id_binding = args.account_id.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
         let region_name_binding = args.region_name.get_output(context);
@@ -87,6 +103,7 @@ pub mod region {
                     value: &region_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RegionResult {

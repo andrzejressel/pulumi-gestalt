@@ -144,6 +144,22 @@ pub mod target_group_attachment {
         name: &str,
         args: TargetGroupAttachmentArgs,
     ) -> TargetGroupAttachmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TargetGroupAttachmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TargetGroupAttachmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TargetGroupAttachmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TargetGroupAttachmentResult {
         let availability_zone_binding = args.availability_zone.get_output(context);
         let port_binding = args.port.get_output(context);
         let target_group_arn_binding = args.target_group_arn.get_output(context);
@@ -170,6 +186,7 @@ pub mod target_group_attachment {
                     value: &target_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TargetGroupAttachmentResult {

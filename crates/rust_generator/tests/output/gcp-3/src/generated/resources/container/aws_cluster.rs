@@ -380,6 +380,22 @@ pub mod aws_cluster {
         name: &str,
         args: AwsClusterArgs,
     ) -> AwsClusterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AwsClusterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AwsClusterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AwsClusterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AwsClusterResult {
         let annotations_binding = args.annotations.get_output(context);
         let authorization_binding = args.authorization.get_output(context);
         let aws_region_binding = args.aws_region.get_output(context);
@@ -446,6 +462,7 @@ pub mod aws_cluster {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AwsClusterResult {

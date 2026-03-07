@@ -91,6 +91,22 @@ pub mod protection_container_mapping {
         name: &str,
         args: ProtectionContainerMappingArgs,
     ) -> ProtectionContainerMappingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProtectionContainerMappingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ProtectionContainerMappingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProtectionContainerMappingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ProtectionContainerMappingResult {
         let automatic_update_binding = args.automatic_update.get_output(context);
         let name_binding = args.name.get_output(context);
         let recovery_fabric_name_binding = args.recovery_fabric_name.get_output(context);
@@ -144,6 +160,7 @@ pub mod protection_container_mapping {
                     value: &resource_group_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ProtectionContainerMappingResult {

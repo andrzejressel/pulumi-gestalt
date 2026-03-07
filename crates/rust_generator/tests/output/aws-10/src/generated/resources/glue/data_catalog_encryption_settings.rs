@@ -81,6 +81,22 @@ pub mod data_catalog_encryption_settings {
         name: &str,
         args: DataCatalogEncryptionSettingsArgs,
     ) -> DataCatalogEncryptionSettingsResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataCatalogEncryptionSettingsArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DataCatalogEncryptionSettingsResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataCatalogEncryptionSettingsArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DataCatalogEncryptionSettingsResult {
         let catalog_id_binding = args.catalog_id.get_output(context);
         let data_catalog_encryption_settings_binding = args
             .data_catalog_encryption_settings
@@ -100,6 +116,7 @@ pub mod data_catalog_encryption_settings {
                     value: &data_catalog_encryption_settings_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DataCatalogEncryptionSettingsResult {

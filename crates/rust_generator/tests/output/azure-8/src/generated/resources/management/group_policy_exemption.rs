@@ -120,6 +120,22 @@ pub mod group_policy_exemption {
         name: &str,
         args: GroupPolicyExemptionArgs,
     ) -> GroupPolicyExemptionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GroupPolicyExemptionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GroupPolicyExemptionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GroupPolicyExemptionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GroupPolicyExemptionResult {
         let description_binding = args.description.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let exemption_category_binding = args.exemption_category.get_output(context);
@@ -173,6 +189,7 @@ pub mod group_policy_exemption {
                     value: &policy_definition_reference_ids_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GroupPolicyExemptionResult {

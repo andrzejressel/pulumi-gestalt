@@ -182,6 +182,22 @@ pub mod https_health_check {
         name: &str,
         args: HttpsHealthCheckArgs,
     ) -> HttpsHealthCheckResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HttpsHealthCheckArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> HttpsHealthCheckResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HttpsHealthCheckArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> HttpsHealthCheckResult {
         let check_interval_sec_binding = args.check_interval_sec.get_output(context);
         let description_binding = args.description.get_output(context);
         let healthy_threshold_binding = args.healthy_threshold.get_output(context);
@@ -238,6 +254,7 @@ pub mod https_health_check {
                     value: &unhealthy_threshold_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         HttpsHealthCheckResult {

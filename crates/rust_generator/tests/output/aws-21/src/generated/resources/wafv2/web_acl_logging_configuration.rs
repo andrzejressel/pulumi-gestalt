@@ -141,6 +141,22 @@ pub mod web_acl_logging_configuration {
         name: &str,
         args: WebAclLoggingConfigurationArgs,
     ) -> WebAclLoggingConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WebAclLoggingConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WebAclLoggingConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WebAclLoggingConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WebAclLoggingConfigurationResult {
         let log_destination_configs_binding = args
             .log_destination_configs
             .get_output(context);
@@ -170,6 +186,7 @@ pub mod web_acl_logging_configuration {
                     value: &resource_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WebAclLoggingConfigurationResult {

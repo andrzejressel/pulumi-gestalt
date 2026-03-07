@@ -298,6 +298,22 @@ pub mod gateway {
         name: &str,
         args: GatewayArgs,
     ) -> GatewayResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GatewayArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GatewayResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GatewayArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GatewayResult {
         let activation_key_binding = args.activation_key.get_output(context);
         let average_download_rate_limit_in_bits_per_sec_binding = args
             .average_download_rate_limit_in_bits_per_sec
@@ -404,6 +420,7 @@ pub mod gateway {
                     value: &tape_drive_type_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GatewayResult {

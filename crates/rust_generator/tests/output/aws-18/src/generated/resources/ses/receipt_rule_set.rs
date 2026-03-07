@@ -56,6 +56,22 @@ pub mod receipt_rule_set {
         name: &str,
         args: ReceiptRuleSetArgs,
     ) -> ReceiptRuleSetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReceiptRuleSetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ReceiptRuleSetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReceiptRuleSetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ReceiptRuleSetResult {
         let rule_set_name_binding = args.rule_set_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ses/receiptRuleSet:ReceiptRuleSet".into(),
@@ -67,6 +83,7 @@ pub mod receipt_rule_set {
                     value: &rule_set_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ReceiptRuleSetResult {

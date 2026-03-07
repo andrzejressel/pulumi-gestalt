@@ -285,6 +285,22 @@ pub mod instance {
         name: &str,
         args: InstanceArgs,
     ) -> InstanceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InstanceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> InstanceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InstanceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> InstanceResult {
         let capacity_gib_binding = args.capacity_gib.get_output(context);
         let description_binding = args.description.get_output(context);
         let directory_stripe_level_binding = args
@@ -343,6 +359,7 @@ pub mod instance {
                     value: &reserved_ip_range_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         InstanceResult {

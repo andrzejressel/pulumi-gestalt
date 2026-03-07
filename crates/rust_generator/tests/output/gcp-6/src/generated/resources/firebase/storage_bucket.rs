@@ -92,6 +92,22 @@ pub mod storage_bucket {
         name: &str,
         args: StorageBucketArgs,
     ) -> StorageBucketResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StorageBucketArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> StorageBucketResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StorageBucketArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> StorageBucketResult {
         let bucket_id_binding = args.bucket_id.get_output(context);
         let project_binding = args.project.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -108,6 +124,7 @@ pub mod storage_bucket {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         StorageBucketResult {

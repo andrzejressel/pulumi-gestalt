@@ -106,6 +106,22 @@ pub mod vpc_endpoint_connection_notification {
         name: &str,
         args: VpcEndpointConnectionNotificationArgs,
     ) -> VpcEndpointConnectionNotificationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcEndpointConnectionNotificationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VpcEndpointConnectionNotificationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcEndpointConnectionNotificationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VpcEndpointConnectionNotificationResult {
         let connection_events_binding = args.connection_events.get_output(context);
         let connection_notification_arn_binding = args
             .connection_notification_arn
@@ -137,6 +153,7 @@ pub mod vpc_endpoint_connection_notification {
                     value: &vpc_endpoint_service_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VpcEndpointConnectionNotificationResult {

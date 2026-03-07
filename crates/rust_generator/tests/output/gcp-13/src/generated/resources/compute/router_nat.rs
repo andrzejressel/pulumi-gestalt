@@ -523,6 +523,22 @@ pub mod router_nat {
         name: &str,
         args: RouterNatArgs,
     ) -> RouterNatResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RouterNatArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RouterNatResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RouterNatArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RouterNatResult {
         let auto_network_tier_binding = args.auto_network_tier.get_output(context);
         let drain_nat_ips_binding = args.drain_nat_ips.get_output(context);
         let enable_dynamic_port_allocation_binding = args
@@ -665,6 +681,7 @@ pub mod router_nat {
                     value: &udp_idle_timeout_sec_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RouterNatResult {

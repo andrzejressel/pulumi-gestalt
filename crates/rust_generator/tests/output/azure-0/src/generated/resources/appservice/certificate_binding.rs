@@ -141,6 +141,22 @@ pub mod certificate_binding {
         name: &str,
         args: CertificateBindingArgs,
     ) -> CertificateBindingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CertificateBindingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CertificateBindingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CertificateBindingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CertificateBindingResult {
         let certificate_id_binding = args.certificate_id.get_output(context);
         let hostname_binding_id_binding = args.hostname_binding_id.get_output(context);
         let ssl_state_binding = args.ssl_state.get_output(context);
@@ -162,6 +178,7 @@ pub mod certificate_binding {
                     value: &ssl_state_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CertificateBindingResult {

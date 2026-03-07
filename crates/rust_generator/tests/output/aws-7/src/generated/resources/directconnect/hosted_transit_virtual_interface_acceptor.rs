@@ -102,6 +102,22 @@ pub mod hosted_transit_virtual_interface_acceptor {
         name: &str,
         args: HostedTransitVirtualInterfaceAcceptorArgs,
     ) -> HostedTransitVirtualInterfaceAcceptorResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HostedTransitVirtualInterfaceAcceptorArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> HostedTransitVirtualInterfaceAcceptorResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HostedTransitVirtualInterfaceAcceptorArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> HostedTransitVirtualInterfaceAcceptorResult {
         let dx_gateway_id_binding = args.dx_gateway_id.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let virtual_interface_id_binding = args.virtual_interface_id.get_output(context);
@@ -124,6 +140,7 @@ pub mod hosted_transit_virtual_interface_acceptor {
                     value: &virtual_interface_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         HostedTransitVirtualInterfaceAcceptorResult {

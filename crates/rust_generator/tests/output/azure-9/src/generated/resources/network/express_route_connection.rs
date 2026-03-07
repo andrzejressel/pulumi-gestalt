@@ -186,6 +186,22 @@ pub mod express_route_connection {
         name: &str,
         args: ExpressRouteConnectionArgs,
     ) -> ExpressRouteConnectionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ExpressRouteConnectionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ExpressRouteConnectionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ExpressRouteConnectionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ExpressRouteConnectionResult {
         let authorization_key_binding = args.authorization_key.get_output(context);
         let enable_internet_security_binding = args
             .enable_internet_security
@@ -247,6 +263,7 @@ pub mod express_route_connection {
                     value: &routing_weight_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ExpressRouteConnectionResult {

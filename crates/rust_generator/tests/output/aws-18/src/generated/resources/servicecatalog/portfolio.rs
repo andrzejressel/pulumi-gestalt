@@ -83,6 +83,22 @@ pub mod portfolio {
         name: &str,
         args: PortfolioArgs,
     ) -> PortfolioResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PortfolioArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PortfolioResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PortfolioArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PortfolioResult {
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let provider_name_binding = args.provider_name.get_output(context);
@@ -109,6 +125,7 @@ pub mod portfolio {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PortfolioResult {

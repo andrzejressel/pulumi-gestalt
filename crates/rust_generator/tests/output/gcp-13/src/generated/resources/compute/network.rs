@@ -335,6 +335,22 @@ pub mod network {
         name: &str,
         args: NetworkArgs,
     ) -> NetworkResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NetworkResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NetworkResult {
         let auto_create_subnetworks_binding = args
             .auto_create_subnetworks
             .get_output(context);
@@ -425,6 +441,7 @@ pub mod network {
                     value: &routing_mode_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NetworkResult {

@@ -119,6 +119,22 @@ pub mod v_2_models_slot {
         name: &str,
         args: V2modelsSlotArgs,
     ) -> V2modelsSlotResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: V2modelsSlotArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> V2modelsSlotResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: V2modelsSlotArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> V2modelsSlotResult {
         let bot_id_binding = args.bot_id.get_output(context);
         let bot_version_binding = args.bot_version.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -189,6 +205,7 @@ pub mod v_2_models_slot {
                     value: &value_elicitation_setting_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         V2modelsSlotResult {

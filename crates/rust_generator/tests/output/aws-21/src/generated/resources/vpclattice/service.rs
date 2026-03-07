@@ -100,6 +100,22 @@ pub mod service {
         name: &str,
         args: ServiceArgs,
     ) -> ServiceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServiceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServiceResult {
         let auth_type_binding = args.auth_type.get_output(context);
         let certificate_arn_binding = args.certificate_arn.get_output(context);
         let custom_domain_name_binding = args.custom_domain_name.get_output(context);
@@ -131,6 +147,7 @@ pub mod service {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServiceResult {

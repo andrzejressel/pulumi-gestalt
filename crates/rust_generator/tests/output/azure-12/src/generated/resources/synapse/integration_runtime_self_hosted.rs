@@ -115,6 +115,22 @@ pub mod integration_runtime_self_hosted {
         name: &str,
         args: IntegrationRuntimeSelfHostedArgs,
     ) -> IntegrationRuntimeSelfHostedResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IntegrationRuntimeSelfHostedArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IntegrationRuntimeSelfHostedResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IntegrationRuntimeSelfHostedArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IntegrationRuntimeSelfHostedResult {
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let synapse_workspace_id_binding = args.synapse_workspace_id.get_output(context);
@@ -137,6 +153,7 @@ pub mod integration_runtime_self_hosted {
                     value: &synapse_workspace_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IntegrationRuntimeSelfHostedResult {

@@ -108,6 +108,22 @@ pub mod resource_bridge_appliance {
         name: &str,
         args: ResourceBridgeApplianceArgs,
     ) -> ResourceBridgeApplianceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResourceBridgeApplianceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ResourceBridgeApplianceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResourceBridgeApplianceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ResourceBridgeApplianceResult {
         let distro_binding = args.distro.get_output(context);
         let identity_binding = args.identity.get_output(context);
         let infrastructure_provider_binding = args
@@ -156,6 +172,7 @@ pub mod resource_bridge_appliance {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ResourceBridgeApplianceResult {

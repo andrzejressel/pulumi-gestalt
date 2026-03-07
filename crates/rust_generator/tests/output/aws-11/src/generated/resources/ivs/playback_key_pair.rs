@@ -83,6 +83,22 @@ pub mod playback_key_pair {
         name: &str,
         args: PlaybackKeyPairArgs,
     ) -> PlaybackKeyPairResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PlaybackKeyPairArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PlaybackKeyPairResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PlaybackKeyPairArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PlaybackKeyPairResult {
         let name_binding = args.name.get_output(context);
         let public_key_binding = args.public_key.get_output(context);
         let tags_binding = args.tags.get_output(context);
@@ -104,6 +120,7 @@ pub mod playback_key_pair {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PlaybackKeyPairResult {

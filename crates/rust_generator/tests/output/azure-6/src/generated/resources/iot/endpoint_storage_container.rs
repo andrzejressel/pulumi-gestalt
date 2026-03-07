@@ -152,6 +152,22 @@ pub mod endpoint_storage_container {
         name: &str,
         args: EndpointStorageContainerArgs,
     ) -> EndpointStorageContainerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EndpointStorageContainerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EndpointStorageContainerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EndpointStorageContainerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EndpointStorageContainerResult {
         let authentication_type_binding = args.authentication_type.get_output(context);
         let batch_frequency_in_seconds_binding = args
             .batch_frequency_in_seconds
@@ -222,6 +238,7 @@ pub mod endpoint_storage_container {
                     value: &resource_group_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EndpointStorageContainerResult {

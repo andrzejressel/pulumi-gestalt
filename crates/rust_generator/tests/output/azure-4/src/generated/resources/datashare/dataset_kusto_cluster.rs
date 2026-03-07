@@ -109,6 +109,22 @@ pub mod dataset_kusto_cluster {
         name: &str,
         args: DatasetKustoClusterArgs,
     ) -> DatasetKustoClusterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatasetKustoClusterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DatasetKustoClusterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatasetKustoClusterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DatasetKustoClusterResult {
         let kusto_cluster_id_binding = args.kusto_cluster_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let share_id_binding = args.share_id.get_output(context);
@@ -130,6 +146,7 @@ pub mod dataset_kusto_cluster {
                     value: &share_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DatasetKustoClusterResult {

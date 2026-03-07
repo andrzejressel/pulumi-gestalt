@@ -97,6 +97,22 @@ pub mod environment_custom_domain {
         name: &str,
         args: EnvironmentCustomDomainArgs,
     ) -> EnvironmentCustomDomainResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EnvironmentCustomDomainArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EnvironmentCustomDomainResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EnvironmentCustomDomainArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EnvironmentCustomDomainResult {
         let certificate_blob_base64_binding = args
             .certificate_blob_base64
             .get_output(context);
@@ -128,6 +144,7 @@ pub mod environment_custom_domain {
                     value: &dns_suffix_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EnvironmentCustomDomainResult {

@@ -162,6 +162,22 @@ pub mod method_settings {
         name: &str,
         args: MethodSettingsArgs,
     ) -> MethodSettingsResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MethodSettingsArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MethodSettingsResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MethodSettingsArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MethodSettingsResult {
         let method_path_binding = args.method_path.get_output(context);
         let rest_api_binding = args.rest_api.get_output(context);
         let settings_binding = args.settings.get_output(context);
@@ -188,6 +204,7 @@ pub mod method_settings {
                     value: &stage_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MethodSettingsResult {

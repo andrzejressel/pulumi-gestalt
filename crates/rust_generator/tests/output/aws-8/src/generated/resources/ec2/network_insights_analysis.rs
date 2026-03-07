@@ -119,6 +119,22 @@ pub mod network_insights_analysis {
         name: &str,
         args: NetworkInsightsAnalysisArgs,
     ) -> NetworkInsightsAnalysisResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkInsightsAnalysisArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NetworkInsightsAnalysisResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkInsightsAnalysisArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NetworkInsightsAnalysisResult {
         let filter_in_arns_binding = args.filter_in_arns.get_output(context);
         let network_insights_path_id_binding = args
             .network_insights_path_id
@@ -147,6 +163,7 @@ pub mod network_insights_analysis {
                     value: &wait_for_completion_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NetworkInsightsAnalysisResult {

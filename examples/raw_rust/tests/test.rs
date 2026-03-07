@@ -26,6 +26,7 @@ fn test_integration() -> Result<()> {
     let combined = stack.get_array_as_string("/combined")?;
     let resource_urn = stack.get_string("/resource_urn")?;
     let resource_id = stack.get_string("/resource_id")?;
+    let provider_id = stack.get_string("/provider_id")?;
 
     let secret = stack.get_string("/secret")?;
     let secret_plaintext = secret_stack.get_string("/secret")?;
@@ -35,6 +36,9 @@ fn test_integration() -> Result<()> {
 
     assert_eq!(result.len(), 16);
     assert_eq!(resource_id.len(), 16);
+    assert!(provider_id.starts_with(
+        "urn:pulumi:test::Pulumi-raw-rust-Sample::pulumi:providers:random::custom-provider::"
+    ));
     assert_eq!(double_length, 32);
     assert_eq!(static_string, "my_string");
     assert!(!whoami_stdout.is_empty());

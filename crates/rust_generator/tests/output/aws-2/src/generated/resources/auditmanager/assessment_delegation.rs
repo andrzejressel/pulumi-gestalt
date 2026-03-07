@@ -89,6 +89,22 @@ pub mod assessment_delegation {
         name: &str,
         args: AssessmentDelegationArgs,
     ) -> AssessmentDelegationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AssessmentDelegationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AssessmentDelegationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AssessmentDelegationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AssessmentDelegationResult {
         let assessment_id_binding = args.assessment_id.get_output(context);
         let comment_binding = args.comment.get_output(context);
         let control_set_id_binding = args.control_set_id.get_output(context);
@@ -120,6 +136,7 @@ pub mod assessment_delegation {
                     value: &role_type_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AssessmentDelegationResult {

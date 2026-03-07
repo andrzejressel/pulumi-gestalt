@@ -96,6 +96,22 @@ pub mod local_rulestack_fqdn_list {
         name: &str,
         args: LocalRulestackFqdnListArgs,
     ) -> LocalRulestackFqdnListResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LocalRulestackFqdnListArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LocalRulestackFqdnListResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LocalRulestackFqdnListArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LocalRulestackFqdnListResult {
         let audit_comment_binding = args.audit_comment.get_output(context);
         let description_binding = args.description.get_output(context);
         let fully_qualified_domain_names_binding = args
@@ -129,6 +145,7 @@ pub mod local_rulestack_fqdn_list {
                     value: &rulestack_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LocalRulestackFqdnListResult {

@@ -95,6 +95,22 @@ pub mod cluster_endpoint {
         name: &str,
         args: ClusterEndpointArgs,
     ) -> ClusterEndpointResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClusterEndpointArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ClusterEndpointResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClusterEndpointArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ClusterEndpointResult {
         let cluster_endpoint_identifier_binding = args
             .cluster_endpoint_identifier
             .get_output(context);
@@ -133,6 +149,7 @@ pub mod cluster_endpoint {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ClusterEndpointResult {

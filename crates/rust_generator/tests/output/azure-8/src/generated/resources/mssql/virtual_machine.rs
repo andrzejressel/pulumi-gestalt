@@ -188,6 +188,22 @@ pub mod virtual_machine {
         name: &str,
         args: VirtualMachineArgs,
     ) -> VirtualMachineResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VirtualMachineArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VirtualMachineResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VirtualMachineArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VirtualMachineResult {
         let assessment_binding = args.assessment.get_output(context);
         let auto_backup_binding = args.auto_backup.get_output(context);
         let auto_patching_binding = args.auto_patching.get_output(context);
@@ -288,6 +304,7 @@ pub mod virtual_machine {
                     value: &wsfc_domain_credential_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VirtualMachineResult {

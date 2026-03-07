@@ -78,6 +78,22 @@ pub mod product_portfolio_association {
         name: &str,
         args: ProductPortfolioAssociationArgs,
     ) -> ProductPortfolioAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProductPortfolioAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ProductPortfolioAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProductPortfolioAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ProductPortfolioAssociationResult {
         let accept_language_binding = args.accept_language.get_output(context);
         let portfolio_id_binding = args.portfolio_id.get_output(context);
         let product_id_binding = args.product_id.get_output(context);
@@ -105,6 +121,7 @@ pub mod product_portfolio_association {
                     value: &source_portfolio_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ProductPortfolioAssociationResult {

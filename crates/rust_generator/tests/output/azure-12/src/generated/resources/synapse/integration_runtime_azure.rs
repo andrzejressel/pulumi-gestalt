@@ -132,6 +132,22 @@ pub mod integration_runtime_azure {
         name: &str,
         args: IntegrationRuntimeAzureArgs,
     ) -> IntegrationRuntimeAzureResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IntegrationRuntimeAzureArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IntegrationRuntimeAzureResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IntegrationRuntimeAzureArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IntegrationRuntimeAzureResult {
         let compute_type_binding = args.compute_type.get_output(context);
         let core_count_binding = args.core_count.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -174,6 +190,7 @@ pub mod integration_runtime_azure {
                     value: &time_to_live_min_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IntegrationRuntimeAzureResult {

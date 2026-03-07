@@ -103,6 +103,22 @@ pub mod medical_vocabulary {
         name: &str,
         args: MedicalVocabularyArgs,
     ) -> MedicalVocabularyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MedicalVocabularyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MedicalVocabularyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MedicalVocabularyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MedicalVocabularyResult {
         let language_code_binding = args.language_code.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let vocabulary_file_uri_binding = args.vocabulary_file_uri.get_output(context);
@@ -129,6 +145,7 @@ pub mod medical_vocabulary {
                     value: &vocabulary_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MedicalVocabularyResult {

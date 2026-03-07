@@ -70,6 +70,22 @@ pub mod default_route_table_association {
         name: &str,
         args: DefaultRouteTableAssociationArgs,
     ) -> DefaultRouteTableAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DefaultRouteTableAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DefaultRouteTableAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DefaultRouteTableAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DefaultRouteTableAssociationResult {
         let timeouts_binding = args.timeouts.get_output(context);
         let transit_gateway_id_binding = args.transit_gateway_id.get_output(context);
         let transit_gateway_route_table_id_binding = args
@@ -94,6 +110,7 @@ pub mod default_route_table_association {
                     value: &transit_gateway_route_table_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DefaultRouteTableAssociationResult {

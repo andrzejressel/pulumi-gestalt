@@ -135,6 +135,22 @@ pub mod logger {
         name: &str,
         args: LoggerArgs,
     ) -> LoggerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LoggerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LoggerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LoggerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LoggerResult {
         let api_management_name_binding = args.api_management_name.get_output(context);
         let application_insights_binding = args.application_insights.get_output(context);
         let buffered_binding = args.buffered.get_output(context);
@@ -181,6 +197,7 @@ pub mod logger {
                     value: &resource_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LoggerResult {

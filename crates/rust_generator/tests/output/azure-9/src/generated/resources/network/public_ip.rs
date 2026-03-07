@@ -189,6 +189,22 @@ pub mod public_ip {
         name: &str,
         args: PublicIpArgs,
     ) -> PublicIpResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PublicIpArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PublicIpResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PublicIpArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PublicIpResult {
         let allocation_method_binding = args.allocation_method.get_output(context);
         let ddos_protection_mode_binding = args.ddos_protection_mode.get_output(context);
         let ddos_protection_plan_id_binding = args
@@ -291,6 +307,7 @@ pub mod public_ip {
                     value: &zones_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PublicIpResult {

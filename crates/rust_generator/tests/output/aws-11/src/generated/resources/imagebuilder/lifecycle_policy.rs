@@ -153,6 +153,22 @@ pub mod lifecycle_policy {
         name: &str,
         args: LifecyclePolicyArgs,
     ) -> LifecyclePolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LifecyclePolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LifecyclePolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LifecyclePolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LifecyclePolicyResult {
         let description_binding = args.description.get_output(context);
         let execution_role_binding = args.execution_role.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -199,6 +215,7 @@ pub mod lifecycle_policy {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LifecyclePolicyResult {

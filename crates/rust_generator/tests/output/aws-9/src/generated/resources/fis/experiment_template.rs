@@ -150,6 +150,22 @@ pub mod experiment_template {
         name: &str,
         args: ExperimentTemplateArgs,
     ) -> ExperimentTemplateResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ExperimentTemplateArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ExperimentTemplateResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ExperimentTemplateArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ExperimentTemplateResult {
         let actions_binding = args.actions.get_output(context);
         let description_binding = args.description.get_output(context);
         let experiment_options_binding = args.experiment_options.get_output(context);
@@ -196,6 +212,7 @@ pub mod experiment_template {
                     value: &targets_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ExperimentTemplateResult {

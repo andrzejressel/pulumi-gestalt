@@ -196,6 +196,22 @@ pub mod blockchain_nodes {
         name: &str,
         args: BlockchainNodesArgs,
     ) -> BlockchainNodesResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BlockchainNodesArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BlockchainNodesResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BlockchainNodesArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BlockchainNodesResult {
         let blockchain_node_id_binding = args.blockchain_node_id.get_output(context);
         let blockchain_type_binding = args.blockchain_type.get_output(context);
         let ethereum_details_binding = args.ethereum_details.get_output(context);
@@ -232,6 +248,7 @@ pub mod blockchain_nodes {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BlockchainNodesResult {

@@ -153,6 +153,22 @@ pub mod input {
         name: &str,
         args: InputArgs,
     ) -> InputResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InputArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> InputResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InputArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> InputResult {
         let destinations_binding = args.destinations.get_output(context);
         let input_devices_binding = args.input_devices.get_output(context);
         let input_security_groups_binding = args
@@ -211,6 +227,7 @@ pub mod input {
                     value: &vpc_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         InputResult {

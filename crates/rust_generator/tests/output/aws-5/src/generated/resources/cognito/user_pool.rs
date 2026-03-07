@@ -314,6 +314,22 @@ pub mod user_pool {
         name: &str,
         args: UserPoolArgs,
     ) -> UserPoolResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: UserPoolArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> UserPoolResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: UserPoolArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> UserPoolResult {
         let account_recovery_setting_binding = args
             .account_recovery_setting
             .get_output(context);
@@ -462,6 +478,7 @@ pub mod user_pool {
                     value: &verification_message_template_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         UserPoolResult {

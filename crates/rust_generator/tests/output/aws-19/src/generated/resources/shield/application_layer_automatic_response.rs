@@ -77,6 +77,22 @@ pub mod application_layer_automatic_response {
         name: &str,
         args: ApplicationLayerAutomaticResponseArgs,
     ) -> ApplicationLayerAutomaticResponseResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApplicationLayerAutomaticResponseArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ApplicationLayerAutomaticResponseResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApplicationLayerAutomaticResponseArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ApplicationLayerAutomaticResponseResult {
         let action_binding = args.action.get_output(context);
         let resource_arn_binding = args.resource_arn.get_output(context);
         let timeouts_binding = args.timeouts.get_output(context);
@@ -99,6 +115,7 @@ pub mod application_layer_automatic_response {
                     value: &timeouts_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ApplicationLayerAutomaticResponseResult {

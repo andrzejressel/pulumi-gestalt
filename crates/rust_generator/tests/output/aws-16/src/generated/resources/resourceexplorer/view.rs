@@ -111,6 +111,22 @@ pub mod view {
         name: &str,
         args: ViewArgs,
     ) -> ViewResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ViewArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ViewResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ViewArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ViewResult {
         let default_view_binding = args.default_view.get_output(context);
         let filters_binding = args.filters.get_output(context);
         let included_properties_binding = args.included_properties.get_output(context);
@@ -147,6 +163,7 @@ pub mod view {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ViewResult {

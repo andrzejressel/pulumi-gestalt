@@ -149,6 +149,22 @@ pub mod static_web_app {
         name: &str,
         args: StaticWebAppArgs,
     ) -> StaticWebAppResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StaticWebAppArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> StaticWebAppResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StaticWebAppArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> StaticWebAppResult {
         let app_settings_binding = args.app_settings.get_output(context);
         let basic_auth_binding = args.basic_auth.get_output(context);
         let configuration_file_changes_enabled_binding = args
@@ -221,6 +237,7 @@ pub mod static_web_app {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         StaticWebAppResult {

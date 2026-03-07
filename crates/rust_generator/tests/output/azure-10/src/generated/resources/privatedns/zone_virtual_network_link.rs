@@ -112,6 +112,22 @@ pub mod zone_virtual_network_link {
         name: &str,
         args: ZoneVirtualNetworkLinkArgs,
     ) -> ZoneVirtualNetworkLinkResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZoneVirtualNetworkLinkArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ZoneVirtualNetworkLinkResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZoneVirtualNetworkLinkArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ZoneVirtualNetworkLinkResult {
         let name_binding = args.name.get_output(context);
         let private_dns_zone_name_binding = args
             .private_dns_zone_name
@@ -151,6 +167,7 @@ pub mod zone_virtual_network_link {
                     value: &virtual_network_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ZoneVirtualNetworkLinkResult {

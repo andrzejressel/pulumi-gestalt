@@ -69,6 +69,22 @@ pub mod policy_table {
         name: &str,
         args: PolicyTableArgs,
     ) -> PolicyTableResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PolicyTableArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PolicyTableResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PolicyTableArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PolicyTableResult {
         let tags_binding = args.tags.get_output(context);
         let transit_gateway_id_binding = args.transit_gateway_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -85,6 +101,7 @@ pub mod policy_table {
                     value: &transit_gateway_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PolicyTableResult {

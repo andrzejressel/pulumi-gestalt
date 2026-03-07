@@ -575,6 +575,22 @@ pub mod workload_identity_pool_provider {
         name: &str,
         args: WorkloadIdentityPoolProviderArgs,
     ) -> WorkloadIdentityPoolProviderResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkloadIdentityPoolProviderArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WorkloadIdentityPoolProviderResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkloadIdentityPoolProviderArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WorkloadIdentityPoolProviderResult {
         let attribute_condition_binding = args.attribute_condition.get_output(context);
         let attribute_mapping_binding = args.attribute_mapping.get_output(context);
         let aws_binding = args.aws.get_output(context);
@@ -646,6 +662,7 @@ pub mod workload_identity_pool_provider {
                     value: &x509_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WorkloadIdentityPoolProviderResult {

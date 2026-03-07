@@ -146,6 +146,22 @@ pub mod reservation {
         name: &str,
         args: ReservationArgs,
     ) -> ReservationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReservationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ReservationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReservationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ReservationResult {
         let autoscale_binding = args.autoscale.get_output(context);
         let concurrency_binding = args.concurrency.get_output(context);
         let edition_binding = args.edition.get_output(context);
@@ -192,6 +208,7 @@ pub mod reservation {
                     value: &slot_capacity_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ReservationResult {

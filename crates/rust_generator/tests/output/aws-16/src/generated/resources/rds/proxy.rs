@@ -101,6 +101,22 @@ pub mod proxy {
         name: &str,
         args: ProxyArgs,
     ) -> ProxyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProxyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ProxyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProxyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ProxyResult {
         let auths_binding = args.auths.get_output(context);
         let debug_logging_binding = args.debug_logging.get_output(context);
         let engine_family_binding = args.engine_family.get_output(context);
@@ -159,6 +175,7 @@ pub mod proxy {
                     value: &vpc_subnet_ids_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ProxyResult {

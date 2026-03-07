@@ -98,6 +98,22 @@ pub mod placement_group {
         name: &str,
         args: PlacementGroupArgs,
     ) -> PlacementGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PlacementGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PlacementGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PlacementGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PlacementGroupResult {
         let allowed_vm_sizes_binding = args.allowed_vm_sizes.get_output(context);
         let location_binding = args.location.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -134,6 +150,7 @@ pub mod placement_group {
                     value: &zone_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PlacementGroupResult {

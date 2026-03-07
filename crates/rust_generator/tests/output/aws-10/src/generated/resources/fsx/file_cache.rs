@@ -163,6 +163,22 @@ pub mod file_cache {
         name: &str,
         args: FileCacheArgs,
     ) -> FileCacheResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FileCacheArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FileCacheResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FileCacheArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FileCacheResult {
         let copy_tags_to_data_repository_associations_binding = args
             .copy_tags_to_data_repository_associations
             .get_output(context);
@@ -227,6 +243,7 @@ pub mod file_cache {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FileCacheResult {

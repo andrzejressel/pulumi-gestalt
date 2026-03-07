@@ -136,6 +136,22 @@ pub mod endpoint_event_hub {
         name: &str,
         args: EndpointEventHubArgs,
     ) -> EndpointEventHubResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EndpointEventHubArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EndpointEventHubResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EndpointEventHubArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EndpointEventHubResult {
         let dead_letter_storage_secret_binding = args
             .dead_letter_storage_secret
             .get_output(context);
@@ -173,6 +189,7 @@ pub mod endpoint_event_hub {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EndpointEventHubResult {

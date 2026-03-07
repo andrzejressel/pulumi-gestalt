@@ -165,6 +165,22 @@ pub mod custom_domain {
         name: &str,
         args: CustomDomainArgs,
     ) -> CustomDomainResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomDomainArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CustomDomainResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomDomainArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CustomDomainResult {
         let api_management_id_binding = args.api_management_id.get_output(context);
         let developer_portals_binding = args.developer_portals.get_output(context);
         let gateways_binding = args.gateways.get_output(context);
@@ -201,6 +217,7 @@ pub mod custom_domain {
                     value: &scms_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CustomDomainResult {

@@ -176,6 +176,22 @@ pub mod engine_model {
         name: &str,
         args: EngineModelArgs,
     ) -> EngineModelResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EngineModelArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EngineModelResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EngineModelArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EngineModelResult {
         let default_version_binding = args.default_version.get_output(context);
         let description_binding = args.description.get_output(context);
         let labels_binding = args.labels.get_output(context);
@@ -226,6 +242,7 @@ pub mod engine_model {
                     value: &regions_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EngineModelResult {

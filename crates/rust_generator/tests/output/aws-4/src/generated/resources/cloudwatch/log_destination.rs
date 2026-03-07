@@ -83,6 +83,22 @@ pub mod log_destination {
         name: &str,
         args: LogDestinationArgs,
     ) -> LogDestinationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LogDestinationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LogDestinationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LogDestinationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LogDestinationResult {
         let name_binding = args.name.get_output(context);
         let role_arn_binding = args.role_arn.get_output(context);
         let tags_binding = args.tags.get_output(context);
@@ -109,6 +125,7 @@ pub mod log_destination {
                     value: &target_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LogDestinationResult {

@@ -117,6 +117,22 @@ pub mod network_acl {
         name: &str,
         args: NetworkAclArgs,
     ) -> NetworkAclResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkAclArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NetworkAclResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkAclArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NetworkAclResult {
         let egress_binding = args.egress.get_output(context);
         let ingress_binding = args.ingress.get_output(context);
         let subnet_ids_binding = args.subnet_ids.get_output(context);
@@ -148,6 +164,7 @@ pub mod network_acl {
                     value: &vpc_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NetworkAclResult {

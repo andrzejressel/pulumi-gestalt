@@ -83,6 +83,22 @@ pub mod table_bucket {
         name: &str,
         args: TableBucketArgs,
     ) -> TableBucketResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TableBucketArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TableBucketResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TableBucketArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TableBucketResult {
         let maintenance_configuration_binding = args
             .maintenance_configuration
             .get_output(context);
@@ -101,6 +117,7 @@ pub mod table_bucket {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TableBucketResult {

@@ -117,6 +117,22 @@ pub mod access_key {
         name: &str,
         args: AccessKeyArgs,
     ) -> AccessKeyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccessKeyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AccessKeyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccessKeyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AccessKeyResult {
         let pgp_key_binding = args.pgp_key.get_output(context);
         let status_binding = args.status.get_output(context);
         let user_binding = args.user.get_output(context);
@@ -138,6 +154,7 @@ pub mod access_key {
                     value: &user_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AccessKeyResult {

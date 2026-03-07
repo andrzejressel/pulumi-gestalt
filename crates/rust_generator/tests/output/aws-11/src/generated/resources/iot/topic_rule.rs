@@ -283,6 +283,22 @@ pub mod topic_rule {
         name: &str,
         args: TopicRuleArgs,
     ) -> TopicRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TopicRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TopicRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TopicRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TopicRuleResult {
         let cloudwatch_alarms_binding = args.cloudwatch_alarms.get_output(context);
         let cloudwatch_logs_binding = args.cloudwatch_logs.get_output(context);
         let cloudwatch_metrics_binding = args.cloudwatch_metrics.get_output(context);
@@ -419,6 +435,7 @@ pub mod topic_rule {
                     value: &timestreams_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TopicRuleResult {

@@ -240,6 +240,22 @@ pub mod security_group_rule {
         name: &str,
         args: SecurityGroupRuleArgs,
     ) -> SecurityGroupRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SecurityGroupRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SecurityGroupRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SecurityGroupRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SecurityGroupRuleResult {
         let cidr_blocks_binding = args.cidr_blocks.get_output(context);
         let description_binding = args.description.get_output(context);
         let from_port_binding = args.from_port.get_output(context);
@@ -303,6 +319,7 @@ pub mod security_group_rule {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SecurityGroupRuleResult {

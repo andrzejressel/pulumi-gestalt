@@ -143,6 +143,22 @@ pub mod tag_rule {
         name: &str,
         args: TagRuleArgs,
     ) -> TagRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TagRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TagRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TagRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TagRuleResult {
         let activity_log_enabled_binding = args.activity_log_enabled.get_output(context);
         let azure_active_directory_log_enabled_binding = args
             .azure_active_directory_log_enabled
@@ -188,6 +204,7 @@ pub mod tag_rule {
                     value: &subscription_log_enabled_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TagRuleResult {

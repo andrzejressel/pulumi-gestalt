@@ -147,6 +147,22 @@ pub mod application {
         name: &str,
         args: ApplicationArgs,
     ) -> ApplicationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApplicationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ApplicationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApplicationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ApplicationResult {
         let auth_domain_binding = args.auth_domain.get_output(context);
         let database_type_binding = args.database_type.get_output(context);
         let feature_settings_binding = args.feature_settings.get_output(context);
@@ -188,6 +204,7 @@ pub mod application {
                     value: &serving_status_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ApplicationResult {

@@ -146,6 +146,22 @@ pub mod data_lake {
         name: &str,
         args: DataLakeArgs,
     ) -> DataLakeResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataLakeArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DataLakeResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataLakeArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DataLakeResult {
         let configuration_binding = args.configuration.get_output(context);
         let meta_store_manager_role_arn_binding = args
             .meta_store_manager_role_arn
@@ -174,6 +190,7 @@ pub mod data_lake {
                     value: &timeouts_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DataLakeResult {

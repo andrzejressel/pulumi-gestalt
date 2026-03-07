@@ -241,6 +241,22 @@ pub mod lustre_file_system {
         name: &str,
         args: LustreFileSystemArgs,
     ) -> LustreFileSystemResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LustreFileSystemArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LustreFileSystemResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LustreFileSystemArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LustreFileSystemResult {
         let auto_import_policy_binding = args.auto_import_policy.get_output(context);
         let automatic_backup_retention_days_binding = args
             .automatic_backup_retention_days
@@ -395,6 +411,7 @@ pub mod lustre_file_system {
                     value: &weekly_maintenance_start_time_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LustreFileSystemResult {

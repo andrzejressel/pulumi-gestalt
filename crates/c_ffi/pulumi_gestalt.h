@@ -33,6 +33,7 @@ typedef struct pulumi_register_resource_request_t {
   const char *version;
   const struct pulumi_object_field_t *inputs;
   uintptr_t inputs_len;
+  const struct pulumi_output_t *provider;
 } pulumi_register_resource_request_t;
 
 typedef struct pulumi_invoke_resource_request_t {
@@ -105,6 +106,11 @@ struct pulumi_output_t *pulumi_composite_output_get_field(struct pulumi_composit
 struct pulumi_output_t *pulumi_composite_output_get_urn(struct pulumi_composite_output_t *output);
 
 struct pulumi_output_t *pulumi_composite_output_get_id(struct pulumi_composite_output_t *output);
+
+/**
+ * Pulumi Provider ID is the combination of URN and ID. It is used when creating a resource.
+ */
+struct pulumi_output_t *pulumi_composite_output_get_provider_id(struct pulumi_composite_output_t *output);
 
 /**
  * Receives value from configuration

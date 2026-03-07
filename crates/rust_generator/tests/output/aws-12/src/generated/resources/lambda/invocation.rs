@@ -161,6 +161,22 @@ pub mod invocation {
         name: &str,
         args: InvocationArgs,
     ) -> InvocationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InvocationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> InvocationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InvocationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> InvocationResult {
         let function_name_binding = args.function_name.get_output(context);
         let input_binding = args.input.get_output(context);
         let lifecycle_scope_binding = args.lifecycle_scope.get_output(context);
@@ -197,6 +213,7 @@ pub mod invocation {
                     value: &triggers_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         InvocationResult {

@@ -80,6 +80,22 @@ pub mod managed_headers {
         name: &str,
         args: ManagedHeadersArgs,
     ) -> ManagedHeadersResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedHeadersArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ManagedHeadersResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedHeadersArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ManagedHeadersResult {
         let managed_request_headers_binding = args
             .managed_request_headers
             .get_output(context);
@@ -105,6 +121,7 @@ pub mod managed_headers {
                     value: &zone_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ManagedHeadersResult {

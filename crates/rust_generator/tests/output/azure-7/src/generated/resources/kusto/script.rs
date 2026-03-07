@@ -155,6 +155,22 @@ pub mod script {
         name: &str,
         args: ScriptArgs,
     ) -> ScriptResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ScriptArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ScriptResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ScriptArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ScriptResult {
         let continue_on_errors_enabled_binding = args
             .continue_on_errors_enabled
             .get_output(context);
@@ -200,6 +216,7 @@ pub mod script {
                     value: &url_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ScriptResult {

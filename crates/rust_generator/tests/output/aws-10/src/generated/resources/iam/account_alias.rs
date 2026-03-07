@@ -56,6 +56,22 @@ pub mod account_alias {
         name: &str,
         args: AccountAliasArgs,
     ) -> AccountAliasResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccountAliasArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AccountAliasResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccountAliasArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AccountAliasResult {
         let account_alias_binding = args.account_alias.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:iam/accountAlias:AccountAlias".into(),
@@ -67,6 +83,7 @@ pub mod account_alias {
                     value: &account_alias_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AccountAliasResult {

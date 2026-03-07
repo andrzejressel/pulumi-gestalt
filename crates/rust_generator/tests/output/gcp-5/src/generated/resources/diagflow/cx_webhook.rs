@@ -169,6 +169,22 @@ pub mod cx_webhook {
         name: &str,
         args: CxWebhookArgs,
     ) -> CxWebhookResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CxWebhookArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CxWebhookResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CxWebhookArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CxWebhookResult {
         let disabled_binding = args.disabled.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let enable_spell_correction_binding = args
@@ -224,6 +240,7 @@ pub mod cx_webhook {
                     value: &timeout_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CxWebhookResult {

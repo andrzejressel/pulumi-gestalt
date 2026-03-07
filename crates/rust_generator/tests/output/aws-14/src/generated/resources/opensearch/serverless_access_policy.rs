@@ -156,6 +156,22 @@ pub mod serverless_access_policy {
         name: &str,
         args: ServerlessAccessPolicyArgs,
     ) -> ServerlessAccessPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServerlessAccessPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServerlessAccessPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServerlessAccessPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServerlessAccessPolicyResult {
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let policy_binding = args.policy.get_output(context);
@@ -182,6 +198,7 @@ pub mod serverless_access_policy {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServerlessAccessPolicyResult {

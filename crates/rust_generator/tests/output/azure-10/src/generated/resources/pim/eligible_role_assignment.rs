@@ -156,6 +156,22 @@ pub mod eligible_role_assignment {
         name: &str,
         args: EligibleRoleAssignmentArgs,
     ) -> EligibleRoleAssignmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EligibleRoleAssignmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EligibleRoleAssignmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EligibleRoleAssignmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EligibleRoleAssignmentResult {
         let justification_binding = args.justification.get_output(context);
         let principal_id_binding = args.principal_id.get_output(context);
         let role_definition_id_binding = args.role_definition_id.get_output(context);
@@ -192,6 +208,7 @@ pub mod eligible_role_assignment {
                     value: &ticket_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EligibleRoleAssignmentResult {

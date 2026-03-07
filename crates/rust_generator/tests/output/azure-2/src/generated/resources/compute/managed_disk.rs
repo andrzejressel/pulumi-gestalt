@@ -365,6 +365,22 @@ pub mod managed_disk {
         name: &str,
         args: ManagedDiskArgs,
     ) -> ManagedDiskResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedDiskArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ManagedDiskResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedDiskArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ManagedDiskResult {
         let create_option_binding = args.create_option.get_output(context);
         let disk_access_id_binding = args.disk_access_id.get_output(context);
         let disk_encryption_set_id_binding = args
@@ -564,6 +580,7 @@ pub mod managed_disk {
                     value: &zone_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ManagedDiskResult {

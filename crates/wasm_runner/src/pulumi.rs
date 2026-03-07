@@ -78,6 +78,11 @@ impl HostContext for MyState {
             inputs.insert(field.name.clone().into(), output.output.clone());
         }
 
+        let provider = match request.provider {
+            None => None,
+            Some(p) => Some(table.get(&p)?.output.clone()),
+        };
+
         let result = context
             .engine
             .register_resource(pulumi_gestalt_rust_integration::RegisterResourceRequest {
@@ -85,6 +90,7 @@ impl HostContext for MyState {
                 name: request.name,
                 inputs,
                 version: request.version,
+                provider,
             })
             .await;
 
@@ -290,6 +296,18 @@ impl HostCompositeOutput for MyState {
         assert!(!self_.owned());
         let composite_output = self.table.get(&self_)?;
         let output = composite_output.output.get_id().await;
+        let output = SingleThreadedOutput::new(output);
+        let id = self.table.push(output)?;
+        Ok(id)
+    }
+
+    async fn get_provider_id(
+        &mut self,
+        self_: Resource<output_interface::CompositeOutput>,
+    ) -> wasmtime::Result<Resource<output_interface::Output>> {
+        assert!(!self_.owned());
+        let composite_output = self.table.get(&self_)?;
+        let output = composite_output.output.get_provider_id().await;
         let output = SingleThreadedOutput::new(output);
         let id = self.table.push(output)?;
         Ok(id)

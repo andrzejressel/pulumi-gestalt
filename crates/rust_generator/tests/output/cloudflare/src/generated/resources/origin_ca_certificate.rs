@@ -92,6 +92,22 @@ pub mod origin_ca_certificate {
         name: &str,
         args: OriginCaCertificateArgs,
     ) -> OriginCaCertificateResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OriginCaCertificateArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OriginCaCertificateResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OriginCaCertificateArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OriginCaCertificateResult {
         let csr_binding = args.csr.get_output(context);
         let hostnames_binding = args.hostnames.get_output(context);
         let min_days_for_renewal_binding = args.min_days_for_renewal.get_output(context);
@@ -123,6 +139,7 @@ pub mod origin_ca_certificate {
                     value: &requested_validity_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OriginCaCertificateResult {

@@ -164,6 +164,22 @@ pub mod spring_cloud_certificate {
         name: &str,
         args: SpringCloudCertificateArgs,
     ) -> SpringCloudCertificateResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudCertificateArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SpringCloudCertificateResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudCertificateArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SpringCloudCertificateResult {
         let certificate_content_binding = args.certificate_content.get_output(context);
         let exclude_private_key_binding = args.exclude_private_key.get_output(context);
         let key_vault_certificate_id_binding = args
@@ -203,6 +219,7 @@ pub mod spring_cloud_certificate {
                     value: &service_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SpringCloudCertificateResult {

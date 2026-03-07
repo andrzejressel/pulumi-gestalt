@@ -237,6 +237,22 @@ pub mod config {
         name: &str,
         args: ConfigArgs,
     ) -> ConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ConfigResult {
         let authorized_domains_binding = args.authorized_domains.get_output(context);
         let autodelete_anonymous_users_binding = args
             .autodelete_anonymous_users
@@ -300,6 +316,7 @@ pub mod config {
                     value: &sms_region_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ConfigResult {

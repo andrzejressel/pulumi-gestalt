@@ -122,6 +122,22 @@ pub mod snapshot_import {
         name: &str,
         args: SnapshotImportArgs,
     ) -> SnapshotImportResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SnapshotImportArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SnapshotImportResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SnapshotImportArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SnapshotImportResult {
         let client_data_binding = args.client_data.get_output(context);
         let description_binding = args.description.get_output(context);
         let disk_container_binding = args.disk_container.get_output(context);
@@ -180,6 +196,7 @@ pub mod snapshot_import {
                     value: &temporary_restore_days_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SnapshotImportResult {

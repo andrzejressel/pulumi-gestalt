@@ -425,6 +425,22 @@ pub mod managed_folder_iam_binding {
         name: &str,
         args: ManagedFolderIamBindingArgs,
     ) -> ManagedFolderIamBindingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedFolderIamBindingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ManagedFolderIamBindingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedFolderIamBindingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ManagedFolderIamBindingResult {
         let bucket_binding = args.bucket.get_output(context);
         let condition_binding = args.condition.get_output(context);
         let managed_folder_binding = args.managed_folder.get_output(context);
@@ -456,6 +472,7 @@ pub mod managed_folder_iam_binding {
                     value: &role_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ManagedFolderIamBindingResult {

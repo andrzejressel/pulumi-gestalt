@@ -438,6 +438,22 @@ pub mod region_disk {
         name: &str,
         args: RegionDiskArgs,
     ) -> RegionDiskResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionDiskArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RegionDiskResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionDiskArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RegionDiskResult {
         let async_primary_disk_binding = args.async_primary_disk.get_output(context);
         let description_binding = args.description.get_output(context);
         let disk_encryption_key_binding = args.disk_encryption_key.get_output(context);
@@ -533,6 +549,7 @@ pub mod region_disk {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RegionDiskResult {

@@ -88,6 +88,22 @@ pub mod endpoint_access {
         name: &str,
         args: EndpointAccessArgs,
     ) -> EndpointAccessResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EndpointAccessArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EndpointAccessResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EndpointAccessArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EndpointAccessResult {
         let cluster_identifier_binding = args.cluster_identifier.get_output(context);
         let endpoint_name_binding = args.endpoint_name.get_output(context);
         let resource_owner_binding = args.resource_owner.get_output(context);
@@ -121,6 +137,7 @@ pub mod endpoint_access {
                     value: &vpc_security_group_ids_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EndpointAccessResult {

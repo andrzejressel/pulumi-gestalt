@@ -207,6 +207,22 @@ pub mod workflow {
         name: &str,
         args: WorkflowArgs,
     ) -> WorkflowResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkflowArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WorkflowResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkflowArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WorkflowResult {
         let call_log_level_binding = args.call_log_level.get_output(context);
         let crypto_key_name_binding = args.crypto_key_name.get_output(context);
         let deletion_protection_binding = args.deletion_protection.get_output(context);
@@ -273,6 +289,7 @@ pub mod workflow {
                     value: &user_env_vars_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WorkflowResult {

@@ -146,6 +146,22 @@ pub mod authorized_view {
         name: &str,
         args: AuthorizedViewArgs,
     ) -> AuthorizedViewResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AuthorizedViewArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AuthorizedViewResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AuthorizedViewArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AuthorizedViewResult {
         let deletion_protection_binding = args.deletion_protection.get_output(context);
         let instance_name_binding = args.instance_name.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -182,6 +198,7 @@ pub mod authorized_view {
                     value: &table_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AuthorizedViewResult {

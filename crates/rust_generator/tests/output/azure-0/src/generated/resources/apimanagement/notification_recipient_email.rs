@@ -87,6 +87,22 @@ pub mod notification_recipient_email {
         name: &str,
         args: NotificationRecipientEmailArgs,
     ) -> NotificationRecipientEmailResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NotificationRecipientEmailArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NotificationRecipientEmailResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NotificationRecipientEmailArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NotificationRecipientEmailResult {
         let api_management_id_binding = args.api_management_id.get_output(context);
         let email_binding = args.email.get_output(context);
         let notification_type_binding = args.notification_type.get_output(context);
@@ -109,6 +125,7 @@ pub mod notification_recipient_email {
                     value: &notification_type_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NotificationRecipientEmailResult {

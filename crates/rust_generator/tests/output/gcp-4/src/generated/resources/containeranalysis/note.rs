@@ -194,6 +194,22 @@ pub mod note {
         name: &str,
         args: NoteArgs,
     ) -> NoteResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NoteArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NoteResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NoteArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NoteResult {
         let attestation_authority_binding = args
             .attestation_authority
             .get_output(context);
@@ -242,6 +258,7 @@ pub mod note {
                     value: &short_description_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NoteResult {

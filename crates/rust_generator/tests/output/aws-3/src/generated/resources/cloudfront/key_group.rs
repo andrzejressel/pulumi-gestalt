@@ -77,6 +77,22 @@ pub mod key_group {
         name: &str,
         args: KeyGroupArgs,
     ) -> KeyGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: KeyGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> KeyGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: KeyGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> KeyGroupResult {
         let comment_binding = args.comment.get_output(context);
         let items_binding = args.items.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -98,6 +114,7 @@ pub mod key_group {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         KeyGroupResult {

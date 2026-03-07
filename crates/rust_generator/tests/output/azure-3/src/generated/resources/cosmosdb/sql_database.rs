@@ -88,6 +88,22 @@ pub mod sql_database {
         name: &str,
         args: SqlDatabaseArgs,
     ) -> SqlDatabaseResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SqlDatabaseArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SqlDatabaseResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SqlDatabaseArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SqlDatabaseResult {
         let account_name_binding = args.account_name.get_output(context);
         let autoscale_settings_binding = args.autoscale_settings.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -119,6 +135,7 @@ pub mod sql_database {
                     value: &throughput_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SqlDatabaseResult {

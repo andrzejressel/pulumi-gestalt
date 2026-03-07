@@ -275,6 +275,22 @@ pub mod namespace_customer_managed_key {
         name: &str,
         args: NamespaceCustomerManagedKeyArgs,
     ) -> NamespaceCustomerManagedKeyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NamespaceCustomerManagedKeyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NamespaceCustomerManagedKeyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NamespaceCustomerManagedKeyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NamespaceCustomerManagedKeyResult {
         let eventhub_namespace_id_binding = args
             .eventhub_namespace_id
             .get_output(context);
@@ -308,6 +324,7 @@ pub mod namespace_customer_managed_key {
                     value: &user_assigned_identity_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NamespaceCustomerManagedKeyResult {

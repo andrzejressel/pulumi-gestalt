@@ -83,6 +83,22 @@ pub mod association {
         name: &str,
         args: AssociationArgs,
     ) -> AssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AssociationResult {
         let license_configuration_arn_binding = args
             .license_configuration_arn
             .get_output(context);
@@ -101,6 +117,7 @@ pub mod association {
                     value: &resource_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AssociationResult {

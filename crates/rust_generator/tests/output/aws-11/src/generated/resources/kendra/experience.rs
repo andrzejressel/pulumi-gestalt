@@ -116,6 +116,22 @@ pub mod experience {
         name: &str,
         args: ExperienceArgs,
     ) -> ExperienceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ExperienceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ExperienceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ExperienceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ExperienceResult {
         let configuration_binding = args.configuration.get_output(context);
         let description_binding = args.description.get_output(context);
         let index_id_binding = args.index_id.get_output(context);
@@ -147,6 +163,7 @@ pub mod experience {
                     value: &role_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ExperienceResult {

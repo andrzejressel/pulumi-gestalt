@@ -122,6 +122,22 @@ pub mod image {
         name: &str,
         args: ImageArgs,
     ) -> ImageResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ImageArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ImageResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ImageArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ImageResult {
         let data_disks_binding = args.data_disks.get_output(context);
         let hyper_v_generation_binding = args.hyper_v_generation.get_output(context);
         let location_binding = args.location.get_output(context);
@@ -175,6 +191,7 @@ pub mod image {
                     value: &zone_resilient_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ImageResult {

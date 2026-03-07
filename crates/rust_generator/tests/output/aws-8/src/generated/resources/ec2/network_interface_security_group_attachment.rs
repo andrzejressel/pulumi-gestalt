@@ -121,6 +121,22 @@ pub mod network_interface_security_group_attachment {
         name: &str,
         args: NetworkInterfaceSecurityGroupAttachmentArgs,
     ) -> NetworkInterfaceSecurityGroupAttachmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkInterfaceSecurityGroupAttachmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NetworkInterfaceSecurityGroupAttachmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkInterfaceSecurityGroupAttachmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NetworkInterfaceSecurityGroupAttachmentResult {
         let network_interface_id_binding = args.network_interface_id.get_output(context);
         let security_group_id_binding = args.security_group_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -138,6 +154,7 @@ pub mod network_interface_security_group_attachment {
                     value: &security_group_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NetworkInterfaceSecurityGroupAttachmentResult {

@@ -192,6 +192,22 @@ pub mod document_classifier {
         name: &str,
         args: DocumentClassifierArgs,
     ) -> DocumentClassifierResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DocumentClassifierArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DocumentClassifierResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DocumentClassifierArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DocumentClassifierResult {
         let data_access_role_arn_binding = args.data_access_role_arn.get_output(context);
         let input_data_config_binding = args.input_data_config.get_output(context);
         let language_code_binding = args.language_code.get_output(context);
@@ -258,6 +274,7 @@ pub mod document_classifier {
                     value: &vpc_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DocumentClassifierResult {

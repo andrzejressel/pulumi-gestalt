@@ -227,6 +227,22 @@ pub mod job {
         name: &str,
         args: JobArgs,
     ) -> JobResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: JobArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> JobResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: JobArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> JobResult {
         let force_delete_binding = args.force_delete.get_output(context);
         let hadoop_config_binding = args.hadoop_config.get_output(context);
         let hive_config_binding = args.hive_config.get_output(context);
@@ -303,6 +319,7 @@ pub mod job {
                     value: &sparksql_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         JobResult {

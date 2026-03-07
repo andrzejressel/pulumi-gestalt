@@ -167,6 +167,22 @@ pub mod instance_group_named_port {
         name: &str,
         args: InstanceGroupNamedPortArgs,
     ) -> InstanceGroupNamedPortResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InstanceGroupNamedPortArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> InstanceGroupNamedPortResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InstanceGroupNamedPortArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> InstanceGroupNamedPortResult {
         let group_binding = args.group.get_output(context);
         let name_binding = args.name.get_output(context);
         let port_binding = args.port.get_output(context);
@@ -198,6 +214,7 @@ pub mod instance_group_named_port {
                     value: &zone_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         InstanceGroupNamedPortResult {

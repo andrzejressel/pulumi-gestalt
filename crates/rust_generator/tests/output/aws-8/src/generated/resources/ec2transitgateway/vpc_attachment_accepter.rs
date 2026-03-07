@@ -105,6 +105,22 @@ pub mod vpc_attachment_accepter {
         name: &str,
         args: VpcAttachmentAccepterArgs,
     ) -> VpcAttachmentAccepterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcAttachmentAccepterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VpcAttachmentAccepterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcAttachmentAccepterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VpcAttachmentAccepterResult {
         let tags_binding = args.tags.get_output(context);
         let transit_gateway_attachment_id_binding = args
             .transit_gateway_attachment_id
@@ -140,6 +156,7 @@ pub mod vpc_attachment_accepter {
                         .drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VpcAttachmentAccepterResult {

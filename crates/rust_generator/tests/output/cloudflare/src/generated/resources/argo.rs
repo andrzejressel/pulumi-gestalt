@@ -68,6 +68,22 @@ pub mod argo {
         name: &str,
         args: ArgoArgs,
     ) -> ArgoResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ArgoArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ArgoResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ArgoArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ArgoResult {
         let smart_routing_binding = args.smart_routing.get_output(context);
         let tiered_caching_binding = args.tiered_caching.get_output(context);
         let zone_id_binding = args.zone_id.get_output(context);
@@ -89,6 +105,7 @@ pub mod argo {
                     value: &zone_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ArgoResult {

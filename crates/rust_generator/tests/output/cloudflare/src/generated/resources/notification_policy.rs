@@ -101,6 +101,22 @@ pub mod notification_policy {
         name: &str,
         args: NotificationPolicyArgs,
     ) -> NotificationPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NotificationPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NotificationPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NotificationPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NotificationPolicyResult {
         let account_id_binding = args.account_id.get_output(context);
         let alert_type_binding = args.alert_type.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -156,6 +172,7 @@ pub mod notification_policy {
                     value: &webhooks_integrations_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NotificationPolicyResult {

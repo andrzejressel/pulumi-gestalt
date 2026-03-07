@@ -230,6 +230,22 @@ pub mod game_server_group {
         name: &str,
         args: GameServerGroupArgs,
     ) -> GameServerGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GameServerGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GameServerGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GameServerGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GameServerGroupResult {
         let auto_scaling_policy_binding = args.auto_scaling_policy.get_output(context);
         let balancing_strategy_binding = args.balancing_strategy.get_output(context);
         let game_server_group_name_binding = args
@@ -295,6 +311,7 @@ pub mod game_server_group {
                     value: &vpc_subnets_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GameServerGroupResult {

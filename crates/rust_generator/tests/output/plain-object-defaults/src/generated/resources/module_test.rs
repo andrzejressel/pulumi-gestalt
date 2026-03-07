@@ -30,6 +30,22 @@ pub mod module_test {
         name: &str,
         args: moduleTestArgs,
     ) -> moduleTestResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: moduleTestArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> moduleTestResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: moduleTestArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> moduleTestResult {
         let mod1_binding = args.mod1.get_output(context);
         let val_binding = args.val.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -46,6 +62,7 @@ pub mod module_test {
                     value: &val_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         moduleTestResult {

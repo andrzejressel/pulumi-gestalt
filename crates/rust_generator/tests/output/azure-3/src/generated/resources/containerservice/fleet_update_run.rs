@@ -126,6 +126,22 @@ pub mod fleet_update_run {
         name: &str,
         args: FleetUpdateRunArgs,
     ) -> FleetUpdateRunResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FleetUpdateRunArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FleetUpdateRunResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FleetUpdateRunArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FleetUpdateRunResult {
         let fleet_update_strategy_id_binding = args
             .fleet_update_strategy_id
             .get_output(context);
@@ -163,6 +179,7 @@ pub mod fleet_update_run {
                     value: &stages_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FleetUpdateRunResult {

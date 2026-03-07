@@ -163,6 +163,22 @@ pub mod response_policy {
         name: &str,
         args: ResponsePolicyArgs,
     ) -> ResponsePolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResponsePolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ResponsePolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResponsePolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ResponsePolicyResult {
         let description_binding = args.description.get_output(context);
         let gke_clusters_binding = args.gke_clusters.get_output(context);
         let networks_binding = args.networks.get_output(context);
@@ -194,6 +210,7 @@ pub mod response_policy {
                     value: &response_policy_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ResponsePolicyResult {

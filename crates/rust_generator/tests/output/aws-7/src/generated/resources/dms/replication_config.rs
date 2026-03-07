@@ -130,6 +130,22 @@ pub mod replication_config {
         name: &str,
         args: ReplicationConfigArgs,
     ) -> ReplicationConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReplicationConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ReplicationConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReplicationConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ReplicationConfigResult {
         let compute_config_binding = args.compute_config.get_output(context);
         let replication_config_identifier_binding = args
             .replication_config_identifier
@@ -195,6 +211,7 @@ pub mod replication_config {
                     value: &target_endpoint_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ReplicationConfigResult {

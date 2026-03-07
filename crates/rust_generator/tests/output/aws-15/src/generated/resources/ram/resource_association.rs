@@ -64,6 +64,22 @@ pub mod resource_association {
         name: &str,
         args: ResourceAssociationArgs,
     ) -> ResourceAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResourceAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ResourceAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResourceAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ResourceAssociationResult {
         let resource_arn_binding = args.resource_arn.get_output(context);
         let resource_share_arn_binding = args.resource_share_arn.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -80,6 +96,7 @@ pub mod resource_association {
                     value: &resource_share_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ResourceAssociationResult {

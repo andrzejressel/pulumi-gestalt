@@ -156,6 +156,22 @@ pub mod integration_account_agreement {
         name: &str,
         args: IntegrationAccountAgreementArgs,
     ) -> IntegrationAccountAgreementResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IntegrationAccountAgreementArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IntegrationAccountAgreementResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IntegrationAccountAgreementArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IntegrationAccountAgreementResult {
         let agreement_type_binding = args.agreement_type.get_output(context);
         let content_binding = args.content.get_output(context);
         let guest_identity_binding = args.guest_identity.get_output(context);
@@ -215,6 +231,7 @@ pub mod integration_account_agreement {
                     value: &resource_group_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IntegrationAccountAgreementResult {

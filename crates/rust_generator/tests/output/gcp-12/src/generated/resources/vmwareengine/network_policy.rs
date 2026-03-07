@@ -192,6 +192,22 @@ pub mod network_policy {
         name: &str,
         args: NetworkPolicyArgs,
     ) -> NetworkPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NetworkPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NetworkPolicyResult {
         let description_binding = args.description.get_output(context);
         let edge_services_cidr_binding = args.edge_services_cidr.get_output(context);
         let external_ip_binding = args.external_ip.get_output(context);
@@ -240,6 +256,7 @@ pub mod network_policy {
                     value: &vmware_engine_network_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NetworkPolicyResult {

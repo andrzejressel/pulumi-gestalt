@@ -125,6 +125,22 @@ pub mod event_threat_detection_custom_module {
         name: &str,
         args: EventThreatDetectionCustomModuleArgs,
     ) -> EventThreatDetectionCustomModuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EventThreatDetectionCustomModuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EventThreatDetectionCustomModuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EventThreatDetectionCustomModuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EventThreatDetectionCustomModuleResult {
         let config_binding = args.config.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let enablement_state_binding = args.enablement_state.get_output(context);
@@ -157,6 +173,7 @@ pub mod event_threat_detection_custom_module {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EventThreatDetectionCustomModuleResult {

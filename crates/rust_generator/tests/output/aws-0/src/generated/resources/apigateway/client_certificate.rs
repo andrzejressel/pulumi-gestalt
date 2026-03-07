@@ -77,6 +77,22 @@ pub mod client_certificate {
         name: &str,
         args: ClientCertificateArgs,
     ) -> ClientCertificateResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClientCertificateArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ClientCertificateResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClientCertificateArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ClientCertificateResult {
         let description_binding = args.description.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -93,6 +109,7 @@ pub mod client_certificate {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ClientCertificateResult {

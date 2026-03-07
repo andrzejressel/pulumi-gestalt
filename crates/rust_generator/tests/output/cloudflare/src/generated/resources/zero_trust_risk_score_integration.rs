@@ -54,6 +54,22 @@ pub mod zero_trust_risk_score_integration {
         name: &str,
         args: ZeroTrustRiskScoreIntegrationArgs,
     ) -> ZeroTrustRiskScoreIntegrationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZeroTrustRiskScoreIntegrationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ZeroTrustRiskScoreIntegrationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZeroTrustRiskScoreIntegrationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ZeroTrustRiskScoreIntegrationResult {
         let account_id_binding = args.account_id.get_output(context);
         let active_binding = args.active.get_output(context);
         let integration_type_binding = args.integration_type.get_output(context);
@@ -86,6 +102,7 @@ pub mod zero_trust_risk_score_integration {
                     value: &tenant_url_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ZeroTrustRiskScoreIntegrationResult {

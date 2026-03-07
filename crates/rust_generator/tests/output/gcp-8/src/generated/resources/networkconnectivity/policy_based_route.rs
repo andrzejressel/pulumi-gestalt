@@ -232,6 +232,22 @@ pub mod policy_based_route {
         name: &str,
         args: PolicyBasedRouteArgs,
     ) -> PolicyBasedRouteResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PolicyBasedRouteArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PolicyBasedRouteResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PolicyBasedRouteArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PolicyBasedRouteResult {
         let description_binding = args.description.get_output(context);
         let filter_binding = args.filter.get_output(context);
         let interconnect_attachment_binding = args
@@ -297,6 +313,7 @@ pub mod policy_based_route {
                     value: &virtual_machine_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PolicyBasedRouteResult {

@@ -156,6 +156,22 @@ pub mod kmsconfig {
         name: &str,
         args: KmsconfigArgs,
     ) -> KmsconfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: KmsconfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> KmsconfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: KmsconfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> KmsconfigResult {
         let crypto_key_name_binding = args.crypto_key_name.get_output(context);
         let description_binding = args.description.get_output(context);
         let labels_binding = args.labels.get_output(context);
@@ -192,6 +208,7 @@ pub mod kmsconfig {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         KmsconfigResult {

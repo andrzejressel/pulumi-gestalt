@@ -203,6 +203,22 @@ pub mod fhir_store_iam_binding {
         name: &str,
         args: FhirStoreIamBindingArgs,
     ) -> FhirStoreIamBindingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FhirStoreIamBindingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FhirStoreIamBindingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FhirStoreIamBindingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FhirStoreIamBindingResult {
         let condition_binding = args.condition.get_output(context);
         let fhir_store_id_binding = args.fhir_store_id.get_output(context);
         let members_binding = args.members.get_output(context);
@@ -229,6 +245,7 @@ pub mod fhir_store_iam_binding {
                     value: &role_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FhirStoreIamBindingResult {

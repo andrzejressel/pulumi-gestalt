@@ -123,6 +123,22 @@ pub mod folder_settings {
         name: &str,
         args: FolderSettingsArgs,
     ) -> FolderSettingsResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FolderSettingsArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FolderSettingsResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FolderSettingsArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FolderSettingsResult {
         let disable_default_sink_binding = args.disable_default_sink.get_output(context);
         let folder_binding = args.folder.get_output(context);
         let kms_key_name_binding = args.kms_key_name.get_output(context);
@@ -149,6 +165,7 @@ pub mod folder_settings {
                     value: &storage_location_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FolderSettingsResult {

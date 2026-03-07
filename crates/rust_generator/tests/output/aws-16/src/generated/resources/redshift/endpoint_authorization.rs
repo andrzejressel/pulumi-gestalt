@@ -80,6 +80,22 @@ pub mod endpoint_authorization {
         name: &str,
         args: EndpointAuthorizationArgs,
     ) -> EndpointAuthorizationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EndpointAuthorizationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EndpointAuthorizationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EndpointAuthorizationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EndpointAuthorizationResult {
         let account_binding = args.account.get_output(context);
         let cluster_identifier_binding = args.cluster_identifier.get_output(context);
         let force_delete_binding = args.force_delete.get_output(context);
@@ -106,6 +122,7 @@ pub mod endpoint_authorization {
                     value: &vpc_ids_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EndpointAuthorizationResult {

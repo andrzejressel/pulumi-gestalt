@@ -139,6 +139,22 @@ pub mod conformance_pack {
         name: &str,
         args: ConformancePackArgs,
     ) -> ConformancePackResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConformancePackArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ConformancePackResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConformancePackArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ConformancePackResult {
         let delivery_s3_bucket_binding = args.delivery_s3_bucket.get_output(context);
         let delivery_s3_key_prefix_binding = args
             .delivery_s3_key_prefix
@@ -177,6 +193,7 @@ pub mod conformance_pack {
                     value: &template_s3_uri_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ConformancePackResult {

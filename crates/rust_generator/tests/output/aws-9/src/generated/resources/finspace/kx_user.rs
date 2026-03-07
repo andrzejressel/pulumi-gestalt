@@ -109,6 +109,22 @@ pub mod kx_user {
         name: &str,
         args: KxUserArgs,
     ) -> KxUserResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: KxUserArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> KxUserResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: KxUserArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> KxUserResult {
         let environment_id_binding = args.environment_id.get_output(context);
         let iam_role_binding = args.iam_role.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -135,6 +151,7 @@ pub mod kx_user {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         KxUserResult {

@@ -243,6 +243,22 @@ pub mod cluster_instance {
         name: &str,
         args: ClusterInstanceArgs,
     ) -> ClusterInstanceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClusterInstanceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ClusterInstanceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClusterInstanceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ClusterInstanceResult {
         let apply_immediately_binding = args.apply_immediately.get_output(context);
         let auto_minor_version_upgrade_binding = args
             .auto_minor_version_upgrade
@@ -392,6 +408,7 @@ pub mod cluster_instance {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ClusterInstanceResult {

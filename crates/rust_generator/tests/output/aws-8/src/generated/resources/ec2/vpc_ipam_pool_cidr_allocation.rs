@@ -147,6 +147,22 @@ pub mod vpc_ipam_pool_cidr_allocation {
         name: &str,
         args: VpcIpamPoolCidrAllocationArgs,
     ) -> VpcIpamPoolCidrAllocationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcIpamPoolCidrAllocationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VpcIpamPoolCidrAllocationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcIpamPoolCidrAllocationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VpcIpamPoolCidrAllocationResult {
         let cidr_binding = args.cidr.get_output(context);
         let description_binding = args.description.get_output(context);
         let disallowed_cidrs_binding = args.disallowed_cidrs.get_output(context);
@@ -178,6 +194,7 @@ pub mod vpc_ipam_pool_cidr_allocation {
                     value: &netmask_length_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VpcIpamPoolCidrAllocationResult {

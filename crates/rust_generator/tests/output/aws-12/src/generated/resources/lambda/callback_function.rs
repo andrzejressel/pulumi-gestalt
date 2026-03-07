@@ -468,6 +468,22 @@ pub mod callback_function {
         name: &str,
         args: CallbackFunctionArgs,
     ) -> CallbackFunctionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CallbackFunctionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CallbackFunctionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CallbackFunctionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CallbackFunctionResult {
         let architectures_binding = args.architectures.get_output(context);
         let callback_binding = args.callback.get_output(context);
         let callback_factory_binding = args.callback_factory.get_output(context);
@@ -657,6 +673,7 @@ pub mod callback_function {
                     value: &vpc_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CallbackFunctionResult {

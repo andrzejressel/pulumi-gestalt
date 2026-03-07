@@ -347,6 +347,22 @@ pub mod job_definition {
         name: &str,
         args: JobDefinitionArgs,
     ) -> JobDefinitionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: JobDefinitionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> JobDefinitionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: JobDefinitionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> JobDefinitionResult {
         let container_properties_binding = args.container_properties.get_output(context);
         let deregister_on_new_revision_binding = args
             .deregister_on_new_revision
@@ -427,6 +443,7 @@ pub mod job_definition {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         JobDefinitionResult {

@@ -95,6 +95,22 @@ pub mod object_lambda_access_point_policy {
         name: &str,
         args: ObjectLambdaAccessPointPolicyArgs,
     ) -> ObjectLambdaAccessPointPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ObjectLambdaAccessPointPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ObjectLambdaAccessPointPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ObjectLambdaAccessPointPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ObjectLambdaAccessPointPolicyResult {
         let account_id_binding = args.account_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let policy_binding = args.policy.get_output(context);
@@ -117,6 +133,7 @@ pub mod object_lambda_access_point_policy {
                     value: &policy_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ObjectLambdaAccessPointPolicyResult {

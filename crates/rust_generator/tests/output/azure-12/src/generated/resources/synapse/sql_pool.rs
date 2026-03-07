@@ -147,6 +147,22 @@ pub mod sql_pool {
         name: &str,
         args: SqlPoolArgs,
     ) -> SqlPoolResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SqlPoolArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SqlPoolResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SqlPoolArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SqlPoolResult {
         let collation_binding = args.collation.get_output(context);
         let create_mode_binding = args.create_mode.get_output(context);
         let data_encrypted_binding = args.data_encrypted.get_output(context);
@@ -210,6 +226,7 @@ pub mod sql_pool {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SqlPoolResult {

@@ -95,6 +95,22 @@ pub mod sdkvoice_sip_rule {
         name: &str,
         args: SdkvoiceSipRuleArgs,
     ) -> SdkvoiceSipRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SdkvoiceSipRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SdkvoiceSipRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SdkvoiceSipRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SdkvoiceSipRuleResult {
         let disabled_binding = args.disabled.get_output(context);
         let name_binding = args.name.get_output(context);
         let target_applications_binding = args.target_applications.get_output(context);
@@ -126,6 +142,7 @@ pub mod sdkvoice_sip_rule {
                     value: &trigger_value_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SdkvoiceSipRuleResult {

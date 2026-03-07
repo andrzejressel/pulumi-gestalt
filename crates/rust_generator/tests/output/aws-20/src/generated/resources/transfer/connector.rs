@@ -143,6 +143,22 @@ pub mod connector {
         name: &str,
         args: ConnectorArgs,
     ) -> ConnectorResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConnectorArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ConnectorResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConnectorArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ConnectorResult {
         let access_role_binding = args.access_role.get_output(context);
         let as2_config_binding = args.as2_config.get_output(context);
         let logging_role_binding = args.logging_role.get_output(context);
@@ -184,6 +200,7 @@ pub mod connector {
                     value: &url_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ConnectorResult {

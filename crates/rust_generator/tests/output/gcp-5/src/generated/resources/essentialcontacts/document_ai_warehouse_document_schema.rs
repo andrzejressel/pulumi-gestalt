@@ -125,6 +125,22 @@ pub mod document_ai_warehouse_document_schema {
         name: &str,
         args: DocumentAiWarehouseDocumentSchemaArgs,
     ) -> DocumentAiWarehouseDocumentSchemaResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DocumentAiWarehouseDocumentSchemaArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DocumentAiWarehouseDocumentSchemaResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DocumentAiWarehouseDocumentSchemaArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DocumentAiWarehouseDocumentSchemaResult {
         let display_name_binding = args.display_name.get_output(context);
         let document_is_folder_binding = args.document_is_folder.get_output(context);
         let location_binding = args.location.get_output(context);
@@ -157,6 +173,7 @@ pub mod document_ai_warehouse_document_schema {
                     value: &property_definitions_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DocumentAiWarehouseDocumentSchemaResult {

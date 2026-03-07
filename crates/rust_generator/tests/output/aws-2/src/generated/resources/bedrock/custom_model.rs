@@ -171,6 +171,22 @@ pub mod custom_model {
         name: &str,
         args: CustomModelArgs,
     ) -> CustomModelResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomModelArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CustomModelResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomModelArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CustomModelResult {
         let base_model_identifier_binding = args
             .base_model_identifier
             .get_output(context);
@@ -248,6 +264,7 @@ pub mod custom_model {
                     value: &vpc_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CustomModelResult {

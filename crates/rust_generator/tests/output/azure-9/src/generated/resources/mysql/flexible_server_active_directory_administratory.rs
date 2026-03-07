@@ -41,6 +41,22 @@ pub mod flexible_server_active_directory_administratory {
         name: &str,
         args: FlexibleServerActiveDirectoryAdministratoryArgs,
     ) -> FlexibleServerActiveDirectoryAdministratoryResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FlexibleServerActiveDirectoryAdministratoryArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FlexibleServerActiveDirectoryAdministratoryResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FlexibleServerActiveDirectoryAdministratoryArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FlexibleServerActiveDirectoryAdministratoryResult {
         let identity_id_binding = args.identity_id.get_output(context);
         let login_binding = args.login.get_output(context);
         let object_id_binding = args.object_id.get_output(context);
@@ -73,6 +89,7 @@ pub mod flexible_server_active_directory_administratory {
                     value: &tenant_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FlexibleServerActiveDirectoryAdministratoryResult {

@@ -185,6 +185,22 @@ pub mod source_representation_instance {
         name: &str,
         args: SourceRepresentationInstanceArgs,
     ) -> SourceRepresentationInstanceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SourceRepresentationInstanceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SourceRepresentationInstanceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SourceRepresentationInstanceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SourceRepresentationInstanceResult {
         let ca_certificate_binding = args.ca_certificate.get_output(context);
         let client_certificate_binding = args.client_certificate.get_output(context);
         let client_key_binding = args.client_key.get_output(context);
@@ -252,6 +268,7 @@ pub mod source_representation_instance {
                     value: &username_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SourceRepresentationInstanceResult {

@@ -226,6 +226,22 @@ pub mod frontdoor {
         name: &str,
         args: FrontdoorArgs,
     ) -> FrontdoorResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FrontdoorArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FrontdoorResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FrontdoorArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FrontdoorResult {
         let backend_pool_health_probes_binding = args
             .backend_pool_health_probes
             .get_output(context);
@@ -295,6 +311,7 @@ pub mod frontdoor {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FrontdoorResult {

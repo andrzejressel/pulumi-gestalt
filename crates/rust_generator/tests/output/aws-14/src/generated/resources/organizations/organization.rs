@@ -101,6 +101,22 @@ pub mod organization {
         name: &str,
         args: OrganizationArgs,
     ) -> OrganizationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OrganizationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OrganizationResult {
         let aws_service_access_principals_binding = args
             .aws_service_access_principals
             .get_output(context);
@@ -124,6 +140,7 @@ pub mod organization {
                     value: &feature_set_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OrganizationResult {

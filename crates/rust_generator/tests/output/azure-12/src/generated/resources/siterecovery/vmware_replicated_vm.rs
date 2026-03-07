@@ -327,6 +327,22 @@ pub mod vmware_replicated_vm {
         name: &str,
         args: VmwareReplicatedVmArgs,
     ) -> VmwareReplicatedVmResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VmwareReplicatedVmArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VmwareReplicatedVmResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VmwareReplicatedVmArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VmwareReplicatedVmResult {
         let appliance_name_binding = args.appliance_name.get_output(context);
         let default_log_storage_account_id_binding = args
             .default_log_storage_account_id
@@ -462,6 +478,7 @@ pub mod vmware_replicated_vm {
                     value: &test_network_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VmwareReplicatedVmResult {

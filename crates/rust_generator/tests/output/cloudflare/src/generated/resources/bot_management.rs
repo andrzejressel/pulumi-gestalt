@@ -123,6 +123,22 @@ pub mod bot_management {
         name: &str,
         args: BotManagementArgs,
     ) -> BotManagementResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BotManagementArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BotManagementResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BotManagementArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BotManagementResult {
         let ai_bots_protection_binding = args.ai_bots_protection.get_output(context);
         let auto_update_model_binding = args.auto_update_model.get_output(context);
         let enable_js_binding = args.enable_js.get_output(context);
@@ -192,6 +208,7 @@ pub mod bot_management {
                     value: &zone_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BotManagementResult {

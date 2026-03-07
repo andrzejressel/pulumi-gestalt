@@ -167,6 +167,22 @@ pub mod pipeline {
         name: &str,
         args: PipelineArgs,
     ) -> PipelineResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PipelineArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PipelineResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PipelineArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PipelineResult {
         let aws_kms_key_arn_binding = args.aws_kms_key_arn.get_output(context);
         let content_config_binding = args.content_config.get_output(context);
         let content_config_permissions_binding = args
@@ -227,6 +243,7 @@ pub mod pipeline {
                     value: &thumbnail_config_permissions_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PipelineResult {

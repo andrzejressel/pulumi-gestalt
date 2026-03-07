@@ -160,6 +160,22 @@ pub mod trigger_schedule {
         name: &str,
         args: TriggerScheduleArgs,
     ) -> TriggerScheduleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TriggerScheduleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TriggerScheduleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TriggerScheduleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TriggerScheduleResult {
         let activated_binding = args.activated.get_output(context);
         let annotations_binding = args.annotations.get_output(context);
         let data_factory_id_binding = args.data_factory_id.get_output(context);
@@ -236,6 +252,7 @@ pub mod trigger_schedule {
                     value: &time_zone_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TriggerScheduleResult {

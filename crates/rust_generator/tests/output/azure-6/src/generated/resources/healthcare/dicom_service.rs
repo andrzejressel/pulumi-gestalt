@@ -108,6 +108,22 @@ pub mod dicom_service {
         name: &str,
         args: DicomServiceArgs,
     ) -> DicomServiceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DicomServiceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DicomServiceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DicomServiceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DicomServiceResult {
         let identity_binding = args.identity.get_output(context);
         let location_binding = args.location.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -146,6 +162,7 @@ pub mod dicom_service {
                     value: &workspace_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DicomServiceResult {

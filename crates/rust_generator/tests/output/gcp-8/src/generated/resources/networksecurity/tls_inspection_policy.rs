@@ -322,6 +322,22 @@ pub mod tls_inspection_policy {
         name: &str,
         args: TlsInspectionPolicyArgs,
     ) -> TlsInspectionPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TlsInspectionPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TlsInspectionPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TlsInspectionPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TlsInspectionPolicyResult {
         let ca_pool_binding = args.ca_pool.get_output(context);
         let custom_tls_features_binding = args.custom_tls_features.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -380,6 +396,7 @@ pub mod tls_inspection_policy {
                     value: &trust_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TlsInspectionPolicyResult {

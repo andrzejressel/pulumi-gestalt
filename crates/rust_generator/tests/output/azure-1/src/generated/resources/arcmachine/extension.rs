@@ -135,6 +135,22 @@ pub mod extension {
         name: &str,
         args: ExtensionArgs,
     ) -> ExtensionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ExtensionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ExtensionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ExtensionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ExtensionResult {
         let arc_machine_id_binding = args.arc_machine_id.get_output(context);
         let automatic_upgrade_enabled_binding = args
             .automatic_upgrade_enabled
@@ -198,6 +214,7 @@ pub mod extension {
                     value: &type_handler_version_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ExtensionResult {

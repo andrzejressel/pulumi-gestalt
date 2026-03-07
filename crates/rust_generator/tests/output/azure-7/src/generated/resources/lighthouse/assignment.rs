@@ -67,6 +67,22 @@ pub mod assignment {
         name: &str,
         args: AssignmentArgs,
     ) -> AssignmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AssignmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AssignmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AssignmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AssignmentResult {
         let lighthouse_definition_id_binding = args
             .lighthouse_definition_id
             .get_output(context);
@@ -90,6 +106,7 @@ pub mod assignment {
                     value: &scope_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AssignmentResult {

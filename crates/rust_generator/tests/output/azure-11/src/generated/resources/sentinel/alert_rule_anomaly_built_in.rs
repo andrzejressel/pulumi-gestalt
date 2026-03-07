@@ -148,6 +148,22 @@ pub mod alert_rule_anomaly_built_in {
         name: &str,
         args: AlertRuleAnomalyBuiltInArgs,
     ) -> AlertRuleAnomalyBuiltInResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AlertRuleAnomalyBuiltInArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AlertRuleAnomalyBuiltInResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AlertRuleAnomalyBuiltInArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AlertRuleAnomalyBuiltInResult {
         let display_name_binding = args.display_name.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
         let log_analytics_workspace_id_binding = args
@@ -182,6 +198,7 @@ pub mod alert_rule_anomaly_built_in {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AlertRuleAnomalyBuiltInResult {

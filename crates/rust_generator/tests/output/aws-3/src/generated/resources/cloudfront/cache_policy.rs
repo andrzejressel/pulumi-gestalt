@@ -125,6 +125,22 @@ pub mod cache_policy {
         name: &str,
         args: CachePolicyArgs,
     ) -> CachePolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CachePolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CachePolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CachePolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CachePolicyResult {
         let comment_binding = args.comment.get_output(context);
         let default_ttl_binding = args.default_ttl.get_output(context);
         let max_ttl_binding = args.max_ttl.get_output(context);
@@ -164,6 +180,7 @@ pub mod cache_policy {
                         .drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CachePolicyResult {

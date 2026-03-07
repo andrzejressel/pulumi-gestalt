@@ -86,6 +86,22 @@ pub mod geofence_collection {
         name: &str,
         args: GeofenceCollectionArgs,
     ) -> GeofenceCollectionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GeofenceCollectionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GeofenceCollectionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GeofenceCollectionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GeofenceCollectionResult {
         let collection_name_binding = args.collection_name.get_output(context);
         let description_binding = args.description.get_output(context);
         let kms_key_id_binding = args.kms_key_id.get_output(context);
@@ -112,6 +128,7 @@ pub mod geofence_collection {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GeofenceCollectionResult {

@@ -136,6 +136,22 @@ pub mod route {
         name: &str,
         args: RouteArgs,
     ) -> RouteResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RouteArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RouteResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RouteArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RouteResult {
         let condition_binding = args.condition.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
         let endpoint_names_binding = args.endpoint_names.get_output(context);
@@ -177,6 +193,7 @@ pub mod route {
                     value: &source_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RouteResult {

@@ -223,6 +223,22 @@ pub mod storage_pool {
         name: &str,
         args: StoragePoolArgs,
     ) -> StoragePoolResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StoragePoolArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> StoragePoolResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StoragePoolArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> StoragePoolResult {
         let active_directory_binding = args.active_directory.get_output(context);
         let allow_auto_tiering_binding = args.allow_auto_tiering.get_output(context);
         let capacity_gib_binding = args.capacity_gib.get_output(context);
@@ -299,6 +315,7 @@ pub mod storage_pool {
                     value: &zone_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         StoragePoolResult {

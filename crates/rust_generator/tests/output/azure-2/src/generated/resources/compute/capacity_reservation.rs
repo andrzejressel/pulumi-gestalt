@@ -107,6 +107,22 @@ pub mod capacity_reservation {
         name: &str,
         args: CapacityReservationArgs,
     ) -> CapacityReservationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CapacityReservationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CapacityReservationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CapacityReservationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CapacityReservationResult {
         let capacity_reservation_group_id_binding = args
             .capacity_reservation_group_id
             .get_output(context);
@@ -140,6 +156,7 @@ pub mod capacity_reservation {
                     value: &zone_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CapacityReservationResult {

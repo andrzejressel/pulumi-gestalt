@@ -171,6 +171,22 @@ pub mod form_type {
         name: &str,
         args: FormTypeArgs,
     ) -> FormTypeResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FormTypeArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FormTypeResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FormTypeArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FormTypeResult {
         let description_binding = args.description.get_output(context);
         let domain_identifier_binding = args.domain_identifier.get_output(context);
         let model_binding = args.model.get_output(context);
@@ -214,6 +230,7 @@ pub mod form_type {
                     value: &timeouts_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FormTypeResult {

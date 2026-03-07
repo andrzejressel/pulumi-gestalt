@@ -1,3 +1,4 @@
+use bon::Builder;
 use pulumi_gestalt_rust_integration as integration;
 use pulumi_gestalt_rust_integration::FieldName;
 use serde::{Serialize, de::DeserializeOwned};
@@ -6,6 +7,23 @@ use std::collections::HashMap;
 use std::marker::PhantomData;
 use std::rc::Rc;
 use tokio::runtime::Runtime;
+
+pub trait Provider {
+    /// Pulumi Provider ID is the combination of URN and ID. It is used when creating a resource.
+    fn get_provider_id(&self) -> Output<String>;
+}
+
+impl<T: Provider> From<&T> for Output<String> {
+    fn from(provider: &T) -> Self {
+        provider.get_provider_id()
+    }
+}
+
+#[derive(Default, Builder, Clone)]
+pub struct CustomResourceOptions {
+    #[builder(with = |p: &impl Provider| { p.get_provider_id() })]
+    pub provider: Option<Output<String>>,
+}
 
 pub type FunctionContext = Box<dyn Fn(Value) -> Value + Send>;
 
@@ -105,6 +123,15 @@ impl CompositeOutput {
             runtime: self.runtime.clone(),
         }
     }
+
+    pub fn get_provider_id(&self) -> Output<String> {
+        let res = self.runtime.block_on(self.inner.get_provider_id());
+        Output {
+            inner: res,
+            phantom: PhantomData,
+            runtime: self.runtime.clone(),
+        }
+    }
 }
 
 pub struct Context {
@@ -157,12 +184,19 @@ impl Context {
                 object.value.inner.clone(),
             );
         }
+        let provider = request
+            .options
+            .as_ref()
+            .and_then(|o| o.provider.as_ref())
+            .map(|p| p.inner.clone());
+
         let result = self.runtime.block_on(self.inner.register_resource(
             integration::RegisterResourceRequest {
                 r#type: request.type_.clone(),
                 name: request.name.clone(),
                 version: request.version.clone(),
                 inputs,
+                provider,
             },
         ));
         CompositeOutput {
@@ -213,6 +247,7 @@ pub struct RegisterResourceRequest<'a, OUTPUT> {
     pub name: String,
     pub version: String,
     pub object: &'a [ResourceRequestObjectField<'a, OUTPUT>],
+    pub options: Option<CustomResourceOptions>,
 }
 pub struct InvokeResourceRequest<'a, OUTPUT> {
     pub token: String,

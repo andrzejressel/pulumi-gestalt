@@ -158,6 +158,22 @@ pub mod data_disk_attachment {
         name: &str,
         args: DataDiskAttachmentArgs,
     ) -> DataDiskAttachmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataDiskAttachmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DataDiskAttachmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataDiskAttachmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DataDiskAttachmentResult {
         let caching_binding = args.caching.get_output(context);
         let create_option_binding = args.create_option.get_output(context);
         let lun_binding = args.lun.get_output(context);
@@ -196,6 +212,7 @@ pub mod data_disk_attachment {
                     value: &write_accelerator_enabled_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DataDiskAttachmentResult {
