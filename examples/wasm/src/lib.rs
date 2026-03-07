@@ -18,6 +18,7 @@ fn generate_random_value(ctx: &Context) {
         name: "my_name".to_string(),
         version: "4.15.1".to_string(),
         object: inputs,
+        provider: None,
     };
 
     let composite_output = ctx.register_resource(&register_resource_request);
