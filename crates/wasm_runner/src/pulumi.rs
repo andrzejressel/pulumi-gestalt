@@ -274,7 +274,7 @@ impl HostCompositeOutput for MyState {
     async fn get_urn(
         &mut self,
         self_: Resource<output_interface::CompositeOutput>,
-    ) -> anyhow::Result<Resource<output_interface::Output>> {
+    ) -> wasmtime::Result<Resource<output_interface::Output>> {
         assert!(!self_.owned());
         let composite_output = self.table.get(&self_)?;
         let output = composite_output.output.get_urn().await;
