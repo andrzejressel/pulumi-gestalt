@@ -218,7 +218,7 @@ pub mod integration_account_agreement {
         };
         let o = context.register_resource(request);
         IntegrationAccountAgreementResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             agreement_type: o.get_field("agreementType"),
             content: o.get_field("content"),

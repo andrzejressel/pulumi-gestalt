@@ -297,7 +297,7 @@ pub mod diagnostic {
         };
         let o = context.register_resource(request);
         DiagnosticResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             always_log_errors: o.get_field("alwaysLogErrors"),
             api_management_logger_id: o.get_field("apiManagementLoggerId"),

@@ -180,7 +180,7 @@ pub mod configuration {
         };
         let o = context.register_resource(request);
         ConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             authentication_strategy: o.get_field("authenticationStrategy"),

@@ -164,7 +164,7 @@ pub mod vpc_block_public_access_exclusion {
         };
         let o = context.register_resource(request);
         VpcBlockPublicAccessExclusionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             internet_gateway_exclusion_mode: o.get_field("internetGatewayExclusionMode"),
             resource_arn: o.get_field("resourceArn"),

@@ -171,7 +171,7 @@ pub mod network_sim_group {
         };
         let o = context.register_resource(request);
         NetworkSimGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             encryption_key_url: o.get_field("encryptionKeyUrl"),
             identity: o.get_field("identity"),

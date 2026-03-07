@@ -115,7 +115,7 @@ pub mod proxy_default_target_group {
         };
         let o = context.register_resource(request);
         ProxyDefaultTargetGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             connection_pool_config: o.get_field("connectionPoolConfig"),

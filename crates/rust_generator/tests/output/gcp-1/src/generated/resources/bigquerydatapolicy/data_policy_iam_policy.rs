@@ -286,7 +286,7 @@ pub mod data_policy_iam_policy {
         };
         let o = context.register_resource(request);
         DataPolicyIamPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             data_policy_id: o.get_field("dataPolicyId"),
             etag: o.get_field("etag"),

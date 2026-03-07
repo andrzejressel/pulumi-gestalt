@@ -123,7 +123,7 @@ pub mod flexible_server_database {
         };
         let o = context.register_resource(request);
         FlexibleServerDatabaseResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             charset: o.get_field("charset"),
             collation: o.get_field("collation"),

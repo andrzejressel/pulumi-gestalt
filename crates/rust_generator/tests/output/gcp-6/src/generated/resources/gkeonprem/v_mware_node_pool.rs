@@ -322,7 +322,7 @@ pub mod v_mware_node_pool {
         };
         let o = context.register_resource(request);
         VMwareNodePoolResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             annotations: o.get_field("annotations"),
             config: o.get_field("config"),

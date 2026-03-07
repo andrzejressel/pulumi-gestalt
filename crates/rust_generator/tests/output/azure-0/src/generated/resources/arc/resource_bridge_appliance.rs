@@ -159,7 +159,7 @@ pub mod resource_bridge_appliance {
         };
         let o = context.register_resource(request);
         ResourceBridgeApplianceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             distro: o.get_field("distro"),
             identity: o.get_field("identity"),

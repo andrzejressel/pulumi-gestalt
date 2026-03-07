@@ -200,7 +200,7 @@ pub mod table_export {
         };
         let o = context.register_resource(request);
         TableExportResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             billed_size_in_bytes: o.get_field("billedSizeInBytes"),

@@ -118,7 +118,7 @@ pub mod data_connector_iot {
         };
         let o = context.register_resource(request);
         DataConnectorIotResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             log_analytics_workspace_id: o.get_field("logAnalyticsWorkspaceId"),
             name: o.get_field("name"),

@@ -298,7 +298,7 @@ pub mod frontdoor {
         };
         let o = context.register_resource(request);
         FrontdoorResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             backend_pool_health_probes: o.get_field("backendPoolHealthProbes"),
             backend_pool_health_probes_map: o.get_field("backendPoolHealthProbesMap"),

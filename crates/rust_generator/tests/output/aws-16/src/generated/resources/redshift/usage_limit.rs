@@ -143,7 +143,7 @@ pub mod usage_limit {
         };
         let o = context.register_resource(request);
         UsageLimitResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             amount: o.get_field("amount"),
             arn: o.get_field("arn"),

@@ -104,7 +104,7 @@ pub mod local_gateway_route {
         };
         let o = context.register_resource(request);
         LocalGatewayRouteResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             destination_cidr_block: o.get_field("destinationCidrBlock"),
             local_gateway_route_table_id: o.get_field("localGatewayRouteTableId"),

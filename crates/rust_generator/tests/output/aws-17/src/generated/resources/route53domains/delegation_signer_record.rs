@@ -168,7 +168,7 @@ pub mod delegation_signer_record {
         };
         let o = context.register_resource(request);
         DelegationSignerRecordResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             dnssec_key_id: o.get_field("dnssecKeyId"),
             domain_name: o.get_field("domainName"),

@@ -132,7 +132,7 @@ pub mod linked_storage_account {
         };
         let o = context.register_resource(request);
         LinkedStorageAccountResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             data_source_type: o.get_field("dataSourceType"),
             resource_group_name: o.get_field("resourceGroupName"),

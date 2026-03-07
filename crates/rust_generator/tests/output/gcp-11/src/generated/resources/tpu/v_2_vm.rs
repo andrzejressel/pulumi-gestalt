@@ -455,7 +455,7 @@ pub mod v_2_vm {
         };
         let o = context.register_resource(request);
         V2VmResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             accelerator_config: o.get_field("acceleratorConfig"),
             accelerator_type: o.get_field("acceleratorType"),

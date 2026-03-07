@@ -120,7 +120,7 @@ pub mod data_connector_aws_cloud_trail {
         };
         let o = context.register_resource(request);
         DataConnectorAwsCloudTrailResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             aws_role_arn: o.get_field("awsRoleArn"),
             log_analytics_workspace_id: o.get_field("logAnalyticsWorkspaceId"),

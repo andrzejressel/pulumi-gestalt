@@ -217,7 +217,7 @@ pub mod reservation {
         };
         let o = context.register_resource(request);
         ReservationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             commitment: o.get_field("commitment"),
             creation_timestamp: o.get_field("creationTimestamp"),

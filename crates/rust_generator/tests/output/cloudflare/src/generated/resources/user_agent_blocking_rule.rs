@@ -137,7 +137,7 @@ pub mod user_agent_blocking_rule {
         };
         let o = context.register_resource(request);
         UserAgentBlockingRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             configuration: o.get_field("configuration"),
             description: o.get_field("description"),

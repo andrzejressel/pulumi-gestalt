@@ -89,7 +89,7 @@ pub mod random_bytes {
         };
         let o = context.register_resource(request);
         RandomBytesResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             base64: o.get_field("base64"),
             hex: o.get_field("hex"),

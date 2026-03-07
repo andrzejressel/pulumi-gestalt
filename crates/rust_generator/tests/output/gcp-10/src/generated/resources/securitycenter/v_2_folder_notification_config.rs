@@ -184,7 +184,7 @@ pub mod v_2_folder_notification_config {
         };
         let o = context.register_resource(request);
         V2FolderNotificationConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             config_id: o.get_field("configId"),
             description: o.get_field("description"),

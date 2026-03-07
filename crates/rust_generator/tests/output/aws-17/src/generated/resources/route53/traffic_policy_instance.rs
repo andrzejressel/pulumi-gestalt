@@ -116,7 +116,7 @@ pub mod traffic_policy_instance {
         };
         let o = context.register_resource(request);
         TrafficPolicyInstanceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             hosted_zone_id: o.get_field("hostedZoneId"),
             name: o.get_field("name"),

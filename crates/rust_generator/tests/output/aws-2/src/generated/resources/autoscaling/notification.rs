@@ -109,7 +109,7 @@ pub mod notification {
         };
         let o = context.register_resource(request);
         NotificationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             group_names: o.get_field("groupNames"),
             notifications: o.get_field("notifications"),

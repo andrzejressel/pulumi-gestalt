@@ -116,7 +116,7 @@ pub mod monitoring_schedule {
         };
         let o = context.register_resource(request);
         MonitoringScheduleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             monitoring_schedule_config: o.get_field("monitoringScheduleConfig"),

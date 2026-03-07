@@ -125,7 +125,7 @@ pub mod access_connector {
         };
         let o = context.register_resource(request);
         AccessConnectorResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             identity: o.get_field("identity"),
             location: o.get_field("location"),

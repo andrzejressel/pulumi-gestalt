@@ -229,7 +229,7 @@ pub mod engine_model {
         };
         let o = context.register_resource(request);
         EngineModelResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             default_version: o.get_field("defaultVersion"),
             description: o.get_field("description"),

@@ -112,7 +112,7 @@ pub mod application_assignment {
         };
         let o = context.register_resource(request);
         ApplicationAssignmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             application_arn: o.get_field("applicationArn"),
             principal_id: o.get_field("principalId"),

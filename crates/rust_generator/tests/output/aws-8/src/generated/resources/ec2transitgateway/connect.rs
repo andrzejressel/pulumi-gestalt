@@ -153,7 +153,7 @@ pub mod connect {
         };
         let o = context.register_resource(request);
         ConnectResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             protocol: o.get_field("protocol"),
             tags: o.get_field("tags"),

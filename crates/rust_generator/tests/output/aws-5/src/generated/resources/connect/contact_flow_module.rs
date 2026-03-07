@@ -209,7 +209,7 @@ pub mod contact_flow_module {
         };
         let o = context.register_resource(request);
         ContactFlowModuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             contact_flow_module_id: o.get_field("contactFlowModuleId"),

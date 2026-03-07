@@ -856,7 +856,7 @@ pub mod windows_virtual_machine {
         };
         let o = context.register_resource(request);
         WindowsVirtualMachineResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             additional_capabilities: o.get_field("additionalCapabilities"),
             additional_unattend_contents: o.get_field("additionalUnattendContents"),

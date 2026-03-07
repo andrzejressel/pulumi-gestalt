@@ -191,7 +191,7 @@ pub mod stream_input_iot_hub {
         };
         let o = context.register_resource(request);
         StreamInputIotHubResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             endpoint: o.get_field("endpoint"),
             eventhub_consumer_group_name: o.get_field("eventhubConsumerGroupName"),

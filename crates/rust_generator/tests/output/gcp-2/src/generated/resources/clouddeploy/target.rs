@@ -374,7 +374,7 @@ pub mod target {
         };
         let o = context.register_resource(request);
         TargetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             annotations: o.get_field("annotations"),
             anthos_cluster: o.get_field("anthosCluster"),

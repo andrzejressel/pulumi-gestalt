@@ -188,7 +188,7 @@ pub mod workload_identity_pool {
         };
         let o = context.register_resource(request);
         WorkloadIdentityPoolResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             description: o.get_field("description"),
             disabled: o.get_field("disabled"),

@@ -92,7 +92,7 @@ pub mod lb_certificate_attachment {
         };
         let o = context.register_resource(request);
         LbCertificateAttachmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             certificate_name: o.get_field("certificateName"),
             lb_name: o.get_field("lbName"),

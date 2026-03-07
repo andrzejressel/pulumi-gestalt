@@ -1570,7 +1570,7 @@ pub mod forwarding_rule {
         };
         let o = context.register_resource(request);
         ForwardingRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             all_ports: o.get_field("allPorts"),
             allow_global_access: o.get_field("allowGlobalAccess"),

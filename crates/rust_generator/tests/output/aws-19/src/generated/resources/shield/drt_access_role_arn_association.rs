@@ -100,7 +100,7 @@ pub mod drt_access_role_arn_association {
         };
         let o = context.register_resource(request);
         DrtAccessRoleArnAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             role_arn: o.get_field("roleArn"),
             timeouts: o.get_field("timeouts"),

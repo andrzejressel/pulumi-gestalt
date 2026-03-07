@@ -105,7 +105,7 @@ pub mod automanage_configuration_assignment {
         };
         let o = context.register_resource(request);
         AutomanageConfigurationAssignmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arc_machine_id: o.get_field("arcMachineId"),
             configuration_id: o.get_field("configurationId"),

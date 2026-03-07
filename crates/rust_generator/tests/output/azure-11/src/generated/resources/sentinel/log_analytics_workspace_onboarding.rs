@@ -111,7 +111,7 @@ pub mod log_analytics_workspace_onboarding {
         };
         let o = context.register_resource(request);
         LogAnalyticsWorkspaceOnboardingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             customer_managed_key_enabled: o.get_field("customerManagedKeyEnabled"),
             workspace_id: o.get_field("workspaceId"),

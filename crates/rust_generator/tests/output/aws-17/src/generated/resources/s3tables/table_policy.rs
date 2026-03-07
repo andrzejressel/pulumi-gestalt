@@ -135,7 +135,7 @@ pub mod table_policy {
         };
         let o = context.register_resource(request);
         TablePolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             name: o.get_field("name"),
             namespace: o.get_field("namespace"),

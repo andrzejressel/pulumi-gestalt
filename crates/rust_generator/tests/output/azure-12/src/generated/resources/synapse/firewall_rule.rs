@@ -141,7 +141,7 @@ pub mod firewall_rule {
         };
         let o = context.register_resource(request);
         FirewallRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             end_ip_address: o.get_field("endIpAddress"),
             name: o.get_field("name"),

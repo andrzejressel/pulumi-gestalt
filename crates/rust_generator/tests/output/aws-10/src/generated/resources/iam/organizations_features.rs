@@ -79,7 +79,7 @@ pub mod organizations_features {
         };
         let o = context.register_resource(request);
         OrganizationsFeaturesResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             enabled_features: o.get_field("enabledFeatures"),
         }

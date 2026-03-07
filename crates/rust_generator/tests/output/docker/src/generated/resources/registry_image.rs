@@ -110,7 +110,7 @@ pub mod registry_image {
         };
         let o = context.register_resource(request);
         RegistryImageResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             insecure_skip_verify: o.get_field("insecureSkipVerify"),
             keep_remotely: o.get_field("keepRemotely"),

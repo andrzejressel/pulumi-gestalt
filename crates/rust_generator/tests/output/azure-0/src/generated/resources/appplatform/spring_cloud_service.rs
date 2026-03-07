@@ -323,7 +323,7 @@ pub mod spring_cloud_service {
         };
         let o = context.register_resource(request);
         SpringCloudServiceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             build_agent_pool_size: o.get_field("buildAgentPoolSize"),
             config_server_git_setting: o.get_field("configServerGitSetting"),

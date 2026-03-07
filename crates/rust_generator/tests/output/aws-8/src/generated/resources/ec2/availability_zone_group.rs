@@ -83,7 +83,7 @@ pub mod availability_zone_group {
         };
         let o = context.register_resource(request);
         AvailabilityZoneGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             group_name: o.get_field("groupName"),
             opt_in_status: o.get_field("optInStatus"),

@@ -93,7 +93,7 @@ pub mod egress_only_internet_gateway {
         };
         let o = context.register_resource(request);
         EgressOnlyInternetGatewayResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             tags: o.get_field("tags"),
             tags_all: o.get_field("tagsAll"),

@@ -611,7 +611,7 @@ pub mod instance {
         };
         let o = context.register_resource(request);
         InstanceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             accelerators: o.get_field("accelerators"),
             api_endpoint: o.get_field("apiEndpoint"),

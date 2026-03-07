@@ -126,7 +126,7 @@ pub mod appregistry_application {
         };
         let o = context.register_resource(request);
         AppregistryApplicationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             application_tag: o.get_field("applicationTag"),
             arn: o.get_field("arn"),

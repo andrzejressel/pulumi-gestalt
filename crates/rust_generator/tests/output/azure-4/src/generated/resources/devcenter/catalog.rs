@@ -83,7 +83,7 @@ pub mod catalog {
         };
         let o = context.register_resource(request);
         CatalogResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             catalog_adogit: o.get_field("catalogAdogit"),
             catalog_github: o.get_field("catalogGithub"),

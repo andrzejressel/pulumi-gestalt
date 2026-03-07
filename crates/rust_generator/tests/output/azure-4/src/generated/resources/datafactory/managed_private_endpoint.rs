@@ -146,7 +146,7 @@ pub mod managed_private_endpoint {
         };
         let o = context.register_resource(request);
         ManagedPrivateEndpointResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             data_factory_id: o.get_field("dataFactoryId"),
             fqdns: o.get_field("fqdns"),

@@ -127,7 +127,7 @@ pub mod zone_lockdown {
         };
         let o = context.register_resource(request);
         ZoneLockdownResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             configurations: o.get_field("configurations"),
             description: o.get_field("description"),

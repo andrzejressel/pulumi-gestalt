@@ -492,7 +492,7 @@ pub mod subnetwork_iam_member {
         };
         let o = context.register_resource(request);
         SubnetworkIAMMemberResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             condition: o.get_field("condition"),
             etag: o.get_field("etag"),

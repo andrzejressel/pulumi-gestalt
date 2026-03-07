@@ -168,7 +168,7 @@ pub mod saved_search {
         };
         let o = context.register_resource(request);
         SavedSearchResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             category: o.get_field("category"),
             display_name: o.get_field("displayName"),

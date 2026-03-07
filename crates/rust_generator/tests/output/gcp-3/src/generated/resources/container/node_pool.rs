@@ -434,7 +434,7 @@ pub mod node_pool {
         };
         let o = context.register_resource(request);
         NodePoolResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             autoscaling: o.get_field("autoscaling"),
             cluster: o.get_field("cluster"),

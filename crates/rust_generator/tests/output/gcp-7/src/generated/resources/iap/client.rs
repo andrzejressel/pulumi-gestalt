@@ -147,7 +147,7 @@ pub mod client {
         };
         let o = context.register_resource(request);
         ClientResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             brand: o.get_field("brand"),
             client_id: o.get_field("clientId"),

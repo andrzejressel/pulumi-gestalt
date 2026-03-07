@@ -71,7 +71,7 @@ pub mod account_suppression_attributes {
         };
         let o = context.register_resource(request);
         AccountSuppressionAttributesResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             suppressed_reasons: o.get_field("suppressedReasons"),
         }

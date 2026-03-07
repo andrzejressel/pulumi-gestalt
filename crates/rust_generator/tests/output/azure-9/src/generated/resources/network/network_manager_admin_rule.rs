@@ -244,7 +244,7 @@ pub mod network_manager_admin_rule {
         };
         let o = context.register_resource(request);
         NetworkManagerAdminRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             action: o.get_field("action"),
             admin_rule_collection_id: o.get_field("adminRuleCollectionId"),

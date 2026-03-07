@@ -222,7 +222,7 @@ pub mod router_interface {
         };
         let o = context.register_resource(request);
         RouterInterfaceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             interconnect_attachment: o.get_field("interconnectAttachment"),
             ip_range: o.get_field("ipRange"),

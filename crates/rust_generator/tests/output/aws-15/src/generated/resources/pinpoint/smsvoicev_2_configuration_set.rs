@@ -113,7 +113,7 @@ pub mod smsvoicev_2_configuration_set {
         };
         let o = context.register_resource(request);
         Smsvoicev2ConfigurationSetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             default_message_type: o.get_field("defaultMessageType"),

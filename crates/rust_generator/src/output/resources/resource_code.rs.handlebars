@@ -106,7 +106,7 @@ fn __create(
 
     let o = context.register_resource(request);
     {{resource.struct_name}}Result {
-        id: o.get_field("id"),
+        id: o.get_id(),
         urn: o.get_urn(),
     {{#each resource.output_properties}}
         {{arg_name}}: o.get_field("{{name}}"),

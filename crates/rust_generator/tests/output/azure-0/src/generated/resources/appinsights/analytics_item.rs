@@ -153,7 +153,7 @@ pub mod analytics_item {
         };
         let o = context.register_resource(request);
         AnalyticsItemResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             application_insights_id: o.get_field("applicationInsightsId"),
             content: o.get_field("content"),

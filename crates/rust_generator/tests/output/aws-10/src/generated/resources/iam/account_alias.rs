@@ -70,7 +70,7 @@ pub mod account_alias {
         };
         let o = context.register_resource(request);
         AccountAliasResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_alias: o.get_field("accountAlias"),
         }

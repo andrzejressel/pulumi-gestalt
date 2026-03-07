@@ -205,7 +205,7 @@ pub mod frontdoor_custom_domain {
         };
         let o = context.register_resource(request);
         FrontdoorCustomDomainResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cdn_frontdoor_profile_id: o.get_field("cdnFrontdoorProfileId"),
             dns_zone_id: o.get_field("dnsZoneId"),

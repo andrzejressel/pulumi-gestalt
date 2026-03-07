@@ -152,7 +152,7 @@ pub mod reserved_cache_node {
         };
         let o = context.register_resource(request);
         ReservedCacheNodeResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             cache_node_count: o.get_field("cacheNodeCount"),

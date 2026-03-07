@@ -143,7 +143,7 @@ pub mod txt_record {
         };
         let o = context.register_resource(request);
         TxtRecordResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             fqdn: o.get_field("fqdn"),
             name: o.get_field("name"),

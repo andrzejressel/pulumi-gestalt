@@ -230,7 +230,7 @@ pub mod implicit_data_disk_from_source {
         };
         let o = context.register_resource(request);
         ImplicitDataDiskFromSourceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             caching: o.get_field("caching"),
             create_option: o.get_field("createOption"),

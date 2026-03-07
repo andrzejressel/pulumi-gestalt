@@ -303,7 +303,7 @@ pub mod resource_deployment_script_power_shell {
         };
         let o = context.register_resource(request);
         ResourceDeploymentScriptPowerShellResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cleanup_preference: o.get_field("cleanupPreference"),
             command_line: o.get_field("commandLine"),

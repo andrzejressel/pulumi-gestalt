@@ -632,7 +632,7 @@ pub mod subnetwork {
         };
         let o = context.register_resource(request);
         SubnetworkResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allow_subnet_cidr_routes_overlap: o
                 .get_field("allowSubnetCidrRoutesOverlap"),

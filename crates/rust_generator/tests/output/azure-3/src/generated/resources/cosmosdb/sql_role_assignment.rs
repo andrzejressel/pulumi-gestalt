@@ -158,7 +158,7 @@ pub mod sql_role_assignment {
         };
         let o = context.register_resource(request);
         SqlRoleAssignmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_name: o.get_field("accountName"),
             name: o.get_field("name"),

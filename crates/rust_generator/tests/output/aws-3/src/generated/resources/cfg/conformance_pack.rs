@@ -180,7 +180,7 @@ pub mod conformance_pack {
         };
         let o = context.register_resource(request);
         ConformancePackResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             delivery_s3_bucket: o.get_field("deliveryS3Bucket"),

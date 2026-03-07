@@ -203,7 +203,7 @@ pub mod attestor {
         };
         let o = context.register_resource(request);
         AttestorResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             attestation_authority_note: o.get_field("attestationAuthorityNote"),
             description: o.get_field("description"),

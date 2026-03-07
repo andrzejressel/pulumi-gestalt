@@ -176,7 +176,7 @@ pub mod dataset_data_lake_gen_2 {
         };
         let o = context.register_resource(request);
         DatasetDataLakeGen2Result {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             display_name: o.get_field("displayName"),
             file_path: o.get_field("filePath"),

@@ -109,7 +109,7 @@ pub mod request_validator {
         };
         let o = context.register_resource(request);
         RequestValidatorResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             name: o.get_field("name"),
             rest_api: o.get_field("restApi"),

@@ -260,7 +260,7 @@ pub mod cassandra_datacenter {
         };
         let o = context.register_resource(request);
         CassandraDatacenterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             availability_zones_enabled: o.get_field("availabilityZonesEnabled"),
             backup_storage_customer_key_uri: o.get_field("backupStorageCustomerKeyUri"),

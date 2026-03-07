@@ -181,7 +181,7 @@ pub mod resource_group_cost_management_export {
         };
         let o = context.register_resource(request);
         ResourceGroupCostManagementExportResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             active: o.get_field("active"),
             export_data_options: o.get_field("exportDataOptions"),

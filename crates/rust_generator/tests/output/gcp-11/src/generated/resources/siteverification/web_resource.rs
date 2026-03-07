@@ -142,7 +142,7 @@ pub mod web_resource {
         };
         let o = context.register_resource(request);
         WebResourceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             owners: o.get_field("owners"),
             site: o.get_field("site"),

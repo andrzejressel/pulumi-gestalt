@@ -333,7 +333,7 @@ pub mod server_extended_auditing_policy {
         };
         let o = context.register_resource(request);
         ServerExtendedAuditingPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             audit_actions_and_groups: o.get_field("auditActionsAndGroups"),
             enabled: o.get_field("enabled"),

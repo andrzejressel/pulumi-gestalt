@@ -174,7 +174,7 @@ pub mod public_ip_prefix {
         };
         let o = context.register_resource(request);
         PublicIpPrefixResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             ip_prefix: o.get_field("ipPrefix"),
             ip_version: o.get_field("ipVersion"),

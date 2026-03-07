@@ -317,7 +317,7 @@ pub mod intent {
         };
         let o = context.register_resource(request);
         IntentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             checksum: o.get_field("checksum"),

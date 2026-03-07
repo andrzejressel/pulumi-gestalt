@@ -187,7 +187,7 @@ pub mod generic_service {
         };
         let o = context.register_resource(request);
         GenericServiceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             basic_service: o.get_field("basicService"),
             display_name: o.get_field("displayName"),

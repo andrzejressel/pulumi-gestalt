@@ -188,7 +188,7 @@ pub mod peering_connection_options {
         };
         let o = context.register_resource(request);
         PeeringConnectionOptionsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             accepter: o.get_field("accepter"),
             requester: o.get_field("requester"),

@@ -68,7 +68,7 @@ pub mod static_ip {
         };
         let o = context.register_resource(request);
         StaticIpResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             ip_address: o.get_field("ipAddress"),

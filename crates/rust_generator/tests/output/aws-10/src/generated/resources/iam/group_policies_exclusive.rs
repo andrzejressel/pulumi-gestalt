@@ -64,7 +64,7 @@ pub mod group_policies_exclusive {
         };
         let o = context.register_resource(request);
         GroupPoliciesExclusiveResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             group_name: o.get_field("groupName"),
             policy_names: o.get_field("policyNames"),

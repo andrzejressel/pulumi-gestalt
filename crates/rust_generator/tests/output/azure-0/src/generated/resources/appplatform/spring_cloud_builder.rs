@@ -143,7 +143,7 @@ pub mod spring_cloud_builder {
         };
         let o = context.register_resource(request);
         SpringCloudBuilderResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             build_pack_groups: o.get_field("buildPackGroups"),
             name: o.get_field("name"),

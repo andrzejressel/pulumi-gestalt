@@ -165,7 +165,7 @@ pub mod instance_group_membership {
         };
         let o = context.register_resource(request);
         InstanceGroupMembershipResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             instance: o.get_field("instance"),
             instance_group: o.get_field("instanceGroup"),

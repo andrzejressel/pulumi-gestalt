@@ -314,7 +314,7 @@ pub mod cache {
         };
         let o = context.register_resource(request);
         CacheResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             automatically_rotate_key_to_latest_enabled: o
                 .get_field("automaticallyRotateKeyToLatestEnabled"),

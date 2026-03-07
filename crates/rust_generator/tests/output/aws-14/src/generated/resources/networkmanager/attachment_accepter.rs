@@ -110,7 +110,7 @@ pub mod attachment_accepter {
         };
         let o = context.register_resource(request);
         AttachmentAccepterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             attachment_id: o.get_field("attachmentId"),
             attachment_policy_rule_number: o.get_field("attachmentPolicyRuleNumber"),

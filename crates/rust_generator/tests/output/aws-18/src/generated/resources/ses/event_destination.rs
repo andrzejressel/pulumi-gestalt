@@ -213,7 +213,7 @@ pub mod event_destination {
         };
         let o = context.register_resource(request);
         EventDestinationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             cloudwatch_destinations: o.get_field("cloudwatchDestinations"),

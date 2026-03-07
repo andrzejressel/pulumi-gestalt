@@ -112,7 +112,7 @@ pub mod custom_pages {
         };
         let o = context.register_resource(request);
         CustomPagesResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             state: o.get_field("state"),

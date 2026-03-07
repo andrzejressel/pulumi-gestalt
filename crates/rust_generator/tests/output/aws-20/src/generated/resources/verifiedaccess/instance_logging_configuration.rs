@@ -236,7 +236,7 @@ pub mod instance_logging_configuration {
         };
         let o = context.register_resource(request);
         InstanceLoggingConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_logs: o.get_field("accessLogs"),
             verifiedaccess_instance_id: o.get_field("verifiedaccessInstanceId"),

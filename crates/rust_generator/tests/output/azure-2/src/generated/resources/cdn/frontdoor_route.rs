@@ -368,7 +368,7 @@ pub mod frontdoor_route {
         };
         let o = context.register_resource(request);
         FrontdoorRouteResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cache: o.get_field("cache"),
             cdn_frontdoor_custom_domain_ids: o.get_field("cdnFrontdoorCustomDomainIds"),

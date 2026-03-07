@@ -267,7 +267,7 @@ pub mod fhir_service {
         };
         let o = context.register_resource(request);
         FhirServiceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_policy_object_ids: o.get_field("accessPolicyObjectIds"),
             authentication: o.get_field("authentication"),

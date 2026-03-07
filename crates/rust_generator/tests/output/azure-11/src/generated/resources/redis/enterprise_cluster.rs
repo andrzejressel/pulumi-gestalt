@@ -147,7 +147,7 @@ pub mod enterprise_cluster {
         };
         let o = context.register_resource(request);
         EnterpriseClusterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             hostname: o.get_field("hostname"),
             location: o.get_field("location"),

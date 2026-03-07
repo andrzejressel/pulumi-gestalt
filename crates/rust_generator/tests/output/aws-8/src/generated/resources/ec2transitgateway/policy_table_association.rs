@@ -94,7 +94,7 @@ pub mod policy_table_association {
         };
         let o = context.register_resource(request);
         PolicyTableAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             resource_id: o.get_field("resourceId"),
             resource_type: o.get_field("resourceType"),

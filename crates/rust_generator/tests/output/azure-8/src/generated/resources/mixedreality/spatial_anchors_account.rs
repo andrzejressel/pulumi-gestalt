@@ -119,7 +119,7 @@ pub mod spatial_anchors_account {
         };
         let o = context.register_resource(request);
         SpatialAnchorsAccountResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_domain: o.get_field("accountDomain"),
             account_id: o.get_field("accountId"),

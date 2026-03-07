@@ -175,7 +175,7 @@ pub mod firewall_endpoint {
         };
         let o = context.register_resource(request);
         FirewallEndpointResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             associated_networks: o.get_field("associatedNetworks"),
             billing_project_id: o.get_field("billingProjectId"),

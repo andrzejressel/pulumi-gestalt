@@ -346,7 +346,7 @@ pub mod integration_runtime_ssis {
         };
         let o = context.register_resource(request);
         IntegrationRuntimeSsisResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             catalog_info: o.get_field("catalogInfo"),
             copy_compute_scale: o.get_field("copyComputeScale"),

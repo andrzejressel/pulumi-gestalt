@@ -121,7 +121,7 @@ pub mod sql_dedicated_gateway {
         };
         let o = context.register_resource(request);
         SqlDedicatedGatewayResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cosmosdb_account_id: o.get_field("cosmosdbAccountId"),
             instance_count: o.get_field("instanceCount"),

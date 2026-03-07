@@ -205,7 +205,7 @@ pub mod report_definition {
         };
         let o = context.register_resource(request);
         ReportDefinitionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             additional_artifacts: o.get_field("additionalArtifacts"),
             additional_schema_elements: o.get_field("additionalSchemaElements"),

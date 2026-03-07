@@ -187,7 +187,7 @@ pub mod query_pack_query {
         };
         let o = context.register_resource(request);
         QueryPackQueryResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             additional_settings_json: o.get_field("additionalSettingsJson"),
             body: o.get_field("body"),

@@ -110,7 +110,7 @@ pub mod vpc_ipam_preview_next_cidr {
         };
         let o = context.register_resource(request);
         VpcIpamPreviewNextCidrResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cidr: o.get_field("cidr"),
             disallowed_cidrs: o.get_field("disallowedCidrs"),

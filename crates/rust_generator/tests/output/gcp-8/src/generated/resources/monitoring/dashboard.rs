@@ -125,7 +125,7 @@ pub mod dashboard {
         };
         let o = context.register_resource(request);
         DashboardResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             dashboard_json: o.get_field("dashboardJson"),
             project: o.get_field("project"),

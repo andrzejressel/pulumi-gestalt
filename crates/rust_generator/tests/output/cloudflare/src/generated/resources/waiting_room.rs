@@ -283,7 +283,7 @@ pub mod waiting_room {
         };
         let o = context.register_resource(request);
         WaitingRoomResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             additional_routes: o.get_field("additionalRoutes"),
             cookie_suffix: o.get_field("cookieSuffix"),

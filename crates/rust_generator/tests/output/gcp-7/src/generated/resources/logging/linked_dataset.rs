@@ -200,7 +200,7 @@ pub mod linked_dataset {
         };
         let o = context.register_resource(request);
         LinkedDatasetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bigquery_datasets: o.get_field("bigqueryDatasets"),
             bucket: o.get_field("bucket"),

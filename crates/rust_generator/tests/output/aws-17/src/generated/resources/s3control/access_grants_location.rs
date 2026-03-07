@@ -120,7 +120,7 @@ pub mod access_grants_location {
         };
         let o = context.register_resource(request);
         AccessGrantsLocationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_grants_location_arn: o.get_field("accessGrantsLocationArn"),
             access_grants_location_id: o.get_field("accessGrantsLocationId"),

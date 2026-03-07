@@ -622,7 +622,7 @@ pub mod connection_profile {
         };
         let o = context.register_resource(request);
         ConnectionProfileResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             alloydb: o.get_field("alloydb"),
             cloudsql: o.get_field("cloudsql"),

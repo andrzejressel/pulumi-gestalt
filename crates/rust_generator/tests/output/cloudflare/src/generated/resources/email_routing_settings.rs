@@ -88,7 +88,7 @@ pub mod email_routing_settings {
         };
         let o = context.register_resource(request);
         EmailRoutingSettingsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             created: o.get_field("created"),
             enabled: o.get_field("enabled"),

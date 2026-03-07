@@ -111,7 +111,7 @@ pub mod iam_member_remove {
         };
         let o = context.register_resource(request);
         IamMemberRemoveResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             member: o.get_field("member"),
             project: o.get_field("project"),

@@ -86,7 +86,7 @@ pub mod resolver_query_log_config_association {
         };
         let o = context.register_resource(request);
         ResolverQueryLogConfigAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             resolver_query_log_config_id: o.get_field("resolverQueryLogConfigId"),
             resource_id: o.get_field("resourceId"),

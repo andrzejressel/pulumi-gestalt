@@ -517,7 +517,7 @@ pub mod batch {
         };
         let o = context.register_resource(request);
         BatchResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             batch_id: o.get_field("batchId"),
             create_time: o.get_field("createTime"),

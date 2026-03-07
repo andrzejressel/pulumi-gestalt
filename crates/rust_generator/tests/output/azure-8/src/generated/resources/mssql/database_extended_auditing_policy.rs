@@ -193,7 +193,7 @@ pub mod database_extended_auditing_policy {
         };
         let o = context.register_resource(request);
         DatabaseExtendedAuditingPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             database_id: o.get_field("databaseId"),
             enabled: o.get_field("enabled"),

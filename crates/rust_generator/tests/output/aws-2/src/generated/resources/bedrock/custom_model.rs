@@ -251,7 +251,7 @@ pub mod custom_model {
         };
         let o = context.register_resource(request);
         CustomModelResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             base_model_identifier: o.get_field("baseModelIdentifier"),
             custom_model_arn: o.get_field("customModelArn"),

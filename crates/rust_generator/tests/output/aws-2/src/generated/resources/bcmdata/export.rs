@@ -118,7 +118,7 @@ pub mod export {
         };
         let o = context.register_resource(request);
         ExportResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             export: o.get_field("export"),
             tags: o.get_field("tags"),

@@ -220,7 +220,7 @@ pub mod endpoint {
         };
         let o = context.register_resource(request);
         EndpointResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             address: o.get_field("address"),
             endpoint_id: o.get_field("endpointId"),

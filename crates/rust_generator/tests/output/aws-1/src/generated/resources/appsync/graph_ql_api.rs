@@ -269,7 +269,7 @@ pub mod graph_ql_api {
         };
         let o = context.register_resource(request);
         GraphQLApiResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             additional_authentication_providers: o
                 .get_field("additionalAuthenticationProviders"),

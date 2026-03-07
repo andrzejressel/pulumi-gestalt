@@ -108,7 +108,7 @@ pub mod route_table_association {
         };
         let o = context.register_resource(request);
         RouteTableAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             replace_existing_association: o.get_field("replaceExistingAssociation"),
             resource_id: o.get_field("resourceId"),

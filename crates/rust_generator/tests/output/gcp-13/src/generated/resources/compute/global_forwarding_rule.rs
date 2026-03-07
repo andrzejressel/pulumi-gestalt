@@ -1010,7 +1010,7 @@ pub mod global_forwarding_rule {
         };
         let o = context.register_resource(request);
         GlobalForwardingRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allow_psc_global_access: o.get_field("allowPscGlobalAccess"),
             base_forwarding_rule: o.get_field("baseForwardingRule"),

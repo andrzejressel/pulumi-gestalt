@@ -104,7 +104,7 @@ pub mod resource_group {
         };
         let o = context.register_resource(request);
         ResourceGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             location: o.get_field("location"),
             managed_by: o.get_field("managedBy"),

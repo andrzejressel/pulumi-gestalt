@@ -52,7 +52,7 @@ pub mod virtual_network_appliance {
         };
         let o = context.register_resource(request);
         VirtualNetworkApplianceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             name: o.get_field("name"),
             virtual_hub_id: o.get_field("virtualHubId"),

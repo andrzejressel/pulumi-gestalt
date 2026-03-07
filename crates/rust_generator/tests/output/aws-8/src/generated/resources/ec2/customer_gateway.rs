@@ -140,7 +140,7 @@ pub mod customer_gateway {
         };
         let o = context.register_resource(request);
         CustomerGatewayResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             bgp_asn: o.get_field("bgpAsn"),

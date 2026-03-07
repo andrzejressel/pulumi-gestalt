@@ -174,7 +174,7 @@ pub mod composite_alarm {
         };
         let o = context.register_resource(request);
         CompositeAlarmResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             actions_enabled: o.get_field("actionsEnabled"),
             actions_suppressor: o.get_field("actionsSuppressor"),

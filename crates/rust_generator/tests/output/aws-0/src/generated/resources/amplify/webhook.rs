@@ -104,7 +104,7 @@ pub mod webhook {
         };
         let o = context.register_resource(request);
         WebhookResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             app_id: o.get_field("appId"),
             arn: o.get_field("arn"),

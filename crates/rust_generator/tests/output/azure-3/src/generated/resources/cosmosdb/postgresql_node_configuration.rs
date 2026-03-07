@@ -115,7 +115,7 @@ pub mod postgresql_node_configuration {
         };
         let o = context.register_resource(request);
         PostgresqlNodeConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cluster_id: o.get_field("clusterId"),
             name: o.get_field("name"),

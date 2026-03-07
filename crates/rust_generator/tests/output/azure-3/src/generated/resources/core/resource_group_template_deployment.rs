@@ -144,7 +144,7 @@ pub mod resource_group_template_deployment {
         };
         let o = context.register_resource(request);
         ResourceGroupTemplateDeploymentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             debug_level: o.get_field("debugLevel"),
             deployment_mode: o.get_field("deploymentMode"),

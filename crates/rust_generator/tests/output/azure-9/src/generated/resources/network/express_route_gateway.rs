@@ -161,7 +161,7 @@ pub mod express_route_gateway {
         };
         let o = context.register_resource(request);
         ExpressRouteGatewayResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allow_non_virtual_wan_traffic: o.get_field("allowNonVirtualWanTraffic"),
             location: o.get_field("location"),

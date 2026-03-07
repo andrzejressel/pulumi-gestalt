@@ -282,7 +282,7 @@ pub mod repository {
         };
         let o = context.register_resource(request);
         RepositoryResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             display_name: o.get_field("displayName"),
             effective_labels: o.get_field("effectiveLabels"),

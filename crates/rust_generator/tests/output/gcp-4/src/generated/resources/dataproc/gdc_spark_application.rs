@@ -502,7 +502,7 @@ pub mod gdc_spark_application {
         };
         let o = context.register_resource(request);
         GdcSparkApplicationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             annotations: o.get_field("annotations"),
             application_environment: o.get_field("applicationEnvironment"),

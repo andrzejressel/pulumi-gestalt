@@ -132,7 +132,7 @@ pub mod bucket_public_access_block {
         };
         let o = context.register_resource(request);
         BucketPublicAccessBlockResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             block_public_acls: o.get_field("blockPublicAcls"),
             block_public_policy: o.get_field("blockPublicPolicy"),

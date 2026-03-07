@@ -306,7 +306,7 @@ pub mod job {
         };
         let o = context.register_resource(request);
         JobResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             driver_controls_files_uri: o.get_field("driverControlsFilesUri"),
             driver_output_resource_uri: o.get_field("driverOutputResourceUri"),

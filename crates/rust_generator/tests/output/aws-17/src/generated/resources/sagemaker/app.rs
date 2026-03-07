@@ -149,7 +149,7 @@ pub mod app {
         };
         let o = context.register_resource(request);
         AppResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             app_name: o.get_field("appName"),
             app_type: o.get_field("appType"),

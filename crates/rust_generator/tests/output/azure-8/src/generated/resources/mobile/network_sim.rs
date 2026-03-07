@@ -245,7 +245,7 @@ pub mod network_sim {
         };
         let o = context.register_resource(request);
         NetworkSimResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             authentication_key: o.get_field("authenticationKey"),
             device_type: o.get_field("deviceType"),

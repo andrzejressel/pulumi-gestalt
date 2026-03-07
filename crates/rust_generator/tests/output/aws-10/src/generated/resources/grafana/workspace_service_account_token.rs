@@ -112,7 +112,7 @@ pub mod workspace_service_account_token {
         };
         let o = context.register_resource(request);
         WorkspaceServiceAccountTokenResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             created_at: o.get_field("createdAt"),
             expires_at: o.get_field("expiresAt"),

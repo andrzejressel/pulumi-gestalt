@@ -90,7 +90,7 @@ pub mod trigger {
         };
         let o = context.register_resource(request);
         TriggerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             configuration_id: o.get_field("configurationId"),
             repository_name: o.get_field("repositoryName"),

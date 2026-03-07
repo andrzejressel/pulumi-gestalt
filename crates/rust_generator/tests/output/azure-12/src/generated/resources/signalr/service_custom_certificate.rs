@@ -167,7 +167,7 @@ pub mod service_custom_certificate {
         };
         let o = context.register_resource(request);
         ServiceCustomCertificateResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             certificate_version: o.get_field("certificateVersion"),
             custom_certificate_id: o.get_field("customCertificateId"),

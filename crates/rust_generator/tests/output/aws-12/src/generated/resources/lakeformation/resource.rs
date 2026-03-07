@@ -120,7 +120,7 @@ pub mod resource {
         };
         let o = context.register_resource(request);
         ResourceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             hybrid_access_enabled: o.get_field("hybridAccessEnabled"),

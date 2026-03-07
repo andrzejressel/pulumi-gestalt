@@ -165,7 +165,7 @@ pub mod certificate_binding {
         };
         let o = context.register_resource(request);
         CertificateBindingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             app_service_name: o.get_field("appServiceName"),
             certificate_id: o.get_field("certificateId"),

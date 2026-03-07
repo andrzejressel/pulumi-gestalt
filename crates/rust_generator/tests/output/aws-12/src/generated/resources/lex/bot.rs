@@ -274,7 +274,7 @@ pub mod bot {
         };
         let o = context.register_resource(request);
         BotResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             abort_statement: o.get_field("abortStatement"),
             arn: o.get_field("arn"),

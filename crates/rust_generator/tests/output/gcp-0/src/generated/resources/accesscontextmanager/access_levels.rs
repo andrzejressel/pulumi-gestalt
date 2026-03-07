@@ -134,7 +134,7 @@ pub mod access_levels {
         };
         let o = context.register_resource(request);
         AccessLevelsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_levels: o.get_field("accessLevels"),
             parent: o.get_field("parent"),

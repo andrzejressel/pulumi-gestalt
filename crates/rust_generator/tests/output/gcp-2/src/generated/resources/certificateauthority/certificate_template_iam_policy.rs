@@ -417,7 +417,7 @@ pub mod certificate_template_iam_policy {
         };
         let o = context.register_resource(request);
         CertificateTemplateIamPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             certificate_template: o.get_field("certificateTemplate"),
             etag: o.get_field("etag"),

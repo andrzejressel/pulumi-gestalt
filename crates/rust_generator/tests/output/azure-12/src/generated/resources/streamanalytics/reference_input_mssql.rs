@@ -224,7 +224,7 @@ pub mod reference_input_mssql {
         };
         let o = context.register_resource(request);
         ReferenceInputMssqlResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             database: o.get_field("database"),
             delta_snapshot_query: o.get_field("deltaSnapshotQuery"),

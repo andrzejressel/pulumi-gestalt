@@ -154,7 +154,7 @@ pub mod policy_attachment {
         };
         let o = context.register_resource(request);
         PolicyAttachmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             groups: o.get_field("groups"),
             name: o.get_field("name"),

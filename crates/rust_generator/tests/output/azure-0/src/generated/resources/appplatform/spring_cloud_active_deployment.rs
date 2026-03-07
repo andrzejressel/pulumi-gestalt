@@ -113,7 +113,7 @@ pub mod spring_cloud_active_deployment {
         };
         let o = context.register_resource(request);
         SpringCloudActiveDeploymentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             deployment_name: o.get_field("deploymentName"),
             spring_cloud_app_id: o.get_field("springCloudAppId"),

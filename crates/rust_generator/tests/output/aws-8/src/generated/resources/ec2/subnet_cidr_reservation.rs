@@ -104,7 +104,7 @@ pub mod subnet_cidr_reservation {
         };
         let o = context.register_resource(request);
         SubnetCidrReservationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cidr_block: o.get_field("cidrBlock"),
             description: o.get_field("description"),

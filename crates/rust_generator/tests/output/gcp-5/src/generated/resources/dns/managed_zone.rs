@@ -511,7 +511,7 @@ pub mod managed_zone {
         };
         let o = context.register_resource(request);
         ManagedZoneResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cloud_logging_config: o.get_field("cloudLoggingConfig"),
             creation_time: o.get_field("creationTime"),

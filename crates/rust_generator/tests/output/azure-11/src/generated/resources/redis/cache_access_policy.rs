@@ -108,7 +108,7 @@ pub mod cache_access_policy {
         };
         let o = context.register_resource(request);
         CacheAccessPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             name: o.get_field("name"),
             permissions: o.get_field("permissions"),

@@ -195,7 +195,7 @@ pub mod active_role_assignment {
         };
         let o = context.register_resource(request);
         ActiveRoleAssignmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             justification: o.get_field("justification"),
             principal_id: o.get_field("principalId"),

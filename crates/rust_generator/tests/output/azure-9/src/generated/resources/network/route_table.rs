@@ -150,7 +150,7 @@ pub mod route_table {
         };
         let o = context.register_resource(request);
         RouteTableResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bgp_route_propagation_enabled: o.get_field("bgpRoutePropagationEnabled"),
             location: o.get_field("location"),

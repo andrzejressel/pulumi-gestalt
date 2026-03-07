@@ -68,7 +68,7 @@ pub mod snapshot_block_public_access {
         };
         let o = context.register_resource(request);
         SnapshotBlockPublicAccessResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             state: o.get_field("state"),
         }

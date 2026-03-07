@@ -462,7 +462,7 @@ pub mod web_type_app_enging_iam_member {
         };
         let o = context.register_resource(request);
         WebTypeAppEngingIamMemberResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             app_id: o.get_field("appId"),
             condition: o.get_field("condition"),

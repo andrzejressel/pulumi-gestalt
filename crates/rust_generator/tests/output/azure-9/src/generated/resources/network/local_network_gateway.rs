@@ -164,7 +164,7 @@ pub mod local_network_gateway {
         };
         let o = context.register_resource(request);
         LocalNetworkGatewayResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             address_spaces: o.get_field("addressSpaces"),
             bgp_settings: o.get_field("bgpSettings"),

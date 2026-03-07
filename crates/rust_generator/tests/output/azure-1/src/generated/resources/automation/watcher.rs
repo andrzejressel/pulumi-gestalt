@@ -214,7 +214,7 @@ pub mod watcher {
         };
         let o = context.register_resource(request);
         WatcherResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             automation_account_id: o.get_field("automationAccountId"),
             description: o.get_field("description"),

@@ -202,7 +202,7 @@ pub mod kubernetes_cluster_extension {
         };
         let o = context.register_resource(request);
         KubernetesClusterExtensionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             aks_assigned_identities: o.get_field("aksAssignedIdentities"),
             cluster_id: o.get_field("clusterId"),

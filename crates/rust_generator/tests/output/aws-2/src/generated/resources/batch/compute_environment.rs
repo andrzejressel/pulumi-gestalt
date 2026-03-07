@@ -334,7 +334,7 @@ pub mod compute_environment {
         };
         let o = context.register_resource(request);
         ComputeEnvironmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             compute_environment_name: o.get_field("computeEnvironmentName"),

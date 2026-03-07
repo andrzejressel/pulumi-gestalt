@@ -72,7 +72,7 @@ pub mod template_association {
         };
         let o = context.register_resource(request);
         TemplateAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             skip_destroy: o.get_field("skipDestroy"),
             status: o.get_field("status"),

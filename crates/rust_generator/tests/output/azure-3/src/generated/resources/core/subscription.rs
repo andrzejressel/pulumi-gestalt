@@ -197,7 +197,7 @@ pub mod subscription {
         };
         let o = context.register_resource(request);
         SubscriptionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             alias: o.get_field("alias"),
             billing_scope_id: o.get_field("billingScopeId"),

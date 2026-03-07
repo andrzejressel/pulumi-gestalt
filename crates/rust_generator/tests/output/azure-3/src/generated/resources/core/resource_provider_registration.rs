@@ -113,7 +113,7 @@ pub mod resource_provider_registration {
         };
         let o = context.register_resource(request);
         ResourceProviderRegistrationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             features: o.get_field("features"),
             name: o.get_field("name"),

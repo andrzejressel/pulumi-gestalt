@@ -214,7 +214,7 @@ pub mod smart_detector_alert_rule {
         };
         let o = context.register_resource(request);
         SmartDetectorAlertRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             action_group: o.get_field("actionGroup"),
             description: o.get_field("description"),

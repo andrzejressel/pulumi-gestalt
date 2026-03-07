@@ -286,7 +286,7 @@ pub mod external_access_rule {
         };
         let o = context.register_resource(request);
         ExternalAccessRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             action: o.get_field("action"),
             create_time: o.get_field("createTime"),

@@ -299,7 +299,7 @@ pub mod host_pool {
         };
         let o = context.register_resource(request);
         HostPoolResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             custom_rdp_properties: o.get_field("customRdpProperties"),
             description: o.get_field("description"),

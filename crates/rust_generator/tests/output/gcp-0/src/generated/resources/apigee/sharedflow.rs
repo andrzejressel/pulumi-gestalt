@@ -115,7 +115,7 @@ pub mod sharedflow {
         };
         let o = context.register_resource(request);
         SharedflowResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             config_bundle: o.get_field("configBundle"),
             detect_md5hash: o.get_field("detectMd5hash"),

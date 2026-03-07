@@ -206,7 +206,7 @@ pub mod spring_cloud_certificate {
         };
         let o = context.register_resource(request);
         SpringCloudCertificateResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             certificate_content: o.get_field("certificateContent"),
             exclude_private_key: o.get_field("excludePrivateKey"),

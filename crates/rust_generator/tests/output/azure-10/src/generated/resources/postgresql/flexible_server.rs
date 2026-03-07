@@ -495,7 +495,7 @@ pub mod flexible_server {
         };
         let o = context.register_resource(request);
         FlexibleServerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             administrator_login: o.get_field("administratorLogin"),
             administrator_password: o.get_field("administratorPassword"),

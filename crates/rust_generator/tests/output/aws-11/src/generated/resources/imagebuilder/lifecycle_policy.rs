@@ -202,7 +202,7 @@ pub mod lifecycle_policy {
         };
         let o = context.register_resource(request);
         LifecyclePolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             description: o.get_field("description"),

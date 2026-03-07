@@ -111,7 +111,7 @@ pub mod serverless_cluster {
         };
         let o = context.register_resource(request);
         ServerlessClusterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             client_authentication: o.get_field("clientAuthentication"),

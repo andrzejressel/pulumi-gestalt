@@ -134,7 +134,7 @@ pub mod ip_set {
         };
         let o = context.register_resource(request);
         IpSetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             addresses: o.get_field("addresses"),
             arn: o.get_field("arn"),

@@ -136,7 +136,7 @@ pub mod alert_rule_threat_intelligence {
         };
         let o = context.register_resource(request);
         AlertRuleThreatIntelligenceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             alert_rule_template_guid: o.get_field("alertRuleTemplateGuid"),
             enabled: o.get_field("enabled"),

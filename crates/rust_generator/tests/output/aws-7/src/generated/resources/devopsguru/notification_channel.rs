@@ -124,7 +124,7 @@ pub mod notification_channel {
         };
         let o = context.register_resource(request);
         NotificationChannelResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             filters: o.get_field("filters"),
             sns: o.get_field("sns"),

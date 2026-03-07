@@ -87,7 +87,7 @@ pub mod application_snapshot {
         };
         let o = context.register_resource(request);
         ApplicationSnapshotResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             application_name: o.get_field("applicationName"),
             application_version_id: o.get_field("applicationVersionId"),

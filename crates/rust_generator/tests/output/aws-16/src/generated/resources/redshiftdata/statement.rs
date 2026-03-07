@@ -179,7 +179,7 @@ pub mod statement {
         };
         let o = context.register_resource(request);
         StatementResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cluster_identifier: o.get_field("clusterIdentifier"),
             database: o.get_field("database"),

@@ -272,7 +272,7 @@ pub mod export_task {
         };
         let o = context.register_resource(request);
         ExportTaskResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             export_onlies: o.get_field("exportOnlies"),
             export_task_identifier: o.get_field("exportTaskIdentifier"),

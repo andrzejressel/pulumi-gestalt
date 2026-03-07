@@ -147,7 +147,7 @@ pub mod job_schedule {
         };
         let o = context.register_resource(request);
         JobScheduleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             automation_account_name: o.get_field("automationAccountName"),
             job_schedule_id: o.get_field("jobScheduleId"),

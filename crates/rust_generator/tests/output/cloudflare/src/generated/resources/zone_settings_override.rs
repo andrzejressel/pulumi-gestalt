@@ -124,7 +124,7 @@ pub mod zone_settings_override {
         };
         let o = context.register_resource(request);
         ZoneSettingsOverrideResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             initial_settings: o.get_field("initialSettings"),
             initial_settings_read_at: o.get_field("initialSettingsReadAt"),

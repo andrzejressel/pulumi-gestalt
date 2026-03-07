@@ -120,7 +120,7 @@ pub mod trust_store_revocation {
         };
         let o = context.register_resource(request);
         TrustStoreRevocationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             revocation_id: o.get_field("revocationId"),
             revocations_s3_bucket: o.get_field("revocationsS3Bucket"),

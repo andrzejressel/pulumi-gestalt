@@ -248,7 +248,7 @@ pub mod document {
         };
         let o = context.register_resource(request);
         DocumentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             collection: o.get_field("collection"),
             create_time: o.get_field("createTime"),

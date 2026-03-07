@@ -256,7 +256,7 @@ pub mod index {
         };
         let o = context.register_resource(request);
         IndexResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_scope: o.get_field("apiScope"),
             collection: o.get_field("collection"),

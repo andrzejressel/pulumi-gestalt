@@ -166,7 +166,7 @@ pub mod location_azure_blob {
         };
         let o = context.register_resource(request);
         LocationAzureBlobResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_tier: o.get_field("accessTier"),
             agent_arns: o.get_field("agentArns"),

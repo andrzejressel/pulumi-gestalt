@@ -212,7 +212,7 @@ pub mod authorized_orgs_desc {
         };
         let o = context.register_resource(request);
         AuthorizedOrgsDescResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             asset_type: o.get_field("assetType"),
             authorization_direction: o.get_field("authorizationDirection"),

@@ -105,7 +105,7 @@ pub mod vpc_endpoint_connection_accepter {
         };
         let o = context.register_resource(request);
         VpcEndpointConnectionAccepterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             vpc_endpoint_id: o.get_field("vpcEndpointId"),
             vpc_endpoint_service_id: o.get_field("vpcEndpointServiceId"),

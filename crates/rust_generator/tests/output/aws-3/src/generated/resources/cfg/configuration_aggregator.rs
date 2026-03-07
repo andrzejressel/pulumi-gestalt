@@ -183,7 +183,7 @@ pub mod configuration_aggregator {
         };
         let o = context.register_resource(request);
         ConfigurationAggregatorResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_aggregation_source: o.get_field("accountAggregationSource"),
             arn: o.get_field("arn"),

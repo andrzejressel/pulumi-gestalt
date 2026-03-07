@@ -141,7 +141,7 @@ pub mod function_url {
         };
         let o = context.register_resource(request);
         FunctionUrlResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             authorization_type: o.get_field("authorizationType"),
             cors: o.get_field("cors"),

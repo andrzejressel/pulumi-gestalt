@@ -181,7 +181,7 @@ pub mod account_cost_management_export {
         };
         let o = context.register_resource(request);
         AccountCostManagementExportResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             active: o.get_field("active"),
             billing_account_id: o.get_field("billingAccountId"),

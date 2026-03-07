@@ -152,7 +152,7 @@ pub mod channel_facebook {
         };
         let o = context.register_resource(request);
         ChannelFacebookResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bot_name: o.get_field("botName"),
             facebook_application_id: o.get_field("facebookApplicationId"),

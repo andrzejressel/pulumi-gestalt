@@ -271,7 +271,7 @@ pub mod configuration {
         };
         let o = context.register_resource(request);
         ConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             antimalware: o.get_field("antimalware"),
             automation_account_enabled: o.get_field("automationAccountEnabled"),

@@ -212,7 +212,7 @@ pub mod volume {
         };
         let o = context.register_resource(request);
         VolumeResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             create_source: o.get_field("createSource"),
             name: o.get_field("name"),

@@ -183,7 +183,7 @@ pub mod zone_cache_variants {
         };
         let o = context.register_resource(request);
         ZoneCacheVariantsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             avifs: o.get_field("avifs"),
             bmps: o.get_field("bmps"),

@@ -225,7 +225,7 @@ pub mod ssl_policy {
         };
         let o = context.register_resource(request);
         SSLPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             creation_timestamp: o.get_field("creationTimestamp"),
             custom_features: o.get_field("customFeatures"),

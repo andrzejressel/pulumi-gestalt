@@ -377,7 +377,7 @@ pub mod connection {
         };
         let o = context.register_resource(request);
         ConnectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             annotations: o.get_field("annotations"),
             bitbucket_cloud_config: o.get_field("bitbucketCloudConfig"),

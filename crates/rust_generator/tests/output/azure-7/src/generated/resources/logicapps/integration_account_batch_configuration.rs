@@ -156,7 +156,7 @@ pub mod integration_account_batch_configuration {
         };
         let o = context.register_resource(request);
         IntegrationAccountBatchConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             batch_group_name: o.get_field("batchGroupName"),
             integration_account_name: o.get_field("integrationAccountName"),

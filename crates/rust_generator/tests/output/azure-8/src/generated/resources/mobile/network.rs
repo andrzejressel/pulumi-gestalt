@@ -133,7 +133,7 @@ pub mod network {
         };
         let o = context.register_resource(request);
         NetworkResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             location: o.get_field("location"),
             mobile_country_code: o.get_field("mobileCountryCode"),

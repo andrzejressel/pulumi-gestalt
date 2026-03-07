@@ -123,7 +123,7 @@ pub mod snapshot_copy {
         };
         let o = context.register_resource(request);
         SnapshotCopyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cluster_identifier: o.get_field("clusterIdentifier"),
             destination_region: o.get_field("destinationRegion"),

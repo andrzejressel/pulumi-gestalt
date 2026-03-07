@@ -78,7 +78,7 @@ pub mod deployment {
         };
         let o = context.register_resource(request);
         DeploymentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             operation_id: o.get_field("operationId"),
             service_arn: o.get_field("serviceArn"),

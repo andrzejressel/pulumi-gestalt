@@ -149,7 +149,7 @@ pub mod dicom_service {
         };
         let o = context.register_resource(request);
         DicomServiceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             authentications: o.get_field("authentications"),
             identity: o.get_field("identity"),

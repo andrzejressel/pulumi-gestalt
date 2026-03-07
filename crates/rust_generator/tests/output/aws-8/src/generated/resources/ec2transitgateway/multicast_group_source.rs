@@ -92,7 +92,7 @@ pub mod multicast_group_source {
         };
         let o = context.register_resource(request);
         MulticastGroupSourceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             group_ip_address: o.get_field("groupIpAddress"),
             network_interface_id: o.get_field("networkInterfaceId"),

@@ -106,7 +106,7 @@ pub mod api_shield_schema {
         };
         let o = context.register_resource(request);
         ApiShieldSchemaResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             kind: o.get_field("kind"),
             name: o.get_field("name"),

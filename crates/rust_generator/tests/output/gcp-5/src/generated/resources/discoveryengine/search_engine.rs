@@ -217,7 +217,7 @@ pub mod search_engine {
         };
         let o = context.register_resource(request);
         SearchEngineResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             collection_id: o.get_field("collectionId"),
             common_config: o.get_field("commonConfig"),

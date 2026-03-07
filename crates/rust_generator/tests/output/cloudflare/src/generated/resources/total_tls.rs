@@ -93,7 +93,7 @@ pub mod total_tls {
         };
         let o = context.register_resource(request);
         TotalTlsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             certificate_authority: o.get_field("certificateAuthority"),
             enabled: o.get_field("enabled"),

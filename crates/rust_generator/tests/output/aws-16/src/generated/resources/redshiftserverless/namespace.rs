@@ -191,7 +191,7 @@ pub mod namespace {
         };
         let o = context.register_resource(request);
         NamespaceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             admin_password_secret_arn: o.get_field("adminPasswordSecretArn"),
             admin_password_secret_kms_key_id: o.get_field("adminPasswordSecretKmsKeyId"),

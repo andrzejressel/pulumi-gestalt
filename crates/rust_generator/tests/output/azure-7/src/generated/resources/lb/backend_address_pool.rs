@@ -161,7 +161,7 @@ pub mod backend_address_pool {
         };
         let o = context.register_resource(request);
         BackendAddressPoolResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             backend_ip_configurations: o.get_field("backendIpConfigurations"),
             inbound_nat_rules: o.get_field("inboundNatRules"),

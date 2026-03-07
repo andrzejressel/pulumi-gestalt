@@ -305,7 +305,7 @@ pub mod server_tls_policy {
         };
         let o = context.register_resource(request);
         ServerTlsPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allow_open: o.get_field("allowOpen"),
             create_time: o.get_field("createTime"),

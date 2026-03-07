@@ -249,7 +249,7 @@ pub mod method {
         };
         let o = context.register_resource(request);
         MethodResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_key_required: o.get_field("apiKeyRequired"),
             authorization: o.get_field("authorization"),

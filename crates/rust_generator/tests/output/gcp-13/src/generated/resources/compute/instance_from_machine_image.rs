@@ -519,7 +519,7 @@ pub mod instance_from_machine_image {
         };
         let o = context.register_resource(request);
         InstanceFromMachineImageResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             advanced_machine_features: o.get_field("advancedMachineFeatures"),
             allow_stopping_for_update: o.get_field("allowStoppingForUpdate"),

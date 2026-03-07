@@ -108,7 +108,7 @@ pub mod product_portfolio_association {
         };
         let o = context.register_resource(request);
         ProductPortfolioAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             accept_language: o.get_field("acceptLanguage"),
             portfolio_id: o.get_field("portfolioId"),

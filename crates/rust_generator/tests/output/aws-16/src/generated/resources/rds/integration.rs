@@ -224,7 +224,7 @@ pub mod integration {
         };
         let o = context.register_resource(request);
         IntegrationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             additional_encryption_context: o.get_field("additionalEncryptionContext"),
             arn: o.get_field("arn"),

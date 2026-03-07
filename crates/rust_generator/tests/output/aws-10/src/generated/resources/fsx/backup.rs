@@ -190,7 +190,7 @@ pub mod backup {
         };
         let o = context.register_resource(request);
         BackupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             file_system_id: o.get_field("fileSystemId"),

@@ -128,7 +128,7 @@ pub mod user_assigned_identity {
         };
         let o = context.register_resource(request);
         UserAssignedIdentityResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             client_id: o.get_field("clientId"),
             location: o.get_field("location"),

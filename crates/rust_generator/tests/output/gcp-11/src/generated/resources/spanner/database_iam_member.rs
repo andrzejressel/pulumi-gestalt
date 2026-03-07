@@ -396,7 +396,7 @@ pub mod database_iam_member {
         };
         let o = context.register_resource(request);
         DatabaseIAMMemberResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             condition: o.get_field("condition"),
             database: o.get_field("database"),

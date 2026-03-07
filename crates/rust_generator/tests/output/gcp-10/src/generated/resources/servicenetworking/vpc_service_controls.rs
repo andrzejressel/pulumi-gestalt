@@ -193,7 +193,7 @@ pub mod vpc_service_controls {
         };
         let o = context.register_resource(request);
         VpcServiceControlsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             enabled: o.get_field("enabled"),
             network: o.get_field("network"),

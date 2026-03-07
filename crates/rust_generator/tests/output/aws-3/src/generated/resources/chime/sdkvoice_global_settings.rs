@@ -80,7 +80,7 @@ pub mod sdkvoice_global_settings {
         };
         let o = context.register_resource(request);
         SdkvoiceGlobalSettingsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             voice_connector: o.get_field("voiceConnector"),
         }

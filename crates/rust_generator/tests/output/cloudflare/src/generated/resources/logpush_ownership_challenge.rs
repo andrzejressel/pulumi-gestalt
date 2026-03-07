@@ -89,7 +89,7 @@ pub mod logpush_ownership_challenge {
         };
         let o = context.register_resource(request);
         LogpushOwnershipChallengeResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             destination_conf: o.get_field("destinationConf"),

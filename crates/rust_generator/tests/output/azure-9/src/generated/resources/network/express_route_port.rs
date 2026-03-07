@@ -205,7 +205,7 @@ pub mod express_route_port {
         };
         let o = context.register_resource(request);
         ExpressRoutePortResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bandwidth_in_gbps: o.get_field("bandwidthInGbps"),
             billing_type: o.get_field("billingType"),

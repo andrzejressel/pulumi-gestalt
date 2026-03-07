@@ -202,7 +202,7 @@ pub mod outbound_rule {
         };
         let o = context.register_resource(request);
         OutboundRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allocated_outbound_ports: o.get_field("allocatedOutboundPorts"),
             backend_address_pool_id: o.get_field("backendAddressPoolId"),

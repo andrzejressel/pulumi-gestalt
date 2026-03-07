@@ -88,7 +88,7 @@ pub mod assignment_dynamic_scope {
         };
         let o = context.register_resource(request);
         AssignmentDynamicScopeResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             filter: o.get_field("filter"),
             maintenance_configuration_id: o.get_field("maintenanceConfigurationId"),

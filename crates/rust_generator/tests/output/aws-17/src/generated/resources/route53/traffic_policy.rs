@@ -102,7 +102,7 @@ pub mod traffic_policy {
         };
         let o = context.register_resource(request);
         TrafficPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             comment: o.get_field("comment"),
             document: o.get_field("document"),

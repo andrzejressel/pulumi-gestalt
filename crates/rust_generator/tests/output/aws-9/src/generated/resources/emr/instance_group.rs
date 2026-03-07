@@ -198,7 +198,7 @@ pub mod instance_group {
         };
         let o = context.register_resource(request);
         InstanceGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             autoscaling_policy: o.get_field("autoscalingPolicy"),
             bid_price: o.get_field("bidPrice"),

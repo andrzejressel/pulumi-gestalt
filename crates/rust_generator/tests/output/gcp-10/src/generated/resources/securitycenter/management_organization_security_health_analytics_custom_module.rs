@@ -256,7 +256,7 @@ pub mod management_organization_security_health_analytics_custom_module {
         };
         let o = context.register_resource(request);
         ManagementOrganizationSecurityHealthAnalyticsCustomModuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             ancestor_module: o.get_field("ancestorModule"),
             custom_config: o.get_field("customConfig"),

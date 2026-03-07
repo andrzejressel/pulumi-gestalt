@@ -98,7 +98,7 @@ pub mod instance_trust_provider_attachment {
         };
         let o = context.register_resource(request);
         InstanceTrustProviderAttachmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             verifiedaccess_instance_id: o.get_field("verifiedaccessInstanceId"),
             verifiedaccess_trust_provider_id: o

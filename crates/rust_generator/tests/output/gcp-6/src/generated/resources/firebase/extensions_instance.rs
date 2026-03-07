@@ -169,7 +169,7 @@ pub mod extensions_instance {
         };
         let o = context.register_resource(request);
         ExtensionsInstanceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             config: o.get_field("config"),
             create_time: o.get_field("createTime"),

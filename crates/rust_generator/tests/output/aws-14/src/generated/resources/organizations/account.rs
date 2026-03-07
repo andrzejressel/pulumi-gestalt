@@ -176,7 +176,7 @@ pub mod account {
         };
         let o = context.register_resource(request);
         AccountResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             close_on_deletion: o.get_field("closeOnDeletion"),

@@ -150,7 +150,7 @@ pub mod document_ai_processor {
         };
         let o = context.register_resource(request);
         DocumentAiProcessorResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             display_name: o.get_field("displayName"),
             kms_key_name: o.get_field("kmsKeyName"),

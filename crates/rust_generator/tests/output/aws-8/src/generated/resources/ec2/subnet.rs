@@ -314,7 +314,7 @@ pub mod subnet {
         };
         let o = context.register_resource(request);
         SubnetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             assign_ipv6_address_on_creation: o.get_field("assignIpv6AddressOnCreation"),

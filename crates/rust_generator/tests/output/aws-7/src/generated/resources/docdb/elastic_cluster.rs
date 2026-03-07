@@ -236,7 +236,7 @@ pub mod elastic_cluster {
         };
         let o = context.register_resource(request);
         ElasticClusterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             admin_user_name: o.get_field("adminUserName"),
             admin_user_password: o.get_field("adminUserPassword"),

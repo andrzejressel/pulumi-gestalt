@@ -465,7 +465,7 @@ pub mod user_pool {
         };
         let o = context.register_resource(request);
         UserPoolResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_recovery_setting: o.get_field("accountRecoverySetting"),
             admin_create_user_config: o.get_field("adminCreateUserConfig"),

@@ -127,7 +127,7 @@ pub mod hosted_transit_virtual_interface_acceptor {
         };
         let o = context.register_resource(request);
         HostedTransitVirtualInterfaceAcceptorResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             dx_gateway_id: o.get_field("dxGatewayId"),

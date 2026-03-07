@@ -385,7 +385,7 @@ pub mod internal_range {
         };
         let o = context.register_resource(request);
         InternalRangeResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             description: o.get_field("description"),
             effective_labels: o.get_field("effectiveLabels"),

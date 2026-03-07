@@ -231,7 +231,7 @@ pub mod synapse_spark {
         };
         let o = context.register_resource(request);
         SynapseSparkResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             description: o.get_field("description"),
             identity: o.get_field("identity"),

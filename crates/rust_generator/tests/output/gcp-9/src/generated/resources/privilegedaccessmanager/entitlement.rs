@@ -282,7 +282,7 @@ pub mod entitlement {
         };
         let o = context.register_resource(request);
         entitlementResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             additional_notification_targets: o
                 .get_field("additionalNotificationTargets"),

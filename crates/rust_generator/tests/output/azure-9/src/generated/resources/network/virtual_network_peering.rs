@@ -309,7 +309,7 @@ pub mod virtual_network_peering {
         };
         let o = context.register_resource(request);
         VirtualNetworkPeeringResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allow_forwarded_traffic: o.get_field("allowForwardedTraffic"),
             allow_gateway_transit: o.get_field("allowGatewayTransit"),

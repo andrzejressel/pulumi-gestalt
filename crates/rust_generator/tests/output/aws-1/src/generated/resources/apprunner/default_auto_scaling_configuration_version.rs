@@ -85,7 +85,7 @@ pub mod default_auto_scaling_configuration_version {
         };
         let o = context.register_resource(request);
         DefaultAutoScalingConfigurationVersionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             auto_scaling_configuration_arn: o.get_field("autoScalingConfigurationArn"),
         }

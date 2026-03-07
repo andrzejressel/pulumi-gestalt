@@ -161,7 +161,7 @@ pub mod consumers_iam_binding {
         };
         let o = context.register_resource(request);
         ConsumersIamBindingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             condition: o.get_field("condition"),
             consumer_project: o.get_field("consumerProject"),

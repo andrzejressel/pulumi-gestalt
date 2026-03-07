@@ -352,7 +352,7 @@ pub mod ontap_file_system {
         };
         let o = context.register_resource(request);
         OntapFileSystemResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             automatic_backup_retention_days: o.get_field("automaticBackupRetentionDays"),

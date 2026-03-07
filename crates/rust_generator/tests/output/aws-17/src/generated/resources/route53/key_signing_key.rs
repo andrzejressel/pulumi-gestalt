@@ -180,7 +180,7 @@ pub mod key_signing_key {
         };
         let o = context.register_resource(request);
         KeySigningKeyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             digest_algorithm_mnemonic: o.get_field("digestAlgorithmMnemonic"),
             digest_algorithm_type: o.get_field("digestAlgorithmType"),

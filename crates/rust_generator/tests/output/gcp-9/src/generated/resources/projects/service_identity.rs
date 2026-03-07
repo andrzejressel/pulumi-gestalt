@@ -108,7 +108,7 @@ pub mod service_identity {
         };
         let o = context.register_resource(request);
         ServiceIdentityResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             email: o.get_field("email"),
             member: o.get_field("member"),

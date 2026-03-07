@@ -705,7 +705,7 @@ pub mod function {
         };
         let o = context.register_resource(request);
         FunctionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             architectures: o.get_field("architectures"),
             arn: o.get_field("arn"),

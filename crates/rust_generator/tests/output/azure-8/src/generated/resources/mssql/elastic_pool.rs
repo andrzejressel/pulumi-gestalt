@@ -260,7 +260,7 @@ pub mod elastic_pool {
         };
         let o = context.register_resource(request);
         ElasticPoolResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             enclave_type: o.get_field("enclaveType"),
             license_type: o.get_field("licenseType"),

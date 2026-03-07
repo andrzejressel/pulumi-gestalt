@@ -129,7 +129,7 @@ pub mod hybrid_connection {
         };
         let o = context.register_resource(request);
         HybridConnectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             name: o.get_field("name"),
             relay_namespace_name: o.get_field("relayNamespaceName"),

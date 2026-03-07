@@ -109,7 +109,7 @@ pub mod endpoint_authorization {
         };
         let o = context.register_resource(request);
         EndpointAuthorizationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account: o.get_field("account"),
             allowed_all_vpcs: o.get_field("allowedAllVpcs"),

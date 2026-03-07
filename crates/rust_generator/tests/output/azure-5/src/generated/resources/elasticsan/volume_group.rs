@@ -267,7 +267,7 @@ pub mod volume_group {
         };
         let o = context.register_resource(request);
         VolumeGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             elastic_san_id: o.get_field("elasticSanId"),
             encryption: o.get_field("encryption"),

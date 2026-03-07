@@ -129,7 +129,7 @@ pub mod policy_attachment {
         };
         let o = context.register_resource(request);
         PolicyAttachmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             policy_id: o.get_field("policyId"),
             skip_destroy: o.get_field("skipDestroy"),

@@ -137,7 +137,7 @@ pub mod cluster_snapshot {
         };
         let o = context.register_resource(request);
         ClusterSnapshotResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allocated_storage: o.get_field("allocatedStorage"),
             availability_zones: o.get_field("availabilityZones"),

@@ -250,7 +250,7 @@ pub mod express_route_connection {
         };
         let o = context.register_resource(request);
         ExpressRouteConnectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             authorization_key: o.get_field("authorizationKey"),
             enable_internet_security: o.get_field("enableInternetSecurity"),

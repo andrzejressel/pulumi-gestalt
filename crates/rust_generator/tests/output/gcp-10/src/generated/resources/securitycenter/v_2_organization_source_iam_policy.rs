@@ -255,7 +255,7 @@ pub mod v_2_organization_source_iam_policy {
         };
         let o = context.register_resource(request);
         V2OrganizationSourceIamPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             etag: o.get_field("etag"),
             organization: o.get_field("organization"),

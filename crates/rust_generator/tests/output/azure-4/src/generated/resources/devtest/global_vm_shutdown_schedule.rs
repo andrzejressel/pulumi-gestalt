@@ -207,7 +207,7 @@ pub mod global_vm_shutdown_schedule {
         };
         let o = context.register_resource(request);
         GlobalVMShutdownScheduleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             daily_recurrence_time: o.get_field("dailyRecurrenceTime"),
             enabled: o.get_field("enabled"),

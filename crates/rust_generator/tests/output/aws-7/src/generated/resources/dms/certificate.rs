@@ -112,7 +112,7 @@ pub mod certificate {
         };
         let o = context.register_resource(request);
         CertificateResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             certificate_arn: o.get_field("certificateArn"),
             certificate_id: o.get_field("certificateId"),

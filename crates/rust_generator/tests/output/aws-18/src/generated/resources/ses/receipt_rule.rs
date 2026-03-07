@@ -246,7 +246,7 @@ pub mod receipt_rule {
         };
         let o = context.register_resource(request);
         ReceiptRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             add_header_actions: o.get_field("addHeaderActions"),
             after: o.get_field("after"),

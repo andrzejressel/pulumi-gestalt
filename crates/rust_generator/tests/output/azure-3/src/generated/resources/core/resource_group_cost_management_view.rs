@@ -198,7 +198,7 @@ pub mod resource_group_cost_management_view {
         };
         let o = context.register_resource(request);
         ResourceGroupCostManagementViewResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             accumulated: o.get_field("accumulated"),
             chart_type: o.get_field("chartType"),

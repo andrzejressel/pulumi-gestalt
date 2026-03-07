@@ -143,7 +143,7 @@ pub mod replication_configuration {
         };
         let o = context.register_resource(request);
         ReplicationConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             registry_id: o.get_field("registryId"),
             replication_configuration: o.get_field("replicationConfiguration"),

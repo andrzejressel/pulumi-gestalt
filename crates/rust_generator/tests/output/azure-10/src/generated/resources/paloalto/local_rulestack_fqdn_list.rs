@@ -132,7 +132,7 @@ pub mod local_rulestack_fqdn_list {
         };
         let o = context.register_resource(request);
         LocalRulestackFqdnListResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             audit_comment: o.get_field("auditComment"),
             description: o.get_field("description"),

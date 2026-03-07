@@ -161,7 +161,7 @@ pub mod cluster {
         };
         let o = context.register_resource(request);
         ClusterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             agent_public_key_certificate: o.get_field("agentPublicKeyCertificate"),
             agent_version: o.get_field("agentVersion"),

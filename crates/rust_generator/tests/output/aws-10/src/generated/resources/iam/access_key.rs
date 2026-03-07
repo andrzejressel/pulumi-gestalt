@@ -141,7 +141,7 @@ pub mod access_key {
         };
         let o = context.register_resource(request);
         AccessKeyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             create_date: o.get_field("createDate"),
             encrypted_secret: o.get_field("encryptedSecret"),

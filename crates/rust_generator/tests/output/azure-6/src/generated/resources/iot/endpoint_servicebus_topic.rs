@@ -185,7 +185,7 @@ pub mod endpoint_servicebus_topic {
         };
         let o = context.register_resource(request);
         EndpointServicebusTopicResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             authentication_type: o.get_field("authenticationType"),
             connection_string: o.get_field("connectionString"),

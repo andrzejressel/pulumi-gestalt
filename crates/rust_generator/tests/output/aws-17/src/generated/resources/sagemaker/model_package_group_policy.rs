@@ -67,7 +67,7 @@ pub mod model_package_group_policy {
         };
         let o = context.register_resource(request);
         ModelPackageGroupPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             model_package_group_name: o.get_field("modelPackageGroupName"),
             resource_policy: o.get_field("resourcePolicy"),

@@ -165,7 +165,7 @@ pub mod integration_account_assembly {
         };
         let o = context.register_resource(request);
         IntegrationAccountAssemblyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             assembly_name: o.get_field("assemblyName"),
             assembly_version: o.get_field("assemblyVersion"),

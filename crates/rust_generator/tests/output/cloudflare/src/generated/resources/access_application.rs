@@ -445,7 +445,7 @@ pub mod access_application {
         };
         let o = context.register_resource(request);
         AccessApplicationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             allow_authenticate_via_warp: o.get_field("allowAuthenticateViaWarp"),

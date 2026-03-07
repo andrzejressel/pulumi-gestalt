@@ -134,7 +134,7 @@ pub mod job_agent {
         };
         let o = context.register_resource(request);
         JobAgentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             database_id: o.get_field("databaseId"),
             location: o.get_field("location"),

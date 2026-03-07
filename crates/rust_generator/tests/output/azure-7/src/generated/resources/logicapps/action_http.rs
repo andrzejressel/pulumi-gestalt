@@ -175,7 +175,7 @@ pub mod action_http {
         };
         let o = context.register_resource(request);
         ActionHttpResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             body: o.get_field("body"),
             headers: o.get_field("headers"),

@@ -93,7 +93,7 @@ pub mod resolver_config {
         };
         let o = context.register_resource(request);
         ResolverConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             autodefined_reverse_flag: o.get_field("autodefinedReverseFlag"),
             owner_id: o.get_field("ownerId"),

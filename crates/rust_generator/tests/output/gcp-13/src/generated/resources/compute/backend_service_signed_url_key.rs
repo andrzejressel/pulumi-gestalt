@@ -165,7 +165,7 @@ pub mod backend_service_signed_url_key {
         };
         let o = context.register_resource(request);
         BackendServiceSignedUrlKeyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             backend_service: o.get_field("backendService"),
             key_value: o.get_field("keyValue"),

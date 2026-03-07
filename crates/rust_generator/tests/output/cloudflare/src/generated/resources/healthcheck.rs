@@ -315,7 +315,7 @@ pub mod healthcheck {
         };
         let o = context.register_resource(request);
         HealthcheckResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             address: o.get_field("address"),
             allow_insecure: o.get_field("allowInsecure"),

@@ -668,7 +668,7 @@ pub mod router_nat {
         };
         let o = context.register_resource(request);
         RouterNatResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             auto_network_tier: o.get_field("autoNetworkTier"),
             drain_nat_ips: o.get_field("drainNatIps"),

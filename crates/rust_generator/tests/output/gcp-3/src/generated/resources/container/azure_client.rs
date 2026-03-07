@@ -149,7 +149,7 @@ pub mod azure_client {
         };
         let o = context.register_resource(request);
         AzureClientResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             application_id: o.get_field("applicationId"),
             certificate: o.get_field("certificate"),

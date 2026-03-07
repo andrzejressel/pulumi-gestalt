@@ -232,7 +232,7 @@ pub mod api_config {
         };
         let o = context.register_resource(request);
         ApiConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api: o.get_field("api"),
             api_config_id: o.get_field("apiConfigId"),

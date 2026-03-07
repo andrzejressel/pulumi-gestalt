@@ -93,7 +93,7 @@ pub mod byte_match_set {
         };
         let o = context.register_resource(request);
         ByteMatchSetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             byte_match_tuples: o.get_field("byteMatchTuples"),
             name: o.get_field("name"),

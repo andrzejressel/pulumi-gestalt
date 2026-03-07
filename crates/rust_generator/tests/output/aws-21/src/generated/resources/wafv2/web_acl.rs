@@ -210,7 +210,7 @@ pub mod web_acl {
         };
         let o = context.register_resource(request);
         WebAclResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             application_integration_url: o.get_field("applicationIntegrationUrl"),
             arn: o.get_field("arn"),

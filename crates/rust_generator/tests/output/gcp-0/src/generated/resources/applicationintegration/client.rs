@@ -214,7 +214,7 @@ pub mod client {
         };
         let o = context.register_resource(request);
         ClientResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cloud_kms_config: o.get_field("cloudKmsConfig"),
             create_sample_integrations: o.get_field("createSampleIntegrations"),

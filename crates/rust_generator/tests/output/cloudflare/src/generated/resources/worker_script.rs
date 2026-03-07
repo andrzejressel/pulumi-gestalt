@@ -321,7 +321,7 @@ pub mod worker_script {
         };
         let o = context.register_resource(request);
         WorkerScriptResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             analytics_engine_bindings: o.get_field("analyticsEngineBindings"),

@@ -308,7 +308,7 @@ pub mod attestor_iam_binding {
         };
         let o = context.register_resource(request);
         AttestorIamBindingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             attestor: o.get_field("attestor"),
             condition: o.get_field("condition"),

@@ -154,7 +154,7 @@ pub mod user_workloads_secret {
         };
         let o = context.register_resource(request);
         UserWorkloadsSecretResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             data: o.get_field("data"),
             environment: o.get_field("environment"),

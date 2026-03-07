@@ -124,7 +124,7 @@ pub mod folder {
         };
         let o = context.register_resource(request);
         FolderResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             create_time: o.get_field("createTime"),
             deletion_protection: o.get_field("deletionProtection"),

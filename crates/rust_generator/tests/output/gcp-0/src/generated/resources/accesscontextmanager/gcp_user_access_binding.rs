@@ -144,7 +144,7 @@ pub mod gcp_user_access_binding {
         };
         let o = context.register_resource(request);
         GcpUserAccessBindingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_levels: o.get_field("accessLevels"),
             group_key: o.get_field("groupKey"),

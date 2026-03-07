@@ -137,7 +137,7 @@ pub mod keyless_certificate {
         };
         let o = context.register_resource(request);
         KeylessCertificateResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bundle_method: o.get_field("bundleMethod"),
             certificate: o.get_field("certificate"),

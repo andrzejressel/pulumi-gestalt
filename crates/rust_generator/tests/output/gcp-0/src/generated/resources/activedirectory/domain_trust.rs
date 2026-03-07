@@ -192,7 +192,7 @@ pub mod domain_trust {
         };
         let o = context.register_resource(request);
         DomainTrustResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             domain: o.get_field("domain"),
             project: o.get_field("project"),

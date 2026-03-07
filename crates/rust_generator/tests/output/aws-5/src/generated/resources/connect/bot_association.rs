@@ -142,7 +142,7 @@ pub mod bot_association {
         };
         let o = context.register_resource(request);
         BotAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             instance_id: o.get_field("instanceId"),
             lex_bot: o.get_field("lexBot"),

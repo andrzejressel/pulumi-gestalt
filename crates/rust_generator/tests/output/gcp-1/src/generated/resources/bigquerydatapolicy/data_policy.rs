@@ -251,7 +251,7 @@ pub mod data_policy {
         };
         let o = context.register_resource(request);
         DataPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             data_masking_policy: o.get_field("dataMaskingPolicy"),
             data_policy_id: o.get_field("dataPolicyId"),

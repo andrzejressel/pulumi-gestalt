@@ -335,7 +335,7 @@ pub mod aspect_type {
         };
         let o = context.register_resource(request);
         AspectTypeResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             aspect_type_id: o.get_field("aspectTypeId"),
             create_time: o.get_field("createTime"),

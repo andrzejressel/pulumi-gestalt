@@ -315,7 +315,7 @@ pub mod network_attachment {
         };
         let o = context.register_resource(request);
         NetworkAttachmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             connection_endpoints: o.get_field("connectionEndpoints"),
             connection_preference: o.get_field("connectionPreference"),

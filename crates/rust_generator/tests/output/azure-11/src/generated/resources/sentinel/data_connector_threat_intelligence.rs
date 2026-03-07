@@ -133,7 +133,7 @@ pub mod data_connector_threat_intelligence {
         };
         let o = context.register_resource(request);
         DataConnectorThreatIntelligenceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             log_analytics_workspace_id: o.get_field("logAnalyticsWorkspaceId"),
             lookback_date: o.get_field("lookbackDate"),

@@ -163,7 +163,7 @@ pub mod user_workloads_config_map {
         };
         let o = context.register_resource(request);
         UserWorkloadsConfigMapResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             data: o.get_field("data"),
             environment: o.get_field("environment"),

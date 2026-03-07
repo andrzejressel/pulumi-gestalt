@@ -335,7 +335,7 @@ pub mod ontap_volume {
         };
         let o = context.register_resource(request);
         OntapVolumeResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             aggregate_configuration: o.get_field("aggregateConfiguration"),
             arn: o.get_field("arn"),

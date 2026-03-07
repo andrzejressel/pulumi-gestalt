@@ -197,7 +197,7 @@ pub mod integration_response {
         };
         let o = context.register_resource(request);
         IntegrationResponseResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             content_handling: o.get_field("contentHandling"),
             http_method: o.get_field("httpMethod"),

@@ -160,7 +160,7 @@ pub mod tag_template {
         };
         let o = context.register_resource(request);
         TagTemplateResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             display_name: o.get_field("displayName"),
             fields: o.get_field("fields"),

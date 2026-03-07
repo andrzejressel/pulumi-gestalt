@@ -103,7 +103,7 @@ pub mod data_share_authorization {
         };
         let o = context.register_resource(request);
         DataShareAuthorizationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allow_writes: o.get_field("allowWrites"),
             consumer_identifier: o.get_field("consumerIdentifier"),

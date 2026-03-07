@@ -205,7 +205,7 @@ pub mod deployment {
         };
         let o = context.register_resource(request);
         DeploymentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             create_policy: o.get_field("createPolicy"),
             delete_policy: o.get_field("deletePolicy"),

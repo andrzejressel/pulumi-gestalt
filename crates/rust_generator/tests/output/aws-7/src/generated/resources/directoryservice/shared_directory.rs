@@ -97,7 +97,7 @@ pub mod shared_directory {
         };
         let o = context.register_resource(request);
         SharedDirectoryResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             directory_id: o.get_field("directoryId"),
             method: o.get_field("method"),

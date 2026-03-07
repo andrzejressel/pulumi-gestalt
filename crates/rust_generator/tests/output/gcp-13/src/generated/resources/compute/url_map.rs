@@ -962,7 +962,7 @@ pub mod url_map {
         };
         let o = context.register_resource(request);
         URLMapResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             creation_timestamp: o.get_field("creationTimestamp"),
             default_custom_error_response_policy: o

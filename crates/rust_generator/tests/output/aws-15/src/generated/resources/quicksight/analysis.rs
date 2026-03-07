@@ -244,7 +244,7 @@ pub mod analysis {
         };
         let o = context.register_resource(request);
         AnalysisResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             analysis_id: o.get_field("analysisId"),
             arn: o.get_field("arn"),

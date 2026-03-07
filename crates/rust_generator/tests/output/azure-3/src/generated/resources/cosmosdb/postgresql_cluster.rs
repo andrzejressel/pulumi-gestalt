@@ -354,7 +354,7 @@ pub mod postgresql_cluster {
         };
         let o = context.register_resource(request);
         PostgresqlClusterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             administrator_login_password: o.get_field("administratorLoginPassword"),
             citus_version: o.get_field("citusVersion"),

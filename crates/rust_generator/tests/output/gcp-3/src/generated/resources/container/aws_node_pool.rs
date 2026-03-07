@@ -580,7 +580,7 @@ pub mod aws_node_pool {
         };
         let o = context.register_resource(request);
         AwsNodePoolResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             annotations: o.get_field("annotations"),
             autoscaling: o.get_field("autoscaling"),

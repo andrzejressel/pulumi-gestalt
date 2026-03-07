@@ -206,7 +206,7 @@ pub mod agent_agent_alias {
         };
         let o = context.register_resource(request);
         AgentAgentAliasResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             agent_alias_arn: o.get_field("agentAliasArn"),
             agent_alias_id: o.get_field("agentAliasId"),

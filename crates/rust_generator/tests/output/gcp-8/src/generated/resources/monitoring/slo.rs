@@ -476,7 +476,7 @@ pub mod slo {
         };
         let o = context.register_resource(request);
         SloResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             basic_sli: o.get_field("basicSli"),
             calendar_period: o.get_field("calendarPeriod"),

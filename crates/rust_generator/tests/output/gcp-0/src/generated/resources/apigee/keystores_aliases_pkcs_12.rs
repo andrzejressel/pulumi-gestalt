@@ -142,7 +142,7 @@ pub mod keystores_aliases_pkcs_12 {
         };
         let o = context.register_resource(request);
         KeystoresAliasesPkcs12Result {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             alias: o.get_field("alias"),
             certs_infos: o.get_field("certsInfos"),

@@ -224,7 +224,7 @@ pub mod static_web_app {
         };
         let o = context.register_resource(request);
         StaticWebAppResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_key: o.get_field("apiKey"),
             app_settings: o.get_field("appSettings"),

@@ -103,7 +103,7 @@ pub mod api_token {
         };
         let o = context.register_resource(request);
         ApiTokenResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             condition: o.get_field("condition"),
             expires_on: o.get_field("expiresOn"),

@@ -162,7 +162,7 @@ pub mod game_session_queue {
         };
         let o = context.register_resource(request);
         GameSessionQueueResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             custom_event_data: o.get_field("customEventData"),

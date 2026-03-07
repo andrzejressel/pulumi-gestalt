@@ -108,7 +108,7 @@ pub mod container_policy {
         };
         let o = context.register_resource(request);
         ContainerPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             container_name: o.get_field("containerName"),
             policy: o.get_field("policy"),

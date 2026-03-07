@@ -337,7 +337,7 @@ pub mod zone_iam_binding {
         };
         let o = context.register_resource(request);
         ZoneIamBindingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             condition: o.get_field("condition"),
             dataplex_zone: o.get_field("dataplexZone"),

@@ -157,7 +157,7 @@ pub mod cluster_principal_assignment {
         };
         let o = context.register_resource(request);
         ClusterPrincipalAssignmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cluster_name: o.get_field("clusterName"),
             name: o.get_field("name"),

@@ -202,7 +202,7 @@ pub mod vpn_site {
         };
         let o = context.register_resource(request);
         VpnSiteResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             address_cidrs: o.get_field("addressCidrs"),
             device_model: o.get_field("deviceModel"),

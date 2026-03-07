@@ -120,7 +120,7 @@ pub mod spring_cloud_gateway_custom_domain {
         };
         let o = context.register_resource(request);
         SpringCloudGatewayCustomDomainResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             name: o.get_field("name"),
             spring_cloud_gateway_id: o.get_field("springCloudGatewayId"),

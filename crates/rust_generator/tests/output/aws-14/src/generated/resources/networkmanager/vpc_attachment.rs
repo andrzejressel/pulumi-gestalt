@@ -148,7 +148,7 @@ pub mod vpc_attachment {
         };
         let o = context.register_resource(request);
         VpcAttachmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             attachment_policy_rule_number: o.get_field("attachmentPolicyRuleNumber"),

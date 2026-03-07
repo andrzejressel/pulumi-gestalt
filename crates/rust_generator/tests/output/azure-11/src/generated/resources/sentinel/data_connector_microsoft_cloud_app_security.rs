@@ -151,7 +151,7 @@ pub mod data_connector_microsoft_cloud_app_security {
         };
         let o = context.register_resource(request);
         DataConnectorMicrosoftCloudAppSecurityResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             alerts_enabled: o.get_field("alertsEnabled"),
             discovery_logs_enabled: o.get_field("discoveryLogsEnabled"),

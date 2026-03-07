@@ -111,7 +111,7 @@ pub mod voice_connector_organization {
         };
         let o = context.register_resource(request);
         VoiceConnectorOrganizationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             disabled: o.get_field("disabled"),
             routes: o.get_field("routes"),

@@ -204,7 +204,7 @@ pub mod configuration_set {
         };
         let o = context.register_resource(request);
         ConfigurationSetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             configuration_set_name: o.get_field("configurationSetName"),

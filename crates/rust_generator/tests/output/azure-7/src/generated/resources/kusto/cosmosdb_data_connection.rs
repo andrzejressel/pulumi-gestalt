@@ -253,7 +253,7 @@ pub mod cosmosdb_data_connection {
         };
         let o = context.register_resource(request);
         CosmosdbDataConnectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cosmosdb_container_id: o.get_field("cosmosdbContainerId"),
             kusto_database_id: o.get_field("kustoDatabaseId"),

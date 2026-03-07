@@ -132,7 +132,7 @@ pub mod data_source_windows_event {
         };
         let o = context.register_resource(request);
         DataSourceWindowsEventResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             event_log_name: o.get_field("eventLogName"),
             event_types: o.get_field("eventTypes"),

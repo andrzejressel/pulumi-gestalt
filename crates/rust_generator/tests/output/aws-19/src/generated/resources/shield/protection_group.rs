@@ -192,7 +192,7 @@ pub mod protection_group {
         };
         let o = context.register_resource(request);
         ProtectionGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             aggregation: o.get_field("aggregation"),
             members: o.get_field("members"),

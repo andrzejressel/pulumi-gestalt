@@ -241,7 +241,7 @@ pub mod cx_entity_type {
         };
         let o = context.register_resource(request);
         CxEntityTypeResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             auto_expansion_mode: o.get_field("autoExpansionMode"),
             display_name: o.get_field("displayName"),

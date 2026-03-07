@@ -88,7 +88,7 @@ pub mod ai_endpoint_iam_binding {
         };
         let o = context.register_resource(request);
         AiEndpointIamBindingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             condition: o.get_field("condition"),
             endpoint: o.get_field("endpoint"),

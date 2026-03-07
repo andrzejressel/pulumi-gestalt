@@ -108,7 +108,7 @@ pub mod domain {
         };
         let o = context.register_resource(request);
         DomainResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             asset_size_bytes: o.get_field("assetSizeBytes"),

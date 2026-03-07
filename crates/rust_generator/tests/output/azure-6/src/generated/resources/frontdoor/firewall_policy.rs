@@ -250,7 +250,7 @@ pub mod firewall_policy {
         };
         let o = context.register_resource(request);
         FirewallPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             custom_block_response_body: o.get_field("customBlockResponseBody"),
             custom_block_response_status_code: o

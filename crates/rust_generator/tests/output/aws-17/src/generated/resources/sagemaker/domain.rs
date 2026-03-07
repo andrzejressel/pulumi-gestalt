@@ -304,7 +304,7 @@ pub mod domain {
         };
         let o = context.register_resource(request);
         DomainResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             app_network_access_type: o.get_field("appNetworkAccessType"),
             app_security_group_management: o.get_field("appSecurityGroupManagement"),

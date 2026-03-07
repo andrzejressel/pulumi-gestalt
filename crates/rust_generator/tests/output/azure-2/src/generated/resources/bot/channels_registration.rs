@@ -264,7 +264,7 @@ pub mod channels_registration {
         };
         let o = context.register_resource(request);
         ChannelsRegistrationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cmk_key_vault_url: o.get_field("cmkKeyVaultUrl"),
             description: o.get_field("description"),

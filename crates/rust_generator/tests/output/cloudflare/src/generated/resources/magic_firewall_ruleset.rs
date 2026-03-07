@@ -109,7 +109,7 @@ pub mod magic_firewall_ruleset {
         };
         let o = context.register_resource(request);
         MagicFirewallRulesetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             description: o.get_field("description"),

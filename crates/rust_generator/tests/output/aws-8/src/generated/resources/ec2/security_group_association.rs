@@ -95,7 +95,7 @@ pub mod security_group_association {
         };
         let o = context.register_resource(request);
         SecurityGroupAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             replace_default_association: o.get_field("replaceDefaultAssociation"),
             security_group_id: o.get_field("securityGroupId"),

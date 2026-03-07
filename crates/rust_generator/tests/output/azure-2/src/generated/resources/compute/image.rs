@@ -178,7 +178,7 @@ pub mod image {
         };
         let o = context.register_resource(request);
         ImageResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             data_disks: o.get_field("dataDisks"),
             hyper_v_generation: o.get_field("hyperVGeneration"),

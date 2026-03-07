@@ -134,7 +134,7 @@ pub mod runtime_management_config {
         };
         let o = context.register_resource(request);
         RuntimeManagementConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             function_arn: o.get_field("functionArn"),
             function_name: o.get_field("functionName"),

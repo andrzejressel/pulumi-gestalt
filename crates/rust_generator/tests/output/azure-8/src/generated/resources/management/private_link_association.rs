@@ -174,7 +174,7 @@ pub mod private_link_association {
         };
         let o = context.register_resource(request);
         PrivateLinkAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             management_group_id: o.get_field("managementGroupId"),
             name: o.get_field("name"),

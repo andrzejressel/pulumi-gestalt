@@ -341,7 +341,7 @@ pub mod service_azure_bot {
         };
         let o = context.register_resource(request);
         ServiceAzureBotResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cmk_key_vault_key_url: o.get_field("cmkKeyVaultKeyUrl"),
             developer_app_insights_api_key: o.get_field("developerAppInsightsApiKey"),

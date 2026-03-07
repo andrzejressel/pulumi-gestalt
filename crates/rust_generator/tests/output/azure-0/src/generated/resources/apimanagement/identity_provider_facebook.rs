@@ -123,7 +123,7 @@ pub mod identity_provider_facebook {
         };
         let o = context.register_resource(request);
         IdentityProviderFacebookResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_management_name: o.get_field("apiManagementName"),
             app_id: o.get_field("appId"),

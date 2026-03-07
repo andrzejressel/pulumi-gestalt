@@ -183,7 +183,7 @@ pub mod magic_wan_gre_tunnel {
         };
         let o = context.register_resource(request);
         MagicWanGreTunnelResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             cloudflare_gre_endpoint: o.get_field("cloudflareGreEndpoint"),

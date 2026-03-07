@@ -195,7 +195,7 @@ pub mod exadata_infrastructure {
         };
         let o = context.register_resource(request);
         ExadataInfrastructureResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             compute_count: o.get_field("computeCount"),
             customer_contacts: o.get_field("customerContacts"),

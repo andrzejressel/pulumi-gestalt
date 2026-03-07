@@ -238,7 +238,7 @@ pub mod load_balancer_pool {
         };
         let o = context.register_resource(request);
         LoadBalancerPoolResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             check_regions: o.get_field("checkRegions"),

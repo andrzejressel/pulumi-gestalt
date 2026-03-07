@@ -132,7 +132,7 @@ pub mod encryption_scope {
         };
         let o = context.register_resource(request);
         EncryptionScopeResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             infrastructure_encryption_required: o
                 .get_field("infrastructureEncryptionRequired"),

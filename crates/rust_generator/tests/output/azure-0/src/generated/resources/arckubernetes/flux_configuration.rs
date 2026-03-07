@@ -206,7 +206,7 @@ pub mod flux_configuration {
         };
         let o = context.register_resource(request);
         FluxConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             blob_storage: o.get_field("blobStorage"),
             bucket: o.get_field("bucket"),

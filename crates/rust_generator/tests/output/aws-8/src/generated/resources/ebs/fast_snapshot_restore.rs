@@ -97,7 +97,7 @@ pub mod fast_snapshot_restore {
         };
         let o = context.register_resource(request);
         FastSnapshotRestoreResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             availability_zone: o.get_field("availabilityZone"),
             snapshot_id: o.get_field("snapshotId"),

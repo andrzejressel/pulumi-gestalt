@@ -86,7 +86,7 @@ pub mod vpc_dhcp_options_association {
         };
         let o = context.register_resource(request);
         VpcDhcpOptionsAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             dhcp_options_id: o.get_field("dhcpOptionsId"),
             vpc_id: o.get_field("vpcId"),

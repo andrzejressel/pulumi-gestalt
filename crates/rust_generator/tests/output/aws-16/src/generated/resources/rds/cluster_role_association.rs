@@ -97,7 +97,7 @@ pub mod cluster_role_association {
         };
         let o = context.register_resource(request);
         ClusterRoleAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             db_cluster_identifier: o.get_field("dbClusterIdentifier"),
             feature_name: o.get_field("featureName"),

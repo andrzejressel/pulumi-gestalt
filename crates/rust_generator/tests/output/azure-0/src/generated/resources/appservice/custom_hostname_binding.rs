@@ -147,7 +147,7 @@ pub mod custom_hostname_binding {
         };
         let o = context.register_resource(request);
         CustomHostnameBindingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             app_service_name: o.get_field("appServiceName"),
             hostname: o.get_field("hostname"),

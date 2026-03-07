@@ -186,7 +186,7 @@ pub mod registry_webhook {
         };
         let o = context.register_resource(request);
         RegistryWebhookResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             actions: o.get_field("actions"),
             custom_headers: o.get_field("customHeaders"),

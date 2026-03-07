@@ -160,7 +160,7 @@ pub mod snapshot {
         };
         let o = context.register_resource(request);
         SnapshotResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allocated_storage: o.get_field("allocatedStorage"),
             availability_zone: o.get_field("availabilityZone"),

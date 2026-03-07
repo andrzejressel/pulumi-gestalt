@@ -110,7 +110,7 @@ pub mod hsm {
         };
         let o = context.register_resource(request);
         HsmResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             availability_zone: o.get_field("availabilityZone"),
             cluster_id: o.get_field("clusterId"),

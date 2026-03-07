@@ -662,7 +662,7 @@ pub mod scale_set {
         };
         let o = context.register_resource(request);
         ScaleSetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             automatic_os_upgrade: o.get_field("automaticOsUpgrade"),
             boot_diagnostics: o.get_field("bootDiagnostics"),

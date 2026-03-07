@@ -96,7 +96,7 @@ pub mod hyper_v_site {
         };
         let o = context.register_resource(request);
         HyperVSiteResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             name: o.get_field("name"),
             recovery_vault_id: o.get_field("recoveryVaultId"),

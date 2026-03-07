@@ -203,7 +203,7 @@ pub mod classifier {
         };
         let o = context.register_resource(request);
         ClassifierResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             csv_classifier: o.get_field("csvClassifier"),
             grok_classifier: o.get_field("grokClassifier"),

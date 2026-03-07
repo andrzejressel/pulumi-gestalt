@@ -189,7 +189,7 @@ pub mod network_mapping {
         };
         let o = context.register_resource(request);
         NetworkMappingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             name: o.get_field("name"),
             recovery_vault_name: o.get_field("recoveryVaultName"),

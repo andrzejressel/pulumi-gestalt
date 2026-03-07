@@ -188,7 +188,7 @@ pub mod configuration {
         };
         let o = context.register_resource(request);
         ConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             in_guest_user_patch_mode: o.get_field("inGuestUserPatchMode"),
             install_patches: o.get_field("installPatches"),

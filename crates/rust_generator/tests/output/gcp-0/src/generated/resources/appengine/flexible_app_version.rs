@@ -580,7 +580,7 @@ pub mod flexible_app_version {
         };
         let o = context.register_resource(request);
         FlexibleAppVersionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_config: o.get_field("apiConfig"),
             automatic_scaling: o.get_field("automaticScaling"),

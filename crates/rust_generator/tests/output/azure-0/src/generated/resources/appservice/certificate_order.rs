@@ -202,7 +202,7 @@ pub mod certificate_order {
         };
         let o = context.register_resource(request);
         CertificateOrderResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             app_service_certificate_not_renewable_reasons: o
                 .get_field("appServiceCertificateNotRenewableReasons"),

@@ -199,7 +199,7 @@ pub mod subscription {
         };
         let o = context.register_resource(request);
         SubscriptionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allow_tracing: o.get_field("allowTracing"),
             api_id: o.get_field("apiId"),

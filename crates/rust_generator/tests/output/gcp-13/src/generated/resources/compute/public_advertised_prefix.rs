@@ -162,7 +162,7 @@ pub mod public_advertised_prefix {
         };
         let o = context.register_resource(request);
         PublicAdvertisedPrefixResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             description: o.get_field("description"),
             dns_verification_ip: o.get_field("dnsVerificationIp"),

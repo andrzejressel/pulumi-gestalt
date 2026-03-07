@@ -86,7 +86,7 @@ pub mod d_1_database {
         };
         let o = context.register_resource(request);
         D1DatabaseResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             name: o.get_field("name"),

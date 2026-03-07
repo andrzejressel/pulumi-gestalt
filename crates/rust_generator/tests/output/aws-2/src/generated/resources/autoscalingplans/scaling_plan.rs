@@ -91,7 +91,7 @@ pub mod scaling_plan {
         };
         let o = context.register_resource(request);
         ScalingPlanResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             application_source: o.get_field("applicationSource"),
             name: o.get_field("name"),

@@ -214,7 +214,7 @@ pub mod application {
         };
         let o = context.register_resource(request);
         ApplicationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             application_group_id: o.get_field("applicationGroupId"),
             command_line_argument_policy: o.get_field("commandLineArgumentPolicy"),

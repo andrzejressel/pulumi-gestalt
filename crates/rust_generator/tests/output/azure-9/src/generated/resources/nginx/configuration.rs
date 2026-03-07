@@ -204,7 +204,7 @@ pub mod configuration {
         };
         let o = context.register_resource(request);
         ConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             config_files: o.get_field("configFiles"),
             nginx_deployment_id: o.get_field("nginxDeploymentId"),

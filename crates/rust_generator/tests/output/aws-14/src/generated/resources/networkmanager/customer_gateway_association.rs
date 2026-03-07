@@ -144,7 +144,7 @@ pub mod customer_gateway_association {
         };
         let o = context.register_resource(request);
         CustomerGatewayAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             customer_gateway_arn: o.get_field("customerGatewayArn"),
             device_id: o.get_field("deviceId"),

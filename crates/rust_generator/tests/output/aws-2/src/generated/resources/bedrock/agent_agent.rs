@@ -297,7 +297,7 @@ pub mod agent_agent {
         };
         let o = context.register_resource(request);
         AgentAgentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             agent_arn: o.get_field("agentArn"),
             agent_collaboration: o.get_field("agentCollaboration"),

@@ -358,7 +358,7 @@ pub mod node_pool {
         };
         let o = context.register_resource(request);
         NodePoolResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cluster: o.get_field("cluster"),
             create_time: o.get_field("createTime"),

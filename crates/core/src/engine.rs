@@ -117,21 +117,28 @@ impl<FunctionContext> Engine<FunctionContext> {
                 )
                 .await;
 
-            (Arc::new(result.fields), result.urn)
+            (Arc::new(result.fields), result.urn, result.id)
         });
         let fields = Output::from_future({
             let result = result.clone();
             async move {
-                let (fields, _) = result.value.await;
+                let (fields, _, _) = result.value.await;
                 fields
             }
         });
-        let urn = RawOutput::from_future(async move {
-            let (_, urn) = result.value.await;
-            urn
+        let urn = RawOutput::from_future({
+            let result = result.clone();
+            async move {
+                let (_, urn, _) = result.value.await;
+                urn
+            }
+        });
+        let id = RawOutput::from_future(async move {
+            let (_, _, id) = result.value.await;
+            id
         });
 
-        let output = RegisterResourceOutput { fields, urn };
+        let output = RegisterResourceOutput { fields, urn, id };
         self.join_set.push(output.clone().invoke_void());
 
         output
@@ -164,7 +171,8 @@ impl<FunctionContext> Engine<FunctionContext> {
             Arc::new(result.fields)
         });
         let urn = RawOutput::from_node_value(NodeValue::Nothing);
-        let output = RegisterResourceOutput { fields, urn };
+        let id = RawOutput::from_node_value(NodeValue::Nothing);
+        let output = RegisterResourceOutput { fields, urn, id };
         self.join_set.push(output.clone().invoke_void());
 
         output
@@ -250,6 +258,10 @@ impl<FunctionContext> Engine<FunctionContext> {
 
     pub fn create_extract_urn(source: RegisterResourceOutput) -> RawOutput {
         source.get_urn()
+    }
+
+    pub fn create_extract_id(source: RegisterResourceOutput) -> RawOutput {
+        source.get_id()
     }
 
     #[cfg(test)]

@@ -93,7 +93,7 @@ pub mod cluster_iam_roles {
         };
         let o = context.register_resource(request);
         ClusterIamRolesResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cluster_identifier: o.get_field("clusterIdentifier"),
             default_iam_role_arn: o.get_field("defaultIamRoleArn"),

@@ -235,7 +235,7 @@ pub mod instance_storage_config {
         };
         let o = context.register_resource(request);
         InstanceStorageConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             association_id: o.get_field("associationId"),
             instance_id: o.get_field("instanceId"),

@@ -306,7 +306,7 @@ pub mod security_group_rule {
         };
         let o = context.register_resource(request);
         SecurityGroupRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cidr_blocks: o.get_field("cidrBlocks"),
             description: o.get_field("description"),

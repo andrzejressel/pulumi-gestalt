@@ -168,7 +168,7 @@ pub mod definition {
         };
         let o = context.register_resource(request);
         DefinitionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             assignable_scopes: o.get_field("assignableScopes"),
             description: o.get_field("description"),

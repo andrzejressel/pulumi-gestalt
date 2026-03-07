@@ -160,7 +160,7 @@ pub mod service_network_acl {
         };
         let o = context.register_resource(request);
         ServiceNetworkAclResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             default_action: o.get_field("defaultAction"),
             private_endpoints: o.get_field("privateEndpoints"),

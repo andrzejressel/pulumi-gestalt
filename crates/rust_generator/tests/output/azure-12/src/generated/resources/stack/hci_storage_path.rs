@@ -131,7 +131,7 @@ pub mod hci_storage_path {
         };
         let o = context.register_resource(request);
         HciStoragePathResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             custom_location_id: o.get_field("customLocationId"),
             location: o.get_field("location"),

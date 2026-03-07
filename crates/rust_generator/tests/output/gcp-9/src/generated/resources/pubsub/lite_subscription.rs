@@ -183,7 +183,7 @@ pub mod lite_subscription {
         };
         let o = context.register_resource(request);
         LiteSubscriptionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             delivery_config: o.get_field("deliveryConfig"),
             name: o.get_field("name"),

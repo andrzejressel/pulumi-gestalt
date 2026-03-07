@@ -156,7 +156,7 @@ pub mod document_ai_warehouse_location {
         };
         let o = context.register_resource(request);
         DocumentAiWarehouseLocationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_control_mode: o.get_field("accessControlMode"),
             database_type: o.get_field("databaseType"),

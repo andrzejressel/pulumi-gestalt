@@ -556,7 +556,7 @@ pub mod launch_template {
         };
         let o = context.register_resource(request);
         LaunchTemplateResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             block_device_mappings: o.get_field("blockDeviceMappings"),

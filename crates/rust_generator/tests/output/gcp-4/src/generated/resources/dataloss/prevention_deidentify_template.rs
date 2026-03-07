@@ -262,7 +262,7 @@ pub mod prevention_deidentify_template {
         };
         let o = context.register_resource(request);
         PreventionDeidentifyTemplateResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             create_time: o.get_field("createTime"),
             deidentify_config: o.get_field("deidentifyConfig"),

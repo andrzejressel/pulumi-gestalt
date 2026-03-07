@@ -482,7 +482,7 @@ pub mod topic {
         };
         let o = context.register_resource(request);
         TopicResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             application_failure_feedback_role_arn: o
                 .get_field("applicationFailureFeedbackRoleArn"),

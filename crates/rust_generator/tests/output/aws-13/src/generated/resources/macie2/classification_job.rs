@@ -210,7 +210,7 @@ pub mod classification_job {
         };
         let o = context.register_resource(request);
         ClassificationJobResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             created_at: o.get_field("createdAt"),
             custom_data_identifier_ids: o.get_field("customDataIdentifierIds"),

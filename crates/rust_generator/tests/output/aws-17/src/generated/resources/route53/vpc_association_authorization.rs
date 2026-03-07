@@ -122,7 +122,7 @@ pub mod vpc_association_authorization {
         };
         let o = context.register_resource(request);
         VpcAssociationAuthorizationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             vpc_id: o.get_field("vpcId"),
             vpc_region: o.get_field("vpcRegion"),

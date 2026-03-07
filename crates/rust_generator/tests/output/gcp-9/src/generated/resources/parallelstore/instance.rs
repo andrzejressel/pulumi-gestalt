@@ -346,7 +346,7 @@ pub mod instance {
         };
         let o = context.register_resource(request);
         InstanceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_points: o.get_field("accessPoints"),
             capacity_gib: o.get_field("capacityGib"),

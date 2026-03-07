@@ -281,7 +281,7 @@ pub mod account {
         };
         let o = context.register_resource(request);
         AccountResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_endpoint: o.get_field("accountEndpoint"),
             allowed_authentication_modes: o.get_field("allowedAuthenticationModes"),

@@ -161,7 +161,7 @@ pub mod data_lake_gen_2_filesystem {
         };
         let o = context.register_resource(request);
         DataLakeGen2FilesystemResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             aces: o.get_field("aces"),
             default_encryption_scope: o.get_field("defaultEncryptionScope"),

@@ -123,7 +123,7 @@ pub mod activity {
         };
         let o = context.register_resource(request);
         ActivityResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             creation_date: o.get_field("creationDate"),
             encryption_configuration: o.get_field("encryptionConfiguration"),

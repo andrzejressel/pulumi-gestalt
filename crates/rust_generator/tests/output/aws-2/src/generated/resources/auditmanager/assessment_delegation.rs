@@ -123,7 +123,7 @@ pub mod assessment_delegation {
         };
         let o = context.register_resource(request);
         AssessmentDelegationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             assessment_id: o.get_field("assessmentId"),
             comment: o.get_field("comment"),

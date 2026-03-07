@@ -242,7 +242,7 @@ pub mod backup_instance_postgresql {
         };
         let o = context.register_resource(request);
         BackupInstancePostgresqlResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             backup_policy_id: o.get_field("backupPolicyId"),
             database_credential_key_vault_secret_id: o

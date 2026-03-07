@@ -81,7 +81,7 @@ pub mod regional_tiered_cache {
         };
         let o = context.register_resource(request);
         RegionalTieredCacheResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             value: o.get_field("value"),
             zone_id: o.get_field("zoneId"),

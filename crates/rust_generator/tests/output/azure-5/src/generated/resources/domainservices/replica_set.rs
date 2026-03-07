@@ -331,7 +331,7 @@ pub mod replica_set {
         };
         let o = context.register_resource(request);
         ReplicaSetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             domain_controller_ip_addresses: o.get_field("domainControllerIpAddresses"),
             domain_service_id: o.get_field("domainServiceId"),

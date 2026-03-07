@@ -433,7 +433,7 @@ pub mod authority {
         };
         let o = context.register_resource(request);
         AuthorityResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_urls: o.get_field("accessUrls"),
             certificate_authority_id: o.get_field("certificateAuthorityId"),

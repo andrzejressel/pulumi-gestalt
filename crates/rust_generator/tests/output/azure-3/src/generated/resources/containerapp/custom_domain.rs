@@ -227,7 +227,7 @@ pub mod custom_domain {
         };
         let o = context.register_resource(request);
         CustomDomainResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             certificate_binding_type: o.get_field("certificateBindingType"),
             container_app_environment_certificate_id: o

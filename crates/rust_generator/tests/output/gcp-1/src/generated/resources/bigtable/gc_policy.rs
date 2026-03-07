@@ -289,7 +289,7 @@ pub mod gc_policy {
         };
         let o = context.register_resource(request);
         GCPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             column_family: o.get_field("columnFamily"),
             deletion_policy: o.get_field("deletionPolicy"),

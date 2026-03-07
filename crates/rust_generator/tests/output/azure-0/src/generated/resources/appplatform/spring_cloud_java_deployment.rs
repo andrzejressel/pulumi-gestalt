@@ -170,7 +170,7 @@ pub mod spring_cloud_java_deployment {
         };
         let o = context.register_resource(request);
         SpringCloudJavaDeploymentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             environment_variables: o.get_field("environmentVariables"),
             instance_count: o.get_field("instanceCount"),

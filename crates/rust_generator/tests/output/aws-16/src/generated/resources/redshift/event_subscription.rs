@@ -170,7 +170,7 @@ pub mod event_subscription {
         };
         let o = context.register_resource(request);
         EventSubscriptionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             customer_aws_id: o.get_field("customerAwsId"),

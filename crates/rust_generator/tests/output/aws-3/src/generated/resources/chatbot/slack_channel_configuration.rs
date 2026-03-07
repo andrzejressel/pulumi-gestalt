@@ -190,7 +190,7 @@ pub mod slack_channel_configuration {
         };
         let o = context.register_resource(request);
         SlackChannelConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             chat_configuration_arn: o.get_field("chatConfigurationArn"),
             configuration_name: o.get_field("configurationName"),

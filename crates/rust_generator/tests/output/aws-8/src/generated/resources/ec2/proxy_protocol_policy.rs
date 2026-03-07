@@ -93,7 +93,7 @@ pub mod proxy_protocol_policy {
         };
         let o = context.register_resource(request);
         ProxyProtocolPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             instance_ports: o.get_field("instancePorts"),
             load_balancer: o.get_field("loadBalancer"),

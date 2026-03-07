@@ -182,7 +182,7 @@ pub mod hybrid_connection {
         };
         let o = context.register_resource(request);
         HybridConnectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             app_service_name: o.get_field("appServiceName"),
             hostname: o.get_field("hostname"),

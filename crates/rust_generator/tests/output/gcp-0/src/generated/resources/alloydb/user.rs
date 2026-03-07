@@ -260,7 +260,7 @@ pub mod user {
         };
         let o = context.register_resource(request);
         UserResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cluster: o.get_field("cluster"),
             database_roles: o.get_field("databaseRoles"),

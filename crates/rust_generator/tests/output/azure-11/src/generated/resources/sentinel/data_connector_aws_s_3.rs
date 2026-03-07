@@ -141,7 +141,7 @@ pub mod data_connector_aws_s_3 {
         };
         let o = context.register_resource(request);
         DataConnectorAwsS3Result {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             aws_role_arn: o.get_field("awsRoleArn"),
             destination_table: o.get_field("destinationTable"),

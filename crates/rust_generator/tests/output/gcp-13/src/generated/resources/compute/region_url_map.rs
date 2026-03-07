@@ -847,7 +847,7 @@ pub mod region_url_map {
         };
         let o = context.register_resource(request);
         RegionUrlMapResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             creation_timestamp: o.get_field("creationTimestamp"),
             default_route_action: o.get_field("defaultRouteAction"),

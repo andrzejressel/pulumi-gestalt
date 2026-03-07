@@ -231,7 +231,7 @@ pub mod service {
         };
         let o = context.register_resource(request);
         ServiceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             aad_auth_enabled: o.get_field("aadAuthEnabled"),
             capacity: o.get_field("capacity"),

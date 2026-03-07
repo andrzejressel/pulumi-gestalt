@@ -148,7 +148,7 @@ pub mod function_javascript_uda {
         };
         let o = context.register_resource(request);
         FunctionJavascriptUdaResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             inputs: o.get_field("inputs"),
             name: o.get_field("name"),

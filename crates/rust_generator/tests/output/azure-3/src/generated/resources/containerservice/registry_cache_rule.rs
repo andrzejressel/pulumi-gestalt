@@ -136,7 +136,7 @@ pub mod registry_cache_rule {
         };
         let o = context.register_resource(request);
         RegistryCacheRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             container_registry_id: o.get_field("containerRegistryId"),
             credential_set_id: o.get_field("credentialSetId"),

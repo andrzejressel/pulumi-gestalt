@@ -106,7 +106,7 @@ pub mod connection_alias {
         };
         let o = context.register_resource(request);
         ConnectionAliasResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             connection_string: o.get_field("connectionString"),
             owner_account_id: o.get_field("ownerAccountId"),

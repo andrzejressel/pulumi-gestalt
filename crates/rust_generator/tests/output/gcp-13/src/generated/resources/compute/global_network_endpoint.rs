@@ -153,7 +153,7 @@ pub mod global_network_endpoint {
         };
         let o = context.register_resource(request);
         GlobalNetworkEndpointResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             fqdn: o.get_field("fqdn"),
             global_network_endpoint_group: o.get_field("globalNetworkEndpointGroup"),

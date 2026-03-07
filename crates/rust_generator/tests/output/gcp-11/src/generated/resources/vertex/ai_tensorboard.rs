@@ -227,7 +227,7 @@ pub mod ai_tensorboard {
         };
         let o = context.register_resource(request);
         AiTensorboardResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             blob_storage_path_prefix: o.get_field("blobStoragePathPrefix"),
             create_time: o.get_field("createTime"),

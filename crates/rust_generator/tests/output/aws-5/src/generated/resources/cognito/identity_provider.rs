@@ -138,7 +138,7 @@ pub mod identity_provider {
         };
         let o = context.register_resource(request);
         IdentityProviderResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             attribute_mapping: o.get_field("attributeMapping"),
             idp_identifiers: o.get_field("idpIdentifiers"),

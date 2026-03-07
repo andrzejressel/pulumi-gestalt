@@ -553,7 +553,7 @@ pub mod function {
         };
         let o = context.register_resource(request);
         FunctionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             available_memory_mb: o.get_field("availableMemoryMb"),
             build_environment_variables: o.get_field("buildEnvironmentVariables"),

@@ -119,7 +119,7 @@ pub mod service_perimeter_dry_run_egress_policy {
         };
         let o = context.register_resource(request);
         ServicePerimeterDryRunEgressPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             egress_from: o.get_field("egressFrom"),
             egress_to: o.get_field("egressTo"),

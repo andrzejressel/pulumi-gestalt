@@ -156,7 +156,7 @@ pub mod connection_certificate {
         };
         let o = context.register_resource(request);
         ConnectionCertificateResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             automation_account_name: o.get_field("automationAccountName"),
             automation_certificate_name: o.get_field("automationCertificateName"),

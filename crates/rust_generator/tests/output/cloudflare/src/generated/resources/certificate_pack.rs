@@ -155,7 +155,7 @@ pub mod certificate_pack {
         };
         let o = context.register_resource(request);
         CertificatePackResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             certificate_authority: o.get_field("certificateAuthority"),
             cloudflare_branding: o.get_field("cloudflareBranding"),

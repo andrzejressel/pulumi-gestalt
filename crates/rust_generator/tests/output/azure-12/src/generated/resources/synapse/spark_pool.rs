@@ -312,7 +312,7 @@ pub mod spark_pool {
         };
         let o = context.register_resource(request);
         SparkPoolResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             auto_pause: o.get_field("autoPause"),
             auto_scale: o.get_field("autoScale"),

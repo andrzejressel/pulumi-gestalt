@@ -391,7 +391,7 @@ pub mod interconnect {
         };
         let o = context.register_resource(request);
         InterconnectResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             admin_enabled: o.get_field("adminEnabled"),
             available_features: o.get_field("availableFeatures"),

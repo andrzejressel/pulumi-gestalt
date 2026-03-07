@@ -27,11 +27,16 @@ impl RawOutput {
 pub struct RegisterResourceOutput {
     pub(crate) fields: Output<Arc<ResourceFields>>,
     pub(crate) urn: RawOutput,
+    pub(crate) id: RawOutput,
 }
 
 impl RegisterResourceOutput {
     pub fn get_urn(&self) -> RawOutput {
         self.urn.clone()
+    }
+
+    pub fn get_id(&self) -> RawOutput {
+        self.id.clone()
     }
 
     pub(crate) fn invoke_void(self) -> Shared<BoxFuture<'static, ()>> {

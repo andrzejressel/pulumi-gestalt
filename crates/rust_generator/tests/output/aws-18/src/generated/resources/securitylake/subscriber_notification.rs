@@ -121,7 +121,7 @@ pub mod subscriber_notification {
         };
         let o = context.register_resource(request);
         SubscriberNotificationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             configuration: o.get_field("configuration"),
             endpoint_id: o.get_field("endpointId"),

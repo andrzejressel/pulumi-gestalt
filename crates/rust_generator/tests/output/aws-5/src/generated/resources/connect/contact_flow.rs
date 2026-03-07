@@ -211,7 +211,7 @@ pub mod contact_flow {
         };
         let o = context.register_resource(request);
         ContactFlowResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             contact_flow_id: o.get_field("contactFlowId"),

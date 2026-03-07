@@ -123,7 +123,7 @@ pub mod app_cookie_stickiness_policy {
         };
         let o = context.register_resource(request);
         AppCookieStickinessPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cookie_name: o.get_field("cookieName"),
             lb_port: o.get_field("lbPort"),

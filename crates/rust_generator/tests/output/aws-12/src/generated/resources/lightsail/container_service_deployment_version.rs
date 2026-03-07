@@ -131,7 +131,7 @@ pub mod container_service_deployment_version {
         };
         let o = context.register_resource(request);
         ContainerServiceDeploymentVersionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             containers: o.get_field("containers"),
             created_at: o.get_field("createdAt"),

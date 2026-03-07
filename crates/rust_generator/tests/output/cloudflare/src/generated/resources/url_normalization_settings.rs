@@ -85,7 +85,7 @@ pub mod url_normalization_settings {
         };
         let o = context.register_resource(request);
         UrlNormalizationSettingsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             scope: o.get_field("scope"),
             type_: o.get_field("type"),

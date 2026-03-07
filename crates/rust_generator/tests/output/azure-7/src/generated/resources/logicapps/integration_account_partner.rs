@@ -146,7 +146,7 @@ pub mod integration_account_partner {
         };
         let o = context.register_resource(request);
         IntegrationAccountPartnerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             business_identities: o.get_field("businessIdentities"),
             integration_account_name: o.get_field("integrationAccountName"),

@@ -292,7 +292,7 @@ pub mod region_per_instance_config {
         };
         let o = context.register_resource(request);
         RegionPerInstanceConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             minimal_action: o.get_field("minimalAction"),
             most_disruptive_allowed_action: o.get_field("mostDisruptiveAllowedAction"),

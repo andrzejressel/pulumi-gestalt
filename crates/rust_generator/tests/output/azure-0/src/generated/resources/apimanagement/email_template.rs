@@ -145,7 +145,7 @@ pub mod email_template {
         };
         let o = context.register_resource(request);
         EmailTemplateResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_management_name: o.get_field("apiManagementName"),
             body: o.get_field("body"),

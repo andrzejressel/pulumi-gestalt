@@ -171,7 +171,7 @@ pub mod entity_type {
         };
         let o = context.register_resource(request);
         EntityTypeResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             display_name: o.get_field("displayName"),
             enable_fuzzy_extraction: o.get_field("enableFuzzyExtraction"),

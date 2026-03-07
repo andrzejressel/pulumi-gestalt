@@ -241,7 +241,7 @@ pub mod client_tls_policy {
         };
         let o = context.register_resource(request);
         ClientTlsPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             client_certificate: o.get_field("clientCertificate"),
             create_time: o.get_field("createTime"),

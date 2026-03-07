@@ -217,7 +217,7 @@ pub mod automation {
         };
         let o = context.register_resource(request);
         AutomationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             actions: o.get_field("actions"),
             description: o.get_field("description"),

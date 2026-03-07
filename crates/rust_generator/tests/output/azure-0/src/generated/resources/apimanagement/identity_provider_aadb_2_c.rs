@@ -218,7 +218,7 @@ pub mod identity_provider_aadb_2_c {
         };
         let o = context.register_resource(request);
         IdentityProviderAadb2cResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allowed_tenant: o.get_field("allowedTenant"),
             api_management_name: o.get_field("apiManagementName"),

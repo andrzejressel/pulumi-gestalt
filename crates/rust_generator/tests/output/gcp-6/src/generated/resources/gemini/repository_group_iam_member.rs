@@ -177,7 +177,7 @@ pub mod repository_group_iam_member {
         };
         let o = context.register_resource(request);
         RepositoryGroupIamMemberResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             code_repository_index: o.get_field("codeRepositoryIndex"),
             condition: o.get_field("condition"),

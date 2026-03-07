@@ -245,7 +245,7 @@ pub mod target_site {
         };
         let o = context.register_resource(request);
         TargetSiteResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             data_store_id: o.get_field("dataStoreId"),
             exact_match: o.get_field("exactMatch"),

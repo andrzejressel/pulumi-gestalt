@@ -361,7 +361,7 @@ pub mod health_check {
         };
         let o = context.register_resource(request);
         HealthCheckResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             child_health_threshold: o.get_field("childHealthThreshold"),

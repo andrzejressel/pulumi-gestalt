@@ -101,7 +101,7 @@ pub mod package_association {
         };
         let o = context.register_resource(request);
         PackageAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             domain_name: o.get_field("domainName"),
             package_id: o.get_field("packageId"),

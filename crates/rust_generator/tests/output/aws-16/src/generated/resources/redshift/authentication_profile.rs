@@ -83,7 +83,7 @@ pub mod authentication_profile {
         };
         let o = context.register_resource(request);
         AuthenticationProfileResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             authentication_profile_content: o.get_field("authenticationProfileContent"),
             authentication_profile_name: o.get_field("authenticationProfileName"),

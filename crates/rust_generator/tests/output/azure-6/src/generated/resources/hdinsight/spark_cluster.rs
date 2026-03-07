@@ -412,7 +412,7 @@ pub mod spark_cluster {
         };
         let o = context.register_resource(request);
         SparkClusterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cluster_version: o.get_field("clusterVersion"),
             component_version: o.get_field("componentVersion"),

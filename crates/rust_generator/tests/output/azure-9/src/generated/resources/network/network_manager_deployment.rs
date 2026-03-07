@@ -272,7 +272,7 @@ pub mod network_manager_deployment {
         };
         let o = context.register_resource(request);
         NetworkManagerDeploymentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             configuration_ids: o.get_field("configurationIds"),
             location: o.get_field("location"),

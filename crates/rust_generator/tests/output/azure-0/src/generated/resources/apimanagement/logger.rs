@@ -184,7 +184,7 @@ pub mod logger {
         };
         let o = context.register_resource(request);
         LoggerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_management_name: o.get_field("apiManagementName"),
             application_insights: o.get_field("applicationInsights"),

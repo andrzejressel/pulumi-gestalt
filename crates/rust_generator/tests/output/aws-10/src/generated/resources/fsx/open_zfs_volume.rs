@@ -236,7 +236,7 @@ pub mod open_zfs_volume {
         };
         let o = context.register_resource(request);
         OpenZfsVolumeResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             copy_tags_to_snapshots: o.get_field("copyTagsToSnapshots"),

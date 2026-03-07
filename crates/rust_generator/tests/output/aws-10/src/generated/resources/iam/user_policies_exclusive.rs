@@ -64,7 +64,7 @@ pub mod user_policies_exclusive {
         };
         let o = context.register_resource(request);
         UserPoliciesExclusiveResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             policy_names: o.get_field("policyNames"),
             user_name: o.get_field("userName"),

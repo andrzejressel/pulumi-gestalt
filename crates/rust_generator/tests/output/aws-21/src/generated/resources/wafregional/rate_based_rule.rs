@@ -155,7 +155,7 @@ pub mod rate_based_rule {
         };
         let o = context.register_resource(request);
         RateBasedRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             metric_name: o.get_field("metricName"),

@@ -302,7 +302,7 @@ pub mod environment_iam_binding {
         };
         let o = context.register_resource(request);
         EnvironmentIamBindingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             condition: o.get_field("condition"),
             env_id: o.get_field("envId"),

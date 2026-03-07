@@ -87,7 +87,7 @@ pub mod dedicated_ip_assignment {
         };
         let o = context.register_resource(request);
         DedicatedIpAssignmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             destination_pool_name: o.get_field("destinationPoolName"),
             ip: o.get_field("ip"),

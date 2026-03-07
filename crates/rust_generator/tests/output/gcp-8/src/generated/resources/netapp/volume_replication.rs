@@ -322,7 +322,7 @@ pub mod volume_replication {
         };
         let o = context.register_resource(request);
         VolumeReplicationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             create_time: o.get_field("createTime"),
             delete_destination_volume: o.get_field("deleteDestinationVolume"),

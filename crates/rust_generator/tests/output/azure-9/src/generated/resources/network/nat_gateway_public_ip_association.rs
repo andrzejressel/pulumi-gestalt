@@ -109,7 +109,7 @@ pub mod nat_gateway_public_ip_association {
         };
         let o = context.register_resource(request);
         NatGatewayPublicIpAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             nat_gateway_id: o.get_field("natGatewayId"),
             public_ip_address_id: o.get_field("publicIpAddressId"),

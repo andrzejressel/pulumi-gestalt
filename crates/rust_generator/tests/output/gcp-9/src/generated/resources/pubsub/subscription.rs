@@ -828,7 +828,7 @@ pub mod subscription {
         };
         let o = context.register_resource(request);
         SubscriptionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             ack_deadline_seconds: o.get_field("ackDeadlineSeconds"),
             bigquery_config: o.get_field("bigqueryConfig"),

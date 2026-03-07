@@ -203,7 +203,7 @@ pub mod environment_dapr_component {
         };
         let o = context.register_resource(request);
         EnvironmentDaprComponentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             component_type: o.get_field("componentType"),
             container_app_environment_id: o.get_field("containerAppEnvironmentId"),

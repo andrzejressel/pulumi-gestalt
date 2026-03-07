@@ -216,7 +216,7 @@ pub mod pipeline {
         };
         let o = context.register_resource(request);
         PipelineResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             activities_json: o.get_field("activitiesJson"),
             annotations: o.get_field("annotations"),

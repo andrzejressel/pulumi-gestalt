@@ -212,7 +212,7 @@ pub mod medtech_service_fhir_destination {
         };
         let o = context.register_resource(request);
         MedtechServiceFhirDestinationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             destination_fhir_mapping_json: o.get_field("destinationFhirMappingJson"),
             destination_fhir_service_id: o.get_field("destinationFhirServiceId"),

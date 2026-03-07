@@ -285,7 +285,7 @@ pub mod function_iam_policy {
         };
         let o = context.register_resource(request);
         FunctionIamPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cloud_function: o.get_field("cloudFunction"),
             etag: o.get_field("etag"),

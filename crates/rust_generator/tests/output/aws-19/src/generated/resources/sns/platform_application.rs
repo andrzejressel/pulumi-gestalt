@@ -280,7 +280,7 @@ pub mod platform_application {
         };
         let o = context.register_resource(request);
         PlatformApplicationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             apple_platform_bundle_id: o.get_field("applePlatformBundleId"),
             apple_platform_team_id: o.get_field("applePlatformTeamId"),

@@ -196,7 +196,7 @@ pub mod ca_certificate {
         };
         let o = context.register_resource(request);
         CaCertificateResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             active: o.get_field("active"),
             allow_auto_registration: o.get_field("allowAutoRegistration"),

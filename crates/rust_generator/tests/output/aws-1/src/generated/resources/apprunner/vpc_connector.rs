@@ -116,7 +116,7 @@ pub mod vpc_connector {
         };
         let o = context.register_resource(request);
         VpcConnectorResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             security_groups: o.get_field("securityGroups"),

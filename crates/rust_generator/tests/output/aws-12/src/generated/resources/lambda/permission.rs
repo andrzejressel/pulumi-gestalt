@@ -384,7 +384,7 @@ pub mod permission {
         };
         let o = context.register_resource(request);
         PermissionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             action: o.get_field("action"),
             event_source_token: o.get_field("eventSourceToken"),

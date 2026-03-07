@@ -319,7 +319,7 @@ pub mod bitbucket_server_config {
         };
         let o = context.register_resource(request);
         BitbucketServerConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_key: o.get_field("apiKey"),
             config_id: o.get_field("configId"),

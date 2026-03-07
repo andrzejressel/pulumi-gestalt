@@ -211,7 +211,7 @@ pub mod key {
         };
         let o = context.register_resource(request);
         KeyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             keepers: o.get_field("keepers"),
             key_algorithm: o.get_field("keyAlgorithm"),

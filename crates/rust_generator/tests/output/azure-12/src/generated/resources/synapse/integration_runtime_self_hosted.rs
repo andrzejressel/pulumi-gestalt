@@ -140,7 +140,7 @@ pub mod integration_runtime_self_hosted {
         };
         let o = context.register_resource(request);
         IntegrationRuntimeSelfHostedResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             authorization_key_primary: o.get_field("authorizationKeyPrimary"),
             authorization_key_secondary: o.get_field("authorizationKeySecondary"),

@@ -88,7 +88,7 @@ pub mod control_tower_control {
         };
         let o = context.register_resource(request);
         ControlTowerControlResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             control_identifier: o.get_field("controlIdentifier"),

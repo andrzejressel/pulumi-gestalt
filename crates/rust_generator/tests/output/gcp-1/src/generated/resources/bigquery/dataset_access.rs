@@ -378,7 +378,7 @@ pub mod dataset_access {
         };
         let o = context.register_resource(request);
         DatasetAccessResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_updated_member: o.get_field("apiUpdatedMember"),
             authorized_dataset: o.get_field("authorizedDataset"),

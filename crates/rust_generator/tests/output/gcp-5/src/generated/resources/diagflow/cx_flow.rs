@@ -513,7 +513,7 @@ pub mod cx_flow {
         };
         let o = context.register_resource(request);
         CxFlowResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             advanced_settings: o.get_field("advancedSettings"),
             description: o.get_field("description"),

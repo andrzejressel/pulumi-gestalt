@@ -329,7 +329,7 @@ pub mod aspect_type_iam_binding {
         };
         let o = context.register_resource(request);
         AspectTypeIamBindingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             aspect_type_id: o.get_field("aspectTypeId"),
             condition: o.get_field("condition"),

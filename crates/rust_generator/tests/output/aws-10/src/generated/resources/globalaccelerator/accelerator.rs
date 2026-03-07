@@ -154,7 +154,7 @@ pub mod accelerator {
         };
         let o = context.register_resource(request);
         AcceleratorResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             attributes: o.get_field("attributes"),
             dns_name: o.get_field("dnsName"),

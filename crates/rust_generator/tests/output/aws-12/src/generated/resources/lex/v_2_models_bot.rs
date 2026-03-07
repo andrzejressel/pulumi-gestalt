@@ -208,7 +208,7 @@ pub mod v_2_models_bot {
         };
         let o = context.register_resource(request);
         V2modelsBotResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             data_privacies: o.get_field("dataPrivacies"),

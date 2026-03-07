@@ -220,7 +220,7 @@ pub mod server_transparent_data_encryption {
         };
         let o = context.register_resource(request);
         ServerTransparentDataEncryptionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             auto_rotation_enabled: o.get_field("autoRotationEnabled"),
             key_vault_key_id: o.get_field("keyVaultKeyId"),

@@ -441,7 +441,7 @@ pub mod patch_deployment {
         };
         let o = context.register_resource(request);
         PatchDeploymentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),

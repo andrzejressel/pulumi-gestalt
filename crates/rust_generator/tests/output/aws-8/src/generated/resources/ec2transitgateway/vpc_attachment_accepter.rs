@@ -143,7 +143,7 @@ pub mod vpc_attachment_accepter {
         };
         let o = context.register_resource(request);
         VpcAttachmentAccepterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             appliance_mode_support: o.get_field("applianceModeSupport"),
             dns_support: o.get_field("dnsSupport"),

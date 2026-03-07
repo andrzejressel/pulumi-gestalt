@@ -84,7 +84,7 @@ pub mod vpc_endpoint_service_allowed_principle {
         };
         let o = context.register_resource(request);
         VpcEndpointServiceAllowedPrincipleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             principal_arn: o.get_field("principalArn"),
             vpc_endpoint_service_id: o.get_field("vpcEndpointServiceId"),

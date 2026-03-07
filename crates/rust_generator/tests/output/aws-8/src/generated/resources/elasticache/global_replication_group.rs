@@ -279,7 +279,7 @@ pub mod global_replication_group {
         };
         let o = context.register_resource(request);
         GlobalReplicationGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             at_rest_encryption_enabled: o.get_field("atRestEncryptionEnabled"),

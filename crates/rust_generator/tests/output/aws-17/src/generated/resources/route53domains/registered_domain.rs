@@ -243,7 +243,7 @@ pub mod registered_domain {
         };
         let o = context.register_resource(request);
         RegisteredDomainResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             abuse_contact_email: o.get_field("abuseContactEmail"),
             abuse_contact_phone: o.get_field("abuseContactPhone"),

@@ -100,7 +100,7 @@ pub mod eip_domain_name {
         };
         let o = context.register_resource(request);
         EipDomainNameResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allocation_id: o.get_field("allocationId"),
             domain_name: o.get_field("domainName"),

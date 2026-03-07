@@ -140,7 +140,7 @@ pub mod static_web_app_function_app_registration {
         };
         let o = context.register_resource(request);
         StaticWebAppFunctionAppRegistrationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             function_app_id: o.get_field("functionAppId"),
             static_web_app_id: o.get_field("staticWebAppId"),

@@ -280,7 +280,7 @@ pub mod configuration_key {
         };
         let o = context.register_resource(request);
         ConfigurationKeyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             configuration_store_id: o.get_field("configurationStoreId"),
             content_type: o.get_field("contentType"),

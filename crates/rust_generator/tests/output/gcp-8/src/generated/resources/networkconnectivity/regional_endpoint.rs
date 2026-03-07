@@ -279,7 +279,7 @@ pub mod regional_endpoint {
         };
         let o = context.register_resource(request);
         RegionalEndpointResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_type: o.get_field("accessType"),
             address: o.get_field("address"),

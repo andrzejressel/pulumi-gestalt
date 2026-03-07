@@ -264,7 +264,7 @@ pub mod consumer_quota_override {
         };
         let o = context.register_resource(request);
         ConsumerQuotaOverrideResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             dimensions: o.get_field("dimensions"),
             force: o.get_field("force"),

@@ -190,7 +190,7 @@ pub mod alert_processing_rule_suppression {
         };
         let o = context.register_resource(request);
         AlertProcessingRuleSuppressionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             condition: o.get_field("condition"),
             description: o.get_field("description"),

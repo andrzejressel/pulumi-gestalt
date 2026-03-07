@@ -162,7 +162,7 @@ pub mod disk_resource_policy_attachment {
         };
         let o = context.register_resource(request);
         DiskResourcePolicyAttachmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             disk: o.get_field("disk"),
             name: o.get_field("name"),

@@ -235,7 +235,7 @@ pub mod linked_service_data_lake_storage_gen_2 {
         };
         let o = context.register_resource(request);
         LinkedServiceDataLakeStorageGen2Result {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             additional_properties: o.get_field("additionalProperties"),
             annotations: o.get_field("annotations"),

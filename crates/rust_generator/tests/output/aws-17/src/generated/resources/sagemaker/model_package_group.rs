@@ -108,7 +108,7 @@ pub mod model_package_group {
         };
         let o = context.register_resource(request);
         ModelPackageGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             model_package_group_description: o.get_field("modelPackageGroupDescription"),

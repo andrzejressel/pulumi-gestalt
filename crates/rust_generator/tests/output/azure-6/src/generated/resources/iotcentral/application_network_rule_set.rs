@@ -125,7 +125,7 @@ pub mod application_network_rule_set {
         };
         let o = context.register_resource(request);
         ApplicationNetworkRuleSetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             apply_to_device: o.get_field("applyToDevice"),
             default_action: o.get_field("defaultAction"),

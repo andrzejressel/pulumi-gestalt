@@ -111,7 +111,7 @@ pub mod disk_attachment {
         };
         let o = context.register_resource(request);
         Disk_attachmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             disk_name: o.get_field("diskName"),
             disk_path: o.get_field("diskPath"),

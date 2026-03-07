@@ -92,7 +92,7 @@ pub mod account {
         };
         let o = context.register_resource(request);
         AccountResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             enforce_twofactor: o.get_field("enforceTwofactor"),
             name: o.get_field("name"),

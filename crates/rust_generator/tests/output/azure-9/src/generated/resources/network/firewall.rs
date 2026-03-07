@@ -279,7 +279,7 @@ pub mod firewall {
         };
         let o = context.register_resource(request);
         FirewallResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             dns_proxy_enabled: o.get_field("dnsProxyEnabled"),
             dns_servers: o.get_field("dnsServers"),

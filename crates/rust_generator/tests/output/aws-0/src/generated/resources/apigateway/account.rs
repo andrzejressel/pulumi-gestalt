@@ -130,7 +130,7 @@ pub mod account {
         };
         let o = context.register_resource(request);
         AccountResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_key_version: o.get_field("apiKeyVersion"),
             cloudwatch_role_arn: o.get_field("cloudwatchRoleArn"),

@@ -168,7 +168,7 @@ pub mod cluster_managed_private_endpoint {
         };
         let o = context.register_resource(request);
         ClusterManagedPrivateEndpointResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cluster_name: o.get_field("clusterName"),
             group_id: o.get_field("groupId"),

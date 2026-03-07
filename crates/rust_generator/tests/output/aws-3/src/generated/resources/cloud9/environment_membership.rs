@@ -105,7 +105,7 @@ pub mod environment_membership {
         };
         let o = context.register_resource(request);
         EnvironmentMembershipResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             environment_id: o.get_field("environmentId"),
             permissions: o.get_field("permissions"),

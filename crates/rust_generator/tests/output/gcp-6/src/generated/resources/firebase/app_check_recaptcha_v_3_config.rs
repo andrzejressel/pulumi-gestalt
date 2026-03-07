@@ -168,7 +168,7 @@ pub mod app_check_recaptcha_v_3_config {
         };
         let o = context.register_resource(request);
         AppCheckRecaptchaV3ConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             app_id: o.get_field("appId"),
             name: o.get_field("name"),

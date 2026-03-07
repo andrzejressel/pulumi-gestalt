@@ -91,7 +91,7 @@ pub mod r_2_bucket {
         };
         let o = context.register_resource(request);
         R2BucketResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             location: o.get_field("location"),

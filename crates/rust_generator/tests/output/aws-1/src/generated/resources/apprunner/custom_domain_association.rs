@@ -104,7 +104,7 @@ pub mod custom_domain_association {
         };
         let o = context.register_resource(request);
         CustomDomainAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             certificate_validation_records: o.get_field("certificateValidationRecords"),
             dns_target: o.get_field("dnsTarget"),

@@ -126,7 +126,7 @@ pub mod bot_alias {
         };
         let o = context.register_resource(request);
         BotAliasResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             bot_name: o.get_field("botName"),

@@ -129,7 +129,7 @@ pub mod route_response {
         };
         let o = context.register_resource(request);
         RouteResponseResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_id: o.get_field("apiId"),
             model_selection_expression: o.get_field("modelSelectionExpression"),

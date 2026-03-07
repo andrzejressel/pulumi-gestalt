@@ -120,7 +120,7 @@ pub mod watchlist_item {
         };
         let o = context.register_resource(request);
         WatchlistItemResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             name: o.get_field("name"),
             properties: o.get_field("properties"),

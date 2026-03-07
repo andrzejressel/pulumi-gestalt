@@ -169,7 +169,7 @@ pub mod trust_provider {
         };
         let o = context.register_resource(request);
         TrustProviderResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             description: o.get_field("description"),
             device_options: o.get_field("deviceOptions"),

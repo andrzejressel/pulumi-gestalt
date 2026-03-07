@@ -363,7 +363,7 @@ pub mod role {
         };
         let o = context.register_resource(request);
         RoleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             assume_role_policy: o.get_field("assumeRolePolicy"),

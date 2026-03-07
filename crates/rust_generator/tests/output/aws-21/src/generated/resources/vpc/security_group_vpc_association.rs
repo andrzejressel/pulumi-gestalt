@@ -96,7 +96,7 @@ pub mod security_group_vpc_association {
         };
         let o = context.register_resource(request);
         SecurityGroupVpcAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             security_group_id: o.get_field("securityGroupId"),
             state: o.get_field("state"),

@@ -204,7 +204,7 @@ pub mod linked_service_cosmos_db_mongo_api {
         };
         let o = context.register_resource(request);
         LinkedServiceCosmosDbMongoApiResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             additional_properties: o.get_field("additionalProperties"),
             annotations: o.get_field("annotations"),

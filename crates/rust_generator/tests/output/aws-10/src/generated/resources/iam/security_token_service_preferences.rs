@@ -65,7 +65,7 @@ pub mod security_token_service_preferences {
         };
         let o = context.register_resource(request);
         SecurityTokenServicePreferencesResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             global_endpoint_token_version: o.get_field("globalEndpointTokenVersion"),
         }

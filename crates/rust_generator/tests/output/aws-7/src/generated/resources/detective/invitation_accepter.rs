@@ -78,7 +78,7 @@ pub mod invitation_accepter {
         };
         let o = context.register_resource(request);
         InvitationAccepterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             graph_arn: o.get_field("graphArn"),
         }

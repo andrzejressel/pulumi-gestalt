@@ -106,7 +106,7 @@ pub mod ai_feature_store_entity_type_iam_policy {
         };
         let o = context.register_resource(request);
         AiFeatureStoreEntityTypeIamPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             entitytype: o.get_field("entitytype"),
             etag: o.get_field("etag"),

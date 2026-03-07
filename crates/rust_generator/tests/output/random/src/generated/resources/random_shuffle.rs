@@ -103,7 +103,7 @@ pub mod random_shuffle {
         };
         let o = context.register_resource(request);
         RandomShuffleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             inputs: o.get_field("inputs"),
             keepers: o.get_field("keepers"),

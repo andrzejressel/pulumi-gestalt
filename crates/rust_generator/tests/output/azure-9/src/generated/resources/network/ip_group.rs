@@ -125,7 +125,7 @@ pub mod ip_group {
         };
         let o = context.register_resource(request);
         IPGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cidrs: o.get_field("cidrs"),
             firewall_ids: o.get_field("firewallIds"),

@@ -426,7 +426,7 @@ pub mod record {
         };
         let o = context.register_resource(request);
         RecordResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             aliases: o.get_field("aliases"),
             allow_overwrite: o.get_field("allowOverwrite"),

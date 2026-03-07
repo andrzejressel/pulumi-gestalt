@@ -103,7 +103,7 @@ pub mod log_service {
         };
         let o = context.register_resource(request);
         LogServiceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             directory_id: o.get_field("directoryId"),
             log_group_name: o.get_field("logGroupName"),

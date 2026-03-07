@@ -358,7 +358,7 @@ pub mod metric {
         };
         let o = context.register_resource(request);
         MetricResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bucket_name: o.get_field("bucketName"),
             bucket_options: o.get_field("bucketOptions"),

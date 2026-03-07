@@ -94,7 +94,7 @@ pub mod workspace_service_account {
         };
         let o = context.register_resource(request);
         WorkspaceServiceAccountResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             grafana_role: o.get_field("grafanaRole"),
             name: o.get_field("name"),

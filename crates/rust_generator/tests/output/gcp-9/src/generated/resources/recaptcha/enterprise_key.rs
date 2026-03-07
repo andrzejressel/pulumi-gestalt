@@ -304,7 +304,7 @@ pub mod enterprise_key {
         };
         let o = context.register_resource(request);
         EnterpriseKeyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             android_settings: o.get_field("androidSettings"),
             create_time: o.get_field("createTime"),

@@ -107,7 +107,7 @@ pub mod zero_trust_access_service_token {
         };
         let o = context.register_resource(request);
         ZeroTrustAccessServiceTokenResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             client_id: o.get_field("clientId"),

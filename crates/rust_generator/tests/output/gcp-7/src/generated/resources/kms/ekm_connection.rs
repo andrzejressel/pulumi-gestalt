@@ -175,7 +175,7 @@ pub mod ekm_connection {
         };
         let o = context.register_resource(request);
         EkmConnectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             create_time: o.get_field("createTime"),
             crypto_space_path: o.get_field("cryptoSpacePath"),

@@ -83,7 +83,7 @@ pub mod lambda_function_association {
         };
         let o = context.register_resource(request);
         LambdaFunctionAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             function_arn: o.get_field("functionArn"),
             instance_id: o.get_field("instanceId"),

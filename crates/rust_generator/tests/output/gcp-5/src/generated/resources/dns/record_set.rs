@@ -436,7 +436,7 @@ pub mod record_set {
         };
         let o = context.register_resource(request);
         RecordSetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             managed_zone: o.get_field("managedZone"),
             name: o.get_field("name"),

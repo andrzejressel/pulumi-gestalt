@@ -203,7 +203,7 @@ pub mod domain {
         };
         let o = context.register_resource(request);
         DomainResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             admin: o.get_field("admin"),
             authorized_networks: o.get_field("authorizedNetworks"),

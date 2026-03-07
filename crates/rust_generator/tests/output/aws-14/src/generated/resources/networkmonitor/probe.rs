@@ -161,7 +161,7 @@ pub mod probe {
         };
         let o = context.register_resource(request);
         ProbeResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             address_family: o.get_field("addressFamily"),
             arn: o.get_field("arn"),

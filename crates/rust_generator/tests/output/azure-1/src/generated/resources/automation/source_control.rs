@@ -196,7 +196,7 @@ pub mod source_control {
         };
         let o = context.register_resource(request);
         SourceControlResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             automatic_sync: o.get_field("automaticSync"),
             automation_account_id: o.get_field("automationAccountId"),

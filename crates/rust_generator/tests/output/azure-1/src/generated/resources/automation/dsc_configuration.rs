@@ -168,7 +168,7 @@ pub mod dsc_configuration {
         };
         let o = context.register_resource(request);
         DscConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             automation_account_name: o.get_field("automationAccountName"),
             content_embedded: o.get_field("contentEmbedded"),

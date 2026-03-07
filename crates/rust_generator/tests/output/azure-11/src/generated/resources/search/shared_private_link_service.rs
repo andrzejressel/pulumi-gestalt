@@ -148,7 +148,7 @@ pub mod shared_private_link_service {
         };
         let o = context.register_resource(request);
         SharedPrivateLinkServiceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             name: o.get_field("name"),
             request_message: o.get_field("requestMessage"),

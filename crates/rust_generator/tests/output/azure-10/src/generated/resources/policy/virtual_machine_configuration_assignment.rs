@@ -185,7 +185,7 @@ pub mod virtual_machine_configuration_assignment {
         };
         let o = context.register_resource(request);
         VirtualMachineConfigurationAssignmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             configuration: o.get_field("configuration"),
             location: o.get_field("location"),

@@ -417,7 +417,7 @@ pub mod vpn_tunnel {
         };
         let o = context.register_resource(request);
         VPNTunnelResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             creation_timestamp: o.get_field("creationTimestamp"),
             description: o.get_field("description"),

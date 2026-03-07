@@ -144,7 +144,7 @@ pub mod credential {
         };
         let o = context.register_resource(request);
         CredentialResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             automation_account_name: o.get_field("automationAccountName"),
             description: o.get_field("description"),

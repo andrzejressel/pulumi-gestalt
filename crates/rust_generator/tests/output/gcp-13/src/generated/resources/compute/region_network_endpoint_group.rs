@@ -649,7 +649,7 @@ pub mod region_network_endpoint_group {
         };
         let o = context.register_resource(request);
         RegionNetworkEndpointGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             app_engine: o.get_field("appEngine"),
             cloud_function: o.get_field("cloudFunction"),

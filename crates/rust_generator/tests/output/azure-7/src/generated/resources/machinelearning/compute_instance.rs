@@ -278,7 +278,7 @@ pub mod compute_instance {
         };
         let o = context.register_resource(request);
         ComputeInstanceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             assign_to_user: o.get_field("assignToUser"),
             authorization_type: o.get_field("authorizationType"),

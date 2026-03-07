@@ -148,7 +148,7 @@ pub mod address_map {
         };
         let o = context.register_resource(request);
         AddressMapResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             can_delete: o.get_field("canDelete"),

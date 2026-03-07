@@ -209,7 +209,7 @@ pub mod topic {
         };
         let o = context.register_resource(request);
         TopicResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             endpoint: o.get_field("endpoint"),
             identity: o.get_field("identity"),

@@ -319,7 +319,7 @@ pub mod guest_policies {
         };
         let o = context.register_resource(request);
         GuestPoliciesResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             assignment: o.get_field("assignment"),
             create_time: o.get_field("createTime"),

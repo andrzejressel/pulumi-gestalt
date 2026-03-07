@@ -136,7 +136,7 @@ pub mod arc_machine {
         };
         let o = context.register_resource(request);
         ArcMachineResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             identity: o.get_field("identity"),
             kind: o.get_field("kind"),

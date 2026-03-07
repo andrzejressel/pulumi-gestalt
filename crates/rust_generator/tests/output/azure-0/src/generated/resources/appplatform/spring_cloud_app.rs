@@ -220,7 +220,7 @@ pub mod spring_cloud_app {
         };
         let o = context.register_resource(request);
         SpringCloudAppResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             addon_json: o.get_field("addonJson"),
             custom_persistent_disks: o.get_field("customPersistentDisks"),

@@ -190,7 +190,7 @@ pub mod publishing_destination {
         };
         let o = context.register_resource(request);
         PublishingDestinationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             destination_arn: o.get_field("destinationArn"),
             destination_type: o.get_field("destinationType"),

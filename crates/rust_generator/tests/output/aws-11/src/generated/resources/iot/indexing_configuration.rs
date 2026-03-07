@@ -115,7 +115,7 @@ pub mod indexing_configuration {
         };
         let o = context.register_resource(request);
         IndexingConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             thing_group_indexing_configuration: o
                 .get_field("thingGroupIndexingConfiguration"),

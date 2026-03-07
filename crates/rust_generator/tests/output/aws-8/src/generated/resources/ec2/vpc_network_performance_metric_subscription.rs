@@ -96,7 +96,7 @@ pub mod vpc_network_performance_metric_subscription {
         };
         let o = context.register_resource(request);
         VpcNetworkPerformanceMetricSubscriptionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             destination: o.get_field("destination"),
             metric: o.get_field("metric"),

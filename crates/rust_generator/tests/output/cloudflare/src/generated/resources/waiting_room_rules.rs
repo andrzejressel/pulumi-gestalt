@@ -105,7 +105,7 @@ pub mod waiting_room_rules {
         };
         let o = context.register_resource(request);
         WaitingRoomRulesResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             rules: o.get_field("rules"),
             waiting_room_id: o.get_field("waitingRoomId"),

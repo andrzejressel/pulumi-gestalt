@@ -304,7 +304,7 @@ pub mod cluster_instance {
         };
         let o = context.register_resource(request);
         ClusterInstanceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             address: o.get_field("address"),
             apply_immediately: o.get_field("applyImmediately"),

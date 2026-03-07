@@ -115,7 +115,7 @@ pub mod zero_trust_access_group {
         };
         let o = context.register_resource(request);
         ZeroTrustAccessGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             excludes: o.get_field("excludes"),

@@ -60,7 +60,7 @@ pub mod access_keys_configuration {
         };
         let o = context.register_resource(request);
         AccessKeysConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             key_rotation_interval_days: o.get_field("keyRotationIntervalDays"),

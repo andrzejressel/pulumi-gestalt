@@ -246,7 +246,7 @@ pub mod database {
         };
         let o = context.register_resource(request);
         DatabaseResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             database_dialect: o.get_field("databaseDialect"),
             ddls: o.get_field("ddls"),

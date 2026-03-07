@@ -110,7 +110,7 @@ pub mod voice_connector_group {
         };
         let o = context.register_resource(request);
         VoiceConnectorGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             connectors: o.get_field("connectors"),
             name: o.get_field("name"),

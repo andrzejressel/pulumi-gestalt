@@ -154,7 +154,7 @@ pub mod mongo_user_definition {
         };
         let o = context.register_resource(request);
         MongoUserDefinitionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cosmos_mongo_database_id: o.get_field("cosmosMongoDatabaseId"),
             inherited_role_names: o.get_field("inheritedRoleNames"),

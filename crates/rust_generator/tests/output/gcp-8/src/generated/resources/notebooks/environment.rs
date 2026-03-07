@@ -199,7 +199,7 @@ pub mod environment {
         };
         let o = context.register_resource(request);
         EnvironmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             container_image: o.get_field("containerImage"),
             create_time: o.get_field("createTime"),

@@ -106,7 +106,7 @@ pub mod permission {
         };
         let o = context.register_resource(request);
         PermissionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allow_ssh: o.get_field("allowSsh"),
             allow_sudo: o.get_field("allowSudo"),

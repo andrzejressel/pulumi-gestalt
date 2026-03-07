@@ -125,7 +125,7 @@ pub mod registry_scanning_configuration {
         };
         let o = context.register_resource(request);
         RegistryScanningConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             registry_id: o.get_field("registryId"),
             rules: o.get_field("rules"),

@@ -212,7 +212,7 @@ pub mod private_virtual_interface {
         };
         let o = context.register_resource(request);
         PrivateVirtualInterfaceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             address_family: o.get_field("addressFamily"),
             amazon_address: o.get_field("amazonAddress"),

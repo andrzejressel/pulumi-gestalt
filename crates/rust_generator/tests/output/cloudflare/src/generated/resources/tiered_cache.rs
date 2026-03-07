@@ -74,7 +74,7 @@ pub mod tiered_cache {
         };
         let o = context.register_resource(request);
         TieredCacheResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cache_type: o.get_field("cacheType"),
             zone_id: o.get_field("zoneId"),

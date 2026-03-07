@@ -184,10 +184,20 @@ impl PulumiConnector for RealPulumiConnector {
             if self.in_preview {
                 NodeValue::Nothing
             } else {
-                panic!("URL must always be available if not in preview")
+                panic!("URN must always be available if not in preview")
             }
         } else {
             NodeValue::exists(response.urn, false)
+        };
+
+        let id = if response.id.is_empty() {
+            if self.in_preview {
+                NodeValue::Nothing
+            } else {
+                panic!("ID must always be available if not in preview")
+            }
+        } else {
+            NodeValue::exists(response.id, false)
         };
 
         let obj = response.object;
@@ -199,6 +209,7 @@ impl PulumiConnector for RealPulumiConnector {
 
         RegisterResourceResult {
             urn,
+            id,
             fields: ResourceFields {
                 object: map,
                 is_in_preview: self.in_preview,

@@ -197,7 +197,7 @@ pub mod voice_connector_streaming {
         };
         let o = context.register_resource(request);
         VoiceConnectorStreamingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             data_retention: o.get_field("dataRetention"),
             disabled: o.get_field("disabled"),

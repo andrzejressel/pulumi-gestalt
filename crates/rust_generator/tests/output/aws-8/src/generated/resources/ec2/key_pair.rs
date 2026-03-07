@@ -129,7 +129,7 @@ pub mod key_pair {
         };
         let o = context.register_resource(request);
         KeyPairResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             fingerprint: o.get_field("fingerprint"),

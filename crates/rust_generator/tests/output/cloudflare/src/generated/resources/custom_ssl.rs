@@ -105,7 +105,7 @@ pub mod custom_ssl {
         };
         let o = context.register_resource(request);
         CustomSslResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             custom_ssl_options: o.get_field("customSslOptions"),
             custom_ssl_priorities: o.get_field("customSslPriorities"),

@@ -145,7 +145,7 @@ pub mod configuration_template {
         };
         let o = context.register_resource(request);
         ConfigurationTemplateResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             application: o.get_field("application"),
             description: o.get_field("description"),

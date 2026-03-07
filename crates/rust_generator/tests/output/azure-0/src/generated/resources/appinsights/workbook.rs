@@ -199,7 +199,7 @@ pub mod workbook {
         };
         let o = context.register_resource(request);
         WorkbookResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             category: o.get_field("category"),
             data_json: o.get_field("dataJson"),

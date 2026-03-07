@@ -190,7 +190,7 @@ pub mod firewall_network_rule_collection {
         };
         let o = context.register_resource(request);
         FirewallNetworkRuleCollectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             action: o.get_field("action"),
             azure_firewall_name: o.get_field("azureFirewallName"),

@@ -189,7 +189,7 @@ pub mod frontdoor_custom_domain_association {
         };
         let o = context.register_resource(request);
         FrontdoorCustomDomainAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cdn_frontdoor_custom_domain_id: o.get_field("cdnFrontdoorCustomDomainId"),
             cdn_frontdoor_route_ids: o.get_field("cdnFrontdoorRouteIds"),

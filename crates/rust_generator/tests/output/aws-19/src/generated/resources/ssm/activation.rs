@@ -161,7 +161,7 @@ pub mod activation {
         };
         let o = context.register_resource(request);
         ActivationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             activation_code: o.get_field("activationCode"),
             description: o.get_field("description"),

@@ -168,7 +168,7 @@ pub mod configuration_profile {
         };
         let o = context.register_resource(request);
         ConfigurationProfileResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             application_id: o.get_field("applicationId"),
             arn: o.get_field("arn"),

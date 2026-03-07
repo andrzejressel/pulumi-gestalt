@@ -213,7 +213,7 @@ pub mod reference_input_blob {
         };
         let o = context.register_resource(request);
         ReferenceInputBlobResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             authentication_mode: o.get_field("authenticationMode"),
             date_format: o.get_field("dateFormat"),

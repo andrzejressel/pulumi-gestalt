@@ -182,7 +182,7 @@ pub mod elasticsearch {
         };
         let o = context.register_resource(request);
         ElasticsearchResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             elastic_cloud_deployment_id: o.get_field("elasticCloudDeploymentId"),
             elastic_cloud_email_address: o.get_field("elasticCloudEmailAddress"),

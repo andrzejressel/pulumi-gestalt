@@ -173,7 +173,7 @@ pub mod authorization_rule {
         };
         let o = context.register_resource(request);
         AuthorizationRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             eventhub_name: o.get_field("eventhubName"),
             listen: o.get_field("listen"),

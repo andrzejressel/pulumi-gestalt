@@ -209,7 +209,7 @@ pub mod virtual_network_peering {
         };
         let o = context.register_resource(request);
         VirtualNetworkPeeringResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             address_space_prefixes: o.get_field("addressSpacePrefixes"),
             allow_forwarded_traffic: o.get_field("allowForwardedTraffic"),

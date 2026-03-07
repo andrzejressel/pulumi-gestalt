@@ -101,7 +101,7 @@ pub mod api_key {
         };
         let o = context.register_resource(request);
         ApiKeyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_id: o.get_field("apiId"),
             api_key_id: o.get_field("apiKeyId"),

@@ -506,7 +506,7 @@ pub mod managed_instance {
         };
         let o = context.register_resource(request);
         ManagedInstanceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             administrator_login: o.get_field("administratorLogin"),
             administrator_login_password: o.get_field("administratorLoginPassword"),

@@ -84,7 +84,7 @@ pub mod alert_manager_definition {
         };
         let o = context.register_resource(request);
         AlertManagerDefinitionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             definition: o.get_field("definition"),
             workspace_id: o.get_field("workspaceId"),

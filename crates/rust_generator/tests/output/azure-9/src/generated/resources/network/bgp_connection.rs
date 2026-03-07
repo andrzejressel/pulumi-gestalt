@@ -173,7 +173,7 @@ pub mod bgp_connection {
         };
         let o = context.register_resource(request);
         BgpConnectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             name: o.get_field("name"),
             peer_asn: o.get_field("peerAsn"),

@@ -219,7 +219,7 @@ pub mod spring_cloud_app_dynamics_application_performance_monitoring {
         };
         let o = context.register_resource(request);
         SpringCloudAppDynamicsApplicationPerformanceMonitoringResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             agent_account_access_key: o.get_field("agentAccountAccessKey"),
             agent_account_name: o.get_field("agentAccountName"),

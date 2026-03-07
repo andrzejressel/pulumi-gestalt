@@ -184,7 +184,7 @@ pub mod spring_cloud_build_deployment {
         };
         let o = context.register_resource(request);
         SpringCloudBuildDeploymentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             addon_json: o.get_field("addonJson"),
             application_performance_monitoring_ids: o

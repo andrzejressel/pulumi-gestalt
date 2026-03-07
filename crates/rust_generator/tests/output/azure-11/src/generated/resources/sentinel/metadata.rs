@@ -349,7 +349,7 @@ pub mod metadata {
         };
         let o = context.register_resource(request);
         MetadataResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             author: o.get_field("author"),
             category: o.get_field("category"),

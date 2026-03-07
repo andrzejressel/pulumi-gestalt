@@ -106,7 +106,7 @@ pub mod user_group_membership {
         };
         let o = context.register_resource(request);
         UserGroupMembershipResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             groups: o.get_field("groups"),
             user: o.get_field("user"),

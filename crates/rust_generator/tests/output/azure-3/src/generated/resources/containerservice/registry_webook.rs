@@ -186,7 +186,7 @@ pub mod registry_webook {
         };
         let o = context.register_resource(request);
         RegistryWebookResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             actions: o.get_field("actions"),
             custom_headers: o.get_field("customHeaders"),

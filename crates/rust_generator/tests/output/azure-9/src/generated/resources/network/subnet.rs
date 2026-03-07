@@ -245,7 +245,7 @@ pub mod subnet {
         };
         let o = context.register_resource(request);
         SubnetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             address_prefixes: o.get_field("addressPrefixes"),
             default_outbound_access_enabled: o.get_field("defaultOutboundAccessEnabled"),

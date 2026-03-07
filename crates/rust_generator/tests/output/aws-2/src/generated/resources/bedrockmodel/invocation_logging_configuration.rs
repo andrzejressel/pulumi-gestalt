@@ -128,7 +128,7 @@ pub mod invocation_logging_configuration {
         };
         let o = context.register_resource(request);
         InvocationLoggingConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             logging_config: o.get_field("loggingConfig"),
         }

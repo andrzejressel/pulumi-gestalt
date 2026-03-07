@@ -442,7 +442,7 @@ pub mod uptime_check_config {
         };
         let o = context.register_resource(request);
         UptimeCheckConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             checker_type: o.get_field("checkerType"),
             content_matchers: o.get_field("contentMatchers"),

@@ -247,7 +247,7 @@ pub mod dataset_json {
         };
         let o = context.register_resource(request);
         DatasetJsonResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             additional_properties: o.get_field("additionalProperties"),
             annotations: o.get_field("annotations"),

@@ -153,7 +153,7 @@ pub mod ip_set {
         };
         let o = context.register_resource(request);
         IPSetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             activate: o.get_field("activate"),
             arn: o.get_field("arn"),

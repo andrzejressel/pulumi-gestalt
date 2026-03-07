@@ -162,7 +162,7 @@ pub mod dev_center {
         };
         let o = context.register_resource(request);
         DevCenterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             dev_center_uri: o.get_field("devCenterUri"),
             identity: o.get_field("identity"),

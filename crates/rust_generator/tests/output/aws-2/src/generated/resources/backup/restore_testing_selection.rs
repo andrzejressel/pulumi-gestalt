@@ -189,7 +189,7 @@ pub mod restore_testing_selection {
         };
         let o = context.register_resource(request);
         RestoreTestingSelectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             iam_role_arn: o.get_field("iamRoleArn"),
             name: o.get_field("name"),

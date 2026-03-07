@@ -186,7 +186,7 @@ pub mod option_group {
         };
         let o = context.register_resource(request);
         OptionGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             engine_name: o.get_field("engineName"),

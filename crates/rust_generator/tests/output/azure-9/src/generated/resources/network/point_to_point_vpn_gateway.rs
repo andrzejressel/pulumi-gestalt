@@ -239,7 +239,7 @@ pub mod point_to_point_vpn_gateway {
         };
         let o = context.register_resource(request);
         PointToPointVpnGatewayResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             connection_configurations: o.get_field("connectionConfigurations"),
             dns_servers: o.get_field("dnsServers"),

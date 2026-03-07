@@ -133,7 +133,7 @@ pub mod monitor_tag_rule {
         };
         let o = context.register_resource(request);
         MonitorTagRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             datadog_monitor_id: o.get_field("datadogMonitorId"),
             logs: o.get_field("logs"),

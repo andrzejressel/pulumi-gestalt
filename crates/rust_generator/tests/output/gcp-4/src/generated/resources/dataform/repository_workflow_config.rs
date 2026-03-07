@@ -261,7 +261,7 @@ pub mod repository_workflow_config {
         };
         let o = context.register_resource(request);
         RepositoryWorkflowConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cron_schedule: o.get_field("cronSchedule"),
             invocation_config: o.get_field("invocationConfig"),

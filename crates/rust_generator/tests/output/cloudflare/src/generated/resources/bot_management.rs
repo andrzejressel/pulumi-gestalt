@@ -195,7 +195,7 @@ pub mod bot_management {
         };
         let o = context.register_resource(request);
         BotManagementResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             ai_bots_protection: o.get_field("aiBotsProtection"),
             auto_update_model: o.get_field("autoUpdateModel"),

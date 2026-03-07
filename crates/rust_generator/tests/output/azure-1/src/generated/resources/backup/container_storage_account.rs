@@ -125,7 +125,7 @@ pub mod container_storage_account {
         };
         let o = context.register_resource(request);
         ContainerStorageAccountResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             recovery_vault_name: o.get_field("recoveryVaultName"),
             resource_group_name: o.get_field("resourceGroupName"),

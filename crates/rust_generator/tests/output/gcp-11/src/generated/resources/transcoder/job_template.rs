@@ -528,7 +528,7 @@ pub mod job_template {
         };
         let o = context.register_resource(request);
         JobTemplateResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             config: o.get_field("config"),
             effective_labels: o.get_field("effectiveLabels"),

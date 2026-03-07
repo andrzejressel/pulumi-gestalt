@@ -103,7 +103,7 @@ pub mod observatory_scheduled_test {
         };
         let o = context.register_resource(request);
         ObservatoryScheduledTestResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             frequency: o.get_field("frequency"),
             region: o.get_field("region"),

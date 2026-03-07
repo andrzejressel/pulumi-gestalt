@@ -143,7 +143,7 @@ pub mod user_hierarchy_group {
         };
         let o = context.register_resource(request);
         UserHierarchyGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             hierarchy_group_id: o.get_field("hierarchyGroupId"),

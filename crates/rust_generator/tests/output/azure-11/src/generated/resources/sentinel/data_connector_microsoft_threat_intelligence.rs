@@ -141,7 +141,7 @@ pub mod data_connector_microsoft_threat_intelligence {
         };
         let o = context.register_resource(request);
         DataConnectorMicrosoftThreatIntelligenceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             log_analytics_workspace_id: o.get_field("logAnalyticsWorkspaceId"),
             microsoft_emerging_threat_feed_lookback_date: o

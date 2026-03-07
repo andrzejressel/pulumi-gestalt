@@ -62,7 +62,7 @@ pub mod resource_group {
         };
         let o = context.register_resource(request);
         ResourceGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             tags: o.get_field("tags"),

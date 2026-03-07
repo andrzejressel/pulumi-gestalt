@@ -28,6 +28,8 @@ pub struct {{resource.struct_name}}Args {
 pub struct {{resource.struct_name}}Result {
     /// Pulumi URN is the stable logical identity of this provider resource in the Pulumi stack.
     pub urn: pulumi_gestalt_rust::Output<String>,
+    /// Pulumi ID is the unique identifier assigned by the provider to this resource.
+    pub id: pulumi_gestalt_rust::Output<String>,
 {{#each resource.output_properties}}
     {{#each description_lines}}
         /// {{&this}}
@@ -96,6 +98,7 @@ pub fn {{resource.function_name}}_with_options(
     let o = context.register_resource(request);
     {{resource.struct_name}}Result {
         urn: o.get_urn(),
+        id: o.get_id(),
     {{#each resource.output_properties}}
         {{arg_name}}: o.get_field("{{name}}"),
     {{/each}}

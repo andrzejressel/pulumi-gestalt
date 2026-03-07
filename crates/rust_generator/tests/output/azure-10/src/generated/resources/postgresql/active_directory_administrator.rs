@@ -133,7 +133,7 @@ pub mod active_directory_administrator {
         };
         let o = context.register_resource(request);
         ActiveDirectoryAdministratorResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             login: o.get_field("login"),
             object_id: o.get_field("objectId"),

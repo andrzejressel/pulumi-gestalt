@@ -139,7 +139,7 @@ pub mod grant {
         };
         let o = context.register_resource(request);
         GrantResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             constraints: o.get_field("constraints"),
             grant_creation_tokens: o.get_field("grantCreationTokens"),

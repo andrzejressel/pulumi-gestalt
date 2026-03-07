@@ -155,7 +155,7 @@ pub mod volume_attachment {
         };
         let o = context.register_resource(request);
         VolumeAttachmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             device_name: o.get_field("deviceName"),
             force_detach: o.get_field("forceDetach"),

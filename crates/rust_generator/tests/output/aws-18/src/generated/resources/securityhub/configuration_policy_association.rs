@@ -137,7 +137,7 @@ pub mod configuration_policy_association {
         };
         let o = context.register_resource(request);
         ConfigurationPolicyAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             policy_id: o.get_field("policyId"),
             target_id: o.get_field("targetId"),

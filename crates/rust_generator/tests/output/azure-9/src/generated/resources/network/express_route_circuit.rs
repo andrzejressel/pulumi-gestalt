@@ -221,7 +221,7 @@ pub mod express_route_circuit {
         };
         let o = context.register_resource(request);
         ExpressRouteCircuitResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allow_classic_operations: o.get_field("allowClassicOperations"),
             authorization_key: o.get_field("authorizationKey"),

@@ -199,7 +199,7 @@ pub mod rate_limit {
         };
         let o = context.register_resource(request);
         RateLimitResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             action: o.get_field("action"),
             bypass_url_patterns: o.get_field("bypassUrlPatterns"),

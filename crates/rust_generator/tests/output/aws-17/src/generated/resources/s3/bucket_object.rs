@@ -463,7 +463,7 @@ pub mod bucket_object {
         };
         let o = context.register_resource(request);
         BucketObjectResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             acl: o.get_field("acl"),
             arn: o.get_field("arn"),

@@ -148,7 +148,7 @@ pub mod portfolio_share {
         };
         let o = context.register_resource(request);
         PortfolioShareResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             accept_language: o.get_field("acceptLanguage"),
             accepted: o.get_field("accepted"),

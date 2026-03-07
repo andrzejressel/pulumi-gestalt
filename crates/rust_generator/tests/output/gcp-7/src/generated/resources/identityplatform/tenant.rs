@@ -158,7 +158,7 @@ pub mod tenant {
         };
         let o = context.register_resource(request);
         TenantResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allow_password_signup: o.get_field("allowPasswordSignup"),
             disable_auth: o.get_field("disableAuth"),

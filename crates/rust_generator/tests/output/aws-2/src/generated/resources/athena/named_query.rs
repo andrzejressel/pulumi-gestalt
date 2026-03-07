@@ -148,7 +148,7 @@ pub mod named_query {
         };
         let o = context.register_resource(request);
         NamedQueryResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             database: o.get_field("database"),
             description: o.get_field("description"),

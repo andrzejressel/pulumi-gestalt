@@ -196,7 +196,7 @@ pub mod catalog_table_optimizer {
         };
         let o = context.register_resource(request);
         CatalogTableOptimizerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             catalog_id: o.get_field("catalogId"),
             configuration: o.get_field("configuration"),

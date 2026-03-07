@@ -90,7 +90,7 @@ pub mod image_version {
         };
         let o = context.register_resource(request);
         ImageVersionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             base_image: o.get_field("baseImage"),

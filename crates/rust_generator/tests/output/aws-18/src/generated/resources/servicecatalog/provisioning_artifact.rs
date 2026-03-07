@@ -185,7 +185,7 @@ pub mod provisioning_artifact {
         };
         let o = context.register_resource(request);
         ProvisioningArtifactResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             accept_language: o.get_field("acceptLanguage"),
             active: o.get_field("active"),

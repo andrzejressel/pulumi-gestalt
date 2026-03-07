@@ -252,7 +252,7 @@ pub mod diagnostic_setting {
         };
         let o = context.register_resource(request);
         DiagnosticSettingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             enabled_logs: o.get_field("enabledLogs"),
             eventhub_authorization_rule_id: o.get_field("eventhubAuthorizationRuleId"),

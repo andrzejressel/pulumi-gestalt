@@ -101,7 +101,7 @@ pub mod managed_prefix_list_entry {
         };
         let o = context.register_resource(request);
         ManagedPrefixListEntryResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cidr: o.get_field("cidr"),
             description: o.get_field("description"),

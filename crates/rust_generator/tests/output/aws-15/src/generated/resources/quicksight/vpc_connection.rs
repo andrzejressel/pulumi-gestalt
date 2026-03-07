@@ -198,7 +198,7 @@ pub mod vpc_connection {
         };
         let o = context.register_resource(request);
         VpcConnectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             availability_status: o.get_field("availabilityStatus"),

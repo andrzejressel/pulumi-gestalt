@@ -237,7 +237,7 @@ pub mod file_system {
         };
         let o = context.register_resource(request);
         FileSystemResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             encryption_key: o.get_field("encryptionKey"),
             hsm_setting: o.get_field("hsmSetting"),

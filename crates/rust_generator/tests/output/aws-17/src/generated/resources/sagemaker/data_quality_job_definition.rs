@@ -256,7 +256,7 @@ pub mod data_quality_job_definition {
         };
         let o = context.register_resource(request);
         DataQualityJobDefinitionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             data_quality_app_specification: o.get_field("dataQualityAppSpecification"),

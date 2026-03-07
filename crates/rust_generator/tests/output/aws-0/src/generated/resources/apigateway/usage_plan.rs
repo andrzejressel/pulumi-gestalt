@@ -134,7 +134,7 @@ pub mod usage_plan {
         };
         let o = context.register_resource(request);
         UsagePlanResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_stages: o.get_field("apiStages"),
             arn: o.get_field("arn"),

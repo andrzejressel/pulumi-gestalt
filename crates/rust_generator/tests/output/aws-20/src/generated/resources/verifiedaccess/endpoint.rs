@@ -247,7 +247,7 @@ pub mod endpoint {
         };
         let o = context.register_resource(request);
         EndpointResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             application_domain: o.get_field("applicationDomain"),
             attachment_type: o.get_field("attachmentType"),

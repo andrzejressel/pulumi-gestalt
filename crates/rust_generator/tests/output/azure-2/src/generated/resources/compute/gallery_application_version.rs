@@ -272,7 +272,7 @@ pub mod gallery_application_version {
         };
         let o = context.register_resource(request);
         GalleryApplicationVersionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             config_file: o.get_field("configFile"),
             enable_health_check: o.get_field("enableHealthCheck"),

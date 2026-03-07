@@ -150,7 +150,7 @@ pub mod api_connection {
         };
         let o = context.register_resource(request);
         ApiConnectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             display_name: o.get_field("displayName"),
             managed_api_id: o.get_field("managedApiId"),

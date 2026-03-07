@@ -156,7 +156,7 @@ pub mod keystores_aliases_key_cert_file {
         };
         let o = context.register_resource(request);
         KeystoresAliasesKeyCertFileResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             alias: o.get_field("alias"),
             cert: o.get_field("cert"),

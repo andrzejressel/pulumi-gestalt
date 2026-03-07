@@ -244,7 +244,7 @@ pub mod virtual_network {
         };
         let o = context.register_resource(request);
         VirtualNetworkResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             address_spaces: o.get_field("addressSpaces"),
             bgp_community: o.get_field("bgpCommunity"),

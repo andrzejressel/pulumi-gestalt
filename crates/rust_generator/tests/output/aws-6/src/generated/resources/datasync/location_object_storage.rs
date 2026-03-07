@@ -176,7 +176,7 @@ pub mod location_object_storage {
         };
         let o = context.register_resource(request);
         LocationObjectStorageResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_key: o.get_field("accessKey"),
             agent_arns: o.get_field("agentArns"),

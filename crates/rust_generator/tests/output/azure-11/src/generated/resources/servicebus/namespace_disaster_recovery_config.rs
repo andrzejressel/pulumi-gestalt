@@ -144,7 +144,7 @@ pub mod namespace_disaster_recovery_config {
         };
         let o = context.register_resource(request);
         NamespaceDisasterRecoveryConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             alias_authorization_rule_id: o.get_field("aliasAuthorizationRuleId"),
             default_primary_key: o.get_field("defaultPrimaryKey"),

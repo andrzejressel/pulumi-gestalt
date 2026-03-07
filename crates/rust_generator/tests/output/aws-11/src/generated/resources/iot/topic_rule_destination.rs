@@ -71,7 +71,7 @@ pub mod topic_rule_destination {
         };
         let o = context.register_resource(request);
         TopicRuleDestinationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             enabled: o.get_field("enabled"),

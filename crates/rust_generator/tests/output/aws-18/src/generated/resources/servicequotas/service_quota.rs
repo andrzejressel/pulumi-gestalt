@@ -112,7 +112,7 @@ pub mod service_quota {
         };
         let o = context.register_resource(request);
         ServiceQuotaResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             adjustable: o.get_field("adjustable"),
             arn: o.get_field("arn"),

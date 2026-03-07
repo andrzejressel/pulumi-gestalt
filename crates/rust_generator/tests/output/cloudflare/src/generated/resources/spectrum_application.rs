@@ -211,7 +211,7 @@ pub mod spectrum_application {
         };
         let o = context.register_resource(request);
         SpectrumApplicationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             argo_smart_routing: o.get_field("argoSmartRouting"),
             dns: o.get_field("dns"),

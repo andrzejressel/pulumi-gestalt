@@ -116,7 +116,7 @@ pub mod model {
         };
         let o = context.register_resource(request);
         ModelResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_id: o.get_field("apiId"),
             content_type: o.get_field("contentType"),

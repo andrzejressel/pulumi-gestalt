@@ -130,7 +130,7 @@ pub mod api_release {
         };
         let o = context.register_resource(request);
         ApiReleaseResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_id: o.get_field("apiId"),
             name: o.get_field("name"),

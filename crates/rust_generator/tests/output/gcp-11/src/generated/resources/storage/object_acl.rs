@@ -125,7 +125,7 @@ pub mod object_acl {
         };
         let o = context.register_resource(request);
         ObjectACLResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bucket: o.get_field("bucket"),
             object: o.get_field("object"),

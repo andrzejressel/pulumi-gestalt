@@ -117,7 +117,7 @@ pub mod cluster_snapshot {
         };
         let o = context.register_resource(request);
         ClusterSnapshotResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             cluster_identifier: o.get_field("clusterIdentifier"),

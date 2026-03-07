@@ -130,7 +130,7 @@ pub mod quicksetup_configuration_manager {
         };
         let o = context.register_resource(request);
         QuicksetupConfigurationManagerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             configuration_definition: o.get_field("configurationDefinition"),
             description: o.get_field("description"),

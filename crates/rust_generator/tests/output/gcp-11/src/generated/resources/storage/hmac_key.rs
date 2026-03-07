@@ -148,7 +148,7 @@ pub mod hmac_key {
         };
         let o = context.register_resource(request);
         HmacKeyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_id: o.get_field("accessId"),
             project: o.get_field("project"),

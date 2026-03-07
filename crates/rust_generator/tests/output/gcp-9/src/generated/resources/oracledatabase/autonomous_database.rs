@@ -298,7 +298,7 @@ pub mod autonomous_database {
         };
         let o = context.register_resource(request);
         AutonomousDatabaseResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             admin_password: o.get_field("adminPassword"),
             autonomous_database_id: o.get_field("autonomousDatabaseId"),

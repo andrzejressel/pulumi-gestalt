@@ -175,7 +175,7 @@ pub mod lifecycle_hook {
         };
         let o = context.register_resource(request);
         LifecycleHookResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             autoscaling_group_name: o.get_field("autoscalingGroupName"),
             default_result: o.get_field("defaultResult"),

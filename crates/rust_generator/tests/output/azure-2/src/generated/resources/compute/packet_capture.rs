@@ -275,7 +275,7 @@ pub mod packet_capture {
         };
         let o = context.register_resource(request);
         PacketCaptureResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             filters: o.get_field("filters"),
             maximum_bytes_per_packet: o.get_field("maximumBytesPerPacket"),

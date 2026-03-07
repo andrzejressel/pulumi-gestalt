@@ -171,7 +171,7 @@ pub mod engine_split_traffic {
         };
         let o = context.register_resource(request);
         EngineSplitTrafficResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             migrate_traffic: o.get_field("migrateTraffic"),
             project: o.get_field("project"),

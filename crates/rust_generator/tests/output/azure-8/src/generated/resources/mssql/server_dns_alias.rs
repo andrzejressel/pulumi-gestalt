@@ -102,7 +102,7 @@ pub mod server_dns_alias {
         };
         let o = context.register_resource(request);
         ServerDnsAliasResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             dns_record: o.get_field("dnsRecord"),
             mssql_server_id: o.get_field("mssqlServerId"),

@@ -160,7 +160,7 @@ pub mod instance_config {
         };
         let o = context.register_resource(request);
         InstanceConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             base_config: o.get_field("baseConfig"),
             config_type: o.get_field("configType"),

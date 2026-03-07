@@ -270,7 +270,7 @@ pub mod v_2_models_intent {
         };
         let o = context.register_resource(request);
         V2modelsIntentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bot_id: o.get_field("botId"),
             bot_version: o.get_field("botVersion"),

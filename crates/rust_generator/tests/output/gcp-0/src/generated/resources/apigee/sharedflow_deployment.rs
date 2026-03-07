@@ -118,7 +118,7 @@ pub mod sharedflow_deployment {
         };
         let o = context.register_resource(request);
         SharedflowDeploymentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             environment: o.get_field("environment"),
             org_id: o.get_field("orgId"),

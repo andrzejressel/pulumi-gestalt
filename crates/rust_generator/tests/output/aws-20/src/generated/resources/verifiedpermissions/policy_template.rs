@@ -103,7 +103,7 @@ pub mod policy_template {
         };
         let o = context.register_resource(request);
         PolicyTemplateResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             created_date: o.get_field("createdDate"),
             description: o.get_field("description"),

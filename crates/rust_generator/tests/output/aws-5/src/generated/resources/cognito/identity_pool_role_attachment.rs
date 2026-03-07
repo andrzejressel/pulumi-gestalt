@@ -87,7 +87,7 @@ pub mod identity_pool_role_attachment {
         };
         let o = context.register_resource(request);
         IdentityPoolRoleAttachmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             identity_pool_id: o.get_field("identityPoolId"),
             role_mappings: o.get_field("roleMappings"),

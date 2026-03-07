@@ -137,7 +137,7 @@ pub mod network_manager_security_admin_configuration {
         };
         let o = context.register_resource(request);
         NetworkManagerSecurityAdminConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             apply_on_network_intent_policy_based_services: o
                 .get_field("applyOnNetworkIntentPolicyBasedServices"),

@@ -96,7 +96,7 @@ pub mod fleet_stack_association {
         };
         let o = context.register_resource(request);
         FleetStackAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             fleet_name: o.get_field("fleetName"),
             stack_name: o.get_field("stackName"),

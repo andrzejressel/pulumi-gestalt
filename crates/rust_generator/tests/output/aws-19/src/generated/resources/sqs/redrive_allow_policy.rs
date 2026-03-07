@@ -92,7 +92,7 @@ pub mod redrive_allow_policy {
         };
         let o = context.register_resource(request);
         RedriveAllowPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             queue_url: o.get_field("queueUrl"),
             redrive_allow_policy: o.get_field("redriveAllowPolicy"),

@@ -121,7 +121,7 @@ pub mod organization_configuration_feature {
         };
         let o = context.register_resource(request);
         OrganizationConfigurationFeatureResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             additional_configurations: o.get_field("additionalConfigurations"),
             auto_enable: o.get_field("autoEnable"),

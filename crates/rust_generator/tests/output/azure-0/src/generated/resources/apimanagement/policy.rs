@@ -118,7 +118,7 @@ pub mod policy {
         };
         let o = context.register_resource(request);
         PolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_management_id: o.get_field("apiManagementId"),
             xml_content: o.get_field("xmlContent"),

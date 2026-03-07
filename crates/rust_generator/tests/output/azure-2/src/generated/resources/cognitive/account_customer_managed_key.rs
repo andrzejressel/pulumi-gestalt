@@ -202,7 +202,7 @@ pub mod account_customer_managed_key {
         };
         let o = context.register_resource(request);
         AccountCustomerManagedKeyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cognitive_account_id: o.get_field("cognitiveAccountId"),
             identity_client_id: o.get_field("identityClientId"),

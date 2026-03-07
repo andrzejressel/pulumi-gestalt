@@ -407,7 +407,7 @@ pub mod volume {
         };
         let o = context.register_resource(request);
         VolumeResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_name: o.get_field("accountName"),
             azure_vmware_data_store_enabled: o.get_field("azureVmwareDataStoreEnabled"),

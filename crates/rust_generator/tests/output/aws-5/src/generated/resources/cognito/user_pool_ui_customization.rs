@@ -159,7 +159,7 @@ pub mod user_pool_ui_customization {
         };
         let o = context.register_resource(request);
         UserPoolUICustomizationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             client_id: o.get_field("clientId"),
             creation_date: o.get_field("creationDate"),

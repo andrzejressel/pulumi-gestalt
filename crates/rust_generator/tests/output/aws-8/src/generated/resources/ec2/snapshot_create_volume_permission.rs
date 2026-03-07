@@ -82,7 +82,7 @@ pub mod snapshot_create_volume_permission {
         };
         let o = context.register_resource(request);
         SnapshotCreateVolumePermissionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             snapshot_id: o.get_field("snapshotId"),

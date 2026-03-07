@@ -210,7 +210,7 @@ pub mod sampling_rule {
         };
         let o = context.register_resource(request);
         SamplingRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             attributes: o.get_field("attributes"),

@@ -65,6 +65,8 @@ pub struct ProviderArgs {
 pub struct ProviderResult {
     /// Pulumi URN is the stable logical identity of this provider resource in the Pulumi stack.
     pub urn: pulumi_gestalt_rust::Output<String>,
+    /// Pulumi ID is the unique identifier assigned by the provider to this resource.
+    pub id: pulumi_gestalt_rust::Output<String>,
     /// Configure the base path used by the API client. Alternatively, can be configured using the `CLOUDFLARE_API_BASE_PATH`
     /// environment variable.
     pub api_base_path: pulumi_gestalt_rust::Output<Option<String>>,
@@ -184,6 +186,7 @@ pub fn create(
     let o = context.register_resource(request);
     ProviderResult {
         urn: o.get_urn(),
+        id: o.get_id(),
         api_base_path: o.get_field("apiBasePath"),
         api_client_logging: o.get_field("apiClientLogging"),
         api_hostname: o.get_field("apiHostname"),

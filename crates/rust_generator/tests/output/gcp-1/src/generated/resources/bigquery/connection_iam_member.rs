@@ -343,7 +343,7 @@ pub mod connection_iam_member {
         };
         let o = context.register_resource(request);
         ConnectionIamMemberResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             condition: o.get_field("condition"),
             connection_id: o.get_field("connectionId"),

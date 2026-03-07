@@ -170,7 +170,7 @@ pub mod signing_job {
         };
         let o = context.register_resource(request);
         SigningJobResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             completed_at: o.get_field("completedAt"),
             created_at: o.get_field("createdAt"),

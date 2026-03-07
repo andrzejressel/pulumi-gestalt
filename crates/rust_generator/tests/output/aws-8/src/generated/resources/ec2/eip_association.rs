@@ -152,7 +152,7 @@ pub mod eip_association {
         };
         let o = context.register_resource(request);
         EipAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allocation_id: o.get_field("allocationId"),
             allow_reassociation: o.get_field("allowReassociation"),

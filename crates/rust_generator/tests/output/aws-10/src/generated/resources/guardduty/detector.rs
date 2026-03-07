@@ -153,7 +153,7 @@ pub mod detector {
         };
         let o = context.register_resource(request);
         DetectorResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             arn: o.get_field("arn"),

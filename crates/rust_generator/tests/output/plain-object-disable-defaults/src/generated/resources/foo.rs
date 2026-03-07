@@ -79,7 +79,7 @@ pub mod foo {
         };
         let o = context.register_resource(request);
         FooResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             default_kube_client_settings: o.get_field("defaultKubeClientSettings"),
         }

@@ -155,7 +155,7 @@ pub mod api_schema {
         };
         let o = context.register_resource(request);
         ApiSchemaResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_management_name: o.get_field("apiManagementName"),
             api_name: o.get_field("apiName"),

@@ -153,7 +153,7 @@ pub mod google_channel_config {
         };
         let o = context.register_resource(request);
         GoogleChannelConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             crypto_key_name: o.get_field("cryptoKeyName"),
             location: o.get_field("location"),

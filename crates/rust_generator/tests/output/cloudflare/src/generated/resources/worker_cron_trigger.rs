@@ -103,7 +103,7 @@ pub mod worker_cron_trigger {
         };
         let o = context.register_resource(request);
         WorkerCronTriggerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             schedules: o.get_field("schedules"),

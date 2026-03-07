@@ -641,7 +641,7 @@ pub mod workspace {
         };
         let o = context.register_resource(request);
         WorkspaceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             application_insights_id: o.get_field("applicationInsightsId"),
             container_registry_id: o.get_field("containerRegistryId"),

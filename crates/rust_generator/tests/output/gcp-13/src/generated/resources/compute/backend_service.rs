@@ -1123,7 +1123,7 @@ pub mod backend_service {
         };
         let o = context.register_resource(request);
         BackendServiceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             affinity_cookie_ttl_sec: o.get_field("affinityCookieTtlSec"),
             backends: o.get_field("backends"),

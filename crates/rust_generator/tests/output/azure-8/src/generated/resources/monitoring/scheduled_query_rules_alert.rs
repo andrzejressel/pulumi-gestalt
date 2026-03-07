@@ -238,7 +238,7 @@ pub mod scheduled_query_rules_alert {
         };
         let o = context.register_resource(request);
         ScheduledQueryRulesAlertResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             action: o.get_field("action"),
             authorized_resource_ids: o.get_field("authorizedResourceIds"),

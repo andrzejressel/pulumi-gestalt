@@ -92,7 +92,7 @@ pub mod argo {
         };
         let o = context.register_resource(request);
         ArgoResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             smart_routing: o.get_field("smartRouting"),
             tiered_caching: o.get_field("tieredCaching"),

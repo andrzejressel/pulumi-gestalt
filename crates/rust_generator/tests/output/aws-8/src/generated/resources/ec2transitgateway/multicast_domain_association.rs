@@ -107,7 +107,7 @@ pub mod multicast_domain_association {
         };
         let o = context.register_resource(request);
         MulticastDomainAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             subnet_id: o.get_field("subnetId"),
             transit_gateway_attachment_id: o.get_field("transitGatewayAttachmentId"),

@@ -232,7 +232,7 @@ pub mod access_approval_settings {
         };
         let o = context.register_resource(request);
         AccessApprovalSettingsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             active_key_version: o.get_field("activeKeyVersion"),
             ancestor_has_active_key_version: o.get_field("ancestorHasActiveKeyVersion"),

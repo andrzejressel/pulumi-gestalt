@@ -194,7 +194,7 @@ pub mod logging_configuration {
         };
         let o = context.register_resource(request);
         LoggingConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             destination_configuration: o.get_field("destinationConfiguration"),

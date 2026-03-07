@@ -236,7 +236,7 @@ pub mod namespace {
         };
         let o = context.register_resource(request);
         NamespaceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             capacity: o.get_field("capacity"),
             customer_managed_key: o.get_field("customerManagedKey"),

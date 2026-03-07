@@ -449,7 +449,7 @@ pub mod aws_cluster {
         };
         let o = context.register_resource(request);
         AwsClusterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             annotations: o.get_field("annotations"),
             authorization: o.get_field("authorization"),

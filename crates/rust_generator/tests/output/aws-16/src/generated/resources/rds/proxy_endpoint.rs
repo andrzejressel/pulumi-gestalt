@@ -128,7 +128,7 @@ pub mod proxy_endpoint {
         };
         let o = context.register_resource(request);
         ProxyEndpointResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             db_proxy_endpoint_name: o.get_field("dbProxyEndpointName"),

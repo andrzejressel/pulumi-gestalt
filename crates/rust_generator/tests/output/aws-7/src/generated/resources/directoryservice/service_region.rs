@@ -114,7 +114,7 @@ pub mod service_region {
         };
         let o = context.register_resource(request);
         ServiceRegionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             desired_number_of_domain_controllers: o
                 .get_field("desiredNumberOfDomainControllers"),

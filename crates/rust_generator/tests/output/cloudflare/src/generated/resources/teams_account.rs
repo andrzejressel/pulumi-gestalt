@@ -350,7 +350,7 @@ pub mod teams_account {
         };
         let o = context.register_resource(request);
         TeamsAccountResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             activity_log_enabled: o.get_field("activityLogEnabled"),

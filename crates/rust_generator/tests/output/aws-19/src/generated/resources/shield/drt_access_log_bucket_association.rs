@@ -107,7 +107,7 @@ pub mod drt_access_log_bucket_association {
         };
         let o = context.register_resource(request);
         DrtAccessLogBucketAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             log_bucket: o.get_field("logBucket"),
             role_arn_association_id: o.get_field("roleArnAssociationId"),

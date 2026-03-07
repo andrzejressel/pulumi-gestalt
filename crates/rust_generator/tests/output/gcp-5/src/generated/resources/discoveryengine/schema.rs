@@ -170,7 +170,7 @@ pub mod schema {
         };
         let o = context.register_resource(request);
         SchemaResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             data_store_id: o.get_field("dataStoreId"),
             json_schema: o.get_field("jsonSchema"),

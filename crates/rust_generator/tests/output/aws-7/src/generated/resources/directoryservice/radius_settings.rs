@@ -159,7 +159,7 @@ pub mod radius_settings {
         };
         let o = context.register_resource(request);
         RadiusSettingsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             authentication_protocol: o.get_field("authenticationProtocol"),
             directory_id: o.get_field("directoryId"),

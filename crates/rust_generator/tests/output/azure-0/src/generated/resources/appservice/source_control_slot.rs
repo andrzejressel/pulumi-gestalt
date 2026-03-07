@@ -198,7 +198,7 @@ pub mod source_control_slot {
         };
         let o = context.register_resource(request);
         SourceControlSlotResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             branch: o.get_field("branch"),
             github_action_configuration: o.get_field("githubActionConfiguration"),

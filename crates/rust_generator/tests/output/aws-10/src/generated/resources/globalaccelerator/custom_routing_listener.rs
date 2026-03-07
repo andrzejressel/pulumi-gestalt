@@ -106,7 +106,7 @@ pub mod custom_routing_listener {
         };
         let o = context.register_resource(request);
         CustomRoutingListenerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             accelerator_arn: o.get_field("acceleratorArn"),
             port_ranges: o.get_field("portRanges"),

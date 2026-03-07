@@ -139,7 +139,7 @@ pub mod secret_version {
         };
         let o = context.register_resource(request);
         SecretVersionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             secret_binary: o.get_field("secretBinary"),

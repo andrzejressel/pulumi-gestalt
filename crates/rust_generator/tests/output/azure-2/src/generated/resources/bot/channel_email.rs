@@ -141,7 +141,7 @@ pub mod channel_email {
         };
         let o = context.register_resource(request);
         ChannelEmailResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bot_name: o.get_field("botName"),
             email_address: o.get_field("emailAddress"),

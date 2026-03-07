@@ -667,7 +667,7 @@ pub mod migration_job {
         };
         let o = context.register_resource(request);
         MigrationJobResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             create_time: o.get_field("createTime"),
             destination: o.get_field("destination"),

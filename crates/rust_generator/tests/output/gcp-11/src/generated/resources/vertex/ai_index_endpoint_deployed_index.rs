@@ -422,7 +422,7 @@ pub mod ai_index_endpoint_deployed_index {
         };
         let o = context.register_resource(request);
         AiIndexEndpointDeployedIndexResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             automatic_resources: o.get_field("automaticResources"),
             create_time: o.get_field("createTime"),

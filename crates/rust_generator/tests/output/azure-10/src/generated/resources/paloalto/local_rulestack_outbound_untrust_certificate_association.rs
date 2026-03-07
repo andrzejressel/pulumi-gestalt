@@ -86,7 +86,7 @@ pub mod local_rulestack_outbound_untrust_certificate_association {
         };
         let o = context.register_resource(request);
         LocalRulestackOutboundUntrustCertificateAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             certificate_id: o.get_field("certificateId"),
         }

@@ -172,7 +172,7 @@ pub mod folder_bucket_config {
         };
         let o = context.register_resource(request);
         FolderBucketConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bucket_id: o.get_field("bucketId"),
             cmek_settings: o.get_field("cmekSettings"),

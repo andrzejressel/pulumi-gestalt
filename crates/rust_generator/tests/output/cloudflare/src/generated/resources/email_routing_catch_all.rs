@@ -125,7 +125,7 @@ pub mod email_routing_catch_all {
         };
         let o = context.register_resource(request);
         EmailRoutingCatchAllResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             actions: o.get_field("actions"),
             enabled: o.get_field("enabled"),

@@ -88,7 +88,7 @@ pub mod network_association {
         };
         let o = context.register_resource(request);
         NetworkAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             association_id: o.get_field("associationId"),
             client_vpn_endpoint_id: o.get_field("clientVpnEndpointId"),

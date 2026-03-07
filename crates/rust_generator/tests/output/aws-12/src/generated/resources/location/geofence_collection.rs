@@ -115,7 +115,7 @@ pub mod geofence_collection {
         };
         let o = context.register_resource(request);
         GeofenceCollectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             collection_arn: o.get_field("collectionArn"),
             collection_name: o.get_field("collectionName"),

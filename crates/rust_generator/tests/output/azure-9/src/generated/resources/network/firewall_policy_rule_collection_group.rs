@@ -219,7 +219,7 @@ pub mod firewall_policy_rule_collection_group {
         };
         let o = context.register_resource(request);
         FirewallPolicyRuleCollectionGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             application_rule_collections: o.get_field("applicationRuleCollections"),
             firewall_policy_id: o.get_field("firewallPolicyId"),

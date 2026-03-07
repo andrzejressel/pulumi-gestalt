@@ -274,7 +274,7 @@ pub mod private_cloud {
         };
         let o = context.register_resource(request);
         PrivateCloudResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             deletion_delay_hours: o.get_field("deletionDelayHours"),
             description: o.get_field("description"),

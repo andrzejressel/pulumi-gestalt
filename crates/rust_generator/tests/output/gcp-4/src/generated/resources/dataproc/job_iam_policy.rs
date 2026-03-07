@@ -235,7 +235,7 @@ pub mod job_iam_policy {
         };
         let o = context.register_resource(request);
         JobIAMPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             etag: o.get_field("etag"),
             job_id: o.get_field("jobId"),

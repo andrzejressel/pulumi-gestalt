@@ -116,6 +116,15 @@ impl CompositeOutput {
             runtime: self.runtime.clone(),
         }
     }
+
+    pub fn get_id(&self) -> Output<String> {
+        let res = self.runtime.block_on(self.inner.get_id());
+        Output {
+            inner: res,
+            phantom: PhantomData,
+            runtime: self.runtime.clone(),
+        }
+    }
 }
 
 pub struct Context {

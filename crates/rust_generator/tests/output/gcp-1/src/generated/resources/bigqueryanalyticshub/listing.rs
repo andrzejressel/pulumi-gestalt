@@ -410,7 +410,7 @@ pub mod listing {
         };
         let o = context.register_resource(request);
         ListingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bigquery_dataset: o.get_field("bigqueryDataset"),
             categories: o.get_field("categories"),

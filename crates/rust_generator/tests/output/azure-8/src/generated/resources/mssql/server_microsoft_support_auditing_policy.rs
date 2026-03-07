@@ -281,7 +281,7 @@ pub mod server_microsoft_support_auditing_policy {
         };
         let o = context.register_resource(request);
         ServerMicrosoftSupportAuditingPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             blob_storage_endpoint: o.get_field("blobStorageEndpoint"),
             enabled: o.get_field("enabled"),

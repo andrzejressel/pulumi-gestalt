@@ -139,7 +139,7 @@ pub mod iam_policy_assignment {
         };
         let o = context.register_resource(request);
         IamPolicyAssignmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             assignment_id: o.get_field("assignmentId"),
             assignment_name: o.get_field("assignmentName"),

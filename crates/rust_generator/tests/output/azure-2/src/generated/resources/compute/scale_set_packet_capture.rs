@@ -272,7 +272,7 @@ pub mod scale_set_packet_capture {
         };
         let o = context.register_resource(request);
         ScaleSetPacketCaptureResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             filters: o.get_field("filters"),
             machine_scope: o.get_field("machineScope"),

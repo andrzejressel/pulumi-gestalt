@@ -239,7 +239,7 @@ pub mod domain {
         };
         let o = context.register_resource(request);
         DomainResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             auto_create_topic_with_first_subscription: o
                 .get_field("autoCreateTopicWithFirstSubscription"),

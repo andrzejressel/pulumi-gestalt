@@ -309,7 +309,7 @@ pub mod plan {
         };
         let o = context.register_resource(request);
         PlanResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             app_service_environment_id: o.get_field("appServiceEnvironmentId"),
             is_xenon: o.get_field("isXenon"),

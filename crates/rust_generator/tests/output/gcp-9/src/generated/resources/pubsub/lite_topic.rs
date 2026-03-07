@@ -205,7 +205,7 @@ pub mod lite_topic {
         };
         let o = context.register_resource(request);
         LiteTopicResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             name: o.get_field("name"),
             partition_config: o.get_field("partitionConfig"),

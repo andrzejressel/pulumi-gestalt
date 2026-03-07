@@ -93,7 +93,7 @@ pub mod hci_deployment_setting {
         };
         let o = context.register_resource(request);
         HciDeploymentSettingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arc_resource_ids: o.get_field("arcResourceIds"),
             scale_units: o.get_field("scaleUnits"),

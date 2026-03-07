@@ -201,7 +201,7 @@ pub mod instance_group_named_port {
         };
         let o = context.register_resource(request);
         InstanceGroupNamedPortResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             group: o.get_field("group"),
             name: o.get_field("name"),

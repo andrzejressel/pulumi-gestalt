@@ -351,7 +351,7 @@ pub mod asset_iam_binding {
         };
         let o = context.register_resource(request);
         AssetIamBindingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             asset: o.get_field("asset"),
             condition: o.get_field("condition"),

@@ -356,7 +356,7 @@ pub mod function_app_slot {
         };
         let o = context.register_resource(request);
         FunctionAppSlotResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             app_service_plan_id: o.get_field("appServicePlanId"),
             app_settings: o.get_field("appSettings"),

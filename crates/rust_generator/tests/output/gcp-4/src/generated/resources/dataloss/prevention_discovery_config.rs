@@ -188,7 +188,7 @@ pub mod prevention_discovery_config {
         };
         let o = context.register_resource(request);
         PreventionDiscoveryConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             actions: o.get_field("actions"),
             create_time: o.get_field("createTime"),

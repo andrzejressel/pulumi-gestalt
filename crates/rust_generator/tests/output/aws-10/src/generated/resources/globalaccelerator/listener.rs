@@ -126,7 +126,7 @@ pub mod listener {
         };
         let o = context.register_resource(request);
         ListenerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             accelerator_arn: o.get_field("acceleratorArn"),
             client_affinity: o.get_field("clientAffinity"),

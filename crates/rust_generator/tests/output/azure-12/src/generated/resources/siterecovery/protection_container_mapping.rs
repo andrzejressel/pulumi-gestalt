@@ -147,7 +147,7 @@ pub mod protection_container_mapping {
         };
         let o = context.register_resource(request);
         ProtectionContainerMappingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             automatic_update: o.get_field("automaticUpdate"),
             name: o.get_field("name"),

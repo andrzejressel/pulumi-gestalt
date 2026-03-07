@@ -164,7 +164,7 @@ pub mod api {
         };
         let o = context.register_resource(request);
         ApiResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_id: o.get_field("apiId"),
             create_time: o.get_field("createTime"),

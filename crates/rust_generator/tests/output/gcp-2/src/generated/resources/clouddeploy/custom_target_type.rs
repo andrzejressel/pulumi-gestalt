@@ -280,7 +280,7 @@ pub mod custom_target_type {
         };
         let o = context.register_resource(request);
         CustomTargetTypeResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             annotations: o.get_field("annotations"),
             create_time: o.get_field("createTime"),

@@ -176,7 +176,7 @@ pub mod local_rulestack {
         };
         let o = context.register_resource(request);
         LocalRulestackResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             anti_spyware_profile: o.get_field("antiSpywareProfile"),
             anti_virus_profile: o.get_field("antiVirusProfile"),

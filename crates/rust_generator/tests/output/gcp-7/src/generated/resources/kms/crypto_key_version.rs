@@ -149,7 +149,7 @@ pub mod crypto_key_version {
         };
         let o = context.register_resource(request);
         CryptoKeyVersionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             algorithm: o.get_field("algorithm"),
             attestations: o.get_field("attestations"),

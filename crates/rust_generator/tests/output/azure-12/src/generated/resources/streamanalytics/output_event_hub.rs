@@ -217,7 +217,7 @@ pub mod output_event_hub {
         };
         let o = context.register_resource(request);
         OutputEventHubResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             authentication_mode: o.get_field("authenticationMode"),
             eventhub_name: o.get_field("eventhubName"),

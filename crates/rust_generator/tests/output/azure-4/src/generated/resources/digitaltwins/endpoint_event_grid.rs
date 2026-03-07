@@ -162,7 +162,7 @@ pub mod endpoint_event_grid {
         };
         let o = context.register_resource(request);
         EndpointEventGridResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             dead_letter_storage_secret: o.get_field("deadLetterStorageSecret"),
             digital_twins_id: o.get_field("digitalTwinsId"),

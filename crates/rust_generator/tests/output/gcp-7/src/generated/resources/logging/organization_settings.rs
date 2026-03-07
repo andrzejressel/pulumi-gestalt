@@ -145,7 +145,7 @@ pub mod organization_settings {
         };
         let o = context.register_resource(request);
         OrganizationSettingsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             disable_default_sink: o.get_field("disableDefaultSink"),
             kms_key_name: o.get_field("kmsKeyName"),

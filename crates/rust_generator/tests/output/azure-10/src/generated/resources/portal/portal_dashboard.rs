@@ -105,7 +105,7 @@ pub mod portal_dashboard {
         };
         let o = context.register_resource(request);
         PortalDashboardResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             dashboard_properties: o.get_field("dashboardProperties"),
             location: o.get_field("location"),

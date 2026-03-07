@@ -124,7 +124,7 @@ pub mod authorization_rule {
         };
         let o = context.register_resource(request);
         AuthorizationRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_group_id: o.get_field("accessGroupId"),
             authorize_all_groups: o.get_field("authorizeAllGroups"),

@@ -597,7 +597,7 @@ pub mod virtual_network_gateway_connection {
         };
         let o = context.register_resource(request);
         VirtualNetworkGatewayConnectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             authorization_key: o.get_field("authorizationKey"),
             connection_mode: o.get_field("connectionMode"),

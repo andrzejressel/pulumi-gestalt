@@ -140,7 +140,7 @@ pub mod vpc_endpoint_connection_notification {
         };
         let o = context.register_resource(request);
         VpcEndpointConnectionNotificationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             connection_events: o.get_field("connectionEvents"),
             connection_notification_arn: o.get_field("connectionNotificationArn"),

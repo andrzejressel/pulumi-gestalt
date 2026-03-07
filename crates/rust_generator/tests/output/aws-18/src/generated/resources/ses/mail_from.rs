@@ -144,7 +144,7 @@ pub mod mail_from {
         };
         let o = context.register_resource(request);
         MailFromResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             behavior_on_mx_failure: o.get_field("behaviorOnMxFailure"),
             domain: o.get_field("domain"),

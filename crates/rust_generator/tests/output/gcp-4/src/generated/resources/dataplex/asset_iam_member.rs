@@ -351,7 +351,7 @@ pub mod asset_iam_member {
         };
         let o = context.register_resource(request);
         AssetIamMemberResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             asset: o.get_field("asset"),
             condition: o.get_field("condition"),

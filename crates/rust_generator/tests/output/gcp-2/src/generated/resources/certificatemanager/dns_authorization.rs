@@ -229,7 +229,7 @@ pub mod dns_authorization {
         };
         let o = context.register_resource(request);
         DnsAuthorizationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             description: o.get_field("description"),
             dns_resource_records: o.get_field("dnsResourceRecords"),

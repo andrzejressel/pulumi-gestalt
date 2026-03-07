@@ -161,7 +161,7 @@ pub mod resolver_inbound_endpoint {
         };
         let o = context.register_resource(request);
         ResolverInboundEndpointResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             ip_configurations: o.get_field("ipConfigurations"),
             location: o.get_field("location"),

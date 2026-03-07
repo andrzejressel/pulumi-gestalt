@@ -445,7 +445,7 @@ pub mod database {
         };
         let o = context.register_resource(request);
         DatabaseResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             app_engine_integration_mode: o.get_field("appEngineIntegrationMode"),
             cmek_config: o.get_field("cmekConfig"),

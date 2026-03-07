@@ -190,7 +190,7 @@ pub mod local_user {
         };
         let o = context.register_resource(request);
         LocalUserResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             home_directory: o.get_field("homeDirectory"),
             name: o.get_field("name"),

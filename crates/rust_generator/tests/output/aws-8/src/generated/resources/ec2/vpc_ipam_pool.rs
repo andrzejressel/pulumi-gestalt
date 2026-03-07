@@ -295,7 +295,7 @@ pub mod vpc_ipam_pool {
         };
         let o = context.register_resource(request);
         VpcIpamPoolResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             address_family: o.get_field("addressFamily"),
             allocation_default_netmask_length: o

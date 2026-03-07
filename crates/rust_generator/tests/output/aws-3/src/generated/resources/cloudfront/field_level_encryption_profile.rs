@@ -112,7 +112,7 @@ pub mod field_level_encryption_profile {
         };
         let o = context.register_resource(request);
         FieldLevelEncryptionProfileResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             caller_reference: o.get_field("callerReference"),
             comment: o.get_field("comment"),

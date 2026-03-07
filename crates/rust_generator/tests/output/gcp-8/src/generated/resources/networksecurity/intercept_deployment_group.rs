@@ -189,7 +189,7 @@ pub mod intercept_deployment_group {
         };
         let o = context.register_resource(request);
         InterceptDeploymentGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             connected_endpoint_groups: o.get_field("connectedEndpointGroups"),
             create_time: o.get_field("createTime"),

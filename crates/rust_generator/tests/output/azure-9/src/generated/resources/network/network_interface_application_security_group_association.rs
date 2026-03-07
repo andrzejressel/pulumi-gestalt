@@ -133,7 +133,7 @@ pub mod network_interface_application_security_group_association {
         };
         let o = context.register_resource(request);
         NetworkInterfaceApplicationSecurityGroupAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             application_security_group_id: o.get_field("applicationSecurityGroupId"),
             network_interface_id: o.get_field("networkInterfaceId"),
