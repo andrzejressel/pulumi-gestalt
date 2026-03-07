@@ -41,7 +41,7 @@ struct MyState {
 }
 
 impl HostContext for MyState {
-    async fn new(&mut self) -> anyhow::Result<Resource<Context>> {
+    async fn new(&mut self) -> wasmtime::Result<Resource<Context>> {
         let engine = pulumi_gestalt_rust_integration::Context::new().await;
         let context = SingleThreadedContext::new(engine);
         let id = self.table.push(context)?;
@@ -53,7 +53,7 @@ impl HostContext for MyState {
         context: Resource<Context>,
         value: String,
         secret: bool,
-    ) -> anyhow::Result<Resource<Output>> {
+    ) -> wasmtime::Result<Resource<Output>> {
         assert!(!context.owned());
         let context = self.table.get_mut(&context)?;
         let value = serde_json::from_str(&value).unwrap();
@@ -67,7 +67,7 @@ impl HostContext for MyState {
         &mut self,
         context: Resource<Context>,
         request: context::RegisterResourceRequest,
-    ) -> anyhow::Result<Resource<CompositeOutput>> {
+    ) -> wasmtime::Result<Resource<CompositeOutput>> {
         assert!(!context.owned());
         let table = &self.table;
         let context = table.get(&context)?;
@@ -97,7 +97,7 @@ impl HostContext for MyState {
         &mut self,
         context: Resource<Context>,
         request: context::ResourceInvokeRequest,
-    ) -> anyhow::Result<Resource<CompositeOutput>> {
+    ) -> wasmtime::Result<Resource<CompositeOutput>> {
         assert!(!context.owned());
         let table = &mut self.table;
 
@@ -127,7 +127,7 @@ impl HostContext for MyState {
         &mut self,
         self_: Resource<Context>,
         functions: Vec<FunctionInvocationResult>,
-    ) -> anyhow::Result<Vec<FunctionInvocationRequest>> {
+    ) -> wasmtime::Result<Vec<FunctionInvocationRequest>> {
         assert!(!self_.owned());
 
         for FunctionInvocationResult { id, value } in functions {
@@ -163,7 +163,7 @@ impl HostContext for MyState {
         context: Resource<Context>,
         name: Option<String>,
         key: String,
-    ) -> anyhow::Result<Option<ConfigValue>> {
+    ) -> wasmtime::Result<Option<ConfigValue>> {
         assert!(!context.owned());
         let context = self.table.get_mut(&context)?;
         let result = context.engine.get_config_value(name.as_deref(), &key).await;
@@ -180,7 +180,7 @@ impl HostContext for MyState {
         Ok(result)
     }
 
-    async fn drop(&mut self, context: Resource<Context>) -> anyhow::Result<()> {
+    async fn drop(&mut self, context: Resource<Context>) -> wasmtime::Result<()> {
         assert!(context.owned());
         self.table.delete(context)?;
         Ok(())
@@ -196,7 +196,7 @@ impl HostOutput for MyState {
         &mut self,
         self_: Resource<SingleThreadedOutput>,
         function_name: String,
-    ) -> anyhow::Result<Resource<SingleThreadedOutput>> {
+    ) -> wasmtime::Result<Resource<SingleThreadedOutput>> {
         let table = &mut self.table;
         let st_output = table.get(&self_)?;
         let output = st_output.output.map(function_name).await;
@@ -208,7 +208,7 @@ impl HostOutput for MyState {
     async fn clone(
         &mut self,
         self_: Resource<output_interface::Output>,
-    ) -> anyhow::Result<Resource<output_interface::Output>> {
+    ) -> wasmtime::Result<Resource<output_interface::Output>> {
         assert!(!self_.owned());
         let st_output = self.table.get(&self_)?;
         let output = st_output.output.clone();
@@ -221,7 +221,7 @@ impl HostOutput for MyState {
         &mut self,
         self_: Resource<output_interface::Output>,
         outputs: Vec<Resource<output_interface::Output>>,
-    ) -> anyhow::Result<Resource<output_interface::Output>> {
+    ) -> wasmtime::Result<Resource<output_interface::Output>> {
         assert!(!self_.owned());
         let table = &self.table;
         let st_output = table.get(&self_)?;
@@ -242,7 +242,7 @@ impl HostOutput for MyState {
         &mut self,
         self_: Resource<output_interface::Output>,
         name: String,
-    ) -> anyhow::Result<()> {
+    ) -> wasmtime::Result<()> {
         assert!(!self_.owned());
         let table = &self.table;
         let output = table.get(&self_)?;
@@ -250,7 +250,7 @@ impl HostOutput for MyState {
         Ok(())
     }
 
-    async fn drop(&mut self, rep: Resource<output_interface::Output>) -> anyhow::Result<()> {
+    async fn drop(&mut self, rep: Resource<output_interface::Output>) -> wasmtime::Result<()> {
         assert!(rep.owned());
         self.table.delete(rep)?;
         Ok(())
@@ -262,7 +262,7 @@ impl HostCompositeOutput for MyState {
         &mut self,
         self_: Resource<output_interface::CompositeOutput>,
         field_name: String,
-    ) -> anyhow::Result<Resource<output_interface::Output>> {
+    ) -> wasmtime::Result<Resource<output_interface::Output>> {
         assert!(!self_.owned());
         let composite_output = self.table.get(&self_)?;
         let output = composite_output.output.get_field(field_name.into()).await;
@@ -274,7 +274,7 @@ impl HostCompositeOutput for MyState {
     async fn get_urn(
         &mut self,
         self_: Resource<output_interface::CompositeOutput>,
-    ) -> anyhow::Result<Resource<output_interface::Output>> {
+    ) -> wasmtime::Result<Resource<output_interface::Output>> {
         assert!(!self_.owned());
         let composite_output = self.table.get(&self_)?;
         let output = composite_output.output.get_urn().await;
@@ -286,7 +286,7 @@ impl HostCompositeOutput for MyState {
     async fn drop(
         &mut self,
         rep: Resource<output_interface::CompositeOutput>,
-    ) -> anyhow::Result<()> {
+    ) -> wasmtime::Result<()> {
         assert!(rep.owned());
         self.table.delete(rep)?;
         Ok(())
