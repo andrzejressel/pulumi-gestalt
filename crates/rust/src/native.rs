@@ -1,14 +1,15 @@
 use bon::Builder;
 use pulumi_gestalt_rust_integration as integration;
 use pulumi_gestalt_rust_integration::FieldName;
-use serde::{de::DeserializeOwned, Serialize};
-use serde_json::{from_value, to_value, Value};
+use serde::{Serialize, de::DeserializeOwned};
+use serde_json::{Value, from_value, to_value};
 use std::collections::HashMap;
 use std::marker::PhantomData;
 use std::rc::Rc;
 use tokio::runtime::Runtime;
 
 pub trait Provider {
+    /// Pulumi Provider ID is the combination of URN and ID. It is used when creating a resource.
     fn get_provider_id(&self) -> Output<String>;
 }
 
@@ -119,6 +120,15 @@ impl CompositeOutput {
 
     pub fn get_id(&self) -> Output<String> {
         let res = self.runtime.block_on(self.inner.get_id());
+        Output {
+            inner: res,
+            phantom: PhantomData,
+            runtime: self.runtime.clone(),
+        }
+    }
+
+    pub fn get_provider_id(&self) -> Output<String> {
+        let res = self.runtime.block_on(self.inner.get_provider_id());
         Output {
             inner: res,
             phantom: PhantomData,

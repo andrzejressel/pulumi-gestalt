@@ -30,6 +30,8 @@ pub struct {{resource.struct_name}}Result {
     pub urn: pulumi_gestalt_rust::Output<String>,
     /// Pulumi ID is the unique identifier assigned by the provider to this resource.
     pub id: pulumi_gestalt_rust::Output<String>,
+    /// Pulumi Provider ID is the combination of URN and ID. It is used when creating a resource.
+    pub provider_id: pulumi_gestalt_rust::Output<String>,
 {{#each resource.output_properties}}
     {{#each description_lines}}
         /// {{&this}}
@@ -40,8 +42,7 @@ pub struct {{resource.struct_name}}Result {
 
 impl pulumi_gestalt_rust::Provider for {{resource.struct_name}}Result {
     fn get_provider_id(&self) -> pulumi_gestalt_rust::Output<String> {
-        use pulumi_gestalt_rust::pulumi_combine;
-        pulumi_combine!(self.urn.clone(), self.id.clone()).map(|(urn, id)| format!("{}::{}", urn, id))
+        self.provider_id.clone()
     }
 }
 
@@ -99,6 +100,7 @@ pub fn {{resource.function_name}}_with_options(
     {{resource.struct_name}}Result {
         urn: o.get_urn(),
         id: o.get_id(),
+        provider_id: o.get_provider_id(),
     {{#each resource.output_properties}}
         {{arg_name}}: o.get_field("{{name}}"),
     {{/each}}

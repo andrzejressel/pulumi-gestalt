@@ -227,4 +227,12 @@ impl<T> RegisterResourceOutput<T> {
             engine: Arc::clone(&self.engine),
         }
     }
+
+    pub async fn get_provider_id(&self) -> Output<T> {
+        let raw_output = core::Engine::<T>::create_extract_provider_id(self.inner.clone());
+        Output {
+            inner: raw_output,
+            engine: Arc::clone(&self.engine),
+        }
+    }
 }

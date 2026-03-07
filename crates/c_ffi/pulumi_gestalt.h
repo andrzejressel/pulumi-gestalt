@@ -108,6 +108,11 @@ struct pulumi_output_t *pulumi_composite_output_get_urn(struct pulumi_composite_
 struct pulumi_output_t *pulumi_composite_output_get_id(struct pulumi_composite_output_t *output);
 
 /**
+ * Pulumi Provider ID is the combination of URN and ID. It is used when creating a resource.
+ */
+struct pulumi_output_t *pulumi_composite_output_get_provider_id(struct pulumi_composite_output_t *output);
+
+/**
  * Receives value from configuration
  * `name`: Configuration bag's logical name. If null, the default (project name) is used.
  * `key`: Config key. Cannot be null

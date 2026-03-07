@@ -17,8 +17,8 @@ pub use oneof::OneOf4;
 use anyhow::{Context as AnyhowContext, Result};
 
 pub use native::{
-    CompositeOutput, ConfigValue, Context, InvokeResourceRequest, Output, RegisterResourceRequest,
-    ResourceRequestObjectField, CustomResourceOptions, Provider
+    CompositeOutput, ConfigValue, Context, CustomResourceOptions, InvokeResourceRequest, Output,
+    Provider, RegisterResourceRequest, ResourceRequestObjectField,
 };
 
 /// Entrypoint for execution

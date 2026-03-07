@@ -189,7 +189,6 @@ mod tests {
             context,
             "test",
             SomeResourceArgs::builder().build_struct(),
-            None,
         );
     }
 

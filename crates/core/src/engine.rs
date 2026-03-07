@@ -137,8 +137,32 @@ impl<FunctionContext> Engine<FunctionContext> {
             let (_, _, id) = result.value.await;
             id
         });
+        let provider_id = RawOutput::from_future({
+            let urn = urn.clone();
+            let id = id.clone();
+            async move {
+                let urn_val = urn.value.await;
+                let id_val = id.value.await;
+                match (urn_val, id_val) {
+                    (NodeValue::Exists(urn_e), NodeValue::Exists(id_e)) => {
+                        let urn_str = urn_e.value.as_str().expect("Expected URN to be a string");
+                        let id_str = id_e.value.as_str().expect("Expected ID to be a string");
+                        NodeValue::exists(
+                            format!("{}::{}", urn_str, id_str),
+                            urn_e.secret || id_e.secret,
+                        )
+                    }
+                    _ => NodeValue::Nothing,
+                }
+            }
+        });
 
-        let output = RegisterResourceOutput { fields, urn, id };
+        let output = RegisterResourceOutput {
+            fields,
+            urn,
+            id,
+            provider_id,
+        };
         self.join_set.push(output.clone().invoke_void());
 
         output
@@ -172,7 +196,13 @@ impl<FunctionContext> Engine<FunctionContext> {
         });
         let urn = RawOutput::from_node_value(NodeValue::Nothing);
         let id = RawOutput::from_node_value(NodeValue::Nothing);
-        let output = RegisterResourceOutput { fields, urn, id };
+        let provider_id = RawOutput::from_node_value(NodeValue::Nothing);
+        let output = RegisterResourceOutput {
+            fields,
+            urn,
+            id,
+            provider_id,
+        };
         self.join_set.push(output.clone().invoke_void());
 
         output
@@ -262,6 +292,10 @@ impl<FunctionContext> Engine<FunctionContext> {
 
     pub fn create_extract_id(source: RegisterResourceOutput) -> RawOutput {
         source.get_id()
+    }
+
+    pub fn create_extract_provider_id(source: RegisterResourceOutput) -> RawOutput {
+        source.get_provider_id()
     }
 
     #[cfg(test)]
