@@ -20,6 +20,7 @@ pub struct RegisterResourceRequest {
     pub r#type: String,
     pub object: HashMap<FieldName, NodeValue>,
     pub version: String,
+    pub provider: Option<String>,
 }
 
 #[derive(Builder)]

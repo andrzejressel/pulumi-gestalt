@@ -18,7 +18,7 @@ use anyhow::{Context as AnyhowContext, Result};
 
 pub use native::{
     CompositeOutput, ConfigValue, Context, InvokeResourceRequest, Output, RegisterResourceRequest,
-    ResourceRequestObjectField,
+    ResourceRequestObjectField, CustomResourceOptions
 };
 
 /// Entrypoint for execution

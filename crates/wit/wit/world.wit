@@ -49,6 +49,7 @@ interface types {
         name: string,
         version: string,
         object: list<object-field>,
+        provider: option<borrow<output>>,
     }
 
     record resource-invoke-request {

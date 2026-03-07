@@ -67,6 +67,7 @@ pub struct RegisterResourceRequest {
     version: *const c_char,
     inputs: *const ObjectField,
     inputs_len: usize,
+    provider: *const CustomOutputId,
 }
 
 #[repr(C)]
@@ -191,6 +192,12 @@ extern "C" fn pulumi_register_resource(
 
     let objects = extract_field(request.inputs, request.inputs_len);
 
+    let provider = if request.provider.is_null() {
+        None
+    } else {
+        Some(unsafe { &*request.provider }.native.clone())
+    };
+
     let inner = &pulumi_context.inner;
     let inner_engine = pulumi_context.inner.borrow_mut();
     let request = integration::RegisterResourceRequest {
@@ -198,6 +205,7 @@ extern "C" fn pulumi_register_resource(
         name,
         inputs: objects,
         version,
+        provider,
     };
     let output_id = inner_engine
         .runtime

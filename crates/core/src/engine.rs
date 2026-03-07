@@ -81,6 +81,7 @@ impl<FunctionContext> Engine<FunctionContext> {
         name: String,
         inputs: HashMap<FieldName, RawOutput>,
         version: String,
+        provider: Option<RawOutput>,
     ) -> RegisterResourceOutput {
         let pulumi = self.pulumi.clone();
         let result = Output::from_future(async move {
@@ -90,6 +91,20 @@ impl<FunctionContext> Engine<FunctionContext> {
                 resolved_inputs.insert(key, value);
             }
 
+            let provider_id = match provider {
+                None => None,
+                Some(p) => match p.value.await {
+                    NodeValue::Exists(ExistingNodeValue {
+                        value: serde_json::Value::String(s),
+                        ..
+                    }) => Some(s),
+                    NodeValue::Exists(v) => {
+                        panic!("Expected Provider URN to be a String, got {:?}", v.value)
+                    }
+                    NodeValue::Nothing => None,
+                },
+            };
+
             let result = pulumi
                 .register_resource(
                     RegisterResourceRequest::builder()
@@ -97,6 +112,7 @@ impl<FunctionContext> Engine<FunctionContext> {
                         .name(name)
                         .version(version)
                         .object(resolved_inputs)
+                        .maybe_provider(provider_id)
                         .build(),
                 )
                 .await;

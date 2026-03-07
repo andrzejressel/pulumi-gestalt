@@ -33,6 +33,7 @@ typedef struct pulumi_register_resource_request_t {
   const char *version;
   const struct pulumi_object_field_t *inputs;
   uintptr_t inputs_len;
+  const struct pulumi_output_t *provider;
 } pulumi_register_resource_request_t;
 
 typedef struct pulumi_invoke_resource_request_t {

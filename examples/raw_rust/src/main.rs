@@ -14,6 +14,7 @@ async fn generate_random_value(ctx: &Context) {
         name: "my_name".to_string(),
         version: "4.15.1".to_string(),
         inputs: HashMap::from([("length".into(), output.clone())]),
+        provider: None,
     };
 
     let composite_output = ctx.register_resource(register_resource_request).await;

@@ -78,6 +78,11 @@ impl HostContext for MyState {
             inputs.insert(field.name.clone().into(), output.output.clone());
         }
 
+        let provider = match request.provider {
+            None => None,
+            Some(p) => Some(table.get(&p)?.output.clone()),
+        };
+
         let result = context
             .engine
             .register_resource(pulumi_gestalt_rust_integration::RegisterResourceRequest {
@@ -85,6 +90,7 @@ impl HostContext for MyState {
                 name: request.name,
                 inputs,
                 version: request.version,
+                provider,
             })
             .await;
 

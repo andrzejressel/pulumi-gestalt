@@ -170,6 +170,7 @@ impl PulumiConnector for RealPulumiConnector {
             name: req.name,
             object: Some(create_protobuf_struct(req.object)),
             version: req.version,
+            provider: req.provider.unwrap_or_default(),
             custom: true,
             accept_secrets: true,
             ..Default::default()

@@ -48,8 +48,26 @@ pub fn create(
     context: &pulumi_gestalt_rust::Context,
     name: &str,
 {{#if resource.input_properties}}
-    args: {{resource.struct_name}}Args
+    args: {{resource.struct_name}}Args,
 {{/if}}
+) -> {{resource.struct_name}}Result {
+    create_with_options(
+        context,
+        name,
+        {{#if resource.input_properties}}
+        args,
+        {{/if}}
+        None,
+    )
+}
+
+pub fn create_with_options(
+    context: &pulumi_gestalt_rust::Context,
+    name: &str,
+{{#if resource.input_properties}}
+    args: {{resource.struct_name}}Args,
+{{/if}}
+    options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
 ) -> {{resource.struct_name}}Result {
 
 {{#each resource.input_properties}}
@@ -64,7 +82,8 @@ pub fn create(
             {{#each resource.input_properties}}
                 pulumi_gestalt_rust::ResourceRequestObjectField { name: "{{name}}".into(), value: &{{arg_name}}_binding.drop_type() },
             {{/each}}
-        ]
+        ],
+        options,
     };
 
     let o = context.register_resource(request);

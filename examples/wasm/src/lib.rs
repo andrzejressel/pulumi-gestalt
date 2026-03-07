@@ -7,17 +7,29 @@ use pulumi_gestalt_wit::client_bindings::component::pulumi_gestalt::types::{
 };
 
 fn generate_random_value(ctx: &Context) {
+    // 1. Create a provider
+    let provider_request = RegisterResourceRequest {
+        type_: "pulumi:providers:random".to_string(),
+        name: "custom-provider".to_string(),
+        version: "4.15.1".to_string(),
+        object: vec![],
+        provider: None,
+    };
+    let provider = ctx.register_resource(&provider_request);
+
     let output = ctx.create_output("16", false);
     let inputs = vec![ObjectField {
         name: "length".to_string(),
         value: &output,
     }];
 
+    // 2. Use the provider
     let register_resource_request = RegisterResourceRequest {
         type_: "random:index/randomString:RandomString".to_string(),
         name: "my_name".to_string(),
         version: "4.15.1".to_string(),
         object: inputs,
+        provider: Some(&provider.get_urn()),
     };
 
     let composite_output = ctx.register_resource(&register_resource_request);
@@ -25,6 +37,7 @@ fn generate_random_value(ctx: &Context) {
     let output_urn = composite_output.get_urn();
     output_result.add_to_export("result");
     output_urn.add_to_export("resource_urn");
+    provider.get_urn().add_to_export("provider_urn");
 }
 
 fn run_command(ctx: &Context) {

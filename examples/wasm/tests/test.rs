@@ -25,6 +25,7 @@ fn test_integration() -> Result<()> {
     let whoami_stdout = stack.get_string("/whoami_stdout")?;
     let combined = stack.get_array_as_string("/combined")?;
     let resource_urn = stack.get_string("/resource_urn")?;
+    let provider_urn = stack.get_string("/provider_urn")?;
 
     let secret = stack.get_string("/secret")?;
     let secret_plaintext = secret_stack.get_string("/secret")?;
@@ -40,6 +41,10 @@ fn test_integration() -> Result<()> {
     assert_eq!(
         resource_urn,
         "urn:pulumi:test::Pulumi-example-wasm-Sample::random:index/randomString:RandomString::my_name"
+    );
+    assert_eq!(
+        provider_urn,
+        "urn:pulumi:test::Pulumi-example-wasm-Sample::pulumi:providers:random::custom-provider"
     );
     assert_eq!(secret, "[secret]");
     assert_eq!(secret_plaintext, "secret_value");

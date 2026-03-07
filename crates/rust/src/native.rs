@@ -7,6 +7,18 @@ use std::marker::PhantomData;
 use std::rc::Rc;
 use tokio::runtime::Runtime;
 
+pub trait Provider {
+    fn get_provider_id(&self) -> Output<String>;
+}
+
+#[derive(Default)]
+pub struct ResourceOptions {}
+
+#[derive(Default)]
+pub struct CustomResourceOptions {
+    pub provider: Option<Rc<dyn Provider>>,
+}
+
 pub type FunctionContext = Box<dyn Fn(Value) -> Value + Send>;
 
 pub struct Output<T> {
@@ -148,12 +160,19 @@ impl Context {
                 object.value.inner.clone(),
             );
         }
+        let provider = request
+            .options
+            .as_ref()
+            .and_then(|o| o.provider.as_ref())
+            .map(|p| p.get_provider_id().inner.clone());
+
         let result = self.runtime.block_on(self.inner.register_resource(
             integration::RegisterResourceRequest {
                 r#type: request.type_.clone(),
                 name: request.name.clone(),
                 version: request.version.clone(),
                 inputs,
+                provider,
             },
         ));
         CompositeOutput {
@@ -204,6 +223,7 @@ pub struct RegisterResourceRequest<'a, OUTPUT> {
     pub name: String,
     pub version: String,
     pub object: &'a [ResourceRequestObjectField<'a, OUTPUT>],
+    pub options: Option<CustomResourceOptions>,
 }
 pub struct InvokeResourceRequest<'a, OUTPUT> {
     pub token: String,
