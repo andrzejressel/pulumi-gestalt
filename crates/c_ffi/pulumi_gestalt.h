@@ -104,6 +104,8 @@ struct pulumi_output_t *pulumi_composite_output_get_field(struct pulumi_composit
 
 struct pulumi_output_t *pulumi_composite_output_get_urn(struct pulumi_composite_output_t *output);
 
+struct pulumi_output_t *pulumi_composite_output_get_id(struct pulumi_composite_output_t *output);
+
 /**
  * Receives value from configuration
  * `name`: Configuration bag's logical name. If null, the default (project name) is used.

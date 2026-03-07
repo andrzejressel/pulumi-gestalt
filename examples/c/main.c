@@ -51,9 +51,11 @@ static void generate_random_value(pulumi_context_t* ctx) {
 
 	pulumi_output_t* output_result = pulumi_composite_output_get_field(composite_output, "result");
 	pulumi_output_t* output_urn = pulumi_composite_output_get_urn(composite_output);
+	pulumi_output_t* output_id = pulumi_composite_output_get_id(composite_output);
 
 	pulumi_output_add_to_export(output_result, "result");
 	pulumi_output_add_to_export(output_urn, "resource_urn");
+	pulumi_output_add_to_export(output_id, "resource_id");
 }
 
 static void run_command(pulumi_context_t* ctx) {

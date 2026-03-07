@@ -391,6 +391,29 @@ extern "C" fn pulumi_composite_output_get_urn(
     raw
 }
 
+#[unsafe(no_mangle)]
+extern "C" fn pulumi_composite_output_get_id(
+    output: *mut CustomCompositeOutputId,
+) -> *mut CustomOutputId {
+    let custom_register_output_id = unsafe { &*output };
+    let binding = custom_register_output_id.ctx.upgrade().unwrap();
+    let mut engine = binding.borrow_mut();
+
+    let new_output = engine
+        .runtime
+        .block_on(custom_register_output_id.native.get_id());
+
+    let binding = custom_register_output_id.ctx.upgrade().unwrap();
+
+    let output = CustomOutputId {
+        native: new_output,
+        ctx: Rc::downgrade(&binding),
+    };
+    let raw = Box::into_raw(Box::new(output));
+    engine.outputs.push(raw);
+    raw
+}
+
 /// Receives value from configuration
 /// `name`: Configuration bag's logical name. If null, the default (project name) is used.
 /// `key`: Config key. Cannot be null
