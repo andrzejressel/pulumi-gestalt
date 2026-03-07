@@ -1,0 +1,4 @@
+type: Added
+title: Add non working support of passing providers as function parameters
+description: |
+  But at least code generator is not crashing

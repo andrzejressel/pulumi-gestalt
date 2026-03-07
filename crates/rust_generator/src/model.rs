@@ -92,7 +92,9 @@ impl TypeExt for Type {
             | Type::Array(_)
             | Type::Object(_)
             | Type::ConstString(_)
-            | Type::Ref(Ref::Asset | Ref::Any | Ref::Archive | Ref::CurrentProvider) => self.get_rust_type(depth),
+            | Type::Ref(Ref::Asset | Ref::Any | Ref::Archive | Ref::CurrentProvider) => {
+                self.get_rust_type(depth)
+            }
         }
     }
 

@@ -3,7 +3,7 @@ use crate::model::{
     NumberEnumElement, OutputProperty, Provider, Ref, StringEnumElement,
 };
 use crate::utils::fix_description;
-use anyhow::{Context, Result, anyhow, bail};
+use anyhow::{Context, Result, anyhow};
 use convert_case::{Case, Casing};
 use pulumi_gestalt_serde_constant_string::generate_string_const;
 use serde::Deserialize;
@@ -26,7 +26,7 @@ pub(crate) enum TypeEnum {
     #[serde(alias = "object")]
     Object,
     #[serde(untagged)]
-    Other(String)
+    Other(String),
 }
 
 #[derive(Deserialize, Debug)]
@@ -246,7 +246,12 @@ fn new_type_mapper(type_: &Type) -> Result<crate::model::Type> {
             ref_: None,
             ..
         } => Err(anyhow!("'type' and 'ref' fields cannot be empty")),
-        Type { type_: Some(TypeEnum::Other(_)), ref_: None, one_of: None, .. } => todo!(),
+        Type {
+            type_: Some(TypeEnum::Other(_)),
+            ref_: None,
+            one_of: None,
+            ..
+        } => todo!(),
     })
     .context(format!("Cannot handle type: [{type_:?}]"))
 }
@@ -533,7 +538,10 @@ fn convert_to_global_type(type_name: &String, type_: &&ComplexType) -> Result<Gl
             r#type: Some(TypeEnum::String),
             ..
         } => Err(anyhow!("Invalid string without enum")),
-        ObjectType { r#type: Some(TypeEnum::Other(_)), .. } => todo!(),
+        ObjectType {
+            r#type: Some(TypeEnum::Other(_)),
+            ..
+        } => todo!(),
     }
     .context(format!("Cannot convert type [{type_name}]"))?;
     Ok(GlobalType {

@@ -2,8 +2,8 @@ use crate::code_generation::yaml::model::Variable::FnInvokeVariable;
 use crate::code_generation::yaml::yaml_model::{
     YamlExpression, YamlFile, YamlFnInvoke, YamlResource, YamlVariable,
 };
-use anyhow::{bail, Result};
 use anyhow::{Context, anyhow};
+use anyhow::{Result, bail};
 use pulumi_gestalt_schema::model::*;
 use std::collections::BTreeMap;
 use std::ops::Deref;
