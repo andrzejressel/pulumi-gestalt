@@ -1,6 +1,6 @@
 use crate::pulumi::Pulumi;
 use anyhow::{Context, Error};
-use clap::{Args, Parser, Subcommand, arg};
+use clap::{Args, Parser, Subcommand};
 use log::LevelFilter;
 use log4rs::Config;
 use log4rs::append::file::FileAppender;

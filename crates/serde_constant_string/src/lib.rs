@@ -73,7 +73,6 @@ macro_rules! generate_string_const {
 
 #[cfg(test)]
 mod tests {
-    use super::*;
     use serde::{Deserialize, Serialize};
 
     #[derive(Serialize, Deserialize)]
