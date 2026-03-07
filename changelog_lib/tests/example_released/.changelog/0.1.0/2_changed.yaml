@@ -1,2 +1,7 @@
 type: Changed
 title: "Changed a feature"
+description: |
+  Description of a change with multiple newlines
+  
+  
+  
