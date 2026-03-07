@@ -549,6 +549,12 @@ fn extract_field(
     inputs: *const ObjectField,
     inputs_len: usize,
 ) -> HashMap<integration::FieldName, integration::Output<FunctionType>> {
+    if inputs.is_null() {
+        if inputs_len > 0 {
+            panic!("Inputs pointer is null but size is greater than 0");
+        }
+         return HashMap::new();
+    }
     let mut objects = HashMap::new();
     unsafe {
         std::slice::from_raw_parts(inputs, inputs_len)
