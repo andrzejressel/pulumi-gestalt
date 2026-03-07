@@ -103,6 +103,7 @@ fn main() {
         "output-funcs-edgeorder",
         "plain-object-defaults",
         "plain-object-disable-defaults",
+        "provider_as_function_parameter",
         "random",
         "reserved_names",
         "unions-inline",

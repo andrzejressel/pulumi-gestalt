@@ -50,7 +50,7 @@ fn convert_function(package: &Package, element_id: &ElementId) -> Function {
         name: element_id.get_rust_namespace_name(),
         r#type: element_id.raw.clone(),
         package_name: element_id.get_rust_package_name(),
-        struct_name: element_id.name.clone().to_case(Case::Pascal),
+        struct_name: element_id.name.replace("/", "_").clone().to_case(Case::Pascal),
         register_interface: get_register_interface(element_id),
         function_name: element_id.get_rust_function_name(),
         get_version,
