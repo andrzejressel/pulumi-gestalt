@@ -65,13 +65,6 @@ impl<T: Clone + 'static + Send + Sync> Output<T> {
         }
     }
 
-    pub(crate) fn from_value(value: T) -> Output<T> {
-        let f = async move { value };
-        Self {
-            value: f.boxed().shared(),
-        }
-    }
-
     // Used for mappings to ensure they will be invoked (even if the result is not needed)
     pub(crate) fn invoke_void(self) -> Shared<BoxFuture<'static, ()>> {
         async move {
