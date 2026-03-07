@@ -3,7 +3,7 @@ use pulumi_gestalt_rust_integration as integration;
 use serde_json::Value;
 use std::cell::RefCell;
 use std::collections::HashMap;
-use std::ffi::{c_char, c_void, CStr, CString};
+use std::ffi::{CStr, CString, c_char, c_void};
 use std::ptr::null_mut;
 use std::rc::{Rc, Weak};
 use tokio::runtime::Runtime;

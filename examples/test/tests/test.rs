@@ -22,7 +22,10 @@ fn test_integration() -> Result<()> {
 
     assert_eq!(result, "SUFFIX");
     assert_eq!(provider_prefix, "MY_PREFIX");
-    assert_eq!(provider_urn, "urn:pulumi:test::Pulumi-Gestalt-Examples-Test::pulumi:providers:test::test_provider");
+    assert_eq!(
+        provider_urn,
+        "urn:pulumi:test::Pulumi-Gestalt-Examples-Test::pulumi:providers:test::test_provider"
+    );
 
     Ok(())
 }

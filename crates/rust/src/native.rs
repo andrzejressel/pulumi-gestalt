@@ -1,7 +1,7 @@
 use pulumi_gestalt_rust_integration as integration;
 use pulumi_gestalt_rust_integration::FieldName;
-use serde::{de::DeserializeOwned, Serialize};
-use serde_json::{from_value, to_value, Value};
+use serde::{Serialize, de::DeserializeOwned};
+use serde_json::{Value, from_value, to_value};
 use std::collections::HashMap;
 use std::marker::PhantomData;
 use std::rc::Rc;
