@@ -113,6 +113,9 @@ pub mod managedkafka {
 pub mod memcache {
     include!("resources/memcache/instance.rs");
 }
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {
     pub mod iam {
         include!("functions/iam/get_rule.rs");
@@ -521,6 +524,7 @@ pub mod types {
         include!("types/memcache/instance_memcache_parameters.rs");
         include!("types/memcache/instance_node_config.rs");
     }
+    include!("types/provider_batching.rs");
 }
 #[doc(hidden)]
 pub mod constants {}

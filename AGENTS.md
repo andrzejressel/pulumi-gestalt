@@ -27,6 +27,8 @@ Commands are run using `just`. Run `just --list` for all available commands.
     ```bash
     just
     ```
+*   **Never run `--all-features` locally** (CI only):
+    Running `cargo test --all-features` or similar commands with `--all-features` can be extremely slow and resource-intensive as it enables all provider generators.
 *   **Format source code**:
     ```bash
     just fmt

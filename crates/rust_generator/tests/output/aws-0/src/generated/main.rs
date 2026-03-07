@@ -85,6 +85,9 @@ pub mod appautoscaling {
     include!("resources/appautoscaling/scheduled_action.rs");
     include!("resources/appautoscaling/target.rs");
 }
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {
     pub mod acm {
         include!("functions/acm/get_certificate.rs");
@@ -299,6 +302,11 @@ pub mod types {
         include!("types/appautoscaling/scheduled_action_scalable_target_action.rs");
         include!("types/appautoscaling/target_suspended_state.rs");
     }
+    include!("types/provider_assume_role.rs");
+    include!("types/provider_assume_role_with_web_identity.rs");
+    include!("types/provider_default_tags.rs");
+    include!("types/provider_endpoint.rs");
+    include!("types/provider_ignore_tags.rs");
     include!("types/get_availability_zone_filter.rs");
     include!("types/get_availability_zones_filter.rs");
     include!("types/get_regions_filter.rs");

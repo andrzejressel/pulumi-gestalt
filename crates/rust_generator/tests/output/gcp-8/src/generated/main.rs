@@ -97,6 +97,9 @@ pub mod notebooks {
     include!("resources/notebooks/runtime_iam_member.rs");
     include!("resources/notebooks/runtime_iam_policy.rs");
 }
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {
     pub mod monitoring {
         include!("functions/monitoring/get_app_engine_service.rs");
@@ -602,6 +605,7 @@ pub mod types {
             "types/notebooks/runtime_virtual_machine_virtual_machine_config_shielded_instance_config.rs"
         );
     }
+    include!("types/provider_batching.rs");
 }
 #[doc(hidden)]
 pub mod constants {}

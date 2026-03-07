@@ -150,6 +150,9 @@ pub mod compute {
     include!("resources/compute/vpn_gateway.rs");
     include!("resources/compute/vpn_tunnel.rs");
 }
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {
     pub mod compute {
         include!("functions/compute/router_status.rs");
@@ -1735,6 +1738,7 @@ pub mod types {
         include!("types/compute/get_subnetwork_secondary_ip_range.rs");
         include!("types/compute/get_subnetworks_subnetwork.rs");
     }
+    include!("types/provider_batching.rs");
 }
 #[doc(hidden)]
 pub mod constants {}

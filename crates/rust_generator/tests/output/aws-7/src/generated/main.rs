@@ -87,6 +87,9 @@ pub mod dynamodb {
     include!("resources/dynamodb/table_replica.rs");
     include!("resources/dynamodb/tag.rs");
 }
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {
     pub mod devopsguru {
         include!("functions/devopsguru/get_notification_channel.rs");
@@ -249,6 +252,11 @@ pub mod types {
         include!("types/dynamodb/get_table_server_side_encryption.rs");
         include!("types/dynamodb/get_table_ttl.rs");
     }
+    include!("types/provider_assume_role.rs");
+    include!("types/provider_assume_role_with_web_identity.rs");
+    include!("types/provider_default_tags.rs");
+    include!("types/provider_endpoint.rs");
+    include!("types/provider_ignore_tags.rs");
     include!("types/get_availability_zone_filter.rs");
     include!("types/get_availability_zones_filter.rs");
     include!("types/get_regions_filter.rs");

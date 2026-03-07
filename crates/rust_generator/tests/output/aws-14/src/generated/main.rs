@@ -98,6 +98,9 @@ pub mod organizations {
     include!("resources/organizations/policy_attachment.rs");
     include!("resources/organizations/resource_policy.rs");
 }
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {
     pub mod neptune {
         include!("functions/neptune/get_engine_version.rs");
@@ -643,6 +646,11 @@ pub mod types {
         );
         include!("types/organizations/get_organizational_units_child.rs");
     }
+    include!("types/provider_assume_role.rs");
+    include!("types/provider_assume_role_with_web_identity.rs");
+    include!("types/provider_default_tags.rs");
+    include!("types/provider_endpoint.rs");
+    include!("types/provider_ignore_tags.rs");
     include!("types/get_availability_zone_filter.rs");
     include!("types/get_availability_zones_filter.rs");
     include!("types/get_regions_filter.rs");

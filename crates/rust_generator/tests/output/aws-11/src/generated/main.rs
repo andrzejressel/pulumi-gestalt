@@ -70,6 +70,9 @@ pub mod kinesis {
     include!("resources/kinesis/stream_consumer.rs");
     include!("resources/kinesis/video_stream.rs");
 }
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {
     pub mod imagebuilder {
         include!("functions/imagebuilder/get_component.rs");
@@ -832,6 +835,11 @@ pub mod types {
         include!("types/kinesis/stream_stream_mode_details.rs");
         include!("types/kinesis/get_stream_stream_mode_detail.rs");
     }
+    include!("types/provider_assume_role.rs");
+    include!("types/provider_assume_role_with_web_identity.rs");
+    include!("types/provider_default_tags.rs");
+    include!("types/provider_endpoint.rs");
+    include!("types/provider_ignore_tags.rs");
     include!("types/get_availability_zone_filter.rs");
     include!("types/get_availability_zones_filter.rs");
     include!("types/get_regions_filter.rs");
