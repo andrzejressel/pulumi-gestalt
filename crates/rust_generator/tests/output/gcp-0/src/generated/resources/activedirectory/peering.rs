@@ -180,7 +180,7 @@ pub mod peering {
         };
         let o = context.register_resource(request);
         PeeringResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             authorized_network: o.get_field("authorizedNetwork"),
             domain_resource: o.get_field("domainResource"),

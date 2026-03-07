@@ -350,7 +350,7 @@ pub mod hosting_version {
         };
         let o = context.register_resource(request);
         HostingVersionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             config: o.get_field("config"),
             name: o.get_field("name"),

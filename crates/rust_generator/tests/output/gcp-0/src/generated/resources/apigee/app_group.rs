@@ -292,7 +292,7 @@ pub mod app_group {
         };
         let o = context.register_resource(request);
         AppGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             app_group_id: o.get_field("appGroupId"),
             attributes: o.get_field("attributes"),

@@ -167,7 +167,7 @@ pub mod hybrid_connection_authorization_rule {
         };
         let o = context.register_resource(request);
         HybridConnectionAuthorizationRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             hybrid_connection_name: o.get_field("hybridConnectionName"),
             listen: o.get_field("listen"),

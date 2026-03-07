@@ -227,7 +227,7 @@ pub mod cx_webhook {
         };
         let o = context.register_resource(request);
         CxWebhookResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             disabled: o.get_field("disabled"),
             display_name: o.get_field("displayName"),

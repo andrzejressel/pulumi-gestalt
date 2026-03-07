@@ -649,7 +649,7 @@ pub mod database {
         };
         let o = context.register_resource(request);
         DatabaseResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             auto_pause_delay_in_minutes: o.get_field("autoPauseDelayInMinutes"),
             collation: o.get_field("collation"),

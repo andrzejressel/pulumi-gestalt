@@ -129,7 +129,7 @@ pub mod tunnel_config {
         };
         let o = context.register_resource(request);
         TunnelConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             config: o.get_field("config"),

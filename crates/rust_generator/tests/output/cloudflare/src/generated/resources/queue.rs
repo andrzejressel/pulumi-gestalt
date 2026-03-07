@@ -80,7 +80,7 @@ pub mod queue {
         };
         let o = context.register_resource(request);
         QueueResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             name: o.get_field("name"),

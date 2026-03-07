@@ -151,7 +151,7 @@ pub mod peering_attachment {
         };
         let o = context.register_resource(request);
         PeeringAttachmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             options: o.get_field("options"),
             peer_account_id: o.get_field("peerAccountId"),

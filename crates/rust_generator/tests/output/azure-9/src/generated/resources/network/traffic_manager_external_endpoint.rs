@@ -215,7 +215,7 @@ pub mod traffic_manager_external_endpoint {
         };
         let o = context.register_resource(request);
         TrafficManagerExternalEndpointResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             always_serve_enabled: o.get_field("alwaysServeEnabled"),
             custom_headers: o.get_field("customHeaders"),

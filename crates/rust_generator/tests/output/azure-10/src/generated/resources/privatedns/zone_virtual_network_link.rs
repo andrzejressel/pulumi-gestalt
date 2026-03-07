@@ -154,7 +154,7 @@ pub mod zone_virtual_network_link {
         };
         let o = context.register_resource(request);
         ZoneVirtualNetworkLinkResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             name: o.get_field("name"),
             private_dns_zone_name: o.get_field("privateDnsZoneName"),

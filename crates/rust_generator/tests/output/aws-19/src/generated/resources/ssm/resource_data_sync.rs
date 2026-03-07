@@ -123,7 +123,7 @@ pub mod resource_data_sync {
         };
         let o = context.register_resource(request);
         ResourceDataSyncResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             name: o.get_field("name"),
             s3_destination: o.get_field("s3Destination"),

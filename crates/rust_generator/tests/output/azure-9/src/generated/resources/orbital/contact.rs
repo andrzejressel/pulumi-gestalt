@@ -200,7 +200,7 @@ pub mod contact {
         };
         let o = context.register_resource(request);
         ContactResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             contact_profile_id: o.get_field("contactProfileId"),
             ground_station_name: o.get_field("groundStationName"),

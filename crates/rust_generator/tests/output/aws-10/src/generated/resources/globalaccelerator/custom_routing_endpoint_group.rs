@@ -141,7 +141,7 @@ pub mod custom_routing_endpoint_group {
         };
         let o = context.register_resource(request);
         CustomRoutingEndpointGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             destination_configurations: o.get_field("destinationConfigurations"),

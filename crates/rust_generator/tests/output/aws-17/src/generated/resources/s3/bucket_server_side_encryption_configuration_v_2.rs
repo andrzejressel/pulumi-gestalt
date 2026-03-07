@@ -127,7 +127,7 @@ pub mod bucket_server_side_encryption_configuration_v_2 {
         };
         let o = context.register_resource(request);
         BucketServerSideEncryptionConfigurationV2Result {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bucket: o.get_field("bucket"),
             expected_bucket_owner: o.get_field("expectedBucketOwner"),

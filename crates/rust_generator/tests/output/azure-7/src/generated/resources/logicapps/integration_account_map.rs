@@ -144,7 +144,7 @@ pub mod integration_account_map {
         };
         let o = context.register_resource(request);
         IntegrationAccountMapResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             content: o.get_field("content"),
             integration_account_name: o.get_field("integrationAccountName"),

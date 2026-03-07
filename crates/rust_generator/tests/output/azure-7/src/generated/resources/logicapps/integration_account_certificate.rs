@@ -153,7 +153,7 @@ pub mod integration_account_certificate {
         };
         let o = context.register_resource(request);
         IntegrationAccountCertificateResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             integration_account_name: o.get_field("integrationAccountName"),
             key_vault_key: o.get_field("keyVaultKey"),

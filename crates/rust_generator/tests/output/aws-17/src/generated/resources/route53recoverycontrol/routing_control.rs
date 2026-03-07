@@ -121,7 +121,7 @@ pub mod routing_control {
         };
         let o = context.register_resource(request);
         RoutingControlResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             cluster_arn: o.get_field("clusterArn"),

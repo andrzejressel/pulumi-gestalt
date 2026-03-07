@@ -141,7 +141,7 @@ pub mod network_interface_security_group_attachment {
         };
         let o = context.register_resource(request);
         NetworkInterfaceSecurityGroupAttachmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             network_interface_id: o.get_field("networkInterfaceId"),
             security_group_id: o.get_field("securityGroupId"),

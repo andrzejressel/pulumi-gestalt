@@ -275,7 +275,7 @@ pub mod registration {
         };
         let o = context.register_resource(request);
         RegistrationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             contact_notices: o.get_field("contactNotices"),
             contact_settings: o.get_field("contactSettings"),

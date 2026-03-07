@@ -114,7 +114,7 @@ pub mod repository_policy {
         };
         let o = context.register_resource(request);
         RepositoryPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             policy: o.get_field("policy"),
             registry_id: o.get_field("registryId"),

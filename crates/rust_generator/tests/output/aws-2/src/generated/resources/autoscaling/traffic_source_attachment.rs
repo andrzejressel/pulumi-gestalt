@@ -84,7 +84,7 @@ pub mod traffic_source_attachment {
         };
         let o = context.register_resource(request);
         TrafficSourceAttachmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             autoscaling_group_name: o.get_field("autoscalingGroupName"),
             traffic_source: o.get_field("trafficSource"),

@@ -142,7 +142,7 @@ pub mod scram_secret_association {
         };
         let o = context.register_resource(request);
         ScramSecretAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cluster_arn: o.get_field("clusterArn"),
             secret_arn_lists: o.get_field("secretArnLists"),

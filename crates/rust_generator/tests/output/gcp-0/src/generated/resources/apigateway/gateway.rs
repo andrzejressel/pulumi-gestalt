@@ -170,7 +170,7 @@ pub mod gateway {
         };
         let o = context.register_resource(request);
         GatewayResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_config: o.get_field("apiConfig"),
             default_hostname: o.get_field("defaultHostname"),

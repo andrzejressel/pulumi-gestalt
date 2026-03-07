@@ -127,7 +127,7 @@ pub mod certificate_contacts {
         };
         let o = context.register_resource(request);
         CertificateContactsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             contacts: o.get_field("contacts"),
             key_vault_id: o.get_field("keyVaultId"),

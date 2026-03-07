@@ -262,7 +262,7 @@ pub mod time_series_database_connection {
         };
         let o = context.register_resource(request);
         TimeSeriesDatabaseConnectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             digital_twins_id: o.get_field("digitalTwinsId"),
             eventhub_consumer_group_name: o.get_field("eventhubConsumerGroupName"),

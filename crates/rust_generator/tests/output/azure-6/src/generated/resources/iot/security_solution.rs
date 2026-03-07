@@ -256,7 +256,7 @@ pub mod security_solution {
         };
         let o = context.register_resource(request);
         SecuritySolutionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             additional_workspaces: o.get_field("additionalWorkspaces"),
             disabled_data_sources: o.get_field("disabledDataSources"),

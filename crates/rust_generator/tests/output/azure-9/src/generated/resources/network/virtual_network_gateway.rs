@@ -436,7 +436,7 @@ pub mod virtual_network_gateway {
         };
         let o = context.register_resource(request);
         VirtualNetworkGatewayResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             active_active: o.get_field("activeActive"),
             bgp_route_translation_for_nat_enabled: o

@@ -355,7 +355,7 @@ pub mod spring_cloud_gateway {
         };
         let o = context.register_resource(request);
         SpringCloudGatewayResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_metadata: o.get_field("apiMetadata"),
             application_performance_monitoring_ids: o

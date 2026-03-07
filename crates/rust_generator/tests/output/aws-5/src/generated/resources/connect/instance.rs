@@ -247,7 +247,7 @@ pub mod instance {
         };
         let o = context.register_resource(request);
         InstanceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             auto_resolve_best_voices_enabled: o

@@ -221,7 +221,7 @@ pub mod hci_virtual_hard_disk {
         };
         let o = context.register_resource(request);
         HciVirtualHardDiskResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             block_size_in_bytes: o.get_field("blockSizeInBytes"),
             custom_location_id: o.get_field("customLocationId"),

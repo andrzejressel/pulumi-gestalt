@@ -144,7 +144,7 @@ pub mod contact_list {
         };
         let o = context.register_resource(request);
         ContactListResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             contact_list_name: o.get_field("contactListName"),

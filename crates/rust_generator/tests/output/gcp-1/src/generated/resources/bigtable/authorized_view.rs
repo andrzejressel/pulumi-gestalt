@@ -185,7 +185,7 @@ pub mod authorized_view {
         };
         let o = context.register_resource(request);
         AuthorizedViewResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             deletion_protection: o.get_field("deletionProtection"),
             instance_name: o.get_field("instanceName"),

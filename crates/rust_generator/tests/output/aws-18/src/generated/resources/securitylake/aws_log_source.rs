@@ -86,7 +86,7 @@ pub mod aws_log_source {
         };
         let o = context.register_resource(request);
         AwsLogSourceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             source: o.get_field("source"),
         }

@@ -154,7 +154,7 @@ pub mod flexible_server_active_directory_administrator {
         };
         let o = context.register_resource(request);
         FlexibleServerActiveDirectoryAdministratorResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             object_id: o.get_field("objectId"),
             principal_name: o.get_field("principalName"),

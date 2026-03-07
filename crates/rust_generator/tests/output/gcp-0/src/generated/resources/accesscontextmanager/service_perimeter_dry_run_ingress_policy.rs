@@ -122,7 +122,7 @@ pub mod service_perimeter_dry_run_ingress_policy {
         };
         let o = context.register_resource(request);
         ServicePerimeterDryRunIngressPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             ingress_from: o.get_field("ingressFrom"),
             ingress_to: o.get_field("ingressTo"),

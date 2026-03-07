@@ -123,7 +123,7 @@ pub mod tape_pool {
         };
         let o = context.register_resource(request);
         TapePoolResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             pool_name: o.get_field("poolName"),

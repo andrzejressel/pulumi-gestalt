@@ -176,7 +176,7 @@ pub mod virtual_network_rule {
         };
         let o = context.register_resource(request);
         VirtualNetworkRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             ignore_missing_vnet_service_endpoint: o
                 .get_field("ignoreMissingVnetServiceEndpoint"),

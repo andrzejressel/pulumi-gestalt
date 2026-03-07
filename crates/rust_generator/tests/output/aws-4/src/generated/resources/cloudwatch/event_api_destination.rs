@@ -133,7 +133,7 @@ pub mod event_api_destination {
         };
         let o = context.register_resource(request);
         EventApiDestinationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             connection_arn: o.get_field("connectionArn"),

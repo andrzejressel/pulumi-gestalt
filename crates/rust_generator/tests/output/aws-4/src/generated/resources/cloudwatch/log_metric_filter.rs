@@ -121,7 +121,7 @@ pub mod log_metric_filter {
         };
         let o = context.register_resource(request);
         LogMetricFilterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             log_group_name: o.get_field("logGroupName"),
             metric_transformation: o.get_field("metricTransformation"),

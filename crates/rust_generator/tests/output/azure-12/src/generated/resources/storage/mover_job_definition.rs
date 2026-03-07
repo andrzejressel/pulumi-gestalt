@@ -230,7 +230,7 @@ pub mod mover_job_definition {
         };
         let o = context.register_resource(request);
         MoverJobDefinitionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             agent_name: o.get_field("agentName"),
             copy_mode: o.get_field("copyMode"),

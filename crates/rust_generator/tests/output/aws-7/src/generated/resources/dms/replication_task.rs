@@ -206,7 +206,7 @@ pub mod replication_task {
         };
         let o = context.register_resource(request);
         ReplicationTaskResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cdc_start_position: o.get_field("cdcStartPosition"),
             cdc_start_time: o.get_field("cdcStartTime"),

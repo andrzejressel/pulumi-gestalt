@@ -288,7 +288,7 @@ pub mod app_connection {
         };
         let o = context.register_resource(request);
         AppConnectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             application_endpoint: o.get_field("applicationEndpoint"),
             connectors: o.get_field("connectors"),

@@ -91,7 +91,7 @@ pub mod identity_pool_provider_principal_tag {
         };
         let o = context.register_resource(request);
         IdentityPoolProviderPrincipalTagResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             identity_pool_id: o.get_field("identityPoolId"),
             identity_provider_name: o.get_field("identityProviderName"),

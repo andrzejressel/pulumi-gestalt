@@ -203,7 +203,7 @@ pub mod script {
         };
         let o = context.register_resource(request);
         ScriptResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             continue_on_errors_enabled: o.get_field("continueOnErrorsEnabled"),
             database_id: o.get_field("databaseId"),

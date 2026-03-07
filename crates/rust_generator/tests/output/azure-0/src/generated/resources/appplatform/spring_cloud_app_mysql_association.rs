@@ -172,7 +172,7 @@ pub mod spring_cloud_app_mysql_association {
         };
         let o = context.register_resource(request);
         SpringCloudAppMysqlAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             database_name: o.get_field("databaseName"),
             mysql_server_id: o.get_field("mysqlServerId"),

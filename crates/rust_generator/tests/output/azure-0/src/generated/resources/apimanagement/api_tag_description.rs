@@ -145,7 +145,7 @@ pub mod api_tag_description {
         };
         let o = context.register_resource(request);
         ApiTagDescriptionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_tag_id: o.get_field("apiTagId"),
             description: o.get_field("description"),

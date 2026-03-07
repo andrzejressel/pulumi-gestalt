@@ -141,7 +141,7 @@ pub mod spring_cloud_app_redis_association {
         };
         let o = context.register_resource(request);
         SpringCloudAppRedisAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             name: o.get_field("name"),
             redis_access_key: o.get_field("redisAccessKey"),

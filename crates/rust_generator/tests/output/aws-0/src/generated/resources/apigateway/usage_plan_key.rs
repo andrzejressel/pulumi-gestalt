@@ -116,7 +116,7 @@ pub mod usage_plan_key {
         };
         let o = context.register_resource(request);
         UsagePlanKeyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             key_id: o.get_field("keyId"),
             key_type: o.get_field("keyType"),

@@ -119,7 +119,7 @@ pub mod access_point {
         };
         let o = context.register_resource(request);
         AccessPointResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             file_system_arn: o.get_field("fileSystemArn"),

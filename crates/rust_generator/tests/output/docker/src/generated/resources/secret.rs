@@ -74,7 +74,7 @@ pub mod secret {
         };
         let o = context.register_resource(request);
         SecretResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             data: o.get_field("data"),
             labels: o.get_field("labels"),

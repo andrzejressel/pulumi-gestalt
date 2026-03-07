@@ -174,7 +174,7 @@ pub mod language_model {
         };
         let o = context.register_resource(request);
         LanguageModelResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             base_model_name: o.get_field("baseModelName"),

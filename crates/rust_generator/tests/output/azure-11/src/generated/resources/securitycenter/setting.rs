@@ -83,7 +83,7 @@ pub mod setting {
         };
         let o = context.register_resource(request);
         SettingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             enabled: o.get_field("enabled"),
             setting_name: o.get_field("settingName"),

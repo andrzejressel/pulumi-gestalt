@@ -173,7 +173,7 @@ pub mod target_group_attachment {
         };
         let o = context.register_resource(request);
         TargetGroupAttachmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             availability_zone: o.get_field("availabilityZone"),
             port: o.get_field("port"),

@@ -131,7 +131,7 @@ pub mod spring_cloud_storage {
         };
         let o = context.register_resource(request);
         SpringCloudStorageResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             name: o.get_field("name"),
             spring_cloud_service_id: o.get_field("springCloudServiceId"),

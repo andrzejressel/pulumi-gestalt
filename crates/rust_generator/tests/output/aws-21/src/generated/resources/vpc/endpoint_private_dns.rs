@@ -86,7 +86,7 @@ pub mod endpoint_private_dns {
         };
         let o = context.register_resource(request);
         EndpointPrivateDnsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             private_dns_enabled: o.get_field("privateDnsEnabled"),
             vpc_endpoint_id: o.get_field("vpcEndpointId"),

@@ -101,7 +101,7 @@ pub mod key_group {
         };
         let o = context.register_resource(request);
         KeyGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             comment: o.get_field("comment"),
             etag: o.get_field("etag"),

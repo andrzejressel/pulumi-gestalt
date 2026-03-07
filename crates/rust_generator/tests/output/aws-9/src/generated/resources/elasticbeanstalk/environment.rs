@@ -318,7 +318,7 @@ pub mod environment {
         };
         let o = context.register_resource(request);
         EnvironmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             all_settings: o.get_field("allSettings"),
             application: o.get_field("application"),

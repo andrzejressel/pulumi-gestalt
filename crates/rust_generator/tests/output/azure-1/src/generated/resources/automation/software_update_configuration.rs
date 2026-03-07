@@ -248,7 +248,7 @@ pub mod software_update_configuration {
         };
         let o = context.register_resource(request);
         SoftwareUpdateConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             automation_account_id: o.get_field("automationAccountId"),
             duration: o.get_field("duration"),

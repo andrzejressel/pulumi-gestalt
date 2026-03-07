@@ -223,7 +223,7 @@ pub mod spring_cloud_gateway_route_config {
         };
         let o = context.register_resource(request);
         SpringCloudGatewayRouteConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             filters: o.get_field("filters"),
             name: o.get_field("name"),

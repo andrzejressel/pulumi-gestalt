@@ -86,7 +86,7 @@ pub mod classification_export_configuration {
         };
         let o = context.register_resource(request);
         ClassificationExportConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             s3_destination: o.get_field("s3Destination"),
         }

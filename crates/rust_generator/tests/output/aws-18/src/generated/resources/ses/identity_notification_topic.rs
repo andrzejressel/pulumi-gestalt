@@ -105,7 +105,7 @@ pub mod identity_notification_topic {
         };
         let o = context.register_resource(request);
         IdentityNotificationTopicResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             identity: o.get_field("identity"),
             include_original_headers: o.get_field("includeOriginalHeaders"),

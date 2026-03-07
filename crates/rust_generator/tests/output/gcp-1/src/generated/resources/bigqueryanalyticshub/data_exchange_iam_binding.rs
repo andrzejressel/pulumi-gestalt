@@ -336,7 +336,7 @@ pub mod data_exchange_iam_binding {
         };
         let o = context.register_resource(request);
         DataExchangeIamBindingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             condition: o.get_field("condition"),
             data_exchange_id: o.get_field("dataExchangeId"),

@@ -72,7 +72,7 @@ pub mod tag {
         };
         let o = context.register_resource(request);
         TagResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             autoscaling_group_name: o.get_field("autoscalingGroupName"),
             tag: o.get_field("tag"),

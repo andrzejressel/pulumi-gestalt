@@ -221,7 +221,7 @@ pub mod network {
         };
         let o = context.register_resource(request);
         NetworkResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             attachable: o.get_field("attachable"),
             check_duplicate: o.get_field("checkDuplicate"),

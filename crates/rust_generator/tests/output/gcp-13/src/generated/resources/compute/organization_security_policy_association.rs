@@ -157,7 +157,7 @@ pub mod organization_security_policy_association {
         };
         let o = context.register_resource(request);
         OrganizationSecurityPolicyAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             attachment_id: o.get_field("attachmentId"),
             display_name: o.get_field("displayName"),

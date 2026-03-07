@@ -557,7 +557,7 @@ pub mod account {
         };
         let o = context.register_resource(request);
         AccountResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_key_metadata_writes_enabled: o
                 .get_field("accessKeyMetadataWritesEnabled"),

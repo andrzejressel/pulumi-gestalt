@@ -120,7 +120,7 @@ pub mod serverless_vpc_endpoint {
         };
         let o = context.register_resource(request);
         ServerlessVpcEndpointResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             name: o.get_field("name"),
             security_group_ids: o.get_field("securityGroupIds"),

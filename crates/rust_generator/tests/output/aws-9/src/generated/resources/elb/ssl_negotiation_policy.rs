@@ -159,7 +159,7 @@ pub mod ssl_negotiation_policy {
         };
         let o = context.register_resource(request);
         SslNegotiationPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             attributes: o.get_field("attributes"),
             lb_port: o.get_field("lbPort"),

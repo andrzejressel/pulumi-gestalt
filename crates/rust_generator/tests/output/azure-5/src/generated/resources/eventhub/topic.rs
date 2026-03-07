@@ -229,7 +229,7 @@ pub mod topic {
         };
         let o = context.register_resource(request);
         TopicResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             auto_delete_on_idle: o.get_field("autoDeleteOnIdle"),
             batched_operations_enabled: o.get_field("batchedOperationsEnabled"),

@@ -172,7 +172,7 @@ pub mod environment_storage {
         };
         let o = context.register_resource(request);
         EnvironmentStorageResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_key: o.get_field("accessKey"),
             access_mode: o.get_field("accessMode"),

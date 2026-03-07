@@ -191,7 +191,7 @@ pub mod function_app_hybrid_connection {
         };
         let o = context.register_resource(request);
         FunctionAppHybridConnectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             function_app_id: o.get_field("functionAppId"),
             hostname: o.get_field("hostname"),

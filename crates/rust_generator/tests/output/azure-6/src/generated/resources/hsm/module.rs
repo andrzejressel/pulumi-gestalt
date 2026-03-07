@@ -253,7 +253,7 @@ pub mod module {
         };
         let o = context.register_resource(request);
         ModuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             location: o.get_field("location"),
             management_network_profile: o.get_field("managementNetworkProfile"),

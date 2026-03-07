@@ -220,7 +220,7 @@ pub mod network_endpoint {
         };
         let o = context.register_resource(request);
         NetworkEndpointResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             instance: o.get_field("instance"),
             ip_address: o.get_field("ipAddress"),

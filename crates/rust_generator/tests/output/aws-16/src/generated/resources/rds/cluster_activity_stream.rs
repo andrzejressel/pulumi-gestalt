@@ -145,7 +145,7 @@ pub mod cluster_activity_stream {
         };
         let o = context.register_resource(request);
         ClusterActivityStreamResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             engine_native_audit_fields_included: o
                 .get_field("engineNativeAuditFieldsIncluded"),

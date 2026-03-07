@@ -263,7 +263,7 @@ pub mod network_interface {
         };
         let o = context.register_resource(request);
         NetworkInterfaceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             accelerated_networking_enabled: o.get_field("acceleratedNetworkingEnabled"),
             applied_dns_servers: o.get_field("appliedDnsServers"),

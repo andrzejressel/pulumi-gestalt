@@ -126,7 +126,7 @@ pub mod user_profile {
         };
         let o = context.register_resource(request);
         UserProfileResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             details: o.get_field("details"),
             domain_identifier: o.get_field("domainIdentifier"),

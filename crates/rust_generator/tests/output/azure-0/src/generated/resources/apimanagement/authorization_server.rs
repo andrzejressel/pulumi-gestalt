@@ -311,7 +311,7 @@ pub mod authorization_server {
         };
         let o = context.register_resource(request);
         AuthorizationServerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_management_name: o.get_field("apiManagementName"),
             authorization_endpoint: o.get_field("authorizationEndpoint"),

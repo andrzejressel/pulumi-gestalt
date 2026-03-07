@@ -194,7 +194,7 @@ pub mod discovery_virtual_instance {
         };
         let o = context.register_resource(request);
         DiscoveryVirtualInstanceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             central_server_virtual_machine_id: o
                 .get_field("centralServerVirtualMachineId"),

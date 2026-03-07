@@ -202,7 +202,7 @@ pub mod instance_iam_policy {
         };
         let o = context.register_resource(request);
         InstanceIAMPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             etag: o.get_field("etag"),
             instance: o.get_field("instance"),

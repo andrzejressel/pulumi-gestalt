@@ -167,7 +167,7 @@ pub mod spring_cloud_dev_tool_portal {
         };
         let o = context.register_resource(request);
         SpringCloudDevToolPortalResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             application_accelerator_enabled: o
                 .get_field("applicationAcceleratorEnabled"),

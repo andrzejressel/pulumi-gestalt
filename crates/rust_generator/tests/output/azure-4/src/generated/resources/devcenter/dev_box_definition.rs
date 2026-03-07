@@ -138,7 +138,7 @@ pub mod dev_box_definition {
         };
         let o = context.register_resource(request);
         DevBoxDefinitionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             dev_center_id: o.get_field("devCenterId"),
             image_reference_id: o.get_field("imageReferenceId"),

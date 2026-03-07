@@ -183,7 +183,7 @@ pub mod dataset_blob_storage {
         };
         let o = context.register_resource(request);
         DatasetBlobStorageResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             container_name: o.get_field("containerName"),
             data_share_id: o.get_field("dataShareId"),

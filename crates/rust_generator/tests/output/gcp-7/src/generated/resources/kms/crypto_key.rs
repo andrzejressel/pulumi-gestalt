@@ -308,7 +308,7 @@ pub mod crypto_key {
         };
         let o = context.register_resource(request);
         CryptoKeyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             crypto_key_backend: o.get_field("cryptoKeyBackend"),
             destroy_scheduled_duration: o.get_field("destroyScheduledDuration"),

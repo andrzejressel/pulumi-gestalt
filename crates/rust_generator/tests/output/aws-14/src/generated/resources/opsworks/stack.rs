@@ -329,7 +329,7 @@ pub mod stack {
         };
         let o = context.register_resource(request);
         StackResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             agent_version: o.get_field("agentVersion"),
             arn: o.get_field("arn"),

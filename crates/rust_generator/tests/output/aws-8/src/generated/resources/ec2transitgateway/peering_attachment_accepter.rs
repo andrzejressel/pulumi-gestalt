@@ -94,7 +94,7 @@ pub mod peering_attachment_accepter {
         };
         let o = context.register_resource(request);
         PeeringAttachmentAccepterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             peer_account_id: o.get_field("peerAccountId"),
             peer_region: o.get_field("peerRegion"),

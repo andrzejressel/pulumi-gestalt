@@ -373,7 +373,7 @@ pub mod global_cluster {
         };
         let o = context.register_resource(request);
         GlobalClusterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             database_name: o.get_field("databaseName"),

@@ -161,7 +161,7 @@ pub mod replication_set {
         };
         let o = context.register_resource(request);
         ReplicationSetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             created_by: o.get_field("createdBy"),

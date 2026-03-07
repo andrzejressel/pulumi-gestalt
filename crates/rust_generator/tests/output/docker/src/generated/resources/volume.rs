@@ -132,7 +132,7 @@ pub mod volume {
         };
         let o = context.register_resource(request);
         VolumeResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             driver: o.get_field("driver"),
             driver_opts: o.get_field("driverOpts"),

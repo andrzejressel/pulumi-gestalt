@@ -99,7 +99,7 @@ pub mod resolver_firewall_domain_list {
         };
         let o = context.register_resource(request);
         ResolverFirewallDomainListResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             domains: o.get_field("domains"),

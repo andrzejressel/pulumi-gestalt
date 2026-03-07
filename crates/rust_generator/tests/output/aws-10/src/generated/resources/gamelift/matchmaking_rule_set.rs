@@ -82,7 +82,7 @@ pub mod matchmaking_rule_set {
         };
         let o = context.register_resource(request);
         MatchmakingRuleSetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             name: o.get_field("name"),

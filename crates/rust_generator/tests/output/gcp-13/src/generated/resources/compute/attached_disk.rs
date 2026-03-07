@@ -238,7 +238,7 @@ pub mod attached_disk {
         };
         let o = context.register_resource(request);
         AttachedDiskResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             device_name: o.get_field("deviceName"),
             disk: o.get_field("disk"),

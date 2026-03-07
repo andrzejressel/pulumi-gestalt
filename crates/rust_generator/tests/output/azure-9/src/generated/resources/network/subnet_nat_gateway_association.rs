@@ -116,7 +116,7 @@ pub mod subnet_nat_gateway_association {
         };
         let o = context.register_resource(request);
         SubnetNatGatewayAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             nat_gateway_id: o.get_field("natGatewayId"),
             subnet_id: o.get_field("subnetId"),

@@ -229,7 +229,7 @@ pub mod web_test {
         };
         let o = context.register_resource(request);
         WebTestResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             application_insights_id: o.get_field("applicationInsightsId"),
             configuration: o.get_field("configuration"),

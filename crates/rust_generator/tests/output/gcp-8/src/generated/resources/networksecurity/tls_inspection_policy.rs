@@ -383,7 +383,7 @@ pub mod tls_inspection_policy {
         };
         let o = context.register_resource(request);
         TlsInspectionPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             ca_pool: o.get_field("caPool"),
             create_time: o.get_field("createTime"),

@@ -285,7 +285,7 @@ pub mod task_set {
         };
         let o = context.register_resource(request);
         TaskSetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             capacity_provider_strategies: o.get_field("capacityProviderStrategies"),

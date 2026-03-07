@@ -240,7 +240,7 @@ pub mod monitor {
         };
         let o = context.register_resource(request);
         MonitorResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_creation_source: o.get_field("accountCreationSource"),
             account_id: o.get_field("accountId"),

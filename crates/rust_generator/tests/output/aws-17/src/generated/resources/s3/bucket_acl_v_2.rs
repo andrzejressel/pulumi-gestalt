@@ -240,7 +240,7 @@ pub mod bucket_acl_v_2 {
         };
         let o = context.register_resource(request);
         BucketAclV2Result {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_control_policy: o.get_field("accessControlPolicy"),
             acl: o.get_field("acl"),

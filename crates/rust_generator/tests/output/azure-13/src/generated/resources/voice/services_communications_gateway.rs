@@ -267,7 +267,7 @@ pub mod services_communications_gateway {
         };
         let o = context.register_resource(request);
         ServicesCommunicationsGatewayResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_bridge: o.get_field("apiBridge"),
             auto_generated_domain_name_label_scope: o

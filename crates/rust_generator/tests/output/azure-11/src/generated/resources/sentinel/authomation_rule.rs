@@ -218,7 +218,7 @@ pub mod authomation_rule {
         };
         let o = context.register_resource(request);
         AuthomationRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             action_incidents: o.get_field("actionIncidents"),
             action_playbooks: o.get_field("actionPlaybooks"),

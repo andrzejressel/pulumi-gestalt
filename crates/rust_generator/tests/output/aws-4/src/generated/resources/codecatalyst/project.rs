@@ -100,7 +100,7 @@ pub mod project {
         };
         let o = context.register_resource(request);
         ProjectResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             description: o.get_field("description"),
             display_name: o.get_field("displayName"),

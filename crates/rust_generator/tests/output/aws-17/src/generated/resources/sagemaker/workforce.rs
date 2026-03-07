@@ -185,7 +185,7 @@ pub mod workforce {
         };
         let o = context.register_resource(request);
         WorkforceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             cognito_config: o.get_field("cognitoConfig"),

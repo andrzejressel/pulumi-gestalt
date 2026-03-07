@@ -113,7 +113,7 @@ pub mod license_association {
         };
         let o = context.register_resource(request);
         LicenseAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             free_trial_expiration: o.get_field("freeTrialExpiration"),
             grafana_token: o.get_field("grafanaToken"),

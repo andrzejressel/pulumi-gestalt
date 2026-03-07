@@ -148,7 +148,7 @@ pub mod fleet {
         };
         let o = context.register_resource(request);
         FleetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             create_time: o.get_field("createTime"),
             default_cluster_config: o.get_field("defaultClusterConfig"),

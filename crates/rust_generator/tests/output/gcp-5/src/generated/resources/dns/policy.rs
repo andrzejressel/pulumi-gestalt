@@ -208,7 +208,7 @@ pub mod policy {
         };
         let o = context.register_resource(request);
         PolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             alternative_name_server_config: o.get_field("alternativeNameServerConfig"),
             description: o.get_field("description"),

@@ -308,7 +308,7 @@ pub mod entry {
         };
         let o = context.register_resource(request);
         EntryResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bigquery_date_sharded_specs: o.get_field("bigqueryDateShardedSpecs"),
             bigquery_table_specs: o.get_field("bigqueryTableSpecs"),

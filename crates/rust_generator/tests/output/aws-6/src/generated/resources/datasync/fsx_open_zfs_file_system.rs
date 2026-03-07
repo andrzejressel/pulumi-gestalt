@@ -142,7 +142,7 @@ pub mod fsx_open_zfs_file_system {
         };
         let o = context.register_resource(request);
         FsxOpenZfsFileSystemResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             creation_time: o.get_field("creationTime"),

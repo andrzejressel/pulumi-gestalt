@@ -392,7 +392,7 @@ pub mod job {
         };
         let o = context.register_resource(request);
         JobResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             additional_experiments: o.get_field("additionalExperiments"),
             effective_labels: o.get_field("effectiveLabels"),

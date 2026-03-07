@@ -126,7 +126,7 @@ pub mod logically_air_gapped_vault {
         };
         let o = context.register_resource(request);
         LogicallyAirGappedVaultResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             max_retention_days: o.get_field("maxRetentionDays"),

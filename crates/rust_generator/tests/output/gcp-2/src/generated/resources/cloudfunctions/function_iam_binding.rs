@@ -329,7 +329,7 @@ pub mod function_iam_binding {
         };
         let o = context.register_resource(request);
         FunctionIamBindingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cloud_function: o.get_field("cloudFunction"),
             condition: o.get_field("condition"),

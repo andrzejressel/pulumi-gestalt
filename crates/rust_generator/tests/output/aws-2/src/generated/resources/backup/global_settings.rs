@@ -69,7 +69,7 @@ pub mod global_settings {
         };
         let o = context.register_resource(request);
         GlobalSettingsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             global_settings: o.get_field("globalSettings"),
         }

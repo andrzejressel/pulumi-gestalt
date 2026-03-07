@@ -314,7 +314,7 @@ pub mod eip {
         };
         let o = context.register_resource(request);
         EipResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             address: o.get_field("address"),
             allocation_id: o.get_field("allocationId"),

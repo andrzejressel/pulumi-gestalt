@@ -252,7 +252,7 @@ pub mod group_template_deployment {
         };
         let o = context.register_resource(request);
         GroupTemplateDeploymentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             debug_level: o.get_field("debugLevel"),
             location: o.get_field("location"),

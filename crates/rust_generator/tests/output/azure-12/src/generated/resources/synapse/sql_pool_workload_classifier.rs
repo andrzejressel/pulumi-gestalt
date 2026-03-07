@@ -197,7 +197,7 @@ pub mod sql_pool_workload_classifier {
         };
         let o = context.register_resource(request);
         SqlPoolWorkloadClassifierResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             context: o.get_field("context"),
             end_time: o.get_field("endTime"),

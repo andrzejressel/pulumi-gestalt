@@ -117,7 +117,7 @@ pub mod contact {
         };
         let o = context.register_resource(request);
         ContactResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             alert_notifications: o.get_field("alertNotifications"),
             alerts_to_admins: o.get_field("alertsToAdmins"),

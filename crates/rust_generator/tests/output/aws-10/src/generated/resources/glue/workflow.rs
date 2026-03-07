@@ -142,7 +142,7 @@ pub mod workflow {
         };
         let o = context.register_resource(request);
         WorkflowResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             default_run_properties: o.get_field("defaultRunProperties"),

@@ -226,7 +226,7 @@ pub mod document {
         };
         let o = context.register_resource(request);
         DocumentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             attachments_sources: o.get_field("attachmentsSources"),

@@ -156,7 +156,7 @@ pub mod lock {
         };
         let o = context.register_resource(request);
         LockResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             lock_level: o.get_field("lockLevel"),
             name: o.get_field("name"),

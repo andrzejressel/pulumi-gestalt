@@ -194,7 +194,7 @@ pub mod hl_7_store_iam_policy {
         };
         let o = context.register_resource(request);
         Hl7StoreIamPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             etag: o.get_field("etag"),
             hl7_v2_store_id: o.get_field("hl7V2StoreId"),

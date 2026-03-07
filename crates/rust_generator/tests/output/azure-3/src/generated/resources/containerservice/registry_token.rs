@@ -152,7 +152,7 @@ pub mod registry_token {
         };
         let o = context.register_resource(request);
         RegistryTokenResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             container_registry_name: o.get_field("containerRegistryName"),
             enabled: o.get_field("enabled"),

@@ -179,7 +179,7 @@ pub mod firewall_application_rule_collection {
         };
         let o = context.register_resource(request);
         FirewallApplicationRuleCollectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             action: o.get_field("action"),
             azure_firewall_name: o.get_field("azureFirewallName"),

@@ -95,7 +95,7 @@ pub mod tag_option {
         };
         let o = context.register_resource(request);
         TagOptionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             active: o.get_field("active"),
             key: o.get_field("key"),

@@ -175,7 +175,7 @@ pub mod phone_number {
         };
         let o = context.register_resource(request);
         PhoneNumberResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             country_code: o.get_field("countryCode"),

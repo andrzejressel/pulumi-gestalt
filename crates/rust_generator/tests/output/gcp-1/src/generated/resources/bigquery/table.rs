@@ -503,7 +503,7 @@ pub mod table {
         };
         let o = context.register_resource(request);
         TableResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             biglake_configuration: o.get_field("biglakeConfiguration"),
             clusterings: o.get_field("clusterings"),

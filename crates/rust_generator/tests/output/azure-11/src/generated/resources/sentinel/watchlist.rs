@@ -160,7 +160,7 @@ pub mod watchlist {
         };
         let o = context.register_resource(request);
         WatchlistResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             default_duration: o.get_field("defaultDuration"),
             description: o.get_field("description"),

@@ -203,7 +203,7 @@ pub mod account_network_rules {
         };
         let o = context.register_resource(request);
         AccountNetworkRulesResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bypasses: o.get_field("bypasses"),
             default_action: o.get_field("defaultAction"),

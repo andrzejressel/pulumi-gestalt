@@ -85,7 +85,7 @@ pub mod network_acl_association {
         };
         let o = context.register_resource(request);
         NetworkAclAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             network_acl_id: o.get_field("networkAclId"),
             subnet_id: o.get_field("subnetId"),

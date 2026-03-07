@@ -222,7 +222,7 @@ pub mod bucket_website_configuration_v_2 {
         };
         let o = context.register_resource(request);
         BucketWebsiteConfigurationV2Result {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bucket: o.get_field("bucket"),
             error_document: o.get_field("errorDocument"),

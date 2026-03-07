@@ -303,7 +303,7 @@ pub mod config {
         };
         let o = context.register_resource(request);
         ConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             authorized_domains: o.get_field("authorizedDomains"),
             autodelete_anonymous_users: o.get_field("autodeleteAnonymousUsers"),

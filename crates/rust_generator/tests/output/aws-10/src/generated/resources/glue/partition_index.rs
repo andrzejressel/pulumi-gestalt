@@ -160,7 +160,7 @@ pub mod partition_index {
         };
         let o = context.register_resource(request);
         PartitionIndexResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             catalog_id: o.get_field("catalogId"),
             database_name: o.get_field("databaseName"),

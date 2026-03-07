@@ -111,7 +111,7 @@ pub mod replication_policy {
         };
         let o = context.register_resource(request);
         ReplicationPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             application_consistent_snapshot_frequency_in_minutes: o
                 .get_field("applicationConsistentSnapshotFrequencyInMinutes"),

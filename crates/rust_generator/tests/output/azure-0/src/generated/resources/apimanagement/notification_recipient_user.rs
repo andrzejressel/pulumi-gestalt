@@ -124,7 +124,7 @@ pub mod notification_recipient_user {
         };
         let o = context.register_resource(request);
         NotificationRecipientUserResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_management_id: o.get_field("apiManagementId"),
             notification_type: o.get_field("notificationType"),

@@ -114,7 +114,7 @@ pub mod instance_state {
         };
         let o = context.register_resource(request);
         InstanceStateResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             force: o.get_field("force"),
             instance_id: o.get_field("instanceId"),

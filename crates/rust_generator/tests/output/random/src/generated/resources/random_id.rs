@@ -129,7 +129,7 @@ pub mod random_id {
         };
         let o = context.register_resource(request);
         RandomIdResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             b64_std: o.get_field("b64Std"),
             b64_url: o.get_field("b64Url"),

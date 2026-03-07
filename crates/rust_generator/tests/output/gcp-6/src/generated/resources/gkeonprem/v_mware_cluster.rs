@@ -565,7 +565,7 @@ pub mod v_mware_cluster {
         };
         let o = context.register_resource(request);
         VMwareClusterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             admin_cluster_membership: o.get_field("adminClusterMembership"),
             annotations: o.get_field("annotations"),

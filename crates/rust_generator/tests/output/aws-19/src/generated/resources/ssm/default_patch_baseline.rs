@@ -138,7 +138,7 @@ pub mod default_patch_baseline {
         };
         let o = context.register_resource(request);
         DefaultPatchBaselineResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             baseline_id: o.get_field("baselineId"),
             operating_system: o.get_field("operatingSystem"),

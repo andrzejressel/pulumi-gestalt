@@ -268,7 +268,7 @@ pub mod vpn_connection {
         };
         let o = context.register_resource(request);
         VpnConnectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cluster: o.get_field("cluster"),
             create_time: o.get_field("createTime"),

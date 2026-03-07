@@ -261,7 +261,7 @@ pub mod managed_storage_account {
         };
         let o = context.register_resource(request);
         ManagedStorageAccountResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             key_vault_id: o.get_field("keyVaultId"),
             name: o.get_field("name"),

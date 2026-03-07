@@ -205,7 +205,7 @@ pub mod share {
         };
         let o = context.register_resource(request);
         ShareResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_tier: o.get_field("accessTier"),
             acls: o.get_field("acls"),

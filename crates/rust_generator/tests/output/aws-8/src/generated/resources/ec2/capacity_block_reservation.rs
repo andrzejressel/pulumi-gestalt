@@ -141,7 +141,7 @@ pub mod capacity_block_reservation {
         };
         let o = context.register_resource(request);
         CapacityBlockReservationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             availability_zone: o.get_field("availabilityZone"),

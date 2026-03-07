@@ -341,7 +341,7 @@ pub mod queue {
         };
         let o = context.register_resource(request);
         QueueResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             app_engine_routing_override: o.get_field("appEngineRoutingOverride"),
             http_target: o.get_field("httpTarget"),

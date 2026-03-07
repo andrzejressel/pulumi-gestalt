@@ -168,7 +168,7 @@ pub mod backup_policy_disk {
         };
         let o = context.register_resource(request);
         BackupPolicyDiskResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             backup_repeating_time_intervals: o.get_field("backupRepeatingTimeIntervals"),
             default_retention_duration: o.get_field("defaultRetentionDuration"),

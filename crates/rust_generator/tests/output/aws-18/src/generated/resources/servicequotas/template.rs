@@ -109,7 +109,7 @@ pub mod template {
         };
         let o = context.register_resource(request);
         TemplateResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             global_quota: o.get_field("globalQuota"),
             quota_code: o.get_field("quotaCode"),

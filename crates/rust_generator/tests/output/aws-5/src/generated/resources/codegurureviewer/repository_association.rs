@@ -144,7 +144,7 @@ pub mod repository_association {
         };
         let o = context.register_resource(request);
         RepositoryAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             association_id: o.get_field("associationId"),

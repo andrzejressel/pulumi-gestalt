@@ -70,7 +70,7 @@ pub mod serial_console_access {
         };
         let o = context.register_resource(request);
         SerialConsoleAccessResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             enabled: o.get_field("enabled"),
         }

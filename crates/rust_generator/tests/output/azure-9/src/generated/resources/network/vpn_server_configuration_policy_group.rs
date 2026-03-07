@@ -153,7 +153,7 @@ pub mod vpn_server_configuration_policy_group {
         };
         let o = context.register_resource(request);
         VpnServerConfigurationPolicyGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             is_default: o.get_field("isDefault"),
             name: o.get_field("name"),

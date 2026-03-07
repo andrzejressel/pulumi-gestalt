@@ -191,7 +191,7 @@ pub mod method_settings {
         };
         let o = context.register_resource(request);
         MethodSettingsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             method_path: o.get_field("methodPath"),
             rest_api: o.get_field("restApi"),

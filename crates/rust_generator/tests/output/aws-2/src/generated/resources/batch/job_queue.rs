@@ -239,7 +239,7 @@ pub mod job_queue {
         };
         let o = context.register_resource(request);
         JobQueueResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             compute_environment_orders: o.get_field("computeEnvironmentOrders"),

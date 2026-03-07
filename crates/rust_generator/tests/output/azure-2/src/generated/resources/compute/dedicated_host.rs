@@ -171,7 +171,7 @@ pub mod dedicated_host {
         };
         let o = context.register_resource(request);
         DedicatedHostResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             auto_replace_on_failure: o.get_field("autoReplaceOnFailure"),
             dedicated_host_group_id: o.get_field("dedicatedHostGroupId"),

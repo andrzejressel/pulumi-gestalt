@@ -208,7 +208,7 @@ pub mod enterprise_database {
         };
         let o = context.register_resource(request);
         EnterpriseDatabaseResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             client_protocol: o.get_field("clientProtocol"),
             cluster_id: o.get_field("clusterId"),

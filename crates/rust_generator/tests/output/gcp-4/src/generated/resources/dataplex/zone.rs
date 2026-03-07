@@ -230,7 +230,7 @@ pub mod zone {
         };
         let o = context.register_resource(request);
         ZoneResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             asset_statuses: o.get_field("assetStatuses"),
             create_time: o.get_field("createTime"),

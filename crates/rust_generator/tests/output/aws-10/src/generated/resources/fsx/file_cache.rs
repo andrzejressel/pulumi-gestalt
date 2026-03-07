@@ -230,7 +230,7 @@ pub mod file_cache {
         };
         let o = context.register_resource(request);
         FileCacheResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             copy_tags_to_data_repository_associations: o

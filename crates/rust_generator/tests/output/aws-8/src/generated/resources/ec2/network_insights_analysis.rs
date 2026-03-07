@@ -150,7 +150,7 @@ pub mod network_insights_analysis {
         };
         let o = context.register_resource(request);
         NetworkInsightsAnalysisResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             alternate_path_hints: o.get_field("alternatePathHints"),
             arn: o.get_field("arn"),

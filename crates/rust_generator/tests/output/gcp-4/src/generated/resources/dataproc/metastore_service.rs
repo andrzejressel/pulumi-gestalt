@@ -764,7 +764,7 @@ pub mod metastore_service {
         };
         let o = context.register_resource(request);
         MetastoreServiceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             artifact_gcs_uri: o.get_field("artifactGcsUri"),
             database_type: o.get_field("databaseType"),

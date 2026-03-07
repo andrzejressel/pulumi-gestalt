@@ -120,7 +120,7 @@ pub mod detector_feature {
         };
         let o = context.register_resource(request);
         DetectorFeatureResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             additional_configurations: o.get_field("additionalConfigurations"),
             detector_id: o.get_field("detectorId"),

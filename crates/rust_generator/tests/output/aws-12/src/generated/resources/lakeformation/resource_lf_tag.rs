@@ -155,7 +155,7 @@ pub mod resource_lf_tag {
         };
         let o = context.register_resource(request);
         ResourceLfTagResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             catalog_id: o.get_field("catalogId"),
             database: o.get_field("database"),

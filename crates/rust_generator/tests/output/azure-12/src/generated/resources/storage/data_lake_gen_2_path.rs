@@ -157,7 +157,7 @@ pub mod data_lake_gen_2_path {
         };
         let o = context.register_resource(request);
         DataLakeGen2PathResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             aces: o.get_field("aces"),
             filesystem_name: o.get_field("filesystemName"),

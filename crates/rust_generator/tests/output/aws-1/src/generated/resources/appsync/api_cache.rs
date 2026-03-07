@@ -134,7 +134,7 @@ pub mod api_cache {
         };
         let o = context.register_resource(request);
         ApiCacheResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_caching_behavior: o.get_field("apiCachingBehavior"),
             api_id: o.get_field("apiId"),

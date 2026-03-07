@@ -159,7 +159,7 @@ pub mod linked_server {
         };
         let o = context.register_resource(request);
         LinkedServerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             geo_replicated_primary_host_name: o
                 .get_field("geoReplicatedPrimaryHostName"),

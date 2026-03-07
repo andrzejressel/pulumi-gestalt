@@ -108,7 +108,7 @@ pub mod document_ai_processor_default_version {
         };
         let o = context.register_resource(request);
         DocumentAiProcessorDefaultVersionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             processor: o.get_field("processor"),
             version: o.get_field("version"),

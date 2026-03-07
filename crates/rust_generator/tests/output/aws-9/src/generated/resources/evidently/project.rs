@@ -162,7 +162,7 @@ pub mod project {
         };
         let o = context.register_resource(request);
         ProjectResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             active_experiment_count: o.get_field("activeExperimentCount"),
             active_launch_count: o.get_field("activeLaunchCount"),

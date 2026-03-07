@@ -360,7 +360,7 @@ pub mod distribution {
         };
         let o = context.register_resource(request);
         DistributionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             alternative_domain_names: o.get_field("alternativeDomainNames"),
             arn: o.get_field("arn"),

@@ -153,7 +153,7 @@ pub mod container_immutability_policy {
         };
         let o = context.register_resource(request);
         ContainerImmutabilityPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             immutability_period_in_days: o.get_field("immutabilityPeriodInDays"),
             locked: o.get_field("locked"),

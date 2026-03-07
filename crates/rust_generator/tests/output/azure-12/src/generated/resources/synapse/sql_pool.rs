@@ -213,7 +213,7 @@ pub mod sql_pool {
         };
         let o = context.register_resource(request);
         SqlPoolResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             collation: o.get_field("collation"),
             create_mode: o.get_field("createMode"),

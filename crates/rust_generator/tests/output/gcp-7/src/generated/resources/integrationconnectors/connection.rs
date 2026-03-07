@@ -550,7 +550,7 @@ pub mod connection {
         };
         let o = context.register_resource(request);
         ConnectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             auth_config: o.get_field("authConfig"),
             config_variables: o.get_field("configVariables"),

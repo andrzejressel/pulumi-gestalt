@@ -194,7 +194,7 @@ pub mod app_check_service_config {
         };
         let o = context.register_resource(request);
         AppCheckServiceConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             enforcement_mode: o.get_field("enforcementMode"),
             name: o.get_field("name"),

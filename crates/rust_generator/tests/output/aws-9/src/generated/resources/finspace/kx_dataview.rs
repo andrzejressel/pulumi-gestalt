@@ -219,7 +219,7 @@ pub mod kx_dataview {
         };
         let o = context.register_resource(request);
         KxDataviewResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             auto_update: o.get_field("autoUpdate"),

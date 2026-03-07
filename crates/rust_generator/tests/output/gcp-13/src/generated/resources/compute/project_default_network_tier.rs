@@ -97,7 +97,7 @@ pub mod project_default_network_tier {
         };
         let o = context.register_resource(request);
         ProjectDefaultNetworkTierResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             network_tier: o.get_field("networkTier"),
             project: o.get_field("project"),

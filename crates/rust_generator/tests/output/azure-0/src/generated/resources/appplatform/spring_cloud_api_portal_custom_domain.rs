@@ -128,7 +128,7 @@ pub mod spring_cloud_api_portal_custom_domain {
         };
         let o = context.register_resource(request);
         SpringCloudApiPortalCustomDomainResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             name: o.get_field("name"),
             spring_cloud_api_portal_id: o.get_field("springCloudApiPortalId"),

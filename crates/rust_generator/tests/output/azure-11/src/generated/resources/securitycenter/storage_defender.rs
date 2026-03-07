@@ -167,7 +167,7 @@ pub mod storage_defender {
         };
         let o = context.register_resource(request);
         StorageDefenderResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             malware_scanning_on_upload_cap_gb_per_month: o
                 .get_field("malwareScanningOnUploadCapGbPerMonth"),

@@ -229,7 +229,7 @@ pub mod output_servicebus_topic {
         };
         let o = context.register_resource(request);
         OutputServicebusTopicResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             authentication_mode: o.get_field("authenticationMode"),
             name: o.get_field("name"),

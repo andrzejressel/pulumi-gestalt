@@ -387,7 +387,7 @@ pub mod app_profile {
         };
         let o = context.register_resource(request);
         AppProfileResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             app_profile_id: o.get_field("appProfileId"),
             data_boost_isolation_read_only: o.get_field("dataBoostIsolationReadOnly"),

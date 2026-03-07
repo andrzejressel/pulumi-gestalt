@@ -179,7 +179,7 @@ pub mod access_level {
         };
         let o = context.register_resource(request);
         AccessLevelResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             basic: o.get_field("basic"),
             custom: o.get_field("custom"),

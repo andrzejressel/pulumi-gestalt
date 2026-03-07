@@ -194,7 +194,7 @@ pub mod mirroring_endpoint_group {
         };
         let o = context.register_resource(request);
         MirroringEndpointGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             create_time: o.get_field("createTime"),
             effective_labels: o.get_field("effectiveLabels"),

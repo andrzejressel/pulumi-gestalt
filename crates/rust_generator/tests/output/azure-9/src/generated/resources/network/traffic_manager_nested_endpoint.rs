@@ -271,7 +271,7 @@ pub mod traffic_manager_nested_endpoint {
         };
         let o = context.register_resource(request);
         TrafficManagerNestedEndpointResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             custom_headers: o.get_field("customHeaders"),
             enabled: o.get_field("enabled"),

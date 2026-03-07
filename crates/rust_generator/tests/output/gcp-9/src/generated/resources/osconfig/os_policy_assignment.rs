@@ -269,7 +269,7 @@ pub mod os_policy_assignment {
         };
         let o = context.register_resource(request);
         OsPolicyAssignmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             baseline: o.get_field("baseline"),
             deleted: o.get_field("deleted"),

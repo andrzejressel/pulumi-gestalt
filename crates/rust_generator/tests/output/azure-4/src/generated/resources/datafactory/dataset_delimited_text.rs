@@ -353,7 +353,7 @@ pub mod dataset_delimited_text {
         };
         let o = context.register_resource(request);
         DatasetDelimitedTextResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             additional_properties: o.get_field("additionalProperties"),
             annotations: o.get_field("annotations"),

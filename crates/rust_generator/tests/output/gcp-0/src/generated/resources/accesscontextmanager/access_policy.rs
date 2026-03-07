@@ -145,7 +145,7 @@ pub mod access_policy {
         };
         let o = context.register_resource(request);
         AccessPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             create_time: o.get_field("createTime"),
             name: o.get_field("name"),

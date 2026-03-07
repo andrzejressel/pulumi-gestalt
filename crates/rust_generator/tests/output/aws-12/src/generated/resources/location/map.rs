@@ -125,7 +125,7 @@ pub mod map {
         };
         let o = context.register_resource(request);
         MapResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             configuration: o.get_field("configuration"),
             create_time: o.get_field("createTime"),

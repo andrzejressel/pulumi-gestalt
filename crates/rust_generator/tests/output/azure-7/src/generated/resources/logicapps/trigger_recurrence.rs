@@ -157,7 +157,7 @@ pub mod trigger_recurrence {
         };
         let o = context.register_resource(request);
         TriggerRecurrenceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             frequency: o.get_field("frequency"),
             interval: o.get_field("interval"),

@@ -53,7 +53,7 @@ pub mod sharing_with_organization {
         };
         let o = context.register_resource(request);
         SharingWithOrganizationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
         }
     }

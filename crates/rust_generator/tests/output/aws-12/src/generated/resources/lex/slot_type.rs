@@ -151,7 +151,7 @@ pub mod slot_type {
         };
         let o = context.register_resource(request);
         SlotTypeResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             checksum: o.get_field("checksum"),
             create_version: o.get_field("createVersion"),

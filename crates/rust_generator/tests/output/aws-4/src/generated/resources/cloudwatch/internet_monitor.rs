@@ -174,7 +174,7 @@ pub mod internet_monitor {
         };
         let o = context.register_resource(request);
         InternetMonitorResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             health_events_config: o.get_field("healthEventsConfig"),

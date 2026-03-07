@@ -83,7 +83,7 @@ pub mod custom_hostname_fallback_origin {
         };
         let o = context.register_resource(request);
         CustomHostnameFallbackOriginResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             origin: o.get_field("origin"),
             status: o.get_field("status"),

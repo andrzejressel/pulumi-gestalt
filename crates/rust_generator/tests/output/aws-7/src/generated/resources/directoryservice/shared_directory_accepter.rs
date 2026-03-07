@@ -93,7 +93,7 @@ pub mod shared_directory_accepter {
         };
         let o = context.register_resource(request);
         SharedDirectoryAccepterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             method: o.get_field("method"),
             notes: o.get_field("notes"),

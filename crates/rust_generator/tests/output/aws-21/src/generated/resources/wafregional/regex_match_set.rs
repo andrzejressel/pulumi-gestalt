@@ -100,7 +100,7 @@ pub mod regex_match_set {
         };
         let o = context.register_resource(request);
         RegexMatchSetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             name: o.get_field("name"),
             regex_match_tuples: o.get_field("regexMatchTuples"),

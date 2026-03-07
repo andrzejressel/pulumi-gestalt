@@ -101,7 +101,7 @@ pub mod resource {
         };
         let o = context.register_resource(request);
         ResourceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             parent_id: o.get_field("parentId"),
             path: o.get_field("path"),

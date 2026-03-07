@@ -137,7 +137,7 @@ pub mod backend_bucket_signed_url_key {
         };
         let o = context.register_resource(request);
         BackendBucketSignedUrlKeyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             backend_bucket: o.get_field("backendBucket"),
             key_value: o.get_field("keyValue"),

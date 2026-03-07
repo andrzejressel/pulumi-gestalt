@@ -344,7 +344,7 @@ pub mod threat_intelligence_indicator {
         };
         let o = context.register_resource(request);
         ThreatIntelligenceIndicatorResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             confidence: o.get_field("confidence"),
             created_by: o.get_field("createdBy"),

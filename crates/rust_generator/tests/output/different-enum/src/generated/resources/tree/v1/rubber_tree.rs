@@ -105,7 +105,7 @@ pub mod rubber_tree {
         };
         let o = context.register_resource(request);
         RubberTreeResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             container: o.get_field("container"),
             diameter: o.get_field("diameter"),

@@ -76,7 +76,7 @@ pub mod member_association {
         };
         let o = context.register_resource(request);
         MemberAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             delegated_admin_account_id: o.get_field("delegatedAdminAccountId"),

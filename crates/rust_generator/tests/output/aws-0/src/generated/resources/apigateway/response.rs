@@ -122,7 +122,7 @@ pub mod response {
         };
         let o = context.register_resource(request);
         ResponseResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             response_parameters: o.get_field("responseParameters"),
             response_templates: o.get_field("responseTemplates"),

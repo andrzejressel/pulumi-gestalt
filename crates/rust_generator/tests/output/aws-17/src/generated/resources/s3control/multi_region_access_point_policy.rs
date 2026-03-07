@@ -75,7 +75,7 @@ pub mod multi_region_access_point_policy {
         };
         let o = context.register_resource(request);
         MultiRegionAccessPointPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             details: o.get_field("details"),

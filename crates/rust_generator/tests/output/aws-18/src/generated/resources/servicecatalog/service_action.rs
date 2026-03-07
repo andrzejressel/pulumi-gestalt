@@ -116,7 +116,7 @@ pub mod service_action {
         };
         let o = context.register_resource(request);
         ServiceActionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             accept_language: o.get_field("acceptLanguage"),
             definition: o.get_field("definition"),

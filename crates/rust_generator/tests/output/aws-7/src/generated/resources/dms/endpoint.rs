@@ -378,7 +378,7 @@ pub mod endpoint {
         };
         let o = context.register_resource(request);
         EndpointResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             certificate_arn: o.get_field("certificateArn"),
             database_name: o.get_field("databaseName"),

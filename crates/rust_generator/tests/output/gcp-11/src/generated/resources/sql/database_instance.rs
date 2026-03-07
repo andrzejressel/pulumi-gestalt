@@ -555,7 +555,7 @@ pub mod database_instance {
         };
         let o = context.register_resource(request);
         DatabaseInstanceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             available_maintenance_versions: o.get_field("availableMaintenanceVersions"),
             clone: o.get_field("clone"),

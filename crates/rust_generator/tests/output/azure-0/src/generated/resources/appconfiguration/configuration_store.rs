@@ -365,7 +365,7 @@ pub mod configuration_store {
         };
         let o = context.register_resource(request);
         ConfigurationStoreResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             encryption: o.get_field("encryption"),
             endpoint: o.get_field("endpoint"),

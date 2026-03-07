@@ -428,7 +428,7 @@ pub mod network {
         };
         let o = context.register_resource(request);
         NetworkResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             auto_create_subnetworks: o.get_field("autoCreateSubnetworks"),
             bgp_always_compare_med: o.get_field("bgpAlwaysCompareMed"),

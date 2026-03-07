@@ -300,7 +300,7 @@ pub mod ca_pool {
         };
         let o = context.register_resource(request);
         CaPoolResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             effective_labels: o.get_field("effectiveLabels"),
             issuance_policy: o.get_field("issuancePolicy"),

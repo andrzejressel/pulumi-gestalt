@@ -239,7 +239,7 @@ pub mod trust {
         };
         let o = context.register_resource(request);
         TrustResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             conditional_forwarder_ip_addrs: o.get_field("conditionalForwarderIpAddrs"),
             created_date_time: o.get_field("createdDateTime"),

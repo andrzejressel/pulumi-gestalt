@@ -83,7 +83,7 @@ pub mod working_storage {
         };
         let o = context.register_resource(request);
         WorkingStorageResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             disk_id: o.get_field("diskId"),
             gateway_arn: o.get_field("gatewayArn"),

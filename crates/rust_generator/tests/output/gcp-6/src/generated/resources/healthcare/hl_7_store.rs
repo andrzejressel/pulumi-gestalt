@@ -300,7 +300,7 @@ pub mod hl_7_store {
         };
         let o = context.register_resource(request);
         Hl7StoreResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             dataset: o.get_field("dataset"),
             effective_labels: o.get_field("effectiveLabels"),

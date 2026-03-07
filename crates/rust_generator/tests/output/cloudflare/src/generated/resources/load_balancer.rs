@@ -338,7 +338,7 @@ pub mod load_balancer {
         };
         let o = context.register_resource(request);
         LoadBalancerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             adaptive_routings: o.get_field("adaptiveRoutings"),
             country_pools: o.get_field("countryPools"),

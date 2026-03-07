@@ -172,7 +172,7 @@ pub mod policy {
         };
         let o = context.register_resource(request);
         PolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             description: o.get_field("description"),
             evaluator_type: o.get_field("evaluatorType"),

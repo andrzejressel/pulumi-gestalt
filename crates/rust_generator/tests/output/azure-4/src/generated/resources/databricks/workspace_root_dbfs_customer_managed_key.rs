@@ -181,7 +181,7 @@ pub mod workspace_root_dbfs_customer_managed_key {
         };
         let o = context.register_resource(request);
         WorkspaceRootDbfsCustomerManagedKeyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             key_vault_id: o.get_field("keyVaultId"),
             key_vault_key_id: o.get_field("keyVaultKeyId"),

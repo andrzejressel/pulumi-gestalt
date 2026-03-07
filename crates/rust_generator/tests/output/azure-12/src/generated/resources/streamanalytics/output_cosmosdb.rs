@@ -181,7 +181,7 @@ pub mod output_cosmosdb {
         };
         let o = context.register_resource(request);
         OutputCosmosdbResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             container_name: o.get_field("containerName"),
             cosmosdb_account_key: o.get_field("cosmosdbAccountKey"),

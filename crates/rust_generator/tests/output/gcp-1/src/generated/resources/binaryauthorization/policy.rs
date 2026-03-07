@@ -282,7 +282,7 @@ pub mod policy {
         };
         let o = context.register_resource(request);
         PolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             admission_whitelist_patterns: o.get_field("admissionWhitelistPatterns"),
             cluster_admission_rules: o.get_field("clusterAdmissionRules"),

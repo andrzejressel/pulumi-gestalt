@@ -304,7 +304,7 @@ pub mod linux_virtual_machine {
         };
         let o = context.register_resource(request);
         LinuxVirtualMachineResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allow_claim: o.get_field("allowClaim"),
             disallow_public_ip_address: o.get_field("disallowPublicIpAddress"),

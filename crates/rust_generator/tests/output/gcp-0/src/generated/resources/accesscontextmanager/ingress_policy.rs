@@ -80,7 +80,7 @@ pub mod ingress_policy {
         };
         let o = context.register_resource(request);
         IngressPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             ingress_policy_name: o.get_field("ingressPolicyName"),
             resource: o.get_field("resource"),

@@ -106,7 +106,7 @@ pub mod security_configuration {
         };
         let o = context.register_resource(request);
         SecurityConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             encryption_configuration: o.get_field("encryptionConfiguration"),
             name: o.get_field("name"),

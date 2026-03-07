@@ -322,7 +322,7 @@ pub mod volume_group_sap_hana {
         };
         let o = context.register_resource(request);
         VolumeGroupSapHanaResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_name: o.get_field("accountName"),
             application_identifier: o.get_field("applicationIdentifier"),

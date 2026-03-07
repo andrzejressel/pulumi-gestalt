@@ -95,7 +95,7 @@ pub mod key_alias {
         };
         let o = context.register_resource(request);
         KeyAliasResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             alias_name: o.get_field("aliasName"),
             key_arn: o.get_field("keyArn"),

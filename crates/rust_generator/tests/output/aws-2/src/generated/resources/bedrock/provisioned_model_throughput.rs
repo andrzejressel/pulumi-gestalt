@@ -138,7 +138,7 @@ pub mod provisioned_model_throughput {
         };
         let o = context.register_resource(request);
         ProvisionedModelThroughputResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             commitment_duration: o.get_field("commitmentDuration"),
             model_arn: o.get_field("modelArn"),

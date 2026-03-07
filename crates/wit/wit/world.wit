@@ -23,6 +23,7 @@ interface output-interface {
     resource composite-output {
         get-field: func(field-name: string) -> output;
         get-urn: func() -> output;
+        get-id: func() -> output;
     }
 }
 

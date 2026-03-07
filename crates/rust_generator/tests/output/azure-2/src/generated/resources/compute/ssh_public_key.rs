@@ -117,7 +117,7 @@ pub mod ssh_public_key {
         };
         let o = context.register_resource(request);
         SshPublicKeyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             location: o.get_field("location"),
             name: o.get_field("name"),

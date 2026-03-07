@@ -549,7 +549,7 @@ pub mod connection {
         };
         let o = context.register_resource(request);
         ConnectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             aws: o.get_field("aws"),
             azure: o.get_field("azure"),

@@ -259,7 +259,7 @@ pub mod inference_cluster {
         };
         let o = context.register_resource(request);
         InferenceClusterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cluster_purpose: o.get_field("clusterPurpose"),
             description: o.get_field("description"),

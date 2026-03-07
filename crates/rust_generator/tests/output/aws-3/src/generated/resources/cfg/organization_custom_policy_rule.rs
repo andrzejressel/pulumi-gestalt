@@ -220,7 +220,7 @@ pub mod organization_custom_policy_rule {
         };
         let o = context.register_resource(request);
         OrganizationCustomPolicyRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             debug_log_delivery_accounts: o.get_field("debugLogDeliveryAccounts"),

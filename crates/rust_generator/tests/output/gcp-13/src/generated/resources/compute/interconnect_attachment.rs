@@ -492,7 +492,7 @@ pub mod interconnect_attachment {
         };
         let o = context.register_resource(request);
         InterconnectAttachmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             admin_enabled: o.get_field("adminEnabled"),
             bandwidth: o.get_field("bandwidth"),

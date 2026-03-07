@@ -198,7 +198,7 @@ pub mod cluster_extension {
         };
         let o = context.register_resource(request);
         ClusterExtensionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cluster_id: o.get_field("clusterId"),
             configuration_protected_settings: o

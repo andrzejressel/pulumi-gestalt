@@ -124,7 +124,7 @@ pub mod firewall_policy_association {
         };
         let o = context.register_resource(request);
         FirewallPolicyAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             attachment_target: o.get_field("attachmentTarget"),
             firewall_policy: o.get_field("firewallPolicy"),

@@ -243,7 +243,7 @@ pub mod target_ssl_proxy {
         };
         let o = context.register_resource(request);
         TargetSSLProxyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             backend_service: o.get_field("backendService"),
             certificate_map: o.get_field("certificateMap"),

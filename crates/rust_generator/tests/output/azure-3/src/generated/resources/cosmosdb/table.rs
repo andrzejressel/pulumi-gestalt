@@ -128,7 +128,7 @@ pub mod table {
         };
         let o = context.register_resource(request);
         TableResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_name: o.get_field("accountName"),
             autoscale_settings: o.get_field("autoscaleSettings"),

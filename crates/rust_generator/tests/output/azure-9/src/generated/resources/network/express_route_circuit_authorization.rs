@@ -116,7 +116,7 @@ pub mod express_route_circuit_authorization {
         };
         let o = context.register_resource(request);
         ExpressRouteCircuitAuthorizationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             authorization_key: o.get_field("authorizationKey"),
             authorization_use_status: o.get_field("authorizationUseStatus"),

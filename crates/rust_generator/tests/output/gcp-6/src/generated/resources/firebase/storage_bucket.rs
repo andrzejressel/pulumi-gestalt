@@ -111,7 +111,7 @@ pub mod storage_bucket {
         };
         let o = context.register_resource(request);
         StorageBucketResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bucket_id: o.get_field("bucketId"),
             name: o.get_field("name"),

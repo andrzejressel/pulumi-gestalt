@@ -146,7 +146,7 @@ pub mod sql_stored_procedure {
         };
         let o = context.register_resource(request);
         SqlStoredProcedureResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_name: o.get_field("accountName"),
             body: o.get_field("body"),

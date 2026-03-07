@@ -123,7 +123,7 @@ pub mod subnet_route_table_association {
         };
         let o = context.register_resource(request);
         SubnetRouteTableAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             route_table_id: o.get_field("routeTableId"),
             subnet_id: o.get_field("subnetId"),

@@ -166,7 +166,7 @@ pub mod spacecraft {
         };
         let o = context.register_resource(request);
         SpacecraftResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             links: o.get_field("links"),
             location: o.get_field("location"),

@@ -182,7 +182,7 @@ pub mod v_2_organization_mute_config {
         };
         let o = context.register_resource(request);
         V2OrganizationMuteConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),

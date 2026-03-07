@@ -145,7 +145,7 @@ pub mod managed_prefix_list {
         };
         let o = context.register_resource(request);
         ManagedPrefixListResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             address_family: o.get_field("addressFamily"),
             arn: o.get_field("arn"),

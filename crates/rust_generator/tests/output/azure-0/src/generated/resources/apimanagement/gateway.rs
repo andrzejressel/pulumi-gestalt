@@ -133,7 +133,7 @@ pub mod gateway {
         };
         let o = context.register_resource(request);
         GatewayResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_management_id: o.get_field("apiManagementId"),
             description: o.get_field("description"),

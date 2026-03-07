@@ -198,7 +198,7 @@ pub mod assessment {
         };
         let o = context.register_resource(request);
         AssessmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             assessment_reports_destination: o.get_field("assessmentReportsDestination"),

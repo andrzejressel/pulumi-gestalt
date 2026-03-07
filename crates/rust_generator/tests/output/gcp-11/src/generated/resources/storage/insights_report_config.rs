@@ -210,7 +210,7 @@ pub mod insights_report_config {
         };
         let o = context.register_resource(request);
         InsightsReportConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             csv_options: o.get_field("csvOptions"),
             display_name: o.get_field("displayName"),

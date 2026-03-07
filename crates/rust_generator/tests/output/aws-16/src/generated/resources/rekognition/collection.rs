@@ -104,7 +104,7 @@ pub mod collection {
         };
         let o = context.register_resource(request);
         CollectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             collection_id: o.get_field("collectionId"),

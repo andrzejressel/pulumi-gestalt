@@ -97,7 +97,7 @@ pub mod default_object_acl {
         };
         let o = context.register_resource(request);
         DefaultObjectACLResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bucket: o.get_field("bucket"),
             role_entities: o.get_field("roleEntities"),

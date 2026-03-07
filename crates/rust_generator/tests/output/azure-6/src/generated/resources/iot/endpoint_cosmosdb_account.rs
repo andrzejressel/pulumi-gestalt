@@ -246,7 +246,7 @@ pub mod endpoint_cosmosdb_account {
         };
         let o = context.register_resource(request);
         EndpointCosmosdbAccountResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             authentication_type: o.get_field("authenticationType"),
             container_name: o.get_field("containerName"),

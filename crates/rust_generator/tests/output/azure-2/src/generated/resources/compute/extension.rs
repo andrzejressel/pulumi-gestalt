@@ -312,7 +312,7 @@ pub mod extension {
         };
         let o = context.register_resource(request);
         ExtensionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             auto_upgrade_minor_version: o.get_field("autoUpgradeMinorVersion"),
             automatic_upgrade_enabled: o.get_field("automaticUpgradeEnabled"),

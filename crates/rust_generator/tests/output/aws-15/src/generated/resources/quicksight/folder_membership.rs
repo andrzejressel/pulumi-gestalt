@@ -108,7 +108,7 @@ pub mod folder_membership {
         };
         let o = context.register_resource(request);
         FolderMembershipResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             aws_account_id: o.get_field("awsAccountId"),
             folder_id: o.get_field("folderId"),

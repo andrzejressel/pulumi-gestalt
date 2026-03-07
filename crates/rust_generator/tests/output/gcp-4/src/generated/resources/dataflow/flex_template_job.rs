@@ -417,7 +417,7 @@ pub mod flex_template_job {
         };
         let o = context.register_resource(request);
         FlexTemplateJobResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             additional_experiments: o.get_field("additionalExperiments"),
             autoscaling_algorithm: o.get_field("autoscalingAlgorithm"),

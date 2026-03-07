@@ -139,7 +139,7 @@ pub mod job_credential {
         };
         let o = context.register_resource(request);
         JobCredentialResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             job_agent_id: o.get_field("jobAgentId"),
             name: o.get_field("name"),

@@ -245,7 +245,7 @@ pub mod configuration_set_event_destination {
         };
         let o = context.register_resource(request);
         ConfigurationSetEventDestinationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             configuration_set_name: o.get_field("configurationSetName"),
             event_destination: o.get_field("eventDestination"),

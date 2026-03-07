@@ -126,7 +126,7 @@ pub mod subnet_network_security_group_association {
         };
         let o = context.register_resource(request);
         SubnetNetworkSecurityGroupAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             network_security_group_id: o.get_field("networkSecurityGroupId"),
             subnet_id: o.get_field("subnetId"),

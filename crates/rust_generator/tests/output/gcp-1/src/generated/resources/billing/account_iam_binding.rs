@@ -249,7 +249,7 @@ pub mod account_iam_binding {
         };
         let o = context.register_resource(request);
         AccountIamBindingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             billing_account_id: o.get_field("billingAccountId"),
             condition: o.get_field("condition"),

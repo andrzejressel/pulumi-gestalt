@@ -94,7 +94,7 @@ pub mod env_group_attachment {
         };
         let o = context.register_resource(request);
         EnvGroupAttachmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             envgroup_id: o.get_field("envgroupId"),
             environment: o.get_field("environment"),

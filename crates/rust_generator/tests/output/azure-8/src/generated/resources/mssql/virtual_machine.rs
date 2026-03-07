@@ -291,7 +291,7 @@ pub mod virtual_machine {
         };
         let o = context.register_resource(request);
         VirtualMachineResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             assessment: o.get_field("assessment"),
             auto_backup: o.get_field("autoBackup"),

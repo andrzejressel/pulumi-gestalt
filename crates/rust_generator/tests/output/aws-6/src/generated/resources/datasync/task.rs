@@ -252,7 +252,7 @@ pub mod task {
         };
         let o = context.register_resource(request);
         TaskResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             cloudwatch_log_group_arn: o.get_field("cloudwatchLogGroupArn"),

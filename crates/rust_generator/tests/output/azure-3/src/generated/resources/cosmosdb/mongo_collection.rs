@@ -190,7 +190,7 @@ pub mod mongo_collection {
         };
         let o = context.register_resource(request);
         MongoCollectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_name: o.get_field("accountName"),
             analytical_storage_ttl: o.get_field("analyticalStorageTtl"),

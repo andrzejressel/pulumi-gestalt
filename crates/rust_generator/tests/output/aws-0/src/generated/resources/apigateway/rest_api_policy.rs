@@ -105,7 +105,7 @@ pub mod rest_api_policy {
         };
         let o = context.register_resource(request);
         RestApiPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             policy: o.get_field("policy"),
             rest_api_id: o.get_field("restApiId"),

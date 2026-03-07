@@ -101,7 +101,7 @@ pub mod zone_dnssec {
         };
         let o = context.register_resource(request);
         ZoneDnssecResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             algorithm: o.get_field("algorithm"),
             digest: o.get_field("digest"),

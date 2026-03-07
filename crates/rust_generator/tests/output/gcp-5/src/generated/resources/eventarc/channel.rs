@@ -174,7 +174,7 @@ pub mod channel {
         };
         let o = context.register_resource(request);
         ChannelResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             activation_token: o.get_field("activationToken"),
             create_time: o.get_field("createTime"),

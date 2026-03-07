@@ -235,7 +235,7 @@ pub mod folder_feed {
         };
         let o = context.register_resource(request);
         FolderFeedResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             asset_names: o.get_field("assetNames"),
             asset_types: o.get_field("assetTypes"),

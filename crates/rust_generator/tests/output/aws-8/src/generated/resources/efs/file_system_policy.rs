@@ -122,7 +122,7 @@ pub mod file_system_policy {
         };
         let o = context.register_resource(request);
         FileSystemPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bypass_policy_lockout_safety_check: o
                 .get_field("bypassPolicyLockoutSafetyCheck"),

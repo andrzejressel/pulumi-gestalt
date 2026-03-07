@@ -181,7 +181,7 @@ pub mod response_policy_rule {
         };
         let o = context.register_resource(request);
         ResponsePolicyRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             behavior: o.get_field("behavior"),
             dns_name: o.get_field("dnsName"),

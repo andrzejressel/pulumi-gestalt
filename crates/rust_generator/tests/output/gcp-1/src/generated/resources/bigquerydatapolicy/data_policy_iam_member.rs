@@ -330,7 +330,7 @@ pub mod data_policy_iam_member {
         };
         let o = context.register_resource(request);
         DataPolicyIamMemberResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             condition: o.get_field("condition"),
             data_policy_id: o.get_field("dataPolicyId"),

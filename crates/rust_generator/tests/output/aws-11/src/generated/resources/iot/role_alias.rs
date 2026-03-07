@@ -122,7 +122,7 @@ pub mod role_alias {
         };
         let o = context.register_resource(request);
         RoleAliasResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             alias: o.get_field("alias"),
             arn: o.get_field("arn"),

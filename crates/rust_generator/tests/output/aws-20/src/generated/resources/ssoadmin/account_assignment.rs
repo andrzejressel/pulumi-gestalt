@@ -188,7 +188,7 @@ pub mod account_assignment {
         };
         let o = context.register_resource(request);
         AccountAssignmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             instance_arn: o.get_field("instanceArn"),
             permission_set_arn: o.get_field("permissionSetArn"),

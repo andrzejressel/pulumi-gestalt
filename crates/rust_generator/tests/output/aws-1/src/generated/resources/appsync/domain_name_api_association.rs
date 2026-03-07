@@ -82,7 +82,7 @@ pub mod domain_name_api_association {
         };
         let o = context.register_resource(request);
         DomainNameApiAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_id: o.get_field("apiId"),
             domain_name: o.get_field("domainName"),

@@ -155,7 +155,7 @@ pub mod dedicated_host {
         };
         let o = context.register_resource(request);
         DedicatedHostResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             asset_id: o.get_field("assetId"),

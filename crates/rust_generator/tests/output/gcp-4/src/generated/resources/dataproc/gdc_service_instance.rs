@@ -246,7 +246,7 @@ pub mod gdc_service_instance {
         };
         let o = context.register_resource(request);
         GdcServiceInstanceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             create_time: o.get_field("createTime"),
             display_name: o.get_field("displayName"),

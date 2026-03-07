@@ -136,7 +136,7 @@ pub mod cluster_endpoint {
         };
         let o = context.register_resource(request);
         ClusterEndpointResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             cluster_endpoint_identifier: o.get_field("clusterEndpointIdentifier"),

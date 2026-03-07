@@ -238,7 +238,7 @@ pub mod virtual_network_swift_connection {
         };
         let o = context.register_resource(request);
         VirtualNetworkSwiftConnectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             app_service_id: o.get_field("appServiceId"),
             subnet_id: o.get_field("subnetId"),

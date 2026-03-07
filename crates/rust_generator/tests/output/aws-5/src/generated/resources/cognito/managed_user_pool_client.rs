@@ -394,7 +394,7 @@ pub mod managed_user_pool_client {
         };
         let o = context.register_resource(request);
         ManagedUserPoolClientResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_token_validity: o.get_field("accessTokenValidity"),
             allowed_oauth_flows: o.get_field("allowedOauthFlows"),

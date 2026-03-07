@@ -108,7 +108,7 @@ pub mod permission_set_inline_policy {
         };
         let o = context.register_resource(request);
         PermissionSetInlinePolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             inline_policy: o.get_field("inlinePolicy"),
             instance_arn: o.get_field("instanceArn"),

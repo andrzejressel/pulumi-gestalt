@@ -183,7 +183,7 @@ pub mod elastic_san {
         };
         let o = context.register_resource(request);
         ElasticSanResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             base_size_in_tib: o.get_field("baseSizeInTib"),
             extended_size_in_tib: o.get_field("extendedSizeInTib"),

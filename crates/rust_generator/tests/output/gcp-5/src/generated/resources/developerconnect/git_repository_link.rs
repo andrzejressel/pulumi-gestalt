@@ -255,7 +255,7 @@ pub mod git_repository_link {
         };
         let o = context.register_resource(request);
         GitRepositoryLinkResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             annotations: o.get_field("annotations"),
             clone_uri: o.get_field("cloneUri"),

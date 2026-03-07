@@ -519,7 +519,7 @@ pub mod object_copy {
         };
         let o = context.register_resource(request);
         ObjectCopyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             acl: o.get_field("acl"),
             arn: o.get_field("arn"),

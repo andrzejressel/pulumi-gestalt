@@ -168,7 +168,7 @@ pub mod continuous_deployment_policy {
         };
         let o = context.register_resource(request);
         ContinuousDeploymentPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             enabled: o.get_field("enabled"),
             etag: o.get_field("etag"),

@@ -288,7 +288,7 @@ pub mod launch_configuration {
         };
         let o = context.register_resource(request);
         LaunchConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             associate_public_ip_address: o.get_field("associatePublicIpAddress"),

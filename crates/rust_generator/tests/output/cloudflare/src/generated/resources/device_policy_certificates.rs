@@ -83,7 +83,7 @@ pub mod device_policy_certificates {
         };
         let o = context.register_resource(request);
         DevicePolicyCertificatesResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             enabled: o.get_field("enabled"),
             zone_id: o.get_field("zoneId"),

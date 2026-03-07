@@ -117,7 +117,7 @@ pub mod user_login_profile {
         };
         let o = context.register_resource(request);
         UserLoginProfileResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             encrypted_password: o.get_field("encryptedPassword"),
             key_fingerprint: o.get_field("keyFingerprint"),

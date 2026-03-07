@@ -96,7 +96,7 @@ pub mod query_definition {
         };
         let o = context.register_resource(request);
         QueryDefinitionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             log_group_names: o.get_field("logGroupNames"),
             name: o.get_field("name"),

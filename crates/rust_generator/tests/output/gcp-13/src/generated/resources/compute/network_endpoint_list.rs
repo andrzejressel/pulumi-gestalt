@@ -217,7 +217,7 @@ pub mod network_endpoint_list {
         };
         let o = context.register_resource(request);
         NetworkEndpointListResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             network_endpoint_group: o.get_field("networkEndpointGroup"),
             network_endpoints: o.get_field("networkEndpoints"),

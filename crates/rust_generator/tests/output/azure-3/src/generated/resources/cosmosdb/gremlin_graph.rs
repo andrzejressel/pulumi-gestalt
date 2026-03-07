@@ -245,7 +245,7 @@ pub mod gremlin_graph {
         };
         let o = context.register_resource(request);
         GremlinGraphResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_name: o.get_field("accountName"),
             analytical_storage_ttl: o.get_field("analyticalStorageTtl"),

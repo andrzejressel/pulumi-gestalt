@@ -163,7 +163,7 @@ pub mod hosted_configuration_version {
         };
         let o = context.register_resource(request);
         HostedConfigurationVersionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             application_id: o.get_field("applicationId"),
             arn: o.get_field("arn"),

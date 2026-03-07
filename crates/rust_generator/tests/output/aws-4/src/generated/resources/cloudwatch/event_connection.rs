@@ -268,7 +268,7 @@ pub mod event_connection {
         };
         let o = context.register_resource(request);
         EventConnectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             auth_parameters: o.get_field("authParameters"),

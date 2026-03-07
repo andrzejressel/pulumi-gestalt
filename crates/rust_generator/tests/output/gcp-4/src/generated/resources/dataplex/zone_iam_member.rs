@@ -337,7 +337,7 @@ pub mod zone_iam_member {
         };
         let o = context.register_resource(request);
         ZoneIamMemberResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             condition: o.get_field("condition"),
             dataplex_zone: o.get_field("dataplexZone"),

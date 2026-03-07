@@ -141,7 +141,7 @@ pub mod iam_custom_role {
         };
         let o = context.register_resource(request);
         IAMCustomRoleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             deleted: o.get_field("deleted"),
             description: o.get_field("description"),

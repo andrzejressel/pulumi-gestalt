@@ -560,7 +560,7 @@ pub mod routine {
         };
         let o = context.register_resource(request);
         RoutineResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arguments: o.get_field("arguments"),
             creation_time: o.get_field("creationTime"),

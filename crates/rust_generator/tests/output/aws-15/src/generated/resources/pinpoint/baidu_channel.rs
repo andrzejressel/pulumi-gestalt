@@ -104,7 +104,7 @@ pub mod baidu_channel {
         };
         let o = context.register_resource(request);
         BaiduChannelResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_key: o.get_field("apiKey"),
             application_id: o.get_field("applicationId"),

@@ -313,7 +313,7 @@ pub mod bastion_host {
         };
         let o = context.register_resource(request);
         BastionHostResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             copy_paste_enabled: o.get_field("copyPasteEnabled"),
             dns_name: o.get_field("dnsName"),

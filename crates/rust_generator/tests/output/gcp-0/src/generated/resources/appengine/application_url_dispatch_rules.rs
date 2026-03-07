@@ -126,7 +126,7 @@ pub mod application_url_dispatch_rules {
         };
         let o = context.register_resource(request);
         ApplicationUrlDispatchRulesResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             dispatch_rules: o.get_field("dispatchRules"),
             project: o.get_field("project"),

@@ -64,7 +64,7 @@ pub mod bucket_resource_access {
         };
         let o = context.register_resource(request);
         BucketResourceAccessResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bucket_name: o.get_field("bucketName"),
             resource_name: o.get_field("resourceName"),

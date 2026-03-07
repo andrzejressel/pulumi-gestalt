@@ -156,7 +156,7 @@ pub mod threat_intel_set {
         };
         let o = context.register_resource(request);
         ThreatIntelSetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             activate: o.get_field("activate"),
             arn: o.get_field("arn"),

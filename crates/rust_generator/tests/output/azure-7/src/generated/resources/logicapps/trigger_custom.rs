@@ -116,7 +116,7 @@ pub mod trigger_custom {
         };
         let o = context.register_resource(request);
         TriggerCustomResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             body: o.get_field("body"),
             callback_url: o.get_field("callbackUrl"),

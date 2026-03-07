@@ -118,7 +118,7 @@ pub mod role_assignment {
         };
         let o = context.register_resource(request);
         RoleAssignmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             condition: o.get_field("condition"),
             condition_version: o.get_field("conditionVersion"),

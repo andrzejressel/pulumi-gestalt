@@ -127,7 +127,7 @@ pub mod private_link_scope {
         };
         let o = context.register_resource(request);
         PrivateLinkScopeResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             ingestion_access_mode: o.get_field("ingestionAccessMode"),
             name: o.get_field("name"),

@@ -151,7 +151,7 @@ pub mod application {
         };
         let o = context.register_resource(request);
         ApplicationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_name: o.get_field("accountName"),
             allow_updates: o.get_field("allowUpdates"),

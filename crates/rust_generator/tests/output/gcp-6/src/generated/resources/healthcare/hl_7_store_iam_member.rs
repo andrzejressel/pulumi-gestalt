@@ -232,7 +232,7 @@ pub mod hl_7_store_iam_member {
         };
         let o = context.register_resource(request);
         Hl7StoreIamMemberResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             condition: o.get_field("condition"),
             etag: o.get_field("etag"),

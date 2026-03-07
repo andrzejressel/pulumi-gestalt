@@ -217,7 +217,7 @@ pub mod express_route_circuit_connection {
         };
         let o = context.register_resource(request);
         ExpressRouteCircuitConnectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             address_prefix_ipv4: o.get_field("addressPrefixIpv4"),
             address_prefix_ipv6: o.get_field("addressPrefixIpv6"),

@@ -175,7 +175,7 @@ pub mod restore_point {
         };
         let o = context.register_resource(request);
         RestorePointResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             crash_consistency_mode_enabled: o.get_field("crashConsistencyModeEnabled"),
             excluded_disks: o.get_field("excludedDisks"),

@@ -73,7 +73,7 @@ pub mod retention_configuration {
         };
         let o = context.register_resource(request);
         RetentionConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             name: o.get_field("name"),
             retention_period_in_days: o.get_field("retentionPeriodInDays"),

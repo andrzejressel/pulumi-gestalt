@@ -191,7 +191,7 @@ pub mod resolver_forwarding_rule {
         };
         let o = context.register_resource(request);
         ResolverForwardingRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             dns_forwarding_ruleset_id: o.get_field("dnsForwardingRulesetId"),
             domain_name: o.get_field("domainName"),

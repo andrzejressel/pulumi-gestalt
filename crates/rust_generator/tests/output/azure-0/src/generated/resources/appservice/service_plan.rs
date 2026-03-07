@@ -218,7 +218,7 @@ pub mod service_plan {
         };
         let o = context.register_resource(request);
         ServicePlanResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             app_service_environment_id: o.get_field("appServiceEnvironmentId"),
             kind: o.get_field("kind"),

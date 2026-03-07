@@ -317,7 +317,7 @@ pub mod flowlet_data_flow {
         };
         let o = context.register_resource(request);
         FlowletDataFlowResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             annotations: o.get_field("annotations"),
             data_factory_id: o.get_field("dataFactoryId"),

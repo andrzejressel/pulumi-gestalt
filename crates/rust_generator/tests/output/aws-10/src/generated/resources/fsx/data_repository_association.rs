@@ -200,7 +200,7 @@ pub mod data_repository_association {
         };
         let o = context.register_resource(request);
         DataRepositoryAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             association_id: o.get_field("associationId"),

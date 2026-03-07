@@ -200,7 +200,7 @@ pub mod resolver_firewall_rule {
         };
         let o = context.register_resource(request);
         ResolverFirewallRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             action: o.get_field("action"),
             block_override_dns_type: o.get_field("blockOverrideDnsType"),

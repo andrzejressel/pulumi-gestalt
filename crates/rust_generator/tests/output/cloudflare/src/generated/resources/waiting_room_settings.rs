@@ -84,7 +84,7 @@ pub mod waiting_room_settings {
         };
         let o = context.register_resource(request);
         WaitingRoomSettingsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             search_engine_crawler_bypass: o.get_field("searchEngineCrawlerBypass"),
             zone_id: o.get_field("zoneId"),

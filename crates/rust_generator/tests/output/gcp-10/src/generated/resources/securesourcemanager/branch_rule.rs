@@ -294,7 +294,7 @@ pub mod branch_rule {
         };
         let o = context.register_resource(request);
         BranchRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allow_stale_reviews: o.get_field("allowStaleReviews"),
             branch_rule_id: o.get_field("branchRuleId"),

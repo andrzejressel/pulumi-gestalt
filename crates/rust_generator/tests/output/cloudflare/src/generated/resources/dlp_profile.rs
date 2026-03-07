@@ -192,7 +192,7 @@ pub mod dlp_profile {
         };
         let o = context.register_resource(request);
         DlpProfileResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             allowed_match_count: o.get_field("allowedMatchCount"),

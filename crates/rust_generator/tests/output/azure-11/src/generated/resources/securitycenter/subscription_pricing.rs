@@ -132,7 +132,7 @@ pub mod subscription_pricing {
         };
         let o = context.register_resource(request);
         SubscriptionPricingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             extensions: o.get_field("extensions"),
             resource_type: o.get_field("resourceType"),

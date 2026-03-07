@@ -311,7 +311,7 @@ pub mod namespace_customer_managed_key {
         };
         let o = context.register_resource(request);
         NamespaceCustomerManagedKeyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             eventhub_namespace_id: o.get_field("eventhubNamespaceId"),
             infrastructure_encryption_enabled: o

@@ -329,7 +329,7 @@ pub mod aspect_type_iam_member {
         };
         let o = context.register_resource(request);
         AspectTypeIamMemberResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             aspect_type_id: o.get_field("aspectTypeId"),
             condition: o.get_field("condition"),

@@ -77,7 +77,7 @@ pub mod cloud_connector_rules {
         };
         let o = context.register_resource(request);
         CloudConnectorRulesResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             rules: o.get_field("rules"),
             zone_id: o.get_field("zoneId"),

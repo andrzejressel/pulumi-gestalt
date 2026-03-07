@@ -170,7 +170,7 @@ pub mod default_supported_idp_config {
         };
         let o = context.register_resource(request);
         DefaultSupportedIdpConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             client_id: o.get_field("clientId"),
             client_secret: o.get_field("clientSecret"),

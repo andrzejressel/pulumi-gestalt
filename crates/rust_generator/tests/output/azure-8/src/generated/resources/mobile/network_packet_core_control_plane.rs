@@ -323,7 +323,7 @@ pub mod network_packet_core_control_plane {
         };
         let o = context.register_resource(request);
         NetworkPacketCoreControlPlaneResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             control_plane_access_ipv4_address: o
                 .get_field("controlPlaneAccessIpv4Address"),

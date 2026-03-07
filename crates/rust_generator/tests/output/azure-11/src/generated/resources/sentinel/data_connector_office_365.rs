@@ -156,7 +156,7 @@ pub mod data_connector_office_365 {
         };
         let o = context.register_resource(request);
         DataConnectorOffice365Result {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             exchange_enabled: o.get_field("exchangeEnabled"),
             log_analytics_workspace_id: o.get_field("logAnalyticsWorkspaceId"),

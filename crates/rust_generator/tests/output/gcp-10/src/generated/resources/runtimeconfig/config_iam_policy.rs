@@ -109,7 +109,7 @@ pub mod config_iam_policy {
         };
         let o = context.register_resource(request);
         ConfigIamPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             config: o.get_field("config"),
             etag: o.get_field("etag"),

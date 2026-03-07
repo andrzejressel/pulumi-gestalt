@@ -239,7 +239,7 @@ pub mod snapshot {
         };
         let o = context.register_resource(request);
         SnapshotResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             create_option: o.get_field("createOption"),
             disk_access_id: o.get_field("diskAccessId"),

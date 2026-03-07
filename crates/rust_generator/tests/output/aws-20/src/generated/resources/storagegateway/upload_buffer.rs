@@ -115,7 +115,7 @@ pub mod upload_buffer {
         };
         let o = context.register_resource(request);
         UploadBufferResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             disk_id: o.get_field("diskId"),
             disk_path: o.get_field("diskPath"),

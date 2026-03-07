@@ -221,7 +221,7 @@ pub mod stage {
         };
         let o = context.register_resource(request);
         StageResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_log_settings: o.get_field("accessLogSettings"),
             api_id: o.get_field("apiId"),

@@ -651,7 +651,7 @@ pub mod service_attachment {
         };
         let o = context.register_resource(request);
         ServiceAttachmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             connected_endpoints: o.get_field("connectedEndpoints"),
             connection_preference: o.get_field("connectionPreference"),

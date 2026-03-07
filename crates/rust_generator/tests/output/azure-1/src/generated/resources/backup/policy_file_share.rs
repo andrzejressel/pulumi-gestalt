@@ -224,7 +224,7 @@ pub mod policy_file_share {
         };
         let o = context.register_resource(request);
         PolicyFileShareResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             backup: o.get_field("backup"),
             name: o.get_field("name"),

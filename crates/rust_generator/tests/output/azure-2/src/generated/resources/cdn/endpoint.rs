@@ -306,7 +306,7 @@ pub mod endpoint {
         };
         let o = context.register_resource(request);
         EndpointResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             content_types_to_compresses: o.get_field("contentTypesToCompresses"),
             delivery_rules: o.get_field("deliveryRules"),

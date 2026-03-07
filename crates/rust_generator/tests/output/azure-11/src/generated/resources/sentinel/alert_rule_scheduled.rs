@@ -385,7 +385,7 @@ pub mod alert_rule_scheduled {
         };
         let o = context.register_resource(request);
         AlertRuleScheduledResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             alert_details_overrides: o.get_field("alertDetailsOverrides"),
             alert_rule_template_guid: o.get_field("alertRuleTemplateGuid"),

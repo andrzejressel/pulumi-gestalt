@@ -116,7 +116,7 @@ pub mod upload {
         };
         let o = context.register_resource(request);
         UploadResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             category: o.get_field("category"),

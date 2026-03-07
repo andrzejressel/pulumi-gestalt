@@ -89,7 +89,7 @@ pub mod internet_gateway_attachment {
         };
         let o = context.register_resource(request);
         InternetGatewayAttachmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             internet_gateway_id: o.get_field("internetGatewayId"),
             vpc_id: o.get_field("vpcId"),

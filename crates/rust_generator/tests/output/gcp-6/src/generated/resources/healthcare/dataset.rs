@@ -202,7 +202,7 @@ pub mod dataset {
         };
         let o = context.register_resource(request);
         DatasetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             encryption_spec: o.get_field("encryptionSpec"),
             location: o.get_field("location"),

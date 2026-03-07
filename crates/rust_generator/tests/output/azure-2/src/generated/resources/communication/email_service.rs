@@ -114,7 +114,7 @@ pub mod email_service {
         };
         let o = context.register_resource(request);
         EmailServiceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             data_location: o.get_field("dataLocation"),
             name: o.get_field("name"),

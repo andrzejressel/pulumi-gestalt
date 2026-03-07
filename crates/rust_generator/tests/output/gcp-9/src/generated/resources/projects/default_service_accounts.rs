@@ -129,7 +129,7 @@ pub mod default_service_accounts {
         };
         let o = context.register_resource(request);
         DefaultServiceAccountsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             action: o.get_field("action"),
             project: o.get_field("project"),

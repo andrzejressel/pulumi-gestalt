@@ -290,7 +290,7 @@ pub mod region_network_endpoint {
         };
         let o = context.register_resource(request);
         RegionNetworkEndpointResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             client_destination_port: o.get_field("clientDestinationPort"),
             fqdn: o.get_field("fqdn"),

@@ -316,7 +316,7 @@ pub mod region_commitment {
         };
         let o = context.register_resource(request);
         RegionCommitmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             auto_renew: o.get_field("autoRenew"),
             category: o.get_field("category"),

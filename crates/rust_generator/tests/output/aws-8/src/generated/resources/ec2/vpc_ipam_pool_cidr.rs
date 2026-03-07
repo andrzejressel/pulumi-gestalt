@@ -163,7 +163,7 @@ pub mod vpc_ipam_pool_cidr {
         };
         let o = context.register_resource(request);
         VpcIpamPoolCidrResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cidr: o.get_field("cidr"),
             cidr_authorization_context: o.get_field("cidrAuthorizationContext"),

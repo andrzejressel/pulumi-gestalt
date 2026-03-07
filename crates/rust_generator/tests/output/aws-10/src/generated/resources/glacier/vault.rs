@@ -145,7 +145,7 @@ pub mod vault {
         };
         let o = context.register_resource(request);
         VaultResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_policy: o.get_field("accessPolicy"),
             arn: o.get_field("arn"),

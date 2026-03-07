@@ -165,7 +165,7 @@ pub mod repository {
         };
         let o = context.register_resource(request);
         RepositoryResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             create_ignore_already_exists: o.get_field("createIgnoreAlreadyExists"),
             name: o.get_field("name"),

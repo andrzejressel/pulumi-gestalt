@@ -106,7 +106,7 @@ pub mod log_data_protection_policy {
         };
         let o = context.register_resource(request);
         LogDataProtectionPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             log_group_name: o.get_field("logGroupName"),
             policy_document: o.get_field("policyDocument"),

@@ -359,7 +359,7 @@ pub mod region_network_firewall_policy_rule {
         };
         let o = context.register_resource(request);
         RegionNetworkFirewallPolicyRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             action: o.get_field("action"),
             creation_timestamp: o.get_field("creationTimestamp"),

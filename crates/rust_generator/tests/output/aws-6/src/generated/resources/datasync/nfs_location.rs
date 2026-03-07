@@ -137,7 +137,7 @@ pub mod nfs_location {
         };
         let o = context.register_resource(request);
         NfsLocationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             mount_options: o.get_field("mountOptions"),

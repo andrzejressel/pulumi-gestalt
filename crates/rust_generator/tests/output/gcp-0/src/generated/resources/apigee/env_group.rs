@@ -154,7 +154,7 @@ pub mod env_group {
         };
         let o = context.register_resource(request);
         EnvGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             hostnames: o.get_field("hostnames"),
             name: o.get_field("name"),

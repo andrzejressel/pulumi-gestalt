@@ -276,7 +276,7 @@ pub mod application {
         };
         let o = context.register_resource(request);
         ApplicationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             app_sources: o.get_field("appSources"),
             auto_bundle_on_deploy: o.get_field("autoBundleOnDeploy"),

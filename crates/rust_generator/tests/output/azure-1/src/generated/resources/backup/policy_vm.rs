@@ -273,7 +273,7 @@ pub mod policy_vm {
         };
         let o = context.register_resource(request);
         PolicyVMResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             backup: o.get_field("backup"),
             instant_restore_resource_group: o.get_field("instantRestoreResourceGroup"),

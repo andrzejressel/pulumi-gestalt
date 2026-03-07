@@ -153,7 +153,7 @@ pub mod group {
         };
         let o = context.register_resource(request);
         GroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_management_name: o.get_field("apiManagementName"),
             description: o.get_field("description"),

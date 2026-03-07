@@ -157,7 +157,7 @@ pub mod bucket_object_lock_configuration_v_2 {
         };
         let o = context.register_resource(request);
         BucketObjectLockConfigurationV2Result {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bucket: o.get_field("bucket"),
             expected_bucket_owner: o.get_field("expectedBucketOwner"),

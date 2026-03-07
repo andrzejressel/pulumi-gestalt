@@ -146,7 +146,7 @@ pub mod contact_channel {
         };
         let o = context.register_resource(request);
         ContactChannelResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             activation_status: o.get_field("activationStatus"),
             arn: o.get_field("arn"),

@@ -166,7 +166,7 @@ pub mod sql_role_definition {
         };
         let o = context.register_resource(request);
         SqlRoleDefinitionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_name: o.get_field("accountName"),
             assignable_scopes: o.get_field("assignableScopes"),

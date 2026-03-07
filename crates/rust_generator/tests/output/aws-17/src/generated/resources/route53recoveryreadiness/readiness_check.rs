@@ -105,7 +105,7 @@ pub mod readiness_check {
         };
         let o = context.register_resource(request);
         ReadinessCheckResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             readiness_check_name: o.get_field("readinessCheckName"),

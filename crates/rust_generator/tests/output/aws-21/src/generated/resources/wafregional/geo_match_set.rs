@@ -93,7 +93,7 @@ pub mod geo_match_set {
         };
         let o = context.register_resource(request);
         GeoMatchSetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             geo_match_constraints: o.get_field("geoMatchConstraints"),
             name: o.get_field("name"),

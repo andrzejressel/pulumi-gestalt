@@ -301,7 +301,7 @@ pub mod data_store {
         };
         let o = context.register_resource(request);
         DataStoreResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             content_config: o.get_field("contentConfig"),
             create_advanced_site_search: o.get_field("createAdvancedSiteSearch"),

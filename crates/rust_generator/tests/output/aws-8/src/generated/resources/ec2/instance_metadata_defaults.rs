@@ -97,7 +97,7 @@ pub mod instance_metadata_defaults {
         };
         let o = context.register_resource(request);
         InstanceMetadataDefaultsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             http_endpoint: o.get_field("httpEndpoint"),
             http_put_response_hop_limit: o.get_field("httpPutResponseHopLimit"),

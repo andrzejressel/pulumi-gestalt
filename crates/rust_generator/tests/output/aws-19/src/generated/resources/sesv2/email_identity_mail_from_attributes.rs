@@ -101,7 +101,7 @@ pub mod email_identity_mail_from_attributes {
         };
         let o = context.register_resource(request);
         EmailIdentityMailFromAttributesResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             behavior_on_mx_failure: o.get_field("behaviorOnMxFailure"),
             email_identity: o.get_field("emailIdentity"),

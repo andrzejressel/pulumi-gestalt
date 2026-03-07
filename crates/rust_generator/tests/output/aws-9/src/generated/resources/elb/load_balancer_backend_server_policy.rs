@@ -117,7 +117,7 @@ pub mod load_balancer_backend_server_policy {
         };
         let o = context.register_resource(request);
         LoadBalancerBackendServerPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             instance_port: o.get_field("instancePort"),
             load_balancer_name: o.get_field("loadBalancerName"),

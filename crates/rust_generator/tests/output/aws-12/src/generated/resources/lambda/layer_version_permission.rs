@@ -142,7 +142,7 @@ pub mod layer_version_permission {
         };
         let o = context.register_resource(request);
         LayerVersionPermissionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             action: o.get_field("action"),
             layer_name: o.get_field("layerName"),

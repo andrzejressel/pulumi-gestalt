@@ -232,7 +232,7 @@ pub mod managed_instance_failover_group {
         };
         let o = context.register_resource(request);
         ManagedInstanceFailoverGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             location: o.get_field("location"),
             managed_instance_id: o.get_field("managedInstanceId"),

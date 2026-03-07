@@ -100,7 +100,7 @@ pub mod documentation_part {
         };
         let o = context.register_resource(request);
         DocumentationPartResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             documentation_part_id: o.get_field("documentationPartId"),
             location: o.get_field("location"),

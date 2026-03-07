@@ -250,7 +250,7 @@ pub mod network_peering_routes_config {
         };
         let o = context.register_resource(request);
         NetworkPeeringRoutesConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             export_custom_routes: o.get_field("exportCustomRoutes"),
             import_custom_routes: o.get_field("importCustomRoutes"),

@@ -218,7 +218,7 @@ pub mod ami_from_instance {
         };
         let o = context.register_resource(request);
         AmiFromInstanceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             architecture: o.get_field("architecture"),
             arn: o.get_field("arn"),

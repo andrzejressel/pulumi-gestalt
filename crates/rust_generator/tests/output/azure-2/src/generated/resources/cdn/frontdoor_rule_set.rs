@@ -99,7 +99,7 @@ pub mod frontdoor_rule_set {
         };
         let o = context.register_resource(request);
         FrontdoorRuleSetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cdn_frontdoor_profile_id: o.get_field("cdnFrontdoorProfileId"),
             name: o.get_field("name"),

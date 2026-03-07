@@ -211,7 +211,7 @@ pub mod router_route_policy {
         };
         let o = context.register_resource(request);
         RouterRoutePolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             fingerprint: o.get_field("fingerprint"),
             name: o.get_field("name"),

@@ -129,7 +129,7 @@ pub mod network_data_network {
         };
         let o = context.register_resource(request);
         NetworkDataNetworkResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             description: o.get_field("description"),
             location: o.get_field("location"),

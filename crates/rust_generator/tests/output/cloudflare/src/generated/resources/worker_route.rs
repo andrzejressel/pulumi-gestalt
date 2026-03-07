@@ -95,7 +95,7 @@ pub mod worker_route {
         };
         let o = context.register_resource(request);
         WorkerRouteResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             pattern: o.get_field("pattern"),
             script_name: o.get_field("scriptName"),

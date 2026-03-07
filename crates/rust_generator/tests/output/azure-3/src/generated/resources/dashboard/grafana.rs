@@ -261,7 +261,7 @@ pub mod grafana {
         };
         let o = context.register_resource(request);
         GrafanaResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_key_enabled: o.get_field("apiKeyEnabled"),
             auto_generated_domain_name_label_scope: o

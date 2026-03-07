@@ -563,7 +563,7 @@ pub mod instance {
         };
         let o = context.register_resource(request);
         InstanceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             admin_settings: o.get_field("adminSettings"),
             consumer_network: o.get_field("consumerNetwork"),

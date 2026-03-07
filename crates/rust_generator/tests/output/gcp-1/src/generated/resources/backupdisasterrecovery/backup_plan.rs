@@ -174,7 +174,7 @@ pub mod backup_plan {
         };
         let o = context.register_resource(request);
         BackupPlanResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             backup_plan_id: o.get_field("backupPlanId"),
             backup_rules: o.get_field("backupRules"),

@@ -317,7 +317,7 @@ pub mod environment {
         };
         let o = context.register_resource(request);
         EnvironmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             apply_changes_during_maintenance_window: o
                 .get_field("applyChangesDuringMaintenanceWindow"),

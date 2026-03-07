@@ -186,7 +186,7 @@ pub mod monitor {
         };
         let o = context.register_resource(request);
         MonitorResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             identity: o.get_field("identity"),
             location: o.get_field("location"),

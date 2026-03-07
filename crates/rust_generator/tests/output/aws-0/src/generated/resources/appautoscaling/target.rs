@@ -264,7 +264,7 @@ pub mod target {
         };
         let o = context.register_resource(request);
         TargetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             max_capacity: o.get_field("maxCapacity"),

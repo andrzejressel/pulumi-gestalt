@@ -102,7 +102,7 @@ pub mod enabler {
         };
         let o = context.register_resource(request);
         EnablerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_ids: o.get_field("accountIds"),
             resource_types: o.get_field("resourceTypes"),

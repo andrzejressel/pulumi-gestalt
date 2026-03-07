@@ -366,7 +366,7 @@ pub mod mysql_layer {
         };
         let o = context.register_resource(request);
         MysqlLayerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             auto_assign_elastic_ips: o.get_field("autoAssignElasticIps"),

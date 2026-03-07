@@ -183,7 +183,7 @@ pub mod topic {
         };
         let o = context.register_resource(request);
         TopicResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cluster: o.get_field("cluster"),
             configs: o.get_field("configs"),

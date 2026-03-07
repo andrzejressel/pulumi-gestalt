@@ -364,7 +364,7 @@ pub mod hosting_custom_domain {
         };
         let o = context.register_resource(request);
         HostingCustomDomainResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cert_preference: o.get_field("certPreference"),
             certs: o.get_field("certs"),

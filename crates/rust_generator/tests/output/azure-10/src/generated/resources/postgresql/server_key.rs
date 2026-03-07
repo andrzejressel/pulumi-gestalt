@@ -166,7 +166,7 @@ pub mod server_key {
         };
         let o = context.register_resource(request);
         ServerKeyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             key_vault_key_id: o.get_field("keyVaultKeyId"),
             server_id: o.get_field("serverId"),

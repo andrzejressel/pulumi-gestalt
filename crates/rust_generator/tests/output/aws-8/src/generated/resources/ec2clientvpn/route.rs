@@ -136,7 +136,7 @@ pub mod route {
         };
         let o = context.register_resource(request);
         RouteResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             client_vpn_endpoint_id: o.get_field("clientVpnEndpointId"),
             description: o.get_field("description"),

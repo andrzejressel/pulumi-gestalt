@@ -197,7 +197,7 @@ pub mod workgroup {
         };
         let o = context.register_resource(request);
         WorkgroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             base_capacity: o.get_field("baseCapacity"),

@@ -153,7 +153,7 @@ pub mod product_subscription {
         };
         let o = context.register_resource(request);
         ProductSubscriptionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             product_arn: o.get_field("productArn"),

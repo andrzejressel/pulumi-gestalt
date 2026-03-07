@@ -200,7 +200,7 @@ pub mod group {
         };
         let o = context.register_resource(request);
         GroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             auto_accept: o.get_field("autoAccept"),
             create_time: o.get_field("createTime"),

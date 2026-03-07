@@ -161,7 +161,7 @@ pub mod location_smb {
         };
         let o = context.register_resource(request);
         LocationSmbResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             agent_arns: o.get_field("agentArns"),
             arn: o.get_field("arn"),

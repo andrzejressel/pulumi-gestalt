@@ -250,7 +250,7 @@ pub mod ai_services {
         };
         let o = context.register_resource(request);
         AIServicesResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             custom_subdomain_name: o.get_field("customSubdomainName"),
             customer_managed_key: o.get_field("customerManagedKey"),

@@ -176,7 +176,7 @@ pub mod role_assignment {
         };
         let o = context.register_resource(request);
         RoleAssignmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             principal_id: o.get_field("principalId"),
             principal_type: o.get_field("principalType"),

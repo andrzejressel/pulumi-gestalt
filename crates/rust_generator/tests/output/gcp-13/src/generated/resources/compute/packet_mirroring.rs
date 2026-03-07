@@ -281,7 +281,7 @@ pub mod packet_mirroring {
         };
         let o = context.register_resource(request);
         PacketMirroringResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             collector_ilb: o.get_field("collectorIlb"),
             description: o.get_field("description"),

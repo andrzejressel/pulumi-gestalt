@@ -65,7 +65,7 @@ pub mod user_policy_attachments_exclusive {
         };
         let o = context.register_resource(request);
         UserPolicyAttachmentsExclusiveResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             policy_arns: o.get_field("policyArns"),
             user_name: o.get_field("userName"),

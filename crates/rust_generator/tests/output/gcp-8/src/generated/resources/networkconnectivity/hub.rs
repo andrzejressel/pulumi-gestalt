@@ -192,7 +192,7 @@ pub mod hub {
         };
         let o = context.register_resource(request);
         HubResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),

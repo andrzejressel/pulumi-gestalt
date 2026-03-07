@@ -153,7 +153,7 @@ pub mod managed_folder {
         };
         let o = context.register_resource(request);
         ManagedFolderResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bucket: o.get_field("bucket"),
             create_time: o.get_field("createTime"),

@@ -96,7 +96,7 @@ pub mod zero_trust_gateway_proxy_endpoint {
         };
         let o = context.register_resource(request);
         ZeroTrustGatewayProxyEndpointResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             ips: o.get_field("ips"),

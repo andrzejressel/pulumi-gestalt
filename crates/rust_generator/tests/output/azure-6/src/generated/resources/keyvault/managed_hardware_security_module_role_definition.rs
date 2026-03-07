@@ -143,7 +143,7 @@ pub mod managed_hardware_security_module_role_definition {
         };
         let o = context.register_resource(request);
         ManagedHardwareSecurityModuleRoleDefinitionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             description: o.get_field("description"),
             managed_hsm_id: o.get_field("managedHsmId"),

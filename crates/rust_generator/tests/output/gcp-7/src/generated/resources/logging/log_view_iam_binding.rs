@@ -507,7 +507,7 @@ pub mod log_view_iam_binding {
         };
         let o = context.register_resource(request);
         LogViewIamBindingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bucket: o.get_field("bucket"),
             condition: o.get_field("condition"),

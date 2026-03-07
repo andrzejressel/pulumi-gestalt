@@ -128,7 +128,7 @@ pub mod private_link_scoped_service {
         };
         let o = context.register_resource(request);
         PrivateLinkScopedServiceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             linked_resource_id: o.get_field("linkedResourceId"),
             name: o.get_field("name"),

@@ -69,7 +69,7 @@ pub mod web_acl_association {
         };
         let o = context.register_resource(request);
         WebAclAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             resource_arn: o.get_field("resourceArn"),
             web_acl_arn: o.get_field("webAclArn"),

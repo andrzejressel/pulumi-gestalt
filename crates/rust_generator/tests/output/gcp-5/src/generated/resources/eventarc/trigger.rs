@@ -266,7 +266,7 @@ pub mod trigger {
         };
         let o = context.register_resource(request);
         TriggerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             channel: o.get_field("channel"),
             conditions: o.get_field("conditions"),

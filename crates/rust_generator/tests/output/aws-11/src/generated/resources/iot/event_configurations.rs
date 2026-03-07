@@ -81,7 +81,7 @@ pub mod event_configurations {
         };
         let o = context.register_resource(request);
         EventConfigurationsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             event_configurations: o.get_field("eventConfigurations"),
         }

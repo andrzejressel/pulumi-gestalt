@@ -231,7 +231,7 @@ pub mod repository_release_config {
         };
         let o = context.register_resource(request);
         RepositoryReleaseConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             code_compilation_config: o.get_field("codeCompilationConfig"),
             cron_schedule: o.get_field("cronSchedule"),

@@ -170,7 +170,7 @@ pub mod static_site_custom_domain {
         };
         let o = context.register_resource(request);
         StaticSiteCustomDomainResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             domain_name: o.get_field("domainName"),
             static_site_id: o.get_field("staticSiteId"),

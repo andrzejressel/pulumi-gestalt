@@ -253,7 +253,7 @@ pub mod pipeline {
         };
         let o = context.register_resource(request);
         PipelineResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             buffer_options: o.get_field("bufferOptions"),
             encryption_at_rest_options: o.get_field("encryptionAtRestOptions"),

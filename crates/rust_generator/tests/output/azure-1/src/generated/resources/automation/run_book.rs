@@ -246,7 +246,7 @@ pub mod run_book {
         };
         let o = context.register_resource(request);
         RunBookResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             automation_account_name: o.get_field("automationAccountName"),
             content: o.get_field("content"),

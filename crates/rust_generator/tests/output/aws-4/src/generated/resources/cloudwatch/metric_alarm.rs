@@ -461,7 +461,7 @@ pub mod metric_alarm {
         };
         let o = context.register_resource(request);
         MetricAlarmResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             actions_enabled: o.get_field("actionsEnabled"),
             alarm_actions: o.get_field("alarmActions"),

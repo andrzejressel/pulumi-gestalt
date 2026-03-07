@@ -158,7 +158,7 @@ pub mod taxonomy {
         };
         let o = context.register_resource(request);
         TaxonomyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             activated_policy_types: o.get_field("activatedPolicyTypes"),
             description: o.get_field("description"),

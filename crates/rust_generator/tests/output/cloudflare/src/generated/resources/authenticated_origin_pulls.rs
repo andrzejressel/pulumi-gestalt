@@ -158,7 +158,7 @@ pub mod authenticated_origin_pulls {
         };
         let o = context.register_resource(request);
         AuthenticatedOriginPullsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             authenticated_origin_pulls_certificate: o
                 .get_field("authenticatedOriginPullsCertificate"),

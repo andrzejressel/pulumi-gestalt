@@ -135,7 +135,7 @@ pub mod zero_trust_device_posture_integration {
         };
         let o = context.register_resource(request);
         ZeroTrustDevicePostureIntegrationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             configs: o.get_field("configs"),

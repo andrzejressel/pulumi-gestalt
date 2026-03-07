@@ -106,7 +106,7 @@ pub mod application_access_scope {
         };
         let o = context.register_resource(request);
         ApplicationAccessScopeResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             application_arn: o.get_field("applicationArn"),
             authorized_targets: o.get_field("authorizedTargets"),

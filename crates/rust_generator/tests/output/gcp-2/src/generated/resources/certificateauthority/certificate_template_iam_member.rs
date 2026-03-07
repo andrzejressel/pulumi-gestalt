@@ -469,7 +469,7 @@ pub mod certificate_template_iam_member {
         };
         let o = context.register_resource(request);
         CertificateTemplateIamMemberResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             certificate_template: o.get_field("certificateTemplate"),
             condition: o.get_field("condition"),

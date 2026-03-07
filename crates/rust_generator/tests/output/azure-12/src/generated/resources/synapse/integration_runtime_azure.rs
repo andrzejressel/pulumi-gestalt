@@ -177,7 +177,7 @@ pub mod integration_runtime_azure {
         };
         let o = context.register_resource(request);
         IntegrationRuntimeAzureResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             compute_type: o.get_field("computeType"),
             core_count: o.get_field("coreCount"),

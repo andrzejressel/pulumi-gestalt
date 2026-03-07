@@ -869,7 +869,7 @@ pub mod router_peer {
         };
         let o = context.register_resource(request);
         RouterPeerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             advertise_mode: o.get_field("advertiseMode"),
             advertised_groups: o.get_field("advertisedGroups"),

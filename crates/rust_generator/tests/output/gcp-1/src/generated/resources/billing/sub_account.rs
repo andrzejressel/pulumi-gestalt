@@ -110,7 +110,7 @@ pub mod sub_account {
         };
         let o = context.register_resource(request);
         SubAccountResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             billing_account_id: o.get_field("billingAccountId"),
             deletion_policy: o.get_field("deletionPolicy"),

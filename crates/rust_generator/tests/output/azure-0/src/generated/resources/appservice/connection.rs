@@ -192,7 +192,7 @@ pub mod connection {
         };
         let o = context.register_resource(request);
         ConnectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             app_service_id: o.get_field("appServiceId"),
             authentication: o.get_field("authentication"),

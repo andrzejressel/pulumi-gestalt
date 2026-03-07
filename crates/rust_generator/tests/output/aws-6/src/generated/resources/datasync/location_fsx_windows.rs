@@ -147,7 +147,7 @@ pub mod location_fsx_windows {
         };
         let o = context.register_resource(request);
         LocationFsxWindowsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             creation_time: o.get_field("creationTime"),

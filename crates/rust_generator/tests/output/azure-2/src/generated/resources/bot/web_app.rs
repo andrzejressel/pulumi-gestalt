@@ -218,7 +218,7 @@ pub mod web_app {
         };
         let o = context.register_resource(request);
         WebAppResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             developer_app_insights_api_key: o.get_field("developerAppInsightsApiKey"),
             developer_app_insights_application_id: o

@@ -113,7 +113,7 @@ pub mod kinesis_streaming_destination {
         };
         let o = context.register_resource(request);
         KinesisStreamingDestinationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             approximate_creation_date_time_precision: o
                 .get_field("approximateCreationDateTimePrecision"),

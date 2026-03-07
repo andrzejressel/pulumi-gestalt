@@ -103,7 +103,7 @@ pub mod account_static_website {
         };
         let o = context.register_resource(request);
         AccountStaticWebsiteResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             error404_document: o.get_field("error404Document"),
             index_document: o.get_field("indexDocument"),

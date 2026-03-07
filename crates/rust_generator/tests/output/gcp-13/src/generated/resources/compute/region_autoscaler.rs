@@ -229,7 +229,7 @@ pub mod region_autoscaler {
         };
         let o = context.register_resource(request);
         RegionAutoscalerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             autoscaling_policy: o.get_field("autoscalingPolicy"),
             creation_timestamp: o.get_field("creationTimestamp"),

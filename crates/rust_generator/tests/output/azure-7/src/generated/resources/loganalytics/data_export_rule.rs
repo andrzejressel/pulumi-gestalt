@@ -159,7 +159,7 @@ pub mod data_export_rule {
         };
         let o = context.register_resource(request);
         DataExportRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             destination_resource_id: o.get_field("destinationResourceId"),
             enabled: o.get_field("enabled"),

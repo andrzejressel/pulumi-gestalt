@@ -162,7 +162,7 @@ pub mod routing_profile {
         };
         let o = context.register_resource(request);
         RoutingProfileResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             default_outbound_queue_id: o.get_field("defaultOutboundQueueId"),

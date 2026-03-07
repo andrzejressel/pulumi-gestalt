@@ -231,7 +231,7 @@ pub mod image_builder {
         };
         let o = context.register_resource(request);
         ImageBuilderResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_endpoints: o.get_field("accessEndpoints"),
             appstream_agent_version: o.get_field("appstreamAgentVersion"),

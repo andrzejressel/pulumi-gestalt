@@ -208,7 +208,7 @@ pub mod network_packet_core_data_plane {
         };
         let o = context.register_resource(request);
         NetworkPacketCoreDataPlaneResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             location: o.get_field("location"),
             mobile_network_packet_core_control_plane_id: o

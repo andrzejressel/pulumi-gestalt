@@ -331,7 +331,7 @@ pub mod backup_plan_iam_member {
         };
         let o = context.register_resource(request);
         BackupPlanIamMemberResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             condition: o.get_field("condition"),
             etag: o.get_field("etag"),

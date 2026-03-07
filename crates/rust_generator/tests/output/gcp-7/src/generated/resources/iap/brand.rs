@@ -149,7 +149,7 @@ pub mod brand {
         };
         let o = context.register_resource(request);
         BrandResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             application_title: o.get_field("applicationTitle"),
             name: o.get_field("name"),

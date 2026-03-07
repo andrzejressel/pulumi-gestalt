@@ -119,7 +119,7 @@ pub mod domain_entry {
         };
         let o = context.register_resource(request);
         DomainEntryResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             domain_name: o.get_field("domainName"),
             is_alias: o.get_field("isAlias"),

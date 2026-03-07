@@ -416,7 +416,7 @@ pub mod shared_image {
         };
         let o = context.register_resource(request);
         SharedImageResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             accelerated_network_support_enabled: o
                 .get_field("acceleratedNetworkSupportEnabled"),

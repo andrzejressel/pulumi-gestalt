@@ -108,7 +108,7 @@ pub mod managed_headers {
         };
         let o = context.register_resource(request);
         ManagedHeadersResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             managed_request_headers: o.get_field("managedRequestHeaders"),
             managed_response_headers: o.get_field("managedResponseHeaders"),

@@ -222,7 +222,7 @@ pub mod attached_database_configuration {
         };
         let o = context.register_resource(request);
         AttachedDatabaseConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             attached_database_names: o.get_field("attachedDatabaseNames"),
             cluster_name: o.get_field("clusterName"),

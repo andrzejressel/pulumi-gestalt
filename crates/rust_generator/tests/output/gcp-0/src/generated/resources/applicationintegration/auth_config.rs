@@ -261,7 +261,7 @@ pub mod auth_config {
         };
         let o = context.register_resource(request);
         AuthConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             certificate_id: o.get_field("certificateId"),
             client_certificate: o.get_field("clientCertificate"),

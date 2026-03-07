@@ -324,7 +324,7 @@ pub mod backend_bucket {
         };
         let o = context.register_resource(request);
         BackendBucketResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bucket_name: o.get_field("bucketName"),
             cdn_policy: o.get_field("cdnPolicy"),

@@ -298,7 +298,7 @@ pub mod authz_extension {
         };
         let o = context.register_resource(request);
         AuthzExtensionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             authority: o.get_field("authority"),
             create_time: o.get_field("createTime"),

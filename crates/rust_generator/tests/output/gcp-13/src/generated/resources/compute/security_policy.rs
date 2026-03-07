@@ -313,7 +313,7 @@ pub mod security_policy {
         };
         let o = context.register_resource(request);
         SecurityPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             adaptive_protection_config: o.get_field("adaptiveProtectionConfig"),
             advanced_options_config: o.get_field("advancedOptionsConfig"),

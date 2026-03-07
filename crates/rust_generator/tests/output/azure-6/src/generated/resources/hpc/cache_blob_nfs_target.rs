@@ -149,7 +149,7 @@ pub mod cache_blob_nfs_target {
         };
         let o = context.register_resource(request);
         CacheBlobNfsTargetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_policy_name: o.get_field("accessPolicyName"),
             cache_name: o.get_field("cacheName"),

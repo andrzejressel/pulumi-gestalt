@@ -113,7 +113,7 @@ pub mod capability {
         };
         let o = context.register_resource(request);
         CapabilityResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             capability_type: o.get_field("capabilityType"),
             capability_urn: o.get_field("capabilityUrn"),

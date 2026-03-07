@@ -102,7 +102,7 @@ pub mod access_log_subscription {
         };
         let o = context.register_resource(request);
         AccessLogSubscriptionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             destination_arn: o.get_field("destinationArn"),

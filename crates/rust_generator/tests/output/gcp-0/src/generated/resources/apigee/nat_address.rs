@@ -282,7 +282,7 @@ pub mod nat_address {
         };
         let o = context.register_resource(request);
         NatAddressResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             activate: o.get_field("activate"),
             instance_id: o.get_field("instanceId"),

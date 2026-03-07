@@ -121,7 +121,7 @@ pub mod product_api {
         };
         let o = context.register_resource(request);
         ProductApiResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_management_name: o.get_field("apiManagementName"),
             api_name: o.get_field("apiName"),

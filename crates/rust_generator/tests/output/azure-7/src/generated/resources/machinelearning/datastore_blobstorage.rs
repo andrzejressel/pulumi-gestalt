@@ -225,7 +225,7 @@ pub mod datastore_blobstorage {
         };
         let o = context.register_resource(request);
         DatastoreBlobstorageResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_key: o.get_field("accountKey"),
             description: o.get_field("description"),

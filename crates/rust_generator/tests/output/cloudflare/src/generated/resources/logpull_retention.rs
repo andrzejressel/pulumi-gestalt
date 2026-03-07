@@ -74,7 +74,7 @@ pub mod logpull_retention {
         };
         let o = context.register_resource(request);
         LogpullRetentionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             enabled: o.get_field("enabled"),
             zone_id: o.get_field("zoneId"),

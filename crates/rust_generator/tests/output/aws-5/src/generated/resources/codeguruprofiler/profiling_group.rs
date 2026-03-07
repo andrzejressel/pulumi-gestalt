@@ -132,7 +132,7 @@ pub mod profiling_group {
         };
         let o = context.register_resource(request);
         ProfilingGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             agent_orchestration_config: o.get_field("agentOrchestrationConfig"),
             arn: o.get_field("arn"),

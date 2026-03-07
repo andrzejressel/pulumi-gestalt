@@ -169,7 +169,7 @@ pub mod web_app_hybrid_connection {
         };
         let o = context.register_resource(request);
         WebAppHybridConnectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             hostname: o.get_field("hostname"),
             namespace_name: o.get_field("namespaceName"),

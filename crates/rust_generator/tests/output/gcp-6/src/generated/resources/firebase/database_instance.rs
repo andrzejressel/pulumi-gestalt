@@ -243,7 +243,7 @@ pub mod database_instance {
         };
         let o = context.register_resource(request);
         DatabaseInstanceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             database_url: o.get_field("databaseUrl"),
             desired_state: o.get_field("desiredState"),

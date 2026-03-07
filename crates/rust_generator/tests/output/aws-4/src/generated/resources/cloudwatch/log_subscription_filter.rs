@@ -125,7 +125,7 @@ pub mod log_subscription_filter {
         };
         let o = context.register_resource(request);
         LogSubscriptionFilterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             destination_arn: o.get_field("destinationArn"),
             distribution: o.get_field("distribution"),

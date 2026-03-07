@@ -104,7 +104,7 @@ pub mod key_value_store {
         };
         let o = context.register_resource(request);
         KeyValueStoreResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             comment: o.get_field("comment"),

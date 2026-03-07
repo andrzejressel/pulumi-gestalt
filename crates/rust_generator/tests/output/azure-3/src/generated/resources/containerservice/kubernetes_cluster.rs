@@ -1058,7 +1058,7 @@ pub mod kubernetes_cluster {
         };
         let o = context.register_resource(request);
         KubernetesClusterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             aci_connector_linux: o.get_field("aciConnectorLinux"),
             api_server_access_profile: o.get_field("apiServerAccessProfile"),

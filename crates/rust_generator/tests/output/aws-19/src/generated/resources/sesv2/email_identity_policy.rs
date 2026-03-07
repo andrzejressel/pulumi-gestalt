@@ -100,7 +100,7 @@ pub mod email_identity_policy {
         };
         let o = context.register_resource(request);
         EmailIdentityPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             email_identity: o.get_field("emailIdentity"),
             policy: o.get_field("policy"),

@@ -91,7 +91,7 @@ pub mod resolver_rule_association {
         };
         let o = context.register_resource(request);
         ResolverRuleAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             name: o.get_field("name"),
             resolver_rule_id: o.get_field("resolverRuleId"),

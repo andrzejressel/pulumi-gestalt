@@ -159,7 +159,7 @@ pub mod pod_identity_association {
         };
         let o = context.register_resource(request);
         PodIdentityAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             association_arn: o.get_field("associationArn"),
             association_id: o.get_field("associationId"),

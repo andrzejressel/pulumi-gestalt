@@ -234,7 +234,7 @@ pub mod authorizer {
         };
         let o = context.register_resource(request);
         AuthorizerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             authorizer_credentials: o.get_field("authorizerCredentials"),

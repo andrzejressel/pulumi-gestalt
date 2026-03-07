@@ -117,7 +117,7 @@ pub mod managed_disk_sas_token {
         };
         let o = context.register_resource(request);
         ManagedDiskSasTokenResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_level: o.get_field("accessLevel"),
             duration_in_seconds: o.get_field("durationInSeconds"),

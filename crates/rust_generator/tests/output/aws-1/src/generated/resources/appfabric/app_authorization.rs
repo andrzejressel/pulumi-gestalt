@@ -167,7 +167,7 @@ pub mod app_authorization {
         };
         let o = context.register_resource(request);
         AppAuthorizationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             app: o.get_field("app"),
             app_bundle_arn: o.get_field("appBundleArn"),

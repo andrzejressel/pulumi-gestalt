@@ -422,7 +422,7 @@ pub mod topic_rule {
         };
         let o = context.register_resource(request);
         TopicRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             cloudwatch_alarms: o.get_field("cloudwatchAlarms"),

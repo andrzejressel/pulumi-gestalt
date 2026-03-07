@@ -150,7 +150,7 @@ pub mod network_insights_path {
         };
         let o = context.register_resource(request);
         NetworkInsightsPathResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             destination: o.get_field("destination"),

@@ -192,7 +192,7 @@ pub mod billing_account_sink {
         };
         let o = context.register_resource(request);
         BillingAccountSinkResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bigquery_options: o.get_field("bigqueryOptions"),
             billing_account: o.get_field("billingAccount"),

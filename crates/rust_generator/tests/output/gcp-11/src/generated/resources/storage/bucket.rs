@@ -477,7 +477,7 @@ pub mod bucket {
         };
         let o = context.register_resource(request);
         BucketResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             autoclass: o.get_field("autoclass"),
             cors: o.get_field("cors"),

@@ -110,7 +110,7 @@ pub mod express_route_authorization {
         };
         let o = context.register_resource(request);
         ExpressRouteAuthorizationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             express_route_authorization_id: o.get_field("expressRouteAuthorizationId"),
             express_route_authorization_key: o.get_field("expressRouteAuthorizationKey"),

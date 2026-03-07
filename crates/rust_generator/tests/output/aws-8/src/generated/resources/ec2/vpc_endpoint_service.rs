@@ -205,7 +205,7 @@ pub mod vpc_endpoint_service {
         };
         let o = context.register_resource(request);
         VpcEndpointServiceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             acceptance_required: o.get_field("acceptanceRequired"),
             allowed_principals: o.get_field("allowedPrincipals"),

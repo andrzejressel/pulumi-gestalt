@@ -124,7 +124,7 @@ pub mod origin_access_control {
         };
         let o = context.register_resource(request);
         OriginAccessControlResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             description: o.get_field("description"),
             etag: o.get_field("etag"),

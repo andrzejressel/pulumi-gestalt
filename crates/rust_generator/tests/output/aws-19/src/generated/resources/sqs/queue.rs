@@ -375,7 +375,7 @@ pub mod queue {
         };
         let o = context.register_resource(request);
         QueueResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             content_based_deduplication: o.get_field("contentBasedDeduplication"),

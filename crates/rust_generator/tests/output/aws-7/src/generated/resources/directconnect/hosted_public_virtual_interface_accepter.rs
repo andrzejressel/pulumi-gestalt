@@ -110,7 +110,7 @@ pub mod hosted_public_virtual_interface_accepter {
         };
         let o = context.register_resource(request);
         HostedPublicVirtualInterfaceAccepterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             tags: o.get_field("tags"),

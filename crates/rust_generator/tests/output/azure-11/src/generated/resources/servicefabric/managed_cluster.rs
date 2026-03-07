@@ -287,7 +287,7 @@ pub mod managed_cluster {
         };
         let o = context.register_resource(request);
         ManagedClusterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             authentication: o.get_field("authentication"),
             backup_service_enabled: o.get_field("backupServiceEnabled"),

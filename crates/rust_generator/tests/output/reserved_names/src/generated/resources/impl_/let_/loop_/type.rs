@@ -44,7 +44,7 @@ pub mod type_ {
         };
         let o = context.register_resource(request);
         TypeResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
         }
     }

@@ -169,7 +169,7 @@ pub mod policy_vm_workload {
         };
         let o = context.register_resource(request);
         PolicyVMWorkloadResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             name: o.get_field("name"),
             protection_policies: o.get_field("protectionPolicies"),

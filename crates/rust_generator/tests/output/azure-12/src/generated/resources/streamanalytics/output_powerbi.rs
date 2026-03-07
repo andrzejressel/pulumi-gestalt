@@ -161,7 +161,7 @@ pub mod output_powerbi {
         };
         let o = context.register_resource(request);
         OutputPowerbiResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             dataset: o.get_field("dataset"),
             group_id: o.get_field("groupId"),

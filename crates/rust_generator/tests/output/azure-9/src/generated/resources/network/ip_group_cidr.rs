@@ -103,7 +103,7 @@ pub mod ip_group_cidr {
         };
         let o = context.register_resource(request);
         IPGroupCIDRResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cidr: o.get_field("cidr"),
             ip_group_id: o.get_field("ipGroupId"),

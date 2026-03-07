@@ -224,7 +224,7 @@ pub mod project_feed {
         };
         let o = context.register_resource(request);
         ProjectFeedResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             asset_names: o.get_field("assetNames"),
             asset_types: o.get_field("assetTypes"),

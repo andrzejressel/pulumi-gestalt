@@ -171,7 +171,7 @@ pub mod network_interface_nat_rule_association {
         };
         let o = context.register_resource(request);
         NetworkInterfaceNatRuleAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             ip_configuration_name: o.get_field("ipConfigurationName"),
             nat_rule_id: o.get_field("natRuleId"),

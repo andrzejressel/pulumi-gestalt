@@ -138,7 +138,7 @@ pub mod contact {
         };
         let o = context.register_resource(request);
         ContactResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             email: o.get_field("email"),
             language_tag: o.get_field("languageTag"),

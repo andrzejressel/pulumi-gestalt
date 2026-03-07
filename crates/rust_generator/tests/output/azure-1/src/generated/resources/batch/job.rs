@@ -164,7 +164,7 @@ pub mod job {
         };
         let o = context.register_resource(request);
         JobResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             batch_pool_id: o.get_field("batchPoolId"),
             common_environment_properties: o.get_field("commonEnvironmentProperties"),

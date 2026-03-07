@@ -265,7 +265,7 @@ pub mod hosting_release {
         };
         let o = context.register_resource(request);
         HostingReleaseResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             channel_id: o.get_field("channelId"),
             message: o.get_field("message"),

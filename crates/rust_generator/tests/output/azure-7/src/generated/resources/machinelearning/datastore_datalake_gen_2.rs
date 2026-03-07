@@ -222,7 +222,7 @@ pub mod datastore_datalake_gen_2 {
         };
         let o = context.register_resource(request);
         DatastoreDatalakeGen2Result {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             authority_url: o.get_field("authorityUrl"),
             client_id: o.get_field("clientId"),

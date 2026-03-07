@@ -123,7 +123,7 @@ pub mod project_info {
         };
         let o = context.register_resource(request);
         ProjectInfoResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             billing_account: o.get_field("billingAccount"),
             project: o.get_field("project"),

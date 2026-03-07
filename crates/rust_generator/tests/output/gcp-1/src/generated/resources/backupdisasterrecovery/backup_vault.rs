@@ -333,7 +333,7 @@ pub mod backup_vault {
         };
         let o = context.register_resource(request);
         BackupVaultResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_restriction: o.get_field("accessRestriction"),
             allow_missing: o.get_field("allowMissing"),

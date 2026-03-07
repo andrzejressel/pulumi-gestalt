@@ -255,7 +255,7 @@ pub mod source_representation_instance {
         };
         let o = context.register_resource(request);
         SourceRepresentationInstanceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             ca_certificate: o.get_field("caCertificate"),
             client_certificate: o.get_field("clientCertificate"),

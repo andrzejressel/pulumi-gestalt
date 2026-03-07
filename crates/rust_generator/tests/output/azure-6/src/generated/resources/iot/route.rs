@@ -180,7 +180,7 @@ pub mod route {
         };
         let o = context.register_resource(request);
         RouteResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             condition: o.get_field("condition"),
             enabled: o.get_field("enabled"),

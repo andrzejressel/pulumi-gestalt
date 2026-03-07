@@ -208,7 +208,7 @@ pub mod linked_service_cosmos_db {
         };
         let o = context.register_resource(request);
         LinkedServiceCosmosDbResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_endpoint: o.get_field("accountEndpoint"),
             account_key: o.get_field("accountKey"),

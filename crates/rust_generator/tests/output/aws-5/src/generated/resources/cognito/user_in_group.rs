@@ -113,7 +113,7 @@ pub mod user_in_group {
         };
         let o = context.register_resource(request);
         UserInGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             group_name: o.get_field("groupName"),
             user_pool_id: o.get_field("userPoolId"),

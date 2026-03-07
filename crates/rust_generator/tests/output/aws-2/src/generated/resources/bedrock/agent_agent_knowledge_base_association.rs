@@ -136,7 +136,7 @@ pub mod agent_agent_knowledge_base_association {
         };
         let o = context.register_resource(request);
         AgentAgentKnowledgeBaseAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             agent_id: o.get_field("agentId"),
             agent_version: o.get_field("agentVersion"),

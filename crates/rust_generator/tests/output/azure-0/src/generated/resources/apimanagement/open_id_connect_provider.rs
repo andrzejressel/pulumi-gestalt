@@ -166,7 +166,7 @@ pub mod open_id_connect_provider {
         };
         let o = context.register_resource(request);
         OpenIdConnectProviderResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_management_name: o.get_field("apiManagementName"),
             client_id: o.get_field("clientId"),

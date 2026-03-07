@@ -95,7 +95,7 @@ pub mod rule_group_namespace {
         };
         let o = context.register_resource(request);
         RuleGroupNamespaceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             data: o.get_field("data"),
             name: o.get_field("name"),

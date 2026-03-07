@@ -127,7 +127,7 @@ pub mod anomaly_alert {
         };
         let o = context.register_resource(request);
         AnomalyAlertResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             display_name: o.get_field("displayName"),
             email_addresses: o.get_field("emailAddresses"),

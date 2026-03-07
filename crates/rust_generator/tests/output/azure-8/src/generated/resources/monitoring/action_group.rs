@@ -367,7 +367,7 @@ pub mod action_group {
         };
         let o = context.register_resource(request);
         ActionGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arm_role_receivers: o.get_field("armRoleReceivers"),
             automation_runbook_receivers: o.get_field("automationRunbookReceivers"),

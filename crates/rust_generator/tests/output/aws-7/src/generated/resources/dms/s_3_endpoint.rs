@@ -689,7 +689,7 @@ pub mod s_3_endpoint {
         };
         let o = context.register_resource(request);
         S3EndpointResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             add_column_name: o.get_field("addColumnName"),
             add_trailing_padding_character: o.get_field("addTrailingPaddingCharacter"),

@@ -175,7 +175,7 @@ pub mod code_repository_index {
         };
         let o = context.register_resource(request);
         CodeRepositoryIndexResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             code_repository_index_id: o.get_field("codeRepositoryIndexId"),
             create_time: o.get_field("createTime"),

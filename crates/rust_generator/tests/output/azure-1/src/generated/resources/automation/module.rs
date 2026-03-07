@@ -132,7 +132,7 @@ pub mod module {
         };
         let o = context.register_resource(request);
         ModuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             automation_account_name: o.get_field("automationAccountName"),
             module_link: o.get_field("moduleLink"),

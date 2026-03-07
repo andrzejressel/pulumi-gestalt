@@ -186,7 +186,7 @@ pub mod vnp_gateway_nat_rule {
         };
         let o = context.register_resource(request);
         VnpGatewayNatRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             external_mappings: o.get_field("externalMappings"),
             internal_mappings: o.get_field("internalMappings"),

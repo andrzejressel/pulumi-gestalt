@@ -168,7 +168,7 @@ pub mod static_web_app_custom_domain {
         };
         let o = context.register_resource(request);
         StaticWebAppCustomDomainResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             domain_name: o.get_field("domainName"),
             static_web_app_id: o.get_field("staticWebAppId"),

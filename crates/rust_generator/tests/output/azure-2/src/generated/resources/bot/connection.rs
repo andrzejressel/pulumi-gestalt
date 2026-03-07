@@ -177,7 +177,7 @@ pub mod connection {
         };
         let o = context.register_resource(request);
         ConnectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bot_name: o.get_field("botName"),
             client_id: o.get_field("clientId"),

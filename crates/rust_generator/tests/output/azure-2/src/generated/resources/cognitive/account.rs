@@ -389,7 +389,7 @@ pub mod account {
         };
         let o = context.register_resource(request);
         AccountResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             custom_question_answering_search_service_id: o
                 .get_field("customQuestionAnsweringSearchServiceId"),

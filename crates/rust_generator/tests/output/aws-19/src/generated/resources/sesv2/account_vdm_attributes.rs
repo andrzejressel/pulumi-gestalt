@@ -114,7 +114,7 @@ pub mod account_vdm_attributes {
         };
         let o = context.register_resource(request);
         AccountVdmAttributesResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             dashboard_attributes: o.get_field("dashboardAttributes"),
             guardian_attributes: o.get_field("guardianAttributes"),

@@ -91,7 +91,7 @@ pub mod vpc_block_public_access_options {
         };
         let o = context.register_resource(request);
         VpcBlockPublicAccessOptionsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             aws_account_id: o.get_field("awsAccountId"),
             aws_region: o.get_field("awsRegion"),

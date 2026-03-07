@@ -211,7 +211,7 @@ pub mod hybrid_runbook_worker {
         };
         let o = context.register_resource(request);
         HybridRunbookWorkerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             automation_account_name: o.get_field("automationAccountName"),
             ip: o.get_field("ip"),

@@ -76,7 +76,7 @@ pub mod graph {
         };
         let o = context.register_resource(request);
         GraphResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             created_time: o.get_field("createdTime"),
             graph_arn: o.get_field("graphArn"),

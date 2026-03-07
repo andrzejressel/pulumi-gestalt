@@ -84,7 +84,7 @@ pub mod invite_accepter {
         };
         let o = context.register_resource(request);
         InviteAccepterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             invitation_id: o.get_field("invitationId"),
             master_id: o.get_field("masterId"),

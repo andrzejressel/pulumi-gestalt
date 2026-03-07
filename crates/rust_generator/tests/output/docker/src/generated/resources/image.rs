@@ -234,7 +234,7 @@ pub mod image {
         };
         let o = context.register_resource(request);
         ImageResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             base_image_name: o.get_field("baseImageName"),
             context: o.get_field("context"),

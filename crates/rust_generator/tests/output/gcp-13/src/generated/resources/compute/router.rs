@@ -238,7 +238,7 @@ pub mod router {
         };
         let o = context.register_resource(request);
         RouterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bgp: o.get_field("bgp"),
             creation_timestamp: o.get_field("creationTimestamp"),

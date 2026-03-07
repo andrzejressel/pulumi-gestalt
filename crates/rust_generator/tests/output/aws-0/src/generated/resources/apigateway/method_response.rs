@@ -234,7 +234,7 @@ pub mod method_response {
         };
         let o = context.register_resource(request);
         MethodResponseResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             http_method: o.get_field("httpMethod"),
             resource_id: o.get_field("resourceId"),

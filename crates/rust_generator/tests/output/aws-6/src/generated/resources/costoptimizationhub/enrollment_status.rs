@@ -89,7 +89,7 @@ pub mod enrollment_status {
         };
         let o = context.register_resource(request);
         EnrollmentStatusResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             include_member_accounts: o.get_field("includeMemberAccounts"),
             status: o.get_field("status"),

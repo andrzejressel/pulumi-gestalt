@@ -147,7 +147,7 @@ pub mod topic_authorization_rule {
         };
         let o = context.register_resource(request);
         TopicAuthorizationRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             listen: o.get_field("listen"),
             manage: o.get_field("manage"),

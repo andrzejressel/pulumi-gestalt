@@ -72,7 +72,7 @@ pub mod zero_trust_local_fallback_domain {
         };
         let o = context.register_resource(request);
         ZeroTrustLocalFallbackDomainResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             domains: o.get_field("domains"),

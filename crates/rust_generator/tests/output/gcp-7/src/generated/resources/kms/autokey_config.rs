@@ -191,7 +191,7 @@ pub mod autokey_config {
         };
         let o = context.register_resource(request);
         AutokeyConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             folder: o.get_field("folder"),
             key_project: o.get_field("keyProject"),

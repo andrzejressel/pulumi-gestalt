@@ -131,7 +131,7 @@ pub mod attached_network {
         };
         let o = context.register_resource(request);
         AttachedNetworkResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             dev_center_id: o.get_field("devCenterId"),
             name: o.get_field("name"),

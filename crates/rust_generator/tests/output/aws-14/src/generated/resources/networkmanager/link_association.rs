@@ -94,7 +94,7 @@ pub mod link_association {
         };
         let o = context.register_resource(request);
         LinkAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             device_id: o.get_field("deviceId"),
             global_network_id: o.get_field("globalNetworkId"),

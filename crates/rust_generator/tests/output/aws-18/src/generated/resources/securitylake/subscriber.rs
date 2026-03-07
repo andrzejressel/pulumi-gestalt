@@ -183,7 +183,7 @@ pub mod subscriber {
         };
         let o = context.register_resource(request);
         SubscriberResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_type: o.get_field("accessType"),
             arn: o.get_field("arn"),

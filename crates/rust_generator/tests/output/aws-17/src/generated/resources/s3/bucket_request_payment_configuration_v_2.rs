@@ -107,7 +107,7 @@ pub mod bucket_request_payment_configuration_v_2 {
         };
         let o = context.register_resource(request);
         BucketRequestPaymentConfigurationV2Result {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bucket: o.get_field("bucket"),
             expected_bucket_owner: o.get_field("expectedBucketOwner"),

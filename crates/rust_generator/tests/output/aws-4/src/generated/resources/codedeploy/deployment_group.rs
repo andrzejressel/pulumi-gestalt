@@ -520,7 +520,7 @@ pub mod deployment_group {
         };
         let o = context.register_resource(request);
         DeploymentGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             alarm_configuration: o.get_field("alarmConfiguration"),
             app_name: o.get_field("appName"),

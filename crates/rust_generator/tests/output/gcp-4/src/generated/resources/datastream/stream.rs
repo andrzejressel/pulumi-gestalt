@@ -1176,7 +1176,7 @@ pub mod stream {
         };
         let o = context.register_resource(request);
         StreamResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             backfill_all: o.get_field("backfillAll"),
             backfill_none: o.get_field("backfillNone"),

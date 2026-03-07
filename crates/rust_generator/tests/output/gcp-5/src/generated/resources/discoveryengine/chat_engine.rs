@@ -297,7 +297,7 @@ pub mod chat_engine {
         };
         let o = context.register_resource(request);
         ChatEngineResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             chat_engine_config: o.get_field("chatEngineConfig"),
             chat_engine_metadatas: o.get_field("chatEngineMetadatas"),

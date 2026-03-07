@@ -142,7 +142,7 @@ pub mod service_network_settings {
         };
         let o = context.register_resource(request);
         ServiceNetworkSettingsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             network_settings: o.get_field("networkSettings"),
             project: o.get_field("project"),

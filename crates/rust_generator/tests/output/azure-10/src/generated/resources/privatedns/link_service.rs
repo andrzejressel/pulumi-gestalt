@@ -258,7 +258,7 @@ pub mod link_service {
         };
         let o = context.register_resource(request);
         LinkServiceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             alias: o.get_field("alias"),
             auto_approval_subscription_ids: o.get_field("autoApprovalSubscriptionIds"),

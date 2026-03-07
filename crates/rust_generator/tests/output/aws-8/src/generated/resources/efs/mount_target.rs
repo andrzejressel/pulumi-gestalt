@@ -131,7 +131,7 @@ pub mod mount_target {
         };
         let o = context.register_resource(request);
         MountTargetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             availability_zone_id: o.get_field("availabilityZoneId"),
             availability_zone_name: o.get_field("availabilityZoneName"),

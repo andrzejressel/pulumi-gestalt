@@ -80,7 +80,7 @@ pub mod workers_kv_namespace {
         };
         let o = context.register_resource(request);
         WorkersKvNamespaceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             title: o.get_field("title"),

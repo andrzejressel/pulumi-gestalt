@@ -93,7 +93,7 @@ pub mod ip_set {
         };
         let o = context.register_resource(request);
         IpSetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             ip_set_descriptors: o.get_field("ipSetDescriptors"),

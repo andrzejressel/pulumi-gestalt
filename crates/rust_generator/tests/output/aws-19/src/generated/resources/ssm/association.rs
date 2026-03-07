@@ -343,7 +343,7 @@ pub mod association {
         };
         let o = context.register_resource(request);
         AssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             apply_only_at_cron_interval: o.get_field("applyOnlyAtCronInterval"),
             arn: o.get_field("arn"),

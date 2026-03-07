@@ -229,7 +229,7 @@ pub mod target_pool {
         };
         let o = context.register_resource(request);
         TargetPoolResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             backup_pool: o.get_field("backupPool"),
             description: o.get_field("description"),

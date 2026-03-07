@@ -188,7 +188,7 @@ pub mod schema {
         };
         let o = context.register_resource(request);
         SchemaResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             definition: o.get_field("definition"),
             name: o.get_field("name"),

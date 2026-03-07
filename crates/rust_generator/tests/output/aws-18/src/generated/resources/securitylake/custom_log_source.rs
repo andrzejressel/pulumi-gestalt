@@ -137,7 +137,7 @@ pub mod custom_log_source {
         };
         let o = context.register_resource(request);
         CustomLogSourceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             attributes: o.get_field("attributes"),
             configuration: o.get_field("configuration"),

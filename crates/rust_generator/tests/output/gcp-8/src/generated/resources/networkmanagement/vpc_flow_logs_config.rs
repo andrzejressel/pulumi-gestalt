@@ -489,7 +489,7 @@ pub mod vpc_flow_logs_config {
         };
         let o = context.register_resource(request);
         VpcFlowLogsConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             aggregation_interval: o.get_field("aggregationInterval"),
             create_time: o.get_field("createTime"),

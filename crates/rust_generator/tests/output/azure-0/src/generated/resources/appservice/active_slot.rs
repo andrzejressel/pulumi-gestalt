@@ -98,7 +98,7 @@ pub mod active_slot {
         };
         let o = context.register_resource(request);
         ActiveSlotResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             app_service_name: o.get_field("appServiceName"),
             app_service_slot_name: o.get_field("appServiceSlotName"),

@@ -68,7 +68,7 @@ pub mod ai_endpoint_iam_policy {
         };
         let o = context.register_resource(request);
         AiEndpointIamPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             endpoint: o.get_field("endpoint"),
             etag: o.get_field("etag"),

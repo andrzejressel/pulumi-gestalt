@@ -242,7 +242,7 @@ pub mod environment_profile {
         };
         let o = context.register_resource(request);
         EnvironmentProfileResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             aws_account_id: o.get_field("awsAccountId"),
             aws_account_region: o.get_field("awsAccountRegion"),

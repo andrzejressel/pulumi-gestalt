@@ -222,7 +222,7 @@ pub mod nat_gateway {
         };
         let o = context.register_resource(request);
         NatGatewayResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allocation_id: o.get_field("allocationId"),
             association_id: o.get_field("associationId"),

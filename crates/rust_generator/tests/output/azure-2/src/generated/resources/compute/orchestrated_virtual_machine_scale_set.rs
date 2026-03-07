@@ -617,7 +617,7 @@ pub mod orchestrated_virtual_machine_scale_set {
         };
         let o = context.register_resource(request);
         OrchestratedVirtualMachineScaleSetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             additional_capabilities: o.get_field("additionalCapabilities"),
             automatic_instance_repair: o.get_field("automaticInstanceRepair"),

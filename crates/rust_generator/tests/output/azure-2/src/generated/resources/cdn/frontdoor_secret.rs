@@ -630,7 +630,7 @@ pub mod frontdoor_secret {
         };
         let o = context.register_resource(request);
         FrontdoorSecretResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cdn_frontdoor_profile_id: o.get_field("cdnFrontdoorProfileId"),
             cdn_frontdoor_profile_name: o.get_field("cdnFrontdoorProfileName"),

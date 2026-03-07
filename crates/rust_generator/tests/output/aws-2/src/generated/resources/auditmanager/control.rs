@@ -163,7 +163,7 @@ pub mod control {
         };
         let o = context.register_resource(request);
         ControlResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             action_plan_instructions: o.get_field("actionPlanInstructions"),
             action_plan_title: o.get_field("actionPlanTitle"),

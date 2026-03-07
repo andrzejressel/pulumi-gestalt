@@ -104,7 +104,7 @@ pub mod hostname_tls_setting {
         };
         let o = context.register_resource(request);
         HostnameTlsSettingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             created_at: o.get_field("createdAt"),
             hostname: o.get_field("hostname"),

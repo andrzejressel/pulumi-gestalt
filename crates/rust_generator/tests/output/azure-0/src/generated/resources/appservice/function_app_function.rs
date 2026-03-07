@@ -277,7 +277,7 @@ pub mod function_app_function {
         };
         let o = context.register_resource(request);
         FunctionAppFunctionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             config_json: o.get_field("configJson"),
             config_url: o.get_field("configUrl"),

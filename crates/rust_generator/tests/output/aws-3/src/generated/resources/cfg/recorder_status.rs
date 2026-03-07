@@ -137,7 +137,7 @@ pub mod recorder_status {
         };
         let o = context.register_resource(request);
         RecorderStatusResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             is_enabled: o.get_field("isEnabled"),
             name: o.get_field("name"),

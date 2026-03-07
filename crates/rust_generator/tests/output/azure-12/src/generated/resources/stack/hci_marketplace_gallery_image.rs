@@ -202,7 +202,7 @@ pub mod hci_marketplace_gallery_image {
         };
         let o = context.register_resource(request);
         HciMarketplaceGalleryImageResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             custom_location_id: o.get_field("customLocationId"),
             hyperv_generation: o.get_field("hypervGeneration"),

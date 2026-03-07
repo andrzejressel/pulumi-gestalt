@@ -459,7 +459,7 @@ pub mod virtual_machine {
         };
         let o = context.register_resource(request);
         VirtualMachineResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             additional_capabilities: o.get_field("additionalCapabilities"),
             availability_set_id: o.get_field("availabilitySetId"),

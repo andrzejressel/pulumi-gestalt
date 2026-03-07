@@ -99,7 +99,7 @@ pub mod website_certificate_authority_association {
         };
         let o = context.register_resource(request);
         WebsiteCertificateAuthorityAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             certificate: o.get_field("certificate"),
             display_name: o.get_field("displayName"),

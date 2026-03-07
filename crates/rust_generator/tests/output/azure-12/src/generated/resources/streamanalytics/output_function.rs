@@ -201,7 +201,7 @@ pub mod output_function {
         };
         let o = context.register_resource(request);
         OutputFunctionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_key: o.get_field("apiKey"),
             batch_max_count: o.get_field("batchMaxCount"),

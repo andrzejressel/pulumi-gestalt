@@ -167,7 +167,7 @@ pub mod cache_policy {
         };
         let o = context.register_resource(request);
         CachePolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             comment: o.get_field("comment"),
             default_ttl: o.get_field("defaultTtl"),

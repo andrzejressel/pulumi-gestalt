@@ -212,7 +212,7 @@ pub mod transit_gateway {
         };
         let o = context.register_resource(request);
         TransitGatewayResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             amazon_side_asn: o.get_field("amazonSideAsn"),
             arn: o.get_field("arn"),

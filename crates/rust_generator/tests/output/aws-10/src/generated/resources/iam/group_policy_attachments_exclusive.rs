@@ -65,7 +65,7 @@ pub mod group_policy_attachments_exclusive {
         };
         let o = context.register_resource(request);
         GroupPolicyAttachmentsExclusiveResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             group_name: o.get_field("groupName"),
             policy_arns: o.get_field("policyArns"),

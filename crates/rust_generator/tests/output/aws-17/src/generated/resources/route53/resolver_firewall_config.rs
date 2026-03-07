@@ -91,7 +91,7 @@ pub mod resolver_firewall_config {
         };
         let o = context.register_resource(request);
         ResolverFirewallConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             firewall_fail_open: o.get_field("firewallFailOpen"),
             owner_id: o.get_field("ownerId"),

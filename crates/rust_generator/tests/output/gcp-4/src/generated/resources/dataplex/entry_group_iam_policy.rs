@@ -285,7 +285,7 @@ pub mod entry_group_iam_policy {
         };
         let o = context.register_resource(request);
         EntryGroupIamPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             entry_group_id: o.get_field("entryGroupId"),
             etag: o.get_field("etag"),

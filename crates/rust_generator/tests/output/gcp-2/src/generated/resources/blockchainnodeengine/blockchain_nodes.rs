@@ -235,7 +235,7 @@ pub mod blockchain_nodes {
         };
         let o = context.register_resource(request);
         BlockchainNodesResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             blockchain_node_id: o.get_field("blockchainNodeId"),
             blockchain_type: o.get_field("blockchainType"),

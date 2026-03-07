@@ -267,7 +267,7 @@ pub mod certificate_issuance_config {
         };
         let o = context.register_resource(request);
         CertificateIssuanceConfigResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             certificate_authority_config: o.get_field("certificateAuthorityConfig"),
             create_time: o.get_field("createTime"),

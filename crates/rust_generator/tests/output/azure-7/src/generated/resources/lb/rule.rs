@@ -244,7 +244,7 @@ pub mod rule {
         };
         let o = context.register_resource(request);
         RuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             backend_address_pool_ids: o.get_field("backendAddressPoolIds"),
             backend_port: o.get_field("backendPort"),

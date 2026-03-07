@@ -166,7 +166,7 @@ pub mod group_policy_remediation {
         };
         let o = context.register_resource(request);
         GroupPolicyRemediationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             failure_percentage: o.get_field("failurePercentage"),
             location_filters: o.get_field("locationFilters"),

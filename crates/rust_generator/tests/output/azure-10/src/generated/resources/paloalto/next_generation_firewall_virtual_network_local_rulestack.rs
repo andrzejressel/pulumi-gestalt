@@ -259,7 +259,7 @@ pub mod next_generation_firewall_virtual_network_local_rulestack {
         };
         let o = context.register_resource(request);
         NextGenerationFirewallVirtualNetworkLocalRulestackResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             destination_nats: o.get_field("destinationNats"),
             dns_settings: o.get_field("dnsSettings"),

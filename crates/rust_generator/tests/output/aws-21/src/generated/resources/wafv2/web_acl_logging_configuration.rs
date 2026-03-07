@@ -173,7 +173,7 @@ pub mod web_acl_logging_configuration {
         };
         let o = context.register_resource(request);
         WebAclLoggingConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             log_destination_configs: o.get_field("logDestinationConfigs"),
             logging_filter: o.get_field("loggingFilter"),

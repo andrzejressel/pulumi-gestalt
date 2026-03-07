@@ -160,7 +160,7 @@ pub mod listener_policy {
         };
         let o = context.register_resource(request);
         ListenerPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             load_balancer_name: o.get_field("loadBalancerName"),
             load_balancer_port: o.get_field("loadBalancerPort"),

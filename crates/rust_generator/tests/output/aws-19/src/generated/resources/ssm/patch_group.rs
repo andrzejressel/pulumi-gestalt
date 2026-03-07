@@ -80,7 +80,7 @@ pub mod patch_group {
         };
         let o = context.register_resource(request);
         PatchGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             baseline_id: o.get_field("baselineId"),
             patch_group: o.get_field("patchGroup"),

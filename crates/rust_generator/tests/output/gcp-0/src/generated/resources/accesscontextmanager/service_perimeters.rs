@@ -152,7 +152,7 @@ pub mod service_perimeters {
         };
         let o = context.register_resource(request);
         ServicePerimetersResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             parent: o.get_field("parent"),
             service_perimeters: o.get_field("servicePerimeters"),

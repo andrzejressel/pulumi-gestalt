@@ -291,7 +291,7 @@ pub mod bucket_object {
         };
         let o = context.register_resource(request);
         BucketObjectResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bucket: o.get_field("bucket"),
             cache_control: o.get_field("cacheControl"),

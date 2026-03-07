@@ -88,7 +88,7 @@ pub mod email_routing_address {
         };
         let o = context.register_resource(request);
         EmailRoutingAddressResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             created: o.get_field("created"),

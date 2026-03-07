@@ -112,7 +112,7 @@ pub mod base_path_mapping {
         };
         let o = context.register_resource(request);
         BasePathMappingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             base_path: o.get_field("basePath"),
             domain_name: o.get_field("domainName"),

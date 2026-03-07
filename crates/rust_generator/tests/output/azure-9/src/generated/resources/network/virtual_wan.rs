@@ -166,7 +166,7 @@ pub mod virtual_wan {
         };
         let o = context.register_resource(request);
         VirtualWanResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allow_branch_to_branch_traffic: o.get_field("allowBranchToBranchTraffic"),
             disable_vpn_encryption: o.get_field("disableVpnEncryption"),

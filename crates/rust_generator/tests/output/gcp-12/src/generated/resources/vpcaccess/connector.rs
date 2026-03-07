@@ -268,7 +268,7 @@ pub mod connector {
         };
         let o = context.register_resource(request);
         ConnectorResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             connected_projects: o.get_field("connectedProjects"),
             ip_cidr_range: o.get_field("ipCidrRange"),

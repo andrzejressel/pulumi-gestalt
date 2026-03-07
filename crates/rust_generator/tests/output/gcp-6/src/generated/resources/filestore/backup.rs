@@ -226,7 +226,7 @@ pub mod backup {
         };
         let o = context.register_resource(request);
         BackupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             capacity_gb: o.get_field("capacityGb"),
             create_time: o.get_field("createTime"),

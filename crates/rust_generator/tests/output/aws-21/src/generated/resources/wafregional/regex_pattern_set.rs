@@ -85,7 +85,7 @@ pub mod regex_pattern_set {
         };
         let o = context.register_resource(request);
         RegexPatternSetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             name: o.get_field("name"),
             regex_pattern_strings: o.get_field("regexPatternStrings"),

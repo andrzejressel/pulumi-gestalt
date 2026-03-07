@@ -141,7 +141,7 @@ pub mod s_3_location {
         };
         let o = context.register_resource(request);
         S3LocationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             agent_arns: o.get_field("agentArns"),
             arn: o.get_field("arn"),

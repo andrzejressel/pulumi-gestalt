@@ -157,7 +157,7 @@ pub mod virtual_machine_manager_cloud {
         };
         let o = context.register_resource(request);
         VirtualMachineManagerCloudResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             custom_location_id: o.get_field("customLocationId"),
             location: o.get_field("location"),

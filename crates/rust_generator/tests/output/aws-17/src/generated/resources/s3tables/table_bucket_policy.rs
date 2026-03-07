@@ -89,7 +89,7 @@ pub mod table_bucket_policy {
         };
         let o = context.register_resource(request);
         TableBucketPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             resource_policy: o.get_field("resourcePolicy"),
             table_bucket_arn: o.get_field("tableBucketArn"),

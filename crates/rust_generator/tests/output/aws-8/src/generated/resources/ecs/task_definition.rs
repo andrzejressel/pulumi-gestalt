@@ -484,7 +484,7 @@ pub mod task_definition {
         };
         let o = context.register_resource(request);
         TaskDefinitionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             arn_without_revision: o.get_field("arnWithoutRevision"),

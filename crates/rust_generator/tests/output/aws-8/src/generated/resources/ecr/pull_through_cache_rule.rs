@@ -103,7 +103,7 @@ pub mod pull_through_cache_rule {
         };
         let o = context.register_resource(request);
         PullThroughCacheRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             credential_arn: o.get_field("credentialArn"),
             ecr_repository_prefix: o.get_field("ecrRepositoryPrefix"),

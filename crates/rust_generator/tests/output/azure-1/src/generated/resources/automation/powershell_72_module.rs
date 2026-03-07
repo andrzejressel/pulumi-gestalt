@@ -135,7 +135,7 @@ pub mod powershell_72_module {
         };
         let o = context.register_resource(request);
         Powershell72ModuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             automation_account_id: o.get_field("automationAccountId"),
             module_link: o.get_field("moduleLink"),

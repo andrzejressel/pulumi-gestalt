@@ -207,7 +207,7 @@ pub mod workbook_template {
         };
         let o = context.register_resource(request);
         WorkbookTemplateResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             author: o.get_field("author"),
             galleries: o.get_field("galleries"),

@@ -158,7 +158,7 @@ pub mod flexible_server_configuration {
         };
         let o = context.register_resource(request);
         FlexibleServerConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             name: o.get_field("name"),
             server_id: o.get_field("serverId"),

@@ -130,7 +130,7 @@ pub mod placement_group {
         };
         let o = context.register_resource(request);
         PlacementGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             name: o.get_field("name"),

@@ -119,7 +119,7 @@ pub mod access_grants_instance {
         };
         let o = context.register_resource(request);
         AccessGrantsInstanceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_grants_instance_arn: o.get_field("accessGrantsInstanceArn"),
             access_grants_instance_id: o.get_field("accessGrantsInstanceId"),

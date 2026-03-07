@@ -398,7 +398,7 @@ pub mod topic {
         };
         let o = context.register_resource(request);
         TopicResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             effective_labels: o.get_field("effectiveLabels"),
             ingestion_data_source_settings: o.get_field("ingestionDataSourceSettings"),

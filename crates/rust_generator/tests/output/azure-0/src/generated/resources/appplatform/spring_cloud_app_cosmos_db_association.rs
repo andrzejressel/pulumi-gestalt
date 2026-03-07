@@ -232,7 +232,7 @@ pub mod spring_cloud_app_cosmos_db_association {
         };
         let o = context.register_resource(request);
         SpringCloudAppCosmosDBAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_type: o.get_field("apiType"),
             cosmosdb_access_key: o.get_field("cosmosdbAccessKey"),

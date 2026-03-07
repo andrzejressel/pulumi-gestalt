@@ -234,7 +234,7 @@ pub mod factory {
         };
         let o = context.register_resource(request);
         FactoryResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             customer_managed_key_id: o.get_field("customerManagedKeyId"),
             customer_managed_key_identity_id: o

@@ -109,7 +109,7 @@ pub mod workers_kv {
         };
         let o = context.register_resource(request);
         WorkersKvResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             key: o.get_field("key"),

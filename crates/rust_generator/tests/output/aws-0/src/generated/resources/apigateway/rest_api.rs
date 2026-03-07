@@ -216,7 +216,7 @@ pub mod rest_api {
         };
         let o = context.register_resource(request);
         RestApiResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api_key_source: o.get_field("apiKeySource"),
             arn: o.get_field("arn"),

@@ -356,7 +356,7 @@ pub mod workstation_cluster {
         };
         let o = context.register_resource(request);
         WorkstationClusterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             annotations: o.get_field("annotations"),
             conditions: o.get_field("conditions"),

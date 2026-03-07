@@ -125,7 +125,7 @@ pub mod endpoint_access {
         };
         let o = context.register_resource(request);
         EndpointAccessResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             address: o.get_field("address"),
             arn: o.get_field("arn"),

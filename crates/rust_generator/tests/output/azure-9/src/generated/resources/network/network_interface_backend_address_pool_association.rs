@@ -168,7 +168,7 @@ pub mod network_interface_backend_address_pool_association {
         };
         let o = context.register_resource(request);
         NetworkInterfaceBackendAddressPoolAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             backend_address_pool_id: o.get_field("backendAddressPoolId"),
             ip_configuration_name: o.get_field("ipConfigurationName"),

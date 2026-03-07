@@ -94,7 +94,7 @@ pub mod tag_option_resource_association {
         };
         let o = context.register_resource(request);
         TagOptionResourceAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             resource_arn: o.get_field("resourceArn"),
             resource_created_time: o.get_field("resourceCreatedTime"),

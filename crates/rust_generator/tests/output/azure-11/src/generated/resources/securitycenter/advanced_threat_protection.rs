@@ -94,7 +94,7 @@ pub mod advanced_threat_protection {
         };
         let o = context.register_resource(request);
         AdvancedThreatProtectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             enabled: o.get_field("enabled"),
             target_resource_id: o.get_field("targetResourceId"),

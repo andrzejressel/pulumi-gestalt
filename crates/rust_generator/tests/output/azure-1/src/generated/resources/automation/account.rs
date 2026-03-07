@@ -183,7 +183,7 @@ pub mod account {
         };
         let o = context.register_resource(request);
         AccountResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             dsc_primary_access_key: o.get_field("dscPrimaryAccessKey"),
             dsc_secondary_access_key: o.get_field("dscSecondaryAccessKey"),

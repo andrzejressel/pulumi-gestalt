@@ -159,7 +159,7 @@ pub mod proxy_target {
         };
         let o = context.register_resource(request);
         ProxyTargetResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             db_cluster_identifier: o.get_field("dbClusterIdentifier"),
             db_instance_identifier: o.get_field("dbInstanceIdentifier"),

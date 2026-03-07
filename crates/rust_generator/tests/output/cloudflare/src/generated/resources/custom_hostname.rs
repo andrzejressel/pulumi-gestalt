@@ -151,7 +151,7 @@ pub mod custom_hostname {
         };
         let o = context.register_resource(request);
         CustomHostnameResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             custom_metadata: o.get_field("customMetadata"),
             custom_origin_server: o.get_field("customOriginServer"),

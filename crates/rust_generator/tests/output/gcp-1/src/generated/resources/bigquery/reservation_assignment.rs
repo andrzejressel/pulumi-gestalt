@@ -162,7 +162,7 @@ pub mod reservation_assignment {
         };
         let o = context.register_resource(request);
         ReservationAssignmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             assignee: o.get_field("assignee"),
             job_type: o.get_field("jobType"),

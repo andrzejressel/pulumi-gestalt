@@ -143,7 +143,7 @@ pub mod certificate {
         };
         let o = context.register_resource(request);
         CertificateResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             automation_account_name: o.get_field("automationAccountName"),
             base64: o.get_field("base64"),

@@ -281,7 +281,7 @@ pub mod cluster_iam_binding {
         };
         let o = context.register_resource(request);
         ClusterIAMBindingResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cluster: o.get_field("cluster"),
             condition: o.get_field("condition"),

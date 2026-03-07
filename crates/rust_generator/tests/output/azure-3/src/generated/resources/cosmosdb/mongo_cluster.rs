@@ -282,7 +282,7 @@ pub mod mongo_cluster {
         };
         let o = context.register_resource(request);
         MongoClusterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             administrator_password: o.get_field("administratorPassword"),
             administrator_username: o.get_field("administratorUsername"),

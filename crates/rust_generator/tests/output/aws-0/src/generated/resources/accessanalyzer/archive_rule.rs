@@ -100,7 +100,7 @@ pub mod archive_rule {
         };
         let o = context.register_resource(request);
         ArchiveRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             analyzer_name: o.get_field("analyzerName"),
             filters: o.get_field("filters"),

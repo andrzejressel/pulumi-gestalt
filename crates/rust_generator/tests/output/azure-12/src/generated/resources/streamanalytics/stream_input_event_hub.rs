@@ -234,7 +234,7 @@ pub mod stream_input_event_hub {
         };
         let o = context.register_resource(request);
         StreamInputEventHubResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             authentication_mode: o.get_field("authenticationMode"),
             eventhub_consumer_group_name: o.get_field("eventhubConsumerGroupName"),

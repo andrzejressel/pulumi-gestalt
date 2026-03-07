@@ -420,7 +420,7 @@ pub mod ca_pool_iam_policy {
         };
         let o = context.register_resource(request);
         CaPoolIamPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             ca_pool: o.get_field("caPool"),
             etag: o.get_field("etag"),

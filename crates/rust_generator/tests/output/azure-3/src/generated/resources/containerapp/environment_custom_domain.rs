@@ -131,7 +131,7 @@ pub mod environment_custom_domain {
         };
         let o = context.register_resource(request);
         EnvironmentCustomDomainResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             certificate_blob_base64: o.get_field("certificateBlobBase64"),
             certificate_password: o.get_field("certificatePassword"),

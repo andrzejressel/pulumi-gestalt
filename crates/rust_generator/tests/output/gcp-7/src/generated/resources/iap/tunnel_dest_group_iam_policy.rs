@@ -444,7 +444,7 @@ pub mod tunnel_dest_group_iam_policy {
         };
         let o = context.register_resource(request);
         TunnelDestGroupIamPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             dest_group: o.get_field("destGroup"),
             etag: o.get_field("etag"),

@@ -173,7 +173,7 @@ pub mod object_replication {
         };
         let o = context.register_resource(request);
         ObjectReplicationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             destination_object_replication_id: o
                 .get_field("destinationObjectReplicationId"),

@@ -108,7 +108,7 @@ pub mod endpoint_service_private_dns_verification {
         };
         let o = context.register_resource(request);
         EndpointServicePrivateDnsVerificationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             service_id: o.get_field("serviceId"),
             timeouts: o.get_field("timeouts"),

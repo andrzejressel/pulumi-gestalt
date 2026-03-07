@@ -329,7 +329,7 @@ pub mod linked_service_azure_databricks {
         };
         let o = context.register_resource(request);
         LinkedServiceAzureDatabricksResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_token: o.get_field("accessToken"),
             adb_domain: o.get_field("adbDomain"),

@@ -164,7 +164,7 @@ pub mod server {
         };
         let o = context.register_resource(request);
         ServerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             customer_managed_key: o.get_field("customerManagedKey"),
             frs_tenant_id: o.get_field("frsTenantId"),

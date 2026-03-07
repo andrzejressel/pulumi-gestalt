@@ -145,7 +145,7 @@ pub mod virtual_network {
         };
         let o = context.register_resource(request);
         VirtualNetworkResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             description: o.get_field("description"),
             lab_name: o.get_field("labName"),

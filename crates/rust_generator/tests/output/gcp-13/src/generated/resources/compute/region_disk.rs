@@ -536,7 +536,7 @@ pub mod region_disk {
         };
         let o = context.register_resource(request);
         RegionDiskResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             async_primary_disk: o.get_field("asyncPrimaryDisk"),
             creation_timestamp: o.get_field("creationTimestamp"),

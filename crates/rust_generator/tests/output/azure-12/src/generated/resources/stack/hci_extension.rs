@@ -178,7 +178,7 @@ pub mod hci_extension {
         };
         let o = context.register_resource(request);
         HciExtensionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arc_setting_id: o.get_field("arcSettingId"),
             auto_upgrade_minor_version_enabled: o

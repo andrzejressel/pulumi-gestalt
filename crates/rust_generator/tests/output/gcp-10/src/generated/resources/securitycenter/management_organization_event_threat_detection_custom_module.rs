@@ -171,7 +171,7 @@ pub mod management_organization_event_threat_detection_custom_module {
         };
         let o = context.register_resource(request);
         ManagementOrganizationEventThreatDetectionCustomModuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             config: o.get_field("config"),
             display_name: o.get_field("displayName"),

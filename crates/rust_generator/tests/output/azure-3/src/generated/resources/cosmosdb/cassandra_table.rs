@@ -203,7 +203,7 @@ pub mod cassandra_table {
         };
         let o = context.register_resource(request);
         CassandraTableResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             analytical_storage_ttl: o.get_field("analyticalStorageTtl"),
             autoscale_settings: o.get_field("autoscaleSettings"),

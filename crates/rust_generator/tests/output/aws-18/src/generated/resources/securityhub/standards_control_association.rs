@@ -110,7 +110,7 @@ pub mod standards_control_association {
         };
         let o = context.register_resource(request);
         StandardsControlAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             association_status: o.get_field("associationStatus"),
             security_control_id: o.get_field("securityControlId"),

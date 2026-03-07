@@ -184,7 +184,7 @@ pub mod job_schedule {
         };
         let o = context.register_resource(request);
         JobScheduleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             last_output_time: o.get_field("lastOutputTime"),
             start_mode: o.get_field("startMode"),

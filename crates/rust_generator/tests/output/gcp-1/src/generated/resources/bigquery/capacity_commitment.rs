@@ -205,7 +205,7 @@ pub mod capacity_commitment {
         };
         let o = context.register_resource(request);
         CapacityCommitmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             capacity_commitment_id: o.get_field("capacityCommitmentId"),
             commitment_end_time: o.get_field("commitmentEndTime"),

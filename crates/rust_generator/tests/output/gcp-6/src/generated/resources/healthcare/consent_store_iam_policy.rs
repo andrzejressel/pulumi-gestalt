@@ -264,7 +264,7 @@ pub mod consent_store_iam_policy {
         };
         let o = context.register_resource(request);
         ConsentStoreIamPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             consent_store_id: o.get_field("consentStoreId"),
             dataset: o.get_field("dataset"),

@@ -159,7 +159,7 @@ pub mod deployment {
         };
         let o = context.register_resource(request);
         DeploymentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             canary_settings: o.get_field("canarySettings"),
             created_date: o.get_field("createdDate"),

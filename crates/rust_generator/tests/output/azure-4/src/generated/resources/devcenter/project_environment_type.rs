@@ -208,7 +208,7 @@ pub mod project_environment_type {
         };
         let o = context.register_resource(request);
         ProjectEnvironmentTypeResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             creator_role_assignment_roles: o.get_field("creatorRoleAssignmentRoles"),
             deployment_target_id: o.get_field("deploymentTargetId"),

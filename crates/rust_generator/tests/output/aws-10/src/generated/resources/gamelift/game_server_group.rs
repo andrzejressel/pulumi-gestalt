@@ -298,7 +298,7 @@ pub mod game_server_group {
         };
         let o = context.register_resource(request);
         GameServerGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             auto_scaling_group_arn: o.get_field("autoScalingGroupArn"),

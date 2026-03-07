@@ -83,7 +83,7 @@ pub mod resource_association {
         };
         let o = context.register_resource(request);
         ResourceAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             resource_arn: o.get_field("resourceArn"),
             resource_share_arn: o.get_field("resourceShareArn"),

@@ -101,7 +101,7 @@ pub mod assessment_report {
         };
         let o = context.register_resource(request);
         AssessmentReportResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             assessment_id: o.get_field("assessmentId"),
             author: o.get_field("author"),

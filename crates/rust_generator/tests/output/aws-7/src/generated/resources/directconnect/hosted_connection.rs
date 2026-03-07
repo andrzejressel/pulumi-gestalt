@@ -126,7 +126,7 @@ pub mod hosted_connection {
         };
         let o = context.register_resource(request);
         HostedConnectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             aws_device: o.get_field("awsDevice"),
             bandwidth: o.get_field("bandwidth"),

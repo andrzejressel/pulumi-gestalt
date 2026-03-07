@@ -49,7 +49,7 @@ pub mod module_test {
         };
         let o = context.register_resource(request);
         moduleTestResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
         }
     }

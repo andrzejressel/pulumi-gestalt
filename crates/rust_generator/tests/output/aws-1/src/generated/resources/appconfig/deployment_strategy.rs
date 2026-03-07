@@ -156,7 +156,7 @@ pub mod deployment_strategy {
         };
         let o = context.register_resource(request);
         DeploymentStrategyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             deployment_duration_in_minutes: o.get_field("deploymentDurationInMinutes"),

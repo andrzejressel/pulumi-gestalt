@@ -185,7 +185,7 @@ pub mod access_grant {
         };
         let o = context.register_resource(request);
         AccessGrantResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_grant_arn: o.get_field("accessGrantArn"),
             access_grant_id: o.get_field("accessGrantId"),

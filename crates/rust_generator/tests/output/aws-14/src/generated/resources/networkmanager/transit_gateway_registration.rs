@@ -92,7 +92,7 @@ pub mod transit_gateway_registration {
         };
         let o = context.register_resource(request);
         TransitGatewayRegistrationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             global_network_id: o.get_field("globalNetworkId"),
             transit_gateway_arn: o.get_field("transitGatewayArn"),

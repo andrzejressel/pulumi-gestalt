@@ -170,7 +170,7 @@ pub mod container {
         };
         let o = context.register_resource(request);
         ContainerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             container_access_type: o.get_field("containerAccessType"),
             default_encryption_scope: o.get_field("defaultEncryptionScope"),

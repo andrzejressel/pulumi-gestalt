@@ -121,7 +121,7 @@ pub mod ssl_cert {
         };
         let o = context.register_resource(request);
         SslCertResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cert: o.get_field("cert"),
             cert_serial_number: o.get_field("certSerialNumber"),

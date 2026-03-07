@@ -112,7 +112,7 @@ pub mod custom_domain_association {
         };
         let o = context.register_resource(request);
         CustomDomainAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             custom_domain_certificate_arn: o.get_field("customDomainCertificateArn"),
             custom_domain_certificate_expiry_time: o

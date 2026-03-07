@@ -138,7 +138,7 @@ pub mod fleet_member {
         };
         let o = context.register_resource(request);
         FleetMemberResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             group: o.get_field("group"),
             kubernetes_cluster_id: o.get_field("kubernetesClusterId"),

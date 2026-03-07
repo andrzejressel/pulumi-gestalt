@@ -275,7 +275,7 @@ pub mod api_config_iam_policy {
         };
         let o = context.register_resource(request);
         ApiConfigIamPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             api: o.get_field("api"),
             api_config: o.get_field("apiConfig"),

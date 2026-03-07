@@ -89,7 +89,7 @@ pub mod tracker_association {
         };
         let o = context.register_resource(request);
         TrackerAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             consumer_arn: o.get_field("consumerArn"),
             tracker_name: o.get_field("trackerName"),

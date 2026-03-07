@@ -86,7 +86,7 @@ pub mod group_association {
         };
         let o = context.register_resource(request);
         GroupAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             canary_arn: o.get_field("canaryArn"),
             group_arn: o.get_field("groupArn"),

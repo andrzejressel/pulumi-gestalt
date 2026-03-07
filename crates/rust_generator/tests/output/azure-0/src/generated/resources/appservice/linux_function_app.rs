@@ -579,7 +579,7 @@ pub mod linux_function_app {
         };
         let o = context.register_resource(request);
         LinuxFunctionAppResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             app_settings: o.get_field("appSettings"),
             auth_settings: o.get_field("authSettings"),

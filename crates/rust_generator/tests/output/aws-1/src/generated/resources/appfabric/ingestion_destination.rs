@@ -174,7 +174,7 @@ pub mod ingestion_destination {
         };
         let o = context.register_resource(request);
         IngestionDestinationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             app_bundle_arn: o.get_field("appBundleArn"),
             arn: o.get_field("arn"),

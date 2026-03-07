@@ -86,7 +86,7 @@ pub mod portal_tenant_configuration {
         };
         let o = context.register_resource(request);
         PortalTenantConfigurationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             private_markdown_storage_enforced: o
                 .get_field("privateMarkdownStorageEnforced"),

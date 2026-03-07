@@ -91,7 +91,7 @@ pub mod vpn_gateway_attachment {
         };
         let o = context.register_resource(request);
         VpnGatewayAttachmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             vpc_id: o.get_field("vpcId"),
             vpn_gateway_id: o.get_field("vpnGatewayId"),

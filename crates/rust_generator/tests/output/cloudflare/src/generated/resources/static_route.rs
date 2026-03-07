@@ -148,7 +148,7 @@ pub mod static_route {
         };
         let o = context.register_resource(request);
         StaticRouteResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             colo_names: o.get_field("coloNames"),

@@ -453,7 +453,7 @@ pub mod instance {
         };
         let o = context.register_resource(request);
         InstanceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             agent_version: o.get_field("agentVersion"),
             ami_id: o.get_field("amiId"),

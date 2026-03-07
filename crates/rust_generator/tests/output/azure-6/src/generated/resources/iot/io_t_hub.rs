@@ -396,7 +396,7 @@ pub mod io_t_hub {
         };
         let o = context.register_resource(request);
         IoTHubResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cloud_to_device: o.get_field("cloudToDevice"),
             endpoints: o.get_field("endpoints"),

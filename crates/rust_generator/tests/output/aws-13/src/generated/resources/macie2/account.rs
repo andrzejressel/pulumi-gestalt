@@ -91,7 +91,7 @@ pub mod account {
         };
         let o = context.register_resource(request);
         AccountResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             created_at: o.get_field("createdAt"),
             finding_publishing_frequency: o.get_field("findingPublishingFrequency"),

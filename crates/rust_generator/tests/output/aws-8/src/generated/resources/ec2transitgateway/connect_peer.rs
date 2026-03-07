@@ -147,7 +147,7 @@ pub mod connect_peer {
         };
         let o = context.register_resource(request);
         ConnectPeerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             bgp_asn: o.get_field("bgpAsn"),

@@ -790,7 +790,7 @@ pub mod instance_template {
         };
         let o = context.register_resource(request);
         InstanceTemplateResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             advanced_machine_features: o.get_field("advancedMachineFeatures"),
             can_ip_forward: o.get_field("canIpForward"),

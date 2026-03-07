@@ -152,7 +152,7 @@ pub mod network_manager_management_group_connection {
         };
         let o = context.register_resource(request);
         NetworkManagerManagementGroupConnectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             connection_state: o.get_field("connectionState"),
             description: o.get_field("description"),

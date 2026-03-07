@@ -171,7 +171,7 @@ pub mod connection_service_principal {
         };
         let o = context.register_resource(request);
         ConnectionServicePrincipalResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             application_id: o.get_field("applicationId"),
             automation_account_name: o.get_field("automationAccountName"),

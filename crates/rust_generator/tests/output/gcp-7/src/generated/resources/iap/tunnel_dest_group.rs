@@ -167,7 +167,7 @@ pub mod tunnel_dest_group {
         };
         let o = context.register_resource(request);
         TunnelDestGroupResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cidrs: o.get_field("cidrs"),
             fqdns: o.get_field("fqdns"),

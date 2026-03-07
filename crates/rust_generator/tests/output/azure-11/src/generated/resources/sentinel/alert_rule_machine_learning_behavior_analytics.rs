@@ -130,7 +130,7 @@ pub mod alert_rule_machine_learning_behavior_analytics {
         };
         let o = context.register_resource(request);
         AlertRuleMachineLearningBehaviorAnalyticsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             alert_rule_template_guid: o.get_field("alertRuleTemplateGuid"),
             enabled: o.get_field("enabled"),

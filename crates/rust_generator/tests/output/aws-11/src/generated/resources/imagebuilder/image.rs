@@ -220,7 +220,7 @@ pub mod image {
         };
         let o = context.register_resource(request);
         ImageResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             container_recipe_arn: o.get_field("containerRecipeArn"),

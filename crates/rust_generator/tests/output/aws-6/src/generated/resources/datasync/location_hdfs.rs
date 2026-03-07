@@ -274,7 +274,7 @@ pub mod location_hdfs {
         };
         let o = context.register_resource(request);
         LocationHdfsResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             agent_arns: o.get_field("agentArns"),
             arn: o.get_field("arn"),

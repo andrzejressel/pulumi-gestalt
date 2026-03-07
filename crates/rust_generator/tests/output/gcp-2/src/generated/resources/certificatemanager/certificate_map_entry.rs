@@ -253,7 +253,7 @@ pub mod certificate_map_entry {
         };
         let o = context.register_resource(request);
         CertificateMapEntryResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             certificates: o.get_field("certificates"),
             create_time: o.get_field("createTime"),

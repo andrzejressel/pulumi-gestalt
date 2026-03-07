@@ -194,7 +194,7 @@ pub mod network_connection {
         };
         let o = context.register_resource(request);
         NetworkConnectionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             domain_join_type: o.get_field("domainJoinType"),
             domain_name: o.get_field("domainName"),

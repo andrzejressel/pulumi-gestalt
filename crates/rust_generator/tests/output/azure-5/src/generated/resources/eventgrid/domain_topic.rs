@@ -102,7 +102,7 @@ pub mod domain_topic {
         };
         let o = context.register_resource(request);
         DomainTopicResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             domain_name: o.get_field("domainName"),
             name: o.get_field("name"),

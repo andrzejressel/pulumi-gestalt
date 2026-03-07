@@ -152,7 +152,7 @@ pub mod virtual_router {
         };
         let o = context.register_resource(request);
         VirtualRouterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             created_date: o.get_field("createdDate"),

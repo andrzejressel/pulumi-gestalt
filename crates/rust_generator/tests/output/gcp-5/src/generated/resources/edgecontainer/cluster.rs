@@ -420,7 +420,7 @@ pub mod cluster {
         };
         let o = context.register_resource(request);
         ClusterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             authorization: o.get_field("authorization"),
             cluster_ca_certificate: o.get_field("clusterCaCertificate"),

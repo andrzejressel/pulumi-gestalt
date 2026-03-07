@@ -206,7 +206,7 @@ pub mod managed_hardware_security_module_key {
         };
         let o = context.register_resource(request);
         ManagedHardwareSecurityModuleKeyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             curve: o.get_field("curve"),
             expiration_date: o.get_field("expirationDate"),

@@ -320,7 +320,7 @@ pub mod job {
         };
         let o = context.register_resource(request);
         JobResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             container_app_environment_id: o.get_field("containerAppEnvironmentId"),
             event_stream_endpoint: o.get_field("eventStreamEndpoint"),

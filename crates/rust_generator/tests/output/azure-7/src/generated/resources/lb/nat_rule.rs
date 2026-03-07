@@ -261,7 +261,7 @@ pub mod nat_rule {
         };
         let o = context.register_resource(request);
         NatRuleResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             backend_address_pool_id: o.get_field("backendAddressPoolId"),
             backend_ip_configuration_id: o.get_field("backendIpConfigurationId"),

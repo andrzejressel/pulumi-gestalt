@@ -119,7 +119,7 @@ pub mod user_stack_association {
         };
         let o = context.register_resource(request);
         UserStackAssociationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             authentication_type: o.get_field("authenticationType"),
             send_email_notification: o.get_field("sendEmailNotification"),

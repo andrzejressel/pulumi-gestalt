@@ -195,7 +195,7 @@ pub mod reservation {
         };
         let o = context.register_resource(request);
         ReservationResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             autoscale: o.get_field("autoscale"),
             concurrency: o.get_field("concurrency"),

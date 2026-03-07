@@ -301,7 +301,7 @@ pub mod job {
         };
         let o = context.register_resource(request);
         JobResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             compatibility_level: o.get_field("compatibilityLevel"),
             content_storage_policy: o.get_field("contentStoragePolicy"),

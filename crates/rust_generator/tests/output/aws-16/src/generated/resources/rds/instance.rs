@@ -1303,7 +1303,7 @@ pub mod instance {
         };
         let o = context.register_resource(request);
         InstanceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             address: o.get_field("address"),
             allocated_storage: o.get_field("allocatedStorage"),

@@ -123,7 +123,7 @@ pub mod integration_account_session {
         };
         let o = context.register_resource(request);
         IntegrationAccountSessionResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             content: o.get_field("content"),
             integration_account_name: o.get_field("integrationAccountName"),

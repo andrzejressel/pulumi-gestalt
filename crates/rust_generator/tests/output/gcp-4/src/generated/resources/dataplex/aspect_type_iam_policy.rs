@@ -285,7 +285,7 @@ pub mod aspect_type_iam_policy {
         };
         let o = context.register_resource(request);
         AspectTypeIamPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             aspect_type_id: o.get_field("aspectTypeId"),
             etag: o.get_field("etag"),

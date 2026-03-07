@@ -156,7 +156,7 @@ pub mod plan {
         };
         let o = context.register_resource(request);
         PlanResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             contact_id: o.get_field("contactId"),
             stages: o.get_field("stages"),

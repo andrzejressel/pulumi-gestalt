@@ -126,7 +126,7 @@ pub mod package {
         };
         let o = context.register_resource(request);
         PackageResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             available_package_version: o.get_field("availablePackageVersion"),
             package_description: o.get_field("packageDescription"),

@@ -196,7 +196,7 @@ pub mod linked_service_azure_search {
         };
         let o = context.register_resource(request);
         LinkedServiceAzureSearchResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             additional_properties: o.get_field("additionalProperties"),
             annotations: o.get_field("annotations"),

@@ -134,7 +134,7 @@ pub mod sql_trigger {
         };
         let o = context.register_resource(request);
         SqlTriggerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             body: o.get_field("body"),
             container_id: o.get_field("containerId"),

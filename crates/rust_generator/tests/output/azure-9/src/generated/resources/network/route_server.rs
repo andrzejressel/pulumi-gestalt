@@ -191,7 +191,7 @@ pub mod route_server {
         };
         let o = context.register_resource(request);
         RouteServerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             branch_to_branch_traffic_enabled: o
                 .get_field("branchToBranchTrafficEnabled"),

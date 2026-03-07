@@ -165,7 +165,7 @@ pub mod web_app_active_slot {
         };
         let o = context.register_resource(request);
         WebAppActiveSlotResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             last_successful_swap: o.get_field("lastSuccessfulSwap"),
             overwrite_network_config: o.get_field("overwriteNetworkConfig"),

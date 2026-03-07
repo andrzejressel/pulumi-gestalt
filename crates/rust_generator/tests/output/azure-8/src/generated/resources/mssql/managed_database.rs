@@ -178,7 +178,7 @@ pub mod managed_database {
         };
         let o = context.register_resource(request);
         ManagedDatabaseResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             long_term_retention_policy: o.get_field("longTermRetentionPolicy"),
             managed_instance_id: o.get_field("managedInstanceId"),

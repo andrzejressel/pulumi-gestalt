@@ -271,7 +271,7 @@ pub mod crypto_key_iam_member {
         };
         let o = context.register_resource(request);
         CryptoKeyIAMMemberResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             condition: o.get_field("condition"),
             crypto_key_id: o.get_field("cryptoKeyId"),

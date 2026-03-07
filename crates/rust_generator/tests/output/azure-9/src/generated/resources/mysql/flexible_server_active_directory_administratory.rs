@@ -76,7 +76,7 @@ pub mod flexible_server_active_directory_administratory {
         };
         let o = context.register_resource(request);
         FlexibleServerActiveDirectoryAdministratoryResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             identity_id: o.get_field("identityId"),
             login: o.get_field("login"),

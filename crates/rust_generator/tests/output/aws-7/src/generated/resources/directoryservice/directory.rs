@@ -322,7 +322,7 @@ pub mod directory {
         };
         let o = context.register_resource(request);
         DirectoryResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             access_url: o.get_field("accessUrl"),
             alias: o.get_field("alias"),

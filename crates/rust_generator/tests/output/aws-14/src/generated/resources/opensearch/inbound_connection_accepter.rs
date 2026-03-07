@@ -91,7 +91,7 @@ pub mod inbound_connection_accepter {
         };
         let o = context.register_resource(request);
         InboundConnectionAccepterResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             connection_id: o.get_field("connectionId"),
             connection_status: o.get_field("connectionStatus"),

@@ -410,7 +410,7 @@ pub mod machine_image_iam_policy {
         };
         let o = context.register_resource(request);
         MachineImageIamPolicyResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             etag: o.get_field("etag"),
             machine_image: o.get_field("machineImage"),

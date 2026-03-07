@@ -210,7 +210,7 @@ pub mod identity_pool {
         };
         let o = context.register_resource(request);
         IdentityPoolResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allow_classic_flow: o.get_field("allowClassicFlow"),
             allow_unauthenticated_identities: o

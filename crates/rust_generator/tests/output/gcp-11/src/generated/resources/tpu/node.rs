@@ -323,7 +323,7 @@ pub mod node {
         };
         let o = context.register_resource(request);
         NodeResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             accelerator_type: o.get_field("acceleratorType"),
             cidr_block: o.get_field("cidrBlock"),

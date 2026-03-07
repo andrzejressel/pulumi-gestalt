@@ -138,7 +138,7 @@ pub mod workspace_table {
         };
         let o = context.register_resource(request);
         WorkspaceTableResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             name: o.get_field("name"),
             plan: o.get_field("plan"),

@@ -188,7 +188,7 @@ pub mod workspace {
         };
         let o = context.register_resource(request);
         WorkspaceResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             bundle_id: o.get_field("bundleId"),
             computer_name: o.get_field("computerName"),

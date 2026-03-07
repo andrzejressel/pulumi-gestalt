@@ -105,7 +105,7 @@ pub mod spring_cloud_application_live_view {
         };
         let o = context.register_resource(request);
         SpringCloudApplicationLiveViewResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             name: o.get_field("name"),
             spring_cloud_service_id: o.get_field("springCloudServiceId"),

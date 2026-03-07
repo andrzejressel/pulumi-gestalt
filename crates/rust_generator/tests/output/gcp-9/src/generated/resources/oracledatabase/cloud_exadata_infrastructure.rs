@@ -260,7 +260,7 @@ pub mod cloud_exadata_infrastructure {
         };
         let o = context.register_resource(request);
         CloudExadataInfrastructureResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             cloud_exadata_infrastructure_id: o.get_field("cloudExadataInfrastructureId"),
             create_time: o.get_field("createTime"),

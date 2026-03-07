@@ -97,7 +97,7 @@ pub mod network_interface_attachment {
         };
         let o = context.register_resource(request);
         NetworkInterfaceAttachmentResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             attachment_id: o.get_field("attachmentId"),
             device_index: o.get_field("deviceIndex"),

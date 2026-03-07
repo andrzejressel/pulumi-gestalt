@@ -184,7 +184,7 @@ pub mod share_file {
         };
         let o = context.register_resource(request);
         ShareFileResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             content_disposition: o.get_field("contentDisposition"),
             content_encoding: o.get_field("contentEncoding"),

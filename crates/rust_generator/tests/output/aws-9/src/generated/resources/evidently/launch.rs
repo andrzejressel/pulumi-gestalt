@@ -356,7 +356,7 @@ pub mod launch {
         };
         let o = context.register_resource(request);
         LaunchResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             created_time: o.get_field("createdTime"),

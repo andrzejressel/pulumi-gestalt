@@ -319,7 +319,7 @@ pub mod registry_task {
         };
         let o = context.register_resource(request);
         RegistryTaskResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             agent_pool_name: o.get_field("agentPoolName"),
             agent_setting: o.get_field("agentSetting"),

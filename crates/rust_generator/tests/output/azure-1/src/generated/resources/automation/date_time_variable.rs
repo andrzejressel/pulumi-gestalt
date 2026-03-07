@@ -142,7 +142,7 @@ pub mod date_time_variable {
         };
         let o = context.register_resource(request);
         DateTimeVariableResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             automation_account_name: o.get_field("automationAccountName"),
             description: o.get_field("description"),

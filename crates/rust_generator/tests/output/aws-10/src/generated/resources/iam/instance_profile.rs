@@ -141,7 +141,7 @@ pub mod instance_profile {
         };
         let o = context.register_resource(request);
         InstanceProfileResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             create_date: o.get_field("createDate"),

@@ -352,7 +352,7 @@ pub mod memcached_layer {
         };
         let o = context.register_resource(request);
         MemcachedLayerResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             allocated_memory: o.get_field("allocatedMemory"),
             arn: o.get_field("arn"),

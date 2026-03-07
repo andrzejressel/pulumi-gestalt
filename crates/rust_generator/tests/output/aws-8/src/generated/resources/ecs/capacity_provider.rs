@@ -118,7 +118,7 @@ pub mod capacity_provider {
         };
         let o = context.register_resource(request);
         CapacityProviderResult {
-            id: o.get_field("id"),
+            id: o.get_id(),
             urn: o.get_urn(),
             arn: o.get_field("arn"),
             auto_scaling_group_provider: o.get_field("autoScalingGroupProvider"),
