@@ -38,7 +38,8 @@ pub struct {{resource.struct_name}}Result {
 
 impl pulumi_gestalt_rust::Provider for {{resource.struct_name}}Result {
     fn get_provider_id(&self) -> pulumi_gestalt_rust::Output<String> {
-        self.urn.clone()
+        use pulumi_gestalt_rust::pulumi_combine;
+        pulumi_combine!(self.urn, self.id).apply(|(urn, id)| format!("{}::{}", urn, id))
     }
 }
 

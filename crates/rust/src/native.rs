@@ -1,7 +1,8 @@
+use bon::Builder;
 use pulumi_gestalt_rust_integration as integration;
 use pulumi_gestalt_rust_integration::FieldName;
-use serde::{Serialize, de::DeserializeOwned};
-use serde_json::{Value, from_value, to_value};
+use serde::{de::DeserializeOwned, Serialize};
+use serde_json::{from_value, to_value, Value};
 use std::collections::HashMap;
 use std::marker::PhantomData;
 use std::rc::Rc;
@@ -11,13 +12,20 @@ pub trait Provider {
     fn get_provider_id(&self) -> Output<String>;
 }
 
-#[derive(Default)]
-pub struct ResourceOptions {}
+impl<T: Provider> From<&T> for Output<String> {
+    fn from(provider: &T) -> Self {
+        provider.get_provider_id()
+    }
+}
+
+#[derive(Default, Builder, Clone)]
+pub struct CustomResourceOptions {
+    #[builder(with = |p: &impl Provider| { p.get_provider_id() })]
+    pub provider: Option<Output<String>>,
+}
 
 #[derive(Default)]
-pub struct CustomResourceOptions {
-    pub provider: Option<Rc<dyn Provider>>,
-}
+pub struct ResourceOptions {}
 
 pub type FunctionContext = Box<dyn Fn(Value) -> Value + Send>;
 
@@ -164,7 +172,7 @@ impl Context {
             .options
             .as_ref()
             .and_then(|o| o.provider.as_ref())
-            .map(|p| p.get_provider_id().inner.clone());
+            .map(|p| p.inner.clone());
 
         let result = self.runtime.block_on(self.inner.register_resource(
             integration::RegisterResourceRequest {
