@@ -308,7 +308,6 @@ impl Pulumi {
     pub async fn create(program: &Path) -> Result<Pulumi, Error> {
         let mut engine_config = wasmtime::Config::new();
         engine_config.wasm_component_model(true);
-        engine_config.async_support(true);
         engine_config.wasm_backtrace_details(wasmtime::WasmBacktraceDetails::Enable);
         engine_config.debug_info(true);
 
