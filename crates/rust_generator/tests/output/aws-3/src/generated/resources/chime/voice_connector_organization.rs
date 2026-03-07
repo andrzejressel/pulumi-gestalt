@@ -66,6 +66,8 @@ pub mod voice_connector_organization {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// When origination settings are disabled, inbound calls are not enabled for your Amazon Chime Voice Connector.
         pub disabled: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Set of call distribution properties defined for your SIP hosts. See route below for more details. Minimum of 1. Maximum of 20.
@@ -110,6 +112,7 @@ pub mod voice_connector_organization {
         let o = context.register_resource(request);
         VoiceConnectorOrganizationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             disabled: o.get_field("disabled"),
             routes: o.get_field("routes"),
             voice_connector_id: o.get_field("voiceConnectorId"),

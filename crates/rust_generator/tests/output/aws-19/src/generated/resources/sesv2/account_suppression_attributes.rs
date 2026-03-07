@@ -42,6 +42,8 @@ pub mod account_suppression_attributes {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A list that contains the reasons that email addresses will be automatically added to the suppression list for your account. Valid values: `COMPLAINT`, `BOUNCE`.
         pub suppressed_reasons: pulumi_gestalt_rust::Output<Vec<String>>,
     }
@@ -70,6 +72,7 @@ pub mod account_suppression_attributes {
         let o = context.register_resource(request);
         AccountSuppressionAttributesResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             suppressed_reasons: o.get_field("suppressedReasons"),
         }
     }

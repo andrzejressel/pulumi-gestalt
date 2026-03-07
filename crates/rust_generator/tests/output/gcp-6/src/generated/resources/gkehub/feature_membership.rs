@@ -421,6 +421,8 @@ pub mod feature_membership {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Config Management-specific spec. Structure is documented below.
         pub configmanagement: pulumi_gestalt_rust::Output<
             Option<super::super::types::gkehub::FeatureMembershipConfigmanagement>,
@@ -503,6 +505,7 @@ pub mod feature_membership {
         let o = context.register_resource(request);
         FeatureMembershipResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             configmanagement: o.get_field("configmanagement"),
             feature: o.get_field("feature"),
             location: o.get_field("location"),

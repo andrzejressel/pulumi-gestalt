@@ -73,6 +73,8 @@ pub mod routing_control {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ARN of the routing control.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// ARN of the cluster in which this routing control will reside.
@@ -120,6 +122,7 @@ pub mod routing_control {
         let o = context.register_resource(request);
         RoutingControlResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             cluster_arn: o.get_field("clusterArn"),
             control_panel_arn: o.get_field("controlPanelArn"),

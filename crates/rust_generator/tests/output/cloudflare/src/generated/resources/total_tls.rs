@@ -49,6 +49,8 @@ pub mod total_tls {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Certificate Authority that Total TLS certificates will be issued through. Available values: `google`, `lets_encrypt`.
         pub certificate_authority: pulumi_gestalt_rust::Output<Option<String>>,
         /// Enable Total TLS for the zone.
@@ -92,6 +94,7 @@ pub mod total_tls {
         let o = context.register_resource(request);
         TotalTlsResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             certificate_authority: o.get_field("certificateAuthority"),
             enabled: o.get_field("enabled"),
             zone_id: o.get_field("zoneId"),

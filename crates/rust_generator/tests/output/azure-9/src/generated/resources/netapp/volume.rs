@@ -138,6 +138,8 @@ pub mod volume {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The name of the NetApp account in which the NetApp Pool should be created. Changing this forces a new resource to be created.
         pub account_name: pulumi_gestalt_rust::Output<String>,
         /// Is the NetApp Volume enabled for Azure VMware Solution (AVS) datastore purpose. Defaults to `false`. Changing this forces a new resource to be created.
@@ -406,6 +408,7 @@ pub mod volume {
         let o = context.register_resource(request);
         VolumeResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             account_name: o.get_field("accountName"),
             azure_vmware_data_store_enabled: o.get_field("azureVmwareDataStoreEnabled"),
             create_from_snapshot_resource_id: o

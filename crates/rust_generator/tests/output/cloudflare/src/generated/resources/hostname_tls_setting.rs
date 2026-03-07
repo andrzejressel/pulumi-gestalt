@@ -53,6 +53,8 @@ pub mod hostname_tls_setting {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         pub created_at: pulumi_gestalt_rust::Output<String>,
         /// Hostname that belongs to this zone name. **Modifying this attribute will force creation of a new resource.**
         pub hostname: pulumi_gestalt_rust::Output<String>,
@@ -103,6 +105,7 @@ pub mod hostname_tls_setting {
         let o = context.register_resource(request);
         HostnameTlsSettingResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             created_at: o.get_field("createdAt"),
             hostname: o.get_field("hostname"),
             setting: o.get_field("setting"),

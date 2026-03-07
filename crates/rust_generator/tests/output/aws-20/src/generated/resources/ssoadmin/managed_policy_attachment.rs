@@ -106,6 +106,8 @@ pub mod managed_policy_attachment {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the SSO Instance under which the operation will be executed.
         pub instance_arn: pulumi_gestalt_rust::Output<String>,
         /// The IAM managed policy Amazon Resource Name (ARN) to be attached to the Permission Set.
@@ -149,6 +151,7 @@ pub mod managed_policy_attachment {
         let o = context.register_resource(request);
         ManagedPolicyAttachmentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             instance_arn: o.get_field("instanceArn"),
             managed_policy_arn: o.get_field("managedPolicyArn"),
             managed_policy_name: o.get_field("managedPolicyName"),

@@ -174,6 +174,8 @@ pub mod cosmosdb_data_connection {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The name of an existing container in the Cosmos DB database. Changing this forces a new Kusto Cosmos DB Connection to be created.
         pub cosmosdb_container_id: pulumi_gestalt_rust::Output<String>,
         /// The name of the database in the Kusto cluster. Changing this forces a new Kusto Cosmos DB Connection to be created.
@@ -252,6 +254,7 @@ pub mod cosmosdb_data_connection {
         let o = context.register_resource(request);
         CosmosdbDataConnectionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             cosmosdb_container_id: o.get_field("cosmosdbContainerId"),
             kusto_database_id: o.get_field("kustoDatabaseId"),
             location: o.get_field("location"),

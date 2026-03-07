@@ -70,6 +70,8 @@ pub mod managed_disk_sas_token {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The level of access required on the disk. Supported are Read, Write. Changing this forces a new resource to be created.
         ///
         /// Refer to the [SAS creation reference from Azure](https://docs.microsoft.com/rest/api/compute/disks/grant-access)
@@ -116,6 +118,7 @@ pub mod managed_disk_sas_token {
         let o = context.register_resource(request);
         ManagedDiskSasTokenResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             access_level: o.get_field("accessLevel"),
             duration_in_seconds: o.get_field("durationInSeconds"),
             managed_disk_id: o.get_field("managedDiskId"),

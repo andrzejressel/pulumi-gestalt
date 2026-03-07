@@ -80,6 +80,8 @@ pub mod connection_classic_certificate {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The name of the automation account in which the Connection is created. Changing this forces a new resource to be created.
         pub automation_account_name: pulumi_gestalt_rust::Output<String>,
         /// The name of the certificate asset.
@@ -154,6 +156,7 @@ pub mod connection_classic_certificate {
         let o = context.register_resource(request);
         ConnectionClassicCertificateResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             automation_account_name: o.get_field("automationAccountName"),
             certificate_asset_name: o.get_field("certificateAssetName"),
             description: o.get_field("description"),

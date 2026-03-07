@@ -550,6 +550,8 @@ pub mod metastore_service {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A Cloud Storage URI (starting with gs://) that specifies where artifacts related to the metastore service are stored.
         pub artifact_gcs_uri: pulumi_gestalt_rust::Output<String>,
         /// The database type that the Metastore service stores its data.
@@ -763,6 +765,7 @@ pub mod metastore_service {
         let o = context.register_resource(request);
         MetastoreServiceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             artifact_gcs_uri: o.get_field("artifactGcsUri"),
             database_type: o.get_field("databaseType"),
             deletion_protection: o.get_field("deletionProtection"),

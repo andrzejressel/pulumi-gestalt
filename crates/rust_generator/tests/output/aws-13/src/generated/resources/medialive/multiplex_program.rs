@@ -78,6 +78,8 @@ pub mod multiplex_program {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Multiplex ID.
         pub multiplex_id: pulumi_gestalt_rust::Output<String>,
         /// MultiplexProgram settings. See Multiplex Program Settings for more details.
@@ -127,6 +129,7 @@ pub mod multiplex_program {
         let o = context.register_resource(request);
         MultiplexProgramResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             multiplex_id: o.get_field("multiplexId"),
             multiplex_program_settings: o.get_field("multiplexProgramSettings"),
             program_name: o.get_field("programName"),

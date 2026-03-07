@@ -106,6 +106,8 @@ pub mod environment_dapr_component {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Dapr Component Type. For example `state.azure.blobstorage`. Changing this forces a new resource to be created.
         pub component_type: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Container App Managed Environment for this Dapr Component. Changing this forces a new resource to be created.
@@ -202,6 +204,7 @@ pub mod environment_dapr_component {
         let o = context.register_resource(request);
         EnvironmentDaprComponentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             component_type: o.get_field("componentType"),
             container_app_environment_id: o.get_field("containerAppEnvironmentId"),
             ignore_errors: o.get_field("ignoreErrors"),

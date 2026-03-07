@@ -147,6 +147,8 @@ pub mod frontdoor_custom_domain_association {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Front Door Custom Domain that should be managed by the association resource. Changing this forces a new association resource to be created.
         pub cdn_frontdoor_custom_domain_id: pulumi_gestalt_rust::Output<String>,
         /// One or more IDs of the Front Door Route to which the Front Door Custom Domain is associated with.
@@ -188,6 +190,7 @@ pub mod frontdoor_custom_domain_association {
         let o = context.register_resource(request);
         FrontdoorCustomDomainAssociationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             cdn_frontdoor_custom_domain_id: o.get_field("cdnFrontdoorCustomDomainId"),
             cdn_frontdoor_route_ids: o.get_field("cdnFrontdoorRouteIds"),
         }

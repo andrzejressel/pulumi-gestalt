@@ -132,6 +132,8 @@ pub mod data_quality_job_definition {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) assigned by AWS to this data quality job definition.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the container that runs the monitoring job. Fields are documented below.
@@ -255,6 +257,7 @@ pub mod data_quality_job_definition {
         let o = context.register_resource(request);
         DataQualityJobDefinitionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             data_quality_app_specification: o.get_field("dataQualityAppSpecification"),
             data_quality_baseline_config: o.get_field("dataQualityBaselineConfig"),

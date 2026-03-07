@@ -75,6 +75,8 @@ pub mod mover_agent {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the fully qualified ID of the Hybrid Compute resource for the Storage Mover Agent. Changing this forces a new resource to be created.
         pub arc_virtual_machine_id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the Hybrid Compute resource's unique SMBIOS ID. Changing this forces a new resource to be created.
@@ -134,6 +136,7 @@ pub mod mover_agent {
         let o = context.register_resource(request);
         MoverAgentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arc_virtual_machine_id: o.get_field("arcVirtualMachineId"),
             arc_virtual_machine_uuid: o.get_field("arcVirtualMachineUuid"),
             description: o.get_field("description"),

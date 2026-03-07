@@ -82,6 +82,8 @@ pub mod analytics_item {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Application Insights component on which the Analytics Item exists. Changing this forces a new resource to be created.
         pub application_insights_id: pulumi_gestalt_rust::Output<String>,
         /// The content for the Analytics Item, for example the query text if `type` is `query`.
@@ -152,6 +154,7 @@ pub mod analytics_item {
         let o = context.register_resource(request);
         AnalyticsItemResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             application_insights_id: o.get_field("applicationInsightsId"),
             content: o.get_field("content"),
             function_alias: o.get_field("functionAlias"),

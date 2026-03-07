@@ -90,6 +90,8 @@ pub mod gallery_application {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A description of the Gallery Application.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// The end of life date in RFC3339 format of the Gallery Application.
@@ -184,6 +186,7 @@ pub mod gallery_application {
         let o = context.register_resource(request);
         GalleryApplicationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             description: o.get_field("description"),
             end_of_life_date: o.get_field("endOfLifeDate"),
             eula: o.get_field("eula"),

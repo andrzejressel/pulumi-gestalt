@@ -139,6 +139,8 @@ pub mod data_exchange {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the data exchange. Must contain only Unicode letters, numbers (0-9), underscores (_). Should not use characters that require URL-escaping, or characters outside of ASCII, spaces.
         pub data_exchange_id: pulumi_gestalt_rust::Output<String>,
         /// Description of the data exchange.
@@ -237,6 +239,7 @@ pub mod data_exchange {
         let o = context.register_resource(request);
         DataExchangeResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             data_exchange_id: o.get_field("dataExchangeId"),
             description: o.get_field("description"),
             display_name: o.get_field("displayName"),

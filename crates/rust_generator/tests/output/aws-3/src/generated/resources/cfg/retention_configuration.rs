@@ -41,6 +41,8 @@ pub mod retention_configuration {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The name of the retention configuration object. The object is always named **default**.
         pub name: pulumi_gestalt_rust::Output<String>,
         /// The number of days AWS Config stores historical information.
@@ -72,6 +74,7 @@ pub mod retention_configuration {
         let o = context.register_resource(request);
         RetentionConfigurationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             name: o.get_field("name"),
             retention_period_in_days: o.get_field("retentionPeriodInDays"),
         }

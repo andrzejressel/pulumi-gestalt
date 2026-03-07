@@ -65,6 +65,8 @@ pub mod server_dns_alias {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The fully qualified DNS record for alias.
         pub dns_record: pulumi_gestalt_rust::Output<String>,
         /// The ID of the mssql server. Changing this forces a new MSSQL Server DNS Alias to be created.
@@ -101,6 +103,7 @@ pub mod server_dns_alias {
         let o = context.register_resource(request);
         ServerDnsAliasResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             dns_record: o.get_field("dnsRecord"),
             mssql_server_id: o.get_field("mssqlServerId"),
             name: o.get_field("name"),

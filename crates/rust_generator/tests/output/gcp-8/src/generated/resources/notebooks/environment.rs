@@ -108,6 +108,8 @@ pub mod environment {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Use a container image to start the notebook instance.
         /// Structure is documented below.
         pub container_image: pulumi_gestalt_rust::Output<
@@ -198,6 +200,7 @@ pub mod environment {
         let o = context.register_resource(request);
         EnvironmentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             container_image: o.get_field("containerImage"),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),

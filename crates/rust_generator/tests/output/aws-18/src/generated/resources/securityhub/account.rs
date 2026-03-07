@@ -47,6 +47,8 @@ pub mod account {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ARN of the SecurityHub Hub created in the account.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Whether to automatically enable new controls when they are added to standards that are enabled. By default, this is set to true, and new controls are enabled automatically. To not automatically enable new controls, set this to false.
@@ -94,6 +96,7 @@ pub mod account {
         let o = context.register_resource(request);
         AccountResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             auto_enable_controls: o.get_field("autoEnableControls"),
             control_finding_generator: o.get_field("controlFindingGenerator"),

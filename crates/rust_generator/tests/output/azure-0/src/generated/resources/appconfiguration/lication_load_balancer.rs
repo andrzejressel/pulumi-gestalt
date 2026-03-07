@@ -63,6 +63,8 @@ pub mod lication_load_balancer {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Azure Region where the Application Gateway for Containers (ALB) should exist. Changing this forces a new resource to be created.
         pub location: pulumi_gestalt_rust::Output<String>,
         /// The name which should be used for this Application Gateway for Containers (ALB). Changing this forces a new resource to be created.
@@ -116,6 +118,7 @@ pub mod lication_load_balancer {
         let o = context.register_resource(request);
         LicationLoadBalancerResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             location: o.get_field("location"),
             name: o.get_field("name"),
             primary_configuration_endpoint: o.get_field("primaryConfigurationEndpoint"),

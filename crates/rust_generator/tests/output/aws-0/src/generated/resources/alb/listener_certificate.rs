@@ -62,6 +62,8 @@ pub mod listener_certificate {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the certificate to attach to the listener.
         pub certificate_arn: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the listener to which to attach the certificate.
@@ -96,6 +98,7 @@ pub mod listener_certificate {
         let o = context.register_resource(request);
         ListenerCertificateResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             certificate_arn: o.get_field("certificateArn"),
             listener_arn: o.get_field("listenerArn"),
         }

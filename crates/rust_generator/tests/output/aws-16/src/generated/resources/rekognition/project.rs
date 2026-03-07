@@ -56,6 +56,8 @@ pub mod project {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ARN of the Project.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Specify if automatic retraining should occur. Valid values are `ENABLED` or `DISABLED`. Defaults to `DISABLED`
@@ -109,6 +111,7 @@ pub mod project {
         let o = context.register_resource(request);
         ProjectResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             auto_update: o.get_field("autoUpdate"),
             feature: o.get_field("feature"),

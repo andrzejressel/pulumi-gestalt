@@ -227,6 +227,8 @@ pub mod server_extended_auditing_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A list of Actions-Groups and Actions to audit.
         pub audit_actions_and_groups: pulumi_gestalt_rust::Output<Vec<String>>,
         /// Whether to enable the extended auditing policy. Possible values are `true` and `false`. Defaults to `true`.
@@ -332,6 +334,7 @@ pub mod server_extended_auditing_policy {
         let o = context.register_resource(request);
         ServerExtendedAuditingPolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             audit_actions_and_groups: o.get_field("auditActionsAndGroups"),
             enabled: o.get_field("enabled"),
             log_monitoring_enabled: o.get_field("logMonitoringEnabled"),

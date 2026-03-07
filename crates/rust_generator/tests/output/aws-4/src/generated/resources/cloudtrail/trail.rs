@@ -373,6 +373,8 @@ pub mod trail {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies an advanced event selector for enabling data event logging. Fields documented below. Conflicts with `event_selector`.
         pub advanced_event_selectors: pulumi_gestalt_rust::Output<
             Option<Vec<super::super::types::cloudtrail::TrailAdvancedEventSelector>>,
@@ -537,6 +539,7 @@ pub mod trail {
         let o = context.register_resource(request);
         TrailResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             advanced_event_selectors: o.get_field("advancedEventSelectors"),
             arn: o.get_field("arn"),
             cloud_watch_logs_group_arn: o.get_field("cloudWatchLogsGroupArn"),

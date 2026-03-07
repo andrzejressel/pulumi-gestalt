@@ -67,6 +67,8 @@ pub mod device_dex_test {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The account identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// Timestamp of when the Dex Test was created.
@@ -133,6 +135,7 @@ pub mod device_dex_test {
         let o = context.register_resource(request);
         DeviceDexTestResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             created: o.get_field("created"),
             data: o.get_field("data"),

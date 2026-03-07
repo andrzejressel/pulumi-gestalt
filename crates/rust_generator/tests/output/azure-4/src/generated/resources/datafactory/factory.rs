@@ -102,6 +102,8 @@ pub mod factory {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the Azure Key Vault Key ID to be used as the Customer Managed Key (CMK) for double encryption. Required with user assigned identity.
         pub customer_managed_key_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// Specifies the ID of the user assigned identity associated with the Customer Managed Key. Must be supplied if `customer_managed_key_id` is set.
@@ -233,6 +235,7 @@ pub mod factory {
         let o = context.register_resource(request);
         FactoryResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             customer_managed_key_id: o.get_field("customerManagedKeyId"),
             customer_managed_key_identity_id: o
                 .get_field("customerManagedKeyIdentityId"),

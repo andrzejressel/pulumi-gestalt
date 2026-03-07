@@ -286,6 +286,8 @@ pub mod listener {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Name of the Application-Layer Protocol Negotiation (ALPN) policy. Can be set if `protocol` is `TLS`. Valid values are `HTTP1Only`, `HTTP2Only`, `HTTP2Optional`, `HTTP2Preferred`, and `None`.
         pub alpn_policy: pulumi_gestalt_rust::Output<Option<String>>,
         /// ARN of the listener (matches `id`).
@@ -396,6 +398,7 @@ pub mod listener {
         let o = context.register_resource(request);
         ListenerResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             alpn_policy: o.get_field("alpnPolicy"),
             arn: o.get_field("arn"),
             certificate_arn: o.get_field("certificateArn"),

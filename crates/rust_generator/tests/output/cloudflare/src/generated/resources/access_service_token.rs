@@ -45,6 +45,8 @@ pub mod access_service_token {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The account identifier to target for the resource. Conflicts with `zone_id`.
         pub account_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// Client ID associated with the Service Token. **Modifying this attribute will force creation of a new resource.**
@@ -105,6 +107,7 @@ pub mod access_service_token {
         let o = context.register_resource(request);
         AccessServiceTokenResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             client_id: o.get_field("clientId"),
             client_secret: o.get_field("clientSecret"),

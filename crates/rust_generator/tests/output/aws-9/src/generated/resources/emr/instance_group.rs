@@ -92,6 +92,8 @@ pub mod instance_group {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The autoscaling policy document. This is a JSON formatted string. See [EMR Auto Scaling](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-automatic-scaling.html)
         pub autoscaling_policy: pulumi_gestalt_rust::Output<Option<String>>,
         /// If set, the bid price for each EC2 instance in the instance group, expressed in USD. By setting this attribute, the instance group is being declared as a Spot Instance, and will implicitly create a Spot request. Leave this blank to use On-Demand Instances.
@@ -197,6 +199,7 @@ pub mod instance_group {
         let o = context.register_resource(request);
         InstanceGroupResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             autoscaling_policy: o.get_field("autoscalingPolicy"),
             bid_price: o.get_field("bidPrice"),
             cluster_id: o.get_field("clusterId"),

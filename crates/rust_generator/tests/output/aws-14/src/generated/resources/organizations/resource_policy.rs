@@ -49,6 +49,8 @@ pub mod resource_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the resource policy.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Content for the resource policy. The text must be correctly formatted JSON that complies with the syntax for the resource policy's type. See the [_AWS Organizations User Guide_](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_delegate_examples.html) for examples.
@@ -91,6 +93,7 @@ pub mod resource_policy {
         let o = context.register_resource(request);
         ResourcePolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             content: o.get_field("content"),
             tags: o.get_field("tags"),

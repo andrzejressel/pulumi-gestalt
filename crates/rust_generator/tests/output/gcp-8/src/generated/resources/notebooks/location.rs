@@ -47,6 +47,8 @@ pub mod location {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Name of the Location resource.
         pub name: pulumi_gestalt_rust::Output<String>,
         /// The ID of the project in which the resource belongs.
@@ -84,6 +86,7 @@ pub mod location {
         let o = context.register_resource(request);
         LocationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             name: o.get_field("name"),
             project: o.get_field("project"),
             self_link: o.get_field("selfLink"),

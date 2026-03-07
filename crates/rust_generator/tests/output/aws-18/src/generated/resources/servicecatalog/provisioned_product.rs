@@ -108,6 +108,8 @@ pub mod provisioned_product {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Language code. Valid values: `en` (English), `jp` (Japanese), `zh` (Chinese). Default value is `en`.
         pub accept_language: pulumi_gestalt_rust::Output<Option<String>>,
         /// ARN of the provisioned product.
@@ -278,6 +280,7 @@ pub mod provisioned_product {
         let o = context.register_resource(request);
         ProvisionedProductResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             accept_language: o.get_field("acceptLanguage"),
             arn: o.get_field("arn"),
             cloudwatch_dashboard_names: o.get_field("cloudwatchDashboardNames"),

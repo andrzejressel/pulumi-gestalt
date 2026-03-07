@@ -89,6 +89,8 @@ pub mod image {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the image.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the container recipe.
@@ -219,6 +221,7 @@ pub mod image {
         let o = context.register_resource(request);
         ImageResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             container_recipe_arn: o.get_field("containerRecipeArn"),
             date_created: o.get_field("dateCreated"),

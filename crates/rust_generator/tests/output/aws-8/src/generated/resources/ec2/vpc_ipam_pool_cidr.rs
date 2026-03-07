@@ -108,6 +108,8 @@ pub mod vpc_ipam_pool_cidr {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The CIDR you want to assign to the pool. Conflicts with `netmask_length`.
         pub cidr: pulumi_gestalt_rust::Output<String>,
         /// A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP. This is not stored in the state file. See cidr_authorization_context for more information.
@@ -162,6 +164,7 @@ pub mod vpc_ipam_pool_cidr {
         let o = context.register_resource(request);
         VpcIpamPoolCidrResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             cidr: o.get_field("cidr"),
             cidr_authorization_context: o.get_field("cidrAuthorizationContext"),
             ipam_pool_cidr_id: o.get_field("ipamPoolCidrId"),

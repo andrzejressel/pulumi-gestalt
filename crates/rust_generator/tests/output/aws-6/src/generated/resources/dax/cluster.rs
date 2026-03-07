@@ -107,6 +107,8 @@ pub mod cluster {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the DAX cluster
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// List of Availability Zones in which the
@@ -273,6 +275,7 @@ pub mod cluster {
         let o = context.register_resource(request);
         ClusterResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             availability_zones: o.get_field("availabilityZones"),
             cluster_address: o.get_field("clusterAddress"),

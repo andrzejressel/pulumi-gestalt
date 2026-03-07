@@ -109,6 +109,8 @@ pub mod virtual_gateway {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ARN of the virtual gateway.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Creation date of the virtual gateway.
@@ -180,6 +182,7 @@ pub mod virtual_gateway {
         let o = context.register_resource(request);
         VirtualGatewayResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             created_date: o.get_field("createdDate"),
             last_updated_date: o.get_field("lastUpdatedDate"),

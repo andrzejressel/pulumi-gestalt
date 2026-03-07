@@ -63,6 +63,8 @@ pub mod field_level_encryption_profile {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Internal value used by CloudFront to allow future updates to the Field Level Encryption Profile.
         pub caller_reference: pulumi_gestalt_rust::Output<String>,
         /// An optional comment about the Field Level Encryption Profile.
@@ -111,6 +113,7 @@ pub mod field_level_encryption_profile {
         let o = context.register_resource(request);
         FieldLevelEncryptionProfileResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             caller_reference: o.get_field("callerReference"),
             comment: o.get_field("comment"),
             encryption_entities: o.get_field("encryptionEntities"),

@@ -117,6 +117,8 @@ pub mod notebook_instance {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A list of Elastic Inference (EI) instance types to associate with this notebook instance. See [Elastic Inference Accelerator](https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html) for more details. Valid values: `ml.eia1.medium`, `ml.eia1.large`, `ml.eia1.xlarge`, `ml.eia2.medium`, `ml.eia2.large`, `ml.eia2.xlarge`.
         pub accelerator_types: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// An array of up to three Git repositories to associate with the notebook instance.
@@ -278,6 +280,7 @@ pub mod notebook_instance {
         let o = context.register_resource(request);
         NotebookInstanceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             accelerator_types: o.get_field("acceleratorTypes"),
             additional_code_repositories: o.get_field("additionalCodeRepositories"),
             arn: o.get_field("arn"),

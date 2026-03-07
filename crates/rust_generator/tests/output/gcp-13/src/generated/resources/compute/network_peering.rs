@@ -93,6 +93,8 @@ pub mod network_peering {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Whether to export the custom routes to the peer network. Defaults to `false`.
         pub export_custom_routes: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always exported to peers and are not controlled by this field.
@@ -183,6 +185,7 @@ pub mod network_peering {
         let o = context.register_resource(request);
         NetworkPeeringResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             export_custom_routes: o.get_field("exportCustomRoutes"),
             export_subnet_routes_with_public_ip: o
                 .get_field("exportSubnetRoutesWithPublicIp"),

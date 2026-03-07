@@ -272,6 +272,8 @@ pub mod permissions {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
         pub catalog_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// Whether the permissions are to be granted for the Data Catalog. Defaults to `false`.
@@ -398,6 +400,7 @@ pub mod permissions {
         let o = context.register_resource(request);
         PermissionsResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             catalog_id: o.get_field("catalogId"),
             catalog_resource: o.get_field("catalogResource"),
             data_cells_filter: o.get_field("dataCellsFilter"),

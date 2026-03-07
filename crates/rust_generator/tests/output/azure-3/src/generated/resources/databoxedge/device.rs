@@ -67,6 +67,8 @@ pub mod device {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A `device_properties` block as defined below.
         pub device_properties: pulumi_gestalt_rust::Output<
             Vec<super::super::types::databoxedge::DeviceDeviceProperty>,
@@ -128,6 +130,7 @@ pub mod device {
         let o = context.register_resource(request);
         DeviceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             device_properties: o.get_field("deviceProperties"),
             location: o.get_field("location"),
             name: o.get_field("name"),

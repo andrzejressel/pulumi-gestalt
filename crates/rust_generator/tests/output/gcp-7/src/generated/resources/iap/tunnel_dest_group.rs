@@ -105,6 +105,8 @@ pub mod tunnel_dest_group {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// List of CIDRs that this group applies to.
         pub cidrs: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// List of FQDNs that this group applies to.
@@ -166,6 +168,7 @@ pub mod tunnel_dest_group {
         let o = context.register_resource(request);
         TunnelDestGroupResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             cidrs: o.get_field("cidrs"),
             fqdns: o.get_field("fqdns"),
             group_name: o.get_field("groupName"),

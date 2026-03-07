@@ -103,6 +103,8 @@ pub mod managed_database {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A `long_term_retention_policy` block as defined below.
         pub long_term_retention_policy: pulumi_gestalt_rust::Output<
             super::super::types::mssql::ManagedDatabaseLongTermRetentionPolicy,
@@ -177,6 +179,7 @@ pub mod managed_database {
         let o = context.register_resource(request);
         ManagedDatabaseResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             long_term_retention_policy: o.get_field("longTermRetentionPolicy"),
             managed_instance_id: o.get_field("managedInstanceId"),
             name: o.get_field("name"),

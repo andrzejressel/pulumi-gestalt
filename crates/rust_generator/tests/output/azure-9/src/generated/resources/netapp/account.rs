@@ -94,6 +94,8 @@ pub mod account {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A `active_directory` block as defined below.
         pub active_directory: pulumi_gestalt_rust::Output<
             Option<super::super::types::netapp::AccountActiveDirectory>,
@@ -162,6 +164,7 @@ pub mod account {
         let o = context.register_resource(request);
         AccountResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             active_directory: o.get_field("activeDirectory"),
             identity: o.get_field("identity"),
             location: o.get_field("location"),

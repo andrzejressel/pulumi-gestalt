@@ -107,6 +107,8 @@ pub mod source_control_slot {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The URL for the repository. Changing this forces a new resource to be created.
         pub branch: pulumi_gestalt_rust::Output<String>,
         /// A `github_action_configuration` block as detailed below. Changing this forces a new resource to be created.
@@ -197,6 +199,7 @@ pub mod source_control_slot {
         let o = context.register_resource(request);
         SourceControlSlotResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             branch: o.get_field("branch"),
             github_action_configuration: o.get_field("githubActionConfiguration"),
             repo_url: o.get_field("repoUrl"),

@@ -334,6 +334,8 @@ pub mod slo {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Basic Service-Level Indicator (SLI) on a well-known service type.
         /// Performance will be computed on the basis of pre-defined metrics.
         /// SLIs are used to measure and calculate the quality of the Service's
@@ -475,6 +477,7 @@ pub mod slo {
         let o = context.register_resource(request);
         SloResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             basic_sli: o.get_field("basicSli"),
             calendar_period: o.get_field("calendarPeriod"),
             display_name: o.get_field("displayName"),

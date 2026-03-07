@@ -58,6 +58,8 @@ pub mod traffic_policy_instance {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ID of the hosted zone that you want Amazon Route 53 to create resource record sets in by using the configuration in a traffic policy.
         pub hosted_zone_id: pulumi_gestalt_rust::Output<String>,
         /// Domain name for which Amazon Route 53 responds to DNS queries by using the resource record sets that Route 53 creates for this traffic policy instance.
@@ -115,6 +117,7 @@ pub mod traffic_policy_instance {
         let o = context.register_resource(request);
         TrafficPolicyInstanceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             hosted_zone_id: o.get_field("hostedZoneId"),
             name: o.get_field("name"),
             traffic_policy_id: o.get_field("trafficPolicyId"),

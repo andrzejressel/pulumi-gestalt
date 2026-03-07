@@ -68,6 +68,8 @@ pub mod page_rule {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The actions taken by the page rule, options given below.
         pub actions: pulumi_gestalt_rust::Output<super::types::PageRuleActions>,
         /// The priority of the page rule among others for this target, the higher the number the higher the priority as per [API documentation](https://api.cloudflare.com/#page-rules-for-a-zone-create-page-rule).
@@ -123,6 +125,7 @@ pub mod page_rule {
         let o = context.register_resource(request);
         PageRuleResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             actions: o.get_field("actions"),
             priority: o.get_field("priority"),
             status: o.get_field("status"),

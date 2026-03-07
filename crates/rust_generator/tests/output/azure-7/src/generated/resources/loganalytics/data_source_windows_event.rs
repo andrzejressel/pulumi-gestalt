@@ -75,6 +75,8 @@ pub mod data_source_windows_event {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the name of the Windows Event Log to collect events from.
         pub event_log_name: pulumi_gestalt_rust::Output<String>,
         /// Specifies an array of event types applied to the specified event log. Possible values include `Error`, `Warning` and `Information`.
@@ -131,6 +133,7 @@ pub mod data_source_windows_event {
         let o = context.register_resource(request);
         DataSourceWindowsEventResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             event_log_name: o.get_field("eventLogName"),
             event_types: o.get_field("eventTypes"),
             name: o.get_field("name"),

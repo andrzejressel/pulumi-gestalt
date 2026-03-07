@@ -92,6 +92,8 @@ pub mod ssl_negotiation_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// An SSL Negotiation policy attribute. Each has two properties:
         pub attributes: pulumi_gestalt_rust::Output<
             Option<Vec<super::super::types::elb::SslNegotiationPolicyAttribute>>,
@@ -158,6 +160,7 @@ pub mod ssl_negotiation_policy {
         let o = context.register_resource(request);
         SslNegotiationPolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             attributes: o.get_field("attributes"),
             lb_port: o.get_field("lbPort"),
             load_balancer: o.get_field("loadBalancer"),

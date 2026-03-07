@@ -71,6 +71,8 @@ pub mod integration_account_session {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The content of the Logic App Integration Account Session.
         pub content: pulumi_gestalt_rust::Output<String>,
         /// The name of the Logic App Integration Account. Changing this forces a new Logic App Integration Account Session to be created.
@@ -122,6 +124,7 @@ pub mod integration_account_session {
         let o = context.register_resource(request);
         IntegrationAccountSessionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             content: o.get_field("content"),
             integration_account_name: o.get_field("integrationAccountName"),
             name: o.get_field("name"),

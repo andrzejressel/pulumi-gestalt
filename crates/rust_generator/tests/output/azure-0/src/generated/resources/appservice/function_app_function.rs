@@ -189,6 +189,8 @@ pub mod function_app_function {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The config for this Function in JSON format.
         pub config_json: pulumi_gestalt_rust::Output<String>,
         /// The URL of the configuration JSON.
@@ -276,6 +278,7 @@ pub mod function_app_function {
         let o = context.register_resource(request);
         FunctionAppFunctionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             config_json: o.get_field("configJson"),
             config_url: o.get_field("configUrl"),
             enabled: o.get_field("enabled"),

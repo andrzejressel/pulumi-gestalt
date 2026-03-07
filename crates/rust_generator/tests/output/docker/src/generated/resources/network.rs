@@ -108,6 +108,8 @@ pub mod network {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Enable manual container attachment to the network.
         pub attachable: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Requests daemon to check for networks with same name.
@@ -220,6 +222,7 @@ pub mod network {
         let o = context.register_resource(request);
         NetworkResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             attachable: o.get_field("attachable"),
             check_duplicate: o.get_field("checkDuplicate"),
             driver: o.get_field("driver"),

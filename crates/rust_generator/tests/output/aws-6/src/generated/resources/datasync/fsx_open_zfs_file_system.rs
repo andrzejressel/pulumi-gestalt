@@ -72,6 +72,8 @@ pub mod fsx_open_zfs_file_system {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the DataSync Location.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The time that the FSx for openzfs location was created.
@@ -141,6 +143,7 @@ pub mod fsx_open_zfs_file_system {
         let o = context.register_resource(request);
         FsxOpenZfsFileSystemResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             creation_time: o.get_field("creationTime"),
             fsx_filesystem_arn: o.get_field("fsxFilesystemArn"),

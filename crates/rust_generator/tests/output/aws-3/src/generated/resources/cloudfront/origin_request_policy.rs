@@ -91,6 +91,8 @@ pub mod origin_request_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Comment to describe the origin request policy.
         pub comment: pulumi_gestalt_rust::Output<Option<String>>,
         /// Object that determines whether any cookies in viewer requests (and if so, which cookies) are included in the origin request key and automatically included in requests that CloudFront sends to the origin. See Cookies Config for more information.
@@ -154,6 +156,7 @@ pub mod origin_request_policy {
         let o = context.register_resource(request);
         OriginRequestPolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             comment: o.get_field("comment"),
             cookies_config: o.get_field("cookiesConfig"),
             etag: o.get_field("etag"),

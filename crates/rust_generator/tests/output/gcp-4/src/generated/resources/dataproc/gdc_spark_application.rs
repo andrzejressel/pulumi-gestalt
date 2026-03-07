@@ -287,6 +287,8 @@ pub mod gdc_spark_application {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The annotations to associate with this application. Annotations may be used to store client information, but are not used by the server.
         /// **Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
         /// Please refer to the field `effective_annotations` for all of the annotations present on the resource.
@@ -501,6 +503,7 @@ pub mod gdc_spark_application {
         let o = context.register_resource(request);
         GdcSparkApplicationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             annotations: o.get_field("annotations"),
             application_environment: o.get_field("applicationEnvironment"),
             create_time: o.get_field("createTime"),

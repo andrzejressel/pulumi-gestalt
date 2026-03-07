@@ -93,6 +93,8 @@ pub mod channel_direct_line_speech {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The name of the Bot Resource this channel will be associated with. Changing this forces a new resource to be created.
         pub bot_name: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Cognitive Account this Bot Channel should be associated with.
@@ -177,6 +179,7 @@ pub mod channel_direct_line_speech {
         let o = context.register_resource(request);
         ChannelDirectLineSpeechResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             bot_name: o.get_field("botName"),
             cognitive_account_id: o.get_field("cognitiveAccountId"),
             cognitive_service_access_key: o.get_field("cognitiveServiceAccessKey"),

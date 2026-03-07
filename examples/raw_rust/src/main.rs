@@ -18,7 +18,9 @@ async fn generate_random_value(ctx: &Context) {
 
     let composite_output = ctx.register_resource(register_resource_request).await;
     let output_result = composite_output.get_field("result".into()).await;
+    let output_urn = composite_output.get_urn().await;
     output_result.add_export("result".into()).await;
+    output_urn.add_export("resource_urn".into()).await;
 }
 
 async fn run_command(ctx: &Context) {

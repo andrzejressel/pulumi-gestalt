@@ -249,6 +249,8 @@ pub mod cluster {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the MSK cluster.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Comma separated list of one or more hostname:port pairs of kafka brokers suitable to bootstrap connectivity to the kafka cluster. Contains a value if `encryption_info.0.encryption_in_transit.0.client_broker` is set to `PLAINTEXT` or `TLS_PLAINTEXT`. The resource sorts values alphabetically. AWS may not always return all endpoints so this value is not guaranteed to be stable across applies.
@@ -411,6 +413,7 @@ pub mod cluster {
         let o = context.register_resource(request);
         ClusterResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             bootstrap_brokers: o.get_field("bootstrapBrokers"),
             bootstrap_brokers_public_sasl_iam: o

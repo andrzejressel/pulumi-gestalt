@@ -141,6 +141,8 @@ pub mod key_vault {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A list of up to 1024 objects describing access policies, as described below.
         ///
         /// > **NOTE** Since `access_policy` can be configured both inline and via the separate `azure.keyvault.AccessPolicy` resource, we have to explicitly set it to empty slice (`[]`) to remove it.
@@ -309,6 +311,7 @@ pub mod key_vault {
         let o = context.register_resource(request);
         KeyVaultResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             access_policies: o.get_field("accessPolicies"),
             contacts: o.get_field("contacts"),
             enable_rbac_authorization: o.get_field("enableRbacAuthorization"),

@@ -197,6 +197,8 @@ pub mod target {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Optional. User annotations. These attributes can only be set and used by the user, and not by Google Cloud Deploy. See https://google.aip.dev/128#annotations for more details such as format and size limitations.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
@@ -373,6 +375,7 @@ pub mod target {
         let o = context.register_resource(request);
         TargetResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             annotations: o.get_field("annotations"),
             anthos_cluster: o.get_field("anthosCluster"),
             associated_entities: o.get_field("associatedEntities"),

@@ -80,6 +80,8 @@ pub mod ssh_public_key {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// An expiration time in microseconds since epoch.
         pub expiration_time_usec: pulumi_gestalt_rust::Output<Option<String>>,
         /// The SHA-256 fingerprint of the SSH public key.
@@ -133,6 +135,7 @@ pub mod ssh_public_key {
         let o = context.register_resource(request);
         SshPublicKeyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             expiration_time_usec: o.get_field("expirationTimeUsec"),
             fingerprint: o.get_field("fingerprint"),
             key: o.get_field("key"),

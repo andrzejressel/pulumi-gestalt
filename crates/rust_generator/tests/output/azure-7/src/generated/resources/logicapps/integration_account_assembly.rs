@@ -83,6 +83,8 @@ pub mod integration_account_assembly {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The name of the Logic App Integration Account Assembly.
         pub assembly_name: pulumi_gestalt_rust::Output<String>,
         /// The version of the Logic App Integration Account Assembly. Defaults to `0.0.0.0`.
@@ -164,6 +166,7 @@ pub mod integration_account_assembly {
         let o = context.register_resource(request);
         IntegrationAccountAssemblyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             assembly_name: o.get_field("assemblyName"),
             assembly_version: o.get_field("assemblyVersion"),
             content: o.get_field("content"),

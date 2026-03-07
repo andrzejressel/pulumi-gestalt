@@ -114,6 +114,8 @@ pub mod rate_limit {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The action to be performed when the threshold of matched traffic within the period defined is exceeded.
         pub action: pulumi_gestalt_rust::Output<super::types::RateLimitAction>,
         pub bypass_url_patterns: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
@@ -198,6 +200,7 @@ pub mod rate_limit {
         let o = context.register_resource(request);
         RateLimitResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             action: o.get_field("action"),
             bypass_url_patterns: o.get_field("bypassUrlPatterns"),
             correlate: o.get_field("correlate"),

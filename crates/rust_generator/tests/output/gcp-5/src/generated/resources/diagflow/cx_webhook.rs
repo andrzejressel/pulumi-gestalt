@@ -124,6 +124,8 @@ pub mod cx_webhook {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Indicates whether the webhook is disabled.
         pub disabled: pulumi_gestalt_rust::Output<Option<bool>>,
         /// The human-readable name of the webhook, unique within the agent.
@@ -226,6 +228,7 @@ pub mod cx_webhook {
         let o = context.register_resource(request);
         CxWebhookResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             disabled: o.get_field("disabled"),
             display_name: o.get_field("displayName"),
             enable_spell_correction: o.get_field("enableSpellCorrection"),

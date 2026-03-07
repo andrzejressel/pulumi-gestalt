@@ -73,6 +73,7 @@ fn convert_resource(package: &Package, element_id: &ElementId) -> Resource {
         output_properties: resource
             .output_properties
             .iter()
+            .filter(|output_property| output_property.name != "id" && output_property.name != "urn")
             .map(|output_property| OutputProperty {
                 name: output_property.name.clone(),
                 arg_name: output_property.get_rust_argument_name(),

@@ -95,6 +95,8 @@ pub mod backup_vault {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Whether to enable cross-region restore for the Backup Vault.
         ///
         /// > **Note:** The `cross_region_restore_enabled` can only be specified when `redundancy` is specified for `GeoRedundant`. Once `cross_region_restore_enabled` is enabled, it cannot be disabled.
@@ -201,6 +203,7 @@ pub mod backup_vault {
         let o = context.register_resource(request);
         BackupVaultResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             cross_region_restore_enabled: o.get_field("crossRegionRestoreEnabled"),
             datastore_type: o.get_field("datastoreType"),
             identity: o.get_field("identity"),

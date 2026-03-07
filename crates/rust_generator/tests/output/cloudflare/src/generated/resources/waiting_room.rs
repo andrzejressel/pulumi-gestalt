@@ -119,6 +119,8 @@ pub mod waiting_room {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A list of additional hostname and paths combination to be applied on the waiting room.
         pub additional_routes: pulumi_gestalt_rust::Output<
             Option<Vec<super::types::WaitingRoomAdditionalRoute>>,
@@ -282,6 +284,7 @@ pub mod waiting_room {
         let o = context.register_resource(request);
         WaitingRoomResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             additional_routes: o.get_field("additionalRoutes"),
             cookie_suffix: o.get_field("cookieSuffix"),
             custom_page_html: o.get_field("customPageHtml"),

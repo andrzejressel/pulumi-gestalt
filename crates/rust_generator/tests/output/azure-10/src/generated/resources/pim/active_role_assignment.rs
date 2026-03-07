@@ -126,6 +126,8 @@ pub mod active_role_assignment {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The justification for the role assignment. Changing this forces a new resource to be created.
         pub justification: pulumi_gestalt_rust::Output<String>,
         /// Object ID of the principal for this role assignment. Changing this forces a new resource to be created.
@@ -194,6 +196,7 @@ pub mod active_role_assignment {
         let o = context.register_resource(request);
         ActiveRoleAssignmentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             justification: o.get_field("justification"),
             principal_id: o.get_field("principalId"),
             principal_type: o.get_field("principalType"),

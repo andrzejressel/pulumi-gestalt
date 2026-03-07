@@ -117,6 +117,8 @@ pub mod application_group {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Option to set the display name for the default sessionDesktop desktop when `type` is set to `Desktop`. A value here is mandatory for connections to the desktop using the Windows 365 portal. Without it the connection will hang at 'Loading Client'.
         pub default_desktop_display_name: pulumi_gestalt_rust::Output<Option<String>>,
         /// Option to set a description for the Virtual Desktop Application Group.
@@ -205,6 +207,7 @@ pub mod application_group {
         let o = context.register_resource(request);
         ApplicationGroupResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             default_desktop_display_name: o.get_field("defaultDesktopDisplayName"),
             description: o.get_field("description"),
             friendly_name: o.get_field("friendlyName"),

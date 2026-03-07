@@ -78,6 +78,8 @@ pub mod catalog {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Output only. The creation time of the catalog. A timestamp in RFC3339 UTC
         /// "Zulu" format, with nanosecond resolution and up to nine fractional
         /// digits.
@@ -141,6 +143,7 @@ pub mod catalog {
         let o = context.register_resource(request);
         CatalogResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             create_time: o.get_field("createTime"),
             delete_time: o.get_field("deleteTime"),
             expire_time: o.get_field("expireTime"),

@@ -48,6 +48,8 @@ pub mod resource_association {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the resource to associate with the RAM Resource Share.
         pub resource_arn: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the RAM Resource Share.
@@ -82,6 +84,7 @@ pub mod resource_association {
         let o = context.register_resource(request);
         ResourceAssociationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             resource_arn: o.get_field("resourceArn"),
             resource_share_arn: o.get_field("resourceShareArn"),
         }

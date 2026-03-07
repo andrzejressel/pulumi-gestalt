@@ -53,6 +53,8 @@ pub mod lb_stickiness_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The cookie duration in seconds. This determines the length of the session stickiness.
         pub cookie_duration: pulumi_gestalt_rust::Output<i32>,
         /// The Session Stickiness state of the load balancer. `true` to activate session stickiness or `false` to deactivate session stickiness.
@@ -94,6 +96,7 @@ pub mod lb_stickiness_policy {
         let o = context.register_resource(request);
         LbStickinessPolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             cookie_duration: o.get_field("cookieDuration"),
             enabled: o.get_field("enabled"),
             lb_name: o.get_field("lbName"),

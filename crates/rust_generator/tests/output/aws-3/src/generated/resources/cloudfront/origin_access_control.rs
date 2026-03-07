@@ -64,6 +64,8 @@ pub mod origin_access_control {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The description of the Origin Access Control. Defaults to "Managed by Pulumi" if omitted.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// The current version of this Origin Access Control.
@@ -123,6 +125,7 @@ pub mod origin_access_control {
         let o = context.register_resource(request);
         OriginAccessControlResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             description: o.get_field("description"),
             etag: o.get_field("etag"),
             name: o.get_field("name"),

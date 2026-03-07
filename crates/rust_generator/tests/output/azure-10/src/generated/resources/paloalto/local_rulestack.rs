@@ -79,6 +79,8 @@ pub mod local_rulestack {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The setting to use for Anti-Spyware. Possible values include `BestPractice`, and `Custom`.
         pub anti_spyware_profile: pulumi_gestalt_rust::Output<Option<String>>,
         /// The setting to use for Anti-Virus. Possible values include `BestPractice`, and `Custom`.
@@ -175,6 +177,7 @@ pub mod local_rulestack {
         let o = context.register_resource(request);
         LocalRulestackResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             anti_spyware_profile: o.get_field("antiSpywareProfile"),
             anti_virus_profile: o.get_field("antiVirusProfile"),
             description: o.get_field("description"),

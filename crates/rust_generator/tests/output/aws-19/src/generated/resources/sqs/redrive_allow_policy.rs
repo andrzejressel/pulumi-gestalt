@@ -57,6 +57,8 @@ pub mod redrive_allow_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The URL of the SQS Queue to which to attach the policy
         pub queue_url: pulumi_gestalt_rust::Output<String>,
         /// The JSON redrive allow policy for the SQS queue. Learn more in the [Amazon SQS dead-letter queues documentation](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html).
@@ -91,6 +93,7 @@ pub mod redrive_allow_policy {
         let o = context.register_resource(request);
         RedriveAllowPolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             queue_url: o.get_field("queueUrl"),
             redrive_allow_policy: o.get_field("redriveAllowPolicy"),
         }

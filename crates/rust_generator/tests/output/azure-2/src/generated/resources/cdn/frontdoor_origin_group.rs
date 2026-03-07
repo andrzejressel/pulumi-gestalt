@@ -99,6 +99,8 @@ pub mod frontdoor_origin_group {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Front Door Profile within which this Front Door Origin Group should exist. Changing this forces a new Front Door Origin Group to be created.
         pub cdn_frontdoor_profile_id: pulumi_gestalt_rust::Output<String>,
         /// A `health_probe` block as defined below.
@@ -176,6 +178,7 @@ pub mod frontdoor_origin_group {
         let o = context.register_resource(request);
         FrontdoorOriginGroupResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             cdn_frontdoor_profile_id: o.get_field("cdnFrontdoorProfileId"),
             health_probe: o.get_field("healthProbe"),
             load_balancing: o.get_field("loadBalancing"),

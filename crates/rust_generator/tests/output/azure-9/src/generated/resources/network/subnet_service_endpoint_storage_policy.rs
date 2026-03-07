@@ -96,6 +96,8 @@ pub mod subnet_service_endpoint_storage_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A `definition` block as defined below
         pub definitions: pulumi_gestalt_rust::Output<
             Option<
@@ -160,6 +162,7 @@ pub mod subnet_service_endpoint_storage_policy {
         let o = context.register_resource(request);
         SubnetServiceEndpointStoragePolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             definitions: o.get_field("definitions"),
             location: o.get_field("location"),
             name: o.get_field("name"),

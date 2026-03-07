@@ -89,6 +89,8 @@ pub mod connection {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The name of the Bot Resource this connection will be associated with. Changing this forces a new resource to be created.
         pub bot_name: pulumi_gestalt_rust::Output<String>,
         /// The Client ID that will be used to authenticate with the service provider.
@@ -176,6 +178,7 @@ pub mod connection {
         let o = context.register_resource(request);
         ConnectionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             bot_name: o.get_field("botName"),
             client_id: o.get_field("clientId"),
             client_secret: o.get_field("clientSecret"),

@@ -76,6 +76,8 @@ pub mod matchmaking_configuration {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies if the match that was created with this configuration must be accepted by matched players.
         pub acceptance_required: pulumi_gestalt_rust::Output<Option<bool>>,
         /// The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required.
@@ -225,6 +227,7 @@ pub mod matchmaking_configuration {
         let o = context.register_resource(request);
         MatchmakingConfigurationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             acceptance_required: o.get_field("acceptanceRequired"),
             acceptance_timeout_seconds: o.get_field("acceptanceTimeoutSeconds"),
             additional_player_count: o.get_field("additionalPlayerCount"),

@@ -84,6 +84,8 @@ pub mod event_hub {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A `capture_description` block as defined below.
         pub capture_description: pulumi_gestalt_rust::Output<
             Option<super::super::types::eventhub::EventHubCaptureDescription>,
@@ -168,6 +170,7 @@ pub mod event_hub {
         let o = context.register_resource(request);
         EventHubResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             capture_description: o.get_field("captureDescription"),
             message_retention: o.get_field("messageRetention"),
             name: o.get_field("name"),

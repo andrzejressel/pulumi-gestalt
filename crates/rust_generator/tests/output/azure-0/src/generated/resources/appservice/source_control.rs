@@ -101,6 +101,8 @@ pub mod source_control {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Windows or Linux Web App. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** Function apps are not supported at this time.
@@ -193,6 +195,7 @@ pub mod source_control {
         let o = context.register_resource(request);
         SourceControlResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             app_id: o.get_field("appId"),
             branch: o.get_field("branch"),
             github_action_configuration: o.get_field("githubActionConfiguration"),

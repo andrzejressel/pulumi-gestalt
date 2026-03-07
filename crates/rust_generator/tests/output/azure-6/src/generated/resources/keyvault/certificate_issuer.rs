@@ -82,6 +82,8 @@ pub mod certificate_issuer {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The account number with the third-party Certificate Issuer.
         pub account_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// One or more `admin` blocks as defined below.
@@ -153,6 +155,7 @@ pub mod certificate_issuer {
         let o = context.register_resource(request);
         CertificateIssuerResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             admins: o.get_field("admins"),
             key_vault_id: o.get_field("keyVaultId"),

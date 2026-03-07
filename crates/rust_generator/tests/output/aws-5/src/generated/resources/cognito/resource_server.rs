@@ -90,6 +90,8 @@ pub mod resource_server {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// An identifier for the resource server.
         pub identifier: pulumi_gestalt_rust::Output<String>,
         /// A name for the resource server.
@@ -142,6 +144,7 @@ pub mod resource_server {
         let o = context.register_resource(request);
         ResourceServerResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             identifier: o.get_field("identifier"),
             name: o.get_field("name"),
             scope_identifiers: o.get_field("scopeIdentifiers"),

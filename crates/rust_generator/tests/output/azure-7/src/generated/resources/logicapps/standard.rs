@@ -202,6 +202,8 @@ pub mod standard {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the App Service Plan within which to create this Logic App.
         pub app_service_plan_id: pulumi_gestalt_rust::Output<String>,
         /// A map of key-value pairs for [App Settings](https://docs.microsoft.com/azure/azure-functions/functions-app-settings) and custom values.
@@ -409,6 +411,7 @@ pub mod standard {
         let o = context.register_resource(request);
         StandardResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             app_service_plan_id: o.get_field("appServicePlanId"),
             app_settings: o.get_field("appSettings"),
             bundle_version: o.get_field("bundleVersion"),

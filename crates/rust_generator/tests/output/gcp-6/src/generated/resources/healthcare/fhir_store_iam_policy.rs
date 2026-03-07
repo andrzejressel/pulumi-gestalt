@@ -153,6 +153,8 @@ pub mod fhir_store_iam_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// (Computed) The etag of the FHIR store's IAM policy.
         pub etag: pulumi_gestalt_rust::Output<String>,
         /// The FHIR store ID, in the form
@@ -193,6 +195,7 @@ pub mod fhir_store_iam_policy {
         let o = context.register_resource(request);
         FhirStoreIamPolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             etag: o.get_field("etag"),
             fhir_store_id: o.get_field("fhirStoreId"),
             policy_data: o.get_field("policyData"),

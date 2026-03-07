@@ -135,6 +135,8 @@ pub mod agent {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// API version displayed in Dialogflow console. If not specified, V2 API is assumed. Clients are free to query
         /// different service endpoints for different API versions. However, bots connectors and webhook calls will follow
         /// the specified API version.
@@ -276,6 +278,7 @@ pub mod agent {
         let o = context.register_resource(request);
         AgentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             api_version: o.get_field("apiVersion"),
             avatar_uri: o.get_field("avatarUri"),
             avatar_uri_backend: o.get_field("avatarUriBackend"),

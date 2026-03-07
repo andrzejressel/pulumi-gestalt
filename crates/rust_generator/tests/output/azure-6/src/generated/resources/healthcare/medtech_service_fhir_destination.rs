@@ -142,6 +142,8 @@ pub mod medtech_service_fhir_destination {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the destination Fhir mappings of the Med Tech Service Fhir Destination.
         pub destination_fhir_mapping_json: pulumi_gestalt_rust::Output<String>,
         /// Specifies the destination fhir service id of the Med Tech Service Fhir Destination.
@@ -211,6 +213,7 @@ pub mod medtech_service_fhir_destination {
         let o = context.register_resource(request);
         MedtechServiceFhirDestinationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             destination_fhir_mapping_json: o.get_field("destinationFhirMappingJson"),
             destination_fhir_service_id: o.get_field("destinationFhirServiceId"),
             destination_identity_resolution_type: o

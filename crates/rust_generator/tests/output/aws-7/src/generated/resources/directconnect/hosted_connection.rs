@@ -50,6 +50,8 @@ pub mod hosted_connection {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Direct Connect endpoint on which the physical connection terminates.
         pub aws_device: pulumi_gestalt_rust::Output<String>,
         /// The bandwidth of the connection. Valid values for dedicated connections: 1Gbps, 10Gbps. Valid values for hosted connections: 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps and 10Gbps. Case sensitive.
@@ -125,6 +127,7 @@ pub mod hosted_connection {
         let o = context.register_resource(request);
         HostedConnectionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             aws_device: o.get_field("awsDevice"),
             bandwidth: o.get_field("bandwidth"),
             connection_id: o.get_field("connectionId"),

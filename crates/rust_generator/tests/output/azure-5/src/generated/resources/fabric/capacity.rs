@@ -78,6 +78,8 @@ pub mod capacity {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// An array of administrator user identities. The member must be an Entra member user or a service principal.
         pub administration_members: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// The supported Azure location where the Fabric Capacity exists. Changing this forces a new resource to be created.
@@ -144,6 +146,7 @@ pub mod capacity {
         let o = context.register_resource(request);
         CapacityResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             administration_members: o.get_field("administrationMembers"),
             location: o.get_field("location"),
             name: o.get_field("name"),

@@ -139,6 +139,8 @@ pub mod job {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// If present, the location of miscellaneous control files which may be used as part of job setup and handling. If not present, control files may be placed in the same location as driver_output_uri.
         pub driver_controls_files_uri: pulumi_gestalt_rust::Output<String>,
         /// A URI pointing to the location of the stdout of the job's driver program.
@@ -305,6 +307,7 @@ pub mod job {
         let o = context.register_resource(request);
         JobResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             driver_controls_files_uri: o.get_field("driverControlsFilesUri"),
             driver_output_resource_uri: o.get_field("driverOutputResourceUri"),
             effective_labels: o.get_field("effectiveLabels"),

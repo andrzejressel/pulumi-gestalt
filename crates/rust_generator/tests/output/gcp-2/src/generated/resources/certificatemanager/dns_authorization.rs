@@ -123,6 +123,8 @@ pub mod dns_authorization {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A human-readable description of the resource.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// The structure describing the DNS Resource Record that needs to be added
@@ -228,6 +230,7 @@ pub mod dns_authorization {
         let o = context.register_resource(request);
         DnsAuthorizationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             description: o.get_field("description"),
             dns_resource_records: o.get_field("dnsResourceRecords"),
             domain: o.get_field("domain"),

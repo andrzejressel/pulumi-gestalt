@@ -141,6 +141,8 @@ pub mod occurence {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Occurrence that represents a single "attestation". The authenticity
         /// of an attestation can be verified using the attached signature.
         /// If the verifier trusts the public key of the signer, then verifying
@@ -219,6 +221,7 @@ pub mod occurence {
         let o = context.register_resource(request);
         OccurenceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             attestation: o.get_field("attestation"),
             create_time: o.get_field("createTime"),
             kind: o.get_field("kind"),

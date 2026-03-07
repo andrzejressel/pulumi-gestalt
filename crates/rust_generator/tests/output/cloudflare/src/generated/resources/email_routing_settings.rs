@@ -36,6 +36,8 @@ pub mod email_routing_settings {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The date and time the settings have been created.
         pub created: pulumi_gestalt_rust::Output<String>,
         /// State of the zone settings for Email Routing. **Modifying this attribute will force creation of a new resource.**
@@ -87,6 +89,7 @@ pub mod email_routing_settings {
         let o = context.register_resource(request);
         EmailRoutingSettingsResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             created: o.get_field("created"),
             enabled: o.get_field("enabled"),
             modified: o.get_field("modified"),

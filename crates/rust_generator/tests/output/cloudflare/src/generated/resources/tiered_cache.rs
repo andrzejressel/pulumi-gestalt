@@ -39,6 +39,8 @@ pub mod tiered_cache {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The typed of tiered cache to utilize on the zone. Available values: `generic`, `smart`, `off`.
         pub cache_type: pulumi_gestalt_rust::Output<String>,
         /// The zone identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
@@ -73,6 +75,7 @@ pub mod tiered_cache {
         let o = context.register_resource(request);
         TieredCacheResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             cache_type: o.get_field("cacheType"),
             zone_id: o.get_field("zoneId"),
         }

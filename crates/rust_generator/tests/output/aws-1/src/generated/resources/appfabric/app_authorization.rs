@@ -79,6 +79,8 @@ pub mod app_authorization {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The name of the application for valid values see https://docs.aws.amazon.com/appfabric/latest/api/API_CreateAppAuthorization.html.
         pub app: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the app bundle to use for the request.
@@ -166,6 +168,7 @@ pub mod app_authorization {
         let o = context.register_resource(request);
         AppAuthorizationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             app: o.get_field("app"),
             app_bundle_arn: o.get_field("appBundleArn"),
             arn: o.get_field("arn"),

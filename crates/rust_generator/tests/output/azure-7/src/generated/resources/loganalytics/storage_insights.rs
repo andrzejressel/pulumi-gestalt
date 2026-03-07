@@ -94,6 +94,8 @@ pub mod storage_insights {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The names of the blob containers that the workspace should read.
         pub blob_container_names: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// The name which should be used for this Log Analytics Storage Insights. Changing this forces a new Log Analytics Storage Insights to be created.
@@ -163,6 +165,7 @@ pub mod storage_insights {
         let o = context.register_resource(request);
         StorageInsightsResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             blob_container_names: o.get_field("blobContainerNames"),
             name: o.get_field("name"),
             resource_group_name: o.get_field("resourceGroupName"),

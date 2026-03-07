@@ -103,6 +103,8 @@ pub mod assessment {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the assessment.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Assessment report storage destination configuration. See `assessment_reports_destination` below.
@@ -197,6 +199,7 @@ pub mod assessment {
         let o = context.register_resource(request);
         AssessmentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             assessment_reports_destination: o.get_field("assessmentReportsDestination"),
             description: o.get_field("description"),

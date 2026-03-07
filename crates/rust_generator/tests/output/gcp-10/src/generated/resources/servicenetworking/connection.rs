@@ -96,6 +96,8 @@ pub mod connection {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         pub deletion_policy: pulumi_gestalt_rust::Output<Option<String>>,
         /// Name of VPC network connected with service producers using VPC peering.
         pub network: pulumi_gestalt_rust::Output<String>,
@@ -160,6 +162,7 @@ pub mod connection {
         let o = context.register_resource(request);
         ConnectionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             deletion_policy: o.get_field("deletionPolicy"),
             network: o.get_field("network"),
             peering: o.get_field("peering"),

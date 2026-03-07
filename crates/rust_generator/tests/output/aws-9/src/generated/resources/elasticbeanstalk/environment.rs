@@ -157,6 +157,8 @@ pub mod environment {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// List of all option settings configured in this Environment. These
         /// are a combination of default settings and their overrides from `setting` in
         /// the configuration.
@@ -317,6 +319,7 @@ pub mod environment {
         let o = context.register_resource(request);
         EnvironmentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             all_settings: o.get_field("allSettings"),
             application: o.get_field("application"),
             arn: o.get_field("arn"),

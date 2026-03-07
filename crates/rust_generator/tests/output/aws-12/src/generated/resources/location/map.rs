@@ -60,6 +60,8 @@ pub mod map {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Configuration block with the map style selected from an available data provider. Detailed below.
         pub configuration: pulumi_gestalt_rust::Output<
             super::super::types::location::MapConfiguration,
@@ -124,6 +126,7 @@ pub mod map {
         let o = context.register_resource(request);
         MapResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             configuration: o.get_field("configuration"),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),

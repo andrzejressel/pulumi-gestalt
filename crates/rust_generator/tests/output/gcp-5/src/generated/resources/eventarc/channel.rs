@@ -102,6 +102,8 @@ pub mod channel {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Output only. The activation token for the channel. The token must be used by the provider to register the channel for publishing.
         pub activation_token: pulumi_gestalt_rust::Output<String>,
         /// Output only. The creation time.
@@ -173,6 +175,7 @@ pub mod channel {
         let o = context.register_resource(request);
         ChannelResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             activation_token: o.get_field("activationToken"),
             create_time: o.get_field("createTime"),
             crypto_key_name: o.get_field("cryptoKeyName"),

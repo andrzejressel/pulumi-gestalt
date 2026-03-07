@@ -112,6 +112,8 @@ pub mod enterprise_database {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies whether redis clients can connect using TLS-encrypted or plaintext redis protocols. Possible values are `Encrypted` and `Plaintext`. Defaults to `Encrypted`. Changing this forces a new Redis Enterprise Database to be created.
         pub client_protocol: pulumi_gestalt_rust::Output<Option<String>>,
         /// The resource id of the Redis Enterprise Cluster to deploy this Redis Enterprise Database. Changing this forces a new Redis Enterprise Database to be created.
@@ -207,6 +209,7 @@ pub mod enterprise_database {
         let o = context.register_resource(request);
         EnterpriseDatabaseResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             client_protocol: o.get_field("clientProtocol"),
             cluster_id: o.get_field("clusterId"),
             clustering_policy: o.get_field("clusteringPolicy"),

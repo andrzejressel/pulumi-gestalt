@@ -83,6 +83,8 @@ pub mod signing_profile_permission {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// An AWS Signer action permitted as part of cross-account permissions. Valid values: `signer:StartSigningJob`, `signer:GetSigningProfile`, `signer:RevokeSignature`, or `signer:SignPayload`.
         pub action: pulumi_gestalt_rust::Output<String>,
         /// The AWS principal to be granted a cross-account permission.
@@ -145,6 +147,7 @@ pub mod signing_profile_permission {
         let o = context.register_resource(request);
         SigningProfilePermissionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             action: o.get_field("action"),
             principal: o.get_field("principal"),
             profile_name: o.get_field("profileName"),

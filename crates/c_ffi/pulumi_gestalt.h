@@ -102,6 +102,8 @@ void pulumi_output_add_to_export(const struct pulumi_output_t *value, const char
 struct pulumi_output_t *pulumi_composite_output_get_field(struct pulumi_composite_output_t *output,
                                                           const char *field_name);
 
+struct pulumi_output_t *pulumi_composite_output_get_urn(struct pulumi_composite_output_t *output);
+
 /**
  * Receives value from configuration
  * `name`: Configuration bag's logical name. If null, the default (project name) is used.

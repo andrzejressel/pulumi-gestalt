@@ -102,6 +102,8 @@ pub mod resource_group_policy_remediation {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A number between 0.0 to 1.0 representing the percentage failure threshold. The remediation will fail if the percentage of failed remediation operations (i.e. failed deployments) exceeds this threshold.
         pub failure_percentage: pulumi_gestalt_rust::Output<Option<f64>>,
         /// A list of the resource locations that will be remediated.
@@ -190,6 +192,7 @@ pub mod resource_group_policy_remediation {
         let o = context.register_resource(request);
         ResourceGroupPolicyRemediationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             failure_percentage: o.get_field("failurePercentage"),
             location_filters: o.get_field("locationFilters"),
             name: o.get_field("name"),

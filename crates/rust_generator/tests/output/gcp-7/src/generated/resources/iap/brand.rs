@@ -92,6 +92,8 @@ pub mod brand {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Application name displayed on OAuth consent screen.
         ///
         ///
@@ -148,6 +150,7 @@ pub mod brand {
         let o = context.register_resource(request);
         BrandResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             application_title: o.get_field("applicationTitle"),
             name: o.get_field("name"),
             org_internal_only: o.get_field("orgInternalOnly"),

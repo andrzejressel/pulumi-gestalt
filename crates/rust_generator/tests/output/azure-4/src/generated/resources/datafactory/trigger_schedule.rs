@@ -114,6 +114,8 @@ pub mod trigger_schedule {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies if the Data Factory Schedule Trigger is activated. Defaults to `true`.
         pub activated: pulumi_gestalt_rust::Output<Option<bool>>,
         /// List of tags that can be used for describing the Data Factory Schedule Trigger.
@@ -238,6 +240,7 @@ pub mod trigger_schedule {
         let o = context.register_resource(request);
         TriggerScheduleResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             activated: o.get_field("activated"),
             annotations: o.get_field("annotations"),
             data_factory_id: o.get_field("dataFactoryId"),

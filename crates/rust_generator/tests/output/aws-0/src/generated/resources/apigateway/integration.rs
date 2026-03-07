@@ -288,6 +288,8 @@ pub mod integration {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// List of cache key parameters for the integration.
         pub cache_key_parameters: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// Integration's cache namespace.
@@ -443,6 +445,7 @@ pub mod integration {
         let o = context.register_resource(request);
         IntegrationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             cache_key_parameters: o.get_field("cacheKeyParameters"),
             cache_namespace: o.get_field("cacheNamespace"),
             connection_id: o.get_field("connectionId"),

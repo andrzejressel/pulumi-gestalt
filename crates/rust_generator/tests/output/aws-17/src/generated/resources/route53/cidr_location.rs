@@ -54,6 +54,8 @@ pub mod cidr_location {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// CIDR blocks for the location.
         pub cidr_blocks: pulumi_gestalt_rust::Output<Vec<String>>,
         /// The ID of the CIDR collection to update.
@@ -95,6 +97,7 @@ pub mod cidr_location {
         let o = context.register_resource(request);
         CidrLocationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             cidr_blocks: o.get_field("cidrBlocks"),
             cidr_collection_id: o.get_field("cidrCollectionId"),
             name: o.get_field("name"),

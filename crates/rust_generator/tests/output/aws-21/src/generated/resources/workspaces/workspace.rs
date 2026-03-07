@@ -91,6 +91,8 @@ pub mod workspace {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the bundle for the WorkSpace.
         pub bundle_id: pulumi_gestalt_rust::Output<String>,
         /// The name of the WorkSpace, as seen by the operating system.
@@ -187,6 +189,7 @@ pub mod workspace {
         let o = context.register_resource(request);
         WorkspaceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             bundle_id: o.get_field("bundleId"),
             computer_name: o.get_field("computerName"),
             directory_id: o.get_field("directoryId"),

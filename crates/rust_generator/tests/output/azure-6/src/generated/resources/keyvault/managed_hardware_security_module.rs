@@ -106,6 +106,8 @@ pub mod managed_hardware_security_module {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies a list of administrators object IDs for the key vault Managed Hardware Security Module. Changing this forces a new resource to be created.
         pub admin_object_ids: pulumi_gestalt_rust::Output<Vec<String>>,
         /// The URI of the Key Vault Managed Hardware Security Module, used for performing operations on keys.
@@ -238,6 +240,7 @@ pub mod managed_hardware_security_module {
         let o = context.register_resource(request);
         ManagedHardwareSecurityModuleResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             admin_object_ids: o.get_field("adminObjectIds"),
             hsm_uri: o.get_field("hsmUri"),
             location: o.get_field("location"),

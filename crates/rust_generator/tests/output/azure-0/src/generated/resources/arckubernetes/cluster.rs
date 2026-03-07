@@ -78,6 +78,8 @@ pub mod cluster {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the base64-encoded public certificate used by the agent to do the initial handshake to the backend services in Azure. Changing this forces a new Arc Kubernetes Cluster to be created.
         pub agent_public_key_certificate: pulumi_gestalt_rust::Output<String>,
         /// Version of the agent running on the cluster resource.
@@ -160,6 +162,7 @@ pub mod cluster {
         let o = context.register_resource(request);
         ClusterResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             agent_public_key_certificate: o.get_field("agentPublicKeyCertificate"),
             agent_version: o.get_field("agentVersion"),
             distribution: o.get_field("distribution"),

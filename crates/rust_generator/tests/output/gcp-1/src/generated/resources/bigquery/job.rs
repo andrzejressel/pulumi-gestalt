@@ -387,6 +387,8 @@ pub mod job {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Copies a table.
         pub copy: pulumi_gestalt_rust::Output<
             Option<super::super::types::bigquery::JobCopy>,
@@ -502,6 +504,7 @@ pub mod job {
         let o = context.register_resource(request);
         JobResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             copy: o.get_field("copy"),
             effective_labels: o.get_field("effectiveLabels"),
             extract: o.get_field("extract"),

@@ -67,6 +67,8 @@ pub mod consumer_group {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The name of the Event Hub-compatible endpoint in the IoT hub. Changing this forces a new resource to be created.
         pub eventhub_endpoint_name: pulumi_gestalt_rust::Output<String>,
         /// The name of the IoT Hub. Changing this forces a new resource to be created.
@@ -117,6 +119,7 @@ pub mod consumer_group {
         let o = context.register_resource(request);
         ConsumerGroupResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             eventhub_endpoint_name: o.get_field("eventhubEndpointName"),
             iothub_name: o.get_field("iothubName"),
             name: o.get_field("name"),

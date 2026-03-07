@@ -356,6 +356,8 @@ pub mod linux_virtual_machine_scale_set {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// An `additional_capabilities` block as defined below.
         pub additional_capabilities: pulumi_gestalt_rust::Output<
             Option<
@@ -871,6 +873,7 @@ pub mod linux_virtual_machine_scale_set {
         let o = context.register_resource(request);
         LinuxVirtualMachineScaleSetResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             additional_capabilities: o.get_field("additionalCapabilities"),
             admin_password: o.get_field("adminPassword"),
             admin_ssh_keys: o.get_field("adminSshKeys"),

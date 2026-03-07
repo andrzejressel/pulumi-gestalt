@@ -210,6 +210,8 @@ pub mod policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Dry-run policy. Audit-only policy, can be used to monitor how the policy would have impacted the existing and future resources if it's enforced.
         /// Structure is documented below.
         pub dry_run_spec: pulumi_gestalt_rust::Output<
@@ -269,6 +271,7 @@ pub mod policy {
         let o = context.register_resource(request);
         PolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             dry_run_spec: o.get_field("dryRunSpec"),
             etag: o.get_field("etag"),
             name: o.get_field("name"),

@@ -156,6 +156,8 @@ pub mod gallery_application_version {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the name of the config file on the VM. Changing this forces a new resource to be created.
         pub config_file: pulumi_gestalt_rust::Output<Option<String>>,
         /// Should the Gallery Application reports health. Defaults to `false`.
@@ -271,6 +273,7 @@ pub mod gallery_application_version {
         let o = context.register_resource(request);
         GalleryApplicationVersionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             config_file: o.get_field("configFile"),
             enable_health_check: o.get_field("enableHealthCheck"),
             end_of_life_date: o.get_field("endOfLifeDate"),

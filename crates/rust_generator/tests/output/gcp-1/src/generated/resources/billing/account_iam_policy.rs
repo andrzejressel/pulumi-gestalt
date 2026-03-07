@@ -172,6 +172,8 @@ pub mod account_iam_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The billing account id.
         ///
         /// For `gcp.billing.AccountIamMember` or `gcp.billing.AccountIamBinding`:
@@ -212,6 +214,7 @@ pub mod account_iam_policy {
         let o = context.register_resource(request);
         AccountIamPolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             billing_account_id: o.get_field("billingAccountId"),
             etag: o.get_field("etag"),
             policy_data: o.get_field("policyData"),

@@ -145,6 +145,8 @@ pub mod ontap_volume {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Aggregate configuration only applies to `FLEXGROUP` volumes. See [`aggregate_configuration` Block] for details.
         pub aggregate_configuration: pulumi_gestalt_rust::Output<
             Option<super::super::types::fsx::OntapVolumeAggregateConfiguration>,
@@ -334,6 +336,7 @@ pub mod ontap_volume {
         let o = context.register_resource(request);
         OntapVolumeResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             aggregate_configuration: o.get_field("aggregateConfiguration"),
             arn: o.get_field("arn"),
             bypass_snaplock_enterprise_retention: o

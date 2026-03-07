@@ -182,6 +182,8 @@ pub mod index {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The API scope at which a query is run. Default value: "ANY_API" Possible values: ["ANY_API", "DATASTORE_MODE_API"]
         pub api_scope: pulumi_gestalt_rust::Output<Option<String>>,
         /// The collection being indexed.
@@ -255,6 +257,7 @@ pub mod index {
         let o = context.register_resource(request);
         IndexResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             api_scope: o.get_field("apiScope"),
             collection: o.get_field("collection"),
             database: o.get_field("database"),

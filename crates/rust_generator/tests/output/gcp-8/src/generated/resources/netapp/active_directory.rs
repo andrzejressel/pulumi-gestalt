@@ -165,6 +165,8 @@ pub mod active_directory {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Domain user accounts to be added to the local Administrators group of the SMB service. Comma-separated list of domain users or groups. The Domain Admin group is automatically added when the service joins your domain as a hidden group.
         pub administrators: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// Enables AES-128 and AES-256 encryption for Kerberos-based communication with Active Directory.
@@ -362,6 +364,7 @@ pub mod active_directory {
         let o = context.register_resource(request);
         ActiveDirectoryResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             administrators: o.get_field("administrators"),
             aes_encryption: o.get_field("aesEncryption"),
             backup_operators: o.get_field("backupOperators"),

@@ -206,6 +206,8 @@ pub mod user_pool {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Configuration block to define which verified available method a user can use to recover their forgotten password. Detailed below.
         pub account_recovery_setting: pulumi_gestalt_rust::Output<
             Option<super::super::types::cognito::UserPoolAccountRecoverySetting>,
@@ -464,6 +466,7 @@ pub mod user_pool {
         let o = context.register_resource(request);
         UserPoolResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             account_recovery_setting: o.get_field("accountRecoverySetting"),
             admin_create_user_config: o.get_field("adminCreateUserConfig"),
             alias_attributes: o.get_field("aliasAttributes"),
