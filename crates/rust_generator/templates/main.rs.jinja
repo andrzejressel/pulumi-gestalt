@@ -1,5 +1,9 @@
 {{+ resources|safe }}
 
+pub mod provider {
+    include!("provider/provider.rs");
+}
+
 pub mod functions {
     {{+ functions|safe }}
 }

@@ -1,5 +1,6 @@
 use anyhow::Result;
 use pulumi_gestalt_providers_test::combine_string::CombineStringArgs;
+use pulumi_gestalt_providers_test::provider::ProviderArgs;
 use pulumi_gestalt_rust::Context;
 use pulumi_gestalt_rust::add_export;
 
@@ -13,6 +14,13 @@ fn pulumi_main(context: &Context) -> Result<()> {
         CombineStringArgs::builder().suffix("SUFFIX").build_struct(),
     );
 
+    let provider = pulumi_gestalt_providers_test::provider::create(
+        context,
+        "test_provider",
+        ProviderArgs::builder().prefix("MY_PREFIX").build_struct(),
+    );
+
+    add_export("provider_prefix", &provider.prefix);
     add_export("result", &combine_string_res.result);
 
     Ok(())

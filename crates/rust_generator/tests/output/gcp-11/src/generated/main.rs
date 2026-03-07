@@ -99,6 +99,9 @@ pub mod vertex {
     include!("resources/vertex/ai_metadata_store.rs");
     include!("resources/vertex/ai_tensorboard.rs");
 }
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {
     pub mod siteverification {
         include!("functions/siteverification/get_token.rs");
@@ -639,6 +642,7 @@ pub mod types {
             "types/vertex/get_ai_index_metadata_config_algorithm_config_tree_ah_config.rs"
         );
     }
+    include!("types/provider_batching.rs");
 }
 #[doc(hidden)]
 pub mod constants {}

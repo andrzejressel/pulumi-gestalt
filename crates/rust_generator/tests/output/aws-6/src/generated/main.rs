@@ -59,6 +59,9 @@ pub mod dax {
     include!("resources/dax/parameter_group.rs");
     include!("resources/dax/subnet_group.rs");
 }
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {
     pub mod controltower {
         include!("functions/controltower/get_controls.rs");
@@ -388,6 +391,11 @@ pub mod types {
         include!("types/dax/cluster_server_side_encryption.rs");
         include!("types/dax/parameter_group_parameter.rs");
     }
+    include!("types/provider_assume_role.rs");
+    include!("types/provider_assume_role_with_web_identity.rs");
+    include!("types/provider_default_tags.rs");
+    include!("types/provider_endpoint.rs");
+    include!("types/provider_ignore_tags.rs");
     include!("types/get_availability_zone_filter.rs");
     include!("types/get_availability_zones_filter.rs");
     include!("types/get_regions_filter.rs");

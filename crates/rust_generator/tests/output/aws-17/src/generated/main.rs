@@ -134,6 +134,9 @@ pub mod sagemaker {
     include!("resources/sagemaker/workforce.rs");
     include!("resources/sagemaker/workteam.rs");
 }
+pub mod provider {
+    include!("provider/provider.rs");
+}
 pub mod functions {
     pub mod route53 {
         include!("functions/route53/get_delegation_set.rs");
@@ -1124,6 +1127,11 @@ pub mod types {
             "types/sagemaker/workteam_worker_access_configuration_s_3_presign_iam_policy_constraints.rs"
         );
     }
+    include!("types/provider_assume_role.rs");
+    include!("types/provider_assume_role_with_web_identity.rs");
+    include!("types/provider_default_tags.rs");
+    include!("types/provider_endpoint.rs");
+    include!("types/provider_ignore_tags.rs");
     include!("types/get_availability_zone_filter.rs");
     include!("types/get_availability_zones_filter.rs");
     include!("types/get_regions_filter.rs");
