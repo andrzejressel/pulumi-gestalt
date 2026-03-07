@@ -42,6 +42,35 @@ fn generate_random_value(ctx: &Context) {
     provider.get_urn().add_to_export("provider_urn");
 }
 
+fn create_provider_and_use_it(ctx: &Context) {
+    let provider_request = RegisterResourceRequest {
+        type_: "pulumi:providers:random".to_string(),
+        name: "custom-provider".to_string(),
+        version: "4.15.1".to_string(),
+        object: vec![],
+        provider: None,
+    };
+    let provider = ctx.register_resource(&provider_request);
+    let provider_id = provider.get_provider_id();
+
+    let output = ctx.create_output("16", false);
+    let inputs = vec![ObjectField {
+        name: "length".to_string(),
+        value: &output,
+    }];
+
+    let register_resource_request = RegisterResourceRequest {
+        type_: "random:index/randomString:RandomString".to_string(),
+        name: "my_name_with_provider".to_string(),
+        version: "4.15.1".to_string(),
+        object: inputs,
+        provider: Some(&provider_id),
+    };
+
+    let _ = ctx.register_resource(&register_resource_request);
+    provider_id.add_to_export("resource_provider_id");
+}
+
 fn run_command(ctx: &Context) {
     let output = ctx.create_output("\"whoami\"", false);
 
@@ -142,6 +171,7 @@ unsafe extern "C" fn __wasm_main() {
 fn main() {
     let ctx = Context::new();
     generate_random_value(&ctx);
+    create_provider_and_use_it(&ctx);
     run_command(&ctx);
     perform_operations_on_outputs(&ctx);
     perform_operations_on_default_config(&ctx);
