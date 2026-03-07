@@ -104,6 +104,22 @@ pub mod device_fleet {
         name: &str,
         args: DeviceFleetArgs,
     ) -> DeviceFleetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DeviceFleetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DeviceFleetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DeviceFleetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DeviceFleetResult {
         let description_binding = args.description.get_output(context);
         let device_fleet_name_binding = args.device_fleet_name.get_output(context);
         let enable_iot_role_alias_binding = args
@@ -142,6 +158,7 @@ pub mod device_fleet {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DeviceFleetResult {

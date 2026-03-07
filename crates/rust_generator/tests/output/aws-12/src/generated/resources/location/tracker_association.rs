@@ -70,6 +70,22 @@ pub mod tracker_association {
         name: &str,
         args: TrackerAssociationArgs,
     ) -> TrackerAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TrackerAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TrackerAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TrackerAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TrackerAssociationResult {
         let consumer_arn_binding = args.consumer_arn.get_output(context);
         let tracker_name_binding = args.tracker_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -86,6 +102,7 @@ pub mod tracker_association {
                     value: &tracker_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TrackerAssociationResult {

@@ -113,6 +113,22 @@ pub mod hosted_private_virtual_interface {
         name: &str,
         args: HostedPrivateVirtualInterfaceArgs,
     ) -> HostedPrivateVirtualInterfaceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HostedPrivateVirtualInterfaceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> HostedPrivateVirtualInterfaceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HostedPrivateVirtualInterfaceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> HostedPrivateVirtualInterfaceResult {
         let address_family_binding = args.address_family.get_output(context);
         let amazon_address_binding = args.amazon_address.get_output(context);
         let bgp_asn_binding = args.bgp_asn.get_output(context);
@@ -170,6 +186,7 @@ pub mod hosted_private_virtual_interface {
                     value: &vlan_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         HostedPrivateVirtualInterfaceResult {

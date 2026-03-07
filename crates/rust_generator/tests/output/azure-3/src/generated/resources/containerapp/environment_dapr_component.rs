@@ -146,6 +146,22 @@ pub mod environment_dapr_component {
         name: &str,
         args: EnvironmentDaprComponentArgs,
     ) -> EnvironmentDaprComponentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EnvironmentDaprComponentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EnvironmentDaprComponentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EnvironmentDaprComponentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EnvironmentDaprComponentResult {
         let component_type_binding = args.component_type.get_output(context);
         let container_app_environment_id_binding = args
             .container_app_environment_id
@@ -200,6 +216,7 @@ pub mod environment_dapr_component {
                     value: &version_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EnvironmentDaprComponentResult {

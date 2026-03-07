@@ -81,6 +81,22 @@ pub mod hsm {
         name: &str,
         args: HsmArgs,
     ) -> HsmResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HsmArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> HsmResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HsmArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> HsmResult {
         let availability_zone_binding = args.availability_zone.get_output(context);
         let cluster_id_binding = args.cluster_id.get_output(context);
         let ip_address_binding = args.ip_address.get_output(context);
@@ -107,6 +123,7 @@ pub mod hsm {
                     value: &subnet_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         HsmResult {

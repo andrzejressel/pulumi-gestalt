@@ -172,6 +172,22 @@ pub mod backup_plan_association {
         name: &str,
         args: BackupPlanAssociationArgs,
     ) -> BackupPlanAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackupPlanAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BackupPlanAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackupPlanAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BackupPlanAssociationResult {
         let backup_plan_binding = args.backup_plan.get_output(context);
         let backup_plan_association_id_binding = args
             .backup_plan_association_id
@@ -211,6 +227,7 @@ pub mod backup_plan_association {
                     value: &resource_type_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BackupPlanAssociationResult {

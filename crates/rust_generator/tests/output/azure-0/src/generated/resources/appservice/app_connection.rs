@@ -157,6 +157,22 @@ pub mod app_connection {
         name: &str,
         args: AppConnectionArgs,
     ) -> AppConnectionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AppConnectionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AppConnectionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AppConnectionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AppConnectionResult {
         let authentication_binding = args.authentication.get_output(context);
         let client_type_binding = args.client_type.get_output(context);
         let function_app_id_binding = args.function_app_id.get_output(context);
@@ -198,6 +214,7 @@ pub mod app_connection {
                     value: &vnet_solution_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AppConnectionResult {

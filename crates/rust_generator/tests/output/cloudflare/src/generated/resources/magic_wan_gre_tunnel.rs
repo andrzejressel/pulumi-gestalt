@@ -115,6 +115,22 @@ pub mod magic_wan_gre_tunnel {
         name: &str,
         args: MagicWanGreTunnelArgs,
     ) -> MagicWanGreTunnelResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MagicWanGreTunnelArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MagicWanGreTunnelResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MagicWanGreTunnelArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MagicWanGreTunnelResult {
         let account_id_binding = args.account_id.get_output(context);
         let cloudflare_gre_endpoint_binding = args
             .cloudflare_gre_endpoint
@@ -180,6 +196,7 @@ pub mod magic_wan_gre_tunnel {
                     value: &ttl_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MagicWanGreTunnelResult {

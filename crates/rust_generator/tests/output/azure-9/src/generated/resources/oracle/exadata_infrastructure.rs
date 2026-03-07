@@ -131,6 +131,22 @@ pub mod exadata_infrastructure {
         name: &str,
         args: ExadataInfrastructureArgs,
     ) -> ExadataInfrastructureResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ExadataInfrastructureArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ExadataInfrastructureResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ExadataInfrastructureArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ExadataInfrastructureResult {
         let compute_count_binding = args.compute_count.get_output(context);
         let customer_contacts_binding = args.customer_contacts.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
@@ -192,6 +208,7 @@ pub mod exadata_infrastructure {
                     value: &zones_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ExadataInfrastructureResult {

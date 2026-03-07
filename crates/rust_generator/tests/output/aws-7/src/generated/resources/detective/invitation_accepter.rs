@@ -64,6 +64,22 @@ pub mod invitation_accepter {
         name: &str,
         args: InvitationAccepterArgs,
     ) -> InvitationAccepterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InvitationAccepterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> InvitationAccepterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InvitationAccepterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> InvitationAccepterResult {
         let graph_arn_binding = args.graph_arn.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:detective/invitationAccepter:InvitationAccepter".into(),
@@ -75,6 +91,7 @@ pub mod invitation_accepter {
                     value: &graph_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         InvitationAccepterResult {

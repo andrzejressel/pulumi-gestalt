@@ -81,6 +81,22 @@ pub mod project_metadata_item {
         name: &str,
         args: ProjectMetadataItemArgs,
     ) -> ProjectMetadataItemResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProjectMetadataItemArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ProjectMetadataItemResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProjectMetadataItemArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ProjectMetadataItemResult {
         let key_binding = args.key.get_output(context);
         let project_binding = args.project.get_output(context);
         let value_binding = args.value.get_output(context);
@@ -102,6 +118,7 @@ pub mod project_metadata_item {
                     value: &value_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ProjectMetadataItemResult {

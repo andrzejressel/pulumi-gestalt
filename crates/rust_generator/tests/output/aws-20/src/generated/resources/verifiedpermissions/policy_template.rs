@@ -79,6 +79,22 @@ pub mod policy_template {
         name: &str,
         args: PolicyTemplateArgs,
     ) -> PolicyTemplateResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PolicyTemplateArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PolicyTemplateResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PolicyTemplateArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PolicyTemplateResult {
         let description_binding = args.description.get_output(context);
         let policy_store_id_binding = args.policy_store_id.get_output(context);
         let statement_binding = args.statement.get_output(context);
@@ -100,6 +116,7 @@ pub mod policy_template {
                     value: &statement_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PolicyTemplateResult {

@@ -100,6 +100,22 @@ pub mod registry_cache_rule {
         name: &str,
         args: RegistryCacheRuleArgs,
     ) -> RegistryCacheRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegistryCacheRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RegistryCacheRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegistryCacheRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RegistryCacheRuleResult {
         let container_registry_id_binding = args
             .container_registry_id
             .get_output(context);
@@ -133,6 +149,7 @@ pub mod registry_cache_rule {
                     value: &target_repo_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RegistryCacheRuleResult {

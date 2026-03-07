@@ -224,6 +224,22 @@ pub mod maintenance_window_task {
         name: &str,
         args: MaintenanceWindowTaskArgs,
     ) -> MaintenanceWindowTaskResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MaintenanceWindowTaskArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MaintenanceWindowTaskResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MaintenanceWindowTaskArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MaintenanceWindowTaskResult {
         let cutoff_behavior_binding = args.cutoff_behavior.get_output(context);
         let description_binding = args.description.get_output(context);
         let max_concurrency_binding = args.max_concurrency.get_output(context);
@@ -292,6 +308,7 @@ pub mod maintenance_window_task {
                     value: &window_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MaintenanceWindowTaskResult {

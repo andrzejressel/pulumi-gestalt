@@ -140,6 +140,22 @@ pub mod api_operation {
         name: &str,
         args: ApiOperationArgs,
     ) -> ApiOperationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApiOperationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ApiOperationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApiOperationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ApiOperationResult {
         let api_management_name_binding = args.api_management_name.get_output(context);
         let api_name_binding = args.api_name.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -201,6 +217,7 @@ pub mod api_operation {
                     value: &url_template_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ApiOperationResult {

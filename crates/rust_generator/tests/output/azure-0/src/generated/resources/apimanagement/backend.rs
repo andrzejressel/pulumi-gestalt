@@ -150,6 +150,22 @@ pub mod backend {
         name: &str,
         args: BackendArgs,
     ) -> BackendResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackendArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BackendResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackendArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BackendResult {
         let api_management_name_binding = args.api_management_name.get_output(context);
         let credentials_binding = args.credentials.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -218,6 +234,7 @@ pub mod backend {
                     value: &url_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BackendResult {

@@ -75,6 +75,22 @@ pub mod baidu_channel {
         name: &str,
         args: BaiduChannelArgs,
     ) -> BaiduChannelResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BaiduChannelArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BaiduChannelResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BaiduChannelArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BaiduChannelResult {
         let api_key_binding = args.api_key.get_output(context);
         let application_id_binding = args.application_id.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
@@ -101,6 +117,7 @@ pub mod baidu_channel {
                     value: &secret_key_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BaiduChannelResult {

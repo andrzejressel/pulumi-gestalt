@@ -153,6 +153,22 @@ pub mod generic_service {
         name: &str,
         args: GenericServiceArgs,
     ) -> GenericServiceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GenericServiceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GenericServiceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GenericServiceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GenericServiceResult {
         let basic_service_binding = args.basic_service.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let project_binding = args.project.get_output(context);
@@ -184,6 +200,7 @@ pub mod generic_service {
                     value: &user_labels_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GenericServiceResult {

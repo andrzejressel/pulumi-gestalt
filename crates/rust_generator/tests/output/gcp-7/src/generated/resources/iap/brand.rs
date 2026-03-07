@@ -125,6 +125,22 @@ pub mod brand {
         name: &str,
         args: BrandArgs,
     ) -> BrandResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BrandArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BrandResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BrandArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BrandResult {
         let application_title_binding = args.application_title.get_output(context);
         let project_binding = args.project.get_output(context);
         let support_email_binding = args.support_email.get_output(context);
@@ -146,6 +162,7 @@ pub mod brand {
                     value: &support_email_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BrandResult {

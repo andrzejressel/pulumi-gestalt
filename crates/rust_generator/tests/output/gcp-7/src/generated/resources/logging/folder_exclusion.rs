@@ -97,6 +97,22 @@ pub mod folder_exclusion {
         name: &str,
         args: FolderExclusionArgs,
     ) -> FolderExclusionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FolderExclusionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FolderExclusionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FolderExclusionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FolderExclusionResult {
         let description_binding = args.description.get_output(context);
         let disabled_binding = args.disabled.get_output(context);
         let filter_binding = args.filter.get_output(context);
@@ -128,6 +144,7 @@ pub mod folder_exclusion {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FolderExclusionResult {

@@ -121,6 +121,22 @@ pub mod reserved_instance {
         name: &str,
         args: ReservedInstanceArgs,
     ) -> ReservedInstanceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReservedInstanceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ReservedInstanceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReservedInstanceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ReservedInstanceResult {
         let instance_count_binding = args.instance_count.get_output(context);
         let offering_id_binding = args.offering_id.get_output(context);
         let reservation_id_binding = args.reservation_id.get_output(context);
@@ -147,6 +163,7 @@ pub mod reserved_instance {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ReservedInstanceResult {

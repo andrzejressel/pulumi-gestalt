@@ -188,6 +188,22 @@ pub mod server_transparent_data_encryption {
         name: &str,
         args: ServerTransparentDataEncryptionArgs,
     ) -> ServerTransparentDataEncryptionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServerTransparentDataEncryptionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServerTransparentDataEncryptionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServerTransparentDataEncryptionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServerTransparentDataEncryptionResult {
         let auto_rotation_enabled_binding = args
             .auto_rotation_enabled
             .get_output(context);
@@ -217,6 +233,7 @@ pub mod server_transparent_data_encryption {
                     value: &server_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServerTransparentDataEncryptionResult {

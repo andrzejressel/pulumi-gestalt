@@ -195,6 +195,22 @@ pub mod task_set {
         name: &str,
         args: TaskSetArgs,
     ) -> TaskSetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TaskSetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TaskSetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TaskSetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TaskSetResult {
         let capacity_provider_strategies_binding = args
             .capacity_provider_strategies
             .get_output(context);
@@ -282,6 +298,7 @@ pub mod task_set {
                     value: &wait_until_stable_timeout_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TaskSetResult {

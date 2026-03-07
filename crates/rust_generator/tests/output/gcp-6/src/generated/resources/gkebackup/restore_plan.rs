@@ -843,6 +843,22 @@ pub mod restore_plan {
         name: &str,
         args: RestorePlanArgs,
     ) -> RestorePlanResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RestorePlanArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RestorePlanResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RestorePlanArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RestorePlanResult {
         let backup_plan_binding = args.backup_plan.get_output(context);
         let cluster_binding = args.cluster.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -889,6 +905,7 @@ pub mod restore_plan {
                     value: &restore_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RestorePlanResult {

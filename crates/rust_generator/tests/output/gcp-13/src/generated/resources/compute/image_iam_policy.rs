@@ -390,6 +390,22 @@ pub mod image_iam_policy {
         name: &str,
         args: ImageIamPolicyArgs,
     ) -> ImageIamPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ImageIamPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ImageIamPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ImageIamPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ImageIamPolicyResult {
         let image_binding = args.image.get_output(context);
         let policy_data_binding = args.policy_data.get_output(context);
         let project_binding = args.project.get_output(context);
@@ -411,6 +427,7 @@ pub mod image_iam_policy {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ImageIamPolicyResult {

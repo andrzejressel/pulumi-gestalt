@@ -92,6 +92,22 @@ pub mod worker_configuration {
         name: &str,
         args: WorkerConfigurationArgs,
     ) -> WorkerConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkerConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WorkerConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkerConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WorkerConfigurationResult {
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let properties_file_content_binding = args
@@ -120,6 +136,7 @@ pub mod worker_configuration {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WorkerConfigurationResult {

@@ -147,6 +147,22 @@ pub mod web_app {
         name: &str,
         args: WebAppArgs,
     ) -> WebAppResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WebAppArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WebAppResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WebAppArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WebAppResult {
         let api_key_id_binding = args.api_key_id.get_output(context);
         let deletion_policy_binding = args.deletion_policy.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
@@ -173,6 +189,7 @@ pub mod web_app {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WebAppResult {

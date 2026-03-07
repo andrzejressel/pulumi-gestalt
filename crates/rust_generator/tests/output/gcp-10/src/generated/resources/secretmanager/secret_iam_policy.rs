@@ -388,6 +388,22 @@ pub mod secret_iam_policy {
         name: &str,
         args: SecretIamPolicyArgs,
     ) -> SecretIamPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SecretIamPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SecretIamPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SecretIamPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SecretIamPolicyResult {
         let policy_data_binding = args.policy_data.get_output(context);
         let project_binding = args.project.get_output(context);
         let secret_id_binding = args.secret_id.get_output(context);
@@ -409,6 +425,7 @@ pub mod secret_iam_policy {
                     value: &secret_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SecretIamPolicyResult {

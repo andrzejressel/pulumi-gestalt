@@ -233,6 +233,22 @@ pub mod keystores_aliases_self_signed_cert {
         name: &str,
         args: KeystoresAliasesSelfSignedCertArgs,
     ) -> KeystoresAliasesSelfSignedCertResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: KeystoresAliasesSelfSignedCertArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> KeystoresAliasesSelfSignedCertResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: KeystoresAliasesSelfSignedCertArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> KeystoresAliasesSelfSignedCertResult {
         let alias_binding = args.alias.get_output(context);
         let cert_validity_in_days_binding = args
             .cert_validity_in_days
@@ -289,6 +305,7 @@ pub mod keystores_aliases_self_signed_cert {
                     value: &subject_alternative_dns_names_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         KeystoresAliasesSelfSignedCertResult {

@@ -96,6 +96,22 @@ pub mod source_credential {
         name: &str,
         args: SourceCredentialArgs,
     ) -> SourceCredentialResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SourceCredentialArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SourceCredentialResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SourceCredentialArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SourceCredentialResult {
         let auth_type_binding = args.auth_type.get_output(context);
         let server_type_binding = args.server_type.get_output(context);
         let token_binding = args.token.get_output(context);
@@ -122,6 +138,7 @@ pub mod source_credential {
                     value: &user_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SourceCredentialResult {

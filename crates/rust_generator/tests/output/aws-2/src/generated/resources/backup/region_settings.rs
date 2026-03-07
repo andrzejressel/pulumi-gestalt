@@ -81,6 +81,22 @@ pub mod region_settings {
         name: &str,
         args: RegionSettingsArgs,
     ) -> RegionSettingsResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionSettingsArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RegionSettingsResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionSettingsArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RegionSettingsResult {
         let resource_type_management_preference_binding = args
             .resource_type_management_preference
             .get_output(context);
@@ -101,6 +117,7 @@ pub mod region_settings {
                     value: &resource_type_opt_in_preference_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RegionSettingsResult {

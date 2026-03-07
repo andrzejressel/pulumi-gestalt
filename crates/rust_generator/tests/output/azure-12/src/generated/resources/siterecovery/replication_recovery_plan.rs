@@ -115,6 +115,22 @@ pub mod replication_recovery_plan {
         name: &str,
         args: ReplicationRecoveryPlanArgs,
     ) -> ReplicationRecoveryPlanResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReplicationRecoveryPlanArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ReplicationRecoveryPlanResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReplicationRecoveryPlanArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ReplicationRecoveryPlanResult {
         let azure_to_azure_settings_binding = args
             .azure_to_azure_settings
             .get_output(context);
@@ -172,6 +188,7 @@ pub mod replication_recovery_plan {
                     value: &target_recovery_fabric_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ReplicationRecoveryPlanResult {

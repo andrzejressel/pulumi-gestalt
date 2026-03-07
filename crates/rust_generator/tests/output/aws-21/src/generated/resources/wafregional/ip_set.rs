@@ -74,6 +74,22 @@ pub mod ip_set {
         name: &str,
         args: IpSetArgs,
     ) -> IpSetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IpSetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IpSetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IpSetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IpSetResult {
         let ip_set_descriptors_binding = args.ip_set_descriptors.get_output(context);
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -90,6 +106,7 @@ pub mod ip_set {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IpSetResult {

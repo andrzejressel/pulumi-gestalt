@@ -113,6 +113,22 @@ pub mod topic_authorization_rule {
         name: &str,
         args: TopicAuthorizationRuleArgs,
     ) -> TopicAuthorizationRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TopicAuthorizationRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TopicAuthorizationRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TopicAuthorizationRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TopicAuthorizationRuleResult {
         let listen_binding = args.listen.get_output(context);
         let manage_binding = args.manage.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -144,6 +160,7 @@ pub mod topic_authorization_rule {
                     value: &topic_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TopicAuthorizationRuleResult {

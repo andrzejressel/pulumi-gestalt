@@ -126,6 +126,22 @@ pub mod resiliency_policy {
         name: &str,
         args: ResiliencyPolicyArgs,
     ) -> ResiliencyPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResiliencyPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ResiliencyPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResiliencyPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ResiliencyPolicyResult {
         let data_location_constraint_binding = args
             .data_location_constraint
             .get_output(context);
@@ -169,6 +185,7 @@ pub mod resiliency_policy {
                     value: &timeouts_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ResiliencyPolicyResult {

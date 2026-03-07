@@ -228,6 +228,22 @@ pub mod extension {
         name: &str,
         args: ExtensionArgs,
     ) -> ExtensionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ExtensionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ExtensionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ExtensionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ExtensionResult {
         let auto_upgrade_minor_version_binding = args
             .auto_upgrade_minor_version
             .get_output(context);
@@ -309,6 +325,7 @@ pub mod extension {
                     value: &virtual_machine_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ExtensionResult {

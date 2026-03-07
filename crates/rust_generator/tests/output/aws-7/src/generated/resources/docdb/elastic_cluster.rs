@@ -149,6 +149,22 @@ pub mod elastic_cluster {
         name: &str,
         args: ElasticClusterArgs,
     ) -> ElasticClusterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ElasticClusterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ElasticClusterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ElasticClusterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ElasticClusterResult {
         let admin_user_name_binding = args.admin_user_name.get_output(context);
         let admin_user_password_binding = args.admin_user_password.get_output(context);
         let auth_type_binding = args.auth_type.get_output(context);
@@ -233,6 +249,7 @@ pub mod elastic_cluster {
                     value: &vpc_security_group_ids_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ElasticClusterResult {

@@ -152,6 +152,22 @@ pub mod assessment {
         name: &str,
         args: AssessmentArgs,
     ) -> AssessmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AssessmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AssessmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AssessmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AssessmentResult {
         let assessment_reports_destination_binding = args
             .assessment_reports_destination
             .get_output(context);
@@ -195,6 +211,7 @@ pub mod assessment {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AssessmentResult {

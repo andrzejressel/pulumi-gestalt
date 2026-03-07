@@ -80,6 +80,22 @@ pub mod standards_control_association {
         name: &str,
         args: StandardsControlAssociationArgs,
     ) -> StandardsControlAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StandardsControlAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> StandardsControlAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StandardsControlAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> StandardsControlAssociationResult {
         let association_status_binding = args.association_status.get_output(context);
         let security_control_id_binding = args.security_control_id.get_output(context);
         let standards_arn_binding = args.standards_arn.get_output(context);
@@ -107,6 +123,7 @@ pub mod standards_control_association {
                     value: &updated_reason_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         StandardsControlAssociationResult {

@@ -78,6 +78,22 @@ pub mod frontdoor_rule_set {
         name: &str,
         args: FrontdoorRuleSetArgs,
     ) -> FrontdoorRuleSetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FrontdoorRuleSetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FrontdoorRuleSetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FrontdoorRuleSetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FrontdoorRuleSetResult {
         let cdn_frontdoor_profile_id_binding = args
             .cdn_frontdoor_profile_id
             .get_output(context);
@@ -96,6 +112,7 @@ pub mod frontdoor_rule_set {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FrontdoorRuleSetResult {

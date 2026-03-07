@@ -132,6 +132,22 @@ pub mod organization_security_policy_association {
         name: &str,
         args: OrganizationSecurityPolicyAssociationArgs,
     ) -> OrganizationSecurityPolicyAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationSecurityPolicyAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OrganizationSecurityPolicyAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationSecurityPolicyAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OrganizationSecurityPolicyAssociationResult {
         let attachment_id_binding = args.attachment_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let policy_id_binding = args.policy_id.get_output(context);
@@ -154,6 +170,7 @@ pub mod organization_security_policy_association {
                     value: &policy_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OrganizationSecurityPolicyAssociationResult {

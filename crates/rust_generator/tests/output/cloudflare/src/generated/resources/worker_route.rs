@@ -71,6 +71,22 @@ pub mod worker_route {
         name: &str,
         args: WorkerRouteArgs,
     ) -> WorkerRouteResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkerRouteArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WorkerRouteResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkerRouteArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WorkerRouteResult {
         let pattern_binding = args.pattern.get_output(context);
         let script_name_binding = args.script_name.get_output(context);
         let zone_id_binding = args.zone_id.get_output(context);
@@ -92,6 +108,7 @@ pub mod worker_route {
                     value: &zone_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WorkerRouteResult {

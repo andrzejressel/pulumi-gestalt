@@ -122,6 +122,22 @@ pub mod fleet {
         name: &str,
         args: FleetArgs,
     ) -> FleetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FleetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FleetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FleetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FleetResult {
         let default_cluster_config_binding = args
             .default_cluster_config
             .get_output(context);
@@ -145,6 +161,7 @@ pub mod fleet {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FleetResult {

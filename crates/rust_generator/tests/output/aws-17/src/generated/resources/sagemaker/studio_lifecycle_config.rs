@@ -84,6 +84,22 @@ pub mod studio_lifecycle_config {
         name: &str,
         args: StudioLifecycleConfigArgs,
     ) -> StudioLifecycleConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StudioLifecycleConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> StudioLifecycleConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StudioLifecycleConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> StudioLifecycleConfigResult {
         let studio_lifecycle_config_app_type_binding = args
             .studio_lifecycle_config_app_type
             .get_output(context);
@@ -116,6 +132,7 @@ pub mod studio_lifecycle_config {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         StudioLifecycleConfigResult {

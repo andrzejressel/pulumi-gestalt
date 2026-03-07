@@ -213,6 +213,22 @@ pub mod compute_cluster {
         name: &str,
         args: ComputeClusterArgs,
     ) -> ComputeClusterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ComputeClusterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ComputeClusterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ComputeClusterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ComputeClusterResult {
         let description_binding = args.description.get_output(context);
         let identity_binding = args.identity.get_output(context);
         let local_auth_enabled_binding = args.local_auth_enabled.get_output(context);
@@ -295,6 +311,7 @@ pub mod compute_cluster {
                     value: &vm_size_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ComputeClusterResult {

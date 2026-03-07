@@ -136,6 +136,22 @@ pub mod peering {
         name: &str,
         args: PeeringArgs,
     ) -> PeeringResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PeeringArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PeeringResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PeeringArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PeeringResult {
         let authorized_network_binding = args.authorized_network.get_output(context);
         let domain_resource_binding = args.domain_resource.get_output(context);
         let labels_binding = args.labels.get_output(context);
@@ -177,6 +193,7 @@ pub mod peering {
                     value: &status_message_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PeeringResult {

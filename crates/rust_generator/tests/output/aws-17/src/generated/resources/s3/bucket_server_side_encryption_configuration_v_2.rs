@@ -100,6 +100,22 @@ pub mod bucket_server_side_encryption_configuration_v_2 {
         name: &str,
         args: BucketServerSideEncryptionConfigurationV2Args,
     ) -> BucketServerSideEncryptionConfigurationV2Result {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BucketServerSideEncryptionConfigurationV2Args,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BucketServerSideEncryptionConfigurationV2Result {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BucketServerSideEncryptionConfigurationV2Args,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BucketServerSideEncryptionConfigurationV2Result {
         let bucket_binding = args.bucket.get_output(context);
         let expected_bucket_owner_binding = args
             .expected_bucket_owner
@@ -124,6 +140,7 @@ pub mod bucket_server_side_encryption_configuration_v_2 {
                     value: &rules_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BucketServerSideEncryptionConfigurationV2Result {

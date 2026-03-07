@@ -113,6 +113,22 @@ pub mod eip_association {
         name: &str,
         args: EipAssociationArgs,
     ) -> EipAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EipAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EipAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EipAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EipAssociationResult {
         let allocation_id_binding = args.allocation_id.get_output(context);
         let allow_reassociation_binding = args.allow_reassociation.get_output(context);
         let instance_id_binding = args.instance_id.get_output(context);
@@ -149,6 +165,7 @@ pub mod eip_association {
                     value: &public_ip_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EipAssociationResult {

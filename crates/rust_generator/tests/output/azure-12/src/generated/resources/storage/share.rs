@@ -156,6 +156,22 @@ pub mod share {
         name: &str,
         args: ShareArgs,
     ) -> ShareResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ShareArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ShareResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ShareArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ShareResult {
         let access_tier_binding = args.access_tier.get_output(context);
         let acls_binding = args.acls.get_output(context);
         let enabled_protocol_binding = args.enabled_protocol.get_output(context);
@@ -202,6 +218,7 @@ pub mod share {
                     value: &storage_account_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ShareResult {

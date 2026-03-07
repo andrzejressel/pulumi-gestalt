@@ -64,6 +64,22 @@ pub mod function_recursion_config {
         name: &str,
         args: FunctionRecursionConfigArgs,
     ) -> FunctionRecursionConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FunctionRecursionConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FunctionRecursionConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FunctionRecursionConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FunctionRecursionConfigResult {
         let function_name_binding = args.function_name.get_output(context);
         let recursive_loop_binding = args.recursive_loop.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -80,6 +96,7 @@ pub mod function_recursion_config {
                     value: &recursive_loop_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FunctionRecursionConfigResult {

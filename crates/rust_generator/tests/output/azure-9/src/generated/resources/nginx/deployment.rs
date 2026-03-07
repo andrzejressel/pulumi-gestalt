@@ -213,6 +213,22 @@ pub mod deployment {
         name: &str,
         args: DeploymentArgs,
     ) -> DeploymentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DeploymentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DeploymentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DeploymentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DeploymentResult {
         let auto_scale_profiles_binding = args.auto_scale_profiles.get_output(context);
         let automatic_upgrade_channel_binding = args
             .automatic_upgrade_channel
@@ -307,6 +323,7 @@ pub mod deployment {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DeploymentResult {

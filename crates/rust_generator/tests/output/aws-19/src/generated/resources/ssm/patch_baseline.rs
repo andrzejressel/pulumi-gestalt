@@ -264,6 +264,22 @@ pub mod patch_baseline {
         name: &str,
         args: PatchBaselineArgs,
     ) -> PatchBaselineResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PatchBaselineArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PatchBaselineResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PatchBaselineArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PatchBaselineResult {
         let approval_rules_binding = args.approval_rules.get_output(context);
         let approved_patches_binding = args.approved_patches.get_output(context);
         let approved_patches_compliance_level_binding = args
@@ -336,6 +352,7 @@ pub mod patch_baseline {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PatchBaselineResult {

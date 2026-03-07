@@ -200,6 +200,22 @@ pub mod gallery_application_version {
         name: &str,
         args: GalleryApplicationVersionArgs,
     ) -> GalleryApplicationVersionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GalleryApplicationVersionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GalleryApplicationVersionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GalleryApplicationVersionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GalleryApplicationVersionResult {
         let config_file_binding = args.config_file.get_output(context);
         let enable_health_check_binding = args.enable_health_check.get_output(context);
         let end_of_life_date_binding = args.end_of_life_date.get_output(context);
@@ -269,6 +285,7 @@ pub mod gallery_application_version {
                     value: &target_regions_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GalleryApplicationVersionResult {

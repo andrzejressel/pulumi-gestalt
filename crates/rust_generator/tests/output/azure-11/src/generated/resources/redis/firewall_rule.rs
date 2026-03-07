@@ -102,6 +102,22 @@ pub mod firewall_rule {
         name: &str,
         args: FirewallRuleArgs,
     ) -> FirewallRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FirewallRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FirewallRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FirewallRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FirewallRuleResult {
         let end_ip_binding = args.end_ip.get_output(context);
         let name_binding = args.name.get_output(context);
         let redis_cache_name_binding = args.redis_cache_name.get_output(context);
@@ -133,6 +149,7 @@ pub mod firewall_rule {
                     value: &start_ip_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FirewallRuleResult {

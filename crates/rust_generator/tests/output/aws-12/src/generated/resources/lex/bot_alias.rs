@@ -92,6 +92,22 @@ pub mod bot_alias {
         name: &str,
         args: BotAliasArgs,
     ) -> BotAliasResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BotAliasArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BotAliasResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BotAliasArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BotAliasResult {
         let bot_name_binding = args.bot_name.get_output(context);
         let bot_version_binding = args.bot_version.get_output(context);
         let conversation_logs_binding = args.conversation_logs.get_output(context);
@@ -123,6 +139,7 @@ pub mod bot_alias {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BotAliasResult {

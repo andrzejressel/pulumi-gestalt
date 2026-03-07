@@ -125,6 +125,22 @@ pub mod account {
         name: &str,
         args: AccountArgs,
     ) -> AccountResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccountArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AccountResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccountArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AccountResult {
         let account_id_binding = args.account_id.get_output(context);
         let create_ignore_already_exists_binding = args
             .create_ignore_already_exists
@@ -163,6 +179,7 @@ pub mod account {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AccountResult {

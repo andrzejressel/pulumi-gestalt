@@ -116,6 +116,22 @@ pub mod bucket_intelligent_tiering_configuration {
         name: &str,
         args: BucketIntelligentTieringConfigurationArgs,
     ) -> BucketIntelligentTieringConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BucketIntelligentTieringConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BucketIntelligentTieringConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BucketIntelligentTieringConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BucketIntelligentTieringConfigurationResult {
         let bucket_binding = args.bucket.get_output(context);
         let filter_binding = args.filter.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -148,6 +164,7 @@ pub mod bucket_intelligent_tiering_configuration {
                     value: &tierings_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BucketIntelligentTieringConfigurationResult {

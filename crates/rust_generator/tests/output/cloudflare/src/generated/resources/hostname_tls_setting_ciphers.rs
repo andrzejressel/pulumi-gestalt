@@ -74,6 +74,22 @@ pub mod hostname_tls_setting_ciphers {
         name: &str,
         args: HostnameTlsSettingCiphersArgs,
     ) -> HostnameTlsSettingCiphersResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HostnameTlsSettingCiphersArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> HostnameTlsSettingCiphersResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HostnameTlsSettingCiphersArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> HostnameTlsSettingCiphersResult {
         let hostname_binding = args.hostname.get_output(context);
         let ports_binding = args.ports.get_output(context);
         let values_binding = args.values.get_output(context);
@@ -101,6 +117,7 @@ pub mod hostname_tls_setting_ciphers {
                     value: &zone_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         HostnameTlsSettingCiphersResult {

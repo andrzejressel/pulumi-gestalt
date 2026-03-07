@@ -82,6 +82,22 @@ pub mod account_registration {
         name: &str,
         args: AccountRegistrationArgs,
     ) -> AccountRegistrationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccountRegistrationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AccountRegistrationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccountRegistrationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AccountRegistrationResult {
         let delegated_admin_account_binding = args
             .delegated_admin_account
             .get_output(context);
@@ -107,6 +123,7 @@ pub mod account_registration {
                     value: &kms_key_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AccountRegistrationResult {

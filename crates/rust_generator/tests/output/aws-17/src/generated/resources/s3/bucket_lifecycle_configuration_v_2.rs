@@ -385,6 +385,22 @@ pub mod bucket_lifecycle_configuration_v_2 {
         name: &str,
         args: BucketLifecycleConfigurationV2Args,
     ) -> BucketLifecycleConfigurationV2Result {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BucketLifecycleConfigurationV2Args,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BucketLifecycleConfigurationV2Result {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BucketLifecycleConfigurationV2Args,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BucketLifecycleConfigurationV2Result {
         let bucket_binding = args.bucket.get_output(context);
         let expected_bucket_owner_binding = args
             .expected_bucket_owner
@@ -416,6 +432,7 @@ pub mod bucket_lifecycle_configuration_v_2 {
                     value: &transition_default_minimum_object_size_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BucketLifecycleConfigurationV2Result {

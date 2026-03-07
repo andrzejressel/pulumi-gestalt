@@ -114,6 +114,22 @@ pub mod integration_runtime_rule {
         name: &str,
         args: IntegrationRuntimeRuleArgs,
     ) -> IntegrationRuntimeRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IntegrationRuntimeRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IntegrationRuntimeRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IntegrationRuntimeRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IntegrationRuntimeRuleResult {
         let cleanup_enabled_binding = args.cleanup_enabled.get_output(context);
         let compute_type_binding = args.compute_type.get_output(context);
         let core_count_binding = args.core_count.get_output(context);
@@ -168,6 +184,7 @@ pub mod integration_runtime_rule {
                     value: &virtual_network_enabled_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IntegrationRuntimeRuleResult {

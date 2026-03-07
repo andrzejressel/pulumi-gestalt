@@ -163,6 +163,22 @@ pub mod backup_policy {
         name: &str,
         args: BackupPolicyArgs,
     ) -> BackupPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackupPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BackupPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackupPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BackupPolicyResult {
         let daily_backup_limit_binding = args.daily_backup_limit.get_output(context);
         let description_binding = args.description.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
@@ -214,6 +230,7 @@ pub mod backup_policy {
                     value: &weekly_backup_limit_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BackupPolicyResult {

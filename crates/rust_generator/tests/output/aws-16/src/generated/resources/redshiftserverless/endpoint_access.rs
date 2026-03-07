@@ -89,6 +89,22 @@ pub mod endpoint_access {
         name: &str,
         args: EndpointAccessArgs,
     ) -> EndpointAccessResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EndpointAccessArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EndpointAccessResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EndpointAccessArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EndpointAccessResult {
         let endpoint_name_binding = args.endpoint_name.get_output(context);
         let owner_account_binding = args.owner_account.get_output(context);
         let subnet_ids_binding = args.subnet_ids.get_output(context);
@@ -122,6 +138,7 @@ pub mod endpoint_access {
                     value: &workgroup_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EndpointAccessResult {

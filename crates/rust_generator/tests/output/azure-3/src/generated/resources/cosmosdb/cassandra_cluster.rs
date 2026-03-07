@@ -189,6 +189,22 @@ pub mod cassandra_cluster {
         name: &str,
         args: CassandraClusterArgs,
     ) -> CassandraClusterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CassandraClusterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CassandraClusterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CassandraClusterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CassandraClusterResult {
         let authentication_method_binding = args
             .authentication_method
             .get_output(context);
@@ -279,6 +295,7 @@ pub mod cassandra_cluster {
                     value: &version_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CassandraClusterResult {

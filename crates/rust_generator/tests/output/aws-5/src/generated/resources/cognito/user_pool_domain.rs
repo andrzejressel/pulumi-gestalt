@@ -118,6 +118,22 @@ pub mod user_pool_domain {
         name: &str,
         args: UserPoolDomainArgs,
     ) -> UserPoolDomainResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: UserPoolDomainArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> UserPoolDomainResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: UserPoolDomainArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> UserPoolDomainResult {
         let certificate_arn_binding = args.certificate_arn.get_output(context);
         let domain_binding = args.domain.get_output(context);
         let user_pool_id_binding = args.user_pool_id.get_output(context);
@@ -139,6 +155,7 @@ pub mod user_pool_domain {
                     value: &user_pool_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         UserPoolDomainResult {

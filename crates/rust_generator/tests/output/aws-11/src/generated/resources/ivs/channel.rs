@@ -97,6 +97,22 @@ pub mod channel {
         name: &str,
         args: ChannelArgs,
     ) -> ChannelResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ChannelArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ChannelResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ChannelArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ChannelResult {
         let authorized_binding = args.authorized.get_output(context);
         let latency_mode_binding = args.latency_mode.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -135,6 +151,7 @@ pub mod channel {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ChannelResult {

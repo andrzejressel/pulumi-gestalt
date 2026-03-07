@@ -69,6 +69,22 @@ pub mod cluster_iam_roles {
         name: &str,
         args: ClusterIamRolesArgs,
     ) -> ClusterIamRolesResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClusterIamRolesArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ClusterIamRolesResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClusterIamRolesArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ClusterIamRolesResult {
         let cluster_identifier_binding = args.cluster_identifier.get_output(context);
         let default_iam_role_arn_binding = args.default_iam_role_arn.get_output(context);
         let iam_role_arns_binding = args.iam_role_arns.get_output(context);
@@ -90,6 +106,7 @@ pub mod cluster_iam_roles {
                     value: &iam_role_arns_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ClusterIamRolesResult {

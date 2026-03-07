@@ -905,6 +905,22 @@ pub mod trigger {
         name: &str,
         args: TriggerArgs,
     ) -> TriggerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TriggerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TriggerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TriggerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TriggerResult {
         let approval_config_binding = args.approval_config.get_output(context);
         let bitbucket_server_trigger_config_binding = args
             .bitbucket_server_trigger_config
@@ -1030,6 +1046,7 @@ pub mod trigger {
                     value: &webhook_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TriggerResult {

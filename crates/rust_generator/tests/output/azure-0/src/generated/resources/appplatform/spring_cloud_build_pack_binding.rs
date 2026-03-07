@@ -108,6 +108,22 @@ pub mod spring_cloud_build_pack_binding {
         name: &str,
         args: SpringCloudBuildPackBindingArgs,
     ) -> SpringCloudBuildPackBindingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudBuildPackBindingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SpringCloudBuildPackBindingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudBuildPackBindingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SpringCloudBuildPackBindingResult {
         let binding_type_binding = args.binding_type.get_output(context);
         let launch_binding = args.launch.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -137,6 +153,7 @@ pub mod spring_cloud_build_pack_binding {
                     value: &spring_cloud_builder_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SpringCloudBuildPackBindingResult {

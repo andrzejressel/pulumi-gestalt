@@ -114,6 +114,22 @@ pub mod risk_configuration {
         name: &str,
         args: RiskConfigurationArgs,
     ) -> RiskConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RiskConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RiskConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RiskConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RiskConfigurationResult {
         let account_takeover_risk_configuration_binding = args
             .account_takeover_risk_configuration
             .get_output(context);
@@ -152,6 +168,7 @@ pub mod risk_configuration {
                     value: &user_pool_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RiskConfigurationResult {

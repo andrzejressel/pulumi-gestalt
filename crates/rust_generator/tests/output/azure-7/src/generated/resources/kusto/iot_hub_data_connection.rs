@@ -179,6 +179,22 @@ pub mod iot_hub_data_connection {
         name: &str,
         args: IotHubDataConnectionArgs,
     ) -> IotHubDataConnectionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IotHubDataConnectionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IotHubDataConnectionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IotHubDataConnectionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IotHubDataConnectionResult {
         let cluster_name_binding = args.cluster_name.get_output(context);
         let consumer_group_binding = args.consumer_group.get_output(context);
         let data_format_binding = args.data_format.get_output(context);
@@ -256,6 +272,7 @@ pub mod iot_hub_data_connection {
                     value: &table_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IotHubDataConnectionResult {

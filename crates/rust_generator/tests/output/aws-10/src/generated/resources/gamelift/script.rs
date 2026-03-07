@@ -97,6 +97,22 @@ pub mod script {
         name: &str,
         args: ScriptArgs,
     ) -> ScriptResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ScriptArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ScriptResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ScriptArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ScriptResult {
         let name_binding = args.name.get_output(context);
         let storage_location_binding = args.storage_location.get_output(context);
         let tags_binding = args.tags.get_output(context);
@@ -128,6 +144,7 @@ pub mod script {
                     value: &zip_file_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ScriptResult {

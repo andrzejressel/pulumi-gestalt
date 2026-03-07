@@ -137,6 +137,22 @@ pub mod workstation_config_iam_binding {
         name: &str,
         args: WorkstationConfigIamBindingArgs,
     ) -> WorkstationConfigIamBindingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkstationConfigIamBindingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WorkstationConfigIamBindingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkstationConfigIamBindingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WorkstationConfigIamBindingResult {
         let condition_binding = args.condition.get_output(context);
         let location_binding = args.location.get_output(context);
         let members_binding = args.members.get_output(context);
@@ -183,6 +199,7 @@ pub mod workstation_config_iam_binding {
                     value: &workstation_config_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WorkstationConfigIamBindingResult {

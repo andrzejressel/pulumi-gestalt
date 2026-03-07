@@ -99,6 +99,22 @@ pub mod notification_recipient_user {
         name: &str,
         args: NotificationRecipientUserArgs,
     ) -> NotificationRecipientUserResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NotificationRecipientUserArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NotificationRecipientUserResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NotificationRecipientUserArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NotificationRecipientUserResult {
         let api_management_id_binding = args.api_management_id.get_output(context);
         let notification_type_binding = args.notification_type.get_output(context);
         let user_id_binding = args.user_id.get_output(context);
@@ -121,6 +137,7 @@ pub mod notification_recipient_user {
                     value: &user_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NotificationRecipientUserResult {

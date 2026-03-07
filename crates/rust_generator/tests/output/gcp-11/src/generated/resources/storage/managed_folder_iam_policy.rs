@@ -387,6 +387,22 @@ pub mod managed_folder_iam_policy {
         name: &str,
         args: ManagedFolderIamPolicyArgs,
     ) -> ManagedFolderIamPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedFolderIamPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ManagedFolderIamPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedFolderIamPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ManagedFolderIamPolicyResult {
         let bucket_binding = args.bucket.get_output(context);
         let managed_folder_binding = args.managed_folder.get_output(context);
         let policy_data_binding = args.policy_data.get_output(context);
@@ -408,6 +424,7 @@ pub mod managed_folder_iam_policy {
                     value: &policy_data_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ManagedFolderIamPolicyResult {

@@ -130,6 +130,22 @@ pub mod deny_policy {
         name: &str,
         args: DenyPolicyArgs,
     ) -> DenyPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DenyPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DenyPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DenyPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DenyPolicyResult {
         let display_name_binding = args.display_name.get_output(context);
         let name_binding = args.name.get_output(context);
         let parent_binding = args.parent.get_output(context);
@@ -156,6 +172,7 @@ pub mod deny_policy {
                     value: &rules_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DenyPolicyResult {

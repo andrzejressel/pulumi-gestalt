@@ -70,6 +70,22 @@ pub mod receipt_filter {
         name: &str,
         args: ReceiptFilterArgs,
     ) -> ReceiptFilterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReceiptFilterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ReceiptFilterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReceiptFilterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ReceiptFilterResult {
         let cidr_binding = args.cidr.get_output(context);
         let name_binding = args.name.get_output(context);
         let policy_binding = args.policy.get_output(context);
@@ -91,6 +107,7 @@ pub mod receipt_filter {
                     value: &policy_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ReceiptFilterResult {

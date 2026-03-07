@@ -149,6 +149,22 @@ pub mod smart_detector_alert_rule {
         name: &str,
         args: SmartDetectorAlertRuleArgs,
     ) -> SmartDetectorAlertRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SmartDetectorAlertRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SmartDetectorAlertRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SmartDetectorAlertRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SmartDetectorAlertRuleResult {
         let action_group_binding = args.action_group.get_output(context);
         let description_binding = args.description.get_output(context);
         let detector_type_binding = args.detector_type.get_output(context);
@@ -211,6 +227,7 @@ pub mod smart_detector_alert_rule {
                     value: &throttling_duration_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SmartDetectorAlertRuleResult {

@@ -290,6 +290,22 @@ pub mod aspect_type_iam_member {
         name: &str,
         args: AspectTypeIamMemberArgs,
     ) -> AspectTypeIamMemberResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AspectTypeIamMemberArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AspectTypeIamMemberResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AspectTypeIamMemberArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AspectTypeIamMemberResult {
         let aspect_type_id_binding = args.aspect_type_id.get_output(context);
         let condition_binding = args.condition.get_output(context);
         let location_binding = args.location.get_output(context);
@@ -326,6 +342,7 @@ pub mod aspect_type_iam_member {
                     value: &role_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AspectTypeIamMemberResult {

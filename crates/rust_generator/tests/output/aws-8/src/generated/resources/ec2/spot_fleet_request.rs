@@ -412,6 +412,22 @@ pub mod spot_fleet_request {
         name: &str,
         args: SpotFleetRequestArgs,
     ) -> SpotFleetRequestResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpotFleetRequestArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SpotFleetRequestResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpotFleetRequestArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SpotFleetRequestResult {
         let allocation_strategy_binding = args.allocation_strategy.get_output(context);
         let context_binding = args.context.get_output(context);
         let excess_capacity_termination_policy_binding = args
@@ -569,6 +585,7 @@ pub mod spot_fleet_request {
                     value: &wait_for_fulfillment_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SpotFleetRequestResult {

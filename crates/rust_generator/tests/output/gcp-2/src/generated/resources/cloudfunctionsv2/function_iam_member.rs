@@ -290,6 +290,22 @@ pub mod function_iam_member {
         name: &str,
         args: FunctionIamMemberArgs,
     ) -> FunctionIamMemberResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FunctionIamMemberArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FunctionIamMemberResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FunctionIamMemberArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FunctionIamMemberResult {
         let cloud_function_binding = args.cloud_function.get_output(context);
         let condition_binding = args.condition.get_output(context);
         let location_binding = args.location.get_output(context);
@@ -326,6 +342,7 @@ pub mod function_iam_member {
                     value: &role_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FunctionIamMemberResult {

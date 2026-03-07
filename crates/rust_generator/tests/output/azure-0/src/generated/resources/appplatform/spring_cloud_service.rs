@@ -217,6 +217,22 @@ pub mod spring_cloud_service {
         name: &str,
         args: SpringCloudServiceArgs,
     ) -> SpringCloudServiceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudServiceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SpringCloudServiceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudServiceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SpringCloudServiceResult {
         let build_agent_pool_size_binding = args
             .build_agent_pool_size
             .get_output(context);
@@ -320,6 +336,7 @@ pub mod spring_cloud_service {
                     value: &zone_redundant_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SpringCloudServiceResult {

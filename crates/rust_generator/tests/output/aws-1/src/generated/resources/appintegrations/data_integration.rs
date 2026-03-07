@@ -98,6 +98,22 @@ pub mod data_integration {
         name: &str,
         args: DataIntegrationArgs,
     ) -> DataIntegrationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataIntegrationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DataIntegrationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataIntegrationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DataIntegrationResult {
         let description_binding = args.description.get_output(context);
         let kms_key_binding = args.kms_key.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -134,6 +150,7 @@ pub mod data_integration {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DataIntegrationResult {

@@ -102,6 +102,22 @@ pub mod iam_custom_role {
         name: &str,
         args: IAMCustomRoleArgs,
     ) -> IAMCustomRoleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IAMCustomRoleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IAMCustomRoleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IAMCustomRoleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IAMCustomRoleResult {
         let description_binding = args.description.get_output(context);
         let org_id_binding = args.org_id.get_output(context);
         let permissions_binding = args.permissions.get_output(context);
@@ -138,6 +154,7 @@ pub mod iam_custom_role {
                     value: &title_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IAMCustomRoleResult {

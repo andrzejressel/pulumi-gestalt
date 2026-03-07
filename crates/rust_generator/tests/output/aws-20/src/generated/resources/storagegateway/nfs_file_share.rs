@@ -176,6 +176,22 @@ pub mod nfs_file_share {
         name: &str,
         args: NfsFileShareArgs,
     ) -> NfsFileShareResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NfsFileShareArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NfsFileShareResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NfsFileShareArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NfsFileShareResult {
         let audit_destination_arn_binding = args
             .audit_destination_arn
             .get_output(context);
@@ -292,6 +308,7 @@ pub mod nfs_file_share {
                     value: &vpc_endpoint_dns_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NfsFileShareResult {

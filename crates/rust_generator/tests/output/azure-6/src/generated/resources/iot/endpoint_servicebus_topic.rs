@@ -136,6 +136,22 @@ pub mod endpoint_servicebus_topic {
         name: &str,
         args: EndpointServicebusTopicArgs,
     ) -> EndpointServicebusTopicResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EndpointServicebusTopicArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EndpointServicebusTopicResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EndpointServicebusTopicArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EndpointServicebusTopicResult {
         let authentication_type_binding = args.authentication_type.get_output(context);
         let connection_string_binding = args.connection_string.get_output(context);
         let endpoint_uri_binding = args.endpoint_uri.get_output(context);
@@ -182,6 +198,7 @@ pub mod endpoint_servicebus_topic {
                     value: &resource_group_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EndpointServicebusTopicResult {

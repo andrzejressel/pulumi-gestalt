@@ -107,6 +107,22 @@ pub mod source_iam_binding {
         name: &str,
         args: SourceIamBindingArgs,
     ) -> SourceIamBindingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SourceIamBindingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SourceIamBindingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SourceIamBindingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SourceIamBindingResult {
         let condition_binding = args.condition.get_output(context);
         let members_binding = args.members.get_output(context);
         let organization_binding = args.organization.get_output(context);
@@ -138,6 +154,7 @@ pub mod source_iam_binding {
                     value: &source_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SourceIamBindingResult {

@@ -113,6 +113,22 @@ pub mod trusted_token_issuer {
         name: &str,
         args: TrustedTokenIssuerArgs,
     ) -> TrustedTokenIssuerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TrustedTokenIssuerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TrustedTokenIssuerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TrustedTokenIssuerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TrustedTokenIssuerResult {
         let client_token_binding = args.client_token.get_output(context);
         let instance_arn_binding = args.instance_arn.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -153,6 +169,7 @@ pub mod trusted_token_issuer {
                     value: &trusted_token_issuer_type_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TrustedTokenIssuerResult {

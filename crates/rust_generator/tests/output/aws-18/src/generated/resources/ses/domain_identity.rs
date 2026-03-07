@@ -80,6 +80,22 @@ pub mod domain_identity {
         name: &str,
         args: DomainIdentityArgs,
     ) -> DomainIdentityResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DomainIdentityArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DomainIdentityResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DomainIdentityArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DomainIdentityResult {
         let domain_binding = args.domain.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ses/domainIdentity:DomainIdentity".into(),
@@ -91,6 +107,7 @@ pub mod domain_identity {
                     value: &domain_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DomainIdentityResult {

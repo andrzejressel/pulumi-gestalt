@@ -68,6 +68,22 @@ pub mod thing_group_membership {
         name: &str,
         args: ThingGroupMembershipArgs,
     ) -> ThingGroupMembershipResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ThingGroupMembershipArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ThingGroupMembershipResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ThingGroupMembershipArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ThingGroupMembershipResult {
         let override_dynamic_group_binding = args
             .override_dynamic_group
             .get_output(context);
@@ -91,6 +107,7 @@ pub mod thing_group_membership {
                     value: &thing_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ThingGroupMembershipResult {

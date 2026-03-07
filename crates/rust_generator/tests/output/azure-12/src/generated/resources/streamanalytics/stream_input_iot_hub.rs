@@ -129,6 +129,22 @@ pub mod stream_input_iot_hub {
         name: &str,
         args: StreamInputIotHubArgs,
     ) -> StreamInputIotHubResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StreamInputIotHubArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> StreamInputIotHubResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StreamInputIotHubArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> StreamInputIotHubResult {
         let endpoint_binding = args.endpoint.get_output(context);
         let eventhub_consumer_group_name_binding = args
             .eventhub_consumer_group_name
@@ -188,6 +204,7 @@ pub mod stream_input_iot_hub {
                     value: &stream_analytics_job_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         StreamInputIotHubResult {

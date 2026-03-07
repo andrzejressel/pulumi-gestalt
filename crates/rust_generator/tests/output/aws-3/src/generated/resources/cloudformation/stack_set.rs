@@ -211,6 +211,22 @@ pub mod stack_set {
         name: &str,
         args: StackSetArgs,
     ) -> StackSetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StackSetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> StackSetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StackSetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> StackSetResult {
         let administration_role_arn_binding = args
             .administration_role_arn
             .get_output(context);
@@ -291,6 +307,7 @@ pub mod stack_set {
                     value: &template_url_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         StackSetResult {

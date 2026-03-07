@@ -93,6 +93,22 @@ pub mod managed_disk_sas_token {
         name: &str,
         args: ManagedDiskSasTokenArgs,
     ) -> ManagedDiskSasTokenResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedDiskSasTokenArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ManagedDiskSasTokenResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedDiskSasTokenArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ManagedDiskSasTokenResult {
         let access_level_binding = args.access_level.get_output(context);
         let duration_in_seconds_binding = args.duration_in_seconds.get_output(context);
         let managed_disk_id_binding = args.managed_disk_id.get_output(context);
@@ -114,6 +130,7 @@ pub mod managed_disk_sas_token {
                     value: &managed_disk_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ManagedDiskSasTokenResult {

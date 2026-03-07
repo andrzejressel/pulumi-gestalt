@@ -113,6 +113,22 @@ pub mod inference_profile {
         name: &str,
         args: InferenceProfileArgs,
     ) -> InferenceProfileResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InferenceProfileArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> InferenceProfileResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InferenceProfileArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> InferenceProfileResult {
         let description_binding = args.description.get_output(context);
         let model_source_binding = args.model_source.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -144,6 +160,7 @@ pub mod inference_profile {
                     value: &timeouts_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         InferenceProfileResult {

@@ -110,6 +110,22 @@ pub mod container_immutability_policy {
         name: &str,
         args: ContainerImmutabilityPolicyArgs,
     ) -> ContainerImmutabilityPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ContainerImmutabilityPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ContainerImmutabilityPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ContainerImmutabilityPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ContainerImmutabilityPolicyResult {
         let immutability_period_in_days_binding = args
             .immutability_period_in_days
             .get_output(context);
@@ -150,6 +166,7 @@ pub mod container_immutability_policy {
                     value: &storage_container_resource_manager_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ContainerImmutabilityPolicyResult {

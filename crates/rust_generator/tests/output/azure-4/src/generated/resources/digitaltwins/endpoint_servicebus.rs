@@ -131,6 +131,22 @@ pub mod endpoint_servicebus {
         name: &str,
         args: EndpointServicebusArgs,
     ) -> EndpointServicebusResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EndpointServicebusArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EndpointServicebusResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EndpointServicebusArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EndpointServicebusResult {
         let dead_letter_storage_secret_binding = args
             .dead_letter_storage_secret
             .get_output(context);
@@ -168,6 +184,7 @@ pub mod endpoint_servicebus {
                     value: &servicebus_secondary_connection_string_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EndpointServicebusResult {

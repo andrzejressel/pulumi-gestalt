@@ -82,6 +82,22 @@ pub mod billing_account_exclusion {
         name: &str,
         args: BillingAccountExclusionArgs,
     ) -> BillingAccountExclusionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BillingAccountExclusionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BillingAccountExclusionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BillingAccountExclusionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BillingAccountExclusionResult {
         let billing_account_binding = args.billing_account.get_output(context);
         let description_binding = args.description.get_output(context);
         let disabled_binding = args.disabled.get_output(context);
@@ -113,6 +129,7 @@ pub mod billing_account_exclusion {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BillingAccountExclusionResult {

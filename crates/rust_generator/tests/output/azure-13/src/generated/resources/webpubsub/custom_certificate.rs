@@ -140,6 +140,22 @@ pub mod custom_certificate {
         name: &str,
         args: CustomCertificateArgs,
     ) -> CustomCertificateResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomCertificateArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CustomCertificateResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomCertificateArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CustomCertificateResult {
         let custom_certificate_id_binding = args
             .custom_certificate_id
             .get_output(context);
@@ -163,6 +179,7 @@ pub mod custom_certificate {
                     value: &web_pubsub_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CustomCertificateResult {

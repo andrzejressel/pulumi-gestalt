@@ -90,6 +90,22 @@ pub mod cloud_formation_type {
         name: &str,
         args: CloudFormationTypeArgs,
     ) -> CloudFormationTypeResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CloudFormationTypeArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CloudFormationTypeResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CloudFormationTypeArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CloudFormationTypeResult {
         let execution_role_arn_binding = args.execution_role_arn.get_output(context);
         let logging_config_binding = args.logging_config.get_output(context);
         let schema_handler_package_binding = args
@@ -123,6 +139,7 @@ pub mod cloud_formation_type {
                     value: &type_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CloudFormationTypeResult {

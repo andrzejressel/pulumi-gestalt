@@ -158,6 +158,22 @@ pub mod job_schedule {
         name: &str,
         args: JobScheduleArgs,
     ) -> JobScheduleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: JobScheduleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> JobScheduleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: JobScheduleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> JobScheduleResult {
         let start_mode_binding = args.start_mode.get_output(context);
         let start_time_binding = args.start_time.get_output(context);
         let stream_analytics_job_id_binding = args
@@ -181,6 +197,7 @@ pub mod job_schedule {
                     value: &stream_analytics_job_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         JobScheduleResult {

@@ -136,6 +136,22 @@ pub mod hub {
         name: &str,
         args: HubArgs,
     ) -> HubResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HubArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> HubResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HubArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> HubResult {
         let apns_credential_binding = args.apns_credential.get_output(context);
         let browser_credential_binding = args.browser_credential.get_output(context);
         let gcm_credential_binding = args.gcm_credential.get_output(context);
@@ -182,6 +198,7 @@ pub mod hub {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         HubResult {

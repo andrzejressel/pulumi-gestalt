@@ -138,6 +138,22 @@ pub mod resource_group_cost_management_view {
         name: &str,
         args: ResourceGroupCostManagementViewArgs,
     ) -> ResourceGroupCostManagementViewResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResourceGroupCostManagementViewArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ResourceGroupCostManagementViewResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResourceGroupCostManagementViewArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ResourceGroupCostManagementViewResult {
         let accumulated_binding = args.accumulated.get_output(context);
         let chart_type_binding = args.chart_type.get_output(context);
         let dataset_binding = args.dataset.get_output(context);
@@ -195,6 +211,7 @@ pub mod resource_group_cost_management_view {
                     value: &timeframe_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ResourceGroupCostManagementViewResult {

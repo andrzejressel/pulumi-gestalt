@@ -162,6 +162,22 @@ pub mod output_blob {
         name: &str,
         args: OutputBlobArgs,
     ) -> OutputBlobResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OutputBlobArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OutputBlobResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OutputBlobArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OutputBlobResult {
         let authentication_mode_binding = args.authentication_mode.get_output(context);
         let batch_max_wait_time_binding = args.batch_max_wait_time.get_output(context);
         let batch_min_rows_binding = args.batch_min_rows.get_output(context);
@@ -242,6 +258,7 @@ pub mod output_blob {
                     value: &time_format_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OutputBlobResult {

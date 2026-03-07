@@ -447,6 +447,22 @@ pub mod region_instance_group_manager {
         name: &str,
         args: RegionInstanceGroupManagerArgs,
     ) -> RegionInstanceGroupManagerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionInstanceGroupManagerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RegionInstanceGroupManagerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionInstanceGroupManagerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RegionInstanceGroupManagerResult {
         let all_instances_config_binding = args.all_instances_config.get_output(context);
         let auto_healing_policies_binding = args
             .auto_healing_policies
@@ -604,6 +620,7 @@ pub mod region_instance_group_manager {
                     value: &wait_for_instances_status_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RegionInstanceGroupManagerResult {

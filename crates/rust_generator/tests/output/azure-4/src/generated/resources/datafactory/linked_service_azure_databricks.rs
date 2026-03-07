@@ -243,6 +243,22 @@ pub mod linked_service_azure_databricks {
         name: &str,
         args: LinkedServiceAzureDatabricksArgs,
     ) -> LinkedServiceAzureDatabricksResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LinkedServiceAzureDatabricksArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LinkedServiceAzureDatabricksResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LinkedServiceAzureDatabricksArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LinkedServiceAzureDatabricksResult {
         let access_token_binding = args.access_token.get_output(context);
         let adb_domain_binding = args.adb_domain.get_output(context);
         let additional_properties_binding = args
@@ -326,6 +342,7 @@ pub mod linked_service_azure_databricks {
                     value: &parameters_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LinkedServiceAzureDatabricksResult {

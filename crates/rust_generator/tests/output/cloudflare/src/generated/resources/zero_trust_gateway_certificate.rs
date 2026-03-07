@@ -61,6 +61,22 @@ pub mod zero_trust_gateway_certificate {
         name: &str,
         args: ZeroTrustGatewayCertificateArgs,
     ) -> ZeroTrustGatewayCertificateResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZeroTrustGatewayCertificateArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ZeroTrustGatewayCertificateResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZeroTrustGatewayCertificateArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ZeroTrustGatewayCertificateResult {
         let account_id_binding = args.account_id.get_output(context);
         let activate_binding = args.activate.get_output(context);
         let custom_binding = args.custom.get_output(context);
@@ -93,6 +109,7 @@ pub mod zero_trust_gateway_certificate {
                     value: &validity_period_days_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ZeroTrustGatewayCertificateResult {

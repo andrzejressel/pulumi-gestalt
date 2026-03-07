@@ -188,6 +188,22 @@ pub mod data_quality_job_definition {
         name: &str,
         args: DataQualityJobDefinitionArgs,
     ) -> DataQualityJobDefinitionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataQualityJobDefinitionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DataQualityJobDefinitionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataQualityJobDefinitionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DataQualityJobDefinitionResult {
         let data_quality_app_specification_binding = args
             .data_quality_app_specification
             .get_output(context);
@@ -253,6 +269,7 @@ pub mod data_quality_job_definition {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DataQualityJobDefinitionResult {

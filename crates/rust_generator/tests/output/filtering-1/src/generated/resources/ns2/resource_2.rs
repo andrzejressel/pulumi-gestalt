@@ -38,6 +38,22 @@ pub mod resource_2 {
         name: &str,
         args: Resource2Args,
     ) -> Resource2Result {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: Resource2Args,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> Resource2Result {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: Resource2Args,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> Resource2Result {
         let common_type_binding = args.common_type.get_output(context);
         let type2_binding = args.type2.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -54,6 +70,7 @@ pub mod resource_2 {
                     value: &type2_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         Resource2Result {

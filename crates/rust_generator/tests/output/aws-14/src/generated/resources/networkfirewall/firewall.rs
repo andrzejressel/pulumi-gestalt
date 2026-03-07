@@ -128,6 +128,22 @@ pub mod firewall {
         name: &str,
         args: FirewallArgs,
     ) -> FirewallResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FirewallArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FirewallResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FirewallArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FirewallResult {
         let delete_protection_binding = args.delete_protection.get_output(context);
         let description_binding = args.description.get_output(context);
         let encryption_configuration_binding = args
@@ -190,6 +206,7 @@ pub mod firewall {
                     value: &vpc_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FirewallResult {

@@ -265,6 +265,22 @@ pub mod dataset_iam_member {
         name: &str,
         args: DatasetIamMemberArgs,
     ) -> DatasetIamMemberResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatasetIamMemberArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DatasetIamMemberResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatasetIamMemberArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DatasetIamMemberResult {
         let condition_binding = args.condition.get_output(context);
         let dataset_id_binding = args.dataset_id.get_output(context);
         let member_binding = args.member.get_output(context);
@@ -296,6 +312,7 @@ pub mod dataset_iam_member {
                     value: &role_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DatasetIamMemberResult {

@@ -164,6 +164,22 @@ pub mod subscription_rule {
         name: &str,
         args: SubscriptionRuleArgs,
     ) -> SubscriptionRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SubscriptionRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SubscriptionRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SubscriptionRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SubscriptionRuleResult {
         let action_binding = args.action.get_output(context);
         let correlation_filter_binding = args.correlation_filter.get_output(context);
         let filter_type_binding = args.filter_type.get_output(context);
@@ -200,6 +216,7 @@ pub mod subscription_rule {
                     value: &subscription_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SubscriptionRuleResult {

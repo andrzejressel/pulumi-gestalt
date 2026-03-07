@@ -120,6 +120,22 @@ pub mod agent_data_source {
         name: &str,
         args: AgentDataSourceArgs,
     ) -> AgentDataSourceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AgentDataSourceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AgentDataSourceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AgentDataSourceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AgentDataSourceResult {
         let data_deletion_policy_binding = args.data_deletion_policy.get_output(context);
         let data_source_configuration_binding = args
             .data_source_configuration
@@ -172,6 +188,7 @@ pub mod agent_data_source {
                     value: &vector_ingestion_configuration_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AgentDataSourceResult {

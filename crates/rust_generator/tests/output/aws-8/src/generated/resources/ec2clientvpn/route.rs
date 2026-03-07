@@ -103,6 +103,22 @@ pub mod route {
         name: &str,
         args: RouteArgs,
     ) -> RouteResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RouteArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RouteResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RouteArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RouteResult {
         let client_vpn_endpoint_id_binding = args
             .client_vpn_endpoint_id
             .get_output(context);
@@ -133,6 +149,7 @@ pub mod route {
                     value: &target_vpc_subnet_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RouteResult {

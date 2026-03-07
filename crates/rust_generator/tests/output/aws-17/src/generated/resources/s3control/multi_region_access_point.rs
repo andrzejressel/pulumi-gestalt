@@ -97,6 +97,22 @@ pub mod multi_region_access_point {
         name: &str,
         args: MultiRegionAccessPointArgs,
     ) -> MultiRegionAccessPointResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MultiRegionAccessPointArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MultiRegionAccessPointResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MultiRegionAccessPointArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MultiRegionAccessPointResult {
         let account_id_binding = args.account_id.get_output(context);
         let details_binding = args.details.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -113,6 +129,7 @@ pub mod multi_region_access_point {
                     value: &details_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MultiRegionAccessPointResult {

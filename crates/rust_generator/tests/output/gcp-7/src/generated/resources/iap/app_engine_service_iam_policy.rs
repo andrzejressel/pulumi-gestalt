@@ -409,6 +409,22 @@ pub mod app_engine_service_iam_policy {
         name: &str,
         args: AppEngineServiceIamPolicyArgs,
     ) -> AppEngineServiceIamPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AppEngineServiceIamPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AppEngineServiceIamPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AppEngineServiceIamPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AppEngineServiceIamPolicyResult {
         let app_id_binding = args.app_id.get_output(context);
         let policy_data_binding = args.policy_data.get_output(context);
         let project_binding = args.project.get_output(context);
@@ -435,6 +451,7 @@ pub mod app_engine_service_iam_policy {
                     value: &service_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AppEngineServiceIamPolicyResult {

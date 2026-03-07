@@ -174,6 +174,22 @@ pub mod point_to_point_vpn_gateway {
         name: &str,
         args: PointToPointVpnGatewayArgs,
     ) -> PointToPointVpnGatewayResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PointToPointVpnGatewayArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PointToPointVpnGatewayResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PointToPointVpnGatewayArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PointToPointVpnGatewayResult {
         let connection_configurations_binding = args
             .connection_configurations
             .get_output(context);
@@ -236,6 +252,7 @@ pub mod point_to_point_vpn_gateway {
                     value: &vpn_server_configuration_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PointToPointVpnGatewayResult {

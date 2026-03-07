@@ -162,6 +162,22 @@ pub mod a_record {
         name: &str,
         args: ARecordArgs,
     ) -> ARecordResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ARecordArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ARecordResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ARecordArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ARecordResult {
         let name_binding = args.name.get_output(context);
         let records_binding = args.records.get_output(context);
         let resource_group_name_binding = args.resource_group_name.get_output(context);
@@ -203,6 +219,7 @@ pub mod a_record {
                     value: &zone_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ARecordResult {

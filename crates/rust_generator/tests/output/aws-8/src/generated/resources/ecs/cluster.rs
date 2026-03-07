@@ -222,6 +222,22 @@ pub mod cluster {
         name: &str,
         args: ClusterArgs,
     ) -> ClusterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClusterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ClusterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClusterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ClusterResult {
         let configuration_binding = args.configuration.get_output(context);
         let name_binding = args.name.get_output(context);
         let service_connect_defaults_binding = args
@@ -255,6 +271,7 @@ pub mod cluster {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ClusterResult {

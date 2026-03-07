@@ -109,6 +109,22 @@ pub mod route_map {
         name: &str,
         args: RouteMapArgs,
     ) -> RouteMapResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RouteMapArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RouteMapResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RouteMapArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RouteMapResult {
         let name_binding = args.name.get_output(context);
         let rules_binding = args.rules.get_output(context);
         let virtual_hub_id_binding = args.virtual_hub_id.get_output(context);
@@ -130,6 +146,7 @@ pub mod route_map {
                     value: &virtual_hub_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RouteMapResult {

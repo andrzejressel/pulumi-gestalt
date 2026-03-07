@@ -235,6 +235,22 @@ pub mod integration_runtime_ssis {
         name: &str,
         args: IntegrationRuntimeSsisArgs,
     ) -> IntegrationRuntimeSsisResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IntegrationRuntimeSsisArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IntegrationRuntimeSsisResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IntegrationRuntimeSsisArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IntegrationRuntimeSsisResult {
         let catalog_info_binding = args.catalog_info.get_output(context);
         let copy_compute_scale_binding = args.copy_compute_scale.get_output(context);
         let credential_name_binding = args.credential_name.get_output(context);
@@ -343,6 +359,7 @@ pub mod integration_runtime_ssis {
                     value: &vnet_integration_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IntegrationRuntimeSsisResult {

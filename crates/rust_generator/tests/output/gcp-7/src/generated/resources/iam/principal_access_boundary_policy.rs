@@ -141,6 +141,22 @@ pub mod principal_access_boundary_policy {
         name: &str,
         args: PrincipalAccessBoundaryPolicyArgs,
     ) -> PrincipalAccessBoundaryPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PrincipalAccessBoundaryPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PrincipalAccessBoundaryPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PrincipalAccessBoundaryPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PrincipalAccessBoundaryPolicyResult {
         let annotations_binding = args.annotations.get_output(context);
         let details_binding = args.details.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
@@ -180,6 +196,7 @@ pub mod principal_access_boundary_policy {
                     value: &principal_access_boundary_policy_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PrincipalAccessBoundaryPolicyResult {

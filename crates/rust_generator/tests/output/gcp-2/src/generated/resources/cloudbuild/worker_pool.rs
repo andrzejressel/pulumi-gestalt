@@ -217,6 +217,22 @@ pub mod worker_pool {
         name: &str,
         args: WorkerPoolArgs,
     ) -> WorkerPoolResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkerPoolArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WorkerPoolResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkerPoolArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WorkerPoolResult {
         let annotations_binding = args.annotations.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let location_binding = args.location.get_output(context);
@@ -265,6 +281,7 @@ pub mod worker_pool {
                     value: &worker_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WorkerPoolResult {

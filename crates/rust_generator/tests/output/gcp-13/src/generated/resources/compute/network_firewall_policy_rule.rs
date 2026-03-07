@@ -255,6 +255,22 @@ pub mod network_firewall_policy_rule {
         name: &str,
         args: NetworkFirewallPolicyRuleArgs,
     ) -> NetworkFirewallPolicyRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkFirewallPolicyRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NetworkFirewallPolicyRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkFirewallPolicyRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NetworkFirewallPolicyRuleResult {
         let action_binding = args.action.get_output(context);
         let description_binding = args.description.get_output(context);
         let direction_binding = args.direction.get_output(context);
@@ -336,6 +352,7 @@ pub mod network_firewall_policy_rule {
                     value: &tls_inspect_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NetworkFirewallPolicyRuleResult {

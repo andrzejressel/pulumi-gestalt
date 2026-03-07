@@ -175,6 +175,22 @@ pub mod certificate {
         name: &str,
         args: CertificateArgs,
     ) -> CertificateResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CertificateArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CertificateResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CertificateArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CertificateResult {
         let certificate_virtual_path_binding = args
             .certificate_virtual_path
             .get_output(context);
@@ -208,6 +224,7 @@ pub mod certificate {
                     value: &nginx_deployment_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CertificateResult {

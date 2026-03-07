@@ -153,6 +153,22 @@ pub mod output_service_bus_queue {
         name: &str,
         args: OutputServiceBusQueueArgs,
     ) -> OutputServiceBusQueueResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OutputServiceBusQueueArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OutputServiceBusQueueResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OutputServiceBusQueueArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OutputServiceBusQueueResult {
         let authentication_mode_binding = args.authentication_mode.get_output(context);
         let name_binding = args.name.get_output(context);
         let property_columns_binding = args.property_columns.get_output(context);
@@ -223,6 +239,7 @@ pub mod output_service_bus_queue {
                     value: &system_property_columns_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OutputServiceBusQueueResult {

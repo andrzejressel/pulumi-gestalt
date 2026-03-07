@@ -142,6 +142,22 @@ pub mod vnp_gateway_nat_rule {
         name: &str,
         args: VnpGatewayNatRuleArgs,
     ) -> VnpGatewayNatRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VnpGatewayNatRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VnpGatewayNatRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VnpGatewayNatRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VnpGatewayNatRuleResult {
         let external_mappings_binding = args.external_mappings.get_output(context);
         let internal_mappings_binding = args.internal_mappings.get_output(context);
         let ip_configuration_id_binding = args.ip_configuration_id.get_output(context);
@@ -183,6 +199,7 @@ pub mod vnp_gateway_nat_rule {
                     value: &vpn_gateway_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VnpGatewayNatRuleResult {

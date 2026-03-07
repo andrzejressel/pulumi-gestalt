@@ -104,6 +104,22 @@ pub mod open_id_connect_provider {
         name: &str,
         args: OpenIdConnectProviderArgs,
     ) -> OpenIdConnectProviderResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OpenIdConnectProviderArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OpenIdConnectProviderResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OpenIdConnectProviderArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OpenIdConnectProviderResult {
         let client_id_lists_binding = args.client_id_lists.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let thumbprint_lists_binding = args.thumbprint_lists.get_output(context);
@@ -130,6 +146,7 @@ pub mod open_id_connect_provider {
                     value: &url_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OpenIdConnectProviderResult {

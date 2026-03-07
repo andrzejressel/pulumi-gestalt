@@ -129,6 +129,22 @@ pub mod custom_action_type {
         name: &str,
         args: CustomActionTypeArgs,
     ) -> CustomActionTypeResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomActionTypeArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CustomActionTypeResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomActionTypeArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CustomActionTypeResult {
         let category_binding = args.category.get_output(context);
         let configuration_properties_binding = args
             .configuration_properties
@@ -181,6 +197,7 @@ pub mod custom_action_type {
                     value: &version_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CustomActionTypeResult {

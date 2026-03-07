@@ -112,6 +112,22 @@ pub mod ami_launch_permission {
         name: &str,
         args: AmiLaunchPermissionArgs,
     ) -> AmiLaunchPermissionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AmiLaunchPermissionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AmiLaunchPermissionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AmiLaunchPermissionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AmiLaunchPermissionResult {
         let account_id_binding = args.account_id.get_output(context);
         let group_binding = args.group.get_output(context);
         let image_id_binding = args.image_id.get_output(context);
@@ -145,6 +161,7 @@ pub mod ami_launch_permission {
                     value: &organizational_unit_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AmiLaunchPermissionResult {

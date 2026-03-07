@@ -114,6 +114,22 @@ pub mod signing_profile {
         name: &str,
         args: SigningProfileArgs,
     ) -> SigningProfileResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SigningProfileArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SigningProfileResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SigningProfileArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SigningProfileResult {
         let name_binding = args.name.get_output(context);
         let name_prefix_binding = args.name_prefix.get_output(context);
         let platform_id_binding = args.platform_id.get_output(context);
@@ -152,6 +168,7 @@ pub mod signing_profile {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SigningProfileResult {

@@ -290,6 +290,22 @@ pub mod datascan_iam_binding {
         name: &str,
         args: DatascanIamBindingArgs,
     ) -> DatascanIamBindingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatascanIamBindingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DatascanIamBindingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatascanIamBindingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DatascanIamBindingResult {
         let condition_binding = args.condition.get_output(context);
         let data_scan_id_binding = args.data_scan_id.get_output(context);
         let location_binding = args.location.get_output(context);
@@ -326,6 +342,7 @@ pub mod datascan_iam_binding {
                     value: &role_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DatascanIamBindingResult {

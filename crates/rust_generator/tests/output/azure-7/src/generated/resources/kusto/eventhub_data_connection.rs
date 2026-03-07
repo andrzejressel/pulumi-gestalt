@@ -190,6 +190,22 @@ pub mod eventhub_data_connection {
         name: &str,
         args: EventhubDataConnectionArgs,
     ) -> EventhubDataConnectionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EventhubDataConnectionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EventhubDataConnectionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EventhubDataConnectionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EventhubDataConnectionResult {
         let cluster_name_binding = args.cluster_name.get_output(context);
         let compression_binding = args.compression.get_output(context);
         let consumer_group_binding = args.consumer_group.get_output(context);
@@ -270,6 +286,7 @@ pub mod eventhub_data_connection {
                     value: &table_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EventhubDataConnectionResult {

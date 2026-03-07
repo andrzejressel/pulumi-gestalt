@@ -111,6 +111,22 @@ pub mod v_2_organization_source {
         name: &str,
         args: V2OrganizationSourceArgs,
     ) -> V2OrganizationSourceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: V2OrganizationSourceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> V2OrganizationSourceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: V2OrganizationSourceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> V2OrganizationSourceResult {
         let description_binding = args.description.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let organization_binding = args.organization.get_output(context);
@@ -132,6 +148,7 @@ pub mod v_2_organization_source {
                     value: &organization_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         V2OrganizationSourceResult {

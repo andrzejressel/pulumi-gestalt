@@ -203,6 +203,22 @@ pub mod dashboard {
         name: &str,
         args: DashboardArgs,
     ) -> DashboardResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DashboardArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DashboardResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DashboardArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DashboardResult {
         let aws_account_id_binding = args.aws_account_id.get_output(context);
         let dashboard_id_binding = args.dashboard_id.get_output(context);
         let dashboard_publish_options_binding = args
@@ -261,6 +277,7 @@ pub mod dashboard {
                     value: &version_description_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DashboardResult {

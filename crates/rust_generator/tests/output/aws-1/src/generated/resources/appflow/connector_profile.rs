@@ -135,6 +135,22 @@ pub mod connector_profile {
         name: &str,
         args: ConnectorProfileArgs,
     ) -> ConnectorProfileResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConnectorProfileArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ConnectorProfileResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConnectorProfileArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ConnectorProfileResult {
         let connection_mode_binding = args.connection_mode.get_output(context);
         let connector_label_binding = args.connector_label.get_output(context);
         let connector_profile_config_binding = args
@@ -173,6 +189,7 @@ pub mod connector_profile {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ConnectorProfileResult {

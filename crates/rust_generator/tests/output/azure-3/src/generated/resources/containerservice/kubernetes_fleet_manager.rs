@@ -102,6 +102,22 @@ pub mod kubernetes_fleet_manager {
         name: &str,
         args: KubernetesFleetManagerArgs,
     ) -> KubernetesFleetManagerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: KubernetesFleetManagerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> KubernetesFleetManagerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: KubernetesFleetManagerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> KubernetesFleetManagerResult {
         let hub_profile_binding = args.hub_profile.get_output(context);
         let location_binding = args.location.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -134,6 +150,7 @@ pub mod kubernetes_fleet_manager {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         KubernetesFleetManagerResult {

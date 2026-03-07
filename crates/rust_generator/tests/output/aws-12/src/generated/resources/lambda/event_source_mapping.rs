@@ -441,6 +441,22 @@ pub mod event_source_mapping {
         name: &str,
         args: EventSourceMappingArgs,
     ) -> EventSourceMappingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EventSourceMappingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EventSourceMappingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EventSourceMappingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EventSourceMappingResult {
         let amazon_managed_kafka_event_source_config_binding = args
             .amazon_managed_kafka_event_source_config
             .get_output(context);
@@ -610,6 +626,7 @@ pub mod event_source_mapping {
                     value: &tumbling_window_in_seconds_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EventSourceMappingResult {

@@ -88,6 +88,22 @@ pub mod filter {
         name: &str,
         args: FilterArgs,
     ) -> FilterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FilterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FilterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FilterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FilterResult {
         let description_binding = args.description.get_output(context);
         let expression_binding = args.expression.get_output(context);
         let paused_binding = args.paused.get_output(context);
@@ -119,6 +135,7 @@ pub mod filter {
                     value: &zone_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FilterResult {

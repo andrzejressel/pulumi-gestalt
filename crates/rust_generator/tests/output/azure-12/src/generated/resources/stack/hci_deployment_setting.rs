@@ -64,6 +64,22 @@ pub mod hci_deployment_setting {
         name: &str,
         args: HciDeploymentSettingArgs,
     ) -> HciDeploymentSettingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HciDeploymentSettingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> HciDeploymentSettingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HciDeploymentSettingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> HciDeploymentSettingResult {
         let arc_resource_ids_binding = args.arc_resource_ids.get_output(context);
         let scale_units_binding = args.scale_units.get_output(context);
         let stack_hci_cluster_id_binding = args.stack_hci_cluster_id.get_output(context);
@@ -90,6 +106,7 @@ pub mod hci_deployment_setting {
                     value: &version_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         HciDeploymentSettingResult {

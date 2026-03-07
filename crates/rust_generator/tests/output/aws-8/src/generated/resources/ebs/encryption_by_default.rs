@@ -56,6 +56,22 @@ pub mod encryption_by_default {
         name: &str,
         args: EncryptionByDefaultArgs,
     ) -> EncryptionByDefaultResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EncryptionByDefaultArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EncryptionByDefaultResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EncryptionByDefaultArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EncryptionByDefaultResult {
         let enabled_binding = args.enabled.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ebs/encryptionByDefault:EncryptionByDefault".into(),
@@ -67,6 +83,7 @@ pub mod encryption_by_default {
                     value: &enabled_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EncryptionByDefaultResult {

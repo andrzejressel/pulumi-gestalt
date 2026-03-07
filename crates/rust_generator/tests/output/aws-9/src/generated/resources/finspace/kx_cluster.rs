@@ -255,6 +255,22 @@ pub mod kx_cluster {
         name: &str,
         args: KxClusterArgs,
     ) -> KxClusterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: KxClusterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> KxClusterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: KxClusterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> KxClusterResult {
         let auto_scaling_configuration_binding = args
             .auto_scaling_configuration
             .get_output(context);
@@ -377,6 +393,7 @@ pub mod kx_cluster {
                     value: &vpc_configuration_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         KxClusterResult {

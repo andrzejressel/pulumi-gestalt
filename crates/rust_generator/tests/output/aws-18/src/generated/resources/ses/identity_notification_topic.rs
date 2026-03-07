@@ -74,6 +74,22 @@ pub mod identity_notification_topic {
         name: &str,
         args: IdentityNotificationTopicArgs,
     ) -> IdentityNotificationTopicResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IdentityNotificationTopicArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IdentityNotificationTopicResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IdentityNotificationTopicArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IdentityNotificationTopicResult {
         let identity_binding = args.identity.get_output(context);
         let include_original_headers_binding = args
             .include_original_headers
@@ -102,6 +118,7 @@ pub mod identity_notification_topic {
                     value: &topic_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IdentityNotificationTopicResult {

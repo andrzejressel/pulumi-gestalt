@@ -92,6 +92,22 @@ pub mod capacity_provider {
         name: &str,
         args: CapacityProviderArgs,
     ) -> CapacityProviderResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CapacityProviderArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CapacityProviderResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CapacityProviderArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CapacityProviderResult {
         let auto_scaling_group_provider_binding = args
             .auto_scaling_group_provider
             .get_output(context);
@@ -115,6 +131,7 @@ pub mod capacity_provider {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CapacityProviderResult {

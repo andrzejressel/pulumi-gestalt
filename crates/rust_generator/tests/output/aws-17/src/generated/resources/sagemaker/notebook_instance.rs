@@ -180,6 +180,22 @@ pub mod notebook_instance {
         name: &str,
         args: NotebookInstanceArgs,
     ) -> NotebookInstanceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NotebookInstanceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NotebookInstanceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NotebookInstanceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NotebookInstanceResult {
         let accelerator_types_binding = args.accelerator_types.get_output(context);
         let additional_code_repositories_binding = args
             .additional_code_repositories
@@ -276,6 +292,7 @@ pub mod notebook_instance {
                     value: &volume_size_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NotebookInstanceResult {

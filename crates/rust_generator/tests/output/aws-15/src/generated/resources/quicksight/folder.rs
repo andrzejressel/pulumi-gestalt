@@ -160,6 +160,22 @@ pub mod folder {
         name: &str,
         args: FolderArgs,
     ) -> FolderResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FolderArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FolderResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FolderArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FolderResult {
         let aws_account_id_binding = args.aws_account_id.get_output(context);
         let folder_id_binding = args.folder_id.get_output(context);
         let folder_type_binding = args.folder_type.get_output(context);
@@ -201,6 +217,7 @@ pub mod folder {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FolderResult {

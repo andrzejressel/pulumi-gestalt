@@ -153,6 +153,22 @@ pub mod serverless_cache {
         name: &str,
         args: ServerlessCacheArgs,
     ) -> ServerlessCacheResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServerlessCacheArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServerlessCacheResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServerlessCacheArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServerlessCacheResult {
         let cache_usage_limits_binding = args.cache_usage_limits.get_output(context);
         let daily_snapshot_time_binding = args.daily_snapshot_time.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -233,6 +249,7 @@ pub mod serverless_cache {
                     value: &user_group_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServerlessCacheResult {

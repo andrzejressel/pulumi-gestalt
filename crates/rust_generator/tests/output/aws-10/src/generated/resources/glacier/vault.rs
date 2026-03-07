@@ -116,6 +116,22 @@ pub mod vault {
         name: &str,
         args: VaultArgs,
     ) -> VaultResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VaultArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VaultResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VaultArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VaultResult {
         let access_policy_binding = args.access_policy.get_output(context);
         let name_binding = args.name.get_output(context);
         let notification_binding = args.notification.get_output(context);
@@ -142,6 +158,7 @@ pub mod vault {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VaultResult {

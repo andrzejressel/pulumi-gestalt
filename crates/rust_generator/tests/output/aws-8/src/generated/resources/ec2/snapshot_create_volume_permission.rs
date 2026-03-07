@@ -62,6 +62,22 @@ pub mod snapshot_create_volume_permission {
         name: &str,
         args: SnapshotCreateVolumePermissionArgs,
     ) -> SnapshotCreateVolumePermissionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SnapshotCreateVolumePermissionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SnapshotCreateVolumePermissionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SnapshotCreateVolumePermissionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SnapshotCreateVolumePermissionResult {
         let account_id_binding = args.account_id.get_output(context);
         let snapshot_id_binding = args.snapshot_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -79,6 +95,7 @@ pub mod snapshot_create_volume_permission {
                     value: &snapshot_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SnapshotCreateVolumePermissionResult {

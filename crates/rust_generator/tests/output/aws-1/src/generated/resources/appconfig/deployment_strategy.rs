@@ -103,6 +103,22 @@ pub mod deployment_strategy {
         name: &str,
         args: DeploymentStrategyArgs,
     ) -> DeploymentStrategyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DeploymentStrategyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DeploymentStrategyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DeploymentStrategyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DeploymentStrategyResult {
         let deployment_duration_in_minutes_binding = args
             .deployment_duration_in_minutes
             .get_output(context);
@@ -153,6 +169,7 @@ pub mod deployment_strategy {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DeploymentStrategyResult {

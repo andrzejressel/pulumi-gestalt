@@ -135,6 +135,22 @@ pub mod cluster_extension {
         name: &str,
         args: ClusterExtensionArgs,
     ) -> ClusterExtensionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClusterExtensionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ClusterExtensionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClusterExtensionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ClusterExtensionResult {
         let cluster_id_binding = args.cluster_id.get_output(context);
         let configuration_protected_settings_binding = args
             .configuration_protected_settings
@@ -195,6 +211,7 @@ pub mod cluster_extension {
                     value: &version_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ClusterExtensionResult {

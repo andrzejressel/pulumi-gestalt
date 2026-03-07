@@ -234,6 +234,22 @@ pub mod node_group {
         name: &str,
         args: NodeGroupArgs,
     ) -> NodeGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NodeGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NodeGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NodeGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NodeGroupResult {
         let ami_type_binding = args.ami_type.get_output(context);
         let capacity_type_binding = args.capacity_type.get_output(context);
         let cluster_name_binding = args.cluster_name.get_output(context);
@@ -337,6 +353,7 @@ pub mod node_group {
                     value: &version_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NodeGroupResult {

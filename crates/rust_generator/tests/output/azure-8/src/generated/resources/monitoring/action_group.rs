@@ -267,6 +267,22 @@ pub mod action_group {
         name: &str,
         args: ActionGroupArgs,
     ) -> ActionGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ActionGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ActionGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ActionGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ActionGroupResult {
         let arm_role_receivers_binding = args.arm_role_receivers.get_output(context);
         let automation_runbook_receivers_binding = args
             .automation_runbook_receivers
@@ -364,6 +380,7 @@ pub mod action_group {
                     value: &webhook_receivers_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ActionGroupResult {

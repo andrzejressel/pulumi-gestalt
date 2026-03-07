@@ -214,6 +214,22 @@ pub mod instance_logging_configuration {
         name: &str,
         args: InstanceLoggingConfigurationArgs,
     ) -> InstanceLoggingConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InstanceLoggingConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> InstanceLoggingConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InstanceLoggingConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> InstanceLoggingConfigurationResult {
         let access_logs_binding = args.access_logs.get_output(context);
         let verifiedaccess_instance_id_binding = args
             .verifiedaccess_instance_id
@@ -233,6 +249,7 @@ pub mod instance_logging_configuration {
                     value: &verifiedaccess_instance_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         InstanceLoggingConfigurationResult {

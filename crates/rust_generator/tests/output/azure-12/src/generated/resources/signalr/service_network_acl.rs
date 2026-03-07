@@ -131,6 +131,22 @@ pub mod service_network_acl {
         name: &str,
         args: ServiceNetworkAclArgs,
     ) -> ServiceNetworkAclResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceNetworkAclArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServiceNetworkAclResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceNetworkAclArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServiceNetworkAclResult {
         let default_action_binding = args.default_action.get_output(context);
         let private_endpoints_binding = args.private_endpoints.get_output(context);
         let public_network_binding = args.public_network.get_output(context);
@@ -157,6 +173,7 @@ pub mod service_network_acl {
                     value: &signalr_service_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServiceNetworkAclResult {

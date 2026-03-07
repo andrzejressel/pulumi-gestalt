@@ -291,6 +291,22 @@ pub mod anomaly_subscription {
         name: &str,
         args: AnomalySubscriptionArgs,
     ) -> AnomalySubscriptionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AnomalySubscriptionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AnomalySubscriptionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AnomalySubscriptionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AnomalySubscriptionResult {
         let account_id_binding = args.account_id.get_output(context);
         let frequency_binding = args.frequency.get_output(context);
         let monitor_arn_lists_binding = args.monitor_arn_lists.get_output(context);
@@ -332,6 +348,7 @@ pub mod anomaly_subscription {
                     value: &threshold_expression_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AnomalySubscriptionResult {

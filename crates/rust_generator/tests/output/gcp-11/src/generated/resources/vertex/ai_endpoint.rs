@@ -321,6 +321,22 @@ pub mod ai_endpoint {
         name: &str,
         args: AiEndpointArgs,
     ) -> AiEndpointResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AiEndpointArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AiEndpointResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AiEndpointArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AiEndpointResult {
         let dedicated_endpoint_enabled_binding = args
             .dedicated_endpoint_enabled
             .get_output(context);
@@ -398,6 +414,7 @@ pub mod ai_endpoint {
                     value: &traffic_split_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AiEndpointResult {

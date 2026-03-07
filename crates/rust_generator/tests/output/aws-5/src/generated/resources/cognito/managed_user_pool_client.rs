@@ -256,6 +256,22 @@ pub mod managed_user_pool_client {
         name: &str,
         args: ManagedUserPoolClientArgs,
     ) -> ManagedUserPoolClientResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedUserPoolClientArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ManagedUserPoolClientResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedUserPoolClientArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ManagedUserPoolClientResult {
         let access_token_validity_binding = args
             .access_token_validity
             .get_output(context);
@@ -391,6 +407,7 @@ pub mod managed_user_pool_client {
                     value: &write_attributes_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ManagedUserPoolClientResult {

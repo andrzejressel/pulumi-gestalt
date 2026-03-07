@@ -123,6 +123,22 @@ pub mod spring_cloud_java_deployment {
         name: &str,
         args: SpringCloudJavaDeploymentArgs,
     ) -> SpringCloudJavaDeploymentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudJavaDeploymentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SpringCloudJavaDeploymentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudJavaDeploymentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SpringCloudJavaDeploymentResult {
         let environment_variables_binding = args
             .environment_variables
             .get_output(context);
@@ -167,6 +183,7 @@ pub mod spring_cloud_java_deployment {
                     value: &spring_cloud_app_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SpringCloudJavaDeploymentResult {

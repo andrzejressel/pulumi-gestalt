@@ -178,6 +178,22 @@ pub mod role_management_policy {
         name: &str,
         args: RoleManagementPolicyArgs,
     ) -> RoleManagementPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RoleManagementPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RoleManagementPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RoleManagementPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RoleManagementPolicyResult {
         let activation_rules_binding = args.activation_rules.get_output(context);
         let active_assignment_rules_binding = args
             .active_assignment_rules
@@ -218,6 +234,7 @@ pub mod role_management_policy {
                     value: &scope_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RoleManagementPolicyResult {

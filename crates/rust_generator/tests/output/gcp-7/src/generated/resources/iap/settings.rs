@@ -181,6 +181,22 @@ pub mod settings {
         name: &str,
         args: SettingsArgs,
     ) -> SettingsResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SettingsArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SettingsResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SettingsArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SettingsResult {
         let access_settings_binding = args.access_settings.get_output(context);
         let application_settings_binding = args.application_settings.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -202,6 +218,7 @@ pub mod settings {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SettingsResult {

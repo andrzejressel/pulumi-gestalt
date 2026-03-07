@@ -142,6 +142,22 @@ pub mod response_policy_rule {
         name: &str,
         args: ResponsePolicyRuleArgs,
     ) -> ResponsePolicyRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResponsePolicyRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ResponsePolicyRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResponsePolicyRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ResponsePolicyRuleResult {
         let behavior_binding = args.behavior.get_output(context);
         let dns_name_binding = args.dns_name.get_output(context);
         let local_data_binding = args.local_data.get_output(context);
@@ -178,6 +194,7 @@ pub mod response_policy_rule {
                     value: &rule_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ResponsePolicyRuleResult {

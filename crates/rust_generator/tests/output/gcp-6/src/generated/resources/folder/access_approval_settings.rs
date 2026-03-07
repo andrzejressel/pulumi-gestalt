@@ -203,6 +203,22 @@ pub mod access_approval_settings {
         name: &str,
         args: AccessApprovalSettingsArgs,
     ) -> AccessApprovalSettingsResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccessApprovalSettingsArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AccessApprovalSettingsResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccessApprovalSettingsArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AccessApprovalSettingsResult {
         let active_key_version_binding = args.active_key_version.get_output(context);
         let enrolled_services_binding = args.enrolled_services.get_output(context);
         let folder_id_binding = args.folder_id.get_output(context);
@@ -229,6 +245,7 @@ pub mod access_approval_settings {
                     value: &notification_emails_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AccessApprovalSettingsResult {

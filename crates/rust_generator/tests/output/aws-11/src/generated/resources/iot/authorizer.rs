@@ -112,6 +112,22 @@ pub mod authorizer {
         name: &str,
         args: AuthorizerArgs,
     ) -> AuthorizerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AuthorizerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AuthorizerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AuthorizerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AuthorizerResult {
         let authorizer_function_arn_binding = args
             .authorizer_function_arn
             .get_output(context);
@@ -164,6 +180,7 @@ pub mod authorizer {
                     value: &token_signing_public_keys_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AuthorizerResult {

@@ -458,6 +458,22 @@ pub mod batch {
         name: &str,
         args: BatchArgs,
     ) -> BatchResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BatchArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BatchResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BatchArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BatchResult {
         let batch_id_binding = args.batch_id.get_output(context);
         let environment_config_binding = args.environment_config.get_output(context);
         let labels_binding = args.labels.get_output(context);
@@ -514,6 +530,7 @@ pub mod batch {
                     value: &spark_sql_batch_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BatchResult {

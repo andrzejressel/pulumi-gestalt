@@ -125,6 +125,22 @@ pub mod account_cost_management_export {
         name: &str,
         args: AccountCostManagementExportArgs,
     ) -> AccountCostManagementExportResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccountCostManagementExportArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AccountCostManagementExportResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccountCostManagementExportArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AccountCostManagementExportResult {
         let active_binding = args.active.get_output(context);
         let billing_account_id_binding = args.billing_account_id.get_output(context);
         let export_data_options_binding = args.export_data_options.get_output(context);
@@ -178,6 +194,7 @@ pub mod account_cost_management_export {
                     value: &recurrence_type_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AccountCostManagementExportResult {

@@ -164,6 +164,22 @@ pub mod region_ssl_policy {
         name: &str,
         args: RegionSslPolicyArgs,
     ) -> RegionSslPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionSslPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RegionSslPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionSslPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RegionSslPolicyResult {
         let custom_features_binding = args.custom_features.get_output(context);
         let description_binding = args.description.get_output(context);
         let min_tls_version_binding = args.min_tls_version.get_output(context);
@@ -205,6 +221,7 @@ pub mod region_ssl_policy {
                     value: &region_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RegionSslPolicyResult {

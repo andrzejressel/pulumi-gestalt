@@ -72,6 +72,22 @@ pub mod control_panel {
         name: &str,
         args: ControlPanelArgs,
     ) -> ControlPanelResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ControlPanelArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ControlPanelResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ControlPanelArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ControlPanelResult {
         let cluster_arn_binding = args.cluster_arn.get_output(context);
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -88,6 +104,7 @@ pub mod control_panel {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ControlPanelResult {

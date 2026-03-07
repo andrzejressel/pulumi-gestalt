@@ -238,6 +238,22 @@ pub mod bucket_v_2 {
         name: &str,
         args: BucketV2Args,
     ) -> BucketV2Result {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BucketV2Args,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BucketV2Result {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BucketV2Args,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BucketV2Result {
         let acceleration_status_binding = args.acceleration_status.get_output(context);
         let acl_binding = args.acl.get_output(context);
         let bucket_binding = args.bucket.get_output(context);
@@ -340,6 +356,7 @@ pub mod bucket_v_2 {
                     value: &websites_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BucketV2Result {

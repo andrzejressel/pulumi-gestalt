@@ -61,6 +61,22 @@ pub mod organization_admin_account {
         name: &str,
         args: OrganizationAdminAccountArgs,
     ) -> OrganizationAdminAccountResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationAdminAccountArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OrganizationAdminAccountResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationAdminAccountArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OrganizationAdminAccountResult {
         let account_id_binding = args.account_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:detective/organizationAdminAccount:OrganizationAdminAccount"
@@ -73,6 +89,7 @@ pub mod organization_admin_account {
                     value: &account_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OrganizationAdminAccountResult {

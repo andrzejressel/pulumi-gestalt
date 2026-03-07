@@ -111,6 +111,22 @@ pub mod dx_gateway_attachment {
         name: &str,
         args: DxGatewayAttachmentArgs,
     ) -> DxGatewayAttachmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DxGatewayAttachmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DxGatewayAttachmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DxGatewayAttachmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DxGatewayAttachmentResult {
         let core_network_id_binding = args.core_network_id.get_output(context);
         let direct_connect_gateway_arn_binding = args
             .direct_connect_gateway_arn
@@ -144,6 +160,7 @@ pub mod dx_gateway_attachment {
                     value: &timeouts_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DxGatewayAttachmentResult {

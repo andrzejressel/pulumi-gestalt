@@ -75,6 +75,22 @@ pub mod custom_key_store {
         name: &str,
         args: CustomKeyStoreArgs,
     ) -> CustomKeyStoreResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomKeyStoreArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CustomKeyStoreResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomKeyStoreArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CustomKeyStoreResult {
         let cloud_hsm_cluster_id_binding = args.cloud_hsm_cluster_id.get_output(context);
         let custom_key_store_name_binding = args
             .custom_key_store_name
@@ -105,6 +121,7 @@ pub mod custom_key_store {
                     value: &trust_anchor_certificate_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CustomKeyStoreResult {

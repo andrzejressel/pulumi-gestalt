@@ -117,6 +117,22 @@ pub mod registry_agent_pool {
         name: &str,
         args: RegistryAgentPoolArgs,
     ) -> RegistryAgentPoolResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegistryAgentPoolArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RegistryAgentPoolResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegistryAgentPoolArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RegistryAgentPoolResult {
         let container_registry_name_binding = args
             .container_registry_name
             .get_output(context);
@@ -167,6 +183,7 @@ pub mod registry_agent_pool {
                     value: &virtual_network_subnet_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RegistryAgentPoolResult {

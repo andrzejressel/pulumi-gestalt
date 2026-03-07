@@ -161,6 +161,22 @@ pub mod organization_conformance_pack {
         name: &str,
         args: OrganizationConformancePackArgs,
     ) -> OrganizationConformancePackResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationConformancePackArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OrganizationConformancePackResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationConformancePackArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OrganizationConformancePackResult {
         let delivery_s3_bucket_binding = args.delivery_s3_bucket.get_output(context);
         let delivery_s3_key_prefix_binding = args
             .delivery_s3_key_prefix
@@ -205,6 +221,7 @@ pub mod organization_conformance_pack {
                     value: &template_s3_uri_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OrganizationConformancePackResult {

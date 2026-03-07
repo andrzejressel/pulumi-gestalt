@@ -130,6 +130,22 @@ pub mod load_balancer_monitor {
         name: &str,
         args: LoadBalancerMonitorArgs,
     ) -> LoadBalancerMonitorResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LoadBalancerMonitorArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LoadBalancerMonitorResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LoadBalancerMonitorArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LoadBalancerMonitorResult {
         let account_id_binding = args.account_id.get_output(context);
         let allow_insecure_binding = args.allow_insecure.get_output(context);
         let consecutive_down_binding = args.consecutive_down.get_output(context);
@@ -221,6 +237,7 @@ pub mod load_balancer_monitor {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LoadBalancerMonitorResult {

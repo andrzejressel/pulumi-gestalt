@@ -67,6 +67,22 @@ pub mod event_configurations {
         name: &str,
         args: EventConfigurationsArgs,
     ) -> EventConfigurationsResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EventConfigurationsArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EventConfigurationsResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EventConfigurationsArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EventConfigurationsResult {
         let event_configurations_binding = args.event_configurations.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:iot/eventConfigurations:EventConfigurations".into(),
@@ -78,6 +94,7 @@ pub mod event_configurations {
                     value: &event_configurations_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EventConfigurationsResult {

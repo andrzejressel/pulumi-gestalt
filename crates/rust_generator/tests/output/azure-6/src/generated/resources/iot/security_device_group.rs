@@ -112,6 +112,22 @@ pub mod security_device_group {
         name: &str,
         args: SecurityDeviceGroupArgs,
     ) -> SecurityDeviceGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SecurityDeviceGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SecurityDeviceGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SecurityDeviceGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SecurityDeviceGroupResult {
         let allow_rule_binding = args.allow_rule.get_output(context);
         let iothub_id_binding = args.iothub_id.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -138,6 +154,7 @@ pub mod security_device_group {
                     value: &range_rules_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SecurityDeviceGroupResult {

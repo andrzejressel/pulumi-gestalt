@@ -62,6 +62,22 @@ pub mod vpc_endpoint_service_allowed_principle {
         name: &str,
         args: VpcEndpointServiceAllowedPrincipleArgs,
     ) -> VpcEndpointServiceAllowedPrincipleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcEndpointServiceAllowedPrincipleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VpcEndpointServiceAllowedPrincipleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcEndpointServiceAllowedPrincipleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VpcEndpointServiceAllowedPrincipleResult {
         let principal_arn_binding = args.principal_arn.get_output(context);
         let vpc_endpoint_service_id_binding = args
             .vpc_endpoint_service_id
@@ -81,6 +97,7 @@ pub mod vpc_endpoint_service_allowed_principle {
                     value: &vpc_endpoint_service_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VpcEndpointServiceAllowedPrincipleResult {

@@ -184,6 +184,22 @@ pub mod environment {
         name: &str,
         args: EnvironmentArgs,
     ) -> EnvironmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EnvironmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EnvironmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EnvironmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EnvironmentResult {
         let dapr_application_insights_connection_string_binding = args
             .dapr_application_insights_connection_string
             .get_output(context);
@@ -263,6 +279,7 @@ pub mod environment {
                     value: &zone_redundancy_enabled_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EnvironmentResult {

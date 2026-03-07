@@ -105,6 +105,22 @@ pub mod agreement {
         name: &str,
         args: AgreementArgs,
     ) -> AgreementResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AgreementArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AgreementResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AgreementArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AgreementResult {
         let access_role_binding = args.access_role.get_output(context);
         let base_directory_binding = args.base_directory.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -146,6 +162,7 @@ pub mod agreement {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AgreementResult {

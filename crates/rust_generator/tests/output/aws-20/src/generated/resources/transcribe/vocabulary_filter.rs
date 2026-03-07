@@ -96,6 +96,22 @@ pub mod vocabulary_filter {
         name: &str,
         args: VocabularyFilterArgs,
     ) -> VocabularyFilterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VocabularyFilterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VocabularyFilterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VocabularyFilterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VocabularyFilterResult {
         let language_code_binding = args.language_code.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let vocabulary_filter_file_uri_binding = args
@@ -131,6 +147,7 @@ pub mod vocabulary_filter {
                     value: &words_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VocabularyFilterResult {

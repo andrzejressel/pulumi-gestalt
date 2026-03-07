@@ -168,6 +168,22 @@ pub mod contact_profile {
         name: &str,
         args: ContactProfileArgs,
     ) -> ContactProfileResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ContactProfileArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ContactProfileResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ContactProfileArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ContactProfileResult {
         let auto_tracking_binding = args.auto_tracking.get_output(context);
         let event_hub_uri_binding = args.event_hub_uri.get_output(context);
         let links_binding = args.links.get_output(context);
@@ -230,6 +246,7 @@ pub mod contact_profile {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ContactProfileResult {

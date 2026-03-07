@@ -103,6 +103,22 @@ pub mod nfs_location {
         name: &str,
         args: NfsLocationArgs,
     ) -> NfsLocationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NfsLocationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NfsLocationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NfsLocationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NfsLocationResult {
         let mount_options_binding = args.mount_options.get_output(context);
         let on_prem_config_binding = args.on_prem_config.get_output(context);
         let server_hostname_binding = args.server_hostname.get_output(context);
@@ -134,6 +150,7 @@ pub mod nfs_location {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NfsLocationResult {

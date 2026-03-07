@@ -86,6 +86,22 @@ pub mod replicator {
         name: &str,
         args: ReplicatorArgs,
     ) -> ReplicatorResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReplicatorArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ReplicatorResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReplicatorArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ReplicatorResult {
         let description_binding = args.description.get_output(context);
         let kafka_clusters_binding = args.kafka_clusters.get_output(context);
         let replication_info_list_binding = args
@@ -126,6 +142,7 @@ pub mod replicator {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ReplicatorResult {

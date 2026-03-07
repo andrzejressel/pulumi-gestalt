@@ -338,6 +338,22 @@ pub mod metric_alarm {
         name: &str,
         args: MetricAlarmArgs,
     ) -> MetricAlarmResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MetricAlarmArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MetricAlarmResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MetricAlarmArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MetricAlarmResult {
         let actions_enabled_binding = args.actions_enabled.get_output(context);
         let alarm_actions_binding = args.alarm_actions.get_output(context);
         let alarm_description_binding = args.alarm_description.get_output(context);
@@ -458,6 +474,7 @@ pub mod metric_alarm {
                     value: &unit_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MetricAlarmResult {

@@ -89,6 +89,22 @@ pub mod snapshot_copy_grant {
         name: &str,
         args: SnapshotCopyGrantArgs,
     ) -> SnapshotCopyGrantResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SnapshotCopyGrantArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SnapshotCopyGrantResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SnapshotCopyGrantArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SnapshotCopyGrantResult {
         let kms_key_id_binding = args.kms_key_id.get_output(context);
         let snapshot_copy_grant_name_binding = args
             .snapshot_copy_grant_name
@@ -112,6 +128,7 @@ pub mod snapshot_copy_grant {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SnapshotCopyGrantResult {

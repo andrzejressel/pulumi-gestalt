@@ -204,6 +204,22 @@ pub mod organization_custom_module {
         name: &str,
         args: OrganizationCustomModuleArgs,
     ) -> OrganizationCustomModuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationCustomModuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OrganizationCustomModuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationCustomModuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OrganizationCustomModuleResult {
         let custom_config_binding = args.custom_config.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let enablement_state_binding = args.enablement_state.get_output(context);
@@ -231,6 +247,7 @@ pub mod organization_custom_module {
                     value: &organization_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OrganizationCustomModuleResult {

@@ -123,6 +123,22 @@ pub mod project_notification_config {
         name: &str,
         args: ProjectNotificationConfigArgs,
     ) -> ProjectNotificationConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProjectNotificationConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ProjectNotificationConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProjectNotificationConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ProjectNotificationConfigResult {
         let config_id_binding = args.config_id.get_output(context);
         let description_binding = args.description.get_output(context);
         let project_binding = args.project.get_output(context);
@@ -155,6 +171,7 @@ pub mod project_notification_config {
                     value: &streaming_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ProjectNotificationConfigResult {

@@ -103,6 +103,22 @@ pub mod dedicated_host_group {
         name: &str,
         args: DedicatedHostGroupArgs,
     ) -> DedicatedHostGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DedicatedHostGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DedicatedHostGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DedicatedHostGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DedicatedHostGroupResult {
         let automatic_placement_enabled_binding = args
             .automatic_placement_enabled
             .get_output(context);
@@ -148,6 +164,7 @@ pub mod dedicated_host_group {
                     value: &zone_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DedicatedHostGroupResult {

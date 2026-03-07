@@ -133,6 +133,22 @@ pub mod network_profile {
         name: &str,
         args: NetworkProfileArgs,
     ) -> NetworkProfileResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkProfileArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NetworkProfileResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkProfileArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NetworkProfileResult {
         let description_binding = args.description.get_output(context);
         let downlink_bandwidth_bits_binding = args
             .downlink_bandwidth_bits
@@ -210,6 +226,7 @@ pub mod network_profile {
                     value: &uplink_loss_percent_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NetworkProfileResult {

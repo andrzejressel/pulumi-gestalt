@@ -117,6 +117,22 @@ pub mod storage_defender {
         name: &str,
         args: StorageDefenderArgs,
     ) -> StorageDefenderResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StorageDefenderArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> StorageDefenderResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StorageDefenderArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> StorageDefenderResult {
         let malware_scanning_on_upload_cap_gb_per_month_binding = args
             .malware_scanning_on_upload_cap_gb_per_month
             .get_output(context);
@@ -164,6 +180,7 @@ pub mod storage_defender {
                     value: &storage_account_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         StorageDefenderResult {

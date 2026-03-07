@@ -115,6 +115,22 @@ pub mod data_connector_office_365 {
         name: &str,
         args: DataConnectorOffice365Args,
     ) -> DataConnectorOffice365Result {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataConnectorOffice365Args,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DataConnectorOffice365Result {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataConnectorOffice365Args,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DataConnectorOffice365Result {
         let exchange_enabled_binding = args.exchange_enabled.get_output(context);
         let log_analytics_workspace_id_binding = args
             .log_analytics_workspace_id
@@ -153,6 +169,7 @@ pub mod data_connector_office_365 {
                     value: &tenant_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DataConnectorOffice365Result {

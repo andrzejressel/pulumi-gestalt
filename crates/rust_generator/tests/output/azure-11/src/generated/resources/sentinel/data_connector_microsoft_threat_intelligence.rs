@@ -106,6 +106,22 @@ pub mod data_connector_microsoft_threat_intelligence {
         name: &str,
         args: DataConnectorMicrosoftThreatIntelligenceArgs,
     ) -> DataConnectorMicrosoftThreatIntelligenceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataConnectorMicrosoftThreatIntelligenceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DataConnectorMicrosoftThreatIntelligenceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataConnectorMicrosoftThreatIntelligenceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DataConnectorMicrosoftThreatIntelligenceResult {
         let log_analytics_workspace_id_binding = args
             .log_analytics_workspace_id
             .get_output(context);
@@ -138,6 +154,7 @@ pub mod data_connector_microsoft_threat_intelligence {
                     value: &tenant_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DataConnectorMicrosoftThreatIntelligenceResult {

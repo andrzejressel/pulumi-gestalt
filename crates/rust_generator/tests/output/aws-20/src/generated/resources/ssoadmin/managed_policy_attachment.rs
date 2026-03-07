@@ -126,6 +126,22 @@ pub mod managed_policy_attachment {
         name: &str,
         args: ManagedPolicyAttachmentArgs,
     ) -> ManagedPolicyAttachmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedPolicyAttachmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ManagedPolicyAttachmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedPolicyAttachmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ManagedPolicyAttachmentResult {
         let instance_arn_binding = args.instance_arn.get_output(context);
         let managed_policy_arn_binding = args.managed_policy_arn.get_output(context);
         let permission_set_arn_binding = args.permission_set_arn.get_output(context);
@@ -147,6 +163,7 @@ pub mod managed_policy_attachment {
                     value: &permission_set_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ManagedPolicyAttachmentResult {

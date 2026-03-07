@@ -68,6 +68,22 @@ pub mod service_setting {
         name: &str,
         args: ServiceSettingArgs,
     ) -> ServiceSettingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceSettingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServiceSettingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceSettingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServiceSettingResult {
         let setting_id_binding = args.setting_id.get_output(context);
         let setting_value_binding = args.setting_value.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -84,6 +100,7 @@ pub mod service_setting {
                     value: &setting_value_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServiceSettingResult {

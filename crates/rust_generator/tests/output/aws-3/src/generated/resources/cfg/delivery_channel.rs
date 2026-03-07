@@ -132,6 +132,22 @@ pub mod delivery_channel {
         name: &str,
         args: DeliveryChannelArgs,
     ) -> DeliveryChannelResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DeliveryChannelArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DeliveryChannelResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DeliveryChannelArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DeliveryChannelResult {
         let name_binding = args.name.get_output(context);
         let s3_bucket_name_binding = args.s3_bucket_name.get_output(context);
         let s3_key_prefix_binding = args.s3_key_prefix.get_output(context);
@@ -170,6 +186,7 @@ pub mod delivery_channel {
                     value: &sns_topic_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DeliveryChannelResult {

@@ -97,6 +97,22 @@ pub mod role_policy {
         name: &str,
         args: RolePolicyArgs,
     ) -> RolePolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RolePolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RolePolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RolePolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RolePolicyResult {
         let name_binding = args.name.get_output(context);
         let name_prefix_binding = args.name_prefix.get_output(context);
         let policy_binding = args.policy.get_output(context);
@@ -123,6 +139,7 @@ pub mod role_policy {
                     value: &role_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RolePolicyResult {

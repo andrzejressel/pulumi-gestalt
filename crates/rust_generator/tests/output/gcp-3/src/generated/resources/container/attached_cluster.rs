@@ -362,6 +362,22 @@ pub mod attached_cluster {
         name: &str,
         args: AttachedClusterArgs,
     ) -> AttachedClusterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AttachedClusterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AttachedClusterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AttachedClusterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AttachedClusterResult {
         let annotations_binding = args.annotations.get_output(context);
         let authorization_binding = args.authorization.get_output(context);
         let binary_authorization_binding = args.binary_authorization.get_output(context);
@@ -450,6 +466,7 @@ pub mod attached_cluster {
                     value: &security_posture_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AttachedClusterResult {

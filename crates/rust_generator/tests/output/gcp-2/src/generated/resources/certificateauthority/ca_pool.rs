@@ -256,6 +256,22 @@ pub mod ca_pool {
         name: &str,
         args: CaPoolArgs,
     ) -> CaPoolResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CaPoolArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CaPoolResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CaPoolArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CaPoolResult {
         let issuance_policy_binding = args.issuance_policy.get_output(context);
         let labels_binding = args.labels.get_output(context);
         let location_binding = args.location.get_output(context);
@@ -297,6 +313,7 @@ pub mod ca_pool {
                     value: &tier_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CaPoolResult {

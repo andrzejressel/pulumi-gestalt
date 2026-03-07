@@ -104,6 +104,22 @@ pub mod monitor_tag_rule {
         name: &str,
         args: MonitorTagRuleArgs,
     ) -> MonitorTagRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MonitorTagRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MonitorTagRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MonitorTagRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MonitorTagRuleResult {
         let datadog_monitor_id_binding = args.datadog_monitor_id.get_output(context);
         let logs_binding = args.logs.get_output(context);
         let metrics_binding = args.metrics.get_output(context);
@@ -130,6 +146,7 @@ pub mod monitor_tag_rule {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MonitorTagRuleResult {

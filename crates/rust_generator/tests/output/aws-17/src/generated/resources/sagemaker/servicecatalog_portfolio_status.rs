@@ -56,6 +56,22 @@ pub mod servicecatalog_portfolio_status {
         name: &str,
         args: ServicecatalogPortfolioStatusArgs,
     ) -> ServicecatalogPortfolioStatusResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServicecatalogPortfolioStatusArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServicecatalogPortfolioStatusResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServicecatalogPortfolioStatusArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServicecatalogPortfolioStatusResult {
         let status_binding = args.status.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:sagemaker/servicecatalogPortfolioStatus:ServicecatalogPortfolioStatus"
@@ -68,6 +84,7 @@ pub mod servicecatalog_portfolio_status {
                     value: &status_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServicecatalogPortfolioStatusResult {

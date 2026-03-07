@@ -109,6 +109,22 @@ pub mod data_source_windows_performance_counter {
         name: &str,
         args: DataSourceWindowsPerformanceCounterArgs,
     ) -> DataSourceWindowsPerformanceCounterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataSourceWindowsPerformanceCounterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DataSourceWindowsPerformanceCounterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataSourceWindowsPerformanceCounterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DataSourceWindowsPerformanceCounterResult {
         let counter_name_binding = args.counter_name.get_output(context);
         let instance_name_binding = args.instance_name.get_output(context);
         let interval_seconds_binding = args.interval_seconds.get_output(context);
@@ -151,6 +167,7 @@ pub mod data_source_windows_performance_counter {
                     value: &workspace_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DataSourceWindowsPerformanceCounterResult {

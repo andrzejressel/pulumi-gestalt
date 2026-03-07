@@ -133,6 +133,22 @@ pub mod scheduled_action {
         name: &str,
         args: ScheduledActionArgs,
     ) -> ScheduledActionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ScheduledActionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ScheduledActionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ScheduledActionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ScheduledActionResult {
         let day_of_month_binding = args.day_of_month.get_output(context);
         let days_of_weeks_binding = args.days_of_weeks.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
@@ -209,6 +225,7 @@ pub mod scheduled_action {
                     value: &weeks_of_months_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ScheduledActionResult {

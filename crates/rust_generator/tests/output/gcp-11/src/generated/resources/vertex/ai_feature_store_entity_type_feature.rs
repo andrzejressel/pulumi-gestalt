@@ -176,6 +176,22 @@ pub mod ai_feature_store_entity_type_feature {
         name: &str,
         args: AiFeatureStoreEntityTypeFeatureArgs,
     ) -> AiFeatureStoreEntityTypeFeatureResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AiFeatureStoreEntityTypeFeatureArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AiFeatureStoreEntityTypeFeatureResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AiFeatureStoreEntityTypeFeatureArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AiFeatureStoreEntityTypeFeatureResult {
         let description_binding = args.description.get_output(context);
         let entitytype_binding = args.entitytype.get_output(context);
         let labels_binding = args.labels.get_output(context);
@@ -208,6 +224,7 @@ pub mod ai_feature_store_entity_type_feature {
                     value: &value_type_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AiFeatureStoreEntityTypeFeatureResult {

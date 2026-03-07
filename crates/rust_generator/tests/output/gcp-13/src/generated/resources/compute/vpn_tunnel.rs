@@ -313,6 +313,22 @@ pub mod vpn_tunnel {
         name: &str,
         args: VPNTunnelArgs,
     ) -> VPNTunnelResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VPNTunnelArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VPNTunnelResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VPNTunnelArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VPNTunnelResult {
         let description_binding = args.description.get_output(context);
         let ike_version_binding = args.ike_version.get_output(context);
         let labels_binding = args.labels.get_output(context);
@@ -414,6 +430,7 @@ pub mod vpn_tunnel {
                     value: &vpn_gateway_interface_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VPNTunnelResult {

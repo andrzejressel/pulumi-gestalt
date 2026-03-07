@@ -89,6 +89,22 @@ pub mod detector_feature {
         name: &str,
         args: DetectorFeatureArgs,
     ) -> DetectorFeatureResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DetectorFeatureArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DetectorFeatureResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DetectorFeatureArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DetectorFeatureResult {
         let additional_configurations_binding = args
             .additional_configurations
             .get_output(context);
@@ -117,6 +133,7 @@ pub mod detector_feature {
                     value: &status_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DetectorFeatureResult {

@@ -81,6 +81,22 @@ pub mod endpoint_service_private_dns_verification {
         name: &str,
         args: EndpointServicePrivateDnsVerificationArgs,
     ) -> EndpointServicePrivateDnsVerificationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EndpointServicePrivateDnsVerificationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EndpointServicePrivateDnsVerificationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EndpointServicePrivateDnsVerificationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EndpointServicePrivateDnsVerificationResult {
         let service_id_binding = args.service_id.get_output(context);
         let timeouts_binding = args.timeouts.get_output(context);
         let wait_for_verification_binding = args
@@ -105,6 +121,7 @@ pub mod endpoint_service_private_dns_verification {
                     value: &wait_for_verification_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EndpointServicePrivateDnsVerificationResult {

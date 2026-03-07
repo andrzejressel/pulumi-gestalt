@@ -241,6 +241,22 @@ pub mod state_machine {
         name: &str,
         args: StateMachineArgs,
     ) -> StateMachineResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StateMachineArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> StateMachineResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StateMachineArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> StateMachineResult {
         let definition_binding = args.definition.get_output(context);
         let encryption_configuration_binding = args
             .encryption_configuration
@@ -303,6 +319,7 @@ pub mod state_machine {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         StateMachineResult {

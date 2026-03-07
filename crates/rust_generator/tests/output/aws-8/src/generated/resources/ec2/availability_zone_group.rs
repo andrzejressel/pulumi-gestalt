@@ -64,6 +64,22 @@ pub mod availability_zone_group {
         name: &str,
         args: AvailabilityZoneGroupArgs,
     ) -> AvailabilityZoneGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AvailabilityZoneGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AvailabilityZoneGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AvailabilityZoneGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AvailabilityZoneGroupResult {
         let group_name_binding = args.group_name.get_output(context);
         let opt_in_status_binding = args.opt_in_status.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -80,6 +96,7 @@ pub mod availability_zone_group {
                     value: &opt_in_status_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AvailabilityZoneGroupResult {

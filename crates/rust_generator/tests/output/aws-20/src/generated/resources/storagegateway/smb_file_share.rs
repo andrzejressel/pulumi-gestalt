@@ -226,6 +226,22 @@ pub mod smb_file_share {
         name: &str,
         args: SmbFileShareArgs,
     ) -> SmbFileShareResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SmbFileShareArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SmbFileShareResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SmbFileShareArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SmbFileShareResult {
         let access_based_enumeration_binding = args
             .access_based_enumeration
             .get_output(context);
@@ -367,6 +383,7 @@ pub mod smb_file_share {
                     value: &vpc_endpoint_dns_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SmbFileShareResult {

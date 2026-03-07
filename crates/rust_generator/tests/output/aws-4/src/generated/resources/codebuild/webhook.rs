@@ -136,6 +136,22 @@ pub mod webhook {
         name: &str,
         args: WebhookArgs,
     ) -> WebhookResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WebhookArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WebhookResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WebhookArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WebhookResult {
         let branch_filter_binding = args.branch_filter.get_output(context);
         let build_type_binding = args.build_type.get_output(context);
         let filter_groups_binding = args.filter_groups.get_output(context);
@@ -167,6 +183,7 @@ pub mod webhook {
                     value: &scope_configuration_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WebhookResult {

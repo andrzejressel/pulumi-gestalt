@@ -127,6 +127,22 @@ pub mod registry_webook {
         name: &str,
         args: RegistryWebookArgs,
     ) -> RegistryWebookResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegistryWebookArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RegistryWebookResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegistryWebookArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RegistryWebookResult {
         let actions_binding = args.actions.get_output(context);
         let custom_headers_binding = args.custom_headers.get_output(context);
         let location_binding = args.location.get_output(context);
@@ -183,6 +199,7 @@ pub mod registry_webook {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RegistryWebookResult {

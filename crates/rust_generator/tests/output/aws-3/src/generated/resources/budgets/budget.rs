@@ -345,6 +345,22 @@ pub mod budget {
         name: &str,
         args: BudgetArgs,
     ) -> BudgetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BudgetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BudgetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BudgetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BudgetResult {
         let account_id_binding = args.account_id.get_output(context);
         let auto_adjust_data_binding = args.auto_adjust_data.get_output(context);
         let budget_type_binding = args.budget_type.get_output(context);
@@ -426,6 +442,7 @@ pub mod budget {
                     value: &time_unit_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BudgetResult {

@@ -78,6 +78,22 @@ pub mod revision {
         name: &str,
         args: RevisionArgs,
     ) -> RevisionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RevisionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RevisionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RevisionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RevisionResult {
         let comment_binding = args.comment.get_output(context);
         let data_set_id_binding = args.data_set_id.get_output(context);
         let tags_binding = args.tags.get_output(context);
@@ -99,6 +115,7 @@ pub mod revision {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RevisionResult {

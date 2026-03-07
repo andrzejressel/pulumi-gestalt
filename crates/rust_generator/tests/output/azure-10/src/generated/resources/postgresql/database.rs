@@ -103,6 +103,22 @@ pub mod database {
         name: &str,
         args: DatabaseArgs,
     ) -> DatabaseResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatabaseArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DatabaseResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatabaseArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DatabaseResult {
         let charset_binding = args.charset.get_output(context);
         let collation_binding = args.collation.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -134,6 +150,7 @@ pub mod database {
                     value: &server_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DatabaseResult {

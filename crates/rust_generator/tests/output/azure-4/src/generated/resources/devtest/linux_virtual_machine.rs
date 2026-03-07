@@ -204,6 +204,22 @@ pub mod linux_virtual_machine {
         name: &str,
         args: LinuxVirtualMachineArgs,
     ) -> LinuxVirtualMachineResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LinuxVirtualMachineArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LinuxVirtualMachineResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LinuxVirtualMachineArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LinuxVirtualMachineResult {
         let allow_claim_binding = args.allow_claim.get_output(context);
         let disallow_public_ip_address_binding = args
             .disallow_public_ip_address
@@ -301,6 +317,7 @@ pub mod linux_virtual_machine {
                     value: &username_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LinuxVirtualMachineResult {

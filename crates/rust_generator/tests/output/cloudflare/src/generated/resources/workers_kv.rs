@@ -80,6 +80,22 @@ pub mod workers_kv {
         name: &str,
         args: WorkersKvArgs,
     ) -> WorkersKvResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkersKvArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WorkersKvResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkersKvArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WorkersKvResult {
         let account_id_binding = args.account_id.get_output(context);
         let key_binding = args.key.get_output(context);
         let namespace_id_binding = args.namespace_id.get_output(context);
@@ -106,6 +122,7 @@ pub mod workers_kv {
                     value: &value_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WorkersKvResult {

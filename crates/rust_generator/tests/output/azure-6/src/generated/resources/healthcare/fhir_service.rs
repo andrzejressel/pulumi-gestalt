@@ -187,6 +187,22 @@ pub mod fhir_service {
         name: &str,
         args: FhirServiceArgs,
     ) -> FhirServiceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FhirServiceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FhirServiceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FhirServiceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FhirServiceResult {
         let access_policy_object_ids_binding = args
             .access_policy_object_ids
             .get_output(context);
@@ -264,6 +280,7 @@ pub mod fhir_service {
                     value: &workspace_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FhirServiceResult {

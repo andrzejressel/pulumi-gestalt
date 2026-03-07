@@ -202,6 +202,22 @@ pub mod agent {
         name: &str,
         args: AgentArgs,
     ) -> AgentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AgentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AgentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AgentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AgentResult {
         let api_version_binding = args.api_version.get_output(context);
         let avatar_uri_binding = args.avatar_uri.get_output(context);
         let classification_threshold_binding = args
@@ -274,6 +290,7 @@ pub mod agent {
                     value: &time_zone_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AgentResult {

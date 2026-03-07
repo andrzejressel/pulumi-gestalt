@@ -103,6 +103,22 @@ pub mod user_agent_blocking_rule {
         name: &str,
         args: UserAgentBlockingRuleArgs,
     ) -> UserAgentBlockingRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: UserAgentBlockingRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> UserAgentBlockingRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: UserAgentBlockingRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> UserAgentBlockingRuleResult {
         let configuration_binding = args.configuration.get_output(context);
         let description_binding = args.description.get_output(context);
         let mode_binding = args.mode.get_output(context);
@@ -134,6 +150,7 @@ pub mod user_agent_blocking_rule {
                     value: &zone_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         UserAgentBlockingRuleResult {

@@ -179,6 +179,22 @@ pub mod customer_managed_key {
         name: &str,
         args: CustomerManagedKeyArgs,
     ) -> CustomerManagedKeyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomerManagedKeyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CustomerManagedKeyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomerManagedKeyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CustomerManagedKeyResult {
         let federated_identity_client_id_binding = args
             .federated_identity_client_id
             .get_output(context);
@@ -229,6 +245,7 @@ pub mod customer_managed_key {
                     value: &user_assigned_identity_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CustomerManagedKeyResult {

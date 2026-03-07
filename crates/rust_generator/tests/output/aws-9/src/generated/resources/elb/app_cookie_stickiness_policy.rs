@@ -94,6 +94,22 @@ pub mod app_cookie_stickiness_policy {
         name: &str,
         args: AppCookieStickinessPolicyArgs,
     ) -> AppCookieStickinessPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AppCookieStickinessPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AppCookieStickinessPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AppCookieStickinessPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AppCookieStickinessPolicyResult {
         let cookie_name_binding = args.cookie_name.get_output(context);
         let lb_port_binding = args.lb_port.get_output(context);
         let load_balancer_binding = args.load_balancer.get_output(context);
@@ -120,6 +136,7 @@ pub mod app_cookie_stickiness_policy {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AppCookieStickinessPolicyResult {

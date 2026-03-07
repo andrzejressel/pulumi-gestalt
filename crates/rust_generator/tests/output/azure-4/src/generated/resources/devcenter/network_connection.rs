@@ -135,6 +135,22 @@ pub mod network_connection {
         name: &str,
         args: NetworkConnectionArgs,
     ) -> NetworkConnectionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkConnectionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NetworkConnectionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkConnectionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NetworkConnectionResult {
         let domain_join_type_binding = args.domain_join_type.get_output(context);
         let domain_name_binding = args.domain_name.get_output(context);
         let domain_password_binding = args.domain_password.get_output(context);
@@ -191,6 +207,7 @@ pub mod network_connection {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NetworkConnectionResult {

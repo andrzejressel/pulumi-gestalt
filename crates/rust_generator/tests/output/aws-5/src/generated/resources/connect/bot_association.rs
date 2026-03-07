@@ -123,6 +123,22 @@ pub mod bot_association {
         name: &str,
         args: BotAssociationArgs,
     ) -> BotAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BotAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BotAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BotAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BotAssociationResult {
         let instance_id_binding = args.instance_id.get_output(context);
         let lex_bot_binding = args.lex_bot.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -139,6 +155,7 @@ pub mod bot_association {
                     value: &lex_bot_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BotAssociationResult {

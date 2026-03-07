@@ -246,6 +246,22 @@ pub mod directory {
         name: &str,
         args: DirectoryArgs,
     ) -> DirectoryResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DirectoryArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DirectoryResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DirectoryArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DirectoryResult {
         let alias_binding = args.alias.get_output(context);
         let connect_settings_binding = args.connect_settings.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -319,6 +335,7 @@ pub mod directory {
                     value: &vpc_settings_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DirectoryResult {

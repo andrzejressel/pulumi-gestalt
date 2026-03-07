@@ -478,6 +478,22 @@ pub mod edge_cache_service {
         name: &str,
         args: EdgeCacheServiceArgs,
     ) -> EdgeCacheServiceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EdgeCacheServiceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EdgeCacheServiceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EdgeCacheServiceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EdgeCacheServiceResult {
         let description_binding = args.description.get_output(context);
         let disable_http2_binding = args.disable_http2.get_output(context);
         let disable_quic_binding = args.disable_quic.get_output(context);
@@ -546,6 +562,7 @@ pub mod edge_cache_service {
                     value: &ssl_policy_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EdgeCacheServiceResult {

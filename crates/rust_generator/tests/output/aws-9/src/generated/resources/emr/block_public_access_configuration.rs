@@ -149,6 +149,22 @@ pub mod block_public_access_configuration {
         name: &str,
         args: BlockPublicAccessConfigurationArgs,
     ) -> BlockPublicAccessConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BlockPublicAccessConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BlockPublicAccessConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BlockPublicAccessConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BlockPublicAccessConfigurationResult {
         let block_public_security_group_rules_binding = args
             .block_public_security_group_rules
             .get_output(context);
@@ -171,6 +187,7 @@ pub mod block_public_access_configuration {
                         .drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BlockPublicAccessConfigurationResult {

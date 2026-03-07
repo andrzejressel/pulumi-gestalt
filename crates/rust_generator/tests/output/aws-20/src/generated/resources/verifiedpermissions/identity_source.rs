@@ -153,6 +153,22 @@ pub mod identity_source {
         name: &str,
         args: IdentitySourceArgs,
     ) -> IdentitySourceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IdentitySourceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IdentitySourceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IdentitySourceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IdentitySourceResult {
         let configuration_binding = args.configuration.get_output(context);
         let policy_store_id_binding = args.policy_store_id.get_output(context);
         let principal_entity_type_binding = args
@@ -176,6 +192,7 @@ pub mod identity_source {
                     value: &principal_entity_type_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IdentitySourceResult {

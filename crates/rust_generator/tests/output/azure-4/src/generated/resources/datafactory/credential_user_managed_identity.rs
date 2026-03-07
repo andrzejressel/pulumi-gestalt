@@ -51,6 +51,22 @@ pub mod credential_user_managed_identity {
         name: &str,
         args: CredentialUserManagedIdentityArgs,
     ) -> CredentialUserManagedIdentityResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CredentialUserManagedIdentityArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CredentialUserManagedIdentityResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CredentialUserManagedIdentityArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CredentialUserManagedIdentityResult {
         let annotations_binding = args.annotations.get_output(context);
         let data_factory_id_binding = args.data_factory_id.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -83,6 +99,7 @@ pub mod credential_user_managed_identity {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CredentialUserManagedIdentityResult {

@@ -88,6 +88,22 @@ pub mod authorization_rule {
         name: &str,
         args: AuthorizationRuleArgs,
     ) -> AuthorizationRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AuthorizationRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AuthorizationRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AuthorizationRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AuthorizationRuleResult {
         let access_group_id_binding = args.access_group_id.get_output(context);
         let authorize_all_groups_binding = args.authorize_all_groups.get_output(context);
         let client_vpn_endpoint_id_binding = args
@@ -121,6 +137,7 @@ pub mod authorization_rule {
                     value: &target_network_cidr_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AuthorizationRuleResult {

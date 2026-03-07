@@ -193,6 +193,22 @@ pub mod connector {
         name: &str,
         args: ConnectorArgs,
     ) -> ConnectorResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConnectorArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ConnectorResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConnectorArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ConnectorResult {
         let capacity_binding = args.capacity.get_output(context);
         let connector_configuration_binding = args
             .connector_configuration
@@ -272,6 +288,7 @@ pub mod connector {
                     value: &worker_configuration_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ConnectorResult {

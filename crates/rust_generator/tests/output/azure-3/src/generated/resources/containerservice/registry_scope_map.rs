@@ -107,6 +107,22 @@ pub mod registry_scope_map {
         name: &str,
         args: RegistryScopeMapArgs,
     ) -> RegistryScopeMapResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegistryScopeMapArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RegistryScopeMapResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegistryScopeMapArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RegistryScopeMapResult {
         let actions_binding = args.actions.get_output(context);
         let container_registry_name_binding = args
             .container_registry_name
@@ -140,6 +156,7 @@ pub mod registry_scope_map {
                     value: &resource_group_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RegistryScopeMapResult {

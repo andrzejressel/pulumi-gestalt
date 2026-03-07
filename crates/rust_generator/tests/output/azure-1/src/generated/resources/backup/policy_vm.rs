@@ -195,6 +195,22 @@ pub mod policy_vm {
         name: &str,
         args: PolicyVMArgs,
     ) -> PolicyVMResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PolicyVMArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PolicyVMResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PolicyVMArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PolicyVMResult {
         let backup_binding = args.backup.get_output(context);
         let instant_restore_resource_group_binding = args
             .instant_restore_resource_group
@@ -270,6 +286,7 @@ pub mod policy_vm {
                     value: &timezone_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PolicyVMResult {

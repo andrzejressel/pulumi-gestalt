@@ -219,6 +219,22 @@ pub mod resolver {
         name: &str,
         args: ResolverArgs,
     ) -> ResolverResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResolverArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ResolverResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResolverArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ResolverResult {
         let api_id_binding = args.api_id.get_output(context);
         let caching_config_binding = args.caching_config.get_output(context);
         let code_binding = args.code.get_output(context);
@@ -290,6 +306,7 @@ pub mod resolver {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ResolverResult {

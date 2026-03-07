@@ -387,6 +387,22 @@ pub mod patch_deployment {
         name: &str,
         args: PatchDeploymentArgs,
     ) -> PatchDeploymentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PatchDeploymentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PatchDeploymentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PatchDeploymentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PatchDeploymentResult {
         let description_binding = args.description.get_output(context);
         let duration_binding = args.duration.get_output(context);
         let instance_filter_binding = args.instance_filter.get_output(context);
@@ -438,6 +454,7 @@ pub mod patch_deployment {
                     value: &rollout_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PatchDeploymentResult {

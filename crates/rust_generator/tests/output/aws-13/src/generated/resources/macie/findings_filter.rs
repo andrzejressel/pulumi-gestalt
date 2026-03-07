@@ -114,6 +114,22 @@ pub mod findings_filter {
         name: &str,
         args: FindingsFilterArgs,
     ) -> FindingsFilterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FindingsFilterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FindingsFilterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FindingsFilterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FindingsFilterResult {
         let action_binding = args.action.get_output(context);
         let description_binding = args.description.get_output(context);
         let finding_criteria_binding = args.finding_criteria.get_output(context);
@@ -155,6 +171,7 @@ pub mod findings_filter {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FindingsFilterResult {

@@ -290,6 +290,22 @@ pub mod configuration_store {
         name: &str,
         args: ConfigurationStoreArgs,
     ) -> ConfigurationStoreResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConfigurationStoreArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ConfigurationStoreResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConfigurationStoreArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ConfigurationStoreResult {
         let encryption_binding = args.encryption.get_output(context);
         let identity_binding = args.identity.get_output(context);
         let local_auth_enabled_binding = args.local_auth_enabled.get_output(context);
@@ -362,6 +378,7 @@ pub mod configuration_store {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ConfigurationStoreResult {

@@ -203,6 +203,22 @@ pub mod certificate_map_entry {
         name: &str,
         args: CertificateMapEntryArgs,
     ) -> CertificateMapEntryResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CertificateMapEntryArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CertificateMapEntryResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CertificateMapEntryArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CertificateMapEntryResult {
         let certificates_binding = args.certificates.get_output(context);
         let description_binding = args.description.get_output(context);
         let hostname_binding = args.hostname.get_output(context);
@@ -250,6 +266,7 @@ pub mod certificate_map_entry {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CertificateMapEntryResult {

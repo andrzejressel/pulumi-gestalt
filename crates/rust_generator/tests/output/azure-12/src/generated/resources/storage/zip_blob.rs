@@ -76,6 +76,22 @@ pub mod zip_blob {
         name: &str,
         args: ZipBlobArgs,
     ) -> ZipBlobResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZipBlobArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ZipBlobResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZipBlobArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ZipBlobResult {
         let access_tier_binding = args.access_tier.get_output(context);
         let cache_control_binding = args.cache_control.get_output(context);
         let content_binding = args.content.get_output(context);
@@ -159,6 +175,7 @@ pub mod zip_blob {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ZipBlobResult {

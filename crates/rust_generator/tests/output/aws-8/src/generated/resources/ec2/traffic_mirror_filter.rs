@@ -80,6 +80,22 @@ pub mod traffic_mirror_filter {
         name: &str,
         args: TrafficMirrorFilterArgs,
     ) -> TrafficMirrorFilterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TrafficMirrorFilterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TrafficMirrorFilterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TrafficMirrorFilterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TrafficMirrorFilterResult {
         let description_binding = args.description.get_output(context);
         let network_services_binding = args.network_services.get_output(context);
         let tags_binding = args.tags.get_output(context);
@@ -101,6 +117,7 @@ pub mod traffic_mirror_filter {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TrafficMirrorFilterResult {

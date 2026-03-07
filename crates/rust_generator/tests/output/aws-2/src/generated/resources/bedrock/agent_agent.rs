@@ -206,6 +206,22 @@ pub mod agent_agent {
         name: &str,
         args: AgentAgentArgs,
     ) -> AgentAgentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AgentAgentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AgentAgentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AgentAgentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AgentAgentResult {
         let agent_collaboration_binding = args.agent_collaboration.get_output(context);
         let agent_name_binding = args.agent_name.get_output(context);
         let agent_resource_role_arn_binding = args
@@ -294,6 +310,7 @@ pub mod agent_agent {
                     value: &timeouts_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AgentAgentResult {

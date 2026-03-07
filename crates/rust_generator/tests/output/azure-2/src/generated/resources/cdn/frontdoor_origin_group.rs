@@ -131,6 +131,22 @@ pub mod frontdoor_origin_group {
         name: &str,
         args: FrontdoorOriginGroupArgs,
     ) -> FrontdoorOriginGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FrontdoorOriginGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FrontdoorOriginGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FrontdoorOriginGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FrontdoorOriginGroupResult {
         let cdn_frontdoor_profile_id_binding = args
             .cdn_frontdoor_profile_id
             .get_output(context);
@@ -174,6 +190,7 @@ pub mod frontdoor_origin_group {
                     value: &session_affinity_enabled_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FrontdoorOriginGroupResult {

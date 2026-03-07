@@ -225,6 +225,22 @@ pub mod service {
         name: &str,
         args: ServiceArgs,
     ) -> ServiceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServiceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServiceResult {
         let aad_auth_enabled_binding = args.aad_auth_enabled.get_output(context);
         let connectivity_logs_enabled_binding = args
             .connectivity_logs_enabled
@@ -338,6 +354,7 @@ pub mod service {
                     value: &upstream_endpoints_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServiceResult {

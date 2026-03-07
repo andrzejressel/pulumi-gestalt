@@ -240,6 +240,22 @@ pub mod cache {
         name: &str,
         args: CacheArgs,
     ) -> CacheResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CacheArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CacheResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CacheArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CacheResult {
         let access_keys_authentication_enabled_binding = args
             .access_keys_authentication_enabled
             .get_output(context);
@@ -362,6 +378,7 @@ pub mod cache {
                     value: &zones_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CacheResult {

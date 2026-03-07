@@ -235,6 +235,22 @@ pub mod api {
         name: &str,
         args: ApiArgs,
     ) -> ApiResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApiArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ApiResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApiArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ApiResult {
         let api_management_name_binding = args.api_management_name.get_output(context);
         let api_type_binding = args.api_type.get_output(context);
         let contact_binding = args.contact.get_output(context);
@@ -362,6 +378,7 @@ pub mod api {
                     value: &version_set_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ApiResult {

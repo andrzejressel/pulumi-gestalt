@@ -92,6 +92,22 @@ pub mod voice_connector_termination {
         name: &str,
         args: VoiceConnectorTerminationArgs,
     ) -> VoiceConnectorTerminationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VoiceConnectorTerminationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VoiceConnectorTerminationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VoiceConnectorTerminationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VoiceConnectorTerminationResult {
         let calling_regions_binding = args.calling_regions.get_output(context);
         let cidr_allow_lists_binding = args.cidr_allow_lists.get_output(context);
         let cps_limit_binding = args.cps_limit.get_output(context);
@@ -129,6 +145,7 @@ pub mod voice_connector_termination {
                     value: &voice_connector_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VoiceConnectorTerminationResult {

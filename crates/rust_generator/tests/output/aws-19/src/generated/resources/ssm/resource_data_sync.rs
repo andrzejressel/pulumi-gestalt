@@ -104,6 +104,22 @@ pub mod resource_data_sync {
         name: &str,
         args: ResourceDataSyncArgs,
     ) -> ResourceDataSyncResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResourceDataSyncArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ResourceDataSyncResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResourceDataSyncArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ResourceDataSyncResult {
         let name_binding = args.name.get_output(context);
         let s3_destination_binding = args.s3_destination.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -120,6 +136,7 @@ pub mod resource_data_sync {
                     value: &s3_destination_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ResourceDataSyncResult {

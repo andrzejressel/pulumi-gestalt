@@ -126,6 +126,22 @@ pub mod hosted_configuration_version {
         name: &str,
         args: HostedConfigurationVersionArgs,
     ) -> HostedConfigurationVersionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HostedConfigurationVersionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> HostedConfigurationVersionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HostedConfigurationVersionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> HostedConfigurationVersionResult {
         let application_id_binding = args.application_id.get_output(context);
         let configuration_profile_id_binding = args
             .configuration_profile_id
@@ -160,6 +176,7 @@ pub mod hosted_configuration_version {
                     value: &description_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         HostedConfigurationVersionResult {

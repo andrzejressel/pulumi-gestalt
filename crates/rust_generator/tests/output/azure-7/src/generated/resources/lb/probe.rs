@@ -128,6 +128,22 @@ pub mod probe {
         name: &str,
         args: ProbeArgs,
     ) -> ProbeResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProbeArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ProbeResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProbeArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ProbeResult {
         let interval_in_seconds_binding = args.interval_in_seconds.get_output(context);
         let loadbalancer_id_binding = args.loadbalancer_id.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -174,6 +190,7 @@ pub mod probe {
                     value: &request_path_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ProbeResult {

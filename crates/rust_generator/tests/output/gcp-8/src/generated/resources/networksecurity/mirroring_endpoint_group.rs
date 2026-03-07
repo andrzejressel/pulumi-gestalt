@@ -155,6 +155,22 @@ pub mod mirroring_endpoint_group {
         name: &str,
         args: MirroringEndpointGroupArgs,
     ) -> MirroringEndpointGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MirroringEndpointGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MirroringEndpointGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MirroringEndpointGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MirroringEndpointGroupResult {
         let labels_binding = args.labels.get_output(context);
         let location_binding = args.location.get_output(context);
         let mirroring_deployment_group_binding = args
@@ -191,6 +207,7 @@ pub mod mirroring_endpoint_group {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MirroringEndpointGroupResult {

@@ -288,6 +288,22 @@ pub mod queue {
         name: &str,
         args: QueueArgs,
     ) -> QueueResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: QueueArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> QueueResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: QueueArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> QueueResult {
         let app_engine_routing_override_binding = args
             .app_engine_routing_override
             .get_output(context);
@@ -338,6 +354,7 @@ pub mod queue {
                     value: &stackdriver_logging_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         QueueResult {

@@ -115,6 +115,22 @@ pub mod schema {
         name: &str,
         args: SchemaArgs,
     ) -> SchemaResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SchemaArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SchemaResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SchemaArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SchemaResult {
         let content_binding = args.content.get_output(context);
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -151,6 +167,7 @@ pub mod schema {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SchemaResult {

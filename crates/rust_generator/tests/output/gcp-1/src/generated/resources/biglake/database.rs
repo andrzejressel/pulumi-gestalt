@@ -131,6 +131,22 @@ pub mod database {
         name: &str,
         args: DatabaseArgs,
     ) -> DatabaseResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatabaseArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DatabaseResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatabaseArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DatabaseResult {
         let catalog_binding = args.catalog.get_output(context);
         let hive_options_binding = args.hive_options.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -157,6 +173,7 @@ pub mod database {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DatabaseResult {

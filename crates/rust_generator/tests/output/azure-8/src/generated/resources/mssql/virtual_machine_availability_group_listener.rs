@@ -103,6 +103,22 @@ pub mod virtual_machine_availability_group_listener {
         name: &str,
         args: VirtualMachineAvailabilityGroupListenerArgs,
     ) -> VirtualMachineAvailabilityGroupListenerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VirtualMachineAvailabilityGroupListenerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VirtualMachineAvailabilityGroupListenerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VirtualMachineAvailabilityGroupListenerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VirtualMachineAvailabilityGroupListenerResult {
         let availability_group_name_binding = args
             .availability_group_name
             .get_output(context);
@@ -153,6 +169,7 @@ pub mod virtual_machine_availability_group_listener {
                     value: &sql_virtual_machine_group_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VirtualMachineAvailabilityGroupListenerResult {

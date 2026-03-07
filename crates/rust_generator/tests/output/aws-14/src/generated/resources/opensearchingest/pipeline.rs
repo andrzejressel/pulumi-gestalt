@@ -188,6 +188,22 @@ pub mod pipeline {
         name: &str,
         args: PipelineArgs,
     ) -> PipelineResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PipelineArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PipelineResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PipelineArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PipelineResult {
         let buffer_options_binding = args.buffer_options.get_output(context);
         let encryption_at_rest_options_binding = args
             .encryption_at_rest_options
@@ -250,6 +266,7 @@ pub mod pipeline {
                     value: &vpc_options_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PipelineResult {

@@ -70,6 +70,22 @@ pub mod route_table_propagation {
         name: &str,
         args: RouteTablePropagationArgs,
     ) -> RouteTablePropagationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RouteTablePropagationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RouteTablePropagationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RouteTablePropagationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RouteTablePropagationResult {
         let transit_gateway_attachment_id_binding = args
             .transit_gateway_attachment_id
             .get_output(context);
@@ -91,6 +107,7 @@ pub mod route_table_propagation {
                     value: &transit_gateway_route_table_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RouteTablePropagationResult {

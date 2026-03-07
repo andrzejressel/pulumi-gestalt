@@ -120,6 +120,22 @@ pub mod email_channel {
         name: &str,
         args: EmailChannelArgs,
     ) -> EmailChannelResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EmailChannelArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EmailChannelResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EmailChannelArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EmailChannelResult {
         let application_id_binding = args.application_id.get_output(context);
         let configuration_set_binding = args.configuration_set.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
@@ -156,6 +172,7 @@ pub mod email_channel {
                     value: &role_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EmailChannelResult {

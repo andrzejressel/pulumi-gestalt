@@ -127,6 +127,22 @@ pub mod tag_key {
         name: &str,
         args: TagKeyArgs,
     ) -> TagKeyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TagKeyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TagKeyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TagKeyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TagKeyResult {
         let description_binding = args.description.get_output(context);
         let parent_binding = args.parent.get_output(context);
         let purpose_binding = args.purpose.get_output(context);
@@ -158,6 +174,7 @@ pub mod tag_key {
                     value: &short_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TagKeyResult {

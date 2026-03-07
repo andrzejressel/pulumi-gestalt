@@ -82,6 +82,22 @@ pub mod outbound_firewall_rule {
         name: &str,
         args: OutboundFirewallRuleArgs,
     ) -> OutboundFirewallRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OutboundFirewallRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OutboundFirewallRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OutboundFirewallRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OutboundFirewallRuleResult {
         let name_binding = args.name.get_output(context);
         let server_id_binding = args.server_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -98,6 +114,7 @@ pub mod outbound_firewall_rule {
                     value: &server_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OutboundFirewallRuleResult {

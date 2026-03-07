@@ -108,6 +108,22 @@ pub mod vocabulary {
         name: &str,
         args: VocabularyArgs,
     ) -> VocabularyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VocabularyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VocabularyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VocabularyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VocabularyResult {
         let language_code_binding = args.language_code.get_output(context);
         let phrases_binding = args.phrases.get_output(context);
         let tags_binding = args.tags.get_output(context);
@@ -139,6 +155,7 @@ pub mod vocabulary {
                     value: &vocabulary_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VocabularyResult {

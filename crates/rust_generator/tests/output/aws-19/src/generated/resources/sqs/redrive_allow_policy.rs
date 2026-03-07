@@ -73,6 +73,22 @@ pub mod redrive_allow_policy {
         name: &str,
         args: RedriveAllowPolicyArgs,
     ) -> RedriveAllowPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RedriveAllowPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RedriveAllowPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RedriveAllowPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RedriveAllowPolicyResult {
         let queue_url_binding = args.queue_url.get_output(context);
         let redrive_allow_policy_binding = args.redrive_allow_policy.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -89,6 +105,7 @@ pub mod redrive_allow_policy {
                     value: &redrive_allow_policy_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RedriveAllowPolicyResult {

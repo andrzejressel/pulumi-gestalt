@@ -117,6 +117,22 @@ pub mod global_network_endpoint {
         name: &str,
         args: GlobalNetworkEndpointArgs,
     ) -> GlobalNetworkEndpointResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GlobalNetworkEndpointArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GlobalNetworkEndpointResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GlobalNetworkEndpointArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GlobalNetworkEndpointResult {
         let fqdn_binding = args.fqdn.get_output(context);
         let global_network_endpoint_group_binding = args
             .global_network_endpoint_group
@@ -150,6 +166,7 @@ pub mod global_network_endpoint {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GlobalNetworkEndpointResult {

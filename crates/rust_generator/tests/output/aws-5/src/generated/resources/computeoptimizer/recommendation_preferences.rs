@@ -178,6 +178,22 @@ pub mod recommendation_preferences {
         name: &str,
         args: RecommendationPreferencesArgs,
     ) -> RecommendationPreferencesResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RecommendationPreferencesArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RecommendationPreferencesResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RecommendationPreferencesArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RecommendationPreferencesResult {
         let enhanced_infrastructure_metrics_binding = args
             .enhanced_infrastructure_metrics
             .get_output(context);
@@ -240,6 +256,7 @@ pub mod recommendation_preferences {
                     value: &utilization_preferences_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RecommendationPreferencesResult {

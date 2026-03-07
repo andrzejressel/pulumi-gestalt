@@ -203,6 +203,22 @@ pub mod hl_7_store_iam_binding {
         name: &str,
         args: Hl7StoreIamBindingArgs,
     ) -> Hl7StoreIamBindingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: Hl7StoreIamBindingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> Hl7StoreIamBindingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: Hl7StoreIamBindingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> Hl7StoreIamBindingResult {
         let condition_binding = args.condition.get_output(context);
         let hl7_v2_store_id_binding = args.hl7_v2_store_id.get_output(context);
         let members_binding = args.members.get_output(context);
@@ -229,6 +245,7 @@ pub mod hl_7_store_iam_binding {
                     value: &role_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         Hl7StoreIamBindingResult {

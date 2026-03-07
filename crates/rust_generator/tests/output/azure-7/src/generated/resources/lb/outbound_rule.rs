@@ -145,6 +145,22 @@ pub mod outbound_rule {
         name: &str,
         args: OutboundRuleArgs,
     ) -> OutboundRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OutboundRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OutboundRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OutboundRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OutboundRuleResult {
         let allocated_outbound_ports_binding = args
             .allocated_outbound_ports
             .get_output(context);
@@ -199,6 +215,7 @@ pub mod outbound_rule {
                     value: &protocol_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OutboundRuleResult {

@@ -199,6 +199,22 @@ pub mod assignment {
         name: &str,
         args: AssignmentArgs,
     ) -> AssignmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AssignmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AssignmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AssignmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AssignmentResult {
         let identity_binding = args.identity.get_output(context);
         let location_binding = args.location.get_output(context);
         let lock_exclude_actions_binding = args.lock_exclude_actions.get_output(context);
@@ -259,6 +275,7 @@ pub mod assignment {
                     value: &version_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AssignmentResult {

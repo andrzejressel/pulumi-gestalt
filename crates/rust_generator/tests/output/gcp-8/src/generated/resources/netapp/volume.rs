@@ -327,6 +327,22 @@ pub mod volume {
         name: &str,
         args: VolumeArgs,
     ) -> VolumeResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VolumeArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VolumeResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VolumeArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VolumeResult {
         let backup_config_binding = args.backup_config.get_output(context);
         let capacity_gib_binding = args.capacity_gib.get_output(context);
         let deletion_policy_binding = args.deletion_policy.get_output(context);
@@ -448,6 +464,7 @@ pub mod volume {
                     value: &unix_permissions_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VolumeResult {

@@ -114,6 +114,22 @@ pub mod zone_cache_variants {
         name: &str,
         args: ZoneCacheVariantsArgs,
     ) -> ZoneCacheVariantsResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZoneCacheVariantsArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ZoneCacheVariantsResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZoneCacheVariantsArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ZoneCacheVariantsResult {
         let avifs_binding = args.avifs.get_output(context);
         let bmps_binding = args.bmps.get_output(context);
         let gifs_binding = args.gifs.get_output(context);
@@ -180,6 +196,7 @@ pub mod zone_cache_variants {
                     value: &zone_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ZoneCacheVariantsResult {

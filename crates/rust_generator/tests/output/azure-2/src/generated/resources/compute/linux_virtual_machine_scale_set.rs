@@ -571,6 +571,22 @@ pub mod linux_virtual_machine_scale_set {
         name: &str,
         args: LinuxVirtualMachineScaleSetArgs,
     ) -> LinuxVirtualMachineScaleSetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LinuxVirtualMachineScaleSetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LinuxVirtualMachineScaleSetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LinuxVirtualMachineScaleSetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LinuxVirtualMachineScaleSetResult {
         let additional_capabilities_binding = args
             .additional_capabilities
             .get_output(context);
@@ -869,6 +885,7 @@ pub mod linux_virtual_machine_scale_set {
                     value: &zones_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LinuxVirtualMachineScaleSetResult {

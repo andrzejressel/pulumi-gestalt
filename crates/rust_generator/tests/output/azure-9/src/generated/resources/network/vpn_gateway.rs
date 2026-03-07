@@ -146,6 +146,22 @@ pub mod vpn_gateway {
         name: &str,
         args: VpnGatewayArgs,
     ) -> VpnGatewayResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpnGatewayArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VpnGatewayResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpnGatewayArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VpnGatewayResult {
         let bgp_route_translation_for_nat_enabled_binding = args
             .bgp_route_translation_for_nat_enabled
             .get_output(context);
@@ -199,6 +215,7 @@ pub mod vpn_gateway {
                     value: &virtual_hub_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VpnGatewayResult {

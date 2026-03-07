@@ -71,6 +71,22 @@ pub mod size_constraint_set {
         name: &str,
         args: SizeConstraintSetArgs,
     ) -> SizeConstraintSetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SizeConstraintSetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SizeConstraintSetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SizeConstraintSetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SizeConstraintSetResult {
         let name_binding = args.name.get_output(context);
         let size_constraints_binding = args.size_constraints.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -87,6 +103,7 @@ pub mod size_constraint_set {
                     value: &size_constraints_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SizeConstraintSetResult {

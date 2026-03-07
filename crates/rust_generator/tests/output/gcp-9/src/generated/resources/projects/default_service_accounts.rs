@@ -105,6 +105,22 @@ pub mod default_service_accounts {
         name: &str,
         args: DefaultServiceAccountsArgs,
     ) -> DefaultServiceAccountsResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DefaultServiceAccountsArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DefaultServiceAccountsResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DefaultServiceAccountsArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DefaultServiceAccountsResult {
         let action_binding = args.action.get_output(context);
         let project_binding = args.project.get_output(context);
         let restore_policy_binding = args.restore_policy.get_output(context);
@@ -126,6 +142,7 @@ pub mod default_service_accounts {
                     value: &restore_policy_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DefaultServiceAccountsResult {

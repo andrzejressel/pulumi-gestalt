@@ -83,6 +83,22 @@ pub mod bucket_lifecycle_configuration {
         name: &str,
         args: BucketLifecycleConfigurationArgs,
     ) -> BucketLifecycleConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BucketLifecycleConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BucketLifecycleConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BucketLifecycleConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BucketLifecycleConfigurationResult {
         let bucket_binding = args.bucket.get_output(context);
         let rules_binding = args.rules.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -100,6 +116,7 @@ pub mod bucket_lifecycle_configuration {
                     value: &rules_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BucketLifecycleConfigurationResult {

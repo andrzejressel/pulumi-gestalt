@@ -95,6 +95,22 @@ pub mod ip_set {
         name: &str,
         args: IpSetArgs,
     ) -> IpSetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IpSetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IpSetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IpSetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IpSetResult {
         let addresses_binding = args.addresses.get_output(context);
         let description_binding = args.description.get_output(context);
         let ip_address_version_binding = args.ip_address_version.get_output(context);
@@ -131,6 +147,7 @@ pub mod ip_set {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IpSetResult {

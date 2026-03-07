@@ -87,6 +87,22 @@ pub mod signing_certificate {
         name: &str,
         args: SigningCertificateArgs,
     ) -> SigningCertificateResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SigningCertificateArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SigningCertificateResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SigningCertificateArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SigningCertificateResult {
         let certificate_body_binding = args.certificate_body.get_output(context);
         let status_binding = args.status.get_output(context);
         let user_name_binding = args.user_name.get_output(context);
@@ -108,6 +124,7 @@ pub mod signing_certificate {
                     value: &user_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SigningCertificateResult {

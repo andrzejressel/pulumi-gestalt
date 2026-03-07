@@ -122,6 +122,22 @@ pub mod stream {
         name: &str,
         args: StreamArgs,
     ) -> StreamResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StreamArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> StreamResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StreamArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> StreamResult {
         let arn_binding = args.arn.get_output(context);
         let encryption_type_binding = args.encryption_type.get_output(context);
         let enforce_consumer_deletion_binding = args
@@ -180,6 +196,7 @@ pub mod stream {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         StreamResult {

@@ -372,6 +372,22 @@ pub mod data_transfer_config {
         name: &str,
         args: DataTransferConfigArgs,
     ) -> DataTransferConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataTransferConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DataTransferConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataTransferConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DataTransferConfigResult {
         let data_refresh_window_days_binding = args
             .data_refresh_window_days
             .get_output(context);
@@ -461,6 +477,7 @@ pub mod data_transfer_config {
                     value: &service_account_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DataTransferConfigResult {

@@ -90,6 +90,22 @@ pub mod zero_trust_list {
         name: &str,
         args: ZeroTrustListArgs,
     ) -> ZeroTrustListResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZeroTrustListArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ZeroTrustListResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZeroTrustListArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ZeroTrustListResult {
         let account_id_binding = args.account_id.get_output(context);
         let description_binding = args.description.get_output(context);
         let items_binding = args.items.get_output(context);
@@ -128,6 +144,7 @@ pub mod zero_trust_list {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ZeroTrustListResult {

@@ -87,6 +87,22 @@ pub mod custom_location {
         name: &str,
         args: CustomLocationArgs,
     ) -> CustomLocationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomLocationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CustomLocationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomLocationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CustomLocationResult {
         let authentication_binding = args.authentication.get_output(context);
         let cluster_extension_ids_binding = args
             .cluster_extension_ids
@@ -140,6 +156,7 @@ pub mod custom_location {
                     value: &resource_group_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CustomLocationResult {

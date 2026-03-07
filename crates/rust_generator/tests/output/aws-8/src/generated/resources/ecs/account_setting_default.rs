@@ -67,6 +67,22 @@ pub mod account_setting_default {
         name: &str,
         args: AccountSettingDefaultArgs,
     ) -> AccountSettingDefaultResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccountSettingDefaultArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AccountSettingDefaultResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccountSettingDefaultArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AccountSettingDefaultResult {
         let name_binding = args.name.get_output(context);
         let value_binding = args.value.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -83,6 +99,7 @@ pub mod account_setting_default {
                     value: &value_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AccountSettingDefaultResult {

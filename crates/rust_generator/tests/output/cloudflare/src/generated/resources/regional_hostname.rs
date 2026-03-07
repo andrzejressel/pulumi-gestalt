@@ -72,6 +72,22 @@ pub mod regional_hostname {
         name: &str,
         args: RegionalHostnameArgs,
     ) -> RegionalHostnameResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionalHostnameArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RegionalHostnameResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionalHostnameArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RegionalHostnameResult {
         let hostname_binding = args.hostname.get_output(context);
         let region_key_binding = args.region_key.get_output(context);
         let zone_id_binding = args.zone_id.get_output(context);
@@ -93,6 +109,7 @@ pub mod regional_hostname {
                     value: &zone_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RegionalHostnameResult {

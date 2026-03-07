@@ -91,6 +91,22 @@ pub mod peered_dns_domain {
         name: &str,
         args: PeeredDnsDomainArgs,
     ) -> PeeredDnsDomainResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PeeredDnsDomainArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PeeredDnsDomainResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PeeredDnsDomainArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PeeredDnsDomainResult {
         let dns_suffix_binding = args.dns_suffix.get_output(context);
         let name_binding = args.name.get_output(context);
         let network_binding = args.network.get_output(context);
@@ -122,6 +138,7 @@ pub mod peered_dns_domain {
                     value: &service_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PeeredDnsDomainResult {

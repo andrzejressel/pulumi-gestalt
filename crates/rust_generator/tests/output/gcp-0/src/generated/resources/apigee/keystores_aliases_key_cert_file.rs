@@ -106,6 +106,22 @@ pub mod keystores_aliases_key_cert_file {
         name: &str,
         args: KeystoresAliasesKeyCertFileArgs,
     ) -> KeystoresAliasesKeyCertFileResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: KeystoresAliasesKeyCertFileArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> KeystoresAliasesKeyCertFileResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: KeystoresAliasesKeyCertFileArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> KeystoresAliasesKeyCertFileResult {
         let alias_binding = args.alias.get_output(context);
         let cert_binding = args.cert.get_output(context);
         let certs_info_binding = args.certs_info.get_output(context);
@@ -153,6 +169,7 @@ pub mod keystores_aliases_key_cert_file {
                     value: &password_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         KeystoresAliasesKeyCertFileResult {

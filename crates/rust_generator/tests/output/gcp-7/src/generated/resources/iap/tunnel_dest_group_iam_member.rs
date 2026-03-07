@@ -453,6 +453,22 @@ pub mod tunnel_dest_group_iam_member {
         name: &str,
         args: TunnelDestGroupIamMemberArgs,
     ) -> TunnelDestGroupIamMemberResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TunnelDestGroupIamMemberArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TunnelDestGroupIamMemberResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TunnelDestGroupIamMemberArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TunnelDestGroupIamMemberResult {
         let condition_binding = args.condition.get_output(context);
         let dest_group_binding = args.dest_group.get_output(context);
         let member_binding = args.member.get_output(context);
@@ -489,6 +505,7 @@ pub mod tunnel_dest_group_iam_member {
                     value: &role_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TunnelDestGroupIamMemberResult {

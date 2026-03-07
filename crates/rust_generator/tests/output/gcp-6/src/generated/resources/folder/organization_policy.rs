@@ -213,6 +213,22 @@ pub mod organization_policy {
         name: &str,
         args: OrganizationPolicyArgs,
     ) -> OrganizationPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OrganizationPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OrganizationPolicyResult {
         let boolean_policy_binding = args.boolean_policy.get_output(context);
         let constraint_binding = args.constraint.get_output(context);
         let folder_binding = args.folder.get_output(context);
@@ -249,6 +265,7 @@ pub mod organization_policy {
                     value: &version_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OrganizationPolicyResult {

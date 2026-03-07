@@ -122,6 +122,22 @@ pub mod network_manager_management_group_connection {
         name: &str,
         args: NetworkManagerManagementGroupConnectionArgs,
     ) -> NetworkManagerManagementGroupConnectionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkManagerManagementGroupConnectionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NetworkManagerManagementGroupConnectionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkManagerManagementGroupConnectionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NetworkManagerManagementGroupConnectionResult {
         let description_binding = args.description.get_output(context);
         let management_group_id_binding = args.management_group_id.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -149,6 +165,7 @@ pub mod network_manager_management_group_connection {
                     value: &network_manager_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NetworkManagerManagementGroupConnectionResult {

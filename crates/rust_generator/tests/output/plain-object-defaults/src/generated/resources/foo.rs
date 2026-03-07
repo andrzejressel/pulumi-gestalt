@@ -48,6 +48,22 @@ pub mod foo {
         name: &str,
         args: FooArgs,
     ) -> FooResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FooArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FooResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FooArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FooResult {
         let argument_binding = args.argument.get_output(context);
         let backup_kube_client_settings_binding = args
             .backup_kube_client_settings
@@ -76,6 +92,7 @@ pub mod foo {
                     value: &settings_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FooResult {

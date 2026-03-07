@@ -141,6 +141,22 @@ pub mod transfer_agent_pool {
         name: &str,
         args: TransferAgentPoolArgs,
     ) -> TransferAgentPoolResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TransferAgentPoolArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TransferAgentPoolResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TransferAgentPoolArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TransferAgentPoolResult {
         let bandwidth_limit_binding = args.bandwidth_limit.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -167,6 +183,7 @@ pub mod transfer_agent_pool {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TransferAgentPoolResult {

@@ -93,6 +93,22 @@ pub mod quicksetup_configuration_manager {
         name: &str,
         args: QuicksetupConfigurationManagerArgs,
     ) -> QuicksetupConfigurationManagerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: QuicksetupConfigurationManagerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> QuicksetupConfigurationManagerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: QuicksetupConfigurationManagerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> QuicksetupConfigurationManagerResult {
         let configuration_definition_binding = args
             .configuration_definition
             .get_output(context);
@@ -127,6 +143,7 @@ pub mod quicksetup_configuration_manager {
                     value: &timeouts_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         QuicksetupConfigurationManagerResult {

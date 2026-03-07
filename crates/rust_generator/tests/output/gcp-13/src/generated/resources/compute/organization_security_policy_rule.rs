@@ -163,6 +163,22 @@ pub mod organization_security_policy_rule {
         name: &str,
         args: OrganizationSecurityPolicyRuleArgs,
     ) -> OrganizationSecurityPolicyRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationSecurityPolicyRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OrganizationSecurityPolicyRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationSecurityPolicyRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OrganizationSecurityPolicyRuleResult {
         let action_binding = args.action.get_output(context);
         let description_binding = args.description.get_output(context);
         let direction_binding = args.direction.get_output(context);
@@ -222,6 +238,7 @@ pub mod organization_security_policy_rule {
                     value: &target_service_accounts_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OrganizationSecurityPolicyRuleResult {

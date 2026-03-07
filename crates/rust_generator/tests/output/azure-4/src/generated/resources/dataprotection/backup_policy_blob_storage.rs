@@ -138,6 +138,22 @@ pub mod backup_policy_blob_storage {
         name: &str,
         args: BackupPolicyBlobStorageArgs,
     ) -> BackupPolicyBlobStorageResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackupPolicyBlobStorageArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BackupPolicyBlobStorageResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackupPolicyBlobStorageArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BackupPolicyBlobStorageResult {
         let backup_repeating_time_intervals_binding = args
             .backup_repeating_time_intervals
             .get_output(context);
@@ -186,6 +202,7 @@ pub mod backup_policy_blob_storage {
                     value: &vault_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BackupPolicyBlobStorageResult {

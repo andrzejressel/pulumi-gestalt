@@ -97,6 +97,22 @@ pub mod query_suggestions_block_list {
         name: &str,
         args: QuerySuggestionsBlockListArgs,
     ) -> QuerySuggestionsBlockListResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: QuerySuggestionsBlockListArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> QuerySuggestionsBlockListResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: QuerySuggestionsBlockListArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> QuerySuggestionsBlockListResult {
         let description_binding = args.description.get_output(context);
         let index_id_binding = args.index_id.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -134,6 +150,7 @@ pub mod query_suggestions_block_list {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         QuerySuggestionsBlockListResult {

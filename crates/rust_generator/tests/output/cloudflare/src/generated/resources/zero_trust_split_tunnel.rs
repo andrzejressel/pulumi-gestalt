@@ -52,6 +52,22 @@ pub mod zero_trust_split_tunnel {
         name: &str,
         args: ZeroTrustSplitTunnelArgs,
     ) -> ZeroTrustSplitTunnelResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZeroTrustSplitTunnelArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ZeroTrustSplitTunnelResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZeroTrustSplitTunnelArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ZeroTrustSplitTunnelResult {
         let account_id_binding = args.account_id.get_output(context);
         let mode_binding = args.mode.get_output(context);
         let policy_id_binding = args.policy_id.get_output(context);
@@ -78,6 +94,7 @@ pub mod zero_trust_split_tunnel {
                     value: &tunnels_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ZeroTrustSplitTunnelResult {

@@ -165,6 +165,22 @@ pub mod vpn_server_configuration {
         name: &str,
         args: VpnServerConfigurationArgs,
     ) -> VpnServerConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpnServerConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VpnServerConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpnServerConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VpnServerConfigurationResult {
         let azure_active_directory_authentications_binding = args
             .azure_active_directory_authentications
             .get_output(context);
@@ -234,6 +250,7 @@ pub mod vpn_server_configuration {
                     value: &vpn_protocols_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VpnServerConfigurationResult {

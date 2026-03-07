@@ -183,6 +183,22 @@ pub mod network_sim {
         name: &str,
         args: NetworkSimArgs,
     ) -> NetworkSimResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkSimArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NetworkSimResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkSimArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NetworkSimResult {
         let authentication_key_binding = args.authentication_key.get_output(context);
         let device_type_binding = args.device_type.get_output(context);
         let integrated_circuit_card_identifier_binding = args
@@ -242,6 +258,7 @@ pub mod network_sim {
                     value: &static_ip_configurations_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NetworkSimResult {

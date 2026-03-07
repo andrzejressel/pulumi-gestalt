@@ -72,6 +72,22 @@ pub mod aws_log_source {
         name: &str,
         args: AwsLogSourceArgs,
     ) -> AwsLogSourceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AwsLogSourceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AwsLogSourceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AwsLogSourceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AwsLogSourceResult {
         let source_binding = args.source.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:securitylake/awsLogSource:AwsLogSource".into(),
@@ -83,6 +99,7 @@ pub mod aws_log_source {
                     value: &source_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AwsLogSourceResult {

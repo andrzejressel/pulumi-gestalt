@@ -247,6 +247,22 @@ pub mod active_directory {
         name: &str,
         args: ActiveDirectoryArgs,
     ) -> ActiveDirectoryResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ActiveDirectoryArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ActiveDirectoryResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ActiveDirectoryArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ActiveDirectoryResult {
         let administrators_binding = args.administrators.get_output(context);
         let aes_encryption_binding = args.aes_encryption.get_output(context);
         let backup_operators_binding = args.backup_operators.get_output(context);
@@ -360,6 +376,7 @@ pub mod active_directory {
                     value: &username_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ActiveDirectoryResult {

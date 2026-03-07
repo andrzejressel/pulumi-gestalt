@@ -306,6 +306,22 @@ pub mod kafka_cluster {
         name: &str,
         args: KafkaClusterArgs,
     ) -> KafkaClusterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: KafkaClusterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> KafkaClusterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: KafkaClusterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> KafkaClusterResult {
         let cluster_version_binding = args.cluster_version.get_output(context);
         let component_version_binding = args.component_version.get_output(context);
         let compute_isolation_binding = args.compute_isolation.get_output(context);
@@ -426,6 +442,7 @@ pub mod kafka_cluster {
                     value: &tls_min_version_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         KafkaClusterResult {

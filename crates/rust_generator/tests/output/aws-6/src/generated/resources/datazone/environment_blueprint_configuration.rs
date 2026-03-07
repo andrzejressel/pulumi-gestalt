@@ -115,6 +115,22 @@ pub mod environment_blueprint_configuration {
         name: &str,
         args: EnvironmentBlueprintConfigurationArgs,
     ) -> EnvironmentBlueprintConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EnvironmentBlueprintConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EnvironmentBlueprintConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EnvironmentBlueprintConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EnvironmentBlueprintConfigurationResult {
         let domain_id_binding = args.domain_id.get_output(context);
         let enabled_regions_binding = args.enabled_regions.get_output(context);
         let environment_blueprint_id_binding = args
@@ -158,6 +174,7 @@ pub mod environment_blueprint_configuration {
                     value: &regional_parameters_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EnvironmentBlueprintConfigurationResult {

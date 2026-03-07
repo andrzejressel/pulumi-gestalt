@@ -186,6 +186,22 @@ pub mod managed_instance_failover_group {
         name: &str,
         args: ManagedInstanceFailoverGroupArgs,
     ) -> ManagedInstanceFailoverGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedInstanceFailoverGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ManagedInstanceFailoverGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedInstanceFailoverGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ManagedInstanceFailoverGroupResult {
         let location_binding = args.location.get_output(context);
         let managed_instance_id_binding = args.managed_instance_id.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -229,6 +245,7 @@ pub mod managed_instance_failover_group {
                     value: &readonly_endpoint_failover_policy_enabled_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ManagedInstanceFailoverGroupResult {

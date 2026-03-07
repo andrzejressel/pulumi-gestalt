@@ -69,6 +69,22 @@ pub mod authorize_vpc_endpoint_access {
         name: &str,
         args: AuthorizeVpcEndpointAccessArgs,
     ) -> AuthorizeVpcEndpointAccessResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AuthorizeVpcEndpointAccessArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AuthorizeVpcEndpointAccessResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AuthorizeVpcEndpointAccessArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AuthorizeVpcEndpointAccessResult {
         let account_binding = args.account.get_output(context);
         let domain_name_binding = args.domain_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -86,6 +102,7 @@ pub mod authorize_vpc_endpoint_access {
                     value: &domain_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AuthorizeVpcEndpointAccessResult {

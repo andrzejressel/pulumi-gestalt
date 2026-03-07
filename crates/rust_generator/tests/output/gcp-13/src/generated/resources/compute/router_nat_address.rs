@@ -113,6 +113,22 @@ pub mod router_nat_address {
         name: &str,
         args: RouterNatAddressArgs,
     ) -> RouterNatAddressResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RouterNatAddressArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RouterNatAddressResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RouterNatAddressArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RouterNatAddressResult {
         let drain_nat_ips_binding = args.drain_nat_ips.get_output(context);
         let nat_ips_binding = args.nat_ips.get_output(context);
         let project_binding = args.project.get_output(context);
@@ -149,6 +165,7 @@ pub mod router_nat_address {
                     value: &router_nat_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RouterNatAddressResult {

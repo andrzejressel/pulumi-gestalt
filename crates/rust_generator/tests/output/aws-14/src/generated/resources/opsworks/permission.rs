@@ -72,6 +72,22 @@ pub mod permission {
         name: &str,
         args: PermissionArgs,
     ) -> PermissionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PermissionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PermissionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PermissionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PermissionResult {
         let allow_ssh_binding = args.allow_ssh.get_output(context);
         let allow_sudo_binding = args.allow_sudo.get_output(context);
         let level_binding = args.level.get_output(context);
@@ -103,6 +119,7 @@ pub mod permission {
                     value: &user_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PermissionResult {

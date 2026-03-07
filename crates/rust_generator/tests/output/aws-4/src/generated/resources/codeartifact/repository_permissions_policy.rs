@@ -107,6 +107,22 @@ pub mod repository_permissions_policy {
         name: &str,
         args: RepositoryPermissionsPolicyArgs,
     ) -> RepositoryPermissionsPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RepositoryPermissionsPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RepositoryPermissionsPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RepositoryPermissionsPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RepositoryPermissionsPolicyResult {
         let domain_binding = args.domain.get_output(context);
         let domain_owner_binding = args.domain_owner.get_output(context);
         let policy_document_binding = args.policy_document.get_output(context);
@@ -139,6 +155,7 @@ pub mod repository_permissions_policy {
                     value: &repository_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RepositoryPermissionsPolicyResult {

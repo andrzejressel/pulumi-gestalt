@@ -169,6 +169,22 @@ pub mod insights_report_config {
         name: &str,
         args: InsightsReportConfigArgs,
     ) -> InsightsReportConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InsightsReportConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> InsightsReportConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InsightsReportConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> InsightsReportConfigResult {
         let csv_options_binding = args.csv_options.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let frequency_options_binding = args.frequency_options.get_output(context);
@@ -207,6 +223,7 @@ pub mod insights_report_config {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         InsightsReportConfigResult {

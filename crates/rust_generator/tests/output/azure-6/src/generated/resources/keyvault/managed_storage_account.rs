@@ -215,6 +215,22 @@ pub mod managed_storage_account {
         name: &str,
         args: ManagedStorageAccountArgs,
     ) -> ManagedStorageAccountResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedStorageAccountArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ManagedStorageAccountResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedStorageAccountArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ManagedStorageAccountResult {
         let key_vault_id_binding = args.key_vault_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let regenerate_key_automatically_binding = args
@@ -258,6 +274,7 @@ pub mod managed_storage_account {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ManagedStorageAccountResult {

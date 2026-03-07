@@ -41,6 +41,22 @@ pub mod risk_behavior {
         name: &str,
         args: RiskBehaviorArgs,
     ) -> RiskBehaviorResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RiskBehaviorArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RiskBehaviorResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RiskBehaviorArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RiskBehaviorResult {
         let account_id_binding = args.account_id.get_output(context);
         let behaviors_binding = args.behaviors.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -57,6 +73,7 @@ pub mod risk_behavior {
                     value: &behaviors_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RiskBehaviorResult {

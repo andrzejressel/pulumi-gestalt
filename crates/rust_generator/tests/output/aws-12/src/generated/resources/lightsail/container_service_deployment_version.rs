@@ -106,6 +106,22 @@ pub mod container_service_deployment_version {
         name: &str,
         args: ContainerServiceDeploymentVersionArgs,
     ) -> ContainerServiceDeploymentVersionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ContainerServiceDeploymentVersionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ContainerServiceDeploymentVersionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ContainerServiceDeploymentVersionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ContainerServiceDeploymentVersionResult {
         let containers_binding = args.containers.get_output(context);
         let public_endpoint_binding = args.public_endpoint.get_output(context);
         let service_name_binding = args.service_name.get_output(context);
@@ -128,6 +144,7 @@ pub mod container_service_deployment_version {
                     value: &service_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ContainerServiceDeploymentVersionResult {

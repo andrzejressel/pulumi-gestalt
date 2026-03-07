@@ -103,6 +103,22 @@ pub mod query_log {
         name: &str,
         args: QueryLogArgs,
     ) -> QueryLogResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: QueryLogArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> QueryLogResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: QueryLogArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> QueryLogResult {
         let cloudwatch_log_group_arn_binding = args
             .cloudwatch_log_group_arn
             .get_output(context);
@@ -121,6 +137,7 @@ pub mod query_log {
                     value: &zone_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         QueryLogResult {

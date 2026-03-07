@@ -101,6 +101,22 @@ pub mod profiling_group {
         name: &str,
         args: ProfilingGroupArgs,
     ) -> ProfilingGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProfilingGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ProfilingGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProfilingGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ProfilingGroupResult {
         let agent_orchestration_config_binding = args
             .agent_orchestration_config
             .get_output(context);
@@ -129,6 +145,7 @@ pub mod profiling_group {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ProfilingGroupResult {

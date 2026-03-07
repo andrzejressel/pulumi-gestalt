@@ -102,6 +102,22 @@ pub mod workspace_table {
         name: &str,
         args: WorkspaceTableArgs,
     ) -> WorkspaceTableResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkspaceTableArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WorkspaceTableResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkspaceTableArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WorkspaceTableResult {
         let name_binding = args.name.get_output(context);
         let plan_binding = args.plan.get_output(context);
         let retention_in_days_binding = args.retention_in_days.get_output(context);
@@ -135,6 +151,7 @@ pub mod workspace_table {
                     value: &workspace_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WorkspaceTableResult {

@@ -96,6 +96,22 @@ pub mod file_system_policy {
         name: &str,
         args: FileSystemPolicyArgs,
     ) -> FileSystemPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FileSystemPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FileSystemPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FileSystemPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FileSystemPolicyResult {
         let bypass_policy_lockout_safety_check_binding = args
             .bypass_policy_lockout_safety_check
             .get_output(context);
@@ -119,6 +135,7 @@ pub mod file_system_policy {
                     value: &policy_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FileSystemPolicyResult {

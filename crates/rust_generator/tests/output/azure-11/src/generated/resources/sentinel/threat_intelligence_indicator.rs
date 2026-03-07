@@ -234,6 +234,22 @@ pub mod threat_intelligence_indicator {
         name: &str,
         args: ThreatIntelligenceIndicatorArgs,
     ) -> ThreatIntelligenceIndicatorResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ThreatIntelligenceIndicatorArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ThreatIntelligenceIndicatorResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ThreatIntelligenceIndicatorArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ThreatIntelligenceIndicatorResult {
         let confidence_binding = args.confidence.get_output(context);
         let created_by_binding = args.created_by.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -341,6 +357,7 @@ pub mod threat_intelligence_indicator {
                     value: &workspace_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ThreatIntelligenceIndicatorResult {

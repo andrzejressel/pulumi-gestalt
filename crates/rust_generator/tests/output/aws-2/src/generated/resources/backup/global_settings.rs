@@ -55,6 +55,22 @@ pub mod global_settings {
         name: &str,
         args: GlobalSettingsArgs,
     ) -> GlobalSettingsResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GlobalSettingsArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GlobalSettingsResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GlobalSettingsArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GlobalSettingsResult {
         let global_settings_binding = args.global_settings.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:backup/globalSettings:GlobalSettings".into(),
@@ -66,6 +82,7 @@ pub mod global_settings {
                     value: &global_settings_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GlobalSettingsResult {

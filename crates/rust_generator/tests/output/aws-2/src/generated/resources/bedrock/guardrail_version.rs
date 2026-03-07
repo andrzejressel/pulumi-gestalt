@@ -83,6 +83,22 @@ pub mod guardrail_version {
         name: &str,
         args: GuardrailVersionArgs,
     ) -> GuardrailVersionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GuardrailVersionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GuardrailVersionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GuardrailVersionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GuardrailVersionResult {
         let description_binding = args.description.get_output(context);
         let guardrail_arn_binding = args.guardrail_arn.get_output(context);
         let skip_destroy_binding = args.skip_destroy.get_output(context);
@@ -109,6 +125,7 @@ pub mod guardrail_version {
                     value: &timeouts_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GuardrailVersionResult {

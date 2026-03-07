@@ -87,6 +87,22 @@ pub mod trust_store_revocation {
         name: &str,
         args: TrustStoreRevocationArgs,
     ) -> TrustStoreRevocationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TrustStoreRevocationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TrustStoreRevocationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TrustStoreRevocationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TrustStoreRevocationResult {
         let revocations_s3_bucket_binding = args
             .revocations_s3_bucket
             .get_output(context);
@@ -117,6 +133,7 @@ pub mod trust_store_revocation {
                     value: &trust_store_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TrustStoreRevocationResult {

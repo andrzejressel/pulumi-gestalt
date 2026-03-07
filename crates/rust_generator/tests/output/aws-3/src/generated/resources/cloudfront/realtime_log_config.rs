@@ -123,6 +123,22 @@ pub mod realtime_log_config {
         name: &str,
         args: RealtimeLogConfigArgs,
     ) -> RealtimeLogConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RealtimeLogConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RealtimeLogConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RealtimeLogConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RealtimeLogConfigResult {
         let endpoint_binding = args.endpoint.get_output(context);
         let fields_binding = args.fields.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -149,6 +165,7 @@ pub mod realtime_log_config {
                     value: &sampling_rate_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RealtimeLogConfigResult {

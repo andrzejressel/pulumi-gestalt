@@ -188,6 +188,22 @@ pub mod target_group {
         name: &str,
         args: TargetGroupArgs,
     ) -> TargetGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TargetGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TargetGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TargetGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TargetGroupResult {
         let config_binding = args.config.get_output(context);
         let name_binding = args.name.get_output(context);
         let tags_binding = args.tags.get_output(context);
@@ -214,6 +230,7 @@ pub mod target_group {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TargetGroupResult {

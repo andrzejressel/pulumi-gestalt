@@ -105,6 +105,22 @@ pub mod custom_hostname {
         name: &str,
         args: CustomHostnameArgs,
     ) -> CustomHostnameResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomHostnameArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CustomHostnameResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomHostnameArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CustomHostnameResult {
         let custom_metadata_binding = args.custom_metadata.get_output(context);
         let custom_origin_server_binding = args.custom_origin_server.get_output(context);
         let custom_origin_sni_binding = args.custom_origin_sni.get_output(context);
@@ -148,6 +164,7 @@ pub mod custom_hostname {
                     value: &zone_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CustomHostnameResult {

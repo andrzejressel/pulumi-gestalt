@@ -150,6 +150,22 @@ pub mod nat_pool {
         name: &str,
         args: NatPoolArgs,
     ) -> NatPoolResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NatPoolArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NatPoolResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NatPoolArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NatPoolResult {
         let backend_port_binding = args.backend_port.get_output(context);
         let floating_ip_enabled_binding = args.floating_ip_enabled.get_output(context);
         let frontend_ip_configuration_name_binding = args
@@ -215,6 +231,7 @@ pub mod nat_pool {
                     value: &tcp_reset_enabled_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NatPoolResult {

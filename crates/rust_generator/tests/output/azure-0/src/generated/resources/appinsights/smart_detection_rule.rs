@@ -107,6 +107,22 @@ pub mod smart_detection_rule {
         name: &str,
         args: SmartDetectionRuleArgs,
     ) -> SmartDetectionRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SmartDetectionRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SmartDetectionRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SmartDetectionRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SmartDetectionRuleResult {
         let additional_email_recipients_binding = args
             .additional_email_recipients
             .get_output(context);
@@ -144,6 +160,7 @@ pub mod smart_detection_rule {
                     value: &send_emails_to_subscription_owners_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SmartDetectionRuleResult {

@@ -144,6 +144,22 @@ pub mod identity_provider_aadb_2_c {
         name: &str,
         args: IdentityProviderAadb2cArgs,
     ) -> IdentityProviderAadb2cResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IdentityProviderAadb2cArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IdentityProviderAadb2cResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IdentityProviderAadb2cArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IdentityProviderAadb2cResult {
         let allowed_tenant_binding = args.allowed_tenant.get_output(context);
         let api_management_name_binding = args.api_management_name.get_output(context);
         let authority_binding = args.authority.get_output(context);
@@ -215,6 +231,7 @@ pub mod identity_provider_aadb_2_c {
                     value: &signup_policy_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IdentityProviderAadb2cResult {

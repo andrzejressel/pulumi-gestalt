@@ -91,6 +91,22 @@ pub mod channel_alexa {
         name: &str,
         args: ChannelAlexaArgs,
     ) -> ChannelAlexaResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ChannelAlexaArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ChannelAlexaResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ChannelAlexaArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ChannelAlexaResult {
         let bot_name_binding = args.bot_name.get_output(context);
         let location_binding = args.location.get_output(context);
         let resource_group_name_binding = args.resource_group_name.get_output(context);
@@ -117,6 +133,7 @@ pub mod channel_alexa {
                     value: &skill_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ChannelAlexaResult {

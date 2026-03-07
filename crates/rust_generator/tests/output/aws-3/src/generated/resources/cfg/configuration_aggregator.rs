@@ -150,6 +150,22 @@ pub mod configuration_aggregator {
         name: &str,
         args: ConfigurationAggregatorArgs,
     ) -> ConfigurationAggregatorResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConfigurationAggregatorArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ConfigurationAggregatorResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConfigurationAggregatorArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ConfigurationAggregatorResult {
         let account_aggregation_source_binding = args
             .account_aggregation_source
             .get_output(context);
@@ -180,6 +196,7 @@ pub mod configuration_aggregator {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ConfigurationAggregatorResult {

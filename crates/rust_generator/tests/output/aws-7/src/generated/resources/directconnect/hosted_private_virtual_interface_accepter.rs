@@ -103,6 +103,22 @@ pub mod hosted_private_virtual_interface_accepter {
         name: &str,
         args: HostedPrivateVirtualInterfaceAccepterArgs,
     ) -> HostedPrivateVirtualInterfaceAccepterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HostedPrivateVirtualInterfaceAccepterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> HostedPrivateVirtualInterfaceAccepterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HostedPrivateVirtualInterfaceAccepterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> HostedPrivateVirtualInterfaceAccepterResult {
         let dx_gateway_id_binding = args.dx_gateway_id.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let virtual_interface_id_binding = args.virtual_interface_id.get_output(context);
@@ -130,6 +146,7 @@ pub mod hosted_private_virtual_interface_accepter {
                     value: &vpn_gateway_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         HostedPrivateVirtualInterfaceAccepterResult {

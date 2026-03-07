@@ -59,6 +59,22 @@ pub mod identity_pool_provider_principal_tag {
         name: &str,
         args: IdentityPoolProviderPrincipalTagArgs,
     ) -> IdentityPoolProviderPrincipalTagResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IdentityPoolProviderPrincipalTagArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IdentityPoolProviderPrincipalTagResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IdentityPoolProviderPrincipalTagArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IdentityPoolProviderPrincipalTagResult {
         let identity_pool_id_binding = args.identity_pool_id.get_output(context);
         let identity_provider_name_binding = args
             .identity_provider_name
@@ -88,6 +104,7 @@ pub mod identity_pool_provider_principal_tag {
                     value: &use_defaults_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IdentityPoolProviderPrincipalTagResult {

@@ -189,6 +189,22 @@ pub mod cluster {
         name: &str,
         args: ClusterArgs,
     ) -> ClusterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClusterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ClusterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClusterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ClusterResult {
         let availability_zones_binding = args.availability_zones.get_output(context);
         let cluster_endpoint_encryption_type_binding = args
             .cluster_endpoint_encryption_type
@@ -271,6 +287,7 @@ pub mod cluster {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ClusterResult {

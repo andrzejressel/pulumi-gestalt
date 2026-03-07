@@ -202,6 +202,22 @@ pub mod transfer_job {
         name: &str,
         args: TransferJobArgs,
     ) -> TransferJobResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TransferJobArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TransferJobResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TransferJobArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TransferJobResult {
         let description_binding = args.description.get_output(context);
         let event_stream_binding = args.event_stream.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -248,6 +264,7 @@ pub mod transfer_job {
                     value: &transfer_spec_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TransferJobResult {

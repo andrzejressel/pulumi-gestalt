@@ -250,6 +250,22 @@ pub mod region_commitment {
         name: &str,
         args: RegionCommitmentArgs,
     ) -> RegionCommitmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionCommitmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RegionCommitmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionCommitmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RegionCommitmentResult {
         let auto_renew_binding = args.auto_renew.get_output(context);
         let category_binding = args.category.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -313,6 +329,7 @@ pub mod region_commitment {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RegionCommitmentResult {

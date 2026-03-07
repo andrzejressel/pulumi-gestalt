@@ -93,6 +93,22 @@ pub mod identity_provider_microsoft {
         name: &str,
         args: IdentityProviderMicrosoftArgs,
     ) -> IdentityProviderMicrosoftResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IdentityProviderMicrosoftArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IdentityProviderMicrosoftResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IdentityProviderMicrosoftArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IdentityProviderMicrosoftResult {
         let api_management_name_binding = args.api_management_name.get_output(context);
         let client_id_binding = args.client_id.get_output(context);
         let client_secret_binding = args.client_secret.get_output(context);
@@ -120,6 +136,7 @@ pub mod identity_provider_microsoft {
                     value: &resource_group_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IdentityProviderMicrosoftResult {

@@ -537,6 +537,22 @@ pub mod spoke {
         name: &str,
         args: SpokeArgs,
     ) -> SpokeResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpokeArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SpokeResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpokeArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SpokeResult {
         let description_binding = args.description.get_output(context);
         let hub_binding = args.hub.get_output(context);
         let labels_binding = args.labels.get_output(context);
@@ -604,6 +620,7 @@ pub mod spoke {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SpokeResult {

@@ -319,6 +319,22 @@ pub mod backup {
         name: &str,
         args: BackupArgs,
     ) -> BackupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BackupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BackupResult {
         let annotations_binding = args.annotations.get_output(context);
         let backup_id_binding = args.backup_id.get_output(context);
         let cluster_name_binding = args.cluster_name.get_output(context);
@@ -375,6 +391,7 @@ pub mod backup {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BackupResult {

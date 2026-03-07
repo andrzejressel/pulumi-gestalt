@@ -225,6 +225,22 @@ pub mod custom_db_engine_version {
         name: &str,
         args: CustomDbEngineVersionArgs,
     ) -> CustomDbEngineVersionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomDbEngineVersionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CustomDbEngineVersionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomDbEngineVersionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CustomDbEngineVersionResult {
         let database_installation_files_s3_bucket_name_binding = args
             .database_installation_files_s3_bucket_name
             .get_output(context);
@@ -296,6 +312,7 @@ pub mod custom_db_engine_version {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CustomDbEngineVersionResult {

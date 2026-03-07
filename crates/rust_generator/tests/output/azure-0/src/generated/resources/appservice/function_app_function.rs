@@ -233,6 +233,22 @@ pub mod function_app_function {
         name: &str,
         args: FunctionAppFunctionArgs,
     ) -> FunctionAppFunctionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FunctionAppFunctionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FunctionAppFunctionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FunctionAppFunctionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FunctionAppFunctionResult {
         let config_json_binding = args.config_json.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
         let files_binding = args.files.get_output(context);
@@ -274,6 +290,7 @@ pub mod function_app_function {
                     value: &test_data_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FunctionAppFunctionResult {

@@ -76,6 +76,22 @@ pub mod eip_domain_name {
         name: &str,
         args: EipDomainNameArgs,
     ) -> EipDomainNameResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EipDomainNameArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EipDomainNameResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EipDomainNameArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EipDomainNameResult {
         let allocation_id_binding = args.allocation_id.get_output(context);
         let domain_name_binding = args.domain_name.get_output(context);
         let timeouts_binding = args.timeouts.get_output(context);
@@ -97,6 +113,7 @@ pub mod eip_domain_name {
                     value: &timeouts_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EipDomainNameResult {

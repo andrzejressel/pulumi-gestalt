@@ -135,6 +135,22 @@ pub mod fleet {
         name: &str,
         args: FleetArgs,
     ) -> FleetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FleetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FleetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FleetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FleetResult {
         let audit_stream_arn_binding = args.audit_stream_arn.get_output(context);
         let device_ca_certificate_binding = args
             .device_ca_certificate
@@ -180,6 +196,7 @@ pub mod fleet {
                     value: &optimize_for_end_user_location_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FleetResult {

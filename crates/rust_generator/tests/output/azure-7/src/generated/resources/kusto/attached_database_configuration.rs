@@ -170,6 +170,22 @@ pub mod attached_database_configuration {
         name: &str,
         args: AttachedDatabaseConfigurationArgs,
     ) -> AttachedDatabaseConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AttachedDatabaseConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AttachedDatabaseConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AttachedDatabaseConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AttachedDatabaseConfigurationResult {
         let cluster_name_binding = args.cluster_name.get_output(context);
         let cluster_resource_id_binding = args.cluster_resource_id.get_output(context);
         let database_name_binding = args.database_name.get_output(context);
@@ -219,6 +235,7 @@ pub mod attached_database_configuration {
                     value: &sharing_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AttachedDatabaseConfigurationResult {

@@ -221,6 +221,22 @@ pub mod export_task {
         name: &str,
         args: ExportTaskArgs,
     ) -> ExportTaskResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ExportTaskArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ExportTaskResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ExportTaskArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ExportTaskResult {
         let export_onlies_binding = args.export_onlies.get_output(context);
         let export_task_identifier_binding = args
             .export_task_identifier
@@ -269,6 +285,7 @@ pub mod export_task {
                     value: &timeouts_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ExportTaskResult {

@@ -111,6 +111,22 @@ pub mod local_rulestack {
         name: &str,
         args: LocalRulestackArgs,
     ) -> LocalRulestackResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LocalRulestackArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LocalRulestackResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LocalRulestackArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LocalRulestackResult {
         let anti_spyware_profile_binding = args.anti_spyware_profile.get_output(context);
         let anti_virus_profile_binding = args.anti_virus_profile.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -173,6 +189,7 @@ pub mod local_rulestack {
                     value: &vulnerability_profile_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LocalRulestackResult {

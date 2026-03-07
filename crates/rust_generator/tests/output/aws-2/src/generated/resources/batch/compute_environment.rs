@@ -276,6 +276,22 @@ pub mod compute_environment {
         name: &str,
         args: ComputeEnvironmentArgs,
     ) -> ComputeEnvironmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ComputeEnvironmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ComputeEnvironmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ComputeEnvironmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ComputeEnvironmentResult {
         let compute_environment_name_binding = args
             .compute_environment_name
             .get_output(context);
@@ -331,6 +347,7 @@ pub mod compute_environment {
                     value: &update_policy_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ComputeEnvironmentResult {

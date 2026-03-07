@@ -333,6 +333,22 @@ pub mod frontdoor_rule {
         name: &str,
         args: FrontdoorRuleArgs,
     ) -> FrontdoorRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FrontdoorRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FrontdoorRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FrontdoorRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FrontdoorRuleResult {
         let actions_binding = args.actions.get_output(context);
         let behavior_on_match_binding = args.behavior_on_match.get_output(context);
         let cdn_frontdoor_rule_set_id_binding = args
@@ -371,6 +387,7 @@ pub mod frontdoor_rule {
                     value: &order_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FrontdoorRuleResult {

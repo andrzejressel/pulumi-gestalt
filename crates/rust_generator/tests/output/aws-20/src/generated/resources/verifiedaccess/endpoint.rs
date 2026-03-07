@@ -163,6 +163,22 @@ pub mod endpoint {
         name: &str,
         args: EndpointArgs,
     ) -> EndpointResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EndpointArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EndpointResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EndpointArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EndpointResult {
         let application_domain_binding = args.application_domain.get_output(context);
         let attachment_type_binding = args.attachment_type.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -244,6 +260,7 @@ pub mod endpoint {
                     value: &verified_access_group_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EndpointResult {

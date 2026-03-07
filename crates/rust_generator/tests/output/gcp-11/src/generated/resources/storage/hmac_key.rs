@@ -122,6 +122,22 @@ pub mod hmac_key {
         name: &str,
         args: HmacKeyArgs,
     ) -> HmacKeyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HmacKeyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> HmacKeyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HmacKeyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> HmacKeyResult {
         let project_binding = args.project.get_output(context);
         let service_account_email_binding = args
             .service_account_email
@@ -145,6 +161,7 @@ pub mod hmac_key {
                     value: &state_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         HmacKeyResult {

@@ -188,6 +188,22 @@ pub mod network_interface {
         name: &str,
         args: NetworkInterfaceArgs,
     ) -> NetworkInterfaceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkInterfaceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NetworkInterfaceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkInterfaceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NetworkInterfaceResult {
         let accelerated_networking_enabled_binding = args
             .accelerated_networking_enabled
             .get_output(context);
@@ -260,6 +276,7 @@ pub mod network_interface {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NetworkInterfaceResult {

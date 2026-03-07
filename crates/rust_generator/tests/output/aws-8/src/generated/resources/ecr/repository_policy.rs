@@ -93,6 +93,22 @@ pub mod repository_policy {
         name: &str,
         args: RepositoryPolicyArgs,
     ) -> RepositoryPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RepositoryPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RepositoryPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RepositoryPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RepositoryPolicyResult {
         let policy_binding = args.policy.get_output(context);
         let repository_binding = args.repository.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -109,6 +125,7 @@ pub mod repository_policy {
                     value: &repository_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RepositoryPolicyResult {

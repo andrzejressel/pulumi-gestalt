@@ -371,6 +371,22 @@ pub mod tunnel_iam_policy {
         name: &str,
         args: TunnelIamPolicyArgs,
     ) -> TunnelIamPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TunnelIamPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TunnelIamPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TunnelIamPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TunnelIamPolicyResult {
         let policy_data_binding = args.policy_data.get_output(context);
         let project_binding = args.project.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -387,6 +403,7 @@ pub mod tunnel_iam_policy {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TunnelIamPolicyResult {

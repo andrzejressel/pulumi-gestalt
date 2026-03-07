@@ -306,6 +306,22 @@ pub mod topic {
         name: &str,
         args: TopicArgs,
     ) -> TopicResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TopicArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TopicResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TopicArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TopicResult {
         let application_failure_feedback_role_arn_binding = args
             .application_failure_feedback_role_arn
             .get_output(context);
@@ -479,6 +495,7 @@ pub mod topic {
                     value: &tracing_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TopicResult {

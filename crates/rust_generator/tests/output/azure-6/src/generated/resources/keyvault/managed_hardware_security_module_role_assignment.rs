@@ -65,6 +65,22 @@ pub mod managed_hardware_security_module_role_assignment {
         name: &str,
         args: ManagedHardwareSecurityModuleRoleAssignmentArgs,
     ) -> ManagedHardwareSecurityModuleRoleAssignmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedHardwareSecurityModuleRoleAssignmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ManagedHardwareSecurityModuleRoleAssignmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedHardwareSecurityModuleRoleAssignmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ManagedHardwareSecurityModuleRoleAssignmentResult {
         let managed_hsm_id_binding = args.managed_hsm_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let principal_id_binding = args.principal_id.get_output(context);
@@ -97,6 +113,7 @@ pub mod managed_hardware_security_module_role_assignment {
                     value: &scope_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ManagedHardwareSecurityModuleRoleAssignmentResult {

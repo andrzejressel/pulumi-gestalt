@@ -261,6 +261,22 @@ pub mod cx_agent {
         name: &str,
         args: CxAgentArgs,
     ) -> CxAgentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CxAgentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CxAgentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CxAgentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CxAgentResult {
         let advanced_settings_binding = args.advanced_settings.get_output(context);
         let avatar_uri_binding = args.avatar_uri.get_output(context);
         let default_language_code_binding = args
@@ -356,6 +372,7 @@ pub mod cx_agent {
                     value: &time_zone_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CxAgentResult {

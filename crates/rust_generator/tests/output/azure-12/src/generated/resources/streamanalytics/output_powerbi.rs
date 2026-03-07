@@ -106,6 +106,22 @@ pub mod output_powerbi {
         name: &str,
         args: OutputPowerbiArgs,
     ) -> OutputPowerbiResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OutputPowerbiArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OutputPowerbiResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OutputPowerbiArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OutputPowerbiResult {
         let dataset_binding = args.dataset.get_output(context);
         let group_id_binding = args.group_id.get_output(context);
         let group_name_binding = args.group_name.get_output(context);
@@ -158,6 +174,7 @@ pub mod output_powerbi {
                     value: &token_user_principal_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OutputPowerbiResult {

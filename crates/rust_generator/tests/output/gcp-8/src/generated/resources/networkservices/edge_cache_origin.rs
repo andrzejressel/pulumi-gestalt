@@ -348,6 +348,22 @@ pub mod edge_cache_origin {
         name: &str,
         args: EdgeCacheOriginArgs,
     ) -> EdgeCacheOriginResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EdgeCacheOriginArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EdgeCacheOriginResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EdgeCacheOriginArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EdgeCacheOriginResult {
         let aws_v4_authentication_binding = args
             .aws_v4_authentication
             .get_output(context);
@@ -428,6 +444,7 @@ pub mod edge_cache_origin {
                     value: &timeout_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EdgeCacheOriginResult {

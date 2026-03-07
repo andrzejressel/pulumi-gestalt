@@ -200,6 +200,22 @@ pub mod backup_instance_postgresql {
         name: &str,
         args: BackupInstancePostgresqlArgs,
     ) -> BackupInstancePostgresqlResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackupInstancePostgresqlArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BackupInstancePostgresqlResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackupInstancePostgresqlArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BackupInstancePostgresqlResult {
         let backup_policy_id_binding = args.backup_policy_id.get_output(context);
         let database_credential_key_vault_secret_id_binding = args
             .database_credential_key_vault_secret_id
@@ -239,6 +255,7 @@ pub mod backup_instance_postgresql {
                     value: &vault_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BackupInstancePostgresqlResult {

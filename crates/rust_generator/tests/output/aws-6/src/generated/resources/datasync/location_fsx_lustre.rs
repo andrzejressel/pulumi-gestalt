@@ -86,6 +86,22 @@ pub mod location_fsx_lustre {
         name: &str,
         args: LocationFsxLustreArgs,
     ) -> LocationFsxLustreResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LocationFsxLustreArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LocationFsxLustreResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LocationFsxLustreArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LocationFsxLustreResult {
         let fsx_filesystem_arn_binding = args.fsx_filesystem_arn.get_output(context);
         let security_group_arns_binding = args.security_group_arns.get_output(context);
         let subdirectory_binding = args.subdirectory.get_output(context);
@@ -112,6 +128,7 @@ pub mod location_fsx_lustre {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LocationFsxLustreResult {

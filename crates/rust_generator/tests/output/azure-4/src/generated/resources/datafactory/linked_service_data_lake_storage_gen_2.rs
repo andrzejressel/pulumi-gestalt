@@ -154,6 +154,22 @@ pub mod linked_service_data_lake_storage_gen_2 {
         name: &str,
         args: LinkedServiceDataLakeStorageGen2Args,
     ) -> LinkedServiceDataLakeStorageGen2Result {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LinkedServiceDataLakeStorageGen2Args,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LinkedServiceDataLakeStorageGen2Result {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LinkedServiceDataLakeStorageGen2Args,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LinkedServiceDataLakeStorageGen2Result {
         let additional_properties_binding = args
             .additional_properties
             .get_output(context);
@@ -232,6 +248,7 @@ pub mod linked_service_data_lake_storage_gen_2 {
                     value: &use_managed_identity_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LinkedServiceDataLakeStorageGen2Result {

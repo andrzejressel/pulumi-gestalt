@@ -474,6 +474,22 @@ pub mod routine {
         name: &str,
         args: RoutineArgs,
     ) -> RoutineResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RoutineArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RoutineResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RoutineArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RoutineResult {
         let arguments_binding = args.arguments.get_output(context);
         let data_governance_type_binding = args.data_governance_type.get_output(context);
         let dataset_id_binding = args.dataset_id.get_output(context);
@@ -557,6 +573,7 @@ pub mod routine {
                     value: &spark_options_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RoutineResult {

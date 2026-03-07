@@ -161,6 +161,22 @@ pub mod linked_dataset {
         name: &str,
         args: LinkedDatasetArgs,
     ) -> LinkedDatasetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LinkedDatasetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LinkedDatasetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LinkedDatasetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LinkedDatasetResult {
         let bigquery_datasets_binding = args.bigquery_datasets.get_output(context);
         let bucket_binding = args.bucket.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -197,6 +213,7 @@ pub mod linked_dataset {
                     value: &parent_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LinkedDatasetResult {

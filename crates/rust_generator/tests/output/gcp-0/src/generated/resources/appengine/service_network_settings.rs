@@ -118,6 +118,22 @@ pub mod service_network_settings {
         name: &str,
         args: ServiceNetworkSettingsArgs,
     ) -> ServiceNetworkSettingsResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceNetworkSettingsArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServiceNetworkSettingsResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceNetworkSettingsArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServiceNetworkSettingsResult {
         let network_settings_binding = args.network_settings.get_output(context);
         let project_binding = args.project.get_output(context);
         let service_binding = args.service.get_output(context);
@@ -139,6 +155,7 @@ pub mod service_network_settings {
                     value: &service_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServiceNetworkSettingsResult {

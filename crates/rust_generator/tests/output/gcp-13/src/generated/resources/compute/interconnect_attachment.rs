@@ -394,6 +394,22 @@ pub mod interconnect_attachment {
         name: &str,
         args: InterconnectAttachmentArgs,
     ) -> InterconnectAttachmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InterconnectAttachmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> InterconnectAttachmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InterconnectAttachmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> InterconnectAttachmentResult {
         let admin_enabled_binding = args.admin_enabled.get_output(context);
         let bandwidth_binding = args.bandwidth.get_output(context);
         let candidate_subnets_binding = args.candidate_subnets.get_output(context);
@@ -489,6 +505,7 @@ pub mod interconnect_attachment {
                     value: &vlan_tag8021q_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         InterconnectAttachmentResult {

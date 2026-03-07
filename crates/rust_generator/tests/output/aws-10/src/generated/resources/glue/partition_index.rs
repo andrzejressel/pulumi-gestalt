@@ -131,6 +131,22 @@ pub mod partition_index {
         name: &str,
         args: PartitionIndexArgs,
     ) -> PartitionIndexResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PartitionIndexArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PartitionIndexResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PartitionIndexArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PartitionIndexResult {
         let catalog_id_binding = args.catalog_id.get_output(context);
         let database_name_binding = args.database_name.get_output(context);
         let partition_index_binding = args.partition_index.get_output(context);
@@ -157,6 +173,7 @@ pub mod partition_index {
                     value: &table_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PartitionIndexResult {

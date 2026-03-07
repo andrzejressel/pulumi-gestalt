@@ -88,6 +88,22 @@ pub mod anomaly_alert {
         name: &str,
         args: AnomalyAlertArgs,
     ) -> AnomalyAlertResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AnomalyAlertArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AnomalyAlertResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AnomalyAlertArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AnomalyAlertResult {
         let display_name_binding = args.display_name.get_output(context);
         let email_addresses_binding = args.email_addresses.get_output(context);
         let email_subject_binding = args.email_subject.get_output(context);
@@ -124,6 +140,7 @@ pub mod anomaly_alert {
                     value: &subscription_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AnomalyAlertResult {

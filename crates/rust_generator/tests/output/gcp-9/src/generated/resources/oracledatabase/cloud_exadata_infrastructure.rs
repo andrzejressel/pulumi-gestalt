@@ -208,6 +208,22 @@ pub mod cloud_exadata_infrastructure {
         name: &str,
         args: CloudExadataInfrastructureArgs,
     ) -> CloudExadataInfrastructureResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CloudExadataInfrastructureArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CloudExadataInfrastructureResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CloudExadataInfrastructureArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CloudExadataInfrastructureResult {
         let cloud_exadata_infrastructure_id_binding = args
             .cloud_exadata_infrastructure_id
             .get_output(context);
@@ -257,6 +273,7 @@ pub mod cloud_exadata_infrastructure {
                     value: &properties_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CloudExadataInfrastructureResult {

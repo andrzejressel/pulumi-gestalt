@@ -212,6 +212,22 @@ pub mod postgresql_cluster {
         name: &str,
         args: PostgresqlClusterArgs,
     ) -> PostgresqlClusterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PostgresqlClusterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PostgresqlClusterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PostgresqlClusterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PostgresqlClusterResult {
         let administrator_login_password_binding = args
             .administrator_login_password
             .get_output(context);
@@ -351,6 +367,7 @@ pub mod postgresql_cluster {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PostgresqlClusterResult {

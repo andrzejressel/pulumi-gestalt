@@ -132,6 +132,22 @@ pub mod billing_account_bucket_config {
         name: &str,
         args: BillingAccountBucketConfigArgs,
     ) -> BillingAccountBucketConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BillingAccountBucketConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BillingAccountBucketConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BillingAccountBucketConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BillingAccountBucketConfigResult {
         let billing_account_binding = args.billing_account.get_output(context);
         let bucket_id_binding = args.bucket_id.get_output(context);
         let cmek_settings_binding = args.cmek_settings.get_output(context);
@@ -174,6 +190,7 @@ pub mod billing_account_bucket_config {
                     value: &retention_days_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BillingAccountBucketConfigResult {

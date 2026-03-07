@@ -107,6 +107,22 @@ pub mod event_bus {
         name: &str,
         args: EventBusArgs,
     ) -> EventBusResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EventBusArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EventBusResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EventBusArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EventBusResult {
         let description_binding = args.description.get_output(context);
         let event_source_name_binding = args.event_source_name.get_output(context);
         let kms_key_identifier_binding = args.kms_key_identifier.get_output(context);
@@ -138,6 +154,7 @@ pub mod event_bus {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EventBusResult {

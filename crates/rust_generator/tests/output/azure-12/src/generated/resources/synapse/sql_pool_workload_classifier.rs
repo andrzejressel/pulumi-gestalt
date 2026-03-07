@@ -147,6 +147,22 @@ pub mod sql_pool_workload_classifier {
         name: &str,
         args: SqlPoolWorkloadClassifierArgs,
     ) -> SqlPoolWorkloadClassifierResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SqlPoolWorkloadClassifierArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SqlPoolWorkloadClassifierResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SqlPoolWorkloadClassifierArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SqlPoolWorkloadClassifierResult {
         let context_binding = args.context.get_output(context);
         let end_time_binding = args.end_time.get_output(context);
         let importance_binding = args.importance.get_output(context);
@@ -194,6 +210,7 @@ pub mod sql_pool_workload_classifier {
                     value: &workload_group_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SqlPoolWorkloadClassifierResult {

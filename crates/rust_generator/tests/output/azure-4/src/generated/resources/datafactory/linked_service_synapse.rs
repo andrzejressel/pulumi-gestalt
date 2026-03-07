@@ -187,6 +187,22 @@ pub mod linked_service_synapse {
         name: &str,
         args: LinkedServiceSynapseArgs,
     ) -> LinkedServiceSynapseResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LinkedServiceSynapseArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LinkedServiceSynapseResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LinkedServiceSynapseArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LinkedServiceSynapseResult {
         let additional_properties_binding = args
             .additional_properties
             .get_output(context);
@@ -242,6 +258,7 @@ pub mod linked_service_synapse {
                     value: &parameters_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LinkedServiceSynapseResult {

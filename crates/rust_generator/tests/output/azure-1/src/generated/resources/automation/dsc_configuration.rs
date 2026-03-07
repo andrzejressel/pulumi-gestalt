@@ -117,6 +117,22 @@ pub mod dsc_configuration {
         name: &str,
         args: DscConfigurationArgs,
     ) -> DscConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DscConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DscConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DscConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DscConfigurationResult {
         let automation_account_name_binding = args
             .automation_account_name
             .get_output(context);
@@ -165,6 +181,7 @@ pub mod dsc_configuration {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DscConfigurationResult {

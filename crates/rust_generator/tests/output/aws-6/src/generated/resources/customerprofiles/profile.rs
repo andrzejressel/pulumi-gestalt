@@ -188,6 +188,22 @@ pub mod profile {
         name: &str,
         args: ProfileArgs,
     ) -> ProfileResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProfileArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ProfileResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProfileArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ProfileResult {
         let account_number_binding = args.account_number.get_output(context);
         let additional_information_binding = args
             .additional_information
@@ -312,6 +328,7 @@ pub mod profile {
                     value: &shipping_address_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ProfileResult {

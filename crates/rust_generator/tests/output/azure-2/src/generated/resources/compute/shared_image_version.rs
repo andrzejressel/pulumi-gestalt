@@ -180,6 +180,22 @@ pub mod shared_image_version {
         name: &str,
         args: SharedImageVersionArgs,
     ) -> SharedImageVersionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SharedImageVersionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SharedImageVersionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SharedImageVersionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SharedImageVersionResult {
         let blob_uri_binding = args.blob_uri.get_output(context);
         let deletion_of_replicated_locations_enabled_binding = args
             .deletion_of_replicated_locations_enabled
@@ -263,6 +279,7 @@ pub mod shared_image_version {
                     value: &target_regions_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SharedImageVersionResult {

@@ -225,6 +225,22 @@ pub mod per_instance_config {
         name: &str,
         args: PerInstanceConfigArgs,
     ) -> PerInstanceConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PerInstanceConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PerInstanceConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PerInstanceConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PerInstanceConfigResult {
         let instance_group_manager_binding = args
             .instance_group_manager
             .get_output(context);
@@ -284,6 +300,7 @@ pub mod per_instance_config {
                     value: &zone_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PerInstanceConfigResult {

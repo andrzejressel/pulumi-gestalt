@@ -198,6 +198,22 @@ pub mod insights {
         name: &str,
         args: InsightsArgs,
     ) -> InsightsResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InsightsArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> InsightsResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InsightsArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> InsightsResult {
         let application_type_binding = args.application_type.get_output(context);
         let daily_data_cap_in_gb_binding = args.daily_data_cap_in_gb.get_output(context);
         let daily_data_cap_notifications_disabled_binding = args
@@ -289,6 +305,7 @@ pub mod insights {
                     value: &workspace_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         InsightsResult {

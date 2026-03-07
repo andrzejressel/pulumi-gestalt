@@ -89,6 +89,22 @@ pub mod standards_control {
         name: &str,
         args: StandardsControlArgs,
     ) -> StandardsControlResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StandardsControlArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> StandardsControlResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StandardsControlArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> StandardsControlResult {
         let control_status_binding = args.control_status.get_output(context);
         let disabled_reason_binding = args.disabled_reason.get_output(context);
         let standards_control_arn_binding = args
@@ -112,6 +128,7 @@ pub mod standards_control {
                     value: &standards_control_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         StandardsControlResult {

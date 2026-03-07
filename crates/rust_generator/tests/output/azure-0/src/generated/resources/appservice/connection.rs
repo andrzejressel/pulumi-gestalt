@@ -148,6 +148,22 @@ pub mod connection {
         name: &str,
         args: ConnectionArgs,
     ) -> ConnectionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConnectionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ConnectionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConnectionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ConnectionResult {
         let app_service_id_binding = args.app_service_id.get_output(context);
         let authentication_binding = args.authentication.get_output(context);
         let client_type_binding = args.client_type.get_output(context);
@@ -189,6 +205,7 @@ pub mod connection {
                     value: &vnet_solution_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ConnectionResult {

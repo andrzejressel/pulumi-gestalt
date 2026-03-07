@@ -83,6 +83,22 @@ pub mod vpc_endpoint_connection_accepter {
         name: &str,
         args: VpcEndpointConnectionAccepterArgs,
     ) -> VpcEndpointConnectionAccepterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcEndpointConnectionAccepterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VpcEndpointConnectionAccepterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcEndpointConnectionAccepterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VpcEndpointConnectionAccepterResult {
         let vpc_endpoint_id_binding = args.vpc_endpoint_id.get_output(context);
         let vpc_endpoint_service_id_binding = args
             .vpc_endpoint_service_id
@@ -102,6 +118,7 @@ pub mod vpc_endpoint_connection_accepter {
                     value: &vpc_endpoint_service_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VpcEndpointConnectionAccepterResult {

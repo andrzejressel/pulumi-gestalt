@@ -85,6 +85,22 @@ pub mod security_configuration {
         name: &str,
         args: SecurityConfigurationArgs,
     ) -> SecurityConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SecurityConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SecurityConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SecurityConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SecurityConfigurationResult {
         let encryption_configuration_binding = args
             .encryption_configuration
             .get_output(context);
@@ -103,6 +119,7 @@ pub mod security_configuration {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SecurityConfigurationResult {

@@ -105,6 +105,22 @@ pub mod zone_association {
         name: &str,
         args: ZoneAssociationArgs,
     ) -> ZoneAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZoneAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ZoneAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZoneAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ZoneAssociationResult {
         let vpc_id_binding = args.vpc_id.get_output(context);
         let vpc_region_binding = args.vpc_region.get_output(context);
         let zone_id_binding = args.zone_id.get_output(context);
@@ -126,6 +142,7 @@ pub mod zone_association {
                     value: &zone_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ZoneAssociationResult {

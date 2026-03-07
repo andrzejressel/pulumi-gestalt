@@ -98,6 +98,22 @@ pub mod workspace_application_group_association {
         name: &str,
         args: WorkspaceApplicationGroupAssociationArgs,
     ) -> WorkspaceApplicationGroupAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkspaceApplicationGroupAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WorkspaceApplicationGroupAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkspaceApplicationGroupAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WorkspaceApplicationGroupAssociationResult {
         let application_group_id_binding = args.application_group_id.get_output(context);
         let workspace_id_binding = args.workspace_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -115,6 +131,7 @@ pub mod workspace_application_group_association {
                     value: &workspace_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WorkspaceApplicationGroupAssociationResult {

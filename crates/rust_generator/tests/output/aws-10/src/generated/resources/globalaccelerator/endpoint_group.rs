@@ -133,6 +133,22 @@ pub mod endpoint_group {
         name: &str,
         args: EndpointGroupArgs,
     ) -> EndpointGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EndpointGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EndpointGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EndpointGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EndpointGroupResult {
         let endpoint_configurations_binding = args
             .endpoint_configurations
             .get_output(context);
@@ -199,6 +215,7 @@ pub mod endpoint_group {
                     value: &traffic_dial_percentage_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EndpointGroupResult {

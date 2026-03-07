@@ -76,6 +76,22 @@ pub mod attachment {
         name: &str,
         args: AttachmentArgs,
     ) -> AttachmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AttachmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AttachmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AttachmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AttachmentResult {
         let autoscaling_group_name_binding = args
             .autoscaling_group_name
             .get_output(context);
@@ -99,6 +115,7 @@ pub mod attachment {
                     value: &lb_target_group_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AttachmentResult {

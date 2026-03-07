@@ -453,6 +453,22 @@ pub mod workforce_pool_provider {
         name: &str,
         args: WorkforcePoolProviderArgs,
     ) -> WorkforcePoolProviderResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkforcePoolProviderArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WorkforcePoolProviderResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkforcePoolProviderArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WorkforcePoolProviderResult {
         let attribute_condition_binding = args.attribute_condition.get_output(context);
         let attribute_mapping_binding = args.attribute_mapping.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -516,6 +532,7 @@ pub mod workforce_pool_provider {
                     value: &workforce_pool_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WorkforcePoolProviderResult {

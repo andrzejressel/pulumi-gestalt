@@ -144,6 +144,22 @@ pub mod instance_group {
         name: &str,
         args: InstanceGroupArgs,
     ) -> InstanceGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InstanceGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> InstanceGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InstanceGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> InstanceGroupResult {
         let autoscaling_policy_binding = args.autoscaling_policy.get_output(context);
         let bid_price_binding = args.bid_price.get_output(context);
         let cluster_id_binding = args.cluster_id.get_output(context);
@@ -195,6 +211,7 @@ pub mod instance_group {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         InstanceGroupResult {

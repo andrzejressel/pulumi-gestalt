@@ -133,6 +133,22 @@ pub mod workspace {
         name: &str,
         args: WorkspaceArgs,
     ) -> WorkspaceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkspaceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WorkspaceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkspaceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WorkspaceResult {
         let bundle_id_binding = args.bundle_id.get_output(context);
         let directory_id_binding = args.directory_id.get_output(context);
         let root_volume_encryption_enabled_binding = args
@@ -185,6 +201,7 @@ pub mod workspace {
                     value: &workspace_properties_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WorkspaceResult {

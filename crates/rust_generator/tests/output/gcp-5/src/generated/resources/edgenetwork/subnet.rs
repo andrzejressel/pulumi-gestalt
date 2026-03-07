@@ -223,6 +223,22 @@ pub mod subnet {
         name: &str,
         args: SubnetArgs,
     ) -> SubnetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SubnetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SubnetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SubnetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SubnetResult {
         let description_binding = args.description.get_output(context);
         let ipv4_cidrs_binding = args.ipv4_cidrs.get_output(context);
         let ipv6_cidrs_binding = args.ipv6_cidrs.get_output(context);
@@ -279,6 +295,7 @@ pub mod subnet {
                     value: &zone_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SubnetResult {

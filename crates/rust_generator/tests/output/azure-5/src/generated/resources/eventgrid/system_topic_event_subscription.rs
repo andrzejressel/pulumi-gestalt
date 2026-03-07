@@ -295,6 +295,22 @@ pub mod system_topic_event_subscription {
         name: &str,
         args: SystemTopicEventSubscriptionArgs,
     ) -> SystemTopicEventSubscriptionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SystemTopicEventSubscriptionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SystemTopicEventSubscriptionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SystemTopicEventSubscriptionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SystemTopicEventSubscriptionResult {
         let advanced_filter_binding = args.advanced_filter.get_output(context);
         let advanced_filtering_on_arrays_enabled_binding = args
             .advanced_filtering_on_arrays_enabled
@@ -428,6 +444,7 @@ pub mod system_topic_event_subscription {
                     value: &webhook_endpoint_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SystemTopicEventSubscriptionResult {

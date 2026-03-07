@@ -71,6 +71,22 @@ pub mod security_group_vpc_association {
         name: &str,
         args: SecurityGroupVpcAssociationArgs,
     ) -> SecurityGroupVpcAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SecurityGroupVpcAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SecurityGroupVpcAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SecurityGroupVpcAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SecurityGroupVpcAssociationResult {
         let security_group_id_binding = args.security_group_id.get_output(context);
         let timeouts_binding = args.timeouts.get_output(context);
         let vpc_id_binding = args.vpc_id.get_output(context);
@@ -93,6 +109,7 @@ pub mod security_group_vpc_association {
                     value: &vpc_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SecurityGroupVpcAssociationResult {

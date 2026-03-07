@@ -250,6 +250,22 @@ pub mod event_subscription {
         name: &str,
         args: EventSubscriptionArgs,
     ) -> EventSubscriptionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EventSubscriptionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EventSubscriptionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EventSubscriptionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EventSubscriptionResult {
         let advanced_filter_binding = args.advanced_filter.get_output(context);
         let advanced_filtering_on_arrays_enabled_binding = args
             .advanced_filtering_on_arrays_enabled
@@ -377,6 +393,7 @@ pub mod event_subscription {
                     value: &webhook_endpoint_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EventSubscriptionResult {

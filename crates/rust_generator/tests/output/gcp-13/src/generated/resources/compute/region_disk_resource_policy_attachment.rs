@@ -151,6 +151,22 @@ pub mod region_disk_resource_policy_attachment {
         name: &str,
         args: RegionDiskResourcePolicyAttachmentArgs,
     ) -> RegionDiskResourcePolicyAttachmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionDiskResourcePolicyAttachmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RegionDiskResourcePolicyAttachmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionDiskResourcePolicyAttachmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RegionDiskResourcePolicyAttachmentResult {
         let disk_binding = args.disk.get_output(context);
         let name_binding = args.name.get_output(context);
         let project_binding = args.project.get_output(context);
@@ -178,6 +194,7 @@ pub mod region_disk_resource_policy_attachment {
                     value: &region_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RegionDiskResourcePolicyAttachmentResult {

@@ -236,6 +236,22 @@ pub mod endpoint {
         name: &str,
         args: EndpointArgs,
     ) -> EndpointResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EndpointArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EndpointResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EndpointArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EndpointResult {
         let certificate_arn_binding = args.certificate_arn.get_output(context);
         let database_name_binding = args.database_name.get_output(context);
         let elasticsearch_settings_binding = args
@@ -375,6 +391,7 @@ pub mod endpoint {
                     value: &username_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EndpointResult {

@@ -230,6 +230,22 @@ pub mod netapp_volume_attachment {
         name: &str,
         args: NetappVolumeAttachmentArgs,
     ) -> NetappVolumeAttachmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetappVolumeAttachmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NetappVolumeAttachmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetappVolumeAttachmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NetappVolumeAttachmentResult {
         let name_binding = args.name.get_output(context);
         let netapp_volume_id_binding = args.netapp_volume_id.get_output(context);
         let vmware_cluster_id_binding = args.vmware_cluster_id.get_output(context);
@@ -251,6 +267,7 @@ pub mod netapp_volume_attachment {
                     value: &vmware_cluster_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NetappVolumeAttachmentResult {

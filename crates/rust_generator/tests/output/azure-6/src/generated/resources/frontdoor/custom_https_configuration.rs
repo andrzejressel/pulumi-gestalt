@@ -137,6 +137,22 @@ pub mod custom_https_configuration {
         name: &str,
         args: CustomHttpsConfigurationArgs,
     ) -> CustomHttpsConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomHttpsConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CustomHttpsConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomHttpsConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CustomHttpsConfigurationResult {
         let custom_https_configuration_binding = args
             .custom_https_configuration
             .get_output(context);
@@ -163,6 +179,7 @@ pub mod custom_https_configuration {
                     value: &frontend_endpoint_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CustomHttpsConfigurationResult {

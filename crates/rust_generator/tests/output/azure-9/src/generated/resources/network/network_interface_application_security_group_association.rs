@@ -111,6 +111,22 @@ pub mod network_interface_application_security_group_association {
         name: &str,
         args: NetworkInterfaceApplicationSecurityGroupAssociationArgs,
     ) -> NetworkInterfaceApplicationSecurityGroupAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkInterfaceApplicationSecurityGroupAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NetworkInterfaceApplicationSecurityGroupAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkInterfaceApplicationSecurityGroupAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NetworkInterfaceApplicationSecurityGroupAssociationResult {
         let application_security_group_id_binding = args
             .application_security_group_id
             .get_output(context);
@@ -130,6 +146,7 @@ pub mod network_interface_application_security_group_association {
                     value: &network_interface_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NetworkInterfaceApplicationSecurityGroupAssociationResult {

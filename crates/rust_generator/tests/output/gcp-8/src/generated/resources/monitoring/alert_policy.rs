@@ -278,6 +278,22 @@ pub mod alert_policy {
         name: &str,
         args: AlertPolicyArgs,
     ) -> AlertPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AlertPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AlertPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AlertPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AlertPolicyResult {
         let alert_strategy_binding = args.alert_strategy.get_output(context);
         let combiner_binding = args.combiner.get_output(context);
         let conditions_binding = args.conditions.get_output(context);
@@ -336,6 +352,7 @@ pub mod alert_policy {
                     value: &user_labels_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AlertPolicyResult {

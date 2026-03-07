@@ -80,6 +80,22 @@ pub mod bucket_request_payment_configuration_v_2 {
         name: &str,
         args: BucketRequestPaymentConfigurationV2Args,
     ) -> BucketRequestPaymentConfigurationV2Result {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BucketRequestPaymentConfigurationV2Args,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BucketRequestPaymentConfigurationV2Result {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BucketRequestPaymentConfigurationV2Args,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BucketRequestPaymentConfigurationV2Result {
         let bucket_binding = args.bucket.get_output(context);
         let expected_bucket_owner_binding = args
             .expected_bucket_owner
@@ -104,6 +120,7 @@ pub mod bucket_request_payment_configuration_v_2 {
                     value: &payer_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BucketRequestPaymentConfigurationV2Result {

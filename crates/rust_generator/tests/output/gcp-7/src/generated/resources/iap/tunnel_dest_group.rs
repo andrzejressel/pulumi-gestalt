@@ -133,6 +133,22 @@ pub mod tunnel_dest_group {
         name: &str,
         args: TunnelDestGroupArgs,
     ) -> TunnelDestGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TunnelDestGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TunnelDestGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TunnelDestGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TunnelDestGroupResult {
         let cidrs_binding = args.cidrs.get_output(context);
         let fqdns_binding = args.fqdns.get_output(context);
         let group_name_binding = args.group_name.get_output(context);
@@ -164,6 +180,7 @@ pub mod tunnel_dest_group {
                     value: &region_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TunnelDestGroupResult {

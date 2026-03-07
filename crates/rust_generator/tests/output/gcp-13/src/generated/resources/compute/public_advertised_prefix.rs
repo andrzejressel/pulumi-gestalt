@@ -128,6 +128,22 @@ pub mod public_advertised_prefix {
         name: &str,
         args: PublicAdvertisedPrefixArgs,
     ) -> PublicAdvertisedPrefixResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PublicAdvertisedPrefixArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PublicAdvertisedPrefixResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PublicAdvertisedPrefixArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PublicAdvertisedPrefixResult {
         let description_binding = args.description.get_output(context);
         let dns_verification_ip_binding = args.dns_verification_ip.get_output(context);
         let ip_cidr_range_binding = args.ip_cidr_range.get_output(context);
@@ -159,6 +175,7 @@ pub mod public_advertised_prefix {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PublicAdvertisedPrefixResult {

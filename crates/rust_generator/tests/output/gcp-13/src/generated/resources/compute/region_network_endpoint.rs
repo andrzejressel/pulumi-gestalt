@@ -237,6 +237,22 @@ pub mod region_network_endpoint {
         name: &str,
         args: RegionNetworkEndpointArgs,
     ) -> RegionNetworkEndpointResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionNetworkEndpointArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RegionNetworkEndpointResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionNetworkEndpointArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RegionNetworkEndpointResult {
         let client_destination_port_binding = args
             .client_destination_port
             .get_output(context);
@@ -287,6 +303,7 @@ pub mod region_network_endpoint {
                     value: &region_network_endpoint_group_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RegionNetworkEndpointResult {

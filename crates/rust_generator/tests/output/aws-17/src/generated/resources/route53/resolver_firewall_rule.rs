@@ -126,6 +126,22 @@ pub mod resolver_firewall_rule {
         name: &str,
         args: ResolverFirewallRuleArgs,
     ) -> ResolverFirewallRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResolverFirewallRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ResolverFirewallRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResolverFirewallRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ResolverFirewallRuleResult {
         let action_binding = args.action.get_output(context);
         let block_override_dns_type_binding = args
             .block_override_dns_type
@@ -197,6 +213,7 @@ pub mod resolver_firewall_rule {
                     value: &q_type_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ResolverFirewallRuleResult {

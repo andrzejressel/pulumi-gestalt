@@ -160,6 +160,22 @@ pub mod account_network_rules {
         name: &str,
         args: AccountNetworkRulesArgs,
     ) -> AccountNetworkRulesResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccountNetworkRulesArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AccountNetworkRulesResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccountNetworkRulesArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AccountNetworkRulesResult {
         let bypasses_binding = args.bypasses.get_output(context);
         let default_action_binding = args.default_action.get_output(context);
         let ip_rules_binding = args.ip_rules.get_output(context);
@@ -200,6 +216,7 @@ pub mod account_network_rules {
                     value: &virtual_network_subnet_ids_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AccountNetworkRulesResult {

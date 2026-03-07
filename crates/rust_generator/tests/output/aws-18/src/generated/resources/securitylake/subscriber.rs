@@ -137,6 +137,22 @@ pub mod subscriber {
         name: &str,
         args: SubscriberArgs,
     ) -> SubscriberResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SubscriberArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SubscriberResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SubscriberArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SubscriberResult {
         let access_type_binding = args.access_type.get_output(context);
         let source_binding = args.source.get_output(context);
         let subscriber_description_binding = args
@@ -180,6 +196,7 @@ pub mod subscriber {
                     value: &timeouts_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SubscriberResult {

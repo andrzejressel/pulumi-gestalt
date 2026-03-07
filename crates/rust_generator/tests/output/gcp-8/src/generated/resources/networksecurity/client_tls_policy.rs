@@ -190,6 +190,22 @@ pub mod client_tls_policy {
         name: &str,
         args: ClientTlsPolicyArgs,
     ) -> ClientTlsPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClientTlsPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ClientTlsPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClientTlsPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ClientTlsPolicyResult {
         let client_certificate_binding = args.client_certificate.get_output(context);
         let description_binding = args.description.get_output(context);
         let labels_binding = args.labels.get_output(context);
@@ -238,6 +254,7 @@ pub mod client_tls_policy {
                     value: &sni_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ClientTlsPolicyResult {

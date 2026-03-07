@@ -194,6 +194,22 @@ pub mod resize_request {
         name: &str,
         args: ResizeRequestArgs,
     ) -> ResizeRequestResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResizeRequestArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ResizeRequestResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResizeRequestArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ResizeRequestResult {
         let description_binding = args.description.get_output(context);
         let instance_group_manager_binding = args
             .instance_group_manager
@@ -239,6 +255,7 @@ pub mod resize_request {
                     value: &zone_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ResizeRequestResult {

@@ -257,6 +257,22 @@ pub mod policy_tag_iam_binding {
         name: &str,
         args: PolicyTagIamBindingArgs,
     ) -> PolicyTagIamBindingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PolicyTagIamBindingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PolicyTagIamBindingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PolicyTagIamBindingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PolicyTagIamBindingResult {
         let condition_binding = args.condition.get_output(context);
         let members_binding = args.members.get_output(context);
         let policy_tag_binding = args.policy_tag.get_output(context);
@@ -283,6 +299,7 @@ pub mod policy_tag_iam_binding {
                     value: &role_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PolicyTagIamBindingResult {

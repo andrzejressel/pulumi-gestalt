@@ -62,6 +62,22 @@ pub mod single_scram_secret_association {
         name: &str,
         args: SingleScramSecretAssociationArgs,
     ) -> SingleScramSecretAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SingleScramSecretAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SingleScramSecretAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SingleScramSecretAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SingleScramSecretAssociationResult {
         let cluster_arn_binding = args.cluster_arn.get_output(context);
         let secret_arn_binding = args.secret_arn.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -79,6 +95,7 @@ pub mod single_scram_secret_association {
                     value: &secret_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SingleScramSecretAssociationResult {

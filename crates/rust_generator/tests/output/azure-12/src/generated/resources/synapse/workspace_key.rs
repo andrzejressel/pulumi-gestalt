@@ -174,6 +174,22 @@ pub mod workspace_key {
         name: &str,
         args: WorkspaceKeyArgs,
     ) -> WorkspaceKeyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkspaceKeyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WorkspaceKeyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkspaceKeyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WorkspaceKeyResult {
         let active_binding = args.active.get_output(context);
         let customer_managed_key_name_binding = args
             .customer_managed_key_name
@@ -204,6 +220,7 @@ pub mod workspace_key {
                     value: &synapse_workspace_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WorkspaceKeyResult {

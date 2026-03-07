@@ -125,6 +125,22 @@ pub mod statement {
         name: &str,
         args: StatementArgs,
     ) -> StatementResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StatementArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> StatementResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StatementArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> StatementResult {
         let cluster_identifier_binding = args.cluster_identifier.get_output(context);
         let database_binding = args.database.get_output(context);
         let db_user_binding = args.db_user.get_output(context);
@@ -176,6 +192,7 @@ pub mod statement {
                     value: &workgroup_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         StatementResult {

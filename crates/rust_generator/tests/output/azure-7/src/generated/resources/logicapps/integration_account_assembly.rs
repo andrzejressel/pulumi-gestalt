@@ -113,6 +113,22 @@ pub mod integration_account_assembly {
         name: &str,
         args: IntegrationAccountAssemblyArgs,
     ) -> IntegrationAccountAssemblyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IntegrationAccountAssemblyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IntegrationAccountAssemblyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IntegrationAccountAssemblyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IntegrationAccountAssemblyResult {
         let assembly_name_binding = args.assembly_name.get_output(context);
         let assembly_version_binding = args.assembly_version.get_output(context);
         let content_binding = args.content.get_output(context);
@@ -162,6 +178,7 @@ pub mod integration_account_assembly {
                     value: &resource_group_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IntegrationAccountAssemblyResult {

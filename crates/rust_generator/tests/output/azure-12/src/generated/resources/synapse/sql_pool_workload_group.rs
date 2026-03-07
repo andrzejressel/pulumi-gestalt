@@ -141,6 +141,22 @@ pub mod sql_pool_workload_group {
         name: &str,
         args: SqlPoolWorkloadGroupArgs,
     ) -> SqlPoolWorkloadGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SqlPoolWorkloadGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SqlPoolWorkloadGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SqlPoolWorkloadGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SqlPoolWorkloadGroupResult {
         let importance_binding = args.importance.get_output(context);
         let max_resource_percent_binding = args.max_resource_percent.get_output(context);
         let max_resource_percent_per_request_binding = args
@@ -193,6 +209,7 @@ pub mod sql_pool_workload_group {
                     value: &sql_pool_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SqlPoolWorkloadGroupResult {

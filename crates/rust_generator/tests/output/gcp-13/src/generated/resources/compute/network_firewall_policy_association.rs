@@ -124,6 +124,22 @@ pub mod network_firewall_policy_association {
         name: &str,
         args: NetworkFirewallPolicyAssociationArgs,
     ) -> NetworkFirewallPolicyAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkFirewallPolicyAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NetworkFirewallPolicyAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkFirewallPolicyAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NetworkFirewallPolicyAssociationResult {
         let attachment_target_binding = args.attachment_target.get_output(context);
         let firewall_policy_binding = args.firewall_policy.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -151,6 +167,7 @@ pub mod network_firewall_policy_association {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NetworkFirewallPolicyAssociationResult {

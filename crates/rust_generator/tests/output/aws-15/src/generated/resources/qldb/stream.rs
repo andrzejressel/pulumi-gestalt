@@ -94,6 +94,22 @@ pub mod stream {
         name: &str,
         args: StreamArgs,
     ) -> StreamResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StreamArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> StreamResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StreamArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> StreamResult {
         let exclusive_end_time_binding = args.exclusive_end_time.get_output(context);
         let inclusive_start_time_binding = args.inclusive_start_time.get_output(context);
         let kinesis_configuration_binding = args
@@ -137,6 +153,7 @@ pub mod stream {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         StreamResult {

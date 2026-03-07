@@ -88,6 +88,22 @@ pub mod endpoint {
         name: &str,
         args: EndpointArgs,
     ) -> EndpointResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EndpointArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EndpointResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EndpointArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EndpointResult {
         let access_type_binding = args.access_type.get_output(context);
         let customer_owned_ipv4_pool_binding = args
             .customer_owned_ipv4_pool
@@ -121,6 +137,7 @@ pub mod endpoint {
                     value: &subnet_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EndpointResult {

@@ -127,6 +127,22 @@ pub mod provider {
         name: &str,
         args: ProviderArgs,
     ) -> ProviderResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProviderArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ProviderResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProviderArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ProviderResult {
         let location_binding = args.location.get_output(context);
         let name_binding = args.name.get_output(context);
         let open_enclave_policy_base64_binding = args
@@ -186,6 +202,7 @@ pub mod provider {
                     value: &tpm_policy_base64_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ProviderResult {

@@ -87,6 +87,22 @@ pub mod vpc_ipam_resource_discovery_association {
         name: &str,
         args: VpcIpamResourceDiscoveryAssociationArgs,
     ) -> VpcIpamResourceDiscoveryAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcIpamResourceDiscoveryAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VpcIpamResourceDiscoveryAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcIpamResourceDiscoveryAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VpcIpamResourceDiscoveryAssociationResult {
         let ipam_id_binding = args.ipam_id.get_output(context);
         let ipam_resource_discovery_id_binding = args
             .ipam_resource_discovery_id
@@ -111,6 +127,7 @@ pub mod vpc_ipam_resource_discovery_association {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VpcIpamResourceDiscoveryAssociationResult {

@@ -471,6 +471,22 @@ pub mod container {
         name: &str,
         args: ContainerArgs,
     ) -> ContainerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ContainerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ContainerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ContainerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ContainerResult {
         let attach_binding = args.attach.get_output(context);
         let capabilities_binding = args.capabilities.get_output(context);
         let cgroupns_mode_binding = args.cgroupns_mode.get_output(context);
@@ -792,6 +808,7 @@ pub mod container {
                     value: &working_dir_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ContainerResult {

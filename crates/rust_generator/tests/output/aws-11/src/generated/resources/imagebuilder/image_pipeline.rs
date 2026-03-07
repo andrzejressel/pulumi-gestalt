@@ -155,6 +155,22 @@ pub mod image_pipeline {
         name: &str,
         args: ImagePipelineArgs,
     ) -> ImagePipelineResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ImagePipelineArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ImagePipelineResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ImagePipelineArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ImagePipelineResult {
         let container_recipe_arn_binding = args.container_recipe_arn.get_output(context);
         let description_binding = args.description.get_output(context);
         let distribution_configuration_arn_binding = args
@@ -241,6 +257,7 @@ pub mod image_pipeline {
                     value: &workflows_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ImagePipelineResult {

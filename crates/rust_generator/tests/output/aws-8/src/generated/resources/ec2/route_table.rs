@@ -193,6 +193,22 @@ pub mod route_table {
         name: &str,
         args: RouteTableArgs,
     ) -> RouteTableResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RouteTableArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RouteTableResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RouteTableArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RouteTableResult {
         let propagating_vgws_binding = args.propagating_vgws.get_output(context);
         let routes_binding = args.routes.get_output(context);
         let tags_binding = args.tags.get_output(context);
@@ -219,6 +235,7 @@ pub mod route_table {
                     value: &vpc_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RouteTableResult {

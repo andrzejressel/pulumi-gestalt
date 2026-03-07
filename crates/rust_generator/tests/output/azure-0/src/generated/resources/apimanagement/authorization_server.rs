@@ -191,6 +191,22 @@ pub mod authorization_server {
         name: &str,
         args: AuthorizationServerArgs,
     ) -> AuthorizationServerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AuthorizationServerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AuthorizationServerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AuthorizationServerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AuthorizationServerResult {
         let api_management_name_binding = args.api_management_name.get_output(context);
         let authorization_endpoint_binding = args
             .authorization_endpoint
@@ -308,6 +324,7 @@ pub mod authorization_server {
                     value: &token_endpoint_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AuthorizationServerResult {

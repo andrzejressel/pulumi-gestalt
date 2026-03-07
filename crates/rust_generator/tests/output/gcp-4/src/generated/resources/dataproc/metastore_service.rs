@@ -663,6 +663,22 @@ pub mod metastore_service {
         name: &str,
         args: MetastoreServiceArgs,
     ) -> MetastoreServiceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MetastoreServiceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MetastoreServiceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MetastoreServiceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MetastoreServiceResult {
         let database_type_binding = args.database_type.get_output(context);
         let deletion_protection_binding = args.deletion_protection.get_output(context);
         let encryption_config_binding = args.encryption_config.get_output(context);
@@ -761,6 +777,7 @@ pub mod metastore_service {
                     value: &tier_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MetastoreServiceResult {

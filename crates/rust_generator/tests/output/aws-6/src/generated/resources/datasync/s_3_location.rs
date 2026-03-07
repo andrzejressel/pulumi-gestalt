@@ -102,6 +102,22 @@ pub mod s_3_location {
         name: &str,
         args: S3LocationArgs,
     ) -> S3LocationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: S3LocationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> S3LocationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: S3LocationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> S3LocationResult {
         let agent_arns_binding = args.agent_arns.get_output(context);
         let s3_bucket_arn_binding = args.s3_bucket_arn.get_output(context);
         let s3_config_binding = args.s3_config.get_output(context);
@@ -138,6 +154,7 @@ pub mod s_3_location {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         S3LocationResult {

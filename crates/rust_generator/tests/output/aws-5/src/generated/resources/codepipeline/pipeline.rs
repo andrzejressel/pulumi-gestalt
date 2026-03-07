@@ -245,6 +245,22 @@ pub mod pipeline {
         name: &str,
         args: PipelineArgs,
     ) -> PipelineResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PipelineArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PipelineResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PipelineArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PipelineResult {
         let artifact_stores_binding = args.artifact_stores.get_output(context);
         let execution_mode_binding = args.execution_mode.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -296,6 +312,7 @@ pub mod pipeline {
                     value: &variables_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PipelineResult {

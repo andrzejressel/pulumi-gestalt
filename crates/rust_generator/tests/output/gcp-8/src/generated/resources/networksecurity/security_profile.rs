@@ -188,6 +188,22 @@ pub mod security_profile {
         name: &str,
         args: SecurityProfileArgs,
     ) -> SecurityProfileResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SecurityProfileArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SecurityProfileResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SecurityProfileArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SecurityProfileResult {
         let description_binding = args.description.get_output(context);
         let labels_binding = args.labels.get_output(context);
         let location_binding = args.location.get_output(context);
@@ -231,6 +247,7 @@ pub mod security_profile {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SecurityProfileResult {

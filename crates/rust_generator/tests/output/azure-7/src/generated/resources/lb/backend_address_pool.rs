@@ -127,6 +127,22 @@ pub mod backend_address_pool {
         name: &str,
         args: BackendAddressPoolArgs,
     ) -> BackendAddressPoolResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackendAddressPoolArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BackendAddressPoolResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackendAddressPoolArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BackendAddressPoolResult {
         let loadbalancer_id_binding = args.loadbalancer_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let synchronous_mode_binding = args.synchronous_mode.get_output(context);
@@ -158,6 +174,7 @@ pub mod backend_address_pool {
                     value: &virtual_network_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BackendAddressPoolResult {

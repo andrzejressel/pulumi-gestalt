@@ -107,6 +107,22 @@ pub mod token_password {
         name: &str,
         args: TokenPasswordArgs,
     ) -> TokenPasswordResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TokenPasswordArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TokenPasswordResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TokenPasswordArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TokenPasswordResult {
         let container_registry_token_id_binding = args
             .container_registry_token_id
             .get_output(context);
@@ -130,6 +146,7 @@ pub mod token_password {
                     value: &password2_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TokenPasswordResult {

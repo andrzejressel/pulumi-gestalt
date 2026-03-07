@@ -133,6 +133,22 @@ pub mod source_control {
         name: &str,
         args: SourceControlArgs,
     ) -> SourceControlResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SourceControlArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SourceControlResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SourceControlArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SourceControlResult {
         let automatic_sync_binding = args.automatic_sync.get_output(context);
         let automation_account_id_binding = args
             .automation_account_id
@@ -193,6 +209,7 @@ pub mod source_control {
                     value: &source_control_type_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SourceControlResult {

@@ -552,6 +552,22 @@ pub mod data_source {
         name: &str,
         args: DataSourceArgs,
     ) -> DataSourceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataSourceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DataSourceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataSourceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DataSourceResult {
         let configuration_binding = args.configuration.get_output(context);
         let custom_document_enrichment_configuration_binding = args
             .custom_document_enrichment_configuration
@@ -610,6 +626,7 @@ pub mod data_source {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DataSourceResult {

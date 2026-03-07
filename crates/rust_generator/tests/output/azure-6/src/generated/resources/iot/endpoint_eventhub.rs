@@ -141,6 +141,22 @@ pub mod endpoint_eventhub {
         name: &str,
         args: EndpointEventhubArgs,
     ) -> EndpointEventhubResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EndpointEventhubArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EndpointEventhubResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EndpointEventhubArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EndpointEventhubResult {
         let authentication_type_binding = args.authentication_type.get_output(context);
         let connection_string_binding = args.connection_string.get_output(context);
         let endpoint_uri_binding = args.endpoint_uri.get_output(context);
@@ -187,6 +203,7 @@ pub mod endpoint_eventhub {
                     value: &resource_group_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EndpointEventhubResult {

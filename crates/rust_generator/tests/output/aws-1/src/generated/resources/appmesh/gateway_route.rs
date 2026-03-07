@@ -107,6 +107,22 @@ pub mod gateway_route {
         name: &str,
         args: GatewayRouteArgs,
     ) -> GatewayRouteResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GatewayRouteArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GatewayRouteResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GatewayRouteArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GatewayRouteResult {
         let mesh_name_binding = args.mesh_name.get_output(context);
         let mesh_owner_binding = args.mesh_owner.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -143,6 +159,7 @@ pub mod gateway_route {
                     value: &virtual_gateway_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GatewayRouteResult {

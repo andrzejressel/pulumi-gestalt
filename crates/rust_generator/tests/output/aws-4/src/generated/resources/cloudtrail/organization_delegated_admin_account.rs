@@ -65,6 +65,22 @@ pub mod organization_delegated_admin_account {
         name: &str,
         args: OrganizationDelegatedAdminAccountArgs,
     ) -> OrganizationDelegatedAdminAccountResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationDelegatedAdminAccountArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OrganizationDelegatedAdminAccountResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationDelegatedAdminAccountArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OrganizationDelegatedAdminAccountResult {
         let account_id_binding = args.account_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:cloudtrail/organizationDelegatedAdminAccount:OrganizationDelegatedAdminAccount"
@@ -77,6 +93,7 @@ pub mod organization_delegated_admin_account {
                     value: &account_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OrganizationDelegatedAdminAccountResult {

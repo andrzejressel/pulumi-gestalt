@@ -103,6 +103,22 @@ pub mod logging {
         name: &str,
         args: LoggingArgs,
     ) -> LoggingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LoggingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LoggingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LoggingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LoggingResult {
         let bucket_name_binding = args.bucket_name.get_output(context);
         let cluster_identifier_binding = args.cluster_identifier.get_output(context);
         let log_destination_type_binding = args.log_destination_type.get_output(context);
@@ -134,6 +150,7 @@ pub mod logging {
                     value: &s3_key_prefix_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LoggingResult {

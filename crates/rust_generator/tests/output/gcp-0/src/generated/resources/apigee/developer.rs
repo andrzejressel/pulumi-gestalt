@@ -239,6 +239,22 @@ pub mod developer {
         name: &str,
         args: DeveloperArgs,
     ) -> DeveloperResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DeveloperArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DeveloperResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DeveloperArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DeveloperResult {
         let attributes_binding = args.attributes.get_output(context);
         let email_binding = args.email.get_output(context);
         let first_name_binding = args.first_name.get_output(context);
@@ -275,6 +291,7 @@ pub mod developer {
                     value: &user_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DeveloperResult {

@@ -112,6 +112,22 @@ pub mod space {
         name: &str,
         args: SpaceArgs,
     ) -> SpaceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpaceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SpaceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpaceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SpaceResult {
         let domain_id_binding = args.domain_id.get_output(context);
         let ownership_settings_binding = args.ownership_settings.get_output(context);
         let space_display_name_binding = args.space_display_name.get_output(context);
@@ -155,6 +171,7 @@ pub mod space {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SpaceResult {

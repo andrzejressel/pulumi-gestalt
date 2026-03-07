@@ -379,6 +379,22 @@ pub mod organization {
         name: &str,
         args: OrganizationArgs,
     ) -> OrganizationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OrganizationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OrganizationResult {
         let analytics_region_binding = args.analytics_region.get_output(context);
         let api_consumer_data_encryption_key_name_binding = args
             .api_consumer_data_encryption_key_name
@@ -463,6 +479,7 @@ pub mod organization {
                     value: &runtime_type_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OrganizationResult {

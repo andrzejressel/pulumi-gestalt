@@ -75,6 +75,22 @@ pub mod delegation_set {
         name: &str,
         args: DelegationSetArgs,
     ) -> DelegationSetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DelegationSetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DelegationSetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DelegationSetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DelegationSetResult {
         let reference_name_binding = args.reference_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:route53/delegationSet:DelegationSet".into(),
@@ -86,6 +102,7 @@ pub mod delegation_set {
                     value: &reference_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DelegationSetResult {

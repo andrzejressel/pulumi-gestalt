@@ -72,6 +72,22 @@ pub mod zone_hold {
         name: &str,
         args: ZoneHoldArgs,
     ) -> ZoneHoldResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZoneHoldArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ZoneHoldResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZoneHoldArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ZoneHoldResult {
         let hold_binding = args.hold.get_output(context);
         let hold_after_binding = args.hold_after.get_output(context);
         let include_subdomains_binding = args.include_subdomains.get_output(context);
@@ -98,6 +114,7 @@ pub mod zone_hold {
                     value: &zone_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ZoneHoldResult {

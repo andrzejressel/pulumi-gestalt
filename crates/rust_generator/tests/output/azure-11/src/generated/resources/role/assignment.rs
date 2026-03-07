@@ -331,6 +331,22 @@ pub mod assignment {
         name: &str,
         args: AssignmentArgs,
     ) -> AssignmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AssignmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AssignmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AssignmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AssignmentResult {
         let condition_binding = args.condition.get_output(context);
         let condition_version_binding = args.condition_version.get_output(context);
         let delegated_managed_identity_resource_id_binding = args
@@ -396,6 +412,7 @@ pub mod assignment {
                     value: &skip_service_principal_aad_check_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AssignmentResult {

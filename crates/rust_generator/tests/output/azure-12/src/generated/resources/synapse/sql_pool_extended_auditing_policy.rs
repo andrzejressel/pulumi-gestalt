@@ -137,6 +137,22 @@ pub mod sql_pool_extended_auditing_policy {
         name: &str,
         args: SqlPoolExtendedAuditingPolicyArgs,
     ) -> SqlPoolExtendedAuditingPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SqlPoolExtendedAuditingPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SqlPoolExtendedAuditingPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SqlPoolExtendedAuditingPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SqlPoolExtendedAuditingPolicyResult {
         let log_monitoring_enabled_binding = args
             .log_monitoring_enabled
             .get_output(context);
@@ -180,6 +196,7 @@ pub mod sql_pool_extended_auditing_policy {
                     value: &storage_endpoint_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SqlPoolExtendedAuditingPolicyResult {

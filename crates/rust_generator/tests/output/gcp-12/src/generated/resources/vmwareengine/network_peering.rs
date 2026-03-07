@@ -207,6 +207,22 @@ pub mod network_peering {
         name: &str,
         args: NetworkPeeringArgs,
     ) -> NetworkPeeringResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkPeeringArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NetworkPeeringResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkPeeringArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NetworkPeeringResult {
         let description_binding = args.description.get_output(context);
         let export_custom_routes_binding = args.export_custom_routes.get_output(context);
         let export_custom_routes_with_public_ip_binding = args
@@ -269,6 +285,7 @@ pub mod network_peering {
                     value: &vmware_engine_network_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NetworkPeeringResult {

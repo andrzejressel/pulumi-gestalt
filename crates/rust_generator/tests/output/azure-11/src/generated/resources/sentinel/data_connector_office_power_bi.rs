@@ -96,6 +96,22 @@ pub mod data_connector_office_power_bi {
         name: &str,
         args: DataConnectorOfficePowerBiArgs,
     ) -> DataConnectorOfficePowerBiResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataConnectorOfficePowerBiArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DataConnectorOfficePowerBiResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataConnectorOfficePowerBiArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DataConnectorOfficePowerBiResult {
         let log_analytics_workspace_id_binding = args
             .log_analytics_workspace_id
             .get_output(context);
@@ -120,6 +136,7 @@ pub mod data_connector_office_power_bi {
                     value: &tenant_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DataConnectorOfficePowerBiResult {

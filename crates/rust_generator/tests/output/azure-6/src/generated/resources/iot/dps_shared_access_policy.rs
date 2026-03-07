@@ -130,6 +130,22 @@ pub mod dps_shared_access_policy {
         name: &str,
         args: DpsSharedAccessPolicyArgs,
     ) -> DpsSharedAccessPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DpsSharedAccessPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DpsSharedAccessPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DpsSharedAccessPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DpsSharedAccessPolicyResult {
         let enrollment_read_binding = args.enrollment_read.get_output(context);
         let enrollment_write_binding = args.enrollment_write.get_output(context);
         let iothub_dps_name_binding = args.iothub_dps_name.get_output(context);
@@ -176,6 +192,7 @@ pub mod dps_shared_access_policy {
                     value: &service_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DpsSharedAccessPolicyResult {

@@ -140,6 +140,22 @@ pub mod language_model {
         name: &str,
         args: LanguageModelArgs,
     ) -> LanguageModelResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LanguageModelArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LanguageModelResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LanguageModelArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LanguageModelResult {
         let base_model_name_binding = args.base_model_name.get_output(context);
         let input_data_config_binding = args.input_data_config.get_output(context);
         let language_code_binding = args.language_code.get_output(context);
@@ -171,6 +187,7 @@ pub mod language_model {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LanguageModelResult {

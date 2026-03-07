@@ -83,6 +83,22 @@ pub mod get_host_pool_registration_info {
         name: &str,
         args: getHostPoolRegistrationInfoArgs,
     ) -> getHostPoolRegistrationInfoResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: getHostPoolRegistrationInfoArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> getHostPoolRegistrationInfoResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: getHostPoolRegistrationInfoArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> getHostPoolRegistrationInfoResult {
         let expiration_date_binding = args.expiration_date.get_output(context);
         let hostpool_id_binding = args.hostpool_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -100,6 +116,7 @@ pub mod get_host_pool_registration_info {
                     value: &hostpool_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         getHostPoolRegistrationInfoResult {

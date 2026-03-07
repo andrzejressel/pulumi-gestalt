@@ -186,6 +186,22 @@ pub mod trust {
         name: &str,
         args: TrustArgs,
     ) -> TrustResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TrustArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TrustResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TrustArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TrustResult {
         let conditional_forwarder_ip_addrs_binding = args
             .conditional_forwarder_ip_addrs
             .get_output(context);
@@ -236,6 +252,7 @@ pub mod trust {
                     value: &trust_type_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TrustResult {

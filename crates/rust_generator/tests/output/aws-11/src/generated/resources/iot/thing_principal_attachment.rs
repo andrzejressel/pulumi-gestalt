@@ -62,6 +62,22 @@ pub mod thing_principal_attachment {
         name: &str,
         args: ThingPrincipalAttachmentArgs,
     ) -> ThingPrincipalAttachmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ThingPrincipalAttachmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ThingPrincipalAttachmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ThingPrincipalAttachmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ThingPrincipalAttachmentResult {
         let principal_binding = args.principal.get_output(context);
         let thing_binding = args.thing.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -78,6 +94,7 @@ pub mod thing_principal_attachment {
                     value: &thing_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ThingPrincipalAttachmentResult {

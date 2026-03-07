@@ -89,6 +89,22 @@ pub mod user_in_group {
         name: &str,
         args: UserInGroupArgs,
     ) -> UserInGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: UserInGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> UserInGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: UserInGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> UserInGroupResult {
         let group_name_binding = args.group_name.get_output(context);
         let user_pool_id_binding = args.user_pool_id.get_output(context);
         let username_binding = args.username.get_output(context);
@@ -110,6 +126,7 @@ pub mod user_in_group {
                     value: &username_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         UserInGroupResult {

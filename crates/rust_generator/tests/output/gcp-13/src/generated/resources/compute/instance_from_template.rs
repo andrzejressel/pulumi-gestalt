@@ -373,6 +373,22 @@ pub mod instance_from_template {
         name: &str,
         args: InstanceFromTemplateArgs,
     ) -> InstanceFromTemplateResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InstanceFromTemplateArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> InstanceFromTemplateResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InstanceFromTemplateArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> InstanceFromTemplateResult {
         let advanced_machine_features_binding = args
             .advanced_machine_features
             .get_output(context);
@@ -560,6 +576,7 @@ pub mod instance_from_template {
                     value: &zone_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         InstanceFromTemplateResult {

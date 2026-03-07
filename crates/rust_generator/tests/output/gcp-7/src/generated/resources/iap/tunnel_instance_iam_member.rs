@@ -447,6 +447,22 @@ pub mod tunnel_instance_iam_member {
         name: &str,
         args: TunnelInstanceIAMMemberArgs,
     ) -> TunnelInstanceIAMMemberResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TunnelInstanceIAMMemberArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TunnelInstanceIAMMemberResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TunnelInstanceIAMMemberArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TunnelInstanceIAMMemberResult {
         let condition_binding = args.condition.get_output(context);
         let instance_binding = args.instance.get_output(context);
         let member_binding = args.member.get_output(context);
@@ -483,6 +499,7 @@ pub mod tunnel_instance_iam_member {
                     value: &zone_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TunnelInstanceIAMMemberResult {

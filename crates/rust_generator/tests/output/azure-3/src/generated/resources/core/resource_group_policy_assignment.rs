@@ -182,6 +182,22 @@ pub mod resource_group_policy_assignment {
         name: &str,
         args: ResourceGroupPolicyAssignmentArgs,
     ) -> ResourceGroupPolicyAssignmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResourceGroupPolicyAssignmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ResourceGroupPolicyAssignmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResourceGroupPolicyAssignmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ResourceGroupPolicyAssignmentResult {
         let description_binding = args.description.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let enforce_binding = args.enforce.get_output(context);
@@ -261,6 +277,7 @@ pub mod resource_group_policy_assignment {
                     value: &resource_selectors_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ResourceGroupPolicyAssignmentResult {

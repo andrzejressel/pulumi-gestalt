@@ -92,6 +92,22 @@ pub mod group {
         name: &str,
         args: GroupArgs,
     ) -> GroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GroupResult {
         let filter_expression_binding = args.filter_expression.get_output(context);
         let group_name_binding = args.group_name.get_output(context);
         let insights_configuration_binding = args
@@ -120,6 +136,7 @@ pub mod group {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GroupResult {

@@ -151,6 +151,22 @@ pub mod watcher {
         name: &str,
         args: WatcherArgs,
     ) -> WatcherResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WatcherArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WatcherResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WatcherArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WatcherResult {
         let automation_account_id_binding = args
             .automation_account_id
             .get_output(context);
@@ -211,6 +227,7 @@ pub mod watcher {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WatcherResult {

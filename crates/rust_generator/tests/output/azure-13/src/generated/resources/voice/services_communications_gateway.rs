@@ -181,6 +181,22 @@ pub mod services_communications_gateway {
         name: &str,
         args: ServicesCommunicationsGatewayArgs,
     ) -> ServicesCommunicationsGatewayResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServicesCommunicationsGatewayArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServicesCommunicationsGatewayResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServicesCommunicationsGatewayArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServicesCommunicationsGatewayResult {
         let api_bridge_binding = args.api_bridge.get_output(context);
         let auto_generated_domain_name_label_scope_binding = args
             .auto_generated_domain_name_label_scope
@@ -264,6 +280,7 @@ pub mod services_communications_gateway {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServicesCommunicationsGatewayResult {

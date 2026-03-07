@@ -218,6 +218,22 @@ pub mod vpc_peering_connection {
         name: &str,
         args: VpcPeeringConnectionArgs,
     ) -> VpcPeeringConnectionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcPeeringConnectionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VpcPeeringConnectionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcPeeringConnectionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VpcPeeringConnectionResult {
         let accepter_binding = args.accepter.get_output(context);
         let auto_accept_binding = args.auto_accept.get_output(context);
         let peer_owner_id_binding = args.peer_owner_id.get_output(context);
@@ -264,6 +280,7 @@ pub mod vpc_peering_connection {
                     value: &vpc_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VpcPeeringConnectionResult {

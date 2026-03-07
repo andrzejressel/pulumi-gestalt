@@ -158,6 +158,22 @@ pub mod hub {
         name: &str,
         args: HubArgs,
     ) -> HubResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HubArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> HubResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HubArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> HubResult {
         let description_binding = args.description.get_output(context);
         let export_psc_binding = args.export_psc.get_output(context);
         let labels_binding = args.labels.get_output(context);
@@ -189,6 +205,7 @@ pub mod hub {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         HubResult {

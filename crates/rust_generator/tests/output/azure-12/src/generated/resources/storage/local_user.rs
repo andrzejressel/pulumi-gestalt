@@ -146,6 +146,22 @@ pub mod local_user {
         name: &str,
         args: LocalUserArgs,
     ) -> LocalUserResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LocalUserArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LocalUserResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LocalUserArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LocalUserResult {
         let home_directory_binding = args.home_directory.get_output(context);
         let name_binding = args.name.get_output(context);
         let permission_scopes_binding = args.permission_scopes.get_output(context);
@@ -187,6 +203,7 @@ pub mod local_user {
                     value: &storage_account_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LocalUserResult {

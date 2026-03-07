@@ -114,6 +114,22 @@ pub mod configuration_profile {
         name: &str,
         args: ConfigurationProfileArgs,
     ) -> ConfigurationProfileResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConfigurationProfileArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ConfigurationProfileResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConfigurationProfileArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ConfigurationProfileResult {
         let application_id_binding = args.application_id.get_output(context);
         let description_binding = args.description.get_output(context);
         let kms_key_identifier_binding = args.kms_key_identifier.get_output(context);
@@ -165,6 +181,7 @@ pub mod configuration_profile {
                     value: &validators_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ConfigurationProfileResult {

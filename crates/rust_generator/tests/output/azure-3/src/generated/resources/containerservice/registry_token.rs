@@ -116,6 +116,22 @@ pub mod registry_token {
         name: &str,
         args: RegistryTokenArgs,
     ) -> RegistryTokenResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegistryTokenArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RegistryTokenResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegistryTokenArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RegistryTokenResult {
         let container_registry_name_binding = args
             .container_registry_name
             .get_output(context);
@@ -149,6 +165,7 @@ pub mod registry_token {
                     value: &scope_map_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RegistryTokenResult {

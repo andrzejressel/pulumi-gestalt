@@ -170,6 +170,22 @@ pub mod v_2_models_intent {
         name: &str,
         args: V2modelsIntentArgs,
     ) -> V2modelsIntentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: V2modelsIntentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> V2modelsIntentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: V2modelsIntentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> V2modelsIntentResult {
         let bot_id_binding = args.bot_id.get_output(context);
         let bot_version_binding = args.bot_version.get_output(context);
         let closing_setting_binding = args.closing_setting.get_output(context);
@@ -267,6 +283,7 @@ pub mod v_2_models_intent {
                     value: &timeouts_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         V2modelsIntentResult {

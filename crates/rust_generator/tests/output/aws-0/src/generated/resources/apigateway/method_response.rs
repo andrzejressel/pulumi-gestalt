@@ -195,6 +195,22 @@ pub mod method_response {
         name: &str,
         args: MethodResponseArgs,
     ) -> MethodResponseResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MethodResponseArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MethodResponseResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MethodResponseArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MethodResponseResult {
         let http_method_binding = args.http_method.get_output(context);
         let resource_id_binding = args.resource_id.get_output(context);
         let response_models_binding = args.response_models.get_output(context);
@@ -231,6 +247,7 @@ pub mod method_response {
                     value: &status_code_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MethodResponseResult {

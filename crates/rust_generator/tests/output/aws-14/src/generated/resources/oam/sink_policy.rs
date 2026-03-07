@@ -84,6 +84,22 @@ pub mod sink_policy {
         name: &str,
         args: SinkPolicyArgs,
     ) -> SinkPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SinkPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SinkPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SinkPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SinkPolicyResult {
         let policy_binding = args.policy.get_output(context);
         let sink_identifier_binding = args.sink_identifier.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -100,6 +116,7 @@ pub mod sink_policy {
                     value: &sink_identifier_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SinkPolicyResult {

@@ -135,6 +135,22 @@ pub mod option_group {
         name: &str,
         args: OptionGroupArgs,
     ) -> OptionGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OptionGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OptionGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OptionGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OptionGroupResult {
         let engine_name_binding = args.engine_name.get_output(context);
         let major_engine_version_binding = args.major_engine_version.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -183,6 +199,7 @@ pub mod option_group {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OptionGroupResult {

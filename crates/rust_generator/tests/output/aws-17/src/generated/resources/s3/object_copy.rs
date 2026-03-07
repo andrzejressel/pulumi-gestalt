@@ -295,6 +295,22 @@ pub mod object_copy {
         name: &str,
         args: ObjectCopyArgs,
     ) -> ObjectCopyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ObjectCopyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ObjectCopyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ObjectCopyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ObjectCopyResult {
         let acl_binding = args.acl.get_output(context);
         let bucket_binding = args.bucket.get_output(context);
         let bucket_key_enabled_binding = args.bucket_key_enabled.get_output(context);
@@ -516,6 +532,7 @@ pub mod object_copy {
                     value: &website_redirect_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ObjectCopyResult {

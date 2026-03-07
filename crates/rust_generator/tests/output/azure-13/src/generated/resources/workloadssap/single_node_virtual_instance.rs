@@ -107,6 +107,22 @@ pub mod single_node_virtual_instance {
         name: &str,
         args: SingleNodeVirtualInstanceArgs,
     ) -> SingleNodeVirtualInstanceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SingleNodeVirtualInstanceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SingleNodeVirtualInstanceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SingleNodeVirtualInstanceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SingleNodeVirtualInstanceResult {
         let app_location_binding = args.app_location.get_output(context);
         let environment_binding = args.environment.get_output(context);
         let identity_binding = args.identity.get_output(context);
@@ -173,6 +189,7 @@ pub mod single_node_virtual_instance {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SingleNodeVirtualInstanceResult {

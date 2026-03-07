@@ -126,6 +126,22 @@ pub mod replica_key {
         name: &str,
         args: ReplicaKeyArgs,
     ) -> ReplicaKeyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReplicaKeyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ReplicaKeyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReplicaKeyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ReplicaKeyResult {
         let bypass_policy_lockout_safety_check_binding = args
             .bypass_policy_lockout_safety_check
             .get_output(context);
@@ -171,6 +187,7 @@ pub mod replica_key {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ReplicaKeyResult {

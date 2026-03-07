@@ -197,6 +197,22 @@ pub mod bucket_object {
         name: &str,
         args: BucketObjectArgs,
     ) -> BucketObjectResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BucketObjectArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BucketObjectResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BucketObjectArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BucketObjectResult {
         let bucket_binding = args.bucket.get_output(context);
         let cache_control_binding = args.cache_control.get_output(context);
         let content_binding = args.content.get_output(context);
@@ -288,6 +304,7 @@ pub mod bucket_object {
                     value: &temporary_hold_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BucketObjectResult {

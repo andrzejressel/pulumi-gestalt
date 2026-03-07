@@ -133,6 +133,22 @@ pub mod resolver_virtual_network_link {
         name: &str,
         args: ResolverVirtualNetworkLinkArgs,
     ) -> ResolverVirtualNetworkLinkResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResolverVirtualNetworkLinkArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ResolverVirtualNetworkLinkResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResolverVirtualNetworkLinkArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ResolverVirtualNetworkLinkResult {
         let dns_forwarding_ruleset_id_binding = args
             .dns_forwarding_ruleset_id
             .get_output(context);
@@ -162,6 +178,7 @@ pub mod resolver_virtual_network_link {
                     value: &virtual_network_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ResolverVirtualNetworkLinkResult {

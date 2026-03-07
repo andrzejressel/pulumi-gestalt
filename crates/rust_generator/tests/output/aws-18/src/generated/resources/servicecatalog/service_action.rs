@@ -87,6 +87,22 @@ pub mod service_action {
         name: &str,
         args: ServiceActionArgs,
     ) -> ServiceActionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceActionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServiceActionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceActionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServiceActionResult {
         let accept_language_binding = args.accept_language.get_output(context);
         let definition_binding = args.definition.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -113,6 +129,7 @@ pub mod service_action {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServiceActionResult {

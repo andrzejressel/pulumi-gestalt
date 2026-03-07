@@ -99,6 +99,22 @@ pub mod identity_provider {
         name: &str,
         args: IdentityProviderArgs,
     ) -> IdentityProviderResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IdentityProviderArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IdentityProviderResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IdentityProviderArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IdentityProviderResult {
         let attribute_mapping_binding = args.attribute_mapping.get_output(context);
         let idp_identifiers_binding = args.idp_identifiers.get_output(context);
         let provider_details_binding = args.provider_details.get_output(context);
@@ -135,6 +151,7 @@ pub mod identity_provider {
                     value: &user_pool_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IdentityProviderResult {

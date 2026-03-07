@@ -140,6 +140,22 @@ pub mod route_server {
         name: &str,
         args: RouteServerArgs,
     ) -> RouteServerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RouteServerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RouteServerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RouteServerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RouteServerResult {
         let branch_to_branch_traffic_enabled_binding = args
             .branch_to_branch_traffic_enabled
             .get_output(context);
@@ -188,6 +204,7 @@ pub mod route_server {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RouteServerResult {

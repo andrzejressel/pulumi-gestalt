@@ -260,6 +260,22 @@ pub mod network_attachment {
         name: &str,
         args: NetworkAttachmentArgs,
     ) -> NetworkAttachmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkAttachmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NetworkAttachmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkAttachmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NetworkAttachmentResult {
         let connection_preference_binding = args
             .connection_preference
             .get_output(context);
@@ -312,6 +328,7 @@ pub mod network_attachment {
                     value: &subnetworks_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NetworkAttachmentResult {

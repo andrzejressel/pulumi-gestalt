@@ -142,6 +142,22 @@ pub mod bucket_access_control {
         name: &str,
         args: BucketAccessControlArgs,
     ) -> BucketAccessControlResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BucketAccessControlArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BucketAccessControlResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BucketAccessControlArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BucketAccessControlResult {
         let bucket_binding = args.bucket.get_output(context);
         let entity_binding = args.entity.get_output(context);
         let role_binding = args.role.get_output(context);
@@ -163,6 +179,7 @@ pub mod bucket_access_control {
                     value: &role_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BucketAccessControlResult {

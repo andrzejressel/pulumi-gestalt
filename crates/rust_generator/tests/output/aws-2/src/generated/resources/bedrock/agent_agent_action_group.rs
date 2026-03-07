@@ -254,6 +254,22 @@ pub mod agent_agent_action_group {
         name: &str,
         args: AgentAgentActionGroupArgs,
     ) -> AgentAgentActionGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AgentAgentActionGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AgentAgentActionGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AgentAgentActionGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AgentAgentActionGroupResult {
         let action_group_executor_binding = args
             .action_group_executor
             .get_output(context);
@@ -326,6 +342,7 @@ pub mod agent_agent_action_group {
                     value: &timeouts_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AgentAgentActionGroupResult {

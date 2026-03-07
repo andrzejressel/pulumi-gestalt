@@ -93,6 +93,22 @@ pub mod application_network_rule_set {
         name: &str,
         args: ApplicationNetworkRuleSetArgs,
     ) -> ApplicationNetworkRuleSetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApplicationNetworkRuleSetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ApplicationNetworkRuleSetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApplicationNetworkRuleSetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ApplicationNetworkRuleSetResult {
         let apply_to_device_binding = args.apply_to_device.get_output(context);
         let default_action_binding = args.default_action.get_output(context);
         let iotcentral_application_id_binding = args
@@ -122,6 +138,7 @@ pub mod application_network_rule_set {
                     value: &ip_rules_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ApplicationNetworkRuleSetResult {

@@ -69,6 +69,22 @@ pub mod api_token {
         name: &str,
         args: ApiTokenArgs,
     ) -> ApiTokenResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApiTokenArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ApiTokenResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApiTokenArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ApiTokenResult {
         let condition_binding = args.condition.get_output(context);
         let expires_on_binding = args.expires_on.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -100,6 +116,7 @@ pub mod api_token {
                     value: &policies_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ApiTokenResult {

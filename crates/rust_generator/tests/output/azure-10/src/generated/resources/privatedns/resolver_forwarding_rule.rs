@@ -149,6 +149,22 @@ pub mod resolver_forwarding_rule {
         name: &str,
         args: ResolverForwardingRuleArgs,
     ) -> ResolverForwardingRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResolverForwardingRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ResolverForwardingRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResolverForwardingRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ResolverForwardingRuleResult {
         let dns_forwarding_ruleset_id_binding = args
             .dns_forwarding_ruleset_id
             .get_output(context);
@@ -188,6 +204,7 @@ pub mod resolver_forwarding_rule {
                     value: &target_dns_servers_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ResolverForwardingRuleResult {

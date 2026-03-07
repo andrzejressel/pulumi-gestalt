@@ -404,6 +404,22 @@ pub mod key {
         name: &str,
         args: KeyArgs,
     ) -> KeyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: KeyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> KeyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: KeyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> KeyResult {
         let bypass_policy_lockout_safety_check_binding = args
             .bypass_policy_lockout_safety_check
             .get_output(context);
@@ -483,6 +499,7 @@ pub mod key {
                     value: &xks_key_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         KeyResult {

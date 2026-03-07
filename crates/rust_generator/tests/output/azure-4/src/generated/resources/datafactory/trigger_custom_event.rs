@@ -154,6 +154,22 @@ pub mod trigger_custom_event {
         name: &str,
         args: TriggerCustomEventArgs,
     ) -> TriggerCustomEventResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TriggerCustomEventArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TriggerCustomEventResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TriggerCustomEventArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TriggerCustomEventResult {
         let activated_binding = args.activated.get_output(context);
         let additional_properties_binding = args
             .additional_properties
@@ -217,6 +233,7 @@ pub mod trigger_custom_event {
                     value: &subject_ends_with_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TriggerCustomEventResult {

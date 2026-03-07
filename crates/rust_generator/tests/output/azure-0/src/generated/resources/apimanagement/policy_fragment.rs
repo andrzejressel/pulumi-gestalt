@@ -103,6 +103,22 @@ pub mod policy_fragment {
         name: &str,
         args: PolicyFragmentArgs,
     ) -> PolicyFragmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PolicyFragmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PolicyFragmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PolicyFragmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PolicyFragmentResult {
         let api_management_id_binding = args.api_management_id.get_output(context);
         let description_binding = args.description.get_output(context);
         let format_binding = args.format.get_output(context);
@@ -134,6 +150,7 @@ pub mod policy_fragment {
                     value: &value_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PolicyFragmentResult {

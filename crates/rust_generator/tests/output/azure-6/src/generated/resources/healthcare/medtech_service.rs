@@ -133,6 +133,22 @@ pub mod medtech_service {
         name: &str,
         args: MedtechServiceArgs,
     ) -> MedtechServiceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MedtechServiceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MedtechServiceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MedtechServiceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MedtechServiceResult {
         let device_mapping_json_binding = args.device_mapping_json.get_output(context);
         let eventhub_consumer_group_name_binding = args
             .eventhub_consumer_group_name
@@ -188,6 +204,7 @@ pub mod medtech_service {
                     value: &workspace_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MedtechServiceResult {

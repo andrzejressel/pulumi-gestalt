@@ -246,6 +246,22 @@ pub mod eip {
         name: &str,
         args: EipArgs,
     ) -> EipResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EipArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EipResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EipArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EipResult {
         let address_binding = args.address.get_output(context);
         let associate_with_private_ip_binding = args
             .associate_with_private_ip
@@ -311,6 +327,7 @@ pub mod eip {
                     value: &vpc_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EipResult {

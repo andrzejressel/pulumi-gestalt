@@ -188,6 +188,22 @@ pub mod fleet {
         name: &str,
         args: FleetArgs,
     ) -> FleetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FleetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FleetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FleetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FleetResult {
         let compute_capacity_binding = args.compute_capacity.get_output(context);
         let description_binding = args.description.get_output(context);
         let disconnect_timeout_in_seconds_binding = args
@@ -294,6 +310,7 @@ pub mod fleet {
                     value: &vpc_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FleetResult {

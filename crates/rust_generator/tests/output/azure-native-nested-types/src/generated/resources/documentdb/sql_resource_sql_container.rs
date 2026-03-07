@@ -42,11 +42,26 @@ pub mod sql_resource_sql_container {
         context: &pulumi_gestalt_rust::Context,
         name: &str,
     ) -> SqlResourceSqlContainerResult {
+        __create(context, name, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SqlResourceSqlContainerResult {
+        __create(context, name, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SqlResourceSqlContainerResult {
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure-native:documentdb:SqlResourceSqlContainer".into(),
             name: name.to_string(),
             version: super::super::get_version(),
             object: &[],
+            options,
         };
         let o = context.register_resource(request);
         SqlResourceSqlContainerResult {

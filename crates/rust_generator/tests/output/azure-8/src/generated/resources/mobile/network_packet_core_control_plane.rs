@@ -212,6 +212,22 @@ pub mod network_packet_core_control_plane {
         name: &str,
         args: NetworkPacketCoreControlPlaneArgs,
     ) -> NetworkPacketCoreControlPlaneResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkPacketCoreControlPlaneArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NetworkPacketCoreControlPlaneResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkPacketCoreControlPlaneArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NetworkPacketCoreControlPlaneResult {
         let control_plane_access_ipv4_address_binding = args
             .control_plane_access_ipv4_address
             .get_output(context);
@@ -320,6 +336,7 @@ pub mod network_packet_core_control_plane {
                     value: &user_equipment_mtu_in_bytes_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NetworkPacketCoreControlPlaneResult {

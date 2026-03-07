@@ -162,6 +162,22 @@ pub mod network_manager_connectivity_configuration {
         name: &str,
         args: NetworkManagerConnectivityConfigurationArgs,
     ) -> NetworkManagerConnectivityConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkManagerConnectivityConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NetworkManagerConnectivityConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkManagerConnectivityConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NetworkManagerConnectivityConfigurationResult {
         let applies_to_groups_binding = args.applies_to_groups.get_output(context);
         let connectivity_topology_binding = args
             .connectivity_topology
@@ -213,6 +229,7 @@ pub mod network_manager_connectivity_configuration {
                     value: &network_manager_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NetworkManagerConnectivityConfigurationResult {

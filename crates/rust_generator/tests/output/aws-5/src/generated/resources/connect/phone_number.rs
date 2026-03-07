@@ -136,6 +136,22 @@ pub mod phone_number {
         name: &str,
         args: PhoneNumberArgs,
     ) -> PhoneNumberResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PhoneNumberArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PhoneNumberResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PhoneNumberArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PhoneNumberResult {
         let country_code_binding = args.country_code.get_output(context);
         let description_binding = args.description.get_output(context);
         let prefix_binding = args.prefix.get_output(context);
@@ -172,6 +188,7 @@ pub mod phone_number {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PhoneNumberResult {

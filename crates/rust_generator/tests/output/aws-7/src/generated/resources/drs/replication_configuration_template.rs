@@ -151,6 +151,22 @@ pub mod replication_configuration_template {
         name: &str,
         args: ReplicationConfigurationTemplateArgs,
     ) -> ReplicationConfigurationTemplateResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReplicationConfigurationTemplateArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ReplicationConfigurationTemplateResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReplicationConfigurationTemplateArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ReplicationConfigurationTemplateResult {
         let associate_default_security_group_binding = args
             .associate_default_security_group
             .get_output(context);
@@ -254,6 +270,7 @@ pub mod replication_configuration_template {
                     value: &use_dedicated_replication_server_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ReplicationConfigurationTemplateResult {

@@ -149,6 +149,22 @@ pub mod access_policy {
         name: &str,
         args: AccessPolicyArgs,
     ) -> AccessPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccessPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AccessPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccessPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AccessPolicyResult {
         let application_id_binding = args.application_id.get_output(context);
         let certificate_permissions_binding = args
             .certificate_permissions
@@ -197,6 +213,7 @@ pub mod access_policy {
                     value: &tenant_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AccessPolicyResult {

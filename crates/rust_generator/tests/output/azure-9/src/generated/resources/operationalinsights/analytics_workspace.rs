@@ -187,6 +187,22 @@ pub mod analytics_workspace {
         name: &str,
         args: AnalyticsWorkspaceArgs,
     ) -> AnalyticsWorkspaceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AnalyticsWorkspaceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AnalyticsWorkspaceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AnalyticsWorkspaceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AnalyticsWorkspaceResult {
         let allow_resource_only_permissions_binding = args
             .allow_resource_only_permissions
             .get_output(context);
@@ -288,6 +304,7 @@ pub mod analytics_workspace {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AnalyticsWorkspaceResult {

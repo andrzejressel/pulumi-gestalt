@@ -89,6 +89,22 @@ pub mod container_policy {
         name: &str,
         args: ContainerPolicyArgs,
     ) -> ContainerPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ContainerPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ContainerPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ContainerPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ContainerPolicyResult {
         let container_name_binding = args.container_name.get_output(context);
         let policy_binding = args.policy.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -105,6 +121,7 @@ pub mod container_policy {
                     value: &policy_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ContainerPolicyResult {

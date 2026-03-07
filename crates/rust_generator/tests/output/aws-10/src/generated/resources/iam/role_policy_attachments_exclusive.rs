@@ -91,6 +91,22 @@ pub mod role_policy_attachments_exclusive {
         name: &str,
         args: RolePolicyAttachmentsExclusiveArgs,
     ) -> RolePolicyAttachmentsExclusiveResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RolePolicyAttachmentsExclusiveArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RolePolicyAttachmentsExclusiveResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RolePolicyAttachmentsExclusiveArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RolePolicyAttachmentsExclusiveResult {
         let policy_arns_binding = args.policy_arns.get_output(context);
         let role_name_binding = args.role_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -108,6 +124,7 @@ pub mod role_policy_attachments_exclusive {
                     value: &role_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RolePolicyAttachmentsExclusiveResult {

@@ -202,6 +202,22 @@ pub mod regional_secret_version {
         name: &str,
         args: RegionalSecretVersionArgs,
     ) -> RegionalSecretVersionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionalSecretVersionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RegionalSecretVersionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionalSecretVersionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RegionalSecretVersionResult {
         let deletion_policy_binding = args.deletion_policy.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
         let is_secret_data_base64_binding = args
@@ -236,6 +252,7 @@ pub mod regional_secret_version {
                     value: &secret_data_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RegionalSecretVersionResult {

@@ -200,6 +200,22 @@ pub mod linked_service_sql_server {
         name: &str,
         args: LinkedServiceSqlServerArgs,
     ) -> LinkedServiceSqlServerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LinkedServiceSqlServerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LinkedServiceSqlServerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LinkedServiceSqlServerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LinkedServiceSqlServerResult {
         let additional_properties_binding = args
             .additional_properties
             .get_output(context);
@@ -268,6 +284,7 @@ pub mod linked_service_sql_server {
                     value: &user_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LinkedServiceSqlServerResult {

@@ -158,6 +158,22 @@ pub mod c_name_record {
         name: &str,
         args: CNameRecordArgs,
     ) -> CNameRecordResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CNameRecordArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CNameRecordResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CNameRecordArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CNameRecordResult {
         let name_binding = args.name.get_output(context);
         let record_binding = args.record.get_output(context);
         let resource_group_name_binding = args.resource_group_name.get_output(context);
@@ -199,6 +215,7 @@ pub mod c_name_record {
                     value: &zone_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CNameRecordResult {

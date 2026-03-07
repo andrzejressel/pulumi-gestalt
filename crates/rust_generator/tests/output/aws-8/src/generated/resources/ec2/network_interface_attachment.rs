@@ -72,6 +72,22 @@ pub mod network_interface_attachment {
         name: &str,
         args: NetworkInterfaceAttachmentArgs,
     ) -> NetworkInterfaceAttachmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkInterfaceAttachmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NetworkInterfaceAttachmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkInterfaceAttachmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NetworkInterfaceAttachmentResult {
         let device_index_binding = args.device_index.get_output(context);
         let instance_id_binding = args.instance_id.get_output(context);
         let network_interface_id_binding = args.network_interface_id.get_output(context);
@@ -94,6 +110,7 @@ pub mod network_interface_attachment {
                     value: &network_interface_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NetworkInterfaceAttachmentResult {

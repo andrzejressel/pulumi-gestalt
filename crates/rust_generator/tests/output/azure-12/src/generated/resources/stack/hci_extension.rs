@@ -120,6 +120,22 @@ pub mod hci_extension {
         name: &str,
         args: HciExtensionArgs,
     ) -> HciExtensionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HciExtensionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> HciExtensionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HciExtensionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> HciExtensionResult {
         let arc_setting_id_binding = args.arc_setting_id.get_output(context);
         let auto_upgrade_minor_version_enabled_binding = args
             .auto_upgrade_minor_version_enabled
@@ -175,6 +191,7 @@ pub mod hci_extension {
                     value: &type_handler_version_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         HciExtensionResult {

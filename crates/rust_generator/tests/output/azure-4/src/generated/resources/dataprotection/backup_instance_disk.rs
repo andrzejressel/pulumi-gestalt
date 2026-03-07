@@ -129,6 +129,22 @@ pub mod backup_instance_disk {
         name: &str,
         args: BackupInstanceDiskArgs,
     ) -> BackupInstanceDiskResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackupInstanceDiskArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BackupInstanceDiskResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackupInstanceDiskArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BackupInstanceDiskResult {
         let backup_policy_id_binding = args.backup_policy_id.get_output(context);
         let disk_id_binding = args.disk_id.get_output(context);
         let location_binding = args.location.get_output(context);
@@ -167,6 +183,7 @@ pub mod backup_instance_disk {
                     value: &vault_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BackupInstanceDiskResult {

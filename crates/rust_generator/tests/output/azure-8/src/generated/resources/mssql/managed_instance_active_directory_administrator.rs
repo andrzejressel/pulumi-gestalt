@@ -138,6 +138,22 @@ pub mod managed_instance_active_directory_administrator {
         name: &str,
         args: ManagedInstanceActiveDirectoryAdministratorArgs,
     ) -> ManagedInstanceActiveDirectoryAdministratorResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedInstanceActiveDirectoryAdministratorArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ManagedInstanceActiveDirectoryAdministratorResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedInstanceActiveDirectoryAdministratorArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ManagedInstanceActiveDirectoryAdministratorResult {
         let azuread_authentication_only_binding = args
             .azuread_authentication_only
             .get_output(context);
@@ -172,6 +188,7 @@ pub mod managed_instance_active_directory_administrator {
                     value: &tenant_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ManagedInstanceActiveDirectoryAdministratorResult {

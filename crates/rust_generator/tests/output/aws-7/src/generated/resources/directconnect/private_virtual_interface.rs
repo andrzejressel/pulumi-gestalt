@@ -137,6 +137,22 @@ pub mod private_virtual_interface {
         name: &str,
         args: PrivateVirtualInterfaceArgs,
     ) -> PrivateVirtualInterfaceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PrivateVirtualInterfaceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PrivateVirtualInterfaceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PrivateVirtualInterfaceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PrivateVirtualInterfaceResult {
         let address_family_binding = args.address_family.get_output(context);
         let amazon_address_binding = args.amazon_address.get_output(context);
         let bgp_asn_binding = args.bgp_asn.get_output(context);
@@ -209,6 +225,7 @@ pub mod private_virtual_interface {
                     value: &vpn_gateway_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PrivateVirtualInterfaceResult {

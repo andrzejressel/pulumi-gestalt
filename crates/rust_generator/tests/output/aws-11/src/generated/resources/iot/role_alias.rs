@@ -93,6 +93,22 @@ pub mod role_alias {
         name: &str,
         args: RoleAliasArgs,
     ) -> RoleAliasResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RoleAliasArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RoleAliasResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RoleAliasArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RoleAliasResult {
         let alias_binding = args.alias.get_output(context);
         let credential_duration_binding = args.credential_duration.get_output(context);
         let role_arn_binding = args.role_arn.get_output(context);
@@ -119,6 +135,7 @@ pub mod role_alias {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RoleAliasResult {

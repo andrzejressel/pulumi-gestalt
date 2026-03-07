@@ -244,6 +244,22 @@ pub mod repository {
         name: &str,
         args: RepositoryArgs,
     ) -> RepositoryResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RepositoryArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RepositoryResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RepositoryArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RepositoryResult {
         let annotations_binding = args.annotations.get_output(context);
         let location_binding = args.location.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -280,6 +296,7 @@ pub mod repository {
                     value: &remote_uri_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RepositoryResult {

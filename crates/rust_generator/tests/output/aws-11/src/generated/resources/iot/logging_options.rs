@@ -59,6 +59,22 @@ pub mod logging_options {
         name: &str,
         args: LoggingOptionsArgs,
     ) -> LoggingOptionsResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LoggingOptionsArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LoggingOptionsResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LoggingOptionsArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LoggingOptionsResult {
         let default_log_level_binding = args.default_log_level.get_output(context);
         let disable_all_logs_binding = args.disable_all_logs.get_output(context);
         let role_arn_binding = args.role_arn.get_output(context);
@@ -80,6 +96,7 @@ pub mod logging_options {
                     value: &role_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LoggingOptionsResult {

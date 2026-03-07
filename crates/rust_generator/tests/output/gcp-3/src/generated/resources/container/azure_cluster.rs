@@ -293,6 +293,22 @@ pub mod azure_cluster {
         name: &str,
         args: AzureClusterArgs,
     ) -> AzureClusterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AzureClusterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AzureClusterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AzureClusterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AzureClusterResult {
         let annotations_binding = args.annotations.get_output(context);
         let authorization_binding = args.authorization.get_output(context);
         let azure_region_binding = args.azure_region.get_output(context);
@@ -371,6 +387,7 @@ pub mod azure_cluster {
                     value: &resource_group_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AzureClusterResult {

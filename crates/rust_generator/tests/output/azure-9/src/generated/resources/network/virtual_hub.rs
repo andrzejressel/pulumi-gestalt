@@ -139,6 +139,22 @@ pub mod virtual_hub {
         name: &str,
         args: VirtualHubArgs,
     ) -> VirtualHubResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VirtualHubArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VirtualHubResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VirtualHubArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VirtualHubResult {
         let address_prefix_binding = args.address_prefix.get_output(context);
         let hub_routing_preference_binding = args
             .hub_routing_preference
@@ -199,6 +215,7 @@ pub mod virtual_hub {
                     value: &virtual_wan_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VirtualHubResult {

@@ -153,6 +153,22 @@ pub mod stored_iscsi_volume {
         name: &str,
         args: StoredIscsiVolumeArgs,
     ) -> StoredIscsiVolumeResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StoredIscsiVolumeArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> StoredIscsiVolumeResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StoredIscsiVolumeArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> StoredIscsiVolumeResult {
         let disk_id_binding = args.disk_id.get_output(context);
         let gateway_arn_binding = args.gateway_arn.get_output(context);
         let kms_encrypted_binding = args.kms_encrypted.get_output(context);
@@ -206,6 +222,7 @@ pub mod stored_iscsi_volume {
                     value: &target_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         StoredIscsiVolumeResult {

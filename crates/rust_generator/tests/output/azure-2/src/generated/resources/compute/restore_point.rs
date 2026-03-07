@@ -141,6 +141,22 @@ pub mod restore_point {
         name: &str,
         args: RestorePointArgs,
     ) -> RestorePointResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RestorePointArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RestorePointResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RestorePointArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RestorePointResult {
         let crash_consistency_mode_enabled_binding = args
             .crash_consistency_mode_enabled
             .get_output(context);
@@ -172,6 +188,7 @@ pub mod restore_point {
                         .drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RestorePointResult {

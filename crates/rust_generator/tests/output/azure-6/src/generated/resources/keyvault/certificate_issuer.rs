@@ -110,6 +110,22 @@ pub mod certificate_issuer {
         name: &str,
         args: CertificateIssuerArgs,
     ) -> CertificateIssuerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CertificateIssuerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CertificateIssuerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CertificateIssuerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CertificateIssuerResult {
         let account_id_binding = args.account_id.get_output(context);
         let admins_binding = args.admins.get_output(context);
         let key_vault_id_binding = args.key_vault_id.get_output(context);
@@ -151,6 +167,7 @@ pub mod certificate_issuer {
                     value: &provider_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CertificateIssuerResult {

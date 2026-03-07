@@ -292,6 +292,22 @@ pub mod restore_plan_iam_binding {
         name: &str,
         args: RestorePlanIamBindingArgs,
     ) -> RestorePlanIamBindingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RestorePlanIamBindingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RestorePlanIamBindingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RestorePlanIamBindingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RestorePlanIamBindingResult {
         let condition_binding = args.condition.get_output(context);
         let location_binding = args.location.get_output(context);
         let members_binding = args.members.get_output(context);
@@ -328,6 +344,7 @@ pub mod restore_plan_iam_binding {
                     value: &role_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RestorePlanIamBindingResult {

@@ -176,6 +176,22 @@ pub mod application {
         name: &str,
         args: ApplicationArgs,
     ) -> ApplicationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApplicationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ApplicationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApplicationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ApplicationResult {
         let app_sources_binding = args.app_sources.get_output(context);
         let auto_bundle_on_deploy_binding = args
             .auto_bundle_on_deploy
@@ -273,6 +289,7 @@ pub mod application {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ApplicationResult {

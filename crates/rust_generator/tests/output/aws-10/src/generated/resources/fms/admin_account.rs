@@ -54,6 +54,22 @@ pub mod admin_account {
         name: &str,
         args: AdminAccountArgs,
     ) -> AdminAccountResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AdminAccountArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AdminAccountResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AdminAccountArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AdminAccountResult {
         let account_id_binding = args.account_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:fms/adminAccount:AdminAccount".into(),
@@ -65,6 +81,7 @@ pub mod admin_account {
                     value: &account_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AdminAccountResult {

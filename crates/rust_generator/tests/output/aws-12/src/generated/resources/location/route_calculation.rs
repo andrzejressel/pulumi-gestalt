@@ -90,6 +90,22 @@ pub mod route_calculation {
         name: &str,
         args: RouteCalculationArgs,
     ) -> RouteCalculationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RouteCalculationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RouteCalculationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RouteCalculationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RouteCalculationResult {
         let calculator_name_binding = args.calculator_name.get_output(context);
         let data_source_binding = args.data_source.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -116,6 +132,7 @@ pub mod route_calculation {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RouteCalculationResult {

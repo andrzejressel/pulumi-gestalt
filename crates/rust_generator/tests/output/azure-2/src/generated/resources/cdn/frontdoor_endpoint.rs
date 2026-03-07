@@ -88,6 +88,22 @@ pub mod frontdoor_endpoint {
         name: &str,
         args: FrontdoorEndpointArgs,
     ) -> FrontdoorEndpointResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FrontdoorEndpointArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FrontdoorEndpointResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FrontdoorEndpointArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FrontdoorEndpointResult {
         let cdn_frontdoor_profile_id_binding = args
             .cdn_frontdoor_profile_id
             .get_output(context);
@@ -116,6 +132,7 @@ pub mod frontdoor_endpoint {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FrontdoorEndpointResult {

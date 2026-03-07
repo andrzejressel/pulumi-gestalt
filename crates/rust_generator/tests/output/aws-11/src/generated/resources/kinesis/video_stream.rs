@@ -98,6 +98,22 @@ pub mod video_stream {
         name: &str,
         args: VideoStreamArgs,
     ) -> VideoStreamResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VideoStreamArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VideoStreamResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VideoStreamArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VideoStreamResult {
         let data_retention_in_hours_binding = args
             .data_retention_in_hours
             .get_output(context);
@@ -136,6 +152,7 @@ pub mod video_stream {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VideoStreamResult {

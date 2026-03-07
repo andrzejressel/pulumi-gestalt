@@ -149,6 +149,22 @@ pub mod catalog_database {
         name: &str,
         args: CatalogDatabaseArgs,
     ) -> CatalogDatabaseResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CatalogDatabaseArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CatalogDatabaseResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CatalogDatabaseArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CatalogDatabaseResult {
         let catalog_id_binding = args.catalog_id.get_output(context);
         let create_table_default_permissions_binding = args
             .create_table_default_permissions
@@ -202,6 +218,7 @@ pub mod catalog_database {
                     value: &target_database_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CatalogDatabaseResult {

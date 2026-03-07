@@ -77,6 +77,22 @@ pub mod managed_prefix_list_entry {
         name: &str,
         args: ManagedPrefixListEntryArgs,
     ) -> ManagedPrefixListEntryResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedPrefixListEntryArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ManagedPrefixListEntryResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedPrefixListEntryArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ManagedPrefixListEntryResult {
         let cidr_binding = args.cidr.get_output(context);
         let description_binding = args.description.get_output(context);
         let prefix_list_id_binding = args.prefix_list_id.get_output(context);
@@ -98,6 +114,7 @@ pub mod managed_prefix_list_entry {
                     value: &prefix_list_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ManagedPrefixListEntryResult {

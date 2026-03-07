@@ -113,6 +113,22 @@ pub mod kx_scaling_group {
         name: &str,
         args: KxScalingGroupArgs,
     ) -> KxScalingGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: KxScalingGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> KxScalingGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: KxScalingGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> KxScalingGroupResult {
         let availability_zone_id_binding = args.availability_zone_id.get_output(context);
         let environment_id_binding = args.environment_id.get_output(context);
         let host_type_binding = args.host_type.get_output(context);
@@ -144,6 +160,7 @@ pub mod kx_scaling_group {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         KxScalingGroupResult {

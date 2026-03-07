@@ -107,6 +107,22 @@ pub mod function_java_script_udf {
         name: &str,
         args: FunctionJavaScriptUDFArgs,
     ) -> FunctionJavaScriptUDFResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FunctionJavaScriptUDFArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FunctionJavaScriptUDFResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FunctionJavaScriptUDFArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FunctionJavaScriptUDFResult {
         let inputs_binding = args.inputs.get_output(context);
         let name_binding = args.name.get_output(context);
         let output_binding = args.output.get_output(context);
@@ -146,6 +162,7 @@ pub mod function_java_script_udf {
                     value: &stream_analytics_job_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FunctionJavaScriptUDFResult {

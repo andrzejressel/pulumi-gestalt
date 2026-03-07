@@ -539,6 +539,22 @@ pub mod target_https_proxy {
         name: &str,
         args: TargetHttpsProxyArgs,
     ) -> TargetHttpsProxyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TargetHttpsProxyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TargetHttpsProxyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TargetHttpsProxyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TargetHttpsProxyResult {
         let certificate_manager_certificates_binding = args
             .certificate_manager_certificates
             .get_output(context);
@@ -614,6 +630,7 @@ pub mod target_https_proxy {
                     value: &url_map_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TargetHttpsProxyResult {

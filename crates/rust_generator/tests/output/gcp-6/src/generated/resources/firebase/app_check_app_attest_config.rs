@@ -159,6 +159,22 @@ pub mod app_check_app_attest_config {
         name: &str,
         args: AppCheckAppAttestConfigArgs,
     ) -> AppCheckAppAttestConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AppCheckAppAttestConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AppCheckAppAttestConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AppCheckAppAttestConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AppCheckAppAttestConfigResult {
         let app_id_binding = args.app_id.get_output(context);
         let project_binding = args.project.get_output(context);
         let token_ttl_binding = args.token_ttl.get_output(context);
@@ -180,6 +196,7 @@ pub mod app_check_app_attest_config {
                     value: &token_ttl_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AppCheckAppAttestConfigResult {

@@ -359,6 +359,22 @@ pub mod v_2_vm {
         name: &str,
         args: V2VmArgs,
     ) -> V2VmResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: V2VmArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> V2VmResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: V2VmArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> V2VmResult {
         let accelerator_config_binding = args.accelerator_config.get_output(context);
         let accelerator_type_binding = args.accelerator_type.get_output(context);
         let cidr_block_binding = args.cidr_block.get_output(context);
@@ -452,6 +468,7 @@ pub mod v_2_vm {
                     value: &zone_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         V2VmResult {

@@ -379,6 +379,22 @@ pub mod datascan {
         name: &str,
         args: DatascanArgs,
     ) -> DatascanResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatascanArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DatascanResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatascanArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DatascanResult {
         let data_binding = args.data.get_output(context);
         let data_profile_spec_binding = args.data_profile_spec.get_output(context);
         let data_quality_spec_binding = args.data_quality_spec.get_output(context);
@@ -435,6 +451,7 @@ pub mod datascan {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DatascanResult {

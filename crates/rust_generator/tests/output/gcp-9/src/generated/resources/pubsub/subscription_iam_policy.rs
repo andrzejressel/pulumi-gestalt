@@ -179,6 +179,22 @@ pub mod subscription_iam_policy {
         name: &str,
         args: SubscriptionIAMPolicyArgs,
     ) -> SubscriptionIAMPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SubscriptionIAMPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SubscriptionIAMPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SubscriptionIAMPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SubscriptionIAMPolicyResult {
         let policy_data_binding = args.policy_data.get_output(context);
         let project_binding = args.project.get_output(context);
         let subscription_binding = args.subscription.get_output(context);
@@ -200,6 +216,7 @@ pub mod subscription_iam_policy {
                     value: &subscription_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SubscriptionIAMPolicyResult {

@@ -151,6 +151,22 @@ pub mod service_project_attachment {
         name: &str,
         args: ServiceProjectAttachmentArgs,
     ) -> ServiceProjectAttachmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceProjectAttachmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServiceProjectAttachmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceProjectAttachmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServiceProjectAttachmentResult {
         let project_binding = args.project.get_output(context);
         let service_project_binding = args.service_project.get_output(context);
         let service_project_attachment_id_binding = args
@@ -174,6 +190,7 @@ pub mod service_project_attachment {
                     value: &service_project_attachment_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServiceProjectAttachmentResult {

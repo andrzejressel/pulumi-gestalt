@@ -92,6 +92,22 @@ pub mod data_connector_azure_security_center {
         name: &str,
         args: DataConnectorAzureSecurityCenterArgs,
     ) -> DataConnectorAzureSecurityCenterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataConnectorAzureSecurityCenterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DataConnectorAzureSecurityCenterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataConnectorAzureSecurityCenterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DataConnectorAzureSecurityCenterResult {
         let log_analytics_workspace_id_binding = args
             .log_analytics_workspace_id
             .get_output(context);
@@ -116,6 +132,7 @@ pub mod data_connector_azure_security_center {
                     value: &subscription_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DataConnectorAzureSecurityCenterResult {

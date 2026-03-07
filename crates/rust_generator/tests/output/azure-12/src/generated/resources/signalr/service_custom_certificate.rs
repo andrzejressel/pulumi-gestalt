@@ -140,6 +140,22 @@ pub mod service_custom_certificate {
         name: &str,
         args: ServiceCustomCertificateArgs,
     ) -> ServiceCustomCertificateResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceCustomCertificateArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServiceCustomCertificateResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceCustomCertificateArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServiceCustomCertificateResult {
         let custom_certificate_id_binding = args
             .custom_certificate_id
             .get_output(context);
@@ -164,6 +180,7 @@ pub mod service_custom_certificate {
                     value: &signalr_service_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServiceCustomCertificateResult {

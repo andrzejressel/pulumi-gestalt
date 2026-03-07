@@ -228,6 +228,22 @@ pub mod metric_alert {
         name: &str,
         args: MetricAlertArgs,
     ) -> MetricAlertResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MetricAlertArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MetricAlertResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MetricAlertArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MetricAlertResult {
         let actions_binding = args.actions.get_output(context);
         let application_insights_web_test_location_availability_criteria_binding = args
             .application_insights_web_test_location_availability_criteria
@@ -320,6 +336,7 @@ pub mod metric_alert {
                     value: &window_size_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MetricAlertResult {

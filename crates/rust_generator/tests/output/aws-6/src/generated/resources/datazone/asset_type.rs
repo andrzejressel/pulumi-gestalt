@@ -102,6 +102,22 @@ pub mod asset_type {
         name: &str,
         args: AssetTypeArgs,
     ) -> AssetTypeResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AssetTypeArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AssetTypeResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AssetTypeArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AssetTypeResult {
         let description_binding = args.description.get_output(context);
         let domain_identifier_binding = args.domain_identifier.get_output(context);
         let forms_inputs_binding = args.forms_inputs.get_output(context);
@@ -140,6 +156,7 @@ pub mod asset_type {
                     value: &timeouts_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AssetTypeResult {

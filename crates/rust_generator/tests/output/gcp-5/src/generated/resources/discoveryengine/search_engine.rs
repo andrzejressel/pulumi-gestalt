@@ -163,6 +163,22 @@ pub mod search_engine {
         name: &str,
         args: SearchEngineArgs,
     ) -> SearchEngineResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SearchEngineArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SearchEngineResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SearchEngineArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SearchEngineResult {
         let collection_id_binding = args.collection_id.get_output(context);
         let common_config_binding = args.common_config.get_output(context);
         let data_store_ids_binding = args.data_store_ids.get_output(context);
@@ -214,6 +230,7 @@ pub mod search_engine {
                     value: &search_engine_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SearchEngineResult {

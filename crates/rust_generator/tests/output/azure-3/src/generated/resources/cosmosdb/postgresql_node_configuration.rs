@@ -90,6 +90,22 @@ pub mod postgresql_node_configuration {
         name: &str,
         args: PostgresqlNodeConfigurationArgs,
     ) -> PostgresqlNodeConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PostgresqlNodeConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PostgresqlNodeConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PostgresqlNodeConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PostgresqlNodeConfigurationResult {
         let cluster_id_binding = args.cluster_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let value_binding = args.value.get_output(context);
@@ -112,6 +128,7 @@ pub mod postgresql_node_configuration {
                     value: &value_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PostgresqlNodeConfigurationResult {

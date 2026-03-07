@@ -197,6 +197,22 @@ pub mod replicated_vm {
         name: &str,
         args: ReplicatedVMArgs,
     ) -> ReplicatedVMResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReplicatedVMArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ReplicatedVMResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReplicatedVMArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ReplicatedVMResult {
         let managed_disks_binding = args.managed_disks.get_output(context);
         let multi_vm_group_name_binding = args.multi_vm_group_name.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -347,6 +363,7 @@ pub mod replicated_vm {
                     value: &unmanaged_disks_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ReplicatedVMResult {

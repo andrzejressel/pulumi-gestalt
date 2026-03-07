@@ -122,6 +122,22 @@ pub mod maintenance_window {
         name: &str,
         args: MaintenanceWindowArgs,
     ) -> MaintenanceWindowResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MaintenanceWindowArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MaintenanceWindowResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MaintenanceWindowArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MaintenanceWindowResult {
         let allow_unassociated_targets_binding = args
             .allow_unassociated_targets
             .get_output(context);
@@ -190,6 +206,7 @@ pub mod maintenance_window {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MaintenanceWindowResult {

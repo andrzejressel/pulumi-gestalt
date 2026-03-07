@@ -238,6 +238,22 @@ pub mod replication_instance {
         name: &str,
         args: ReplicationInstanceArgs,
     ) -> ReplicationInstanceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReplicationInstanceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ReplicationInstanceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ReplicationInstanceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ReplicationInstanceResult {
         let allocated_storage_binding = args.allocated_storage.get_output(context);
         let allow_major_version_upgrade_binding = args
             .allow_major_version_upgrade
@@ -338,6 +354,7 @@ pub mod replication_instance {
                     value: &vpc_security_group_ids_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ReplicationInstanceResult {

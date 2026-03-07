@@ -83,6 +83,22 @@ pub mod directory_config {
         name: &str,
         args: DirectoryConfigArgs,
     ) -> DirectoryConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DirectoryConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DirectoryConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DirectoryConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DirectoryConfigResult {
         let directory_name_binding = args.directory_name.get_output(context);
         let organizational_unit_distinguished_names_binding = args
             .organizational_unit_distinguished_names
@@ -108,6 +124,7 @@ pub mod directory_config {
                     value: &service_account_credentials_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DirectoryConfigResult {

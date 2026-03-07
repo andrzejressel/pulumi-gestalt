@@ -144,6 +144,22 @@ pub mod gateway_host_name_configuration {
         name: &str,
         args: GatewayHostNameConfigurationArgs,
     ) -> GatewayHostNameConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GatewayHostNameConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GatewayHostNameConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GatewayHostNameConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GatewayHostNameConfigurationResult {
         let api_management_id_binding = args.api_management_id.get_output(context);
         let certificate_id_binding = args.certificate_id.get_output(context);
         let gateway_name_binding = args.gateway_name.get_output(context);
@@ -198,6 +214,7 @@ pub mod gateway_host_name_configuration {
                     value: &tls11_enabled_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GatewayHostNameConfigurationResult {

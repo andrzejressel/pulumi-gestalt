@@ -217,6 +217,22 @@ pub mod core_network {
         name: &str,
         args: CoreNetworkArgs,
     ) -> CoreNetworkResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CoreNetworkArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CoreNetworkResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CoreNetworkArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CoreNetworkResult {
         let base_policy_document_binding = args.base_policy_document.get_output(context);
         let base_policy_region_binding = args.base_policy_region.get_output(context);
         let base_policy_regions_binding = args.base_policy_regions.get_output(context);
@@ -258,6 +274,7 @@ pub mod core_network {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CoreNetworkResult {

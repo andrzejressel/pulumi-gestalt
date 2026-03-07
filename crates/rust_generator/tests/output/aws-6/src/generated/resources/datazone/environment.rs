@@ -147,6 +147,22 @@ pub mod environment {
         name: &str,
         args: EnvironmentArgs,
     ) -> EnvironmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EnvironmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EnvironmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EnvironmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EnvironmentResult {
         let account_identifier_binding = args.account_identifier.get_output(context);
         let account_region_binding = args.account_region.get_output(context);
         let blueprint_identifier_binding = args.blueprint_identifier.get_output(context);
@@ -208,6 +224,7 @@ pub mod environment {
                     value: &user_parameters_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EnvironmentResult {

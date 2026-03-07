@@ -213,6 +213,22 @@ pub mod container_service {
         name: &str,
         args: ContainerServiceArgs,
     ) -> ContainerServiceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ContainerServiceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ContainerServiceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ContainerServiceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ContainerServiceResult {
         let is_disabled_binding = args.is_disabled.get_output(context);
         let name_binding = args.name.get_output(context);
         let power_binding = args.power.get_output(context);
@@ -256,6 +272,7 @@ pub mod container_service {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ContainerServiceResult {

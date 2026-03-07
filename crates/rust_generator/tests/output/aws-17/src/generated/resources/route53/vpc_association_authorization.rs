@@ -97,6 +97,22 @@ pub mod vpc_association_authorization {
         name: &str,
         args: VpcAssociationAuthorizationArgs,
     ) -> VpcAssociationAuthorizationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcAssociationAuthorizationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VpcAssociationAuthorizationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcAssociationAuthorizationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VpcAssociationAuthorizationResult {
         let vpc_id_binding = args.vpc_id.get_output(context);
         let vpc_region_binding = args.vpc_region.get_output(context);
         let zone_id_binding = args.zone_id.get_output(context);
@@ -119,6 +135,7 @@ pub mod vpc_association_authorization {
                     value: &zone_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VpcAssociationAuthorizationResult {

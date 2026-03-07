@@ -134,6 +134,22 @@ pub mod repository {
         name: &str,
         args: RepositoryArgs,
     ) -> RepositoryResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RepositoryArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RepositoryResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RepositoryArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RepositoryResult {
         let create_ignore_already_exists_binding = args
             .create_ignore_already_exists
             .get_output(context);
@@ -162,6 +178,7 @@ pub mod repository {
                     value: &pubsub_configs_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RepositoryResult {

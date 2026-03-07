@@ -96,6 +96,22 @@ pub mod subnet_nat_gateway_association {
         name: &str,
         args: SubnetNatGatewayAssociationArgs,
     ) -> SubnetNatGatewayAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SubnetNatGatewayAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SubnetNatGatewayAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SubnetNatGatewayAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SubnetNatGatewayAssociationResult {
         let nat_gateway_id_binding = args.nat_gateway_id.get_output(context);
         let subnet_id_binding = args.subnet_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -113,6 +129,7 @@ pub mod subnet_nat_gateway_association {
                     value: &subnet_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SubnetNatGatewayAssociationResult {

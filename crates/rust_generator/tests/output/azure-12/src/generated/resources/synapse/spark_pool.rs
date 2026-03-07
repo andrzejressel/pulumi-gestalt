@@ -202,6 +202,22 @@ pub mod spark_pool {
         name: &str,
         args: SparkPoolArgs,
     ) -> SparkPoolResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SparkPoolArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SparkPoolResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SparkPoolArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SparkPoolResult {
         let auto_pause_binding = args.auto_pause.get_output(context);
         let auto_scale_binding = args.auto_scale.get_output(context);
         let cache_size_binding = args.cache_size.get_output(context);
@@ -309,6 +325,7 @@ pub mod spark_pool {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SparkPoolResult {

@@ -151,6 +151,22 @@ pub mod table_export {
         name: &str,
         args: TableExportArgs,
     ) -> TableExportResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TableExportArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TableExportResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TableExportArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TableExportResult {
         let export_format_binding = args.export_format.get_output(context);
         let export_time_binding = args.export_time.get_output(context);
         let s3_bucket_binding = args.s3_bucket.get_output(context);
@@ -197,6 +213,7 @@ pub mod table_export {
                     value: &table_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TableExportResult {

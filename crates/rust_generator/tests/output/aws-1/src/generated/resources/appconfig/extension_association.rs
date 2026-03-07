@@ -112,6 +112,22 @@ pub mod extension_association {
         name: &str,
         args: ExtensionAssociationArgs,
     ) -> ExtensionAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ExtensionAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ExtensionAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ExtensionAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ExtensionAssociationResult {
         let extension_arn_binding = args.extension_arn.get_output(context);
         let parameters_binding = args.parameters.get_output(context);
         let resource_arn_binding = args.resource_arn.get_output(context);
@@ -133,6 +149,7 @@ pub mod extension_association {
                     value: &resource_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ExtensionAssociationResult {

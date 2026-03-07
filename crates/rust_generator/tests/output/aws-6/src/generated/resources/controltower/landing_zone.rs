@@ -67,6 +67,22 @@ pub mod landing_zone {
         name: &str,
         args: LandingZoneArgs,
     ) -> LandingZoneResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LandingZoneArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LandingZoneResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LandingZoneArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LandingZoneResult {
         let manifest_json_binding = args.manifest_json.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let version_binding = args.version.get_output(context);
@@ -88,6 +104,7 @@ pub mod landing_zone {
                     value: &version_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LandingZoneResult {

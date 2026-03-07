@@ -284,6 +284,22 @@ pub mod standard {
         name: &str,
         args: StandardArgs,
     ) -> StandardResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StandardArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> StandardResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StandardArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> StandardResult {
         let app_service_plan_id_binding = args.app_service_plan_id.get_output(context);
         let app_settings_binding = args.app_settings.get_output(context);
         let bundle_version_binding = args.bundle_version.get_output(context);
@@ -407,6 +423,7 @@ pub mod standard {
                     value: &virtual_network_subnet_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         StandardResult {

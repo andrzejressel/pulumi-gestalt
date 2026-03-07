@@ -69,6 +69,22 @@ pub mod vpc_block_public_access_options {
         name: &str,
         args: VpcBlockPublicAccessOptionsArgs,
     ) -> VpcBlockPublicAccessOptionsResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcBlockPublicAccessOptionsArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VpcBlockPublicAccessOptionsResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcBlockPublicAccessOptionsArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VpcBlockPublicAccessOptionsResult {
         let internet_gateway_block_mode_binding = args
             .internet_gateway_block_mode
             .get_output(context);
@@ -88,6 +104,7 @@ pub mod vpc_block_public_access_options {
                     value: &timeouts_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VpcBlockPublicAccessOptionsResult {

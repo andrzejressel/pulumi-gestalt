@@ -120,6 +120,22 @@ pub mod event_hub {
         name: &str,
         args: EventHubArgs,
     ) -> EventHubResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EventHubArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EventHubResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EventHubArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EventHubResult {
         let capture_description_binding = args.capture_description.get_output(context);
         let message_retention_binding = args.message_retention.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -166,6 +182,7 @@ pub mod event_hub {
                     value: &status_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EventHubResult {

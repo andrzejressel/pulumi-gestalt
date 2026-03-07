@@ -78,6 +78,22 @@ pub mod shared_directory_accepter {
         name: &str,
         args: SharedDirectoryAccepterArgs,
     ) -> SharedDirectoryAccepterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SharedDirectoryAccepterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SharedDirectoryAccepterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SharedDirectoryAccepterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SharedDirectoryAccepterResult {
         let shared_directory_id_binding = args.shared_directory_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:directoryservice/sharedDirectoryAccepter:SharedDirectoryAccepter"
@@ -90,6 +106,7 @@ pub mod shared_directory_accepter {
                     value: &shared_directory_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SharedDirectoryAccepterResult {

@@ -155,6 +155,22 @@ pub mod pipeline {
         name: &str,
         args: PipelineArgs,
     ) -> PipelineResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PipelineArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PipelineResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PipelineArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PipelineResult {
         let activities_json_binding = args.activities_json.get_output(context);
         let annotations_binding = args.annotations.get_output(context);
         let concurrency_binding = args.concurrency.get_output(context);
@@ -213,6 +229,7 @@ pub mod pipeline {
                     value: &variables_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PipelineResult {

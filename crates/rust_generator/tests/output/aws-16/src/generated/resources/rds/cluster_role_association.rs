@@ -71,6 +71,22 @@ pub mod cluster_role_association {
         name: &str,
         args: ClusterRoleAssociationArgs,
     ) -> ClusterRoleAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClusterRoleAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ClusterRoleAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClusterRoleAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ClusterRoleAssociationResult {
         let db_cluster_identifier_binding = args
             .db_cluster_identifier
             .get_output(context);
@@ -94,6 +110,7 @@ pub mod cluster_role_association {
                     value: &role_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ClusterRoleAssociationResult {

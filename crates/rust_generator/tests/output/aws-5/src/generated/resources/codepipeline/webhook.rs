@@ -161,6 +161,22 @@ pub mod webhook {
         name: &str,
         args: WebhookArgs,
     ) -> WebhookResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WebhookArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WebhookResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WebhookArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WebhookResult {
         let authentication_binding = args.authentication.get_output(context);
         let authentication_configuration_binding = args
             .authentication_configuration
@@ -204,6 +220,7 @@ pub mod webhook {
                     value: &target_pipeline_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WebhookResult {

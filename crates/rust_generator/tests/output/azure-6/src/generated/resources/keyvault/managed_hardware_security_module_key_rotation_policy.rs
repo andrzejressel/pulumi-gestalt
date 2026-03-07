@@ -84,6 +84,22 @@ pub mod managed_hardware_security_module_key_rotation_policy {
         name: &str,
         args: ManagedHardwareSecurityModuleKeyRotationPolicyArgs,
     ) -> ManagedHardwareSecurityModuleKeyRotationPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedHardwareSecurityModuleKeyRotationPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ManagedHardwareSecurityModuleKeyRotationPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedHardwareSecurityModuleKeyRotationPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ManagedHardwareSecurityModuleKeyRotationPolicyResult {
         let expire_after_binding = args.expire_after.get_output(context);
         let managed_hsm_key_id_binding = args.managed_hsm_key_id.get_output(context);
         let time_after_creation_binding = args.time_after_creation.get_output(context);
@@ -111,6 +127,7 @@ pub mod managed_hardware_security_module_key_rotation_policy {
                     value: &time_before_expiry_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ManagedHardwareSecurityModuleKeyRotationPolicyResult {

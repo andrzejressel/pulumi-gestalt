@@ -211,6 +211,22 @@ pub mod data_flow {
         name: &str,
         args: DataFlowArgs,
     ) -> DataFlowResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataFlowArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DataFlowResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataFlowArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DataFlowResult {
         let annotations_binding = args.annotations.get_output(context);
         let data_factory_id_binding = args.data_factory_id.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -267,6 +283,7 @@ pub mod data_flow {
                     value: &transformations_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DataFlowResult {

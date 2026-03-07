@@ -86,6 +86,22 @@ pub mod vpc_ipam_preview_next_cidr {
         name: &str,
         args: VpcIpamPreviewNextCidrArgs,
     ) -> VpcIpamPreviewNextCidrResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcIpamPreviewNextCidrArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VpcIpamPreviewNextCidrResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcIpamPreviewNextCidrArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VpcIpamPreviewNextCidrResult {
         let disallowed_cidrs_binding = args.disallowed_cidrs.get_output(context);
         let ipam_pool_id_binding = args.ipam_pool_id.get_output(context);
         let netmask_length_binding = args.netmask_length.get_output(context);
@@ -107,6 +123,7 @@ pub mod vpc_ipam_preview_next_cidr {
                     value: &netmask_length_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VpcIpamPreviewNextCidrResult {

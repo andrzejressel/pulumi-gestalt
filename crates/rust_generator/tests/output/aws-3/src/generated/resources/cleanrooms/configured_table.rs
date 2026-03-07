@@ -110,6 +110,22 @@ pub mod configured_table {
         name: &str,
         args: ConfiguredTableArgs,
     ) -> ConfiguredTableResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConfiguredTableArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ConfiguredTableResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConfiguredTableArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ConfiguredTableResult {
         let allowed_columns_binding = args.allowed_columns.get_output(context);
         let analysis_method_binding = args.analysis_method.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -146,6 +162,7 @@ pub mod configured_table {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ConfiguredTableResult {

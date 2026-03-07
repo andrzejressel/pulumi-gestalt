@@ -86,6 +86,22 @@ pub mod voice_connector_organization {
         name: &str,
         args: VoiceConnectorOrganizationArgs,
     ) -> VoiceConnectorOrganizationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VoiceConnectorOrganizationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VoiceConnectorOrganizationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VoiceConnectorOrganizationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VoiceConnectorOrganizationResult {
         let disabled_binding = args.disabled.get_output(context);
         let routes_binding = args.routes.get_output(context);
         let voice_connector_id_binding = args.voice_connector_id.get_output(context);
@@ -108,6 +124,7 @@ pub mod voice_connector_organization {
                     value: &voice_connector_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VoiceConnectorOrganizationResult {

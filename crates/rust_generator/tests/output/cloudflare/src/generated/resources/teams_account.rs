@@ -248,6 +248,22 @@ pub mod teams_account {
         name: &str,
         args: TeamsAccountArgs,
     ) -> TeamsAccountResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TeamsAccountArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TeamsAccountResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TeamsAccountArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TeamsAccountResult {
         let account_id_binding = args.account_id.get_output(context);
         let activity_log_enabled_binding = args.activity_log_enabled.get_output(context);
         let antivirus_binding = args.antivirus.get_output(context);
@@ -347,6 +363,7 @@ pub mod teams_account {
                     value: &url_browser_isolation_enabled_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TeamsAccountResult {

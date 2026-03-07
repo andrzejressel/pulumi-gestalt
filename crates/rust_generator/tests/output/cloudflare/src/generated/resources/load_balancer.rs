@@ -232,6 +232,22 @@ pub mod load_balancer {
         name: &str,
         args: LoadBalancerArgs,
     ) -> LoadBalancerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LoadBalancerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LoadBalancerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LoadBalancerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LoadBalancerResult {
         let adaptive_routings_binding = args.adaptive_routings.get_output(context);
         let country_pools_binding = args.country_pools.get_output(context);
         let default_pool_ids_binding = args.default_pool_ids.get_output(context);
@@ -335,6 +351,7 @@ pub mod load_balancer {
                     value: &zone_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LoadBalancerResult {

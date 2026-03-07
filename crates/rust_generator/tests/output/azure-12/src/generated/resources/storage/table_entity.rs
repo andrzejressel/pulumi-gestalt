@@ -95,6 +95,22 @@ pub mod table_entity {
         name: &str,
         args: TableEntityArgs,
     ) -> TableEntityResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TableEntityArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TableEntityResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TableEntityArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TableEntityResult {
         let entity_binding = args.entity.get_output(context);
         let partition_key_binding = args.partition_key.get_output(context);
         let row_key_binding = args.row_key.get_output(context);
@@ -121,6 +137,7 @@ pub mod table_entity {
                     value: &storage_table_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TableEntityResult {

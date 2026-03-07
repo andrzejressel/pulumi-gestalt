@@ -260,6 +260,22 @@ pub mod automation {
         name: &str,
         args: AutomationArgs,
     ) -> AutomationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AutomationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AutomationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AutomationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AutomationResult {
         let annotations_binding = args.annotations.get_output(context);
         let delivery_pipeline_binding = args.delivery_pipeline.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -321,6 +337,7 @@ pub mod automation {
                     value: &suspended_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AutomationResult {

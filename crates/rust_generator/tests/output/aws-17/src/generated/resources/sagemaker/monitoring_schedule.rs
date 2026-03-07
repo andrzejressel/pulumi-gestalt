@@ -90,6 +90,22 @@ pub mod monitoring_schedule {
         name: &str,
         args: MonitoringScheduleArgs,
     ) -> MonitoringScheduleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MonitoringScheduleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MonitoringScheduleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MonitoringScheduleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MonitoringScheduleResult {
         let monitoring_schedule_config_binding = args
             .monitoring_schedule_config
             .get_output(context);
@@ -113,6 +129,7 @@ pub mod monitoring_schedule {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MonitoringScheduleResult {

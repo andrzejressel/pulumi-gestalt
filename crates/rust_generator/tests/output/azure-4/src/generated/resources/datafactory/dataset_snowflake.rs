@@ -148,6 +148,22 @@ pub mod dataset_snowflake {
         name: &str,
         args: DatasetSnowflakeArgs,
     ) -> DatasetSnowflakeResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatasetSnowflakeArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DatasetSnowflakeResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatasetSnowflakeArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DatasetSnowflakeResult {
         let additional_properties_binding = args
             .additional_properties
             .get_output(context);
@@ -211,6 +227,7 @@ pub mod dataset_snowflake {
                     value: &table_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DatasetSnowflakeResult {

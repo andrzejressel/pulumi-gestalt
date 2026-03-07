@@ -68,6 +68,22 @@ pub mod domain_identity_verification {
         name: &str,
         args: DomainIdentityVerificationArgs,
     ) -> DomainIdentityVerificationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DomainIdentityVerificationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DomainIdentityVerificationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DomainIdentityVerificationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DomainIdentityVerificationResult {
         let domain_binding = args.domain.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ses/domainIdentityVerification:DomainIdentityVerification"
@@ -80,6 +96,7 @@ pub mod domain_identity_verification {
                     value: &domain_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DomainIdentityVerificationResult {

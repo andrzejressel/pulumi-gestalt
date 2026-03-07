@@ -531,6 +531,22 @@ pub mod health_check {
         name: &str,
         args: HealthCheckArgs,
     ) -> HealthCheckResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HealthCheckArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> HealthCheckResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HealthCheckArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> HealthCheckResult {
         let check_interval_sec_binding = args.check_interval_sec.get_output(context);
         let description_binding = args.description.get_output(context);
         let grpc_health_check_binding = args.grpc_health_check.get_output(context);
@@ -612,6 +628,7 @@ pub mod health_check {
                     value: &unhealthy_threshold_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         HealthCheckResult {

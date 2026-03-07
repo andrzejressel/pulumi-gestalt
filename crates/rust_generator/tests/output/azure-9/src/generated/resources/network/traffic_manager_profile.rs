@@ -147,6 +147,22 @@ pub mod traffic_manager_profile {
         name: &str,
         args: TrafficManagerProfileArgs,
     ) -> TrafficManagerProfileResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TrafficManagerProfileArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TrafficManagerProfileResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TrafficManagerProfileArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TrafficManagerProfileResult {
         let dns_config_binding = args.dns_config.get_output(context);
         let max_return_binding = args.max_return.get_output(context);
         let monitor_config_binding = args.monitor_config.get_output(context);
@@ -200,6 +216,7 @@ pub mod traffic_manager_profile {
                     value: &traffic_view_enabled_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TrafficManagerProfileResult {

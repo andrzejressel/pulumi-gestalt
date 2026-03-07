@@ -224,6 +224,22 @@ pub mod selection {
         name: &str,
         args: SelectionArgs,
     ) -> SelectionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SelectionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SelectionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SelectionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SelectionResult {
         let conditions_binding = args.conditions.get_output(context);
         let iam_role_arn_binding = args.iam_role_arn.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -265,6 +281,7 @@ pub mod selection {
                     value: &selection_tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SelectionResult {

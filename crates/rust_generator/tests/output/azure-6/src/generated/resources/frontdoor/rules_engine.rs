@@ -159,6 +159,22 @@ pub mod rules_engine {
         name: &str,
         args: RulesEngineArgs,
     ) -> RulesEngineResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RulesEngineArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RulesEngineResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RulesEngineArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RulesEngineResult {
         let enabled_binding = args.enabled.get_output(context);
         let frontdoor_name_binding = args.frontdoor_name.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -190,6 +206,7 @@ pub mod rules_engine {
                     value: &rules_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RulesEngineResult {

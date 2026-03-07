@@ -228,6 +228,22 @@ pub mod access_level_condition {
         name: &str,
         args: AccessLevelConditionArgs,
     ) -> AccessLevelConditionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccessLevelConditionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AccessLevelConditionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccessLevelConditionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AccessLevelConditionResult {
         let access_level_binding = args.access_level.get_output(context);
         let device_policy_binding = args.device_policy.get_output(context);
         let ip_subnetworks_binding = args.ip_subnetworks.get_output(context);
@@ -277,6 +293,7 @@ pub mod access_level_condition {
                     value: &vpc_network_sources_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AccessLevelConditionResult {

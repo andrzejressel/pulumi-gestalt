@@ -188,6 +188,22 @@ pub mod service_connection_policy {
         name: &str,
         args: ServiceConnectionPolicyArgs,
     ) -> ServiceConnectionPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceConnectionPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServiceConnectionPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceConnectionPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServiceConnectionPolicyResult {
         let description_binding = args.description.get_output(context);
         let labels_binding = args.labels.get_output(context);
         let location_binding = args.location.get_output(context);
@@ -235,6 +251,7 @@ pub mod service_connection_policy {
                     value: &service_class_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServiceConnectionPolicyResult {

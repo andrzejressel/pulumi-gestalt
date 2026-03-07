@@ -111,6 +111,22 @@ pub mod nat_gateway {
         name: &str,
         args: NatGatewayArgs,
     ) -> NatGatewayResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NatGatewayArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NatGatewayResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NatGatewayArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NatGatewayResult {
         let idle_timeout_in_minutes_binding = args
             .idle_timeout_in_minutes
             .get_output(context);
@@ -154,6 +170,7 @@ pub mod nat_gateway {
                     value: &zones_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NatGatewayResult {

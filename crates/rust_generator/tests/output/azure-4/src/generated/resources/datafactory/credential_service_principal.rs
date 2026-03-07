@@ -154,6 +154,22 @@ pub mod credential_service_principal {
         name: &str,
         args: CredentialServicePrincipalArgs,
     ) -> CredentialServicePrincipalResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CredentialServicePrincipalArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CredentialServicePrincipalResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CredentialServicePrincipalArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CredentialServicePrincipalResult {
         let annotations_binding = args.annotations.get_output(context);
         let data_factory_id_binding = args.data_factory_id.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -198,6 +214,7 @@ pub mod credential_service_principal {
                     value: &tenant_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CredentialServicePrincipalResult {

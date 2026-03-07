@@ -111,6 +111,22 @@ pub mod managed_private_endpoint {
         name: &str,
         args: ManagedPrivateEndpointArgs,
     ) -> ManagedPrivateEndpointResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedPrivateEndpointArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ManagedPrivateEndpointResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedPrivateEndpointArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ManagedPrivateEndpointResult {
         let data_factory_id_binding = args.data_factory_id.get_output(context);
         let fqdns_binding = args.fqdns.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -143,6 +159,7 @@ pub mod managed_private_endpoint {
                     value: &target_resource_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ManagedPrivateEndpointResult {

@@ -153,6 +153,22 @@ pub mod s_quota_preference {
         name: &str,
         args: SQuotaPreferenceArgs,
     ) -> SQuotaPreferenceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SQuotaPreferenceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SQuotaPreferenceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SQuotaPreferenceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SQuotaPreferenceResult {
         let contact_email_binding = args.contact_email.get_output(context);
         let dimensions_binding = args.dimensions.get_output(context);
         let ignore_safety_checks_binding = args.ignore_safety_checks.get_output(context);
@@ -204,6 +220,7 @@ pub mod s_quota_preference {
                     value: &service_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SQuotaPreferenceResult {

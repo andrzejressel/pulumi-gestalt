@@ -132,6 +132,22 @@ pub mod smsvoicev_2_phone_number {
         name: &str,
         args: Smsvoicev2PhoneNumberArgs,
     ) -> Smsvoicev2PhoneNumberResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: Smsvoicev2PhoneNumberArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> Smsvoicev2PhoneNumberResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: Smsvoicev2PhoneNumberArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> Smsvoicev2PhoneNumberResult {
         let deletion_protection_enabled_binding = args
             .deletion_protection_enabled
             .get_output(context);
@@ -204,6 +220,7 @@ pub mod smsvoicev_2_phone_number {
                     value: &two_way_channel_enabled_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         Smsvoicev2PhoneNumberResult {

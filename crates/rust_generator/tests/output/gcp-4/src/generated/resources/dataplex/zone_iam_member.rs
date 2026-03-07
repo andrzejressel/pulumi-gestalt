@@ -293,6 +293,22 @@ pub mod zone_iam_member {
         name: &str,
         args: ZoneIamMemberArgs,
     ) -> ZoneIamMemberResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZoneIamMemberArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ZoneIamMemberResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZoneIamMemberArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ZoneIamMemberResult {
         let condition_binding = args.condition.get_output(context);
         let dataplex_zone_binding = args.dataplex_zone.get_output(context);
         let lake_binding = args.lake.get_output(context);
@@ -334,6 +350,7 @@ pub mod zone_iam_member {
                     value: &role_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ZoneIamMemberResult {

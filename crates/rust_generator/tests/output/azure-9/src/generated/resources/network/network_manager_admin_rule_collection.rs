@@ -106,6 +106,22 @@ pub mod network_manager_admin_rule_collection {
         name: &str,
         args: NetworkManagerAdminRuleCollectionArgs,
     ) -> NetworkManagerAdminRuleCollectionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkManagerAdminRuleCollectionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NetworkManagerAdminRuleCollectionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkManagerAdminRuleCollectionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NetworkManagerAdminRuleCollectionResult {
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let network_group_ids_binding = args.network_group_ids.get_output(context);
@@ -135,6 +151,7 @@ pub mod network_manager_admin_rule_collection {
                     value: &security_admin_configuration_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NetworkManagerAdminRuleCollectionResult {

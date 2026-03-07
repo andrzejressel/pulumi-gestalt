@@ -97,6 +97,22 @@ pub mod arc_machine {
         name: &str,
         args: ArcMachineArgs,
     ) -> ArcMachineResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ArcMachineArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ArcMachineResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ArcMachineArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ArcMachineResult {
         let identity_binding = args.identity.get_output(context);
         let kind_binding = args.kind.get_output(context);
         let location_binding = args.location.get_output(context);
@@ -133,6 +149,7 @@ pub mod arc_machine {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ArcMachineResult {

@@ -390,6 +390,22 @@ pub mod regional_secret {
         name: &str,
         args: RegionalSecretArgs,
     ) -> RegionalSecretResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionalSecretArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RegionalSecretResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionalSecretArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RegionalSecretResult {
         let annotations_binding = args.annotations.get_output(context);
         let customer_managed_encryption_binding = args
             .customer_managed_encryption
@@ -458,6 +474,7 @@ pub mod regional_secret {
                     value: &version_destroy_ttl_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RegionalSecretResult {

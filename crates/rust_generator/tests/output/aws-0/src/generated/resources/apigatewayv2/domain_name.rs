@@ -143,6 +143,22 @@ pub mod domain_name {
         name: &str,
         args: DomainNameArgs,
     ) -> DomainNameResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DomainNameArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DomainNameResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DomainNameArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DomainNameResult {
         let domain_name_binding = args.domain_name.get_output(context);
         let domain_name_configuration_binding = args
             .domain_name_configuration
@@ -173,6 +189,7 @@ pub mod domain_name {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DomainNameResult {

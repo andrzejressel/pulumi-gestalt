@@ -141,6 +141,22 @@ pub mod feature_group {
         name: &str,
         args: FeatureGroupArgs,
     ) -> FeatureGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FeatureGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FeatureGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FeatureGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FeatureGroupResult {
         let description_binding = args.description.get_output(context);
         let event_time_feature_name_binding = args
             .event_time_feature_name
@@ -201,6 +217,7 @@ pub mod feature_group {
                     value: &throughput_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FeatureGroupResult {

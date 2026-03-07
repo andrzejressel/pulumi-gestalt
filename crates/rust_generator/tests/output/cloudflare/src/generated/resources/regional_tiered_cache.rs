@@ -62,6 +62,22 @@ pub mod regional_tiered_cache {
         name: &str,
         args: RegionalTieredCacheArgs,
     ) -> RegionalTieredCacheResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionalTieredCacheArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RegionalTieredCacheResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionalTieredCacheArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RegionalTieredCacheResult {
         let value_binding = args.value.get_output(context);
         let zone_id_binding = args.zone_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -78,6 +94,7 @@ pub mod regional_tiered_cache {
                     value: &zone_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RegionalTieredCacheResult {

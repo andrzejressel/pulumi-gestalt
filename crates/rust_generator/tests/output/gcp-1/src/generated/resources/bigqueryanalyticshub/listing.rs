@@ -324,6 +324,22 @@ pub mod listing {
         name: &str,
         args: ListingArgs,
     ) -> ListingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ListingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ListingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ListingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ListingResult {
         let bigquery_dataset_binding = args.bigquery_dataset.get_output(context);
         let categories_binding = args.categories.get_output(context);
         let data_exchange_id_binding = args.data_exchange_id.get_output(context);
@@ -407,6 +423,7 @@ pub mod listing {
                     value: &restricted_export_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ListingResult {

@@ -115,6 +115,22 @@ pub mod workspace_network_outbound_rule_fqdn {
         name: &str,
         args: WorkspaceNetworkOutboundRuleFqdnArgs,
     ) -> WorkspaceNetworkOutboundRuleFqdnResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkspaceNetworkOutboundRuleFqdnArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WorkspaceNetworkOutboundRuleFqdnResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkspaceNetworkOutboundRuleFqdnArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WorkspaceNetworkOutboundRuleFqdnResult {
         let destination_fqdn_binding = args.destination_fqdn.get_output(context);
         let name_binding = args.name.get_output(context);
         let workspace_id_binding = args.workspace_id.get_output(context);
@@ -137,6 +153,7 @@ pub mod workspace_network_outbound_rule_fqdn {
                     value: &workspace_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WorkspaceNetworkOutboundRuleFqdnResult {

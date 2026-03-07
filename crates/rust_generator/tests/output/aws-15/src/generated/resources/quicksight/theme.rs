@@ -141,6 +141,22 @@ pub mod theme {
         name: &str,
         args: ThemeArgs,
     ) -> ThemeResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ThemeArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ThemeResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ThemeArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ThemeResult {
         let aws_account_id_binding = args.aws_account_id.get_output(context);
         let base_theme_id_binding = args.base_theme_id.get_output(context);
         let configuration_binding = args.configuration.get_output(context);
@@ -187,6 +203,7 @@ pub mod theme {
                     value: &version_description_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ThemeResult {

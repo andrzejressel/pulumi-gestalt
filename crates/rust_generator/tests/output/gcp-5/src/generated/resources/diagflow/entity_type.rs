@@ -135,6 +135,22 @@ pub mod entity_type {
         name: &str,
         args: EntityTypeArgs,
     ) -> EntityTypeResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EntityTypeArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EntityTypeResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EntityTypeArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EntityTypeResult {
         let display_name_binding = args.display_name.get_output(context);
         let enable_fuzzy_extraction_binding = args
             .enable_fuzzy_extraction
@@ -168,6 +184,7 @@ pub mod entity_type {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EntityTypeResult {

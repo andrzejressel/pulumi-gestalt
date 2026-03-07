@@ -201,6 +201,22 @@ pub mod vpc_ipam_pool {
         name: &str,
         args: VpcIpamPoolArgs,
     ) -> VpcIpamPoolResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcIpamPoolArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VpcIpamPoolResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcIpamPoolArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VpcIpamPoolResult {
         let address_family_binding = args.address_family.get_output(context);
         let allocation_default_netmask_length_binding = args
             .allocation_default_netmask_length
@@ -292,6 +308,7 @@ pub mod vpc_ipam_pool {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VpcIpamPoolResult {

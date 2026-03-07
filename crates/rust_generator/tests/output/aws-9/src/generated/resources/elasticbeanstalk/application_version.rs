@@ -124,6 +124,22 @@ pub mod application_version {
         name: &str,
         args: ApplicationVersionArgs,
     ) -> ApplicationVersionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApplicationVersionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ApplicationVersionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApplicationVersionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ApplicationVersionResult {
         let application_binding = args.application.get_output(context);
         let bucket_binding = args.bucket.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -170,6 +186,7 @@ pub mod application_version {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ApplicationVersionResult {

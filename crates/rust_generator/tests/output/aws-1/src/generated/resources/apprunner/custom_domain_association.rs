@@ -79,6 +79,22 @@ pub mod custom_domain_association {
         name: &str,
         args: CustomDomainAssociationArgs,
     ) -> CustomDomainAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomDomainAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CustomDomainAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomDomainAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CustomDomainAssociationResult {
         let domain_name_binding = args.domain_name.get_output(context);
         let enable_www_subdomain_binding = args.enable_www_subdomain.get_output(context);
         let service_arn_binding = args.service_arn.get_output(context);
@@ -101,6 +117,7 @@ pub mod custom_domain_association {
                     value: &service_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CustomDomainAssociationResult {

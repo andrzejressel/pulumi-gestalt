@@ -123,6 +123,22 @@ pub mod traffic_mirror_session {
         name: &str,
         args: TrafficMirrorSessionArgs,
     ) -> TrafficMirrorSessionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TrafficMirrorSessionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TrafficMirrorSessionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TrafficMirrorSessionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TrafficMirrorSessionResult {
         let description_binding = args.description.get_output(context);
         let network_interface_id_binding = args.network_interface_id.get_output(context);
         let packet_length_binding = args.packet_length.get_output(context);
@@ -173,6 +189,7 @@ pub mod traffic_mirror_session {
                     value: &virtual_network_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TrafficMirrorSessionResult {

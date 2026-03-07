@@ -164,6 +164,22 @@ pub mod spring_cloud_gateway_route_config {
         name: &str,
         args: SpringCloudGatewayRouteConfigArgs,
     ) -> SpringCloudGatewayRouteConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudGatewayRouteConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SpringCloudGatewayRouteConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudGatewayRouteConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SpringCloudGatewayRouteConfigResult {
         let filters_binding = args.filters.get_output(context);
         let name_binding = args.name.get_output(context);
         let open_api_binding = args.open_api.get_output(context);
@@ -220,6 +236,7 @@ pub mod spring_cloud_gateway_route_config {
                     value: &sso_validation_enabled_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SpringCloudGatewayRouteConfigResult {

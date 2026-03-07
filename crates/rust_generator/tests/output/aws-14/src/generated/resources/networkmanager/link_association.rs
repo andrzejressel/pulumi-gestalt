@@ -70,6 +70,22 @@ pub mod link_association {
         name: &str,
         args: LinkAssociationArgs,
     ) -> LinkAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LinkAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LinkAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LinkAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LinkAssociationResult {
         let device_id_binding = args.device_id.get_output(context);
         let global_network_id_binding = args.global_network_id.get_output(context);
         let link_id_binding = args.link_id.get_output(context);
@@ -91,6 +107,7 @@ pub mod link_association {
                     value: &link_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LinkAssociationResult {

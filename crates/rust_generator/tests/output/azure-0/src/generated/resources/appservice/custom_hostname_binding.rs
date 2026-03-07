@@ -113,6 +113,22 @@ pub mod custom_hostname_binding {
         name: &str,
         args: CustomHostnameBindingArgs,
     ) -> CustomHostnameBindingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomHostnameBindingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CustomHostnameBindingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomHostnameBindingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CustomHostnameBindingResult {
         let app_service_name_binding = args.app_service_name.get_output(context);
         let hostname_binding = args.hostname.get_output(context);
         let resource_group_name_binding = args.resource_group_name.get_output(context);
@@ -144,6 +160,7 @@ pub mod custom_hostname_binding {
                     value: &thumbprint_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CustomHostnameBindingResult {

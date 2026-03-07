@@ -101,6 +101,22 @@ pub mod linked_storage_account {
         name: &str,
         args: LinkedStorageAccountArgs,
     ) -> LinkedStorageAccountResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LinkedStorageAccountArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LinkedStorageAccountResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LinkedStorageAccountArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LinkedStorageAccountResult {
         let data_source_type_binding = args.data_source_type.get_output(context);
         let resource_group_name_binding = args.resource_group_name.get_output(context);
         let storage_account_ids_binding = args.storage_account_ids.get_output(context);
@@ -129,6 +145,7 @@ pub mod linked_storage_account {
                     value: &workspace_resource_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LinkedStorageAccountResult {

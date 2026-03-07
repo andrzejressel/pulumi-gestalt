@@ -67,6 +67,22 @@ pub mod account {
         name: &str,
         args: AccountArgs,
     ) -> AccountResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccountArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AccountResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccountArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AccountResult {
         let auto_enable_controls_binding = args.auto_enable_controls.get_output(context);
         let control_finding_generator_binding = args
             .control_finding_generator
@@ -92,6 +108,7 @@ pub mod account {
                     value: &enable_default_standards_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AccountResult {

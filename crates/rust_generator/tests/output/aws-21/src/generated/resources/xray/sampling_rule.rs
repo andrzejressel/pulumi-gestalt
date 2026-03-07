@@ -136,6 +136,22 @@ pub mod sampling_rule {
         name: &str,
         args: SamplingRuleArgs,
     ) -> SamplingRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SamplingRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SamplingRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SamplingRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SamplingRuleResult {
         let attributes_binding = args.attributes.get_output(context);
         let fixed_rate_binding = args.fixed_rate.get_output(context);
         let host_binding = args.host.get_output(context);
@@ -207,6 +223,7 @@ pub mod sampling_rule {
                     value: &version_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SamplingRuleResult {

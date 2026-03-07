@@ -113,6 +113,22 @@ pub mod organization_security_policy {
         name: &str,
         args: OrganizationSecurityPolicyArgs,
     ) -> OrganizationSecurityPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationSecurityPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OrganizationSecurityPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationSecurityPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OrganizationSecurityPolicyResult {
         let description_binding = args.description.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let parent_binding = args.parent.get_output(context);
@@ -140,6 +156,7 @@ pub mod organization_security_policy {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OrganizationSecurityPolicyResult {

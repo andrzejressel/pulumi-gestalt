@@ -141,6 +141,22 @@ pub mod topic {
         name: &str,
         args: TopicArgs,
     ) -> TopicResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TopicArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TopicResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TopicArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TopicResult {
         let identity_binding = args.identity.get_output(context);
         let inbound_ip_rules_binding = args.inbound_ip_rules.get_output(context);
         let input_mapping_default_values_binding = args
@@ -206,6 +222,7 @@ pub mod topic {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TopicResult {

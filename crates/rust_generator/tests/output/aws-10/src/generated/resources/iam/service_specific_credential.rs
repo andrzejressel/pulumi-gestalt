@@ -77,6 +77,22 @@ pub mod service_specific_credential {
         name: &str,
         args: ServiceSpecificCredentialArgs,
     ) -> ServiceSpecificCredentialResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceSpecificCredentialArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServiceSpecificCredentialResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceSpecificCredentialArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServiceSpecificCredentialResult {
         let service_name_binding = args.service_name.get_output(context);
         let status_binding = args.status.get_output(context);
         let user_name_binding = args.user_name.get_output(context);
@@ -98,6 +114,7 @@ pub mod service_specific_credential {
                     value: &user_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServiceSpecificCredentialResult {

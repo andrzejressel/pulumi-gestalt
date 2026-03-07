@@ -82,6 +82,22 @@ pub mod lication_load_balancer_frontend {
         name: &str,
         args: LicationLoadBalancerFrontendArgs,
     ) -> LicationLoadBalancerFrontendResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LicationLoadBalancerFrontendArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LicationLoadBalancerFrontendResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LicationLoadBalancerFrontendArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LicationLoadBalancerFrontendResult {
         let application_load_balancer_id_binding = args
             .application_load_balancer_id
             .get_output(context);
@@ -106,6 +122,7 @@ pub mod lication_load_balancer_frontend {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LicationLoadBalancerFrontendResult {

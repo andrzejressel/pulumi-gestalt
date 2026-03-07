@@ -415,6 +415,22 @@ pub mod tunnel_dest_group_iam_policy {
         name: &str,
         args: TunnelDestGroupIamPolicyArgs,
     ) -> TunnelDestGroupIamPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TunnelDestGroupIamPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TunnelDestGroupIamPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TunnelDestGroupIamPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TunnelDestGroupIamPolicyResult {
         let dest_group_binding = args.dest_group.get_output(context);
         let policy_data_binding = args.policy_data.get_output(context);
         let project_binding = args.project.get_output(context);
@@ -441,6 +457,7 @@ pub mod tunnel_dest_group_iam_policy {
                     value: &region_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TunnelDestGroupIamPolicyResult {

@@ -73,6 +73,22 @@ pub mod worker_secret {
         name: &str,
         args: WorkerSecretArgs,
     ) -> WorkerSecretResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkerSecretArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WorkerSecretResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkerSecretArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WorkerSecretResult {
         let account_id_binding = args.account_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let script_name_binding = args.script_name.get_output(context);
@@ -99,6 +115,7 @@ pub mod worker_secret {
                     value: &secret_text_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WorkerSecretResult {

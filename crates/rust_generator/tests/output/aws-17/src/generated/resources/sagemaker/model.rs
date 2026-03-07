@@ -142,6 +142,22 @@ pub mod model {
         name: &str,
         args: ModelArgs,
     ) -> ModelResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ModelArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ModelResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ModelArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ModelResult {
         let containers_binding = args.containers.get_output(context);
         let enable_network_isolation_binding = args
             .enable_network_isolation
@@ -192,6 +208,7 @@ pub mod model {
                     value: &vpc_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ModelResult {

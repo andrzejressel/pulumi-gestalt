@@ -130,6 +130,22 @@ pub mod workload {
         name: &str,
         args: WorkloadArgs,
     ) -> WorkloadResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkloadArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WorkloadResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkloadArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WorkloadResult {
         let application_id_binding = args.application_id.get_output(context);
         let attributes_binding = args.attributes.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -176,6 +192,7 @@ pub mod workload {
                     value: &workload_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WorkloadResult {

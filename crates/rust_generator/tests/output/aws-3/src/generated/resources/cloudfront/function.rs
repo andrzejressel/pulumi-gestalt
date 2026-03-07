@@ -87,6 +87,22 @@ pub mod function {
         name: &str,
         args: FunctionArgs,
     ) -> FunctionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FunctionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FunctionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FunctionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FunctionResult {
         let code_binding = args.code.get_output(context);
         let comment_binding = args.comment.get_output(context);
         let key_value_store_associations_binding = args
@@ -125,6 +141,7 @@ pub mod function {
                     value: &runtime_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FunctionResult {

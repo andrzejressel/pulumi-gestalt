@@ -339,6 +339,22 @@ pub mod resource_policy {
         name: &str,
         args: ResourcePolicyArgs,
     ) -> ResourcePolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResourcePolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ResourcePolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResourcePolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ResourcePolicyResult {
         let description_binding = args.description.get_output(context);
         let disk_consistency_group_policy_binding = args
             .disk_consistency_group_policy
@@ -393,6 +409,7 @@ pub mod resource_policy {
                     value: &snapshot_schedule_policy_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ResourcePolicyResult {

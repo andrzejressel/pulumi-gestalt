@@ -74,6 +74,22 @@ pub mod access_group {
         name: &str,
         args: AccessGroupArgs,
     ) -> AccessGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccessGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AccessGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccessGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AccessGroupResult {
         let account_id_binding = args.account_id.get_output(context);
         let excludes_binding = args.excludes.get_output(context);
         let includes_binding = args.includes.get_output(context);
@@ -110,6 +126,7 @@ pub mod access_group {
                     value: &zone_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AccessGroupResult {

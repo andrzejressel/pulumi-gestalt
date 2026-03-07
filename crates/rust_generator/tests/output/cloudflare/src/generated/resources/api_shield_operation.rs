@@ -66,6 +66,22 @@ pub mod api_shield_operation {
         name: &str,
         args: ApiShieldOperationArgs,
     ) -> ApiShieldOperationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApiShieldOperationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ApiShieldOperationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApiShieldOperationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ApiShieldOperationResult {
         let endpoint_binding = args.endpoint.get_output(context);
         let host_binding = args.host.get_output(context);
         let method_binding = args.method.get_output(context);
@@ -92,6 +108,7 @@ pub mod api_shield_operation {
                     value: &zone_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ApiShieldOperationResult {

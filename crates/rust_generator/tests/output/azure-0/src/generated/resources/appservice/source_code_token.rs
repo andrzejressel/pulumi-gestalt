@@ -72,6 +72,22 @@ pub mod source_code_token {
         name: &str,
         args: SourceCodeTokenArgs,
     ) -> SourceCodeTokenResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SourceCodeTokenArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SourceCodeTokenResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SourceCodeTokenArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SourceCodeTokenResult {
         let token_binding = args.token.get_output(context);
         let token_secret_binding = args.token_secret.get_output(context);
         let type__binding = args.type_.get_output(context);
@@ -93,6 +109,7 @@ pub mod source_code_token {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SourceCodeTokenResult {

@@ -71,6 +71,22 @@ pub mod lb_stickiness_policy {
         name: &str,
         args: LbStickinessPolicyArgs,
     ) -> LbStickinessPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LbStickinessPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LbStickinessPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LbStickinessPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LbStickinessPolicyResult {
         let cookie_duration_binding = args.cookie_duration.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
         let lb_name_binding = args.lb_name.get_output(context);
@@ -92,6 +108,7 @@ pub mod lb_stickiness_policy {
                     value: &lb_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LbStickinessPolicyResult {

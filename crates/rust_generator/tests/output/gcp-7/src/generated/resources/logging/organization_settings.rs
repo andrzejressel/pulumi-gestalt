@@ -116,6 +116,22 @@ pub mod organization_settings {
         name: &str,
         args: OrganizationSettingsArgs,
     ) -> OrganizationSettingsResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationSettingsArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OrganizationSettingsResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationSettingsArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OrganizationSettingsResult {
         let disable_default_sink_binding = args.disable_default_sink.get_output(context);
         let kms_key_name_binding = args.kms_key_name.get_output(context);
         let organization_binding = args.organization.get_output(context);
@@ -142,6 +158,7 @@ pub mod organization_settings {
                     value: &storage_location_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OrganizationSettingsResult {

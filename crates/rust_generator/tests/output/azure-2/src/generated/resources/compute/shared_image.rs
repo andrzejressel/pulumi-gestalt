@@ -243,6 +243,22 @@ pub mod shared_image {
         name: &str,
         args: SharedImageArgs,
     ) -> SharedImageResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SharedImageArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SharedImageResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SharedImageArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SharedImageResult {
         let accelerated_network_support_enabled_binding = args
             .accelerated_network_support_enabled
             .get_output(context);
@@ -413,6 +429,7 @@ pub mod shared_image {
                     value: &trusted_launch_supported_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SharedImageResult {

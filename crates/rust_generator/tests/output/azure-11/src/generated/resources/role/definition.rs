@@ -129,6 +129,22 @@ pub mod definition {
         name: &str,
         args: DefinitionArgs,
     ) -> DefinitionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DefinitionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DefinitionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DefinitionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DefinitionResult {
         let assignable_scopes_binding = args.assignable_scopes.get_output(context);
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -165,6 +181,7 @@ pub mod definition {
                     value: &scope_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DefinitionResult {

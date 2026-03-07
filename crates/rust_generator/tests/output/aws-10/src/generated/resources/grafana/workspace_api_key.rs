@@ -70,6 +70,22 @@ pub mod workspace_api_key {
         name: &str,
         args: WorkspaceApiKeyArgs,
     ) -> WorkspaceApiKeyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkspaceApiKeyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WorkspaceApiKeyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkspaceApiKeyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WorkspaceApiKeyResult {
         let key_name_binding = args.key_name.get_output(context);
         let key_role_binding = args.key_role.get_output(context);
         let seconds_to_live_binding = args.seconds_to_live.get_output(context);
@@ -96,6 +112,7 @@ pub mod workspace_api_key {
                     value: &workspace_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WorkspaceApiKeyResult {

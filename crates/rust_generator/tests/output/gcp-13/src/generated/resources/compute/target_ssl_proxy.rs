@@ -194,6 +194,22 @@ pub mod target_ssl_proxy {
         name: &str,
         args: TargetSSLProxyArgs,
     ) -> TargetSSLProxyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TargetSSLProxyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TargetSSLProxyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TargetSSLProxyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TargetSSLProxyResult {
         let backend_service_binding = args.backend_service.get_output(context);
         let certificate_map_binding = args.certificate_map.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -240,6 +256,7 @@ pub mod target_ssl_proxy {
                     value: &ssl_policy_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TargetSSLProxyResult {

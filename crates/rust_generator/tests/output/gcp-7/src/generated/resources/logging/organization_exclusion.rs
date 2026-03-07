@@ -90,6 +90,22 @@ pub mod organization_exclusion {
         name: &str,
         args: OrganizationExclusionArgs,
     ) -> OrganizationExclusionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationExclusionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OrganizationExclusionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationExclusionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OrganizationExclusionResult {
         let description_binding = args.description.get_output(context);
         let disabled_binding = args.disabled.get_output(context);
         let filter_binding = args.filter.get_output(context);
@@ -121,6 +137,7 @@ pub mod organization_exclusion {
                     value: &org_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OrganizationExclusionResult {

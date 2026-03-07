@@ -162,6 +162,22 @@ pub mod access_point {
         name: &str,
         args: AccessPointArgs,
     ) -> AccessPointResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccessPointArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AccessPointResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccessPointArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AccessPointResult {
         let account_id_binding = args.account_id.get_output(context);
         let bucket_binding = args.bucket.get_output(context);
         let bucket_account_id_binding = args.bucket_account_id.get_output(context);
@@ -205,6 +221,7 @@ pub mod access_point {
                     value: &vpc_configuration_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AccessPointResult {

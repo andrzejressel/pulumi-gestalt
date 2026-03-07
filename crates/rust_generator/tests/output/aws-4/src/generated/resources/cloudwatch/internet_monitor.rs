@@ -119,6 +119,22 @@ pub mod internet_monitor {
         name: &str,
         args: InternetMonitorArgs,
     ) -> InternetMonitorResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InternetMonitorArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> InternetMonitorResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InternetMonitorArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> InternetMonitorResult {
         let health_events_config_binding = args.health_events_config.get_output(context);
         let internet_measurements_log_delivery_binding = args
             .internet_measurements_log_delivery
@@ -171,6 +187,7 @@ pub mod internet_monitor {
                     value: &traffic_percentage_to_monitor_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         InternetMonitorResult {

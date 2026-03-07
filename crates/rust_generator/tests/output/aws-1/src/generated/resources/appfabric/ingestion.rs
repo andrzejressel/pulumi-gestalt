@@ -89,6 +89,22 @@ pub mod ingestion {
         name: &str,
         args: IngestionArgs,
     ) -> IngestionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IngestionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IngestionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IngestionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IngestionResult {
         let app_binding = args.app.get_output(context);
         let app_bundle_arn_binding = args.app_bundle_arn.get_output(context);
         let ingestion_type_binding = args.ingestion_type.get_output(context);
@@ -120,6 +136,7 @@ pub mod ingestion {
                     value: &tenant_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IngestionResult {

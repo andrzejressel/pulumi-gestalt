@@ -69,6 +69,22 @@ pub mod security_group_association {
         name: &str,
         args: SecurityGroupAssociationArgs,
     ) -> SecurityGroupAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SecurityGroupAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SecurityGroupAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SecurityGroupAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SecurityGroupAssociationResult {
         let replace_default_association_binding = args
             .replace_default_association
             .get_output(context);
@@ -92,6 +108,7 @@ pub mod security_group_association {
                     value: &vpc_endpoint_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SecurityGroupAssociationResult {

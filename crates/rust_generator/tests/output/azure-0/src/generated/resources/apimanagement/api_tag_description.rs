@@ -112,6 +112,22 @@ pub mod api_tag_description {
         name: &str,
         args: ApiTagDescriptionArgs,
     ) -> ApiTagDescriptionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApiTagDescriptionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ApiTagDescriptionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApiTagDescriptionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ApiTagDescriptionResult {
         let api_tag_id_binding = args.api_tag_id.get_output(context);
         let description_binding = args.description.get_output(context);
         let external_documentation_description_binding = args
@@ -142,6 +158,7 @@ pub mod api_tag_description {
                     value: &external_documentation_url_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ApiTagDescriptionResult {

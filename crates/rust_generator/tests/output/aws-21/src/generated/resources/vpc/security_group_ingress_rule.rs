@@ -128,6 +128,22 @@ pub mod security_group_ingress_rule {
         name: &str,
         args: SecurityGroupIngressRuleArgs,
     ) -> SecurityGroupIngressRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SecurityGroupIngressRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SecurityGroupIngressRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SecurityGroupIngressRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SecurityGroupIngressRuleResult {
         let cidr_ipv4_binding = args.cidr_ipv4.get_output(context);
         let cidr_ipv6_binding = args.cidr_ipv6.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -186,6 +202,7 @@ pub mod security_group_ingress_rule {
                     value: &to_port_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SecurityGroupIngressRuleResult {

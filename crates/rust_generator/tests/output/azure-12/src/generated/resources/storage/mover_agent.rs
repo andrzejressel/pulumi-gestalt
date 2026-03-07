@@ -97,6 +97,22 @@ pub mod mover_agent {
         name: &str,
         args: MoverAgentArgs,
     ) -> MoverAgentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MoverAgentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MoverAgentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MoverAgentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MoverAgentResult {
         let arc_virtual_machine_id_binding = args
             .arc_virtual_machine_id
             .get_output(context);
@@ -132,6 +148,7 @@ pub mod mover_agent {
                     value: &storage_mover_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MoverAgentResult {

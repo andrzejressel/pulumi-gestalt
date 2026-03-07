@@ -283,6 +283,22 @@ pub mod bare_metal_node_pool {
         name: &str,
         args: BareMetalNodePoolArgs,
     ) -> BareMetalNodePoolResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BareMetalNodePoolArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BareMetalNodePoolResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BareMetalNodePoolArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BareMetalNodePoolResult {
         let annotations_binding = args.annotations.get_output(context);
         let bare_metal_cluster_binding = args.bare_metal_cluster.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
@@ -324,6 +340,7 @@ pub mod bare_metal_node_pool {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BareMetalNodePoolResult {

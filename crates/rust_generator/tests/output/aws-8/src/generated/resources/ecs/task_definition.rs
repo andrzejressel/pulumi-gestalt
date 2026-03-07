@@ -372,6 +372,22 @@ pub mod task_definition {
         name: &str,
         args: TaskDefinitionArgs,
     ) -> TaskDefinitionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TaskDefinitionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TaskDefinitionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TaskDefinitionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TaskDefinitionResult {
         let container_definitions_binding = args
             .container_definitions
             .get_output(context);
@@ -481,6 +497,7 @@ pub mod task_definition {
                     value: &volumes_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TaskDefinitionResult {

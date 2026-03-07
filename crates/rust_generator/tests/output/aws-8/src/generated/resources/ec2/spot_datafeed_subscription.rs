@@ -69,6 +69,22 @@ pub mod spot_datafeed_subscription {
         name: &str,
         args: SpotDatafeedSubscriptionArgs,
     ) -> SpotDatafeedSubscriptionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpotDatafeedSubscriptionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SpotDatafeedSubscriptionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpotDatafeedSubscriptionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SpotDatafeedSubscriptionResult {
         let bucket_binding = args.bucket.get_output(context);
         let prefix_binding = args.prefix.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -85,6 +101,7 @@ pub mod spot_datafeed_subscription {
                     value: &prefix_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SpotDatafeedSubscriptionResult {

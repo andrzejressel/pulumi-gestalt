@@ -498,6 +498,22 @@ pub mod region_target_https_proxy {
         name: &str,
         args: RegionTargetHttpsProxyArgs,
     ) -> RegionTargetHttpsProxyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionTargetHttpsProxyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RegionTargetHttpsProxyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionTargetHttpsProxyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RegionTargetHttpsProxyResult {
         let certificate_manager_certificates_binding = args
             .certificate_manager_certificates
             .get_output(context);
@@ -558,6 +574,7 @@ pub mod region_target_https_proxy {
                     value: &url_map_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RegionTargetHttpsProxyResult {

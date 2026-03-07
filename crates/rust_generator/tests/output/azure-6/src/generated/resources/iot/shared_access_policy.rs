@@ -117,6 +117,22 @@ pub mod shared_access_policy {
         name: &str,
         args: SharedAccessPolicyArgs,
     ) -> SharedAccessPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SharedAccessPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SharedAccessPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SharedAccessPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SharedAccessPolicyResult {
         let device_connect_binding = args.device_connect.get_output(context);
         let iothub_name_binding = args.iothub_name.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -158,6 +174,7 @@ pub mod shared_access_policy {
                     value: &service_connect_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SharedAccessPolicyResult {

@@ -149,6 +149,22 @@ pub mod account_assignment {
         name: &str,
         args: AccountAssignmentArgs,
     ) -> AccountAssignmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccountAssignmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AccountAssignmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccountAssignmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AccountAssignmentResult {
         let instance_arn_binding = args.instance_arn.get_output(context);
         let permission_set_arn_binding = args.permission_set_arn.get_output(context);
         let principal_id_binding = args.principal_id.get_output(context);
@@ -185,6 +201,7 @@ pub mod account_assignment {
                     value: &target_type_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AccountAssignmentResult {

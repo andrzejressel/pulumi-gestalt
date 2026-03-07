@@ -75,6 +75,22 @@ pub mod next_generation_firewall_virtual_hub_local_rulestack {
         name: &str,
         args: NextGenerationFirewallVirtualHubLocalRulestackArgs,
     ) -> NextGenerationFirewallVirtualHubLocalRulestackResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NextGenerationFirewallVirtualHubLocalRulestackArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NextGenerationFirewallVirtualHubLocalRulestackResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NextGenerationFirewallVirtualHubLocalRulestackArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NextGenerationFirewallVirtualHubLocalRulestackResult {
         let destination_nats_binding = args.destination_nats.get_output(context);
         let dns_settings_binding = args.dns_settings.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -117,6 +133,7 @@ pub mod next_generation_firewall_virtual_hub_local_rulestack {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NextGenerationFirewallVirtualHubLocalRulestackResult {

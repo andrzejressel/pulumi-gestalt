@@ -81,6 +81,22 @@ pub mod ai_feature_store_entity_type_iam_policy {
         name: &str,
         args: AiFeatureStoreEntityTypeIamPolicyArgs,
     ) -> AiFeatureStoreEntityTypeIamPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AiFeatureStoreEntityTypeIamPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AiFeatureStoreEntityTypeIamPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AiFeatureStoreEntityTypeIamPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AiFeatureStoreEntityTypeIamPolicyResult {
         let entitytype_binding = args.entitytype.get_output(context);
         let featurestore_binding = args.featurestore.get_output(context);
         let policy_data_binding = args.policy_data.get_output(context);
@@ -103,6 +119,7 @@ pub mod ai_feature_store_entity_type_iam_policy {
                     value: &policy_data_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AiFeatureStoreEntityTypeIamPolicyResult {

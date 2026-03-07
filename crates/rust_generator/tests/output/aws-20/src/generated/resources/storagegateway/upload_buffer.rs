@@ -91,6 +91,22 @@ pub mod upload_buffer {
         name: &str,
         args: UploadBufferArgs,
     ) -> UploadBufferResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: UploadBufferArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> UploadBufferResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: UploadBufferArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> UploadBufferResult {
         let disk_id_binding = args.disk_id.get_output(context);
         let disk_path_binding = args.disk_path.get_output(context);
         let gateway_arn_binding = args.gateway_arn.get_output(context);
@@ -112,6 +128,7 @@ pub mod upload_buffer {
                     value: &gateway_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         UploadBufferResult {

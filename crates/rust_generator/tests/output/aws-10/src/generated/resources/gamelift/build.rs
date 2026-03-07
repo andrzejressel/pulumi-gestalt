@@ -98,6 +98,22 @@ pub mod build {
         name: &str,
         args: BuildArgs,
     ) -> BuildResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BuildArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BuildResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BuildArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BuildResult {
         let name_binding = args.name.get_output(context);
         let operating_system_binding = args.operating_system.get_output(context);
         let storage_location_binding = args.storage_location.get_output(context);
@@ -129,6 +145,7 @@ pub mod build {
                     value: &version_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BuildResult {

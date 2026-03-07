@@ -126,6 +126,22 @@ pub mod mongo_role_definition {
         name: &str,
         args: MongoRoleDefinitionArgs,
     ) -> MongoRoleDefinitionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MongoRoleDefinitionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MongoRoleDefinitionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MongoRoleDefinitionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MongoRoleDefinitionResult {
         let cosmos_mongo_database_id_binding = args
             .cosmos_mongo_database_id
             .get_output(context);
@@ -154,6 +170,7 @@ pub mod mongo_role_definition {
                     value: &role_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MongoRoleDefinitionResult {

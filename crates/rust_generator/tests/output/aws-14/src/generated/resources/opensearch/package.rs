@@ -97,6 +97,22 @@ pub mod package {
         name: &str,
         args: PackageArgs,
     ) -> PackageResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PackageArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PackageResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PackageArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PackageResult {
         let package_description_binding = args.package_description.get_output(context);
         let package_name_binding = args.package_name.get_output(context);
         let package_source_binding = args.package_source.get_output(context);
@@ -123,6 +139,7 @@ pub mod package {
                     value: &package_type_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PackageResult {

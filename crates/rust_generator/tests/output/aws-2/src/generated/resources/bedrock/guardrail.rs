@@ -224,6 +224,22 @@ pub mod guardrail {
         name: &str,
         args: GuardrailArgs,
     ) -> GuardrailResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GuardrailArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GuardrailResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GuardrailArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GuardrailResult {
         let blocked_input_messaging_binding = args
             .blocked_input_messaging
             .get_output(context);
@@ -300,6 +316,7 @@ pub mod guardrail {
                     value: &word_policy_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GuardrailResult {

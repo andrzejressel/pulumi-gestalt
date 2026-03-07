@@ -271,6 +271,22 @@ pub mod v_mware_node_pool {
         name: &str,
         args: VMwareNodePoolArgs,
     ) -> VMwareNodePoolResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VMwareNodePoolArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VMwareNodePoolResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VMwareNodePoolArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VMwareNodePoolResult {
         let annotations_binding = args.annotations.get_output(context);
         let config_binding = args.config.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
@@ -319,6 +335,7 @@ pub mod v_mware_node_pool {
                     value: &vmware_cluster_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VMwareNodePoolResult {

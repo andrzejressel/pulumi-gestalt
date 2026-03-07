@@ -104,6 +104,22 @@ pub mod source_api_association {
         name: &str,
         args: SourceApiAssociationArgs,
     ) -> SourceApiAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SourceApiAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SourceApiAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SourceApiAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SourceApiAssociationResult {
         let description_binding = args.description.get_output(context);
         let merged_api_arn_binding = args.merged_api_arn.get_output(context);
         let merged_api_id_binding = args.merged_api_id.get_output(context);
@@ -147,6 +163,7 @@ pub mod source_api_association {
                     value: &timeouts_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SourceApiAssociationResult {

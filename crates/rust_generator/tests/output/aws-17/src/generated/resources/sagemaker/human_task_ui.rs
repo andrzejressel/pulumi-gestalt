@@ -81,6 +81,22 @@ pub mod human_task_ui {
         name: &str,
         args: HumanTaskUIArgs,
     ) -> HumanTaskUIResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HumanTaskUIArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> HumanTaskUIResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HumanTaskUIArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> HumanTaskUIResult {
         let human_task_ui_name_binding = args.human_task_ui_name.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let ui_template_binding = args.ui_template.get_output(context);
@@ -102,6 +118,7 @@ pub mod human_task_ui {
                     value: &ui_template_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         HumanTaskUIResult {

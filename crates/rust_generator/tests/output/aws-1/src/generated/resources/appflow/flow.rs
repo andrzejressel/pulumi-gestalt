@@ -214,6 +214,22 @@ pub mod flow {
         name: &str,
         args: FlowArgs,
     ) -> FlowResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FlowArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FlowResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FlowArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FlowResult {
         let description_binding = args.description.get_output(context);
         let destination_flow_configs_binding = args
             .destination_flow_configs
@@ -269,6 +285,7 @@ pub mod flow {
                     value: &trigger_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FlowResult {

@@ -120,6 +120,22 @@ pub mod container {
         name: &str,
         args: ContainerArgs,
     ) -> ContainerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ContainerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ContainerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ContainerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ContainerResult {
         let container_access_type_binding = args
             .container_access_type
             .get_output(context);
@@ -167,6 +183,7 @@ pub mod container {
                     value: &storage_account_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ContainerResult {

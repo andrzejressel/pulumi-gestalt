@@ -128,6 +128,22 @@ pub mod access {
         name: &str,
         args: AccessArgs,
     ) -> AccessResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccessArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AccessResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccessArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AccessResult {
         let external_id_binding = args.external_id.get_output(context);
         let home_directory_binding = args.home_directory.get_output(context);
         let home_directory_mappings_binding = args
@@ -176,6 +192,7 @@ pub mod access {
                     value: &server_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AccessResult {

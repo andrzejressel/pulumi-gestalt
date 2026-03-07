@@ -275,6 +275,22 @@ pub mod metric_stream {
         name: &str,
         args: MetricStreamArgs,
     ) -> MetricStreamResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MetricStreamArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MetricStreamResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MetricStreamArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MetricStreamResult {
         let exclude_filters_binding = args.exclude_filters.get_output(context);
         let firehose_arn_binding = args.firehose_arn.get_output(context);
         let include_filters_binding = args.include_filters.get_output(context);
@@ -335,6 +351,7 @@ pub mod metric_stream {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MetricStreamResult {

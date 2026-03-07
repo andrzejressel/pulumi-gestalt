@@ -106,6 +106,22 @@ pub mod workflow {
         name: &str,
         args: WorkflowArgs,
     ) -> WorkflowResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkflowArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WorkflowResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkflowArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WorkflowResult {
         let default_run_properties_binding = args
             .default_run_properties
             .get_output(context);
@@ -139,6 +155,7 @@ pub mod workflow {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WorkflowResult {

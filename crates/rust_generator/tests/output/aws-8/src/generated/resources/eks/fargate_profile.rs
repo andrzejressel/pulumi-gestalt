@@ -111,6 +111,22 @@ pub mod fargate_profile {
         name: &str,
         args: FargateProfileArgs,
     ) -> FargateProfileResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FargateProfileArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FargateProfileResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FargateProfileArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FargateProfileResult {
         let cluster_name_binding = args.cluster_name.get_output(context);
         let fargate_profile_name_binding = args.fargate_profile_name.get_output(context);
         let pod_execution_role_arn_binding = args
@@ -149,6 +165,7 @@ pub mod fargate_profile {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FargateProfileResult {

@@ -107,6 +107,22 @@ pub mod three_tier_virtual_instance {
         name: &str,
         args: ThreeTierVirtualInstanceArgs,
     ) -> ThreeTierVirtualInstanceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ThreeTierVirtualInstanceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ThreeTierVirtualInstanceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ThreeTierVirtualInstanceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ThreeTierVirtualInstanceResult {
         let app_location_binding = args.app_location.get_output(context);
         let environment_binding = args.environment.get_output(context);
         let identity_binding = args.identity.get_output(context);
@@ -173,6 +189,7 @@ pub mod three_tier_virtual_instance {
                     value: &three_tier_configuration_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ThreeTierVirtualInstanceResult {

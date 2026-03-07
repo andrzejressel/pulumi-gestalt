@@ -136,6 +136,22 @@ pub mod output_synapse {
         name: &str,
         args: OutputSynapseArgs,
     ) -> OutputSynapseResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OutputSynapseArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OutputSynapseResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OutputSynapseArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OutputSynapseResult {
         let database_binding = args.database.get_output(context);
         let name_binding = args.name.get_output(context);
         let password_binding = args.password.get_output(context);
@@ -184,6 +200,7 @@ pub mod output_synapse {
                     value: &user_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OutputSynapseResult {

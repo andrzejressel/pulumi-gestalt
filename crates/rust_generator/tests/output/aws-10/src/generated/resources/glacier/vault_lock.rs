@@ -107,6 +107,22 @@ pub mod vault_lock {
         name: &str,
         args: VaultLockArgs,
     ) -> VaultLockResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VaultLockArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VaultLockResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VaultLockArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VaultLockResult {
         let complete_lock_binding = args.complete_lock.get_output(context);
         let ignore_deletion_error_binding = args
             .ignore_deletion_error
@@ -135,6 +151,7 @@ pub mod vault_lock {
                     value: &vault_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VaultLockResult {

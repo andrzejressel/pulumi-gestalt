@@ -153,6 +153,22 @@ pub mod kx_dataview {
         name: &str,
         args: KxDataviewArgs,
     ) -> KxDataviewResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: KxDataviewArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> KxDataviewResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: KxDataviewArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> KxDataviewResult {
         let auto_update_binding = args.auto_update.get_output(context);
         let availability_zone_id_binding = args.availability_zone_id.get_output(context);
         let az_mode_binding = args.az_mode.get_output(context);
@@ -216,6 +232,7 @@ pub mod kx_dataview {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         KxDataviewResult {

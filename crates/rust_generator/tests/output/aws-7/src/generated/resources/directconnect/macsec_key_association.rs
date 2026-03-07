@@ -102,6 +102,22 @@ pub mod macsec_key_association {
         name: &str,
         args: MacsecKeyAssociationArgs,
     ) -> MacsecKeyAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MacsecKeyAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MacsecKeyAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MacsecKeyAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MacsecKeyAssociationResult {
         let cak_binding = args.cak.get_output(context);
         let ckn_binding = args.ckn.get_output(context);
         let connection_id_binding = args.connection_id.get_output(context);
@@ -128,6 +144,7 @@ pub mod macsec_key_association {
                     value: &secret_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MacsecKeyAssociationResult {

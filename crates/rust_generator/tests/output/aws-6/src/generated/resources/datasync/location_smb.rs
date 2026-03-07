@@ -112,6 +112,22 @@ pub mod location_smb {
         name: &str,
         args: LocationSmbArgs,
     ) -> LocationSmbResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LocationSmbArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LocationSmbResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LocationSmbArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LocationSmbResult {
         let agent_arns_binding = args.agent_arns.get_output(context);
         let domain_binding = args.domain.get_output(context);
         let mount_options_binding = args.mount_options.get_output(context);
@@ -158,6 +174,7 @@ pub mod location_smb {
                     value: &user_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LocationSmbResult {

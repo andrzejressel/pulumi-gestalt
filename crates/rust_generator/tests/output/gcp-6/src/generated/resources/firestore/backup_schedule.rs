@@ -164,6 +164,22 @@ pub mod backup_schedule {
         name: &str,
         args: BackupScheduleArgs,
     ) -> BackupScheduleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackupScheduleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BackupScheduleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackupScheduleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BackupScheduleResult {
         let daily_recurrence_binding = args.daily_recurrence.get_output(context);
         let database_binding = args.database.get_output(context);
         let project_binding = args.project.get_output(context);
@@ -195,6 +211,7 @@ pub mod backup_schedule {
                     value: &weekly_recurrence_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BackupScheduleResult {

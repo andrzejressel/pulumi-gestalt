@@ -373,6 +373,22 @@ pub mod address {
         name: &str,
         args: AddressArgs,
     ) -> AddressResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AddressArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AddressResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AddressArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AddressResult {
         let address_binding = args.address.get_output(context);
         let address_type_binding = args.address_type.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -449,6 +465,7 @@ pub mod address {
                     value: &subnetwork_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AddressResult {

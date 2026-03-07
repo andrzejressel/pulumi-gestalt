@@ -115,6 +115,22 @@ pub mod pipeline {
         name: &str,
         args: PipelineArgs,
     ) -> PipelineResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PipelineArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PipelineResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PipelineArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PipelineResult {
         let parallelism_configuration_binding = args
             .parallelism_configuration
             .get_output(context);
@@ -167,6 +183,7 @@ pub mod pipeline {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PipelineResult {

@@ -212,6 +212,22 @@ pub mod data_policy {
         name: &str,
         args: DataPolicyArgs,
     ) -> DataPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DataPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DataPolicyResult {
         let data_masking_policy_binding = args.data_masking_policy.get_output(context);
         let data_policy_id_binding = args.data_policy_id.get_output(context);
         let data_policy_type_binding = args.data_policy_type.get_output(context);
@@ -248,6 +264,7 @@ pub mod data_policy {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DataPolicyResult {

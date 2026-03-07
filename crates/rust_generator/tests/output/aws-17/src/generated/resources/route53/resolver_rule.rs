@@ -141,6 +141,22 @@ pub mod resolver_rule {
         name: &str,
         args: ResolverRuleArgs,
     ) -> ResolverRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResolverRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ResolverRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResolverRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ResolverRuleResult {
         let domain_name_binding = args.domain_name.get_output(context);
         let name_binding = args.name.get_output(context);
         let resolver_endpoint_id_binding = args.resolver_endpoint_id.get_output(context);
@@ -177,6 +193,7 @@ pub mod resolver_rule {
                     value: &target_ips_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ResolverRuleResult {

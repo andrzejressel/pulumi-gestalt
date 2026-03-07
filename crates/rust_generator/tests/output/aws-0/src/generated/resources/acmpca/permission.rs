@@ -84,6 +84,22 @@ pub mod permission {
         name: &str,
         args: PermissionArgs,
     ) -> PermissionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PermissionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PermissionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PermissionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PermissionResult {
         let actions_binding = args.actions.get_output(context);
         let certificate_authority_arn_binding = args
             .certificate_authority_arn
@@ -112,6 +128,7 @@ pub mod permission {
                     value: &source_account_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PermissionResult {

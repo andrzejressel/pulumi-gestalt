@@ -112,6 +112,22 @@ pub mod vpc_origin {
         name: &str,
         args: VpcOriginArgs,
     ) -> VpcOriginResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcOriginArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VpcOriginResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpcOriginArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VpcOriginResult {
         let tags_binding = args.tags.get_output(context);
         let timeouts_binding = args.timeouts.get_output(context);
         let vpc_origin_endpoint_config_binding = args
@@ -135,6 +151,7 @@ pub mod vpc_origin {
                     value: &vpc_origin_endpoint_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VpcOriginResult {

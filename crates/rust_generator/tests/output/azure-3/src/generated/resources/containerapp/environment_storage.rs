@@ -131,6 +131,22 @@ pub mod environment_storage {
         name: &str,
         args: EnvironmentStorageArgs,
     ) -> EnvironmentStorageResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EnvironmentStorageArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EnvironmentStorageResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EnvironmentStorageArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EnvironmentStorageResult {
         let access_key_binding = args.access_key.get_output(context);
         let access_mode_binding = args.access_mode.get_output(context);
         let account_name_binding = args.account_name.get_output(context);
@@ -169,6 +185,7 @@ pub mod environment_storage {
                     value: &share_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EnvironmentStorageResult {

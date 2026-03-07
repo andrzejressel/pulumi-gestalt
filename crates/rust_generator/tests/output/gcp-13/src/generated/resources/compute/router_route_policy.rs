@@ -172,6 +172,22 @@ pub mod router_route_policy {
         name: &str,
         args: RouterRoutePolicyArgs,
     ) -> RouterRoutePolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RouterRoutePolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RouterRoutePolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RouterRoutePolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RouterRoutePolicyResult {
         let name_binding = args.name.get_output(context);
         let project_binding = args.project.get_output(context);
         let region_binding = args.region.get_output(context);
@@ -208,6 +224,7 @@ pub mod router_route_policy {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RouterRoutePolicyResult {

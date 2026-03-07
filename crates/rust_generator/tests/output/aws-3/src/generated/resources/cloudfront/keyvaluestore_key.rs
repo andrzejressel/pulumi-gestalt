@@ -79,6 +79,22 @@ pub mod keyvaluestore_key {
         name: &str,
         args: KeyvaluestoreKeyArgs,
     ) -> KeyvaluestoreKeyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: KeyvaluestoreKeyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> KeyvaluestoreKeyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: KeyvaluestoreKeyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> KeyvaluestoreKeyResult {
         let key_binding = args.key.get_output(context);
         let key_value_store_arn_binding = args.key_value_store_arn.get_output(context);
         let value_binding = args.value.get_output(context);
@@ -100,6 +116,7 @@ pub mod keyvaluestore_key {
                     value: &value_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         KeyvaluestoreKeyResult {

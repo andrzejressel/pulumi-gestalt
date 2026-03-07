@@ -146,6 +146,22 @@ pub mod identity_pool {
         name: &str,
         args: IdentityPoolArgs,
     ) -> IdentityPoolResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IdentityPoolArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IdentityPoolResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IdentityPoolArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IdentityPoolResult {
         let allow_classic_flow_binding = args.allow_classic_flow.get_output(context);
         let allow_unauthenticated_identities_binding = args
             .allow_unauthenticated_identities
@@ -207,6 +223,7 @@ pub mod identity_pool {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IdentityPoolResult {

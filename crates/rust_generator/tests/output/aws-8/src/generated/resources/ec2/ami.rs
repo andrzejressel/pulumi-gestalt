@@ -189,6 +189,22 @@ pub mod ami {
         name: &str,
         args: AmiArgs,
     ) -> AmiResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AmiArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AmiResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AmiArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AmiResult {
         let architecture_binding = args.architecture.get_output(context);
         let boot_mode_binding = args.boot_mode.get_output(context);
         let deprecation_time_binding = args.deprecation_time.get_output(context);
@@ -282,6 +298,7 @@ pub mod ami {
                     value: &virtualization_type_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AmiResult {

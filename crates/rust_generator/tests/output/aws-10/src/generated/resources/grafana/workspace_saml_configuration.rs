@@ -145,6 +145,22 @@ pub mod workspace_saml_configuration {
         name: &str,
         args: WorkspaceSamlConfigurationArgs,
     ) -> WorkspaceSamlConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkspaceSamlConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WorkspaceSamlConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkspaceSamlConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WorkspaceSamlConfigurationResult {
         let admin_role_values_binding = args.admin_role_values.get_output(context);
         let allowed_organizations_binding = args
             .allowed_organizations
@@ -221,6 +237,7 @@ pub mod workspace_saml_configuration {
                     value: &workspace_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WorkspaceSamlConfigurationResult {

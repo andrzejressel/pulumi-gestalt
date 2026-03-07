@@ -594,6 +594,22 @@ pub mod ai_feature_online_store_featureview {
         name: &str,
         args: AiFeatureOnlineStoreFeatureviewArgs,
     ) -> AiFeatureOnlineStoreFeatureviewResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AiFeatureOnlineStoreFeatureviewArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AiFeatureOnlineStoreFeatureviewResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AiFeatureOnlineStoreFeatureviewArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AiFeatureOnlineStoreFeatureviewResult {
         let big_query_source_binding = args.big_query_source.get_output(context);
         let feature_online_store_binding = args.feature_online_store.get_output(context);
         let feature_registry_source_binding = args
@@ -648,6 +664,7 @@ pub mod ai_feature_online_store_featureview {
                     value: &vector_search_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AiFeatureOnlineStoreFeatureviewResult {

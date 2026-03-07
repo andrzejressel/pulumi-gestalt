@@ -232,6 +232,22 @@ pub mod autonomous_database {
         name: &str,
         args: AutonomousDatabaseArgs,
     ) -> AutonomousDatabaseResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AutonomousDatabaseArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AutonomousDatabaseResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AutonomousDatabaseArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AutonomousDatabaseResult {
         let admin_password_binding = args.admin_password.get_output(context);
         let autonomous_database_id_binding = args
             .autonomous_database_id
@@ -295,6 +311,7 @@ pub mod autonomous_database {
                     value: &properties_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AutonomousDatabaseResult {

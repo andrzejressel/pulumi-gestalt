@@ -415,6 +415,22 @@ pub mod bare_metal_admin_cluster {
         name: &str,
         args: BareMetalAdminClusterArgs,
     ) -> BareMetalAdminClusterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BareMetalAdminClusterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BareMetalAdminClusterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BareMetalAdminClusterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BareMetalAdminClusterResult {
         let annotations_binding = args.annotations.get_output(context);
         let bare_metal_version_binding = args.bare_metal_version.get_output(context);
         let cluster_operations_binding = args.cluster_operations.get_output(context);
@@ -501,6 +517,7 @@ pub mod bare_metal_admin_cluster {
                     value: &storage_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BareMetalAdminClusterResult {

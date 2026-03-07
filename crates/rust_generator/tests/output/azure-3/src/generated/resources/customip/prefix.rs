@@ -178,6 +178,22 @@ pub mod prefix {
         name: &str,
         args: PrefixArgs,
     ) -> PrefixResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PrefixArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PrefixResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PrefixArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PrefixResult {
         let cidr_binding = args.cidr.get_output(context);
         let commissioning_enabled_binding = args
             .commissioning_enabled
@@ -249,6 +265,7 @@ pub mod prefix {
                     value: &zones_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PrefixResult {

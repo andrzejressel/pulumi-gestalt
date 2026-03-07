@@ -181,6 +181,22 @@ pub mod membership_binding {
         name: &str,
         args: MembershipBindingArgs,
     ) -> MembershipBindingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MembershipBindingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MembershipBindingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MembershipBindingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MembershipBindingResult {
         let labels_binding = args.labels.get_output(context);
         let location_binding = args.location.get_output(context);
         let membership_binding_id_binding = args
@@ -219,6 +235,7 @@ pub mod membership_binding {
                     value: &scope_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MembershipBindingResult {

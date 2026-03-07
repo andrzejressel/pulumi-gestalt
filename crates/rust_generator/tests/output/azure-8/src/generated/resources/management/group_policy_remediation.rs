@@ -114,6 +114,22 @@ pub mod group_policy_remediation {
         name: &str,
         args: GroupPolicyRemediationArgs,
     ) -> GroupPolicyRemediationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GroupPolicyRemediationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GroupPolicyRemediationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GroupPolicyRemediationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GroupPolicyRemediationResult {
         let failure_percentage_binding = args.failure_percentage.get_output(context);
         let location_filters_binding = args.location_filters.get_output(context);
         let management_group_id_binding = args.management_group_id.get_output(context);
@@ -163,6 +179,7 @@ pub mod group_policy_remediation {
                     value: &resource_count_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GroupPolicyRemediationResult {

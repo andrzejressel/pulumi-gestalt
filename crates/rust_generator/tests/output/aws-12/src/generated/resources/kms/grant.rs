@@ -88,6 +88,22 @@ pub mod grant {
         name: &str,
         args: GrantArgs,
     ) -> GrantResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GrantArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GrantResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GrantArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GrantResult {
         let constraints_binding = args.constraints.get_output(context);
         let grant_creation_tokens_binding = args
             .grant_creation_tokens
@@ -136,6 +152,7 @@ pub mod grant {
                     value: &retiring_principal_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GrantResult {

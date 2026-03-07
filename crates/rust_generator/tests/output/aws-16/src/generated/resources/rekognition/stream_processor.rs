@@ -302,6 +302,22 @@ pub mod stream_processor {
         name: &str,
         args: StreamProcessorArgs,
     ) -> StreamProcessorResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StreamProcessorArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> StreamProcessorResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StreamProcessorArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> StreamProcessorResult {
         let data_sharing_preference_binding = args
             .data_sharing_preference
             .get_output(context);
@@ -365,6 +381,7 @@ pub mod stream_processor {
                     value: &timeouts_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         StreamProcessorResult {

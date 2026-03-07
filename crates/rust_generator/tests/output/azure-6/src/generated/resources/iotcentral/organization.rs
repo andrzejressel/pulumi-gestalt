@@ -95,6 +95,22 @@ pub mod organization {
         name: &str,
         args: OrganizationArgs,
     ) -> OrganizationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OrganizationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OrganizationResult {
         let display_name_binding = args.display_name.get_output(context);
         let iotcentral_application_id_binding = args
             .iotcentral_application_id
@@ -125,6 +141,7 @@ pub mod organization {
                     value: &parent_organization_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OrganizationResult {

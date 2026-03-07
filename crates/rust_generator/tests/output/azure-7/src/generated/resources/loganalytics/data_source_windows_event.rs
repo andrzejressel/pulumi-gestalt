@@ -97,6 +97,22 @@ pub mod data_source_windows_event {
         name: &str,
         args: DataSourceWindowsEventArgs,
     ) -> DataSourceWindowsEventResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataSourceWindowsEventArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DataSourceWindowsEventResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataSourceWindowsEventArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DataSourceWindowsEventResult {
         let event_log_name_binding = args.event_log_name.get_output(context);
         let event_types_binding = args.event_types.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -129,6 +145,7 @@ pub mod data_source_windows_event {
                     value: &workspace_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DataSourceWindowsEventResult {

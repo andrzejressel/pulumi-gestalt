@@ -235,6 +235,22 @@ pub mod region_security_policy {
         name: &str,
         args: RegionSecurityPolicyArgs,
     ) -> RegionSecurityPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionSecurityPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RegionSecurityPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionSecurityPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RegionSecurityPolicyResult {
         let ddos_protection_config_binding = args
             .ddos_protection_config
             .get_output(context);
@@ -283,6 +299,7 @@ pub mod region_security_policy {
                     value: &user_defined_fields_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RegionSecurityPolicyResult {

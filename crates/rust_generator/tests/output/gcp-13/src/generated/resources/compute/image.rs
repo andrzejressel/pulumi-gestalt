@@ -346,6 +346,22 @@ pub mod image {
         name: &str,
         args: ImageArgs,
     ) -> ImageResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ImageArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ImageResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ImageArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ImageResult {
         let description_binding = args.description.get_output(context);
         let disk_size_gb_binding = args.disk_size_gb.get_output(context);
         let family_binding = args.family.get_output(context);
@@ -422,6 +438,7 @@ pub mod image {
                     value: &storage_locations_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ImageResult {

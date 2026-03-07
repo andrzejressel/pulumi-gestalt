@@ -283,6 +283,22 @@ pub mod cloud_vm_cluster {
         name: &str,
         args: CloudVmClusterArgs,
     ) -> CloudVmClusterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CloudVmClusterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CloudVmClusterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CloudVmClusterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CloudVmClusterResult {
         let backup_subnet_cidr_binding = args.backup_subnet_cidr.get_output(context);
         let cidr_binding = args.cidr.get_output(context);
         let cloud_vm_cluster_id_binding = args.cloud_vm_cluster_id.get_output(context);
@@ -346,6 +362,7 @@ pub mod cloud_vm_cluster {
                     value: &properties_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CloudVmClusterResult {

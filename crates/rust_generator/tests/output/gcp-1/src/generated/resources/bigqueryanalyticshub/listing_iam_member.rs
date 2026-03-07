@@ -303,6 +303,22 @@ pub mod listing_iam_member {
         name: &str,
         args: ListingIamMemberArgs,
     ) -> ListingIamMemberResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ListingIamMemberArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ListingIamMemberResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ListingIamMemberArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ListingIamMemberResult {
         let condition_binding = args.condition.get_output(context);
         let data_exchange_id_binding = args.data_exchange_id.get_output(context);
         let listing_id_binding = args.listing_id.get_output(context);
@@ -344,6 +360,7 @@ pub mod listing_iam_member {
                     value: &role_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ListingIamMemberResult {

@@ -96,6 +96,22 @@ pub mod assessment_policy {
         name: &str,
         args: AssessmentPolicyArgs,
     ) -> AssessmentPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AssessmentPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AssessmentPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AssessmentPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AssessmentPolicyResult {
         let categories_binding = args.categories.get_output(context);
         let description_binding = args.description.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
@@ -146,6 +162,7 @@ pub mod assessment_policy {
                     value: &user_impact_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AssessmentPolicyResult {

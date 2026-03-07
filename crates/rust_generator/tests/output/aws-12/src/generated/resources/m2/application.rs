@@ -125,6 +125,22 @@ pub mod application {
         name: &str,
         args: ApplicationArgs,
     ) -> ApplicationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApplicationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ApplicationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApplicationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ApplicationResult {
         let definition_binding = args.definition.get_output(context);
         let description_binding = args.description.get_output(context);
         let engine_type_binding = args.engine_type.get_output(context);
@@ -171,6 +187,7 @@ pub mod application {
                     value: &timeouts_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ApplicationResult {

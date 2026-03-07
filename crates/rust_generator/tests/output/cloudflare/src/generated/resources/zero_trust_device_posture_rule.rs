@@ -115,6 +115,22 @@ pub mod zero_trust_device_posture_rule {
         name: &str,
         args: ZeroTrustDevicePostureRuleArgs,
     ) -> ZeroTrustDevicePostureRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZeroTrustDevicePostureRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ZeroTrustDevicePostureRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZeroTrustDevicePostureRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ZeroTrustDevicePostureRuleResult {
         let account_id_binding = args.account_id.get_output(context);
         let description_binding = args.description.get_output(context);
         let expiration_binding = args.expiration.get_output(context);
@@ -162,6 +178,7 @@ pub mod zero_trust_device_posture_rule {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ZeroTrustDevicePostureRuleResult {

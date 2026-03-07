@@ -163,6 +163,22 @@ pub mod automation {
         name: &str,
         args: AutomationArgs,
     ) -> AutomationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AutomationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AutomationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AutomationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AutomationResult {
         let actions_binding = args.actions.get_output(context);
         let description_binding = args.description.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
@@ -214,6 +230,7 @@ pub mod automation {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AutomationResult {

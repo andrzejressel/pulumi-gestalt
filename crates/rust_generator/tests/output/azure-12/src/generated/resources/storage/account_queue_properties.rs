@@ -131,6 +131,22 @@ pub mod account_queue_properties {
         name: &str,
         args: AccountQueuePropertiesArgs,
     ) -> AccountQueuePropertiesResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccountQueuePropertiesArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AccountQueuePropertiesResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccountQueuePropertiesArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AccountQueuePropertiesResult {
         let cors_rules_binding = args.cors_rules.get_output(context);
         let hour_metrics_binding = args.hour_metrics.get_output(context);
         let logging_binding = args.logging.get_output(context);
@@ -162,6 +178,7 @@ pub mod account_queue_properties {
                     value: &storage_account_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AccountQueuePropertiesResult {

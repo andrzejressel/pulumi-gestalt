@@ -100,6 +100,22 @@ pub mod profiles_resource_association {
         name: &str,
         args: ProfilesResourceAssociationArgs,
     ) -> ProfilesResourceAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProfilesResourceAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ProfilesResourceAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProfilesResourceAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ProfilesResourceAssociationResult {
         let name_binding = args.name.get_output(context);
         let profile_id_binding = args.profile_id.get_output(context);
         let resource_arn_binding = args.resource_arn.get_output(context);
@@ -132,6 +148,7 @@ pub mod profiles_resource_association {
                     value: &timeouts_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ProfilesResourceAssociationResult {

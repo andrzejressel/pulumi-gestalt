@@ -85,6 +85,22 @@ pub mod service_trust {
         name: &str,
         args: ServiceTrustArgs,
     ) -> ServiceTrustResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceTrustArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServiceTrustResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceTrustArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServiceTrustResult {
         let domain_service_id_binding = args.domain_service_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let password_binding = args.password.get_output(context);
@@ -118,6 +134,7 @@ pub mod service_trust {
                     value: &trusted_domain_fqdn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServiceTrustResult {

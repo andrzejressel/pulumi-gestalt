@@ -146,6 +146,22 @@ pub mod linked_custom_service {
         name: &str,
         args: LinkedCustomServiceArgs,
     ) -> LinkedCustomServiceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LinkedCustomServiceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LinkedCustomServiceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LinkedCustomServiceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LinkedCustomServiceResult {
         let additional_properties_binding = args
             .additional_properties
             .get_output(context);
@@ -199,6 +215,7 @@ pub mod linked_custom_service {
                     value: &type_properties_json_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LinkedCustomServiceResult {

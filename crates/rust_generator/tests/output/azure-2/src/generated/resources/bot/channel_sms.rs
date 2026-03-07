@@ -103,6 +103,22 @@ pub mod channel_sms {
         name: &str,
         args: ChannelSmsArgs,
     ) -> ChannelSmsResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ChannelSmsArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ChannelSmsResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ChannelSmsArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ChannelSmsResult {
         let bot_name_binding = args.bot_name.get_output(context);
         let location_binding = args.location.get_output(context);
         let phone_number_binding = args.phone_number.get_output(context);
@@ -143,6 +159,7 @@ pub mod channel_sms {
                     value: &sms_channel_auth_token_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ChannelSmsResult {

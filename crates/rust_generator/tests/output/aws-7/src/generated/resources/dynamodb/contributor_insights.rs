@@ -59,6 +59,22 @@ pub mod contributor_insights {
         name: &str,
         args: ContributorInsightsArgs,
     ) -> ContributorInsightsResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ContributorInsightsArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ContributorInsightsResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ContributorInsightsArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ContributorInsightsResult {
         let index_name_binding = args.index_name.get_output(context);
         let table_name_binding = args.table_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -75,6 +91,7 @@ pub mod contributor_insights {
                     value: &table_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ContributorInsightsResult {

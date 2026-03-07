@@ -153,6 +153,22 @@ pub mod datastore_fileshare {
         name: &str,
         args: DatastoreFileshareArgs,
     ) -> DatastoreFileshareResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatastoreFileshareArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DatastoreFileshareResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatastoreFileshareArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DatastoreFileshareResult {
         let account_key_binding = args.account_key.get_output(context);
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -203,6 +219,7 @@ pub mod datastore_fileshare {
                     value: &workspace_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DatastoreFileshareResult {

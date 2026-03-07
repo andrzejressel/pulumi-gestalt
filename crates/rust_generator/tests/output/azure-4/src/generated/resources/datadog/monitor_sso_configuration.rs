@@ -93,6 +93,22 @@ pub mod monitor_sso_configuration {
         name: &str,
         args: MonitorSsoConfigurationArgs,
     ) -> MonitorSsoConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MonitorSsoConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MonitorSsoConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MonitorSsoConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MonitorSsoConfigurationResult {
         let datadog_monitor_id_binding = args.datadog_monitor_id.get_output(context);
         let enterprise_application_id_binding = args
             .enterprise_application_id
@@ -124,6 +140,7 @@ pub mod monitor_sso_configuration {
                     value: &single_sign_on_enabled_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MonitorSsoConfigurationResult {

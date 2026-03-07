@@ -107,6 +107,22 @@ pub mod backend_bucket_signed_url_key {
         name: &str,
         args: BackendBucketSignedUrlKeyArgs,
     ) -> BackendBucketSignedUrlKeyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackendBucketSignedUrlKeyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BackendBucketSignedUrlKeyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackendBucketSignedUrlKeyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BackendBucketSignedUrlKeyResult {
         let backend_bucket_binding = args.backend_bucket.get_output(context);
         let key_value_binding = args.key_value.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -134,6 +150,7 @@ pub mod backend_bucket_signed_url_key {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BackendBucketSignedUrlKeyResult {

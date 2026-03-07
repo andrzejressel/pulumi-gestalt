@@ -125,6 +125,22 @@ pub mod primary_contact {
         name: &str,
         args: PrimaryContactArgs,
     ) -> PrimaryContactResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PrimaryContactArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PrimaryContactResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PrimaryContactArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PrimaryContactResult {
         let account_id_binding = args.account_id.get_output(context);
         let address_line1_binding = args.address_line1.get_output(context);
         let address_line2_binding = args.address_line2.get_output(context);
@@ -196,6 +212,7 @@ pub mod primary_contact {
                     value: &website_url_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PrimaryContactResult {

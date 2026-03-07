@@ -123,6 +123,22 @@ pub mod domain_configuration {
         name: &str,
         args: DomainConfigurationArgs,
     ) -> DomainConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DomainConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DomainConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DomainConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DomainConfigurationResult {
         let authorizer_config_binding = args.authorizer_config.get_output(context);
         let domain_name_binding = args.domain_name.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -178,6 +194,7 @@ pub mod domain_configuration {
                     value: &validation_certificate_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DomainConfigurationResult {

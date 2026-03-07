@@ -166,6 +166,22 @@ pub mod datastore_blobstorage {
         name: &str,
         args: DatastoreBlobstorageArgs,
     ) -> DatastoreBlobstorageResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatastoreBlobstorageArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DatastoreBlobstorageResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatastoreBlobstorageArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DatastoreBlobstorageResult {
         let account_key_binding = args.account_key.get_output(context);
         let description_binding = args.description.get_output(context);
         let is_default_binding = args.is_default.get_output(context);
@@ -222,6 +238,7 @@ pub mod datastore_blobstorage {
                     value: &workspace_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DatastoreBlobstorageResult {

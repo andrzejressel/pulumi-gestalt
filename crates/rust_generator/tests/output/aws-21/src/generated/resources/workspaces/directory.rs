@@ -256,6 +256,22 @@ pub mod directory {
         name: &str,
         args: DirectoryArgs,
     ) -> DirectoryResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DirectoryArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DirectoryResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DirectoryArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DirectoryResult {
         let directory_id_binding = args.directory_id.get_output(context);
         let ip_group_ids_binding = args.ip_group_ids.get_output(context);
         let saml_properties_binding = args.saml_properties.get_output(context);
@@ -308,6 +324,7 @@ pub mod directory {
                     value: &workspace_creation_properties_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DirectoryResult {

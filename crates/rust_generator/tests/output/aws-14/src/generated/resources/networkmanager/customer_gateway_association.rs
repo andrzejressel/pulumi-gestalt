@@ -114,6 +114,22 @@ pub mod customer_gateway_association {
         name: &str,
         args: CustomerGatewayAssociationArgs,
     ) -> CustomerGatewayAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomerGatewayAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CustomerGatewayAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CustomerGatewayAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CustomerGatewayAssociationResult {
         let customer_gateway_arn_binding = args.customer_gateway_arn.get_output(context);
         let device_id_binding = args.device_id.get_output(context);
         let global_network_id_binding = args.global_network_id.get_output(context);
@@ -141,6 +157,7 @@ pub mod customer_gateway_association {
                     value: &link_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CustomerGatewayAssociationResult {

@@ -65,6 +65,22 @@ pub mod alert_manager_definition {
         name: &str,
         args: AlertManagerDefinitionArgs,
     ) -> AlertManagerDefinitionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AlertManagerDefinitionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AlertManagerDefinitionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AlertManagerDefinitionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AlertManagerDefinitionResult {
         let definition_binding = args.definition.get_output(context);
         let workspace_id_binding = args.workspace_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -81,6 +97,7 @@ pub mod alert_manager_definition {
                     value: &workspace_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AlertManagerDefinitionResult {

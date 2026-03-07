@@ -165,6 +165,22 @@ pub mod glossary_term {
         name: &str,
         args: GlossaryTermArgs,
     ) -> GlossaryTermResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GlossaryTermArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GlossaryTermResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GlossaryTermArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GlossaryTermResult {
         let domain_identifier_binding = args.domain_identifier.get_output(context);
         let glossary_identifier_binding = args.glossary_identifier.get_output(context);
         let long_description_binding = args.long_description.get_output(context);
@@ -211,6 +227,7 @@ pub mod glossary_term {
                     value: &timeouts_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GlossaryTermResult {

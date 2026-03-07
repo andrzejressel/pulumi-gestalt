@@ -123,6 +123,22 @@ pub mod namespace {
         name: &str,
         args: NamespaceArgs,
     ) -> NamespaceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NamespaceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NamespaceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NamespaceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NamespaceResult {
         let admin_password_secret_kms_key_id_binding = args
             .admin_password_secret_kms_key_id
             .get_output(context);
@@ -188,6 +204,7 @@ pub mod namespace {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NamespaceResult {

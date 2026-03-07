@@ -83,6 +83,22 @@ pub mod spring_cloud_application_live_view {
         name: &str,
         args: SpringCloudApplicationLiveViewArgs,
     ) -> SpringCloudApplicationLiveViewResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudApplicationLiveViewArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SpringCloudApplicationLiveViewResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudApplicationLiveViewArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SpringCloudApplicationLiveViewResult {
         let name_binding = args.name.get_output(context);
         let spring_cloud_service_id_binding = args
             .spring_cloud_service_id
@@ -102,6 +118,7 @@ pub mod spring_cloud_application_live_view {
                     value: &spring_cloud_service_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SpringCloudApplicationLiveViewResult {

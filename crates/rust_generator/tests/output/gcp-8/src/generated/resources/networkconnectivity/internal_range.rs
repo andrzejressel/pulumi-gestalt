@@ -316,6 +316,22 @@ pub mod internal_range {
         name: &str,
         args: InternalRangeArgs,
     ) -> InternalRangeResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InternalRangeArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> InternalRangeResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InternalRangeArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> InternalRangeResult {
         let description_binding = args.description.get_output(context);
         let ip_cidr_range_binding = args.ip_cidr_range.get_output(context);
         let labels_binding = args.labels.get_output(context);
@@ -382,6 +398,7 @@ pub mod internal_range {
                     value: &usage_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         InternalRangeResult {

@@ -607,6 +607,22 @@ pub mod index {
         name: &str,
         args: IndexArgs,
     ) -> IndexResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IndexArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IndexResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IndexArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IndexResult {
         let capacity_units_binding = args.capacity_units.get_output(context);
         let description_binding = args.description.get_output(context);
         let document_metadata_configuration_updates_binding = args
@@ -676,6 +692,7 @@ pub mod index {
                     value: &user_token_configurations_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IndexResult {

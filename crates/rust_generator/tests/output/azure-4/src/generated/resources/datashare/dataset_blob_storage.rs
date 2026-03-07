@@ -144,6 +144,22 @@ pub mod dataset_blob_storage {
         name: &str,
         args: DatasetBlobStorageArgs,
     ) -> DatasetBlobStorageResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatasetBlobStorageArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DatasetBlobStorageResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatasetBlobStorageArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DatasetBlobStorageResult {
         let container_name_binding = args.container_name.get_output(context);
         let data_share_id_binding = args.data_share_id.get_output(context);
         let file_path_binding = args.file_path.get_output(context);
@@ -180,6 +196,7 @@ pub mod dataset_blob_storage {
                     value: &storage_account_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DatasetBlobStorageResult {

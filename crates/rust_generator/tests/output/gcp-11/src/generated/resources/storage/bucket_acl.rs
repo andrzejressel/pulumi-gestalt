@@ -85,6 +85,22 @@ pub mod bucket_acl {
         name: &str,
         args: BucketACLArgs,
     ) -> BucketACLResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BucketACLArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BucketACLResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BucketACLArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BucketACLResult {
         let bucket_binding = args.bucket.get_output(context);
         let default_acl_binding = args.default_acl.get_output(context);
         let predefined_acl_binding = args.predefined_acl.get_output(context);
@@ -111,6 +127,7 @@ pub mod bucket_acl {
                     value: &role_entities_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BucketACLResult {

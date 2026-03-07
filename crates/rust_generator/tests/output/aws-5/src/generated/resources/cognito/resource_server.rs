@@ -114,6 +114,22 @@ pub mod resource_server {
         name: &str,
         args: ResourceServerArgs,
     ) -> ResourceServerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResourceServerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ResourceServerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResourceServerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ResourceServerResult {
         let identifier_binding = args.identifier.get_output(context);
         let name_binding = args.name.get_output(context);
         let scopes_binding = args.scopes.get_output(context);
@@ -140,6 +156,7 @@ pub mod resource_server {
                     value: &user_pool_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ResourceServerResult {

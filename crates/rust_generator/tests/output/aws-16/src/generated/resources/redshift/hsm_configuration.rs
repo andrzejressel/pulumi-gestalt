@@ -101,6 +101,22 @@ pub mod hsm_configuration {
         name: &str,
         args: HsmConfigurationArgs,
     ) -> HsmConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HsmConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> HsmConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HsmConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> HsmConfigurationResult {
         let description_binding = args.description.get_output(context);
         let hsm_configuration_identifier_binding = args
             .hsm_configuration_identifier
@@ -148,6 +164,7 @@ pub mod hsm_configuration {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         HsmConfigurationResult {

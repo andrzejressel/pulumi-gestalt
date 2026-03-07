@@ -82,6 +82,22 @@ pub mod workspace_service_account_token {
         name: &str,
         args: WorkspaceServiceAccountTokenArgs,
     ) -> WorkspaceServiceAccountTokenResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkspaceServiceAccountTokenArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WorkspaceServiceAccountTokenResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkspaceServiceAccountTokenArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WorkspaceServiceAccountTokenResult {
         let name_binding = args.name.get_output(context);
         let seconds_to_live_binding = args.seconds_to_live.get_output(context);
         let service_account_id_binding = args.service_account_id.get_output(context);
@@ -109,6 +125,7 @@ pub mod workspace_service_account_token {
                     value: &workspace_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WorkspaceServiceAccountTokenResult {

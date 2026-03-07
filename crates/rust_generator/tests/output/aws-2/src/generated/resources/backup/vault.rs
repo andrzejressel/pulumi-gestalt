@@ -84,6 +84,22 @@ pub mod vault {
         name: &str,
         args: VaultArgs,
     ) -> VaultResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VaultArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VaultResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VaultArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VaultResult {
         let force_destroy_binding = args.force_destroy.get_output(context);
         let kms_key_arn_binding = args.kms_key_arn.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -110,6 +126,7 @@ pub mod vault {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VaultResult {

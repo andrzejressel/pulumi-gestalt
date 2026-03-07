@@ -143,6 +143,22 @@ pub mod hybrid_connection {
         name: &str,
         args: HybridConnectionArgs,
     ) -> HybridConnectionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HybridConnectionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> HybridConnectionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HybridConnectionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> HybridConnectionResult {
         let app_service_name_binding = args.app_service_name.get_output(context);
         let hostname_binding = args.hostname.get_output(context);
         let port_binding = args.port.get_output(context);
@@ -179,6 +195,7 @@ pub mod hybrid_connection {
                     value: &send_key_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         HybridConnectionResult {

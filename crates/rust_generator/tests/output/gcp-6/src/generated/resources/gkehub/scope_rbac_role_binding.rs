@@ -161,6 +161,22 @@ pub mod scope_rbac_role_binding {
         name: &str,
         args: ScopeRbacRoleBindingArgs,
     ) -> ScopeRbacRoleBindingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ScopeRbacRoleBindingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ScopeRbacRoleBindingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ScopeRbacRoleBindingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ScopeRbacRoleBindingResult {
         let group_binding = args.group.get_output(context);
         let labels_binding = args.labels.get_output(context);
         let project_binding = args.project.get_output(context);
@@ -204,6 +220,7 @@ pub mod scope_rbac_role_binding {
                     value: &user_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ScopeRbacRoleBindingResult {

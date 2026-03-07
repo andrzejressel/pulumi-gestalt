@@ -93,6 +93,22 @@ pub mod auto_scaling_configuration_version {
         name: &str,
         args: AutoScalingConfigurationVersionArgs,
     ) -> AutoScalingConfigurationVersionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AutoScalingConfigurationVersionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AutoScalingConfigurationVersionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AutoScalingConfigurationVersionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AutoScalingConfigurationVersionResult {
         let auto_scaling_configuration_name_binding = args
             .auto_scaling_configuration_name
             .get_output(context);
@@ -127,6 +143,7 @@ pub mod auto_scaling_configuration_version {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AutoScalingConfigurationVersionResult {

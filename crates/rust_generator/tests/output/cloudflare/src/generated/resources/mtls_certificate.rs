@@ -93,6 +93,22 @@ pub mod mtls_certificate {
         name: &str,
         args: MtlsCertificateArgs,
     ) -> MtlsCertificateResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MtlsCertificateArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MtlsCertificateResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MtlsCertificateArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MtlsCertificateResult {
         let account_id_binding = args.account_id.get_output(context);
         let ca_binding = args.ca.get_output(context);
         let certificates_binding = args.certificates.get_output(context);
@@ -124,6 +140,7 @@ pub mod mtls_certificate {
                     value: &private_key_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MtlsCertificateResult {

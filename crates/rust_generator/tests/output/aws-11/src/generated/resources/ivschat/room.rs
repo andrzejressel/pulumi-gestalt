@@ -111,6 +111,22 @@ pub mod room {
         name: &str,
         args: RoomArgs,
     ) -> RoomResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RoomArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RoomResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RoomArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RoomResult {
         let logging_configuration_identifiers_binding = args
             .logging_configuration_identifiers
             .get_output(context);
@@ -155,6 +171,7 @@ pub mod room {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RoomResult {

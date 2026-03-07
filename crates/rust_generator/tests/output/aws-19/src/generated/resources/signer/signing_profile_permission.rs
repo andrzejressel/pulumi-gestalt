@@ -107,6 +107,22 @@ pub mod signing_profile_permission {
         name: &str,
         args: SigningProfilePermissionArgs,
     ) -> SigningProfilePermissionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SigningProfilePermissionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SigningProfilePermissionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SigningProfilePermissionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SigningProfilePermissionResult {
         let action_binding = args.action.get_output(context);
         let principal_binding = args.principal.get_output(context);
         let profile_name_binding = args.profile_name.get_output(context);
@@ -143,6 +159,7 @@ pub mod signing_profile_permission {
                     value: &statement_id_prefix_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SigningProfilePermissionResult {

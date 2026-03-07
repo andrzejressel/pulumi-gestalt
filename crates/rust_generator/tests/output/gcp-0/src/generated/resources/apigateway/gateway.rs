@@ -131,6 +131,22 @@ pub mod gateway {
         name: &str,
         args: GatewayArgs,
     ) -> GatewayResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GatewayArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GatewayResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GatewayArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GatewayResult {
         let api_config_binding = args.api_config.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let gateway_id_binding = args.gateway_id.get_output(context);
@@ -167,6 +183,7 @@ pub mod gateway {
                     value: &region_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GatewayResult {

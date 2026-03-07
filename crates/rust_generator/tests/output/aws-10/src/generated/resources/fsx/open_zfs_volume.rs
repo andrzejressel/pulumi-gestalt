@@ -145,6 +145,22 @@ pub mod open_zfs_volume {
         name: &str,
         args: OpenZfsVolumeArgs,
     ) -> OpenZfsVolumeResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OpenZfsVolumeArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OpenZfsVolumeResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OpenZfsVolumeArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OpenZfsVolumeResult {
         let copy_tags_to_snapshots_binding = args
             .copy_tags_to_snapshots
             .get_output(context);
@@ -233,6 +249,7 @@ pub mod open_zfs_volume {
                     value: &volume_type_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OpenZfsVolumeResult {

@@ -69,6 +69,22 @@ pub mod portal_tenant_configuration {
         name: &str,
         args: PortalTenantConfigurationArgs,
     ) -> PortalTenantConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PortalTenantConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PortalTenantConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PortalTenantConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PortalTenantConfigurationResult {
         let private_markdown_storage_enforced_binding = args
             .private_markdown_storage_enforced
             .get_output(context);
@@ -83,6 +99,7 @@ pub mod portal_tenant_configuration {
                     value: &private_markdown_storage_enforced_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PortalTenantConfigurationResult {

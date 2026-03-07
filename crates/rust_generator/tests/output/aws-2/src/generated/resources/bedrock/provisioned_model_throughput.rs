@@ -96,6 +96,22 @@ pub mod provisioned_model_throughput {
         name: &str,
         args: ProvisionedModelThroughputArgs,
     ) -> ProvisionedModelThroughputResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProvisionedModelThroughputArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ProvisionedModelThroughputResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProvisionedModelThroughputArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ProvisionedModelThroughputResult {
         let commitment_duration_binding = args.commitment_duration.get_output(context);
         let model_arn_binding = args.model_arn.get_output(context);
         let model_units_binding = args.model_units.get_output(context);
@@ -135,6 +151,7 @@ pub mod provisioned_model_throughput {
                     value: &timeouts_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ProvisionedModelThroughputResult {

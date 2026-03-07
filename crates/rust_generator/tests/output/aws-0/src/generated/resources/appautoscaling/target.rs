@@ -215,6 +215,22 @@ pub mod target {
         name: &str,
         args: TargetArgs,
     ) -> TargetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TargetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TargetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TargetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TargetResult {
         let max_capacity_binding = args.max_capacity.get_output(context);
         let min_capacity_binding = args.min_capacity.get_output(context);
         let resource_id_binding = args.resource_id.get_output(context);
@@ -261,6 +277,7 @@ pub mod target {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TargetResult {

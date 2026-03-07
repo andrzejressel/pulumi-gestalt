@@ -108,6 +108,22 @@ pub mod fsx_open_zfs_file_system {
         name: &str,
         args: FsxOpenZfsFileSystemArgs,
     ) -> FsxOpenZfsFileSystemResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FsxOpenZfsFileSystemArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FsxOpenZfsFileSystemResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FsxOpenZfsFileSystemArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FsxOpenZfsFileSystemResult {
         let fsx_filesystem_arn_binding = args.fsx_filesystem_arn.get_output(context);
         let protocol_binding = args.protocol.get_output(context);
         let security_group_arns_binding = args.security_group_arns.get_output(context);
@@ -139,6 +155,7 @@ pub mod fsx_open_zfs_file_system {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FsxOpenZfsFileSystemResult {

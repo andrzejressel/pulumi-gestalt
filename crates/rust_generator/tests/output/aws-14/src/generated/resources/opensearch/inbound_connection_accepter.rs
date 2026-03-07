@@ -76,6 +76,22 @@ pub mod inbound_connection_accepter {
         name: &str,
         args: InboundConnectionAccepterArgs,
     ) -> InboundConnectionAccepterResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InboundConnectionAccepterArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> InboundConnectionAccepterResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InboundConnectionAccepterArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> InboundConnectionAccepterResult {
         let connection_id_binding = args.connection_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:opensearch/inboundConnectionAccepter:InboundConnectionAccepter"
@@ -88,6 +104,7 @@ pub mod inbound_connection_accepter {
                     value: &connection_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         InboundConnectionAccepterResult {

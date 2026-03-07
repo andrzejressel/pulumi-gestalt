@@ -161,6 +161,22 @@ pub mod sync_server_endpoint {
         name: &str,
         args: SyncServerEndpointArgs,
     ) -> SyncServerEndpointResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SyncServerEndpointArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SyncServerEndpointResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SyncServerEndpointArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SyncServerEndpointResult {
         let cloud_tiering_enabled_binding = args
             .cloud_tiering_enabled
             .get_output(context);
@@ -222,6 +238,7 @@ pub mod sync_server_endpoint {
                     value: &volume_free_space_percent_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SyncServerEndpointResult {

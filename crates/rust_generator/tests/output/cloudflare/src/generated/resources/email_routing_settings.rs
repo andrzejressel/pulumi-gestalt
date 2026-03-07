@@ -64,6 +64,22 @@ pub mod email_routing_settings {
         name: &str,
         args: EmailRoutingSettingsArgs,
     ) -> EmailRoutingSettingsResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EmailRoutingSettingsArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EmailRoutingSettingsResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EmailRoutingSettingsArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EmailRoutingSettingsResult {
         let enabled_binding = args.enabled.get_output(context);
         let skip_wizard_binding = args.skip_wizard.get_output(context);
         let zone_id_binding = args.zone_id.get_output(context);
@@ -85,6 +101,7 @@ pub mod email_routing_settings {
                     value: &zone_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EmailRoutingSettingsResult {

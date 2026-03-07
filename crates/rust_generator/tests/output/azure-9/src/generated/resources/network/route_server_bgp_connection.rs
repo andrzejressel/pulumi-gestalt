@@ -115,6 +115,22 @@ pub mod route_server_bgp_connection {
         name: &str,
         args: RouteServerBgpConnectionArgs,
     ) -> RouteServerBgpConnectionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RouteServerBgpConnectionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RouteServerBgpConnectionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RouteServerBgpConnectionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RouteServerBgpConnectionResult {
         let name_binding = args.name.get_output(context);
         let peer_asn_binding = args.peer_asn.get_output(context);
         let peer_ip_binding = args.peer_ip.get_output(context);
@@ -142,6 +158,7 @@ pub mod route_server_bgp_connection {
                     value: &route_server_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RouteServerBgpConnectionResult {

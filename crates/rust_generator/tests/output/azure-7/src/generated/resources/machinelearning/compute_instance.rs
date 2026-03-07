@@ -205,6 +205,22 @@ pub mod compute_instance {
         name: &str,
         args: ComputeInstanceArgs,
     ) -> ComputeInstanceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ComputeInstanceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ComputeInstanceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ComputeInstanceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ComputeInstanceResult {
         let assign_to_user_binding = args.assign_to_user.get_output(context);
         let authorization_type_binding = args.authorization_type.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -275,6 +291,7 @@ pub mod compute_instance {
                     value: &virtual_machine_size_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ComputeInstanceResult {

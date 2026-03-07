@@ -137,6 +137,22 @@ pub mod event_subscription {
         name: &str,
         args: EventSubscriptionArgs,
     ) -> EventSubscriptionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EventSubscriptionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EventSubscriptionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EventSubscriptionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EventSubscriptionResult {
         let enabled_binding = args.enabled.get_output(context);
         let event_categories_binding = args.event_categories.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -183,6 +199,7 @@ pub mod event_subscription {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EventSubscriptionResult {

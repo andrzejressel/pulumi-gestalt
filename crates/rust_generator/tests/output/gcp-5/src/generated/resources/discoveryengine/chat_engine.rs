@@ -243,6 +243,22 @@ pub mod chat_engine {
         name: &str,
         args: ChatEngineArgs,
     ) -> ChatEngineResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ChatEngineArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ChatEngineResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ChatEngineArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ChatEngineResult {
         let chat_engine_config_binding = args.chat_engine_config.get_output(context);
         let collection_id_binding = args.collection_id.get_output(context);
         let common_config_binding = args.common_config.get_output(context);
@@ -294,6 +310,7 @@ pub mod chat_engine {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ChatEngineResult {

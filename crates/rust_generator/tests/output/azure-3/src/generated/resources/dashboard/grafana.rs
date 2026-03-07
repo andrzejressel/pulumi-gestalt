@@ -170,6 +170,22 @@ pub mod grafana {
         name: &str,
         args: GrafanaArgs,
     ) -> GrafanaResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GrafanaArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GrafanaResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GrafanaArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GrafanaResult {
         let api_key_enabled_binding = args.api_key_enabled.get_output(context);
         let auto_generated_domain_name_label_scope_binding = args
             .auto_generated_domain_name_label_scope
@@ -258,6 +274,7 @@ pub mod grafana {
                     value: &zone_redundancy_enabled_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GrafanaResult {

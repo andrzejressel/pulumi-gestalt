@@ -101,6 +101,22 @@ pub mod global_schema {
         name: &str,
         args: GlobalSchemaArgs,
     ) -> GlobalSchemaResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GlobalSchemaArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GlobalSchemaResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GlobalSchemaArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GlobalSchemaResult {
         let api_management_name_binding = args.api_management_name.get_output(context);
         let description_binding = args.description.get_output(context);
         let resource_group_name_binding = args.resource_group_name.get_output(context);
@@ -137,6 +153,7 @@ pub mod global_schema {
                     value: &value_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GlobalSchemaResult {

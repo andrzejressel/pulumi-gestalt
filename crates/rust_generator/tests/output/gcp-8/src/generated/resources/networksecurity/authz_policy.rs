@@ -324,6 +324,22 @@ pub mod authz_policy {
         name: &str,
         args: AuthzPolicyArgs,
     ) -> AuthzPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AuthzPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AuthzPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AuthzPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AuthzPolicyResult {
         let action_binding = args.action.get_output(context);
         let custom_provider_binding = args.custom_provider.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -375,6 +391,7 @@ pub mod authz_policy {
                     value: &target_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AuthzPolicyResult {

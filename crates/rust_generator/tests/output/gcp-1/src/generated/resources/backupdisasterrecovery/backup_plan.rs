@@ -130,6 +130,22 @@ pub mod backup_plan {
         name: &str,
         args: BackupPlanArgs,
     ) -> BackupPlanResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackupPlanArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BackupPlanResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackupPlanArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BackupPlanResult {
         let backup_plan_id_binding = args.backup_plan_id.get_output(context);
         let backup_rules_binding = args.backup_rules.get_output(context);
         let backup_vault_binding = args.backup_vault.get_output(context);
@@ -171,6 +187,7 @@ pub mod backup_plan {
                     value: &resource_type_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BackupPlanResult {

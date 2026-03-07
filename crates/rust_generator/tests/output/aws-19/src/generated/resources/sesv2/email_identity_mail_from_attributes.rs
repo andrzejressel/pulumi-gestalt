@@ -74,6 +74,22 @@ pub mod email_identity_mail_from_attributes {
         name: &str,
         args: EmailIdentityMailFromAttributesArgs,
     ) -> EmailIdentityMailFromAttributesResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EmailIdentityMailFromAttributesArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EmailIdentityMailFromAttributesResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EmailIdentityMailFromAttributesArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EmailIdentityMailFromAttributesResult {
         let behavior_on_mx_failure_binding = args
             .behavior_on_mx_failure
             .get_output(context);
@@ -98,6 +114,7 @@ pub mod email_identity_mail_from_attributes {
                     value: &mail_from_domain_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EmailIdentityMailFromAttributesResult {

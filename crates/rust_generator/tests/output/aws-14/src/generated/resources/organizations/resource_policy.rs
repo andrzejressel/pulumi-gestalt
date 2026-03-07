@@ -73,6 +73,22 @@ pub mod resource_policy {
         name: &str,
         args: ResourcePolicyArgs,
     ) -> ResourcePolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResourcePolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ResourcePolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResourcePolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ResourcePolicyResult {
         let content_binding = args.content.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -89,6 +105,7 @@ pub mod resource_policy {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ResourcePolicyResult {

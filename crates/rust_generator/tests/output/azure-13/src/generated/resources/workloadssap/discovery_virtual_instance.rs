@@ -128,6 +128,22 @@ pub mod discovery_virtual_instance {
         name: &str,
         args: DiscoveryVirtualInstanceArgs,
     ) -> DiscoveryVirtualInstanceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DiscoveryVirtualInstanceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DiscoveryVirtualInstanceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DiscoveryVirtualInstanceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DiscoveryVirtualInstanceResult {
         let central_server_virtual_machine_id_binding = args
             .central_server_virtual_machine_id
             .get_output(context);
@@ -191,6 +207,7 @@ pub mod discovery_virtual_instance {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DiscoveryVirtualInstanceResult {

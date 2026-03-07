@@ -83,6 +83,22 @@ pub mod thing_type {
         name: &str,
         args: ThingTypeArgs,
     ) -> ThingTypeResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ThingTypeArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ThingTypeResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ThingTypeArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ThingTypeResult {
         let deprecated_binding = args.deprecated.get_output(context);
         let name_binding = args.name.get_output(context);
         let properties_binding = args.properties.get_output(context);
@@ -109,6 +125,7 @@ pub mod thing_type {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ThingTypeResult {

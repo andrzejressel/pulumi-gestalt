@@ -163,6 +163,22 @@ pub mod ai_services {
         name: &str,
         args: AIServicesArgs,
     ) -> AIServicesResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AIServicesArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AIServicesResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AIServicesArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AIServicesResult {
         let custom_subdomain_name_binding = args
             .custom_subdomain_name
             .get_output(context);
@@ -247,6 +263,7 @@ pub mod ai_services {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AIServicesResult {

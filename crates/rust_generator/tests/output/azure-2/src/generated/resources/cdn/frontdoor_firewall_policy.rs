@@ -212,6 +212,22 @@ pub mod frontdoor_firewall_policy {
         name: &str,
         args: FrontdoorFirewallPolicyArgs,
     ) -> FrontdoorFirewallPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FrontdoorFirewallPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FrontdoorFirewallPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FrontdoorFirewallPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FrontdoorFirewallPolicyResult {
         let custom_block_response_body_binding = args
             .custom_block_response_body
             .get_output(context);
@@ -284,6 +300,7 @@ pub mod frontdoor_firewall_policy {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FrontdoorFirewallPolicyResult {

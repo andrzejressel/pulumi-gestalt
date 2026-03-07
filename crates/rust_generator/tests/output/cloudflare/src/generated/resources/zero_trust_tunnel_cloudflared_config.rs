@@ -109,6 +109,22 @@ pub mod zero_trust_tunnel_cloudflared_config {
         name: &str,
         args: ZeroTrustTunnelCloudflaredConfigArgs,
     ) -> ZeroTrustTunnelCloudflaredConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZeroTrustTunnelCloudflaredConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ZeroTrustTunnelCloudflaredConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZeroTrustTunnelCloudflaredConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ZeroTrustTunnelCloudflaredConfigResult {
         let account_id_binding = args.account_id.get_output(context);
         let config_binding = args.config.get_output(context);
         let tunnel_id_binding = args.tunnel_id.get_output(context);
@@ -131,6 +147,7 @@ pub mod zero_trust_tunnel_cloudflared_config {
                     value: &tunnel_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ZeroTrustTunnelCloudflaredConfigResult {

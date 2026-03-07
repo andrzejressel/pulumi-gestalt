@@ -162,6 +162,22 @@ pub mod refresh_schedule {
         name: &str,
         args: RefreshScheduleArgs,
     ) -> RefreshScheduleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RefreshScheduleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RefreshScheduleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RefreshScheduleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RefreshScheduleResult {
         let aws_account_id_binding = args.aws_account_id.get_output(context);
         let data_set_id_binding = args.data_set_id.get_output(context);
         let schedule_binding = args.schedule.get_output(context);
@@ -188,6 +204,7 @@ pub mod refresh_schedule {
                     value: &schedule_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RefreshScheduleResult {

@@ -133,6 +133,22 @@ pub mod scaling_plan_host_pool_association {
         name: &str,
         args: ScalingPlanHostPoolAssociationArgs,
     ) -> ScalingPlanHostPoolAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ScalingPlanHostPoolAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ScalingPlanHostPoolAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ScalingPlanHostPoolAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ScalingPlanHostPoolAssociationResult {
         let enabled_binding = args.enabled.get_output(context);
         let host_pool_id_binding = args.host_pool_id.get_output(context);
         let scaling_plan_id_binding = args.scaling_plan_id.get_output(context);
@@ -155,6 +171,7 @@ pub mod scaling_plan_host_pool_association {
                     value: &scaling_plan_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ScalingPlanHostPoolAssociationResult {

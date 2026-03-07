@@ -102,6 +102,22 @@ pub mod channel_email {
         name: &str,
         args: ChannelEmailArgs,
     ) -> ChannelEmailResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ChannelEmailArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ChannelEmailResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ChannelEmailArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ChannelEmailResult {
         let bot_name_binding = args.bot_name.get_output(context);
         let email_address_binding = args.email_address.get_output(context);
         let email_password_binding = args.email_password.get_output(context);
@@ -138,6 +154,7 @@ pub mod channel_email {
                     value: &resource_group_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ChannelEmailResult {

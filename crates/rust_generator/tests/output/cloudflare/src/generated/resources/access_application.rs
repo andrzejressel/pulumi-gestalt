@@ -246,6 +246,22 @@ pub mod access_application {
         name: &str,
         args: AccessApplicationArgs,
     ) -> AccessApplicationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccessApplicationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AccessApplicationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccessApplicationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AccessApplicationResult {
         let account_id_binding = args.account_id.get_output(context);
         let allow_authenticate_via_warp_binding = args
             .allow_authenticate_via_warp
@@ -442,6 +458,7 @@ pub mod access_application {
                     value: &zone_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AccessApplicationResult {

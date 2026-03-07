@@ -337,6 +337,22 @@ pub mod instance {
         name: &str,
         args: InstanceArgs,
     ) -> InstanceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InstanceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> InstanceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InstanceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> InstanceResult {
         let desired_state_binding = args.desired_state.get_output(context);
         let disable_proxy_access_binding = args.disable_proxy_access.get_output(context);
         let gce_setup_binding = args.gce_setup.get_output(context);
@@ -388,6 +404,7 @@ pub mod instance {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         InstanceResult {

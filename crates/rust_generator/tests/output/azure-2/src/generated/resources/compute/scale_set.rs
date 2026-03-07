@@ -497,6 +497,22 @@ pub mod scale_set {
         name: &str,
         args: ScaleSetArgs,
     ) -> ScaleSetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ScaleSetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ScaleSetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ScaleSetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ScaleSetResult {
         let automatic_os_upgrade_binding = args.automatic_os_upgrade.get_output(context);
         let boot_diagnostics_binding = args.boot_diagnostics.get_output(context);
         let eviction_policy_binding = args.eviction_policy.get_output(context);
@@ -659,6 +675,7 @@ pub mod scale_set {
                     value: &zones_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ScaleSetResult {

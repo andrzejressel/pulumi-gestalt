@@ -80,6 +80,22 @@ pub mod recovery_group {
         name: &str,
         args: RecoveryGroupArgs,
     ) -> RecoveryGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RecoveryGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RecoveryGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RecoveryGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RecoveryGroupResult {
         let cells_binding = args.cells.get_output(context);
         let recovery_group_name_binding = args.recovery_group_name.get_output(context);
         let tags_binding = args.tags.get_output(context);
@@ -101,6 +117,7 @@ pub mod recovery_group {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RecoveryGroupResult {

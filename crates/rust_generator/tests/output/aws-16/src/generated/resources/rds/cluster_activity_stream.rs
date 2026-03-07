@@ -114,6 +114,22 @@ pub mod cluster_activity_stream {
         name: &str,
         args: ClusterActivityStreamArgs,
     ) -> ClusterActivityStreamResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClusterActivityStreamArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ClusterActivityStreamResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClusterActivityStreamArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ClusterActivityStreamResult {
         let engine_native_audit_fields_included_binding = args
             .engine_native_audit_fields_included
             .get_output(context);
@@ -142,6 +158,7 @@ pub mod cluster_activity_stream {
                     value: &resource_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ClusterActivityStreamResult {

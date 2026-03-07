@@ -131,6 +131,22 @@ pub mod ingestion_destination {
         name: &str,
         args: IngestionDestinationArgs,
     ) -> IngestionDestinationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IngestionDestinationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IngestionDestinationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IngestionDestinationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IngestionDestinationResult {
         let app_bundle_arn_binding = args.app_bundle_arn.get_output(context);
         let destination_configuration_binding = args
             .destination_configuration
@@ -171,6 +187,7 @@ pub mod ingestion_destination {
                     value: &timeouts_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IngestionDestinationResult {

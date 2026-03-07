@@ -96,6 +96,22 @@ pub mod agent_agent_knowledge_base_association {
         name: &str,
         args: AgentAgentKnowledgeBaseAssociationArgs,
     ) -> AgentAgentKnowledgeBaseAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AgentAgentKnowledgeBaseAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AgentAgentKnowledgeBaseAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AgentAgentKnowledgeBaseAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AgentAgentKnowledgeBaseAssociationResult {
         let agent_id_binding = args.agent_id.get_output(context);
         let agent_version_binding = args.agent_version.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -133,6 +149,7 @@ pub mod agent_agent_knowledge_base_association {
                     value: &timeouts_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AgentAgentKnowledgeBaseAssociationResult {

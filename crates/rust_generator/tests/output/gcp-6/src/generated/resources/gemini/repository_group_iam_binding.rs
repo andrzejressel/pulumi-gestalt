@@ -131,6 +131,22 @@ pub mod repository_group_iam_binding {
         name: &str,
         args: RepositoryGroupIamBindingArgs,
     ) -> RepositoryGroupIamBindingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RepositoryGroupIamBindingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RepositoryGroupIamBindingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RepositoryGroupIamBindingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RepositoryGroupIamBindingResult {
         let code_repository_index_binding = args
             .code_repository_index
             .get_output(context);
@@ -175,6 +191,7 @@ pub mod repository_group_iam_binding {
                     value: &role_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RepositoryGroupIamBindingResult {

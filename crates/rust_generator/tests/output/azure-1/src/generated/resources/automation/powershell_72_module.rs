@@ -104,6 +104,22 @@ pub mod powershell_72_module {
         name: &str,
         args: Powershell72ModuleArgs,
     ) -> Powershell72ModuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: Powershell72ModuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> Powershell72ModuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: Powershell72ModuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> Powershell72ModuleResult {
         let automation_account_id_binding = args
             .automation_account_id
             .get_output(context);
@@ -132,6 +148,7 @@ pub mod powershell_72_module {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         Powershell72ModuleResult {

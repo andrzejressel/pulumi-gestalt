@@ -152,6 +152,22 @@ pub mod project_environment_type {
         name: &str,
         args: ProjectEnvironmentTypeArgs,
     ) -> ProjectEnvironmentTypeResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProjectEnvironmentTypeArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ProjectEnvironmentTypeResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProjectEnvironmentTypeArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ProjectEnvironmentTypeResult {
         let creator_role_assignment_roles_binding = args
             .creator_role_assignment_roles
             .get_output(context);
@@ -205,6 +221,7 @@ pub mod project_environment_type {
                     value: &user_role_assignments_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ProjectEnvironmentTypeResult {

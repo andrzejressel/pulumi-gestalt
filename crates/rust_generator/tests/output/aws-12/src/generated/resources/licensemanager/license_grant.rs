@@ -84,6 +84,22 @@ pub mod license_grant {
         name: &str,
         args: LicenseGrantArgs,
     ) -> LicenseGrantResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LicenseGrantArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LicenseGrantResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LicenseGrantArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LicenseGrantResult {
         let allowed_operations_binding = args.allowed_operations.get_output(context);
         let license_arn_binding = args.license_arn.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -110,6 +126,7 @@ pub mod license_grant {
                     value: &principal_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LicenseGrantResult {

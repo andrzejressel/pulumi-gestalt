@@ -110,6 +110,22 @@ pub mod field_level_encryption_config {
         name: &str,
         args: FieldLevelEncryptionConfigArgs,
     ) -> FieldLevelEncryptionConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FieldLevelEncryptionConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FieldLevelEncryptionConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FieldLevelEncryptionConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FieldLevelEncryptionConfigResult {
         let comment_binding = args.comment.get_output(context);
         let content_type_profile_config_binding = args
             .content_type_profile_config
@@ -136,6 +152,7 @@ pub mod field_level_encryption_config {
                     value: &query_arg_profile_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FieldLevelEncryptionConfigResult {

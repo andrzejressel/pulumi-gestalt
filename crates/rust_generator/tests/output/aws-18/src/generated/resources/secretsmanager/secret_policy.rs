@@ -89,6 +89,22 @@ pub mod secret_policy {
         name: &str,
         args: SecretPolicyArgs,
     ) -> SecretPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SecretPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SecretPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SecretPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SecretPolicyResult {
         let block_public_policy_binding = args.block_public_policy.get_output(context);
         let policy_binding = args.policy.get_output(context);
         let secret_arn_binding = args.secret_arn.get_output(context);
@@ -110,6 +126,7 @@ pub mod secret_policy {
                     value: &secret_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SecretPolicyResult {

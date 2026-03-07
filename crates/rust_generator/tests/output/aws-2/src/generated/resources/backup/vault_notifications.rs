@@ -95,6 +95,22 @@ pub mod vault_notifications {
         name: &str,
         args: VaultNotificationsArgs,
     ) -> VaultNotificationsResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VaultNotificationsArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VaultNotificationsResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VaultNotificationsArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VaultNotificationsResult {
         let backup_vault_events_binding = args.backup_vault_events.get_output(context);
         let backup_vault_name_binding = args.backup_vault_name.get_output(context);
         let sns_topic_arn_binding = args.sns_topic_arn.get_output(context);
@@ -116,6 +132,7 @@ pub mod vault_notifications {
                     value: &sns_topic_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VaultNotificationsResult {

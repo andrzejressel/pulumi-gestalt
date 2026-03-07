@@ -123,6 +123,22 @@ pub mod crypto_key_version {
         name: &str,
         args: CryptoKeyVersionArgs,
     ) -> CryptoKeyVersionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CryptoKeyVersionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CryptoKeyVersionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CryptoKeyVersionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CryptoKeyVersionResult {
         let crypto_key_binding = args.crypto_key.get_output(context);
         let external_protection_level_options_binding = args
             .external_protection_level_options
@@ -146,6 +162,7 @@ pub mod crypto_key_version {
                     value: &state_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CryptoKeyVersionResult {

@@ -102,6 +102,22 @@ pub mod job_template {
         name: &str,
         args: JobTemplateArgs,
     ) -> JobTemplateResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: JobTemplateArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> JobTemplateResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: JobTemplateArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> JobTemplateResult {
         let job_template_data_binding = args.job_template_data.get_output(context);
         let kms_key_arn_binding = args.kms_key_arn.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -128,6 +144,7 @@ pub mod job_template {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         JobTemplateResult {

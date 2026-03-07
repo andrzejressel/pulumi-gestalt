@@ -207,6 +207,22 @@ pub mod vpn_connection {
         name: &str,
         args: VpnConnectionArgs,
     ) -> VpnConnectionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpnConnectionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VpnConnectionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpnConnectionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VpnConnectionResult {
         let cluster_binding = args.cluster.get_output(context);
         let enable_high_availability_binding = args
             .enable_high_availability
@@ -265,6 +281,7 @@ pub mod vpn_connection {
                     value: &vpc_project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VpnConnectionResult {

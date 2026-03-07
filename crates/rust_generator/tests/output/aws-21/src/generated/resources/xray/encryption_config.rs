@@ -101,6 +101,22 @@ pub mod encryption_config {
         name: &str,
         args: EncryptionConfigArgs,
     ) -> EncryptionConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EncryptionConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EncryptionConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EncryptionConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EncryptionConfigResult {
         let key_id_binding = args.key_id.get_output(context);
         let type__binding = args.type_.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -117,6 +133,7 @@ pub mod encryption_config {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EncryptionConfigResult {

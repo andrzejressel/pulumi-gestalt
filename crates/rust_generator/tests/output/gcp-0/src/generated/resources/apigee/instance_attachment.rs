@@ -75,6 +75,22 @@ pub mod instance_attachment {
         name: &str,
         args: InstanceAttachmentArgs,
     ) -> InstanceAttachmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InstanceAttachmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> InstanceAttachmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InstanceAttachmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> InstanceAttachmentResult {
         let environment_binding = args.environment.get_output(context);
         let instance_id_binding = args.instance_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -91,6 +107,7 @@ pub mod instance_attachment {
                     value: &instance_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         InstanceAttachmentResult {

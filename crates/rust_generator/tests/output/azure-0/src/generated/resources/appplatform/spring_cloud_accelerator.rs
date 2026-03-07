@@ -81,6 +81,22 @@ pub mod spring_cloud_accelerator {
         name: &str,
         args: SpringCloudAcceleratorArgs,
     ) -> SpringCloudAcceleratorResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudAcceleratorArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SpringCloudAcceleratorResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudAcceleratorArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SpringCloudAcceleratorResult {
         let name_binding = args.name.get_output(context);
         let spring_cloud_service_id_binding = args
             .spring_cloud_service_id
@@ -100,6 +116,7 @@ pub mod spring_cloud_accelerator {
                     value: &spring_cloud_service_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SpringCloudAcceleratorResult {

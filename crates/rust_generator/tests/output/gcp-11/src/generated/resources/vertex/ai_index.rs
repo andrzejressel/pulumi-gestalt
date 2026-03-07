@@ -238,6 +238,22 @@ pub mod ai_index {
         name: &str,
         args: AiIndexArgs,
     ) -> AiIndexResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AiIndexArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AiIndexResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AiIndexArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AiIndexResult {
         let description_binding = args.description.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let index_update_method_binding = args.index_update_method.get_output(context);
@@ -279,6 +295,7 @@ pub mod ai_index {
                     value: &region_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AiIndexResult {

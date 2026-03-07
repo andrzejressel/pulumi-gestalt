@@ -96,6 +96,22 @@ pub mod encryption_scope {
         name: &str,
         args: EncryptionScopeArgs,
     ) -> EncryptionScopeResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EncryptionScopeArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EncryptionScopeResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EncryptionScopeArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EncryptionScopeResult {
         let infrastructure_encryption_required_binding = args
             .infrastructure_encryption_required
             .get_output(context);
@@ -129,6 +145,7 @@ pub mod encryption_scope {
                     value: &storage_account_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EncryptionScopeResult {

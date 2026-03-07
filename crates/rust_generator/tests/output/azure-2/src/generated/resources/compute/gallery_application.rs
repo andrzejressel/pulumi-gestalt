@@ -124,6 +124,22 @@ pub mod gallery_application {
         name: &str,
         args: GalleryApplicationArgs,
     ) -> GalleryApplicationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GalleryApplicationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GalleryApplicationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GalleryApplicationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GalleryApplicationResult {
         let description_binding = args.description.get_output(context);
         let end_of_life_date_binding = args.end_of_life_date.get_output(context);
         let eula_binding = args.eula.get_output(context);
@@ -182,6 +198,7 @@ pub mod gallery_application {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GalleryApplicationResult {

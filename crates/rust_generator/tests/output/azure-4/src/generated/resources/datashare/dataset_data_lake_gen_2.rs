@@ -137,6 +137,22 @@ pub mod dataset_data_lake_gen_2 {
         name: &str,
         args: DatasetDataLakeGen2Args,
     ) -> DatasetDataLakeGen2Result {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatasetDataLakeGen2Args,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DatasetDataLakeGen2Result {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatasetDataLakeGen2Args,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DatasetDataLakeGen2Result {
         let file_path_binding = args.file_path.get_output(context);
         let file_system_name_binding = args.file_system_name.get_output(context);
         let folder_path_binding = args.folder_path.get_output(context);
@@ -173,6 +189,7 @@ pub mod dataset_data_lake_gen_2 {
                     value: &storage_account_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DatasetDataLakeGen2Result {

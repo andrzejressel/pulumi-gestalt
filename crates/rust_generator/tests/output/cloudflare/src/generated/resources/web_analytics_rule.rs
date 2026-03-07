@@ -93,6 +93,22 @@ pub mod web_analytics_rule {
         name: &str,
         args: WebAnalyticsRuleArgs,
     ) -> WebAnalyticsRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WebAnalyticsRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WebAnalyticsRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WebAnalyticsRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WebAnalyticsRuleResult {
         let account_id_binding = args.account_id.get_output(context);
         let host_binding = args.host.get_output(context);
         let inclusive_binding = args.inclusive.get_output(context);
@@ -129,6 +145,7 @@ pub mod web_analytics_rule {
                     value: &ruleset_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WebAnalyticsRuleResult {

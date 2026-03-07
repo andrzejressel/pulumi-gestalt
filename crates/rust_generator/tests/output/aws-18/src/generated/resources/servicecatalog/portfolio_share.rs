@@ -104,6 +104,22 @@ pub mod portfolio_share {
         name: &str,
         args: PortfolioShareArgs,
     ) -> PortfolioShareResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PortfolioShareArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PortfolioShareResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PortfolioShareArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PortfolioShareResult {
         let accept_language_binding = args.accept_language.get_output(context);
         let portfolio_id_binding = args.portfolio_id.get_output(context);
         let principal_id_binding = args.principal_id.get_output(context);
@@ -145,6 +161,7 @@ pub mod portfolio_share {
                     value: &wait_for_acceptance_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PortfolioShareResult {

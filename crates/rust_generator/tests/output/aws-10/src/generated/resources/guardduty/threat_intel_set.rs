@@ -117,6 +117,22 @@ pub mod threat_intel_set {
         name: &str,
         args: ThreatIntelSetArgs,
     ) -> ThreatIntelSetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ThreatIntelSetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ThreatIntelSetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ThreatIntelSetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ThreatIntelSetResult {
         let activate_binding = args.activate.get_output(context);
         let detector_id_binding = args.detector_id.get_output(context);
         let format_binding = args.format.get_output(context);
@@ -153,6 +169,7 @@ pub mod threat_intel_set {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ThreatIntelSetResult {

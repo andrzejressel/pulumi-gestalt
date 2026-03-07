@@ -371,6 +371,22 @@ pub mod windows_function_app {
         name: &str,
         args: WindowsFunctionAppArgs,
     ) -> WindowsFunctionAppResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WindowsFunctionAppArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WindowsFunctionAppResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WindowsFunctionAppArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WindowsFunctionAppResult {
         let app_settings_binding = args.app_settings.get_output(context);
         let auth_settings_binding = args.auth_settings.get_output(context);
         let auth_settings_v2_binding = args.auth_settings_v2.get_output(context);
@@ -580,6 +596,7 @@ pub mod windows_function_app {
                     value: &zip_deploy_file_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WindowsFunctionAppResult {

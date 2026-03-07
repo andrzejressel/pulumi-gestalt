@@ -118,6 +118,22 @@ pub mod mail_from {
         name: &str,
         args: MailFromArgs,
     ) -> MailFromResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MailFromArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MailFromResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MailFromArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MailFromResult {
         let behavior_on_mx_failure_binding = args
             .behavior_on_mx_failure
             .get_output(context);
@@ -141,6 +157,7 @@ pub mod mail_from {
                     value: &mail_from_domain_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MailFromResult {

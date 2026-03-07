@@ -731,6 +731,22 @@ pub mod subscription {
         name: &str,
         args: SubscriptionArgs,
     ) -> SubscriptionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SubscriptionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SubscriptionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SubscriptionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SubscriptionResult {
         let ack_deadline_seconds_binding = args.ack_deadline_seconds.get_output(context);
         let bigquery_config_binding = args.bigquery_config.get_output(context);
         let cloud_storage_config_binding = args.cloud_storage_config.get_output(context);
@@ -825,6 +841,7 @@ pub mod subscription {
                     value: &topic_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SubscriptionResult {

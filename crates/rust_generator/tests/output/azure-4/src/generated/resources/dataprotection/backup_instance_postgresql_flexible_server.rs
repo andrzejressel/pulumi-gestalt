@@ -137,6 +137,22 @@ pub mod backup_instance_postgresql_flexible_server {
         name: &str,
         args: BackupInstancePostgresqlFlexibleServerArgs,
     ) -> BackupInstancePostgresqlFlexibleServerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackupInstancePostgresqlFlexibleServerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BackupInstancePostgresqlFlexibleServerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackupInstancePostgresqlFlexibleServerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BackupInstancePostgresqlFlexibleServerResult {
         let backup_policy_id_binding = args.backup_policy_id.get_output(context);
         let location_binding = args.location.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -169,6 +185,7 @@ pub mod backup_instance_postgresql_flexible_server {
                     value: &vault_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BackupInstancePostgresqlFlexibleServerResult {

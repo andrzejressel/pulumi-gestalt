@@ -125,6 +125,22 @@ pub mod protected_vm {
         name: &str,
         args: ProtectedVMArgs,
     ) -> ProtectedVMResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProtectedVMArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ProtectedVMResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProtectedVMArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ProtectedVMResult {
         let backup_policy_id_binding = args.backup_policy_id.get_output(context);
         let exclude_disk_luns_binding = args.exclude_disk_luns.get_output(context);
         let include_disk_luns_binding = args.include_disk_luns.get_output(context);
@@ -166,6 +182,7 @@ pub mod protected_vm {
                     value: &source_vm_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ProtectedVMResult {

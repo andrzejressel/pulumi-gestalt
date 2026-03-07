@@ -206,6 +206,22 @@ pub mod target_site {
         name: &str,
         args: TargetSiteArgs,
     ) -> TargetSiteResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TargetSiteArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TargetSiteResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TargetSiteArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TargetSiteResult {
         let data_store_id_binding = args.data_store_id.get_output(context);
         let exact_match_binding = args.exact_match.get_output(context);
         let location_binding = args.location.get_output(context);
@@ -242,6 +258,7 @@ pub mod target_site {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TargetSiteResult {

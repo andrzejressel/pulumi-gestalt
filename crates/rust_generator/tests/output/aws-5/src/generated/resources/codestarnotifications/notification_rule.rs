@@ -133,6 +133,22 @@ pub mod notification_rule {
         name: &str,
         args: NotificationRuleArgs,
     ) -> NotificationRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NotificationRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NotificationRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NotificationRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NotificationRuleResult {
         let detail_type_binding = args.detail_type.get_output(context);
         let event_type_ids_binding = args.event_type_ids.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -174,6 +190,7 @@ pub mod notification_rule {
                     value: &targets_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NotificationRuleResult {

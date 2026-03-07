@@ -76,6 +76,22 @@ pub mod notebook_instance_lifecycle_configuration {
         name: &str,
         args: NotebookInstanceLifecycleConfigurationArgs,
     ) -> NotebookInstanceLifecycleConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NotebookInstanceLifecycleConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NotebookInstanceLifecycleConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NotebookInstanceLifecycleConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NotebookInstanceLifecycleConfigurationResult {
         let name_binding = args.name.get_output(context);
         let on_create_binding = args.on_create.get_output(context);
         let on_start_binding = args.on_start.get_output(context);
@@ -98,6 +114,7 @@ pub mod notebook_instance_lifecycle_configuration {
                     value: &on_start_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NotebookInstanceLifecycleConfigurationResult {

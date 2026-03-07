@@ -116,6 +116,22 @@ pub mod rate_based_rule {
         name: &str,
         args: RateBasedRuleArgs,
     ) -> RateBasedRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RateBasedRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RateBasedRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RateBasedRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RateBasedRuleResult {
         let metric_name_binding = args.metric_name.get_output(context);
         let name_binding = args.name.get_output(context);
         let predicates_binding = args.predicates.get_output(context);
@@ -152,6 +168,7 @@ pub mod rate_based_rule {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RateBasedRuleResult {

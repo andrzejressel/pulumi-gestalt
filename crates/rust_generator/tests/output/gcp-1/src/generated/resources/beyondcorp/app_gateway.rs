@@ -186,6 +186,22 @@ pub mod app_gateway {
         name: &str,
         args: AppGatewayArgs,
     ) -> AppGatewayResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AppGatewayArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AppGatewayResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AppGatewayArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AppGatewayResult {
         let display_name_binding = args.display_name.get_output(context);
         let host_type_binding = args.host_type.get_output(context);
         let labels_binding = args.labels.get_output(context);
@@ -227,6 +243,7 @@ pub mod app_gateway {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AppGatewayResult {

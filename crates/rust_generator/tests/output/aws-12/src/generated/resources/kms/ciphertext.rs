@@ -74,6 +74,22 @@ pub mod ciphertext {
         name: &str,
         args: CiphertextArgs,
     ) -> CiphertextResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CiphertextArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CiphertextResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CiphertextArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CiphertextResult {
         let context_binding = args.context.get_output(context);
         let key_id_binding = args.key_id.get_output(context);
         let plaintext_binding = args.plaintext.get_output(context);
@@ -95,6 +111,7 @@ pub mod ciphertext {
                     value: &plaintext_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CiphertextResult {

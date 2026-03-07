@@ -204,6 +204,22 @@ pub mod connector {
         name: &str,
         args: ConnectorArgs,
     ) -> ConnectorResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConnectorArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ConnectorResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConnectorArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ConnectorResult {
         let ip_cidr_range_binding = args.ip_cidr_range.get_output(context);
         let machine_type_binding = args.machine_type.get_output(context);
         let max_instances_binding = args.max_instances.get_output(context);
@@ -265,6 +281,7 @@ pub mod connector {
                     value: &subnet_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ConnectorResult {

@@ -48,6 +48,22 @@ pub mod zero_trust_access_tag {
         name: &str,
         args: ZeroTrustAccessTagArgs,
     ) -> ZeroTrustAccessTagResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZeroTrustAccessTagArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ZeroTrustAccessTagResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZeroTrustAccessTagArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ZeroTrustAccessTagResult {
         let account_id_binding = args.account_id.get_output(context);
         let app_count_binding = args.app_count.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -74,6 +90,7 @@ pub mod zero_trust_access_tag {
                     value: &zone_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ZeroTrustAccessTagResult {

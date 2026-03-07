@@ -72,6 +72,22 @@ pub mod active_slot {
         name: &str,
         args: ActiveSlotArgs,
     ) -> ActiveSlotResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ActiveSlotArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ActiveSlotResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ActiveSlotArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ActiveSlotResult {
         let app_service_name_binding = args.app_service_name.get_output(context);
         let app_service_slot_name_binding = args
             .app_service_slot_name
@@ -95,6 +111,7 @@ pub mod active_slot {
                     value: &resource_group_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ActiveSlotResult {

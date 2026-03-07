@@ -52,6 +52,22 @@ pub mod domain_dkim {
         name: &str,
         args: DomainDkimArgs,
     ) -> DomainDkimResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DomainDkimArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DomainDkimResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DomainDkimArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DomainDkimResult {
         let domain_binding = args.domain.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ses/domainDkim:DomainDkim".into(),
@@ -63,6 +79,7 @@ pub mod domain_dkim {
                     value: &domain_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DomainDkimResult {

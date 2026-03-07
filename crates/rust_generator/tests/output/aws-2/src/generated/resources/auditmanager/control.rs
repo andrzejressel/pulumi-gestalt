@@ -115,6 +115,22 @@ pub mod control {
         name: &str,
         args: ControlArgs,
     ) -> ControlResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ControlArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ControlResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ControlArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ControlResult {
         let action_plan_instructions_binding = args
             .action_plan_instructions
             .get_output(context);
@@ -160,6 +176,7 @@ pub mod control {
                     value: &testing_information_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ControlResult {

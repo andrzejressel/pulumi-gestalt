@@ -206,6 +206,22 @@ pub mod worker_script {
         name: &str,
         args: WorkerScriptArgs,
     ) -> WorkerScriptResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkerScriptArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WorkerScriptResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkerScriptArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WorkerScriptResult {
         let account_id_binding = args.account_id.get_output(context);
         let analytics_engine_bindings_binding = args
             .analytics_engine_bindings
@@ -318,6 +334,7 @@ pub mod worker_script {
                     value: &webassembly_bindings_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WorkerScriptResult {

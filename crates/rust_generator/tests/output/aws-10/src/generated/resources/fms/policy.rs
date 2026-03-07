@@ -171,6 +171,22 @@ pub mod policy {
         name: &str,
         args: PolicyArgs,
     ) -> PolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PolicyResult {
         let delete_all_policy_resources_binding = args
             .delete_all_policy_resources
             .get_output(context);
@@ -255,6 +271,7 @@ pub mod policy {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PolicyResult {

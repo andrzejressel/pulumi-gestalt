@@ -183,6 +183,22 @@ pub mod container_recipe {
         name: &str,
         args: ContainerRecipeArgs,
     ) -> ContainerRecipeResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ContainerRecipeArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ContainerRecipeResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ContainerRecipeArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ContainerRecipeResult {
         let components_binding = args.components.get_output(context);
         let container_type_binding = args.container_type.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -265,6 +281,7 @@ pub mod container_recipe {
                     value: &working_directory_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ContainerRecipeResult {

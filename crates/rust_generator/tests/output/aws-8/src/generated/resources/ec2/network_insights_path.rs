@@ -106,6 +106,22 @@ pub mod network_insights_path {
         name: &str,
         args: NetworkInsightsPathArgs,
     ) -> NetworkInsightsPathResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkInsightsPathArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NetworkInsightsPathResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkInsightsPathArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NetworkInsightsPathResult {
         let destination_binding = args.destination.get_output(context);
         let destination_ip_binding = args.destination_ip.get_output(context);
         let destination_port_binding = args.destination_port.get_output(context);
@@ -147,6 +163,7 @@ pub mod network_insights_path {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NetworkInsightsPathResult {

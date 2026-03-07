@@ -120,6 +120,22 @@ pub mod hybrid_connection_authorization_rule {
         name: &str,
         args: HybridConnectionAuthorizationRuleArgs,
     ) -> HybridConnectionAuthorizationRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HybridConnectionAuthorizationRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> HybridConnectionAuthorizationRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HybridConnectionAuthorizationRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> HybridConnectionAuthorizationRuleResult {
         let hybrid_connection_name_binding = args
             .hybrid_connection_name
             .get_output(context);
@@ -164,6 +180,7 @@ pub mod hybrid_connection_authorization_rule {
                     value: &send_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         HybridConnectionAuthorizationRuleResult {

@@ -716,6 +716,22 @@ pub mod router_peer {
         name: &str,
         args: RouterPeerArgs,
     ) -> RouterPeerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RouterPeerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RouterPeerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RouterPeerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RouterPeerResult {
         let advertise_mode_binding = args.advertise_mode.get_output(context);
         let advertised_groups_binding = args.advertised_groups.get_output(context);
         let advertised_ip_ranges_binding = args.advertised_ip_ranges.get_output(context);
@@ -866,6 +882,7 @@ pub mod router_peer {
                     value: &router_appliance_instance_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RouterPeerResult {

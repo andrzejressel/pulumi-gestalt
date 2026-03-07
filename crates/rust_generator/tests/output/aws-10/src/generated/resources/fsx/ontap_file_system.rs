@@ -241,6 +241,22 @@ pub mod ontap_file_system {
         name: &str,
         args: OntapFileSystemArgs,
     ) -> OntapFileSystemResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OntapFileSystemArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OntapFileSystemResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OntapFileSystemArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OntapFileSystemResult {
         let automatic_backup_retention_days_binding = args
             .automatic_backup_retention_days
             .get_output(context);
@@ -349,6 +365,7 @@ pub mod ontap_file_system {
                     value: &weekly_maintenance_start_time_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OntapFileSystemResult {

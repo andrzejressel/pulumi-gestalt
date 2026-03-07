@@ -134,6 +134,22 @@ pub mod elastic_san {
         name: &str,
         args: ElasticSanArgs,
     ) -> ElasticSanResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ElasticSanArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ElasticSanResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ElasticSanArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ElasticSanResult {
         let base_size_in_tib_binding = args.base_size_in_tib.get_output(context);
         let extended_size_in_tib_binding = args.extended_size_in_tib.get_output(context);
         let location_binding = args.location.get_output(context);
@@ -180,6 +196,7 @@ pub mod elastic_san {
                     value: &zones_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ElasticSanResult {

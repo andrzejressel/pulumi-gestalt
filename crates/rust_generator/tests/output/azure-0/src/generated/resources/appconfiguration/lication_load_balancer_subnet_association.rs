@@ -124,6 +124,22 @@ pub mod lication_load_balancer_subnet_association {
         name: &str,
         args: LicationLoadBalancerSubnetAssociationArgs,
     ) -> LicationLoadBalancerSubnetAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LicationLoadBalancerSubnetAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LicationLoadBalancerSubnetAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LicationLoadBalancerSubnetAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LicationLoadBalancerSubnetAssociationResult {
         let application_load_balancer_id_binding = args
             .application_load_balancer_id
             .get_output(context);
@@ -153,6 +169,7 @@ pub mod lication_load_balancer_subnet_association {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LicationLoadBalancerSubnetAssociationResult {

@@ -99,6 +99,22 @@ pub mod static_route {
         name: &str,
         args: StaticRouteArgs,
     ) -> StaticRouteResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StaticRouteArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> StaticRouteResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StaticRouteArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> StaticRouteResult {
         let account_id_binding = args.account_id.get_output(context);
         let colo_names_binding = args.colo_names.get_output(context);
         let colo_regions_binding = args.colo_regions.get_output(context);
@@ -145,6 +161,7 @@ pub mod static_route {
                     value: &weight_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         StaticRouteResult {

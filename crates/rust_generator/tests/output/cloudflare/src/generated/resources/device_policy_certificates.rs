@@ -63,6 +63,22 @@ pub mod device_policy_certificates {
         name: &str,
         args: DevicePolicyCertificatesArgs,
     ) -> DevicePolicyCertificatesResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DevicePolicyCertificatesArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DevicePolicyCertificatesResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DevicePolicyCertificatesArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DevicePolicyCertificatesResult {
         let enabled_binding = args.enabled.get_output(context);
         let zone_id_binding = args.zone_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -80,6 +96,7 @@ pub mod device_policy_certificates {
                     value: &zone_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DevicePolicyCertificatesResult {

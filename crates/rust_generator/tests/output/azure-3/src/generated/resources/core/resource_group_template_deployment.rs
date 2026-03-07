@@ -92,6 +92,22 @@ pub mod resource_group_template_deployment {
         name: &str,
         args: ResourceGroupTemplateDeploymentArgs,
     ) -> ResourceGroupTemplateDeploymentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResourceGroupTemplateDeploymentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ResourceGroupTemplateDeploymentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResourceGroupTemplateDeploymentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ResourceGroupTemplateDeploymentResult {
         let debug_level_binding = args.debug_level.get_output(context);
         let deployment_mode_binding = args.deployment_mode.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -141,6 +157,7 @@ pub mod resource_group_template_deployment {
                     value: &template_spec_version_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ResourceGroupTemplateDeploymentResult {

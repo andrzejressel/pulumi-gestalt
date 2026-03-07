@@ -111,6 +111,22 @@ pub mod efs_location {
         name: &str,
         args: EfsLocationArgs,
     ) -> EfsLocationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EfsLocationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EfsLocationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EfsLocationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EfsLocationResult {
         let access_point_arn_binding = args.access_point_arn.get_output(context);
         let ec2_config_binding = args.ec2_config.get_output(context);
         let efs_file_system_arn_binding = args.efs_file_system_arn.get_output(context);
@@ -156,6 +172,7 @@ pub mod efs_location {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EfsLocationResult {

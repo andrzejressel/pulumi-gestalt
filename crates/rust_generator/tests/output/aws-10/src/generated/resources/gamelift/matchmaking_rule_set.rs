@@ -58,6 +58,22 @@ pub mod matchmaking_rule_set {
         name: &str,
         args: MatchmakingRuleSetArgs,
     ) -> MatchmakingRuleSetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MatchmakingRuleSetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MatchmakingRuleSetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MatchmakingRuleSetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MatchmakingRuleSetResult {
         let name_binding = args.name.get_output(context);
         let rule_set_body_binding = args.rule_set_body.get_output(context);
         let tags_binding = args.tags.get_output(context);
@@ -79,6 +95,7 @@ pub mod matchmaking_rule_set {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MatchmakingRuleSetResult {

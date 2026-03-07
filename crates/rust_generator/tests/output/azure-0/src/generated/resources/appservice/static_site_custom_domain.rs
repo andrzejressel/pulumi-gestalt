@@ -145,6 +145,22 @@ pub mod static_site_custom_domain {
         name: &str,
         args: StaticSiteCustomDomainArgs,
     ) -> StaticSiteCustomDomainResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StaticSiteCustomDomainArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> StaticSiteCustomDomainResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StaticSiteCustomDomainArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> StaticSiteCustomDomainResult {
         let domain_name_binding = args.domain_name.get_output(context);
         let static_site_id_binding = args.static_site_id.get_output(context);
         let validation_type_binding = args.validation_type.get_output(context);
@@ -167,6 +183,7 @@ pub mod static_site_custom_domain {
                     value: &validation_type_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         StaticSiteCustomDomainResult {

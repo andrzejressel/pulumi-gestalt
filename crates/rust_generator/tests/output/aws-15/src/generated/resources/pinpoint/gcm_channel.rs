@@ -59,6 +59,22 @@ pub mod gcm_channel {
         name: &str,
         args: GcmChannelArgs,
     ) -> GcmChannelResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GcmChannelArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GcmChannelResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GcmChannelArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GcmChannelResult {
         let api_key_binding = args.api_key.get_output(context);
         let application_id_binding = args.application_id.get_output(context);
         let default_authentication_method_binding = args
@@ -92,6 +108,7 @@ pub mod gcm_channel {
                     value: &service_json_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GcmChannelResult {

@@ -132,6 +132,22 @@ pub mod secret {
         name: &str,
         args: SecretArgs,
     ) -> SecretResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SecretArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SecretResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SecretArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SecretResult {
         let content_type_binding = args.content_type.get_output(context);
         let expiration_date_binding = args.expiration_date.get_output(context);
         let key_vault_id_binding = args.key_vault_id.get_output(context);
@@ -173,6 +189,7 @@ pub mod secret {
                     value: &value_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SecretResult {

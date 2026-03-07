@@ -44,6 +44,22 @@ pub mod workspace_customer_managed_key {
         name: &str,
         args: WorkspaceCustomerManagedKeyArgs,
     ) -> WorkspaceCustomerManagedKeyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkspaceCustomerManagedKeyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WorkspaceCustomerManagedKeyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WorkspaceCustomerManagedKeyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WorkspaceCustomerManagedKeyResult {
         let key_vault_key_id_binding = args.key_vault_key_id.get_output(context);
         let workspace_id_binding = args.workspace_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -61,6 +77,7 @@ pub mod workspace_customer_managed_key {
                     value: &workspace_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WorkspaceCustomerManagedKeyResult {

@@ -119,6 +119,22 @@ pub mod config_iam_member {
         name: &str,
         args: ConfigIamMemberArgs,
     ) -> ConfigIamMemberResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConfigIamMemberArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ConfigIamMemberResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConfigIamMemberArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ConfigIamMemberResult {
         let condition_binding = args.condition.get_output(context);
         let config_binding = args.config.get_output(context);
         let member_binding = args.member.get_output(context);
@@ -150,6 +166,7 @@ pub mod config_iam_member {
                     value: &role_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ConfigIamMemberResult {

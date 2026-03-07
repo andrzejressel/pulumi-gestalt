@@ -175,6 +175,22 @@ pub mod firewall_policy_rule_collection_group {
         name: &str,
         args: FirewallPolicyRuleCollectionGroupArgs,
     ) -> FirewallPolicyRuleCollectionGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FirewallPolicyRuleCollectionGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FirewallPolicyRuleCollectionGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FirewallPolicyRuleCollectionGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FirewallPolicyRuleCollectionGroupResult {
         let application_rule_collections_binding = args
             .application_rule_collections
             .get_output(context);
@@ -216,6 +232,7 @@ pub mod firewall_policy_rule_collection_group {
                     value: &priority_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FirewallPolicyRuleCollectionGroupResult {

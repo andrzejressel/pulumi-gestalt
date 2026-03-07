@@ -294,6 +294,22 @@ pub mod region_target_http_proxy {
         name: &str,
         args: RegionTargetHttpProxyArgs,
     ) -> RegionTargetHttpProxyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionTargetHttpProxyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RegionTargetHttpProxyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegionTargetHttpProxyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RegionTargetHttpProxyResult {
         let description_binding = args.description.get_output(context);
         let http_keep_alive_timeout_sec_binding = args
             .http_keep_alive_timeout_sec
@@ -332,6 +348,7 @@ pub mod region_target_http_proxy {
                     value: &url_map_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RegionTargetHttpProxyResult {

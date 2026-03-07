@@ -343,6 +343,22 @@ pub mod topic {
         name: &str,
         args: TopicArgs,
     ) -> TopicResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TopicArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TopicResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TopicArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TopicResult {
         let ingestion_data_source_settings_binding = args
             .ingestion_data_source_settings
             .get_output(context);
@@ -395,6 +411,7 @@ pub mod topic {
                     value: &schema_settings_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TopicResult {

@@ -143,6 +143,22 @@ pub mod vpn_site {
         name: &str,
         args: VpnSiteArgs,
     ) -> VpnSiteResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpnSiteArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VpnSiteResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VpnSiteArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VpnSiteResult {
         let address_cidrs_binding = args.address_cidrs.get_output(context);
         let device_model_binding = args.device_model.get_output(context);
         let device_vendor_binding = args.device_vendor.get_output(context);
@@ -199,6 +215,7 @@ pub mod vpn_site {
                     value: &virtual_wan_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VpnSiteResult {

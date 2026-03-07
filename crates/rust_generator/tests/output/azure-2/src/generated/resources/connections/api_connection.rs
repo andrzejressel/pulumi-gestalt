@@ -111,6 +111,22 @@ pub mod api_connection {
         name: &str,
         args: ApiConnectionArgs,
     ) -> ApiConnectionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApiConnectionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ApiConnectionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ApiConnectionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ApiConnectionResult {
         let display_name_binding = args.display_name.get_output(context);
         let managed_api_id_binding = args.managed_api_id.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -147,6 +163,7 @@ pub mod api_connection {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ApiConnectionResult {

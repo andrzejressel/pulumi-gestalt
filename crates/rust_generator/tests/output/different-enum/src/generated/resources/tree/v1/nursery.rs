@@ -41,6 +41,22 @@ pub mod nursery {
         name: &str,
         args: NurseryArgs,
     ) -> NurseryResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NurseryArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NurseryResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NurseryArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NurseryResult {
         let sizes_binding = args.sizes.get_output(context);
         let varieties_binding = args.varieties.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -57,6 +73,7 @@ pub mod nursery {
                     value: &varieties_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NurseryResult {

@@ -101,6 +101,22 @@ pub mod hyper_v_replication_policy {
         name: &str,
         args: HyperVReplicationPolicyArgs,
     ) -> HyperVReplicationPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HyperVReplicationPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> HyperVReplicationPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HyperVReplicationPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> HyperVReplicationPolicyResult {
         let application_consistent_snapshot_frequency_in_hours_binding = args
             .application_consistent_snapshot_frequency_in_hours
             .get_output(context);
@@ -140,6 +156,7 @@ pub mod hyper_v_replication_policy {
                     value: &replication_interval_in_seconds_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         HyperVReplicationPolicyResult {

@@ -147,6 +147,22 @@ pub mod spring_cloud_app {
         name: &str,
         args: SpringCloudAppArgs,
     ) -> SpringCloudAppResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudAppArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SpringCloudAppResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudAppArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SpringCloudAppResult {
         let addon_json_binding = args.addon_json.get_output(context);
         let custom_persistent_disks_binding = args
             .custom_persistent_disks
@@ -217,6 +233,7 @@ pub mod spring_cloud_app {
                     value: &tls_enabled_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SpringCloudAppResult {

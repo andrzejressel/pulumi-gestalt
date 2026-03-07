@@ -131,6 +131,22 @@ pub mod elasticsearch {
         name: &str,
         args: ElasticsearchArgs,
     ) -> ElasticsearchResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ElasticsearchArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ElasticsearchResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ElasticsearchArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ElasticsearchResult {
         let elastic_cloud_email_address_binding = args
             .elastic_cloud_email_address
             .get_output(context);
@@ -179,6 +195,7 @@ pub mod elasticsearch {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ElasticsearchResult {

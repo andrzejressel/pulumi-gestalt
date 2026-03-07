@@ -107,6 +107,22 @@ pub mod kx_database {
         name: &str,
         args: KxDatabaseArgs,
     ) -> KxDatabaseResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: KxDatabaseArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> KxDatabaseResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: KxDatabaseArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> KxDatabaseResult {
         let description_binding = args.description.get_output(context);
         let environment_id_binding = args.environment_id.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -133,6 +149,7 @@ pub mod kx_database {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         KxDatabaseResult {

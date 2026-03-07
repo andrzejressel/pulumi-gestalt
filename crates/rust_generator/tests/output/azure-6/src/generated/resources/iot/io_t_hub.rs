@@ -289,6 +289,22 @@ pub mod io_t_hub {
         name: &str,
         args: IoTHubArgs,
     ) -> IoTHubResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IoTHubArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IoTHubResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IoTHubArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IoTHubResult {
         let cloud_to_device_binding = args.cloud_to_device.get_output(context);
         let endpoints_binding = args.endpoints.get_output(context);
         let enrichments_binding = args.enrichments.get_output(context);
@@ -393,6 +409,7 @@ pub mod io_t_hub {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IoTHubResult {

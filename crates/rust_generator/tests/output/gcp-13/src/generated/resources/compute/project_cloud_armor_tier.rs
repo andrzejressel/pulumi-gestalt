@@ -126,6 +126,22 @@ pub mod project_cloud_armor_tier {
         name: &str,
         args: ProjectCloudArmorTierArgs,
     ) -> ProjectCloudArmorTierResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProjectCloudArmorTierArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ProjectCloudArmorTierResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProjectCloudArmorTierArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ProjectCloudArmorTierResult {
         let cloud_armor_tier_binding = args.cloud_armor_tier.get_output(context);
         let project_binding = args.project.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -142,6 +158,7 @@ pub mod project_cloud_armor_tier {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ProjectCloudArmorTierResult {

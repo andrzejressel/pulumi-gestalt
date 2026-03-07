@@ -86,6 +86,22 @@ pub mod account_rai_blocklist {
         name: &str,
         args: AccountRaiBlocklistArgs,
     ) -> AccountRaiBlocklistResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccountRaiBlocklistArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AccountRaiBlocklistResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccountRaiBlocklistArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AccountRaiBlocklistResult {
         let cognitive_account_id_binding = args.cognitive_account_id.get_output(context);
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -107,6 +123,7 @@ pub mod account_rai_blocklist {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AccountRaiBlocklistResult {

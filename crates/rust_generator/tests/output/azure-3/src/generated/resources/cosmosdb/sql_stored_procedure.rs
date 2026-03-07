@@ -107,6 +107,22 @@ pub mod sql_stored_procedure {
         name: &str,
         args: SqlStoredProcedureArgs,
     ) -> SqlStoredProcedureResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SqlStoredProcedureArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SqlStoredProcedureResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SqlStoredProcedureArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SqlStoredProcedureResult {
         let account_name_binding = args.account_name.get_output(context);
         let body_binding = args.body.get_output(context);
         let container_name_binding = args.container_name.get_output(context);
@@ -143,6 +159,7 @@ pub mod sql_stored_procedure {
                     value: &resource_group_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SqlStoredProcedureResult {

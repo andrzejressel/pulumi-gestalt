@@ -62,6 +62,22 @@ pub mod member_association {
         name: &str,
         args: MemberAssociationArgs,
     ) -> MemberAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MemberAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MemberAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MemberAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MemberAssociationResult {
         let account_id_binding = args.account_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:inspector2/memberAssociation:MemberAssociation".into(),
@@ -73,6 +89,7 @@ pub mod member_association {
                     value: &account_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MemberAssociationResult {

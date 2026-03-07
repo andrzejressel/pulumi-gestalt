@@ -216,6 +216,22 @@ pub mod entry_type {
         name: &str,
         args: EntryTypeArgs,
     ) -> EntryTypeResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EntryTypeArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EntryTypeResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EntryTypeArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EntryTypeResult {
         let description_binding = args.description.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let entry_type_id_binding = args.entry_type_id.get_output(context);
@@ -272,6 +288,7 @@ pub mod entry_type {
                     value: &type_aliases_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EntryTypeResult {

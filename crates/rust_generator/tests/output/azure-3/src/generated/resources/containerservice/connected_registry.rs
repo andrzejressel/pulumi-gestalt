@@ -171,6 +171,22 @@ pub mod connected_registry {
         name: &str,
         args: ConnectedRegistryArgs,
     ) -> ConnectedRegistryResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConnectedRegistryArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ConnectedRegistryResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConnectedRegistryArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ConnectedRegistryResult {
         let audit_log_enabled_binding = args.audit_log_enabled.get_output(context);
         let client_token_ids_binding = args.client_token_ids.get_output(context);
         let container_registry_id_binding = args
@@ -239,6 +255,7 @@ pub mod connected_registry {
                     value: &sync_window_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ConnectedRegistryResult {

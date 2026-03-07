@@ -140,6 +140,22 @@ pub mod teams_channel_configuration {
         name: &str,
         args: TeamsChannelConfigurationArgs,
     ) -> TeamsChannelConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TeamsChannelConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TeamsChannelConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TeamsChannelConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TeamsChannelConfigurationResult {
         let channel_id_binding = args.channel_id.get_output(context);
         let channel_name_binding = args.channel_name.get_output(context);
         let configuration_name_binding = args.configuration_name.get_output(context);
@@ -216,6 +232,7 @@ pub mod teams_channel_configuration {
                     value: &user_authorization_required_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TeamsChannelConfigurationResult {

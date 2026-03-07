@@ -130,6 +130,22 @@ pub mod share_file {
         name: &str,
         args: ShareFileArgs,
     ) -> ShareFileResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ShareFileArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ShareFileResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ShareFileArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ShareFileResult {
         let content_disposition_binding = args.content_disposition.get_output(context);
         let content_encoding_binding = args.content_encoding.get_output(context);
         let content_md5_binding = args.content_md5.get_output(context);
@@ -181,6 +197,7 @@ pub mod share_file {
                     value: &storage_share_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ShareFileResult {

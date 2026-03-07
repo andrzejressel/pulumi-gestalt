@@ -273,6 +273,22 @@ pub mod schema_iam_member {
         name: &str,
         args: SchemaIamMemberArgs,
     ) -> SchemaIamMemberResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SchemaIamMemberArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SchemaIamMemberResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SchemaIamMemberArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SchemaIamMemberResult {
         let condition_binding = args.condition.get_output(context);
         let member_binding = args.member.get_output(context);
         let project_binding = args.project.get_output(context);
@@ -304,6 +320,7 @@ pub mod schema_iam_member {
                     value: &schema_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SchemaIamMemberResult {

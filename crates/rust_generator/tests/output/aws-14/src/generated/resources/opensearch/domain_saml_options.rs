@@ -87,6 +87,22 @@ pub mod domain_saml_options {
         name: &str,
         args: DomainSamlOptionsArgs,
     ) -> DomainSamlOptionsResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DomainSamlOptionsArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DomainSamlOptionsResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DomainSamlOptionsArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DomainSamlOptionsResult {
         let domain_name_binding = args.domain_name.get_output(context);
         let saml_options_binding = args.saml_options.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -103,6 +119,7 @@ pub mod domain_saml_options {
                     value: &saml_options_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DomainSamlOptionsResult {

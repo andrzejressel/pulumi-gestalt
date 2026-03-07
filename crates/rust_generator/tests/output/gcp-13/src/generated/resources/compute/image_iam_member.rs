@@ -428,6 +428,22 @@ pub mod image_iam_member {
         name: &str,
         args: ImageIamMemberArgs,
     ) -> ImageIamMemberResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ImageIamMemberArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ImageIamMemberResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ImageIamMemberArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ImageIamMemberResult {
         let condition_binding = args.condition.get_output(context);
         let image_binding = args.image.get_output(context);
         let member_binding = args.member.get_output(context);
@@ -459,6 +475,7 @@ pub mod image_iam_member {
                     value: &role_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ImageIamMemberResult {

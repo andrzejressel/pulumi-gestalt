@@ -162,6 +162,22 @@ pub mod rule {
         name: &str,
         args: RuleArgs,
     ) -> RuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RuleResult {
         let backend_address_pool_ids_binding = args
             .backend_address_pool_ids
             .get_output(context);
@@ -241,6 +257,7 @@ pub mod rule {
                     value: &protocol_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RuleResult {

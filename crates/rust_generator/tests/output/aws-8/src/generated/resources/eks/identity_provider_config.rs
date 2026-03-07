@@ -89,6 +89,22 @@ pub mod identity_provider_config {
         name: &str,
         args: IdentityProviderConfigArgs,
     ) -> IdentityProviderConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IdentityProviderConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IdentityProviderConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IdentityProviderConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IdentityProviderConfigResult {
         let cluster_name_binding = args.cluster_name.get_output(context);
         let oidc_binding = args.oidc.get_output(context);
         let tags_binding = args.tags.get_output(context);
@@ -110,6 +126,7 @@ pub mod identity_provider_config {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IdentityProviderConfigResult {

@@ -301,6 +301,22 @@ pub mod analytics_application {
         name: &str,
         args: AnalyticsApplicationArgs,
     ) -> AnalyticsApplicationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AnalyticsApplicationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AnalyticsApplicationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AnalyticsApplicationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AnalyticsApplicationResult {
         let cloudwatch_logging_options_binding = args
             .cloudwatch_logging_options
             .get_output(context);
@@ -356,6 +372,7 @@ pub mod analytics_application {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AnalyticsApplicationResult {

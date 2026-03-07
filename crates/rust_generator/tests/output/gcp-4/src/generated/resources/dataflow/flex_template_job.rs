@@ -272,6 +272,22 @@ pub mod flex_template_job {
         name: &str,
         args: FlexTemplateJobArgs,
     ) -> FlexTemplateJobResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FlexTemplateJobArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FlexTemplateJobResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FlexTemplateJobArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FlexTemplateJobResult {
         let additional_experiments_binding = args
             .additional_experiments
             .get_output(context);
@@ -414,6 +430,7 @@ pub mod flex_template_job {
                     value: &transform_name_mapping_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FlexTemplateJobResult {

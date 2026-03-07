@@ -156,6 +156,22 @@ pub mod output_servicebus_topic {
         name: &str,
         args: OutputServicebusTopicArgs,
     ) -> OutputServicebusTopicResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OutputServicebusTopicArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OutputServicebusTopicResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OutputServicebusTopicArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OutputServicebusTopicResult {
         let authentication_mode_binding = args.authentication_mode.get_output(context);
         let name_binding = args.name.get_output(context);
         let property_columns_binding = args.property_columns.get_output(context);
@@ -226,6 +242,7 @@ pub mod output_servicebus_topic {
                     value: &topic_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OutputServicebusTopicResult {

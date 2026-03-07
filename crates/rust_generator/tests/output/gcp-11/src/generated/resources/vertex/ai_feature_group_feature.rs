@@ -195,6 +195,22 @@ pub mod ai_feature_group_feature {
         name: &str,
         args: AiFeatureGroupFeatureArgs,
     ) -> AiFeatureGroupFeatureResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AiFeatureGroupFeatureArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AiFeatureGroupFeatureResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AiFeatureGroupFeatureArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AiFeatureGroupFeatureResult {
         let description_binding = args.description.get_output(context);
         let feature_group_binding = args.feature_group.get_output(context);
         let labels_binding = args.labels.get_output(context);
@@ -236,6 +252,7 @@ pub mod ai_feature_group_feature {
                     value: &version_column_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AiFeatureGroupFeatureResult {

@@ -89,6 +89,22 @@ pub mod scraper {
         name: &str,
         args: ScraperArgs,
     ) -> ScraperResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ScraperArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ScraperResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ScraperArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ScraperResult {
         let alias_binding = args.alias.get_output(context);
         let destination_binding = args.destination.get_output(context);
         let scrape_configuration_binding = args.scrape_configuration.get_output(context);
@@ -125,6 +141,7 @@ pub mod scraper {
                     value: &timeouts_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ScraperResult {

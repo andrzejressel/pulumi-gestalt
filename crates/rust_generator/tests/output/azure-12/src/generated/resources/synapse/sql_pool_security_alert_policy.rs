@@ -155,6 +155,22 @@ pub mod sql_pool_security_alert_policy {
         name: &str,
         args: SqlPoolSecurityAlertPolicyArgs,
     ) -> SqlPoolSecurityAlertPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SqlPoolSecurityAlertPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SqlPoolSecurityAlertPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SqlPoolSecurityAlertPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SqlPoolSecurityAlertPolicyResult {
         let disabled_alerts_binding = args.disabled_alerts.get_output(context);
         let email_account_admins_enabled_binding = args
             .email_account_admins_enabled
@@ -206,6 +222,7 @@ pub mod sql_pool_security_alert_policy {
                     value: &storage_endpoint_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SqlPoolSecurityAlertPolicyResult {

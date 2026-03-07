@@ -105,6 +105,22 @@ pub mod random_id {
         name: &str,
         args: RandomIdArgs,
     ) -> RandomIdResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RandomIdArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RandomIdResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RandomIdArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RandomIdResult {
         let byte_length_binding = args.byte_length.get_output(context);
         let keepers_binding = args.keepers.get_output(context);
         let prefix_binding = args.prefix.get_output(context);
@@ -126,6 +142,7 @@ pub mod random_id {
                     value: &prefix_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RandomIdResult {

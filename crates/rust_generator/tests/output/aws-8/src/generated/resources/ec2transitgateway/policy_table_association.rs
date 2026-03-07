@@ -70,6 +70,22 @@ pub mod policy_table_association {
         name: &str,
         args: PolicyTableAssociationArgs,
     ) -> PolicyTableAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PolicyTableAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PolicyTableAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PolicyTableAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PolicyTableAssociationResult {
         let transit_gateway_attachment_id_binding = args
             .transit_gateway_attachment_id
             .get_output(context);
@@ -91,6 +107,7 @@ pub mod policy_table_association {
                     value: &transit_gateway_policy_table_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PolicyTableAssociationResult {

@@ -113,6 +113,22 @@ pub mod data_lake_gen_2_path {
         name: &str,
         args: DataLakeGen2PathArgs,
     ) -> DataLakeGen2PathResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataLakeGen2PathArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DataLakeGen2PathResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DataLakeGen2PathArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DataLakeGen2PathResult {
         let aces_binding = args.aces.get_output(context);
         let filesystem_name_binding = args.filesystem_name.get_output(context);
         let group_binding = args.group.get_output(context);
@@ -154,6 +170,7 @@ pub mod data_lake_gen_2_path {
                     value: &storage_account_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DataLakeGen2PathResult {

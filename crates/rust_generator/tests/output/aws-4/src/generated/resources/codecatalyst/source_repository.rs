@@ -79,6 +79,22 @@ pub mod source_repository {
         name: &str,
         args: SourceRepositoryArgs,
     ) -> SourceRepositoryResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SourceRepositoryArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SourceRepositoryResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SourceRepositoryArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SourceRepositoryResult {
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let project_name_binding = args.project_name.get_output(context);
@@ -105,6 +121,7 @@ pub mod source_repository {
                     value: &space_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SourceRepositoryResult {

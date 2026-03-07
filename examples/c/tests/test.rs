@@ -35,9 +35,9 @@ fn test_integration() -> Result<()> {
 
     assert_eq!(result.len(), 16);
     assert_eq!(resource_id.len(), 16);
-    assert!(
-        provider_id.starts_with("urn:pulumi:test::Pulumi-CPP-Sample::pulumi:providers:random::custom-provider::")
-    );
+    assert!(provider_id.starts_with(
+        "urn:pulumi:test::Pulumi-CPP-Sample::pulumi:providers:random::custom-provider::"
+    ));
     assert_eq!(double_length, 32);
     assert_eq!(static_string, "my_string");
     assert!(!whoami_stdout.is_empty());

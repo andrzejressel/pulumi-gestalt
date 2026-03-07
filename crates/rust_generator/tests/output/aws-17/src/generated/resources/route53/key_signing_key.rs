@@ -149,6 +149,22 @@ pub mod key_signing_key {
         name: &str,
         args: KeySigningKeyArgs,
     ) -> KeySigningKeyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: KeySigningKeyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> KeySigningKeyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: KeySigningKeyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> KeySigningKeyResult {
         let hosted_zone_id_binding = args.hosted_zone_id.get_output(context);
         let key_management_service_arn_binding = args
             .key_management_service_arn
@@ -177,6 +193,7 @@ pub mod key_signing_key {
                     value: &status_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         KeySigningKeyResult {

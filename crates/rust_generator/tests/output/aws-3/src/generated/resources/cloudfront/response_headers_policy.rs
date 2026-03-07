@@ -227,6 +227,22 @@ pub mod response_headers_policy {
         name: &str,
         args: ResponseHeadersPolicyArgs,
     ) -> ResponseHeadersPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResponseHeadersPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ResponseHeadersPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResponseHeadersPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ResponseHeadersPolicyResult {
         let comment_binding = args.comment.get_output(context);
         let cors_config_binding = args.cors_config.get_output(context);
         let custom_headers_config_binding = args
@@ -281,6 +297,7 @@ pub mod response_headers_policy {
                     value: &server_timing_headers_config_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ResponseHeadersPolicyResult {

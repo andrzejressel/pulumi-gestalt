@@ -405,6 +405,22 @@ pub mod deployment_group {
         name: &str,
         args: DeploymentGroupArgs,
     ) -> DeploymentGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DeploymentGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DeploymentGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DeploymentGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DeploymentGroupResult {
         let alarm_configuration_binding = args.alarm_configuration.get_output(context);
         let app_name_binding = args.app_name.get_output(context);
         let auto_rollback_configuration_binding = args
@@ -517,6 +533,7 @@ pub mod deployment_group {
                     value: &trigger_configurations_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DeploymentGroupResult {

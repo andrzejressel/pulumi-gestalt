@@ -463,6 +463,22 @@ pub mod log_view_iam_binding {
         name: &str,
         args: LogViewIamBindingArgs,
     ) -> LogViewIamBindingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LogViewIamBindingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LogViewIamBindingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LogViewIamBindingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LogViewIamBindingResult {
         let bucket_binding = args.bucket.get_output(context);
         let condition_binding = args.condition.get_output(context);
         let location_binding = args.location.get_output(context);
@@ -504,6 +520,7 @@ pub mod log_view_iam_binding {
                     value: &role_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LogViewIamBindingResult {

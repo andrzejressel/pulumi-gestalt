@@ -193,6 +193,22 @@ pub mod nodejs_app_layer {
         name: &str,
         args: NodejsAppLayerArgs,
     ) -> NodejsAppLayerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NodejsAppLayerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NodejsAppLayerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NodejsAppLayerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NodejsAppLayerResult {
         let auto_assign_elastic_ips_binding = args
             .auto_assign_elastic_ips
             .get_output(context);
@@ -349,6 +365,7 @@ pub mod nodejs_app_layer {
                     value: &use_ebs_optimized_instances_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NodejsAppLayerResult {

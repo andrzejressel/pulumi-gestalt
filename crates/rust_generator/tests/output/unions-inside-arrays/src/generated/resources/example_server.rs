@@ -38,6 +38,22 @@ pub mod example_server {
         name: &str,
         args: ExampleServerArgs,
     ) -> ExampleServerResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ExampleServerArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ExampleServerResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ExampleServerArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ExampleServerResult {
         let properties_collection_binding = args
             .properties_collection
             .get_output(context);
@@ -51,6 +67,7 @@ pub mod example_server {
                     value: &properties_collection_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ExampleServerResult {

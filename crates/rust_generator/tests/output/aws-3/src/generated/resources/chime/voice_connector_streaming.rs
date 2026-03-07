@@ -159,6 +159,22 @@ pub mod voice_connector_streaming {
         name: &str,
         args: VoiceConnectorStreamingArgs,
     ) -> VoiceConnectorStreamingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VoiceConnectorStreamingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VoiceConnectorStreamingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VoiceConnectorStreamingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VoiceConnectorStreamingResult {
         let data_retention_binding = args.data_retention.get_output(context);
         let disabled_binding = args.disabled.get_output(context);
         let media_insights_configuration_binding = args
@@ -194,6 +210,7 @@ pub mod voice_connector_streaming {
                     value: &voice_connector_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VoiceConnectorStreamingResult {

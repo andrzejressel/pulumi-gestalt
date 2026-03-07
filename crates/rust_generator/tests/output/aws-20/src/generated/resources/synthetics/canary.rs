@@ -191,6 +191,22 @@ pub mod canary {
         name: &str,
         args: CanaryArgs,
     ) -> CanaryResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CanaryArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CanaryResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CanaryArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CanaryResult {
         let artifact_config_binding = args.artifact_config.get_output(context);
         let artifact_s3_location_binding = args.artifact_s3_location.get_output(context);
         let delete_lambda_binding = args.delete_lambda.get_output(context);
@@ -291,6 +307,7 @@ pub mod canary {
                     value: &zip_file_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CanaryResult {

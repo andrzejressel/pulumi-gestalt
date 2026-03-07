@@ -211,6 +211,22 @@ pub mod service_azure_bot {
         name: &str,
         args: ServiceAzureBotArgs,
     ) -> ServiceAzureBotResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceAzureBotArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServiceAzureBotResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceAzureBotArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServiceAzureBotResult {
         let cmk_key_vault_key_url_binding = args
             .cmk_key_vault_key_url
             .get_output(context);
@@ -338,6 +354,7 @@ pub mod service_azure_bot {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServiceAzureBotResult {

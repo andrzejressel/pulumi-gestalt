@@ -97,6 +97,22 @@ pub mod sql_dedicated_gateway {
         name: &str,
         args: SqlDedicatedGatewayArgs,
     ) -> SqlDedicatedGatewayResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SqlDedicatedGatewayArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SqlDedicatedGatewayResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SqlDedicatedGatewayArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SqlDedicatedGatewayResult {
         let cosmosdb_account_id_binding = args.cosmosdb_account_id.get_output(context);
         let instance_count_binding = args.instance_count.get_output(context);
         let instance_size_binding = args.instance_size.get_output(context);
@@ -118,6 +134,7 @@ pub mod sql_dedicated_gateway {
                     value: &instance_size_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SqlDedicatedGatewayResult {

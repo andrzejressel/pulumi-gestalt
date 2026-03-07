@@ -124,6 +124,22 @@ pub mod provisioning_artifact {
         name: &str,
         args: ProvisioningArtifactArgs,
     ) -> ProvisioningArtifactResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProvisioningArtifactArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ProvisioningArtifactResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProvisioningArtifactArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ProvisioningArtifactResult {
         let accept_language_binding = args.accept_language.get_output(context);
         let active_binding = args.active.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -182,6 +198,7 @@ pub mod provisioning_artifact {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ProvisioningArtifactResult {

@@ -112,6 +112,22 @@ pub mod namespace_disaster_recovery_config {
         name: &str,
         args: NamespaceDisasterRecoveryConfigArgs,
     ) -> NamespaceDisasterRecoveryConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NamespaceDisasterRecoveryConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NamespaceDisasterRecoveryConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NamespaceDisasterRecoveryConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NamespaceDisasterRecoveryConfigResult {
         let alias_authorization_rule_id_binding = args
             .alias_authorization_rule_id
             .get_output(context);
@@ -141,6 +157,7 @@ pub mod namespace_disaster_recovery_config {
                     value: &primary_namespace_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NamespaceDisasterRecoveryConfigResult {

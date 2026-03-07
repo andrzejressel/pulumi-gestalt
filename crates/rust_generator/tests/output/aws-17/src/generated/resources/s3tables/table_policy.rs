@@ -106,6 +106,22 @@ pub mod table_policy {
         name: &str,
         args: TablePolicyArgs,
     ) -> TablePolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TablePolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TablePolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TablePolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TablePolicyResult {
         let name_binding = args.name.get_output(context);
         let namespace_binding = args.namespace.get_output(context);
         let resource_policy_binding = args.resource_policy.get_output(context);
@@ -132,6 +148,7 @@ pub mod table_policy {
                     value: &table_bucket_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TablePolicyResult {

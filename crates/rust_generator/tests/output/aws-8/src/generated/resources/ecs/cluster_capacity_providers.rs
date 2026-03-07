@@ -91,6 +91,22 @@ pub mod cluster_capacity_providers {
         name: &str,
         args: ClusterCapacityProvidersArgs,
     ) -> ClusterCapacityProvidersResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClusterCapacityProvidersArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ClusterCapacityProvidersResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ClusterCapacityProvidersArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ClusterCapacityProvidersResult {
         let capacity_providers_binding = args.capacity_providers.get_output(context);
         let cluster_name_binding = args.cluster_name.get_output(context);
         let default_capacity_provider_strategies_binding = args
@@ -114,6 +130,7 @@ pub mod cluster_capacity_providers {
                     value: &default_capacity_provider_strategies_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ClusterCapacityProvidersResult {

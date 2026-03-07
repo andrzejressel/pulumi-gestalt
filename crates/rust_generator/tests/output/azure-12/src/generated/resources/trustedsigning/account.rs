@@ -93,6 +93,22 @@ pub mod account {
         name: &str,
         args: AccountArgs,
     ) -> AccountResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccountArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AccountResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccountArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AccountResult {
         let location_binding = args.location.get_output(context);
         let name_binding = args.name.get_output(context);
         let resource_group_name_binding = args.resource_group_name.get_output(context);
@@ -124,6 +140,7 @@ pub mod account {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AccountResult {

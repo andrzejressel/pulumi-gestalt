@@ -65,6 +65,22 @@ pub mod organizations_features {
         name: &str,
         args: OrganizationsFeaturesArgs,
     ) -> OrganizationsFeaturesResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationsFeaturesArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OrganizationsFeaturesResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationsFeaturesArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OrganizationsFeaturesResult {
         let enabled_features_binding = args.enabled_features.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:iam/organizationsFeatures:OrganizationsFeatures".into(),
@@ -76,6 +92,7 @@ pub mod organizations_features {
                     value: &enabled_features_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OrganizationsFeaturesResult {

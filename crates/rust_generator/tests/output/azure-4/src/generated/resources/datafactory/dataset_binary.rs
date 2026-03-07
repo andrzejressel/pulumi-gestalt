@@ -179,6 +179,22 @@ pub mod dataset_binary {
         name: &str,
         args: DatasetBinaryArgs,
     ) -> DatasetBinaryResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatasetBinaryArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DatasetBinaryResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatasetBinaryArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DatasetBinaryResult {
         let additional_properties_binding = args
             .additional_properties
             .get_output(context);
@@ -249,6 +265,7 @@ pub mod dataset_binary {
                     value: &sftp_server_location_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DatasetBinaryResult {

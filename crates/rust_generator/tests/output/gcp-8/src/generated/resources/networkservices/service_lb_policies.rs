@@ -185,6 +185,22 @@ pub mod service_lb_policies {
         name: &str,
         args: ServiceLbPoliciesArgs,
     ) -> ServiceLbPoliciesResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceLbPoliciesArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServiceLbPoliciesResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceLbPoliciesArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServiceLbPoliciesResult {
         let auto_capacity_drain_binding = args.auto_capacity_drain.get_output(context);
         let description_binding = args.description.get_output(context);
         let failover_config_binding = args.failover_config.get_output(context);
@@ -233,6 +249,7 @@ pub mod service_lb_policies {
                     value: &project_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServiceLbPoliciesResult {

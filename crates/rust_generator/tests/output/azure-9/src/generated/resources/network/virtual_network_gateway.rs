@@ -296,6 +296,22 @@ pub mod virtual_network_gateway {
         name: &str,
         args: VirtualNetworkGatewayArgs,
     ) -> VirtualNetworkGatewayResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VirtualNetworkGatewayArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> VirtualNetworkGatewayResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: VirtualNetworkGatewayArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> VirtualNetworkGatewayResult {
         let active_active_binding = args.active_active.get_output(context);
         let bgp_route_translation_for_nat_enabled_binding = args
             .bgp_route_translation_for_nat_enabled
@@ -433,6 +449,7 @@ pub mod virtual_network_gateway {
                     value: &vpn_type_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         VirtualNetworkGatewayResult {

@@ -151,6 +151,22 @@ pub mod managed_hardware_security_module_key {
         name: &str,
         args: ManagedHardwareSecurityModuleKeyArgs,
     ) -> ManagedHardwareSecurityModuleKeyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedHardwareSecurityModuleKeyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ManagedHardwareSecurityModuleKeyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedHardwareSecurityModuleKeyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ManagedHardwareSecurityModuleKeyResult {
         let curve_binding = args.curve.get_output(context);
         let expiration_date_binding = args.expiration_date.get_output(context);
         let key_opts_binding = args.key_opts.get_output(context);
@@ -203,6 +219,7 @@ pub mod managed_hardware_security_module_key {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ManagedHardwareSecurityModuleKeyResult {

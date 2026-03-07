@@ -358,6 +358,22 @@ pub mod ai_index_endpoint_deployed_index {
         name: &str,
         args: AiIndexEndpointDeployedIndexArgs,
     ) -> AiIndexEndpointDeployedIndexResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AiIndexEndpointDeployedIndexArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AiIndexEndpointDeployedIndexResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AiIndexEndpointDeployedIndexArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AiIndexEndpointDeployedIndexResult {
         let automatic_resources_binding = args.automatic_resources.get_output(context);
         let dedicated_resources_binding = args.dedicated_resources.get_output(context);
         let deployed_index_auth_config_binding = args
@@ -419,6 +435,7 @@ pub mod ai_index_endpoint_deployed_index {
                     value: &reserved_ip_ranges_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AiIndexEndpointDeployedIndexResult {

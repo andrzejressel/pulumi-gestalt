@@ -168,6 +168,22 @@ pub mod recorder {
         name: &str,
         args: RecorderArgs,
     ) -> RecorderResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RecorderArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RecorderResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RecorderArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RecorderResult {
         let name_binding = args.name.get_output(context);
         let recording_group_binding = args.recording_group.get_output(context);
         let recording_mode_binding = args.recording_mode.get_output(context);
@@ -194,6 +210,7 @@ pub mod recorder {
                     value: &role_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RecorderResult {

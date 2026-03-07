@@ -248,6 +248,22 @@ pub mod app_group {
         name: &str,
         args: AppGroupArgs,
     ) -> AppGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AppGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AppGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AppGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AppGroupResult {
         let attributes_binding = args.attributes.get_output(context);
         let channel_id_binding = args.channel_id.get_output(context);
         let channel_uri_binding = args.channel_uri.get_output(context);
@@ -289,6 +305,7 @@ pub mod app_group {
                     value: &status_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AppGroupResult {

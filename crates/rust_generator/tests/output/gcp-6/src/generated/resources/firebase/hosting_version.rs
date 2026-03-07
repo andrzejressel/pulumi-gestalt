@@ -331,6 +331,22 @@ pub mod hosting_version {
         name: &str,
         args: HostingVersionArgs,
     ) -> HostingVersionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HostingVersionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> HostingVersionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HostingVersionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> HostingVersionResult {
         let config_binding = args.config.get_output(context);
         let site_id_binding = args.site_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -347,6 +363,7 @@ pub mod hosting_version {
                     value: &site_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         HostingVersionResult {

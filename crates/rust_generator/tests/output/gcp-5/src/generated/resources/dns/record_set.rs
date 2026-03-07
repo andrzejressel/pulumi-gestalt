@@ -392,6 +392,22 @@ pub mod record_set {
         name: &str,
         args: RecordSetArgs,
     ) -> RecordSetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RecordSetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RecordSetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RecordSetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RecordSetResult {
         let managed_zone_binding = args.managed_zone.get_output(context);
         let name_binding = args.name.get_output(context);
         let project_binding = args.project.get_output(context);
@@ -433,6 +449,7 @@ pub mod record_set {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RecordSetResult {

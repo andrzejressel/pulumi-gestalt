@@ -136,6 +136,22 @@ pub mod spring_cloud_new_relic_application_performance_monitoring {
         name: &str,
         args: SpringCloudNewRelicApplicationPerformanceMonitoringArgs,
     ) -> SpringCloudNewRelicApplicationPerformanceMonitoringResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudNewRelicApplicationPerformanceMonitoringArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SpringCloudNewRelicApplicationPerformanceMonitoringResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SpringCloudNewRelicApplicationPerformanceMonitoringArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SpringCloudNewRelicApplicationPerformanceMonitoringResult {
         let agent_enabled_binding = args.agent_enabled.get_output(context);
         let app_name_binding = args.app_name.get_output(context);
         let app_server_port_binding = args.app_server_port.get_output(context);
@@ -211,6 +227,7 @@ pub mod spring_cloud_new_relic_application_performance_monitoring {
                     value: &spring_cloud_service_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SpringCloudNewRelicApplicationPerformanceMonitoringResult {

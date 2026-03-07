@@ -105,6 +105,22 @@ pub mod runtime_management_config {
         name: &str,
         args: RuntimeManagementConfigArgs,
     ) -> RuntimeManagementConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RuntimeManagementConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RuntimeManagementConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RuntimeManagementConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RuntimeManagementConfigResult {
         let function_name_binding = args.function_name.get_output(context);
         let qualifier_binding = args.qualifier.get_output(context);
         let runtime_version_arn_binding = args.runtime_version_arn.get_output(context);
@@ -131,6 +147,7 @@ pub mod runtime_management_config {
                     value: &update_runtime_on_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RuntimeManagementConfigResult {

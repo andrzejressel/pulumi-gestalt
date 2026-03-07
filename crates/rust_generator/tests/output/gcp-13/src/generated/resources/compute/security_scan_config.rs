@@ -175,6 +175,22 @@ pub mod security_scan_config {
         name: &str,
         args: SecurityScanConfigArgs,
     ) -> SecurityScanConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SecurityScanConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SecurityScanConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SecurityScanConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SecurityScanConfigResult {
         let authentication_binding = args.authentication.get_output(context);
         let blacklist_patterns_binding = args.blacklist_patterns.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
@@ -233,6 +249,7 @@ pub mod security_scan_config {
                     value: &user_agent_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SecurityScanConfigResult {

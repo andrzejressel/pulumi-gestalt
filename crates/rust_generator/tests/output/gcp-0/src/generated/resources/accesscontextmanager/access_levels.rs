@@ -115,6 +115,22 @@ pub mod access_levels {
         name: &str,
         args: AccessLevelsArgs,
     ) -> AccessLevelsResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccessLevelsArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AccessLevelsResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccessLevelsArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AccessLevelsResult {
         let access_levels_binding = args.access_levels.get_output(context);
         let parent_binding = args.parent.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -131,6 +147,7 @@ pub mod access_levels {
                     value: &parent_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AccessLevelsResult {

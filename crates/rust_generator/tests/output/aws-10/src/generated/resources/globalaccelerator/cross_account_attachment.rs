@@ -127,6 +127,22 @@ pub mod cross_account_attachment {
         name: &str,
         args: CrossAccountAttachmentArgs,
     ) -> CrossAccountAttachmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CrossAccountAttachmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CrossAccountAttachmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CrossAccountAttachmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CrossAccountAttachmentResult {
         let name_binding = args.name.get_output(context);
         let principals_binding = args.principals.get_output(context);
         let resources_binding = args.resources.get_output(context);
@@ -154,6 +170,7 @@ pub mod cross_account_attachment {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CrossAccountAttachmentResult {

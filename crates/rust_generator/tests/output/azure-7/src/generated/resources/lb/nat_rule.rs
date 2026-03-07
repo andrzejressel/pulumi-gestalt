@@ -181,6 +181,22 @@ pub mod nat_rule {
         name: &str,
         args: NatRuleArgs,
     ) -> NatRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NatRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NatRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NatRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NatRuleResult {
         let backend_address_pool_id_binding = args
             .backend_address_pool_id
             .get_output(context);
@@ -258,6 +274,7 @@ pub mod nat_rule {
                     value: &resource_group_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NatRuleResult {

@@ -114,6 +114,22 @@ pub mod integration_account_batch_configuration {
         name: &str,
         args: IntegrationAccountBatchConfigurationArgs,
     ) -> IntegrationAccountBatchConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IntegrationAccountBatchConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IntegrationAccountBatchConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IntegrationAccountBatchConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IntegrationAccountBatchConfigurationResult {
         let batch_group_name_binding = args.batch_group_name.get_output(context);
         let integration_account_name_binding = args
             .integration_account_name
@@ -153,6 +169,7 @@ pub mod integration_account_batch_configuration {
                     value: &resource_group_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IntegrationAccountBatchConfigurationResult {

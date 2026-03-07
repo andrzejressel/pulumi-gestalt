@@ -97,6 +97,22 @@ pub mod zone {
         name: &str,
         args: ZoneArgs,
     ) -> ZoneResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZoneArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ZoneResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ZoneArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ZoneResult {
         let account_id_binding = args.account_id.get_output(context);
         let jump_start_binding = args.jump_start.get_output(context);
         let paused_binding = args.paused.get_output(context);
@@ -138,6 +154,7 @@ pub mod zone {
                     value: &zone_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ZoneResult {

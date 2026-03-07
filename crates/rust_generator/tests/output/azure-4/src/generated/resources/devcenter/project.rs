@@ -113,6 +113,22 @@ pub mod project {
         name: &str,
         args: ProjectArgs,
     ) -> ProjectResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProjectArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ProjectResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProjectArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ProjectResult {
         let description_binding = args.description.get_output(context);
         let dev_center_id_binding = args.dev_center_id.get_output(context);
         let location_binding = args.location.get_output(context);
@@ -156,6 +172,7 @@ pub mod project {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ProjectResult {

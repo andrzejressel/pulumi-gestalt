@@ -74,6 +74,22 @@ pub mod tag_option_resource_association {
         name: &str,
         args: TagOptionResourceAssociationArgs,
     ) -> TagOptionResourceAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TagOptionResourceAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TagOptionResourceAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TagOptionResourceAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TagOptionResourceAssociationResult {
         let resource_id_binding = args.resource_id.get_output(context);
         let tag_option_id_binding = args.tag_option_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -91,6 +107,7 @@ pub mod tag_option_resource_association {
                     value: &tag_option_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TagOptionResourceAssociationResult {

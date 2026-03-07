@@ -251,6 +251,22 @@ pub mod alert_rule_scheduled {
         name: &str,
         args: AlertRuleScheduledArgs,
     ) -> AlertRuleScheduledResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AlertRuleScheduledArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AlertRuleScheduledResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AlertRuleScheduledArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AlertRuleScheduledResult {
         let alert_details_overrides_binding = args
             .alert_details_overrides
             .get_output(context);
@@ -382,6 +398,7 @@ pub mod alert_rule_scheduled {
                     value: &trigger_threshold_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AlertRuleScheduledResult {

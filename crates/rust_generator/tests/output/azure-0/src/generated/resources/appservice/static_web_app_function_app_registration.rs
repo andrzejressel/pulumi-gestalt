@@ -120,6 +120,22 @@ pub mod static_web_app_function_app_registration {
         name: &str,
         args: StaticWebAppFunctionAppRegistrationArgs,
     ) -> StaticWebAppFunctionAppRegistrationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StaticWebAppFunctionAppRegistrationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> StaticWebAppFunctionAppRegistrationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StaticWebAppFunctionAppRegistrationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> StaticWebAppFunctionAppRegistrationResult {
         let function_app_id_binding = args.function_app_id.get_output(context);
         let static_web_app_id_binding = args.static_web_app_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -137,6 +153,7 @@ pub mod static_web_app_function_app_registration {
                     value: &static_web_app_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         StaticWebAppFunctionAppRegistrationResult {

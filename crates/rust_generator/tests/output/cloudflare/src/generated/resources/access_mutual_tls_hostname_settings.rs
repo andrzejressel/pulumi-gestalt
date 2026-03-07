@@ -82,6 +82,22 @@ pub mod access_mutual_tls_hostname_settings {
         name: &str,
         args: AccessMutualTlsHostnameSettingsArgs,
     ) -> AccessMutualTlsHostnameSettingsResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccessMutualTlsHostnameSettingsArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AccessMutualTlsHostnameSettingsResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccessMutualTlsHostnameSettingsArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AccessMutualTlsHostnameSettingsResult {
         let account_id_binding = args.account_id.get_output(context);
         let settings_binding = args.settings.get_output(context);
         let zone_id_binding = args.zone_id.get_output(context);
@@ -104,6 +120,7 @@ pub mod access_mutual_tls_hostname_settings {
                     value: &zone_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AccessMutualTlsHostnameSettingsResult {

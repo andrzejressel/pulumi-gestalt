@@ -169,6 +169,22 @@ pub mod environment_keyvaluemaps_entries {
         name: &str,
         args: EnvironmentKeyvaluemapsEntriesArgs,
     ) -> EnvironmentKeyvaluemapsEntriesResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EnvironmentKeyvaluemapsEntriesArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EnvironmentKeyvaluemapsEntriesResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EnvironmentKeyvaluemapsEntriesArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EnvironmentKeyvaluemapsEntriesResult {
         let env_keyvaluemap_id_binding = args.env_keyvaluemap_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let value_binding = args.value.get_output(context);
@@ -191,6 +207,7 @@ pub mod environment_keyvaluemaps_entries {
                     value: &value_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EnvironmentKeyvaluemapsEntriesResult {

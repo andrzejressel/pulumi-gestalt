@@ -148,6 +148,22 @@ pub mod integration_response {
         name: &str,
         args: IntegrationResponseArgs,
     ) -> IntegrationResponseResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IntegrationResponseArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IntegrationResponseResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IntegrationResponseArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IntegrationResponseResult {
         let content_handling_binding = args.content_handling.get_output(context);
         let http_method_binding = args.http_method.get_output(context);
         let resource_id_binding = args.resource_id.get_output(context);
@@ -194,6 +210,7 @@ pub mod integration_response {
                     value: &status_code_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IntegrationResponseResult {

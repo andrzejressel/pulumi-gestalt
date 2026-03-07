@@ -134,6 +134,22 @@ pub mod network_acl {
         name: &str,
         args: NetworkAclArgs,
     ) -> NetworkAclResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkAclArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NetworkAclResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkAclArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NetworkAclResult {
         let default_action_binding = args.default_action.get_output(context);
         let private_endpoints_binding = args.private_endpoints.get_output(context);
         let public_network_binding = args.public_network.get_output(context);
@@ -160,6 +176,7 @@ pub mod network_acl {
                     value: &web_pubsub_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NetworkAclResult {

@@ -78,6 +78,22 @@ pub mod resource_share {
         name: &str,
         args: ResourceShareArgs,
     ) -> ResourceShareResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResourceShareArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ResourceShareResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResourceShareArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ResourceShareResult {
         let allow_external_principals_binding = args
             .allow_external_principals
             .get_output(context);
@@ -106,6 +122,7 @@ pub mod resource_share {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ResourceShareResult {

@@ -90,6 +90,22 @@ pub mod table_item {
         name: &str,
         args: TableItemArgs,
     ) -> TableItemResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TableItemArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TableItemResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TableItemArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TableItemResult {
         let hash_key_binding = args.hash_key.get_output(context);
         let item_binding = args.item.get_output(context);
         let range_key_binding = args.range_key.get_output(context);
@@ -116,6 +132,7 @@ pub mod table_item {
                     value: &table_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TableItemResult {

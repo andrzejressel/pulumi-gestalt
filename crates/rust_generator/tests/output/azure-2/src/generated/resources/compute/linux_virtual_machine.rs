@@ -518,6 +518,22 @@ pub mod linux_virtual_machine {
         name: &str,
         args: LinuxVirtualMachineArgs,
     ) -> LinuxVirtualMachineResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LinuxVirtualMachineArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LinuxVirtualMachineResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LinuxVirtualMachineArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LinuxVirtualMachineResult {
         let additional_capabilities_binding = args
             .additional_capabilities
             .get_output(context);
@@ -804,6 +820,7 @@ pub mod linux_virtual_machine {
                     value: &zone_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LinuxVirtualMachineResult {

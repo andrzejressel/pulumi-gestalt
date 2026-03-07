@@ -143,6 +143,22 @@ pub mod dlp_profile {
         name: &str,
         args: DlpProfileArgs,
     ) -> DlpProfileResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DlpProfileArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DlpProfileResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DlpProfileArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DlpProfileResult {
         let account_id_binding = args.account_id.get_output(context);
         let allowed_match_count_binding = args.allowed_match_count.get_output(context);
         let context_awareness_binding = args.context_awareness.get_output(context);
@@ -189,6 +205,7 @@ pub mod dlp_profile {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DlpProfileResult {

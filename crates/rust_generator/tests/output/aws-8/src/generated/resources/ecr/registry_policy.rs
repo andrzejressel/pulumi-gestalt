@@ -78,6 +78,22 @@ pub mod registry_policy {
         name: &str,
         args: RegistryPolicyArgs,
     ) -> RegistryPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegistryPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RegistryPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegistryPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RegistryPolicyResult {
         let policy_binding = args.policy.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ecr/registryPolicy:RegistryPolicy".into(),
@@ -89,6 +105,7 @@ pub mod registry_policy {
                     value: &policy_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RegistryPolicyResult {

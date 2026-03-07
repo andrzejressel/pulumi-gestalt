@@ -133,6 +133,22 @@ pub mod cx_version {
         name: &str,
         args: CxVersionArgs,
     ) -> CxVersionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CxVersionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CxVersionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CxVersionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CxVersionResult {
         let description_binding = args.description.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let parent_binding = args.parent.get_output(context);
@@ -154,6 +170,7 @@ pub mod cx_version {
                     value: &parent_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CxVersionResult {

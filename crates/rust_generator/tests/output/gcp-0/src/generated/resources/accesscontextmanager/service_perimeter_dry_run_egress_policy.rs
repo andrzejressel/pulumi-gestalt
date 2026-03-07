@@ -94,6 +94,22 @@ pub mod service_perimeter_dry_run_egress_policy {
         name: &str,
         args: ServicePerimeterDryRunEgressPolicyArgs,
     ) -> ServicePerimeterDryRunEgressPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServicePerimeterDryRunEgressPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServicePerimeterDryRunEgressPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServicePerimeterDryRunEgressPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServicePerimeterDryRunEgressPolicyResult {
         let egress_from_binding = args.egress_from.get_output(context);
         let egress_to_binding = args.egress_to.get_output(context);
         let perimeter_binding = args.perimeter.get_output(context);
@@ -116,6 +132,7 @@ pub mod service_perimeter_dry_run_egress_policy {
                     value: &perimeter_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServicePerimeterDryRunEgressPolicyResult {

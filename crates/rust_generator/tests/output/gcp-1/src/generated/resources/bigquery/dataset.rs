@@ -516,6 +516,22 @@ pub mod dataset {
         name: &str,
         args: DatasetArgs,
     ) -> DatasetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatasetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DatasetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatasetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DatasetResult {
         let accesses_binding = args.accesses.get_output(context);
         let dataset_id_binding = args.dataset_id.get_output(context);
         let default_collation_binding = args.default_collation.get_output(context);
@@ -628,6 +644,7 @@ pub mod dataset {
                     value: &storage_billing_model_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DatasetResult {

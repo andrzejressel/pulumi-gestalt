@@ -195,6 +195,22 @@ pub mod environment_v_3 {
         name: &str,
         args: EnvironmentV3Args,
     ) -> EnvironmentV3Result {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EnvironmentV3Args,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EnvironmentV3Result {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EnvironmentV3Args,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EnvironmentV3Result {
         let allow_new_private_endpoint_connections_binding = args
             .allow_new_private_endpoint_connections
             .get_output(context);
@@ -257,6 +273,7 @@ pub mod environment_v_3 {
                     value: &zone_redundant_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EnvironmentV3Result {

@@ -181,6 +181,22 @@ pub mod autonomous_database {
         name: &str,
         args: AutonomousDatabaseArgs,
     ) -> AutonomousDatabaseResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AutonomousDatabaseArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AutonomousDatabaseResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AutonomousDatabaseArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AutonomousDatabaseResult {
         let admin_password_binding = args.admin_password.get_output(context);
         let auto_scaling_enabled_binding = args.auto_scaling_enabled.get_output(context);
         let auto_scaling_for_storage_enabled_binding = args
@@ -302,6 +318,7 @@ pub mod autonomous_database {
                     value: &virtual_network_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AutonomousDatabaseResult {

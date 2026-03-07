@@ -288,6 +288,22 @@ pub mod service {
         name: &str,
         args: ServiceArgs,
     ) -> ServiceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServiceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServiceResult {
         let additional_locations_binding = args.additional_locations.get_output(context);
         let certificates_binding = args.certificates.get_output(context);
         let client_certificate_enabled_binding = args
@@ -434,6 +450,7 @@ pub mod service {
                     value: &zones_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServiceResult {

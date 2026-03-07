@@ -273,6 +273,22 @@ pub mod attestor_iam_binding {
         name: &str,
         args: AttestorIamBindingArgs,
     ) -> AttestorIamBindingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AttestorIamBindingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AttestorIamBindingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AttestorIamBindingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AttestorIamBindingResult {
         let attestor_binding = args.attestor.get_output(context);
         let condition_binding = args.condition.get_output(context);
         let members_binding = args.members.get_output(context);
@@ -305,6 +321,7 @@ pub mod attestor_iam_binding {
                     value: &role_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AttestorIamBindingResult {

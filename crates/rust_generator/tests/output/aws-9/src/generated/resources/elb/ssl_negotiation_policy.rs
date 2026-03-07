@@ -125,6 +125,22 @@ pub mod ssl_negotiation_policy {
         name: &str,
         args: SslNegotiationPolicyArgs,
     ) -> SslNegotiationPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SslNegotiationPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SslNegotiationPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SslNegotiationPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SslNegotiationPolicyResult {
         let attributes_binding = args.attributes.get_output(context);
         let lb_port_binding = args.lb_port.get_output(context);
         let load_balancer_binding = args.load_balancer.get_output(context);
@@ -156,6 +172,7 @@ pub mod ssl_negotiation_policy {
                     value: &triggers_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SslNegotiationPolicyResult {

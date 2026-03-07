@@ -89,6 +89,22 @@ pub mod log_analytics_workspace_onboarding {
         name: &str,
         args: LogAnalyticsWorkspaceOnboardingArgs,
     ) -> LogAnalyticsWorkspaceOnboardingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LogAnalyticsWorkspaceOnboardingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LogAnalyticsWorkspaceOnboardingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LogAnalyticsWorkspaceOnboardingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LogAnalyticsWorkspaceOnboardingResult {
         let customer_managed_key_enabled_binding = args
             .customer_managed_key_enabled
             .get_output(context);
@@ -108,6 +124,7 @@ pub mod log_analytics_workspace_onboarding {
                     value: &workspace_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LogAnalyticsWorkspaceOnboardingResult {

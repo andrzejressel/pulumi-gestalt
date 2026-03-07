@@ -188,6 +188,22 @@ pub mod analysis {
         name: &str,
         args: AnalysisArgs,
     ) -> AnalysisResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AnalysisArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AnalysisResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AnalysisArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AnalysisResult {
         let analysis_id_binding = args.analysis_id.get_output(context);
         let aws_account_id_binding = args.aws_account_id.get_output(context);
         let name_binding = args.name.get_output(context);
@@ -241,6 +257,7 @@ pub mod analysis {
                     value: &theme_arn_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AnalysisResult {

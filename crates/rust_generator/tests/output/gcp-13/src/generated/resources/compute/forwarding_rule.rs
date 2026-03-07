@@ -1428,6 +1428,22 @@ pub mod forwarding_rule {
         name: &str,
         args: ForwardingRuleArgs,
     ) -> ForwardingRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ForwardingRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ForwardingRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ForwardingRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ForwardingRuleResult {
         let all_ports_binding = args.all_ports.get_output(context);
         let allow_global_access_binding = args.allow_global_access.get_output(context);
         let allow_psc_global_access_binding = args
@@ -1567,6 +1583,7 @@ pub mod forwarding_rule {
                     value: &target_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ForwardingRuleResult {

@@ -275,6 +275,22 @@ pub mod scheduled_query_rules_alert_v_2 {
         name: &str,
         args: ScheduledQueryRulesAlertV2Args,
     ) -> ScheduledQueryRulesAlertV2Result {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ScheduledQueryRulesAlertV2Args,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ScheduledQueryRulesAlertV2Result {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ScheduledQueryRulesAlertV2Args,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ScheduledQueryRulesAlertV2Result {
         let action_binding = args.action.get_output(context);
         let auto_mitigation_enabled_binding = args
             .auto_mitigation_enabled
@@ -394,6 +410,7 @@ pub mod scheduled_query_rules_alert_v_2 {
                     value: &workspace_alerts_storage_enabled_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ScheduledQueryRulesAlertV2Result {

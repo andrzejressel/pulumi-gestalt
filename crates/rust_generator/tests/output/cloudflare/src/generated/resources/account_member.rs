@@ -77,6 +77,22 @@ pub mod account_member {
         name: &str,
         args: AccountMemberArgs,
     ) -> AccountMemberResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccountMemberArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AccountMemberResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccountMemberArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AccountMemberResult {
         let account_id_binding = args.account_id.get_output(context);
         let email_address_binding = args.email_address.get_output(context);
         let role_ids_binding = args.role_ids.get_output(context);
@@ -103,6 +119,7 @@ pub mod account_member {
                     value: &status_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AccountMemberResult {

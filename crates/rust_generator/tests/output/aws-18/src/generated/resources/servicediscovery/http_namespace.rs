@@ -77,6 +77,22 @@ pub mod http_namespace {
         name: &str,
         args: HttpNamespaceArgs,
     ) -> HttpNamespaceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HttpNamespaceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> HttpNamespaceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HttpNamespaceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> HttpNamespaceResult {
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let tags_binding = args.tags.get_output(context);
@@ -98,6 +114,7 @@ pub mod http_namespace {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         HttpNamespaceResult {

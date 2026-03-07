@@ -315,6 +315,22 @@ pub mod app_profile {
         name: &str,
         args: AppProfileArgs,
     ) -> AppProfileResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AppProfileArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AppProfileResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AppProfileArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AppProfileResult {
         let app_profile_id_binding = args.app_profile_id.get_output(context);
         let data_boost_isolation_read_only_binding = args
             .data_boost_isolation_read_only
@@ -384,6 +400,7 @@ pub mod app_profile {
                     value: &standard_isolation_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AppProfileResult {

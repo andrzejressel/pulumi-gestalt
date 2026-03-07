@@ -446,6 +446,22 @@ pub mod connection_profile {
         name: &str,
         args: ConnectionProfileArgs,
     ) -> ConnectionProfileResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConnectionProfileArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ConnectionProfileResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ConnectionProfileArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ConnectionProfileResult {
         let bigquery_profile_binding = args.bigquery_profile.get_output(context);
         let connection_profile_id_binding = args
             .connection_profile_id
@@ -528,6 +544,7 @@ pub mod connection_profile {
                     value: &sql_server_profile_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ConnectionProfileResult {

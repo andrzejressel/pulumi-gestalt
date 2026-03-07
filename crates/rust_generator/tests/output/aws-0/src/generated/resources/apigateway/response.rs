@@ -88,6 +88,22 @@ pub mod response {
         name: &str,
         args: ResponseArgs,
     ) -> ResponseResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResponseArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ResponseResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResponseArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ResponseResult {
         let response_parameters_binding = args.response_parameters.get_output(context);
         let response_templates_binding = args.response_templates.get_output(context);
         let response_type_binding = args.response_type.get_output(context);
@@ -119,6 +135,7 @@ pub mod response {
                     value: &status_code_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ResponseResult {

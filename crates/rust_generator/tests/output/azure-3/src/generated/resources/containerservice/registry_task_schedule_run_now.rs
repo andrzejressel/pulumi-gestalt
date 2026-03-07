@@ -82,6 +82,22 @@ pub mod registry_task_schedule_run_now {
         name: &str,
         args: RegistryTaskScheduleRunNowArgs,
     ) -> RegistryTaskScheduleRunNowResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegistryTaskScheduleRunNowArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RegistryTaskScheduleRunNowResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegistryTaskScheduleRunNowArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RegistryTaskScheduleRunNowResult {
         let container_registry_task_id_binding = args
             .container_registry_task_id
             .get_output(context);
@@ -96,6 +112,7 @@ pub mod registry_task_schedule_run_now {
                     value: &container_registry_task_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RegistryTaskScheduleRunNowResult {

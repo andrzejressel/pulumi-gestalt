@@ -950,6 +950,22 @@ pub mod backend_service {
         name: &str,
         args: BackendServiceArgs,
     ) -> BackendServiceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackendServiceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BackendServiceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BackendServiceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BackendServiceResult {
         let affinity_cookie_ttl_sec_binding = args
             .affinity_cookie_ttl_sec
             .get_output(context);
@@ -1120,6 +1136,7 @@ pub mod backend_service {
                     value: &timeout_sec_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BackendServiceResult {

@@ -89,6 +89,22 @@ pub mod service_linked_role {
         name: &str,
         args: ServiceLinkedRoleArgs,
     ) -> ServiceLinkedRoleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceLinkedRoleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ServiceLinkedRoleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ServiceLinkedRoleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ServiceLinkedRoleResult {
         let aws_service_name_binding = args.aws_service_name.get_output(context);
         let custom_suffix_binding = args.custom_suffix.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -115,6 +131,7 @@ pub mod service_linked_role {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ServiceLinkedRoleResult {

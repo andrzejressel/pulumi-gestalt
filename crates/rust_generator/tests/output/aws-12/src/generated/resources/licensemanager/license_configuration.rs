@@ -114,6 +114,22 @@ pub mod license_configuration {
         name: &str,
         args: LicenseConfigurationArgs,
     ) -> LicenseConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LicenseConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LicenseConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LicenseConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LicenseConfigurationResult {
         let description_binding = args.description.get_output(context);
         let license_count_binding = args.license_count.get_output(context);
         let license_count_hard_limit_binding = args
@@ -159,6 +175,7 @@ pub mod license_configuration {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LicenseConfigurationResult {

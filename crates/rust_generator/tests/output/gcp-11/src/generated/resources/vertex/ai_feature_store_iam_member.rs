@@ -130,6 +130,22 @@ pub mod ai_feature_store_iam_member {
         name: &str,
         args: AiFeatureStoreIamMemberArgs,
     ) -> AiFeatureStoreIamMemberResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AiFeatureStoreIamMemberArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AiFeatureStoreIamMemberResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AiFeatureStoreIamMemberArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AiFeatureStoreIamMemberResult {
         let condition_binding = args.condition.get_output(context);
         let featurestore_binding = args.featurestore.get_output(context);
         let member_binding = args.member.get_output(context);
@@ -166,6 +182,7 @@ pub mod ai_feature_store_iam_member {
                     value: &role_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AiFeatureStoreIamMemberResult {

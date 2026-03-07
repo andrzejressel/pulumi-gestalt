@@ -258,6 +258,22 @@ pub mod intent {
         name: &str,
         args: IntentArgs,
     ) -> IntentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IntentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IntentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IntentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IntentResult {
         let action_binding = args.action.get_output(context);
         let default_response_platforms_binding = args
             .default_response_platforms
@@ -328,6 +344,7 @@ pub mod intent {
                     value: &webhook_state_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IntentResult {

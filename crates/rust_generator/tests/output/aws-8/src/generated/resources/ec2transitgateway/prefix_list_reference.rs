@@ -106,6 +106,22 @@ pub mod prefix_list_reference {
         name: &str,
         args: PrefixListReferenceArgs,
     ) -> PrefixListReferenceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PrefixListReferenceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> PrefixListReferenceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: PrefixListReferenceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> PrefixListReferenceResult {
         let blackhole_binding = args.blackhole.get_output(context);
         let prefix_list_id_binding = args.prefix_list_id.get_output(context);
         let transit_gateway_attachment_id_binding = args
@@ -137,6 +153,7 @@ pub mod prefix_list_reference {
                     value: &transit_gateway_route_table_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         PrefixListReferenceResult {

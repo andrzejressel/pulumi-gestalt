@@ -88,6 +88,22 @@ pub mod user_stack_association {
         name: &str,
         args: UserStackAssociationArgs,
     ) -> UserStackAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: UserStackAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> UserStackAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: UserStackAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> UserStackAssociationResult {
         let authentication_type_binding = args.authentication_type.get_output(context);
         let send_email_notification_binding = args
             .send_email_notification
@@ -116,6 +132,7 @@ pub mod user_stack_association {
                     value: &user_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         UserStackAssociationResult {

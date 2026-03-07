@@ -131,6 +131,22 @@ pub mod subscription_cost_management_export {
         name: &str,
         args: SubscriptionCostManagementExportArgs,
     ) -> SubscriptionCostManagementExportResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SubscriptionCostManagementExportArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SubscriptionCostManagementExportResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SubscriptionCostManagementExportArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SubscriptionCostManagementExportResult {
         let active_binding = args.active.get_output(context);
         let export_data_options_binding = args.export_data_options.get_output(context);
         let export_data_storage_location_binding = args
@@ -184,6 +200,7 @@ pub mod subscription_cost_management_export {
                     value: &subscription_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SubscriptionCostManagementExportResult {

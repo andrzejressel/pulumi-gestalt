@@ -127,6 +127,22 @@ pub mod v_2_queued_resource {
         name: &str,
         args: V2QueuedResourceArgs,
     ) -> V2QueuedResourceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: V2QueuedResourceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> V2QueuedResourceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: V2QueuedResourceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> V2QueuedResourceResult {
         let name_binding = args.name.get_output(context);
         let project_binding = args.project.get_output(context);
         let tpu_binding = args.tpu.get_output(context);
@@ -153,6 +169,7 @@ pub mod v_2_queued_resource {
                     value: &zone_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         V2QueuedResourceResult {

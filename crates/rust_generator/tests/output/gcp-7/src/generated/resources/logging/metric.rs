@@ -299,6 +299,22 @@ pub mod metric {
         name: &str,
         args: MetricArgs,
     ) -> MetricResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MetricArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MetricResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MetricArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MetricResult {
         let bucket_name_binding = args.bucket_name.get_output(context);
         let bucket_options_binding = args.bucket_options.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -355,6 +371,7 @@ pub mod metric {
                     value: &value_extractor_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MetricResult {

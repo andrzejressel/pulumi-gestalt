@@ -196,6 +196,22 @@ pub mod resource_deployment_script_azure_cli {
         name: &str,
         args: ResourceDeploymentScriptAzureCliArgs,
     ) -> ResourceDeploymentScriptAzureCliResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResourceDeploymentScriptAzureCliArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ResourceDeploymentScriptAzureCliResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResourceDeploymentScriptAzureCliArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ResourceDeploymentScriptAzureCliResult {
         let cleanup_preference_binding = args.cleanup_preference.get_output(context);
         let command_line_binding = args.command_line.get_output(context);
         let container_binding = args.container.get_output(context);
@@ -292,6 +308,7 @@ pub mod resource_deployment_script_azure_cli {
                     value: &version_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ResourceDeploymentScriptAzureCliResult {

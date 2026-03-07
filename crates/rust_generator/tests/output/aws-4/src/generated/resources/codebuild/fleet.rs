@@ -161,6 +161,22 @@ pub mod fleet {
         name: &str,
         args: FleetArgs,
     ) -> FleetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FleetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> FleetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: FleetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> FleetResult {
         let base_capacity_binding = args.base_capacity.get_output(context);
         let compute_type_binding = args.compute_type.get_output(context);
         let environment_type_binding = args.environment_type.get_output(context);
@@ -219,6 +235,7 @@ pub mod fleet {
                     value: &vpc_configs_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         FleetResult {

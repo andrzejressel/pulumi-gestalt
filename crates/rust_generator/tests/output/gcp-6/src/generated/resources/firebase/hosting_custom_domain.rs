@@ -323,6 +323,22 @@ pub mod hosting_custom_domain {
         name: &str,
         args: HostingCustomDomainArgs,
     ) -> HostingCustomDomainResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HostingCustomDomainArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> HostingCustomDomainResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: HostingCustomDomainArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> HostingCustomDomainResult {
         let cert_preference_binding = args.cert_preference.get_output(context);
         let custom_domain_binding = args.custom_domain.get_output(context);
         let project_binding = args.project.get_output(context);
@@ -361,6 +377,7 @@ pub mod hosting_custom_domain {
                     value: &wait_dns_verification_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         HostingCustomDomainResult {

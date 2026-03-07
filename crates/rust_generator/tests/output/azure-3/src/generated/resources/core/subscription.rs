@@ -158,6 +158,22 @@ pub mod subscription {
         name: &str,
         args: SubscriptionArgs,
     ) -> SubscriptionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SubscriptionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SubscriptionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SubscriptionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SubscriptionResult {
         let alias_binding = args.alias.get_output(context);
         let billing_scope_id_binding = args.billing_scope_id.get_output(context);
         let subscription_id_binding = args.subscription_id.get_output(context);
@@ -194,6 +210,7 @@ pub mod subscription {
                     value: &workload_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SubscriptionResult {

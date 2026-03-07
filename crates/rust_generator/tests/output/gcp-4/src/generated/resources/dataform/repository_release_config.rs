@@ -180,6 +180,22 @@ pub mod repository_release_config {
         name: &str,
         args: RepositoryReleaseConfigArgs,
     ) -> RepositoryReleaseConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RepositoryReleaseConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RepositoryReleaseConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RepositoryReleaseConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RepositoryReleaseConfigResult {
         let code_compilation_config_binding = args
             .code_compilation_config
             .get_output(context);
@@ -228,6 +244,7 @@ pub mod repository_release_config {
                     value: &time_zone_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RepositoryReleaseConfigResult {

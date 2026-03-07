@@ -225,6 +225,22 @@ pub mod managed_instance_transparent_data_encryption {
         name: &str,
         args: ManagedInstanceTransparentDataEncryptionArgs,
     ) -> ManagedInstanceTransparentDataEncryptionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedInstanceTransparentDataEncryptionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ManagedInstanceTransparentDataEncryptionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ManagedInstanceTransparentDataEncryptionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ManagedInstanceTransparentDataEncryptionResult {
         let auto_rotation_enabled_binding = args
             .auto_rotation_enabled
             .get_output(context);
@@ -249,6 +265,7 @@ pub mod managed_instance_transparent_data_encryption {
                     value: &managed_instance_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ManagedInstanceTransparentDataEncryptionResult {

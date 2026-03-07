@@ -246,6 +246,22 @@ pub mod intent {
         name: &str,
         args: IntentArgs,
     ) -> IntentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IntentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> IntentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: IntentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> IntentResult {
         let conclusion_statement_binding = args.conclusion_statement.get_output(context);
         let confirmation_prompt_binding = args.confirmation_prompt.get_output(context);
         let create_version_binding = args.create_version.get_output(context);
@@ -314,6 +330,7 @@ pub mod intent {
                     value: &slots_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         IntentResult {

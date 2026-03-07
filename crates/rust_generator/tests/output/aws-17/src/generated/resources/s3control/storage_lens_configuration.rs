@@ -109,6 +109,22 @@ pub mod storage_lens_configuration {
         name: &str,
         args: StorageLensConfigurationArgs,
     ) -> StorageLensConfigurationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StorageLensConfigurationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> StorageLensConfigurationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StorageLensConfigurationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> StorageLensConfigurationResult {
         let account_id_binding = args.account_id.get_output(context);
         let config_id_binding = args.config_id.get_output(context);
         let storage_lens_configuration_binding = args
@@ -138,6 +154,7 @@ pub mod storage_lens_configuration {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         StorageLensConfigurationResult {

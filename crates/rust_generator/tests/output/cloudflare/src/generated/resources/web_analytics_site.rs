@@ -80,6 +80,22 @@ pub mod web_analytics_site {
         name: &str,
         args: WebAnalyticsSiteArgs,
     ) -> WebAnalyticsSiteResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WebAnalyticsSiteArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> WebAnalyticsSiteResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: WebAnalyticsSiteArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> WebAnalyticsSiteResult {
         let account_id_binding = args.account_id.get_output(context);
         let auto_install_binding = args.auto_install.get_output(context);
         let host_binding = args.host.get_output(context);
@@ -106,6 +122,7 @@ pub mod web_analytics_site {
                     value: &zone_tag_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         WebAnalyticsSiteResult {

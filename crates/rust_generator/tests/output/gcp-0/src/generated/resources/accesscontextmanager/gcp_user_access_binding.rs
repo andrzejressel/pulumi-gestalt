@@ -119,6 +119,22 @@ pub mod gcp_user_access_binding {
         name: &str,
         args: GcpUserAccessBindingArgs,
     ) -> GcpUserAccessBindingResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GcpUserAccessBindingArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GcpUserAccessBindingResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GcpUserAccessBindingArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GcpUserAccessBindingResult {
         let access_levels_binding = args.access_levels.get_output(context);
         let group_key_binding = args.group_key.get_output(context);
         let organization_id_binding = args.organization_id.get_output(context);
@@ -141,6 +157,7 @@ pub mod gcp_user_access_binding {
                     value: &organization_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GcpUserAccessBindingResult {

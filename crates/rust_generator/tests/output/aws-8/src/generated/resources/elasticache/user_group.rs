@@ -99,6 +99,22 @@ pub mod user_group {
         name: &str,
         args: UserGroupArgs,
     ) -> UserGroupResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: UserGroupArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> UserGroupResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: UserGroupArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> UserGroupResult {
         let engine_binding = args.engine.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let user_group_id_binding = args.user_group_id.get_output(context);
@@ -125,6 +141,7 @@ pub mod user_group {
                     value: &user_ids_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         UserGroupResult {

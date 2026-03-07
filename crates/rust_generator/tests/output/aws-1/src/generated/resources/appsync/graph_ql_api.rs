@@ -165,6 +165,22 @@ pub mod graph_ql_api {
         name: &str,
         args: GraphQLApiArgs,
     ) -> GraphQLApiResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GraphQLApiArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GraphQLApiResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GraphQLApiArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GraphQLApiResult {
         let additional_authentication_providers_binding = args
             .additional_authentication_providers
             .get_output(context);
@@ -266,6 +282,7 @@ pub mod graph_ql_api {
                     value: &xray_enabled_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GraphQLApiResult {

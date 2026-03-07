@@ -319,6 +319,22 @@ pub mod database {
         name: &str,
         args: DatabaseArgs,
     ) -> DatabaseResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatabaseArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DatabaseResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DatabaseArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DatabaseResult {
         let apply_immediately_binding = args.apply_immediately.get_output(context);
         let availability_zone_binding = args.availability_zone.get_output(context);
         let backup_retention_enabled_binding = args
@@ -408,6 +424,7 @@ pub mod database {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DatabaseResult {

@@ -318,6 +318,22 @@ pub mod standard_app_version {
         name: &str,
         args: StandardAppVersionArgs,
     ) -> StandardAppVersionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StandardAppVersionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> StandardAppVersionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: StandardAppVersionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> StandardAppVersionResult {
         let app_engine_apis_binding = args.app_engine_apis.get_output(context);
         let automatic_scaling_binding = args.automatic_scaling.get_output(context);
         let basic_scaling_binding = args.basic_scaling.get_output(context);
@@ -431,6 +447,7 @@ pub mod standard_app_version {
                     value: &vpc_access_connector_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         StandardAppVersionResult {

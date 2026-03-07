@@ -131,6 +131,22 @@ pub mod network_peering {
         name: &str,
         args: NetworkPeeringArgs,
     ) -> NetworkPeeringResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkPeeringArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NetworkPeeringResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NetworkPeeringArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NetworkPeeringResult {
         let export_custom_routes_binding = args.export_custom_routes.get_output(context);
         let export_subnet_routes_with_public_ip_binding = args
             .export_subnet_routes_with_public_ip
@@ -181,6 +197,7 @@ pub mod network_peering {
                     value: &stack_type_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NetworkPeeringResult {

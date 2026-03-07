@@ -150,6 +150,22 @@ pub mod account_encryption {
         name: &str,
         args: AccountEncryptionArgs,
     ) -> AccountEncryptionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccountEncryptionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AccountEncryptionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AccountEncryptionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AccountEncryptionResult {
         let encryption_key_binding = args.encryption_key.get_output(context);
         let netapp_account_id_binding = args.netapp_account_id.get_output(context);
         let system_assigned_identity_principal_id_binding = args
@@ -180,6 +196,7 @@ pub mod account_encryption {
                     value: &user_assigned_identity_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AccountEncryptionResult {

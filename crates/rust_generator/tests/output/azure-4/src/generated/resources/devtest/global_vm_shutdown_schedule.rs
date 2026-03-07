@@ -158,6 +158,22 @@ pub mod global_vm_shutdown_schedule {
         name: &str,
         args: GlobalVMShutdownScheduleArgs,
     ) -> GlobalVMShutdownScheduleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GlobalVMShutdownScheduleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> GlobalVMShutdownScheduleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: GlobalVMShutdownScheduleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> GlobalVMShutdownScheduleResult {
         let daily_recurrence_time_binding = args
             .daily_recurrence_time
             .get_output(context);
@@ -204,6 +220,7 @@ pub mod global_vm_shutdown_schedule {
                     value: &virtual_machine_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         GlobalVMShutdownScheduleResult {

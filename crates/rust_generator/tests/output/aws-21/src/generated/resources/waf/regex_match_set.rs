@@ -83,6 +83,22 @@ pub mod regex_match_set {
         name: &str,
         args: RegexMatchSetArgs,
     ) -> RegexMatchSetResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegexMatchSetArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> RegexMatchSetResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: RegexMatchSetArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> RegexMatchSetResult {
         let name_binding = args.name.get_output(context);
         let regex_match_tuples_binding = args.regex_match_tuples.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -99,6 +115,7 @@ pub mod regex_match_set {
                     value: &regex_match_tuples_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         RegexMatchSetResult {

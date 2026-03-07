@@ -208,6 +208,22 @@ pub mod certificate_issuance_config {
         name: &str,
         args: CertificateIssuanceConfigArgs,
     ) -> CertificateIssuanceConfigResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CertificateIssuanceConfigArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CertificateIssuanceConfigResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CertificateIssuanceConfigArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CertificateIssuanceConfigResult {
         let certificate_authority_config_binding = args
             .certificate_authority_config
             .get_output(context);
@@ -264,6 +280,7 @@ pub mod certificate_issuance_config {
                     value: &rotation_window_percentage_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CertificateIssuanceConfigResult {

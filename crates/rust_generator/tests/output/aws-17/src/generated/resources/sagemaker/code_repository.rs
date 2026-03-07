@@ -117,6 +117,22 @@ pub mod code_repository {
         name: &str,
         args: CodeRepositoryArgs,
     ) -> CodeRepositoryResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CodeRepositoryArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> CodeRepositoryResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: CodeRepositoryArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> CodeRepositoryResult {
         let code_repository_name_binding = args.code_repository_name.get_output(context);
         let git_config_binding = args.git_config.get_output(context);
         let tags_binding = args.tags.get_output(context);
@@ -138,6 +154,7 @@ pub mod code_repository {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         CodeRepositoryResult {

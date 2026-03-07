@@ -80,6 +80,22 @@ pub mod template {
         name: &str,
         args: TemplateArgs,
     ) -> TemplateResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TemplateArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> TemplateResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TemplateArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> TemplateResult {
         let quota_code_binding = args.quota_code.get_output(context);
         let region_binding = args.region.get_output(context);
         let service_code_binding = args.service_code.get_output(context);
@@ -106,6 +122,7 @@ pub mod template {
                     value: &value_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         TemplateResult {

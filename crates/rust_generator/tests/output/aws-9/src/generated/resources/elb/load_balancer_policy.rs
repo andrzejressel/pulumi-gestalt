@@ -128,6 +128,22 @@ pub mod load_balancer_policy {
         name: &str,
         args: LoadBalancerPolicyArgs,
     ) -> LoadBalancerPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LoadBalancerPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LoadBalancerPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LoadBalancerPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LoadBalancerPolicyResult {
         let load_balancer_name_binding = args.load_balancer_name.get_output(context);
         let policy_attributes_binding = args.policy_attributes.get_output(context);
         let policy_name_binding = args.policy_name.get_output(context);
@@ -154,6 +170,7 @@ pub mod load_balancer_policy {
                     value: &policy_type_name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LoadBalancerPolicyResult {

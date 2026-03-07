@@ -66,6 +66,22 @@ pub mod budget_resource_association {
         name: &str,
         args: BudgetResourceAssociationArgs,
     ) -> BudgetResourceAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BudgetResourceAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BudgetResourceAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BudgetResourceAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BudgetResourceAssociationResult {
         let budget_name_binding = args.budget_name.get_output(context);
         let resource_id_binding = args.resource_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -83,6 +99,7 @@ pub mod budget_resource_association {
                     value: &resource_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BudgetResourceAssociationResult {

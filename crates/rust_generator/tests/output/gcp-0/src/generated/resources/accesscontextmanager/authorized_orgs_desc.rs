@@ -170,6 +170,22 @@ pub mod authorized_orgs_desc {
         name: &str,
         args: AuthorizedOrgsDescArgs,
     ) -> AuthorizedOrgsDescResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AuthorizedOrgsDescArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> AuthorizedOrgsDescResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: AuthorizedOrgsDescArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> AuthorizedOrgsDescResult {
         let asset_type_binding = args.asset_type.get_output(context);
         let authorization_direction_binding = args
             .authorization_direction
@@ -209,6 +225,7 @@ pub mod authorized_orgs_desc {
                     value: &parent_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         AuthorizedOrgsDescResult {

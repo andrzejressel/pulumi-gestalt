@@ -129,6 +129,22 @@ pub mod mongo_collection {
         name: &str,
         args: MongoCollectionArgs,
     ) -> MongoCollectionResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MongoCollectionArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> MongoCollectionResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: MongoCollectionArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> MongoCollectionResult {
         let account_name_binding = args.account_name.get_output(context);
         let analytical_storage_ttl_binding = args
             .analytical_storage_ttl
@@ -187,6 +203,7 @@ pub mod mongo_collection {
                     value: &throughput_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         MongoCollectionResult {

@@ -83,6 +83,22 @@ pub mod directory_bucket {
         name: &str,
         args: DirectoryBucketArgs,
     ) -> DirectoryBucketResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DirectoryBucketArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DirectoryBucketResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DirectoryBucketArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DirectoryBucketResult {
         let bucket_binding = args.bucket.get_output(context);
         let data_redundancy_binding = args.data_redundancy.get_output(context);
         let force_destroy_binding = args.force_destroy.get_output(context);
@@ -114,6 +130,7 @@ pub mod directory_bucket {
                     value: &type__binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DirectoryBucketResult {

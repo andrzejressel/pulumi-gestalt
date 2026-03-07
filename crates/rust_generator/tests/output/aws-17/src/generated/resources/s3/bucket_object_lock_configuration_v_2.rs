@@ -120,6 +120,22 @@ pub mod bucket_object_lock_configuration_v_2 {
         name: &str,
         args: BucketObjectLockConfigurationV2Args,
     ) -> BucketObjectLockConfigurationV2Result {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BucketObjectLockConfigurationV2Args,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> BucketObjectLockConfigurationV2Result {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: BucketObjectLockConfigurationV2Args,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> BucketObjectLockConfigurationV2Result {
         let bucket_binding = args.bucket.get_output(context);
         let expected_bucket_owner_binding = args
             .expected_bucket_owner
@@ -154,6 +170,7 @@ pub mod bucket_object_lock_configuration_v_2 {
                     value: &token_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         BucketObjectLockConfigurationV2Result {

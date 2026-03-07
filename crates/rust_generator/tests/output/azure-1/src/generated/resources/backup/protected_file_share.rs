@@ -126,6 +126,22 @@ pub mod protected_file_share {
         name: &str,
         args: ProtectedFileShareArgs,
     ) -> ProtectedFileShareResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProtectedFileShareArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ProtectedFileShareResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ProtectedFileShareArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ProtectedFileShareResult {
         let backup_policy_id_binding = args.backup_policy_id.get_output(context);
         let recovery_vault_name_binding = args.recovery_vault_name.get_output(context);
         let resource_group_name_binding = args.resource_group_name.get_output(context);
@@ -161,6 +177,7 @@ pub mod protected_file_share {
                     value: &source_storage_account_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ProtectedFileShareResult {

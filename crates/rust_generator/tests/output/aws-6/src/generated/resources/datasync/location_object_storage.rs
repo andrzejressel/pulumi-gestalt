@@ -117,6 +117,22 @@ pub mod location_object_storage {
         name: &str,
         args: LocationObjectStorageArgs,
     ) -> LocationObjectStorageResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LocationObjectStorageArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LocationObjectStorageResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LocationObjectStorageArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LocationObjectStorageResult {
         let access_key_binding = args.access_key.get_output(context);
         let agent_arns_binding = args.agent_arns.get_output(context);
         let bucket_name_binding = args.bucket_name.get_output(context);
@@ -173,6 +189,7 @@ pub mod location_object_storage {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LocationObjectStorageResult {

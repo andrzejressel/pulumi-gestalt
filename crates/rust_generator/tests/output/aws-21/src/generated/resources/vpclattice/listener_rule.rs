@@ -147,6 +147,22 @@ pub mod listener_rule {
         name: &str,
         args: ListenerRuleArgs,
     ) -> ListenerRuleResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ListenerRuleArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ListenerRuleResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ListenerRuleArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ListenerRuleResult {
         let action_binding = args.action.get_output(context);
         let listener_identifier_binding = args.listener_identifier.get_output(context);
         let match__binding = args.match_.get_output(context);
@@ -188,6 +204,7 @@ pub mod listener_rule {
                     value: &tags_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ListenerRuleResult {

@@ -141,6 +141,22 @@ pub mod source_control {
         name: &str,
         args: SourceControlArgs,
     ) -> SourceControlResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SourceControlArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> SourceControlResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: SourceControlArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> SourceControlResult {
         let app_id_binding = args.app_id.get_output(context);
         let branch_binding = args.branch.get_output(context);
         let github_action_configuration_binding = args
@@ -191,6 +207,7 @@ pub mod source_control {
                     value: &use_mercurial_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         SourceControlResult {

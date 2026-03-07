@@ -92,6 +92,22 @@ pub mod load_balancer_backend_server_policy {
         name: &str,
         args: LoadBalancerBackendServerPolicyArgs,
     ) -> LoadBalancerBackendServerPolicyResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LoadBalancerBackendServerPolicyArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> LoadBalancerBackendServerPolicyResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: LoadBalancerBackendServerPolicyArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> LoadBalancerBackendServerPolicyResult {
         let instance_port_binding = args.instance_port.get_output(context);
         let load_balancer_name_binding = args.load_balancer_name.get_output(context);
         let policy_names_binding = args.policy_names.get_output(context);
@@ -114,6 +130,7 @@ pub mod load_balancer_backend_server_policy {
                     value: &policy_names_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         LoadBalancerBackendServerPolicyResult {

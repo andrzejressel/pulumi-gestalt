@@ -74,6 +74,22 @@ pub mod instance_trust_provider_attachment {
         name: &str,
         args: InstanceTrustProviderAttachmentArgs,
     ) -> InstanceTrustProviderAttachmentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InstanceTrustProviderAttachmentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> InstanceTrustProviderAttachmentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: InstanceTrustProviderAttachmentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> InstanceTrustProviderAttachmentResult {
         let verifiedaccess_instance_id_binding = args
             .verifiedaccess_instance_id
             .get_output(context);
@@ -95,6 +111,7 @@ pub mod instance_trust_provider_attachment {
                     value: &verifiedaccess_trust_provider_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         InstanceTrustProviderAttachmentResult {

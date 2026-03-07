@@ -82,6 +82,22 @@ pub mod resource {
         name: &str,
         args: ResourceArgs,
     ) -> ResourceResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResourceArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> ResourceResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: ResourceArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> ResourceResult {
         let arn_binding = args.arn.get_output(context);
         let hybrid_access_enabled_binding = args
             .hybrid_access_enabled
@@ -117,6 +133,7 @@ pub mod resource {
                     value: &with_federation_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         ResourceResult {

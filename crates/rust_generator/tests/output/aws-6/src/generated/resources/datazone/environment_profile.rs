@@ -191,6 +191,22 @@ pub mod environment_profile {
         name: &str,
         args: EnvironmentProfileArgs,
     ) -> EnvironmentProfileResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EnvironmentProfileArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> EnvironmentProfileResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: EnvironmentProfileArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> EnvironmentProfileResult {
         let aws_account_id_binding = args.aws_account_id.get_output(context);
         let aws_account_region_binding = args.aws_account_region.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -239,6 +255,7 @@ pub mod environment_profile {
                     value: &user_parameters_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         EnvironmentProfileResult {

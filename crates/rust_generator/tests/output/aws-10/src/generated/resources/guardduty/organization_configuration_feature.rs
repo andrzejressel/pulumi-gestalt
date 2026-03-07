@@ -89,6 +89,22 @@ pub mod organization_configuration_feature {
         name: &str,
         args: OrganizationConfigurationFeatureArgs,
     ) -> OrganizationConfigurationFeatureResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationConfigurationFeatureArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> OrganizationConfigurationFeatureResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: OrganizationConfigurationFeatureArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> OrganizationConfigurationFeatureResult {
         let additional_configurations_binding = args
             .additional_configurations
             .get_output(context);
@@ -118,6 +134,7 @@ pub mod organization_configuration_feature {
                     value: &name_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         OrganizationConfigurationFeatureResult {

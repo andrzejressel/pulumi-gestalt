@@ -89,6 +89,22 @@ pub mod nat_gateway_public_ip_prefix_association {
         name: &str,
         args: NatGatewayPublicIpPrefixAssociationArgs,
     ) -> NatGatewayPublicIpPrefixAssociationResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NatGatewayPublicIpPrefixAssociationArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> NatGatewayPublicIpPrefixAssociationResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: NatGatewayPublicIpPrefixAssociationArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> NatGatewayPublicIpPrefixAssociationResult {
         let nat_gateway_id_binding = args.nat_gateway_id.get_output(context);
         let public_ip_prefix_id_binding = args.public_ip_prefix_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -106,6 +122,7 @@ pub mod nat_gateway_public_ip_prefix_association {
                     value: &public_ip_prefix_id_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         NatGatewayPublicIpPrefixAssociationResult {

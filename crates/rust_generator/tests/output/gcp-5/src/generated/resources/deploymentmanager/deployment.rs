@@ -156,6 +156,22 @@ pub mod deployment {
         name: &str,
         args: DeploymentArgs,
     ) -> DeploymentResult {
+        __create(context, name, args, None)
+    }
+    pub fn create_with_options(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DeploymentArgs,
+        options: pulumi_gestalt_rust::CustomResourceOptions,
+    ) -> DeploymentResult {
+        __create(context, name, args, Some(options))
+    }
+    fn __create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: DeploymentArgs,
+        options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
+    ) -> DeploymentResult {
         let create_policy_binding = args.create_policy.get_output(context);
         let delete_policy_binding = args.delete_policy.get_output(context);
         let description_binding = args.description.get_output(context);
@@ -202,6 +218,7 @@ pub mod deployment {
                     value: &target_binding.drop_type(),
                 },
             ],
+            options,
         };
         let o = context.register_resource(request);
         DeploymentResult {
