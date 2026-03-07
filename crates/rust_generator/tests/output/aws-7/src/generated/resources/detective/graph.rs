@@ -39,6 +39,8 @@ pub mod graph {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Date and time, in UTC and extended RFC 3339 format, when the Amazon Detective Graph was created.
         pub created_time: pulumi_gestalt_rust::Output<String>,
         /// ARN of the Detective Graph.
@@ -75,6 +77,7 @@ pub mod graph {
         let o = context.register_resource(request);
         GraphResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             created_time: o.get_field("createdTime"),
             graph_arn: o.get_field("graphArn"),
             tags: o.get_field("tags"),

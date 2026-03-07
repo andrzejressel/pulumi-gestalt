@@ -391,6 +391,8 @@ pub mod instance {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Only applicable to STANDARD_HA tier which protects the instance
         /// against zonal failures by provisioning it across two zones.
         /// If provided, it must be a different zone from the one provided in
@@ -685,6 +687,7 @@ pub mod instance {
         let o = context.register_resource(request);
         InstanceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             alternative_location_id: o.get_field("alternativeLocationId"),
             auth_enabled: o.get_field("authEnabled"),
             auth_string: o.get_field("authString"),

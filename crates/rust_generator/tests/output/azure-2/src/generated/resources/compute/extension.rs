@@ -172,6 +172,8 @@ pub mod extension {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies if the platform deploys the latest minor version update to the `type_handler_version` specified.
         pub auto_upgrade_minor_version: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Should the Extension be automatically updated whenever the Publisher releases a new version of this VM Extension?
@@ -311,6 +313,7 @@ pub mod extension {
         let o = context.register_resource(request);
         ExtensionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             auto_upgrade_minor_version: o.get_field("autoUpgradeMinorVersion"),
             automatic_upgrade_enabled: o.get_field("automaticUpgradeEnabled"),
             failure_suppression_enabled: o.get_field("failureSuppressionEnabled"),

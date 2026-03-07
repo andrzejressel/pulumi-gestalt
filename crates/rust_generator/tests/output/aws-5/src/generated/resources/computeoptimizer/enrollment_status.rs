@@ -47,6 +47,8 @@ pub mod enrollment_status {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Whether to enroll member accounts of the organization if the account is the management account of an organization. Default is `false`.
         pub include_member_accounts: pulumi_gestalt_rust::Output<bool>,
         /// The count of organization member accounts that are opted in to the service, if your account is an organization management account.
@@ -93,6 +95,7 @@ pub mod enrollment_status {
         let o = context.register_resource(request);
         EnrollmentStatusResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             include_member_accounts: o.get_field("includeMemberAccounts"),
             number_of_member_accounts_opted_in: o
                 .get_field("numberOfMemberAccountsOptedIn"),

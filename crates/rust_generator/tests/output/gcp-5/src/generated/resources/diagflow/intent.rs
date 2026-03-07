@@ -189,6 +189,8 @@ pub mod intent {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The name of the action associated with the intent.
         /// Note: The action name must not contain whitespaces.
         pub action: pulumi_gestalt_rust::Output<String>,
@@ -330,6 +332,7 @@ pub mod intent {
         let o = context.register_resource(request);
         IntentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             action: o.get_field("action"),
             default_response_platforms: o.get_field("defaultResponsePlatforms"),
             display_name: o.get_field("displayName"),

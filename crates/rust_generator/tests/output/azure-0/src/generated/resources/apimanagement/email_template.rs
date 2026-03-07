@@ -83,6 +83,8 @@ pub mod email_template {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The name of the API Management Service in which the Email Template should exist. Changing this forces a new API Management Email Template to be created.
         pub api_management_name: pulumi_gestalt_rust::Output<String>,
         /// The body of the Email. Its format has to be a well-formed HTML document.
@@ -144,6 +146,7 @@ pub mod email_template {
         let o = context.register_resource(request);
         EmailTemplateResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             api_management_name: o.get_field("apiManagementName"),
             body: o.get_field("body"),
             description: o.get_field("description"),

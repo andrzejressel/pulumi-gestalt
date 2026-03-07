@@ -58,6 +58,8 @@ pub mod xss_match_set {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The name of the set
         pub name: pulumi_gestalt_rust::Output<String>,
         /// The parts of web requests that you want to inspect for cross-site scripting attacks.
@@ -94,6 +96,7 @@ pub mod xss_match_set {
         let o = context.register_resource(request);
         XssMatchSetResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             name: o.get_field("name"),
             xss_match_tuples: o.get_field("xssMatchTuples"),
         }

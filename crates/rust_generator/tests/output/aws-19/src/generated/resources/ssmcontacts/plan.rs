@@ -119,6 +119,8 @@ pub mod plan {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the contact or escalation plan.
         pub contact_id: pulumi_gestalt_rust::Output<String>,
         /// One or more configuration blocks for specifying a list of stages that the escalation plan or engagement plan uses to engage contacts and contact methods. See Stage below for more details.
@@ -155,6 +157,7 @@ pub mod plan {
         let o = context.register_resource(request);
         PlanResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             contact_id: o.get_field("contactId"),
             stages: o.get_field("stages"),
         }

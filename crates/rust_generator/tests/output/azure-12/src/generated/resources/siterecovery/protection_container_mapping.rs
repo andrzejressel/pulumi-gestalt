@@ -59,6 +59,8 @@ pub mod protection_container_mapping {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// a `automatic_update` block defined as below.
         pub automatic_update: pulumi_gestalt_rust::Output<
             super::super::types::siterecovery::ProtectionContainerMappingAutomaticUpdate,
@@ -146,6 +148,7 @@ pub mod protection_container_mapping {
         let o = context.register_resource(request);
         ProtectionContainerMappingResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             automatic_update: o.get_field("automaticUpdate"),
             name: o.get_field("name"),
             recovery_fabric_name: o.get_field("recoveryFabricName"),

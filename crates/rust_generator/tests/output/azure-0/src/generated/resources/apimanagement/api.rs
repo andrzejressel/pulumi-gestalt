@@ -157,6 +157,8 @@ pub mod api {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Name of the API Management Service where this API should be created. Changing this forces a new resource to be created.
         pub api_management_name: pulumi_gestalt_rust::Output<String>,
         /// Type of API. Possible values are `graphql`, `http`, `soap`, and `websocket`. Defaults to `http`.
@@ -364,6 +366,7 @@ pub mod api {
         let o = context.register_resource(request);
         ApiResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             api_management_name: o.get_field("apiManagementName"),
             api_type: o.get_field("apiType"),
             contact: o.get_field("contact"),

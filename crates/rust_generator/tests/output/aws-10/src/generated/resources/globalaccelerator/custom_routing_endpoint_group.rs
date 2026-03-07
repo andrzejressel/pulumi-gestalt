@@ -73,6 +73,8 @@ pub mod custom_routing_endpoint_group {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the custom routing endpoint group.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The port ranges and protocols for all endpoints in a custom routing endpoint group to accept client traffic on. Fields documented below.
@@ -140,6 +142,7 @@ pub mod custom_routing_endpoint_group {
         let o = context.register_resource(request);
         CustomRoutingEndpointGroupResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             destination_configurations: o.get_field("destinationConfigurations"),
             endpoint_configurations: o.get_field("endpointConfigurations"),

@@ -1,5 +1,5 @@
 use crate::config::{Config, RawConfigValue};
-use crate::{RawOutput, RegisterResourceOutput};
+use crate::{Output, RawOutput, RegisterResourceOutput};
 use futures::FutureExt;
 use futures::channel::mpsc::{UnboundedReceiver, UnboundedSender, unbounded};
 use futures::channel::oneshot::{Sender, channel};
@@ -83,7 +83,7 @@ impl<FunctionContext> Engine<FunctionContext> {
         version: String,
     ) -> RegisterResourceOutput {
         let pulumi = self.pulumi.clone();
-        let output = RegisterResourceOutput::from_future(async move {
+        let result = Output::from_future(async move {
             let mut resolved_inputs = HashMap::new();
             for (key, output) in inputs {
                 let value = output.value.await;
@@ -101,8 +101,21 @@ impl<FunctionContext> Engine<FunctionContext> {
                 )
                 .await;
 
-            Arc::new(result.fields)
+            (Arc::new(result.fields), result.urn)
         });
+        let fields = Output::from_future({
+            let result = result.clone();
+            async move {
+                let (fields, _) = result.value.await;
+                fields
+            }
+        });
+        let urn = RawOutput::from_future(async move {
+            let (_, urn) = result.value.await;
+            urn
+        });
+
+        let output = RegisterResourceOutput { fields, urn };
         self.join_set.push(output.clone().invoke_void());
 
         output
@@ -115,7 +128,7 @@ impl<FunctionContext> Engine<FunctionContext> {
         version: String,
     ) -> RegisterResourceOutput {
         let pulumi = self.pulumi.clone();
-        let output = RegisterResourceOutput::from_future(async move {
+        let fields = Output::from_future(async move {
             let mut resolved_inputs = HashMap::new();
             for (key, output) in inputs {
                 let value = output.value.await;
@@ -134,6 +147,8 @@ impl<FunctionContext> Engine<FunctionContext> {
 
             Arc::new(result.fields)
         });
+        let urn = RawOutput::from_node_value(NodeValue::Nothing);
+        let output = RegisterResourceOutput { fields, urn };
         self.join_set.push(output.clone().invoke_void());
 
         output
@@ -212,9 +227,13 @@ impl<FunctionContext> Engine<FunctionContext> {
         source: RegisterResourceOutput,
     ) -> RawOutput {
         RawOutput::from_future(async move {
-            let resource_fields = source.value.await;
+            let resource_fields = source.fields.value.await;
             resource_fields.get_field_value(&field_name)
         })
+    }
+
+    pub fn create_extract_urn(source: RegisterResourceOutput) -> RawOutput {
+        source.get_urn()
     }
 
     #[cfg(test)]

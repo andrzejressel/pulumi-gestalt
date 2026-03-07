@@ -185,6 +185,8 @@ pub mod managed_storage_account {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Key Vault where the Managed Storage Account should be created. Changing this forces a new resource to be created.
         pub key_vault_id: pulumi_gestalt_rust::Output<String>,
         /// The name which should be used for this Key Vault Managed Storage Account. Changing this forces a new Key Vault Managed Storage Account to be created.
@@ -260,6 +262,7 @@ pub mod managed_storage_account {
         let o = context.register_resource(request);
         ManagedStorageAccountResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             key_vault_id: o.get_field("keyVaultId"),
             name: o.get_field("name"),
             regenerate_key_automatically: o.get_field("regenerateKeyAutomatically"),

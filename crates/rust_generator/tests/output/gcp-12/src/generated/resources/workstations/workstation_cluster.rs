@@ -207,6 +207,8 @@ pub mod workstation_cluster {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Client-specified annotations. This is distinct from labels.
         /// **Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
         /// Please refer to the field `effective_annotations` for all of the annotations present on the resource.
@@ -355,6 +357,7 @@ pub mod workstation_cluster {
         let o = context.register_resource(request);
         WorkstationClusterResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             annotations: o.get_field("annotations"),
             conditions: o.get_field("conditions"),
             control_plane_ip: o.get_field("controlPlaneIp"),

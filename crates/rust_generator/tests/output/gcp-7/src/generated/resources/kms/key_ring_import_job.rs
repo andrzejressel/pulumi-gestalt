@@ -64,6 +64,8 @@ pub mod key_ring_import_job {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Statement that was generated and signed by the key creator (for example, an HSM) at key creation time.
         /// Use this statement to verify attributes of the key as stored on the HSM, independently of Google.
         /// Only present if the chosen ImportMethod is one with a protection level of HSM.
@@ -138,6 +140,7 @@ pub mod key_ring_import_job {
         let o = context.register_resource(request);
         KeyRingImportJobResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             attestations: o.get_field("attestations"),
             expire_time: o.get_field("expireTime"),
             import_job_id: o.get_field("importJobId"),

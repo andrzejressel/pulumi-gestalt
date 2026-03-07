@@ -115,6 +115,8 @@ pub mod bgp_connection {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The name which should be used for this Virtual Hub Bgp Connection. Changing this forces a new resource to be created.
         pub name: pulumi_gestalt_rust::Output<String>,
         /// The peer autonomous system number for the Virtual Hub Bgp Connection. Changing this forces a new resource to be created.
@@ -172,6 +174,7 @@ pub mod bgp_connection {
         let o = context.register_resource(request);
         BgpConnectionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             name: o.get_field("name"),
             peer_asn: o.get_field("peerAsn"),
             peer_ip: o.get_field("peerIp"),

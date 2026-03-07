@@ -73,6 +73,8 @@ pub mod identity_provider_facebook {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Name of the API Management Service where this Facebook Identity Provider should be created. Changing this forces a new resource to be created.
         pub api_management_name: pulumi_gestalt_rust::Output<String>,
         /// App ID for Facebook.
@@ -122,6 +124,7 @@ pub mod identity_provider_facebook {
         let o = context.register_resource(request);
         IdentityProviderFacebookResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             api_management_name: o.get_field("apiManagementName"),
             app_id: o.get_field("appId"),
             app_secret: o.get_field("appSecret"),

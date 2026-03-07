@@ -286,6 +286,8 @@ pub mod application_gateway {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// One or more `authentication_certificate` blocks as defined below.
         pub authentication_certificates: pulumi_gestalt_rust::Output<
             Option<
@@ -647,6 +649,7 @@ pub mod application_gateway {
         let o = context.register_resource(request);
         ApplicationGatewayResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             authentication_certificates: o.get_field("authenticationCertificates"),
             autoscale_configuration: o.get_field("autoscaleConfiguration"),
             backend_address_pools: o.get_field("backendAddressPools"),

@@ -44,6 +44,8 @@ pub mod random_uuid {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Arbitrary map of values that, when changed, will trigger recreation of resource. See the main provider documentation for more information.
         pub keepers: pulumi_gestalt_rust::Output<
             Option<std::collections::HashMap<String, String>>,
@@ -75,6 +77,7 @@ pub mod random_uuid {
         let o = context.register_resource(request);
         RandomUuidResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             keepers: o.get_field("keepers"),
             result: o.get_field("result"),
         }

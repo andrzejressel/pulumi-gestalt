@@ -74,6 +74,8 @@ pub mod authorizer {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the authorizer.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the authorizer's Lambda function.
@@ -166,6 +168,7 @@ pub mod authorizer {
         let o = context.register_resource(request);
         AuthorizerResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             authorizer_function_arn: o.get_field("authorizerFunctionArn"),
             enable_caching_for_http: o.get_field("enableCachingForHttp"),

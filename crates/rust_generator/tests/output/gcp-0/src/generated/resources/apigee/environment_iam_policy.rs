@@ -214,6 +214,8 @@ pub mod environment_iam_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Used to find the parent resource to bind the IAM policy to
         pub env_id: pulumi_gestalt_rust::Output<String>,
         /// (Computed) The etag of the IAM policy.
@@ -257,6 +259,7 @@ pub mod environment_iam_policy {
         let o = context.register_resource(request);
         EnvironmentIamPolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             env_id: o.get_field("envId"),
             etag: o.get_field("etag"),
             org_id: o.get_field("orgId"),

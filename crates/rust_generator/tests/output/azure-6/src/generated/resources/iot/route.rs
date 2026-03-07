@@ -110,6 +110,8 @@ pub mod route {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The condition that is evaluated to apply the routing rule. For grammar, see: <https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-query-language>. Defaults to `true`.
         pub condition: pulumi_gestalt_rust::Output<Option<String>>,
         /// Specifies whether a route is enabled.
@@ -179,6 +181,7 @@ pub mod route {
         let o = context.register_resource(request);
         RouteResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             condition: o.get_field("condition"),
             enabled: o.get_field("enabled"),
             endpoint_names: o.get_field("endpointNames"),

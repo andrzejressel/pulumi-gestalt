@@ -111,6 +111,8 @@ pub mod endpoint_attachment {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// State of the endpoint attachment connection to the service attachment.
         pub connection_state: pulumi_gestalt_rust::Output<String>,
         /// ID of the endpoint attachment.
@@ -172,6 +174,7 @@ pub mod endpoint_attachment {
         let o = context.register_resource(request);
         EndpointAttachmentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             connection_state: o.get_field("connectionState"),
             endpoint_attachment_id: o.get_field("endpointAttachmentId"),
             host: o.get_field("host"),

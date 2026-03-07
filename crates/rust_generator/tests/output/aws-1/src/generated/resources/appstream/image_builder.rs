@@ -95,6 +95,8 @@ pub mod image_builder {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Set of interface VPC endpoint (interface endpoint) objects. Maximum of 4. See below.
         pub access_endpoints: pulumi_gestalt_rust::Output<
             Option<Vec<super::super::types::appstream::ImageBuilderAccessEndpoint>>,
@@ -230,6 +232,7 @@ pub mod image_builder {
         let o = context.register_resource(request);
         ImageBuilderResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             access_endpoints: o.get_field("accessEndpoints"),
             appstream_agent_version: o.get_field("appstreamAgentVersion"),
             arn: o.get_field("arn"),

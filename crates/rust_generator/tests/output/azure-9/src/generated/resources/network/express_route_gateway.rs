@@ -87,6 +87,8 @@ pub mod express_route_gateway {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specified whether this gateway accept traffic from non-Virtual WAN networks. Defaults to `false`.
         pub allow_non_virtual_wan_traffic: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
@@ -160,6 +162,7 @@ pub mod express_route_gateway {
         let o = context.register_resource(request);
         ExpressRouteGatewayResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             allow_non_virtual_wan_traffic: o.get_field("allowNonVirtualWanTraffic"),
             location: o.get_field("location"),
             name: o.get_field("name"),

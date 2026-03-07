@@ -109,6 +109,8 @@ pub mod endpoint_servicebus {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The storage secret of the dead-lettering, whose format is `https://<storageAccountname>.blob.core.windows.net/<containerName>?<SASToken>`. When an endpoint can't deliver an event within a certain time period or after trying to deliver the event a certain number of times, it can send the undelivered event to a storage account.
         pub dead_letter_storage_secret: pulumi_gestalt_rust::Output<Option<String>>,
         /// The ID of the Digital Twins Instance. Changing this forces a new Digital Twins Service Bus Endpoint to be created.
@@ -170,6 +172,7 @@ pub mod endpoint_servicebus {
         let o = context.register_resource(request);
         EndpointServicebusResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             dead_letter_storage_secret: o.get_field("deadLetterStorageSecret"),
             digital_twins_id: o.get_field("digitalTwinsId"),
             name: o.get_field("name"),

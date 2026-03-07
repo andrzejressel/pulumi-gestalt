@@ -46,6 +46,8 @@ pub mod zone_dnssec {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Zone DNSSEC algorithm.
         pub algorithm: pulumi_gestalt_rust::Output<String>,
         /// Zone DNSSEC digest.
@@ -100,6 +102,7 @@ pub mod zone_dnssec {
         let o = context.register_resource(request);
         ZoneDnssecResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             algorithm: o.get_field("algorithm"),
             digest: o.get_field("digest"),
             digest_algorithm: o.get_field("digestAlgorithm"),

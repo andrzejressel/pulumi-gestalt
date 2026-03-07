@@ -202,6 +202,8 @@ pub mod ca_pool {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
             std::collections::HashMap<String, String>,
@@ -299,6 +301,7 @@ pub mod ca_pool {
         let o = context.register_resource(request);
         CaPoolResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             effective_labels: o.get_field("effectiveLabels"),
             issuance_policy: o.get_field("issuancePolicy"),
             labels: o.get_field("labels"),

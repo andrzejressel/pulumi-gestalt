@@ -149,6 +149,8 @@ pub mod load_balancer {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// An Access Logs block. Access Logs documented below.
         pub access_logs: pulumi_gestalt_rust::Output<
             Option<super::super::types::elb::LoadBalancerAccessLogs>,
@@ -325,6 +327,7 @@ pub mod load_balancer {
         let o = context.register_resource(request);
         LoadBalancerResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             access_logs: o.get_field("accessLogs"),
             arn: o.get_field("arn"),
             availability_zones: o.get_field("availabilityZones"),

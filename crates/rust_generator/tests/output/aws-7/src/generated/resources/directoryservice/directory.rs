@@ -192,6 +192,8 @@ pub mod directory {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The access URL for the directory, such as `http://alias.awsapps.com`.
         pub access_url: pulumi_gestalt_rust::Output<String>,
         /// The alias for the directory (must be unique amongst all aliases in AWS). Required for `enable_sso`.
@@ -321,6 +323,7 @@ pub mod directory {
         let o = context.register_resource(request);
         DirectoryResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             access_url: o.get_field("accessUrl"),
             alias: o.get_field("alias"),
             connect_settings: o.get_field("connectSettings"),

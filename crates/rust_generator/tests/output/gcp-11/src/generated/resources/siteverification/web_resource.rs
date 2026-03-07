@@ -97,6 +97,8 @@ pub mod web_resource {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The email addresses of all direct, verified owners of this exact property. Indirect owners —
         /// for example verified owners of the containing domain—are not included in this list.
         pub owners: pulumi_gestalt_rust::Output<Vec<String>>,
@@ -141,6 +143,7 @@ pub mod web_resource {
         let o = context.register_resource(request);
         WebResourceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             owners: o.get_field("owners"),
             site: o.get_field("site"),
             verification_method: o.get_field("verificationMethod"),

@@ -58,6 +58,8 @@ pub mod bucket_ownership_controls {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Name of the bucket that you want to associate this access point with.
         pub bucket: pulumi_gestalt_rust::Output<String>,
         /// Configuration block(s) with Ownership Controls rules. Detailed below.
@@ -94,6 +96,7 @@ pub mod bucket_ownership_controls {
         let o = context.register_resource(request);
         BucketOwnershipControlsResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             bucket: o.get_field("bucket"),
             rule: o.get_field("rule"),
         }

@@ -42,6 +42,8 @@ pub mod attachment {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The name of the ELB.
         pub elb: pulumi_gestalt_rust::Output<String>,
         /// Instance ID to place in the ELB pool.
@@ -76,6 +78,7 @@ pub mod attachment {
         let o = context.register_resource(request);
         AttachmentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             elb: o.get_field("elb"),
             instance: o.get_field("instance"),
         }

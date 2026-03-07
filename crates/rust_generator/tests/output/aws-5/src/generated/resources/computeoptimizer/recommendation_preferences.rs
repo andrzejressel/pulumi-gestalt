@@ -130,6 +130,8 @@ pub mod recommendation_preferences {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The status of the enhanced infrastructure metrics recommendation preference. Valid values: `Active`, `Inactive`.
         pub enhanced_infrastructure_metrics: pulumi_gestalt_rust::Output<Option<String>>,
         /// The provider of the external metrics recommendation preference. See External Metrics Preference below.
@@ -242,6 +244,7 @@ pub mod recommendation_preferences {
         let o = context.register_resource(request);
         RecommendationPreferencesResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             enhanced_infrastructure_metrics: o
                 .get_field("enhancedInfrastructureMetrics"),
             external_metrics_preference: o.get_field("externalMetricsPreference"),

@@ -141,6 +141,8 @@ pub mod policy_vm {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Configures the Policy backup frequency, times & days as documented in the `backup` block below.
         pub backup: pulumi_gestalt_rust::Output<
             super::super::types::backup::PolicyVmBackup,
@@ -272,6 +274,7 @@ pub mod policy_vm {
         let o = context.register_resource(request);
         PolicyVMResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             backup: o.get_field("backup"),
             instant_restore_resource_group: o.get_field("instantRestoreResourceGroup"),
             instant_restore_retention_days: o.get_field("instantRestoreRetentionDays"),

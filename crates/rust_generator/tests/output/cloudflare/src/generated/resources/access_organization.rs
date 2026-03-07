@@ -101,6 +101,8 @@ pub mod access_organization {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The account identifier to target for the resource. Conflicts with `zone_id`.
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// When set to true, users can authenticate via WARP for any application in your organization. Application settings will take precedence over this value.
@@ -227,6 +229,7 @@ pub mod access_organization {
         let o = context.register_resource(request);
         AccessOrganizationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             allow_authenticate_via_warp: o.get_field("allowAuthenticateViaWarp"),
             auth_domain: o.get_field("authDomain"),

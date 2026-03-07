@@ -24,6 +24,7 @@ pub struct RegisterResourceRequest {
 
 #[derive(Builder)]
 pub struct RegisterResourceResult {
+    pub urn: NodeValue,
     pub fields: ResourceFields,
 }
 

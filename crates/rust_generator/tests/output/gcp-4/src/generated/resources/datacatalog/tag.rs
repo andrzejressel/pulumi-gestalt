@@ -282,6 +282,8 @@ pub mod tag {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Resources like Entry can have schemas associated with them. This scope allows users to attach tags to an individual
         /// column based on that schema. For attaching a tag to a nested column, use '.' to separate the column names. Example:
         /// 'outer_column.inner_column'
@@ -346,6 +348,7 @@ pub mod tag {
         let o = context.register_resource(request);
         TagResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             column: o.get_field("column"),
             fields: o.get_field("fields"),
             name: o.get_field("name"),

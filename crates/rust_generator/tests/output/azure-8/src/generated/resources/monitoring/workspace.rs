@@ -63,6 +63,8 @@ pub mod workspace {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the managed default Data Collection Endpoint created with the Azure Monitor Workspace.
         pub default_data_collection_endpoint_id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the managed default Data Collection Rule created with the Azure Monitor Workspace.
@@ -128,6 +130,7 @@ pub mod workspace {
         let o = context.register_resource(request);
         WorkspaceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             default_data_collection_endpoint_id: o
                 .get_field("defaultDataCollectionEndpointId"),
             default_data_collection_rule_id: o.get_field("defaultDataCollectionRuleId"),

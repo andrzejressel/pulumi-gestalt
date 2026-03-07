@@ -185,6 +185,8 @@ pub mod bucket_acl_v_2 {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Configuration block that sets the ACL permissions for an object per grantee. See below.
         pub access_control_policy: pulumi_gestalt_rust::Output<
             super::super::types::s3::BucketAclV2AccessControlPolicy,
@@ -239,6 +241,7 @@ pub mod bucket_acl_v_2 {
         let o = context.register_resource(request);
         BucketAclV2Result {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             access_control_policy: o.get_field("accessControlPolicy"),
             acl: o.get_field("acl"),
             bucket: o.get_field("bucket"),

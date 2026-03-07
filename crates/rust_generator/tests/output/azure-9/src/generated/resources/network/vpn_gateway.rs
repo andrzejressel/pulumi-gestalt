@@ -110,6 +110,8 @@ pub mod vpn_gateway {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Is BGP route translation for NAT on this VPN Gateway enabled? Defaults to `false`.
         pub bgp_route_translation_for_nat_enabled: pulumi_gestalt_rust::Output<
             Option<bool>,
@@ -201,6 +203,7 @@ pub mod vpn_gateway {
         let o = context.register_resource(request);
         VpnGatewayResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             bgp_route_translation_for_nat_enabled: o
                 .get_field("bgpRouteTranslationForNatEnabled"),
             bgp_settings: o.get_field("bgpSettings"),

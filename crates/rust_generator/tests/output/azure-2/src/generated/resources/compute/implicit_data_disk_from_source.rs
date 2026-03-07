@@ -150,6 +150,8 @@ pub mod implicit_data_disk_from_source {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the caching requirements for this Data Disk. Possible values are `ReadOnly` and `ReadWrite`.
         pub caching: pulumi_gestalt_rust::Output<Option<String>>,
         /// Specifies the Create Option of the Data Disk. The only possible value is `Copy`. Changing this forces a new resource to be created.
@@ -229,6 +231,7 @@ pub mod implicit_data_disk_from_source {
         let o = context.register_resource(request);
         ImplicitDataDiskFromSourceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             caching: o.get_field("caching"),
             create_option: o.get_field("createOption"),
             disk_size_gb: o.get_field("diskSizeGb"),

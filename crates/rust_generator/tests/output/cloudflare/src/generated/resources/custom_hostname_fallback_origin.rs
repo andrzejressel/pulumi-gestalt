@@ -45,6 +45,8 @@ pub mod custom_hostname_fallback_origin {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Hostname you intend to fallback requests to. Origin must be a proxied A/AAAA/CNAME DNS record within Clouldflare.
         pub origin: pulumi_gestalt_rust::Output<String>,
         /// Status of the fallback origin's activation.
@@ -82,6 +84,7 @@ pub mod custom_hostname_fallback_origin {
         let o = context.register_resource(request);
         CustomHostnameFallbackOriginResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             origin: o.get_field("origin"),
             status: o.get_field("status"),
             zone_id: o.get_field("zoneId"),

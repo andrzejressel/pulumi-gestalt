@@ -211,6 +211,8 @@ pub mod virtual_network_gateway {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// If `true`, an active-active Virtual Network Gateway will be created. An active-active gateway requires a `HighPerformance` or an `UltraPerformance` SKU. If `false`, an active-standby gateway will be created. Defaults to `false`.
         pub active_active: pulumi_gestalt_rust::Output<bool>,
         /// Is BGP Route Translation for NAT enabled? Defaults to `false`.
@@ -435,6 +437,7 @@ pub mod virtual_network_gateway {
         let o = context.register_resource(request);
         VirtualNetworkGatewayResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             active_active: o.get_field("activeActive"),
             bgp_route_translation_for_nat_enabled: o
                 .get_field("bgpRouteTranslationForNatEnabled"),

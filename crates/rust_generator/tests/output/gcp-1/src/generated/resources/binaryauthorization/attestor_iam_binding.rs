@@ -235,6 +235,8 @@ pub mod attestor_iam_binding {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Used to find the parent resource to bind the IAM policy to
         pub attestor: pulumi_gestalt_rust::Output<String>,
         pub condition: pulumi_gestalt_rust::Output<
@@ -307,6 +309,7 @@ pub mod attestor_iam_binding {
         let o = context.register_resource(request);
         AttestorIamBindingResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             attestor: o.get_field("attestor"),
             condition: o.get_field("condition"),
             etag: o.get_field("etag"),

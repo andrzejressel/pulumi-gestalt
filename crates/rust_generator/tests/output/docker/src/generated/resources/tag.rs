@@ -21,6 +21,8 @@ pub mod tag {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Name of the source image.
         pub source_image: pulumi_gestalt_rust::Output<String>,
         /// ImageID of the source image in the format of `sha256:<<ID>>`
@@ -57,6 +59,7 @@ pub mod tag {
         let o = context.register_resource(request);
         TagResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             source_image: o.get_field("sourceImage"),
             source_image_id: o.get_field("sourceImageId"),
             target_image: o.get_field("targetImage"),

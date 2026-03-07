@@ -48,6 +48,8 @@ pub mod schema {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The definition of the schema.
         pub definition: pulumi_gestalt_rust::Output<
             Option<super::super::types::verifiedpermissions::SchemaDefinition>,
@@ -86,6 +88,7 @@ pub mod schema {
         let o = context.register_resource(request);
         SchemaResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             definition: o.get_field("definition"),
             namespaces: o.get_field("namespaces"),
             policy_store_id: o.get_field("policyStoreId"),

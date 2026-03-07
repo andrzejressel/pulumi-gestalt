@@ -48,6 +48,8 @@ pub mod cache {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Local disk identifier. For example, `pci-0000:03:00.0-scsi-0:0:0:0`.
         pub disk_id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the gateway.
@@ -82,6 +84,7 @@ pub mod cache {
         let o = context.register_resource(request);
         CacheResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             disk_id: o.get_field("diskId"),
             gateway_arn: o.get_field("gatewayArn"),
         }

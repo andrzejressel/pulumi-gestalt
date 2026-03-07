@@ -134,6 +134,8 @@ pub mod git_repository_link {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Optional. Allows clients to store small amounts of arbitrary data.
         /// **Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
         /// Please refer to the field `effective_annotations` for all of the annotations present on the resource.
@@ -254,6 +256,7 @@ pub mod git_repository_link {
         let o = context.register_resource(request);
         GitRepositoryLinkResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             annotations: o.get_field("annotations"),
             clone_uri: o.get_field("cloneUri"),
             create_time: o.get_field("createTime"),

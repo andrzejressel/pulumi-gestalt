@@ -100,6 +100,8 @@ pub mod resource_group_cost_management_view {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Whether the costs data in the Cost Management View are accumulated over time. Changing this forces a new Cost Management View for a Resource Group to be created.
         pub accumulated: pulumi_gestalt_rust::Output<bool>,
         /// Chart type of the main view in Cost Analysis. Possible values are `Area`, `GroupedColumn`, `Line`, `StackedColumn` and `Table`.
@@ -197,6 +199,7 @@ pub mod resource_group_cost_management_view {
         let o = context.register_resource(request);
         ResourceGroupCostManagementViewResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             accumulated: o.get_field("accumulated"),
             chart_type: o.get_field("chartType"),
             dataset: o.get_field("dataset"),

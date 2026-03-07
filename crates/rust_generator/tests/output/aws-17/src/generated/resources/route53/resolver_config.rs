@@ -54,6 +54,8 @@ pub mod resolver_config {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Indicates whether or not the Resolver will create autodefined rules for reverse DNS lookups. Valid values: `ENABLE`, `DISABLE`.
         pub autodefined_reverse_flag: pulumi_gestalt_rust::Output<String>,
         /// The AWS account ID of the owner of the VPC that this resolver configuration applies to.
@@ -92,6 +94,7 @@ pub mod resolver_config {
         let o = context.register_resource(request);
         ResolverConfigResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             autodefined_reverse_flag: o.get_field("autodefinedReverseFlag"),
             owner_id: o.get_field("ownerId"),
             resource_id: o.get_field("resourceId"),

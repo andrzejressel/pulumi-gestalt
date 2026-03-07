@@ -110,6 +110,8 @@ pub mod linked_service_sftp {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A map of additional properties to associate with the Data Factory Linked Service.
         ///
         /// The following supported arguments are specific to SFTP Linked Service:
@@ -240,6 +242,7 @@ pub mod linked_service_sftp {
         let o = context.register_resource(request);
         LinkedServiceSftpResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             additional_properties: o.get_field("additionalProperties"),
             annotations: o.get_field("annotations"),
             authentication_type: o.get_field("authenticationType"),

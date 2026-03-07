@@ -112,6 +112,8 @@ pub mod replication_configuration {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// When the replication configuration was created.
         /// * `destination[0].file_system_id` - The fs ID of the replica.
         /// * `destination[0].status` - The status of the replication.
@@ -160,6 +162,7 @@ pub mod replication_configuration {
         let o = context.register_resource(request);
         ReplicationConfigurationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             creation_time: o.get_field("creationTime"),
             destination: o.get_field("destination"),
             original_source_file_system_arn: o.get_field("originalSourceFileSystemArn"),

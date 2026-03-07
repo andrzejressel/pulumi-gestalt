@@ -46,6 +46,8 @@ pub mod api_shield_operation {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The endpoint which can contain path parameter templates in curly braces, each will be replaced from left to right with `{varN}`, starting with `{var1}`. This will then be [Cloudflare-normalized](https://developers.cloudflare.com/rules/normalization/how-it-works/). **Modifying this attribute will force creation of a new resource.**
         pub endpoint: pulumi_gestalt_rust::Output<String>,
         /// RFC3986-compliant host. **Modifying this attribute will force creation of a new resource.**
@@ -94,6 +96,7 @@ pub mod api_shield_operation {
         let o = context.register_resource(request);
         ApiShieldOperationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             endpoint: o.get_field("endpoint"),
             host: o.get_field("host"),
             method: o.get_field("method"),

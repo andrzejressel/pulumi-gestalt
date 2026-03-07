@@ -208,6 +208,8 @@ pub mod network_attachment {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// An array of connections for all the producers connected to this network attachment.
         /// Structure is documented below.
         pub connection_endpoints: pulumi_gestalt_rust::Output<
@@ -314,6 +316,7 @@ pub mod network_attachment {
         let o = context.register_resource(request);
         NetworkAttachmentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             connection_endpoints: o.get_field("connectionEndpoints"),
             connection_preference: o.get_field("connectionPreference"),
             creation_timestamp: o.get_field("creationTimestamp"),

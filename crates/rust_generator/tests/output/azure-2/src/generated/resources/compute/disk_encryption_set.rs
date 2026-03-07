@@ -256,6 +256,8 @@ pub mod disk_encryption_set {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         pub auto_key_rotation_enabled: pulumi_gestalt_rust::Output<Option<bool>>,
         /// The type of key used to encrypt the data of the disk. Possible values are `EncryptionAtRestWithCustomerKey`, `EncryptionAtRestWithPlatformAndCustomerKeys` and `ConfidentialVmEncryptedWithCustomerKey`. Defaults to `EncryptionAtRestWithCustomerKey`. Changing this forces a new resource to be created.
         pub encryption_type: pulumi_gestalt_rust::Output<Option<String>>,
@@ -358,6 +360,7 @@ pub mod disk_encryption_set {
         let o = context.register_resource(request);
         DiskEncryptionSetResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             auto_key_rotation_enabled: o.get_field("autoKeyRotationEnabled"),
             encryption_type: o.get_field("encryptionType"),
             federated_client_id: o.get_field("federatedClientId"),

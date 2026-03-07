@@ -87,6 +87,15 @@ impl CompositeOutput {
             runtime: self.runtime.clone(),
         }
     }
+
+    pub fn get_urn(&self) -> Output<String> {
+        let res = self.runtime.block_on(self.inner.get_urn());
+        Output {
+            inner: res,
+            phantom: PhantomData,
+            runtime: self.runtime.clone(),
+        }
+    }
 }
 
 pub struct Context {

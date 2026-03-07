@@ -74,6 +74,8 @@ pub mod local_rulestack_fqdn_list {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The comment for Audit purposes.
         pub audit_comment: pulumi_gestalt_rust::Output<Option<String>>,
         /// The description for the FQDN List.
@@ -131,6 +133,7 @@ pub mod local_rulestack_fqdn_list {
         let o = context.register_resource(request);
         LocalRulestackFqdnListResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             audit_comment: o.get_field("auditComment"),
             description: o.get_field("description"),
             fully_qualified_domain_names: o.get_field("fullyQualifiedDomainNames"),

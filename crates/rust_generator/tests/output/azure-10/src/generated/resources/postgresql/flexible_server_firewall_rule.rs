@@ -75,6 +75,8 @@ pub mod flexible_server_firewall_rule {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The End IP Address associated with this PostgreSQL Flexible Server Firewall Rule.
         pub end_ip_address: pulumi_gestalt_rust::Output<String>,
         /// The name which should be used for this PostgreSQL Flexible Server Firewall Rule. Changing this forces a new PostgreSQL Flexible Server Firewall Rule to be created.
@@ -124,6 +126,7 @@ pub mod flexible_server_firewall_rule {
         let o = context.register_resource(request);
         FlexibleServerFirewallRuleResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             end_ip_address: o.get_field("endIpAddress"),
             name: o.get_field("name"),
             server_id: o.get_field("serverId"),

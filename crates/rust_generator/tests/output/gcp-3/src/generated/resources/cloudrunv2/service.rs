@@ -718,6 +718,8 @@ pub mod service {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Unstructured key value map that may be set by external tools to store and arbitrary metadata. They are not queryable and
         /// should be preserved when modifying objects. Cloud Run API v2 does not support annotations with 'run.googleapis.com',
         /// 'cloud.googleapis.com', 'serving.knative.dev', or 'autoscaling.knative.dev' namespaces, and they will be rejected in new
@@ -960,6 +962,7 @@ pub mod service {
         let o = context.register_resource(request);
         ServiceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             annotations: o.get_field("annotations"),
             binary_authorization: o.get_field("binaryAuthorization"),
             client: o.get_field("client"),

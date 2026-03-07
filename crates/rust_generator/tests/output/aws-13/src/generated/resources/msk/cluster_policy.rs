@@ -64,6 +64,8 @@ pub mod cluster_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) that uniquely identifies the cluster.
         pub cluster_arn: pulumi_gestalt_rust::Output<String>,
         pub current_version: pulumi_gestalt_rust::Output<String>,
@@ -99,6 +101,7 @@ pub mod cluster_policy {
         let o = context.register_resource(request);
         ClusterPolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             cluster_arn: o.get_field("clusterArn"),
             current_version: o.get_field("currentVersion"),
             policy: o.get_field("policy"),

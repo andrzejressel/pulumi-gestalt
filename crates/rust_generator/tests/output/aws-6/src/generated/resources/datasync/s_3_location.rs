@@ -67,6 +67,8 @@ pub mod s_3_location {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A list of DataSync Agent ARNs with which this location will be associated.
         pub agent_arns: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// Amazon Resource Name (ARN) of the DataSync Location.
@@ -140,6 +142,7 @@ pub mod s_3_location {
         let o = context.register_resource(request);
         S3LocationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             agent_arns: o.get_field("agentArns"),
             arn: o.get_field("arn"),
             s3_bucket_arn: o.get_field("s3BucketArn"),

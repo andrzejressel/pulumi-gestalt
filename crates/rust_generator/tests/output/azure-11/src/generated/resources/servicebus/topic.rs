@@ -101,6 +101,8 @@ pub mod topic {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ISO 8601 timespan duration of the idle interval after which the Topic is automatically deleted, minimum of 5 minutes. Defaults to `P10675199DT2H48M5.4775807S`.
         pub auto_delete_on_idle: pulumi_gestalt_rust::Output<Option<String>>,
         /// Boolean flag which controls if server-side batched operations are enabled.
@@ -228,6 +230,7 @@ pub mod topic {
         let o = context.register_resource(request);
         TopicResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             auto_delete_on_idle: o.get_field("autoDeleteOnIdle"),
             batched_operations_enabled: o.get_field("batchedOperationsEnabled"),
             default_message_ttl: o.get_field("defaultMessageTtl"),

@@ -77,6 +77,8 @@ pub mod policy_fragment {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The id of the API Management Service. Changing this forces a new Api Management Policy Fragment to be created.
         pub api_management_id: pulumi_gestalt_rust::Output<String>,
         /// The description for the Policy Fragment.
@@ -136,6 +138,7 @@ pub mod policy_fragment {
         let o = context.register_resource(request);
         PolicyFragmentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             api_management_id: o.get_field("apiManagementId"),
             description: o.get_field("description"),
             format: o.get_field("format"),

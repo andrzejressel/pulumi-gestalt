@@ -368,6 +368,8 @@ pub mod cluster {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Configuration block for the access config associated with your cluster, see [Amazon EKS Access Entries](https://docs.aws.amazon.com/eks/latest/userguide/access-entries.html).
         pub access_config: pulumi_gestalt_rust::Output<
             super::super::types::eks::ClusterAccessConfig,
@@ -567,6 +569,7 @@ pub mod cluster {
         let o = context.register_resource(request);
         ClusterResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             access_config: o.get_field("accessConfig"),
             arn: o.get_field("arn"),
             bootstrap_self_managed_addons: o.get_field("bootstrapSelfManagedAddons"),

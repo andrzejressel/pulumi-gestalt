@@ -84,6 +84,8 @@ pub mod network_edge_security_service {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Creation timestamp in RFC3339 text format.
         pub creation_timestamp: pulumi_gestalt_rust::Output<String>,
         /// Free-text description of the resource.
@@ -155,6 +157,7 @@ pub mod network_edge_security_service {
         let o = context.register_resource(request);
         NetworkEdgeSecurityServiceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             creation_timestamp: o.get_field("creationTimestamp"),
             description: o.get_field("description"),
             fingerprint: o.get_field("fingerprint"),

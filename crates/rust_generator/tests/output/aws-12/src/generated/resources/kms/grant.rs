@@ -53,6 +53,8 @@ pub mod grant {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A structure that you can use to allow certain operations in the grant only when the desired encryption context is present. For more information about encryption context, see [Encryption Context](http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html).
         pub constraints: pulumi_gestalt_rust::Output<
             Option<Vec<super::super::types::kms::GrantConstraint>>,
@@ -138,6 +140,7 @@ pub mod grant {
         let o = context.register_resource(request);
         GrantResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             constraints: o.get_field("constraints"),
             grant_creation_tokens: o.get_field("grantCreationTokens"),
             grant_id: o.get_field("grantId"),

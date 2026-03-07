@@ -100,6 +100,8 @@ pub mod resolver_rule {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ARN (Amazon Resource Name) for the resolver rule.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// DNS queries for this domain name are forwarded to the IP addresses that are specified using `target_ip`.
@@ -179,6 +181,7 @@ pub mod resolver_rule {
         let o = context.register_resource(request);
         ResolverRuleResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             domain_name: o.get_field("domainName"),
             name: o.get_field("name"),

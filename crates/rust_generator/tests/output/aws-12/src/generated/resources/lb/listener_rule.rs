@@ -178,6 +178,8 @@ pub mod listener_rule {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// An Action block. Action blocks are documented below.
         pub actions: pulumi_gestalt_rust::Output<
             Vec<super::super::types::lb::ListenerRuleAction>,
@@ -245,6 +247,7 @@ pub mod listener_rule {
         let o = context.register_resource(request);
         ListenerRuleResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             actions: o.get_field("actions"),
             arn: o.get_field("arn"),
             conditions: o.get_field("conditions"),

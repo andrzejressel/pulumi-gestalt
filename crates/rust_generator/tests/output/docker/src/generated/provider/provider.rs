@@ -36,6 +36,8 @@ pub struct ProviderArgs {
 }
 #[allow(dead_code)]
 pub struct ProviderResult {
+    /// Pulumi URN is the stable logical identity of this provider resource in the Pulumi stack.
+    pub urn: pulumi_gestalt_rust::Output<String>,
     /// PEM-encoded content of Docker host CA certificate
     pub ca_material: pulumi_gestalt_rust::Output<Option<String>>,
     /// PEM-encoded content of Docker client certificate
@@ -103,14 +105,15 @@ pub fn create(
             },
         ],
     };
-    let _o = context.register_resource(request);
+    let o = context.register_resource(request);
     ProviderResult {
-        ca_material: _o.get_field("caMaterial"),
-        cert_material: _o.get_field("certMaterial"),
-        cert_path: _o.get_field("certPath"),
-        host: _o.get_field("host"),
-        key_material: _o.get_field("keyMaterial"),
-        registry_auth: _o.get_field("registryAuth"),
-        ssh_opts: _o.get_field("sshOpts"),
+        urn: o.get_urn(),
+        ca_material: o.get_field("caMaterial"),
+        cert_material: o.get_field("certMaterial"),
+        cert_path: o.get_field("certPath"),
+        host: o.get_field("host"),
+        key_material: o.get_field("keyMaterial"),
+        registry_auth: o.get_field("registryAuth"),
+        ssh_opts: o.get_field("sshOpts"),
     }
 }

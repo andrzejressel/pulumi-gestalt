@@ -231,6 +231,8 @@ pub mod standard_app_version {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Allows App Engine second generation runtimes to access the legacy bundled services.
         pub app_engine_apis: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Automatic scaling is based on request rate, response latencies, and other application metrics.
@@ -433,6 +435,7 @@ pub mod standard_app_version {
         let o = context.register_resource(request);
         StandardAppVersionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             app_engine_apis: o.get_field("appEngineApis"),
             automatic_scaling: o.get_field("automaticScaling"),
             basic_scaling: o.get_field("basicScaling"),

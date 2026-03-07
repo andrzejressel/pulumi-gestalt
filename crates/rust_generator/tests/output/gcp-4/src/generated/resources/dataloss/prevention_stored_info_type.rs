@@ -191,6 +191,8 @@ pub mod prevention_stored_info_type {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A description of the info type.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// Dictionary which defines the rule.
@@ -285,6 +287,7 @@ pub mod prevention_stored_info_type {
         let o = context.register_resource(request);
         PreventionStoredInfoTypeResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             description: o.get_field("description"),
             dictionary: o.get_field("dictionary"),
             display_name: o.get_field("displayName"),

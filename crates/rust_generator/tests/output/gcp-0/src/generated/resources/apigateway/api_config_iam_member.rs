@@ -240,6 +240,8 @@ pub mod api_config_iam_member {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The API to attach the config to.
         /// Used to find the parent resource to bind the IAM policy to
         pub api: pulumi_gestalt_rust::Output<String>,
@@ -318,6 +320,7 @@ pub mod api_config_iam_member {
         let o = context.register_resource(request);
         ApiConfigIamMemberResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             api: o.get_field("api"),
             api_config: o.get_field("apiConfig"),
             condition: o.get_field("condition"),

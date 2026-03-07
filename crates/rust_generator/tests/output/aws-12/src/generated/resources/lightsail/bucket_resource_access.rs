@@ -29,6 +29,8 @@ pub mod bucket_resource_access {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The name of the bucket to grant access to.
         pub bucket_name: pulumi_gestalt_rust::Output<String>,
         /// The name of the resource to be granted bucket access.
@@ -63,6 +65,7 @@ pub mod bucket_resource_access {
         let o = context.register_resource(request);
         BucketResourceAccessResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             bucket_name: o.get_field("bucketName"),
             resource_name: o.get_field("resourceName"),
         }

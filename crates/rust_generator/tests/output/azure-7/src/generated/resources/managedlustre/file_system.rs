@@ -116,6 +116,8 @@ pub mod file_system {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// An `encryption_key` block as defined below.
         ///
         /// > **NOTE:** Removing `encryption_key` forces a new resource to be created.
@@ -236,6 +238,7 @@ pub mod file_system {
         let o = context.register_resource(request);
         FileSystemResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             encryption_key: o.get_field("encryptionKey"),
             hsm_setting: o.get_field("hsmSetting"),
             identity: o.get_field("identity"),

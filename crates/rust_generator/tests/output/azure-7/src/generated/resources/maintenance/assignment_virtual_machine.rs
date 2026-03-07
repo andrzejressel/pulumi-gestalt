@@ -115,6 +115,8 @@ pub mod assignment_virtual_machine {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         pub location: pulumi_gestalt_rust::Output<String>,
         /// Specifies the ID of the Maintenance Configuration Resource. Changing this forces a new resource to be created.
@@ -159,6 +161,7 @@ pub mod assignment_virtual_machine {
         let o = context.register_resource(request);
         AssignmentVirtualMachineResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             location: o.get_field("location"),
             maintenance_configuration_id: o.get_field("maintenanceConfigurationId"),
             virtual_machine_id: o.get_field("virtualMachineId"),

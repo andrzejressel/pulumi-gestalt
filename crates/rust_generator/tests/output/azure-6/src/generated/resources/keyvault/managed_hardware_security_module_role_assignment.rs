@@ -40,6 +40,8 @@ pub mod managed_hardware_security_module_role_assignment {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of a Managed Hardware Security Module resource. Changing this forces a new Managed Hardware Security Module to be created.
         /// *
         pub managed_hsm_id: pulumi_gestalt_rust::Output<String>,
@@ -99,6 +101,7 @@ pub mod managed_hardware_security_module_role_assignment {
         let o = context.register_resource(request);
         ManagedHardwareSecurityModuleRoleAssignmentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             managed_hsm_id: o.get_field("managedHsmId"),
             name: o.get_field("name"),
             principal_id: o.get_field("principalId"),

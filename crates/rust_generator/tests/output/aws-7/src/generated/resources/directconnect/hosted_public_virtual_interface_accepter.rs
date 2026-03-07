@@ -66,6 +66,8 @@ pub mod hosted_public_virtual_interface_accepter {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the virtual interface.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
@@ -109,6 +111,7 @@ pub mod hosted_public_virtual_interface_accepter {
         let o = context.register_resource(request);
         HostedPublicVirtualInterfaceAccepterResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             tags: o.get_field("tags"),
             tags_all: o.get_field("tagsAll"),

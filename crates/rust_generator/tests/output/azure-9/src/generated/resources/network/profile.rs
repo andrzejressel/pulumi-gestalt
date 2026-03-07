@@ -107,6 +107,8 @@ pub mod profile {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A `container_network_interface` block as documented below.
         pub container_network_interface: pulumi_gestalt_rust::Output<
             super::super::types::network::ProfileContainerNetworkInterface,
@@ -170,6 +172,7 @@ pub mod profile {
         let o = context.register_resource(request);
         ProfileResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             container_network_interface: o.get_field("containerNetworkInterface"),
             container_network_interface_ids: o.get_field("containerNetworkInterfaceIds"),
             location: o.get_field("location"),

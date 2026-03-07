@@ -113,6 +113,8 @@ pub mod channels_registration {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The CMK Key Vault Key URL to encrypt the Bot Channels Registration with the Customer Managed Encryption Key.
         ///
         /// > **Note:** It has to add the Key Vault Access Policy for the `Bot Service CMEK Prod` Service Principal and the `soft_delete_enabled` and the `purge_protection_enabled` is enabled on the `azure.keyvault.KeyVault` resource while using `cmk_key_vault_url`.
@@ -263,6 +265,7 @@ pub mod channels_registration {
         let o = context.register_resource(request);
         ChannelsRegistrationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             cmk_key_vault_url: o.get_field("cmkKeyVaultUrl"),
             description: o.get_field("description"),
             developer_app_insights_api_key: o.get_field("developerAppInsightsApiKey"),

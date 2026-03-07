@@ -148,6 +148,8 @@ pub mod cloud_exadata_infrastructure {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Exadata Infrastructure to create. This value is restricted
         /// to (^a-z?$) and must be a maximum of 63
         /// characters in length. The value must start with a letter and end with
@@ -259,6 +261,7 @@ pub mod cloud_exadata_infrastructure {
         let o = context.register_resource(request);
         CloudExadataInfrastructureResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             cloud_exadata_infrastructure_id: o.get_field("cloudExadataInfrastructureId"),
             create_time: o.get_field("createTime"),
             deletion_protection: o.get_field("deletionProtection"),

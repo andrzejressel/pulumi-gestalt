@@ -152,6 +152,8 @@ pub mod database {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The charset value. See MySQL's
         /// [Supported Character Sets and Collations](https://dev.mysql.com/doc/refman/5.7/en/charset-charsets.html)
         /// and Postgres' [Character Set Support](https://www.postgresql.org/docs/9.6/static/multibyte.html)
@@ -233,6 +235,7 @@ pub mod database {
         let o = context.register_resource(request);
         DatabaseResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             charset: o.get_field("charset"),
             collation: o.get_field("collation"),
             deletion_policy: o.get_field("deletionPolicy"),

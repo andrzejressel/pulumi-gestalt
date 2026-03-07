@@ -127,6 +127,8 @@ pub mod service_lb_policies {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Option to specify if an unhealthy MIG/NEG should be considered for global load balancing and traffic routing.
         /// Structure is documented below.
         pub auto_capacity_drain: pulumi_gestalt_rust::Output<
@@ -235,6 +237,7 @@ pub mod service_lb_policies {
         let o = context.register_resource(request);
         ServiceLbPoliciesResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             auto_capacity_drain: o.get_field("autoCapacityDrain"),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),

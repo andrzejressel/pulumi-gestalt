@@ -131,6 +131,8 @@ pub mod voice_connector_streaming {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The retention period, in hours, for the Amazon Kinesis data.
         pub data_retention: pulumi_gestalt_rust::Output<i32>,
         /// When true, media streaming to Amazon Kinesis is turned off. Default: `false`
@@ -196,6 +198,7 @@ pub mod voice_connector_streaming {
         let o = context.register_resource(request);
         VoiceConnectorStreamingResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             data_retention: o.get_field("dataRetention"),
             disabled: o.get_field("disabled"),
             media_insights_configuration: o.get_field("mediaInsightsConfiguration"),

@@ -89,6 +89,8 @@ pub mod route_map {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The name which should be used for this Route Map. Changing this forces a new resource to be created.
         pub name: pulumi_gestalt_rust::Output<String>,
         /// A `rule` block as defined below.
@@ -132,6 +134,7 @@ pub mod route_map {
         let o = context.register_resource(request);
         RouteMapResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             name: o.get_field("name"),
             rules: o.get_field("rules"),
             virtual_hub_id: o.get_field("virtualHubId"),

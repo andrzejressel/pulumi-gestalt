@@ -73,6 +73,8 @@ pub mod storage_bucket {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Required. Immutable. The ID of the underlying Google Cloud Storage bucket
         pub bucket_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// Resource name of the bucket in the format projects/PROJECT_IDENTIFIER/buckets/BUCKET_ID
@@ -110,6 +112,7 @@ pub mod storage_bucket {
         let o = context.register_resource(request);
         StorageBucketResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             bucket_id: o.get_field("bucketId"),
             name: o.get_field("name"),
             project: o.get_field("project"),

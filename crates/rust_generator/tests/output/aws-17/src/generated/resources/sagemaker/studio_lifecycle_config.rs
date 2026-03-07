@@ -56,6 +56,8 @@ pub mod studio_lifecycle_config {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) assigned by AWS to this Studio Lifecycle Config.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The App type that the Lifecycle Configuration is attached to. Valid values are `JupyterServer`, `JupyterLab`, `CodeEditor` and `KernelGateway`.
@@ -118,6 +120,7 @@ pub mod studio_lifecycle_config {
         let o = context.register_resource(request);
         StudioLifecycleConfigResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             studio_lifecycle_config_app_type: o
                 .get_field("studioLifecycleConfigAppType"),

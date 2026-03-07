@@ -55,6 +55,8 @@ pub mod vpn_connection_route {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The CIDR block associated with the local subnet of the customer network.
         pub destination_cidr_block: pulumi_gestalt_rust::Output<String>,
         /// The ID of the VPN connection.
@@ -91,6 +93,7 @@ pub mod vpn_connection_route {
         let o = context.register_resource(request);
         VpnConnectionRouteResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             destination_cidr_block: o.get_field("destinationCidrBlock"),
             vpn_connection_id: o.get_field("vpnConnectionId"),
         }

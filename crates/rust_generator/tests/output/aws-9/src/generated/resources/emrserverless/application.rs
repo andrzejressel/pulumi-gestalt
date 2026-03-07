@@ -148,6 +148,8 @@ pub mod application {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The CPU architecture of an application. Valid values are `ARM64` or `X86_64`. Default value is `X86_64`.
         pub architecture: pulumi_gestalt_rust::Output<Option<String>>,
         /// ARN of the cluster.
@@ -282,6 +284,7 @@ pub mod application {
         let o = context.register_resource(request);
         ApplicationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             architecture: o.get_field("architecture"),
             arn: o.get_field("arn"),
             auto_start_configuration: o.get_field("autoStartConfiguration"),

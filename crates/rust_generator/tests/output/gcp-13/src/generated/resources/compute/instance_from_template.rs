@@ -221,6 +221,8 @@ pub mod instance_from_template {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Controls for advanced machine-related behavior features.
         pub advanced_machine_features: pulumi_gestalt_rust::Output<
             super::super::types::compute::InstanceFromTemplateAdvancedMachineFeatures,
@@ -562,6 +564,7 @@ pub mod instance_from_template {
         let o = context.register_resource(request);
         InstanceFromTemplateResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             advanced_machine_features: o.get_field("advancedMachineFeatures"),
             allow_stopping_for_update: o.get_field("allowStoppingForUpdate"),
             attached_disks: o.get_field("attachedDisks"),

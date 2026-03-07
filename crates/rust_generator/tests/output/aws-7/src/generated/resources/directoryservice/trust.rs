@@ -136,6 +136,8 @@ pub mod trust {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Set of IPv4 addresses for the DNS server associated with the remote Directory.
         /// Can contain between 1 and 4 values.
         pub conditional_forwarder_ip_addrs: pulumi_gestalt_rust::Output<
@@ -238,6 +240,7 @@ pub mod trust {
         let o = context.register_resource(request);
         TrustResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             conditional_forwarder_ip_addrs: o.get_field("conditionalForwarderIpAddrs"),
             created_date_time: o.get_field("createdDateTime"),
             delete_associated_conditional_forwarder: o

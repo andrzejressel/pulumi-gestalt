@@ -78,6 +78,8 @@ pub mod serverless_collection {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the collection.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Collection-specific endpoint used to submit index, search, and data upload requests to an OpenSearch Serverless collection.
@@ -156,6 +158,7 @@ pub mod serverless_collection {
         let o = context.register_resource(request);
         ServerlessCollectionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             collection_endpoint: o.get_field("collectionEndpoint"),
             dashboard_endpoint: o.get_field("dashboardEndpoint"),

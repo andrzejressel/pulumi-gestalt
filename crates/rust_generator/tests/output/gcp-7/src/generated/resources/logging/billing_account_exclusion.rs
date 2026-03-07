@@ -57,6 +57,8 @@ pub mod billing_account_exclusion {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The billing account to create the exclusion for.
         pub billing_account: pulumi_gestalt_rust::Output<String>,
         /// A human-readable description.
@@ -115,6 +117,7 @@ pub mod billing_account_exclusion {
         let o = context.register_resource(request);
         BillingAccountExclusionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             billing_account: o.get_field("billingAccount"),
             description: o.get_field("description"),
             disabled: o.get_field("disabled"),

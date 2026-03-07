@@ -241,6 +241,8 @@ pub mod interconnect_attachment {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Whether the VLAN attachment is enabled or disabled.  When using
         /// PARTNER type this will Pre-Activate the interconnect attachment
         pub admin_enabled: pulumi_gestalt_rust::Output<Option<bool>>,
@@ -491,6 +493,7 @@ pub mod interconnect_attachment {
         let o = context.register_resource(request);
         InterconnectAttachmentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             admin_enabled: o.get_field("adminEnabled"),
             bandwidth: o.get_field("bandwidth"),
             candidate_subnets: o.get_field("candidateSubnets"),

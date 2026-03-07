@@ -169,6 +169,8 @@ pub mod express_route_circuit_peering {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ASN used by Azure.
         pub azure_asn: pulumi_gestalt_rust::Output<i32>,
         /// The name of the ExpressRoute Circuit in which to create the Peering. Changing this forces a new resource to be created.
@@ -299,6 +301,7 @@ pub mod express_route_circuit_peering {
         let o = context.register_resource(request);
         ExpressRouteCircuitPeeringResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             azure_asn: o.get_field("azureAsn"),
             express_route_circuit_name: o.get_field("expressRouteCircuitName"),
             gateway_manager_etag: o.get_field("gatewayManagerEtag"),

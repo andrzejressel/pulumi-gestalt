@@ -112,6 +112,8 @@ pub mod instance_group_membership {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// An instance being added to the InstanceGroup
         pub instance: pulumi_gestalt_rust::Output<String>,
         /// Represents an Instance Group resource name that the instance belongs to.
@@ -164,6 +166,7 @@ pub mod instance_group_membership {
         let o = context.register_resource(request);
         InstanceGroupMembershipResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             instance: o.get_field("instance"),
             instance_group: o.get_field("instanceGroup"),
             project: o.get_field("project"),

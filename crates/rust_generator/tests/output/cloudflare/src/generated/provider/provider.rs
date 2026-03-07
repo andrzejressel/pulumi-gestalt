@@ -63,6 +63,8 @@ pub struct ProviderArgs {
 }
 #[allow(dead_code)]
 pub struct ProviderResult {
+    /// Pulumi URN is the stable logical identity of this provider resource in the Pulumi stack.
+    pub urn: pulumi_gestalt_rust::Output<String>,
     /// Configure the base path used by the API client. Alternatively, can be configured using the `CLOUDFLARE_API_BASE_PATH`
     /// environment variable.
     pub api_base_path: pulumi_gestalt_rust::Output<Option<String>>,
@@ -179,19 +181,20 @@ pub fn create(
             },
         ],
     };
-    let _o = context.register_resource(request);
+    let o = context.register_resource(request);
     ProviderResult {
-        api_base_path: _o.get_field("apiBasePath"),
-        api_client_logging: _o.get_field("apiClientLogging"),
-        api_hostname: _o.get_field("apiHostname"),
-        api_key: _o.get_field("apiKey"),
-        api_token: _o.get_field("apiToken"),
-        api_user_service_key: _o.get_field("apiUserServiceKey"),
-        email: _o.get_field("email"),
-        max_backoff: _o.get_field("maxBackoff"),
-        min_backoff: _o.get_field("minBackoff"),
-        retries: _o.get_field("retries"),
-        rps: _o.get_field("rps"),
-        user_agent_operator_suffix: _o.get_field("userAgentOperatorSuffix"),
+        urn: o.get_urn(),
+        api_base_path: o.get_field("apiBasePath"),
+        api_client_logging: o.get_field("apiClientLogging"),
+        api_hostname: o.get_field("apiHostname"),
+        api_key: o.get_field("apiKey"),
+        api_token: o.get_field("apiToken"),
+        api_user_service_key: o.get_field("apiUserServiceKey"),
+        email: o.get_field("email"),
+        max_backoff: o.get_field("maxBackoff"),
+        min_backoff: o.get_field("minBackoff"),
+        retries: o.get_field("retries"),
+        rps: o.get_field("rps"),
+        user_agent_operator_suffix: o.get_field("userAgentOperatorSuffix"),
     }
 }

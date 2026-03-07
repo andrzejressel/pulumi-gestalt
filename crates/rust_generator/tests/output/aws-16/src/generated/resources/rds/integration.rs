@@ -139,6 +139,8 @@ pub mod integration {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Set of non-secret key–value pairs that contains additional contextual information about the data. For more information, see the [User Guide](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context). You can only include this parameter if you specify the `kms_key_id` parameter.
         pub additional_encryption_context: pulumi_gestalt_rust::Output<
             Option<std::collections::HashMap<String, String>>,
@@ -223,6 +225,7 @@ pub mod integration {
         let o = context.register_resource(request);
         IntegrationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             additional_encryption_context: o.get_field("additionalEncryptionContext"),
             arn: o.get_field("arn"),
             integration_name: o.get_field("integrationName"),

@@ -194,6 +194,8 @@ pub mod chat_engine {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Configurations for a chat Engine.
         /// Structure is documented below.
         pub chat_engine_config: pulumi_gestalt_rust::Output<
@@ -296,6 +298,7 @@ pub mod chat_engine {
         let o = context.register_resource(request);
         ChatEngineResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             chat_engine_config: o.get_field("chatEngineConfig"),
             chat_engine_metadatas: o.get_field("chatEngineMetadatas"),
             collection_id: o.get_field("collectionId"),

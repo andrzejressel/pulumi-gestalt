@@ -53,6 +53,8 @@ pub mod bgp_peer {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The address family for the BGP peer. `ipv4 ` or `ipv6`.
         pub address_family: pulumi_gestalt_rust::Output<String>,
         /// The IPv4 CIDR address to use to send traffic to Amazon.
@@ -123,6 +125,7 @@ pub mod bgp_peer {
         let o = context.register_resource(request);
         BgpPeerResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             address_family: o.get_field("addressFamily"),
             amazon_address: o.get_field("amazonAddress"),
             aws_device: o.get_field("awsDevice"),

@@ -169,6 +169,8 @@ pub mod workflow_template {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Output only. The time template was created.
         pub create_time: pulumi_gestalt_rust::Output<String>,
         /// Optional. Timeout duration for the DAG of jobs, expressed in seconds (see [JSON representation of
@@ -283,6 +285,7 @@ pub mod workflow_template {
         let o = context.register_resource(request);
         WorkflowTemplateResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             create_time: o.get_field("createTime"),
             dag_timeout: o.get_field("dagTimeout"),
             effective_labels: o.get_field("effectiveLabels"),

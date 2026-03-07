@@ -157,6 +157,8 @@ pub mod default_network_acl {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ARN of the Default Network ACL
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Network ACL ID to manage. This attribute is exported from `aws.ec2.Vpc`, or manually found via the AWS Console.
@@ -232,6 +234,7 @@ pub mod default_network_acl {
         let o = context.register_resource(request);
         DefaultNetworkAclResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             default_network_acl_id: o.get_field("defaultNetworkAclId"),
             egress: o.get_field("egress"),

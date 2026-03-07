@@ -55,6 +55,8 @@ pub mod vpc_endpoint {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the Amazon Resource Name (ARN) of the domain to create the endpoint for
         pub domain_arn: pulumi_gestalt_rust::Output<String>,
         /// The connection endpoint ID for connecting to the domain.
@@ -93,6 +95,7 @@ pub mod vpc_endpoint {
         let o = context.register_resource(request);
         VpcEndpointResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             domain_arn: o.get_field("domainArn"),
             endpoint: o.get_field("endpoint"),
             vpc_options: o.get_field("vpcOptions"),

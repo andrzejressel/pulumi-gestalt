@@ -65,6 +65,8 @@ pub mod resource_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Indicates that you are using both methods to grant cross-account. Valid values are `TRUE` and `FALSE`. Note the provider will not perform drift detetction on this field as its not return on read.
         pub enable_hybrid: pulumi_gestalt_rust::Output<Option<String>>,
         /// The policy to be applied to the aws glue data catalog.
@@ -99,6 +101,7 @@ pub mod resource_policy {
         let o = context.register_resource(request);
         ResourcePolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             enable_hybrid: o.get_field("enableHybrid"),
             policy: o.get_field("policy"),
         }

@@ -75,6 +75,8 @@ pub mod resource_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// JSON formatted policy document that controls access to the Network Firewall resource. The policy must be provided **without whitespaces**.  We recommend using jsonencode for formatting as seen in the examples above. For more details, including available policy statement Actions, see the [Policy](https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_PutResourcePolicy.html#API_PutResourcePolicy_RequestSyntax) parameter in the AWS API documentation.
         pub policy: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the rule group or firewall policy.
@@ -109,6 +111,7 @@ pub mod resource_policy {
         let o = context.register_resource(request);
         ResourcePolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             policy: o.get_field("policy"),
             resource_arn: o.get_field("resourceArn"),
         }

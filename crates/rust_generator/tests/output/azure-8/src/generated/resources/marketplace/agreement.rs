@@ -51,6 +51,8 @@ pub mod agreement {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         pub license_text_link: pulumi_gestalt_rust::Output<String>,
         /// The Offer of the Marketplace Image. Changing this forces a new resource to be created.
         pub offer: pulumi_gestalt_rust::Output<String>,
@@ -94,6 +96,7 @@ pub mod agreement {
         let o = context.register_resource(request);
         AgreementResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             license_text_link: o.get_field("licenseTextLink"),
             offer: o.get_field("offer"),
             plan: o.get_field("plan"),

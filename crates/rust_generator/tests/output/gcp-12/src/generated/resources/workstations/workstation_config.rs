@@ -651,6 +651,8 @@ pub mod workstation_config {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A list of port ranges specifying single ports or ranges of ports that are externally accessible in the workstation. Allowed ports must be one of 22, 80, or within range 1024-65535. If not specified defaults to ports 22, 80, and ports 1024-65535.
         /// Structure is documented below.
         pub allowed_ports: pulumi_gestalt_rust::Output<
@@ -892,6 +894,7 @@ pub mod workstation_config {
         let o = context.register_resource(request);
         WorkstationConfigResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             allowed_ports: o.get_field("allowedPorts"),
             annotations: o.get_field("annotations"),
             conditions: o.get_field("conditions"),

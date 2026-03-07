@@ -93,6 +93,8 @@ pub mod extension {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Hybrid Compute Machine Extension. Changing this forces a new Hybrid Compute Machine Extension to be created.
         pub arc_machine_id: pulumi_gestalt_rust::Output<String>,
         /// Indicates whether the extension should be automatically upgraded by the platform if there is a newer version available. Supported values are `true` and `false`. Defaults to `true`.
@@ -200,6 +202,7 @@ pub mod extension {
         let o = context.register_resource(request);
         ExtensionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arc_machine_id: o.get_field("arcMachineId"),
             automatic_upgrade_enabled: o.get_field("automaticUpgradeEnabled"),
             force_update_tag: o.get_field("forceUpdateTag"),

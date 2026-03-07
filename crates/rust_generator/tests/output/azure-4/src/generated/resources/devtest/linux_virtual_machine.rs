@@ -142,6 +142,8 @@ pub mod linux_virtual_machine {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Can this Virtual Machine be claimed by users? Defaults to `true`.
         pub allow_claim: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Should the Virtual Machine be created without a Public IP Address? Changing this forces a new resource to be created.
@@ -303,6 +305,7 @@ pub mod linux_virtual_machine {
         let o = context.register_resource(request);
         LinuxVirtualMachineResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             allow_claim: o.get_field("allowClaim"),
             disallow_public_ip_address: o.get_field("disallowPublicIpAddress"),
             fqdn: o.get_field("fqdn"),

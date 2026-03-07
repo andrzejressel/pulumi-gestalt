@@ -70,6 +70,8 @@ pub mod action_custom {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the JSON Blob defining the Body of this Custom Action.
         pub body: pulumi_gestalt_rust::Output<String>,
         /// Specifies the ID of the Logic App Workflow. Changing this forces a new resource to be created.
@@ -113,6 +115,7 @@ pub mod action_custom {
         let o = context.register_resource(request);
         ActionCustomResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             body: o.get_field("body"),
             logic_app_id: o.get_field("logicAppId"),
             name: o.get_field("name"),

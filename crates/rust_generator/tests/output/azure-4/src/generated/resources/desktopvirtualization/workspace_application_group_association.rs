@@ -82,6 +82,8 @@ pub mod workspace_application_group_association {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The resource ID for the Virtual Desktop Application Group. Changing this forces a new resource to be created.
         pub application_group_id: pulumi_gestalt_rust::Output<String>,
         /// The resource ID for the Virtual Desktop Workspace. Changing this forces a new resource to be created.
@@ -117,6 +119,7 @@ pub mod workspace_application_group_association {
         let o = context.register_resource(request);
         WorkspaceApplicationGroupAssociationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             application_group_id: o.get_field("applicationGroupId"),
             workspace_id: o.get_field("workspaceId"),
         }

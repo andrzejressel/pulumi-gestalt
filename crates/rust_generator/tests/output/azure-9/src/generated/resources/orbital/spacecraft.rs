@@ -85,6 +85,8 @@ pub mod spacecraft {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A `links` block as defined below. Changing this forces a new resource to be created.
         pub links: pulumi_gestalt_rust::Output<
             Vec<super::super::types::orbital::SpacecraftLink>,
@@ -165,6 +167,7 @@ pub mod spacecraft {
         let o = context.register_resource(request);
         SpacecraftResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             links: o.get_field("links"),
             location: o.get_field("location"),
             name: o.get_field("name"),

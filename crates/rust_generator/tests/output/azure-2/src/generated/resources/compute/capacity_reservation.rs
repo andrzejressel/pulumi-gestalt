@@ -81,6 +81,8 @@ pub mod capacity_reservation {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Capacity Reservation Group where the Capacity Reservation exists. Changing this forces a new resource to be created.
         pub capacity_reservation_group_id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the name of this Capacity Reservation. Changing this forces a new resource to be created.
@@ -142,6 +144,7 @@ pub mod capacity_reservation {
         let o = context.register_resource(request);
         CapacityReservationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             capacity_reservation_group_id: o.get_field("capacityReservationGroupId"),
             name: o.get_field("name"),
             sku: o.get_field("sku"),

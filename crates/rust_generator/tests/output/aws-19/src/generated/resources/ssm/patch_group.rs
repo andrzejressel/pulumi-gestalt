@@ -45,6 +45,8 @@ pub mod patch_group {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the patch baseline to register the patch group with.
         pub baseline_id: pulumi_gestalt_rust::Output<String>,
         /// The name of the patch group that should be registered with the patch baseline.
@@ -79,6 +81,7 @@ pub mod patch_group {
         let o = context.register_resource(request);
         PatchGroupResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             baseline_id: o.get_field("baselineId"),
             patch_group: o.get_field("patchGroup"),
         }

@@ -71,6 +71,8 @@ pub mod resource_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A JSON-formatted resource policy. For more information, see [Sharing a Projec](https://docs.aws.amazon.com/codebuild/latest/userguide/project-sharing.html#project-sharing-share) and [Sharing a Report Group](https://docs.aws.amazon.com/codebuild/latest/userguide/report-groups-sharing.html#report-groups-sharing-share).
         pub policy: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the Project or ReportGroup resource you want to associate with a resource policy.
@@ -105,6 +107,7 @@ pub mod resource_policy {
         let o = context.register_resource(request);
         ResourcePolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             policy: o.get_field("policy"),
             resource_arn: o.get_field("resourceArn"),
         }

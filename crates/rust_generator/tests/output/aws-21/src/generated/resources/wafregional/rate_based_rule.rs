@@ -82,6 +82,8 @@ pub mod rate_based_rule {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the WAF Regional Rate Based Rule.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The name or description for the Amazon CloudWatch metric of this rule.
@@ -154,6 +156,7 @@ pub mod rate_based_rule {
         let o = context.register_resource(request);
         RateBasedRuleResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             metric_name: o.get_field("metricName"),
             name: o.get_field("name"),

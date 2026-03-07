@@ -230,6 +230,8 @@ pub mod entry_group_iam_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         pub entry_group_id: pulumi_gestalt_rust::Output<String>,
         /// (Computed) The etag of the IAM policy.
         pub etag: pulumi_gestalt_rust::Output<String>,
@@ -284,6 +286,7 @@ pub mod entry_group_iam_policy {
         let o = context.register_resource(request);
         EntryGroupIamPolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             entry_group_id: o.get_field("entryGroupId"),
             etag: o.get_field("etag"),
             location: o.get_field("location"),

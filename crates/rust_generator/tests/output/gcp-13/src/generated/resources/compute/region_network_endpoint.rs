@@ -200,6 +200,8 @@ pub mod region_network_endpoint {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Client destination port for the `GCE_VM_IP_PORTMAP` NEG.
         pub client_destination_port: pulumi_gestalt_rust::Output<Option<i32>>,
         /// Fully qualified domain name of network endpoint.
@@ -289,6 +291,7 @@ pub mod region_network_endpoint {
         let o = context.register_resource(request);
         RegionNetworkEndpointResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             client_destination_port: o.get_field("clientDestinationPort"),
             fqdn: o.get_field("fqdn"),
             instance: o.get_field("instance"),
