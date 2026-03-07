@@ -14,7 +14,7 @@ interface pulumi-main {
 interface output-interface {
 
     resource output {
-        map: func(function-name: string) -> output;
+        %map: func(function-name: string) -> output;
         clone: func() -> output;
         combine: func(outputs: list<borrow<output>>) -> output;
         add-to-export: func(name: string);
