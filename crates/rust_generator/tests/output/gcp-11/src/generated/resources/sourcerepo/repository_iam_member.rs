@@ -265,7 +265,7 @@ pub mod repository_iam_member {
     ///
     /// Registers a new resource with the given unique name and arguments
     ///
-    #[allow(non_snake_case, unused_imports, dead_code)]
+    #[allow(non_snake_case, dead_code)]
     pub fn create(
         context: &pulumi_gestalt_rust::Context,
         name: &str,
@@ -273,6 +273,10 @@ pub mod repository_iam_member {
     ) -> RepositoryIamMemberResult {
         __create(context, name, args, None)
     }
+    ///
+    /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
+    ///
+    #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
         context: &pulumi_gestalt_rust::Context,
         name: &str,
@@ -281,6 +285,7 @@ pub mod repository_iam_member {
     ) -> RepositoryIamMemberResult {
         __create(context, name, args, Some(options))
     }
+    #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
         context: &pulumi_gestalt_rust::Context,
         name: &str,
