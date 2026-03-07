@@ -59,6 +59,8 @@ pub mod ssh_public_key {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Azure Region where the SSH Public Key should exist. Changing this forces a new SSH Public Key to be created.
         pub location: pulumi_gestalt_rust::Output<String>,
         /// The name which should be used for this SSH Public Key. Changing this forces a new SSH Public Key to be created.
@@ -116,6 +118,7 @@ pub mod ssh_public_key {
         let o = context.register_resource(request);
         SshPublicKeyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             location: o.get_field("location"),
             name: o.get_field("name"),
             public_key: o.get_field("publicKey"),

@@ -67,6 +67,8 @@ pub mod security_configuration {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Configuration block containing encryption configuration. Detailed below.
         pub encryption_configuration: pulumi_gestalt_rust::Output<
             super::super::types::glue::SecurityConfigurationEncryptionConfiguration,
@@ -105,6 +107,7 @@ pub mod security_configuration {
         let o = context.register_resource(request);
         SecurityConfigurationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             encryption_configuration: o.get_field("encryptionConfiguration"),
             name: o.get_field("name"),
         }

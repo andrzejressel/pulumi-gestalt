@@ -75,6 +75,8 @@ pub mod listener {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of your accelerator.
         pub accelerator_arn: pulumi_gestalt_rust::Output<String>,
         /// Direct all requests from a user to the same endpoint. Valid values are `NONE`, `SOURCE_IP`. Default: `NONE`. If `NONE`, Global Accelerator uses the "five-tuple" properties of source IP address, source port, destination IP address, destination port, and protocol to select the hash value. If `SOURCE_IP`, Global Accelerator uses the "two-tuple" properties of source (client) IP address and destination IP address to select the hash value.
@@ -125,6 +127,7 @@ pub mod listener {
         let o = context.register_resource(request);
         ListenerResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             accelerator_arn: o.get_field("acceleratorArn"),
             client_affinity: o.get_field("clientAffinity"),
             port_ranges: o.get_field("portRanges"),

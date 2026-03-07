@@ -90,6 +90,8 @@ pub mod access_levels {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The desired Access Levels that should replace all existing Access Levels in the Access Policy.
         /// Structure is documented below.
         pub access_levels: pulumi_gestalt_rust::Output<
@@ -133,6 +135,7 @@ pub mod access_levels {
         let o = context.register_resource(request);
         AccessLevelsResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             access_levels: o.get_field("accessLevels"),
             parent: o.get_field("parent"),
         }

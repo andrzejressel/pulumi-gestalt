@@ -111,6 +111,8 @@ pub mod resolver_virtual_network_link {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the ID of the Private DNS Resolver DNS Forwarding Ruleset. Changing this forces a new Private DNS Resolver Virtual Network Link to be created.
         pub dns_forwarding_ruleset_id: pulumi_gestalt_rust::Output<String>,
         /// Metadata attached to the Private DNS Resolver Virtual Network Link.
@@ -164,6 +166,7 @@ pub mod resolver_virtual_network_link {
         let o = context.register_resource(request);
         ResolverVirtualNetworkLinkResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             dns_forwarding_ruleset_id: o.get_field("dnsForwardingRulesetId"),
             metadata: o.get_field("metadata"),
             name: o.get_field("name"),

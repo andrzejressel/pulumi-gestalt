@@ -124,6 +124,8 @@ pub mod volume_snapshot {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Description for the snapshot.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
@@ -206,6 +208,7 @@ pub mod volume_snapshot {
         let o = context.register_resource(request);
         VolumeSnapshotResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             description: o.get_field("description"),
             effective_labels: o.get_field("effectiveLabels"),
             labels: o.get_field("labels"),

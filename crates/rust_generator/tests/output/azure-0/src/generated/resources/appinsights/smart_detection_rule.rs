@@ -79,6 +79,8 @@ pub mod smart_detection_rule {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies a list of additional recipients that will be sent emails on this Application Insights Smart Detection Rule.
         ///
         /// > **Note:** At least one read or write permission must be defined.
@@ -146,6 +148,7 @@ pub mod smart_detection_rule {
         let o = context.register_resource(request);
         SmartDetectionRuleResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             additional_email_recipients: o.get_field("additionalEmailRecipients"),
             application_insights_id: o.get_field("applicationInsightsId"),
             enabled: o.get_field("enabled"),

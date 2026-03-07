@@ -69,6 +69,8 @@ pub mod activity {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The date the activity was created.
         pub creation_date: pulumi_gestalt_rust::Output<String>,
         /// Defines what encryption configuration is used to encrypt data in the Activity. For more information see the section [Data at rest encyption](https://docs.aws.amazon.com/step-functions/latest/dg/encryption-at-rest.html) in the AWS Step Functions User Guide.
@@ -122,6 +124,7 @@ pub mod activity {
         let o = context.register_resource(request);
         ActivityResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             creation_date: o.get_field("creationDate"),
             encryption_configuration: o.get_field("encryptionConfiguration"),
             name: o.get_field("name"),

@@ -191,6 +191,8 @@ pub mod action_group {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// One or more `arm_role_receiver` blocks as defined below.
         pub arm_role_receivers: pulumi_gestalt_rust::Output<
             Option<Vec<super::super::types::monitoring::ActionGroupArmRoleReceiver>>,
@@ -366,6 +368,7 @@ pub mod action_group {
         let o = context.register_resource(request);
         ActionGroupResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arm_role_receivers: o.get_field("armRoleReceivers"),
             automation_runbook_receivers: o.get_field("automationRunbookReceivers"),
             azure_app_push_receivers: o.get_field("azureAppPushReceivers"),

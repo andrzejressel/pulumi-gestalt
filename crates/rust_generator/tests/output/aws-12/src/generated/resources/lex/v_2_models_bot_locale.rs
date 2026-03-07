@@ -98,6 +98,8 @@ pub mod v_2_models_bot_locale {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Identifier of the bot to create the locale for.
         pub bot_id: pulumi_gestalt_rust::Output<String>,
         /// Version of the bot to create the locale for. This can only be the draft version of the bot.
@@ -181,6 +183,7 @@ pub mod v_2_models_bot_locale {
         let o = context.register_resource(request);
         V2modelsBotLocaleResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             bot_id: o.get_field("botId"),
             bot_version: o.get_field("botVersion"),
             description: o.get_field("description"),

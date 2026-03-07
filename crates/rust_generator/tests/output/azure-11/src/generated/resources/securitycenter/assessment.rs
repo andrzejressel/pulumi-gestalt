@@ -116,6 +116,8 @@ pub mod assessment {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A map of additional data to associate with the assessment.
         pub additional_data: pulumi_gestalt_rust::Output<
             Option<std::collections::HashMap<String, String>>,
@@ -168,6 +170,7 @@ pub mod assessment {
         let o = context.register_resource(request);
         AssessmentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             additional_data: o.get_field("additionalData"),
             assessment_policy_id: o.get_field("assessmentPolicyId"),
             status: o.get_field("status"),

@@ -159,6 +159,8 @@ pub mod entitlement {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// AdditionalNotificationTargets includes email addresses to be notified.
         pub additional_notification_targets: pulumi_gestalt_rust::Output<
             Option<
@@ -281,6 +283,7 @@ pub mod entitlement {
         let o = context.register_resource(request);
         entitlementResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             additional_notification_targets: o
                 .get_field("additionalNotificationTargets"),
             approval_workflow: o.get_field("approvalWorkflow"),

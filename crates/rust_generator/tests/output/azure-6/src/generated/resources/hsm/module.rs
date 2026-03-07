@@ -159,6 +159,8 @@ pub mod module {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Azure Region where the Dedicated Hardware Security Module should exist. Changing this forces a new Dedicated Hardware Security Module to be created.
         pub location: pulumi_gestalt_rust::Output<String>,
         /// A `management_network_profile` block as defined below.
@@ -252,6 +254,7 @@ pub mod module {
         let o = context.register_resource(request);
         ModuleResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             location: o.get_field("location"),
             management_network_profile: o.get_field("managementNetworkProfile"),
             name: o.get_field("name"),

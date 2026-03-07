@@ -148,6 +148,8 @@ pub mod endpoint {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ARN for the certificate.
         pub certificate_arn: pulumi_gestalt_rust::Output<String>,
         /// Name of the endpoint database.
@@ -377,6 +379,7 @@ pub mod endpoint {
         let o = context.register_resource(request);
         EndpointResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             certificate_arn: o.get_field("certificateArn"),
             database_name: o.get_field("databaseName"),
             elasticsearch_settings: o.get_field("elasticsearchSettings"),

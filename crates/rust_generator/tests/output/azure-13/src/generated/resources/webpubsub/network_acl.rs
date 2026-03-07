@@ -110,6 +110,8 @@ pub mod network_acl {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The default action to control the network access when no other rule matches. Possible values are `Allow` and `Deny`. Defaults to `Deny`.
         pub default_action: pulumi_gestalt_rust::Output<Option<String>>,
         /// A `private_endpoint` block as defined below.
@@ -162,6 +164,7 @@ pub mod network_acl {
         let o = context.register_resource(request);
         NetworkAclResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             default_action: o.get_field("defaultAction"),
             private_endpoints: o.get_field("privateEndpoints"),
             public_network: o.get_field("publicNetwork"),

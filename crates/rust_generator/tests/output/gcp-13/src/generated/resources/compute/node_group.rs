@@ -213,6 +213,8 @@ pub mod node_group {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// If you use sole-tenant nodes for your workloads, you can use the node
         /// group autoscaler to automatically manage the sizes of your node groups.
         /// One of `initial_size` or `autoscaling_policy` must be configured on resource creation.
@@ -334,6 +336,7 @@ pub mod node_group {
         let o = context.register_resource(request);
         NodeGroupResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             autoscaling_policy: o.get_field("autoscalingPolicy"),
             creation_timestamp: o.get_field("creationTimestamp"),
             description: o.get_field("description"),

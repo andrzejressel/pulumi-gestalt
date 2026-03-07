@@ -97,6 +97,8 @@ pub mod spring_cloud_app {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A JSON object that contains the addon configurations of the Spring Cloud Service.
         pub addon_json: pulumi_gestalt_rust::Output<String>,
         /// A `custom_persistent_disk` block as defined below.
@@ -219,6 +221,7 @@ pub mod spring_cloud_app {
         let o = context.register_resource(request);
         SpringCloudAppResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             addon_json: o.get_field("addonJson"),
             custom_persistent_disks: o.get_field("customPersistentDisks"),
             fqdn: o.get_field("fqdn"),

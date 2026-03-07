@@ -435,6 +435,8 @@ pub mod domain {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// IAM policy document specifying the access policies for the domain.
         pub access_policies: pulumi_gestalt_rust::Output<String>,
         /// Key-value string pairs to specify advanced configuration options. Note that the values for these configuration options must be strings (wrapped in quotes) or they may be wrong and cause a perpetual diff, causing the provider to want to recreate your OpenSearch domain on every apply.
@@ -654,6 +656,7 @@ pub mod domain {
         let o = context.register_resource(request);
         DomainResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             access_policies: o.get_field("accessPolicies"),
             advanced_options: o.get_field("advancedOptions"),
             advanced_security_options: o.get_field("advancedSecurityOptions"),

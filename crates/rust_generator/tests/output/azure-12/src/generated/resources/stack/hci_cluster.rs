@@ -89,6 +89,8 @@ pub mod hci_cluster {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Automanage Configuration assigned to the Azure Stack HCI Cluster.
         pub automanage_configuration_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// The Client ID of the Azure Active Directory Application which is used by the Azure Stack HCI Cluster. Changing this forces a new resource to be created.
@@ -179,6 +181,7 @@ pub mod hci_cluster {
         let o = context.register_resource(request);
         HciClusterResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             automanage_configuration_id: o.get_field("automanageConfigurationId"),
             client_id: o.get_field("clientId"),
             cloud_id: o.get_field("cloudId"),

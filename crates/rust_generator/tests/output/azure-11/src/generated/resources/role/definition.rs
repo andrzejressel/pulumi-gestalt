@@ -99,6 +99,8 @@ pub mod definition {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// One or more assignable scopes for this Role Definition, such as `/subscriptions/0b1f6471-1bf0-4dda-aec3-111122223333`, `/subscriptions/0b1f6471-1bf0-4dda-aec3-111122223333/resourceGroups/myGroup`, `/providers/Microsoft.Management/managementGroups/0b1f6471-1bf0-4dda-aec3-111122223333` , or `/subscriptions/0b1f6471-1bf0-4dda-aec3-111122223333/resourceGroups/myGroup/providers/Microsoft.Compute/virtualMachines/myVM`.
         ///
         /// > **NOTE:** The value for `scope` is automatically included in this list if no other values supplied.
@@ -167,6 +169,7 @@ pub mod definition {
         let o = context.register_resource(request);
         DefinitionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             assignable_scopes: o.get_field("assignableScopes"),
             description: o.get_field("description"),
             name: o.get_field("name"),

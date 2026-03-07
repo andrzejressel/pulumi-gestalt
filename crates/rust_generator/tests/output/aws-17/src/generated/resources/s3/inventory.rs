@@ -123,6 +123,8 @@ pub mod inventory {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Name of the source bucket that inventory lists the objects for.
         pub bucket: pulumi_gestalt_rust::Output<String>,
         /// Contains information about where to publish the inventory results (documented below).
@@ -207,6 +209,7 @@ pub mod inventory {
         let o = context.register_resource(request);
         InventoryResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             bucket: o.get_field("bucket"),
             destination: o.get_field("destination"),
             enabled: o.get_field("enabled"),

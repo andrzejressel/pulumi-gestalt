@@ -71,6 +71,8 @@ pub mod configured_table {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The columns of the references table which will be included in the configured table.
         pub allowed_columns: pulumi_gestalt_rust::Output<Vec<String>>,
         /// The analysis method for the configured table. The only valid value is currently `DIRECT_QUERY`.
@@ -148,6 +150,7 @@ pub mod configured_table {
         let o = context.register_resource(request);
         ConfiguredTableResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             allowed_columns: o.get_field("allowedColumns"),
             analysis_method: o.get_field("analysisMethod"),
             arn: o.get_field("arn"),

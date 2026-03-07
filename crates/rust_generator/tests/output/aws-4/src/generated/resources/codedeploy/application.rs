@@ -84,6 +84,8 @@ pub mod application {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The application ID.
         pub application_id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the CodeDeploy application.
@@ -139,6 +141,7 @@ pub mod application {
         let o = context.register_resource(request);
         ApplicationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             application_id: o.get_field("applicationId"),
             arn: o.get_field("arn"),
             compute_platform: o.get_field("computePlatform"),

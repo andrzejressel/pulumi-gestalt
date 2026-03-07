@@ -100,6 +100,8 @@ pub mod event_hub_namespace {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Is Auto Inflate enabled for the EventHub Namespace?
         pub auto_inflate_enabled: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Specifies the Capacity / Throughput Units for a `Standard` SKU namespace. Default capacity has a maximum of `2`, but can be increased in blocks of 2 on a committed purchase basis. Defaults to `1`.
@@ -246,6 +248,7 @@ pub mod event_hub_namespace {
         let o = context.register_resource(request);
         EventHubNamespaceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             auto_inflate_enabled: o.get_field("autoInflateEnabled"),
             capacity: o.get_field("capacity"),
             dedicated_cluster_id: o.get_field("dedicatedClusterId"),

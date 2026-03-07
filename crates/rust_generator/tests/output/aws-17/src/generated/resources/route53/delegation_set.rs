@@ -55,6 +55,8 @@ pub mod delegation_set {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the Delegation Set.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// A list of authoritative name servers for the hosted zone
@@ -88,6 +90,7 @@ pub mod delegation_set {
         let o = context.register_resource(request);
         DelegationSetResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             name_servers: o.get_field("nameServers"),
             reference_name: o.get_field("referenceName"),

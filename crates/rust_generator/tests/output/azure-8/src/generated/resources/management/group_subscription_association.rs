@@ -55,6 +55,8 @@ pub mod group_subscription_association {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Management Group to associate the Subscription with. Changing this forces a new Management to be created.
         pub management_group_id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Subscription to be associated with the Management Group. Changing this forces a new Management to be created.
@@ -90,6 +92,7 @@ pub mod group_subscription_association {
         let o = context.register_resource(request);
         GroupSubscriptionAssociationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             management_group_id: o.get_field("managementGroupId"),
             subscription_id: o.get_field("subscriptionId"),
         }

@@ -179,6 +179,8 @@ pub mod folder_custom_module {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// If empty, indicates that the custom module was created in the organization, folder,
         /// or project in which you are viewing the custom module. Otherwise, ancestor_module
         /// specifies the organization or folder from which the custom module is inherited.
@@ -248,6 +250,7 @@ pub mod folder_custom_module {
         let o = context.register_resource(request);
         FolderCustomModuleResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             ancestor_module: o.get_field("ancestorModule"),
             custom_config: o.get_field("customConfig"),
             display_name: o.get_field("displayName"),

@@ -149,6 +149,8 @@ pub mod android_app {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The globally unique, Google-assigned identifier (UID) for the Firebase API key associated with the AndroidApp.
         /// If apiKeyId is not set during creation, then Firebase automatically associates an apiKeyId with the AndroidApp.
         /// This auto-associated key may be an existing valid key or, if no valid key exists, a new one will be provisioned.
@@ -233,6 +235,7 @@ pub mod android_app {
         let o = context.register_resource(request);
         AndroidAppResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             api_key_id: o.get_field("apiKeyId"),
             app_id: o.get_field("appId"),
             deletion_policy: o.get_field("deletionPolicy"),

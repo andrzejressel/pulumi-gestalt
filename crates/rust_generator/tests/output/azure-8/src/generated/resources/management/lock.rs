@@ -105,6 +105,8 @@ pub mod lock {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the Level to be used for this Lock. Possible values are `CanNotDelete` and `ReadOnly`. Changing this forces a new resource to be created.
         ///
         /// > **Note:** `CanNotDelete` means authorized users are able to read and modify the resources, but not delete. `ReadOnly` means authorized users can only read from a resource, but they can't modify or delete it.
@@ -155,6 +157,7 @@ pub mod lock {
         let o = context.register_resource(request);
         LockResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             lock_level: o.get_field("lockLevel"),
             name: o.get_field("name"),
             notes: o.get_field("notes"),

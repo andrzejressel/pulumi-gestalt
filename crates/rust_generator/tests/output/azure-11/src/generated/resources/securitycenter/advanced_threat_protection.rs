@@ -58,6 +58,8 @@ pub mod advanced_threat_protection {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Should Advanced Threat Protection be enabled on this resource?
         pub enabled: pulumi_gestalt_rust::Output<bool>,
         /// The ID of the Azure Resource which to enable Advanced Threat Protection on. Changing this forces a new resource to be created.
@@ -93,6 +95,7 @@ pub mod advanced_threat_protection {
         let o = context.register_resource(request);
         AdvancedThreatProtectionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             enabled: o.get_field("enabled"),
             target_resource_id: o.get_field("targetResourceId"),
         }

@@ -90,6 +90,8 @@ pub mod ingestion_destination {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the app bundle to use for the request.
         pub app_bundle_arn: pulumi_gestalt_rust::Output<String>,
         /// ARN of the Ingestion Destination.
@@ -173,6 +175,7 @@ pub mod ingestion_destination {
         let o = context.register_resource(request);
         IngestionDestinationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             app_bundle_arn: o.get_field("appBundleArn"),
             arn: o.get_field("arn"),
             destination_configuration: o.get_field("destinationConfiguration"),

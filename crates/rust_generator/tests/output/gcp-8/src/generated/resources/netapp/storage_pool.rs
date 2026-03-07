@@ -151,6 +151,8 @@ pub mod storage_pool {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the Active Directory policy to be used. Format: `projects/{{project}}/locations/{{location}}/activeDirectories/{{name}}`.
         /// The policy needs to be in the same location as the storage pool.
         pub active_directory: pulumi_gestalt_rust::Output<Option<String>>,
@@ -301,6 +303,7 @@ pub mod storage_pool {
         let o = context.register_resource(request);
         StoragePoolResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             active_directory: o.get_field("activeDirectory"),
             allow_auto_tiering: o.get_field("allowAutoTiering"),
             capacity_gib: o.get_field("capacityGib"),

@@ -131,6 +131,8 @@ pub mod virtual_network_gateway_nat_rule {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// One or more `external_mapping` blocks as documented below.
         pub external_mappings: pulumi_gestalt_rust::Output<
             Vec<
@@ -218,6 +220,7 @@ pub mod virtual_network_gateway_nat_rule {
         let o = context.register_resource(request);
         VirtualNetworkGatewayNatRuleResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             external_mappings: o.get_field("externalMappings"),
             internal_mappings: o.get_field("internalMappings"),
             ip_configuration_id: o.get_field("ipConfigurationId"),

@@ -53,6 +53,8 @@ pub mod project {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name of this project
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Sets the execution timeout value (in minutes) for a project. All test runs in this project use the specified execution timeout value unless overridden when scheduling a run.
@@ -104,6 +106,7 @@ pub mod project {
         let o = context.register_resource(request);
         ProjectResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             default_job_timeout_minutes: o.get_field("defaultJobTimeoutMinutes"),
             name: o.get_field("name"),

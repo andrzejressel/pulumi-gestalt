@@ -542,6 +542,8 @@ pub mod index {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the Index.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// A block that sets the number of additional document storage and query capacity units that should be used by the index. Detailed below.
@@ -678,6 +680,7 @@ pub mod index {
         let o = context.register_resource(request);
         IndexResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             capacity_units: o.get_field("capacityUnits"),
             created_at: o.get_field("createdAt"),

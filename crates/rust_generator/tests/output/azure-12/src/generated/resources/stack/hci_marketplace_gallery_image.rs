@@ -106,6 +106,8 @@ pub mod hci_marketplace_gallery_image {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Custom Location where the Azure Stack HCI Marketplace Gallery Image should exist. Changing this forces a new resource to be created.
         pub custom_location_id: pulumi_gestalt_rust::Output<String>,
         /// The hypervisor generation of the Azure Stack HCI Marketplace Gallery Image. Possible values are `V1` and `V2`. Changing this forces a new Azure Stack HCI Marketplace Gallery Image to be created.
@@ -201,6 +203,7 @@ pub mod hci_marketplace_gallery_image {
         let o = context.register_resource(request);
         HciMarketplaceGalleryImageResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             custom_location_id: o.get_field("customLocationId"),
             hyperv_generation: o.get_field("hypervGeneration"),
             identifier: o.get_field("identifier"),

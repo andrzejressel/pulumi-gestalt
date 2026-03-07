@@ -63,6 +63,8 @@ pub mod snapshot_copy_grant {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of snapshot copy grant
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The unique identifier for the customer master key (CMK) that the grant applies to. Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different AWS account, you must use the key ARN. If not specified, the default key is used.
@@ -114,6 +116,7 @@ pub mod snapshot_copy_grant {
         let o = context.register_resource(request);
         SnapshotCopyGrantResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             kms_key_id: o.get_field("kmsKeyId"),
             snapshot_copy_grant_name: o.get_field("snapshotCopyGrantName"),

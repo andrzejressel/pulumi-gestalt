@@ -411,6 +411,8 @@ pub mod kubernetes_cluster {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A `aci_connector_linux` block as defined below. For more details, please visit [Create and configure an AKS cluster to use virtual nodes](https://docs.microsoft.com/azure/aks/virtual-nodes-portal).
         pub aci_connector_linux: pulumi_gestalt_rust::Output<
             Option<
@@ -1057,6 +1059,7 @@ pub mod kubernetes_cluster {
         let o = context.register_resource(request);
         KubernetesClusterResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             aci_connector_linux: o.get_field("aciConnectorLinux"),
             api_server_access_profile: o.get_field("apiServerAccessProfile"),
             auto_scaler_profile: o.get_field("autoScalerProfile"),

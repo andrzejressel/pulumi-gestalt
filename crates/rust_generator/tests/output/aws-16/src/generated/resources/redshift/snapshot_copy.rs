@@ -61,6 +61,8 @@ pub mod snapshot_copy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Identifier of the source cluster.
         pub cluster_identifier: pulumi_gestalt_rust::Output<String>,
         /// AWS Region to copy snapshots to.
@@ -122,6 +124,7 @@ pub mod snapshot_copy {
         let o = context.register_resource(request);
         SnapshotCopyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             cluster_identifier: o.get_field("clusterIdentifier"),
             destination_region: o.get_field("destinationRegion"),
             manual_snapshot_retention_period: o

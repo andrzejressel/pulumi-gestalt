@@ -424,6 +424,8 @@ pub mod region_target_https_proxy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// URLs to certificate manager certificate resources that are used to authenticate connections between users and the load balancer.
         /// sslCertificates and certificateManagerCertificates can't be defined together.
         /// Accepted format is `//certificatemanager.googleapis.com/projects/{project}/locations/{location}/certificates/{resourceName}` or just the self_link `projects/{project}/locations/{location}/certificates/{resourceName}`
@@ -560,6 +562,7 @@ pub mod region_target_https_proxy {
         let o = context.register_resource(request);
         RegionTargetHttpsProxyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             certificate_manager_certificates: o
                 .get_field("certificateManagerCertificates"),
             creation_timestamp: o.get_field("creationTimestamp"),

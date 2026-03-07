@@ -146,6 +146,8 @@ pub mod route {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Identifier of a carrier gateway. This attribute can only be used when the VPC contains a subnet which is associated with a Wavelength Zone.
         pub carrier_gateway_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// The Amazon Resource Name (ARN) of a core network.
@@ -288,6 +290,7 @@ pub mod route {
         let o = context.register_resource(request);
         RouteResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             carrier_gateway_id: o.get_field("carrierGatewayId"),
             core_network_arn: o.get_field("coreNetworkArn"),
             destination_cidr_block: o.get_field("destinationCidrBlock"),

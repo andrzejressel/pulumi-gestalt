@@ -40,6 +40,8 @@ pub mod cluster {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ARN of the cluster
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// List of 5 endpoints in 5 regions that can be used to talk to the cluster. See below.
@@ -75,6 +77,7 @@ pub mod cluster {
         let o = context.register_resource(request);
         ClusterResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             cluster_endpoints: o.get_field("clusterEndpoints"),
             name: o.get_field("name"),

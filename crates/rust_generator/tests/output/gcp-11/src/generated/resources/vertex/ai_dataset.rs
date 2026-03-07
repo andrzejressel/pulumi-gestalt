@@ -74,6 +74,8 @@ pub mod ai_dataset {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The timestamp of when the dataset was created in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits.
         pub create_time: pulumi_gestalt_rust::Output<String>,
         /// The user-defined name of the Dataset. The name can be up to 128 characters long and can be consist of any UTF-8 characters.
@@ -163,6 +165,7 @@ pub mod ai_dataset {
         let o = context.register_resource(request);
         AiDatasetResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             create_time: o.get_field("createTime"),
             display_name: o.get_field("displayName"),
             effective_labels: o.get_field("effectiveLabels"),

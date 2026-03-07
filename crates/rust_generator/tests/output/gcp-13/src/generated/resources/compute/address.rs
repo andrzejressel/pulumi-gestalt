@@ -271,6 +271,8 @@ pub mod address {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The static external IP address represented by this resource.
         /// The IP address must be inside the specified subnetwork,
         /// if any. Set by the API if undefined.
@@ -451,6 +453,7 @@ pub mod address {
         let o = context.register_resource(request);
         AddressResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             address: o.get_field("address"),
             address_type: o.get_field("addressType"),
             creation_timestamp: o.get_field("creationTimestamp"),

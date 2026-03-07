@@ -115,6 +115,8 @@ pub mod cx_environment {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The human-readable description of the environment. The maximum length is 500 characters. If exceeded, the request is
         /// rejected.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
@@ -171,6 +173,7 @@ pub mod cx_environment {
         let o = context.register_resource(request);
         CxEnvironmentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             description: o.get_field("description"),
             display_name: o.get_field("displayName"),
             name: o.get_field("name"),

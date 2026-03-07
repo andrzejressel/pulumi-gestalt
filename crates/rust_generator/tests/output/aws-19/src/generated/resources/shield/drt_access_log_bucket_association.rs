@@ -61,6 +61,8 @@ pub mod drt_access_log_bucket_association {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Amazon S3 bucket that contains the logs that you want to share.
         pub log_bucket: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Role Arn association used for allowing Shield DRT Access.
@@ -106,6 +108,7 @@ pub mod drt_access_log_bucket_association {
         let o = context.register_resource(request);
         DrtAccessLogBucketAssociationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             log_bucket: o.get_field("logBucket"),
             role_arn_association_id: o.get_field("roleArnAssociationId"),
             timeouts: o.get_field("timeouts"),

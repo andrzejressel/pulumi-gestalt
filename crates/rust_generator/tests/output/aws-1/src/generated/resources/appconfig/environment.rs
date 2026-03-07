@@ -67,6 +67,8 @@ pub mod environment {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// AppConfig application ID. Must be between 4 and 7 characters in length.
         pub application_id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the AppConfig Environment.
@@ -137,6 +139,7 @@ pub mod environment {
         let o = context.register_resource(request);
         EnvironmentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             application_id: o.get_field("applicationId"),
             arn: o.get_field("arn"),
             description: o.get_field("description"),

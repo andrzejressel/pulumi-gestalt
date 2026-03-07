@@ -99,6 +99,8 @@ pub mod account_queue_properties {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A `cors_rule` block as defined above.
         pub cors_rules: pulumi_gestalt_rust::Output<
             Option<Vec<super::super::types::storage::AccountQueuePropertiesCorsRule>>,
@@ -164,6 +166,7 @@ pub mod account_queue_properties {
         let o = context.register_resource(request);
         AccountQueuePropertiesResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             cors_rules: o.get_field("corsRules"),
             hour_metrics: o.get_field("hourMetrics"),
             logging: o.get_field("logging"),

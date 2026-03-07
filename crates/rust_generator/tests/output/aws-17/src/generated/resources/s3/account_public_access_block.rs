@@ -64,6 +64,8 @@ pub mod account_public_access_block {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// AWS account ID to configure. Defaults to automatically determined account ID of the this provider AWS provider.
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// Whether Amazon S3 should block public ACLs for buckets in this account. Defaults to `false`. Enabling this setting does not affect existing policies or ACLs. When set to `true` causes the following behavior:
@@ -126,6 +128,7 @@ pub mod account_public_access_block {
         let o = context.register_resource(request);
         AccountPublicAccessBlockResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             block_public_acls: o.get_field("blockPublicAcls"),
             block_public_policy: o.get_field("blockPublicPolicy"),

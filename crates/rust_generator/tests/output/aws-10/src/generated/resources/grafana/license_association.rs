@@ -67,6 +67,8 @@ pub mod license_association {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// If `license_type` is set to `ENTERPRISE_FREE_TRIAL`, this is the expiration date of the free trial.
         pub free_trial_expiration: pulumi_gestalt_rust::Output<String>,
         /// A token from Grafana Labs that ties your AWS account with a Grafana Labs account.
@@ -112,6 +114,7 @@ pub mod license_association {
         let o = context.register_resource(request);
         LicenseAssociationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             free_trial_expiration: o.get_field("freeTrialExpiration"),
             grafana_token: o.get_field("grafanaToken"),
             license_expiration: o.get_field("licenseExpiration"),

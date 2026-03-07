@@ -44,6 +44,8 @@ pub mod license_grant_accepter {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A list of the allowed operations for the grant.
         pub allowed_operations: pulumi_gestalt_rust::Output<Vec<String>>,
         /// The ARN of the grant to accept.
@@ -87,6 +89,7 @@ pub mod license_grant_accepter {
         let o = context.register_resource(request);
         LicenseGrantAccepterResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             allowed_operations: o.get_field("allowedOperations"),
             grant_arn: o.get_field("grantArn"),
             home_region: o.get_field("homeRegion"),

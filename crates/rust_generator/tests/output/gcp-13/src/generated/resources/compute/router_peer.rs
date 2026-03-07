@@ -580,6 +580,8 @@ pub mod router_peer {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// User-specified flag to indicate which mode to use for advertisement.
         /// Valid values of this enum field are: `DEFAULT`, `CUSTOM`
         /// Default value is `DEFAULT`.
@@ -868,6 +870,7 @@ pub mod router_peer {
         let o = context.register_resource(request);
         RouterPeerResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             advertise_mode: o.get_field("advertiseMode"),
             advertised_groups: o.get_field("advertisedGroups"),
             advertised_ip_ranges: o.get_field("advertisedIpRanges"),

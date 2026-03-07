@@ -121,6 +121,8 @@ pub mod project_scc_big_query_export {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// This must be unique within the organization.
         ///
         ///
@@ -218,6 +220,7 @@ pub mod project_scc_big_query_export {
         let o = context.register_resource(request);
         ProjectSccBigQueryExportResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             big_query_export_id: o.get_field("bigQueryExportId"),
             create_time: o.get_field("createTime"),
             dataset: o.get_field("dataset"),

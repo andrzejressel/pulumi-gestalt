@@ -102,6 +102,8 @@ pub mod user_pool_ui_customization {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The client ID for the client app. Defaults to `ALL`. If `ALL` is specified, the `css` and/or `image_file` settings will be used for every client that has no UI customization set previously.
         pub client_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// The creation date in [RFC3339 format](https://tools.ietf.org/html/rfc3339#section-5.8) for the UI customization.
@@ -158,6 +160,7 @@ pub mod user_pool_ui_customization {
         let o = context.register_resource(request);
         UserPoolUICustomizationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             client_id: o.get_field("clientId"),
             creation_date: o.get_field("creationDate"),
             css: o.get_field("css"),

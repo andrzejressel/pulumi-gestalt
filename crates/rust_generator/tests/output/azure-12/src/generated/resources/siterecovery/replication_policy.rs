@@ -46,6 +46,8 @@ pub mod replication_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the frequency(in minutes) at which to create application consistent recovery points.
         ///
         /// > **Note:** The value of `application_consistent_snapshot_frequency_in_minutes` must be less than or equal to the value of `recovery_point_retention_in_minutes`.
@@ -110,6 +112,7 @@ pub mod replication_policy {
         let o = context.register_resource(request);
         ReplicationPolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             application_consistent_snapshot_frequency_in_minutes: o
                 .get_field("applicationConsistentSnapshotFrequencyInMinutes"),
             name: o.get_field("name"),

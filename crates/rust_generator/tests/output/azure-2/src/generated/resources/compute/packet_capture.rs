@@ -186,6 +186,8 @@ pub mod packet_capture {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// One or more `filter` blocks as defined below. Changing this forces a new resource to be created.
         pub filters: pulumi_gestalt_rust::Output<
             Option<Vec<super::super::types::compute::PacketCaptureFilter>>,
@@ -274,6 +276,7 @@ pub mod packet_capture {
         let o = context.register_resource(request);
         PacketCaptureResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             filters: o.get_field("filters"),
             maximum_bytes_per_packet: o.get_field("maximumBytesPerPacket"),
             maximum_bytes_per_session: o.get_field("maximumBytesPerSession"),

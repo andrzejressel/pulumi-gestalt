@@ -126,6 +126,8 @@ pub mod web_app_active_slot {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The timestamp of the last successful swap with `Production`.
         pub last_successful_swap: pulumi_gestalt_rust::Output<String>,
         /// The swap action should overwrite the Production slot's network configuration with the configuration from this slot. Defaults to `true`. Changing this forces a new resource to be created.
@@ -164,6 +166,7 @@ pub mod web_app_active_slot {
         let o = context.register_resource(request);
         WebAppActiveSlotResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             last_successful_swap: o.get_field("lastSuccessfulSwap"),
             overwrite_network_config: o.get_field("overwriteNetworkConfig"),
             slot_id: o.get_field("slotId"),

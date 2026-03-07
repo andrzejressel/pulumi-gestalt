@@ -247,6 +247,8 @@ pub mod database {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// When true , applies changes immediately. When false , applies changes during the preferred maintenance window. Some changes may cause an outage.
         pub apply_immediately: pulumi_gestalt_rust::Output<bool>,
         /// The ARN of the Lightsail instance (matches `id`).
@@ -410,6 +412,7 @@ pub mod database {
         let o = context.register_resource(request);
         DatabaseResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             apply_immediately: o.get_field("applyImmediately"),
             arn: o.get_field("arn"),
             availability_zone: o.get_field("availabilityZone"),

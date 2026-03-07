@@ -1166,6 +1166,8 @@ pub mod forwarding_rule {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The `ports`, `portRange`, and `allPorts` fields are mutually exclusive.
         /// Only packets addressed to ports in the specified range will be forwarded
         /// to the backends configured with this forwarding rule.
@@ -1569,6 +1571,7 @@ pub mod forwarding_rule {
         let o = context.register_resource(request);
         ForwardingRuleResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             all_ports: o.get_field("allPorts"),
             allow_global_access: o.get_field("allowGlobalAccess"),
             allow_psc_global_access: o.get_field("allowPscGlobalAccess"),

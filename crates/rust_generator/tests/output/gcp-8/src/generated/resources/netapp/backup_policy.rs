@@ -108,6 +108,8 @@ pub mod backup_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The total number of volumes assigned by this backup policy.
         pub assigned_volume_count: pulumi_gestalt_rust::Output<i32>,
         /// Create time of the backup policy. A timestamp in RFC3339 UTC "Zulu" format. Examples: "2023-06-22T09:13:01.617Z".
@@ -216,6 +218,7 @@ pub mod backup_policy {
         let o = context.register_resource(request);
         BackupPolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             assigned_volume_count: o.get_field("assignedVolumeCount"),
             create_time: o.get_field("createTime"),
             daily_backup_limit: o.get_field("dailyBackupLimit"),

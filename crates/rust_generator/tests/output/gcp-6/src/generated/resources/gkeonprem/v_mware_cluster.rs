@@ -316,6 +316,8 @@ pub mod v_mware_cluster {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The admin cluster this VMware User Cluster belongs to.
         /// This is the full resource name of the admin cluster's hub membership.
         /// In the future, references to other resource types might be allowed if
@@ -564,6 +566,7 @@ pub mod v_mware_cluster {
         let o = context.register_resource(request);
         VMwareClusterResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             admin_cluster_membership: o.get_field("adminClusterMembership"),
             annotations: o.get_field("annotations"),
             anti_affinity_groups: o.get_field("antiAffinityGroups"),

@@ -219,6 +219,8 @@ pub mod metric_stream {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ARN of the metric stream.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Date and time in [RFC3339 format](https://tools.ietf.org/html/rfc3339#section-5.8) that the metric stream was created.
@@ -337,6 +339,7 @@ pub mod metric_stream {
         let o = context.register_resource(request);
         MetricStreamResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             creation_date: o.get_field("creationDate"),
             exclude_filters: o.get_field("excludeFilters"),

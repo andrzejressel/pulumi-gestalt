@@ -76,6 +76,8 @@ pub mod configuration_template {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// name of the application to associate with this configuration template
         pub application: pulumi_gestalt_rust::Output<String>,
         /// Short description of the Template
@@ -144,6 +146,7 @@ pub mod configuration_template {
         let o = context.register_resource(request);
         ConfigurationTemplateResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             application: o.get_field("application"),
             description: o.get_field("description"),
             environment_id: o.get_field("environmentId"),

@@ -43,6 +43,8 @@ pub mod organization_admin_account {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The AWS account ID for the account to designate as the delegated Amazon Macie administrator account for the organization.
         pub admin_account_id: pulumi_gestalt_rust::Output<String>,
     }
@@ -70,6 +72,7 @@ pub mod organization_admin_account {
         let o = context.register_resource(request);
         OrganizationAdminAccountResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             admin_account_id: o.get_field("adminAccountId"),
         }
     }

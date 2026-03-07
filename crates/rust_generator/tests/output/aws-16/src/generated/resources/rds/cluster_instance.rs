@@ -156,6 +156,8 @@ pub mod cluster_instance {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies whether any database modifications are applied immediately, or during the next maintenance window. Default is`false`.
         pub apply_immediately: pulumi_gestalt_rust::Output<bool>,
         /// Amazon Resource Name (ARN) of cluster instance
@@ -394,6 +396,7 @@ pub mod cluster_instance {
         let o = context.register_resource(request);
         ClusterInstanceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             apply_immediately: o.get_field("applyImmediately"),
             arn: o.get_field("arn"),
             auto_minor_version_upgrade: o.get_field("autoMinorVersionUpgrade"),

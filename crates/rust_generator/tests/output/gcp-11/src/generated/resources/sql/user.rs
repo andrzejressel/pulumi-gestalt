@@ -182,6 +182,8 @@ pub mod user {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The deletion policy for the user.
         /// Setting `ABANDON` allows the resource to be abandoned rather than deleted. This is useful
         /// for Postgres, where users cannot be deleted from the API if they have been granted SQL roles.
@@ -281,6 +283,7 @@ pub mod user {
         let o = context.register_resource(request);
         UserResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             deletion_policy: o.get_field("deletionPolicy"),
             host: o.get_field("host"),
             instance: o.get_field("instance"),

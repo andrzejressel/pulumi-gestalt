@@ -92,6 +92,8 @@ pub mod lifecycle_hook {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Name of the Auto Scaling group to which you want to assign the lifecycle hook
         pub autoscaling_group_name: pulumi_gestalt_rust::Output<String>,
         /// Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an unexpected failure occurs. The value for this parameter can be either CONTINUE or ABANDON. The default value for this parameter is ABANDON.
@@ -174,6 +176,7 @@ pub mod lifecycle_hook {
         let o = context.register_resource(request);
         LifecycleHookResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             autoscaling_group_name: o.get_field("autoscalingGroupName"),
             default_result: o.get_field("defaultResult"),
             heartbeat_timeout: o.get_field("heartbeatTimeout"),

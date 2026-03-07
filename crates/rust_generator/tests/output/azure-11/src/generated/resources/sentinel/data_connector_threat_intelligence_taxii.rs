@@ -100,6 +100,8 @@ pub mod data_connector_threat_intelligence_taxii {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The API root URI of the TAXII server.
         pub api_root_url: pulumi_gestalt_rust::Output<String>,
         /// The collection ID of the TAXII server.
@@ -195,6 +197,7 @@ pub mod data_connector_threat_intelligence_taxii {
         let o = context.register_resource(request);
         DataConnectorThreatIntelligenceTaxiiResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             api_root_url: o.get_field("apiRootUrl"),
             collection_id: o.get_field("collectionId"),
             display_name: o.get_field("displayName"),

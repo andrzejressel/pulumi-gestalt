@@ -69,6 +69,8 @@ pub mod deployment {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Input configuration for the canary deployment when the deployment is a canary release deployment.
         /// See `canary_settings below.
         /// Has no effect when `stage_name` is not set.
@@ -158,6 +160,7 @@ pub mod deployment {
         let o = context.register_resource(request);
         DeploymentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             canary_settings: o.get_field("canarySettings"),
             created_date: o.get_field("createdDate"),
             description: o.get_field("description"),

@@ -139,6 +139,8 @@ pub mod cassandra_cluster {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The authentication method that is used to authenticate clients. Possible values are `None` and `Cassandra`. Defaults to `Cassandra`.
         pub authentication_method: pulumi_gestalt_rust::Output<Option<String>>,
         /// A list of TLS certificates that is used to authorize client connecting to the Cassandra Cluster.
@@ -281,6 +283,7 @@ pub mod cassandra_cluster {
         let o = context.register_resource(request);
         CassandraClusterResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             authentication_method: o.get_field("authenticationMethod"),
             client_certificate_pems: o.get_field("clientCertificatePems"),
             default_admin_password: o.get_field("defaultAdminPassword"),

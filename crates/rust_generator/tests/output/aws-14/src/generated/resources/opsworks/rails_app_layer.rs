@@ -137,6 +137,8 @@ pub mod rails_app_layer {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Keyword for the app server to use. Defaults to "apache_passenger".
         pub app_server: pulumi_gestalt_rust::Output<Option<String>>,
         /// The Amazon Resource Name(ARN) of the layer.
@@ -401,6 +403,7 @@ pub mod rails_app_layer {
         let o = context.register_resource(request);
         RailsAppLayerResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             app_server: o.get_field("appServer"),
             arn: o.get_field("arn"),
             auto_assign_elastic_ips: o.get_field("autoAssignElasticIps"),

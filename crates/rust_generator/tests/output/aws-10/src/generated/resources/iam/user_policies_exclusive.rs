@@ -29,6 +29,8 @@ pub mod user_policies_exclusive {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A list of inline policy names to be assigned to the user. Policies attached to this user but not configured in this argument will be removed.
         pub policy_names: pulumi_gestalt_rust::Output<Vec<String>>,
         /// IAM user name.
@@ -63,6 +65,7 @@ pub mod user_policies_exclusive {
         let o = context.register_resource(request);
         UserPoliciesExclusiveResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             policy_names: o.get_field("policyNames"),
             user_name: o.get_field("userName"),
         }

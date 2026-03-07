@@ -145,6 +145,8 @@ pub mod posture {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Time the Posture was created in UTC.
         pub create_time: pulumi_gestalt_rust::Output<String>,
         /// Description of the posture.
@@ -224,6 +226,7 @@ pub mod posture {
         let o = context.register_resource(request);
         PostureResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),
             etag: o.get_field("etag"),

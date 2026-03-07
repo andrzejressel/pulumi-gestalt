@@ -86,6 +86,8 @@ pub mod activation {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The code the system generates when it processes the activation.
         pub activation_code: pulumi_gestalt_rust::Output<String>,
         /// The description of the resource that you want to register.
@@ -160,6 +162,7 @@ pub mod activation {
         let o = context.register_resource(request);
         ActivationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             activation_code: o.get_field("activationCode"),
             description: o.get_field("description"),
             expiration_date: o.get_field("expirationDate"),

@@ -65,6 +65,8 @@ pub mod identity_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Name or Amazon Resource Name (ARN) of the SES Identity.
         pub identity: pulumi_gestalt_rust::Output<String>,
         /// Name of the policy.
@@ -106,6 +108,7 @@ pub mod identity_policy {
         let o = context.register_resource(request);
         IdentityPolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             identity: o.get_field("identity"),
             name: o.get_field("name"),
             policy: o.get_field("policy"),

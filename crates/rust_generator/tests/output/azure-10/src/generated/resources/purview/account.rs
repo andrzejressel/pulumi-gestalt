@@ -73,6 +73,8 @@ pub mod account {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Atlas Kafka endpoint primary connection string.
         pub atlas_kafka_endpoint_primary_connection_string: pulumi_gestalt_rust::Output<
             String,
@@ -170,6 +172,7 @@ pub mod account {
         let o = context.register_resource(request);
         AccountResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             atlas_kafka_endpoint_primary_connection_string: o
                 .get_field("atlasKafkaEndpointPrimaryConnectionString"),
             atlas_kafka_endpoint_secondary_connection_string: o

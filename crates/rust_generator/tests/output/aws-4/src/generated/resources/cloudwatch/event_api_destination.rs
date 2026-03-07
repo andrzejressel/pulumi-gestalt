@@ -66,6 +66,8 @@ pub mod event_api_destination {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the event API Destination.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// ARN of the EventBridge Connection to use for the API Destination.
@@ -132,6 +134,7 @@ pub mod event_api_destination {
         let o = context.register_resource(request);
         EventApiDestinationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             connection_arn: o.get_field("connectionArn"),
             description: o.get_field("description"),

@@ -74,6 +74,8 @@ pub mod efs_location {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the Amazon Resource Name (ARN) of the access point that DataSync uses to access the Amazon EFS file system.
         pub access_point_arn: pulumi_gestalt_rust::Output<Option<String>>,
         /// Amazon Resource Name (ARN) of the DataSync Location.
@@ -158,6 +160,7 @@ pub mod efs_location {
         let o = context.register_resource(request);
         EfsLocationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             access_point_arn: o.get_field("accessPointArn"),
             arn: o.get_field("arn"),
             ec2_config: o.get_field("ec2Config"),

@@ -83,6 +83,8 @@ pub mod ami_copy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Machine architecture for created instances. Defaults to "x86_64".
         pub architecture: pulumi_gestalt_rust::Output<String>,
         /// ARN of the AMI.
@@ -238,6 +240,7 @@ pub mod ami_copy {
         let o = context.register_resource(request);
         AmiCopyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             architecture: o.get_field("architecture"),
             arn: o.get_field("arn"),
             boot_mode: o.get_field("bootMode"),

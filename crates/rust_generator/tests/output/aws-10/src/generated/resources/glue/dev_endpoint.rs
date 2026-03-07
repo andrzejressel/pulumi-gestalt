@@ -111,6 +111,8 @@ pub mod dev_endpoint {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A map of arguments used to configure the endpoint.
         pub arguments: pulumi_gestalt_rust::Output<
             Option<std::collections::HashMap<String, String>>,
@@ -266,6 +268,7 @@ pub mod dev_endpoint {
         let o = context.register_resource(request);
         DevEndpointResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arguments: o.get_field("arguments"),
             arn: o.get_field("arn"),
             availability_zone: o.get_field("availabilityZone"),

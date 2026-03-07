@@ -47,6 +47,8 @@ pub mod network_association {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The unique ID of the target network association.
         pub association_id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Client VPN endpoint.
@@ -87,6 +89,7 @@ pub mod network_association {
         let o = context.register_resource(request);
         NetworkAssociationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             association_id: o.get_field("associationId"),
             client_vpn_endpoint_id: o.get_field("clientVpnEndpointId"),
             subnet_id: o.get_field("subnetId"),

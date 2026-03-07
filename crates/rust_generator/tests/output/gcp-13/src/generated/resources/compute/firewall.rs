@@ -246,6 +246,8 @@ pub mod firewall {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The list of ALLOW rules specified by this firewall. Each rule
         /// specifies a protocol and port-range tuple that describes a permitted
         /// connection.
@@ -467,6 +469,7 @@ pub mod firewall {
         let o = context.register_resource(request);
         FirewallResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             allows: o.get_field("allows"),
             creation_timestamp: o.get_field("creationTimestamp"),
             denies: o.get_field("denies"),

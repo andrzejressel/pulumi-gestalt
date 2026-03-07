@@ -49,6 +49,8 @@ pub mod hsm_client_certificate {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the Hsm Client Certificate.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The identifier of the HSM client certificate.
@@ -95,6 +97,7 @@ pub mod hsm_client_certificate {
         let o = context.register_resource(request);
         HsmClientCertificateResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             hsm_client_certificate_identifier: o
                 .get_field("hsmClientCertificateIdentifier"),

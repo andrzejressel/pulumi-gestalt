@@ -56,6 +56,8 @@ pub mod shared_directory_accepter {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Method used when sharing a directory (i.e., `ORGANIZATIONS` or `HANDSHAKE`).
         pub method: pulumi_gestalt_rust::Output<String>,
         /// Message sent by the directory owner to the directory consumer to help the directory consumer administrator determine whether to approve or reject the share invitation.
@@ -92,6 +94,7 @@ pub mod shared_directory_accepter {
         let o = context.register_resource(request);
         SharedDirectoryAccepterResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             method: o.get_field("method"),
             notes: o.get_field("notes"),
             owner_account_id: o.get_field("ownerAccountId"),

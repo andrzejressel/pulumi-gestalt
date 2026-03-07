@@ -86,6 +86,8 @@ pub mod subscriber {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Amazon S3 or Lake Formation access type.
         pub access_type: pulumi_gestalt_rust::Output<String>,
         /// ARN of the Data Lake.
@@ -182,6 +184,7 @@ pub mod subscriber {
         let o = context.register_resource(request);
         SubscriberResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             access_type: o.get_field("accessType"),
             arn: o.get_field("arn"),
             resource_share_arn: o.get_field("resourceShareArn"),

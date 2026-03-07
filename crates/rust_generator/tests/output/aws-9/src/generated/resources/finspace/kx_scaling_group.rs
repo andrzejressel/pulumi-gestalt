@@ -63,6 +63,8 @@ pub mod kx_scaling_group {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) identifier of the KX Scaling Group.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The availability zone identifiers for the requested regions.
@@ -146,6 +148,7 @@ pub mod kx_scaling_group {
         let o = context.register_resource(request);
         KxScalingGroupResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             availability_zone_id: o.get_field("availabilityZoneId"),
             clusters: o.get_field("clusters"),

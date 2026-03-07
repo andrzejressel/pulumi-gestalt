@@ -72,6 +72,8 @@ pub mod job_template {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ARN of the job template.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The job template data which holds values of StartJobRun API request.
@@ -130,6 +132,7 @@ pub mod job_template {
         let o = context.register_resource(request);
         JobTemplateResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             job_template_data: o.get_field("jobTemplateData"),
             kms_key_arn: o.get_field("kmsKeyArn"),

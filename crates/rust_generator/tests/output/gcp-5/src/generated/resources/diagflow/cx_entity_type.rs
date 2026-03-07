@@ -136,6 +136,8 @@ pub mod cx_entity_type {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Represents kinds of entities. * AUTO_EXPANSION_MODE_UNSPECIFIED: Auto expansion disabled for the entity. *
         /// AUTO_EXPANSION_MODE_DEFAULT: Allows an agent to recognize values that have not been explicitly listed in the entity.
         /// Possible values: ["AUTO_EXPANSION_MODE_DEFAULT", "AUTO_EXPANSION_MODE_UNSPECIFIED"]
@@ -240,6 +242,7 @@ pub mod cx_entity_type {
         let o = context.register_resource(request);
         CxEntityTypeResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             auto_expansion_mode: o.get_field("autoExpansionMode"),
             display_name: o.get_field("displayName"),
             enable_fuzzy_extraction: o.get_field("enableFuzzyExtraction"),

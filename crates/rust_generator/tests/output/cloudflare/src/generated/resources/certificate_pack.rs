@@ -58,6 +58,8 @@ pub mod certificate_pack {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Which certificate authority to issue the certificate pack. Available values: `digicert`, `lets_encrypt`, `google`, `ssl_com`. **Modifying this attribute will force creation of a new resource.**
         pub certificate_authority: pulumi_gestalt_rust::Output<String>,
         /// Whether or not to include Cloudflare branding. This will add `sni.cloudflaressl.com` as the Common Name if set to `true`. **Modifying this attribute will force creation of a new resource.**
@@ -154,6 +156,7 @@ pub mod certificate_pack {
         let o = context.register_resource(request);
         CertificatePackResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             certificate_authority: o.get_field("certificateAuthority"),
             cloudflare_branding: o.get_field("cloudflareBranding"),
             hosts: o.get_field("hosts"),

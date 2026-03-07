@@ -39,6 +39,8 @@ pub mod assignment_dynamic_scope {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A `filter` block as defined below.
         pub filter: pulumi_gestalt_rust::Output<
             super::super::types::maintenance::AssignmentDynamicScopeFilter,
@@ -87,6 +89,7 @@ pub mod assignment_dynamic_scope {
         let o = context.register_resource(request);
         AssignmentDynamicScopeResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             filter: o.get_field("filter"),
             maintenance_configuration_id: o.get_field("maintenanceConfigurationId"),
             name: o.get_field("name"),

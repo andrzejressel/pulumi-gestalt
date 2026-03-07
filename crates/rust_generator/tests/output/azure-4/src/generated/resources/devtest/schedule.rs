@@ -107,6 +107,8 @@ pub mod schedule {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The properties of a daily schedule. If the schedule occurs once each day of the week, specify the daily recurrence. A `daily_recurrence` block as defined below.
         pub daily_recurrence: pulumi_gestalt_rust::Output<
             Option<super::super::types::devtest::ScheduleDailyRecurrence>,
@@ -223,6 +225,7 @@ pub mod schedule {
         let o = context.register_resource(request);
         ScheduleResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             daily_recurrence: o.get_field("dailyRecurrence"),
             hourly_recurrence: o.get_field("hourlyRecurrence"),
             lab_name: o.get_field("labName"),

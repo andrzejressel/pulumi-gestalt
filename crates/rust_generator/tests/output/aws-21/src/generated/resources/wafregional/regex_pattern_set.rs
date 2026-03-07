@@ -48,6 +48,8 @@ pub mod regex_pattern_set {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The name or description of the Regex Pattern Set.
         pub name: pulumi_gestalt_rust::Output<String>,
         /// A list of regular expression (regex) patterns that you want AWS WAF to search for, such as `B[a@]dB[o0]t`.
@@ -84,6 +86,7 @@ pub mod regex_pattern_set {
         let o = context.register_resource(request);
         RegexPatternSetResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             name: o.get_field("name"),
             regex_pattern_strings: o.get_field("regexPatternStrings"),
         }

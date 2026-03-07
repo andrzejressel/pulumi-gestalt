@@ -81,6 +81,8 @@ pub mod route {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The destination to which the route applies. Can be CIDR (such as `10.1.0.0/16`) or [Azure Service Tag](https://docs.microsoft.com/azure/virtual-network/service-tags-overview) (such as `ApiManagement`, `AzureBackup` or `AzureMonitor`) format.
         pub address_prefix: pulumi_gestalt_rust::Output<String>,
         /// The name of the route. Changing this forces a new resource to be created.
@@ -145,6 +147,7 @@ pub mod route {
         let o = context.register_resource(request);
         RouteResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             address_prefix: o.get_field("addressPrefix"),
             name: o.get_field("name"),
             next_hop_in_ip_address: o.get_field("nextHopInIpAddress"),

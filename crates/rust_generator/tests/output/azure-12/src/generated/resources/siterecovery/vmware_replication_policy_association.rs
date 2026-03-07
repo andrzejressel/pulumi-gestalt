@@ -77,6 +77,8 @@ pub mod vmware_replication_policy_association {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The name of the replication policy association. Changing this forces a new association to be created.
         pub name: pulumi_gestalt_rust::Output<String>,
         /// The ID of the VMWare replication policy which to be associated. Changing this forces a new association to be created.
@@ -120,6 +122,7 @@ pub mod vmware_replication_policy_association {
         let o = context.register_resource(request);
         VmwareReplicationPolicyAssociationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             name: o.get_field("name"),
             policy_id: o.get_field("policyId"),
             recovery_vault_id: o.get_field("recoveryVaultId"),

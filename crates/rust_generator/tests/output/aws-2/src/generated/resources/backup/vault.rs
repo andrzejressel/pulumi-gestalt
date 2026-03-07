@@ -54,6 +54,8 @@ pub mod vault {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the vault.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// A boolean that indicates that all recovery points stored in the vault are deleted so that the vault can be destroyed without error.
@@ -112,6 +114,7 @@ pub mod vault {
         let o = context.register_resource(request);
         VaultResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             force_destroy: o.get_field("forceDestroy"),
             kms_key_arn: o.get_field("kmsKeyArn"),

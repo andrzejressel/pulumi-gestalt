@@ -64,6 +64,8 @@ pub mod service_perimeter_dry_run_ingress_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Defines the conditions on the source of a request causing this `IngressPolicy`
         /// to apply.
         /// Structure is documented below.
@@ -121,6 +123,7 @@ pub mod service_perimeter_dry_run_ingress_policy {
         let o = context.register_resource(request);
         ServicePerimeterDryRunIngressPolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             ingress_from: o.get_field("ingressFrom"),
             ingress_to: o.get_field("ingressTo"),
             perimeter: o.get_field("perimeter"),

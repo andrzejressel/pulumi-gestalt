@@ -151,6 +151,8 @@ pub mod access_approval_settings {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The asymmetric crypto key version to use for signing approval requests. Empty active_key_version indicates that a
         /// Google-managed key should be used for signing.
         pub active_key_version: pulumi_gestalt_rust::Output<Option<String>>,
@@ -221,6 +223,7 @@ pub mod access_approval_settings {
         let o = context.register_resource(request);
         AccessApprovalSettingsResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             active_key_version: o.get_field("activeKeyVersion"),
             ancestor_has_active_key_version: o.get_field("ancestorHasActiveKeyVersion"),
             enrolled_ancestor: o.get_field("enrolledAncestor"),

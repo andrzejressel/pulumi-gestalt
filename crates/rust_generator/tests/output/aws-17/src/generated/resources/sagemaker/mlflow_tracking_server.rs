@@ -73,6 +73,8 @@ pub mod mlflow_tracking_server {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) assigned by AWS to this MLFlow Tracking Server.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The S3 URI for a general purpose bucket to use as the MLflow Tracking Server artifact store.
@@ -163,6 +165,7 @@ pub mod mlflow_tracking_server {
         let o = context.register_resource(request);
         MlflowTrackingServerResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             artifact_store_uri: o.get_field("artifactStoreUri"),
             automatic_model_registration: o.get_field("automaticModelRegistration"),

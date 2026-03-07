@@ -275,6 +275,8 @@ pub mod topic {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
         pub effective_labels: pulumi_gestalt_rust::Output<
             std::collections::HashMap<String, String>,
@@ -397,6 +399,7 @@ pub mod topic {
         let o = context.register_resource(request);
         TopicResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             effective_labels: o.get_field("effectiveLabels"),
             ingestion_data_source_settings: o.get_field("ingestionDataSourceSettings"),
             kms_key_name: o.get_field("kmsKeyName"),

@@ -91,6 +91,8 @@ pub mod pod_identity_association {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the association.
         pub association_arn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the association.
@@ -158,6 +160,7 @@ pub mod pod_identity_association {
         let o = context.register_resource(request);
         PodIdentityAssociationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             association_arn: o.get_field("associationArn"),
             association_id: o.get_field("associationId"),
             cluster_name: o.get_field("clusterName"),

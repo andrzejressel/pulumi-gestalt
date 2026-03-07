@@ -105,6 +105,8 @@ pub mod backup_instance_disk {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Backup Policy.
         pub backup_policy_id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the source Disk. Changing this forces a new Backup Instance Disk to be created.
@@ -169,6 +171,7 @@ pub mod backup_instance_disk {
         let o = context.register_resource(request);
         BackupInstanceDiskResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             backup_policy_id: o.get_field("backupPolicyId"),
             disk_id: o.get_field("diskId"),
             location: o.get_field("location"),

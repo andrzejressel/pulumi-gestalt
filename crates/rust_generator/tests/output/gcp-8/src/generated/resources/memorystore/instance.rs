@@ -303,6 +303,8 @@ pub mod instance {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Optional. Immutable. Authorization mode of the instance. Possible values:
         /// AUTH_DISABLED
         /// IAM_AUTH
@@ -530,6 +532,7 @@ pub mod instance {
         let o = context.register_resource(request);
         InstanceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             authorization_mode: o.get_field("authorizationMode"),
             create_time: o.get_field("createTime"),
             deletion_protection_enabled: o.get_field("deletionProtectionEnabled"),

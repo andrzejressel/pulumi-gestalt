@@ -87,6 +87,8 @@ pub mod default_patch_baseline {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ID of the patch baseline.
         /// Can be an ID or an ARN.
         /// When specifying an AWS-provided patch baseline, must be the ARN.
@@ -137,6 +139,7 @@ pub mod default_patch_baseline {
         let o = context.register_resource(request);
         DefaultPatchBaselineResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             baseline_id: o.get_field("baselineId"),
             operating_system: o.get_field("operatingSystem"),
         }

@@ -195,6 +195,8 @@ pub mod server_tls_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// This field applies only for Traffic Director policies. It is must be set to false for external HTTPS load balancer policies.
         /// Determines if server allows plaintext connections. If set to true, server allows plain text connections. By default, it is set to false. This setting is not exclusive of other encryption modes. For example, if allowOpen and mtlsPolicy are set, server allows both plain text and mTLS connections. See documentation of other encryption modes to confirm compatibility.
         /// Consider using it if you wish to upgrade in place your deployment to TLS while having mixed TLS and non-TLS traffic reaching port :80.
@@ -304,6 +306,7 @@ pub mod server_tls_policy {
         let o = context.register_resource(request);
         ServerTlsPolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             allow_open: o.get_field("allowOpen"),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),

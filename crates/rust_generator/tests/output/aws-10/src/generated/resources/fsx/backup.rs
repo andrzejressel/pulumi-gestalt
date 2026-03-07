@@ -134,6 +134,8 @@ pub mod backup {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name of the backup.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the file system to back up. Required if backing up Lustre or Windows file systems.
@@ -189,6 +191,7 @@ pub mod backup {
         let o = context.register_resource(request);
         BackupResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             file_system_id: o.get_field("fileSystemId"),
             kms_key_id: o.get_field("kmsKeyId"),

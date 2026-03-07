@@ -74,6 +74,8 @@ pub mod cluster_parameter_group {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the db cluster parameter group.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The description of the DB cluster parameter group. Defaults to "Managed by Pulumi".
@@ -146,6 +148,7 @@ pub mod cluster_parameter_group {
         let o = context.register_resource(request);
         ClusterParameterGroupResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             description: o.get_field("description"),
             family: o.get_field("family"),

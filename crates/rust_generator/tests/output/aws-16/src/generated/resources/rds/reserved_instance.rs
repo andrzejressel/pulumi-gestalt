@@ -65,6 +65,8 @@ pub mod reserved_instance {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ARN for the reserved DB instance.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Currency code for the reserved DB instance.
@@ -149,6 +151,7 @@ pub mod reserved_instance {
         let o = context.register_resource(request);
         ReservedInstanceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             currency_code: o.get_field("currencyCode"),
             db_instance_class: o.get_field("dbInstanceClass"),

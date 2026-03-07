@@ -128,6 +128,8 @@ pub mod glossary_term {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Time of glossary term creation.
         pub created_at: pulumi_gestalt_rust::Output<String>,
         /// Creator of glossary term.
@@ -213,6 +215,7 @@ pub mod glossary_term {
         let o = context.register_resource(request);
         GlossaryTermResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             created_at: o.get_field("createdAt"),
             created_by: o.get_field("createdBy"),
             domain_identifier: o.get_field("domainIdentifier"),

@@ -90,6 +90,8 @@ pub mod action_http {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the HTTP Body that should be sent to the `uri` when this HTTP Action is triggered.
         pub body: pulumi_gestalt_rust::Output<Option<String>>,
         /// Specifies a Map of Key-Value Pairs that should be sent to the `uri` when this HTTP Action is triggered.
@@ -174,6 +176,7 @@ pub mod action_http {
         let o = context.register_resource(request);
         ActionHttpResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             body: o.get_field("body"),
             headers: o.get_field("headers"),
             logic_app_id: o.get_field("logicAppId"),

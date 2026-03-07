@@ -67,6 +67,8 @@ pub mod peered_dns_domain {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The DNS domain suffix of the peered DNS domain. Make sure to suffix with a `.` (dot).
         pub dns_suffix: pulumi_gestalt_rust::Output<String>,
         /// Internal name used for the peered DNS domain.
@@ -124,6 +126,7 @@ pub mod peered_dns_domain {
         let o = context.register_resource(request);
         PeeredDnsDomainResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             dns_suffix: o.get_field("dnsSuffix"),
             name: o.get_field("name"),
             network: o.get_field("network"),

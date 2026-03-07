@@ -118,6 +118,8 @@ pub mod backup {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The amount of bytes needed to allocate a full copy of the snapshot content.
         pub capacity_gb: pulumi_gestalt_rust::Output<String>,
         /// The time when the snapshot was created in RFC3339 text format.
@@ -225,6 +227,7 @@ pub mod backup {
         let o = context.register_resource(request);
         BackupResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             capacity_gb: o.get_field("capacityGb"),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),

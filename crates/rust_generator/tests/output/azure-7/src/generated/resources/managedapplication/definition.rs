@@ -96,6 +96,8 @@ pub mod definition {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// One or more `authorization` block defined below.
         pub authorizations: pulumi_gestalt_rust::Output<
             Option<Vec<super::super::types::managedapplication::DefinitionAuthorization>>,
@@ -206,6 +208,7 @@ pub mod definition {
         let o = context.register_resource(request);
         DefinitionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             authorizations: o.get_field("authorizations"),
             create_ui_definition: o.get_field("createUiDefinition"),
             description: o.get_field("description"),

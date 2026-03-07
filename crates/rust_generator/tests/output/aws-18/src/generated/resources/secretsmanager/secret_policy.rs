@@ -69,6 +69,8 @@ pub mod secret_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Makes an optional API call to Zelkova to validate the Resource Policy to prevent broad access to your secret.
         pub block_public_policy: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Valid JSON document representing a [resource policy](https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-based-policies.html). Unlike `aws.secretsmanager.Secret`, where `policy` can be set to `"{}"` to delete the policy, `"{}"` is not a valid policy since `policy` is required.
@@ -112,6 +114,7 @@ pub mod secret_policy {
         let o = context.register_resource(request);
         SecretPolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             block_public_policy: o.get_field("blockPublicPolicy"),
             policy: o.get_field("policy"),
             secret_arn: o.get_field("secretArn"),

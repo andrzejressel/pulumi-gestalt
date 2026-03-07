@@ -125,6 +125,8 @@ pub mod cassandra_table {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Time to live of the Analytical Storage. Possible values are between `-1` and `2147483647` except `0`. `-1` means the Analytical Storage never expires. Changing this forces a new resource to be created.
         ///
         /// > **Note:** throughput has a maximum value of `1000000` unless a higher limit is requested via Azure Support
@@ -202,6 +204,7 @@ pub mod cassandra_table {
         let o = context.register_resource(request);
         CassandraTableResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             analytical_storage_ttl: o.get_field("analyticalStorageTtl"),
             autoscale_settings: o.get_field("autoscaleSettings"),
             cassandra_keyspace_id: o.get_field("cassandraKeyspaceId"),

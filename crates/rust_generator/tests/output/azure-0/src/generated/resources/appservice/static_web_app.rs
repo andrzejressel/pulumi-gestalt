@@ -99,6 +99,8 @@ pub mod static_web_app {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The API key of this Static Web App, which is used for later interacting with this Static Web App from other clients, e.g. GitHub Action.
         pub api_key: pulumi_gestalt_rust::Output<String>,
         /// A key-value pair of App Settings.
@@ -223,6 +225,7 @@ pub mod static_web_app {
         let o = context.register_resource(request);
         StaticWebAppResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             api_key: o.get_field("apiKey"),
             app_settings: o.get_field("appSettings"),
             basic_auth: o.get_field("basicAuth"),

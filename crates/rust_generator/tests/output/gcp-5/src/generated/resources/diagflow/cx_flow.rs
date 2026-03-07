@@ -378,6 +378,8 @@ pub mod cx_flow {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Hierarchical advanced settings for this flow. The settings exposed at the lower level overrides the settings exposed at the higher level.
         /// Hierarchy: Agent->Flow->Page->Fulfillment/Parameter.
         /// Structure is documented below.
@@ -512,6 +514,7 @@ pub mod cx_flow {
         let o = context.register_resource(request);
         CxFlowResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             advanced_settings: o.get_field("advancedSettings"),
             description: o.get_field("description"),
             display_name: o.get_field("displayName"),

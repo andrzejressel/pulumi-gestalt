@@ -793,6 +793,8 @@ pub mod restore_plan {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A reference to the BackupPlan from which Backups may be used
         /// as the source for Restores created via this RestorePlan.
         pub backup_plan: pulumi_gestalt_rust::Output<String>,
@@ -891,6 +893,7 @@ pub mod restore_plan {
         let o = context.register_resource(request);
         RestorePlanResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             backup_plan: o.get_field("backupPlan"),
             cluster: o.get_field("cluster"),
             description: o.get_field("description"),

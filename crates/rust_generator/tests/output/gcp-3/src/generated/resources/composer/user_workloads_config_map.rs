@@ -100,6 +100,8 @@ pub mod user_workloads_config_map {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The "data" field of Kubernetes ConfigMap, organized in key-value pairs.
         /// For details see: https://kubernetes.io/docs/concepts/configuration/configmap/
         pub data: pulumi_gestalt_rust::Output<
@@ -162,6 +164,7 @@ pub mod user_workloads_config_map {
         let o = context.register_resource(request);
         UserWorkloadsConfigMapResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             data: o.get_field("data"),
             environment: o.get_field("environment"),
             name: o.get_field("name"),

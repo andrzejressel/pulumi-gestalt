@@ -141,6 +141,8 @@ pub mod nat_rule {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies a reference to backendAddressPool resource.
         pub backend_address_pool_id: pulumi_gestalt_rust::Output<Option<String>>,
         pub backend_ip_configuration_id: pulumi_gestalt_rust::Output<String>,
@@ -260,6 +262,7 @@ pub mod nat_rule {
         let o = context.register_resource(request);
         NatRuleResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             backend_address_pool_id: o.get_field("backendAddressPoolId"),
             backend_ip_configuration_id: o.get_field("backendIpConfigurationId"),
             backend_port: o.get_field("backendPort"),

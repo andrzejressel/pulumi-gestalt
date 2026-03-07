@@ -119,6 +119,8 @@ pub mod service_project_attachment {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Output only. Create time.
         pub create_time: pulumi_gestalt_rust::Output<String>,
         /// "Identifier. The resource name of a ServiceProjectAttachment. Format:\"projects/{host-project-id}/locations/global/serviceProjectAttachments/{service-project-id}.\""
@@ -176,6 +178,7 @@ pub mod service_project_attachment {
         let o = context.register_resource(request);
         ServiceProjectAttachmentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             create_time: o.get_field("createTime"),
             name: o.get_field("name"),
             project: o.get_field("project"),

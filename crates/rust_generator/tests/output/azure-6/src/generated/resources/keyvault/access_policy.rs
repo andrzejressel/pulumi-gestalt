@@ -121,6 +121,8 @@ pub mod access_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The object ID of an Application in Azure Active Directory. Changing this forces a new resource to be created.
         pub application_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// List of certificate permissions, must be one or more from the following: `Backup`, `Create`, `Delete`, `DeleteIssuers`, `Get`, `GetIssuers`, `Import`, `List`, `ListIssuers`, `ManageContacts`, `ManageIssuers`, `Purge`, `Recover`, `Restore`, `SetIssuers` and `Update`.
@@ -199,6 +201,7 @@ pub mod access_policy {
         let o = context.register_resource(request);
         AccessPolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             application_id: o.get_field("applicationId"),
             certificate_permissions: o.get_field("certificatePermissions"),
             key_permissions: o.get_field("keyPermissions"),

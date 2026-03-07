@@ -191,6 +191,8 @@ pub mod volume {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Reports the resource name of the Active Directory policy being used. Inherited from storage pool.
         pub active_directory: pulumi_gestalt_rust::Output<String>,
         /// Backup configuration for the volume.
@@ -450,6 +452,7 @@ pub mod volume {
         let o = context.register_resource(request);
         VolumeResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             active_directory: o.get_field("activeDirectory"),
             backup_config: o.get_field("backupConfig"),
             capacity_gib: o.get_field("capacityGib"),

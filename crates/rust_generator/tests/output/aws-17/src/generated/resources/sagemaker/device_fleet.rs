@@ -69,6 +69,8 @@ pub mod device_fleet {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) assigned by AWS to this Device Fleet.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// A description of the fleet.
@@ -144,6 +146,7 @@ pub mod device_fleet {
         let o = context.register_resource(request);
         DeviceFleetResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             description: o.get_field("description"),
             device_fleet_name: o.get_field("deviceFleetName"),

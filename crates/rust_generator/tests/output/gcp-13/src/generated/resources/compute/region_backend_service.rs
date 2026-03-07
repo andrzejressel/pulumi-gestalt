@@ -707,6 +707,8 @@ pub mod region_backend_service {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Lifetime of cookies in seconds if session_affinity is
         /// GENERATED_COOKIE. If set to 0, the cookie is non-persistent and lasts
         /// only until the end of the browser session (or equivalent). The
@@ -1079,6 +1081,7 @@ pub mod region_backend_service {
         let o = context.register_resource(request);
         RegionBackendServiceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             affinity_cookie_ttl_sec: o.get_field("affinityCookieTtlSec"),
             backends: o.get_field("backends"),
             cdn_policy: o.get_field("cdnPolicy"),

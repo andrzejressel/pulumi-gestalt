@@ -96,6 +96,8 @@ pub mod web_app {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Application Insights API Key to associate with the Web App Bot.
         pub developer_app_insights_api_key: pulumi_gestalt_rust::Output<Option<String>>,
         /// The Application Insights Application ID to associate with the Web App Bot.
@@ -217,6 +219,7 @@ pub mod web_app {
         let o = context.register_resource(request);
         WebAppResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             developer_app_insights_api_key: o.get_field("developerAppInsightsApiKey"),
             developer_app_insights_application_id: o
                 .get_field("developerAppInsightsApplicationId"),

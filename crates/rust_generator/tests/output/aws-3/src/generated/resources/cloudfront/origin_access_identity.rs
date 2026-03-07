@@ -109,6 +109,8 @@ pub mod origin_access_identity {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Internal value used by CloudFront to allow future
         /// updates to the origin access identity.
         pub caller_reference: pulumi_gestalt_rust::Output<String>,
@@ -153,6 +155,7 @@ pub mod origin_access_identity {
         let o = context.register_resource(request);
         OriginAccessIdentityResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             caller_reference: o.get_field("callerReference"),
             cloudfront_access_identity_path: o.get_field("cloudfrontAccessIdentityPath"),
             comment: o.get_field("comment"),

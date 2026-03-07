@@ -100,6 +100,8 @@ pub mod dev_center {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The URI of the Dev Center.
         pub dev_center_uri: pulumi_gestalt_rust::Output<String>,
         /// An `identity` block as defined below. Specifies the Managed Identity which should be assigned to this Dev Center.
@@ -161,6 +163,7 @@ pub mod dev_center {
         let o = context.register_resource(request);
         DevCenterResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             dev_center_uri: o.get_field("devCenterUri"),
             identity: o.get_field("identity"),
             location: o.get_field("location"),
