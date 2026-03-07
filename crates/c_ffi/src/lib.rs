@@ -553,7 +553,7 @@ fn extract_field(
         if inputs_len > 0 {
             panic!("Inputs pointer is null but size is greater than 0");
         }
-         return HashMap::new();
+        return HashMap::new();
     }
     let mut objects = HashMap::new();
     unsafe {
