@@ -59,6 +59,8 @@ pub mod directory_config {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Date and time, in UTC and extended RFC 3339 format, when the directory config was created.
         pub created_time: pulumi_gestalt_rust::Output<String>,
         /// Fully qualified name of the directory.
@@ -110,6 +112,7 @@ pub mod directory_config {
         let o = context.register_resource(request);
         DirectoryConfigResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             created_time: o.get_field("createdTime"),
             directory_name: o.get_field("directoryName"),
             organizational_unit_distinguished_names: o

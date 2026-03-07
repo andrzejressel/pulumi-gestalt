@@ -71,6 +71,8 @@ pub mod application_network_rule_set {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Whether these IP Rules apply for device connectivity to IoT Hub and Device Provisioning Service associated with this IoT Central Application. Possible values are `true`, `false`. Defaults to `true`
         pub apply_to_device: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Specifies the default action for the IoT Central Application Network Rule Set. Possible values are `Allow` and `Deny`. Defaults to `Deny`.
@@ -124,6 +126,7 @@ pub mod application_network_rule_set {
         let o = context.register_resource(request);
         ApplicationNetworkRuleSetResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             apply_to_device: o.get_field("applyToDevice"),
             default_action: o.get_field("defaultAction"),
             iotcentral_application_id: o.get_field("iotcentralApplicationId"),

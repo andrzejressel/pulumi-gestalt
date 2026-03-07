@@ -171,6 +171,8 @@ pub mod ontap_file_system {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name of the file system.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can retain automatic backups for a maximum of 90 days.
@@ -351,6 +353,7 @@ pub mod ontap_file_system {
         let o = context.register_resource(request);
         OntapFileSystemResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             automatic_backup_retention_days: o.get_field("automaticBackupRetentionDays"),
             daily_automatic_backup_start_time: o

@@ -116,6 +116,8 @@ pub mod subscription {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The idle interval after which the topic is automatically deleted as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). The minimum duration is `5` minutes or `PT5M`. Defaults to `P10675199DT2H48M5.4775807S`.
         pub auto_delete_on_idle: pulumi_gestalt_rust::Output<Option<String>>,
         /// Boolean flag which controls whether the Subscription supports batched operations.
@@ -265,6 +267,7 @@ pub mod subscription {
         let o = context.register_resource(request);
         SubscriptionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             auto_delete_on_idle: o.get_field("autoDeleteOnIdle"),
             batched_operations_enabled: o.get_field("batchedOperationsEnabled"),
             client_scoped_subscription: o.get_field("clientScopedSubscription"),

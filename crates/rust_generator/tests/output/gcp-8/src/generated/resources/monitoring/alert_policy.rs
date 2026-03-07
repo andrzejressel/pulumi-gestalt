@@ -211,6 +211,8 @@ pub mod alert_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Control over how this alert policy's notification channels are notified.
         pub alert_strategy: pulumi_gestalt_rust::Output<
             Option<super::super::types::monitoring::AlertPolicyAlertStrategy>,
@@ -338,6 +340,7 @@ pub mod alert_policy {
         let o = context.register_resource(request);
         AlertPolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             alert_strategy: o.get_field("alertStrategy"),
             combiner: o.get_field("combiner"),
             conditions: o.get_field("conditions"),

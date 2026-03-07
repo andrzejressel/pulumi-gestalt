@@ -107,6 +107,8 @@ pub mod failover_group {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A set of database names to include in the failover group.
         pub databases: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// The name of the Failover Group. Changing this forces a new resource to be created.
@@ -186,6 +188,7 @@ pub mod failover_group {
         let o = context.register_resource(request);
         FailoverGroupResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             databases: o.get_field("databases"),
             name: o.get_field("name"),
             partner_servers: o.get_field("partnerServers"),

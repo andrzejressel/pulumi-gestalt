@@ -81,6 +81,8 @@ pub mod lifecycle_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The policy document. This is a JSON formatted string. See more details about [Policy Parameters](http://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html#lifecycle_policy_parameters) in the official AWS docs. Consider using the `aws.ecr.getLifecyclePolicyDocument` data_source to generate/manage the JSON document used for the `policy` argument.
         pub policy: pulumi_gestalt_rust::Output<String>,
         /// The registry ID where the repository was created.
@@ -117,6 +119,7 @@ pub mod lifecycle_policy {
         let o = context.register_resource(request);
         LifecyclePolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             policy: o.get_field("policy"),
             registry_id: o.get_field("registryId"),
             repository: o.get_field("repository"),

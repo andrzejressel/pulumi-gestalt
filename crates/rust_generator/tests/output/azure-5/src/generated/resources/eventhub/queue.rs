@@ -120,6 +120,8 @@ pub mod queue {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ISO 8601 timespan duration of the idle interval after which the Queue is automatically deleted, minimum of 5 minutes.
         pub auto_delete_on_idle: pulumi_gestalt_rust::Output<String>,
         /// Boolean flag which controls whether server-side batched operations are enabled. Defaults to `true`.
@@ -292,6 +294,7 @@ pub mod queue {
         let o = context.register_resource(request);
         QueueResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             auto_delete_on_idle: o.get_field("autoDeleteOnIdle"),
             batched_operations_enabled: o.get_field("batchedOperationsEnabled"),
             dead_lettering_on_message_expiration: o

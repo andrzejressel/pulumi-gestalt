@@ -107,6 +107,8 @@ pub mod endpoint {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The DNS name for users to reach your application.
         pub application_domain: pulumi_gestalt_rust::Output<String>,
         /// The type of attachment. Currently, only `vpc` is supported.
@@ -246,6 +248,7 @@ pub mod endpoint {
         let o = context.register_resource(request);
         EndpointResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             application_domain: o.get_field("applicationDomain"),
             attachment_type: o.get_field("attachmentType"),
             description: o.get_field("description"),

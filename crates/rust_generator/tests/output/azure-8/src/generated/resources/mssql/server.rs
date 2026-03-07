@@ -211,6 +211,8 @@ pub mod server {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The administrator login name for the new server. Required unless `azuread_authentication_only` in the `azuread_administrator` block is `true`. When omitted, Azure will generate a default username which cannot be subsequently changed. Changing this forces a new resource to be created.
         pub administrator_login: pulumi_gestalt_rust::Output<String>,
         /// The password associated with the `administrator_login` user. Needs to comply with Azure's [Password Policy](https://msdn.microsoft.com/library/ms161959.aspx). Required unless `azuread_authentication_only` in the `azuread_administrator` block is `true`.
@@ -373,6 +375,7 @@ pub mod server {
         let o = context.register_resource(request);
         ServerResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             administrator_login: o.get_field("administratorLogin"),
             administrator_login_password: o.get_field("administratorLoginPassword"),
             azuread_administrator: o.get_field("azureadAdministrator"),

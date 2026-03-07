@@ -80,6 +80,8 @@ pub mod document_ai_warehouse_location {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The access control mode for accessing the customer data.
         /// Possible values are: `ACL_MODE_DOCUMENT_LEVEL_ACCESS_CONTROL_GCI`, `ACL_MODE_DOCUMENT_LEVEL_ACCESS_CONTROL_BYOID`, `ACL_MODE_UNIVERSAL_ACCESS`.
         pub access_control_mode: pulumi_gestalt_rust::Output<String>,
@@ -155,6 +157,7 @@ pub mod document_ai_warehouse_location {
         let o = context.register_resource(request);
         DocumentAiWarehouseLocationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             access_control_mode: o.get_field("accessControlMode"),
             database_type: o.get_field("databaseType"),
             document_creator_default_role: o.get_field("documentCreatorDefaultRole"),

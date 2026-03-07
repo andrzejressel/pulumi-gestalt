@@ -92,6 +92,8 @@ pub mod load_test {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Resource data plane URI.
         pub data_plane_uri: pulumi_gestalt_rust::Output<String>,
         /// Description of the resource.
@@ -169,6 +171,7 @@ pub mod load_test {
         let o = context.register_resource(request);
         LoadTestResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             data_plane_uri: o.get_field("dataPlaneUri"),
             description: o.get_field("description"),
             encryption: o.get_field("encryption"),

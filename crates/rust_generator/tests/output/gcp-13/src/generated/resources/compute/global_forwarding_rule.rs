@@ -706,6 +706,8 @@ pub mod global_forwarding_rule {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// This is used in PSC consumer ForwardingRule to control whether the PSC endpoint can be accessed from another region.
         pub allow_psc_global_access: pulumi_gestalt_rust::Output<Option<bool>>,
         /// [Output Only] The URL for the corresponding base Forwarding Rule. By base Forwarding Rule, we mean the Forwarding Rule that has the same IP address, protocol, and port settings with the current Forwarding Rule, but without sourceIPRanges specified. Always empty if the current Forwarding Rule does not have sourceIPRanges specified.
@@ -1009,6 +1011,7 @@ pub mod global_forwarding_rule {
         let o = context.register_resource(request);
         GlobalForwardingRuleResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             allow_psc_global_access: o.get_field("allowPscGlobalAccess"),
             base_forwarding_rule: o.get_field("baseForwardingRule"),
             description: o.get_field("description"),

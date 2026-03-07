@@ -87,6 +87,8 @@ pub mod fleet_member {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The group this member belongs to for multi-cluster update management.
         pub group: pulumi_gestalt_rust::Output<Option<String>>,
         /// The ARM resource ID of the cluster that joins the Fleet. Changing this forces a new Kubernetes Fleet Member to be created.
@@ -137,6 +139,7 @@ pub mod fleet_member {
         let o = context.register_resource(request);
         FleetMemberResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             group: o.get_field("group"),
             kubernetes_cluster_id: o.get_field("kubernetesClusterId"),
             kubernetes_fleet_id: o.get_field("kubernetesFleetId"),

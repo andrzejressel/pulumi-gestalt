@@ -213,6 +213,8 @@ pub mod network_manager_deployment {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A list of Network Manager Configuration IDs which should be aligned with `scope_access`.
         pub configuration_ids: pulumi_gestalt_rust::Output<Vec<String>>,
         /// Specifies the location which the configurations will be deployed to. Changing this forces a new Network Manager Deployment to be created.
@@ -271,6 +273,7 @@ pub mod network_manager_deployment {
         let o = context.register_resource(request);
         NetworkManagerDeploymentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             configuration_ids: o.get_field("configurationIds"),
             location: o.get_field("location"),
             network_manager_id: o.get_field("networkManagerId"),

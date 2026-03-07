@@ -18,9 +18,11 @@ fn test_integration() -> Result<()> {
 
     let result = stack.get_string("/result")?;
     let provider_prefix = stack.get_string("/provider_prefix")?;
+    let provider_urn = stack.get_string("/provider_urn")?;
 
     assert_eq!(result, "SUFFIX");
     assert_eq!(provider_prefix, "MY_PREFIX");
+    assert_eq!(provider_urn, "urn:pulumi:test::Pulumi-Gestalt-Examples-Test::pulumi:providers:test::test_provider");
 
     Ok(())
 }

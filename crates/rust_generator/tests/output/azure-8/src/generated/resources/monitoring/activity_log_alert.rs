@@ -104,6 +104,8 @@ pub mod activity_log_alert {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// One or more `action` blocks as defined below.
         pub actions: pulumi_gestalt_rust::Output<
             Option<Vec<super::super::types::monitoring::ActivityLogAlertAction>>,
@@ -193,6 +195,7 @@ pub mod activity_log_alert {
         let o = context.register_resource(request);
         ActivityLogAlertResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             actions: o.get_field("actions"),
             criteria: o.get_field("criteria"),
             description: o.get_field("description"),

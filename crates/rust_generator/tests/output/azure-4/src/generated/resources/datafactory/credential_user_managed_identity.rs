@@ -29,6 +29,8 @@ pub mod credential_user_managed_identity {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// (Optional) List of string annotations.
         pub annotations: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// The resource ID of the parent Data Factory
@@ -85,6 +87,7 @@ pub mod credential_user_managed_identity {
         let o = context.register_resource(request);
         CredentialUserManagedIdentityResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             annotations: o.get_field("annotations"),
             data_factory_id: o.get_field("dataFactoryId"),
             description: o.get_field("description"),

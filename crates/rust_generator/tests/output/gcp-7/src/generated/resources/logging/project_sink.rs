@@ -78,6 +78,8 @@ pub mod project_sink {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Options that affect sinks exporting data to BigQuery. Structure documented below.
         pub bigquery_options: pulumi_gestalt_rust::Output<
             super::super::types::logging::ProjectSinkBigqueryOptions,
@@ -195,6 +197,7 @@ pub mod project_sink {
         let o = context.register_resource(request);
         ProjectSinkResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             bigquery_options: o.get_field("bigqueryOptions"),
             custom_writer_identity: o.get_field("customWriterIdentity"),
             description: o.get_field("description"),

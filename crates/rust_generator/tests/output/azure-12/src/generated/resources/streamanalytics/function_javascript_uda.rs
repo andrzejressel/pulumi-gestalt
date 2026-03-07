@@ -85,6 +85,8 @@ pub mod function_javascript_uda {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// One or more `input` blocks as defined below.
         pub inputs: pulumi_gestalt_rust::Output<
             Vec<super::super::types::streamanalytics::FunctionJavascriptUdaInput>,
@@ -147,6 +149,7 @@ pub mod function_javascript_uda {
         let o = context.register_resource(request);
         FunctionJavascriptUdaResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             inputs: o.get_field("inputs"),
             name: o.get_field("name"),
             output: o.get_field("output"),

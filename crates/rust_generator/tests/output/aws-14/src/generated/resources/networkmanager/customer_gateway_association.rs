@@ -94,6 +94,8 @@ pub mod customer_gateway_association {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the customer gateway.
         pub customer_gateway_arn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the device.
@@ -143,6 +145,7 @@ pub mod customer_gateway_association {
         let o = context.register_resource(request);
         CustomerGatewayAssociationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             customer_gateway_arn: o.get_field("customerGatewayArn"),
             device_id: o.get_field("deviceId"),
             global_network_id: o.get_field("globalNetworkId"),

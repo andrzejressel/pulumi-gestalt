@@ -76,6 +76,8 @@ pub mod macsec_key_association {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The MAC Security (MACsec) CAK to associate with the dedicated connection. The valid values are 64 hexadecimal characters (0-9, A-E). Required if using `ckn`.
         pub cak: pulumi_gestalt_rust::Output<Option<String>>,
         /// The MAC Security (MACsec) CKN to associate with the dedicated connection. The valid values are 64 hexadecimal characters (0-9, A-E). Required if using `cak`.
@@ -130,6 +132,7 @@ pub mod macsec_key_association {
         let o = context.register_resource(request);
         MacsecKeyAssociationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             cak: o.get_field("cak"),
             ckn: o.get_field("ckn"),
             connection_id: o.get_field("connectionId"),

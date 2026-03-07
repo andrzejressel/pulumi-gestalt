@@ -57,6 +57,8 @@ pub mod key_group {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A comment to describe the key group..
         pub comment: pulumi_gestalt_rust::Output<Option<String>>,
         /// The identifier for this version of the key group.
@@ -100,6 +102,7 @@ pub mod key_group {
         let o = context.register_resource(request);
         KeyGroupResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             comment: o.get_field("comment"),
             etag: o.get_field("etag"),
             items: o.get_field("items"),

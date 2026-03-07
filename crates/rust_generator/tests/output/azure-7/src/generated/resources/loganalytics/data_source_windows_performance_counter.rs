@@ -83,6 +83,8 @@ pub mod data_source_windows_performance_counter {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The friendly name of the performance counter.
         pub counter_name: pulumi_gestalt_rust::Output<String>,
         /// The name of the virtual machine instance to which the Windows Performance Counter DataSource be applied. Specify a `*` will apply to all instances.
@@ -153,6 +155,7 @@ pub mod data_source_windows_performance_counter {
         let o = context.register_resource(request);
         DataSourceWindowsPerformanceCounterResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             counter_name: o.get_field("counterName"),
             instance_name: o.get_field("instanceName"),
             interval_seconds: o.get_field("intervalSeconds"),

@@ -95,6 +95,8 @@ pub mod shared_private_link_resource {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specify the name of the Web Pubsub Shared Private Link Resource. Changing this forces a new resource to be created.
         pub name: pulumi_gestalt_rust::Output<String>,
         /// Specify the request message for requesting approval of the Shared Private Link Enabled Remote Resource.
@@ -157,6 +159,7 @@ pub mod shared_private_link_resource {
         let o = context.register_resource(request);
         SharedPrivateLinkResourceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             name: o.get_field("name"),
             request_message: o.get_field("requestMessage"),
             status: o.get_field("status"),

@@ -79,6 +79,8 @@ pub mod principal_association {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The principal to associate with the resource share. Possible values are an AWS account ID, an AWS Organizations Organization ARN, or an AWS Organizations Organization Unit ARN.
         pub principal: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the resource share.
@@ -113,6 +115,7 @@ pub mod principal_association {
         let o = context.register_resource(request);
         PrincipalAssociationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             principal: o.get_field("principal"),
             resource_share_arn: o.get_field("resourceShareArn"),
         }

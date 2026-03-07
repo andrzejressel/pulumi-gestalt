@@ -99,6 +99,8 @@ pub mod workspace {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The alias of the prometheus workspace. See more [in AWS Docs](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-onboard-create-workspace.html).
         pub alias: pulumi_gestalt_rust::Output<Option<String>>,
         /// Amazon Resource Name (ARN) of the workspace.
@@ -161,6 +163,7 @@ pub mod workspace {
         let o = context.register_resource(request);
         WorkspaceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             alias: o.get_field("alias"),
             arn: o.get_field("arn"),
             kms_key_arn: o.get_field("kmsKeyArn"),

@@ -81,6 +81,8 @@ pub mod volume_attachment {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The device name to expose to the instance (for
         /// example, `/dev/sdh` or `xvdh`).  See [Device Naming on Linux Instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html#available-ec2-device-names) and [Device Naming on Windows Instances](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/device_naming.html#available-ec2-device-names) for more information.
         pub device_name: pulumi_gestalt_rust::Output<String>,
@@ -154,6 +156,7 @@ pub mod volume_attachment {
         let o = context.register_resource(request);
         VolumeAttachmentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             device_name: o.get_field("deviceName"),
             force_detach: o.get_field("forceDetach"),
             instance_id: o.get_field("instanceId"),

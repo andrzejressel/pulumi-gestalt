@@ -47,6 +47,8 @@ pub mod default_kms_key {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the AWS Key Management Service (AWS KMS) customer master key (CMK) to use to encrypt the EBS volume.
         pub key_arn: pulumi_gestalt_rust::Output<String>,
     }
@@ -74,6 +76,7 @@ pub mod default_kms_key {
         let o = context.register_resource(request);
         DefaultKmsKeyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             key_arn: o.get_field("keyArn"),
         }
     }

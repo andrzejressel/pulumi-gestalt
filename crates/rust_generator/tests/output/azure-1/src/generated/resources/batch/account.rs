@@ -126,6 +126,8 @@ pub mod account {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The account endpoint used to interact with the Batch service.
         pub account_endpoint: pulumi_gestalt_rust::Output<String>,
         /// Specifies the allowed authentication mode for the Batch account. Possible values include `AAD`, `SharedKey` or `TaskAuthenticationToken`.
@@ -280,6 +282,7 @@ pub mod account {
         let o = context.register_resource(request);
         AccountResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             account_endpoint: o.get_field("accountEndpoint"),
             allowed_authentication_modes: o.get_field("allowedAuthenticationModes"),
             encryption: o.get_field("encryption"),

@@ -52,6 +52,8 @@ pub mod group_policy_attachment {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The group the policy should be applied to
         pub group: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the policy you want to apply
@@ -86,6 +88,7 @@ pub mod group_policy_attachment {
         let o = context.register_resource(request);
         GroupPolicyAttachmentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             group: o.get_field("group"),
             policy_arn: o.get_field("policyArn"),
         }

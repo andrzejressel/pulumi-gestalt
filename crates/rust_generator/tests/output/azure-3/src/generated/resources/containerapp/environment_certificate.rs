@@ -82,6 +82,8 @@ pub mod environment_certificate {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Certificate Private Key as a base64 encoded PFX or PEM. Changing this forces a new resource to be created.
         pub certificate_blob_base64: pulumi_gestalt_rust::Output<String>,
         /// The password for the Certificate. Changing this forces a new resource to be created.
@@ -154,6 +156,7 @@ pub mod environment_certificate {
         let o = context.register_resource(request);
         EnvironmentCertificateResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             certificate_blob_base64: o.get_field("certificateBlobBase64"),
             certificate_password: o.get_field("certificatePassword"),
             container_app_environment_id: o.get_field("containerAppEnvironmentId"),

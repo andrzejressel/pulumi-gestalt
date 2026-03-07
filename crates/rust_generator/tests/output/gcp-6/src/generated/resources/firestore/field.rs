@@ -193,6 +193,8 @@ pub mod field {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The id of the collection group to configure.
         pub collection: pulumi_gestalt_rust::Output<String>,
         /// The Firestore database id. Defaults to `"(default)"`.
@@ -271,6 +273,7 @@ pub mod field {
         let o = context.register_resource(request);
         FieldResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             collection: o.get_field("collection"),
             database: o.get_field("database"),
             field: o.get_field("field"),

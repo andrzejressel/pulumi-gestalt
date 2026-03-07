@@ -55,6 +55,8 @@ pub mod pull_through_cache_rule {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ARN of the Secret which will be used to authenticate against the registry.
         pub credential_arn: pulumi_gestalt_rust::Output<Option<String>>,
         /// The repository name prefix to use when caching images from the source registry.
@@ -102,6 +104,7 @@ pub mod pull_through_cache_rule {
         let o = context.register_resource(request);
         PullThroughCacheRuleResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             credential_arn: o.get_field("credentialArn"),
             ecr_repository_prefix: o.get_field("ecrRepositoryPrefix"),
             registry_id: o.get_field("registryId"),

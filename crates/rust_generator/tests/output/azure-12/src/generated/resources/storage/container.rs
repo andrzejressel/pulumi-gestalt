@@ -82,6 +82,8 @@ pub mod container {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Access Level configured for this Container. Possible values are `blob`, `container` or `private`. Defaults to `private`.
         ///
         /// > **Note** When updating `container_access_type` for an existing storage container resource, Shared Key authentication will always be used, as AzureAD authentication is not supported.
@@ -169,6 +171,7 @@ pub mod container {
         let o = context.register_resource(request);
         ContainerResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             container_access_type: o.get_field("containerAccessType"),
             default_encryption_scope: o.get_field("defaultEncryptionScope"),
             encryption_scope_override_enabled: o

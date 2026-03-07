@@ -106,6 +106,8 @@ pub mod generic_service {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A well-known service type, defined by its service type and service labels.
         /// Valid values of service types and services labels are described at
         /// https://cloud.google.com/stackdriver/docs/solutions/slo-monitoring/api/api-structures#basic-svc-w-basic-sli
@@ -186,6 +188,7 @@ pub mod generic_service {
         let o = context.register_resource(request);
         GenericServiceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             basic_service: o.get_field("basicService"),
             display_name: o.get_field("displayName"),
             name: o.get_field("name"),

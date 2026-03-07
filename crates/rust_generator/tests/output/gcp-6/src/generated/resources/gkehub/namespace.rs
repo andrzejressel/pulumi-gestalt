@@ -110,6 +110,8 @@ pub mod namespace {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Time the Namespace was created in UTC.
         pub create_time: pulumi_gestalt_rust::Output<String>,
         /// Time the Namespace was deleted in UTC.
@@ -211,6 +213,7 @@ pub mod namespace {
         let o = context.register_resource(request);
         NamespaceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             create_time: o.get_field("createTime"),
             delete_time: o.get_field("deleteTime"),
             effective_labels: o.get_field("effectiveLabels"),

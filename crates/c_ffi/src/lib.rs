@@ -3,7 +3,7 @@ use pulumi_gestalt_rust_integration as integration;
 use serde_json::Value;
 use std::cell::RefCell;
 use std::collections::HashMap;
-use std::ffi::{CStr, CString, c_char, c_void};
+use std::ffi::{c_char, c_void, CStr, CString};
 use std::ptr::null_mut;
 use std::rc::{Rc, Weak};
 use tokio::runtime::Runtime;
@@ -356,6 +356,29 @@ extern "C" fn pulumi_composite_output_get_field(
             .native
             .get_field(field_name.into()),
     );
+
+    let binding = custom_register_output_id.ctx.upgrade().unwrap();
+
+    let output = CustomOutputId {
+        native: new_output,
+        ctx: Rc::downgrade(&binding),
+    };
+    let raw = Box::into_raw(Box::new(output));
+    engine.outputs.push(raw);
+    raw
+}
+
+#[unsafe(no_mangle)]
+extern "C" fn pulumi_composite_output_get_urn(
+    output: *mut CustomCompositeOutputId,
+) -> *mut CustomOutputId {
+    let custom_register_output_id = unsafe { &*output };
+    let binding = custom_register_output_id.ctx.upgrade().unwrap();
+    let mut engine = binding.borrow_mut();
+
+    let new_output = engine
+        .runtime
+        .block_on(custom_register_output_id.native.get_urn());
 
     let binding = custom_register_output_id.ctx.upgrade().unwrap();
 

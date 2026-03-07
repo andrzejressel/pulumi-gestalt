@@ -47,6 +47,8 @@ pub mod waiting_room_settings {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Whether to allow verified search engine crawlers to bypass all waiting rooms on this zone. Defaults to `false`.
         pub search_engine_crawler_bypass: pulumi_gestalt_rust::Output<Option<bool>>,
         /// The zone identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
@@ -83,6 +85,7 @@ pub mod waiting_room_settings {
         let o = context.register_resource(request);
         WaitingRoomSettingsResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             search_engine_crawler_bypass: o.get_field("searchEngineCrawlerBypass"),
             zone_id: o.get_field("zoneId"),
         }

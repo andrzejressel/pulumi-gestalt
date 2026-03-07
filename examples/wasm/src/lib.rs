@@ -22,7 +22,9 @@ fn generate_random_value(ctx: &Context) {
 
     let composite_output = ctx.register_resource(&register_resource_request);
     let output_result = composite_output.get_field("result");
+    let output_urn = composite_output.get_urn();
     output_result.add_to_export("result");
+    output_urn.add_to_export("resource_urn");
 }
 
 fn run_command(ctx: &Context) {

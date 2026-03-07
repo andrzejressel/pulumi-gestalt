@@ -74,6 +74,8 @@ pub mod custom_plugin {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// the Amazon Resource Name (ARN) of the custom plugin.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The type of the plugin file. Allowed values are `ZIP` and `JAR`.
@@ -145,6 +147,7 @@ pub mod custom_plugin {
         let o = context.register_resource(request);
         CustomPluginResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             content_type: o.get_field("contentType"),
             description: o.get_field("description"),

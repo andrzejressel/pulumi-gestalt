@@ -54,6 +54,8 @@ pub mod workspace_service_account_token {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies when the service account token was created.
         pub created_at: pulumi_gestalt_rust::Output<String>,
         /// Specifies when the service account token will expire.
@@ -111,6 +113,7 @@ pub mod workspace_service_account_token {
         let o = context.register_resource(request);
         WorkspaceServiceAccountTokenResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             created_at: o.get_field("createdAt"),
             expires_at: o.get_field("expiresAt"),
             key: o.get_field("key"),

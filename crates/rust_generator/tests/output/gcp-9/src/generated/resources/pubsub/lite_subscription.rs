@@ -113,6 +113,8 @@ pub mod lite_subscription {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The settings for this subscription's message delivery.
         /// Structure is documented below.
         pub delivery_config: pulumi_gestalt_rust::Output<
@@ -182,6 +184,7 @@ pub mod lite_subscription {
         let o = context.register_resource(request);
         LiteSubscriptionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             delivery_config: o.get_field("deliveryConfig"),
             name: o.get_field("name"),
             project: o.get_field("project"),

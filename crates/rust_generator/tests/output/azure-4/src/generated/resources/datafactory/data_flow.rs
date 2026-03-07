@@ -173,6 +173,8 @@ pub mod data_flow {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// List of tags that can be used for describing the Data Factory Data Flow.
         pub annotations: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// The ID of Data Factory in which to associate the Data Flow with. Changing this forces a new resource.
@@ -269,6 +271,7 @@ pub mod data_flow {
         let o = context.register_resource(request);
         DataFlowResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             annotations: o.get_field("annotations"),
             data_factory_id: o.get_field("dataFactoryId"),
             description: o.get_field("description"),

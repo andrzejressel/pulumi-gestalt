@@ -686,6 +686,8 @@ pub mod group {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ARN for this Auto Scaling Group
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The instance capacity distribution across Availability Zones. See Availability Zone Distribution below for more details.
@@ -1072,6 +1074,7 @@ pub mod group {
         let o = context.register_resource(request);
         GroupResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             availability_zone_distribution: o.get_field("availabilityZoneDistribution"),
             availability_zones: o.get_field("availabilityZones"),

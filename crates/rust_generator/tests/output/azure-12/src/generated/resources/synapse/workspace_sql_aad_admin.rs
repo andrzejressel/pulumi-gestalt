@@ -127,6 +127,8 @@ pub mod workspace_sql_aad_admin {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The login name of the Azure AD Administrator of this Synapse Workspace.
         pub login: pulumi_gestalt_rust::Output<String>,
         /// The object id of the Azure AD Administrator of this Synapse Workspace.
@@ -175,6 +177,7 @@ pub mod workspace_sql_aad_admin {
         let o = context.register_resource(request);
         WorkspaceSqlAadAdminResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             login: o.get_field("login"),
             object_id: o.get_field("objectId"),
             synapse_workspace_id: o.get_field("synapseWorkspaceId"),

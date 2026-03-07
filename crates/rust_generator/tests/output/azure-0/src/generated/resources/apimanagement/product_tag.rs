@@ -92,6 +92,8 @@ pub mod product_tag {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The name of the API Management Service. Changing this forces a new resource to be created.
         pub api_management_name: pulumi_gestalt_rust::Output<String>,
         /// The name of the API Management product. Changing this forces a new resource to be created.
@@ -142,6 +144,7 @@ pub mod product_tag {
         let o = context.register_resource(request);
         ProductTagResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             api_management_name: o.get_field("apiManagementName"),
             api_management_product_id: o.get_field("apiManagementProductId"),
             name: o.get_field("name"),

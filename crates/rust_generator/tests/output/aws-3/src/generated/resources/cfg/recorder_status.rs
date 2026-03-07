@@ -102,6 +102,8 @@ pub mod recorder_status {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Whether the configuration recorder should be enabled or disabled.
         pub is_enabled: pulumi_gestalt_rust::Output<bool>,
         /// The name of the recorder
@@ -136,6 +138,7 @@ pub mod recorder_status {
         let o = context.register_resource(request);
         RecorderStatusResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             is_enabled: o.get_field("isEnabled"),
             name: o.get_field("name"),
         }

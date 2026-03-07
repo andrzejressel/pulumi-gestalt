@@ -103,6 +103,8 @@ pub mod management_server {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The location for the management server (management console)
         pub location: pulumi_gestalt_rust::Output<String>,
         /// The management console URI
@@ -178,6 +180,7 @@ pub mod management_server {
         let o = context.register_resource(request);
         ManagementServerResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             location: o.get_field("location"),
             management_uris: o.get_field("managementUris"),
             name: o.get_field("name"),

@@ -242,6 +242,8 @@ pub mod dataset_access {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// If true, represents that that the iam_member in the config was translated to a different member type by the API, and is
         /// stored in state as a different member type
         pub api_updated_member: pulumi_gestalt_rust::Output<bool>,
@@ -377,6 +379,7 @@ pub mod dataset_access {
         let o = context.register_resource(request);
         DatasetAccessResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             api_updated_member: o.get_field("apiUpdatedMember"),
             authorized_dataset: o.get_field("authorizedDataset"),
             dataset_id: o.get_field("datasetId"),

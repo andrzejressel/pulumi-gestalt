@@ -62,6 +62,8 @@ pub mod service {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ARN of the service.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Type of IAM policy. Either `NONE` or `AWS_IAM`.
@@ -133,6 +135,7 @@ pub mod service {
         let o = context.register_resource(request);
         ServiceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             auth_type: o.get_field("authType"),
             certificate_arn: o.get_field("certificateArn"),

@@ -81,6 +81,8 @@ pub mod spring_cloud_elastic_application_performance_monitoring {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies a list of the packages which should be used to determine whether a stack trace frame is an in-app frame or a library frame. This is a comma separated list of package names.
         pub application_packages: pulumi_gestalt_rust::Output<Vec<String>>,
         /// Specifies whether the Spring Cloud Application Performance Monitoring resource for Application Insights is enabled globally. Defaults to `false`.
@@ -146,6 +148,7 @@ pub mod spring_cloud_elastic_application_performance_monitoring {
         let o = context.register_resource(request);
         SpringCloudElasticApplicationPerformanceMonitoringResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             application_packages: o.get_field("applicationPackages"),
             globally_enabled: o.get_field("globallyEnabled"),
             name: o.get_field("name"),

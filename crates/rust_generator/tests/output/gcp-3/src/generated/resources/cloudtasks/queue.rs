@@ -234,6 +234,8 @@ pub mod queue {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Overrides for task-level appEngineRouting. These settings apply only
         /// to App Engine tasks in this queue
         /// Structure is documented below.
@@ -340,6 +342,7 @@ pub mod queue {
         let o = context.register_resource(request);
         QueueResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             app_engine_routing_override: o.get_field("appEngineRoutingOverride"),
             http_target: o.get_field("httpTarget"),
             location: o.get_field("location"),

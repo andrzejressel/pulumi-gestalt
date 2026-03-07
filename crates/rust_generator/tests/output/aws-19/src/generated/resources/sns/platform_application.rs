@@ -138,6 +138,8 @@ pub mod platform_application {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The bundle identifier that's assigned to your iOS app. May only include alphanumeric characters, hyphens (-), and periods (.).
         pub apple_platform_bundle_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// The identifier that's assigned to your Apple developer account team. Must be 10 alphanumeric characters.
@@ -279,6 +281,7 @@ pub mod platform_application {
         let o = context.register_resource(request);
         PlatformApplicationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             apple_platform_bundle_id: o.get_field("applePlatformBundleId"),
             apple_platform_team_id: o.get_field("applePlatformTeamId"),
             arn: o.get_field("arn"),

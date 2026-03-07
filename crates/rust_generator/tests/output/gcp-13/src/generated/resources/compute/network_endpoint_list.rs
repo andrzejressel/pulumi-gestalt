@@ -157,6 +157,8 @@ pub mod network_endpoint_list {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The network endpoint group these endpoints are part of.
         ///
         ///
@@ -216,6 +218,7 @@ pub mod network_endpoint_list {
         let o = context.register_resource(request);
         NetworkEndpointListResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             network_endpoint_group: o.get_field("networkEndpointGroup"),
             network_endpoints: o.get_field("networkEndpoints"),
             project: o.get_field("project"),

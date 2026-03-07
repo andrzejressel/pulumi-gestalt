@@ -52,6 +52,8 @@ pub mod pages_project {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The account identifier to target for the resource.
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// Configuration for the project build process. Read more about the build configuration in the [developer documentation](https://developers.cloudflare.com/pages/platform/build-configuration).
@@ -126,6 +128,7 @@ pub mod pages_project {
         let o = context.register_resource(request);
         PagesProjectResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             build_config: o.get_field("buildConfig"),
             created_on: o.get_field("createdOn"),

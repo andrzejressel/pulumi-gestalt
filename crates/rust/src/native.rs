@@ -1,7 +1,7 @@
 use pulumi_gestalt_rust_integration as integration;
 use pulumi_gestalt_rust_integration::FieldName;
-use serde::{Serialize, de::DeserializeOwned};
-use serde_json::{Value, from_value, to_value};
+use serde::{de::DeserializeOwned, Serialize};
+use serde_json::{from_value, to_value, Value};
 use std::collections::HashMap;
 use std::marker::PhantomData;
 use std::rc::Rc;
@@ -81,6 +81,15 @@ impl CompositeOutput {
         let res = self
             .runtime
             .block_on(self.inner.get_field(FieldName::from(key.to_string())));
+        Output {
+            inner: res,
+            phantom: PhantomData,
+            runtime: self.runtime.clone(),
+        }
+    }
+
+    pub fn get_urn(&self) -> Output<String> {
+        let res = self.runtime.block_on(self.inner.get_urn());
         Output {
             inner: res,
             phantom: PhantomData,

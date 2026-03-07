@@ -50,8 +50,10 @@ static void generate_random_value(pulumi_context_t* ctx) {
 	pulumi_composite_output_t* composite_output = pulumi_register_resource(ctx, &register_resource_request);
 
 	pulumi_output_t* output_result = pulumi_composite_output_get_field(composite_output, "result");
+	pulumi_output_t* output_urn = pulumi_composite_output_get_urn(composite_output);
 
 	pulumi_output_add_to_export(output_result, "result");
+	pulumi_output_add_to_export(output_urn, "resource_urn");
 }
 
 static void run_command(pulumi_context_t* ctx) {

@@ -397,6 +397,8 @@ pub mod scale_set {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Automatic OS patches can be applied by Azure to your scaleset. This is particularly useful when `upgrade_policy_mode` is set to `Rolling`. Defaults to `false`.
         pub automatic_os_upgrade: pulumi_gestalt_rust::Output<Option<bool>>,
         /// A `boot_diagnostics` block as referenced below.
@@ -661,6 +663,7 @@ pub mod scale_set {
         let o = context.register_resource(request);
         ScaleSetResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             automatic_os_upgrade: o.get_field("automaticOsUpgrade"),
             boot_diagnostics: o.get_field("bootDiagnostics"),
             eviction_policy: o.get_field("evictionPolicy"),

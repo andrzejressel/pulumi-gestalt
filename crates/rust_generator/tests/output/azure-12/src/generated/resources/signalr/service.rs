@@ -144,6 +144,8 @@ pub mod service {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Whether to enable AAD auth? Defaults to `true`.
         pub aad_auth_enabled: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Specifies if Connectivity Logs are enabled or not. Defaults to `false`.
@@ -340,6 +342,7 @@ pub mod service {
         let o = context.register_resource(request);
         ServiceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             aad_auth_enabled: o.get_field("aadAuthEnabled"),
             connectivity_logs_enabled: o.get_field("connectivityLogsEnabled"),
             cors: o.get_field("cors"),

@@ -73,6 +73,8 @@ pub mod identity_provider_google {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Name of the API Management Service where this Google Identity Provider should be created. Changing this forces a new resource to be created.
         pub api_management_name: pulumi_gestalt_rust::Output<String>,
         /// Client Id for Google Sign-in.
@@ -122,6 +124,7 @@ pub mod identity_provider_google {
         let o = context.register_resource(request);
         IdentityProviderGoogleResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             api_management_name: o.get_field("apiManagementName"),
             client_id: o.get_field("clientId"),
             client_secret: o.get_field("clientSecret"),

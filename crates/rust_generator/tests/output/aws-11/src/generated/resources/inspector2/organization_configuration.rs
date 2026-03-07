@@ -49,6 +49,8 @@ pub mod organization_configuration {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Configuration block for auto enabling. See below.
         pub auto_enable: pulumi_gestalt_rust::Output<
             super::super::types::inspector2::OrganizationConfigurationAutoEnable,
@@ -81,6 +83,7 @@ pub mod organization_configuration {
         let o = context.register_resource(request);
         OrganizationConfigurationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             auto_enable: o.get_field("autoEnable"),
             max_account_limit_reached: o.get_field("maxAccountLimitReached"),
         }

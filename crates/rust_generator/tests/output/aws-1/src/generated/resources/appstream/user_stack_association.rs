@@ -66,6 +66,8 @@ pub mod user_stack_association {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Authentication type for the user.
         pub authentication_type: pulumi_gestalt_rust::Output<String>,
         /// Whether a welcome email is sent to a user after the user is created in the user pool.
@@ -118,6 +120,7 @@ pub mod user_stack_association {
         let o = context.register_resource(request);
         UserStackAssociationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             authentication_type: o.get_field("authenticationType"),
             send_email_notification: o.get_field("sendEmailNotification"),
             stack_name: o.get_field("stackName"),

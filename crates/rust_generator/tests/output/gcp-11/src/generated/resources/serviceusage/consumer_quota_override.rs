@@ -183,6 +183,8 @@ pub mod consumer_quota_override {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// If this map is nonempty, then this override applies only to specific values for dimensions defined in the limit unit.
         pub dimensions: pulumi_gestalt_rust::Output<
             Option<std::collections::HashMap<String, String>>,
@@ -263,6 +265,7 @@ pub mod consumer_quota_override {
         let o = context.register_resource(request);
         ConsumerQuotaOverrideResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             dimensions: o.get_field("dimensions"),
             force: o.get_field("force"),
             limit: o.get_field("limit"),

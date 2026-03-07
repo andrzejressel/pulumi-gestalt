@@ -161,6 +161,8 @@ pub mod compute_instance {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A `assign_to_user` block as defined below. A user explicitly assigned to a personal compute instance. Changing this forces a new Machine Learning Compute Instance to be created.
         pub assign_to_user: pulumi_gestalt_rust::Output<
             Option<super::super::types::machinelearning::ComputeInstanceAssignToUser>,
@@ -277,6 +279,7 @@ pub mod compute_instance {
         let o = context.register_resource(request);
         ComputeInstanceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             assign_to_user: o.get_field("assignToUser"),
             authorization_type: o.get_field("authorizationType"),
             description: o.get_field("description"),

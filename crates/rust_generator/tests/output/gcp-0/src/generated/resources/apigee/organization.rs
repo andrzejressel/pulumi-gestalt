@@ -298,6 +298,8 @@ pub mod organization {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Primary GCP region for analytics data storage. For valid values, see [Create an Apigee organization](https://cloud.google.com/apigee/docs/api-platform/get-started/create-org).
         pub analytics_region: pulumi_gestalt_rust::Output<Option<String>>,
         /// Cloud KMS key name used for encrypting API consumer data.
@@ -465,6 +467,7 @@ pub mod organization {
         let o = context.register_resource(request);
         OrganizationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             analytics_region: o.get_field("analyticsRegion"),
             api_consumer_data_encryption_key_name: o
                 .get_field("apiConsumerDataEncryptionKeyName"),

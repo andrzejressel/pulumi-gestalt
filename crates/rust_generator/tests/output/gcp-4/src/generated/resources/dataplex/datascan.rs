@@ -308,6 +308,8 @@ pub mod datascan {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The time when the scan was created.
         pub create_time: pulumi_gestalt_rust::Output<String>,
         /// The data source for DataScan.
@@ -437,6 +439,7 @@ pub mod datascan {
         let o = context.register_resource(request);
         DatascanResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             create_time: o.get_field("createTime"),
             data: o.get_field("data"),
             data_profile_spec: o.get_field("dataProfileSpec"),

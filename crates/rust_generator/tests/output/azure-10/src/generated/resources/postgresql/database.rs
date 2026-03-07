@@ -81,6 +81,8 @@ pub mod database {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the Charset for the PostgreSQL Database, which needs [to be a valid PostgreSQL Charset](https://www.postgresql.org/docs/current/static/multibyte.html). Changing this forces a new resource to be created.
         pub charset: pulumi_gestalt_rust::Output<String>,
         /// Specifies the Collation for the PostgreSQL Database, which needs [to be a valid PostgreSQL Collation](https://www.postgresql.org/docs/current/static/collation.html). Note that Microsoft uses different [notation](https://msdn.microsoft.com/library/windows/desktop/dd373814.aspx) - en-US instead of en_US. Changing this forces a new resource to be created.
@@ -136,6 +138,7 @@ pub mod database {
         let o = context.register_resource(request);
         DatabaseResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             charset: o.get_field("charset"),
             collation: o.get_field("collation"),
             name: o.get_field("name"),

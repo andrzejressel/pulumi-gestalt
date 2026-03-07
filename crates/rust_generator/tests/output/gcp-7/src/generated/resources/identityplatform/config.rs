@@ -176,6 +176,8 @@ pub mod config {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// List of domains authorized for OAuth redirects.
         pub authorized_domains: pulumi_gestalt_rust::Output<Vec<String>>,
         /// Whether anonymous users will be auto-deleted after a period of 30 days
@@ -302,6 +304,7 @@ pub mod config {
         let o = context.register_resource(request);
         ConfigResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             authorized_domains: o.get_field("authorizedDomains"),
             autodelete_anonymous_users: o.get_field("autodeleteAnonymousUsers"),
             blocking_functions: o.get_field("blockingFunctions"),

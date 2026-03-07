@@ -174,6 +174,8 @@ pub mod multicast_domain {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// EC2 Transit Gateway Multicast Domain Amazon Resource Name (ARN).
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Whether to automatically accept cross-account subnet associations that are associated with the EC2 Transit Gateway Multicast Domain. Valid values: `disable`, `enable`. Default value: `disable`.
@@ -243,6 +245,7 @@ pub mod multicast_domain {
         let o = context.register_resource(request);
         MulticastDomainResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             auto_accept_shared_associations: o.get_field("autoAcceptSharedAssociations"),
             igmpv2_support: o.get_field("igmpv2Support"),

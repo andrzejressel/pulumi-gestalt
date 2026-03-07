@@ -154,6 +154,8 @@ pub mod cluster {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A capacity configuration of a Kafka cluster.
         /// Structure is documented below.
         pub capacity_config: pulumi_gestalt_rust::Output<
@@ -252,6 +254,7 @@ pub mod cluster {
         let o = context.register_resource(request);
         ClusterResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             capacity_config: o.get_field("capacityConfig"),
             cluster_id: o.get_field("clusterId"),
             create_time: o.get_field("createTime"),

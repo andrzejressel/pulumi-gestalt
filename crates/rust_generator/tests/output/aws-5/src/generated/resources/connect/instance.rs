@@ -122,6 +122,8 @@ pub mod instance {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the instance.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Specifies whether auto resolve best voices is enabled. Defaults to `true`.
@@ -246,6 +248,7 @@ pub mod instance {
         let o = context.register_resource(request);
         InstanceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             auto_resolve_best_voices_enabled: o
                 .get_field("autoResolveBestVoicesEnabled"),

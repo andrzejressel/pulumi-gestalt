@@ -82,6 +82,8 @@ pub mod source {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The description of the source (max of 1024 characters).
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// The source’s display name. A source’s display name must be unique
@@ -134,6 +136,7 @@ pub mod source {
         let o = context.register_resource(request);
         SourceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             description: o.get_field("description"),
             display_name: o.get_field("displayName"),
             name: o.get_field("name"),

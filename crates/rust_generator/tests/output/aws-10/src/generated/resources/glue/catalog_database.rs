@@ -103,6 +103,8 @@ pub mod catalog_database {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ARN of the Glue Catalog Database.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// ID of the Glue Catalog to create the database in. If omitted, this defaults to the AWS Account ID.
@@ -204,6 +206,7 @@ pub mod catalog_database {
         let o = context.register_resource(request);
         CatalogDatabaseResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             catalog_id: o.get_field("catalogId"),
             create_table_default_permissions: o

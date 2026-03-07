@@ -64,6 +64,8 @@ pub mod zone {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Account ID to manage the zone resource in.
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// Whether to scan for DNS records on creation. Ignored after zone is created.
@@ -140,6 +142,7 @@ pub mod zone {
         let o = context.register_resource(request);
         ZoneResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             jump_start: o.get_field("jumpStart"),
             meta: o.get_field("meta"),

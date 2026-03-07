@@ -58,6 +58,8 @@ pub mod instance_trust_provider_attachment {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Verified Access instance to attach the Trust Provider to.
         pub verifiedaccess_instance_id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Verified Access trust provider.
@@ -97,6 +99,7 @@ pub mod instance_trust_provider_attachment {
         let o = context.register_resource(request);
         InstanceTrustProviderAttachmentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             verifiedaccess_instance_id: o.get_field("verifiedaccessInstanceId"),
             verifiedaccess_trust_provider_id: o
                 .get_field("verifiedaccessTrustProviderId"),

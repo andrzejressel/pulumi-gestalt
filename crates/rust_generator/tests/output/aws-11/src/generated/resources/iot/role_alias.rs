@@ -65,6 +65,8 @@ pub mod role_alias {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The name of the role alias.
         pub alias: pulumi_gestalt_rust::Output<String>,
         /// The ARN assigned by AWS to this role alias.
@@ -121,6 +123,7 @@ pub mod role_alias {
         let o = context.register_resource(request);
         RoleAliasResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             alias: o.get_field("alias"),
             arn: o.get_field("arn"),
             credential_duration: o.get_field("credentialDuration"),

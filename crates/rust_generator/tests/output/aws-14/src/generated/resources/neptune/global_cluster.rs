@@ -128,6 +128,8 @@ pub mod global_cluster {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Global Cluster Amazon Resource Name (ARN)
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// If the Global Cluster should have deletion protection enabled. The database can't be deleted when this value is set to `true`. The default is `false`.
@@ -204,6 +206,7 @@ pub mod global_cluster {
         let o = context.register_resource(request);
         GlobalClusterResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             deletion_protection: o.get_field("deletionProtection"),
             engine: o.get_field("engine"),

@@ -47,6 +47,8 @@ pub mod route_table {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// EC2 Transit Gateway Route Table Amazon Resource Name (ARN).
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Boolean whether this is the default association route table for the EC2 Transit Gateway.
@@ -93,6 +95,7 @@ pub mod route_table {
         let o = context.register_resource(request);
         RouteTableResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             default_association_route_table: o.get_field("defaultAssociationRouteTable"),
             default_propagation_route_table: o.get_field("defaultPropagationRouteTable"),

@@ -40,6 +40,8 @@ pub mod certificate {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Certificate identifier. For example, `rds-ca-rsa4096-g1`. Refer to [AWS RDS (Relational Database) Certificate Identifier](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html#UsingWithRDS.SSL.CertificateIdentifier) for more information.
         pub certificate_identifier: pulumi_gestalt_rust::Output<String>,
     }
@@ -69,6 +71,7 @@ pub mod certificate {
         let o = context.register_resource(request);
         CertificateResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             certificate_identifier: o.get_field("certificateIdentifier"),
         }
     }

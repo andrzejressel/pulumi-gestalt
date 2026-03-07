@@ -160,6 +160,8 @@ pub mod event_subscription {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A `advanced_filter` block as defined below.
         pub advanced_filter: pulumi_gestalt_rust::Output<
             Option<super::super::types::eventhub::EventSubscriptionAdvancedFilter>,
@@ -371,6 +373,7 @@ pub mod event_subscription {
         let o = context.register_resource(request);
         EventSubscriptionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             advanced_filter: o.get_field("advancedFilter"),
             advanced_filtering_on_arrays_enabled: o
                 .get_field("advancedFilteringOnArraysEnabled"),

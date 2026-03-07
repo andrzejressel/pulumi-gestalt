@@ -95,6 +95,8 @@ pub mod tag_binding {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The generated id for the TagBinding. This is a string of the form: `tagBindings/{full-resource-name}/{tag-value-name}`
         pub name: pulumi_gestalt_rust::Output<String>,
         /// The full resource name of the resource the TagValue is bound to. E.g. //cloudresourcemanager.googleapis.com/projects/123
@@ -134,6 +136,7 @@ pub mod tag_binding {
         let o = context.register_resource(request);
         TagBindingResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             name: o.get_field("name"),
             parent: o.get_field("parent"),
             tag_value: o.get_field("tagValue"),

@@ -83,6 +83,8 @@ pub mod data_lake_gen_2_filesystem {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// One or more `ace` blocks as defined below to specify the entries for the ACL for the path.
         pub aces: pulumi_gestalt_rust::Output<
             Vec<super::super::types::storage::DataLakeGen2FilesystemAce>,
@@ -160,6 +162,7 @@ pub mod data_lake_gen_2_filesystem {
         let o = context.register_resource(request);
         DataLakeGen2FilesystemResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             aces: o.get_field("aces"),
             default_encryption_scope: o.get_field("defaultEncryptionScope"),
             group: o.get_field("group"),

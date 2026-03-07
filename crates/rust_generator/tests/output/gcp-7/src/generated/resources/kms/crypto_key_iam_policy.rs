@@ -190,6 +190,8 @@ pub mod crypto_key_iam_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The crypto key ID, in the form
         /// `{project_id}/{location_name}/{key_ring_name}/{crypto_key_name}` or
         /// `{location_name}/{key_ring_name}/{crypto_key_name}`. In the second form,
@@ -230,6 +232,7 @@ pub mod crypto_key_iam_policy {
         let o = context.register_resource(request);
         CryptoKeyIAMPolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             crypto_key_id: o.get_field("cryptoKeyId"),
             etag: o.get_field("etag"),
             policy_data: o.get_field("policyData"),

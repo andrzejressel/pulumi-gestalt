@@ -235,6 +235,8 @@ pub mod topic_iam_binding {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         pub condition: pulumi_gestalt_rust::Output<
             Option<super::super::types::pubsub::TopicIamBindingCondition>,
         >,
@@ -306,6 +308,7 @@ pub mod topic_iam_binding {
         let o = context.register_resource(request);
         TopicIAMBindingResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             condition: o.get_field("condition"),
             etag: o.get_field("etag"),
             members: o.get_field("members"),

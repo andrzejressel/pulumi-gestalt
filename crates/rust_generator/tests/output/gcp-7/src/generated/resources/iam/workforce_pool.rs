@@ -137,6 +137,8 @@ pub mod workforce_pool {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Configure access restrictions on the workforce pool users. This is an optional field. If specified web
         /// sign-in can be restricted to given set of services or programmatic sign-in can be disabled for pool users.
         /// Structure is documented below.
@@ -241,6 +243,7 @@ pub mod workforce_pool {
         let o = context.register_resource(request);
         WorkforcePoolResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             access_restrictions: o.get_field("accessRestrictions"),
             description: o.get_field("description"),
             disabled: o.get_field("disabled"),

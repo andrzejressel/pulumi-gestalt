@@ -174,6 +174,8 @@ pub mod vpc_peering_connection {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The status of the VPC Peering Connection request.
         pub accept_status: pulumi_gestalt_rust::Output<String>,
         /// An optional configuration block that allows for [VPC Peering Connection](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options to be set for the VPC that accepts
@@ -266,6 +268,7 @@ pub mod vpc_peering_connection {
         let o = context.register_resource(request);
         VpcPeeringConnectionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             accept_status: o.get_field("acceptStatus"),
             accepter: o.get_field("accepter"),
             auto_accept: o.get_field("autoAccept"),

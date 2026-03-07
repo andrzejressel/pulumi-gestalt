@@ -95,6 +95,8 @@ pub mod sql_role_assignment {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The name of the Cosmos DB Account. Changing this forces a new resource to be created.
         pub account_name: pulumi_gestalt_rust::Output<String>,
         /// The GUID as the name of the Cosmos DB SQL Role Assignment - one will be generated if not specified. Changing this forces a new resource to be created.
@@ -157,6 +159,7 @@ pub mod sql_role_assignment {
         let o = context.register_resource(request);
         SqlRoleAssignmentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             account_name: o.get_field("accountName"),
             name: o.get_field("name"),
             principal_id: o.get_field("principalId"),

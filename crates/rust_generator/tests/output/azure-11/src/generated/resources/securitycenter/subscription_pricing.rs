@@ -79,6 +79,8 @@ pub mod subscription_pricing {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// One or more `extension` blocks as defined below.
         pub extensions: pulumi_gestalt_rust::Output<
             Option<
@@ -131,6 +133,7 @@ pub mod subscription_pricing {
         let o = context.register_resource(request);
         SubscriptionPricingResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             extensions: o.get_field("extensions"),
             resource_type: o.get_field("resourceType"),
             subplan: o.get_field("subplan"),

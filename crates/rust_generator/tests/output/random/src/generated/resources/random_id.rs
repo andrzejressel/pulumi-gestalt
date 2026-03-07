@@ -77,6 +77,8 @@ pub mod random_id {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The generated id presented in base64 without additional transformations.
         pub b64_std: pulumi_gestalt_rust::Output<String>,
         /// The generated id presented in base64, using the URL-friendly character set: case-sensitive letters, digits and the characters `_` and `-`.
@@ -128,6 +130,7 @@ pub mod random_id {
         let o = context.register_resource(request);
         RandomIdResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             b64_std: o.get_field("b64Std"),
             b64_url: o.get_field("b64Url"),
             byte_length: o.get_field("byteLength"),

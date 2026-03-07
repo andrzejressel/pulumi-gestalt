@@ -150,6 +150,8 @@ pub mod spark_pool {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// An `auto_pause` block as defined below.
         pub auto_pause: pulumi_gestalt_rust::Output<
             Option<super::super::types::synapse::SparkPoolAutoPause>,
@@ -311,6 +313,7 @@ pub mod spark_pool {
         let o = context.register_resource(request);
         SparkPoolResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             auto_pause: o.get_field("autoPause"),
             auto_scale: o.get_field("autoScale"),
             cache_size: o.get_field("cacheSize"),

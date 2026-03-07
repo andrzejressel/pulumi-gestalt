@@ -179,6 +179,8 @@ pub mod virtual_network_peering {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Controls if forwarded traffic from VMs in the remote virtual network is allowed. Defaults to `false`.
         pub allow_forwarded_traffic: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Controls gatewayLinks can be used in the remote virtual network’s link to the local virtual network. Defaults to `false`.
@@ -308,6 +310,7 @@ pub mod virtual_network_peering {
         let o = context.register_resource(request);
         VirtualNetworkPeeringResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             allow_forwarded_traffic: o.get_field("allowForwardedTraffic"),
             allow_gateway_transit: o.get_field("allowGatewayTransit"),
             allow_virtual_network_access: o.get_field("allowVirtualNetworkAccess"),

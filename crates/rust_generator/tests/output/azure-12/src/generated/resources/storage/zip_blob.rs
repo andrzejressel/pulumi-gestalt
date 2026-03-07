@@ -46,6 +46,8 @@ pub mod zip_blob {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         pub access_tier: pulumi_gestalt_rust::Output<String>,
         pub cache_control: pulumi_gestalt_rust::Output<Option<String>>,
         pub content: pulumi_gestalt_rust::Output<Option<String>>,
@@ -161,6 +163,7 @@ pub mod zip_blob {
         let o = context.register_resource(request);
         ZipBlobResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             access_tier: o.get_field("accessTier"),
             cache_control: o.get_field("cacheControl"),
             content: o.get_field("content"),

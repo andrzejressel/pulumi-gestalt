@@ -114,6 +114,8 @@ pub mod integration_response {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// How to handle request payload content type conversions. Supported values are `CONVERT_TO_BINARY` and `CONVERT_TO_TEXT`. If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.
         pub content_handling: pulumi_gestalt_rust::Output<Option<String>>,
         /// HTTP method (`GET`, `POST`, `PUT`, `DELETE`, `HEAD`, `OPTIONS`, `ANY`).
@@ -196,6 +198,7 @@ pub mod integration_response {
         let o = context.register_resource(request);
         IntegrationResponseResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             content_handling: o.get_field("contentHandling"),
             http_method: o.get_field("httpMethod"),
             resource_id: o.get_field("resourceId"),

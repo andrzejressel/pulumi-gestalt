@@ -534,6 +534,8 @@ pub struct ProviderArgs {
 }
 #[allow(dead_code)]
 pub struct ProviderResult {
+    /// Pulumi URN is the stable logical identity of this provider resource in the Pulumi stack.
+    pub urn: pulumi_gestalt_rust::Output<String>,
     pub access_approval_custom_endpoint: pulumi_gestalt_rust::Output<Option<String>>,
     pub access_context_manager_custom_endpoint: pulumi_gestalt_rust::Output<
         Option<String>,
@@ -1971,230 +1973,224 @@ pub fn create(
             },
         ],
     };
-    let _o = context.register_resource(request);
+    let o = context.register_resource(request);
     ProviderResult {
-        access_approval_custom_endpoint: _o.get_field("accessApprovalCustomEndpoint"),
-        access_context_manager_custom_endpoint: _o
+        urn: o.get_urn(),
+        access_approval_custom_endpoint: o.get_field("accessApprovalCustomEndpoint"),
+        access_context_manager_custom_endpoint: o
             .get_field("accessContextManagerCustomEndpoint"),
-        access_token: _o.get_field("accessToken"),
-        active_directory_custom_endpoint: _o.get_field("activeDirectoryCustomEndpoint"),
-        add_pulumi_attribution_label: _o.get_field("addPulumiAttributionLabel"),
-        alloydb_custom_endpoint: _o.get_field("alloydbCustomEndpoint"),
-        api_gateway_custom_endpoint: _o.get_field("apiGatewayCustomEndpoint"),
-        apigee_custom_endpoint: _o.get_field("apigeeCustomEndpoint"),
-        apikeys_custom_endpoint: _o.get_field("apikeysCustomEndpoint"),
-        app_engine_custom_endpoint: _o.get_field("appEngineCustomEndpoint"),
-        apphub_custom_endpoint: _o.get_field("apphubCustomEndpoint"),
-        artifact_registry_custom_endpoint: _o
-            .get_field("artifactRegistryCustomEndpoint"),
-        assured_workloads_custom_endpoint: _o
-            .get_field("assuredWorkloadsCustomEndpoint"),
-        backup_dr_custom_endpoint: _o.get_field("backupDrCustomEndpoint"),
-        batching: _o.get_field("batching"),
-        beyondcorp_custom_endpoint: _o.get_field("beyondcorpCustomEndpoint"),
-        big_query_custom_endpoint: _o.get_field("bigQueryCustomEndpoint"),
-        biglake_custom_endpoint: _o.get_field("biglakeCustomEndpoint"),
-        bigquery_analytics_hub_custom_endpoint: _o
+        access_token: o.get_field("accessToken"),
+        active_directory_custom_endpoint: o.get_field("activeDirectoryCustomEndpoint"),
+        add_pulumi_attribution_label: o.get_field("addPulumiAttributionLabel"),
+        alloydb_custom_endpoint: o.get_field("alloydbCustomEndpoint"),
+        api_gateway_custom_endpoint: o.get_field("apiGatewayCustomEndpoint"),
+        apigee_custom_endpoint: o.get_field("apigeeCustomEndpoint"),
+        apikeys_custom_endpoint: o.get_field("apikeysCustomEndpoint"),
+        app_engine_custom_endpoint: o.get_field("appEngineCustomEndpoint"),
+        apphub_custom_endpoint: o.get_field("apphubCustomEndpoint"),
+        artifact_registry_custom_endpoint: o.get_field("artifactRegistryCustomEndpoint"),
+        assured_workloads_custom_endpoint: o.get_field("assuredWorkloadsCustomEndpoint"),
+        backup_dr_custom_endpoint: o.get_field("backupDrCustomEndpoint"),
+        batching: o.get_field("batching"),
+        beyondcorp_custom_endpoint: o.get_field("beyondcorpCustomEndpoint"),
+        big_query_custom_endpoint: o.get_field("bigQueryCustomEndpoint"),
+        biglake_custom_endpoint: o.get_field("biglakeCustomEndpoint"),
+        bigquery_analytics_hub_custom_endpoint: o
             .get_field("bigqueryAnalyticsHubCustomEndpoint"),
-        bigquery_connection_custom_endpoint: _o
+        bigquery_connection_custom_endpoint: o
             .get_field("bigqueryConnectionCustomEndpoint"),
-        bigquery_data_transfer_custom_endpoint: _o
+        bigquery_data_transfer_custom_endpoint: o
             .get_field("bigqueryDataTransferCustomEndpoint"),
-        bigquery_datapolicy_custom_endpoint: _o
+        bigquery_datapolicy_custom_endpoint: o
             .get_field("bigqueryDatapolicyCustomEndpoint"),
-        bigquery_reservation_custom_endpoint: _o
+        bigquery_reservation_custom_endpoint: o
             .get_field("bigqueryReservationCustomEndpoint"),
-        bigtable_custom_endpoint: _o.get_field("bigtableCustomEndpoint"),
-        billing_custom_endpoint: _o.get_field("billingCustomEndpoint"),
-        billing_project: _o.get_field("billingProject"),
-        binary_authorization_custom_endpoint: _o
+        bigtable_custom_endpoint: o.get_field("bigtableCustomEndpoint"),
+        billing_custom_endpoint: o.get_field("billingCustomEndpoint"),
+        billing_project: o.get_field("billingProject"),
+        binary_authorization_custom_endpoint: o
             .get_field("binaryAuthorizationCustomEndpoint"),
-        blockchain_node_engine_custom_endpoint: _o
+        blockchain_node_engine_custom_endpoint: o
             .get_field("blockchainNodeEngineCustomEndpoint"),
-        certificate_manager_custom_endpoint: _o
+        certificate_manager_custom_endpoint: o
             .get_field("certificateManagerCustomEndpoint"),
-        cloud_asset_custom_endpoint: _o.get_field("cloudAssetCustomEndpoint"),
-        cloud_billing_custom_endpoint: _o.get_field("cloudBillingCustomEndpoint"),
-        cloud_build_custom_endpoint: _o.get_field("cloudBuildCustomEndpoint"),
-        cloud_build_worker_pool_custom_endpoint: _o
+        cloud_asset_custom_endpoint: o.get_field("cloudAssetCustomEndpoint"),
+        cloud_billing_custom_endpoint: o.get_field("cloudBillingCustomEndpoint"),
+        cloud_build_custom_endpoint: o.get_field("cloudBuildCustomEndpoint"),
+        cloud_build_worker_pool_custom_endpoint: o
             .get_field("cloudBuildWorkerPoolCustomEndpoint"),
-        cloud_functions_custom_endpoint: _o.get_field("cloudFunctionsCustomEndpoint"),
-        cloud_identity_custom_endpoint: _o.get_field("cloudIdentityCustomEndpoint"),
-        cloud_ids_custom_endpoint: _o.get_field("cloudIdsCustomEndpoint"),
-        cloud_quotas_custom_endpoint: _o.get_field("cloudQuotasCustomEndpoint"),
-        cloud_resource_manager_custom_endpoint: _o
+        cloud_functions_custom_endpoint: o.get_field("cloudFunctionsCustomEndpoint"),
+        cloud_identity_custom_endpoint: o.get_field("cloudIdentityCustomEndpoint"),
+        cloud_ids_custom_endpoint: o.get_field("cloudIdsCustomEndpoint"),
+        cloud_quotas_custom_endpoint: o.get_field("cloudQuotasCustomEndpoint"),
+        cloud_resource_manager_custom_endpoint: o
             .get_field("cloudResourceManagerCustomEndpoint"),
-        cloud_run_custom_endpoint: _o.get_field("cloudRunCustomEndpoint"),
-        cloud_run_v2_custom_endpoint: _o.get_field("cloudRunV2CustomEndpoint"),
-        cloud_scheduler_custom_endpoint: _o.get_field("cloudSchedulerCustomEndpoint"),
-        cloud_tasks_custom_endpoint: _o.get_field("cloudTasksCustomEndpoint"),
-        cloudbuildv2_custom_endpoint: _o.get_field("cloudbuildv2CustomEndpoint"),
-        clouddeploy_custom_endpoint: _o.get_field("clouddeployCustomEndpoint"),
-        clouddomains_custom_endpoint: _o.get_field("clouddomainsCustomEndpoint"),
-        cloudfunctions2_custom_endpoint: _o.get_field("cloudfunctions2CustomEndpoint"),
-        composer_custom_endpoint: _o.get_field("composerCustomEndpoint"),
-        compute_custom_endpoint: _o.get_field("computeCustomEndpoint"),
-        container_analysis_custom_endpoint: _o
+        cloud_run_custom_endpoint: o.get_field("cloudRunCustomEndpoint"),
+        cloud_run_v2_custom_endpoint: o.get_field("cloudRunV2CustomEndpoint"),
+        cloud_scheduler_custom_endpoint: o.get_field("cloudSchedulerCustomEndpoint"),
+        cloud_tasks_custom_endpoint: o.get_field("cloudTasksCustomEndpoint"),
+        cloudbuildv2_custom_endpoint: o.get_field("cloudbuildv2CustomEndpoint"),
+        clouddeploy_custom_endpoint: o.get_field("clouddeployCustomEndpoint"),
+        clouddomains_custom_endpoint: o.get_field("clouddomainsCustomEndpoint"),
+        cloudfunctions2_custom_endpoint: o.get_field("cloudfunctions2CustomEndpoint"),
+        composer_custom_endpoint: o.get_field("composerCustomEndpoint"),
+        compute_custom_endpoint: o.get_field("computeCustomEndpoint"),
+        container_analysis_custom_endpoint: o
             .get_field("containerAnalysisCustomEndpoint"),
-        container_attached_custom_endpoint: _o
+        container_attached_custom_endpoint: o
             .get_field("containerAttachedCustomEndpoint"),
-        container_aws_custom_endpoint: _o.get_field("containerAwsCustomEndpoint"),
-        container_azure_custom_endpoint: _o.get_field("containerAzureCustomEndpoint"),
-        container_custom_endpoint: _o.get_field("containerCustomEndpoint"),
-        core_billing_custom_endpoint: _o.get_field("coreBillingCustomEndpoint"),
-        credentials: _o.get_field("credentials"),
-        data_catalog_custom_endpoint: _o.get_field("dataCatalogCustomEndpoint"),
-        data_fusion_custom_endpoint: _o.get_field("dataFusionCustomEndpoint"),
-        data_loss_prevention_custom_endpoint: _o
+        container_aws_custom_endpoint: o.get_field("containerAwsCustomEndpoint"),
+        container_azure_custom_endpoint: o.get_field("containerAzureCustomEndpoint"),
+        container_custom_endpoint: o.get_field("containerCustomEndpoint"),
+        core_billing_custom_endpoint: o.get_field("coreBillingCustomEndpoint"),
+        credentials: o.get_field("credentials"),
+        data_catalog_custom_endpoint: o.get_field("dataCatalogCustomEndpoint"),
+        data_fusion_custom_endpoint: o.get_field("dataFusionCustomEndpoint"),
+        data_loss_prevention_custom_endpoint: o
             .get_field("dataLossPreventionCustomEndpoint"),
-        data_pipeline_custom_endpoint: _o.get_field("dataPipelineCustomEndpoint"),
-        database_migration_service_custom_endpoint: _o
+        data_pipeline_custom_endpoint: o.get_field("dataPipelineCustomEndpoint"),
+        database_migration_service_custom_endpoint: o
             .get_field("databaseMigrationServiceCustomEndpoint"),
-        dataflow_custom_endpoint: _o.get_field("dataflowCustomEndpoint"),
-        dataform_custom_endpoint: _o.get_field("dataformCustomEndpoint"),
-        dataplex_custom_endpoint: _o.get_field("dataplexCustomEndpoint"),
-        dataproc_custom_endpoint: _o.get_field("dataprocCustomEndpoint"),
-        dataproc_gdc_custom_endpoint: _o.get_field("dataprocGdcCustomEndpoint"),
-        dataproc_metastore_custom_endpoint: _o
+        dataflow_custom_endpoint: o.get_field("dataflowCustomEndpoint"),
+        dataform_custom_endpoint: o.get_field("dataformCustomEndpoint"),
+        dataplex_custom_endpoint: o.get_field("dataplexCustomEndpoint"),
+        dataproc_custom_endpoint: o.get_field("dataprocCustomEndpoint"),
+        dataproc_gdc_custom_endpoint: o.get_field("dataprocGdcCustomEndpoint"),
+        dataproc_metastore_custom_endpoint: o
             .get_field("dataprocMetastoreCustomEndpoint"),
-        datastream_custom_endpoint: _o.get_field("datastreamCustomEndpoint"),
-        default_labels: _o.get_field("defaultLabels"),
-        deployment_manager_custom_endpoint: _o
+        datastream_custom_endpoint: o.get_field("datastreamCustomEndpoint"),
+        default_labels: o.get_field("defaultLabels"),
+        deployment_manager_custom_endpoint: o
             .get_field("deploymentManagerCustomEndpoint"),
-        developer_connect_custom_endpoint: _o
-            .get_field("developerConnectCustomEndpoint"),
-        dialogflow_custom_endpoint: _o.get_field("dialogflowCustomEndpoint"),
-        dialogflow_cx_custom_endpoint: _o.get_field("dialogflowCxCustomEndpoint"),
-        disable_google_partner_name: _o.get_field("disableGooglePartnerName"),
-        discovery_engine_custom_endpoint: _o.get_field("discoveryEngineCustomEndpoint"),
-        dns_custom_endpoint: _o.get_field("dnsCustomEndpoint"),
-        document_ai_custom_endpoint: _o.get_field("documentAiCustomEndpoint"),
-        document_ai_warehouse_custom_endpoint: _o
+        developer_connect_custom_endpoint: o.get_field("developerConnectCustomEndpoint"),
+        dialogflow_custom_endpoint: o.get_field("dialogflowCustomEndpoint"),
+        dialogflow_cx_custom_endpoint: o.get_field("dialogflowCxCustomEndpoint"),
+        disable_google_partner_name: o.get_field("disableGooglePartnerName"),
+        discovery_engine_custom_endpoint: o.get_field("discoveryEngineCustomEndpoint"),
+        dns_custom_endpoint: o.get_field("dnsCustomEndpoint"),
+        document_ai_custom_endpoint: o.get_field("documentAiCustomEndpoint"),
+        document_ai_warehouse_custom_endpoint: o
             .get_field("documentAiWarehouseCustomEndpoint"),
-        edgecontainer_custom_endpoint: _o.get_field("edgecontainerCustomEndpoint"),
-        edgenetwork_custom_endpoint: _o.get_field("edgenetworkCustomEndpoint"),
-        essential_contacts_custom_endpoint: _o
+        edgecontainer_custom_endpoint: o.get_field("edgecontainerCustomEndpoint"),
+        edgenetwork_custom_endpoint: o.get_field("edgenetworkCustomEndpoint"),
+        essential_contacts_custom_endpoint: o
             .get_field("essentialContactsCustomEndpoint"),
-        eventarc_custom_endpoint: _o.get_field("eventarcCustomEndpoint"),
-        filestore_custom_endpoint: _o.get_field("filestoreCustomEndpoint"),
-        firebase_app_check_custom_endpoint: _o
+        eventarc_custom_endpoint: o.get_field("eventarcCustomEndpoint"),
+        filestore_custom_endpoint: o.get_field("filestoreCustomEndpoint"),
+        firebase_app_check_custom_endpoint: o
             .get_field("firebaseAppCheckCustomEndpoint"),
-        firebase_custom_endpoint: _o.get_field("firebaseCustomEndpoint"),
-        firebase_database_custom_endpoint: _o
-            .get_field("firebaseDatabaseCustomEndpoint"),
-        firebase_extensions_custom_endpoint: _o
+        firebase_custom_endpoint: o.get_field("firebaseCustomEndpoint"),
+        firebase_database_custom_endpoint: o.get_field("firebaseDatabaseCustomEndpoint"),
+        firebase_extensions_custom_endpoint: o
             .get_field("firebaseExtensionsCustomEndpoint"),
-        firebase_hosting_custom_endpoint: _o.get_field("firebaseHostingCustomEndpoint"),
-        firebase_storage_custom_endpoint: _o.get_field("firebaseStorageCustomEndpoint"),
-        firebaserules_custom_endpoint: _o.get_field("firebaserulesCustomEndpoint"),
-        firestore_custom_endpoint: _o.get_field("firestoreCustomEndpoint"),
-        gemini_custom_endpoint: _o.get_field("geminiCustomEndpoint"),
-        gke_backup_custom_endpoint: _o.get_field("gkeBackupCustomEndpoint"),
-        gke_hub2_custom_endpoint: _o.get_field("gkeHub2CustomEndpoint"),
-        gke_hub_custom_endpoint: _o.get_field("gkeHubCustomEndpoint"),
-        gkehub_feature_custom_endpoint: _o.get_field("gkehubFeatureCustomEndpoint"),
-        gkeonprem_custom_endpoint: _o.get_field("gkeonpremCustomEndpoint"),
-        google_partner_name: _o.get_field("googlePartnerName"),
-        healthcare_custom_endpoint: _o.get_field("healthcareCustomEndpoint"),
-        iam2_custom_endpoint: _o.get_field("iam2CustomEndpoint"),
-        iam3_custom_endpoint: _o.get_field("iam3CustomEndpoint"),
-        iam_beta_custom_endpoint: _o.get_field("iamBetaCustomEndpoint"),
-        iam_credentials_custom_endpoint: _o.get_field("iamCredentialsCustomEndpoint"),
-        iam_custom_endpoint: _o.get_field("iamCustomEndpoint"),
-        iam_workforce_pool_custom_endpoint: _o
+        firebase_hosting_custom_endpoint: o.get_field("firebaseHostingCustomEndpoint"),
+        firebase_storage_custom_endpoint: o.get_field("firebaseStorageCustomEndpoint"),
+        firebaserules_custom_endpoint: o.get_field("firebaserulesCustomEndpoint"),
+        firestore_custom_endpoint: o.get_field("firestoreCustomEndpoint"),
+        gemini_custom_endpoint: o.get_field("geminiCustomEndpoint"),
+        gke_backup_custom_endpoint: o.get_field("gkeBackupCustomEndpoint"),
+        gke_hub2_custom_endpoint: o.get_field("gkeHub2CustomEndpoint"),
+        gke_hub_custom_endpoint: o.get_field("gkeHubCustomEndpoint"),
+        gkehub_feature_custom_endpoint: o.get_field("gkehubFeatureCustomEndpoint"),
+        gkeonprem_custom_endpoint: o.get_field("gkeonpremCustomEndpoint"),
+        google_partner_name: o.get_field("googlePartnerName"),
+        healthcare_custom_endpoint: o.get_field("healthcareCustomEndpoint"),
+        iam2_custom_endpoint: o.get_field("iam2CustomEndpoint"),
+        iam3_custom_endpoint: o.get_field("iam3CustomEndpoint"),
+        iam_beta_custom_endpoint: o.get_field("iamBetaCustomEndpoint"),
+        iam_credentials_custom_endpoint: o.get_field("iamCredentialsCustomEndpoint"),
+        iam_custom_endpoint: o.get_field("iamCustomEndpoint"),
+        iam_workforce_pool_custom_endpoint: o
             .get_field("iamWorkforcePoolCustomEndpoint"),
-        iap_custom_endpoint: _o.get_field("iapCustomEndpoint"),
-        identity_platform_custom_endpoint: _o
-            .get_field("identityPlatformCustomEndpoint"),
-        impersonate_service_account: _o.get_field("impersonateServiceAccount"),
-        impersonate_service_account_delegates: _o
+        iap_custom_endpoint: o.get_field("iapCustomEndpoint"),
+        identity_platform_custom_endpoint: o.get_field("identityPlatformCustomEndpoint"),
+        impersonate_service_account: o.get_field("impersonateServiceAccount"),
+        impersonate_service_account_delegates: o
             .get_field("impersonateServiceAccountDelegates"),
-        integration_connectors_custom_endpoint: _o
+        integration_connectors_custom_endpoint: o
             .get_field("integrationConnectorsCustomEndpoint"),
-        integrations_custom_endpoint: _o.get_field("integrationsCustomEndpoint"),
-        kms_custom_endpoint: _o.get_field("kmsCustomEndpoint"),
-        logging_custom_endpoint: _o.get_field("loggingCustomEndpoint"),
-        looker_custom_endpoint: _o.get_field("lookerCustomEndpoint"),
-        managed_kafka_custom_endpoint: _o.get_field("managedKafkaCustomEndpoint"),
-        memcache_custom_endpoint: _o.get_field("memcacheCustomEndpoint"),
-        memorystore_custom_endpoint: _o.get_field("memorystoreCustomEndpoint"),
-        migration_center_custom_endpoint: _o.get_field("migrationCenterCustomEndpoint"),
-        ml_engine_custom_endpoint: _o.get_field("mlEngineCustomEndpoint"),
-        monitoring_custom_endpoint: _o.get_field("monitoringCustomEndpoint"),
-        netapp_custom_endpoint: _o.get_field("netappCustomEndpoint"),
-        network_connectivity_custom_endpoint: _o
+        integrations_custom_endpoint: o.get_field("integrationsCustomEndpoint"),
+        kms_custom_endpoint: o.get_field("kmsCustomEndpoint"),
+        logging_custom_endpoint: o.get_field("loggingCustomEndpoint"),
+        looker_custom_endpoint: o.get_field("lookerCustomEndpoint"),
+        managed_kafka_custom_endpoint: o.get_field("managedKafkaCustomEndpoint"),
+        memcache_custom_endpoint: o.get_field("memcacheCustomEndpoint"),
+        memorystore_custom_endpoint: o.get_field("memorystoreCustomEndpoint"),
+        migration_center_custom_endpoint: o.get_field("migrationCenterCustomEndpoint"),
+        ml_engine_custom_endpoint: o.get_field("mlEngineCustomEndpoint"),
+        monitoring_custom_endpoint: o.get_field("monitoringCustomEndpoint"),
+        netapp_custom_endpoint: o.get_field("netappCustomEndpoint"),
+        network_connectivity_custom_endpoint: o
             .get_field("networkConnectivityCustomEndpoint"),
-        network_management_custom_endpoint: _o
+        network_management_custom_endpoint: o
             .get_field("networkManagementCustomEndpoint"),
-        network_security_custom_endpoint: _o.get_field("networkSecurityCustomEndpoint"),
-        network_services_custom_endpoint: _o.get_field("networkServicesCustomEndpoint"),
-        notebooks_custom_endpoint: _o.get_field("notebooksCustomEndpoint"),
-        oracle_database_custom_endpoint: _o.get_field("oracleDatabaseCustomEndpoint"),
-        org_policy_custom_endpoint: _o.get_field("orgPolicyCustomEndpoint"),
-        os_config_custom_endpoint: _o.get_field("osConfigCustomEndpoint"),
-        os_login_custom_endpoint: _o.get_field("osLoginCustomEndpoint"),
-        parallelstore_custom_endpoint: _o.get_field("parallelstoreCustomEndpoint"),
-        privateca_custom_endpoint: _o.get_field("privatecaCustomEndpoint"),
-        privileged_access_manager_custom_endpoint: _o
+        network_security_custom_endpoint: o.get_field("networkSecurityCustomEndpoint"),
+        network_services_custom_endpoint: o.get_field("networkServicesCustomEndpoint"),
+        notebooks_custom_endpoint: o.get_field("notebooksCustomEndpoint"),
+        oracle_database_custom_endpoint: o.get_field("oracleDatabaseCustomEndpoint"),
+        org_policy_custom_endpoint: o.get_field("orgPolicyCustomEndpoint"),
+        os_config_custom_endpoint: o.get_field("osConfigCustomEndpoint"),
+        os_login_custom_endpoint: o.get_field("osLoginCustomEndpoint"),
+        parallelstore_custom_endpoint: o.get_field("parallelstoreCustomEndpoint"),
+        privateca_custom_endpoint: o.get_field("privatecaCustomEndpoint"),
+        privileged_access_manager_custom_endpoint: o
             .get_field("privilegedAccessManagerCustomEndpoint"),
-        project: _o.get_field("project"),
-        public_ca_custom_endpoint: _o.get_field("publicCaCustomEndpoint"),
-        pubsub_custom_endpoint: _o.get_field("pubsubCustomEndpoint"),
-        pubsub_lite_custom_endpoint: _o.get_field("pubsubLiteCustomEndpoint"),
-        pulumi_attribution_label_addition_strategy: _o
+        project: o.get_field("project"),
+        public_ca_custom_endpoint: o.get_field("publicCaCustomEndpoint"),
+        pubsub_custom_endpoint: o.get_field("pubsubCustomEndpoint"),
+        pubsub_lite_custom_endpoint: o.get_field("pubsubLiteCustomEndpoint"),
+        pulumi_attribution_label_addition_strategy: o
             .get_field("pulumiAttributionLabelAdditionStrategy"),
-        recaptcha_enterprise_custom_endpoint: _o
+        recaptcha_enterprise_custom_endpoint: o
             .get_field("recaptchaEnterpriseCustomEndpoint"),
-        redis_custom_endpoint: _o.get_field("redisCustomEndpoint"),
-        region: _o.get_field("region"),
-        request_reason: _o.get_field("requestReason"),
-        request_timeout: _o.get_field("requestTimeout"),
-        resource_manager_custom_endpoint: _o.get_field("resourceManagerCustomEndpoint"),
-        resource_manager_v3_custom_endpoint: _o
+        redis_custom_endpoint: o.get_field("redisCustomEndpoint"),
+        region: o.get_field("region"),
+        request_reason: o.get_field("requestReason"),
+        request_timeout: o.get_field("requestTimeout"),
+        resource_manager_custom_endpoint: o.get_field("resourceManagerCustomEndpoint"),
+        resource_manager_v3_custom_endpoint: o
             .get_field("resourceManagerV3CustomEndpoint"),
-        runtime_config_custom_endpoint: _o.get_field("runtimeConfigCustomEndpoint"),
-        runtimeconfig_custom_endpoint: _o.get_field("runtimeconfigCustomEndpoint"),
-        scopes: _o.get_field("scopes"),
-        secret_manager_custom_endpoint: _o.get_field("secretManagerCustomEndpoint"),
-        secret_manager_regional_custom_endpoint: _o
+        runtime_config_custom_endpoint: o.get_field("runtimeConfigCustomEndpoint"),
+        runtimeconfig_custom_endpoint: o.get_field("runtimeconfigCustomEndpoint"),
+        scopes: o.get_field("scopes"),
+        secret_manager_custom_endpoint: o.get_field("secretManagerCustomEndpoint"),
+        secret_manager_regional_custom_endpoint: o
             .get_field("secretManagerRegionalCustomEndpoint"),
-        secure_source_manager_custom_endpoint: _o
+        secure_source_manager_custom_endpoint: o
             .get_field("secureSourceManagerCustomEndpoint"),
-        security_center_custom_endpoint: _o.get_field("securityCenterCustomEndpoint"),
-        security_center_management_custom_endpoint: _o
+        security_center_custom_endpoint: o.get_field("securityCenterCustomEndpoint"),
+        security_center_management_custom_endpoint: o
             .get_field("securityCenterManagementCustomEndpoint"),
-        security_center_v2_custom_endpoint: _o
+        security_center_v2_custom_endpoint: o
             .get_field("securityCenterV2CustomEndpoint"),
-        security_scanner_custom_endpoint: _o.get_field("securityScannerCustomEndpoint"),
-        securityposture_custom_endpoint: _o.get_field("securitypostureCustomEndpoint"),
-        service_directory_custom_endpoint: _o
-            .get_field("serviceDirectoryCustomEndpoint"),
-        service_management_custom_endpoint: _o
+        security_scanner_custom_endpoint: o.get_field("securityScannerCustomEndpoint"),
+        securityposture_custom_endpoint: o.get_field("securitypostureCustomEndpoint"),
+        service_directory_custom_endpoint: o.get_field("serviceDirectoryCustomEndpoint"),
+        service_management_custom_endpoint: o
             .get_field("serviceManagementCustomEndpoint"),
-        service_networking_custom_endpoint: _o
+        service_networking_custom_endpoint: o
             .get_field("serviceNetworkingCustomEndpoint"),
-        service_usage_custom_endpoint: _o.get_field("serviceUsageCustomEndpoint"),
-        site_verification_custom_endpoint: _o
-            .get_field("siteVerificationCustomEndpoint"),
-        source_repo_custom_endpoint: _o.get_field("sourceRepoCustomEndpoint"),
-        spanner_custom_endpoint: _o.get_field("spannerCustomEndpoint"),
-        sql_custom_endpoint: _o.get_field("sqlCustomEndpoint"),
-        storage_custom_endpoint: _o.get_field("storageCustomEndpoint"),
-        storage_insights_custom_endpoint: _o.get_field("storageInsightsCustomEndpoint"),
-        storage_transfer_custom_endpoint: _o.get_field("storageTransferCustomEndpoint"),
-        tags_custom_endpoint: _o.get_field("tagsCustomEndpoint"),
-        tags_location_custom_endpoint: _o.get_field("tagsLocationCustomEndpoint"),
-        tpu_custom_endpoint: _o.get_field("tpuCustomEndpoint"),
-        tpu_v2_custom_endpoint: _o.get_field("tpuV2CustomEndpoint"),
-        transcoder_custom_endpoint: _o.get_field("transcoderCustomEndpoint"),
-        universe_domain: _o.get_field("universeDomain"),
-        user_project_override: _o.get_field("userProjectOverride"),
-        vertex_ai_custom_endpoint: _o.get_field("vertexAiCustomEndpoint"),
-        vmwareengine_custom_endpoint: _o.get_field("vmwareengineCustomEndpoint"),
-        vpc_access_custom_endpoint: _o.get_field("vpcAccessCustomEndpoint"),
-        workbench_custom_endpoint: _o.get_field("workbenchCustomEndpoint"),
-        workflows_custom_endpoint: _o.get_field("workflowsCustomEndpoint"),
-        workstations_custom_endpoint: _o.get_field("workstationsCustomEndpoint"),
-        zone: _o.get_field("zone"),
+        service_usage_custom_endpoint: o.get_field("serviceUsageCustomEndpoint"),
+        site_verification_custom_endpoint: o.get_field("siteVerificationCustomEndpoint"),
+        source_repo_custom_endpoint: o.get_field("sourceRepoCustomEndpoint"),
+        spanner_custom_endpoint: o.get_field("spannerCustomEndpoint"),
+        sql_custom_endpoint: o.get_field("sqlCustomEndpoint"),
+        storage_custom_endpoint: o.get_field("storageCustomEndpoint"),
+        storage_insights_custom_endpoint: o.get_field("storageInsightsCustomEndpoint"),
+        storage_transfer_custom_endpoint: o.get_field("storageTransferCustomEndpoint"),
+        tags_custom_endpoint: o.get_field("tagsCustomEndpoint"),
+        tags_location_custom_endpoint: o.get_field("tagsLocationCustomEndpoint"),
+        tpu_custom_endpoint: o.get_field("tpuCustomEndpoint"),
+        tpu_v2_custom_endpoint: o.get_field("tpuV2CustomEndpoint"),
+        transcoder_custom_endpoint: o.get_field("transcoderCustomEndpoint"),
+        universe_domain: o.get_field("universeDomain"),
+        user_project_override: o.get_field("userProjectOverride"),
+        vertex_ai_custom_endpoint: o.get_field("vertexAiCustomEndpoint"),
+        vmwareengine_custom_endpoint: o.get_field("vmwareengineCustomEndpoint"),
+        vpc_access_custom_endpoint: o.get_field("vpcAccessCustomEndpoint"),
+        workbench_custom_endpoint: o.get_field("workbenchCustomEndpoint"),
+        workflows_custom_endpoint: o.get_field("workflowsCustomEndpoint"),
+        workstations_custom_endpoint: o.get_field("workstationsCustomEndpoint"),
+        zone: o.get_field("zone"),
     }
 }

@@ -213,6 +213,8 @@ pub mod guest_policies {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the VM instances that are assigned to this policy. This allows you to target sets
         /// or groups of VM instances by different parameters such as labels, names, OS, or zones.
         /// If left empty, all VM instances underneath this policy are targeted.
@@ -318,6 +320,7 @@ pub mod guest_policies {
         let o = context.register_resource(request);
         GuestPoliciesResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             assignment: o.get_field("assignment"),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),

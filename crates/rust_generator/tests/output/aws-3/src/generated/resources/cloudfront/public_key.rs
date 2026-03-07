@@ -54,6 +54,8 @@ pub mod public_key {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Internal value used by CloudFront to allow future updates to the public key configuration.
         pub caller_reference: pulumi_gestalt_rust::Output<String>,
         /// An optional comment about the public key.
@@ -108,6 +110,7 @@ pub mod public_key {
         let o = context.register_resource(request);
         PublicKeyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             caller_reference: o.get_field("callerReference"),
             comment: o.get_field("comment"),
             encoded_key: o.get_field("encodedKey"),

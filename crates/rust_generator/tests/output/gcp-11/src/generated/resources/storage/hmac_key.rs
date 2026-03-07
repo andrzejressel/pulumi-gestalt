@@ -89,6 +89,8 @@ pub mod hmac_key {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The access ID of the HMAC Key.
         pub access_id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the project in which the resource belongs.
@@ -147,6 +149,7 @@ pub mod hmac_key {
         let o = context.register_resource(request);
         HmacKeyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             access_id: o.get_field("accessId"),
             project: o.get_field("project"),
             secret: o.get_field("secret"),

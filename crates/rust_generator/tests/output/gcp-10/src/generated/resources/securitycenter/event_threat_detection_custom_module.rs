@@ -89,6 +89,8 @@ pub mod event_threat_detection_custom_module {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Config for the module. For the resident module, its config value is defined at this level.
         /// For the inherited module, its config value is inherited from the ancestor module.
         pub config: pulumi_gestalt_rust::Output<String>,
@@ -159,6 +161,7 @@ pub mod event_threat_detection_custom_module {
         let o = context.register_resource(request);
         EventThreatDetectionCustomModuleResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             config: o.get_field("config"),
             display_name: o.get_field("displayName"),
             enablement_state: o.get_field("enablementState"),

@@ -75,6 +75,8 @@ pub mod network_site {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Azure Region where the Mobile Network Site should exist. Changing this forces a new Mobile Network Site to be created.
         pub location: pulumi_gestalt_rust::Output<String>,
         /// the ID of the Mobile Network which the Mobile Network Site belongs to. Changing this forces a new Mobile Network Site to be created.
@@ -127,6 +129,7 @@ pub mod network_site {
         let o = context.register_resource(request);
         NetworkSiteResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             location: o.get_field("location"),
             mobile_network_id: o.get_field("mobileNetworkId"),
             name: o.get_field("name"),

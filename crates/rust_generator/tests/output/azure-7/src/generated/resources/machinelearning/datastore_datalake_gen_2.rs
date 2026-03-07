@@ -124,6 +124,8 @@ pub mod datastore_datalake_gen_2 {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// An URL used for authentication.
         pub authority_url: pulumi_gestalt_rust::Output<Option<String>>,
         /// The object ID of the Service Principal.
@@ -221,6 +223,7 @@ pub mod datastore_datalake_gen_2 {
         let o = context.register_resource(request);
         DatastoreDatalakeGen2Result {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             authority_url: o.get_field("authorityUrl"),
             client_id: o.get_field("clientId"),
             client_secret: o.get_field("clientSecret"),

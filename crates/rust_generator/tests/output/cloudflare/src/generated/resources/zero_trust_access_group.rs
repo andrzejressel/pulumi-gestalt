@@ -50,6 +50,8 @@ pub mod zero_trust_access_group {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The account identifier to target for the resource. Conflicts with `zone_id`. **Modifying this attribute will force creation of a new resource.**
         pub account_id: pulumi_gestalt_rust::Output<Option<String>>,
         pub excludes: pulumi_gestalt_rust::Output<
@@ -114,6 +116,7 @@ pub mod zero_trust_access_group {
         let o = context.register_resource(request);
         ZeroTrustAccessGroupResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             excludes: o.get_field("excludes"),
             includes: o.get_field("includes"),

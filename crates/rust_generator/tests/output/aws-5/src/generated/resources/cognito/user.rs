@@ -124,6 +124,8 @@ pub mod user {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A map that contains user attributes and attribute values to be set for the user.
         pub attributes: pulumi_gestalt_rust::Output<
             Option<std::collections::HashMap<String, String>>,
@@ -241,6 +243,7 @@ pub mod user {
         let o = context.register_resource(request);
         UserResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             attributes: o.get_field("attributes"),
             client_metadata: o.get_field("clientMetadata"),
             creation_date: o.get_field("creationDate"),

@@ -103,6 +103,8 @@ pub mod ontap_storage_virtual_machine {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Configuration block that Amazon FSx uses to join the FSx ONTAP Storage Virtual Machine(SVM) to your Microsoft Active Directory (AD) directory. Detailed below.
         pub active_directory_configuration: pulumi_gestalt_rust::Output<
             Option<
@@ -190,6 +192,7 @@ pub mod ontap_storage_virtual_machine {
         let o = context.register_resource(request);
         OntapStorageVirtualMachineResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             active_directory_configuration: o.get_field("activeDirectoryConfiguration"),
             arn: o.get_field("arn"),
             endpoints: o.get_field("endpoints"),

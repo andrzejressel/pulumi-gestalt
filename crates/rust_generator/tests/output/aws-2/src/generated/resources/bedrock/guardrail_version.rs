@@ -58,6 +58,8 @@ pub mod guardrail_version {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Description of the Guardrail version.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// Guardrail ARN.
@@ -111,6 +113,7 @@ pub mod guardrail_version {
         let o = context.register_resource(request);
         GuardrailVersionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             description: o.get_field("description"),
             guardrail_arn: o.get_field("guardrailArn"),
             skip_destroy: o.get_field("skipDestroy"),

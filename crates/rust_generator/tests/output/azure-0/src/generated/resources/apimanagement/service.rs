@@ -170,6 +170,8 @@ pub mod service {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// One or more `additional_location` blocks as defined below.
         pub additional_locations: pulumi_gestalt_rust::Output<
             Option<Vec<super::super::types::apimanagement::ServiceAdditionalLocation>>,
@@ -436,6 +438,7 @@ pub mod service {
         let o = context.register_resource(request);
         ServiceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             additional_locations: o.get_field("additionalLocations"),
             certificates: o.get_field("certificates"),
             client_certificate_enabled: o.get_field("clientCertificateEnabled"),

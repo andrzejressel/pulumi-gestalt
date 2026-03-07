@@ -46,6 +46,8 @@ pub mod gateway {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ASN to be configured on the Amazon side of the connection. The ASN must be in the private range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294.
         pub amazon_side_asn: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the gateway.
@@ -84,6 +86,7 @@ pub mod gateway {
         let o = context.register_resource(request);
         GatewayResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             amazon_side_asn: o.get_field("amazonSideAsn"),
             arn: o.get_field("arn"),
             name: o.get_field("name"),

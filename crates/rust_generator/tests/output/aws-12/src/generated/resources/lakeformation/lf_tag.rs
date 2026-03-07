@@ -49,6 +49,8 @@ pub mod lf_tag {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ID of the Data Catalog to create the tag in. If omitted, this defaults to the AWS Account ID.
         pub catalog_id: pulumi_gestalt_rust::Output<String>,
         /// Key-name for the tag.
@@ -90,6 +92,7 @@ pub mod lf_tag {
         let o = context.register_resource(request);
         LfTagResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             catalog_id: o.get_field("catalogId"),
             key: o.get_field("key"),
             values: o.get_field("values"),

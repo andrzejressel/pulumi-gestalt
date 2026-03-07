@@ -58,6 +58,8 @@ pub mod webhook {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Unique ID for an Amplify app.
         pub app_id: pulumi_gestalt_rust::Output<String>,
         /// ARN for the webhook.
@@ -103,6 +105,7 @@ pub mod webhook {
         let o = context.register_resource(request);
         WebhookResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             app_id: o.get_field("appId"),
             arn: o.get_field("arn"),
             branch_name: o.get_field("branchName"),

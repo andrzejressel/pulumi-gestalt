@@ -89,6 +89,8 @@ pub mod waiting_room_event {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Creation time.
         pub created_on: pulumi_gestalt_rust::Output<String>,
         /// This is a templated html file that will be rendered at the edge.
@@ -222,6 +224,7 @@ pub mod waiting_room_event {
         let o = context.register_resource(request);
         WaitingRoomEventResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             created_on: o.get_field("createdOn"),
             custom_page_html: o.get_field("customPageHtml"),
             description: o.get_field("description"),

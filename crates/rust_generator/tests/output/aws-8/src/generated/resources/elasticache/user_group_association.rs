@@ -80,6 +80,8 @@ pub mod user_group_association {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ID of the user group.
         pub user_group_id: pulumi_gestalt_rust::Output<String>,
         /// ID of the user to associated with the user group.
@@ -114,6 +116,7 @@ pub mod user_group_association {
         let o = context.register_resource(request);
         UserGroupAssociationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             user_group_id: o.get_field("userGroupId"),
             user_id: o.get_field("userId"),
         }

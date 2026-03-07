@@ -133,6 +133,8 @@ pub mod ai_tensorboard {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Consumer project Cloud Storage path prefix used to store blob data, which can either be a bucket or directory. Does not end with a '/'.
         pub blob_storage_path_prefix: pulumi_gestalt_rust::Output<String>,
         /// The timestamp of when the Tensorboard was created in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits.
@@ -226,6 +228,7 @@ pub mod ai_tensorboard {
         let o = context.register_resource(request);
         AiTensorboardResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             blob_storage_path_prefix: o.get_field("blobStoragePathPrefix"),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),

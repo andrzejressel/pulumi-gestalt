@@ -131,6 +131,8 @@ pub mod custom_domain {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the API Management service for which to configure Custom Domains. Changing this forces a new API Management Custom Domain resource to be created.
         pub api_management_id: pulumi_gestalt_rust::Output<String>,
         /// One or more `developer_portal` blocks as defined below.
@@ -203,6 +205,7 @@ pub mod custom_domain {
         let o = context.register_resource(request);
         CustomDomainResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             api_management_id: o.get_field("apiManagementId"),
             developer_portals: o.get_field("developerPortals"),
             gateways: o.get_field("gateways"),

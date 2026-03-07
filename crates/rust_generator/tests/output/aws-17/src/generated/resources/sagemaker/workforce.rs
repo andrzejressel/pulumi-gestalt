@@ -117,6 +117,8 @@ pub mod workforce {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) assigned by AWS to this Workforce.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Use this parameter to configure an Amazon Cognito private workforce. A single Cognito workforce is created using and corresponds to a single Amazon Cognito user pool. Conflicts with `oidc_config`. see Cognito Config details below.
@@ -184,6 +186,7 @@ pub mod workforce {
         let o = context.register_resource(request);
         WorkforceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             cognito_config: o.get_field("cognitoConfig"),
             oidc_config: o.get_field("oidcConfig"),

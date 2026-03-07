@@ -130,6 +130,8 @@ pub mod ai_feature_group {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Indicates that features for this group come from BigQuery Table/View. By default treats the source as a sparse time series source, which is required to have an entityId and a feature_timestamp column in the source.
         /// Structure is documented below.
         pub big_query: pulumi_gestalt_rust::Output<
@@ -215,6 +217,7 @@ pub mod ai_feature_group {
         let o = context.register_resource(request);
         AiFeatureGroupResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             big_query: o.get_field("bigQuery"),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),

@@ -92,6 +92,8 @@ pub mod studio {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ARN of the studio.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO. Valid values are `SSO` or `IAM`.
@@ -220,6 +222,7 @@ pub mod studio {
         let o = context.register_resource(request);
         StudioResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             auth_mode: o.get_field("authMode"),
             default_s3_location: o.get_field("defaultS3Location"),

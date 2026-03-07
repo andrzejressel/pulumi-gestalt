@@ -80,6 +80,8 @@ pub mod organization_security_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A textual description for the organization security policy.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// A textual name of the security policy.
@@ -142,6 +144,7 @@ pub mod organization_security_policy {
         let o = context.register_resource(request);
         OrganizationSecurityPolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             description: o.get_field("description"),
             display_name: o.get_field("displayName"),
             fingerprint: o.get_field("fingerprint"),

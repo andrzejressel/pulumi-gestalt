@@ -357,6 +357,8 @@ pub mod instance {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Looker instance Admin settings.
         pub admin_settings: pulumi_gestalt_rust::Output<
             Option<super::super::types::looker::InstanceAdminSettings>,
@@ -562,6 +564,7 @@ pub mod instance {
         let o = context.register_resource(request);
         InstanceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             admin_settings: o.get_field("adminSettings"),
             consumer_network: o.get_field("consumerNetwork"),
             create_time: o.get_field("createTime"),

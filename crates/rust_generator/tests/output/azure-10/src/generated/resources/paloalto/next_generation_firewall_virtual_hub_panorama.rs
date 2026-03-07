@@ -44,6 +44,8 @@ pub mod next_generation_firewall_virtual_hub_panorama {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         pub destination_nats: pulumi_gestalt_rust::Output<
             Option<
                 Vec<
@@ -134,6 +136,7 @@ pub mod next_generation_firewall_virtual_hub_panorama {
         let o = context.register_resource(request);
         NextGenerationFirewallVirtualHubPanoramaResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             destination_nats: o.get_field("destinationNats"),
             dns_settings: o.get_field("dnsSettings"),
             location: o.get_field("location"),

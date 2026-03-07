@@ -57,6 +57,8 @@ pub mod vpc_ipam_resource_discovery {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of IPAM Resource Discovery
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// A description for the IPAM Resource Discovery.
@@ -114,6 +116,7 @@ pub mod vpc_ipam_resource_discovery {
         let o = context.register_resource(request);
         VpcIpamResourceDiscoveryResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             description: o.get_field("description"),
             ipam_resource_discovery_region: o.get_field("ipamResourceDiscoveryRegion"),

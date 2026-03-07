@@ -51,6 +51,8 @@ pub mod custom_domain_association {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A set of certificate CNAME records used for this domain name. See Certificate Validation Records below for more details.
         pub certificate_validation_records: pulumi_gestalt_rust::Output<
             Vec<
@@ -103,6 +105,7 @@ pub mod custom_domain_association {
         let o = context.register_resource(request);
         CustomDomainAssociationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             certificate_validation_records: o.get_field("certificateValidationRecords"),
             dns_target: o.get_field("dnsTarget"),
             domain_name: o.get_field("domainName"),

@@ -56,6 +56,8 @@ pub mod archive_rule {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Analyzer name.
         pub analyzer_name: pulumi_gestalt_rust::Output<String>,
         /// Filter criteria for the archive rule. See Filter for more details.
@@ -99,6 +101,7 @@ pub mod archive_rule {
         let o = context.register_resource(request);
         ArchiveRuleResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             analyzer_name: o.get_field("analyzerName"),
             filters: o.get_field("filters"),
             rule_name: o.get_field("ruleName"),

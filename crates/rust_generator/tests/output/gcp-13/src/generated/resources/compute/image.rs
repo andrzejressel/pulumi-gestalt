@@ -240,6 +240,8 @@ pub mod image {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Size of the image tar.gz archive stored in Google Cloud Storage (in
         /// bytes).
         pub archive_size_bytes: pulumi_gestalt_rust::Output<i32>,
@@ -424,6 +426,7 @@ pub mod image {
         let o = context.register_resource(request);
         ImageResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             archive_size_bytes: o.get_field("archiveSizeBytes"),
             creation_timestamp: o.get_field("creationTimestamp"),
             description: o.get_field("description"),

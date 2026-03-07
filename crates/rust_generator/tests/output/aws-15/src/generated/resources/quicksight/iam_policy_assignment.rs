@@ -70,6 +70,8 @@ pub mod iam_policy_assignment {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Assignment ID.
         pub assignment_id: pulumi_gestalt_rust::Output<String>,
         /// Name of the assignment.
@@ -138,6 +140,7 @@ pub mod iam_policy_assignment {
         let o = context.register_resource(request);
         IamPolicyAssignmentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             assignment_id: o.get_field("assignmentId"),
             assignment_name: o.get_field("assignmentName"),
             assignment_status: o.get_field("assignmentStatus"),

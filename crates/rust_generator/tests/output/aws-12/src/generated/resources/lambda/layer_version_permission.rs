@@ -68,6 +68,8 @@ pub mod layer_version_permission {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Action, which will be allowed. `lambda:GetLayerVersion` value is suggested by AWS documantation.
         pub action: pulumi_gestalt_rust::Output<String>,
         /// The name or ARN of the Lambda Layer, which you want to grant access to.
@@ -141,6 +143,7 @@ pub mod layer_version_permission {
         let o = context.register_resource(request);
         LayerVersionPermissionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             action: o.get_field("action"),
             layer_name: o.get_field("layerName"),
             organization_id: o.get_field("organizationId"),

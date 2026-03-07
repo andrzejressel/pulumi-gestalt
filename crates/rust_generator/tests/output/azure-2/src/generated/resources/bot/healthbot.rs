@@ -67,6 +67,8 @@ pub mod healthbot {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The management portal url.
         pub bot_management_portal_url: pulumi_gestalt_rust::Output<String>,
         /// Specifies The Azure Region where the resource exists. Changing this force a new resource to be created.
@@ -126,6 +128,7 @@ pub mod healthbot {
         let o = context.register_resource(request);
         HealthbotResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             bot_management_portal_url: o.get_field("botManagementPortalUrl"),
             location: o.get_field("location"),
             name: o.get_field("name"),

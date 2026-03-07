@@ -118,6 +118,8 @@ pub mod policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Sets an alternative name server for the associated networks.
         /// When specified, all DNS queries are forwarded to a name server that you choose.
         /// Names such as .internal are not available when an alternative name server is specified.
@@ -207,6 +209,7 @@ pub mod policy {
         let o = context.register_resource(request);
         PolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             alternative_name_server_config: o.get_field("alternativeNameServerConfig"),
             description: o.get_field("description"),
             enable_inbound_forwarding: o.get_field("enableInboundForwarding"),

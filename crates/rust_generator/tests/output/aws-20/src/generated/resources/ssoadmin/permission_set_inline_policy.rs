@@ -65,6 +65,8 @@ pub mod permission_set_inline_policy {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The IAM inline policy to attach to a Permission Set.
         pub inline_policy: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the SSO Instance under which the operation will be executed.
@@ -107,6 +109,7 @@ pub mod permission_set_inline_policy {
         let o = context.register_resource(request);
         PermissionSetInlinePolicyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             inline_policy: o.get_field("inlinePolicy"),
             instance_arn: o.get_field("instanceArn"),
             permission_set_arn: o.get_field("permissionSetArn"),

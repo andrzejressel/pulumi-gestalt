@@ -75,6 +75,8 @@ pub mod firewall_rule {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ending IP address to allow through the firewall for this rule.
         ///
         /// > **NOTE:** The Azure feature `Allow access to Azure services` can be enabled by setting `start_ip_address` and `end_ip_address` to `0.0.0.0` which ([is documented in the Azure API Docs](https://docs.microsoft.com/rest/api/sql/firewallrules/createorupdate)).
@@ -125,6 +127,7 @@ pub mod firewall_rule {
         let o = context.register_resource(request);
         FirewallRuleResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             end_ip_address: o.get_field("endIpAddress"),
             name: o.get_field("name"),
             server_id: o.get_field("serverId"),

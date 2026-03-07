@@ -77,6 +77,8 @@ pub mod service {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A list of API objects; structure is documented below.
         pub apis: pulumi_gestalt_rust::Output<
             Vec<super::super::types::endpoints::ServiceApi>,
@@ -148,6 +150,7 @@ pub mod service {
         let o = context.register_resource(request);
         ServiceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             apis: o.get_field("apis"),
             config_id: o.get_field("configId"),
             dns_address: o.get_field("dnsAddress"),

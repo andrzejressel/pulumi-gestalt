@@ -84,6 +84,8 @@ pub mod account {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The account id that is used to generate the service
         /// account email address and a stable unique id. It is unique within a project,
         /// must be 6-30 characters long, and match the regular expression `a-z`
@@ -165,6 +167,7 @@ pub mod account {
         let o = context.register_resource(request);
         AccountResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             account_id: o.get_field("accountId"),
             create_ignore_already_exists: o.get_field("createIgnoreAlreadyExists"),
             description: o.get_field("description"),

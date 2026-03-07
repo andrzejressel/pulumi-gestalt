@@ -128,6 +128,8 @@ pub mod app_connection {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The authentication info. An `authentication` block as defined below.
         ///
         /// > **Note:** If a Managed Identity is used, this will need to be configured on the App Service.
@@ -200,6 +202,7 @@ pub mod app_connection {
         let o = context.register_resource(request);
         AppConnectionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             authentication: o.get_field("authentication"),
             client_type: o.get_field("clientType"),
             function_app_id: o.get_field("functionAppId"),

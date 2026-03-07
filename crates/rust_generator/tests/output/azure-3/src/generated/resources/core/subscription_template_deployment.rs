@@ -67,6 +67,8 @@ pub mod subscription_template_deployment {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Debug Level which should be used for this Subscription Template Deployment. Possible values are `none`, `requestContent`, `responseContent` and `requestContent, responseContent`.
         pub debug_level: pulumi_gestalt_rust::Output<Option<String>>,
         /// The Azure Region where the Subscription Template Deployment should exist. Changing this forces a new Subscription Template Deployment to be created.
@@ -143,6 +145,7 @@ pub mod subscription_template_deployment {
         let o = context.register_resource(request);
         SubscriptionTemplateDeploymentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             debug_level: o.get_field("debugLevel"),
             location: o.get_field("location"),
             name: o.get_field("name"),

@@ -49,6 +49,8 @@ pub mod alert_manager_definition {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// the alert manager definition that you want to be applied. See more [in AWS Docs](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-alert-manager.html).
         pub definition: pulumi_gestalt_rust::Output<String>,
         /// ID of the prometheus workspace the alert manager definition should be linked to
@@ -83,6 +85,7 @@ pub mod alert_manager_definition {
         let o = context.register_resource(request);
         AlertManagerDefinitionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             definition: o.get_field("definition"),
             workspace_id: o.get_field("workspaceId"),
         }

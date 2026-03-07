@@ -112,6 +112,8 @@ pub mod security_solution {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// A `additional_workspace` block as defined below.
         pub additional_workspaces: pulumi_gestalt_rust::Output<
             Option<Vec<super::super::types::iot::SecuritySolutionAdditionalWorkspace>>,
@@ -255,6 +257,7 @@ pub mod security_solution {
         let o = context.register_resource(request);
         SecuritySolutionResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             additional_workspaces: o.get_field("additionalWorkspaces"),
             disabled_data_sources: o.get_field("disabledDataSources"),
             display_name: o.get_field("displayName"),

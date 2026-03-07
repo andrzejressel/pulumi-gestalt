@@ -87,6 +87,8 @@ pub mod project {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The number of ongoing experiments currently in the project.
         pub active_experiment_count: pulumi_gestalt_rust::Output<i32>,
         /// The number of ongoing launches currently in the project.
@@ -161,6 +163,7 @@ pub mod project {
         let o = context.register_resource(request);
         ProjectResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             active_experiment_count: o.get_field("activeExperimentCount"),
             active_launch_count: o.get_field("activeLaunchCount"),
             arn: o.get_field("arn"),

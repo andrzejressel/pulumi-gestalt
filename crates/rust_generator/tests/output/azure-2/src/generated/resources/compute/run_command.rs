@@ -285,6 +285,8 @@ pub mod run_command {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// An `error_blob_managed_identity` block as defined below. User-assigned managed Identity that has access to errorBlobUri storage blob.
         pub error_blob_managed_identity: pulumi_gestalt_rust::Output<
             Option<super::super::types::compute::RunCommandErrorBlobManagedIdentity>,
@@ -415,6 +417,7 @@ pub mod run_command {
         let o = context.register_resource(request);
         RunCommandResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             error_blob_managed_identity: o.get_field("errorBlobManagedIdentity"),
             error_blob_uri: o.get_field("errorBlobUri"),
             instance_views: o.get_field("instanceViews"),

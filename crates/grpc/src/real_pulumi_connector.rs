@@ -179,6 +179,15 @@ impl PulumiConnector for RealPulumiConnector {
             .await
             .context("Failed to send register resource request")
             .unwrap();
+        let urn = if response.urn.is_empty() {
+            if self.in_preview {
+                NodeValue::Nothing
+            } else {
+                panic!("URL must always be available if not in preview")
+            }
+        } else {
+            NodeValue::exists(response.urn, false)
+        };
 
         let obj = response.object;
 
@@ -188,6 +197,7 @@ impl PulumiConnector for RealPulumiConnector {
         };
 
         RegisterResourceResult {
+            urn,
             fields: ResourceFields {
                 object: map,
                 is_in_preview: self.in_preview,

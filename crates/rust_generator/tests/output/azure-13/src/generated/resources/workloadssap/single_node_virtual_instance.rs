@@ -67,6 +67,8 @@ pub mod single_node_virtual_instance {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Geo-Location where the SAP system is to be created. Changing this forces a new resource to be created.
         pub app_location: pulumi_gestalt_rust::Output<String>,
         /// The environment type for the SAP Single Node Virtual Instance. Possible values are `NonProd` and `Prod`. Changing this forces a new resource to be created.
@@ -175,6 +177,7 @@ pub mod single_node_virtual_instance {
         let o = context.register_resource(request);
         SingleNodeVirtualInstanceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             app_location: o.get_field("appLocation"),
             environment: o.get_field("environment"),
             identity: o.get_field("identity"),

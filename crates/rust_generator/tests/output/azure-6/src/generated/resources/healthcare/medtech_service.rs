@@ -99,6 +99,8 @@ pub mod medtech_service {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the Device Mappings of the Med Tech Service.
         pub device_mapping_json: pulumi_gestalt_rust::Output<String>,
         /// Specifies the Consumer Group of the Event Hub to connect to.
@@ -190,6 +192,7 @@ pub mod medtech_service {
         let o = context.register_resource(request);
         MedtechServiceResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             device_mapping_json: o.get_field("deviceMappingJson"),
             eventhub_consumer_group_name: o.get_field("eventhubConsumerGroupName"),
             eventhub_name: o.get_field("eventhubName"),

@@ -59,6 +59,8 @@ pub mod policy_attachment {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The name of the policy to attach.
         pub policy: pulumi_gestalt_rust::Output<String>,
         /// The identity to which the policy is attached.
@@ -93,6 +95,7 @@ pub mod policy_attachment {
         let o = context.register_resource(request);
         PolicyAttachmentResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             policy: o.get_field("policy"),
             target: o.get_field("target"),
         }

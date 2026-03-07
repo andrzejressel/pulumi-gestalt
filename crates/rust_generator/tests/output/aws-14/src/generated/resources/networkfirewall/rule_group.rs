@@ -253,6 +253,8 @@ pub mod rule_group {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) that identifies the rule group.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The maximum number of operating resources that this rule group can use. For a stateless rule group, the capacity required is the sum of the capacity requirements of the individual rules. For a stateful rule group, the minimum capacity required is the number of individual rules.
@@ -347,6 +349,7 @@ pub mod rule_group {
         let o = context.register_resource(request);
         RuleGroupResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             capacity: o.get_field("capacity"),
             description: o.get_field("description"),

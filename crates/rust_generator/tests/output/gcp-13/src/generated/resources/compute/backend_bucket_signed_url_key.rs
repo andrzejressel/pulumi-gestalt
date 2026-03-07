@@ -81,6 +81,8 @@ pub mod backend_bucket_signed_url_key {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The backend bucket this signed URL key belongs.
         ///
         ///
@@ -136,6 +138,7 @@ pub mod backend_bucket_signed_url_key {
         let o = context.register_resource(request);
         BackendBucketSignedUrlKeyResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             backend_bucket: o.get_field("backendBucket"),
             key_value: o.get_field("keyValue"),
             name: o.get_field("name"),

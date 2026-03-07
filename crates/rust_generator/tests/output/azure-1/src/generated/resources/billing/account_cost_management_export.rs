@@ -93,6 +93,8 @@ pub mod account_cost_management_export {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// Is the cost management export active? Default is `true`.
         pub active: pulumi_gestalt_rust::Output<Option<bool>>,
         /// The id of the billing account on which to create an export. Changing this forces a new resource to be created.
@@ -180,6 +182,7 @@ pub mod account_cost_management_export {
         let o = context.register_resource(request);
         AccountCostManagementExportResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             active: o.get_field("active"),
             billing_account_id: o.get_field("billingAccountId"),
             export_data_options: o.get_field("exportDataOptions"),

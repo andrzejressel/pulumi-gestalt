@@ -88,6 +88,8 @@ pub mod extension_association {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// ARN of the AppConfig Extension Association.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the extension defined in the association.
@@ -135,6 +137,7 @@ pub mod extension_association {
         let o = context.register_resource(request);
         ExtensionAssociationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             arn: o.get_field("arn"),
             extension_arn: o.get_field("extensionArn"),
             extension_version: o.get_field("extensionVersion"),

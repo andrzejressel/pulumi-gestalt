@@ -73,6 +73,8 @@ pub mod nat_gateway_public_ip_prefix_association {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the NAT Gateway. Changing this forces a new resource to be created.
         pub nat_gateway_id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Public IP Prefix which this NAT Gateway which should be connected to. Changing this forces a new resource to be created.
@@ -108,6 +110,7 @@ pub mod nat_gateway_public_ip_prefix_association {
         let o = context.register_resource(request);
         NatGatewayPublicIpPrefixAssociationResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             nat_gateway_id: o.get_field("natGatewayId"),
             public_ip_prefix_id: o.get_field("publicIpPrefixId"),
         }

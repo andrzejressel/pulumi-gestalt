@@ -126,6 +126,8 @@ pub mod bot {
         /// Pulumi ID is the provider-assigned unique ID for this managed resource.
         /// It is set during deployments and may be missing (unknown) during planning phases.
         pub id: pulumi_gestalt_rust::Output<String>,
+        /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
+        pub urn: pulumi_gestalt_rust::Output<String>,
         /// The message that Amazon Lex uses to abort a conversation. Attributes are documented under statement.
         pub abort_statement: pulumi_gestalt_rust::Output<
             super::super::types::lex::BotAbortStatement,
@@ -273,6 +275,7 @@ pub mod bot {
         let o = context.register_resource(request);
         BotResult {
             id: o.get_field("id"),
+            urn: o.get_urn(),
             abort_statement: o.get_field("abortStatement"),
             arn: o.get_field("arn"),
             checksum: o.get_field("checksum"),
