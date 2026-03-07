@@ -103,6 +103,16 @@ fn plain_object_disable_defaults() -> Result<()> {
 }
 
 #[test]
+#[cfg_attr(not(feature = "generator_provider_as_function_parameter"), ignore)]
+fn provider_as_function_parameter() -> Result<()> {
+    run_pulumi_generator_test(
+        "provider_as_function_parameter",
+        "provider_as_function_parameter",
+        None,
+    )
+}
+
+#[test]
 #[cfg_attr(not(feature = "generator_random"), ignore)]
 fn random() -> Result<()> {
     run_pulumi_generator_test("random", "random", None)

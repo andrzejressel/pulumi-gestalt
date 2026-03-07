@@ -25,6 +25,8 @@ pub(crate) enum TypeEnum {
     Array,
     #[serde(alias = "object")]
     Object,
+    #[serde(untagged)]
+    Other(String),
 }
 
 #[derive(Deserialize, Debug)]
@@ -244,6 +246,12 @@ fn new_type_mapper(type_: &Type) -> Result<crate::model::Type> {
             ref_: None,
             ..
         } => Err(anyhow!("'type' and 'ref' fields cannot be empty")),
+        Type {
+            type_: Some(TypeEnum::Other(_)),
+            ref_: None,
+            one_of: None,
+            ..
+        } => todo!(),
     })
     .context(format!("Cannot handle type: [{type_:?}]"))
 }
@@ -530,6 +538,10 @@ fn convert_to_global_type(type_name: &String, type_: &&ComplexType) -> Result<Gl
             r#type: Some(TypeEnum::String),
             ..
         } => Err(anyhow!("Invalid string without enum")),
+        ObjectType {
+            r#type: Some(TypeEnum::Other(_)),
+            ..
+        } => todo!(),
     }
     .context(format!("Cannot convert type [{type_name}]"))?;
     Ok(GlobalType {
