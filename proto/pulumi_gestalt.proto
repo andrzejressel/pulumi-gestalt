@@ -136,6 +136,8 @@ message RefType {
     Empty asset = 3;
     // A special type representing any type (pulumi.json#/Any).
     Empty any = 4;
+    // A reference to the current provider.
+    Empty current_provider = 5;
   }
 }
 

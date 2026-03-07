@@ -169,7 +169,7 @@ pub struct Empty {}
 /// Describes a reference to another type within the Pulumi schema.
 #[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct RefType {
-    #[prost(oneof = "ref_type::RefValue", tags = "1, 2, 3, 4")]
+    #[prost(oneof = "ref_type::RefValue", tags = "1, 2, 3, 4, 5")]
     pub ref_value: ::core::option::Option<ref_type::RefValue>,
 }
 /// Nested message and enum types in `RefType`.
@@ -188,6 +188,9 @@ pub mod ref_type {
         /// A special type representing any type (pulumi.json#/Any).
         #[prost(message, tag = "4")]
         Any(super::Empty),
+        /// A reference to the current provider.
+        #[prost(message, tag = "5")]
+        CurrentProvider(super::Empty),
     }
 }
 /// DiscriminatedUnion definition

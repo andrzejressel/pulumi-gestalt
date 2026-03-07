@@ -347,6 +347,7 @@ fn ref_to_proto(r: &Ref) -> Result<pulumi::RefType> {
         Ref::Archive => pulumi::ref_type::RefValue::Archive(pulumi::Empty {}),
         Ref::Asset => pulumi::ref_type::RefValue::Asset(pulumi::Empty {}),
         Ref::Any => pulumi::ref_type::RefValue::Any(pulumi::Empty {}),
+        Ref::CurrentProvider => pulumi::ref_type::RefValue::CurrentProvider(pulumi::Empty {}),
     };
 
     Ok(pulumi::RefType {
@@ -366,6 +367,7 @@ fn proto_to_ref(proto: &pulumi::RefType) -> Result<Ref> {
         pulumi::ref_type::RefValue::Archive(_) => Ok(Ref::Archive),
         pulumi::ref_type::RefValue::Asset(_) => Ok(Ref::Asset),
         pulumi::ref_type::RefValue::Any(_) => Ok(Ref::Any),
+        pulumi::ref_type::RefValue::CurrentProvider(_) => Ok(Ref::CurrentProvider),
     }
 }
 
