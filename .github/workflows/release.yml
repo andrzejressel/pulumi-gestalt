@@ -73,7 +73,7 @@ jobs:
       - run: pulumi login --local
 
       - name: Replace version
-        run: just update-version "0.0.0.0-test"
+        run: just update-version "0.0.0-test"
 
 #      - name: Base and e2e tests
 #        run: just base-ci-flow native-ci-flow wasm-ci-flow c-ci-flow
@@ -88,29 +88,29 @@ jobs:
       - name: Push version change
         run: |
           git add -A
-          git commit -m "Update version to 0.0.0.0-test"
+          git commit -m "Update version to 0.0.0-test"
 
       - name: Generate new changelog
         run: |
-          just changelog-generate-for-repo "0.0.0.0-test"
+          just changelog-generate-for-repo "0.0.0-test"
 
       - name: Copy changelog to new version directory
         run: |
-          mv .changelog/unreleased .changelog/0.0.0.0-test
-          rm .changelog/0.0.0.0-test/.gitkeep
+          mv .changelog/unreleased .changelog/0.0.0-test
+          rm .changelog/0.0.0-test/.gitkeep
           mkdir .changelog/unreleased
           touch .changelog/unreleased/.gitkeep
 
       - name: Commit changes
         run: |
           git add -A
-          git commit -m "Update changelog for version 0.0.0.0-test"
+          git commit -m "Update changelog for version 0.0.0-test"
 
       - name: Create commit
         run: |
-          git commit --allow-empty -m "Release v0.0.0.0-test"
-          git tag "v0.0.0.0-test"
-          git push origin "v0.0.0.0-test"
+          git commit --allow-empty -m "Release v0.0.0-test"
+          git tag "v0.0.0-test"
+          git push origin "v0.0.0-test"
           git revert HEAD~2 # Revert renaming
           git commit --amend -m "Restore version to 0.0.0-DEV"
           git push main
@@ -118,6 +118,6 @@ jobs:
 #      - name: Release
 #        uses: softprops/action-gh-release@a06a81a03ee405af7f2048a818ed3f03bbf83c7b # v2.5.0
 #        with:
-#          name: 0.0.0.0-test
-#          tag_name: "v0.0.0.0-test"
+#          name: 0.0.0-test
+#          tag_name: "v0.0.0-test"
 #          body_path: target/github_changelog.md
