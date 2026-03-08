@@ -394,7 +394,7 @@ fn generate_commit_message(
     let mut title = format!("- {}\n", title);
 
     if let Some(description) = &entry.description {
-        title.push_str(&format!("\n    {}\n", description));
+        title.push_str(&format!("\n    {}\n\n", description.trim()));
     }
 
     Ok(title)
