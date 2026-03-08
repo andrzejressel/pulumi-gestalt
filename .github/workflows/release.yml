@@ -39,7 +39,7 @@ jobs:
 #          df -h /
       - name: Deployer app access token
         id: deployer_app
-        uses: getsentry/action-github-app-token@v2
+        uses: getsentry/action-github-app-token@d4b5da6c5e37703f8c3b3e43abb5705b46e159cc # v3.0.0
         with:
           app_id: ${{ secrets.DEPLOYER_APP_ID }}
           private_key: ${{ secrets.DEPLOYER_APP_PRIVATE_KEY }}
