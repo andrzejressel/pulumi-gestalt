@@ -247,11 +247,11 @@ fn new_type_mapper(type_: &Type) -> Result<crate::model::Type> {
             ..
         } => Err(anyhow!("'type' and 'ref' fields cannot be empty")),
         Type {
-            type_: Some(TypeEnum::Other(_)),
+            type_: Some(TypeEnum::Other(other)),
             ref_: None,
             one_of: None,
             ..
-        } => todo!(),
+        } => Err(anyhow!("Unknown type: [{}]", other)),
     })
     .context(format!("Cannot handle type: [{type_:?}]"))
 }
@@ -539,9 +539,9 @@ fn convert_to_global_type(type_name: &String, type_: &&ComplexType) -> Result<Gl
             ..
         } => Err(anyhow!("Invalid string without enum")),
         ObjectType {
-            r#type: Some(TypeEnum::Other(_)),
+            r#type: Some(TypeEnum::Other(other)),
             ..
-        } => todo!(),
+        } => Err(anyhow!("Unknown type: [{}]", other)),
     }
     .context(format!("Cannot convert type [{type_name}]"))?;
     Ok(GlobalType {
