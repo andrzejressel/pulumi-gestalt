@@ -1,12 +1,14 @@
 use crate::github::functions::get_repository::GetRepositoryArgs;
 use crate::github::repository_ruleset::RepositoryRulesetArgs;
-use crate::github::types::{RepositoryRulesetBypassActor, RepositoryRulesetConditions, RepositoryRulesetConditionsRefName, RepositoryRulesetRules, RepositoryRulesetRulesPullRequest, RepositoryRulesetRulesRequiredStatusChecksRequiredCheck};
+use crate::github::types::{
+    RepositoryRulesetConditions, RepositoryRulesetConditionsRefName, RepositoryRulesetRules,
+    RepositoryRulesetRulesPullRequest, RepositoryRulesetRulesRequiredStatusChecksRequiredCheck,
+};
 use GithubIntegration::{Any, GithubActions, GithubAdvancedSecurity, Mergify, ReleaserBot};
 use anyhow::Result;
 use github::types::RepositoryRulesetRulesRequiredStatusChecks;
 use pulumi_gestalt_rust::Context;
 use std::ops::Deref;
-use crate::github::functions::get_github_app::GetGithubAppArgs;
 
 mod github;
 mod github_workflow;
@@ -20,7 +22,7 @@ enum GithubIntegration {
     GithubActions,
     GithubAdvancedSecurity,
     Mergify,
-    ReleaserBot
+    ReleaserBot,
 }
 
 impl GithubIntegration {
