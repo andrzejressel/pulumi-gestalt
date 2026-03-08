@@ -118,7 +118,7 @@ Commands are run using `just`. Run `just --list` for all available commands.
 
 **Quick fixes for common issues:**
 - Build problems: `just clean && just check`
-- Environment issues: Exit and re-run `devenv shell`
+- Environment issues: Re-run `mise install`
 - Test failures: Run individual test suites to isolate
 
 ## Changelog Management
