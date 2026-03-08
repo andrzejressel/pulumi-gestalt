@@ -28,6 +28,7 @@
 - Add a new feature [66f547a](https://github.com/andrzejressel/pulumi-gestalt/commit/66f547ad19e79c76dd57231b1aa9984707f5ef4d)
 
     Very cool features were added in this release.
+
 - Testing moving file [21d45b3](https://github.com/andrzejressel/pulumi-gestalt/commit/21d45b3cc0aa96e1cd61fabd6f4084258e972c18)
 - Add a new feature through a PR ([#1](https://github.com/andrzejressel/pulumi-gestalt/pull/1)) ([#2](https://github.com/andrzejressel/pulumi-gestalt/pull/2)) [4b184ca](https://github.com/andrzejressel/pulumi-gestalt/commit/4b184ca6490434c59507c6dff0375e63744aa551)
 
