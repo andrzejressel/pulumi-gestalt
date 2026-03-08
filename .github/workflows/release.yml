@@ -113,7 +113,7 @@ jobs:
           git push origin "v0.0.0-test"
           git revert HEAD~2 # Revert renaming
           git commit --amend -m "Restore version to 0.0.0-DEV"
-          git push main
+          git push origin HEAD:main
 
 #      - name: Release
 #        uses: softprops/action-gh-release@a06a81a03ee405af7f2048a818ed3f03bbf83c7b # v2.5.0
