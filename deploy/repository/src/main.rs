@@ -4,7 +4,7 @@ use crate::github::types::{
     RepositoryRulesetConditions, RepositoryRulesetConditionsRefName, RepositoryRulesetRules,
     RepositoryRulesetRulesPullRequest, RepositoryRulesetRulesRequiredStatusChecksRequiredCheck,
 };
-use GithubIntegration::{Any, GithubActions, GithubAdvancedSecurity, Mergify};
+use GithubIntegration::{Any, GithubActions, GithubAdvancedSecurity, Mergify, ReleaserBot};
 use anyhow::Result;
 use github::types::RepositoryRulesetRulesRequiredStatusChecks;
 use pulumi_gestalt_rust::Context;
@@ -22,6 +22,7 @@ enum GithubIntegration {
     GithubActions,
     GithubAdvancedSecurity,
     Mergify,
+    ReleaserBot,
 }
 
 impl GithubIntegration {
@@ -31,6 +32,7 @@ impl GithubIntegration {
             GithubActions => 15368,
             GithubAdvancedSecurity => 57789,
             Mergify => 10562,
+            ReleaserBot => 114865428,
         }
     }
 }
@@ -63,12 +65,21 @@ fn pulumi_main(ctx: &Context) -> Result<()> {
 
     github::repository_ruleset::create(
         ctx,
-        "main-protection-2",
+        "main",
         RepositoryRulesetArgs::builder()
-            .name("main-protection-2")
+            .name("Main")
             .enforcement("active")
             .repository(repository.id)
             .target("branch")
+            // .bypass_actors(
+            //     vec![
+            //         RepositoryRulesetBypassActor::builder()
+            //             .actor_id(ReleaserBot.get_integration_id())
+            //             .actor_type("Integration")
+            //             .bypass_mode("always")
+            //             .build_struct()
+            //     ]
+            // )
             .conditions(
                 RepositoryRulesetConditions::builder()
                     .ref_name(
