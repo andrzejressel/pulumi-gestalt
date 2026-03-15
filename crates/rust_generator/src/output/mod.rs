@@ -82,7 +82,7 @@ pub(crate) fn generate_combined_code(package: &Package, result_path: &std::path:
     .unwrap();
 
     let times = FileTimes::new().set_modified(SystemTime::UNIX_EPOCH);
-    let mut file = File::create(result_path.join("main.rs")).unwrap();
+    let mut file = File::create(result_path.join("lib.rs")).unwrap();
     file.write_all(main.as_bytes()).unwrap();
     file.set_times(times).unwrap();
 }
