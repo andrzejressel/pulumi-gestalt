@@ -1206,7 +1206,7 @@ pub fn run_pulumi_generator_test(
     let lib_rs = root.join("src/lib.rs");
     fs::write(root.join("Cargo.toml"), cargo_toml_content)?;
     fs::create_dir_all(root.join("src"))?;
-    fs::write(&lib_rs, "include!(\"generated/main.rs\");")?;
+    fs::write(&lib_rs, "include!(\"generated/lib.rs\");")?;
     fs::copy(
         "../../rust-toolchain.toml",
         root.join("rust-toolchain.toml"),

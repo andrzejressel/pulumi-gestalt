@@ -59,6 +59,6 @@ pub fn add_export<T>(name: &str, output: &Output<T>) {
 #[macro_export]
 macro_rules! include_provider {
     ($file:expr) => {
-        include!(concat!(env!("OUT_DIR"), "/pulumi/", $file, "/main.rs"));
+        include!(concat!(env!("OUT_DIR"), "/pulumi/", $file, "/lib.rs"));
     };
 }
