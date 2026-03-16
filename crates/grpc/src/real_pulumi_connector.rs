@@ -11,10 +11,10 @@ use pulumi_gestalt_domain::{ExistingNodeValue, FieldName, NodeValue, ResourceFie
 use pulumi_gestalt_proto::pulumi::pulumirpc::engine_client::EngineClient;
 use pulumi_gestalt_proto::pulumi::pulumirpc::resource_monitor_client::ResourceMonitorClient;
 use pulumi_gestalt_proto::pulumi::pulumirpc::{
-    GetRootResourceRequest, InvokeResponse, RegisterResourceOutputsRequest, ResourceInvokeRequest,
+    InvokeResponse, RegisterResourceOutputsRequest, ResourceInvokeRequest,
 };
 use pulumi_gestalt_proto::pulumi::pulumirpc::{
-    RegisterResourceRequest, RegisterResourceResponse, SetRootResourceRequest,
+    RegisterResourceRequest, RegisterResourceResponse,
 };
 use serde_json::{Number, Value, json};
 use std::collections::{BTreeMap, HashMap};
@@ -45,7 +45,7 @@ impl RealPulumiConnector {
             pulumi_stack.clone(),
         )
         .await?;
-        
+
         let s = Self {
             resource_monitor_client,
             root_resource,
