@@ -36,18 +36,16 @@ impl RealPulumiConnector {
     ) -> Result<Self> {
         let resource_monitor_client =
             ResourceMonitorClient::connect(format!("tcp://{monitor_url}")).await?;
-        let engine_client = EngineClient::connect(format!("tcp://{engine_url}")).await?;
+        // I think it will be used for logging
+        let _engine_client = EngineClient::connect(format!("tcp://{engine_url}")).await?;
 
-        Self::create_root_stack(
+        let root_resource = Self::create_root_stack(
             resource_monitor_client.clone(),
-            engine_client.clone(),
             pulumi_project.clone(),
             pulumi_stack.clone(),
         )
         .await?;
-        let root_resource =
-            RealPulumiConnector::get_root_resource_async(engine_url.clone()).await?;
-
+        
         let s = Self {
             resource_monitor_client,
             root_resource,
@@ -84,10 +82,9 @@ impl RealPulumiConnector {
 
     pub async fn create_root_stack(
         monitor: ResourceMonitorClient<Channel>,
-        engine: EngineClient<Channel>,
         pulumi_project: String,
         pulumi_stack: String,
-    ) -> std::result::Result<(), Error> {
+    ) -> std::result::Result<String, Error> {
         let request = RegisterResourceRequest {
             r#type: "pulumi:pulumi:Stack".to_string(),
             name: format!("{}-{}", pulumi_project, pulumi_stack),
@@ -102,11 +99,8 @@ impl RealPulumiConnector {
         let urn = RegisterResourceResponse::decode(&mut result.as_slice())
             .context("Failed to decode register resource response")?
             .urn;
-        Self::set_root_resource_async(urn, engine)
-            .await
-            .context("Failed to set root resource")?;
 
-        Ok(())
+        Ok(urn)
     }
 
     async fn send_register_resource_request_inner(
@@ -135,27 +129,6 @@ impl RealPulumiConnector {
             .context("Failed to register resource")?;
 
         Ok(result.get_ref().encode_to_vec())
-    }
-
-    async fn set_root_resource_async(urn: String, mut engine: EngineClient<Channel>) -> Result<()> {
-        let request = SetRootResourceRequest { urn };
-
-        let _ = engine
-            .set_root_resource(request)
-            .await
-            .context("Failed to set root resource")?;
-
-        Ok(())
-    }
-
-    async fn get_root_resource_async(engine_url: String) -> Result<String> {
-        let mut client = EngineClient::connect(format!("tcp://{engine_url}")).await?;
-
-        let request = GetRootResourceRequest {};
-
-        let result = client.get_root_resource(request).await?;
-
-        Ok(result.get_ref().urn.clone())
     }
 }
 
