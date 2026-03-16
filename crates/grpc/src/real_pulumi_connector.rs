@@ -13,9 +13,7 @@ use pulumi_gestalt_proto::pulumi::pulumirpc::resource_monitor_client::ResourceMo
 use pulumi_gestalt_proto::pulumi::pulumirpc::{
     InvokeResponse, RegisterResourceOutputsRequest, ResourceInvokeRequest,
 };
-use pulumi_gestalt_proto::pulumi::pulumirpc::{
-    RegisterResourceRequest, RegisterResourceResponse,
-};
+use pulumi_gestalt_proto::pulumi::pulumirpc::{RegisterResourceRequest, RegisterResourceResponse};
 use serde_json::{Number, Value, json};
 use std::collections::{BTreeMap, HashMap};
 use tonic::transport::Channel;
