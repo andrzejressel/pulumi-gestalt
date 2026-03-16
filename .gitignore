@@ -32,3 +32,4 @@ out
 .vscode
 
 docs/CHANGELOG.md
+.mise.local.toml
