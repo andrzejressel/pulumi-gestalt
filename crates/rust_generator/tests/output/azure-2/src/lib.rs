@@ -1,1 +1,1 @@
-include!("generated/main.rs");
+include!("generated/lib.rs");
