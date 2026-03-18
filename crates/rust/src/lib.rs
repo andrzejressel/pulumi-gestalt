@@ -7,6 +7,7 @@ mod native;
 pub mod __private;
 mod input_or_output;
 mod oneof;
+pub mod stdlib;
 
 pub use input_or_output::InputOrOutput;
 
