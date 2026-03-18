@@ -46,7 +46,7 @@ mod tests {
     #[test]
     fn to_base64_accepts_multiple_input_types() {
         let string = "xyz".to_string();
-        let from_string= toBase64(string);
+        let from_string = toBase64(string);
         let from_str = toBase64("abc");
         let from_bytes = toBase64(vec![97_u8, 98_u8, 99_u8]);
 
