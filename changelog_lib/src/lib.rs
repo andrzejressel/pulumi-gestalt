@@ -96,6 +96,7 @@ fn generate_changelog_content(
         let version_dir = changelog_dir.join(version.tag_name.get_changelog_yaml_directory());
 
         if version_dir.exists() {
+            let mut announcement = vec![];
             let mut added = vec![];
             let mut changed = vec![];
             let mut deprecated = vec![];
@@ -122,6 +123,9 @@ fn generate_changelog_content(
                     .with_context(|| format!("Failed to parse file {}", path.display()))?;
 
                 match entry.r#type {
+                    ChangelogType::Announcement => {
+                        announcement.push(ChangelogEntryWithPath { entry, path });
+                    }
                     ChangelogType::Added => {
                         added.push(ChangelogEntryWithPath { entry, path });
                     }
@@ -141,6 +145,12 @@ fn generate_changelog_content(
                         security.push(ChangelogEntryWithPath { entry, path });
                     }
                 }
+            }
+
+            if !announcement.is_empty() {
+                s.push_str("### Announcement\n");
+                print_changelog_entries(options, &mut s, &announcement)?;
+                s.push('\n');
             }
 
             if !added.is_empty() {

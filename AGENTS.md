@@ -141,6 +141,7 @@ When making changes that should be documented in the changelog:
    ```
 
 3. **Available types**:
+   - `Announcement` - Important announcements (shown at the top)
    - `Added` - New features
    - `Changed` - Changes to existing functionality
    - `Deprecated` - Soon-to-be removed features
