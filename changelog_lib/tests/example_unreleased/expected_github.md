@@ -1,14 +1,14 @@
 ## 0.3.0
-### Announcement
-- Unreleased announcement [e36765d](https://github.com/andrzejressel/pulumi-gestalt/commit/e36765d29344cf7f5c60f379c8efa81d20a8f8cc)
+### Unreleased announcement
+Important information about the upcoming release.
 
 ### Added
-- Add a new unreleased feature [d969178](https://github.com/andrzejressel/pulumi-gestalt/commit/d969178429015e01a1323429dd56f10cbd74851c)
+- Add a new unreleased feature [e882374](https://github.com/andrzejressel/pulumi-gestalt/commit/e882374b5ad6e0a269501398dc1341bed59a312b)
 
 <details>
 <summary><h3>📝 Other Commits</h3></summary>
 
-- Some yet unreleased feature [d969178](https://github.com/andrzejressel/pulumi-gestalt/commit/d969178429015e01a1323429dd56f10cbd74851c)
-- Some unreleased announcement [e36765d](https://github.com/andrzejressel/pulumi-gestalt/commit/e36765d29344cf7f5c60f379c8efa81d20a8f8cc)
+- Some yet unreleased feature [e882374](https://github.com/andrzejressel/pulumi-gestalt/commit/e882374b5ad6e0a269501398dc1341bed59a312b)
+- Some unreleased announcement [c651542](https://github.com/andrzejressel/pulumi-gestalt/commit/c651542c14574823d8c10fcc634b2b559a93285e)
 </details>
 

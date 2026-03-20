@@ -148,9 +148,7 @@ fn generate_changelog_content(
             }
 
             if !announcement.is_empty() {
-                s.push_str("### Announcement\n");
-                print_changelog_entries(options, &mut s, &announcement)?;
-                s.push('\n');
+                print_announcements(&mut s, &announcement)?;
             }
 
             if !added.is_empty() {
@@ -229,6 +227,25 @@ fn print_changelog_entries(
     }
     Ok(())
 }
+
+fn print_announcements(
+    s: &mut String,
+    entries: &Vec<ChangelogEntryWithPath>,
+) -> Result<()> {
+    for ChangelogEntryWithPath { entry, path: _ } in entries {
+        // Use the title as the header
+        s.push_str(&format!("### {}\n", entry.title));
+
+        // Add the description below if it exists
+        if let Some(description) = &entry.description {
+            s.push_str(&format!("{}\n", description.trim()));
+        }
+
+        s.push('\n');
+    }
+    Ok(())
+}
+
 
 fn generate_history(options: &Options, new_version_name: Option<String>) -> Result<GitHistory> {
     let repo = gix::open(options.repository_path).with_context(|| {

@@ -96,6 +96,8 @@ fn create_repository() -> Result<Repository> {
         .add_and_commit("Initial commit (MUST NOT BE INCLUDED)")?
         .copy_file("tests/example_unreleased/.changelog/0.1.0/0_announcement.yaml")?
         .add_and_commit("Add 0_announcement.yaml")?
+        .copy_file("tests/example_unreleased/.changelog/0.1.0/0_announcement2.yaml")?
+        .add_and_commit("Add 0_announcement2.yaml")?
         .copy_file("tests/example_unreleased/.changelog/0.1.0/1_added.yaml")?
         .add_and_commit("Add 1_added.yaml")?
         .copy_file("tests/example_unreleased/.changelog/0.1.0/2_changed.yaml")?
