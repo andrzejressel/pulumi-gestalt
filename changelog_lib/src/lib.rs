@@ -228,10 +228,7 @@ fn print_changelog_entries(
     Ok(())
 }
 
-fn print_announcements(
-    s: &mut String,
-    entries: &Vec<ChangelogEntryWithPath>,
-) -> Result<()> {
+fn print_announcements(s: &mut String, entries: &Vec<ChangelogEntryWithPath>) -> Result<()> {
     for ChangelogEntryWithPath { entry, path: _ } in entries {
         // Use the title as the header
         s.push_str(&format!("### {}\n", entry.title));
@@ -245,7 +242,6 @@ fn print_announcements(
     }
     Ok(())
 }
-
 
 fn generate_history(options: &Options, new_version_name: Option<String>) -> Result<GitHistory> {
     let repo = gix::open(options.repository_path).with_context(|| {
