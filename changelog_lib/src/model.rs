@@ -5,6 +5,7 @@ use std::path::PathBuf;
 
 #[derive(Debug, Deserialize)]
 pub(crate) enum ChangelogType {
+    Announcement,
     Added,
     Changed,
     Deprecated,

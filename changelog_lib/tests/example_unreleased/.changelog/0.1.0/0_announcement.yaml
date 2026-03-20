@@ -1,0 +1,5 @@
+type: Announcement
+title: "Important announcement about this release"
+description: |
+  This is a very important announcement with detailed information about
+  the release that users should be aware of.
