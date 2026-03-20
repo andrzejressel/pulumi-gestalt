@@ -1,0 +1,5 @@
+type: Announcement
+title: "Breaking changes in this version"
+description: |
+  Please note that we have made several breaking changes in this version.
+  Review the documentation for migration guides.

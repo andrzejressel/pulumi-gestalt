@@ -96,6 +96,7 @@ fn generate_changelog_content(
         let version_dir = changelog_dir.join(version.tag_name.get_changelog_yaml_directory());
 
         if version_dir.exists() {
+            let mut announcement = vec![];
             let mut added = vec![];
             let mut changed = vec![];
             let mut deprecated = vec![];
@@ -122,6 +123,9 @@ fn generate_changelog_content(
                     .with_context(|| format!("Failed to parse file {}", path.display()))?;
 
                 match entry.r#type {
+                    ChangelogType::Announcement => {
+                        announcement.push(ChangelogEntryWithPath { entry, path });
+                    }
                     ChangelogType::Added => {
                         added.push(ChangelogEntryWithPath { entry, path });
                     }
@@ -141,6 +145,10 @@ fn generate_changelog_content(
                         security.push(ChangelogEntryWithPath { entry, path });
                     }
                 }
+            }
+
+            if !announcement.is_empty() {
+                print_announcements(&mut s, &announcement)?;
             }
 
             if !added.is_empty() {
@@ -216,6 +224,21 @@ fn print_changelog_entries(
                 })?
                 .as_str(),
         );
+    }
+    Ok(())
+}
+
+fn print_announcements(s: &mut String, entries: &Vec<ChangelogEntryWithPath>) -> Result<()> {
+    for ChangelogEntryWithPath { entry, path: _ } in entries {
+        // Use the title as the header
+        s.push_str(&format!("### {}\n", entry.title));
+
+        // Add the description below if it exists
+        if let Some(description) = &entry.description {
+            s.push_str(&format!("{}\n", description.trim()));
+        }
+
+        s.push('\n');
     }
     Ok(())
 }
