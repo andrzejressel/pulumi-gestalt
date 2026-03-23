@@ -1,6 +1,7 @@
+use anyhow::{Result, bail};
 use bon::Builder;
 use pulumi_gestalt_rust_integration as integration;
-use pulumi_gestalt_rust_integration::FieldName;
+use pulumi_gestalt_rust_integration::{ConfigValue, FieldName};
 use serde::{Serialize, de::DeserializeOwned};
 use serde_json::{Value, from_value, to_value};
 use std::collections::HashMap;
@@ -224,21 +225,48 @@ impl Context {
             runtime: self.runtime.clone(),
         }
     }
-    pub fn get_config(&self, name: Option<&str>, key: &str) -> Option<ConfigValue<Output<String>>> {
-        self.runtime
+    fn config_full_key(name: Option<&str>, key: &str) -> String {
+        let namespace = name
+            .map(|value| value.to_string())
+            .or_else(|| std::env::var("PULUMI_PROJECT").ok())
+            .unwrap_or_else(|| "<unknown-project>".to_string());
+        format!("{namespace}:{key}")
+    }
+
+    pub fn require_config(&self, name: Option<&str>, key: &str) -> Result<String> {
+        let full_key = Self::config_full_key(name, key);
+        match self
+            .runtime
             .block_on(self.inner.get_config_value(name, key))
-            .map(|v| match v {
-                pulumi_gestalt_rust_integration::ConfigValue::PlainText(pt) => {
-                    ConfigValue::PlainText(pt)
-                }
-                pulumi_gestalt_rust_integration::ConfigValue::Secret(sec) => {
-                    ConfigValue::Secret(Output {
-                        inner: sec,
-                        phantom: PhantomData,
-                        runtime: self.runtime.clone(),
-                    })
-                }
-            })
+        {
+            Some(ConfigValue::PlainText(value)) => Ok(value),
+            Some(ConfigValue::Secret(_)) => {
+                bail!("Config `{full_key}` is secret and cannot be read as plaintext")
+            }
+            None => {
+                bail!("Config `{full_key}` does not exist")
+            }
+        }
+    }
+
+    pub fn require_config_secret(&self, name: Option<&str>, key: &str) -> Result<Output<String>> {
+        let full_key = Self::config_full_key(name, key);
+        match self
+            .runtime
+            .block_on(self.inner.get_config_value(name, key))
+        {
+            Some(ConfigValue::Secret(sec)) => Ok(Output {
+                inner: sec,
+                phantom: PhantomData,
+                runtime: self.runtime.clone(),
+            }),
+            Some(ConfigValue::PlainText(_)) => {
+                bail!("Config `{full_key}` is plaintext and cannot be read as secret")
+            }
+            None => {
+                bail!("Config `{full_key}` does not exist")
+            }
+        }
     }
 }
 
@@ -257,18 +285,4 @@ pub struct InvokeResourceRequest<'a, OUTPUT> {
 pub struct ResourceRequestObjectField<'a, OUTPUT> {
     pub name: String,
     pub value: &'a OUTPUT,
-}
-pub enum ConfigValue<OUTPUT> {
-    PlainText(String),
-    Secret(OUTPUT),
-}
-
-impl ConfigValue<Output<String>> {
-    #[allow(clippy::wrong_self_convention)]
-    pub fn to_output(self, context: &Context) -> Output<String> {
-        match self {
-            ConfigValue::PlainText(s) => context.new_output(&s),
-            ConfigValue::Secret(output) => output,
-        }
-    }
 }
