@@ -6,10 +6,15 @@ pub fn to_base64(input: impl AsRef<[u8]>) -> String {
     STANDARD.encode(input)
 }
 
-pub fn from_base64(input: impl AsRef<str>) -> Result<Vec<u8>> {
-    STANDARD
+pub fn from_base64(input: impl AsRef<str>) -> Result<String> {
+    let bytes = STANDARD
         .decode(input.as_ref())
-        .context("Failed to decode base64 data")
+        .context("Failed to decode base64 data")?;
+
+    String::from_utf8(bytes).context(
+        "Decoded base64 data is not valid UTF-8 string. \
+         The data may be binary content that cannot be represented as a string.",
+    )
 }
 
 #[cfg(test)]
@@ -23,16 +28,29 @@ mod tests {
 
     #[test]
     fn from_base64_decodes_known_text() {
-        assert_eq!(from_base64("aGVsbG8=").unwrap(), b"hello");
+        assert_eq!(from_base64("aGVsbG8=").unwrap(), "hello");
     }
 
     #[test]
-    fn roundtrip_binary_data() {
-        let payload = vec![0x00, 0xff, 0x10, 0x41];
-        let encoded = to_base64(&payload);
+    fn roundtrip_text_data() {
+        let text = "Hello, World! 🌍";
+        let encoded = to_base64(text);
         let decoded = from_base64(encoded).unwrap();
 
-        assert_eq!(decoded, payload);
+        assert_eq!(decoded, text);
+    }
+
+    #[test]
+    fn from_base64_binary_data_returns_error() {
+        // Binary data with invalid UTF-8 sequence
+        let payload = vec![0x00, 0xff, 0x10, 0x41];
+        let encoded = to_base64(&payload);
+        let result = from_base64(encoded);
+
+        assert!(result.is_err());
+        let error_msg = result.unwrap_err().to_string();
+        assert!(error_msg.contains("not valid UTF-8"));
+        assert!(error_msg.contains("binary content"));
     }
 
     #[test]
