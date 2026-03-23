@@ -1,3 +1,4 @@
+use anyhow::{Context as AnyhowContext, Result, bail};
 use bon::Builder;
 use pulumi_gestalt_rust_integration as integration;
 use pulumi_gestalt_rust_integration::FieldName;
@@ -224,21 +225,70 @@ impl Context {
             runtime: self.runtime.clone(),
         }
     }
-    pub fn get_config(&self, name: Option<&str>, key: &str) -> Option<ConfigValue<Output<String>>> {
-        self.runtime
+    fn config_full_key(name: Option<&str>, key: &str) -> String {
+        let namespace = name
+            .map(|value| value.to_string())
+            .or_else(|| std::env::var("PULUMI_PROJECT").ok())
+            .unwrap_or_else(|| "<unknown-project>".to_string());
+        format!("{namespace}:{key}")
+    }
+
+    fn read_config_value_from_env(name: Option<&str>, key: &str) -> Result<String> {
+        let config_map = match std::env::var("PULUMI_CONFIG") {
+            Ok(v) => v,
+            Err(std::env::VarError::NotPresent) => "{}".to_string(),
+            Err(std::env::VarError::NotUnicode(v)) => {
+                bail!(
+                    "PULUMI_CONFIG env var with value [{:?}] is not a valid UTF-8 string",
+                    v
+                )
+            }
+        };
+
+        let config_map: HashMap<String, String> =
+            serde_json::from_str(&config_map).context("PULUMI_CONFIG is not a valid config map")?;
+
+        let full_key = Self::config_full_key(name, key);
+        match config_map.get(&full_key) {
+            Some(value) => Ok(value.clone()),
+            None => bail!("Config `{full_key}` does not exist"),
+        }
+    }
+
+    pub fn require_config(&self, name: Option<&str>, key: &str) -> Result<String> {
+        let full_key = Self::config_full_key(name, key);
+        match self
+            .runtime
             .block_on(self.inner.get_config_value(name, key))
-            .map(|v| match v {
-                pulumi_gestalt_rust_integration::ConfigValue::PlainText(pt) => {
-                    ConfigValue::PlainText(pt)
-                }
-                pulumi_gestalt_rust_integration::ConfigValue::Secret(sec) => {
-                    ConfigValue::Secret(Output {
-                        inner: sec,
-                        phantom: PhantomData,
-                        runtime: self.runtime.clone(),
-                    })
-                }
-            })
+        {
+            Some(pulumi_gestalt_rust_integration::ConfigValue::PlainText(value)) => Ok(value),
+            Some(pulumi_gestalt_rust_integration::ConfigValue::Secret(_)) => {
+                bail!("Config `{full_key}` is secret and cannot be read as plaintext")
+            }
+            None => {
+                bail!("Config `{full_key}` does not exist")
+            }
+        }
+    }
+
+    pub fn require_config_secret(&self, name: Option<&str>, key: &str) -> Result<Option<String>> {
+        let full_key = Self::config_full_key(name, key);
+        match self
+            .runtime
+            .block_on(self.inner.get_config_value(name, key))
+        {
+            Some(pulumi_gestalt_rust_integration::ConfigValue::Secret(_)) => {
+                let secret = Self::read_config_value_from_env(name, key)
+                    .with_context(|| format!("Failed to read config `{full_key}`"))?;
+                Ok(Some(secret))
+            }
+            Some(pulumi_gestalt_rust_integration::ConfigValue::PlainText(_)) => {
+                bail!("Config `{full_key}` is plaintext and cannot be read as secret")
+            }
+            None => {
+                bail!("Config `{full_key}` does not exist")
+            }
+        }
     }
 }
 
@@ -257,18 +307,4 @@ pub struct InvokeResourceRequest<'a, OUTPUT> {
 pub struct ResourceRequestObjectField<'a, OUTPUT> {
     pub name: String,
     pub value: &'a OUTPUT,
-}
-pub enum ConfigValue<OUTPUT> {
-    PlainText(String),
-    Secret(OUTPUT),
-}
-
-impl ConfigValue<Output<String>> {
-    #[allow(clippy::wrong_self_convention)]
-    pub fn to_output(self, context: &Context) -> Output<String> {
-        match self {
-            ConfigValue::PlainText(s) => context.new_output(&s),
-            ConfigValue::Secret(output) => output,
-        }
-    }
 }

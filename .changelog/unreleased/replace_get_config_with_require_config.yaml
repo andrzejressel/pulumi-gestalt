@@ -1,0 +1,6 @@
+type: Changed
+title: Replace high-level Rust get_config with require_config APIs
+description: |
+  Replaced `get_config` in the high-level Rust API.
+  Plain config values should now be read with `require_config`.
+  Secret config values should now be read with `require_config_secret`.

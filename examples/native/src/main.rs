@@ -1,7 +1,6 @@
-use anyhow::Result;
+use anyhow::{Context as AnyhowContext, Result};
 use pulumi_gestalt_providers_random::random_string;
 use pulumi_gestalt_providers_random::random_string::RandomStringArgs;
-use pulumi_gestalt_rust::ConfigValue;
 use pulumi_gestalt_rust::ToOutput;
 use pulumi_gestalt_rust::{Context, Output, add_export, pulumi_combine, pulumi_format};
 
@@ -45,22 +44,19 @@ fn pulumi_main(context: &Context) -> Result<()> {
             .build_struct(),
     );
 
-    let config_value = context.get_config(None, "plain_text");
-    match config_value {
-        Some(ConfigValue::PlainText(s)) => {
-            if s != "plain_value" {
-                panic!("Unexpected config value: {}", s);
-            }
-        }
-        _ => {
-            panic!("Unexpected config value");
-        }
+    let config_value = context
+        .require_config(None, "plain_text")
+        .context("Failed to load required plaintext config `plain_text`")?;
+    if config_value != "plain_value" {
+        panic!("Unexpected config value: {}", config_value);
     }
 
-    let secret_config = context.get_config(None, "secret");
+    let secret_config = context
+        .require_config_secret(None, "secret")
+        .context("Failed to load required secret config `secret`")?;
     let secret_config = match secret_config {
-        Some(ConfigValue::Secret(s)) => s,
-        _ => {
+        Some(value) => context.new_secret(&value),
+        None => {
             println!("Unexpected secret config value");
             panic!("Unexpected secret config value");
         }
