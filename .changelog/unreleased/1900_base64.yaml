@@ -1,2 +1,7 @@
 type: Changed
 title: Add `pulumi_gestalt_rust::stdlib::to_base64` and `pulumi_gestalt_rust::stdlib::from_base64`
+description: |
+  - `to_base64`: Encodes bytes to base64 string
+  - `from_base64`: Decodes base64 string to UTF-8 string. Returns an error with a helpful message if the decoded data is not valid UTF-8 (e.g., binary data).
+additional_pull_requests:
+  - 1932
