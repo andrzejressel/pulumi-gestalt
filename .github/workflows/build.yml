@@ -41,7 +41,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Cache Pulumi providers
-        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
         with:
           path: ~/.pulumi/plugins
           key: ${{ matrix.os }}-pulumi-${{ hashFiles('regenerator/src/main.rs') }}
@@ -140,7 +140,7 @@ jobs:
           cache-dependency-path: "**/go.sum"
       - run: pulumi login --local
       - name: Cache Pulumi providers
-        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
         with:
           path: ~/.pulumi/plugins
           key: ${{ matrix.os }}-pulumi-${{ hashFiles('regenerator/src/main.rs') }}
@@ -175,7 +175,7 @@ jobs:
           go-version: '^1.22.0'
           cache-dependency-path: "**/go.sum"
       - name: Cache Pulumi providers
-        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
         with:
           path: ~/.pulumi/plugins
           key: ${{ matrix.os }}-pulumi-${{ hashFiles('regenerator/src/main.rs') }}
