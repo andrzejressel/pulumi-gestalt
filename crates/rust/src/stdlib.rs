@@ -1,13 +1,14 @@
-use anyhow::{Context, Result};
+use anyhow::{Context, Result, anyhow};
 use base64::Engine;
 use base64::engine::general_purpose::STANDARD;
 
 pub fn cwd() -> Result<String> {
     let path = std::env::current_dir().context("Failed to read current working directory")?;
 
-    path.into_os_string().into_string().map_err(|_| {
-        anyhow::anyhow!(
-            "Current working directory path is not valid UTF-8 and cannot be represented as a string"
+    path.into_os_string().into_string().map_err(|e| {
+        anyhow!(
+            "Current working directory path is not valid UTF-8 and cannot be represented as a string: [{:?}]",
+            e
         )
     })
 }
