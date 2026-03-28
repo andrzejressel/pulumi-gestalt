@@ -1,0 +1,2 @@
+type: Added
+title: Add getters for organization, project and stack in Rust Context
