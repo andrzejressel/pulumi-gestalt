@@ -1,0 +1,2 @@
+type: Added
+title: Add `pulumi_gestalt_rust::stdlib::cwd()` function for getting the current working directory
