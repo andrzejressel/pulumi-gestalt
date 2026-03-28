@@ -8,8 +8,12 @@ use serde_json::Value;
 use std::collections::HashMap;
 use std::sync::Arc;
 
+#[derive(bon::Builder)]
 pub struct Context<FunctionContext> {
     inner: Arc<Mutex<core::Engine<FunctionContext>>>,
+    stack: String,
+    project: String,
+    organization: String,
 }
 
 pub struct Output<FunctionContext> {
@@ -56,6 +60,7 @@ impl<T> Context<T> {
         let pulumi_monitor_url = std::env::var("PULUMI_MONITOR").unwrap();
         let pulumi_stack = std::env::var("PULUMI_STACK").unwrap();
         let pulumi_project = std::env::var("PULUMI_PROJECT").unwrap();
+        let pulumi_organization = std::env::var("PULUMI_ORGANIZATION").unwrap();
         let in_preview = match std::env::var("PULUMI_DRY_RUN") {
             Ok(preview) if preview == "true" => true,
             Ok(preview) if preview == "false" => false,
@@ -65,8 +70,8 @@ impl<T> Context<T> {
         let pulumi_connector = RealPulumiConnector::new(
             pulumi_monitor_url,
             pulumi_engine_url,
-            pulumi_project,
-            pulumi_stack,
+            pulumi_project.clone(),
+            pulumi_stack.clone(),
             in_preview,
         )
         .await
@@ -77,9 +82,12 @@ impl<T> Context<T> {
             .context("Failed to create config instance")
             .unwrap();
 
-        Context {
-            inner: Arc::new(Mutex::new(Engine::new(pulumi_connector, config))),
-        }
+        Context::<T>::builder()
+            .inner(Arc::new(Mutex::new(Engine::new(pulumi_connector, config))))
+            .stack(pulumi_stack)
+            .project(pulumi_project)
+            .organization(pulumi_organization)
+            .build()
     }
 
     pub async fn add_output(&self, field_name: FieldName, output: Output<T>) {
@@ -170,6 +178,18 @@ impl<T> Context<T> {
 
     pub async fn finish(&self) -> Option<core::NativeFunctionRequest<T>> {
         self.inner.lock().await.run().await
+    }
+    
+    pub fn get_organization(&self) -> &str {
+        &self.organization
+    }
+    
+    pub fn get_project(&self) -> &str {
+        &self.project
+    }
+    
+    pub fn get_stack(&self) -> &str {
+        &self.stack
     }
 }
 

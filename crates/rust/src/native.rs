@@ -268,6 +268,18 @@ impl Context {
             }
         }
     }
+    
+    pub fn get_organization(&self) -> &str {
+        self.inner.get_organization()
+    }
+    
+    pub fn get_project(&self) -> &str {
+        self.inner.get_project()
+    }
+    
+    pub fn get_stack(&self) -> &str {
+        self.inner.get_stack()
+    }
 }
 
 pub struct RegisterResourceRequest<'a, OUTPUT> {
