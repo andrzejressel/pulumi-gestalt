@@ -179,15 +179,15 @@ impl<T> Context<T> {
     pub async fn finish(&self) -> Option<core::NativeFunctionRequest<T>> {
         self.inner.lock().await.run().await
     }
-    
+
     pub fn get_organization(&self) -> &str {
         &self.organization
     }
-    
+
     pub fn get_project(&self) -> &str {
         &self.project
     }
-    
+
     pub fn get_stack(&self) -> &str {
         &self.stack
     }
