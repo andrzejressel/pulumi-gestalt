@@ -17,7 +17,6 @@ members = [
     "crates/rust_integration",
     "crates/schema",
     "crates/schema_protobuf",
-
     "crates/wasm_runner",
     "crates/wit", 
     "deploy/repository",
