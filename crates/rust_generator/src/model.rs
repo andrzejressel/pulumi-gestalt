@@ -55,7 +55,7 @@ impl TypeExt for Type {
                     .join(", ")
             ),
             Type::ConstString(s) => {
-                format!("monostate::MustBe!(\"{}\")", s)
+                format!("pulumi_gestalt_rust::__private::monostate::MustBe!(\"{}\")", s)
             }
         }
     }

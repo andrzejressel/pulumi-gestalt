@@ -5,7 +5,7 @@
 pub struct ServerPropertiesForReplica {
     #[builder(skip)]
     #[serde(rename = "createMode")]
-    r#create_mode: monostate::MustBe!("Replica"),
+    r#create_mode: pulumi_gestalt_rust::__private::monostate::MustBe!("Replica"),
     #[builder(into)]
     #[serde(rename = "version")]
     pub r#version: Option<String>,
