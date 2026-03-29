@@ -1212,22 +1212,9 @@ pub fn run_pulumi_generator_test(
         root.join("rust-toolchain.toml"),
     )?;
 
-    if std::env::var_os("REMOVE_LOCK_FILES").is_some() && root.join("Cargo.lock").exists() {
-        fs::remove_file(root.join("Cargo.lock"))?;
-    }
-
     if let Some(env) = std::env::var_os("DO_NOT_COMPILE")
         && env == "true"
     {
-        if !root.join("Cargo.lock").exists() {
-            Command::new("cargo")
-                .args(["generate-lockfile"])
-                .env_remove("CARGO_LLVM_COV")
-                .env_remove("RUSTFLAGS")
-                .current_dir(root)
-                .assert()
-                .success();
-        }
         return Ok(());
     }
 
