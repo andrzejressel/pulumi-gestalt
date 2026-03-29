@@ -43,7 +43,7 @@ jobs:
       with:
         submodules: true
     - uses: Swatinem/rust-cache@c19371144df3bb44fab255c43d04cbc2ab54d1c4 # v2.9.1
-    - uses: jdx/mise-action@c1ecc8f748cd28cdeabf76dab3cccde4ce692fe4 # v4.0.0
+    - uses: jdx/mise-action@1648a7812b9aeae629881980618f079932869151 # v4.0.1
     - name: Install requirements
       run: just install-requirements
       env:
