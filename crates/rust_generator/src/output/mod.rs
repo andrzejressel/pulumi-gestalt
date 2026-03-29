@@ -1,14 +1,11 @@
-use crate::model::{ElementIdExt, TypeExt};
+use crate::model::ElementIdExt;
 use crate::output::types::generate_types_code;
 use crate::utils::escape_rust_name;
-use convert_case::Case::UpperCamel;
 use convert_case::{Case, Casing};
-use itertools::Itertools;
-use pulumi_gestalt_schema::model::{ElementId, GlobalTypeValue, Package};
+use pulumi_gestalt_schema::model::{ElementId, Package};
 use std::collections::{BTreeMap, BTreeSet};
 use std::fs::{File, FileTimes};
 use std::io::Write;
-use std::ops::Deref;
 use std::time::SystemTime;
 
 pub(crate) mod functions;
@@ -76,7 +73,6 @@ pub(crate) fn generate_combined_code(package: &Package, result_path: &std::path:
         generate_includes("functions", &package.functions),
         generate_includes("resources", &package.resources),
         types::generate_module_imports(package),
-        find_consts(package),
         package,
     )
     .unwrap();
@@ -167,43 +163,6 @@ fn generate_includes_looper(tree_node: &TreeNode, current_path: &std::path::Path
     }
 }
 
-fn find_consts(package: &Package) -> Vec<String> {
-    let mut consts = BTreeSet::new();
-    for resource in package.resources.values() {
-        for input in &resource.input_properties {
-            consts.extend(input.r#type.get_consts().clone());
-        }
-        for output in &resource.output_properties {
-            consts.extend(output.r#type.get_consts().clone());
-        }
-    }
-    for input in &package.provider.input_properties {
-        consts.extend(input.r#type.get_consts().clone());
-    }
-    for output in &package.provider.output_properties {
-        consts.extend(output.r#type.get_consts().clone());
-    }
-    for function in package.functions.values() {
-        for input in &function.input_properties {
-            consts.extend(input.r#type.get_consts().clone());
-        }
-        for output in &function.output_properties {
-            consts.extend(output.r#type.get_consts().clone());
-        }
-    }
-    for type_ in package.types.values() {
-        if let GlobalTypeValue::Object(_, obj) = &type_.deref().value {
-            for gtp in obj {
-                consts.extend(gtp.r#type.get_consts().clone());
-            }
-        }
-    }
-    consts
-        .into_iter()
-        .map(|s| s.to_case(UpperCamel))
-        .sorted()
-        .collect()
-}
 
 pub(crate) fn get_register_interface(element_id: &ElementId) -> String {
     let depth = element_id.namespace.len() + 2;

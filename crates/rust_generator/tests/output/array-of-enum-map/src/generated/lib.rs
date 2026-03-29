@@ -6,8 +6,6 @@ pub mod functions {}
 pub mod types {
     include!("types/annotation_store_schema_value_type.rs");
 }
-#[doc(hidden)]
-pub mod constants {}
 #[unsafe(link_section = "pulumi_gestalt_provider::example")]
 #[unsafe(no_mangle)]
 #[cfg(target_arch = "wasm32")]

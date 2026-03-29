@@ -702,8 +702,6 @@ pub mod types {
     }
     include!("types/provider_batching.rs");
 }
-#[doc(hidden)]
-pub mod constants {}
 #[unsafe(link_section = "pulumi_gestalt_provider::gcp")]
 #[unsafe(no_mangle)]
 #[cfg(target_arch = "wasm32")]

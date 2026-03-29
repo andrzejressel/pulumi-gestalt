@@ -23,8 +23,6 @@ pub mod types {
     include!("types/container_color.rs");
     include!("types/container_size.rs");
 }
-#[doc(hidden)]
-pub mod constants {}
 #[unsafe(link_section = "pulumi_gestalt_provider::plant")]
 #[unsafe(no_mangle)]
 #[cfg(target_arch = "wasm32")]

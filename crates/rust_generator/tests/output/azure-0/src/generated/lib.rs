@@ -1551,8 +1551,6 @@ pub mod types {
     include!("types/provider_features_virtual_machine.rs");
     include!("types/provider_features_virtual_machine_scale_set.rs");
 }
-#[doc(hidden)]
-pub mod constants {}
 #[unsafe(link_section = "pulumi_gestalt_provider::azure")]
 #[unsafe(no_mangle)]
 #[cfg(target_arch = "wasm32")]

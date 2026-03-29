@@ -7,15 +7,6 @@ pub mod types {
     include!("types/server_properties_for_replica.rs");
     include!("types/server_properties_for_restore.rs");
 }
-#[doc(hidden)]
-pub mod constants {
-    pulumi_gestalt_rust::__private::pulumi_gestalt_serde_constant_string::generate_string_const!(
-        ConstStringPointInTimeRestore, "PointInTimeRestore"
-    );
-    pulumi_gestalt_rust::__private::pulumi_gestalt_serde_constant_string::generate_string_const!(
-        ConstStringReplica, "Replica"
-    );
-}
 #[unsafe(link_section = "pulumi_gestalt_provider::example")]
 #[unsafe(no_mangle)]
 #[cfg(target_arch = "wasm32")]

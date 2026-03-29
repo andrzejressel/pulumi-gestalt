@@ -88,8 +88,6 @@ pub mod types {
     include!("types/volume_label.rs");
     include!("types/get_network_ipam_config.rs");
 }
-#[doc(hidden)]
-pub mod constants {}
 #[unsafe(link_section = "pulumi_gestalt_provider::docker")]
 #[unsafe(no_mangle)]
 #[cfg(target_arch = "wasm32")]

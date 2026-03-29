@@ -8,8 +8,6 @@ pub mod types {
     }
     include!("types/region.rs");
 }
-#[doc(hidden)]
-pub mod constants {}
 #[unsafe(link_section = "pulumi_gestalt_provider::aws-native")]
 #[unsafe(no_mangle)]
 #[cfg(target_arch = "wasm32")]

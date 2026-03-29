@@ -5,7 +5,7 @@ use crate::model::{
 use crate::utils::fix_description;
 use anyhow::{Context, Result, anyhow};
 use convert_case::{Case, Casing};
-use pulumi_gestalt_serde_constant_string::generate_string_const;
+use monostate::MustBe;
 use serde::Deserialize;
 use std::collections::{BTreeMap, BTreeSet, HashSet};
 
@@ -70,7 +70,7 @@ struct OneOfTypePrimitive {
 struct OneOfTypeArray {
     #[serde(rename = "type")]
     #[allow(dead_code)]
-    type_: ArrayConstant,
+    type_: MustBe!("array"),
     items: OneOfTypePrimitive,
 }
 
@@ -78,13 +78,10 @@ struct OneOfTypeArray {
 struct OneOfTypeObject {
     #[serde(rename = "type")]
     #[allow(dead_code)]
-    type_: ObjectConstant,
+    type_: MustBe!("object"),
     #[serde(rename = "additionalProperties")]
     additional_properties: OneOfTypePrimitive,
 }
-
-generate_string_const!(ObjectConstant, "object");
-generate_string_const!(ArrayConstant, "array");
 
 #[derive(Deserialize, Debug)]
 enum OneOfTypePrimitiveType {

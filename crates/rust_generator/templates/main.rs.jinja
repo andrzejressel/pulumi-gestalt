@@ -12,13 +12,6 @@ pub mod types {
     {{+ types|safe }}
 }
 
-#[doc(hidden)]
-pub mod constants {
-{% for constant in constants +%}
-    pulumi_gestalt_rust::__private::pulumi_gestalt_serde_constant_string::generate_string_const!(ConstString{{ constant }}, "{{ constant }}");
-{% endfor %}
-}
-
 #[unsafe(link_section = "pulumi_gestalt_provider::{{ provider_name }}")]
 #[unsafe(no_mangle)]
 #[cfg(target_arch = "wasm32")]

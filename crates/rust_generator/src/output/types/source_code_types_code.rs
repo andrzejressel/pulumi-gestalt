@@ -5,7 +5,6 @@ use handlebars::Handlebars;
 use pulumi_gestalt_schema::model::{ElementId, GlobalTypeValue, Package, Type};
 use serde::Serialize;
 use serde_json::json;
-use std::collections::BTreeSet;
 use std::ops::Deref;
 
 static TEMPLATE: &str = include_str!("types_code.rs.handlebars");
@@ -30,7 +29,6 @@ struct RefType {
     description_lines: Vec<String>,
     struct_name: String,
     file_name: String,
-    const_strings: BTreeSet<String>,
 }
 
 #[derive(Serialize)]
@@ -109,10 +107,6 @@ fn convert_resource(package: &Package, element_id: &ElementId) -> GenerateResour
                             package,
                         ),
                     })
-                    .collect(),
-                const_strings: properties
-                    .iter()
-                    .flat_map(|global_type_property| global_type_property.r#type.get_consts())
                     .collect(),
             };
             GenerateResource::RealType(ref_type)

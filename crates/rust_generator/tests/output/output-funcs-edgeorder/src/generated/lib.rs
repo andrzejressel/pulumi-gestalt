@@ -29,15 +29,6 @@ pub mod types {
     include!("types/specification_response.rs");
     include!("types/supported_filter_types.rs");
 }
-#[doc(hidden)]
-pub mod constants {
-    pulumi_gestalt_rust::__private::pulumi_gestalt_serde_constant_string::generate_string_const!(
-        ConstStringPav2, "Pav2"
-    );
-    pulumi_gestalt_rust::__private::pulumi_gestalt_serde_constant_string::generate_string_const!(
-        ConstStringPurchase, "Purchase"
-    );
-}
 #[unsafe(link_section = "pulumi_gestalt_provider::myedgeorder")]
 #[unsafe(no_mangle)]
 #[cfg(target_arch = "wasm32")]

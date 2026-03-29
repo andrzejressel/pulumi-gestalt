@@ -9,7 +9,6 @@ struct TemplateModel<'a> {
     functions: String,
     resources: String,
     types: String,
-    constants: Vec<String>,
     provider_name: &'a str,
     provider_version: &'a str,
     provider_metadata: &'a str,
@@ -26,7 +25,6 @@ pub(crate) fn generate(
     functions: String,
     resources: String,
     types: String,
-    constants: Vec<String>,
     package: &Package,
 ) -> anyhow::Result<String> {
     let provider = WasmProviderVersion {
@@ -40,7 +38,6 @@ pub(crate) fn generate(
         functions,
         resources,
         types,
-        constants,
         provider_name: &package.name,
         provider_version: &package.version,
         provider_metadata: &provider,

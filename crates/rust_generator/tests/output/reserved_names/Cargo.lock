@@ -491,6 +491,28 @@ dependencies = [
 ]
 
 [[package]]
+name = "monostate"
+version = "1.0.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bb4cc965c89dd0615a9e822ff8002f7633d2466143d51bd58693e4b2c75aabad"
+dependencies = [
+ "monostate-impl",
+ "serde",
+ "serde_core",
+]
+
+[[package]]
+name = "monostate-impl"
+version = "1.0.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "23f5b99488110875b5904839d396c2cdfaf241ff6622638acb879cc7effad5de"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
 name = "once_cell"
 version = "1.21.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -640,8 +662,8 @@ dependencies = [
  "anyhow",
  "base64",
  "bon",
+ "monostate",
  "pulumi_gestalt_rust_integration",
- "pulumi_gestalt_serde_constant_string",
  "serde",
  "serde_json",
  "tokio",
@@ -672,17 +694,10 @@ dependencies = [
  "anyhow",
  "convert_case",
  "itertools",
- "pulumi_gestalt_serde_constant_string",
+ "monostate",
  "serde",
  "serde_json",
  "serde_yaml",
-]
-
-[[package]]
-name = "pulumi_gestalt_serde_constant_string"
-version = "0.0.0-DEV"
-dependencies = [
- "serde",
 ]
 
 [[package]]

@@ -20,4 +20,4 @@ convert_case.workspace = true
 serde_yaml.workspace = true
 itertools.workspace = true
 proptest = { workspace = true, optional = true }
-pulumi_gestalt_serde_constant_string.workspace = true
+monostate.workspace = true

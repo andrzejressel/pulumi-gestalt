@@ -12,8 +12,6 @@ pub mod types {
         include!("types/documentdb/sql_container_get_properties_response_resource.rs");
     }
 }
-#[doc(hidden)]
-pub mod constants {}
 #[unsafe(link_section = "pulumi_gestalt_provider::azure-native")]
 #[unsafe(no_mangle)]
 #[cfg(target_arch = "wasm32")]
