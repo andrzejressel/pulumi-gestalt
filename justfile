@@ -140,7 +140,6 @@ test-docs:
 
 rust-docs:
     cargo doc --no-deps \
-        -p pulumi_gestalt_serde_constant_string \
         -p pulumi_gestalt_build \
         -p pulumi_gestalt_rust \
         -p pulumi_gestalt_core \
