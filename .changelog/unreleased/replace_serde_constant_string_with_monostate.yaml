@@ -1,0 +1,2 @@
+type: Changed
+title: Replace custom serde_constant_string implementation with monostate library
