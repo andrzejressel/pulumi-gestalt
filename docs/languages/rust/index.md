@@ -21,6 +21,7 @@
 pulumi_gestalt_rust = { version = "=<PULUMI_GESTALT_VERSION>" }
 anyhow = "1.0.95"
 bon = "3.3.1"
+monostate = "1.0.2"
 
 [build-dependencies]
 pulumi_gestalt_build = { version = "=<PULUMI_GESTALT_VERSION>" }
