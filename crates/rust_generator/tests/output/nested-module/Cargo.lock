@@ -491,15 +491,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "nested-module"
-version = "0.0.1"
-dependencies = [
- "bon",
- "pulumi_gestalt_rust",
- "serde",
-]
-
-[[package]]
 name = "monostate"
 version = "1.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -519,6 +510,16 @@ dependencies = [
  "proc-macro2",
  "quote",
  "syn",
+]
+
+[[package]]
+name = "nested-module"
+version = "0.0.1"
+dependencies = [
+ "bon",
+ "monostate",
+ "pulumi_gestalt_rust",
+ "serde",
 ]
 
 [[package]]
@@ -671,8 +672,8 @@ dependencies = [
  "anyhow",
  "base64",
  "bon",
- "pulumi_gestalt_rust_integration",
  "monostate",
+ "pulumi_gestalt_rust_integration",
  "serde",
  "serde_json",
  "tokio",

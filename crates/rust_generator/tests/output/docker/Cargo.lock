@@ -166,6 +166,7 @@ name = "docker"
 version = "0.0.1"
 dependencies = [
  "bon",
+ "monostate",
  "pulumi_gestalt_rust",
  "serde",
 ]

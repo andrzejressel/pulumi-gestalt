@@ -650,6 +650,7 @@ name = "provider_as_function_parameter"
 version = "0.0.1"
 dependencies = [
  "bon",
+ "monostate",
  "pulumi_gestalt_rust",
  "serde",
 ]
@@ -709,8 +710,8 @@ dependencies = [
  "anyhow",
  "base64",
  "bon",
- "pulumi_gestalt_rust_integration",
  "monostate",
+ "pulumi_gestalt_rust_integration",
  "serde",
  "serde_json",
  "tokio",
