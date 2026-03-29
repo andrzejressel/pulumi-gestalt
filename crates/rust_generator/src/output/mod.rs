@@ -163,7 +163,6 @@ fn generate_includes_looper(tree_node: &TreeNode, current_path: &std::path::Path
     }
 }
 
-
 pub(crate) fn get_register_interface(element_id: &ElementId) -> String {
     let depth = element_id.namespace.len() + 2;
     let prefix = if depth > 0 {

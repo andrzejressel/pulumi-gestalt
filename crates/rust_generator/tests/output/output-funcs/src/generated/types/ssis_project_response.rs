@@ -31,7 +31,7 @@ pub struct SsisProjectResponse {
     /// Expected value is 'Project'.
     #[builder(skip)]
     #[serde(rename = "type")]
-    r#type_: super::constants::ConstStringProject,
+    r#type_: monostate::MustBe!("Project"),
     /// Project version.
     #[builder(into)]
     #[serde(rename = "version")]

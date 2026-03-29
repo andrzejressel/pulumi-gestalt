@@ -35,5 +35,5 @@ pub struct SsisPackageResponse {
     /// Expected value is 'Package'.
     #[builder(skip)]
     #[serde(rename = "type")]
-    r#type_: super::constants::ConstStringPackage,
+    r#type_: monostate::MustBe!("Package"),
 }

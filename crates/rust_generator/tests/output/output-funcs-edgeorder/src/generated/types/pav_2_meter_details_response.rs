@@ -7,7 +7,7 @@ pub struct Pav2MeterDetailsResponse {
     /// Expected value is 'Pav2'.
     #[builder(skip)]
     #[serde(rename = "billingType")]
-    r#billing_type: super::constants::ConstStringPav2,
+    r#billing_type: monostate::MustBe!("Pav2"),
     /// Charging type.
     #[builder(into)]
     #[serde(rename = "chargingType")]

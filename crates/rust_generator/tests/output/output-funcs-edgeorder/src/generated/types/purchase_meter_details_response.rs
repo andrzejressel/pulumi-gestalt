@@ -7,7 +7,7 @@ pub struct PurchaseMeterDetailsResponse {
     /// Expected value is 'Purchase'.
     #[builder(skip)]
     #[serde(rename = "billingType")]
-    r#billing_type: super::constants::ConstStringPurchase,
+    r#billing_type: monostate::MustBe!("Purchase"),
     /// Charging type.
     #[builder(into)]
     #[serde(rename = "chargingType")]

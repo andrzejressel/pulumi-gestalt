@@ -3585,6 +3585,7 @@ name = "pulumi_gestalt_providers_aws_mini"
 version = "0.0.0-DEV"
 dependencies = [
  "bon",
+ "monostate",
  "pulumi_gestalt_build",
  "pulumi_gestalt_rust",
  "serde",
@@ -3596,6 +3597,7 @@ name = "pulumi_gestalt_providers_azure_mini"
 version = "0.0.0-DEV"
 dependencies = [
  "bon",
+ "monostate",
  "pulumi_gestalt_build",
  "pulumi_gestalt_rust",
  "serde",
@@ -3607,6 +3609,7 @@ name = "pulumi_gestalt_providers_cloudflare"
 version = "0.0.0-DEV"
 dependencies = [
  "bon",
+ "monostate",
  "pulumi_gestalt_build",
  "pulumi_gestalt_rust",
  "serde",
@@ -3618,6 +3621,7 @@ name = "pulumi_gestalt_providers_docker"
 version = "0.0.0-DEV"
 dependencies = [
  "bon",
+ "monostate",
  "pulumi_gestalt_build",
  "pulumi_gestalt_rust",
  "serde",
@@ -3629,6 +3633,7 @@ name = "pulumi_gestalt_providers_gcp_mini"
 version = "0.0.0-DEV"
 dependencies = [
  "bon",
+ "monostate",
  "pulumi_gestalt_build",
  "pulumi_gestalt_rust",
  "serde",
@@ -3640,6 +3645,7 @@ name = "pulumi_gestalt_providers_random"
 version = "0.0.0-DEV"
 dependencies = [
  "bon",
+ "monostate",
  "pulumi_gestalt_build",
  "pulumi_gestalt_rust",
  "serde",
@@ -3651,6 +3657,7 @@ name = "pulumi_gestalt_providers_test"
 version = "0.0.0-DEV"
 dependencies = [
  "bon",
+ "monostate",
  "pulumi_gestalt_build",
  "pulumi_gestalt_rust",
  "serde",
@@ -3662,6 +3669,7 @@ name = "pulumi_gestalt_providers_typesystem"
 version = "0.0.0-DEV"
 dependencies = [
  "bon",
+ "monostate",
  "pulumi_gestalt_build",
  "pulumi_gestalt_rust",
  "serde",
