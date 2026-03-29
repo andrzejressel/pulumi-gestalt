@@ -33,3 +33,5 @@ out
 
 docs/CHANGELOG.md
 .mise.local.toml
+
+crates/rust_generator/tests/output/**/Cargo.lock
