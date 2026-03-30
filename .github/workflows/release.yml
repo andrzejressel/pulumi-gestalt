@@ -67,7 +67,7 @@ jobs:
           timeout_minutes: 10
           max_attempts: 10
           command: docker pull public.ecr.aws/ubuntu/ubuntu:latest
-      - uses: actions/setup-go@4b73464bb391d4059bd26b0524d20df3927bd417 # v6.3.0
+      - uses: actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c # v6.4.0
         with:
           go-version: '^1.22.0'
           cache-dependency-path: "**/go.sum"
