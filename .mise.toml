@@ -1,5 +1,5 @@
 [tools]
-just = "1.47.1"
+just = "1.48.0"
 "cargo:cargo-nextest" = "0.9.76"
 "cargo:sd" = "1.0.0"
 "cargo:cargo-llvm-cov" = "0.8.0"
