@@ -1,4 +1,4 @@
-use anyhow::{Result, bail};
+use anyhow::{Context as anyhowContext, Result, bail};
 use bon::Builder;
 use pulumi_gestalt_rust_integration as integration;
 use pulumi_gestalt_rust_integration::{ConfigValue, FieldName};
@@ -247,6 +247,19 @@ impl Context {
                 bail!("Config `{full_key}` does not exist")
             }
         }
+    }
+
+    pub fn require_config_deserialize<T: DeserializeOwned>(
+        &self,
+        name: Option<&str>,
+        key: &str,
+    ) -> Result<T> {
+        let val = self
+            .require_config(name, key)
+            .context("Failed to obtain config value")?;
+
+        serde_json::from_str(&val)
+            .with_context(|| format!("Failed to deserialize config value for key `{key}`"))
     }
 
     pub fn require_config_secret(&self, name: Option<&str>, key: &str) -> Result<Output<String>> {
