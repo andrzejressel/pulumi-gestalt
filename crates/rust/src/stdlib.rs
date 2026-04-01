@@ -80,9 +80,7 @@ pub fn single_or_none<T: Clone>(list: impl AsRef<[T]>) -> Result<Option<T>> {
 
 #[cfg(test)]
 mod tests {
-    use super::{
-        cwd, element, from_base64, join, length, single_or_none, split, to_base64,
-    };
+    use super::{cwd, element, from_base64, join, length, single_or_none, split, to_base64};
 
     #[test]
     fn to_base64_encodes_known_text() {
