@@ -1,13 +1,13 @@
 module github.com/andrzejressel/pulumi-gestalt/pulumi-language-gestalt
 
-go 1.25.6
+go 1.25.8
 
 toolchain go1.26.1
 
 require (
 	github.com/golang/protobuf v1.5.4
 	github.com/pkg/errors v0.9.1
-	github.com/pulumi/pulumi/sdk/v3 v3.227.0
+	github.com/pulumi/pulumi/sdk/v3 v3.228.0
 	google.golang.org/grpc v1.79.3
 )
 
