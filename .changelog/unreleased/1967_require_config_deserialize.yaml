@@ -1,0 +1,4 @@
+type: Added
+title: Add `Context::require_config_deserialize` in Rust native API
+description: |
+  Adds `require_config_deserialize<T>` - it's `require_config` that deserializes value to `T`.
