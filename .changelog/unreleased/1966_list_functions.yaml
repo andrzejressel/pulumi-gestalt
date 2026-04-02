@@ -1,0 +1,8 @@
+type: Added
+title: Add list and string helper functions to `pulumi_gestalt_rust::stdlib`
+description: |
+  - `element`: Returns an item by index with clear errors for negative and out-of-bounds indices.
+  - `join`: Joins a list of strings with a separator.
+  - `length`: Returns list length as `i64`.
+  - `split`: Splits text by a separator into `Vec<String>`.
+  - `single_or_none`: Returns `None` for empty lists, `Some` for single-item lists, and an error for larger lists.
