@@ -96,15 +96,11 @@ pub fn entries<T: Clone>(map: impl Borrow<BTreeMap<String, T>>) -> Vec<Entry<T>>
         .collect()
 }
 
-pub fn lookup<K, V, Q>(
-    map: impl Borrow<BTreeMap<K, V>>,
-    key: &Q,
-    default: impl Into<V>,
-) -> V
+pub fn lookup<K, V, Q>(map: impl Borrow<BTreeMap<K, V>>, key: &Q, default: impl Into<V>) -> V
 where
     K: Borrow<Q> + Ord,
     Q: Ord + ?Sized,
-    V: Clone
+    V: Clone,
 {
     map.borrow()
         .get(key)
@@ -283,10 +279,7 @@ mod tests {
         let mut map = BTreeMap::new();
         map.insert("answer".to_string(), "42".to_string());
 
-        assert_eq!(
-            lookup(Box::new(map), "answer", "default"),
-            "42".to_string()
-        );
+        assert_eq!(lookup(Box::new(map), "answer", "default"), "42".to_string());
     }
 
     #[test]
