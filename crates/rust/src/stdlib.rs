@@ -1,6 +1,14 @@
 use anyhow::{Context, Result, anyhow, bail};
 use base64::Engine;
 use base64::engine::general_purpose::STANDARD;
+use std::borrow::Borrow;
+use std::collections::BTreeMap;
+
+#[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize)]
+pub struct Entry<T> {
+    pub key: String,
+    pub value: T,
+}
 
 pub fn cwd() -> Result<String> {
     let path = std::env::current_dir().context("Failed to read current working directory")?;
@@ -78,9 +86,35 @@ pub fn single_or_none<T: Clone>(list: impl AsRef<[T]>) -> Result<Option<T>> {
     Ok(Some(list_ref[0].clone()))
 }
 
+pub fn entries<T: Clone>(map: impl Borrow<BTreeMap<String, T>>) -> Vec<Entry<T>> {
+    map.borrow()
+        .iter()
+        .map(|(key, value)| Entry {
+            key: key.clone(),
+            value: value.clone(),
+        })
+        .collect()
+}
+
+pub fn lookup<K, V, Q>(map: impl Borrow<BTreeMap<K, V>>, key: &Q, default: impl Into<V>) -> V
+where
+    K: Borrow<Q> + Ord,
+    Q: Ord + ?Sized,
+    V: Clone,
+{
+    map.borrow()
+        .get(key)
+        .cloned()
+        .unwrap_or_else(|| default.into())
+}
+
 #[cfg(test)]
 mod tests {
-    use super::{cwd, element, from_base64, join, length, single_or_none, split, to_base64};
+    use super::{
+        Entry, cwd, element, entries, from_base64, join, length, lookup, single_or_none, split,
+        to_base64,
+    };
+    use std::collections::BTreeMap;
 
     #[test]
     fn to_base64_encodes_known_text() {
@@ -197,5 +231,65 @@ mod tests {
         let values = vec!["a", "b"];
         let error = single_or_none(&values).unwrap_err().to_string();
         assert!(error.contains("at most one element"));
+    }
+
+    #[test]
+    fn entries_returns_key_value_pairs_for_non_empty_map() {
+        let mut map = BTreeMap::new();
+        map.insert("b".to_string(), "2".to_string());
+        map.insert("a".to_string(), "1".to_string());
+
+        let output = entries(Box::new(map));
+
+        assert_eq!(
+            output,
+            vec![
+                Entry {
+                    key: "a".to_string(),
+                    value: "1".to_string(),
+                },
+                Entry {
+                    key: "b".to_string(),
+                    value: "2".to_string(),
+                }
+            ]
+        );
+    }
+
+    #[test]
+    fn entries_returns_empty_vec_for_empty_map() {
+        let map: BTreeMap<String, String> = BTreeMap::new();
+        assert_eq!(entries(Box::new(map)), Vec::<Entry<String>>::new());
+    }
+
+    #[test]
+    fn entries_returns_empty_vec_for_empty_map_borrow() {
+        let map: BTreeMap<String, String> = BTreeMap::new();
+        assert_eq!(entries(&map), Vec::<Entry<String>>::new());
+    }
+
+    #[test]
+    fn entries_accepts_owned_map() {
+        let map: BTreeMap<String, String> = BTreeMap::new();
+        assert_eq!(entries(map), Vec::<Entry<String>>::new());
+    }
+
+    #[test]
+    fn lookup_returns_value_for_existing_key() {
+        let mut map = BTreeMap::new();
+        map.insert("answer".to_string(), "42".to_string());
+
+        assert_eq!(lookup(Box::new(map), "answer", "default"), "42".to_string());
+    }
+
+    #[test]
+    fn lookup_returns_default_for_missing_key() {
+        let mut map = BTreeMap::new();
+        map.insert("answer".to_string(), "42".to_string());
+
+        assert_eq!(
+            lookup(Box::new(map), "missing", "default"),
+            "default".to_string()
+        );
     }
 }

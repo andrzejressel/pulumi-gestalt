@@ -1,0 +1,5 @@
+type: Added
+title: Add `pulumi_gestalt_rust::stdlib::entries` and `pulumi_gestalt_rust::stdlib::lookup`
+description: |
+  - `entries`: Converts a map into a list of key/value entries.
+  - `lookup`: Returns a map value for a key, or a provided default when the key is missing.
