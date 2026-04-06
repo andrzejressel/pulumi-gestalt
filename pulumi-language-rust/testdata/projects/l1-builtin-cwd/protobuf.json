@@ -1,0 +1,15 @@
+{
+  "nodes": [
+    {
+      "outputVariable": {
+        "name": "cwdOutput",
+        "logicalName": "cwdOutput",
+        "value": {
+          "functionCallExpression": {
+            "name": "cwd"
+          }
+        }
+      }
+    }
+  ]
+}

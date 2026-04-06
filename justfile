@@ -5,14 +5,14 @@ WASI_TARGET := "wasm32-wasip2"
 @default: build-language-plugin build-pulumi-test regenerator install-requirements build-wasm-components build-wasm-components-release test-all rust-docs fmt
 
 # Regenerate "DO NOT EDIT" sections, recreate generator examples (but does not compile them), reformat whole project, check changelog
-housekeeping-ci-flow: regenerator regenerate-pulumi-test-schema regenerate-generator-tests changelog-dry-run fmt
+housekeeping-ci-flow: regenerator regenerate-pulumi-test-schema regenerate-language-rust regenerate-generator-tests changelog-dry-run fmt
 
 # Runs all amd64 unit and doc tests tests
 base-ci-flow: test
 
 c-ci-flow: build-language-plugin build-static-library test-examples-c
 
-native-ci-flow: build-language-plugin build-pulumi-test test-examples-native
+native-ci-flow: build-language-plugin build-language-plugin-rust build-pulumi-test test-examples-native
 
 wasm-ci-flow: build-language-plugin build-wasm-components build-wasm-components-release test-examples-wasm
 
@@ -30,11 +30,29 @@ fix-issues:
 build-language-plugin:
     cd pulumi-language-gestalt && just
 
+build-language-plugin-rust:
+    cd pulumi-language-rust && just build
+
+[linux]
+[macos]
+build-rust-bridge:
+    cargo build -p pulumi_gestalt_rust_language_server --release
+
+[windows]
+build-rust-bridge:
+    cargo build -p pulumi_gestalt_rust_language_server --release --target x86_64-pc-windows-gnu
+
 build-pulumi-test:
     cd pulumi-test && just pulumi-test-install
 
 package-language-plugin VERSION:
     cd pulumi-language-gestalt && just package-language-plugin-all {{VERSION}}
+
+package-language-plugin-rust VERSION:
+    cd pulumi-language-rust && just package-language-plugin {{VERSION}}
+
+test-language-plugin-rust:
+    cd pulumi-language-rust && just test
 
 install-requirements:
     rustup component add rustfmt
@@ -61,6 +79,7 @@ check:
 
 fmt:
     cd pulumi-language-gestalt && just fmt
+    cd pulumi-language-rust && just fmt
     cd pulumi-test && just fmt
     cargo fmt
     cargo clippy --tests --all-features --fix --allow-dirty --allow-staged
@@ -77,6 +96,9 @@ regenerate-generator-tests $DO_NOT_COMPILE="true":
 
 regenerate-pulumi-test-schema:
     cd pulumi-test && just pulumi-test-regenerate-schema-json
+
+regenerate-language-rust:
+    cd pulumi-language-rust && just regenerate
 
 regenerate-and-format:
     just regenerator

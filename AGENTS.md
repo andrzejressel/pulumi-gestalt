@@ -96,6 +96,7 @@ Commands are run using `just`. Run `just --list` for all available commands.
 
 *   `crates/`: Contains all the Rust crates for this project. See the `AGENTS.md` in each crate's directory for more details.
 *   `pulumi-language-gestalt/`: Go source for the Pulumi language plugin. See the `AGENTS.md` in this directory for more details.
+*   `pulumi-language-rust/`: Go source for the Pulumi Rust language plugin host and conformance tests.
 *   `examples/`: Example projects demonstrating how to use Pulumi Gestalt.
 *   `providers/`: Provider schemas and generated code.
 *   `proto/`: Protobuf definitions.

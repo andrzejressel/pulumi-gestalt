@@ -1,0 +1,61 @@
+set windows-shell := ["pwsh.exe", "-c"]
+
+build-rust-bridge:
+    cd .. && just build-rust-bridge
+
+[windows]
+build $CGO_LDFLAGS_ALLOW=".*pulumi_gestalt_rust_language_server.lib":
+    just build-rust-bridge
+    pulumi plugin rm language rust -y
+    go build
+    pulumi plugin install language rust 1.0 --file ./pulumi-language-rust.exe
+
+[linux]
+[macos]
+build:
+    just build-rust-bridge
+    pulumi plugin rm language rust -y
+    go build
+    pulumi plugin install language rust 1.0 --file ./pulumi-language-rust
+
+fmt:
+    go fmt ./...
+
+# For example: just test-single "TestLanguage/l1-builtin-cwd"
+test:
+    go test -v -count=1 ./...
+
+test-single TEST_NAME:
+    go test -v -count=1 -run {{TEST_NAME}} ./...
+
+regenerate-test $PULUMI_ACCEPT="1":
+    go test -v -count=1 ./...
+
+regenerate-test-single TEST_NAME $PULUMI_ACCEPT="1":
+    go test -v -count=1 -run {{TEST_NAME}} ./...
+
+regenerate: 
+    rust2go-cli --src ../crates/rust_language_server/src/golang.rs --dst ./codegen/rust/api.go --package-name "rust" --without-main
+    protoc --proto_path=../proto/language_server --go_out=./ast/protobuf/schemapcl --go_opt=paths=source_relative ../proto/language_server/pcl.proto
+    protoc --proto_path=../proto/language_server --go_out=./ast/protobuf/schemapackage --go_opt=paths=source_relative ../proto/language_server/package.proto
+
+[windows]
+package-language-plugin VERSION $CGO_LDFLAGS_ALLOW=".*pulumi_gestalt_rust_language_server.lib":
+    just build-rust-bridge
+    go build -o pulumi-language-rust.exe .
+    tar czvf pulumi-language-rust-v{{VERSION}}-windows-amd64.tar.gz pulumi-language-rust.exe
+    rm pulumi-language-rust.exe
+
+[linux]
+package-language-plugin VERSION:
+    just build-rust-bridge
+    go build -o pulumi-language-rust .
+    tar czvf pulumi-language-rust-v{{VERSION}}-linux-amd64.tar.gz pulumi-language-rust
+    rm pulumi-language-rust
+
+[macos]
+package-language-plugin VERSION:
+    just build-rust-bridge
+    go build -o pulumi-language-rust .
+    tar czvf pulumi-language-rust-v{{VERSION}}-darwin-arm64.tar.gz pulumi-language-rust
+    rm pulumi-language-rust

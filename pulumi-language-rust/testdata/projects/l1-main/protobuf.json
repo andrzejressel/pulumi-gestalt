@@ -1,0 +1,15 @@
+{
+  "nodes": [
+    {
+      "outputVariable": {
+        "name": "output_true",
+        "logicalName": "output_true",
+        "value": {
+          "literalValueExpression": {
+            "boolValue": true
+          }
+        }
+      }
+    }
+  ]
+}

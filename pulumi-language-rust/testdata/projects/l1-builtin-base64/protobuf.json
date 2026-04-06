@@ -1,0 +1,97 @@
+{
+  "nodes": [
+    {
+      "configVariable": {
+        "name": "input",
+        "logicalName": "input",
+        "configType": {
+          "stringType": {}
+        }
+      }
+    },
+    {
+      "localVariable": {
+        "name": "bytes",
+        "logicalName": "bytes",
+        "value": {
+          "functionCallExpression": {
+            "name": "fromBase64",
+            "args": [
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "input",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "input"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "data",
+        "logicalName": "data",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "bytes",
+            "traversal": {
+              "each": [
+                {
+                  "traverseRoot": {
+                    "name": "bytes"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "roundtrip",
+        "logicalName": "roundtrip",
+        "value": {
+          "functionCallExpression": {
+            "name": "toBase64",
+            "args": [
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "bytes",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "bytes"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
