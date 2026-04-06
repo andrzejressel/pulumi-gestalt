@@ -1,0 +1,285 @@
+{
+  "nodes": [
+    {
+      "configVariable": {
+        "name": "aList",
+        "logicalName": "aList",
+        "configType": {
+          "listType": {
+            "stringType": {}
+          }
+        }
+      }
+    },
+    {
+      "configVariable": {
+        "name": "singleOrNoneList",
+        "logicalName": "singleOrNoneList",
+        "configType": {
+          "listType": {
+            "stringType": {}
+          }
+        }
+      }
+    },
+    {
+      "configVariable": {
+        "name": "aString",
+        "logicalName": "aString",
+        "configType": {
+          "stringType": {}
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "elementOutput1",
+        "logicalName": "elementOutput1",
+        "value": {
+          "functionCallExpression": {
+            "name": "element",
+            "args": [
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "aList",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "aList"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "type": {
+                  "composite": {}
+                }
+              },
+              {
+                "value": {
+                  "literalValueExpression": {
+                    "numberValue": 1
+                  }
+                },
+                "type": {
+                  "composite": {}
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "elementOutput2",
+        "logicalName": "elementOutput2",
+        "value": {
+          "functionCallExpression": {
+            "name": "element",
+            "args": [
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "aList",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "aList"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "type": {
+                  "composite": {}
+                }
+              },
+              {
+                "value": {
+                  "literalValueExpression": {
+                    "numberValue": 2
+                  }
+                },
+                "type": {
+                  "composite": {}
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "joinOutput",
+        "logicalName": "joinOutput",
+        "value": {
+          "functionCallExpression": {
+            "name": "join",
+            "args": [
+              {
+                "value": {
+                  "templateExpression": {
+                    "parts": [
+                      {
+                        "literalValueExpression": {
+                          "stringValue": "|"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              },
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "aList",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "aList"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "type": {
+                  "composite": {}
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "lengthOutput",
+        "logicalName": "lengthOutput",
+        "value": {
+          "functionCallExpression": {
+            "name": "length",
+            "args": [
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "aList",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "aList"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "type": {
+                  "composite": {}
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "splitOutput",
+        "logicalName": "splitOutput",
+        "value": {
+          "functionCallExpression": {
+            "name": "split",
+            "args": [
+              {
+                "value": {
+                  "templateExpression": {
+                    "parts": [
+                      {
+                        "literalValueExpression": {
+                          "stringValue": "-"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              },
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "aString",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "aString"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "singleOrNoneOutput",
+        "logicalName": "singleOrNoneOutput",
+        "value": {
+          "tupleConsExpression": {
+            "items": [
+              {
+                "functionCallExpression": {
+                  "name": "singleOrNone",
+                  "args": [
+                    {
+                      "value": {
+                        "scopeTraversalExpression": {
+                          "rootName": "singleOrNoneList",
+                          "traversal": {
+                            "each": [
+                              {
+                                "traverseRoot": {
+                                  "name": "singleOrNoneList"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "type": {
+                        "composite": {}
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

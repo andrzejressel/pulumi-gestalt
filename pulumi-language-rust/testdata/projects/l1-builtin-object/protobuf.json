@@ -1,0 +1,175 @@
+{
+  "nodes": [
+    {
+      "configVariable": {
+        "name": "aMap",
+        "logicalName": "aMap",
+        "configType": {
+          "mapType": {
+            "stringType": {}
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "entriesOutput",
+        "logicalName": "entriesOutput",
+        "value": {
+          "functionCallExpression": {
+            "name": "entries",
+            "args": [
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "aMap",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "aMap"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "type": {
+                  "composite": {}
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "lookupOutput",
+        "logicalName": "lookupOutput",
+        "value": {
+          "functionCallExpression": {
+            "name": "lookup",
+            "args": [
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "aMap",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "aMap"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "type": {
+                  "composite": {}
+                }
+              },
+              {
+                "value": {
+                  "templateExpression": {
+                    "parts": [
+                      {
+                        "literalValueExpression": {
+                          "stringValue": "keyPresent"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              },
+              {
+                "value": {
+                  "templateExpression": {
+                    "parts": [
+                      {
+                        "literalValueExpression": {
+                          "stringValue": "default"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "lookupOutputDefault",
+        "logicalName": "lookupOutputDefault",
+        "value": {
+          "functionCallExpression": {
+            "name": "lookup",
+            "args": [
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "aMap",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "aMap"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "type": {
+                  "composite": {}
+                }
+              },
+              {
+                "value": {
+                  "templateExpression": {
+                    "parts": [
+                      {
+                        "literalValueExpression": {
+                          "stringValue": "keyMissing"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              },
+              {
+                "value": {
+                  "templateExpression": {
+                    "parts": [
+                      {
+                        "literalValueExpression": {
+                          "stringValue": "default"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
