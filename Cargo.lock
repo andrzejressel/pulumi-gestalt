@@ -3721,18 +3721,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "pulumi_gestalt_schema_protobuf"
-version = "0.0.0-DEV"
-dependencies = [
- "anyhow",
- "pathdiff",
- "proptest",
- "prost",
- "pulumi_gestalt_proto",
- "pulumi_gestalt_schema",
-]
-
-[[package]]
 name = "pulumi_gestalt_serde_constant_string"
 version = "0.0.0-DEV"
 dependencies = [
@@ -3778,7 +3766,6 @@ dependencies = [
  "cbindgen",
  "libc",
  "pulumi_gestalt_rust_integration",
- "pulumi_gestalt_schema_protobuf",
  "serde_json",
  "tokio",
 ]

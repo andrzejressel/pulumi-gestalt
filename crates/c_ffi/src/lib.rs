@@ -1,4 +1,3 @@
-use anyhow::Context;
 use pulumi_gestalt_rust_integration as integration;
 use serde_json::Value;
 use std::cell::RefCell;
@@ -505,46 +504,6 @@ extern "C" fn pulumi_config_free(value: *mut ConfigValue) {
     }
 }
 
-/// Returns protobuf encoded schema for the provider.
-/// Modules for provider can be found in Pulumi registry on left side with (M) icon:
-/// - [AWS](https://www.pulumi.com/registry/packages/aws/)
-/// - [Azure](https://www.pulumi.com/registry/packages/azure/)
-/// - [GCP](https://www.pulumi.com/registry/packages/gcp/)
-///
-/// Empty modules list means that no modules are used.
-/// To use all modules, pass null for the modules pointer and 0 for the size.
-#[unsafe(no_mangle)]
-extern "C" fn pulumi_get_schema(
-    provider_name: *const c_char,
-    provider_version: *const c_char,
-    modules: *const *const c_char,
-    modules_size: usize,
-) -> *mut CFFIString {
-    let modules = if modules.is_null() {
-        if modules_size > 0 {
-            panic!("Modules pointer is null but size is greater than 0");
-        }
-        None
-    } else {
-        Some(extract_string_vec(modules, modules_size))
-    };
-
-    let provider_name = unsafe { CStr::from_ptr(provider_name) }.to_str().unwrap();
-    let provider_version = unsafe { CStr::from_ptr(provider_version) }
-        .to_str()
-        .unwrap();
-
-    let schema = integration::get_schema(provider_name, provider_version, modules.as_deref())
-        .context("Failed to get schema")
-        .unwrap();
-
-    let protobuf = pulumi_gestalt_schema_protobuf::convert_to_protobuf(&schema)
-        .context("Failed to convert schema to protobuf")
-        .unwrap();
-
-    Box::into_raw(Box::new(CFFIString::from_string(protobuf)))
-}
-
 fn extract_field(
     inputs: *const ObjectField,
     inputs_len: usize,
@@ -566,13 +525,4 @@ fn extract_field(
             });
     }
     objects
-}
-
-fn extract_string_vec<'a>(inputs: *const *const c_char, inputs_len: usize) -> Vec<&'a str> {
-    unsafe {
-        std::slice::from_raw_parts(inputs, inputs_len)
-            .iter()
-            .map(|&s| CStr::from_ptr(s).to_str().unwrap())
-            .collect()
-    }
 }

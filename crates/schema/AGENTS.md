@@ -53,5 +53,4 @@ The crate includes property-based testing (via `proptest`) to verify that schema
 ## Integration Points
 
 - **Used by `rust_generator`**: The code generator reads schemas via this crate
-- **Used by `schema_protobuf`**: Converts schemas to protobuf format
 - **Depends on Pulumi CLI**: Can fetch schemas directly from installed providers

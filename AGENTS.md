@@ -106,7 +106,7 @@ Commands are run using `just`. Run `just --list` for all available commands.
 **Standard workflow for most changes:**
 1. Make changes to Rust code
 2. Update tests if needed
-3. Run `just check` and `just fmt`
+3. Run `just fmt` after code changes
 4. Run `just test` (covers most cases)
 5. Regenerate code if schema changes: `just regenerator`
 
@@ -170,7 +170,7 @@ The changelog entries are automatically processed during release to generate the
 
 ## Code Formatting
 - Max line length: **100 characters**
-- Check and fix issues after every change using:
+- Always run `just fmt` after every code change. Also check and fix issues using:
   ```bash
   just check
   just fmt

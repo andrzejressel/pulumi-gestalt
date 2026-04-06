@@ -5,13 +5,6 @@
     and check abstractions behind `Output` and generated provider.
 
 
-## Schema
-
-The schema for the Pulumi Gestalt Protobuf is defined in the `pulumi_gestalt.proto` file. It includes definitions
-for the main components such as `Package`, `Resource`, `Function`, and various types used within these components. More
-information about the schema can be found in
-the [Gestalt Protocol Buffer Schema documentation](schema.md).
-
 ## Abstractions
 
 The `Pulumi Gestalt` SDK provides abstractions for working with Pulumi in a structured way. It is built around three
@@ -1063,53 +1056,6 @@ of which can be accessed individually.
         | Type                | Description                                         |
         |---------------------|-----------------------------------------------------|
         | `Result<model::Package>` | The provider schema or an error if not found. |
-
-    === "C FFI"
-
-        **🛠️ Signature:**
-        ```c
-        /**
-         * String that may contain nulls and is not null-terminated.
-         */
-        typedef struct pulumi_string_t {
-          uint8_t *data;
-          uintptr_t len;
-        } pulumi_string_t;
-
-        void pulumi_string_free(struct pulumi_string_t *value);
-
-        /**
-         * Returns protobuf encoded schema for the provider.
-         * Modules for provider can be found in Pulumi registry on left side with (M) icon:
-         * - [AWS](https://www.pulumi.com/registry/packages/aws/)
-         * - [Azure](https://www.pulumi.com/registry/packages/azure/)
-         * - [GCP](https://www.pulumi.com/registry/packages/gcp/)
-         *
-         * Empty modules list means that no modules are used.
-         * To use all modules, pass null for the modules pointer and 0 for the size.
-         */
-        struct pulumi_string_t *pulumi_get_schema(const char *provider_name,
-                                                  const char *provider_version,
-                                                  const char *const *modules,
-                                                  uintptr_t modules_size);
-
-        ```
-
-        **📥 Parameters:**
-
-        | Name               | Type                | Description                                                                                           |
-        |--------------------|---------------------|-------------------------------------------------------------------------------------------------------|
-        | `provider_name`    | `const char*`       | Name of the provider (e.g. "aws", "azure")                                                            |
-        | `provider_version` | `const char*`       | Version of the provider (e.g. "5.0.0")                                                               |
-        | `modules`          | `const char* const*`| Array of module names to include. Pass `NULL` to include all modules.                                 |
-        | `modules_size`     | `uintptr_t`         | Size of the `modules` array. Pass `0` if `modules` is `NULL`.                                           |
-
-        **📤 Returns:**
-
-        | Type                    | Description                                                                                                                               |
-        |-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-        | `struct pulumi_string_t*` | A `pulumi_string_t` struct containing the protobuf encoded schema. Must be freed with `pulumi_string_free` when no longer needed.        |
-
 
 ### Abstraction Levels for `Output::map`
 
