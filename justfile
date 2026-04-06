@@ -31,8 +31,10 @@ build-language-plugin:
     cd pulumi-language-gestalt && just
 
 build-language-plugin-rust:
-    cd pulumi-language-rust && just build-rust-bridge
-    cd pulumi-language-rust && go build -o pulumi-language-rust .
+    cd pulumi-language-rust && just build
+
+build-rust-bridge:
+    cargo build -p pulumi_gestalt_rust_language_server --release
 
 build-pulumi-test:
     cd pulumi-test && just pulumi-test-install

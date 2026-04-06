@@ -1,32 +1,21 @@
 set windows-shell := ["pwsh.exe", "-c"]
 
-@default: build
-
 build-rust-bridge:
-    cargo build --manifest-path ../Cargo.toml -p pulumi_gestalt_rust_language_server --release
+    cd .. && just build-rust-bridge
 
 [windows]
 build:
     just build-rust-bridge
-    go build -o pulumi-language-rust.exe .
-
-[linux]
-[macos]
-build:
-    just build-rust-bridge
-    go build -o pulumi-language-rust .
-
-[windows]
-install-local:
-    just build
     pulumi plugin rm language rust -y
+    go build
     pulumi plugin install language rust 1.0 --file ./pulumi-language-rust.exe
 
 [linux]
 [macos]
-install-local:
-    just build
+build:
+    just build-rust-bridge
     pulumi plugin rm language rust -y
+    go build
     pulumi plugin install language rust 1.0 --file ./pulumi-language-rust
 
 fmt:

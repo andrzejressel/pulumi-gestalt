@@ -1,7 +1,9 @@
 package rust
 
 /*
-#cgo LDFLAGS: ${SRCDIR}/../../../target/release/libpulumi_gestalt_rust_language_server.a
+#cgo linux LDFLAGS: ${SRCDIR}/../../../target/release/libpulumi_gestalt_rust_language_server.a
+#cgo darwin LDFLAGS: ${SRCDIR}/../../../target/release/libpulumi_gestalt_rust_language_server.a
+#cgo windows LDFLAGS: ${SRCDIR}/../../../target/release/pulumi_gestalt_rust_language_server.lib
 */
 import "C"
 import (
