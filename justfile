@@ -12,7 +12,7 @@ base-ci-flow: test
 
 c-ci-flow: build-language-plugin build-static-library test-examples-c
 
-native-ci-flow: build-language-plugin build-pulumi-test test-examples-native
+native-ci-flow: build-language-plugin build-language-plugin-rust build-pulumi-test test-examples-native
 
 wasm-ci-flow: build-language-plugin build-wasm-components build-wasm-components-release test-examples-wasm
 
