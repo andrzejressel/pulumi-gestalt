@@ -1,5 +1,0 @@
-type: Changed
-title: Update `Context::require_config_deserialize` to use `Deserialize<'de>` instead of `DeserializeOwned`
-description: |
-  Changed the type bound for `require_config_deserialize<T>` from `DeserializeOwned` to `for<'de> Deserialize<'de>`.
-  This is more flexible and allows types that implement `Deserialize` for any lifetime to be used.
