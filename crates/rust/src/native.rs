@@ -2,7 +2,7 @@ use anyhow::{Context as anyhowContext, Result, bail};
 use bon::Builder;
 use pulumi_gestalt_rust_integration as integration;
 use pulumi_gestalt_rust_integration::{ConfigValue, FieldName};
-use serde::{Serialize, de::DeserializeOwned};
+use serde::{Serialize, Deserialize, de::DeserializeOwned};
 use serde_json::{Value, from_value, to_value};
 use std::collections::HashMap;
 use std::marker::PhantomData;
@@ -249,11 +249,14 @@ impl Context {
         }
     }
 
-    pub fn require_config_deserialize<T: DeserializeOwned>(
+    pub fn require_config_deserialize<T>(
         &self,
         name: Option<&str>,
         key: &str,
-    ) -> Result<T> {
+    ) -> Result<T>
+    where
+        T: for<'de> Deserialize<'de>,
+    {
         let val = self
             .require_config(name, key)
             .context("Failed to obtain config value")?;
