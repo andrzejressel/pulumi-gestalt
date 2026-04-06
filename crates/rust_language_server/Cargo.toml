@@ -1,0 +1,24 @@
+[package]
+name = "pulumi_gestalt_rust_language_server"
+version.workspace = true
+edition.workspace = true
+repository.workspace = true
+license.workspace = true
+readme.workspace = true
+description = "Rust language server codegen bridge for Pulumi Gestalt"
+
+[lib]
+crate-type = ["cdylib", "staticlib", "rlib"]
+
+[dependencies]
+prost.workspace = true
+pulumi_gestalt_schema.workspace = true
+pulumi_gestalt_generator.workspace = true
+pulumi_gestalt_proto = { workspace = true, features = ["language_server"] }
+prettyplease.workspace = true
+syn.workspace = true
+rust2go = "0.4.2"
+rootcause.workspace = true
+
+[lints]
+workspace = true
