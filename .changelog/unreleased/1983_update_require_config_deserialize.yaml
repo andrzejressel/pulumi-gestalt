@@ -1,0 +1,2 @@
+type: Changed
+title: Update `Context::require_config_deserialize` to use `Deserialize<'de>` instead of `DeserializeOwned`
