@@ -3,7 +3,7 @@ package rust
 /*
 #cgo linux LDFLAGS: ${SRCDIR}/../../../target/release/libpulumi_gestalt_rust_language_server.a
 #cgo darwin LDFLAGS: ${SRCDIR}/../../../target/release/libpulumi_gestalt_rust_language_server.a
-#cgo windows LDFLAGS: ${SRCDIR}/../../../target/release/pulumi_gestalt_rust_language_server.lib
+#cgo windows LDFLAGS: ${SRCDIR}/../../../target/x86_64-pc-windows-gnu/release/libpulumi_gestalt_rust_language_server.a  -lwldap32 -ladvapi32 -lws2_32 -luser32 -lntdll -luserenv
 */
 import "C"
 import (
