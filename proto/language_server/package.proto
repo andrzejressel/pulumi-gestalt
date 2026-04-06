@@ -1,0 +1,147 @@
+syntax = "proto3";
+
+package pulumipackage;
+
+option go_package = "github.com/andrzejressel/pulumi-rust/ast/codegen/ast/schemapackage/schemapackage;schemapackage";
+
+message Package {
+  string name = 1;
+  string display_name = 2;
+  string plugin_download_url = 3;
+  string version = 4;
+  repeated Resource resources = 5;
+  repeated Function functions = 6;
+  repeated GlobalType types = 7;
+  Provider provider = 8;
+}
+
+message Provider {
+  string description = 1;
+  repeated InputProperty input_properties = 2;
+  repeated OutputProperty output_properties = 3;
+}
+
+message Resource {
+  ElementId element_id = 1;
+  string description = 2;
+  repeated InputProperty input_properties = 3;
+  repeated OutputProperty output_properties = 4;
+}
+
+message Function {
+  ElementId element_id = 1;
+  string description = 2;
+  repeated InputProperty input_properties = 3;
+  repeated OutputProperty output_properties = 4;
+  Type return_type = 5;
+}
+
+message ElementId {
+  repeated string namespace = 1;
+  string name = 2;
+  string raw = 3;
+}
+
+message InputProperty {
+  string name = 1;
+  Type type = 2;
+  string description = 3;
+}
+
+message OutputProperty {
+  string name = 1;
+  Type type = 2;
+  string description = 3;
+}
+
+message Type {
+  oneof type_value {
+    Empty bool_type = 1;
+    Empty int_type = 2;
+    Empty number_type = 3;
+    Empty string_type = 4;
+    Type array_type = 5;
+    Type map_type = 6;
+    RefType ref_type = 7;
+    Type optional_type = 8;
+    DiscriminatedUnion union_type = 9;
+    string const_string = 10;
+  }
+}
+
+message Empty {}
+
+message RefType {
+  oneof ref_value {
+    ElementId type_ref = 1;
+    Empty archive = 2;
+    Empty asset = 3;
+    Empty any = 4;
+    Empty current_provider = 5;
+  }
+}
+
+message DiscriminatedUnion {
+  repeated Type types = 1;
+  Type default_type = 2;
+  string discriminator = 3;
+  map<string, string> mapping = 4;
+}
+
+message GlobalType {
+  ElementId element_id = 1;
+  GlobalTypeValue global_type_value = 2;
+}
+
+message GlobalTypeValue {
+  oneof value {
+    ObjectType object = 1;
+    StringEnum string_enum = 2;
+    NumberEnum number_enum = 3;
+    IntegerEnum integer_enum = 4;
+  }
+}
+
+message ObjectType {
+  string description = 1;
+  repeated GlobalTypeProperty properties = 2;
+}
+
+message StringEnum {
+  string description = 1;
+  repeated StringEnumElement elements = 2;
+}
+
+message NumberEnum {
+  string description = 1;
+  repeated NumberEnumElement elements = 2;
+}
+
+message IntegerEnum {
+  string description = 1;
+  repeated IntegerEnumElement elements = 2;
+}
+
+message GlobalTypeProperty {
+  string name = 1;
+  Type type = 2;
+  string description = 3;
+}
+
+message StringEnumElement {
+  string name = 1;
+  string value = 2;
+  string description = 3;
+}
+
+message NumberEnumElement {
+  string name = 1;
+  double value = 2;
+  string description = 3;
+}
+
+message IntegerEnumElement {
+  string name = 1;
+  int64 value = 2;
+  string description = 3;
+}

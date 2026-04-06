@@ -12,6 +12,7 @@ all-features = true
 
 [features]
 pulumi = ["dep:tonic"]
+language_server = []
 
 [dependencies]
 prost.workspace = true

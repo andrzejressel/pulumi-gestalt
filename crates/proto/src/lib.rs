@@ -4,3 +4,6 @@
 
 #[cfg(feature = "pulumi")]
 pub mod pulumi;
+
+#[cfg(feature = "language_server")]
+pub mod language_server;

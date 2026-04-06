@@ -12,6 +12,7 @@ members = [
     "crates/grpc",
     "crates/proto", 
     "crates/rust",
+    "crates/rust_language_server",
     "crates/rust_build",
     "crates/rust_generator",
     "crates/rust_integration",
@@ -58,6 +59,7 @@ pulumi_gestalt_domain = { version = "=0.0.0-DEV", path = "crates/domain" }
 pulumi_gestalt_build = { version = "=0.0.0-DEV", path = "crates/rust_build" }
 pulumi_gestalt_generator = { version = "=0.0.0-DEV", path = "crates/rust_generator" }
 pulumi_gestalt_rust = { version = "=0.0.0-DEV", path = "crates/rust" }
+pulumi_gestalt_rust_language_server = { version = "=0.0.0-DEV", path = "crates/rust_language_server" }
 pulumi_gestalt_proto = { version = "=0.0.0-DEV", path = "crates/proto" }
 pulumi_gestalt_wit = { version = "=0.0.0-DEV", path = "crates/wit" }
 pulumi_gestalt_providers_docker = { version = "=0.0.0-DEV", path = "providers/docker" }
@@ -114,3 +116,4 @@ proptest = "1.6.0"
 static_assertions = "1.1.0"
 async-trait = "0.1.89"
 base64 = "0.22.1"
+rootcause = "0.12.1"
