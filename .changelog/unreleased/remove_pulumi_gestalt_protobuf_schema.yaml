@@ -1,5 +1,0 @@
-type: Removed
-title: Remove Pulumi Gestalt protobuf schema surface
-description: |
-  Removed proto/pulumi_gestalt.proto, the pulumi_gestalt_schema_protobuf crate,
-  and related C FFI/schema documentation and release artifacts.
