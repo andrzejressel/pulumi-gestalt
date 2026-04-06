@@ -7,8 +7,6 @@ pub mod functions {
     }
 }
 pub mod types {}
-#[doc(hidden)]
-pub mod constants {}
 #[unsafe(link_section = "pulumi_gestalt_provider::random")]
 #[unsafe(no_mangle)]
 #[cfg(target_arch = "wasm32")]

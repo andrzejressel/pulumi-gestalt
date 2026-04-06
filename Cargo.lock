@@ -2950,6 +2950,28 @@ dependencies = [
 ]
 
 [[package]]
+name = "monostate"
+version = "1.0.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bb4cc965c89dd0615a9e822ff8002f7633d2466143d51bd58693e4b2c75aabad"
+dependencies = [
+ "monostate-impl",
+ "serde",
+ "serde_core",
+]
+
+[[package]]
+name = "monostate-impl"
+version = "1.0.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "23f5b99488110875b5904839d396c2cdfaf241ff6622638acb879cc7effad5de"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
 name = "multimap"
 version = "0.10.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3590,6 +3612,7 @@ name = "pulumi_gestalt_providers_aws_mini"
 version = "0.0.0-DEV"
 dependencies = [
  "bon",
+ "monostate",
  "pulumi_gestalt_build",
  "pulumi_gestalt_rust",
  "serde",
@@ -3601,6 +3624,7 @@ name = "pulumi_gestalt_providers_azure_mini"
 version = "0.0.0-DEV"
 dependencies = [
  "bon",
+ "monostate",
  "pulumi_gestalt_build",
  "pulumi_gestalt_rust",
  "serde",
@@ -3612,6 +3636,7 @@ name = "pulumi_gestalt_providers_cloudflare"
 version = "0.0.0-DEV"
 dependencies = [
  "bon",
+ "monostate",
  "pulumi_gestalt_build",
  "pulumi_gestalt_rust",
  "serde",
@@ -3623,6 +3648,7 @@ name = "pulumi_gestalt_providers_docker"
 version = "0.0.0-DEV"
 dependencies = [
  "bon",
+ "monostate",
  "pulumi_gestalt_build",
  "pulumi_gestalt_rust",
  "serde",
@@ -3634,6 +3660,7 @@ name = "pulumi_gestalt_providers_gcp_mini"
 version = "0.0.0-DEV"
 dependencies = [
  "bon",
+ "monostate",
  "pulumi_gestalt_build",
  "pulumi_gestalt_rust",
  "serde",
@@ -3645,6 +3672,7 @@ name = "pulumi_gestalt_providers_random"
 version = "0.0.0-DEV"
 dependencies = [
  "bon",
+ "monostate",
  "pulumi_gestalt_build",
  "pulumi_gestalt_rust",
  "serde",
@@ -3656,6 +3684,7 @@ name = "pulumi_gestalt_providers_test"
 version = "0.0.0-DEV"
 dependencies = [
  "bon",
+ "monostate",
  "pulumi_gestalt_build",
  "pulumi_gestalt_rust",
  "serde",
@@ -3667,6 +3696,7 @@ name = "pulumi_gestalt_providers_typesystem"
 version = "0.0.0-DEV"
 dependencies = [
  "bon",
+ "monostate",
  "pulumi_gestalt_build",
  "pulumi_gestalt_rust",
  "serde",
@@ -3680,9 +3710,9 @@ dependencies = [
  "anyhow",
  "base64",
  "bon",
+ "monostate",
  "pulumi_gestalt_build",
  "pulumi_gestalt_rust_integration",
- "pulumi_gestalt_serde_constant_string",
  "serde",
  "serde_json",
  "tokio",
@@ -3713,8 +3743,8 @@ dependencies = [
  "anyhow",
  "convert_case",
  "itertools",
+ "monostate",
  "proptest",
- "pulumi_gestalt_serde_constant_string",
  "serde",
  "serde_json",
  "serde_yaml",
@@ -3730,14 +3760,6 @@ dependencies = [
  "prost",
  "pulumi_gestalt_proto",
  "pulumi_gestalt_schema",
-]
-
-[[package]]
-name = "pulumi_gestalt_serde_constant_string"
-version = "0.0.0-DEV"
-dependencies = [
- "serde",
- "serde_json",
 ]
 
 [[package]]

@@ -16,7 +16,7 @@ base64.workspace = true
 serde.workspace = true
 serde_json.workspace = true
 bon.workspace = true
-pulumi_gestalt_serde_constant_string.workspace = true
+monostate.workspace = true
 pulumi_gestalt_rust_integration.workspace = true
 tokio.workspace = true
 

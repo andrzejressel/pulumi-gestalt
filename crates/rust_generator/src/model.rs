@@ -7,7 +7,6 @@ use pulumi_gestalt_schema::model::*;
 pub(crate) trait TypeExt {
     fn get_rust_type(&self, depth: usize) -> String;
     fn get_cycle_safe_rust_type(&self, depth: usize) -> String;
-    fn get_consts(&self) -> Vec<String>;
 }
 
 impl TypeExt for Type {
@@ -56,12 +55,10 @@ impl TypeExt for Type {
                     .join(", ")
             ),
             Type::ConstString(s) => {
-                let prefix = if depth > 0 {
-                    "super::".repeat(depth)
-                } else {
-                    "self::".to_string()
-                };
-                format!("{}constants::ConstString{}", prefix, s.to_case(UpperCamel)).to_string()
+                format!(
+                    "pulumi_gestalt_rust::__private::monostate::MustBe!(\"{}\")",
+                    s
+                )
             }
         }
     }
@@ -95,21 +92,6 @@ impl TypeExt for Type {
             | Type::Ref(Ref::Asset | Ref::Any | Ref::Archive | Ref::CurrentProvider) => {
                 self.get_rust_type(depth)
             }
-        }
-    }
-
-    fn get_consts(&self) -> Vec<String> {
-        match self {
-            Type::Boolean => vec![],
-            Type::Integer => vec![],
-            Type::Number => vec![],
-            Type::String => vec![],
-            Type::ConstString(s) => vec![s.clone()],
-            Type::Ref(_) => vec![],
-            Type::Array(t) => t.get_consts(),
-            Type::Object(o) => o.get_consts(),
-            Type::Option(o) => o.get_consts(),
-            Type::DiscriminatedUnion(_) => vec![],
         }
     }
 }

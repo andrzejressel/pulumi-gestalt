@@ -24,24 +24,6 @@ pub mod types {
     include!("types/ssis_variable_response.rs");
     include!("types/storage_account_key_response.rs");
 }
-#[doc(hidden)]
-pub mod constants {
-    pulumi_gestalt_rust::__private::pulumi_gestalt_serde_constant_string::generate_string_const!(
-        ConstStringEnvironment, "Environment"
-    );
-    pulumi_gestalt_rust::__private::pulumi_gestalt_serde_constant_string::generate_string_const!(
-        ConstStringFixed, "Fixed"
-    );
-    pulumi_gestalt_rust::__private::pulumi_gestalt_serde_constant_string::generate_string_const!(
-        ConstStringFolder, "Folder"
-    );
-    pulumi_gestalt_rust::__private::pulumi_gestalt_serde_constant_string::generate_string_const!(
-        ConstStringPackage, "Package"
-    );
-    pulumi_gestalt_rust::__private::pulumi_gestalt_serde_constant_string::generate_string_const!(
-        ConstStringProject, "Project"
-    );
-}
 #[unsafe(link_section = "pulumi_gestalt_provider::mypkg")]
 #[unsafe(no_mangle)]
 #[cfg(target_arch = "wasm32")]

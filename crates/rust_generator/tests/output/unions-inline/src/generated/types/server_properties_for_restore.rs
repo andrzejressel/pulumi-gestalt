@@ -5,7 +5,7 @@
 pub struct ServerPropertiesForRestore {
     #[builder(skip)]
     #[serde(rename = "createMode")]
-    r#create_mode: super::constants::ConstStringPointInTimeRestore,
+    r#create_mode: pulumi_gestalt_rust::__private::monostate::MustBe!("PointInTimeRestore"),
     #[builder(into)]
     #[serde(rename = "restorePointInTime")]
     pub r#restore_point_in_time: String,

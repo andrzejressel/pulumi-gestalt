@@ -9,6 +9,7 @@ pulumi_gestalt_rust.workspace = true
 wit-bindgen.workspace = true
 bon.workspace = true
 serde.workspace = true
+monostate.workspace = true
 
 [build-dependencies]
 pulumi_gestalt_build.workspace = true

@@ -19,5 +19,5 @@ pub struct SsisFolderResponse {
     /// Expected value is 'Folder'.
     #[builder(skip)]
     #[serde(rename = "type")]
-    r#type_: super::constants::ConstStringFolder,
+    r#type_: pulumi_gestalt_rust::__private::monostate::MustBe!("Folder"),
 }

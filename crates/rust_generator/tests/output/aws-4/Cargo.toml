@@ -7,5 +7,6 @@ edition = "2021"
 pulumi_gestalt_rust = { path = "../../../../rust" }
 serde = "1.0.197"
 bon = "3.3.1"
+monostate = "1.0.2"
 
 [workspace]

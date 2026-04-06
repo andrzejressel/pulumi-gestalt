@@ -26,8 +26,6 @@ pub mod types {
         }
     }
 }
-#[doc(hidden)]
-pub mod constants {}
 #[unsafe(link_section = "pulumi_gestalt_provider::example")]
 #[unsafe(no_mangle)]
 #[cfg(target_arch = "wasm32")]
