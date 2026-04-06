@@ -4,5 +4,3 @@
 
 #[cfg(feature = "pulumi")]
 pub mod pulumi;
-#[cfg(feature = "pulumi_gestalt")]
-pub mod pulumi_gestalt;
