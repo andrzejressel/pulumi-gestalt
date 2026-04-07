@@ -1,8 +1,9 @@
 use crate::github::functions::get_repository::GetRepositoryArgs;
 use crate::github::repository_ruleset::RepositoryRulesetArgs;
 use crate::github::types::{
-    RepositoryRulesetConditions, RepositoryRulesetConditionsRefName, RepositoryRulesetRules,
-    RepositoryRulesetRulesPullRequest, RepositoryRulesetRulesRequiredStatusChecksRequiredCheck,
+    RepositoryRulesetBypassActor, RepositoryRulesetConditions, RepositoryRulesetConditionsRefName,
+    RepositoryRulesetRules, RepositoryRulesetRulesPullRequest,
+    RepositoryRulesetRulesRequiredStatusChecksRequiredCheck,
 };
 use GithubIntegration::{Any, GithubActions, GithubAdvancedSecurity, Mergify, ReleaserBot};
 use anyhow::Result;
@@ -32,7 +33,7 @@ impl GithubIntegration {
             GithubActions => 15368,
             GithubAdvancedSecurity => 57789,
             Mergify => 10562,
-            ReleaserBot => 114865428,
+            ReleaserBot => 3038871,
         }
     }
 }
@@ -71,15 +72,13 @@ fn pulumi_main(ctx: &Context) -> Result<()> {
             .enforcement("active")
             .repository(repository.id)
             .target("branch")
-            // .bypass_actors(
-            //     vec![
-            //         RepositoryRulesetBypassActor::builder()
-            //             .actor_id(ReleaserBot.get_integration_id())
-            //             .actor_type("Integration")
-            //             .bypass_mode("always")
-            //             .build_struct()
-            //     ]
-            // )
+            .bypass_actors(vec![
+                RepositoryRulesetBypassActor::builder()
+                    .actor_id(ReleaserBot.get_integration_id())
+                    .actor_type("Integration")
+                    .bypass_mode("always")
+                    .build_struct(),
+            ])
             .conditions(
                 RepositoryRulesetConditions::builder()
                     .ref_name(
@@ -95,7 +94,11 @@ fn pulumi_main(ctx: &Context) -> Result<()> {
                     .deletion(true)
                     .non_fast_forward(true)
                     .required_linear_history(true)
-                    .pull_request(RepositoryRulesetRulesPullRequest::builder().build_struct())
+                    .pull_request(
+                        RepositoryRulesetRulesPullRequest::builder()
+                            .allowed_merge_methods(vec!["squash".to_string()])
+                            .build_struct(),
+                    )
                     .required_status_checks(
                         RepositoryRulesetRulesRequiredStatusChecks::builder()
                             .strict_required_status_checks_policy(false)
