@@ -5434,9 +5434,9 @@ dependencies = [
 
 [[package]]
 name = "wat"
-version = "1.246.0"
+version = "1.246.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "dc737e3097dfced3030dd15721711cc26781943b59e1499492f8ee1e63245126"
+checksum = "723f2473b47f738c12fc11c8e0bb8b27ce7cf9c78cf1a29dadbc2d34a2513292"
 dependencies = [
  "wast 246.0.2",
 ]
