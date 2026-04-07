@@ -7,6 +7,5 @@ edition = "2024"
 anyhow = "1.0.102"
 # PULUMI_GESTALT_RUST START
 #pulumi_gestalt_rust = "0.0.7"
-#pulumi_gestalt_rust = { path = "/home/andrzej/MojeProgramy/pulumi-gestalt/crates/rust" }
-pulumi_gestalt_rust = { git = "https://github.com/andrzejressel/pulumi-gestalt", rev = "4649a7527cad16af5961598e3d935bb626e1a166" }
+pulumi_gestalt_rust = { path = "{{CURRENT_DIR}}" }
 # PULUMI_GESTALT_RUST END

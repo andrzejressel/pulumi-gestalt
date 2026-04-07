@@ -5,10 +5,11 @@ use crate::golang::{
 use generator::generate_main;
 use prost::Message;
 use rootcause::Result;
+use rootcause::option_ext::OptionExt;
 use rootcause::prelude::ResultExt;
-use std::fs;
 use std::fs::create_dir_all;
 use std::path::Path;
+use std::{env, fs};
 
 mod generator;
 mod golang;
@@ -20,9 +21,17 @@ fn generate_project(req: GenerateProjectRequest) -> Result<()> {
         &*req.protobuf,
     )
     .context("Cannot decode protobuf")?;
+    let current_dir = env::current_dir().context("Cannot get current directory")?;
+    let current_dir = current_dir
+        .to_str()
+        .context("Current directory is not valid UTF-8")?;
     let model_program = pcl_model::map_program(program);
     let main_rs = generate_main(&model_program).context("Failed to generate main.rs")?;
     let cargo_rs = include_str!("./Cargo.toml.template");
+    let cargo_rs = cargo_rs.replace(
+        "{{CURRENT_DIR}}",
+        &format!("{current_dir}../../crates/rust"),
+    );
     let files = vec![
         FileWithContent {
             path: "src/main.rs".to_string(),
