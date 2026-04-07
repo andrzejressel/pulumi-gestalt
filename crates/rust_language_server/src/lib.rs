@@ -5,11 +5,11 @@ use crate::golang::{
 use generator::generate_main;
 use prost::Message;
 use rootcause::Result;
+use rootcause::option_ext::OptionExt;
 use rootcause::prelude::ResultExt;
-use std::{env, fs};
 use std::fs::create_dir_all;
 use std::path::Path;
-use rootcause::option_ext::OptionExt;
+use std::{env, fs};
 
 mod generator;
 mod golang;
@@ -28,8 +28,10 @@ fn generate_project(req: GenerateProjectRequest) -> Result<()> {
     let model_program = pcl_model::map_program(program);
     let main_rs = generate_main(&model_program).context("Failed to generate main.rs")?;
     let cargo_rs = include_str!("./Cargo.toml.template");
-    let cargo_rs = cargo_rs
-        .replace("{{CURRENT_DIR}}", &format!("{current_dir}../../crates/rust"));
+    let cargo_rs = cargo_rs.replace(
+        "{{CURRENT_DIR}}",
+        &format!("{current_dir}../../crates/rust"),
+    );
     let files = vec![
         FileWithContent {
             path: "src/main.rs".to_string(),
