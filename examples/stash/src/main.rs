@@ -15,7 +15,6 @@ fn pulumi_main(context: &Context) -> Result<()> {
         StashArgs::builder().input(stash_input).build_struct(),
     );
 
-
     add_export("stash_input", &stash.input);
     add_export("stash_output", &stash.output);
     add_export("stash_id", &stash.id);
