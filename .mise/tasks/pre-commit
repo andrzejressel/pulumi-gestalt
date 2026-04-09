@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# mise description="Run formatting checks before commit"
+
+set -euo pipefail
+
+just fmt

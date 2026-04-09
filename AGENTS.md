@@ -16,6 +16,11 @@ The development environment is managed by `mise`.
     mise install
     just install-requirements
     ```
+3. **Install git hooks** (optional but recommended):
+    ```bash
+    ./scripts/install-git-hooks.sh
+    ```
+    This installs a pre-commit hook that automatically runs `just fmt` before each commit to ensure code is properly formatted.
 
 ## Development Commands
 
