@@ -136,7 +136,7 @@ func (host *rustLanguageHost) GetProgramDependencies(context.Context, *pulumirpc
 
 func (host *rustLanguageHost) Run(_ context.Context, req *pulumirpc.RunRequest) (*pulumirpc.RunResponse, error) {
 
-	directoryName := path.Base(req.Info.ProgramDirectory)
+	directoryName := path.Base(req.Info.RootDirectory) + "-" + path.Base(req.Info.ProgramDirectory)
 
 	config, err := host.constructConfig(req)
 	if err != nil {
