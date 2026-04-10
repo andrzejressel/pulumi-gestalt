@@ -445,8 +445,12 @@ func generateProject(
 	testing bool,
 ) error {
 	rootDirectory := directory
+	projectDirectory := directory
+	if project.Main != "" {
+		projectDirectory = filepath.Join(directory, project.Main)
+	}
 
-	protobufContent, protobufJSON, err := rust.GenerateProject(program, rootDirectory)
+	protobufContent, protobufJSON, err := rust.GenerateProject(program, projectDirectory)
 	if err != nil {
 		return err
 	}

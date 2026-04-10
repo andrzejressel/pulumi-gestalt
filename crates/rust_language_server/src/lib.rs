@@ -21,7 +21,8 @@ fn generate_project(req: GenerateProjectRequest) -> Result<()> {
         &*req.protobuf,
     )
     .context("Cannot decode protobuf")?;
-    let current_dir = env::current_dir().context("Cannot get current directory")?;
+    let current_dir = env::current_dir().context("Cannot get current directory")?
+        .join("../crates/rust");
     let current_dir = current_dir
         .to_str()
         .context("Current directory is not valid UTF-8")?;
@@ -30,7 +31,7 @@ fn generate_project(req: GenerateProjectRequest) -> Result<()> {
     let cargo_rs = include_str!("./Cargo.toml.template");
     let cargo_rs = cargo_rs.replace(
         "{{CURRENT_DIR}}",
-        &format!("{current_dir}../../crates/rust"),
+        current_dir,
     );
     let files = vec![
         FileWithContent {
