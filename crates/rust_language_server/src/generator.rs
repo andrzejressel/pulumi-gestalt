@@ -78,10 +78,17 @@ fn convert_local_variable(local_variable: &LocalVariable) -> Result<String> {
 
 fn convert_output_variable(output_variable: &OutputVariable) -> Result<String> {
     let value = convert_expression(&output_variable.value).context("Failed to convert value")?;
-    Ok(format!(
-        "pulumi_gestalt_rust::add_export(\"{}\", &context.new_output(&{}));",
-        output_variable.name, value
-    ))
+    if value == "Vec::new()" {
+        Ok(format!(
+            "pulumi_gestalt_rust::add_export(\"{}\", &context.new_output::<Vec<String>>(&Vec::new()));",
+            output_variable.name
+        ))
+    } else {
+        Ok(format!(
+            "pulumi_gestalt_rust::add_export(\"{}\", &context.new_output(&{}));",
+            output_variable.name, value
+        ))
+    }
 }
 
 fn convert_expression(expression: &Expression) -> Result<String> {
@@ -114,7 +121,11 @@ fn convert_expression(expression: &Expression) -> Result<String> {
                 .collect::<Result<Vec<_>>>()
                 .context("Failed to convert tuple items")?
                 .join(", ");
-            Ok(format!("vec!({})", converted_items))
+            if items.is_empty() {
+                Ok("Vec::new()".to_string())
+            } else {
+                Ok(format!("vec!({})", converted_items))
+            }
         }
         expression::Value::FunctionCallExpression(function_call) => {
             let args = function_call
