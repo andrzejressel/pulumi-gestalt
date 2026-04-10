@@ -3694,6 +3694,7 @@ dependencies = [
  "pulumi_gestalt_serde_constant_string",
  "serde",
  "serde_json",
+ "sha1",
  "tokio",
 ]
 
