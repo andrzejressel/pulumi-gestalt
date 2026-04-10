@@ -21,7 +21,8 @@ fn generate_project(req: GenerateProjectRequest) -> Result<()> {
         &*req.protobuf,
     )
     .context("Cannot decode protobuf")?;
-    let current_dir = env::current_dir().context("Cannot get current directory")?
+    let current_dir = env::current_dir()
+        .context("Cannot get current directory")?
         .join("../crates/rust");
     let current_dir = current_dir
         .to_str()
@@ -29,10 +30,7 @@ fn generate_project(req: GenerateProjectRequest) -> Result<()> {
     let model_program = pcl_model::map_program(program);
     let main_rs = generate_main(&model_program).context("Failed to generate main.rs")?;
     let cargo_rs = include_str!("./Cargo.toml.template");
-    let cargo_rs = cargo_rs.replace(
-        "{{CURRENT_DIR}}",
-        current_dir,
-    );
+    let cargo_rs = cargo_rs.replace("{{CURRENT_DIR}}", current_dir);
     let files = vec![
         FileWithContent {
             path: "src/main.rs".to_string(),
