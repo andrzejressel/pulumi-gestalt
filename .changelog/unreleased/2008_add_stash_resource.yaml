@@ -1,0 +1,4 @@
+type: Added
+title: Add Stash API
+description: |
+  Adds `pulumi_gestalt_rust::resources::stash` as an abstraction over [Pulumi Stash](https://www.pulumi.com/docs/iac/concepts/stash/)
