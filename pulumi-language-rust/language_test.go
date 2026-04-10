@@ -117,7 +117,6 @@ func TestLanguage(t *testing.T) {
 // skip them with an informative message until they are fixed.
 var expectedFailures = map[string]string{
 	"l1-builtin-can":                               "unsupported config variable type: map(string)",
-	"l1-builtin-project-root":                      "sdk snapshot validation for simple: walk expected dir: lstat testdata/sdks/simple-2.0.0: no such file or directory",
 	"l1-builtin-project-root-main":                 "sdk snapshot validation for component: walk expected dir: lstat testdata/sdks/component-13.3.7: no such file or directory",
 	"l1-builtin-require-pulumi-version":            "unsupported node type: dynamic",
 	"l1-builtin-secret":                            "unsupported config variable type: output(string)",
