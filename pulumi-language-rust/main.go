@@ -136,7 +136,7 @@ func (host *rustLanguageHost) GetProgramDependencies(context.Context, *pulumirpc
 
 func (host *rustLanguageHost) Run(_ context.Context, req *pulumirpc.RunRequest) (*pulumirpc.RunResponse, error) {
 
-	directoryName := path.Base(req.Info.ProgramDirectory)
+	directoryName := path.Base(req.Info.RootDirectory) + "-" + path.Base(req.Info.ProgramDirectory)
 
 	config, err := host.constructConfig(req)
 	if err != nil {
@@ -445,8 +445,12 @@ func generateProject(
 	testing bool,
 ) error {
 	rootDirectory := directory
+	projectDirectory := directory
+	if project.Main != "" {
+		projectDirectory = filepath.Join(directory, project.Main)
+	}
 
-	protobufContent, protobufJSON, err := rust.GenerateProject(program, rootDirectory)
+	protobufContent, protobufJSON, err := rust.GenerateProject(program, projectDirectory)
 	if err != nil {
 		return err
 	}
