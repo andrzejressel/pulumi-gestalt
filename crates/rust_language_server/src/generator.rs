@@ -247,6 +247,10 @@ fn convert_stdlib_function_call(
                     .to_string(),
             )
         }
+        "rootDirectory" => {
+            ensure_arity(name, arg_count, 0)?;
+            Ok("(&context.get_root_directory()).to_string()".to_string())
+        }
         "stack" => {
             ensure_arity(name, arg_count, 0)?;
             Ok("(&context.get_stack()).to_string()".to_string())

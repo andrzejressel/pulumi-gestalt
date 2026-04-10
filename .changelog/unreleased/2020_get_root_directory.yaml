@@ -1,0 +1,2 @@
+type: Added
+title: Add `get_root_directory` method to `Context`

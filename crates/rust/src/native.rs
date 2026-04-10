@@ -308,6 +308,10 @@ impl Context {
     pub fn get_stack(&self) -> &str {
         self.inner.get_stack()
     }
+
+    pub fn get_root_directory(&self) -> &str {
+        self.inner.get_root_directory()
+    }
 }
 
 pub struct RegisterResourceRequest<'a, OUTPUT> {

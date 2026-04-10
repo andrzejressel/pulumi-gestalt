@@ -14,6 +14,7 @@ pub struct Context<FunctionContext> {
     stack: String,
     project: String,
     organization: String,
+    root_directory: String,
 }
 
 pub struct Output<FunctionContext> {
@@ -61,6 +62,7 @@ impl<T> Context<T> {
         let pulumi_stack = std::env::var("PULUMI_STACK").unwrap();
         let pulumi_project = std::env::var("PULUMI_PROJECT").unwrap();
         let pulumi_organization = std::env::var("PULUMI_ORGANIZATION").unwrap();
+        let pulumi_root_directory = std::env::var("PULUMI_PWD").unwrap();
         let in_preview = match std::env::var("PULUMI_DRY_RUN") {
             Ok(preview) if preview == "true" => true,
             Ok(preview) if preview == "false" => false,
@@ -87,6 +89,7 @@ impl<T> Context<T> {
             .stack(pulumi_stack)
             .project(pulumi_project)
             .organization(pulumi_organization)
+            .root_directory(pulumi_root_directory)
             .build()
     }
 
@@ -190,6 +193,10 @@ impl<T> Context<T> {
 
     pub fn get_stack(&self) -> &str {
         &self.stack
+    }
+
+    pub fn get_root_directory(&self) -> &str {
+        &self.root_directory
     }
 }
 
