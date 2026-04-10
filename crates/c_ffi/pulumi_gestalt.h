@@ -98,6 +98,10 @@ struct pulumi_output_t *pulumi_output_combine(const struct pulumi_output_t *outp
                                               const struct pulumi_output_t *const *outputs,
                                               uintptr_t outputs_size);
 
+struct pulumi_output_t *pulumi_output_secret(const struct pulumi_output_t *output);
+
+struct pulumi_output_t *pulumi_output_unsecret(const struct pulumi_output_t *output);
+
 void pulumi_output_add_to_export(const struct pulumi_output_t *value, const char *name);
 
 struct pulumi_output_t *pulumi_composite_output_get_field(struct pulumi_composite_output_t *output,

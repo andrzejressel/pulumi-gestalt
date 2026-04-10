@@ -115,7 +115,11 @@ fn perform_operations_on_default_config(ctx: &Context) {
         .get_config(None, "secret")
         .expect("Expected secret value");
     if let ConfigValue::Secret(secret_output) = secret {
+        let forced_secret = ctx.create_output("\"forced_secret_value\"", false).secret();
+        let forced_plaintext = secret_output.unsecret();
         secret_output.add_to_export("secret");
+        forced_secret.add_to_export("forced_secret");
+        forced_plaintext.add_to_export("forced_plaintext");
     } else {
         panic!("Secret tag was expected but not returned");
     }

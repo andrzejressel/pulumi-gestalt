@@ -54,6 +54,8 @@ fn pulumi_main(context: &Context) -> Result<()> {
     let secret_config = context
         .require_config_secret(None, "secret")
         .context("Failed to load required secret config `secret`")?;
+    let forced_secret = context.new_output(&"forced_secret_value").secret();
+    let forced_plaintext = secret_config.unsecret();
 
     add_export("result", &random_string.result);
     add_export("transformed_result", &t);
@@ -63,5 +65,7 @@ fn pulumi_main(context: &Context) -> Result<()> {
     add_export("keepers", &keepers);
     add_export("result_2", &random_string_2.result);
     add_export("secret_config", &secret_config);
+    add_export("forced_secret", &forced_secret);
+    add_export("forced_plaintext", &forced_plaintext);
     Ok(())
 }

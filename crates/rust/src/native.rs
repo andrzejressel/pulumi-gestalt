@@ -35,6 +35,22 @@ pub struct Output<T> {
 }
 
 impl<T> Output<T> {
+    pub fn secret(&self) -> Output<T> {
+        Output {
+            inner: self.inner.secret(),
+            phantom: PhantomData,
+            runtime: self.runtime.clone(),
+        }
+    }
+
+    pub fn unsecret(&self) -> Output<T> {
+        Output {
+            inner: self.inner.unsecret(),
+            phantom: PhantomData,
+            runtime: self.runtime.clone(),
+        }
+    }
+
     pub fn map<B, F>(&self, f: F) -> Output<B>
     where
         F: Fn(T) -> B + Send + 'static,
