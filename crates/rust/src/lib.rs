@@ -7,9 +7,12 @@ mod native;
 pub mod __private;
 mod input_or_output;
 mod oneof;
+mod pulumi_any;
+pub mod resources;
 pub mod stdlib;
 
 pub use input_or_output::InputOrOutput;
+pub use pulumi_any::{PulumiAny, ToPulumiAny};
 
 pub use oneof::OneOf2;
 pub use oneof::OneOf3;
