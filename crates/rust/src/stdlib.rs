@@ -1,6 +1,7 @@
 use anyhow::{Context, Result, anyhow, bail};
 use base64::Engine;
 use base64::engine::general_purpose::STANDARD;
+use sha1::{Digest, Sha1};
 use std::borrow::Borrow;
 use std::collections::BTreeMap;
 
@@ -34,6 +35,11 @@ pub fn from_base64(input: impl AsRef<str>) -> Result<String> {
         "Decoded base64 data is not valid UTF-8 string. \
          The data may be binary content that cannot be represented as a string.",
     )
+}
+
+pub fn sha1(input: impl AsRef<str>) -> String {
+    let hash = Sha1::digest(input.as_ref().as_bytes());
+    format!("{hash:x}")
 }
 
 pub fn element<T: Clone, I: TryInto<i64>>(list: impl AsRef<[T]>, index: I) -> Result<T> {
@@ -111,8 +117,8 @@ where
 #[cfg(test)]
 mod tests {
     use super::{
-        Entry, cwd, element, entries, from_base64, join, length, lookup, single_or_none, split,
-        to_base64,
+        Entry, cwd, element, entries, from_base64, join, length, lookup, sha1, single_or_none,
+        split, to_base64,
     };
     use std::collections::BTreeMap;
 
@@ -175,6 +181,18 @@ mod tests {
         assert_eq!(from_string, "eHl6");
         assert_eq!(from_str, "YWJj");
         assert_eq!(from_str, from_bytes);
+    }
+
+    #[test]
+    fn sha1_hashes_known_values() {
+        assert_eq!(
+            sha1("hello world"),
+            "2aae6c35c94fcfb415dbe95f408b9ce91ee846ed"
+        );
+        assert_eq!(
+            sha1("goodbye world"),
+            "0078bb8e5c9d8abf7f1e4e14c87d9023235b6230"
+        );
     }
 
     #[test]

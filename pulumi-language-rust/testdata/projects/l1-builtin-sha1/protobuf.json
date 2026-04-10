@@ -1,0 +1,65 @@
+{
+  "nodes": [
+    {
+      "configVariable": {
+        "name": "input",
+        "logicalName": "input",
+        "configType": {
+          "stringType": {}
+        }
+      }
+    },
+    {
+      "localVariable": {
+        "name": "hash",
+        "logicalName": "hash",
+        "value": {
+          "functionCallExpression": {
+            "name": "sha1",
+            "args": [
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "input",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "input"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "hash",
+        "logicalName": "hash",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "hash",
+            "traversal": {
+              "each": [
+                {
+                  "traverseRoot": {
+                    "name": "hash"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

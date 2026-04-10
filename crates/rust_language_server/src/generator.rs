@@ -194,6 +194,10 @@ fn convert_stdlib_function_call(
             ensure_arity(name, arg_count, 1)?;
             Ok(format!("pulumi_gestalt_rust::stdlib::to_base64({})", args))
         }
+        "sha1" => {
+            ensure_arity(name, arg_count, 1)?;
+            Ok(format!("pulumi_gestalt_rust::stdlib::sha1({})", args))
+        }
         "element" => {
             ensure_arity(name, arg_count, 2)?;
             let first_arg = convert_expression(args_pure[0])
