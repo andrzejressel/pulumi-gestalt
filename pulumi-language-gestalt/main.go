@@ -357,6 +357,7 @@ func (host *gestaltLanguageHost) constructEnv(req *pulumirpc.RunRequest, config,
 	maybeAppendEnv("engine", host.engineAddress)
 	maybeAppendEnv("project", req.GetProject())
 	maybeAppendEnv("stack", req.GetStack())
+	maybeAppendEnv("root_directory", req.GetInfo().GetRootDirectory())
 	maybeAppendEnv("pwd", req.GetPwd())
 	maybeAppendEnv("dry_run", fmt.Sprintf("%v", req.GetDryRun()))
 	maybeAppendEnv("query_mode", fmt.Sprint(req.GetQueryMode()))

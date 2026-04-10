@@ -62,7 +62,7 @@ impl<T> Context<T> {
         let pulumi_stack = std::env::var("PULUMI_STACK").unwrap();
         let pulumi_project = std::env::var("PULUMI_PROJECT").unwrap();
         let pulumi_organization = std::env::var("PULUMI_ORGANIZATION").unwrap();
-        let pulumi_root_directory = std::env::var("PULUMI_PWD").unwrap();
+        let pulumi_root_directory = std::env::var("PULUMI_ROOT_DIRECTORY").unwrap();
         let in_preview = match std::env::var("PULUMI_DRY_RUN") {
             Ok(preview) if preview == "true" => true,
             Ok(preview) if preview == "false" => false,
