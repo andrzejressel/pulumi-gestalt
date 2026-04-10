@@ -244,6 +244,30 @@ impl HostOutput for MyState {
         Ok(id)
     }
 
+    async fn secret(
+        &mut self,
+        self_: Resource<output_interface::Output>,
+    ) -> wasmtime::Result<Resource<output_interface::Output>> {
+        assert!(!self_.owned());
+        let st_output = self.table.get(&self_)?;
+        let output = st_output.output.secret();
+        let output = SingleThreadedOutput::new(output);
+        let id = self.table.push(output)?;
+        Ok(id)
+    }
+
+    async fn unsecret(
+        &mut self,
+        self_: Resource<output_interface::Output>,
+    ) -> wasmtime::Result<Resource<output_interface::Output>> {
+        assert!(!self_.owned());
+        let st_output = self.table.get(&self_)?;
+        let output = st_output.output.unsecret();
+        let output = SingleThreadedOutput::new(output);
+        let id = self.table.push(output)?;
+        Ok(id)
+    }
+
     async fn add_to_export(
         &mut self,
         self_: Resource<output_interface::Output>,

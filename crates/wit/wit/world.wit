@@ -17,6 +17,8 @@ interface output-interface {
         %map: func(function-name: string) -> output;
         clone: func() -> output;
         combine: func(outputs: list<borrow<output>>) -> output;
+        secret: func() -> output;
+        unsecret: func() -> output;
         add-to-export: func(name: string);
     }
 

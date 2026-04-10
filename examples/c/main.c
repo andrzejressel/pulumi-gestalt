@@ -151,7 +151,12 @@ static void perform_operations_on_default_config(pulumi_context_t* ctx) {
 		printf("Secret tag was expected but not returned");
 		exit(2);
 	}
+	pulumi_output_t* forced_secret_input = pulumi_create_output(ctx, "\"forced_secret_value\"", false);
+	pulumi_output_t* forced_secret = pulumi_output_secret(forced_secret_input);
+	pulumi_output_t* forced_plaintext = pulumi_output_unsecret(secret->secret);
 	pulumi_output_add_to_export(secret->secret, "secret");
+	pulumi_output_add_to_export(forced_secret, "forced_secret");
+	pulumi_output_add_to_export(forced_plaintext, "forced_plaintext");
 	pulumi_config_free(secret);
 }
 

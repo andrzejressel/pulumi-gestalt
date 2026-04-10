@@ -194,6 +194,20 @@ impl<T> Context<T> {
 }
 
 impl<T> Output<T> {
+    pub fn secret(&self) -> Self {
+        Output {
+            inner: self.inner.secret(),
+            engine: Arc::clone(&self.engine),
+        }
+    }
+
+    pub fn unsecret(&self) -> Self {
+        Output {
+            inner: self.inner.unsecret(),
+            engine: Arc::clone(&self.engine),
+        }
+    }
+
     pub async fn map(&self, func: T) -> Self {
         let raw_output = self
             .engine
