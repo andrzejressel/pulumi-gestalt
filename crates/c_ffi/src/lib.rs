@@ -332,6 +332,40 @@ extern "C" fn pulumi_output_combine(
 }
 
 #[unsafe(no_mangle)]
+extern "C" fn pulumi_output_secret(output: *const CustomOutputId) -> *mut CustomOutputId {
+    let output = unsafe { &*output };
+
+    let binding = output.ctx.upgrade().unwrap();
+    let mut engine = binding.borrow_mut();
+
+    let output = CustomOutputId {
+        native: output.native.secret(),
+        ctx: output.ctx.clone(),
+    };
+
+    let raw = Box::into_raw(Box::new(output));
+    engine.outputs.push(raw);
+    raw
+}
+
+#[unsafe(no_mangle)]
+extern "C" fn pulumi_output_unsecret(output: *const CustomOutputId) -> *mut CustomOutputId {
+    let output = unsafe { &*output };
+
+    let binding = output.ctx.upgrade().unwrap();
+    let mut engine = binding.borrow_mut();
+
+    let output = CustomOutputId {
+        native: output.native.unsecret(),
+        ctx: output.ctx.clone(),
+    };
+
+    let raw = Box::into_raw(Box::new(output));
+    engine.outputs.push(raw);
+    raw
+}
+
+#[unsafe(no_mangle)]
 extern "C" fn pulumi_output_add_to_export(value: *const CustomOutputId, name: *const c_char) {
     let name = unsafe { CStr::from_ptr(name) }
         .to_str()

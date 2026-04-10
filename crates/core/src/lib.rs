@@ -21,6 +21,32 @@ impl RawOutput {
             value: f.boxed().shared(),
         }
     }
+
+    pub fn secret(&self) -> Self {
+        let value = self.value.clone();
+        Self::from_future(async move {
+            match value.await {
+                NodeValue::Nothing => NodeValue::Nothing,
+                NodeValue::Exists(mut existing) => {
+                    existing.secret = true;
+                    NodeValue::Exists(existing)
+                }
+            }
+        })
+    }
+
+    pub fn unsecret(&self) -> Self {
+        let value = self.value.clone();
+        Self::from_future(async move {
+            match value.await {
+                NodeValue::Nothing => NodeValue::Nothing,
+                NodeValue::Exists(mut existing) => {
+                    existing.secret = false;
+                    NodeValue::Exists(existing)
+                }
+            }
+        })
+    }
 }
 
 #[derive(Clone)]
@@ -72,5 +98,50 @@ impl<T: Clone + 'static + Send + Sync> Output<T> {
         }
         .boxed()
         .shared()
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::RawOutput;
+    use pulumi_gestalt_domain::{ExistingNodeValue, NodeValue};
+    use serde_json::json;
+
+    #[tokio::test]
+    async fn secret_sets_secret_flag_to_true() {
+        let output = RawOutput::from_node_value(NodeValue::exists(json!(42), false));
+
+        let result = output.secret().value.await;
+
+        assert_eq!(
+            result,
+            NodeValue::Exists(ExistingNodeValue {
+                value: json!(42),
+                secret: true,
+            })
+        );
+    }
+
+    #[tokio::test]
+    async fn unsecret_sets_secret_flag_to_false() {
+        let output = RawOutput::from_node_value(NodeValue::exists(json!("x"), true));
+
+        let result = output.unsecret().value.await;
+
+        assert_eq!(
+            result,
+            NodeValue::Exists(ExistingNodeValue {
+                value: json!("x"),
+                secret: false,
+            })
+        );
+    }
+
+    #[tokio::test]
+    async fn secret_and_unsecret_leave_nothing_unchanged() {
+        let output = RawOutput::from_node_value(NodeValue::Nothing);
+
+        assert_eq!(output.secret().value.await, NodeValue::Nothing);
+        assert_eq!(output.unsecret().value.await, NodeValue::Nothing);
     }
 }

@@ -940,6 +940,148 @@ This function does exist in WIT, but it has [a completely different signature an
         | `value` | `const pulumi_output_t*` | `Output` object to add as stack output |
         | `name`  | `const char*`            | Name of the stack output               |
 
+#### Secret
+
+!!! abstract "Returns a new `Output` with the secret flag set to `true`"
+
+    === "Wasm"
+
+        **🛠️ Signature:**
+        ```wit
+        package component:pulumi-gestalt@0.0.0-DEV;
+
+        interface output-interface {
+            resource output {
+                secret: func() -> output;
+            }
+        }
+        ```
+
+        **📥 Parameters:**
+
+        None
+
+        **📤 Returns:**
+
+        | Type     | Description                                                                                                       |
+        |----------|-------------------------------------------------------------------------------------------------------------------|
+        | `Output` | A new `Output` with the same value and dependencies, marked as secret. Does not have to be freed manually.      |
+
+    === "Rust"
+
+        **🛠️ Signature:**
+        ```rust
+        pub struct Output { /* private fields */ }
+
+        impl Output {
+            pub fn secret(&self) -> Output
+        }
+        ```
+
+        **📥 Parameters:**
+
+        | Name   | Type      | Description         |
+        |--------|-----------|---------------------|
+        | `self` | `&Output` | Source output value |
+
+        **📤 Returns:**
+
+        | Type     | Description                                                    |
+        |----------|----------------------------------------------------------------|
+        | `Output` | A new `Output` with secret flag set to `true`                 |
+
+    === "C FFI"
+
+        **🛠️ Signature:**
+        ```c
+        typedef struct pulumi_output_t pulumi_output_t;
+
+        struct pulumi_output_t *pulumi_output_secret(const struct pulumi_output_t *output);
+        ```
+
+        **📥 Parameters:**
+
+        | Name     | Type                     | Description       |
+        |----------|--------------------------|-------------------|
+        | `output` | `const pulumi_output_t*` | Source output     |
+
+        **📤 Returns:**
+
+        | Type               | Description                                                                                                       |
+        |--------------------|-------------------------------------------------------------------------------------------------------------------|
+        | `pulumi_output_t*` | A new `Output` with secret flag set to `true`. Does not have to be freed manually.                              |
+
+#### Unsecret
+
+!!! abstract "Returns a new `Output` with the secret flag set to `false`"
+
+    === "Wasm"
+
+        **🛠️ Signature:**
+        ```wit
+        package component:pulumi-gestalt@0.0.0-DEV;
+
+        interface output-interface {
+            resource output {
+                unsecret: func() -> output;
+            }
+        }
+        ```
+
+        **📥 Parameters:**
+
+        None
+
+        **📤 Returns:**
+
+        | Type     | Description                                                                                                       |
+        |----------|-------------------------------------------------------------------------------------------------------------------|
+        | `Output` | A new `Output` with the same value and dependencies, marked as non-secret. Does not have to be freed manually. |
+
+    === "Rust"
+
+        **🛠️ Signature:**
+        ```rust
+        pub struct Output { /* private fields */ }
+
+        impl Output {
+            pub fn unsecret(&self) -> Output
+        }
+        ```
+
+        **📥 Parameters:**
+
+        | Name   | Type      | Description         |
+        |--------|-----------|---------------------|
+        | `self` | `&Output` | Source output value |
+
+        **📤 Returns:**
+
+        | Type     | Description                                                    |
+        |----------|----------------------------------------------------------------|
+        | `Output` | A new `Output` with secret flag set to `false`                |
+
+    === "C FFI"
+
+        **🛠️ Signature:**
+        ```c
+        typedef struct pulumi_output_t pulumi_output_t;
+
+        struct pulumi_output_t *pulumi_output_unsecret(const struct pulumi_output_t *output);
+        ```
+
+        **📥 Parameters:**
+
+        | Name     | Type                     | Description       |
+        |----------|--------------------------|-------------------|
+        | `output` | `const pulumi_output_t*` | Source output     |
+
+        **📤 Returns:**
+
+        | Type               | Description                                                                                                       |
+        |--------------------|-------------------------------------------------------------------------------------------------------------------|
+        | `pulumi_output_t*` | A new `Output` with secret flag set to `false`. Does not have to be freed manually.                             |
+
 ### CompositeOutput
 
 This is a special type of `Output` that represents the result of a resource operation. It contains multiple fields, each

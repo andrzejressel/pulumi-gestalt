@@ -29,6 +29,10 @@ fn test_integration() -> Result<()> {
 
     let secret = stack.get_string("/secret")?;
     let secret_plaintext = secret_stack.get_string("/secret")?;
+    let forced_secret = stack.get_string("/forced_secret")?;
+    let forced_secret_plaintext = secret_stack.get_string("/forced_secret")?;
+    let forced_plaintext = stack.get_string("/forced_plaintext")?;
+    let forced_plaintext_uncovered = secret_stack.get_string("/forced_plaintext")?;
 
     let secret_namespace = stack.get_string("/secret_namespace")?;
     let secret_namespace_plaintext = secret_stack.get_string("/secret_namespace")?;
@@ -44,6 +48,10 @@ fn test_integration() -> Result<()> {
     assert_eq!(combined, "[16,32,\"my_string\"]");
     assert_eq!(secret, "[secret]");
     assert_eq!(secret_plaintext, "secret_value");
+    assert_eq!(forced_secret, "[secret]");
+    assert_eq!(forced_secret_plaintext, "forced_secret_value");
+    assert_eq!(forced_plaintext, "secret_value");
+    assert_eq!(forced_plaintext_uncovered, "secret_value");
     assert_eq!(secret_namespace, "[secret]");
     assert_eq!(secret_namespace_plaintext, "secret_value_namespace");
 
