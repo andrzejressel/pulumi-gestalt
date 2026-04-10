@@ -39,7 +39,7 @@ pub fn from_base64(input: impl AsRef<str>) -> Result<String> {
 
 pub fn sha1(input: impl AsRef<str>) -> String {
     let hash = Sha1::digest(input.as_ref().as_bytes());
-    format!("{hash:x}")
+    hex::encode(hash)
 }
 
 pub fn element<T: Clone, I: TryInto<i64>>(list: impl AsRef<[T]>, index: I) -> Result<T> {
