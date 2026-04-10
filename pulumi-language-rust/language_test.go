@@ -121,7 +121,6 @@ var expectedFailures = map[string]string{
 	"l1-builtin-project-root-main":                 "sdk snapshot validation for component: walk expected dir: lstat testdata/sdks/component-13.3.7: no such file or directory",
 	"l1-builtin-require-pulumi-version":            "unsupported node type: dynamic",
 	"l1-builtin-secret":                            "unsupported config variable type: output(string)",
-	"l1-builtin-sha1":                              "unsupported stdlib function: sha1",
 	"l1-builtin-stash":                             "sdk snapshot validation for simple: walk expected dir: lstat testdata/sdks/simple-27.0.0: no such file or directory",
 	"l1-builtin-to-json":                           "unsupported config variable type: list(string)",
 	"l1-builtin-try":                               "sdk snapshot validation for any-type-function: walk expected dir: lstat testdata/sdks/any-type-function-15.0.0: no such file or directory",
