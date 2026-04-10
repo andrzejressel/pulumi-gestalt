@@ -6,7 +6,6 @@ hooks {
     steps {
       ["just-fmt"] {
         check = "just fmt"
-        exclusive = true
       }
       ["pkl" ] = Builtins.pkl
     }
