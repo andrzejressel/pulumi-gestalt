@@ -176,7 +176,6 @@ var expectedFailures = map[string]string{
 	"l1-output-map":                                "sdk snapshot validation for sync: walk expected dir: lstat testdata/sdks/sync-3.0.0-alpha.1.internal+exp.sha.2143768: no such file or directory",
 	"l1-output-null":                               "sdk snapshot validation for simple: walk expected dir: lstat testdata/sdks/simple-2.0.0: no such file or directory",
 	"l1-output-number":                             "program snapshot validation: walk expected dir: lstat testdata/projects/l1-output-number: no such file or directory",
-	"l1-output-string":                             "sdk snapshot validation for asset-archive: walk expected dir: lstat testdata/sdks/asset-archive-5.0.0: no such file or directory",
 	"l1-proxy-index":                               "unsupported config variable type: object with union members",
 	"l1-stack-reference":                           "sdk snapshot validation for discriminated-union: walk expected dir: lstat testdata/sdks/discriminated-union-31.0.0: no such file or directory",
 	"l2-builtin-object":                            "sdk snapshot validation for output: walk expected dir: lstat testdata/sdks/output-23.0.0: no such file or directory",
