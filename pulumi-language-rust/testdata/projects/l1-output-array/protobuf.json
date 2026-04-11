@@ -6,6 +6,9 @@
         "logicalName": "empty",
         "value": {
           "tupleConsExpression": {}
+        },
+        "type": {
+          "composite": {}
         }
       }
     },
@@ -40,6 +43,9 @@
               }
             ]
           }
+        },
+        "type": {
+          "composite": {}
         }
       }
     },
@@ -82,6 +88,9 @@
               }
             ]
           }
+        },
+        "type": {
+          "composite": {}
         }
       }
     },
@@ -157,6 +166,9 @@
               }
             ]
           }
+        },
+        "type": {
+          "composite": {}
         }
       }
     },
@@ -1819,6 +1831,9 @@
               }
             ]
           }
+        },
+        "type": {
+          "composite": {}
         }
       }
     }

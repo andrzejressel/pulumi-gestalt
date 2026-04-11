@@ -8,6 +8,9 @@
           "literalValueExpression": {
             "boolValue": true
           }
+        },
+        "type": {
+          "boolType": {}
         }
       }
     },
@@ -19,6 +22,9 @@
           "literalValueExpression": {
             "boolValue": false
           }
+        },
+        "type": {
+          "boolType": {}
         }
       }
     }

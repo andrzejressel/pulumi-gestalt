@@ -74,6 +74,7 @@ message OutputVariable {
   string name = 1;
   string logicalName = 2;
   Expression value = 3;
+  Type type = 4;
 }
 
 message Expression {

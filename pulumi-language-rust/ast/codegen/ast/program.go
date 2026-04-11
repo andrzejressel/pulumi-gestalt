@@ -528,10 +528,16 @@ func transformOutput(output *pcl.OutputVariable) (*astproto.OutputVariable, erro
 		return nil, err
 	}
 
+	typ, err := transformProgramType(output.Type())
+	if err != nil {
+		return nil, err
+	}
+
 	return &astproto.OutputVariable{
 		Name:        output.Name(),
 		LogicalName: output.LogicalName(),
 		Value:       value,
+		Type:        typ,
 	}, nil
 }
 
