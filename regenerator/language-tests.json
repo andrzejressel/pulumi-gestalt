@@ -10,6 +10,7 @@
     "l1-builtin-sha1",
     "l1-empty",
     "l1-main",
+    "l1-output-array",
     "l1-output-bool",
     "l1-output-string"
   ]
