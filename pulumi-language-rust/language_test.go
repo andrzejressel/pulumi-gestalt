@@ -10,6 +10,7 @@ import (
 	"os/exec"
 	"path/filepath"
 	"runtime"
+	"slices"
 	"sync"
 	"testing"
 
@@ -136,6 +137,8 @@ func TestRegenerateJsonWithTests(t *testing.T) {
 		valid_tests = append(valid_tests, tt)
 
 	}
+
+	slices.Sort(valid_tests)
 
 	type Tests struct {
 		Tests []string `json:"tests"`

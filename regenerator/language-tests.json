@@ -1,15 +1,15 @@
 {
   "tests": [
-    "l1-empty",
-    "l1-builtin-object",
+    "l1-builtin-base64",
     "l1-builtin-cwd",
     "l1-builtin-info",
     "l1-builtin-list",
-    "l1-main",
-    "l1-output-bool",
-    "l1-builtin-sha1",
+    "l1-builtin-object",
     "l1-builtin-project-root",
     "l1-builtin-project-root-main",
-    "l1-builtin-base64"
+    "l1-builtin-sha1",
+    "l1-empty",
+    "l1-main",
+    "l1-output-bool"
   ]
 }
