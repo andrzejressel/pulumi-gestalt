@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"os"
@@ -111,6 +112,47 @@ func TestLanguage(t *testing.T) {
 		close(cancel)
 		assert.NoError(t, <-handle.Done)
 	})
+}
+
+func TestRegenerateJsonWithTests(t *testing.T) {
+	if runtime.GOOS == "windows" {
+		panic("Windows not yet supported")
+	}
+
+	_, engine := runTestingHost(t)
+
+	tests, err := engine.GetLanguageTests(context.Background(), &testingrpc.GetLanguageTestsRequest{})
+	require.NoError(t, err)
+
+	valid_tests := make([]string, 0)
+
+	for _, tt := range tests.Tests {
+		tt := tt
+
+		if _, ok := expectedFailures[tt]; ok {
+			continue
+		}
+
+		valid_tests = append(valid_tests, tt)
+
+	}
+
+	type Tests struct {
+		Tests []string `json:"tests"`
+	}
+
+	testsStruct := Tests{
+		Tests: valid_tests,
+	}
+
+	jsonFile, err := os.Create("../regenerator/language-tests.json")
+	require.NoError(t, err)
+	defer jsonFile.Close()
+	encoder := json.NewEncoder(jsonFile)
+	encoder.SetIndent("", "  ")
+	err = encoder.Encode(testsStruct)
+	require.NoError(t, err)
+
 }
 
 // expectedFailures maps the set of conformance tests we expect to fail to reasons they currently do so, so that we may

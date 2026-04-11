@@ -54,6 +54,9 @@ package-language-plugin-rust VERSION:
 test-language-plugin-rust:
     cd pulumi-language-rust && just test
 
+test-language-plugin-rust-single TEST:
+    cd pulumi-language-rust && just test-single "TestLanguage/{{TEST}}"
+
 install-requirements:
     rustup component add rustfmt
     rustup component add llvm-tools-preview
@@ -90,6 +93,7 @@ clippy-to-file:
 
 regenerator:
     cargo run -p regenerator
+    cd pulumi-language-gestalt && just regenerate-test-list
 
 regenerate-generator-tests $DO_NOT_COMPILE="true":
     cargo nextest run -p pulumi_gestalt_generator --all-features --test '*' --profile all_cores

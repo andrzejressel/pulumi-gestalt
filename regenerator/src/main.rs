@@ -2,8 +2,16 @@ mod generate_proto;
 mod provider;
 
 use itertools::Itertools;
+use serde::Deserialize;
 use std::fs;
 use std::process::Command;
+
+const LANGUAGE_TESTS_JSON: &str = include_str!("../language-tests.json");
+
+#[derive(Debug, Deserialize)]
+struct LanguageTests {
+    tests: Vec<String>,
+}
 
 #[derive(Debug)]
 struct Provider<'a> {
@@ -21,6 +29,10 @@ fn main() {
     let azure_modules = provider::find_modules("azure").unwrap();
     let gcp_modules = provider::find_modules("gcp").unwrap();
     let aws_modules = provider::find_modules("aws").unwrap();
+
+    let mut language_tests: LanguageTests =
+        serde_json::from_str(LANGUAGE_TESTS_JSON).expect("Failed to parse language-tests.json");
+    language_tests.tests.sort();
 
     let mut grouped_gcp = gcp_modules
         .into_iter()
@@ -143,6 +155,7 @@ fn main() {
 
     update_tests(&tests, &filtered_tests);
     update_generator_cargo_toml(&tests, &filtered_tests);
+    update_github_actions_language_tests(&language_tests.tests);
     generate_proto::regenerate_proto().expect("Failed to regenerate proto");
 }
 
@@ -167,6 +180,23 @@ fn update_github_actions_build(tests: &[&str], filtered_tests: &[FilteredTest]) 
     replacement.push_str("]\n");
     let start_marker = "# DO NOT EDIT - PROVIDER START";
     let end_marker = "# DO NOT EDIT - PROVIDER END";
+    let content = replace_between_markers(&content, start_marker, end_marker, &replacement);
+
+    fs::write(".github/workflows/build.yml", content)
+        .expect("Failed to write to .github/workflows/build.yml");
+}
+
+fn update_github_actions_language_tests(language_tests: &[String]) {
+    let content = fs::read_to_string(".github/workflows/build.yml")
+        .expect("Failed to read .github/workflows/build.yml");
+
+    let mut replacement = String::new();
+    replacement.push_str("        test: [");
+    replacement.push_str(&language_tests.join(", "));
+    replacement.push_str("]\n");
+
+    let start_marker = "# DO NOT EDIT - LANGUAGE TEST START";
+    let end_marker = "# DO NOT EDIT - LANGUAGE TEST END";
     let content = replace_between_markers(&content, start_marker, end_marker, &replacement);
 
     fs::write(".github/workflows/build.yml", content)
