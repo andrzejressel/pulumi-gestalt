@@ -32,7 +32,6 @@ fn main() {
 
     let mut language_tests: LanguageTests =
         serde_json::from_str(LANGUAGE_TESTS_JSON).expect("Failed to parse language-tests.json");
-    language_tests.tests.sort();
 
     let mut grouped_gcp = gcp_modules
         .into_iter()
