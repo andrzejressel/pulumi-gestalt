@@ -118,11 +118,11 @@ fn convert_output_variable(output_variable: &OutputVariable) -> Result<String> {
     let value = convert_expression(&output_variable.value).context("Failed to convert value")?;
     match value {
         ExpressionType::EmptyList => Ok(format!(
-            "pulumi_gestalt_rust::add_export(\"{}\", &context.new_output::<Vec<String>>(&Vec::new()));",
+            "context.add_export(\"{}\", &Vec::<String>::new());",
             output_variable.name
         )),
         ExpressionType::Other(s) => Ok(format!(
-            "pulumi_gestalt_rust::add_export(\"{}\", &context.new_output(&{}));",
+            "context.add_export(\"{}\", &{});",
             output_variable.name, s
         )),
     }
@@ -259,6 +259,20 @@ fn convert_stdlib_function_call(
         "sha1" => {
             ensure_arity(name, arg_count, 1)?;
             Ok(format!("pulumi_gestalt_rust::stdlib::sha1({})", args))
+        }
+        "secret" => {
+            ensure_arity(name, arg_count, 1)?;
+            Ok(format!(
+                "{}.as_secret_output(context)",
+                args
+            ))
+        }
+        "unsecret" => {
+            ensure_arity(name, arg_count, 1)?;
+            Ok(format!(
+                "{}.as_unsecret_output(context)",
+                args
+            ))
         }
         "element" => {
             ensure_arity(name, arg_count, 2)?;

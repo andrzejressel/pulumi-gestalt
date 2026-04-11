@@ -1,0 +1,162 @@
+{
+  "nodes": [
+    {
+      "configVariable": {
+        "name": "aSecret",
+        "logicalName": "aSecret",
+        "configType": {
+          "stringType": {}
+        }
+      }
+    },
+    {
+      "configVariable": {
+        "name": "notSecret",
+        "logicalName": "notSecret",
+        "configType": {
+          "stringType": {}
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "roundtripSecret",
+        "logicalName": "roundtripSecret",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "aSecret",
+            "traversal": {
+              "each": [
+                {
+                  "traverseRoot": {
+                    "name": "aSecret"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "roundtripNotSecret",
+        "logicalName": "roundtripNotSecret",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "notSecret",
+            "traversal": {
+              "each": [
+                {
+                  "traverseRoot": {
+                    "name": "notSecret"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "double",
+        "logicalName": "double",
+        "value": {
+          "functionCallExpression": {
+            "name": "secret",
+            "args": [
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "aSecret",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "aSecret"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "type": {
+                  "outputType": {
+                    "stringType": {}
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "open",
+        "logicalName": "open",
+        "value": {
+          "functionCallExpression": {
+            "name": "unsecret",
+            "args": [
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "aSecret",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "aSecret"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "type": {
+                  "outputType": {
+                    "stringType": {}
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "close",
+        "logicalName": "close",
+        "value": {
+          "functionCallExpression": {
+            "name": "secret",
+            "args": [
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "notSecret",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "notSecret"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

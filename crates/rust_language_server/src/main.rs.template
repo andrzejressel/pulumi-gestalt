@@ -1,4 +1,5 @@
 use anyhow::Result;
+use pulumi_gestalt_rust::*;
 
 fn main() {
     pulumi_gestalt_rust::run(pulumi_main).unwrap();

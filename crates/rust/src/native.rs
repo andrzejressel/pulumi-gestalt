@@ -8,6 +8,7 @@ use std::collections::HashMap;
 use std::marker::PhantomData;
 use std::rc::Rc;
 use tokio::runtime::Runtime;
+use crate::any_export::IntoOutputAny;
 
 pub trait Provider {
     /// Pulumi Provider ID is the combination of URN and ID. It is used when creating a resource.
@@ -190,6 +191,14 @@ impl Context {
             runtime: self.runtime.clone(),
         }
     }
+    pub fn add_export(
+        &self,
+        key: &str,
+        input: &impl IntoOutputAny,
+    ) {
+        input.as_output(self).add_to_export(key);
+    }
+
     pub fn register_resource(
         &self,
         request: RegisterResourceRequest<Output<()>>,
