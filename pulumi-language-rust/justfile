@@ -28,6 +28,7 @@ test-local $LOCAL_TEST="1":
     go test -v -count=1 ./...
 
 regenerate-test-list:
+    just build-rust-bridge
     go test -v -count=1 -run TestRegenerateJsonWithTests ./...
 
 # For example: just test-single "TestLanguage/l1-builtin-cwd"
