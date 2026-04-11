@@ -30,7 +30,7 @@ fn main() {
     let gcp_modules = provider::find_modules("gcp").unwrap();
     let aws_modules = provider::find_modules("aws").unwrap();
 
-    let mut language_tests: LanguageTests =
+    let language_tests: LanguageTests =
         serde_json::from_str(LANGUAGE_TESTS_JSON).expect("Failed to parse language-tests.json");
 
     let mut grouped_gcp = gcp_modules
