@@ -1,0 +1,13 @@
+amends "package://github.com/jdx/hk/releases/download/v1.41.0/hk@1.41.0#/Config.pkl"
+import "package://github.com/jdx/hk/releases/download/v1.41.0/hk@1.41.0#/Builtins.pkl"
+
+hooks {
+  ["pre-commit"] {
+    steps {
+      ["just-fmt"] {
+        check = "just fmt"
+      }
+      ["pkl" ] = Builtins.pkl
+    }
+  }
+}
