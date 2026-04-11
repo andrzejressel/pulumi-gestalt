@@ -2,11 +2,11 @@ use anyhow::Context;
 use anyhow::Result;
 use itertools::Itertools;
 use serde::{Deserialize, Serialize};
-use std::collections::HashMap;
+use std::collections::BTreeMap;
 
 #[derive(Debug, Serialize, Deserialize, PartialEq)]
 pub struct GitHubWorkflow {
-    pub jobs: HashMap<String, Job>,
+    pub jobs: BTreeMap<String, Job>,
 }
 
 #[derive(Debug, Serialize, Deserialize, PartialEq)]
@@ -17,7 +17,7 @@ pub struct Job {
 
 #[derive(Debug, Serialize, Deserialize, PartialEq)]
 pub struct Strategy {
-    pub matrix: Option<HashMap<String, Vec<String>>>,
+    pub matrix: Option<BTreeMap<String, Vec<String>>>,
 }
 
 impl GitHubWorkflow {
@@ -55,11 +55,11 @@ impl GitHubWorkflow {
         job_names
     }
 
-    fn generate_matrix_combinations(&self, matrix: &HashMap<String, Vec<String>>) -> Vec<String> {
+    fn generate_matrix_combinations(&self, matrix: &BTreeMap<String, Vec<String>>) -> Vec<String> {
         matrix
             .values()
             .multi_cartesian_product()
-            .map(|t| t.into_iter().join(" "))
+            .map(|t| t.into_iter().join(", "))
             .collect_vec()
     }
 }
@@ -88,13 +88,13 @@ jobs:
         let workflow = GitHubWorkflow::from_yaml(YAML_CONTENT).unwrap();
 
         let expected = GitHubWorkflow {
-            jobs: HashMap::from([
+            jobs: BTreeMap::from([
                 (
                     "build-base".to_string(),
                     Job {
                         name: None,
                         strategy: Some(Strategy {
-                            matrix: Some(HashMap::from([(
+                            matrix: Some(BTreeMap::from([(
                                 "os".to_string(),
                                 vec![
                                     "ubuntu-24.04".to_string(),
@@ -110,7 +110,7 @@ jobs:
                     Job {
                         name: None,
                         strategy: Some(Strategy {
-                            matrix: Some(HashMap::from([(
+                            matrix: Some(BTreeMap::from([(
                                 "provider".to_string(),
                                 vec![
                                     "cloudflare".to_string(),
@@ -150,6 +150,31 @@ jobs:
             "build-generated-provider (aws-1)",
             "build-generated-provider (cloudflare)",
             "build-generated-provider (docker)",
+        ];
+
+        assert_eq!(job_names, expected_job_names);
+    }
+
+    #[test]
+    fn test_matrix_with_multiple_keys() {
+        const YAML_MULTI_KEY: &str = r#"
+jobs:
+  build-multi-matrix:
+    strategy:
+      matrix:
+        os: [ubuntu-24.04, windows-2022]
+        rust: [1.70, 1.71]
+"#;
+
+        let workflow = GitHubWorkflow::from_yaml(YAML_MULTI_KEY).unwrap();
+
+        let job_names = workflow.get_job_full_names();
+
+        let expected_job_names = [
+            "build-multi-matrix (ubuntu-24.04, 1.70)",
+            "build-multi-matrix (ubuntu-24.04, 1.71)",
+            "build-multi-matrix (windows-2022, 1.70)",
+            "build-multi-matrix (windows-2022, 1.71)",
         ];
 
         assert_eq!(job_names, expected_job_names);

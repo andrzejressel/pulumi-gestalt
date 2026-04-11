@@ -33,8 +33,7 @@ build-language-plugin:
 build-language-plugin-rust:
     cd pulumi-language-rust && just build
 
-[linux]
-[macos]
+[unix]
 build-rust-bridge:
     cargo build -p pulumi_gestalt_rust_language_server --release
 
@@ -53,6 +52,9 @@ package-language-plugin-rust VERSION:
 
 test-language-plugin-rust:
     cd pulumi-language-rust && just test
+
+test-language-plugin-rust-single TEST:
+    cd pulumi-language-rust && just test-single "TestLanguage/{{TEST}}"
 
 install-requirements:
     rustup component add rustfmt
@@ -90,6 +92,7 @@ clippy-to-file:
 
 regenerator:
     cargo run -p regenerator
+    cd pulumi-language-rust && just regenerate-test-list
 
 regenerate-generator-tests $DO_NOT_COMPILE="true":
     cargo nextest run -p pulumi_gestalt_generator --all-features --test '*' --profile all_cores

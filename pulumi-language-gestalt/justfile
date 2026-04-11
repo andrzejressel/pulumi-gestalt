@@ -8,8 +8,7 @@ build:
     go build
     pulumi plugin install language gestalt 1.0 --file ./pulumi-language-gestalt.exe
 
-[linux]
-[macos]
+[unix]
 build:
     pulumi plugin rm language gestalt -y
     go build
