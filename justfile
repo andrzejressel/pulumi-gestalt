@@ -91,8 +91,8 @@ clippy-to-file:
     python external/sarif-normalizer.py --in-place rust-clippy-results.sarif
 
 regenerator:
-    cargo run -p regenerator
     cd pulumi-language-rust && just regenerate-test-list
+    cargo run -p regenerator
 
 regenerate-generator-tests $DO_NOT_COMPILE="true":
     cargo nextest run -p pulumi_gestalt_generator --all-features --test '*' --profile all_cores
