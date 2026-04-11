@@ -7,6 +7,7 @@
     "l1-builtin-object",
     "l1-builtin-project-root",
     "l1-builtin-project-root-main",
+    "l1-builtin-secret",
     "l1-builtin-sha1",
     "l1-empty",
     "l1-main",

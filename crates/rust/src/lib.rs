@@ -11,7 +11,6 @@ mod oneof;
 mod pulumi_any;
 pub mod resources;
 pub mod stdlib;
-pub mod extensions;
 
 pub use input_or_output::InputOrOutput;
 pub use pulumi_any::{PulumiAny, ToPulumiAny};
@@ -19,8 +18,6 @@ pub use pulumi_any::{PulumiAny, ToPulumiAny};
 pub use oneof::OneOf2;
 pub use oneof::OneOf3;
 pub use oneof::OneOf4;
-
-pub use extensions::*;
 
 use anyhow::{Context as AnyhowContext, Result};
 pub use native::{

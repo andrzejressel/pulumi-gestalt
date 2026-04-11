@@ -6,7 +6,8 @@
         "logicalName": "aSecret",
         "configType": {
           "stringType": {}
-        }
+        },
+        "secret": true
       }
     },
     {

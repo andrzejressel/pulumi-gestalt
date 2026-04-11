@@ -12,43 +12,28 @@ fn pulumi_main(context: &pulumi_gestalt_rust::Context) -> Result<()> {
     let aString = context
         .require_config(None, "aString")
         .expect("Expected config [aString] to exist");
-    pulumi_gestalt_rust::add_export(
-        "elementOutput1",
-        &context
-            .new_output(
-                &pulumi_gestalt_rust::stdlib::element(&aList, 1)
-                    .expect("Element should exist"),
+    context
+        .add_export(
+            "elementOutput1",
+            &pulumi_gestalt_rust::stdlib::element(&aList, 1)
+                .expect("Element should exist"),
+        );
+    context
+        .add_export(
+            "elementOutput2",
+            &pulumi_gestalt_rust::stdlib::element(&aList, 2)
+                .expect("Element should exist"),
+        );
+    context.add_export("joinOutput", &pulumi_gestalt_rust::stdlib::join("|", &aList));
+    context.add_export("lengthOutput", &pulumi_gestalt_rust::stdlib::length(&aList));
+    context.add_export("splitOutput", &pulumi_gestalt_rust::stdlib::split("-", aString));
+    context
+        .add_export(
+            "singleOrNoneOutput",
+            &vec!(
+                pulumi_gestalt_rust::stdlib::single_or_none(singleOrNoneList)
+                .expect("Should get first element")
             ),
-    );
-    pulumi_gestalt_rust::add_export(
-        "elementOutput2",
-        &context
-            .new_output(
-                &pulumi_gestalt_rust::stdlib::element(&aList, 2)
-                    .expect("Element should exist"),
-            ),
-    );
-    pulumi_gestalt_rust::add_export(
-        "joinOutput",
-        &context.new_output(&pulumi_gestalt_rust::stdlib::join("|", &aList)),
-    );
-    pulumi_gestalt_rust::add_export(
-        "lengthOutput",
-        &context.new_output(&pulumi_gestalt_rust::stdlib::length(&aList)),
-    );
-    pulumi_gestalt_rust::add_export(
-        "splitOutput",
-        &context.new_output(&pulumi_gestalt_rust::stdlib::split("-", aString)),
-    );
-    pulumi_gestalt_rust::add_export(
-        "singleOrNoneOutput",
-        &context
-            .new_output(
-                &vec!(
-                    pulumi_gestalt_rust::stdlib::single_or_none(singleOrNoneList)
-                    .expect("Should get first element")
-                ),
-            ),
-    );
+        );
     Ok(())
 }

@@ -57,6 +57,7 @@ message ConfigVariable {
   string logicalName = 2;
   ConfigType configType = 3;
   Expression defaultValue = 4;
+  bool secret = 5;
 }
 
 message ConfigType {
