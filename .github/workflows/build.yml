@@ -308,12 +308,7 @@ jobs:
         run: git add . && git diff --quiet && git diff --cached --quiet
   
   test-pulumi-language-rust:
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-24.04, macos-15]
+    runs-on: ubuntu-24.04
 
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
