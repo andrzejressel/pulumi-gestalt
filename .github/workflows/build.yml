@@ -308,7 +308,14 @@ jobs:
         run: git add . && git diff --quiet && git diff --cached --quiet
   
   test-pulumi-language-rust:
-    runs-on: ubuntu-24.04
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, macos-15]
+        # DO NOT EDIT - LANGUAGE TEST START
+        test: [l1-builtin-base64, l1-builtin-cwd, l1-builtin-info, l1-builtin-list, l1-builtin-object, l1-builtin-project-root, l1-builtin-project-root-main, l1-builtin-sha1, l1-empty, l1-main, l1-output-bool, l1-output-string]
+# DO NOT EDIT - LANGUAGE TEST END
 
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
@@ -328,7 +335,7 @@ jobs:
       - run: just build-rust-bridge
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: just test-language-plugin-rust
+      - run: just test-language-plugin-rust-single ${{ matrix.test }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: git add . && git diff

@@ -3,12 +3,14 @@ package main
 import (
 	"bufio"
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"os"
 	"os/exec"
 	"path/filepath"
 	"runtime"
+	"slices"
 	"sync"
 	"testing"
 
@@ -113,6 +115,49 @@ func TestLanguage(t *testing.T) {
 	})
 }
 
+func TestRegenerateJsonWithTests(t *testing.T) {
+	if runtime.GOOS == "windows" {
+		panic("Windows not yet supported")
+	}
+
+	_, engine := runTestingHost(t)
+
+	tests, err := engine.GetLanguageTests(context.Background(), &testingrpc.GetLanguageTestsRequest{})
+	require.NoError(t, err)
+
+	valid_tests := make([]string, 0)
+
+	for _, tt := range tests.Tests {
+		tt := tt
+
+		if _, ok := expectedFailures[tt]; ok {
+			continue
+		}
+
+		valid_tests = append(valid_tests, tt)
+
+	}
+
+	slices.Sort(valid_tests)
+
+	type Tests struct {
+		Tests []string `json:"tests"`
+	}
+
+	testsStruct := Tests{
+		Tests: valid_tests,
+	}
+
+	jsonFile, err := os.Create("../regenerator/language-tests.json")
+	require.NoError(t, err)
+	defer jsonFile.Close()
+	encoder := json.NewEncoder(jsonFile)
+	encoder.SetIndent("", "  ")
+	err = encoder.Encode(testsStruct)
+	require.NoError(t, err)
+
+}
+
 // expectedFailures maps the set of conformance tests we expect to fail to reasons they currently do so, so that we may
 // skip them with an informative message until they are fixed.
 var expectedFailures = map[string]string{
@@ -130,7 +175,6 @@ var expectedFailures = map[string]string{
 	"l1-output-map":                                "sdk snapshot validation for sync: walk expected dir: lstat testdata/sdks/sync-3.0.0-alpha.1.internal+exp.sha.2143768: no such file or directory",
 	"l1-output-null":                               "sdk snapshot validation for simple: walk expected dir: lstat testdata/sdks/simple-2.0.0: no such file or directory",
 	"l1-output-number":                             "program snapshot validation: walk expected dir: lstat testdata/projects/l1-output-number: no such file or directory",
-	"l1-output-string":                             "sdk snapshot validation for asset-archive: walk expected dir: lstat testdata/sdks/asset-archive-5.0.0: no such file or directory",
 	"l1-proxy-index":                               "unsupported config variable type: object with union members",
 	"l1-stack-reference":                           "sdk snapshot validation for discriminated-union: walk expected dir: lstat testdata/sdks/discriminated-union-31.0.0: no such file or directory",
 	"l2-builtin-object":                            "sdk snapshot validation for output: walk expected dir: lstat testdata/sdks/output-23.0.0: no such file or directory",

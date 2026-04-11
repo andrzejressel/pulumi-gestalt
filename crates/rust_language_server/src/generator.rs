@@ -21,6 +21,26 @@ impl ExpressionType {
     }
 }
 
+fn requires_escaping(s: &str) -> bool {
+    if s.contains('"')
+        || s.contains('\\')
+        || s.contains('\n')
+        || s.contains('\r')
+        || s.contains('\t')
+    {
+        return true;
+    }
+    false
+}
+
+fn escape_rust_string(s: &str) -> String {
+    if requires_escaping(s) {
+        format!("r#\"{}\"#", s)
+    } else {
+        format!("\"{}\"", s)
+    }
+}
+
 pub fn generate_main(model_program: &PclProtobufProgram) -> Result<String> {
     let nodes = model_program
         .nodes
@@ -115,7 +135,7 @@ fn convert_expression(expression: &Expression) -> Result<ExpressionType> {
                 bail!("UnknownValue not yet supported")
             }
             literal_value_expression::Value::StringValue(s) => {
-                Ok(ExpressionType::Other(format!("\"{}\"", s)))
+                Ok(ExpressionType::Other(escape_rust_string(s)))
             }
             literal_value_expression::Value::NumberValue(n) => {
                 Ok(ExpressionType::Other(n.to_string()))
