@@ -93,7 +93,7 @@ clippy-to-file:
 
 regenerator:
     cargo run -p regenerator
-    cd pulumi-language-gestalt && just regenerate-test-list
+    cd pulumi-language-rust && just regenerate-test-list
 
 regenerate-generator-tests $DO_NOT_COMPILE="true":
     cargo nextest run -p pulumi_gestalt_generator --all-features --test '*' --profile all_cores
