@@ -10,8 +10,7 @@ build $CGO_LDFLAGS_ALLOW=".*pulumi_gestalt_rust_language_server.lib":
     go build
     pulumi plugin install language rust 1.0 --file ./pulumi-language-rust.exe
 
-[linux]
-[macos]
+[unix]
 build:
     just build-rust-bridge
     pulumi plugin rm language rust -y
@@ -31,6 +30,15 @@ test-local $LOCAL_TEST="1":
 test-local-single TEST_NAME $LOCAL_TEST="1":
     just build-rust-bridge
     go test -v -count=1 -run {{TEST_NAME}} ./...
+
+[windows]
+regenerate-test-list:
+    cd .
+
+[unix]
+regenerate-test-list:
+    just build-rust-bridge
+    go test -v -count=1 -run TestRegenerateJsonWithTests ./...
 
 # For example: just test-single "TestLanguage/l1-builtin-cwd"
 test-single TEST_NAME:
