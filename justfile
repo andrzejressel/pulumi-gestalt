@@ -33,8 +33,7 @@ build-language-plugin:
 build-language-plugin-rust:
     cd pulumi-language-rust && just build
 
-[linux]
-[macos]
+[unix]
 build-rust-bridge:
     cargo build -p pulumi_gestalt_rust_language_server --release
 
