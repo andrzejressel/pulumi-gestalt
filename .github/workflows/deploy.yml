@@ -129,8 +129,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Package rust language plugin
-        run: just package-language-plugin-rust "$VERSION"
-
+        run: just package-language-plugin-rust "${{ env.VERSION }}"
       - name: Release
         uses: softprops/action-gh-release@153bb8e04406b158c6c84fc1615b65b24149a1fe # v2.6.1
         with:
