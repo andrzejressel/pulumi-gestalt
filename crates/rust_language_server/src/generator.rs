@@ -1,11 +1,26 @@
 use crate::pcl_model::node::Value;
 use crate::pcl_model::{
-    ConfigType, ConfigVariable, Expression, LocalVariable, Node, OutputVariable,
-    PclProtobufProgram, TemplateExpression, TupleConsExpression, expression,
-    literal_value_expression, traverse_index, traverser,
+    expression, literal_value_expression, traverse_index, traverser, ConfigType, ConfigVariable,
+    Expression, LocalVariable, Node, OutputVariable, PclProtobufProgram, TemplateExpression,
+    TupleConsExpression,
 };
 use rootcause::prelude::ResultExt;
-use rootcause::{Result, bail};
+use rootcause::{bail, Result};
+
+fn requires_escaping(s: &str) -> bool {
+    if s.contains('"') || s.contains('\\') || s.contains('\n') || s.contains('\r') || s.contains('\t') {
+        return true;
+    }
+    false
+}
+
+fn escape_rust_string(s: &str) -> String {
+    if requires_escaping(s) {
+        format!("r#\"{}\"#", s)
+    } else {
+        format!("\"{}\"", s)
+    }
+}
 
 pub fn generate_main(model_program: &PclProtobufProgram) -> Result<String> {
     let nodes = model_program
@@ -90,7 +105,9 @@ fn convert_expression(expression: &Expression) -> Result<String> {
             literal_value_expression::Value::UnknownValue(_) => {
                 bail!("UnknownValue not yet supported")
             }
-            literal_value_expression::Value::StringValue(s) => Ok(format!("\"{}\"", s)),
+            literal_value_expression::Value::StringValue(s) => {
+                Ok(escape_rust_string(s))
+            }
             literal_value_expression::Value::NumberValue(n) => Ok(n.to_string()),
             literal_value_expression::Value::BoolValue(b) => Ok(b.to_string()),
         },
