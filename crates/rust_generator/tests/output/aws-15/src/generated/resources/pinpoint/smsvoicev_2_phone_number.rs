@@ -128,49 +128,49 @@ pub mod smsvoicev_2_phone_number {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: Smsvoicev2PhoneNumberArgs,
     ) -> Smsvoicev2PhoneNumberResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: Smsvoicev2PhoneNumberArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> Smsvoicev2PhoneNumberResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: Smsvoicev2PhoneNumberArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> Smsvoicev2PhoneNumberResult {
         let deletion_protection_enabled_binding = args
             .deletion_protection_enabled
-            .get_output(context);
-        let iso_country_code_binding = args.iso_country_code.get_output(context);
-        let message_type_binding = args.message_type.get_output(context);
-        let number_capabilities_binding = args.number_capabilities.get_output(context);
-        let number_type_binding = args.number_type.get_output(context);
-        let opt_out_list_name_binding = args.opt_out_list_name.get_output(context);
-        let registration_id_binding = args.registration_id.get_output(context);
+            .get_output(ctx);
+        let iso_country_code_binding = args.iso_country_code.get_output(ctx);
+        let message_type_binding = args.message_type.get_output(ctx);
+        let number_capabilities_binding = args.number_capabilities.get_output(ctx);
+        let number_type_binding = args.number_type.get_output(ctx);
+        let opt_out_list_name_binding = args.opt_out_list_name.get_output(ctx);
+        let registration_id_binding = args.registration_id.get_output(ctx);
         let self_managed_opt_outs_enabled_binding = args
             .self_managed_opt_outs_enabled
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let timeouts_binding = args.timeouts.get_output(context);
-        let two_way_channel_arn_binding = args.two_way_channel_arn.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let timeouts_binding = args.timeouts.get_output(ctx);
+        let two_way_channel_arn_binding = args.two_way_channel_arn.get_output(ctx);
         let two_way_channel_enabled_binding = args
             .two_way_channel_enabled
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:pinpoint/smsvoicev2PhoneNumber:Smsvoicev2PhoneNumber".into(),
             name: name.to_string(),
@@ -227,7 +227,7 @@ pub mod smsvoicev_2_phone_number {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         Smsvoicev2PhoneNumberResult {
             id: o.get_id(),
             urn: o.get_urn(),

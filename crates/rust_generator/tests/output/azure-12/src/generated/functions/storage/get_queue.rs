@@ -38,12 +38,12 @@ pub mod get_queue {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetQueueArgs,
     ) -> GetQueueResult {
-        let metadata_binding = args.metadata.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let storage_account_name_binding = args.storage_account_name.get_output(context);
+        let metadata_binding = args.metadata.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let storage_account_name_binding = args.storage_account_name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:storage/getQueue:getQueue".into(),
             version: super::super::super::get_version(),
@@ -62,7 +62,7 @@ pub mod get_queue {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetQueueResult {
             id: o.get_field("id"),
             metadata: o.get_field("metadata"),

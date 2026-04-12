@@ -126,46 +126,44 @@ pub mod replication_config {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ReplicationConfigArgs,
     ) -> ReplicationConfigResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ReplicationConfigArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ReplicationConfigResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ReplicationConfigArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ReplicationConfigResult {
-        let compute_config_binding = args.compute_config.get_output(context);
+        let compute_config_binding = args.compute_config.get_output(ctx);
         let replication_config_identifier_binding = args
             .replication_config_identifier
-            .get_output(context);
-        let replication_settings_binding = args.replication_settings.get_output(context);
-        let replication_type_binding = args.replication_type.get_output(context);
-        let resource_identifier_binding = args.resource_identifier.get_output(context);
-        let source_endpoint_arn_binding = args.source_endpoint_arn.get_output(context);
-        let start_replication_binding = args.start_replication.get_output(context);
-        let supplemental_settings_binding = args
-            .supplemental_settings
-            .get_output(context);
-        let table_mappings_binding = args.table_mappings.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let target_endpoint_arn_binding = args.target_endpoint_arn.get_output(context);
+            .get_output(ctx);
+        let replication_settings_binding = args.replication_settings.get_output(ctx);
+        let replication_type_binding = args.replication_type.get_output(ctx);
+        let resource_identifier_binding = args.resource_identifier.get_output(ctx);
+        let source_endpoint_arn_binding = args.source_endpoint_arn.get_output(ctx);
+        let start_replication_binding = args.start_replication.get_output(ctx);
+        let supplemental_settings_binding = args.supplemental_settings.get_output(ctx);
+        let table_mappings_binding = args.table_mappings.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let target_endpoint_arn_binding = args.target_endpoint_arn.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:dms/replicationConfig:ReplicationConfig".into(),
             name: name.to_string(),
@@ -218,7 +216,7 @@ pub mod replication_config {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ReplicationConfigResult {
             id: o.get_id(),
             urn: o.get_urn(),

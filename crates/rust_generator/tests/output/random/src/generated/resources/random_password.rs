@@ -123,43 +123,43 @@ pub mod random_password {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RandomPasswordArgs,
     ) -> RandomPasswordResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RandomPasswordArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> RandomPasswordResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RandomPasswordArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> RandomPasswordResult {
-        let keepers_binding = args.keepers.get_output(context);
-        let length_binding = args.length.get_output(context);
-        let lower_binding = args.lower.get_output(context);
-        let min_lower_binding = args.min_lower.get_output(context);
-        let min_numeric_binding = args.min_numeric.get_output(context);
-        let min_special_binding = args.min_special.get_output(context);
-        let min_upper_binding = args.min_upper.get_output(context);
-        let number_binding = args.number.get_output(context);
-        let numeric_binding = args.numeric.get_output(context);
-        let override_special_binding = args.override_special.get_output(context);
-        let special_binding = args.special.get_output(context);
-        let upper_binding = args.upper.get_output(context);
+        let keepers_binding = args.keepers.get_output(ctx);
+        let length_binding = args.length.get_output(ctx);
+        let lower_binding = args.lower.get_output(ctx);
+        let min_lower_binding = args.min_lower.get_output(ctx);
+        let min_numeric_binding = args.min_numeric.get_output(ctx);
+        let min_special_binding = args.min_special.get_output(ctx);
+        let min_upper_binding = args.min_upper.get_output(ctx);
+        let number_binding = args.number.get_output(ctx);
+        let numeric_binding = args.numeric.get_output(ctx);
+        let override_special_binding = args.override_special.get_output(ctx);
+        let special_binding = args.special.get_output(ctx);
+        let upper_binding = args.upper.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "random:index/randomPassword:RandomPassword".into(),
             name: name.to_string(),
@@ -216,7 +216,7 @@ pub mod random_password {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         RandomPasswordResult {
             id: o.get_id(),
             urn: o.get_urn(),

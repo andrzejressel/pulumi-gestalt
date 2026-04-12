@@ -30,10 +30,10 @@ pub mod get_hl_7_v_2_store_iam_policy {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetHl7V2StoreIamPolicyArgs,
     ) -> GetHl7V2StoreIamPolicyResult {
-        let hl7_v2_store_id_binding = args.hl7_v2_store_id.get_output(context);
+        let hl7_v2_store_id_binding = args.hl7_v2_store_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:healthcare/getHl7V2StoreIamPolicy:getHl7V2StoreIamPolicy".into(),
             version: super::super::super::get_version(),
@@ -44,7 +44,7 @@ pub mod get_hl_7_v_2_store_iam_policy {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetHl7V2StoreIamPolicyResult {
             etag: o.get_field("etag"),
             hl7_v2_store_id: o.get_field("hl7V2StoreId"),

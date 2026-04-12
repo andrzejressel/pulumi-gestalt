@@ -122,38 +122,38 @@ pub mod hosted_configuration_version {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: HostedConfigurationVersionArgs,
     ) -> HostedConfigurationVersionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: HostedConfigurationVersionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> HostedConfigurationVersionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: HostedConfigurationVersionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> HostedConfigurationVersionResult {
-        let application_id_binding = args.application_id.get_output(context);
+        let application_id_binding = args.application_id.get_output(ctx);
         let configuration_profile_id_binding = args
             .configuration_profile_id
-            .get_output(context);
-        let content_binding = args.content.get_output(context);
-        let content_type_binding = args.content_type.get_output(context);
-        let description_binding = args.description.get_output(context);
+            .get_output(ctx);
+        let content_binding = args.content.get_output(ctx);
+        let content_type_binding = args.content_type.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:appconfig/hostedConfigurationVersion:HostedConfigurationVersion"
                 .into(),
@@ -183,7 +183,7 @@ pub mod hosted_configuration_version {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         HostedConfigurationVersionResult {
             id: o.get_id(),
             urn: o.get_urn(),

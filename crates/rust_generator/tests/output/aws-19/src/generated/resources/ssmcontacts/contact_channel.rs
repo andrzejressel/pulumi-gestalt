@@ -113,35 +113,35 @@ pub mod contact_channel {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ContactChannelArgs,
     ) -> ContactChannelResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ContactChannelArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ContactChannelResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ContactChannelArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ContactChannelResult {
-        let contact_id_binding = args.contact_id.get_output(context);
-        let delivery_address_binding = args.delivery_address.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let type__binding = args.type_.get_output(context);
+        let contact_id_binding = args.contact_id.get_output(ctx);
+        let delivery_address_binding = args.delivery_address.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ssmcontacts/contactChannel:ContactChannel".into(),
             name: name.to_string(),
@@ -166,7 +166,7 @@ pub mod contact_channel {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ContactChannelResult {
             id: o.get_id(),
             urn: o.get_urn(),

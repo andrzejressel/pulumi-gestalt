@@ -47,11 +47,11 @@ pub mod get_external_access_rule {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetExternalAccessRuleArgs,
     ) -> GetExternalAccessRuleResult {
-        let name_binding = args.name.get_output(context);
-        let parent_binding = args.parent.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let parent_binding = args.parent.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:vmwareengine/getExternalAccessRule:getExternalAccessRule".into(),
             version: super::super::super::get_version(),
@@ -66,7 +66,7 @@ pub mod get_external_access_rule {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetExternalAccessRuleResult {
             action: o.get_field("action"),
             create_time: o.get_field("createTime"),

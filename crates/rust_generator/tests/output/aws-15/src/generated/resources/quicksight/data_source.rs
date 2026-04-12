@@ -147,43 +147,43 @@ pub mod data_source {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataSourceArgs,
     ) -> DataSourceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataSourceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DataSourceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataSourceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DataSourceResult {
-        let aws_account_id_binding = args.aws_account_id.get_output(context);
-        let credentials_binding = args.credentials.get_output(context);
-        let data_source_id_binding = args.data_source_id.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let parameters_binding = args.parameters.get_output(context);
-        let permissions_binding = args.permissions.get_output(context);
-        let ssl_properties_binding = args.ssl_properties.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let type__binding = args.type_.get_output(context);
+        let aws_account_id_binding = args.aws_account_id.get_output(ctx);
+        let credentials_binding = args.credentials.get_output(ctx);
+        let data_source_id_binding = args.data_source_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let parameters_binding = args.parameters.get_output(ctx);
+        let permissions_binding = args.permissions.get_output(ctx);
+        let ssl_properties_binding = args.ssl_properties.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
         let vpc_connection_properties_binding = args
             .vpc_connection_properties
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:quicksight/dataSource:DataSource".into(),
             name: name.to_string(),
@@ -232,7 +232,7 @@ pub mod data_source {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DataSourceResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -132,46 +132,44 @@ pub mod organization_custom_rule {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OrganizationCustomRuleArgs,
     ) -> OrganizationCustomRuleResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OrganizationCustomRuleArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> OrganizationCustomRuleResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OrganizationCustomRuleArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> OrganizationCustomRuleResult {
-        let description_binding = args.description.get_output(context);
-        let excluded_accounts_binding = args.excluded_accounts.get_output(context);
-        let input_parameters_binding = args.input_parameters.get_output(context);
-        let lambda_function_arn_binding = args.lambda_function_arn.get_output(context);
+        let description_binding = args.description.get_output(ctx);
+        let excluded_accounts_binding = args.excluded_accounts.get_output(ctx);
+        let input_parameters_binding = args.input_parameters.get_output(ctx);
+        let lambda_function_arn_binding = args.lambda_function_arn.get_output(ctx);
         let maximum_execution_frequency_binding = args
             .maximum_execution_frequency
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let resource_id_scope_binding = args.resource_id_scope.get_output(context);
-        let resource_types_scopes_binding = args
-            .resource_types_scopes
-            .get_output(context);
-        let tag_key_scope_binding = args.tag_key_scope.get_output(context);
-        let tag_value_scope_binding = args.tag_value_scope.get_output(context);
-        let trigger_types_binding = args.trigger_types.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let resource_id_scope_binding = args.resource_id_scope.get_output(ctx);
+        let resource_types_scopes_binding = args.resource_types_scopes.get_output(ctx);
+        let tag_key_scope_binding = args.tag_key_scope.get_output(ctx);
+        let tag_value_scope_binding = args.tag_value_scope.get_output(ctx);
+        let trigger_types_binding = args.trigger_types.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:cfg/organizationCustomRule:OrganizationCustomRule".into(),
             name: name.to_string(),
@@ -224,7 +222,7 @@ pub mod organization_custom_rule {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         OrganizationCustomRuleResult {
             id: o.get_id(),
             urn: o.get_urn(),

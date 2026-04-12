@@ -81,38 +81,36 @@ pub mod service_trust {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServiceTrustArgs,
     ) -> ServiceTrustResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServiceTrustArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ServiceTrustResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServiceTrustArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ServiceTrustResult {
-        let domain_service_id_binding = args.domain_service_id.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let password_binding = args.password.get_output(context);
-        let trusted_domain_dns_ips_binding = args
-            .trusted_domain_dns_ips
-            .get_output(context);
-        let trusted_domain_fqdn_binding = args.trusted_domain_fqdn.get_output(context);
+        let domain_service_id_binding = args.domain_service_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let password_binding = args.password.get_output(ctx);
+        let trusted_domain_dns_ips_binding = args.trusted_domain_dns_ips.get_output(ctx);
+        let trusted_domain_fqdn_binding = args.trusted_domain_fqdn.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:domainservices/serviceTrust:ServiceTrust".into(),
             name: name.to_string(),
@@ -141,7 +139,7 @@ pub mod service_trust {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ServiceTrustResult {
             id: o.get_id(),
             urn: o.get_urn(),

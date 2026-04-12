@@ -44,11 +44,11 @@ pub mod get_serverless_security_config {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetServerlessSecurityConfigArgs,
     ) -> GetServerlessSecurityConfigResult {
-        let id_binding = args.id.get_output(context);
-        let saml_options_binding = args.saml_options.get_output(context);
+        let id_binding = args.id.get_output(ctx);
+        let saml_options_binding = args.saml_options.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:opensearch/getServerlessSecurityConfig:getServerlessSecurityConfig"
                 .into(),
@@ -64,7 +64,7 @@ pub mod get_serverless_security_config {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetServerlessSecurityConfigResult {
             config_version: o.get_field("configVersion"),
             created_date: o.get_field("createdDate"),

@@ -44,11 +44,11 @@ pub mod get_link {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetLinkArgs,
     ) -> GetLinkResult {
-        let link_identifier_binding = args.link_identifier.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let link_identifier_binding = args.link_identifier.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:oam/getLink:getLink".into(),
             version: super::super::super::get_version(),
@@ -63,7 +63,7 @@ pub mod get_link {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetLinkResult {
             arn: o.get_field("arn"),
             id: o.get_field("id"),

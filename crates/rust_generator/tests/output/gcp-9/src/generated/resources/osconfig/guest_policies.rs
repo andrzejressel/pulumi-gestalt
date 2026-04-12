@@ -266,39 +266,39 @@ pub mod guest_policies {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GuestPoliciesArgs,
     ) -> GuestPoliciesResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GuestPoliciesArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> GuestPoliciesResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GuestPoliciesArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> GuestPoliciesResult {
-        let assignment_binding = args.assignment.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let etag_binding = args.etag.get_output(context);
-        let guest_policy_id_binding = args.guest_policy_id.get_output(context);
-        let package_repositories_binding = args.package_repositories.get_output(context);
-        let packages_binding = args.packages.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let recipes_binding = args.recipes.get_output(context);
+        let assignment_binding = args.assignment.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let etag_binding = args.etag.get_output(ctx);
+        let guest_policy_id_binding = args.guest_policy_id.get_output(ctx);
+        let package_repositories_binding = args.package_repositories.get_output(ctx);
+        let packages_binding = args.packages.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let recipes_binding = args.recipes.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:osconfig/guestPolicies:GuestPolicies".into(),
             name: name.to_string(),
@@ -339,7 +339,7 @@ pub mod guest_policies {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         GuestPoliciesResult {
             id: o.get_id(),
             urn: o.get_urn(),

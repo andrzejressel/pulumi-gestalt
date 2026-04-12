@@ -280,42 +280,42 @@ pub mod secret {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SecretArgs,
     ) -> SecretResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SecretArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> SecretResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SecretArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> SecretResult {
-        let annotations_binding = args.annotations.get_output(context);
-        let expire_time_binding = args.expire_time.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let replication_binding = args.replication.get_output(context);
-        let rotation_binding = args.rotation.get_output(context);
-        let secret_id_binding = args.secret_id.get_output(context);
-        let topics_binding = args.topics.get_output(context);
-        let ttl_binding = args.ttl.get_output(context);
-        let version_aliases_binding = args.version_aliases.get_output(context);
-        let version_destroy_ttl_binding = args.version_destroy_ttl.get_output(context);
+        let annotations_binding = args.annotations.get_output(ctx);
+        let expire_time_binding = args.expire_time.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let replication_binding = args.replication.get_output(ctx);
+        let rotation_binding = args.rotation.get_output(ctx);
+        let secret_id_binding = args.secret_id.get_output(ctx);
+        let topics_binding = args.topics.get_output(ctx);
+        let ttl_binding = args.ttl.get_output(ctx);
+        let version_aliases_binding = args.version_aliases.get_output(ctx);
+        let version_destroy_ttl_binding = args.version_destroy_ttl.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:secretmanager/secret:Secret".into(),
             name: name.to_string(),
@@ -368,7 +368,7 @@ pub mod secret {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         SecretResult {
             id: o.get_id(),
             urn: o.get_urn(),

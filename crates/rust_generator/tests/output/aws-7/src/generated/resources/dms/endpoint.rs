@@ -232,64 +232,62 @@ pub mod endpoint {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EndpointArgs,
     ) -> EndpointResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EndpointArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> EndpointResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EndpointArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> EndpointResult {
-        let certificate_arn_binding = args.certificate_arn.get_output(context);
-        let database_name_binding = args.database_name.get_output(context);
-        let elasticsearch_settings_binding = args
-            .elasticsearch_settings
-            .get_output(context);
-        let endpoint_id_binding = args.endpoint_id.get_output(context);
-        let endpoint_type_binding = args.endpoint_type.get_output(context);
-        let engine_name_binding = args.engine_name.get_output(context);
+        let certificate_arn_binding = args.certificate_arn.get_output(ctx);
+        let database_name_binding = args.database_name.get_output(ctx);
+        let elasticsearch_settings_binding = args.elasticsearch_settings.get_output(ctx);
+        let endpoint_id_binding = args.endpoint_id.get_output(ctx);
+        let endpoint_type_binding = args.endpoint_type.get_output(ctx);
+        let engine_name_binding = args.engine_name.get_output(ctx);
         let extra_connection_attributes_binding = args
             .extra_connection_attributes
-            .get_output(context);
-        let kafka_settings_binding = args.kafka_settings.get_output(context);
-        let kinesis_settings_binding = args.kinesis_settings.get_output(context);
-        let kms_key_arn_binding = args.kms_key_arn.get_output(context);
-        let mongodb_settings_binding = args.mongodb_settings.get_output(context);
-        let password_binding = args.password.get_output(context);
+            .get_output(ctx);
+        let kafka_settings_binding = args.kafka_settings.get_output(ctx);
+        let kinesis_settings_binding = args.kinesis_settings.get_output(ctx);
+        let kms_key_arn_binding = args.kms_key_arn.get_output(ctx);
+        let mongodb_settings_binding = args.mongodb_settings.get_output(ctx);
+        let password_binding = args.password.get_output(ctx);
         let pause_replication_tasks_binding = args
             .pause_replication_tasks
-            .get_output(context);
-        let port_binding = args.port.get_output(context);
-        let postgres_settings_binding = args.postgres_settings.get_output(context);
-        let redis_settings_binding = args.redis_settings.get_output(context);
-        let redshift_settings_binding = args.redshift_settings.get_output(context);
-        let s3_settings_binding = args.s3_settings.get_output(context);
+            .get_output(ctx);
+        let port_binding = args.port.get_output(ctx);
+        let postgres_settings_binding = args.postgres_settings.get_output(ctx);
+        let redis_settings_binding = args.redis_settings.get_output(ctx);
+        let redshift_settings_binding = args.redshift_settings.get_output(ctx);
+        let s3_settings_binding = args.s3_settings.get_output(ctx);
         let secrets_manager_access_role_arn_binding = args
             .secrets_manager_access_role_arn
-            .get_output(context);
-        let secrets_manager_arn_binding = args.secrets_manager_arn.get_output(context);
-        let server_name_binding = args.server_name.get_output(context);
-        let service_access_role_binding = args.service_access_role.get_output(context);
-        let ssl_mode_binding = args.ssl_mode.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let username_binding = args.username.get_output(context);
+            .get_output(ctx);
+        let secrets_manager_arn_binding = args.secrets_manager_arn.get_output(ctx);
+        let server_name_binding = args.server_name.get_output(ctx);
+        let service_access_role_binding = args.service_access_role.get_output(ctx);
+        let ssl_mode_binding = args.ssl_mode.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let username_binding = args.username.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:dms/endpoint:Endpoint".into(),
             name: name.to_string(),
@@ -398,7 +396,7 @@ pub mod endpoint {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         EndpointResult {
             id: o.get_id(),
             urn: o.get_urn(),

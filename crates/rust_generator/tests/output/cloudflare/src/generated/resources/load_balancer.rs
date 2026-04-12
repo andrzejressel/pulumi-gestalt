@@ -228,52 +228,52 @@ pub mod load_balancer {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LoadBalancerArgs,
     ) -> LoadBalancerResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LoadBalancerArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> LoadBalancerResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LoadBalancerArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> LoadBalancerResult {
-        let adaptive_routings_binding = args.adaptive_routings.get_output(context);
-        let country_pools_binding = args.country_pools.get_output(context);
-        let default_pool_ids_binding = args.default_pool_ids.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let enabled_binding = args.enabled.get_output(context);
-        let fallback_pool_id_binding = args.fallback_pool_id.get_output(context);
-        let location_strategies_binding = args.location_strategies.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let pop_pools_binding = args.pop_pools.get_output(context);
-        let proxied_binding = args.proxied.get_output(context);
-        let random_steerings_binding = args.random_steerings.get_output(context);
-        let region_pools_binding = args.region_pools.get_output(context);
-        let rules_binding = args.rules.get_output(context);
-        let session_affinity_binding = args.session_affinity.get_output(context);
+        let adaptive_routings_binding = args.adaptive_routings.get_output(ctx);
+        let country_pools_binding = args.country_pools.get_output(ctx);
+        let default_pool_ids_binding = args.default_pool_ids.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let enabled_binding = args.enabled.get_output(ctx);
+        let fallback_pool_id_binding = args.fallback_pool_id.get_output(ctx);
+        let location_strategies_binding = args.location_strategies.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let pop_pools_binding = args.pop_pools.get_output(ctx);
+        let proxied_binding = args.proxied.get_output(ctx);
+        let random_steerings_binding = args.random_steerings.get_output(ctx);
+        let region_pools_binding = args.region_pools.get_output(ctx);
+        let rules_binding = args.rules.get_output(ctx);
+        let session_affinity_binding = args.session_affinity.get_output(ctx);
         let session_affinity_attributes_binding = args
             .session_affinity_attributes
-            .get_output(context);
-        let session_affinity_ttl_binding = args.session_affinity_ttl.get_output(context);
-        let steering_policy_binding = args.steering_policy.get_output(context);
-        let ttl_binding = args.ttl.get_output(context);
-        let zone_id_binding = args.zone_id.get_output(context);
+            .get_output(ctx);
+        let session_affinity_ttl_binding = args.session_affinity_ttl.get_output(ctx);
+        let steering_policy_binding = args.steering_policy.get_output(ctx);
+        let ttl_binding = args.ttl.get_output(ctx);
+        let zone_id_binding = args.zone_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "cloudflare:index/loadBalancer:LoadBalancer".into(),
             name: name.to_string(),
@@ -358,7 +358,7 @@ pub mod load_balancer {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         LoadBalancerResult {
             id: o.get_id(),
             urn: o.get_urn(),

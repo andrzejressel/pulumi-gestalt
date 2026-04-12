@@ -165,36 +165,36 @@ pub mod classifier {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClassifierArgs,
     ) -> ClassifierResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClassifierArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ClassifierResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClassifierArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ClassifierResult {
-        let csv_classifier_binding = args.csv_classifier.get_output(context);
-        let grok_classifier_binding = args.grok_classifier.get_output(context);
-        let json_classifier_binding = args.json_classifier.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let xml_classifier_binding = args.xml_classifier.get_output(context);
+        let csv_classifier_binding = args.csv_classifier.get_output(ctx);
+        let grok_classifier_binding = args.grok_classifier.get_output(ctx);
+        let json_classifier_binding = args.json_classifier.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let xml_classifier_binding = args.xml_classifier.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:glue/classifier:Classifier".into(),
             name: name.to_string(),
@@ -223,7 +223,7 @@ pub mod classifier {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ClassifierResult {
             id: o.get_id(),
             urn: o.get_urn(),

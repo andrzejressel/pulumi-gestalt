@@ -502,44 +502,44 @@ pub mod aws_node_pool {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AwsNodePoolArgs,
     ) -> AwsNodePoolResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AwsNodePoolArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AwsNodePoolResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AwsNodePoolArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AwsNodePoolResult {
-        let annotations_binding = args.annotations.get_output(context);
-        let autoscaling_binding = args.autoscaling.get_output(context);
-        let cluster_binding = args.cluster.get_output(context);
-        let config_binding = args.config.get_output(context);
-        let kubelet_config_binding = args.kubelet_config.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let management_binding = args.management.get_output(context);
-        let max_pods_constraint_binding = args.max_pods_constraint.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let subnet_id_binding = args.subnet_id.get_output(context);
-        let update_settings_binding = args.update_settings.get_output(context);
-        let version_binding = args.version.get_output(context);
+        let annotations_binding = args.annotations.get_output(ctx);
+        let autoscaling_binding = args.autoscaling.get_output(ctx);
+        let cluster_binding = args.cluster.get_output(ctx);
+        let config_binding = args.config.get_output(ctx);
+        let kubelet_config_binding = args.kubelet_config.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let management_binding = args.management.get_output(ctx);
+        let max_pods_constraint_binding = args.max_pods_constraint.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let subnet_id_binding = args.subnet_id.get_output(ctx);
+        let update_settings_binding = args.update_settings.get_output(ctx);
+        let version_binding = args.version.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:container/awsNodePool:AwsNodePool".into(),
             name: name.to_string(),
@@ -600,7 +600,7 @@ pub mod aws_node_pool {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AwsNodePoolResult {
             id: o.get_id(),
             urn: o.get_urn(),

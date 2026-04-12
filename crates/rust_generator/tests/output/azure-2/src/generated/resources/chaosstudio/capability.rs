@@ -88,35 +88,33 @@ pub mod capability {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CapabilityArgs,
     ) -> CapabilityResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CapabilityArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> CapabilityResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CapabilityArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> CapabilityResult {
-        let capability_type_binding = args.capability_type.get_output(context);
-        let chaos_studio_target_id_binding = args
-            .chaos_studio_target_id
-            .get_output(context);
+        let capability_type_binding = args.capability_type.get_output(ctx);
+        let chaos_studio_target_id_binding = args.chaos_studio_target_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:chaosstudio/capability:Capability".into(),
             name: name.to_string(),
@@ -133,7 +131,7 @@ pub mod capability {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         CapabilityResult {
             id: o.get_id(),
             urn: o.get_urn(),

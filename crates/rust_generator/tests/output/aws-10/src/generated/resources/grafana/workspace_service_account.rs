@@ -66,34 +66,34 @@ pub mod workspace_service_account {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkspaceServiceAccountArgs,
     ) -> WorkspaceServiceAccountResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkspaceServiceAccountArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> WorkspaceServiceAccountResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkspaceServiceAccountArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> WorkspaceServiceAccountResult {
-        let grafana_role_binding = args.grafana_role.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let workspace_id_binding = args.workspace_id.get_output(context);
+        let grafana_role_binding = args.grafana_role.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let workspace_id_binding = args.workspace_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:grafana/workspaceServiceAccount:WorkspaceServiceAccount".into(),
             name: name.to_string(),
@@ -114,7 +114,7 @@ pub mod workspace_service_account {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         WorkspaceServiceAccountResult {
             id: o.get_id(),
             urn: o.get_urn(),

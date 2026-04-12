@@ -129,42 +129,42 @@ pub mod output_cosmosdb {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OutputCosmosdbArgs,
     ) -> OutputCosmosdbResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OutputCosmosdbArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> OutputCosmosdbResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OutputCosmosdbArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> OutputCosmosdbResult {
-        let container_name_binding = args.container_name.get_output(context);
-        let cosmosdb_account_key_binding = args.cosmosdb_account_key.get_output(context);
+        let container_name_binding = args.container_name.get_output(ctx);
+        let cosmosdb_account_key_binding = args.cosmosdb_account_key.get_output(ctx);
         let cosmosdb_sql_database_id_binding = args
             .cosmosdb_sql_database_id
-            .get_output(context);
-        let document_id_binding = args.document_id.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let partition_key_binding = args.partition_key.get_output(context);
+            .get_output(ctx);
+        let document_id_binding = args.document_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let partition_key_binding = args.partition_key.get_output(ctx);
         let stream_analytics_job_id_binding = args
             .stream_analytics_job_id
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:streamanalytics/outputCosmosdb:OutputCosmosdb".into(),
             name: name.to_string(),
@@ -201,7 +201,7 @@ pub mod output_cosmosdb {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         OutputCosmosdbResult {
             id: o.get_id(),
             urn: o.get_urn(),

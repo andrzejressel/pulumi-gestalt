@@ -196,45 +196,43 @@ pub mod gallery_application_version {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GalleryApplicationVersionArgs,
     ) -> GalleryApplicationVersionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GalleryApplicationVersionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> GalleryApplicationVersionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GalleryApplicationVersionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> GalleryApplicationVersionResult {
-        let config_file_binding = args.config_file.get_output(context);
-        let enable_health_check_binding = args.enable_health_check.get_output(context);
-        let end_of_life_date_binding = args.end_of_life_date.get_output(context);
-        let exclude_from_latest_binding = args.exclude_from_latest.get_output(context);
-        let gallery_application_id_binding = args
-            .gallery_application_id
-            .get_output(context);
-        let location_binding = args.location.get_output(context);
-        let manage_action_binding = args.manage_action.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let package_file_binding = args.package_file.get_output(context);
-        let source_binding = args.source.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let target_regions_binding = args.target_regions.get_output(context);
+        let config_file_binding = args.config_file.get_output(ctx);
+        let enable_health_check_binding = args.enable_health_check.get_output(ctx);
+        let end_of_life_date_binding = args.end_of_life_date.get_output(ctx);
+        let exclude_from_latest_binding = args.exclude_from_latest.get_output(ctx);
+        let gallery_application_id_binding = args.gallery_application_id.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let manage_action_binding = args.manage_action.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let package_file_binding = args.package_file.get_output(ctx);
+        let source_binding = args.source.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let target_regions_binding = args.target_regions.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:compute/galleryApplicationVersion:GalleryApplicationVersion"
                 .into(),
@@ -292,7 +290,7 @@ pub mod gallery_application_version {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         GalleryApplicationVersionResult {
             id: o.get_id(),
             urn: o.get_urn(),

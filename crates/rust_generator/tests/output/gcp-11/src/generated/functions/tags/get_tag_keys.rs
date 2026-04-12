@@ -27,10 +27,10 @@ pub mod get_tag_keys {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetTagKeysArgs,
     ) -> GetTagKeysResult {
-        let parent_binding = args.parent.get_output(context);
+        let parent_binding = args.parent.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:tags/getTagKeys:getTagKeys".into(),
             version: super::super::super::get_version(),
@@ -41,7 +41,7 @@ pub mod get_tag_keys {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetTagKeysResult {
             id: o.get_field("id"),
             keys: o.get_field("keys"),

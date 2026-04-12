@@ -64,12 +64,12 @@ pub mod get_broker {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetBrokerArgs,
     ) -> GetBrokerResult {
-        let broker_id_binding = args.broker_id.get_output(context);
-        let broker_name_binding = args.broker_name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let broker_id_binding = args.broker_id.get_output(ctx);
+        let broker_name_binding = args.broker_name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:mq/getBroker:getBroker".into(),
             version: super::super::super::get_version(),
@@ -88,7 +88,7 @@ pub mod get_broker {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetBrokerResult {
             arn: o.get_field("arn"),
             authentication_strategy: o.get_field("authenticationStrategy"),

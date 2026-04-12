@@ -56,14 +56,14 @@ pub mod get_network_insights_path {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetNetworkInsightsPathArgs,
     ) -> GetNetworkInsightsPathResult {
-        let filters_binding = args.filters.get_output(context);
+        let filters_binding = args.filters.get_output(ctx);
         let network_insights_path_id_binding = args
             .network_insights_path_id
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ec2/getNetworkInsightsPath:getNetworkInsightsPath".into(),
             version: super::super::super::get_version(),
@@ -82,7 +82,7 @@ pub mod get_network_insights_path {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetNetworkInsightsPathResult {
             arn: o.get_field("arn"),
             destination: o.get_field("destination"),

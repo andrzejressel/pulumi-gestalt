@@ -177,40 +177,40 @@ pub mod organizations_policy_binding {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OrganizationsPolicyBindingArgs,
     ) -> OrganizationsPolicyBindingResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OrganizationsPolicyBindingArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> OrganizationsPolicyBindingResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OrganizationsPolicyBindingArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> OrganizationsPolicyBindingResult {
-        let annotations_binding = args.annotations.get_output(context);
-        let condition_binding = args.condition.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let organization_binding = args.organization.get_output(context);
-        let policy_binding = args.policy.get_output(context);
-        let policy_binding_id_binding = args.policy_binding_id.get_output(context);
-        let policy_kind_binding = args.policy_kind.get_output(context);
-        let target_binding = args.target.get_output(context);
+        let annotations_binding = args.annotations.get_output(ctx);
+        let condition_binding = args.condition.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let organization_binding = args.organization.get_output(ctx);
+        let policy_binding = args.policy.get_output(ctx);
+        let policy_binding_id_binding = args.policy_binding_id.get_output(ctx);
+        let policy_kind_binding = args.policy_kind.get_output(ctx);
+        let target_binding = args.target.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:iam/organizationsPolicyBinding:OrganizationsPolicyBinding"
                 .into(),
@@ -256,7 +256,7 @@ pub mod organizations_policy_binding {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         OrganizationsPolicyBindingResult {
             id: o.get_id(),
             urn: o.get_urn(),

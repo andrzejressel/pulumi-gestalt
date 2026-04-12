@@ -41,13 +41,13 @@ pub mod get_zero_trust_access_application {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetZeroTrustAccessApplicationArgs,
     ) -> GetZeroTrustAccessApplicationResult {
-        let account_id_binding = args.account_id.get_output(context);
-        let domain_binding = args.domain.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let zone_id_binding = args.zone_id.get_output(context);
+        let account_id_binding = args.account_id.get_output(ctx);
+        let domain_binding = args.domain.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let zone_id_binding = args.zone_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "cloudflare:index/getZeroTrustAccessApplication:getZeroTrustAccessApplication"
                 .into(),
@@ -71,7 +71,7 @@ pub mod get_zero_trust_access_application {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetZeroTrustAccessApplicationResult {
             account_id: o.get_field("accountId"),
             aud: o.get_field("aud"),

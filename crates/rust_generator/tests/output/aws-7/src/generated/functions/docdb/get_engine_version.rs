@@ -45,15 +45,13 @@ pub mod get_engine_version {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetEngineVersionArgs,
     ) -> GetEngineVersionResult {
-        let engine_binding = args.engine.get_output(context);
-        let parameter_group_family_binding = args
-            .parameter_group_family
-            .get_output(context);
-        let preferred_versions_binding = args.preferred_versions.get_output(context);
-        let version_binding = args.version.get_output(context);
+        let engine_binding = args.engine.get_output(ctx);
+        let parameter_group_family_binding = args.parameter_group_family.get_output(ctx);
+        let preferred_versions_binding = args.preferred_versions.get_output(ctx);
+        let version_binding = args.version.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:docdb/getEngineVersion:getEngineVersion".into(),
             version: super::super::super::get_version(),
@@ -76,7 +74,7 @@ pub mod get_engine_version {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetEngineVersionResult {
             engine: o.get_field("engine"),
             engine_description: o.get_field("engineDescription"),

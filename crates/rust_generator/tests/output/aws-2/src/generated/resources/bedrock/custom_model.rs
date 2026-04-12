@@ -167,50 +167,46 @@ pub mod custom_model {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CustomModelArgs,
     ) -> CustomModelResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CustomModelArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> CustomModelResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CustomModelArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> CustomModelResult {
-        let base_model_identifier_binding = args
-            .base_model_identifier
-            .get_output(context);
+        let base_model_identifier_binding = args.base_model_identifier.get_output(ctx);
         let custom_model_kms_key_id_binding = args
             .custom_model_kms_key_id
-            .get_output(context);
-        let custom_model_name_binding = args.custom_model_name.get_output(context);
-        let customization_type_binding = args.customization_type.get_output(context);
-        let hyperparameters_binding = args.hyperparameters.get_output(context);
-        let job_name_binding = args.job_name.get_output(context);
-        let output_data_config_binding = args.output_data_config.get_output(context);
-        let role_arn_binding = args.role_arn.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let timeouts_binding = args.timeouts.get_output(context);
-        let training_data_config_binding = args.training_data_config.get_output(context);
-        let validation_data_config_binding = args
-            .validation_data_config
-            .get_output(context);
-        let vpc_config_binding = args.vpc_config.get_output(context);
+            .get_output(ctx);
+        let custom_model_name_binding = args.custom_model_name.get_output(ctx);
+        let customization_type_binding = args.customization_type.get_output(ctx);
+        let hyperparameters_binding = args.hyperparameters.get_output(ctx);
+        let job_name_binding = args.job_name.get_output(ctx);
+        let output_data_config_binding = args.output_data_config.get_output(ctx);
+        let role_arn_binding = args.role_arn.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let timeouts_binding = args.timeouts.get_output(ctx);
+        let training_data_config_binding = args.training_data_config.get_output(ctx);
+        let validation_data_config_binding = args.validation_data_config.get_output(ctx);
+        let vpc_config_binding = args.vpc_config.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:bedrock/customModel:CustomModel".into(),
             name: name.to_string(),
@@ -271,7 +267,7 @@ pub mod custom_model {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         CustomModelResult {
             id: o.get_id(),
             urn: o.get_urn(),

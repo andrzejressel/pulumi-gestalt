@@ -56,15 +56,15 @@ pub mod get_certificate {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetCertificateArgs,
     ) -> GetCertificateResult {
-        let domain_binding = args.domain.get_output(context);
-        let key_types_binding = args.key_types.get_output(context);
-        let most_recent_binding = args.most_recent.get_output(context);
-        let statuses_binding = args.statuses.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let types_binding = args.types.get_output(context);
+        let domain_binding = args.domain.get_output(ctx);
+        let key_types_binding = args.key_types.get_output(ctx);
+        let most_recent_binding = args.most_recent.get_output(ctx);
+        let statuses_binding = args.statuses.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let types_binding = args.types.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:acm/getCertificate:getCertificate".into(),
             version: super::super::super::get_version(),
@@ -95,7 +95,7 @@ pub mod get_certificate {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetCertificateResult {
             arn: o.get_field("arn"),
             certificate: o.get_field("certificate"),

@@ -97,39 +97,39 @@ pub mod app_monitor {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AppMonitorArgs,
     ) -> AppMonitorResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AppMonitorArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AppMonitorResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AppMonitorArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AppMonitorResult {
         let app_monitor_configuration_binding = args
             .app_monitor_configuration
-            .get_output(context);
-        let custom_events_binding = args.custom_events.get_output(context);
-        let cw_log_enabled_binding = args.cw_log_enabled.get_output(context);
-        let domain_binding = args.domain.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let custom_events_binding = args.custom_events.get_output(ctx);
+        let cw_log_enabled_binding = args.cw_log_enabled.get_output(ctx);
+        let domain_binding = args.domain.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:rum/appMonitor:AppMonitor".into(),
             name: name.to_string(),
@@ -162,7 +162,7 @@ pub mod app_monitor {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AppMonitorResult {
             id: o.get_id(),
             urn: o.get_urn(),

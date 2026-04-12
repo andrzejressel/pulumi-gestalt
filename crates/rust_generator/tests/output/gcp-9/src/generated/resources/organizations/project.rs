@@ -202,40 +202,40 @@ pub mod project {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProjectArgs,
     ) -> ProjectResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProjectArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ProjectResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProjectArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ProjectResult {
-        let auto_create_network_binding = args.auto_create_network.get_output(context);
-        let billing_account_binding = args.billing_account.get_output(context);
-        let deletion_policy_binding = args.deletion_policy.get_output(context);
-        let folder_id_binding = args.folder_id.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let org_id_binding = args.org_id.get_output(context);
-        let project_id_binding = args.project_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let auto_create_network_binding = args.auto_create_network.get_output(ctx);
+        let billing_account_binding = args.billing_account.get_output(ctx);
+        let deletion_policy_binding = args.deletion_policy.get_output(ctx);
+        let folder_id_binding = args.folder_id.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let org_id_binding = args.org_id.get_output(ctx);
+        let project_id_binding = args.project_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:organizations/project:Project".into(),
             name: name.to_string(),
@@ -280,7 +280,7 @@ pub mod project {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ProjectResult {
             id: o.get_id(),
             urn: o.get_urn(),

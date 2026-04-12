@@ -61,15 +61,15 @@ pub mod get_target_group {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetTargetGroupArgs,
     ) -> GetTargetGroupResult {
-        let arn_binding = args.arn.get_output(context);
+        let arn_binding = args.arn.get_output(ctx);
         let load_balancing_anomaly_mitigation_binding = args
             .load_balancing_anomaly_mitigation
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:lb/getTargetGroup:getTargetGroup".into(),
             version: super::super::super::get_version(),
@@ -92,7 +92,7 @@ pub mod get_target_group {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetTargetGroupResult {
             arn: o.get_field("arn"),
             arn_suffix: o.get_field("arnSuffix"),

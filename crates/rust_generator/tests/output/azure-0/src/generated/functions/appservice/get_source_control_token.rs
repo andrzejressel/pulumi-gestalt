@@ -26,10 +26,10 @@ pub mod get_source_control_token {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetSourceControlTokenArgs,
     ) -> GetSourceControlTokenResult {
-        let type__binding = args.type_.get_output(context);
+        let type__binding = args.type_.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:appservice/getSourceControlToken:getSourceControlToken".into(),
             version: super::super::super::get_version(),
@@ -40,7 +40,7 @@ pub mod get_source_control_token {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetSourceControlTokenResult {
             id: o.get_field("id"),
             token: o.get_field("token"),

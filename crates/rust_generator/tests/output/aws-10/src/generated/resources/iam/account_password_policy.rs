@@ -109,50 +109,50 @@ pub mod account_password_policy {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccountPasswordPolicyArgs,
     ) -> AccountPasswordPolicyResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccountPasswordPolicyArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AccountPasswordPolicyResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccountPasswordPolicyArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AccountPasswordPolicyResult {
         let allow_users_to_change_password_binding = args
             .allow_users_to_change_password
-            .get_output(context);
-        let hard_expiry_binding = args.hard_expiry.get_output(context);
-        let max_password_age_binding = args.max_password_age.get_output(context);
+            .get_output(ctx);
+        let hard_expiry_binding = args.hard_expiry.get_output(ctx);
+        let max_password_age_binding = args.max_password_age.get_output(ctx);
         let minimum_password_length_binding = args
             .minimum_password_length
-            .get_output(context);
+            .get_output(ctx);
         let password_reuse_prevention_binding = args
             .password_reuse_prevention
-            .get_output(context);
+            .get_output(ctx);
         let require_lowercase_characters_binding = args
             .require_lowercase_characters
-            .get_output(context);
-        let require_numbers_binding = args.require_numbers.get_output(context);
-        let require_symbols_binding = args.require_symbols.get_output(context);
+            .get_output(ctx);
+        let require_numbers_binding = args.require_numbers.get_output(ctx);
+        let require_symbols_binding = args.require_symbols.get_output(ctx);
         let require_uppercase_characters_binding = args
             .require_uppercase_characters
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:iam/accountPasswordPolicy:AccountPasswordPolicy".into(),
             name: name.to_string(),
@@ -197,7 +197,7 @@ pub mod account_password_policy {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AccountPasswordPolicyResult {
             id: o.get_id(),
             urn: o.get_urn(),

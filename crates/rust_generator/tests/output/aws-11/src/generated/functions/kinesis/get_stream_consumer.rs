@@ -35,12 +35,12 @@ pub mod get_stream_consumer {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetStreamConsumerArgs,
     ) -> GetStreamConsumerResult {
-        let arn_binding = args.arn.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let stream_arn_binding = args.stream_arn.get_output(context);
+        let arn_binding = args.arn.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let stream_arn_binding = args.stream_arn.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:kinesis/getStreamConsumer:getStreamConsumer".into(),
             version: super::super::super::get_version(),
@@ -59,7 +59,7 @@ pub mod get_stream_consumer {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetStreamConsumerResult {
             arn: o.get_field("arn"),
             creation_timestamp: o.get_field("creationTimestamp"),

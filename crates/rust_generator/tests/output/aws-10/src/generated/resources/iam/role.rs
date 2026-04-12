@@ -293,44 +293,42 @@ pub mod role {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RoleArgs,
     ) -> RoleResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RoleArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> RoleResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RoleArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> RoleResult {
-        let assume_role_policy_binding = args.assume_role_policy.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let force_detach_policies_binding = args
-            .force_detach_policies
-            .get_output(context);
-        let inline_policies_binding = args.inline_policies.get_output(context);
-        let managed_policy_arns_binding = args.managed_policy_arns.get_output(context);
-        let max_session_duration_binding = args.max_session_duration.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let name_prefix_binding = args.name_prefix.get_output(context);
-        let path_binding = args.path.get_output(context);
-        let permissions_boundary_binding = args.permissions_boundary.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let assume_role_policy_binding = args.assume_role_policy.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let force_detach_policies_binding = args.force_detach_policies.get_output(ctx);
+        let inline_policies_binding = args.inline_policies.get_output(ctx);
+        let managed_policy_arns_binding = args.managed_policy_arns.get_output(ctx);
+        let max_session_duration_binding = args.max_session_duration.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let name_prefix_binding = args.name_prefix.get_output(ctx);
+        let path_binding = args.path.get_output(ctx);
+        let permissions_boundary_binding = args.permissions_boundary.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:iam/role:Role".into(),
             name: name.to_string(),
@@ -383,7 +381,7 @@ pub mod role {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         RoleResult {
             id: o.get_id(),
             urn: o.get_urn(),

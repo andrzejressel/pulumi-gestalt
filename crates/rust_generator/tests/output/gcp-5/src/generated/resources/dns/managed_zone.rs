@@ -424,49 +424,49 @@ pub mod managed_zone {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ManagedZoneArgs,
     ) -> ManagedZoneResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ManagedZoneArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ManagedZoneResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ManagedZoneArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ManagedZoneResult {
-        let cloud_logging_config_binding = args.cloud_logging_config.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let dns_name_binding = args.dns_name.get_output(context);
-        let dnssec_config_binding = args.dnssec_config.get_output(context);
-        let force_destroy_binding = args.force_destroy.get_output(context);
-        let forwarding_config_binding = args.forwarding_config.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let peering_config_binding = args.peering_config.get_output(context);
+        let cloud_logging_config_binding = args.cloud_logging_config.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let dns_name_binding = args.dns_name.get_output(ctx);
+        let dnssec_config_binding = args.dnssec_config.get_output(ctx);
+        let force_destroy_binding = args.force_destroy.get_output(ctx);
+        let forwarding_config_binding = args.forwarding_config.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let peering_config_binding = args.peering_config.get_output(ctx);
         let private_visibility_config_binding = args
             .private_visibility_config
-            .get_output(context);
-        let project_binding = args.project.get_output(context);
-        let reverse_lookup_binding = args.reverse_lookup.get_output(context);
+            .get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let reverse_lookup_binding = args.reverse_lookup.get_output(ctx);
         let service_directory_config_binding = args
             .service_directory_config
-            .get_output(context);
-        let visibility_binding = args.visibility.get_output(context);
+            .get_output(ctx);
+        let visibility_binding = args.visibility.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:dns/managedZone:ManagedZone".into(),
             name: name.to_string(),
@@ -531,7 +531,7 @@ pub mod managed_zone {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ManagedZoneResult {
             id: o.get_id(),
             urn: o.get_urn(),

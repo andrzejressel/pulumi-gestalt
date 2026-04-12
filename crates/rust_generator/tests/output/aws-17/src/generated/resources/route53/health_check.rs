@@ -235,60 +235,56 @@ pub mod health_check {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: HealthCheckArgs,
     ) -> HealthCheckResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: HealthCheckArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> HealthCheckResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: HealthCheckArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> HealthCheckResult {
-        let child_health_threshold_binding = args
-            .child_health_threshold
-            .get_output(context);
-        let child_healthchecks_binding = args.child_healthchecks.get_output(context);
-        let cloudwatch_alarm_name_binding = args
-            .cloudwatch_alarm_name
-            .get_output(context);
+        let child_health_threshold_binding = args.child_health_threshold.get_output(ctx);
+        let child_healthchecks_binding = args.child_healthchecks.get_output(ctx);
+        let cloudwatch_alarm_name_binding = args.cloudwatch_alarm_name.get_output(ctx);
         let cloudwatch_alarm_region_binding = args
             .cloudwatch_alarm_region
-            .get_output(context);
-        let disabled_binding = args.disabled.get_output(context);
-        let enable_sni_binding = args.enable_sni.get_output(context);
-        let failure_threshold_binding = args.failure_threshold.get_output(context);
-        let fqdn_binding = args.fqdn.get_output(context);
+            .get_output(ctx);
+        let disabled_binding = args.disabled.get_output(ctx);
+        let enable_sni_binding = args.enable_sni.get_output(ctx);
+        let failure_threshold_binding = args.failure_threshold.get_output(ctx);
+        let fqdn_binding = args.fqdn.get_output(ctx);
         let insufficient_data_health_status_binding = args
             .insufficient_data_health_status
-            .get_output(context);
-        let invert_healthcheck_binding = args.invert_healthcheck.get_output(context);
-        let ip_address_binding = args.ip_address.get_output(context);
-        let measure_latency_binding = args.measure_latency.get_output(context);
-        let port_binding = args.port.get_output(context);
-        let reference_name_binding = args.reference_name.get_output(context);
-        let regions_binding = args.regions.get_output(context);
-        let request_interval_binding = args.request_interval.get_output(context);
-        let resource_path_binding = args.resource_path.get_output(context);
-        let routing_control_arn_binding = args.routing_control_arn.get_output(context);
-        let search_string_binding = args.search_string.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let type__binding = args.type_.get_output(context);
+            .get_output(ctx);
+        let invert_healthcheck_binding = args.invert_healthcheck.get_output(ctx);
+        let ip_address_binding = args.ip_address.get_output(ctx);
+        let measure_latency_binding = args.measure_latency.get_output(ctx);
+        let port_binding = args.port.get_output(ctx);
+        let reference_name_binding = args.reference_name.get_output(ctx);
+        let regions_binding = args.regions.get_output(ctx);
+        let request_interval_binding = args.request_interval.get_output(ctx);
+        let resource_path_binding = args.resource_path.get_output(ctx);
+        let routing_control_arn_binding = args.routing_control_arn.get_output(ctx);
+        let search_string_binding = args.search_string.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:route53/healthCheck:HealthCheck".into(),
             name: name.to_string(),
@@ -381,7 +377,7 @@ pub mod health_check {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         HealthCheckResult {
             id: o.get_id(),
             urn: o.get_urn(),

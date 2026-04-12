@@ -218,46 +218,44 @@ pub mod authz_extension {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AuthzExtensionArgs,
     ) -> AuthzExtensionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AuthzExtensionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AuthzExtensionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AuthzExtensionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AuthzExtensionResult {
-        let authority_binding = args.authority.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let fail_open_binding = args.fail_open.get_output(context);
-        let forward_headers_binding = args.forward_headers.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let load_balancing_scheme_binding = args
-            .load_balancing_scheme
-            .get_output(context);
-        let location_binding = args.location.get_output(context);
-        let metadata_binding = args.metadata.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let service_binding = args.service.get_output(context);
-        let timeout_binding = args.timeout.get_output(context);
-        let wire_format_binding = args.wire_format.get_output(context);
+        let authority_binding = args.authority.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let fail_open_binding = args.fail_open.get_output(ctx);
+        let forward_headers_binding = args.forward_headers.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let load_balancing_scheme_binding = args.load_balancing_scheme.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let metadata_binding = args.metadata.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let service_binding = args.service.get_output(ctx);
+        let timeout_binding = args.timeout.get_output(ctx);
+        let wire_format_binding = args.wire_format.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:networkservices/authzExtension:AuthzExtension".into(),
             name: name.to_string(),
@@ -318,7 +316,7 @@ pub mod authz_extension {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AuthzExtensionResult {
             id: o.get_id(),
             urn: o.get_urn(),

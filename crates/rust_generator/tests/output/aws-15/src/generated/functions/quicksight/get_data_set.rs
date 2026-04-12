@@ -79,13 +79,13 @@ pub mod get_data_set {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetDataSetArgs,
     ) -> GetDataSetResult {
-        let aws_account_id_binding = args.aws_account_id.get_output(context);
-        let data_set_id_binding = args.data_set_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let tags_all_binding = args.tags_all.get_output(context);
+        let aws_account_id_binding = args.aws_account_id.get_output(ctx);
+        let data_set_id_binding = args.data_set_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let tags_all_binding = args.tags_all.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:quicksight/getDataSet:getDataSet".into(),
             version: super::super::super::get_version(),
@@ -108,7 +108,7 @@ pub mod get_data_set {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetDataSetResult {
             arn: o.get_field("arn"),
             aws_account_id: o.get_field("awsAccountId"),

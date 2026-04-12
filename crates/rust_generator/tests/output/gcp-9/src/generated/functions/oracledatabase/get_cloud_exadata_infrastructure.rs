@@ -54,14 +54,14 @@ pub mod get_cloud_exadata_infrastructure {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetCloudExadataInfrastructureArgs,
     ) -> GetCloudExadataInfrastructureResult {
         let cloud_exadata_infrastructure_id_binding = args
             .cloud_exadata_infrastructure_id
-            .get_output(context);
-        let location_binding = args.location.get_output(context);
-        let project_binding = args.project.get_output(context);
+            .get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:oracledatabase/getCloudExadataInfrastructure:getCloudExadataInfrastructure"
                 .into(),
@@ -81,7 +81,7 @@ pub mod get_cloud_exadata_infrastructure {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetCloudExadataInfrastructureResult {
             cloud_exadata_infrastructure_id: o.get_field("cloudExadataInfrastructureId"),
             create_time: o.get_field("createTime"),

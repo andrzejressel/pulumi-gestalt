@@ -128,39 +128,39 @@ pub mod delivery_channel {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DeliveryChannelArgs,
     ) -> DeliveryChannelResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DeliveryChannelArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DeliveryChannelResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DeliveryChannelArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DeliveryChannelResult {
-        let name_binding = args.name.get_output(context);
-        let s3_bucket_name_binding = args.s3_bucket_name.get_output(context);
-        let s3_key_prefix_binding = args.s3_key_prefix.get_output(context);
-        let s3_kms_key_arn_binding = args.s3_kms_key_arn.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let s3_bucket_name_binding = args.s3_bucket_name.get_output(ctx);
+        let s3_key_prefix_binding = args.s3_key_prefix.get_output(ctx);
+        let s3_kms_key_arn_binding = args.s3_kms_key_arn.get_output(ctx);
         let snapshot_delivery_properties_binding = args
             .snapshot_delivery_properties
-            .get_output(context);
-        let sns_topic_arn_binding = args.sns_topic_arn.get_output(context);
+            .get_output(ctx);
+        let sns_topic_arn_binding = args.sns_topic_arn.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:cfg/deliveryChannel:DeliveryChannel".into(),
             name: name.to_string(),
@@ -193,7 +193,7 @@ pub mod delivery_channel {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DeliveryChannelResult {
             id: o.get_id(),
             urn: o.get_urn(),

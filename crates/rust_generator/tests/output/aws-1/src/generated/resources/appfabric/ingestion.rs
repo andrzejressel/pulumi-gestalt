@@ -85,36 +85,36 @@ pub mod ingestion {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IngestionArgs,
     ) -> IngestionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IngestionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> IngestionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IngestionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> IngestionResult {
-        let app_binding = args.app.get_output(context);
-        let app_bundle_arn_binding = args.app_bundle_arn.get_output(context);
-        let ingestion_type_binding = args.ingestion_type.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let tenant_id_binding = args.tenant_id.get_output(context);
+        let app_binding = args.app.get_output(ctx);
+        let app_bundle_arn_binding = args.app_bundle_arn.get_output(ctx);
+        let ingestion_type_binding = args.ingestion_type.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let tenant_id_binding = args.tenant_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:appfabric/ingestion:Ingestion".into(),
             name: name.to_string(),
@@ -143,7 +143,7 @@ pub mod ingestion {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         IngestionResult {
             id: o.get_id(),
             urn: o.get_urn(),

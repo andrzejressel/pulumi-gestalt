@@ -33,12 +33,12 @@ pub mod get_active_folder {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetActiveFolderArgs,
     ) -> GetActiveFolderResult {
-        let api_method_binding = args.api_method.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let parent_binding = args.parent.get_output(context);
+        let api_method_binding = args.api_method.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let parent_binding = args.parent.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:organizations/getActiveFolder:getActiveFolder".into(),
             version: super::super::super::get_version(),
@@ -57,7 +57,7 @@ pub mod get_active_folder {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetActiveFolderResult {
             api_method: o.get_field("apiMethod"),
             display_name: o.get_field("displayName"),

@@ -119,43 +119,43 @@ pub mod traffic_mirror_session {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TrafficMirrorSessionArgs,
     ) -> TrafficMirrorSessionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TrafficMirrorSessionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> TrafficMirrorSessionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TrafficMirrorSessionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> TrafficMirrorSessionResult {
-        let description_binding = args.description.get_output(context);
-        let network_interface_id_binding = args.network_interface_id.get_output(context);
-        let packet_length_binding = args.packet_length.get_output(context);
-        let session_number_binding = args.session_number.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let description_binding = args.description.get_output(ctx);
+        let network_interface_id_binding = args.network_interface_id.get_output(ctx);
+        let packet_length_binding = args.packet_length.get_output(ctx);
+        let session_number_binding = args.session_number.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let traffic_mirror_filter_id_binding = args
             .traffic_mirror_filter_id
-            .get_output(context);
+            .get_output(ctx);
         let traffic_mirror_target_id_binding = args
             .traffic_mirror_target_id
-            .get_output(context);
-        let virtual_network_id_binding = args.virtual_network_id.get_output(context);
+            .get_output(ctx);
+        let virtual_network_id_binding = args.virtual_network_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/trafficMirrorSession:TrafficMirrorSession".into(),
             name: name.to_string(),
@@ -196,7 +196,7 @@ pub mod traffic_mirror_session {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         TrafficMirrorSessionResult {
             id: o.get_id(),
             urn: o.get_urn(),

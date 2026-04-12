@@ -217,56 +217,56 @@ pub mod data_lake_settings {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataLakeSettingsArgs,
     ) -> DataLakeSettingsResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataLakeSettingsArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DataLakeSettingsResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataLakeSettingsArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DataLakeSettingsResult {
-        let admins_binding = args.admins.get_output(context);
+        let admins_binding = args.admins.get_output(ctx);
         let allow_external_data_filtering_binding = args
             .allow_external_data_filtering
-            .get_output(context);
+            .get_output(ctx);
         let allow_full_table_external_data_access_binding = args
             .allow_full_table_external_data_access
-            .get_output(context);
+            .get_output(ctx);
         let authorized_session_tag_value_lists_binding = args
             .authorized_session_tag_value_lists
-            .get_output(context);
-        let catalog_id_binding = args.catalog_id.get_output(context);
+            .get_output(ctx);
+        let catalog_id_binding = args.catalog_id.get_output(ctx);
         let create_database_default_permissions_binding = args
             .create_database_default_permissions
-            .get_output(context);
+            .get_output(ctx);
         let create_table_default_permissions_binding = args
             .create_table_default_permissions
-            .get_output(context);
+            .get_output(ctx);
         let external_data_filtering_allow_lists_binding = args
             .external_data_filtering_allow_lists
-            .get_output(context);
-        let parameters_binding = args.parameters.get_output(context);
-        let read_only_admins_binding = args.read_only_admins.get_output(context);
+            .get_output(ctx);
+        let parameters_binding = args.parameters.get_output(ctx);
+        let read_only_admins_binding = args.read_only_admins.get_output(ctx);
         let trusted_resource_owners_binding = args
             .trusted_resource_owners
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:lakeformation/dataLakeSettings:DataLakeSettings".into(),
             name: name.to_string(),
@@ -319,7 +319,7 @@ pub mod data_lake_settings {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DataLakeSettingsResult {
             id: o.get_id(),
             urn: o.get_urn(),

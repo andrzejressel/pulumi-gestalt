@@ -129,45 +129,45 @@ pub mod scheduled_action {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ScheduledActionArgs,
     ) -> ScheduledActionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ScheduledActionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ScheduledActionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ScheduledActionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ScheduledActionResult {
-        let day_of_month_binding = args.day_of_month.get_output(context);
-        let days_of_weeks_binding = args.days_of_weeks.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let email_address_sender_binding = args.email_address_sender.get_output(context);
-        let email_addresses_binding = args.email_addresses.get_output(context);
-        let email_subject_binding = args.email_subject.get_output(context);
-        let end_date_binding = args.end_date.get_output(context);
-        let frequency_binding = args.frequency.get_output(context);
-        let hour_of_day_binding = args.hour_of_day.get_output(context);
-        let message_binding = args.message.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let start_date_binding = args.start_date.get_output(context);
-        let view_id_binding = args.view_id.get_output(context);
-        let weeks_of_months_binding = args.weeks_of_months.get_output(context);
+        let day_of_month_binding = args.day_of_month.get_output(ctx);
+        let days_of_weeks_binding = args.days_of_weeks.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let email_address_sender_binding = args.email_address_sender.get_output(ctx);
+        let email_addresses_binding = args.email_addresses.get_output(ctx);
+        let email_subject_binding = args.email_subject.get_output(ctx);
+        let end_date_binding = args.end_date.get_output(ctx);
+        let frequency_binding = args.frequency.get_output(ctx);
+        let hour_of_day_binding = args.hour_of_day.get_output(ctx);
+        let message_binding = args.message.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let start_date_binding = args.start_date.get_output(ctx);
+        let view_id_binding = args.view_id.get_output(ctx);
+        let weeks_of_months_binding = args.weeks_of_months.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:costmanagement/scheduledAction:ScheduledAction".into(),
             name: name.to_string(),
@@ -232,7 +232,7 @@ pub mod scheduled_action {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ScheduledActionResult {
             id: o.get_id(),
             urn: o.get_urn(),

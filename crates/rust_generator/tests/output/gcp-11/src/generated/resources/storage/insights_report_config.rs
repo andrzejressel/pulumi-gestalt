@@ -165,39 +165,39 @@ pub mod insights_report_config {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InsightsReportConfigArgs,
     ) -> InsightsReportConfigResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InsightsReportConfigArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> InsightsReportConfigResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InsightsReportConfigArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> InsightsReportConfigResult {
-        let csv_options_binding = args.csv_options.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let frequency_options_binding = args.frequency_options.get_output(context);
-        let location_binding = args.location.get_output(context);
+        let csv_options_binding = args.csv_options.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let frequency_options_binding = args.frequency_options.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
         let object_metadata_report_options_binding = args
             .object_metadata_report_options
-            .get_output(context);
-        let project_binding = args.project.get_output(context);
+            .get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:storage/insightsReportConfig:InsightsReportConfig".into(),
             name: name.to_string(),
@@ -230,7 +230,7 @@ pub mod insights_report_config {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         InsightsReportConfigResult {
             id: o.get_id(),
             urn: o.get_urn(),

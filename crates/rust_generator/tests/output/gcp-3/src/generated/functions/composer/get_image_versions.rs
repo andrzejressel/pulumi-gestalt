@@ -33,11 +33,11 @@ pub mod get_image_versions {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetImageVersionsArgs,
     ) -> GetImageVersionsResult {
-        let project_binding = args.project.get_output(context);
-        let region_binding = args.region.get_output(context);
+        let project_binding = args.project.get_output(ctx);
+        let region_binding = args.region.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:composer/getImageVersions:getImageVersions".into(),
             version: super::super::super::get_version(),
@@ -52,7 +52,7 @@ pub mod get_image_versions {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetImageVersionsResult {
             id: o.get_field("id"),
             image_versions: o.get_field("imageVersions"),

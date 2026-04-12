@@ -185,59 +185,53 @@ pub mod cassandra_cluster {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CassandraClusterArgs,
     ) -> CassandraClusterResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CassandraClusterArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> CassandraClusterResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CassandraClusterArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> CassandraClusterResult {
-        let authentication_method_binding = args
-            .authentication_method
-            .get_output(context);
+        let authentication_method_binding = args.authentication_method.get_output(ctx);
         let client_certificate_pems_binding = args
             .client_certificate_pems
-            .get_output(context);
-        let default_admin_password_binding = args
-            .default_admin_password
-            .get_output(context);
+            .get_output(ctx);
+        let default_admin_password_binding = args.default_admin_password.get_output(ctx);
         let delegated_management_subnet_id_binding = args
             .delegated_management_subnet_id
-            .get_output(context);
+            .get_output(ctx);
         let external_gossip_certificate_pems_binding = args
             .external_gossip_certificate_pems
-            .get_output(context);
+            .get_output(ctx);
         let external_seed_node_ip_addresses_binding = args
             .external_seed_node_ip_addresses
-            .get_output(context);
-        let hours_between_backups_binding = args
-            .hours_between_backups
-            .get_output(context);
-        let identity_binding = args.identity.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let repair_enabled_binding = args.repair_enabled.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let version_binding = args.version.get_output(context);
+            .get_output(ctx);
+        let hours_between_backups_binding = args.hours_between_backups.get_output(ctx);
+        let identity_binding = args.identity.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let repair_enabled_binding = args.repair_enabled.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let version_binding = args.version.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:cosmosdb/cassandraCluster:CassandraCluster".into(),
             name: name.to_string(),
@@ -302,7 +296,7 @@ pub mod cassandra_cluster {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         CassandraClusterResult {
             id: o.get_id(),
             urn: o.get_urn(),

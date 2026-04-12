@@ -63,38 +63,38 @@ pub mod account {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccountArgs,
     ) -> AccountResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccountArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AccountResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccountArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AccountResult {
-        let auto_enable_controls_binding = args.auto_enable_controls.get_output(context);
+        let auto_enable_controls_binding = args.auto_enable_controls.get_output(ctx);
         let control_finding_generator_binding = args
             .control_finding_generator
-            .get_output(context);
+            .get_output(ctx);
         let enable_default_standards_binding = args
             .enable_default_standards
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:securityhub/account:Account".into(),
             name: name.to_string(),
@@ -115,7 +115,7 @@ pub mod account {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AccountResult {
             id: o.get_id(),
             urn: o.get_urn(),

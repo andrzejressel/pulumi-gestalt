@@ -334,92 +334,82 @@ pub mod launch_template {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LaunchTemplateArgs,
     ) -> LaunchTemplateResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LaunchTemplateArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> LaunchTemplateResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LaunchTemplateArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> LaunchTemplateResult {
-        let block_device_mappings_binding = args
-            .block_device_mappings
-            .get_output(context);
+        let block_device_mappings_binding = args.block_device_mappings.get_output(ctx);
         let capacity_reservation_specification_binding = args
             .capacity_reservation_specification
-            .get_output(context);
-        let cpu_options_binding = args.cpu_options.get_output(context);
-        let credit_specification_binding = args.credit_specification.get_output(context);
-        let default_version_binding = args.default_version.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let disable_api_stop_binding = args.disable_api_stop.get_output(context);
+            .get_output(ctx);
+        let cpu_options_binding = args.cpu_options.get_output(ctx);
+        let credit_specification_binding = args.credit_specification.get_output(ctx);
+        let default_version_binding = args.default_version.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let disable_api_stop_binding = args.disable_api_stop.get_output(ctx);
         let disable_api_termination_binding = args
             .disable_api_termination
-            .get_output(context);
-        let ebs_optimized_binding = args.ebs_optimized.get_output(context);
+            .get_output(ctx);
+        let ebs_optimized_binding = args.ebs_optimized.get_output(ctx);
         let elastic_gpu_specifications_binding = args
             .elastic_gpu_specifications
-            .get_output(context);
+            .get_output(ctx);
         let elastic_inference_accelerator_binding = args
             .elastic_inference_accelerator
-            .get_output(context);
-        let enclave_options_binding = args.enclave_options.get_output(context);
-        let hibernation_options_binding = args.hibernation_options.get_output(context);
-        let iam_instance_profile_binding = args.iam_instance_profile.get_output(context);
-        let image_id_binding = args.image_id.get_output(context);
+            .get_output(ctx);
+        let enclave_options_binding = args.enclave_options.get_output(ctx);
+        let hibernation_options_binding = args.hibernation_options.get_output(ctx);
+        let iam_instance_profile_binding = args.iam_instance_profile.get_output(ctx);
+        let image_id_binding = args.image_id.get_output(ctx);
         let instance_initiated_shutdown_behavior_binding = args
             .instance_initiated_shutdown_behavior
-            .get_output(context);
+            .get_output(ctx);
         let instance_market_options_binding = args
             .instance_market_options
-            .get_output(context);
-        let instance_requirements_binding = args
-            .instance_requirements
-            .get_output(context);
-        let instance_type_binding = args.instance_type.get_output(context);
-        let kernel_id_binding = args.kernel_id.get_output(context);
-        let key_name_binding = args.key_name.get_output(context);
-        let license_specifications_binding = args
-            .license_specifications
-            .get_output(context);
-        let maintenance_options_binding = args.maintenance_options.get_output(context);
-        let metadata_options_binding = args.metadata_options.get_output(context);
-        let monitoring_binding = args.monitoring.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let name_prefix_binding = args.name_prefix.get_output(context);
-        let network_interfaces_binding = args.network_interfaces.get_output(context);
-        let placement_binding = args.placement.get_output(context);
+            .get_output(ctx);
+        let instance_requirements_binding = args.instance_requirements.get_output(ctx);
+        let instance_type_binding = args.instance_type.get_output(ctx);
+        let kernel_id_binding = args.kernel_id.get_output(ctx);
+        let key_name_binding = args.key_name.get_output(ctx);
+        let license_specifications_binding = args.license_specifications.get_output(ctx);
+        let maintenance_options_binding = args.maintenance_options.get_output(ctx);
+        let metadata_options_binding = args.metadata_options.get_output(ctx);
+        let monitoring_binding = args.monitoring.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let name_prefix_binding = args.name_prefix.get_output(ctx);
+        let network_interfaces_binding = args.network_interfaces.get_output(ctx);
+        let placement_binding = args.placement.get_output(ctx);
         let private_dns_name_options_binding = args
             .private_dns_name_options
-            .get_output(context);
-        let ram_disk_id_binding = args.ram_disk_id.get_output(context);
-        let security_group_names_binding = args.security_group_names.get_output(context);
-        let tag_specifications_binding = args.tag_specifications.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let update_default_version_binding = args
-            .update_default_version
-            .get_output(context);
-        let user_data_binding = args.user_data.get_output(context);
-        let vpc_security_group_ids_binding = args
-            .vpc_security_group_ids
-            .get_output(context);
+            .get_output(ctx);
+        let ram_disk_id_binding = args.ram_disk_id.get_output(ctx);
+        let security_group_names_binding = args.security_group_names.get_output(ctx);
+        let tag_specifications_binding = args.tag_specifications.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let update_default_version_binding = args.update_default_version.get_output(ctx);
+        let user_data_binding = args.user_data.get_output(ctx);
+        let vpc_security_group_ids_binding = args.vpc_security_group_ids.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/launchTemplate:LaunchTemplate".into(),
             name: name.to_string(),
@@ -576,7 +566,7 @@ pub mod launch_template {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         LaunchTemplateResult {
             id: o.get_id(),
             urn: o.get_urn(),

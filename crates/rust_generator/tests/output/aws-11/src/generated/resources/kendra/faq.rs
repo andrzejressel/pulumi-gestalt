@@ -154,39 +154,39 @@ pub mod faq {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FaqArgs,
     ) -> FaqResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FaqArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> FaqResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FaqArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> FaqResult {
-        let description_binding = args.description.get_output(context);
-        let file_format_binding = args.file_format.get_output(context);
-        let index_id_binding = args.index_id.get_output(context);
-        let language_code_binding = args.language_code.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let role_arn_binding = args.role_arn.get_output(context);
-        let s3_path_binding = args.s3_path.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let description_binding = args.description.get_output(ctx);
+        let file_format_binding = args.file_format.get_output(ctx);
+        let index_id_binding = args.index_id.get_output(ctx);
+        let language_code_binding = args.language_code.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let role_arn_binding = args.role_arn.get_output(ctx);
+        let s3_path_binding = args.s3_path.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:kendra/faq:Faq".into(),
             name: name.to_string(),
@@ -227,7 +227,7 @@ pub mod faq {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         FaqResult {
             id: o.get_id(),
             urn: o.get_urn(),

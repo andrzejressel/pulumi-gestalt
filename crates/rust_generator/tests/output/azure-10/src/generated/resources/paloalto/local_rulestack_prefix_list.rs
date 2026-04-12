@@ -90,36 +90,36 @@ pub mod local_rulestack_prefix_list {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LocalRulestackPrefixListArgs,
     ) -> LocalRulestackPrefixListResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LocalRulestackPrefixListArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> LocalRulestackPrefixListResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LocalRulestackPrefixListArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> LocalRulestackPrefixListResult {
-        let audit_comment_binding = args.audit_comment.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let prefix_lists_binding = args.prefix_lists.get_output(context);
-        let rulestack_id_binding = args.rulestack_id.get_output(context);
+        let audit_comment_binding = args.audit_comment.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let prefix_lists_binding = args.prefix_lists.get_output(ctx);
+        let rulestack_id_binding = args.rulestack_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:paloalto/localRulestackPrefixList:LocalRulestackPrefixList"
                 .into(),
@@ -149,7 +149,7 @@ pub mod local_rulestack_prefix_list {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         LocalRulestackPrefixListResult {
             id: o.get_id(),
             urn: o.get_urn(),

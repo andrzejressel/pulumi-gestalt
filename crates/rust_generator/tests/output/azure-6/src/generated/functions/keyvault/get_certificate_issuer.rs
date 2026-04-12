@@ -37,11 +37,11 @@ pub mod get_certificate_issuer {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetCertificateIssuerArgs,
     ) -> GetCertificateIssuerResult {
-        let key_vault_id_binding = args.key_vault_id.get_output(context);
-        let name_binding = args.name.get_output(context);
+        let key_vault_id_binding = args.key_vault_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:keyvault/getCertificateIssuer:getCertificateIssuer".into(),
             version: super::super::super::get_version(),
@@ -56,7 +56,7 @@ pub mod get_certificate_issuer {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetCertificateIssuerResult {
             account_id: o.get_field("accountId"),
             admins: o.get_field("admins"),

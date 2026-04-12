@@ -43,12 +43,12 @@ pub mod get_producer_data_shares {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetProducerDataSharesArgs,
     ) -> GetProducerDataSharesResult {
-        let data_shares_binding = args.data_shares.get_output(context);
-        let producer_arn_binding = args.producer_arn.get_output(context);
-        let status_binding = args.status.get_output(context);
+        let data_shares_binding = args.data_shares.get_output(ctx);
+        let producer_arn_binding = args.producer_arn.get_output(ctx);
+        let status_binding = args.status.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:redshift/getProducerDataShares:getProducerDataShares".into(),
             version: super::super::super::get_version(),
@@ -67,7 +67,7 @@ pub mod get_producer_data_shares {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetProducerDataSharesResult {
             data_shares: o.get_field("dataShares"),
             id: o.get_field("id"),

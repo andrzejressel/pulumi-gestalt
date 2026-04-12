@@ -59,10 +59,10 @@ pub mod get_signing_job {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetSigningJobArgs,
     ) -> GetSigningJobResult {
-        let job_id_binding = args.job_id.get_output(context);
+        let job_id_binding = args.job_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:signer/getSigningJob:getSigningJob".into(),
             version: super::super::super::get_version(),
@@ -73,7 +73,7 @@ pub mod get_signing_job {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetSigningJobResult {
             completed_at: o.get_field("completedAt"),
             created_at: o.get_field("createdAt"),

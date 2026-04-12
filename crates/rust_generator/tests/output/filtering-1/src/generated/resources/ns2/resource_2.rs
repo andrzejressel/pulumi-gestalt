@@ -34,33 +34,33 @@ pub mod resource_2 {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: Resource2Args,
     ) -> Resource2Result {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: Resource2Args,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> Resource2Result {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: Resource2Args,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> Resource2Result {
-        let common_type_binding = args.common_type.get_output(context);
-        let type2_binding = args.type2.get_output(context);
+        let common_type_binding = args.common_type.get_output(ctx);
+        let type2_binding = args.type2.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "example:ns2:Resource2".into(),
             name: name.to_string(),
@@ -77,7 +77,7 @@ pub mod resource_2 {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         Resource2Result {
             id: o.get_id(),
             urn: o.get_urn(),

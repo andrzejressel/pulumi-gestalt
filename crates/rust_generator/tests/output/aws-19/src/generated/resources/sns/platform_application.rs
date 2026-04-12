@@ -184,62 +184,60 @@ pub mod platform_application {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PlatformApplicationArgs,
     ) -> PlatformApplicationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PlatformApplicationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> PlatformApplicationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PlatformApplicationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> PlatformApplicationResult {
         let apple_platform_bundle_id_binding = args
             .apple_platform_bundle_id
-            .get_output(context);
-        let apple_platform_team_id_binding = args
-            .apple_platform_team_id
-            .get_output(context);
+            .get_output(ctx);
+        let apple_platform_team_id_binding = args.apple_platform_team_id.get_output(ctx);
         let event_delivery_failure_topic_arn_binding = args
             .event_delivery_failure_topic_arn
-            .get_output(context);
+            .get_output(ctx);
         let event_endpoint_created_topic_arn_binding = args
             .event_endpoint_created_topic_arn
-            .get_output(context);
+            .get_output(ctx);
         let event_endpoint_deleted_topic_arn_binding = args
             .event_endpoint_deleted_topic_arn
-            .get_output(context);
+            .get_output(ctx);
         let event_endpoint_updated_topic_arn_binding = args
             .event_endpoint_updated_topic_arn
-            .get_output(context);
+            .get_output(ctx);
         let failure_feedback_role_arn_binding = args
             .failure_feedback_role_arn
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let platform_binding = args.platform.get_output(context);
-        let platform_credential_binding = args.platform_credential.get_output(context);
-        let platform_principal_binding = args.platform_principal.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let platform_binding = args.platform.get_output(ctx);
+        let platform_credential_binding = args.platform_credential.get_output(ctx);
+        let platform_principal_binding = args.platform_principal.get_output(ctx);
         let success_feedback_role_arn_binding = args
             .success_feedback_role_arn
-            .get_output(context);
+            .get_output(ctx);
         let success_feedback_sample_rate_binding = args
             .success_feedback_sample_rate
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:sns/platformApplication:PlatformApplication".into(),
             name: name.to_string(),
@@ -300,7 +298,7 @@ pub mod platform_application {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         PlatformApplicationResult {
             id: o.get_id(),
             urn: o.get_urn(),

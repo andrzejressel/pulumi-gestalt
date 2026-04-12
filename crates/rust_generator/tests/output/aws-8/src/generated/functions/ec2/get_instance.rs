@@ -161,15 +161,15 @@ pub mod get_instance {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetInstanceArgs,
     ) -> GetInstanceResult {
-        let filters_binding = args.filters.get_output(context);
-        let get_password_data_binding = args.get_password_data.get_output(context);
-        let get_user_data_binding = args.get_user_data.get_output(context);
-        let instance_id_binding = args.instance_id.get_output(context);
-        let instance_tags_binding = args.instance_tags.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let filters_binding = args.filters.get_output(ctx);
+        let get_password_data_binding = args.get_password_data.get_output(ctx);
+        let get_user_data_binding = args.get_user_data.get_output(ctx);
+        let instance_id_binding = args.instance_id.get_output(ctx);
+        let instance_tags_binding = args.instance_tags.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ec2/getInstance:getInstance".into(),
             version: super::super::super::get_version(),
@@ -200,7 +200,7 @@ pub mod get_instance {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetInstanceResult {
             ami: o.get_field("ami"),
             arn: o.get_field("arn"),

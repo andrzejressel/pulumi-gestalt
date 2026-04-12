@@ -66,33 +66,33 @@ pub mod connection_association {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ConnectionAssociationArgs,
     ) -> ConnectionAssociationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ConnectionAssociationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ConnectionAssociationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ConnectionAssociationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ConnectionAssociationResult {
-        let connection_id_binding = args.connection_id.get_output(context);
-        let lag_id_binding = args.lag_id.get_output(context);
+        let connection_id_binding = args.connection_id.get_output(ctx);
+        let lag_id_binding = args.lag_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:directconnect/connectionAssociation:ConnectionAssociation"
                 .into(),
@@ -110,7 +110,7 @@ pub mod connection_association {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ConnectionAssociationResult {
             id: o.get_id(),
             urn: o.get_urn(),

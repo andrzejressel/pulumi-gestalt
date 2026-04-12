@@ -127,41 +127,41 @@ pub mod v_2_models_bot_locale {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: V2modelsBotLocaleArgs,
     ) -> V2modelsBotLocaleResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: V2modelsBotLocaleArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> V2modelsBotLocaleResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: V2modelsBotLocaleArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> V2modelsBotLocaleResult {
-        let bot_id_binding = args.bot_id.get_output(context);
-        let bot_version_binding = args.bot_version.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let locale_id_binding = args.locale_id.get_output(context);
+        let bot_id_binding = args.bot_id.get_output(ctx);
+        let bot_version_binding = args.bot_version.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let locale_id_binding = args.locale_id.get_output(ctx);
         let n_lu_intent_confidence_threshold_binding = args
             .n_lu_intent_confidence_threshold
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let timeouts_binding = args.timeouts.get_output(context);
-        let voice_settings_binding = args.voice_settings.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let timeouts_binding = args.timeouts.get_output(ctx);
+        let voice_settings_binding = args.voice_settings.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:lex/v2modelsBotLocale:V2modelsBotLocale".into(),
             name: name.to_string(),
@@ -202,7 +202,7 @@ pub mod v_2_models_bot_locale {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         V2modelsBotLocaleResult {
             id: o.get_id(),
             urn: o.get_urn(),

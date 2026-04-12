@@ -409,69 +409,67 @@ pub mod flexible_app_version {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FlexibleAppVersionArgs,
     ) -> FlexibleAppVersionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FlexibleAppVersionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> FlexibleAppVersionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FlexibleAppVersionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> FlexibleAppVersionResult {
-        let api_config_binding = args.api_config.get_output(context);
-        let automatic_scaling_binding = args.automatic_scaling.get_output(context);
-        let beta_settings_binding = args.beta_settings.get_output(context);
-        let default_expiration_binding = args.default_expiration.get_output(context);
+        let api_config_binding = args.api_config.get_output(ctx);
+        let automatic_scaling_binding = args.automatic_scaling.get_output(ctx);
+        let beta_settings_binding = args.beta_settings.get_output(ctx);
+        let default_expiration_binding = args.default_expiration.get_output(ctx);
         let delete_service_on_destroy_binding = args
             .delete_service_on_destroy
-            .get_output(context);
-        let deployment_binding = args.deployment.get_output(context);
-        let endpoints_api_service_binding = args
-            .endpoints_api_service
-            .get_output(context);
-        let entrypoint_binding = args.entrypoint.get_output(context);
-        let env_variables_binding = args.env_variables.get_output(context);
+            .get_output(ctx);
+        let deployment_binding = args.deployment.get_output(ctx);
+        let endpoints_api_service_binding = args.endpoints_api_service.get_output(ctx);
+        let entrypoint_binding = args.entrypoint.get_output(ctx);
+        let env_variables_binding = args.env_variables.get_output(ctx);
         let flexible_runtime_settings_binding = args
             .flexible_runtime_settings
-            .get_output(context);
-        let handlers_binding = args.handlers.get_output(context);
-        let inbound_services_binding = args.inbound_services.get_output(context);
-        let instance_class_binding = args.instance_class.get_output(context);
-        let liveness_check_binding = args.liveness_check.get_output(context);
-        let manual_scaling_binding = args.manual_scaling.get_output(context);
-        let network_binding = args.network.get_output(context);
-        let nobuild_files_regex_binding = args.nobuild_files_regex.get_output(context);
-        let noop_on_destroy_binding = args.noop_on_destroy.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let readiness_check_binding = args.readiness_check.get_output(context);
-        let resources_binding = args.resources.get_output(context);
-        let runtime_binding = args.runtime.get_output(context);
-        let runtime_api_version_binding = args.runtime_api_version.get_output(context);
-        let runtime_channel_binding = args.runtime_channel.get_output(context);
+            .get_output(ctx);
+        let handlers_binding = args.handlers.get_output(ctx);
+        let inbound_services_binding = args.inbound_services.get_output(ctx);
+        let instance_class_binding = args.instance_class.get_output(ctx);
+        let liveness_check_binding = args.liveness_check.get_output(ctx);
+        let manual_scaling_binding = args.manual_scaling.get_output(ctx);
+        let network_binding = args.network.get_output(ctx);
+        let nobuild_files_regex_binding = args.nobuild_files_regex.get_output(ctx);
+        let noop_on_destroy_binding = args.noop_on_destroy.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let readiness_check_binding = args.readiness_check.get_output(ctx);
+        let resources_binding = args.resources.get_output(ctx);
+        let runtime_binding = args.runtime.get_output(ctx);
+        let runtime_api_version_binding = args.runtime_api_version.get_output(ctx);
+        let runtime_channel_binding = args.runtime_channel.get_output(ctx);
         let runtime_main_executable_path_binding = args
             .runtime_main_executable_path
-            .get_output(context);
-        let service_binding = args.service.get_output(context);
-        let service_account_binding = args.service_account.get_output(context);
-        let serving_status_binding = args.serving_status.get_output(context);
-        let version_id_binding = args.version_id.get_output(context);
-        let vpc_access_connector_binding = args.vpc_access_connector.get_output(context);
+            .get_output(ctx);
+        let service_binding = args.service.get_output(ctx);
+        let service_account_binding = args.service_account.get_output(ctx);
+        let serving_status_binding = args.serving_status.get_output(ctx);
+        let version_id_binding = args.version_id.get_output(ctx);
+        let vpc_access_connector_binding = args.vpc_access_connector.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:appengine/flexibleAppVersion:FlexibleAppVersion".into(),
             name: name.to_string(),
@@ -600,7 +598,7 @@ pub mod flexible_app_version {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         FlexibleAppVersionResult {
             id: o.get_id(),
             urn: o.get_urn(),

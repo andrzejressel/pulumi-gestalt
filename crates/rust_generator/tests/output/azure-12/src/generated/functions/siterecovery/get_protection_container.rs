@@ -35,13 +35,13 @@ pub mod get_protection_container {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetProtectionContainerArgs,
     ) -> GetProtectionContainerResult {
-        let name_binding = args.name.get_output(context);
-        let recovery_fabric_name_binding = args.recovery_fabric_name.get_output(context);
-        let recovery_vault_name_binding = args.recovery_vault_name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let recovery_fabric_name_binding = args.recovery_fabric_name.get_output(ctx);
+        let recovery_vault_name_binding = args.recovery_vault_name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:siterecovery/getProtectionContainer:getProtectionContainer"
                 .into(),
@@ -65,7 +65,7 @@ pub mod get_protection_container {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetProtectionContainerResult {
             id: o.get_field("id"),
             name: o.get_field("name"),

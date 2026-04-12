@@ -164,48 +164,48 @@ pub mod workflow {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkflowArgs,
     ) -> WorkflowResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkflowArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> WorkflowResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkflowArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> WorkflowResult {
-        let access_control_binding = args.access_control.get_output(context);
-        let enabled_binding = args.enabled.get_output(context);
-        let identity_binding = args.identity.get_output(context);
+        let access_control_binding = args.access_control.get_output(ctx);
+        let enabled_binding = args.enabled.get_output(ctx);
+        let identity_binding = args.identity.get_output(ctx);
         let integration_service_environment_id_binding = args
             .integration_service_environment_id
-            .get_output(context);
-        let location_binding = args.location.get_output(context);
+            .get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
         let logic_app_integration_account_id_binding = args
             .logic_app_integration_account_id
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let parameters_binding = args.parameters.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let workflow_parameters_binding = args.workflow_parameters.get_output(context);
-        let workflow_schema_binding = args.workflow_schema.get_output(context);
-        let workflow_version_binding = args.workflow_version.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let parameters_binding = args.parameters.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let workflow_parameters_binding = args.workflow_parameters.get_output(ctx);
+        let workflow_schema_binding = args.workflow_schema.get_output(ctx);
+        let workflow_version_binding = args.workflow_version.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:logicapps/workflow:Workflow".into(),
             name: name.to_string(),
@@ -266,7 +266,7 @@ pub mod workflow {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         WorkflowResult {
             id: o.get_id(),
             urn: o.get_urn(),

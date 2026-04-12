@@ -37,13 +37,13 @@ pub mod get_virtual_machine_manager_inventory_items {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetVirtualMachineManagerInventoryItemsArgs,
     ) -> GetVirtualMachineManagerInventoryItemsResult {
-        let inventory_type_binding = args.inventory_type.get_output(context);
+        let inventory_type_binding = args.inventory_type.get_output(ctx);
         let system_center_virtual_machine_manager_server_id_binding = args
             .system_center_virtual_machine_manager_server_id
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:systemcenter/getVirtualMachineManagerInventoryItems:getVirtualMachineManagerInventoryItems"
                 .into(),
@@ -60,7 +60,7 @@ pub mod get_virtual_machine_manager_inventory_items {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetVirtualMachineManagerInventoryItemsResult {
             id: o.get_field("id"),
             inventory_items: o.get_field("inventoryItems"),

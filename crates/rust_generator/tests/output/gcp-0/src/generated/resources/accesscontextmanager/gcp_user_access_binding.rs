@@ -115,34 +115,34 @@ pub mod gcp_user_access_binding {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GcpUserAccessBindingArgs,
     ) -> GcpUserAccessBindingResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GcpUserAccessBindingArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> GcpUserAccessBindingResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GcpUserAccessBindingArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> GcpUserAccessBindingResult {
-        let access_levels_binding = args.access_levels.get_output(context);
-        let group_key_binding = args.group_key.get_output(context);
-        let organization_id_binding = args.organization_id.get_output(context);
+        let access_levels_binding = args.access_levels.get_output(ctx);
+        let group_key_binding = args.group_key.get_output(ctx);
+        let organization_id_binding = args.organization_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:accesscontextmanager/gcpUserAccessBinding:GcpUserAccessBinding"
                 .into(),
@@ -164,7 +164,7 @@ pub mod gcp_user_access_binding {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         GcpUserAccessBindingResult {
             id: o.get_id(),
             urn: o.get_urn(),

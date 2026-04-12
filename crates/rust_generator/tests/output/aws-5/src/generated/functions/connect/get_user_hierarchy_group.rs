@@ -47,13 +47,13 @@ pub mod get_user_hierarchy_group {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetUserHierarchyGroupArgs,
     ) -> GetUserHierarchyGroupResult {
-        let hierarchy_group_id_binding = args.hierarchy_group_id.get_output(context);
-        let instance_id_binding = args.instance_id.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let hierarchy_group_id_binding = args.hierarchy_group_id.get_output(ctx);
+        let instance_id_binding = args.instance_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:connect/getUserHierarchyGroup:getUserHierarchyGroup".into(),
             version: super::super::super::get_version(),
@@ -76,7 +76,7 @@ pub mod get_user_hierarchy_group {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetUserHierarchyGroupResult {
             arn: o.get_field("arn"),
             hierarchy_group_id: o.get_field("hierarchyGroupId"),

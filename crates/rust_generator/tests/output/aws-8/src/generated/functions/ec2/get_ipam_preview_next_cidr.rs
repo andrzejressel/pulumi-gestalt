@@ -33,12 +33,12 @@ pub mod get_ipam_preview_next_cidr {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetIpamPreviewNextCidrArgs,
     ) -> GetIpamPreviewNextCidrResult {
-        let disallowed_cidrs_binding = args.disallowed_cidrs.get_output(context);
-        let ipam_pool_id_binding = args.ipam_pool_id.get_output(context);
-        let netmask_length_binding = args.netmask_length.get_output(context);
+        let disallowed_cidrs_binding = args.disallowed_cidrs.get_output(ctx);
+        let ipam_pool_id_binding = args.ipam_pool_id.get_output(ctx);
+        let netmask_length_binding = args.netmask_length.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ec2/getIpamPreviewNextCidr:getIpamPreviewNextCidr".into(),
             version: super::super::super::get_version(),
@@ -57,7 +57,7 @@ pub mod get_ipam_preview_next_cidr {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetIpamPreviewNextCidrResult {
             cidr: o.get_field("cidr"),
             disallowed_cidrs: o.get_field("disallowedCidrs"),

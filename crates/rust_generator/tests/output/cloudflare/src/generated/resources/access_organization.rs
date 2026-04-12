@@ -140,54 +140,54 @@ pub mod access_organization {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccessOrganizationArgs,
     ) -> AccessOrganizationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccessOrganizationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AccessOrganizationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccessOrganizationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AccessOrganizationResult {
-        let account_id_binding = args.account_id.get_output(context);
+        let account_id_binding = args.account_id.get_output(ctx);
         let allow_authenticate_via_warp_binding = args
             .allow_authenticate_via_warp
-            .get_output(context);
-        let auth_domain_binding = args.auth_domain.get_output(context);
+            .get_output(ctx);
+        let auth_domain_binding = args.auth_domain.get_output(ctx);
         let auto_redirect_to_identity_binding = args
             .auto_redirect_to_identity
-            .get_output(context);
-        let custom_pages_binding = args.custom_pages.get_output(context);
-        let is_ui_read_only_binding = args.is_ui_read_only.get_output(context);
-        let login_designs_binding = args.login_designs.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let session_duration_binding = args.session_duration.get_output(context);
+            .get_output(ctx);
+        let custom_pages_binding = args.custom_pages.get_output(ctx);
+        let is_ui_read_only_binding = args.is_ui_read_only.get_output(ctx);
+        let login_designs_binding = args.login_designs.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let session_duration_binding = args.session_duration.get_output(ctx);
         let ui_read_only_toggle_reason_binding = args
             .ui_read_only_toggle_reason
-            .get_output(context);
+            .get_output(ctx);
         let user_seat_expiration_inactive_time_binding = args
             .user_seat_expiration_inactive_time
-            .get_output(context);
+            .get_output(ctx);
         let warp_auth_session_duration_binding = args
             .warp_auth_session_duration
-            .get_output(context);
-        let zone_id_binding = args.zone_id.get_output(context);
+            .get_output(ctx);
+        let zone_id_binding = args.zone_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "cloudflare:index/accessOrganization:AccessOrganization".into(),
             name: name.to_string(),
@@ -248,7 +248,7 @@ pub mod access_organization {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AccessOrganizationResult {
             id: o.get_id(),
             urn: o.get_urn(),

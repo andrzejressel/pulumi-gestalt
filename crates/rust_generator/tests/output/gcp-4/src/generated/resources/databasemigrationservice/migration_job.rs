@@ -573,52 +573,50 @@ pub mod migration_job {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MigrationJobArgs,
     ) -> MigrationJobResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MigrationJobArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> MigrationJobResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MigrationJobArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> MigrationJobResult {
-        let destination_binding = args.destination.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let dump_flags_binding = args.dump_flags.get_output(context);
-        let dump_path_binding = args.dump_path.get_output(context);
-        let dump_type_binding = args.dump_type.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let migration_job_id_binding = args.migration_job_id.get_output(context);
-        let performance_config_binding = args.performance_config.get_output(context);
-        let project_binding = args.project.get_output(context);
+        let destination_binding = args.destination.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let dump_flags_binding = args.dump_flags.get_output(ctx);
+        let dump_path_binding = args.dump_path.get_output(ctx);
+        let dump_type_binding = args.dump_type.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let migration_job_id_binding = args.migration_job_id.get_output(ctx);
+        let performance_config_binding = args.performance_config.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let reverse_ssh_connectivity_binding = args
             .reverse_ssh_connectivity
-            .get_output(context);
-        let source_binding = args.source.get_output(context);
-        let static_ip_connectivity_binding = args
-            .static_ip_connectivity
-            .get_output(context);
-        let type__binding = args.type_.get_output(context);
+            .get_output(ctx);
+        let source_binding = args.source.get_output(ctx);
+        let static_ip_connectivity_binding = args.static_ip_connectivity.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
         let vpc_peering_connectivity_binding = args
             .vpc_peering_connectivity
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:databasemigrationservice/migrationJob:MigrationJob".into(),
             name: name.to_string(),
@@ -687,7 +685,7 @@ pub mod migration_job {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         MigrationJobResult {
             id: o.get_id(),
             urn: o.get_urn(),

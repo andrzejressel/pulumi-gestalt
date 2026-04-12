@@ -58,12 +58,12 @@ pub mod get_ai_index {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetAiIndexArgs,
     ) -> GetAiIndexResult {
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let region_binding = args.region.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let region_binding = args.region.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:vertex/getAiIndex:getAiIndex".into(),
             version: super::super::super::get_version(),
@@ -82,7 +82,7 @@ pub mod get_ai_index {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetAiIndexResult {
             create_time: o.get_field("createTime"),
             deployed_indexes: o.get_field("deployedIndexes"),

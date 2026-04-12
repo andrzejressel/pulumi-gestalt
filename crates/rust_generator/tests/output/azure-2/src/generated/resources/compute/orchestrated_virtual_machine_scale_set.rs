@@ -406,88 +406,82 @@ pub mod orchestrated_virtual_machine_scale_set {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OrchestratedVirtualMachineScaleSetArgs,
     ) -> OrchestratedVirtualMachineScaleSetResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OrchestratedVirtualMachineScaleSetArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> OrchestratedVirtualMachineScaleSetResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OrchestratedVirtualMachineScaleSetArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> OrchestratedVirtualMachineScaleSetResult {
         let additional_capabilities_binding = args
             .additional_capabilities
-            .get_output(context);
+            .get_output(ctx);
         let automatic_instance_repair_binding = args
             .automatic_instance_repair
-            .get_output(context);
-        let boot_diagnostics_binding = args.boot_diagnostics.get_output(context);
+            .get_output(ctx);
+        let boot_diagnostics_binding = args.boot_diagnostics.get_output(ctx);
         let capacity_reservation_group_id_binding = args
             .capacity_reservation_group_id
-            .get_output(context);
-        let data_disks_binding = args.data_disks.get_output(context);
+            .get_output(ctx);
+        let data_disks_binding = args.data_disks.get_output(ctx);
         let encryption_at_host_enabled_binding = args
             .encryption_at_host_enabled
-            .get_output(context);
-        let eviction_policy_binding = args.eviction_policy.get_output(context);
+            .get_output(ctx);
+        let eviction_policy_binding = args.eviction_policy.get_output(ctx);
         let extension_operations_enabled_binding = args
             .extension_operations_enabled
-            .get_output(context);
-        let extensions_binding = args.extensions.get_output(context);
-        let extensions_time_budget_binding = args
-            .extensions_time_budget
-            .get_output(context);
-        let identity_binding = args.identity.get_output(context);
-        let instances_binding = args.instances.get_output(context);
-        let license_type_binding = args.license_type.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let max_bid_price_binding = args.max_bid_price.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_interfaces_binding = args.network_interfaces.get_output(context);
-        let os_disk_binding = args.os_disk.get_output(context);
-        let os_profile_binding = args.os_profile.get_output(context);
-        let plan_binding = args.plan.get_output(context);
+            .get_output(ctx);
+        let extensions_binding = args.extensions.get_output(ctx);
+        let extensions_time_budget_binding = args.extensions_time_budget.get_output(ctx);
+        let identity_binding = args.identity.get_output(ctx);
+        let instances_binding = args.instances.get_output(ctx);
+        let license_type_binding = args.license_type.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let max_bid_price_binding = args.max_bid_price.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_interfaces_binding = args.network_interfaces.get_output(ctx);
+        let os_disk_binding = args.os_disk.get_output(ctx);
+        let os_profile_binding = args.os_profile.get_output(ctx);
+        let plan_binding = args.plan.get_output(ctx);
         let platform_fault_domain_count_binding = args
             .platform_fault_domain_count
-            .get_output(context);
-        let priority_binding = args.priority.get_output(context);
-        let priority_mix_binding = args.priority_mix.get_output(context);
+            .get_output(ctx);
+        let priority_binding = args.priority.get_output(ctx);
+        let priority_mix_binding = args.priority_mix.get_output(ctx);
         let proximity_placement_group_id_binding = args
             .proximity_placement_group_id
-            .get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let single_placement_group_binding = args
-            .single_placement_group
-            .get_output(context);
-        let sku_name_binding = args.sku_name.get_output(context);
-        let sku_profile_binding = args.sku_profile.get_output(context);
-        let source_image_id_binding = args.source_image_id.get_output(context);
-        let source_image_reference_binding = args
-            .source_image_reference
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let single_placement_group_binding = args.single_placement_group.get_output(ctx);
+        let sku_name_binding = args.sku_name.get_output(ctx);
+        let sku_profile_binding = args.sku_profile.get_output(ctx);
+        let source_image_id_binding = args.source_image_id.get_output(ctx);
+        let source_image_reference_binding = args.source_image_reference.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let termination_notification_binding = args
             .termination_notification
-            .get_output(context);
-        let user_data_base64_binding = args.user_data_base64.get_output(context);
-        let zone_balance_binding = args.zone_balance.get_output(context);
-        let zones_binding = args.zones.get_output(context);
+            .get_output(ctx);
+        let user_data_base64_binding = args.user_data_base64.get_output(ctx);
+        let zone_balance_binding = args.zone_balance.get_output(ctx);
+        let zones_binding = args.zones.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:compute/orchestratedVirtualMachineScaleSet:OrchestratedVirtualMachineScaleSet"
                 .into(),
@@ -637,7 +631,7 @@ pub mod orchestrated_virtual_machine_scale_set {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         OrchestratedVirtualMachineScaleSetResult {
             id: o.get_id(),
             urn: o.get_urn(),

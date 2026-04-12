@@ -79,10 +79,10 @@ pub mod get_user_pool {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetUserPoolArgs,
     ) -> GetUserPoolResult {
-        let user_pool_id_binding = args.user_pool_id.get_output(context);
+        let user_pool_id_binding = args.user_pool_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:cognito/getUserPool:getUserPool".into(),
             version: super::super::super::get_version(),
@@ -93,7 +93,7 @@ pub mod get_user_pool {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetUserPoolResult {
             account_recovery_settings: o.get_field("accountRecoverySettings"),
             admin_create_user_configs: o.get_field("adminCreateUserConfigs"),

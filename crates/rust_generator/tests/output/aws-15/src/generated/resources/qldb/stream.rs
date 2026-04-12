@@ -90,40 +90,38 @@ pub mod stream {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StreamArgs,
     ) -> StreamResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StreamArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> StreamResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StreamArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> StreamResult {
-        let exclusive_end_time_binding = args.exclusive_end_time.get_output(context);
-        let inclusive_start_time_binding = args.inclusive_start_time.get_output(context);
-        let kinesis_configuration_binding = args
-            .kinesis_configuration
-            .get_output(context);
-        let ledger_name_binding = args.ledger_name.get_output(context);
-        let role_arn_binding = args.role_arn.get_output(context);
-        let stream_name_binding = args.stream_name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let exclusive_end_time_binding = args.exclusive_end_time.get_output(ctx);
+        let inclusive_start_time_binding = args.inclusive_start_time.get_output(ctx);
+        let kinesis_configuration_binding = args.kinesis_configuration.get_output(ctx);
+        let ledger_name_binding = args.ledger_name.get_output(ctx);
+        let role_arn_binding = args.role_arn.get_output(ctx);
+        let stream_name_binding = args.stream_name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:qldb/stream:Stream".into(),
             name: name.to_string(),
@@ -160,7 +158,7 @@ pub mod stream {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         StreamResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -56,16 +56,16 @@ pub mod get_authorization_rule {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetAuthorizationRuleArgs,
     ) -> GetAuthorizationRuleResult {
-        let eventhub_name_binding = args.eventhub_name.get_output(context);
-        let listen_binding = args.listen.get_output(context);
-        let manage_binding = args.manage.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let namespace_name_binding = args.namespace_name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let send_binding = args.send.get_output(context);
+        let eventhub_name_binding = args.eventhub_name.get_output(ctx);
+        let listen_binding = args.listen.get_output(ctx);
+        let manage_binding = args.manage.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let namespace_name_binding = args.namespace_name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let send_binding = args.send.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:eventhub/getAuthorizationRule:getAuthorizationRule".into(),
             version: super::super::super::get_version(),
@@ -100,7 +100,7 @@ pub mod get_authorization_rule {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetAuthorizationRuleResult {
             eventhub_name: o.get_field("eventhubName"),
             id: o.get_field("id"),

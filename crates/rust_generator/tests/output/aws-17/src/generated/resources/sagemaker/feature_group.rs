@@ -137,45 +137,45 @@ pub mod feature_group {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FeatureGroupArgs,
     ) -> FeatureGroupResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FeatureGroupArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> FeatureGroupResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FeatureGroupArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> FeatureGroupResult {
-        let description_binding = args.description.get_output(context);
+        let description_binding = args.description.get_output(ctx);
         let event_time_feature_name_binding = args
             .event_time_feature_name
-            .get_output(context);
-        let feature_definitions_binding = args.feature_definitions.get_output(context);
-        let feature_group_name_binding = args.feature_group_name.get_output(context);
-        let offline_store_config_binding = args.offline_store_config.get_output(context);
-        let online_store_config_binding = args.online_store_config.get_output(context);
+            .get_output(ctx);
+        let feature_definitions_binding = args.feature_definitions.get_output(ctx);
+        let feature_group_name_binding = args.feature_group_name.get_output(ctx);
+        let offline_store_config_binding = args.offline_store_config.get_output(ctx);
+        let online_store_config_binding = args.online_store_config.get_output(ctx);
         let record_identifier_feature_name_binding = args
             .record_identifier_feature_name
-            .get_output(context);
-        let role_arn_binding = args.role_arn.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let throughput_config_binding = args.throughput_config.get_output(context);
+            .get_output(ctx);
+        let role_arn_binding = args.role_arn.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let throughput_config_binding = args.throughput_config.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:sagemaker/featureGroup:FeatureGroup".into(),
             name: name.to_string(),
@@ -224,7 +224,7 @@ pub mod feature_group {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         FeatureGroupResult {
             id: o.get_id(),
             urn: o.get_urn(),

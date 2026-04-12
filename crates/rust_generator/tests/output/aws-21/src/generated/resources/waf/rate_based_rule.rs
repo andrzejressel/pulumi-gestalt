@@ -112,37 +112,37 @@ pub mod rate_based_rule {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RateBasedRuleArgs,
     ) -> RateBasedRuleResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RateBasedRuleArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> RateBasedRuleResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RateBasedRuleArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> RateBasedRuleResult {
-        let metric_name_binding = args.metric_name.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let predicates_binding = args.predicates.get_output(context);
-        let rate_key_binding = args.rate_key.get_output(context);
-        let rate_limit_binding = args.rate_limit.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let metric_name_binding = args.metric_name.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let predicates_binding = args.predicates.get_output(ctx);
+        let rate_key_binding = args.rate_key.get_output(ctx);
+        let rate_limit_binding = args.rate_limit.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:waf/rateBasedRule:RateBasedRule".into(),
             name: name.to_string(),
@@ -175,7 +175,7 @@ pub mod rate_based_rule {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         RateBasedRuleResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -53,11 +53,11 @@ pub mod get_policy_assignment {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetPolicyAssignmentArgs,
     ) -> GetPolicyAssignmentResult {
-        let name_binding = args.name.get_output(context);
-        let scope_id_binding = args.scope_id.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let scope_id_binding = args.scope_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:policy/getPolicyAssignment:getPolicyAssignment".into(),
             version: super::super::super::get_version(),
@@ -72,7 +72,7 @@ pub mod get_policy_assignment {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetPolicyAssignmentResult {
             description: o.get_field("description"),
             display_name: o.get_field("displayName"),

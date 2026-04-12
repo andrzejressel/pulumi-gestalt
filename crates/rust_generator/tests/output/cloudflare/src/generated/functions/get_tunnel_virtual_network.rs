@@ -33,11 +33,11 @@ pub mod get_tunnel_virtual_network {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetTunnelVirtualNetworkArgs,
     ) -> GetTunnelVirtualNetworkResult {
-        let account_id_binding = args.account_id.get_output(context);
-        let name_binding = args.name.get_output(context);
+        let account_id_binding = args.account_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "cloudflare:index/getTunnelVirtualNetwork:getTunnelVirtualNetwork"
                 .into(),
@@ -53,7 +53,7 @@ pub mod get_tunnel_virtual_network {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetTunnelVirtualNetworkResult {
             account_id: o.get_field("accountId"),
             comment: o.get_field("comment"),

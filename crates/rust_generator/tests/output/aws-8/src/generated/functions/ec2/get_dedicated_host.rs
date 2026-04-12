@@ -60,12 +60,12 @@ pub mod get_dedicated_host {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetDedicatedHostArgs,
     ) -> GetDedicatedHostResult {
-        let filters_binding = args.filters.get_output(context);
-        let host_id_binding = args.host_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let filters_binding = args.filters.get_output(ctx);
+        let host_id_binding = args.host_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ec2/getDedicatedHost:getDedicatedHost".into(),
             version: super::super::super::get_version(),
@@ -84,7 +84,7 @@ pub mod get_dedicated_host {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetDedicatedHostResult {
             arn: o.get_field("arn"),
             asset_id: o.get_field("assetId"),

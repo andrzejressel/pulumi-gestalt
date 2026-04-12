@@ -75,21 +75,21 @@ pub mod get_account_blob_container_sas {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetAccountBlobContainerSasArgs,
     ) -> GetAccountBlobContainerSasResult {
-        let cache_control_binding = args.cache_control.get_output(context);
-        let connection_string_binding = args.connection_string.get_output(context);
-        let container_name_binding = args.container_name.get_output(context);
-        let content_disposition_binding = args.content_disposition.get_output(context);
-        let content_encoding_binding = args.content_encoding.get_output(context);
-        let content_language_binding = args.content_language.get_output(context);
-        let content_type_binding = args.content_type.get_output(context);
-        let expiry_binding = args.expiry.get_output(context);
-        let https_only_binding = args.https_only.get_output(context);
-        let ip_address_binding = args.ip_address.get_output(context);
-        let permissions_binding = args.permissions.get_output(context);
-        let start_binding = args.start.get_output(context);
+        let cache_control_binding = args.cache_control.get_output(ctx);
+        let connection_string_binding = args.connection_string.get_output(ctx);
+        let container_name_binding = args.container_name.get_output(ctx);
+        let content_disposition_binding = args.content_disposition.get_output(ctx);
+        let content_encoding_binding = args.content_encoding.get_output(ctx);
+        let content_language_binding = args.content_language.get_output(ctx);
+        let content_type_binding = args.content_type.get_output(ctx);
+        let expiry_binding = args.expiry.get_output(ctx);
+        let https_only_binding = args.https_only.get_output(ctx);
+        let ip_address_binding = args.ip_address.get_output(ctx);
+        let permissions_binding = args.permissions.get_output(ctx);
+        let start_binding = args.start.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:storage/getAccountBlobContainerSAS:getAccountBlobContainerSAS"
                 .into(),
@@ -145,7 +145,7 @@ pub mod get_account_blob_container_sas {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetAccountBlobContainerSasResult {
             cache_control: o.get_field("cacheControl"),
             connection_string: o.get_field("connectionString"),

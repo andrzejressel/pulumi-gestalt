@@ -138,42 +138,42 @@ pub mod backup_policy_postgresql {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BackupPolicyPostgresqlArgs,
     ) -> BackupPolicyPostgresqlResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BackupPolicyPostgresqlArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> BackupPolicyPostgresqlResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BackupPolicyPostgresqlArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> BackupPolicyPostgresqlResult {
         let backup_repeating_time_intervals_binding = args
             .backup_repeating_time_intervals
-            .get_output(context);
+            .get_output(ctx);
         let default_retention_duration_binding = args
             .default_retention_duration
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let retention_rules_binding = args.retention_rules.get_output(context);
-        let time_zone_binding = args.time_zone.get_output(context);
-        let vault_name_binding = args.vault_name.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let retention_rules_binding = args.retention_rules.get_output(ctx);
+        let time_zone_binding = args.time_zone.get_output(ctx);
+        let vault_name_binding = args.vault_name.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:dataprotection/backupPolicyPostgresql:BackupPolicyPostgresql"
                 .into(),
@@ -211,7 +211,7 @@ pub mod backup_policy_postgresql {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         BackupPolicyPostgresqlResult {
             id: o.get_id(),
             urn: o.get_urn(),

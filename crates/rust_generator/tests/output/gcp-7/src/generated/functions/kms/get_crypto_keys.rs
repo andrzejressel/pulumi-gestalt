@@ -38,11 +38,11 @@ pub mod get_crypto_keys {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetCryptoKeysArgs,
     ) -> GetCryptoKeysResult {
-        let filter_binding = args.filter.get_output(context);
-        let key_ring_binding = args.key_ring.get_output(context);
+        let filter_binding = args.filter.get_output(ctx);
+        let key_ring_binding = args.key_ring.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:kms/getCryptoKeys:getCryptoKeys".into(),
             version: super::super::super::get_version(),
@@ -57,7 +57,7 @@ pub mod get_crypto_keys {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetCryptoKeysResult {
             filter: o.get_field("filter"),
             id: o.get_field("id"),

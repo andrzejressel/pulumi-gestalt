@@ -140,40 +140,40 @@ pub mod instance_group {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceGroupArgs,
     ) -> InstanceGroupResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceGroupArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> InstanceGroupResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceGroupArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> InstanceGroupResult {
-        let autoscaling_policy_binding = args.autoscaling_policy.get_output(context);
-        let bid_price_binding = args.bid_price.get_output(context);
-        let cluster_id_binding = args.cluster_id.get_output(context);
-        let configurations_json_binding = args.configurations_json.get_output(context);
-        let ebs_configs_binding = args.ebs_configs.get_output(context);
-        let ebs_optimized_binding = args.ebs_optimized.get_output(context);
-        let instance_count_binding = args.instance_count.get_output(context);
-        let instance_type_binding = args.instance_type.get_output(context);
-        let name_binding = args.name.get_output(context);
+        let autoscaling_policy_binding = args.autoscaling_policy.get_output(ctx);
+        let bid_price_binding = args.bid_price.get_output(ctx);
+        let cluster_id_binding = args.cluster_id.get_output(ctx);
+        let configurations_json_binding = args.configurations_json.get_output(ctx);
+        let ebs_configs_binding = args.ebs_configs.get_output(ctx);
+        let ebs_optimized_binding = args.ebs_optimized.get_output(ctx);
+        let instance_count_binding = args.instance_count.get_output(ctx);
+        let instance_type_binding = args.instance_type.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:emr/instanceGroup:InstanceGroup".into(),
             name: name.to_string(),
@@ -218,7 +218,7 @@ pub mod instance_group {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         InstanceGroupResult {
             id: o.get_id(),
             urn: o.get_urn(),

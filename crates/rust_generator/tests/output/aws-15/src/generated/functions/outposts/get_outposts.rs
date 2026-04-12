@@ -39,13 +39,13 @@ pub mod get_outposts {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetOutpostsArgs,
     ) -> GetOutpostsResult {
-        let availability_zone_binding = args.availability_zone.get_output(context);
-        let availability_zone_id_binding = args.availability_zone_id.get_output(context);
-        let owner_id_binding = args.owner_id.get_output(context);
-        let site_id_binding = args.site_id.get_output(context);
+        let availability_zone_binding = args.availability_zone.get_output(ctx);
+        let availability_zone_id_binding = args.availability_zone_id.get_output(ctx);
+        let owner_id_binding = args.owner_id.get_output(ctx);
+        let site_id_binding = args.site_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:outposts/getOutposts:getOutposts".into(),
             version: super::super::super::get_version(),
@@ -68,7 +68,7 @@ pub mod get_outposts {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetOutpostsResult {
             arns: o.get_field("arns"),
             availability_zone: o.get_field("availabilityZone"),

@@ -26,10 +26,10 @@ pub mod get_email_identity {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetEmailIdentityArgs,
     ) -> GetEmailIdentityResult {
-        let email_binding = args.email.get_output(context);
+        let email_binding = args.email.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ses/getEmailIdentity:getEmailIdentity".into(),
             version: super::super::super::get_version(),
@@ -40,7 +40,7 @@ pub mod get_email_identity {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetEmailIdentityResult {
             arn: o.get_field("arn"),
             email: o.get_field("email"),

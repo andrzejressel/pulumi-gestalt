@@ -271,78 +271,74 @@ pub mod load_balancer {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LoadBalancerArgs,
     ) -> LoadBalancerResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LoadBalancerArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> LoadBalancerResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LoadBalancerArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> LoadBalancerResult {
-        let access_logs_binding = args.access_logs.get_output(context);
-        let client_keep_alive_binding = args.client_keep_alive.get_output(context);
-        let connection_logs_binding = args.connection_logs.get_output(context);
+        let access_logs_binding = args.access_logs.get_output(ctx);
+        let client_keep_alive_binding = args.client_keep_alive.get_output(ctx);
+        let connection_logs_binding = args.connection_logs.get_output(ctx);
         let customer_owned_ipv4_pool_binding = args
             .customer_owned_ipv4_pool
-            .get_output(context);
-        let desync_mitigation_mode_binding = args
-            .desync_mitigation_mode
-            .get_output(context);
+            .get_output(ctx);
+        let desync_mitigation_mode_binding = args.desync_mitigation_mode.get_output(ctx);
         let dns_record_client_routing_policy_binding = args
             .dns_record_client_routing_policy
-            .get_output(context);
+            .get_output(ctx);
         let drop_invalid_header_fields_binding = args
             .drop_invalid_header_fields
-            .get_output(context);
+            .get_output(ctx);
         let enable_cross_zone_load_balancing_binding = args
             .enable_cross_zone_load_balancing
-            .get_output(context);
+            .get_output(ctx);
         let enable_deletion_protection_binding = args
             .enable_deletion_protection
-            .get_output(context);
-        let enable_http2_binding = args.enable_http2.get_output(context);
+            .get_output(ctx);
+        let enable_http2_binding = args.enable_http2.get_output(ctx);
         let enable_tls_version_and_cipher_suite_headers_binding = args
             .enable_tls_version_and_cipher_suite_headers
-            .get_output(context);
-        let enable_waf_fail_open_binding = args.enable_waf_fail_open.get_output(context);
-        let enable_xff_client_port_binding = args
-            .enable_xff_client_port
-            .get_output(context);
-        let enable_zonal_shift_binding = args.enable_zonal_shift.get_output(context);
+            .get_output(ctx);
+        let enable_waf_fail_open_binding = args.enable_waf_fail_open.get_output(ctx);
+        let enable_xff_client_port_binding = args.enable_xff_client_port.get_output(ctx);
+        let enable_zonal_shift_binding = args.enable_zonal_shift.get_output(ctx);
         let enforce_security_group_inbound_rules_on_private_link_traffic_binding = args
             .enforce_security_group_inbound_rules_on_private_link_traffic
-            .get_output(context);
-        let idle_timeout_binding = args.idle_timeout.get_output(context);
-        let internal_binding = args.internal.get_output(context);
-        let ip_address_type_binding = args.ip_address_type.get_output(context);
-        let load_balancer_type_binding = args.load_balancer_type.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let name_prefix_binding = args.name_prefix.get_output(context);
-        let preserve_host_header_binding = args.preserve_host_header.get_output(context);
-        let security_groups_binding = args.security_groups.get_output(context);
-        let subnet_mappings_binding = args.subnet_mappings.get_output(context);
-        let subnets_binding = args.subnets.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let idle_timeout_binding = args.idle_timeout.get_output(ctx);
+        let internal_binding = args.internal.get_output(ctx);
+        let ip_address_type_binding = args.ip_address_type.get_output(ctx);
+        let load_balancer_type_binding = args.load_balancer_type.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let name_prefix_binding = args.name_prefix.get_output(ctx);
+        let preserve_host_header_binding = args.preserve_host_header.get_output(ctx);
+        let security_groups_binding = args.security_groups.get_output(ctx);
+        let subnet_mappings_binding = args.subnet_mappings.get_output(ctx);
+        let subnets_binding = args.subnets.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let xff_header_processing_mode_binding = args
             .xff_header_processing_mode
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:lb/loadBalancer:LoadBalancer".into(),
             name: name.to_string(),
@@ -461,7 +457,7 @@ pub mod load_balancer {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         LoadBalancerResult {
             id: o.get_id(),
             urn: o.get_urn(),

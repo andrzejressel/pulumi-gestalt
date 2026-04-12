@@ -200,56 +200,56 @@ pub mod network_interface {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkInterfaceArgs,
     ) -> NetworkInterfaceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkInterfaceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> NetworkInterfaceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkInterfaceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> NetworkInterfaceResult {
-        let attachments_binding = args.attachments.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let enable_primary_ipv6_binding = args.enable_primary_ipv6.get_output(context);
-        let interface_type_binding = args.interface_type.get_output(context);
-        let ipv4_prefix_count_binding = args.ipv4_prefix_count.get_output(context);
-        let ipv4_prefixes_binding = args.ipv4_prefixes.get_output(context);
-        let ipv6_address_count_binding = args.ipv6_address_count.get_output(context);
+        let attachments_binding = args.attachments.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let enable_primary_ipv6_binding = args.enable_primary_ipv6.get_output(ctx);
+        let interface_type_binding = args.interface_type.get_output(ctx);
+        let ipv4_prefix_count_binding = args.ipv4_prefix_count.get_output(ctx);
+        let ipv4_prefixes_binding = args.ipv4_prefixes.get_output(ctx);
+        let ipv6_address_count_binding = args.ipv6_address_count.get_output(ctx);
         let ipv6_address_list_enabled_binding = args
             .ipv6_address_list_enabled
-            .get_output(context);
-        let ipv6_address_lists_binding = args.ipv6_address_lists.get_output(context);
-        let ipv6_addresses_binding = args.ipv6_addresses.get_output(context);
-        let ipv6_prefix_count_binding = args.ipv6_prefix_count.get_output(context);
-        let ipv6_prefixes_binding = args.ipv6_prefixes.get_output(context);
-        let private_ip_binding = args.private_ip.get_output(context);
+            .get_output(ctx);
+        let ipv6_address_lists_binding = args.ipv6_address_lists.get_output(ctx);
+        let ipv6_addresses_binding = args.ipv6_addresses.get_output(ctx);
+        let ipv6_prefix_count_binding = args.ipv6_prefix_count.get_output(ctx);
+        let ipv6_prefixes_binding = args.ipv6_prefixes.get_output(ctx);
+        let private_ip_binding = args.private_ip.get_output(ctx);
         let private_ip_list_enabled_binding = args
             .private_ip_list_enabled
-            .get_output(context);
-        let private_ip_lists_binding = args.private_ip_lists.get_output(context);
-        let private_ips_binding = args.private_ips.get_output(context);
-        let private_ips_count_binding = args.private_ips_count.get_output(context);
-        let security_groups_binding = args.security_groups.get_output(context);
-        let source_dest_check_binding = args.source_dest_check.get_output(context);
-        let subnet_id_binding = args.subnet_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let private_ip_lists_binding = args.private_ip_lists.get_output(ctx);
+        let private_ips_binding = args.private_ips.get_output(ctx);
+        let private_ips_count_binding = args.private_ips_count.get_output(ctx);
+        let security_groups_binding = args.security_groups.get_output(ctx);
+        let source_dest_check_binding = args.source_dest_check.get_output(ctx);
+        let subnet_id_binding = args.subnet_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/networkInterface:NetworkInterface".into(),
             name: name.to_string(),
@@ -342,7 +342,7 @@ pub mod network_interface {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         NetworkInterfaceResult {
             id: o.get_id(),
             urn: o.get_urn(),

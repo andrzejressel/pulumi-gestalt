@@ -368,54 +368,52 @@ pub mod data_transfer_config {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataTransferConfigArgs,
     ) -> DataTransferConfigResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataTransferConfigArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DataTransferConfigResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataTransferConfigArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DataTransferConfigResult {
         let data_refresh_window_days_binding = args
             .data_refresh_window_days
-            .get_output(context);
-        let data_source_id_binding = args.data_source_id.get_output(context);
-        let destination_dataset_id_binding = args
-            .destination_dataset_id
-            .get_output(context);
-        let disabled_binding = args.disabled.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let email_preferences_binding = args.email_preferences.get_output(context);
+            .get_output(ctx);
+        let data_source_id_binding = args.data_source_id.get_output(ctx);
+        let destination_dataset_id_binding = args.destination_dataset_id.get_output(ctx);
+        let disabled_binding = args.disabled.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let email_preferences_binding = args.email_preferences.get_output(ctx);
         let encryption_configuration_binding = args
             .encryption_configuration
-            .get_output(context);
-        let location_binding = args.location.get_output(context);
+            .get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
         let notification_pubsub_topic_binding = args
             .notification_pubsub_topic
-            .get_output(context);
-        let params_binding = args.params.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let schedule_binding = args.schedule.get_output(context);
-        let schedule_options_binding = args.schedule_options.get_output(context);
-        let sensitive_params_binding = args.sensitive_params.get_output(context);
-        let service_account_name_binding = args.service_account_name.get_output(context);
+            .get_output(ctx);
+        let params_binding = args.params.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let schedule_binding = args.schedule.get_output(ctx);
+        let schedule_options_binding = args.schedule_options.get_output(ctx);
+        let sensitive_params_binding = args.sensitive_params.get_output(ctx);
+        let service_account_name_binding = args.service_account_name.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:bigquery/dataTransferConfig:DataTransferConfig".into(),
             name: name.to_string(),
@@ -484,7 +482,7 @@ pub mod data_transfer_config {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DataTransferConfigResult {
             id: o.get_id(),
             urn: o.get_urn(),

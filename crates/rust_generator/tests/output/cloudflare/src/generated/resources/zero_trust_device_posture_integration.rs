@@ -91,37 +91,37 @@ pub mod zero_trust_device_posture_integration {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ZeroTrustDevicePostureIntegrationArgs,
     ) -> ZeroTrustDevicePostureIntegrationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ZeroTrustDevicePostureIntegrationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ZeroTrustDevicePostureIntegrationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ZeroTrustDevicePostureIntegrationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ZeroTrustDevicePostureIntegrationResult {
-        let account_id_binding = args.account_id.get_output(context);
-        let configs_binding = args.configs.get_output(context);
-        let identifier_binding = args.identifier.get_output(context);
-        let interval_binding = args.interval.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let type__binding = args.type_.get_output(context);
+        let account_id_binding = args.account_id.get_output(ctx);
+        let configs_binding = args.configs.get_output(ctx);
+        let identifier_binding = args.identifier.get_output(ctx);
+        let interval_binding = args.interval.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "cloudflare:index/zeroTrustDevicePostureIntegration:ZeroTrustDevicePostureIntegration"
                 .into(),
@@ -155,7 +155,7 @@ pub mod zero_trust_device_posture_integration {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ZeroTrustDevicePostureIntegrationResult {
             id: o.get_id(),
             urn: o.get_urn(),

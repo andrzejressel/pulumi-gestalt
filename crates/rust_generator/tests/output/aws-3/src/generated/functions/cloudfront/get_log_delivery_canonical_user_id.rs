@@ -23,10 +23,10 @@ pub mod get_log_delivery_canonical_user_id {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetLogDeliveryCanonicalUserIdArgs,
     ) -> GetLogDeliveryCanonicalUserIdResult {
-        let region_binding = args.region.get_output(context);
+        let region_binding = args.region.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:cloudfront/getLogDeliveryCanonicalUserId:getLogDeliveryCanonicalUserId"
                 .into(),
@@ -38,7 +38,7 @@ pub mod get_log_delivery_canonical_user_id {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetLogDeliveryCanonicalUserIdResult {
             id: o.get_field("id"),
             region: o.get_field("region"),

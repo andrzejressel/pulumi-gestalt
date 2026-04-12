@@ -102,36 +102,36 @@ pub mod trigger_http_request {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TriggerHttpRequestArgs,
     ) -> TriggerHttpRequestResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TriggerHttpRequestArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> TriggerHttpRequestResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TriggerHttpRequestArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> TriggerHttpRequestResult {
-        let logic_app_id_binding = args.logic_app_id.get_output(context);
-        let method_binding = args.method.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let relative_path_binding = args.relative_path.get_output(context);
-        let schema_binding = args.schema.get_output(context);
+        let logic_app_id_binding = args.logic_app_id.get_output(ctx);
+        let method_binding = args.method.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let relative_path_binding = args.relative_path.get_output(ctx);
+        let schema_binding = args.schema.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:logicapps/triggerHttpRequest:TriggerHttpRequest".into(),
             name: name.to_string(),
@@ -160,7 +160,7 @@ pub mod trigger_http_request {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         TriggerHttpRequestResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -39,13 +39,13 @@ pub mod get_environment_certificate {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetEnvironmentCertificateArgs,
     ) -> GetEnvironmentCertificateResult {
         let container_app_environment_id_binding = args
             .container_app_environment_id
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:containerapp/getEnvironmentCertificate:getEnvironmentCertificate"
                 .into(),
@@ -61,7 +61,7 @@ pub mod get_environment_certificate {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetEnvironmentCertificateResult {
             container_app_environment_id: o.get_field("containerAppEnvironmentId"),
             expiration_date: o.get_field("expirationDate"),

@@ -58,12 +58,12 @@ pub mod get_engine_versions {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetEngineVersionsArgs,
     ) -> GetEngineVersionsResult {
-        let location_binding = args.location.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let version_prefix_binding = args.version_prefix.get_output(context);
+        let location_binding = args.location.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let version_prefix_binding = args.version_prefix.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:container/getEngineVersions:getEngineVersions".into(),
             version: super::super::super::get_version(),
@@ -82,7 +82,7 @@ pub mod get_engine_versions {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetEngineVersionsResult {
             default_cluster_version: o.get_field("defaultClusterVersion"),
             id: o.get_field("id"),

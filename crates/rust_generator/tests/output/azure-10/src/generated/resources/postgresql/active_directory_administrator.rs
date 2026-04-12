@@ -94,36 +94,36 @@ pub mod active_directory_administrator {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ActiveDirectoryAdministratorArgs,
     ) -> ActiveDirectoryAdministratorResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ActiveDirectoryAdministratorArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ActiveDirectoryAdministratorResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ActiveDirectoryAdministratorArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ActiveDirectoryAdministratorResult {
-        let login_binding = args.login.get_output(context);
-        let object_id_binding = args.object_id.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let server_name_binding = args.server_name.get_output(context);
-        let tenant_id_binding = args.tenant_id.get_output(context);
+        let login_binding = args.login.get_output(ctx);
+        let object_id_binding = args.object_id.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let server_name_binding = args.server_name.get_output(ctx);
+        let tenant_id_binding = args.tenant_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:postgresql/activeDirectoryAdministrator:ActiveDirectoryAdministrator"
                 .into(),
@@ -153,7 +153,7 @@ pub mod active_directory_administrator {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ActiveDirectoryAdministratorResult {
             id: o.get_id(),
             urn: o.get_urn(),

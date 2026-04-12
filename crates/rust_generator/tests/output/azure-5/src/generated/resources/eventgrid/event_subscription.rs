@@ -246,68 +246,64 @@ pub mod event_subscription {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EventSubscriptionArgs,
     ) -> EventSubscriptionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EventSubscriptionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> EventSubscriptionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EventSubscriptionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> EventSubscriptionResult {
-        let advanced_filter_binding = args.advanced_filter.get_output(context);
+        let advanced_filter_binding = args.advanced_filter.get_output(ctx);
         let advanced_filtering_on_arrays_enabled_binding = args
             .advanced_filtering_on_arrays_enabled
-            .get_output(context);
+            .get_output(ctx);
         let azure_function_endpoint_binding = args
             .azure_function_endpoint
-            .get_output(context);
-        let dead_letter_identity_binding = args.dead_letter_identity.get_output(context);
-        let delivery_identity_binding = args.delivery_identity.get_output(context);
-        let delivery_properties_binding = args.delivery_properties.get_output(context);
-        let event_delivery_schema_binding = args
-            .event_delivery_schema
-            .get_output(context);
-        let eventhub_endpoint_id_binding = args.eventhub_endpoint_id.get_output(context);
-        let expiration_time_utc_binding = args.expiration_time_utc.get_output(context);
+            .get_output(ctx);
+        let dead_letter_identity_binding = args.dead_letter_identity.get_output(ctx);
+        let delivery_identity_binding = args.delivery_identity.get_output(ctx);
+        let delivery_properties_binding = args.delivery_properties.get_output(ctx);
+        let event_delivery_schema_binding = args.event_delivery_schema.get_output(ctx);
+        let eventhub_endpoint_id_binding = args.eventhub_endpoint_id.get_output(ctx);
+        let expiration_time_utc_binding = args.expiration_time_utc.get_output(ctx);
         let hybrid_connection_endpoint_id_binding = args
             .hybrid_connection_endpoint_id
-            .get_output(context);
-        let included_event_types_binding = args.included_event_types.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let retry_policy_binding = args.retry_policy.get_output(context);
-        let scope_binding = args.scope.get_output(context);
+            .get_output(ctx);
+        let included_event_types_binding = args.included_event_types.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let retry_policy_binding = args.retry_policy.get_output(ctx);
+        let scope_binding = args.scope.get_output(ctx);
         let service_bus_queue_endpoint_id_binding = args
             .service_bus_queue_endpoint_id
-            .get_output(context);
+            .get_output(ctx);
         let service_bus_topic_endpoint_id_binding = args
             .service_bus_topic_endpoint_id
-            .get_output(context);
+            .get_output(ctx);
         let storage_blob_dead_letter_destination_binding = args
             .storage_blob_dead_letter_destination
-            .get_output(context);
-        let storage_queue_endpoint_binding = args
-            .storage_queue_endpoint
-            .get_output(context);
-        let subject_filter_binding = args.subject_filter.get_output(context);
-        let webhook_endpoint_binding = args.webhook_endpoint.get_output(context);
+            .get_output(ctx);
+        let storage_queue_endpoint_binding = args.storage_queue_endpoint.get_output(ctx);
+        let subject_filter_binding = args.subject_filter.get_output(ctx);
+        let webhook_endpoint_binding = args.webhook_endpoint.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:eventgrid/eventSubscription:EventSubscription".into(),
             name: name.to_string(),
@@ -400,7 +396,7 @@ pub mod event_subscription {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         EventSubscriptionResult {
             id: o.get_id(),
             urn: o.get_urn(),

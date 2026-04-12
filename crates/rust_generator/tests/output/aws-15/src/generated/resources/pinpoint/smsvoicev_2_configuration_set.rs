@@ -79,35 +79,35 @@ pub mod smsvoicev_2_configuration_set {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: Smsvoicev2ConfigurationSetArgs,
     ) -> Smsvoicev2ConfigurationSetResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: Smsvoicev2ConfigurationSetArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> Smsvoicev2ConfigurationSetResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: Smsvoicev2ConfigurationSetArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> Smsvoicev2ConfigurationSetResult {
-        let default_message_type_binding = args.default_message_type.get_output(context);
-        let default_sender_id_binding = args.default_sender_id.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let default_message_type_binding = args.default_message_type.get_output(ctx);
+        let default_sender_id_binding = args.default_sender_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:pinpoint/smsvoicev2ConfigurationSet:Smsvoicev2ConfigurationSet"
                 .into(),
@@ -133,7 +133,7 @@ pub mod smsvoicev_2_configuration_set {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         Smsvoicev2ConfigurationSetResult {
             id: o.get_id(),
             urn: o.get_urn(),

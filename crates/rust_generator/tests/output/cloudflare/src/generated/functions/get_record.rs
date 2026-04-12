@@ -52,14 +52,14 @@ pub mod get_record {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetRecordArgs,
     ) -> GetRecordResult {
-        let content_binding = args.content.get_output(context);
-        let hostname_binding = args.hostname.get_output(context);
-        let priority_binding = args.priority.get_output(context);
-        let type__binding = args.type_.get_output(context);
-        let zone_id_binding = args.zone_id.get_output(context);
+        let content_binding = args.content.get_output(ctx);
+        let hostname_binding = args.hostname.get_output(ctx);
+        let priority_binding = args.priority.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
+        let zone_id_binding = args.zone_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "cloudflare:index/getRecord:getRecord".into(),
             version: super::super::get_version(),
@@ -86,7 +86,7 @@ pub mod get_record {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetRecordResult {
             content: o.get_field("content"),
             hostname: o.get_field("hostname"),

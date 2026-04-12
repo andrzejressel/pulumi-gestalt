@@ -290,56 +290,56 @@ pub mod spark_cluster {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SparkClusterArgs,
     ) -> SparkClusterResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SparkClusterArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> SparkClusterResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SparkClusterArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> SparkClusterResult {
-        let cluster_version_binding = args.cluster_version.get_output(context);
-        let component_version_binding = args.component_version.get_output(context);
-        let compute_isolation_binding = args.compute_isolation.get_output(context);
-        let disk_encryptions_binding = args.disk_encryptions.get_output(context);
+        let cluster_version_binding = args.cluster_version.get_output(ctx);
+        let component_version_binding = args.component_version.get_output(ctx);
+        let compute_isolation_binding = args.compute_isolation.get_output(ctx);
+        let disk_encryptions_binding = args.disk_encryptions.get_output(ctx);
         let encryption_in_transit_enabled_binding = args
             .encryption_in_transit_enabled
-            .get_output(context);
-        let extension_binding = args.extension.get_output(context);
-        let gateway_binding = args.gateway.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let metastores_binding = args.metastores.get_output(context);
-        let monitor_binding = args.monitor.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_binding = args.network.get_output(context);
+            .get_output(ctx);
+        let extension_binding = args.extension.get_output(ctx);
+        let gateway_binding = args.gateway.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let metastores_binding = args.metastores.get_output(ctx);
+        let monitor_binding = args.monitor.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_binding = args.network.get_output(ctx);
         let private_link_configuration_binding = args
             .private_link_configuration
-            .get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let roles_binding = args.roles.get_output(context);
-        let security_profile_binding = args.security_profile.get_output(context);
-        let storage_account_gen2_binding = args.storage_account_gen2.get_output(context);
-        let storage_accounts_binding = args.storage_accounts.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let tier_binding = args.tier.get_output(context);
-        let tls_min_version_binding = args.tls_min_version.get_output(context);
+            .get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let roles_binding = args.roles.get_output(ctx);
+        let security_profile_binding = args.security_profile.get_output(ctx);
+        let storage_account_gen2_binding = args.storage_account_gen2.get_output(ctx);
+        let storage_accounts_binding = args.storage_accounts.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let tier_binding = args.tier.get_output(ctx);
+        let tls_min_version_binding = args.tls_min_version.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:hdinsight/sparkCluster:SparkCluster".into(),
             name: name.to_string(),
@@ -432,7 +432,7 @@ pub mod spark_cluster {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         SparkClusterResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -8,9 +8,9 @@ fn main() {
     pulumi_gestalt_rust::run(pulumi_main).unwrap();
 }
 
-fn pulumi_main(context: &Context) -> anyhow::Result<()> {
+fn pulumi_main(ctx: &Context) -> anyhow::Result<()> {
     let cont = container::create(
-        context,
+        ctx,
         "container",
         container::ContainerArgs::builder()
             .attach(true)
@@ -28,7 +28,7 @@ fn pulumi_main(context: &Context) -> anyhow::Result<()> {
     );
 
     let image = image::create(
-        context,
+        ctx,
         "image",
         image::ImageArgs::builder()
             .build(DockerBuild::builder().context("docker/").build_struct())
@@ -38,7 +38,7 @@ fn pulumi_main(context: &Context) -> anyhow::Result<()> {
     );
 
     let remote_image = get_remote_image::invoke(
-        context,
+        ctx,
         GetRemoteImageArgs::builder()
             .name("public.ecr.aws/ubuntu/ubuntu:latest")
             .build_struct(),

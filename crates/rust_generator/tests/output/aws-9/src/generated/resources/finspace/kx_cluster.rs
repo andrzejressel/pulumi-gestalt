@@ -251,67 +251,61 @@ pub mod kx_cluster {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: KxClusterArgs,
     ) -> KxClusterResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: KxClusterArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> KxClusterResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: KxClusterArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> KxClusterResult {
         let auto_scaling_configuration_binding = args
             .auto_scaling_configuration
-            .get_output(context);
-        let availability_zone_id_binding = args.availability_zone_id.get_output(context);
-        let az_mode_binding = args.az_mode.get_output(context);
+            .get_output(ctx);
+        let availability_zone_id_binding = args.availability_zone_id.get_output(ctx);
+        let az_mode_binding = args.az_mode.get_output(ctx);
         let cache_storage_configurations_binding = args
             .cache_storage_configurations
-            .get_output(context);
-        let capacity_configuration_binding = args
-            .capacity_configuration
-            .get_output(context);
-        let code_binding = args.code.get_output(context);
-        let command_line_arguments_binding = args
-            .command_line_arguments
-            .get_output(context);
-        let databases_binding = args.databases.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let environment_id_binding = args.environment_id.get_output(context);
-        let execution_role_binding = args.execution_role.get_output(context);
-        let initialization_script_binding = args
-            .initialization_script
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let release_label_binding = args.release_label.get_output(context);
+            .get_output(ctx);
+        let capacity_configuration_binding = args.capacity_configuration.get_output(ctx);
+        let code_binding = args.code.get_output(ctx);
+        let command_line_arguments_binding = args.command_line_arguments.get_output(ctx);
+        let databases_binding = args.databases.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let environment_id_binding = args.environment_id.get_output(ctx);
+        let execution_role_binding = args.execution_role.get_output(ctx);
+        let initialization_script_binding = args.initialization_script.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let release_label_binding = args.release_label.get_output(ctx);
         let savedown_storage_configuration_binding = args
             .savedown_storage_configuration
-            .get_output(context);
+            .get_output(ctx);
         let scaling_group_configuration_binding = args
             .scaling_group_configuration
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let tickerplant_log_configurations_binding = args
             .tickerplant_log_configurations
-            .get_output(context);
-        let type__binding = args.type_.get_output(context);
-        let vpc_configuration_binding = args.vpc_configuration.get_output(context);
+            .get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
+        let vpc_configuration_binding = args.vpc_configuration.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:finspace/kxCluster:KxCluster".into(),
             name: name.to_string(),
@@ -400,7 +394,7 @@ pub mod kx_cluster {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         KxClusterResult {
             id: o.get_id(),
             urn: o.get_urn(),

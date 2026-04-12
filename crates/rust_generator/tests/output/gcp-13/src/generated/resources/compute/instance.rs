@@ -502,77 +502,77 @@ pub mod instance {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceArgs,
     ) -> InstanceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> InstanceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> InstanceResult {
         let advanced_machine_features_binding = args
             .advanced_machine_features
-            .get_output(context);
+            .get_output(ctx);
         let allow_stopping_for_update_binding = args
             .allow_stopping_for_update
-            .get_output(context);
-        let attached_disks_binding = args.attached_disks.get_output(context);
-        let boot_disk_binding = args.boot_disk.get_output(context);
-        let can_ip_forward_binding = args.can_ip_forward.get_output(context);
+            .get_output(ctx);
+        let attached_disks_binding = args.attached_disks.get_output(ctx);
+        let boot_disk_binding = args.boot_disk.get_output(ctx);
+        let can_ip_forward_binding = args.can_ip_forward.get_output(ctx);
         let confidential_instance_config_binding = args
             .confidential_instance_config
-            .get_output(context);
-        let deletion_protection_binding = args.deletion_protection.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let desired_status_binding = args.desired_status.get_output(context);
-        let enable_display_binding = args.enable_display.get_output(context);
-        let guest_accelerators_binding = args.guest_accelerators.get_output(context);
-        let hostname_binding = args.hostname.get_output(context);
+            .get_output(ctx);
+        let deletion_protection_binding = args.deletion_protection.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let desired_status_binding = args.desired_status.get_output(ctx);
+        let enable_display_binding = args.enable_display.get_output(ctx);
+        let guest_accelerators_binding = args.guest_accelerators.get_output(ctx);
+        let hostname_binding = args.hostname.get_output(ctx);
         let key_revocation_action_type_binding = args
             .key_revocation_action_type
-            .get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let machine_type_binding = args.machine_type.get_output(context);
-        let metadata_binding = args.metadata.get_output(context);
+            .get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let machine_type_binding = args.machine_type.get_output(ctx);
+        let metadata_binding = args.metadata.get_output(ctx);
         let metadata_startup_script_binding = args
             .metadata_startup_script
-            .get_output(context);
-        let min_cpu_platform_binding = args.min_cpu_platform.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_interfaces_binding = args.network_interfaces.get_output(context);
+            .get_output(ctx);
+        let min_cpu_platform_binding = args.min_cpu_platform.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_interfaces_binding = args.network_interfaces.get_output(ctx);
         let network_performance_config_binding = args
             .network_performance_config
-            .get_output(context);
-        let params_binding = args.params.get_output(context);
-        let partner_metadata_binding = args.partner_metadata.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let reservation_affinity_binding = args.reservation_affinity.get_output(context);
-        let resource_policies_binding = args.resource_policies.get_output(context);
-        let scheduling_binding = args.scheduling.get_output(context);
-        let scratch_disks_binding = args.scratch_disks.get_output(context);
-        let service_account_binding = args.service_account.get_output(context);
+            .get_output(ctx);
+        let params_binding = args.params.get_output(ctx);
+        let partner_metadata_binding = args.partner_metadata.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let reservation_affinity_binding = args.reservation_affinity.get_output(ctx);
+        let resource_policies_binding = args.resource_policies.get_output(ctx);
+        let scheduling_binding = args.scheduling.get_output(ctx);
+        let scratch_disks_binding = args.scratch_disks.get_output(ctx);
+        let service_account_binding = args.service_account.get_output(ctx);
         let shielded_instance_config_binding = args
             .shielded_instance_config
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let zone_binding = args.zone.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let zone_binding = args.zone.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:compute/instance:Instance".into(),
             name: name.to_string(),
@@ -709,7 +709,7 @@ pub mod instance {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         InstanceResult {
             id: o.get_id(),
             urn: o.get_urn(),

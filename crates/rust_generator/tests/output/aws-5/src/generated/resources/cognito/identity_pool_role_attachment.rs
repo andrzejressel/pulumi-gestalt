@@ -58,34 +58,34 @@ pub mod identity_pool_role_attachment {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IdentityPoolRoleAttachmentArgs,
     ) -> IdentityPoolRoleAttachmentResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IdentityPoolRoleAttachmentArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> IdentityPoolRoleAttachmentResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IdentityPoolRoleAttachmentArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> IdentityPoolRoleAttachmentResult {
-        let identity_pool_id_binding = args.identity_pool_id.get_output(context);
-        let role_mappings_binding = args.role_mappings.get_output(context);
-        let roles_binding = args.roles.get_output(context);
+        let identity_pool_id_binding = args.identity_pool_id.get_output(ctx);
+        let role_mappings_binding = args.role_mappings.get_output(ctx);
+        let roles_binding = args.roles.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:cognito/identityPoolRoleAttachment:IdentityPoolRoleAttachment"
                 .into(),
@@ -107,7 +107,7 @@ pub mod identity_pool_role_attachment {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         IdentityPoolRoleAttachmentResult {
             id: o.get_id(),
             urn: o.get_urn(),

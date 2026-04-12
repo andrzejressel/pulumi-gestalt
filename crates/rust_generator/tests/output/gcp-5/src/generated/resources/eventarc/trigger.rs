@@ -201,43 +201,43 @@ pub mod trigger {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TriggerArgs,
     ) -> TriggerResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TriggerArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> TriggerResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TriggerArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> TriggerResult {
-        let channel_binding = args.channel.get_output(context);
-        let destination_binding = args.destination.get_output(context);
+        let channel_binding = args.channel.get_output(ctx);
+        let destination_binding = args.destination.get_output(ctx);
         let event_data_content_type_binding = args
             .event_data_content_type
-            .get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let matching_criterias_binding = args.matching_criterias.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let service_account_binding = args.service_account.get_output(context);
-        let transport_binding = args.transport.get_output(context);
+            .get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let matching_criterias_binding = args.matching_criterias.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let service_account_binding = args.service_account.get_output(ctx);
+        let transport_binding = args.transport.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:eventarc/trigger:Trigger".into(),
             name: name.to_string(),
@@ -286,7 +286,7 @@ pub mod trigger {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         TriggerResult {
             id: o.get_id(),
             urn: o.get_urn(),

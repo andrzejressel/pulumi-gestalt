@@ -915,71 +915,69 @@ pub mod region_backend_service {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RegionBackendServiceArgs,
     ) -> RegionBackendServiceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RegionBackendServiceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> RegionBackendServiceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RegionBackendServiceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> RegionBackendServiceResult {
         let affinity_cookie_ttl_sec_binding = args
             .affinity_cookie_ttl_sec
-            .get_output(context);
-        let backends_binding = args.backends.get_output(context);
-        let cdn_policy_binding = args.cdn_policy.get_output(context);
-        let circuit_breakers_binding = args.circuit_breakers.get_output(context);
+            .get_output(ctx);
+        let backends_binding = args.backends.get_output(ctx);
+        let cdn_policy_binding = args.cdn_policy.get_output(ctx);
+        let circuit_breakers_binding = args.circuit_breakers.get_output(ctx);
         let connection_draining_timeout_sec_binding = args
             .connection_draining_timeout_sec
-            .get_output(context);
+            .get_output(ctx);
         let connection_tracking_policy_binding = args
             .connection_tracking_policy
-            .get_output(context);
-        let consistent_hash_binding = args.consistent_hash.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let enable_cdn_binding = args.enable_cdn.get_output(context);
-        let failover_policy_binding = args.failover_policy.get_output(context);
-        let health_checks_binding = args.health_checks.get_output(context);
-        let iap_binding = args.iap.get_output(context);
+            .get_output(ctx);
+        let consistent_hash_binding = args.consistent_hash.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let enable_cdn_binding = args.enable_cdn.get_output(ctx);
+        let failover_policy_binding = args.failover_policy.get_output(ctx);
+        let health_checks_binding = args.health_checks.get_output(ctx);
+        let iap_binding = args.iap.get_output(ctx);
         let ip_address_selection_policy_binding = args
             .ip_address_selection_policy
-            .get_output(context);
-        let load_balancing_scheme_binding = args
-            .load_balancing_scheme
-            .get_output(context);
-        let locality_lb_policy_binding = args.locality_lb_policy.get_output(context);
-        let log_config_binding = args.log_config.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_binding = args.network.get_output(context);
-        let outlier_detection_binding = args.outlier_detection.get_output(context);
-        let port_name_binding = args.port_name.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let protocol_binding = args.protocol.get_output(context);
-        let region_binding = args.region.get_output(context);
-        let security_policy_binding = args.security_policy.get_output(context);
-        let session_affinity_binding = args.session_affinity.get_output(context);
+            .get_output(ctx);
+        let load_balancing_scheme_binding = args.load_balancing_scheme.get_output(ctx);
+        let locality_lb_policy_binding = args.locality_lb_policy.get_output(ctx);
+        let log_config_binding = args.log_config.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_binding = args.network.get_output(ctx);
+        let outlier_detection_binding = args.outlier_detection.get_output(ctx);
+        let port_name_binding = args.port_name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let protocol_binding = args.protocol.get_output(ctx);
+        let region_binding = args.region.get_output(ctx);
+        let security_policy_binding = args.security_policy.get_output(ctx);
+        let session_affinity_binding = args.session_affinity.get_output(ctx);
         let strong_session_affinity_cookie_binding = args
             .strong_session_affinity_cookie
-            .get_output(context);
-        let subsetting_binding = args.subsetting.get_output(context);
-        let timeout_sec_binding = args.timeout_sec.get_output(context);
+            .get_output(ctx);
+        let subsetting_binding = args.subsetting.get_output(ctx);
+        let timeout_sec_binding = args.timeout_sec.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:compute/regionBackendService:RegionBackendService".into(),
             name: name.to_string(),
@@ -1100,7 +1098,7 @@ pub mod region_backend_service {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         RegionBackendServiceResult {
             id: o.get_id(),
             urn: o.get_urn(),

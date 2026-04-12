@@ -257,60 +257,58 @@ pub mod cx_agent {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CxAgentArgs,
     ) -> CxAgentResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CxAgentArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> CxAgentResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CxAgentArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> CxAgentResult {
-        let advanced_settings_binding = args.advanced_settings.get_output(context);
-        let avatar_uri_binding = args.avatar_uri.get_output(context);
-        let default_language_code_binding = args
-            .default_language_code
-            .get_output(context);
-        let description_binding = args.description.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
+        let advanced_settings_binding = args.advanced_settings.get_output(ctx);
+        let avatar_uri_binding = args.avatar_uri.get_output(ctx);
+        let default_language_code_binding = args.default_language_code.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
         let enable_spell_correction_binding = args
             .enable_spell_correction
-            .get_output(context);
+            .get_output(ctx);
         let enable_stackdriver_logging_binding = args
             .enable_stackdriver_logging
-            .get_output(context);
+            .get_output(ctx);
         let git_integration_settings_binding = args
             .git_integration_settings
-            .get_output(context);
-        let location_binding = args.location.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let security_settings_binding = args.security_settings.get_output(context);
+            .get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let security_settings_binding = args.security_settings.get_output(ctx);
         let speech_to_text_settings_binding = args
             .speech_to_text_settings
-            .get_output(context);
+            .get_output(ctx);
         let supported_language_codes_binding = args
             .supported_language_codes
-            .get_output(context);
+            .get_output(ctx);
         let text_to_speech_settings_binding = args
             .text_to_speech_settings
-            .get_output(context);
-        let time_zone_binding = args.time_zone.get_output(context);
+            .get_output(ctx);
+        let time_zone_binding = args.time_zone.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:diagflow/cxAgent:CxAgent".into(),
             name: name.to_string(),
@@ -379,7 +377,7 @@ pub mod cx_agent {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         CxAgentResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -41,11 +41,11 @@ pub mod get_bot_alias {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetBotAliasArgs,
     ) -> GetBotAliasResult {
-        let bot_name_binding = args.bot_name.get_output(context);
-        let name_binding = args.name.get_output(context);
+        let bot_name_binding = args.bot_name.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:lex/getBotAlias:getBotAlias".into(),
             version: super::super::super::get_version(),
@@ -60,7 +60,7 @@ pub mod get_bot_alias {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetBotAliasResult {
             arn: o.get_field("arn"),
             bot_name: o.get_field("botName"),

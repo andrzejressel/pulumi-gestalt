@@ -101,37 +101,37 @@ pub mod configuration_template {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ConfigurationTemplateArgs,
     ) -> ConfigurationTemplateResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ConfigurationTemplateArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ConfigurationTemplateResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ConfigurationTemplateArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ConfigurationTemplateResult {
-        let application_binding = args.application.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let environment_id_binding = args.environment_id.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let settings_binding = args.settings.get_output(context);
-        let solution_stack_name_binding = args.solution_stack_name.get_output(context);
+        let application_binding = args.application.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let environment_id_binding = args.environment_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let settings_binding = args.settings.get_output(ctx);
+        let solution_stack_name_binding = args.solution_stack_name.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:elasticbeanstalk/configurationTemplate:ConfigurationTemplate"
                 .into(),
@@ -165,7 +165,7 @@ pub mod configuration_template {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ConfigurationTemplateResult {
             id: o.get_id(),
             urn: o.get_urn(),

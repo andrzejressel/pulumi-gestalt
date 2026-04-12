@@ -295,41 +295,41 @@ pub mod metric {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MetricArgs,
     ) -> MetricResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MetricArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> MetricResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MetricArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> MetricResult {
-        let bucket_name_binding = args.bucket_name.get_output(context);
-        let bucket_options_binding = args.bucket_options.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let disabled_binding = args.disabled.get_output(context);
-        let filter_binding = args.filter.get_output(context);
-        let label_extractors_binding = args.label_extractors.get_output(context);
-        let metric_descriptor_binding = args.metric_descriptor.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let value_extractor_binding = args.value_extractor.get_output(context);
+        let bucket_name_binding = args.bucket_name.get_output(ctx);
+        let bucket_options_binding = args.bucket_options.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let disabled_binding = args.disabled.get_output(ctx);
+        let filter_binding = args.filter.get_output(ctx);
+        let label_extractors_binding = args.label_extractors.get_output(ctx);
+        let metric_descriptor_binding = args.metric_descriptor.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let value_extractor_binding = args.value_extractor.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:logging/metric:Metric".into(),
             name: name.to_string(),
@@ -378,7 +378,7 @@ pub mod metric {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         MetricResult {
             id: o.get_id(),
             urn: o.get_urn(),

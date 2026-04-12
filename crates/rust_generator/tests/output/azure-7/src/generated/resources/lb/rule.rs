@@ -158,52 +158,50 @@ pub mod rule {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RuleArgs,
     ) -> RuleResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RuleArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> RuleResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RuleArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> RuleResult {
         let backend_address_pool_ids_binding = args
             .backend_address_pool_ids
-            .get_output(context);
-        let backend_port_binding = args.backend_port.get_output(context);
-        let disable_outbound_snat_binding = args
-            .disable_outbound_snat
-            .get_output(context);
-        let enable_floating_ip_binding = args.enable_floating_ip.get_output(context);
-        let enable_tcp_reset_binding = args.enable_tcp_reset.get_output(context);
+            .get_output(ctx);
+        let backend_port_binding = args.backend_port.get_output(ctx);
+        let disable_outbound_snat_binding = args.disable_outbound_snat.get_output(ctx);
+        let enable_floating_ip_binding = args.enable_floating_ip.get_output(ctx);
+        let enable_tcp_reset_binding = args.enable_tcp_reset.get_output(ctx);
         let frontend_ip_configuration_name_binding = args
             .frontend_ip_configuration_name
-            .get_output(context);
-        let frontend_port_binding = args.frontend_port.get_output(context);
+            .get_output(ctx);
+        let frontend_port_binding = args.frontend_port.get_output(ctx);
         let idle_timeout_in_minutes_binding = args
             .idle_timeout_in_minutes
-            .get_output(context);
-        let load_distribution_binding = args.load_distribution.get_output(context);
-        let loadbalancer_id_binding = args.loadbalancer_id.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let probe_id_binding = args.probe_id.get_output(context);
-        let protocol_binding = args.protocol.get_output(context);
+            .get_output(ctx);
+        let load_distribution_binding = args.load_distribution.get_output(ctx);
+        let loadbalancer_id_binding = args.loadbalancer_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let probe_id_binding = args.probe_id.get_output(ctx);
+        let protocol_binding = args.protocol.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:lb/rule:Rule".into(),
             name: name.to_string(),
@@ -264,7 +262,7 @@ pub mod rule {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         RuleResult {
             id: o.get_id(),
             urn: o.get_urn(),

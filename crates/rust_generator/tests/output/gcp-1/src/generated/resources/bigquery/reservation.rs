@@ -142,39 +142,39 @@ pub mod reservation {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ReservationArgs,
     ) -> ReservationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ReservationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ReservationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ReservationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ReservationResult {
-        let autoscale_binding = args.autoscale.get_output(context);
-        let concurrency_binding = args.concurrency.get_output(context);
-        let edition_binding = args.edition.get_output(context);
-        let ignore_idle_slots_binding = args.ignore_idle_slots.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let slot_capacity_binding = args.slot_capacity.get_output(context);
+        let autoscale_binding = args.autoscale.get_output(ctx);
+        let concurrency_binding = args.concurrency.get_output(ctx);
+        let edition_binding = args.edition.get_output(ctx);
+        let ignore_idle_slots_binding = args.ignore_idle_slots.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let slot_capacity_binding = args.slot_capacity.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:bigquery/reservation:Reservation".into(),
             name: name.to_string(),
@@ -215,7 +215,7 @@ pub mod reservation {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ReservationResult {
             id: o.get_id(),
             urn: o.get_urn(),

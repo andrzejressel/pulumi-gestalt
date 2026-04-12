@@ -131,45 +131,43 @@ pub mod cluster_extension {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterExtensionArgs,
     ) -> ClusterExtensionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterExtensionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ClusterExtensionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterExtensionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ClusterExtensionResult {
-        let cluster_id_binding = args.cluster_id.get_output(context);
+        let cluster_id_binding = args.cluster_id.get_output(ctx);
         let configuration_protected_settings_binding = args
             .configuration_protected_settings
-            .get_output(context);
-        let configuration_settings_binding = args
-            .configuration_settings
-            .get_output(context);
-        let extension_type_binding = args.extension_type.get_output(context);
-        let identity_binding = args.identity.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let release_namespace_binding = args.release_namespace.get_output(context);
-        let release_train_binding = args.release_train.get_output(context);
-        let target_namespace_binding = args.target_namespace.get_output(context);
-        let version_binding = args.version.get_output(context);
+            .get_output(ctx);
+        let configuration_settings_binding = args.configuration_settings.get_output(ctx);
+        let extension_type_binding = args.extension_type.get_output(ctx);
+        let identity_binding = args.identity.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let release_namespace_binding = args.release_namespace.get_output(ctx);
+        let release_train_binding = args.release_train.get_output(ctx);
+        let target_namespace_binding = args.target_namespace.get_output(ctx);
+        let version_binding = args.version.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:arckubernetes/clusterExtension:ClusterExtension".into(),
             name: name.to_string(),
@@ -218,7 +216,7 @@ pub mod cluster_extension {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ClusterExtensionResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -269,61 +269,57 @@ pub mod frontdoor_route {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FrontdoorRouteArgs,
     ) -> FrontdoorRouteResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FrontdoorRouteArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> FrontdoorRouteResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FrontdoorRouteArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> FrontdoorRouteResult {
-        let cache_binding = args.cache.get_output(context);
+        let cache_binding = args.cache.get_output(ctx);
         let cdn_frontdoor_custom_domain_ids_binding = args
             .cdn_frontdoor_custom_domain_ids
-            .get_output(context);
+            .get_output(ctx);
         let cdn_frontdoor_endpoint_id_binding = args
             .cdn_frontdoor_endpoint_id
-            .get_output(context);
+            .get_output(ctx);
         let cdn_frontdoor_origin_group_id_binding = args
             .cdn_frontdoor_origin_group_id
-            .get_output(context);
+            .get_output(ctx);
         let cdn_frontdoor_origin_ids_binding = args
             .cdn_frontdoor_origin_ids
-            .get_output(context);
+            .get_output(ctx);
         let cdn_frontdoor_origin_path_binding = args
             .cdn_frontdoor_origin_path
-            .get_output(context);
+            .get_output(ctx);
         let cdn_frontdoor_rule_set_ids_binding = args
             .cdn_frontdoor_rule_set_ids
-            .get_output(context);
-        let enabled_binding = args.enabled.get_output(context);
-        let forwarding_protocol_binding = args.forwarding_protocol.get_output(context);
-        let https_redirect_enabled_binding = args
-            .https_redirect_enabled
-            .get_output(context);
-        let link_to_default_domain_binding = args
-            .link_to_default_domain
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let patterns_to_matches_binding = args.patterns_to_matches.get_output(context);
-        let supported_protocols_binding = args.supported_protocols.get_output(context);
+            .get_output(ctx);
+        let enabled_binding = args.enabled.get_output(ctx);
+        let forwarding_protocol_binding = args.forwarding_protocol.get_output(ctx);
+        let https_redirect_enabled_binding = args.https_redirect_enabled.get_output(ctx);
+        let link_to_default_domain_binding = args.link_to_default_domain.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let patterns_to_matches_binding = args.patterns_to_matches.get_output(ctx);
+        let supported_protocols_binding = args.supported_protocols.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:cdn/frontdoorRoute:FrontdoorRoute".into(),
             name: name.to_string(),
@@ -388,7 +384,7 @@ pub mod frontdoor_route {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         FrontdoorRouteResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -177,51 +177,51 @@ pub mod api {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ApiArgs,
     ) -> ApiResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ApiArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ApiResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ApiArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ApiResult {
         let api_key_selection_expression_binding = args
             .api_key_selection_expression
-            .get_output(context);
-        let body_binding = args.body.get_output(context);
-        let cors_configuration_binding = args.cors_configuration.get_output(context);
-        let credentials_arn_binding = args.credentials_arn.get_output(context);
-        let description_binding = args.description.get_output(context);
+            .get_output(ctx);
+        let body_binding = args.body.get_output(ctx);
+        let cors_configuration_binding = args.cors_configuration.get_output(ctx);
+        let credentials_arn_binding = args.credentials_arn.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
         let disable_execute_api_endpoint_binding = args
             .disable_execute_api_endpoint
-            .get_output(context);
-        let fail_on_warnings_binding = args.fail_on_warnings.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let protocol_type_binding = args.protocol_type.get_output(context);
-        let route_key_binding = args.route_key.get_output(context);
+            .get_output(ctx);
+        let fail_on_warnings_binding = args.fail_on_warnings.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let protocol_type_binding = args.protocol_type.get_output(ctx);
+        let route_key_binding = args.route_key.get_output(ctx);
         let route_selection_expression_binding = args
             .route_selection_expression
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let target_binding = args.target.get_output(context);
-        let version_binding = args.version.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let target_binding = args.target.get_output(ctx);
+        let version_binding = args.version.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:apigatewayv2/api:Api".into(),
             name: name.to_string(),
@@ -286,7 +286,7 @@ pub mod api {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ApiResult {
             id: o.get_id(),
             urn: o.get_urn(),

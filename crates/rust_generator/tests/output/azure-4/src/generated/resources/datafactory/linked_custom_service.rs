@@ -142,42 +142,40 @@ pub mod linked_custom_service {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LinkedCustomServiceArgs,
     ) -> LinkedCustomServiceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LinkedCustomServiceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> LinkedCustomServiceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LinkedCustomServiceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> LinkedCustomServiceResult {
-        let additional_properties_binding = args
-            .additional_properties
-            .get_output(context);
-        let annotations_binding = args.annotations.get_output(context);
-        let data_factory_id_binding = args.data_factory_id.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let integration_runtime_binding = args.integration_runtime.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let parameters_binding = args.parameters.get_output(context);
-        let type__binding = args.type_.get_output(context);
-        let type_properties_json_binding = args.type_properties_json.get_output(context);
+        let additional_properties_binding = args.additional_properties.get_output(ctx);
+        let annotations_binding = args.annotations.get_output(ctx);
+        let data_factory_id_binding = args.data_factory_id.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let integration_runtime_binding = args.integration_runtime.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let parameters_binding = args.parameters.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
+        let type_properties_json_binding = args.type_properties_json.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:datafactory/linkedCustomService:LinkedCustomService".into(),
             name: name.to_string(),
@@ -222,7 +220,7 @@ pub mod linked_custom_service {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         LinkedCustomServiceResult {
             id: o.get_id(),
             urn: o.get_urn(),

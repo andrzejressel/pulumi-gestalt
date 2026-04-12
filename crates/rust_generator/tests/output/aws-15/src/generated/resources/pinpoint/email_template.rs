@@ -82,34 +82,34 @@ pub mod email_template {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EmailTemplateArgs,
     ) -> EmailTemplateResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EmailTemplateArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> EmailTemplateResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EmailTemplateArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> EmailTemplateResult {
-        let email_templates_binding = args.email_templates.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let template_name_binding = args.template_name.get_output(context);
+        let email_templates_binding = args.email_templates.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let template_name_binding = args.template_name.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:pinpoint/emailTemplate:EmailTemplate".into(),
             name: name.to_string(),
@@ -130,7 +130,7 @@ pub mod email_template {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         EmailTemplateResult {
             id: o.get_id(),
             urn: o.get_urn(),

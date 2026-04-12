@@ -444,90 +444,84 @@ pub mod application_gateway {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ApplicationGatewayArgs,
     ) -> ApplicationGatewayResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ApplicationGatewayArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ApplicationGatewayResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ApplicationGatewayArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ApplicationGatewayResult {
         let authentication_certificates_binding = args
             .authentication_certificates
-            .get_output(context);
+            .get_output(ctx);
         let autoscale_configuration_binding = args
             .autoscale_configuration
-            .get_output(context);
-        let backend_address_pools_binding = args
-            .backend_address_pools
-            .get_output(context);
-        let backend_http_settings_binding = args
-            .backend_http_settings
-            .get_output(context);
+            .get_output(ctx);
+        let backend_address_pools_binding = args.backend_address_pools.get_output(ctx);
+        let backend_http_settings_binding = args.backend_http_settings.get_output(ctx);
         let custom_error_configurations_binding = args
             .custom_error_configurations
-            .get_output(context);
-        let enable_http2_binding = args.enable_http2.get_output(context);
-        let fips_enabled_binding = args.fips_enabled.get_output(context);
-        let firewall_policy_id_binding = args.firewall_policy_id.get_output(context);
+            .get_output(ctx);
+        let enable_http2_binding = args.enable_http2.get_output(ctx);
+        let fips_enabled_binding = args.fips_enabled.get_output(ctx);
+        let firewall_policy_id_binding = args.firewall_policy_id.get_output(ctx);
         let force_firewall_policy_association_binding = args
             .force_firewall_policy_association
-            .get_output(context);
+            .get_output(ctx);
         let frontend_ip_configurations_binding = args
             .frontend_ip_configurations
-            .get_output(context);
-        let frontend_ports_binding = args.frontend_ports.get_output(context);
+            .get_output(ctx);
+        let frontend_ports_binding = args.frontend_ports.get_output(ctx);
         let gateway_ip_configurations_binding = args
             .gateway_ip_configurations
-            .get_output(context);
-        let global_binding = args.global.get_output(context);
-        let http_listeners_binding = args.http_listeners.get_output(context);
-        let identity_binding = args.identity.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
+            .get_output(ctx);
+        let global_binding = args.global.get_output(ctx);
+        let http_listeners_binding = args.http_listeners.get_output(ctx);
+        let identity_binding = args.identity.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let private_link_configurations_binding = args
             .private_link_configurations
-            .get_output(context);
-        let probes_binding = args.probes.get_output(context);
+            .get_output(ctx);
+        let probes_binding = args.probes.get_output(ctx);
         let redirect_configurations_binding = args
             .redirect_configurations
-            .get_output(context);
-        let request_routing_rules_binding = args
-            .request_routing_rules
-            .get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let rewrite_rule_sets_binding = args.rewrite_rule_sets.get_output(context);
-        let sku_binding = args.sku.get_output(context);
-        let ssl_certificates_binding = args.ssl_certificates.get_output(context);
-        let ssl_policy_binding = args.ssl_policy.get_output(context);
-        let ssl_profiles_binding = args.ssl_profiles.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let request_routing_rules_binding = args.request_routing_rules.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let rewrite_rule_sets_binding = args.rewrite_rule_sets.get_output(ctx);
+        let sku_binding = args.sku.get_output(ctx);
+        let ssl_certificates_binding = args.ssl_certificates.get_output(ctx);
+        let ssl_policy_binding = args.ssl_policy.get_output(ctx);
+        let ssl_profiles_binding = args.ssl_profiles.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let trusted_client_certificates_binding = args
             .trusted_client_certificates
-            .get_output(context);
+            .get_output(ctx);
         let trusted_root_certificates_binding = args
             .trusted_root_certificates
-            .get_output(context);
-        let url_path_maps_binding = args.url_path_maps.get_output(context);
-        let waf_configuration_binding = args.waf_configuration.get_output(context);
-        let zones_binding = args.zones.get_output(context);
+            .get_output(ctx);
+        let url_path_maps_binding = args.url_path_maps.get_output(ctx);
+        let waf_configuration_binding = args.waf_configuration.get_output(ctx);
+        let zones_binding = args.zones.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:network/applicationGateway:ApplicationGateway".into(),
             name: name.to_string(),
@@ -668,7 +662,7 @@ pub mod application_gateway {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ApplicationGatewayResult {
             id: o.get_id(),
             urn: o.get_urn(),

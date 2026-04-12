@@ -109,41 +109,41 @@ pub mod hosted_private_virtual_interface {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: HostedPrivateVirtualInterfaceArgs,
     ) -> HostedPrivateVirtualInterfaceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: HostedPrivateVirtualInterfaceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> HostedPrivateVirtualInterfaceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: HostedPrivateVirtualInterfaceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> HostedPrivateVirtualInterfaceResult {
-        let address_family_binding = args.address_family.get_output(context);
-        let amazon_address_binding = args.amazon_address.get_output(context);
-        let bgp_asn_binding = args.bgp_asn.get_output(context);
-        let bgp_auth_key_binding = args.bgp_auth_key.get_output(context);
-        let connection_id_binding = args.connection_id.get_output(context);
-        let customer_address_binding = args.customer_address.get_output(context);
-        let mtu_binding = args.mtu.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let owner_account_id_binding = args.owner_account_id.get_output(context);
-        let vlan_binding = args.vlan.get_output(context);
+        let address_family_binding = args.address_family.get_output(ctx);
+        let amazon_address_binding = args.amazon_address.get_output(ctx);
+        let bgp_asn_binding = args.bgp_asn.get_output(ctx);
+        let bgp_auth_key_binding = args.bgp_auth_key.get_output(ctx);
+        let connection_id_binding = args.connection_id.get_output(ctx);
+        let customer_address_binding = args.customer_address.get_output(ctx);
+        let mtu_binding = args.mtu.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let owner_account_id_binding = args.owner_account_id.get_output(ctx);
+        let vlan_binding = args.vlan.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:directconnect/hostedPrivateVirtualInterface:HostedPrivateVirtualInterface"
                 .into(),
@@ -193,7 +193,7 @@ pub mod hosted_private_virtual_interface {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         HostedPrivateVirtualInterfaceResult {
             id: o.get_id(),
             urn: o.get_urn(),

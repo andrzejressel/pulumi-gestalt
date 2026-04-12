@@ -131,40 +131,40 @@ pub mod vpc_dhcp_options {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcDhcpOptionsArgs,
     ) -> VpcDhcpOptionsResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcDhcpOptionsArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> VpcDhcpOptionsResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcDhcpOptionsArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> VpcDhcpOptionsResult {
-        let domain_name_binding = args.domain_name.get_output(context);
-        let domain_name_servers_binding = args.domain_name_servers.get_output(context);
+        let domain_name_binding = args.domain_name.get_output(ctx);
+        let domain_name_servers_binding = args.domain_name_servers.get_output(ctx);
         let ipv6_address_preferred_lease_time_binding = args
             .ipv6_address_preferred_lease_time
-            .get_output(context);
-        let netbios_name_servers_binding = args.netbios_name_servers.get_output(context);
-        let netbios_node_type_binding = args.netbios_node_type.get_output(context);
-        let ntp_servers_binding = args.ntp_servers.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let netbios_name_servers_binding = args.netbios_name_servers.get_output(ctx);
+        let netbios_node_type_binding = args.netbios_node_type.get_output(ctx);
+        let ntp_servers_binding = args.ntp_servers.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/vpcDhcpOptions:VpcDhcpOptions".into(),
             name: name.to_string(),
@@ -201,7 +201,7 @@ pub mod vpc_dhcp_options {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         VpcDhcpOptionsResult {
             id: o.get_id(),
             urn: o.get_urn(),

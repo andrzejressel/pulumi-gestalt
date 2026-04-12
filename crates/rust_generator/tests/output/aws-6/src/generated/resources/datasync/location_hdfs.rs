@@ -182,50 +182,48 @@ pub mod location_hdfs {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LocationHdfsArgs,
     ) -> LocationHdfsResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LocationHdfsArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> LocationHdfsResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LocationHdfsArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> LocationHdfsResult {
-        let agent_arns_binding = args.agent_arns.get_output(context);
-        let authentication_type_binding = args.authentication_type.get_output(context);
-        let block_size_binding = args.block_size.get_output(context);
-        let kerberos_keytab_binding = args.kerberos_keytab.get_output(context);
-        let kerberos_keytab_base64_binding = args
-            .kerberos_keytab_base64
-            .get_output(context);
-        let kerberos_krb5_conf_binding = args.kerberos_krb5_conf.get_output(context);
+        let agent_arns_binding = args.agent_arns.get_output(ctx);
+        let authentication_type_binding = args.authentication_type.get_output(ctx);
+        let block_size_binding = args.block_size.get_output(ctx);
+        let kerberos_keytab_binding = args.kerberos_keytab.get_output(ctx);
+        let kerberos_keytab_base64_binding = args.kerberos_keytab_base64.get_output(ctx);
+        let kerberos_krb5_conf_binding = args.kerberos_krb5_conf.get_output(ctx);
         let kerberos_krb5_conf_base64_binding = args
             .kerberos_krb5_conf_base64
-            .get_output(context);
-        let kerberos_principal_binding = args.kerberos_principal.get_output(context);
-        let kms_key_provider_uri_binding = args.kms_key_provider_uri.get_output(context);
-        let name_nodes_binding = args.name_nodes.get_output(context);
-        let qop_configuration_binding = args.qop_configuration.get_output(context);
-        let replication_factor_binding = args.replication_factor.get_output(context);
-        let simple_user_binding = args.simple_user.get_output(context);
-        let subdirectory_binding = args.subdirectory.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let kerberos_principal_binding = args.kerberos_principal.get_output(ctx);
+        let kms_key_provider_uri_binding = args.kms_key_provider_uri.get_output(ctx);
+        let name_nodes_binding = args.name_nodes.get_output(ctx);
+        let qop_configuration_binding = args.qop_configuration.get_output(ctx);
+        let replication_factor_binding = args.replication_factor.get_output(ctx);
+        let simple_user_binding = args.simple_user.get_output(ctx);
+        let subdirectory_binding = args.subdirectory.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:datasync/locationHdfs:LocationHdfs".into(),
             name: name.to_string(),
@@ -294,7 +292,7 @@ pub mod location_hdfs {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         LocationHdfsResult {
             id: o.get_id(),
             urn: o.get_urn(),

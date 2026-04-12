@@ -136,38 +136,38 @@ pub mod remote_image {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RemoteImageArgs,
     ) -> RemoteImageResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RemoteImageArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> RemoteImageResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RemoteImageArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> RemoteImageResult {
-        let build_binding = args.build.get_output(context);
-        let force_remove_binding = args.force_remove.get_output(context);
-        let keep_locally_binding = args.keep_locally.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let platform_binding = args.platform.get_output(context);
-        let pull_triggers_binding = args.pull_triggers.get_output(context);
-        let triggers_binding = args.triggers.get_output(context);
+        let build_binding = args.build.get_output(ctx);
+        let force_remove_binding = args.force_remove.get_output(ctx);
+        let keep_locally_binding = args.keep_locally.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let platform_binding = args.platform.get_output(ctx);
+        let pull_triggers_binding = args.pull_triggers.get_output(ctx);
+        let triggers_binding = args.triggers.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "docker:index/remoteImage:RemoteImage".into(),
             name: name.to_string(),
@@ -204,7 +204,7 @@ pub mod remote_image {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         RemoteImageResult {
             id: o.get_id(),
             urn: o.get_urn(),

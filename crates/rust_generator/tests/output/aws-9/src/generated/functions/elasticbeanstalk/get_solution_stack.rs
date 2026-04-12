@@ -36,11 +36,11 @@ pub mod get_solution_stack {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetSolutionStackArgs,
     ) -> GetSolutionStackResult {
-        let most_recent_binding = args.most_recent.get_output(context);
-        let name_regex_binding = args.name_regex.get_output(context);
+        let most_recent_binding = args.most_recent.get_output(ctx);
+        let name_regex_binding = args.name_regex.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:elasticbeanstalk/getSolutionStack:getSolutionStack".into(),
             version: super::super::super::get_version(),
@@ -55,7 +55,7 @@ pub mod get_solution_stack {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetSolutionStackResult {
             id: o.get_field("id"),
             most_recent: o.get_field("mostRecent"),

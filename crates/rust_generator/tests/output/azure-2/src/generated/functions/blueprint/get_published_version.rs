@@ -41,12 +41,12 @@ pub mod get_published_version {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetPublishedVersionArgs,
     ) -> GetPublishedVersionResult {
-        let blueprint_name_binding = args.blueprint_name.get_output(context);
-        let scope_id_binding = args.scope_id.get_output(context);
-        let version_binding = args.version.get_output(context);
+        let blueprint_name_binding = args.blueprint_name.get_output(ctx);
+        let scope_id_binding = args.scope_id.get_output(ctx);
+        let version_binding = args.version.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:blueprint/getPublishedVersion:getPublishedVersion".into(),
             version: super::super::super::get_version(),
@@ -65,7 +65,7 @@ pub mod get_published_version {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetPublishedVersionResult {
             blueprint_name: o.get_field("blueprintName"),
             description: o.get_field("description"),

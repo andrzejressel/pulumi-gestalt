@@ -206,39 +206,39 @@ pub mod machine_image {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MachineImageArgs,
     ) -> MachineImageResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MachineImageArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> MachineImageResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MachineImageArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> MachineImageResult {
-        let description_binding = args.description.get_output(context);
-        let guest_flush_binding = args.guest_flush.get_output(context);
+        let description_binding = args.description.get_output(ctx);
+        let guest_flush_binding = args.guest_flush.get_output(ctx);
         let machine_image_encryption_key_binding = args
             .machine_image_encryption_key
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let source_instance_binding = args.source_instance.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let source_instance_binding = args.source_instance.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:compute/machineImage:MachineImage".into(),
             name: name.to_string(),
@@ -271,7 +271,7 @@ pub mod machine_image {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         MachineImageResult {
             id: o.get_id(),
             urn: o.get_urn(),

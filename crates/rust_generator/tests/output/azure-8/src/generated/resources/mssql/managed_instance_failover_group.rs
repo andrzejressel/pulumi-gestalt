@@ -182,43 +182,43 @@ pub mod managed_instance_failover_group {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ManagedInstanceFailoverGroupArgs,
     ) -> ManagedInstanceFailoverGroupResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ManagedInstanceFailoverGroupArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ManagedInstanceFailoverGroupResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ManagedInstanceFailoverGroupArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ManagedInstanceFailoverGroupResult {
-        let location_binding = args.location.get_output(context);
-        let managed_instance_id_binding = args.managed_instance_id.get_output(context);
-        let name_binding = args.name.get_output(context);
+        let location_binding = args.location.get_output(ctx);
+        let managed_instance_id_binding = args.managed_instance_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let partner_managed_instance_id_binding = args
             .partner_managed_instance_id
-            .get_output(context);
+            .get_output(ctx);
         let read_write_endpoint_failover_policy_binding = args
             .read_write_endpoint_failover_policy
-            .get_output(context);
+            .get_output(ctx);
         let readonly_endpoint_failover_policy_enabled_binding = args
             .readonly_endpoint_failover_policy_enabled
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:mssql/managedInstanceFailoverGroup:ManagedInstanceFailoverGroup"
                 .into(),
@@ -252,7 +252,7 @@ pub mod managed_instance_failover_group {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ManagedInstanceFailoverGroupResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -364,44 +364,44 @@ pub mod uptime_check_config {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: UptimeCheckConfigArgs,
     ) -> UptimeCheckConfigResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: UptimeCheckConfigArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> UptimeCheckConfigResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: UptimeCheckConfigArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> UptimeCheckConfigResult {
-        let checker_type_binding = args.checker_type.get_output(context);
-        let content_matchers_binding = args.content_matchers.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let http_check_binding = args.http_check.get_output(context);
-        let monitored_resource_binding = args.monitored_resource.get_output(context);
-        let period_binding = args.period.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let resource_group_binding = args.resource_group.get_output(context);
-        let selected_regions_binding = args.selected_regions.get_output(context);
-        let synthetic_monitor_binding = args.synthetic_monitor.get_output(context);
-        let tcp_check_binding = args.tcp_check.get_output(context);
-        let timeout_binding = args.timeout.get_output(context);
-        let user_labels_binding = args.user_labels.get_output(context);
+        let checker_type_binding = args.checker_type.get_output(ctx);
+        let content_matchers_binding = args.content_matchers.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let http_check_binding = args.http_check.get_output(ctx);
+        let monitored_resource_binding = args.monitored_resource.get_output(ctx);
+        let period_binding = args.period.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let resource_group_binding = args.resource_group.get_output(ctx);
+        let selected_regions_binding = args.selected_regions.get_output(ctx);
+        let synthetic_monitor_binding = args.synthetic_monitor.get_output(ctx);
+        let tcp_check_binding = args.tcp_check.get_output(ctx);
+        let timeout_binding = args.timeout.get_output(ctx);
+        let user_labels_binding = args.user_labels.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:monitoring/uptimeCheckConfig:UptimeCheckConfig".into(),
             name: name.to_string(),
@@ -462,7 +462,7 @@ pub mod uptime_check_config {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         UptimeCheckConfigResult {
             id: o.get_id(),
             urn: o.get_urn(),

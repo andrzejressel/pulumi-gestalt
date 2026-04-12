@@ -222,66 +222,60 @@ pub mod smb_file_share {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SmbFileShareArgs,
     ) -> SmbFileShareResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SmbFileShareArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> SmbFileShareResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SmbFileShareArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> SmbFileShareResult {
         let access_based_enumeration_binding = args
             .access_based_enumeration
-            .get_output(context);
-        let admin_user_lists_binding = args.admin_user_lists.get_output(context);
-        let audit_destination_arn_binding = args
-            .audit_destination_arn
-            .get_output(context);
-        let authentication_binding = args.authentication.get_output(context);
-        let bucket_region_binding = args.bucket_region.get_output(context);
-        let cache_attributes_binding = args.cache_attributes.get_output(context);
-        let case_sensitivity_binding = args.case_sensitivity.get_output(context);
-        let default_storage_class_binding = args
-            .default_storage_class
-            .get_output(context);
-        let file_share_name_binding = args.file_share_name.get_output(context);
-        let gateway_arn_binding = args.gateway_arn.get_output(context);
+            .get_output(ctx);
+        let admin_user_lists_binding = args.admin_user_lists.get_output(ctx);
+        let audit_destination_arn_binding = args.audit_destination_arn.get_output(ctx);
+        let authentication_binding = args.authentication.get_output(ctx);
+        let bucket_region_binding = args.bucket_region.get_output(ctx);
+        let cache_attributes_binding = args.cache_attributes.get_output(ctx);
+        let case_sensitivity_binding = args.case_sensitivity.get_output(ctx);
+        let default_storage_class_binding = args.default_storage_class.get_output(ctx);
+        let file_share_name_binding = args.file_share_name.get_output(ctx);
+        let gateway_arn_binding = args.gateway_arn.get_output(ctx);
         let guess_mime_type_enabled_binding = args
             .guess_mime_type_enabled
-            .get_output(context);
-        let invalid_user_lists_binding = args.invalid_user_lists.get_output(context);
-        let kms_encrypted_binding = args.kms_encrypted.get_output(context);
-        let kms_key_arn_binding = args.kms_key_arn.get_output(context);
-        let location_arn_binding = args.location_arn.get_output(context);
-        let notification_policy_binding = args.notification_policy.get_output(context);
-        let object_acl_binding = args.object_acl.get_output(context);
-        let oplocks_enabled_binding = args.oplocks_enabled.get_output(context);
-        let read_only_binding = args.read_only.get_output(context);
-        let requester_pays_binding = args.requester_pays.get_output(context);
-        let role_arn_binding = args.role_arn.get_output(context);
-        let smb_acl_enabled_binding = args.smb_acl_enabled.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let valid_user_lists_binding = args.valid_user_lists.get_output(context);
-        let vpc_endpoint_dns_name_binding = args
-            .vpc_endpoint_dns_name
-            .get_output(context);
+            .get_output(ctx);
+        let invalid_user_lists_binding = args.invalid_user_lists.get_output(ctx);
+        let kms_encrypted_binding = args.kms_encrypted.get_output(ctx);
+        let kms_key_arn_binding = args.kms_key_arn.get_output(ctx);
+        let location_arn_binding = args.location_arn.get_output(ctx);
+        let notification_policy_binding = args.notification_policy.get_output(ctx);
+        let object_acl_binding = args.object_acl.get_output(ctx);
+        let oplocks_enabled_binding = args.oplocks_enabled.get_output(ctx);
+        let read_only_binding = args.read_only.get_output(ctx);
+        let requester_pays_binding = args.requester_pays.get_output(ctx);
+        let role_arn_binding = args.role_arn.get_output(ctx);
+        let smb_acl_enabled_binding = args.smb_acl_enabled.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let valid_user_lists_binding = args.valid_user_lists.get_output(ctx);
+        let vpc_endpoint_dns_name_binding = args.vpc_endpoint_dns_name.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:storagegateway/smbFileShare:SmbFileShare".into(),
             name: name.to_string(),
@@ -390,7 +384,7 @@ pub mod smb_file_share {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         SmbFileShareResult {
             id: o.get_id(),
             urn: o.get_urn(),

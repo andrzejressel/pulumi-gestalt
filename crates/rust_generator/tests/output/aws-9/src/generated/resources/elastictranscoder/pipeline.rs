@@ -163,45 +163,45 @@ pub mod pipeline {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PipelineArgs,
     ) -> PipelineResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PipelineArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> PipelineResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PipelineArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> PipelineResult {
-        let aws_kms_key_arn_binding = args.aws_kms_key_arn.get_output(context);
-        let content_config_binding = args.content_config.get_output(context);
+        let aws_kms_key_arn_binding = args.aws_kms_key_arn.get_output(ctx);
+        let content_config_binding = args.content_config.get_output(ctx);
         let content_config_permissions_binding = args
             .content_config_permissions
-            .get_output(context);
-        let input_bucket_binding = args.input_bucket.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let notifications_binding = args.notifications.get_output(context);
-        let output_bucket_binding = args.output_bucket.get_output(context);
-        let role_binding = args.role.get_output(context);
-        let thumbnail_config_binding = args.thumbnail_config.get_output(context);
+            .get_output(ctx);
+        let input_bucket_binding = args.input_bucket.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let notifications_binding = args.notifications.get_output(ctx);
+        let output_bucket_binding = args.output_bucket.get_output(ctx);
+        let role_binding = args.role.get_output(ctx);
+        let thumbnail_config_binding = args.thumbnail_config.get_output(ctx);
         let thumbnail_config_permissions_binding = args
             .thumbnail_config_permissions
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:elastictranscoder/pipeline:Pipeline".into(),
             name: name.to_string(),
@@ -250,7 +250,7 @@ pub mod pipeline {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         PipelineResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -125,43 +125,39 @@ pub mod instance_fleet {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceFleetArgs,
     ) -> InstanceFleetResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceFleetArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> InstanceFleetResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceFleetArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> InstanceFleetResult {
-        let cluster_id_binding = args.cluster_id.get_output(context);
-        let instance_type_configs_binding = args
-            .instance_type_configs
-            .get_output(context);
-        let launch_specifications_binding = args
-            .launch_specifications
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
+        let cluster_id_binding = args.cluster_id.get_output(ctx);
+        let instance_type_configs_binding = args.instance_type_configs.get_output(ctx);
+        let launch_specifications_binding = args.launch_specifications.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let target_on_demand_capacity_binding = args
             .target_on_demand_capacity
-            .get_output(context);
-        let target_spot_capacity_binding = args.target_spot_capacity.get_output(context);
+            .get_output(ctx);
+        let target_spot_capacity_binding = args.target_spot_capacity.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:emr/instanceFleet:InstanceFleet".into(),
             name: name.to_string(),
@@ -194,7 +190,7 @@ pub mod instance_fleet {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         InstanceFleetResult {
             id: o.get_id(),
             urn: o.get_urn(),

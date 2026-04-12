@@ -72,10 +72,10 @@ pub mod get_received_license {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetReceivedLicenseArgs,
     ) -> GetReceivedLicenseResult {
-        let license_arn_binding = args.license_arn.get_output(context);
+        let license_arn_binding = args.license_arn.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:licensemanager/getReceivedLicense:getReceivedLicense".into(),
             version: super::super::super::get_version(),
@@ -86,7 +86,7 @@ pub mod get_received_license {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetReceivedLicenseResult {
             beneficiary: o.get_field("beneficiary"),
             consumption_configurations: o.get_field("consumptionConfigurations"),

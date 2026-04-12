@@ -139,38 +139,36 @@ pub mod default_security_group {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DefaultSecurityGroupArgs,
     ) -> DefaultSecurityGroupResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DefaultSecurityGroupArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DefaultSecurityGroupResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DefaultSecurityGroupArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DefaultSecurityGroupResult {
-        let egress_binding = args.egress.get_output(context);
-        let ingress_binding = args.ingress.get_output(context);
-        let revoke_rules_on_delete_binding = args
-            .revoke_rules_on_delete
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let vpc_id_binding = args.vpc_id.get_output(context);
+        let egress_binding = args.egress.get_output(ctx);
+        let ingress_binding = args.ingress.get_output(ctx);
+        let revoke_rules_on_delete_binding = args.revoke_rules_on_delete.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let vpc_id_binding = args.vpc_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/defaultSecurityGroup:DefaultSecurityGroup".into(),
             name: name.to_string(),
@@ -199,7 +197,7 @@ pub mod default_security_group {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DefaultSecurityGroupResult {
             id: o.get_id(),
             urn: o.get_urn(),

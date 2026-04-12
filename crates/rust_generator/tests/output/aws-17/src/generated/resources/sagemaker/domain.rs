@@ -218,52 +218,48 @@ pub mod domain {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DomainArgs,
     ) -> DomainResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DomainArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DomainResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DomainArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DomainResult {
         let app_network_access_type_binding = args
             .app_network_access_type
-            .get_output(context);
+            .get_output(ctx);
         let app_security_group_management_binding = args
             .app_security_group_management
-            .get_output(context);
-        let auth_mode_binding = args.auth_mode.get_output(context);
-        let default_space_settings_binding = args
-            .default_space_settings
-            .get_output(context);
-        let default_user_settings_binding = args
-            .default_user_settings
-            .get_output(context);
-        let domain_name_binding = args.domain_name.get_output(context);
-        let domain_settings_binding = args.domain_settings.get_output(context);
-        let kms_key_id_binding = args.kms_key_id.get_output(context);
-        let retention_policy_binding = args.retention_policy.get_output(context);
-        let subnet_ids_binding = args.subnet_ids.get_output(context);
-        let tag_propagation_binding = args.tag_propagation.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let vpc_id_binding = args.vpc_id.get_output(context);
+            .get_output(ctx);
+        let auth_mode_binding = args.auth_mode.get_output(ctx);
+        let default_space_settings_binding = args.default_space_settings.get_output(ctx);
+        let default_user_settings_binding = args.default_user_settings.get_output(ctx);
+        let domain_name_binding = args.domain_name.get_output(ctx);
+        let domain_settings_binding = args.domain_settings.get_output(ctx);
+        let kms_key_id_binding = args.kms_key_id.get_output(ctx);
+        let retention_policy_binding = args.retention_policy.get_output(ctx);
+        let subnet_ids_binding = args.subnet_ids.get_output(ctx);
+        let tag_propagation_binding = args.tag_propagation.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let vpc_id_binding = args.vpc_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:sagemaker/domain:Domain".into(),
             name: name.to_string(),
@@ -324,7 +320,7 @@ pub mod domain {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DomainResult {
             id: o.get_id(),
             urn: o.get_urn(),

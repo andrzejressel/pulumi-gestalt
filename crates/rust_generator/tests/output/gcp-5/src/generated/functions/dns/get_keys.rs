@@ -35,11 +35,11 @@ pub mod get_keys {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetKeysArgs,
     ) -> GetKeysResult {
-        let managed_zone_binding = args.managed_zone.get_output(context);
-        let project_binding = args.project.get_output(context);
+        let managed_zone_binding = args.managed_zone.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:dns/getKeys:getKeys".into(),
             version: super::super::super::get_version(),
@@ -54,7 +54,7 @@ pub mod get_keys {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetKeysResult {
             id: o.get_field("id"),
             key_signing_keys: o.get_field("keySigningKeys"),

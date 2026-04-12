@@ -145,39 +145,39 @@ pub mod resolver_forwarding_rule {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ResolverForwardingRuleArgs,
     ) -> ResolverForwardingRuleResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ResolverForwardingRuleArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ResolverForwardingRuleResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ResolverForwardingRuleArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ResolverForwardingRuleResult {
         let dns_forwarding_ruleset_id_binding = args
             .dns_forwarding_ruleset_id
-            .get_output(context);
-        let domain_name_binding = args.domain_name.get_output(context);
-        let enabled_binding = args.enabled.get_output(context);
-        let metadata_binding = args.metadata.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let target_dns_servers_binding = args.target_dns_servers.get_output(context);
+            .get_output(ctx);
+        let domain_name_binding = args.domain_name.get_output(ctx);
+        let enabled_binding = args.enabled.get_output(ctx);
+        let metadata_binding = args.metadata.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let target_dns_servers_binding = args.target_dns_servers.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:privatedns/resolverForwardingRule:ResolverForwardingRule"
                 .into(),
@@ -211,7 +211,7 @@ pub mod resolver_forwarding_rule {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ResolverForwardingRuleResult {
             id: o.get_id(),
             urn: o.get_urn(),

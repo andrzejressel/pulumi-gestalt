@@ -40,12 +40,12 @@ pub mod get_backup_plan {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetBackupPlanArgs,
     ) -> GetBackupPlanResult {
-        let backup_plan_id_binding = args.backup_plan_id.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let project_binding = args.project.get_output(context);
+        let backup_plan_id_binding = args.backup_plan_id.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:backupdisasterrecovery/getBackupPlan:getBackupPlan".into(),
             version: super::super::super::get_version(),
@@ -64,7 +64,7 @@ pub mod get_backup_plan {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetBackupPlanResult {
             backup_plan_id: o.get_field("backupPlanId"),
             backup_rules: o.get_field("backupRules"),

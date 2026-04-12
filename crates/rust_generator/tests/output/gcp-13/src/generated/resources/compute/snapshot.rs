@@ -285,45 +285,45 @@ pub mod snapshot {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SnapshotArgs,
     ) -> SnapshotResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SnapshotArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> SnapshotResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SnapshotArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> SnapshotResult {
-        let chain_name_binding = args.chain_name.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
+        let chain_name_binding = args.chain_name.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let snapshot_encryption_key_binding = args
             .snapshot_encryption_key
-            .get_output(context);
-        let source_disk_binding = args.source_disk.get_output(context);
+            .get_output(ctx);
+        let source_disk_binding = args.source_disk.get_output(ctx);
         let source_disk_encryption_key_binding = args
             .source_disk_encryption_key
-            .get_output(context);
-        let storage_locations_binding = args.storage_locations.get_output(context);
-        let zone_binding = args.zone.get_output(context);
+            .get_output(ctx);
+        let storage_locations_binding = args.storage_locations.get_output(ctx);
+        let zone_binding = args.zone.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:compute/snapshot:Snapshot".into(),
             name: name.to_string(),
@@ -372,7 +372,7 @@ pub mod snapshot {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         SnapshotResult {
             id: o.get_id(),
             urn: o.get_urn(),

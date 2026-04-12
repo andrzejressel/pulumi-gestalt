@@ -2,17 +2,17 @@ use anyhow::Result;
 fn main() {
     pulumi_gestalt_rust::run(pulumi_main).unwrap();
 }
-fn pulumi_main(context: &pulumi_gestalt_rust::Context) -> Result<()> {
-    let aSecret = context
+fn pulumi_main(ctx: &pulumi_gestalt_rust::Context) -> Result<()> {
+    let aSecret = ctx
         .require_config_secret(None, "aSecret")
         .expect("Expected config [aSecret] to exist");
-    let notSecret = context
+    let notSecret = ctx
         .require_config(None, "notSecret")
         .expect("Expected config [notSecret] to exist");
-    context.add_export("roundtripSecret", &aSecret);
-    context.add_export("roundtripNotSecret", &notSecret);
-    context.add_export("double", &aSecret.secret());
-    context.add_export("open", &aSecret.unsecret());
-    context.add_export("close", &context.new_secret(&notSecret));
+    ctx.add_export("roundtripSecret", &aSecret);
+    ctx.add_export("roundtripNotSecret", &notSecret);
+    ctx.add_export("double", &aSecret.secret());
+    ctx.add_export("open", &aSecret.unsecret());
+    ctx.add_export("close", &ctx.new_secret(&notSecret));
     Ok(())
 }

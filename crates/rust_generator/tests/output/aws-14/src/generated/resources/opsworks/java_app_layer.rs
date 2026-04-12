@@ -209,89 +209,81 @@ pub mod java_app_layer {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: JavaAppLayerArgs,
     ) -> JavaAppLayerResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: JavaAppLayerArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> JavaAppLayerResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: JavaAppLayerArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> JavaAppLayerResult {
-        let app_server_binding = args.app_server.get_output(context);
-        let app_server_version_binding = args.app_server_version.get_output(context);
+        let app_server_binding = args.app_server.get_output(ctx);
+        let app_server_version_binding = args.app_server_version.get_output(ctx);
         let auto_assign_elastic_ips_binding = args
             .auto_assign_elastic_ips
-            .get_output(context);
-        let auto_assign_public_ips_binding = args
-            .auto_assign_public_ips
-            .get_output(context);
-        let auto_healing_binding = args.auto_healing.get_output(context);
+            .get_output(ctx);
+        let auto_assign_public_ips_binding = args.auto_assign_public_ips.get_output(ctx);
+        let auto_healing_binding = args.auto_healing.get_output(ctx);
         let cloudwatch_configuration_binding = args
             .cloudwatch_configuration
-            .get_output(context);
+            .get_output(ctx);
         let custom_configure_recipes_binding = args
             .custom_configure_recipes
-            .get_output(context);
-        let custom_deploy_recipes_binding = args
-            .custom_deploy_recipes
-            .get_output(context);
+            .get_output(ctx);
+        let custom_deploy_recipes_binding = args.custom_deploy_recipes.get_output(ctx);
         let custom_instance_profile_arn_binding = args
             .custom_instance_profile_arn
-            .get_output(context);
-        let custom_json_binding = args.custom_json.get_output(context);
+            .get_output(ctx);
+        let custom_json_binding = args.custom_json.get_output(ctx);
         let custom_security_group_ids_binding = args
             .custom_security_group_ids
-            .get_output(context);
-        let custom_setup_recipes_binding = args.custom_setup_recipes.get_output(context);
+            .get_output(ctx);
+        let custom_setup_recipes_binding = args.custom_setup_recipes.get_output(ctx);
         let custom_shutdown_recipes_binding = args
             .custom_shutdown_recipes
-            .get_output(context);
+            .get_output(ctx);
         let custom_undeploy_recipes_binding = args
             .custom_undeploy_recipes
-            .get_output(context);
-        let drain_elb_on_shutdown_binding = args
-            .drain_elb_on_shutdown
-            .get_output(context);
-        let ebs_volumes_binding = args.ebs_volumes.get_output(context);
-        let elastic_load_balancer_binding = args
-            .elastic_load_balancer
-            .get_output(context);
+            .get_output(ctx);
+        let drain_elb_on_shutdown_binding = args.drain_elb_on_shutdown.get_output(ctx);
+        let ebs_volumes_binding = args.ebs_volumes.get_output(ctx);
+        let elastic_load_balancer_binding = args.elastic_load_balancer.get_output(ctx);
         let install_updates_on_boot_binding = args
             .install_updates_on_boot
-            .get_output(context);
+            .get_output(ctx);
         let instance_shutdown_timeout_binding = args
             .instance_shutdown_timeout
-            .get_output(context);
-        let jvm_options_binding = args.jvm_options.get_output(context);
-        let jvm_type_binding = args.jvm_type.get_output(context);
-        let jvm_version_binding = args.jvm_version.get_output(context);
+            .get_output(ctx);
+        let jvm_options_binding = args.jvm_options.get_output(ctx);
+        let jvm_type_binding = args.jvm_type.get_output(ctx);
+        let jvm_version_binding = args.jvm_version.get_output(ctx);
         let load_based_auto_scaling_binding = args
             .load_based_auto_scaling
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let stack_id_binding = args.stack_id.get_output(context);
-        let system_packages_binding = args.system_packages.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let stack_id_binding = args.stack_id.get_output(ctx);
+        let system_packages_binding = args.system_packages.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let use_ebs_optimized_instances_binding = args
             .use_ebs_optimized_instances
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:opsworks/javaAppLayer:JavaAppLayer".into(),
             name: name.to_string(),
@@ -412,7 +404,7 @@ pub mod java_app_layer {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         JavaAppLayerResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -126,48 +126,48 @@ pub mod load_balancer_monitor {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LoadBalancerMonitorArgs,
     ) -> LoadBalancerMonitorResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LoadBalancerMonitorArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> LoadBalancerMonitorResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LoadBalancerMonitorArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> LoadBalancerMonitorResult {
-        let account_id_binding = args.account_id.get_output(context);
-        let allow_insecure_binding = args.allow_insecure.get_output(context);
-        let consecutive_down_binding = args.consecutive_down.get_output(context);
-        let consecutive_up_binding = args.consecutive_up.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let expected_body_binding = args.expected_body.get_output(context);
-        let expected_codes_binding = args.expected_codes.get_output(context);
-        let follow_redirects_binding = args.follow_redirects.get_output(context);
-        let headers_binding = args.headers.get_output(context);
-        let interval_binding = args.interval.get_output(context);
-        let method_binding = args.method.get_output(context);
-        let path_binding = args.path.get_output(context);
-        let port_binding = args.port.get_output(context);
-        let probe_zone_binding = args.probe_zone.get_output(context);
-        let retries_binding = args.retries.get_output(context);
-        let timeout_binding = args.timeout.get_output(context);
-        let type__binding = args.type_.get_output(context);
+        let account_id_binding = args.account_id.get_output(ctx);
+        let allow_insecure_binding = args.allow_insecure.get_output(ctx);
+        let consecutive_down_binding = args.consecutive_down.get_output(ctx);
+        let consecutive_up_binding = args.consecutive_up.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let expected_body_binding = args.expected_body.get_output(ctx);
+        let expected_codes_binding = args.expected_codes.get_output(ctx);
+        let follow_redirects_binding = args.follow_redirects.get_output(ctx);
+        let headers_binding = args.headers.get_output(ctx);
+        let interval_binding = args.interval.get_output(ctx);
+        let method_binding = args.method.get_output(ctx);
+        let path_binding = args.path.get_output(ctx);
+        let port_binding = args.port.get_output(ctx);
+        let probe_zone_binding = args.probe_zone.get_output(ctx);
+        let retries_binding = args.retries.get_output(ctx);
+        let timeout_binding = args.timeout.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "cloudflare:index/loadBalancerMonitor:LoadBalancerMonitor".into(),
             name: name.to_string(),
@@ -244,7 +244,7 @@ pub mod load_balancer_monitor {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         LoadBalancerMonitorResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -67,17 +67,17 @@ pub mod get_shared_image_version {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetSharedImageVersionArgs,
     ) -> GetSharedImageVersionResult {
-        let gallery_name_binding = args.gallery_name.get_output(context);
-        let image_name_binding = args.image_name.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+        let gallery_name_binding = args.gallery_name.get_output(ctx);
+        let image_name_binding = args.image_name.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let sort_versions_by_semver_binding = args
             .sort_versions_by_semver
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:compute/getSharedImageVersion:getSharedImageVersion".into(),
             version: super::super::super::get_version(),
@@ -108,7 +108,7 @@ pub mod get_shared_image_version {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetSharedImageVersionResult {
             exclude_from_latest: o.get_field("excludeFromLatest"),
             gallery_name: o.get_field("galleryName"),

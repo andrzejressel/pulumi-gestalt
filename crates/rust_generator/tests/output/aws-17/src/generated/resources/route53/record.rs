@@ -321,59 +321,59 @@ pub mod record {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RecordArgs,
     ) -> RecordResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RecordArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> RecordResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RecordArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> RecordResult {
-        let aliases_binding = args.aliases.get_output(context);
-        let allow_overwrite_binding = args.allow_overwrite.get_output(context);
-        let cidr_routing_policy_binding = args.cidr_routing_policy.get_output(context);
+        let aliases_binding = args.aliases.get_output(ctx);
+        let allow_overwrite_binding = args.allow_overwrite.get_output(ctx);
+        let cidr_routing_policy_binding = args.cidr_routing_policy.get_output(ctx);
         let failover_routing_policies_binding = args
             .failover_routing_policies
-            .get_output(context);
+            .get_output(ctx);
         let geolocation_routing_policies_binding = args
             .geolocation_routing_policies
-            .get_output(context);
+            .get_output(ctx);
         let geoproximity_routing_policy_binding = args
             .geoproximity_routing_policy
-            .get_output(context);
-        let health_check_id_binding = args.health_check_id.get_output(context);
+            .get_output(ctx);
+        let health_check_id_binding = args.health_check_id.get_output(ctx);
         let latency_routing_policies_binding = args
             .latency_routing_policies
-            .get_output(context);
+            .get_output(ctx);
         let multivalue_answer_routing_policy_binding = args
             .multivalue_answer_routing_policy
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let records_binding = args.records.get_output(context);
-        let set_identifier_binding = args.set_identifier.get_output(context);
-        let ttl_binding = args.ttl.get_output(context);
-        let type__binding = args.type_.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let records_binding = args.records.get_output(ctx);
+        let set_identifier_binding = args.set_identifier.get_output(ctx);
+        let ttl_binding = args.ttl.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
         let weighted_routing_policies_binding = args
             .weighted_routing_policies
-            .get_output(context);
-        let zone_id_binding = args.zone_id.get_output(context);
+            .get_output(ctx);
+        let zone_id_binding = args.zone_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:route53/record:Record".into(),
             name: name.to_string(),
@@ -446,7 +446,7 @@ pub mod record {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         RecordResult {
             id: o.get_id(),
             urn: o.get_urn(),

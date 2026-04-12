@@ -408,43 +408,41 @@ pub mod pipeline_job {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PipelineJobArgs,
     ) -> PipelineJobResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PipelineJobArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> PipelineJobResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PipelineJobArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> PipelineJobResult {
-        let backfill_pipeline_job_binding = args
-            .backfill_pipeline_job
-            .get_output(context);
-        let dataset_binding = args.dataset.get_output(context);
-        let disable_lineage_binding = args.disable_lineage.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let mapping_pipeline_job_binding = args.mapping_pipeline_job.get_output(context);
-        let name_binding = args.name.get_output(context);
+        let backfill_pipeline_job_binding = args.backfill_pipeline_job.get_output(ctx);
+        let dataset_binding = args.dataset.get_output(ctx);
+        let disable_lineage_binding = args.disable_lineage.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let mapping_pipeline_job_binding = args.mapping_pipeline_job.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let reconciliation_pipeline_job_binding = args
             .reconciliation_pipeline_job
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:healthcare/pipelineJob:PipelineJob".into(),
             name: name.to_string(),
@@ -485,7 +483,7 @@ pub mod pipeline_job {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         PipelineJobResult {
             id: o.get_id(),
             urn: o.get_urn(),

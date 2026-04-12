@@ -132,44 +132,44 @@ pub mod product {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProductArgs,
     ) -> ProductResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProductArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ProductResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProductArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ProductResult {
-        let accept_language_binding = args.accept_language.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let distributor_binding = args.distributor.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let owner_binding = args.owner.get_output(context);
+        let accept_language_binding = args.accept_language.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let distributor_binding = args.distributor.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let owner_binding = args.owner.get_output(ctx);
         let provisioning_artifact_parameters_binding = args
             .provisioning_artifact_parameters
-            .get_output(context);
-        let support_description_binding = args.support_description.get_output(context);
-        let support_email_binding = args.support_email.get_output(context);
-        let support_url_binding = args.support_url.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let type__binding = args.type_.get_output(context);
+            .get_output(ctx);
+        let support_description_binding = args.support_description.get_output(ctx);
+        let support_email_binding = args.support_email.get_output(ctx);
+        let support_url_binding = args.support_url.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:servicecatalog/product:Product".into(),
             name: name.to_string(),
@@ -222,7 +222,7 @@ pub mod product {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ProductResult {
             id: o.get_id(),
             urn: o.get_urn(),

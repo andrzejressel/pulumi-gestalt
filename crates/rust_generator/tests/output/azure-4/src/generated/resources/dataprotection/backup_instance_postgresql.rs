@@ -196,39 +196,39 @@ pub mod backup_instance_postgresql {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BackupInstancePostgresqlArgs,
     ) -> BackupInstancePostgresqlResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BackupInstancePostgresqlArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> BackupInstancePostgresqlResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BackupInstancePostgresqlArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> BackupInstancePostgresqlResult {
-        let backup_policy_id_binding = args.backup_policy_id.get_output(context);
+        let backup_policy_id_binding = args.backup_policy_id.get_output(ctx);
         let database_credential_key_vault_secret_id_binding = args
             .database_credential_key_vault_secret_id
-            .get_output(context);
-        let database_id_binding = args.database_id.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let vault_id_binding = args.vault_id.get_output(context);
+            .get_output(ctx);
+        let database_id_binding = args.database_id.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let vault_id_binding = args.vault_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:dataprotection/backupInstancePostgresql:BackupInstancePostgresql"
                 .into(),
@@ -262,7 +262,7 @@ pub mod backup_instance_postgresql {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         BackupInstancePostgresqlResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -28,10 +28,10 @@ pub mod get_broker_engine_types {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetBrokerEngineTypesArgs,
     ) -> GetBrokerEngineTypesResult {
-        let engine_type_binding = args.engine_type.get_output(context);
+        let engine_type_binding = args.engine_type.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:mq/getBrokerEngineTypes:getBrokerEngineTypes".into(),
             version: super::super::super::get_version(),
@@ -42,7 +42,7 @@ pub mod get_broker_engine_types {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetBrokerEngineTypesResult {
             broker_engine_types: o.get_field("brokerEngineTypes"),
             engine_type: o.get_field("engineType"),

@@ -47,12 +47,12 @@ pub mod get_certificate_data {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetCertificateDataArgs,
     ) -> GetCertificateDataResult {
-        let key_vault_id_binding = args.key_vault_id.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let version_binding = args.version.get_output(context);
+        let key_vault_id_binding = args.key_vault_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let version_binding = args.version.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:keyvault/getCertificateData:getCertificateData".into(),
             version: super::super::super::get_version(),
@@ -71,7 +71,7 @@ pub mod get_certificate_data {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetCertificateDataResult {
             certificates_count: o.get_field("certificatesCount"),
             expires: o.get_field("expires"),

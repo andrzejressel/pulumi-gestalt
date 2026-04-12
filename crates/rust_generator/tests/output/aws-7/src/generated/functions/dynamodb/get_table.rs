@@ -65,14 +65,12 @@ pub mod get_table {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetTableArgs,
     ) -> GetTableResult {
-        let name_binding = args.name.get_output(context);
-        let server_side_encryption_binding = args
-            .server_side_encryption
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let server_side_encryption_binding = args.server_side_encryption.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:dynamodb/getTable:getTable".into(),
             version: super::super::super::get_version(),
@@ -91,7 +89,7 @@ pub mod get_table {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetTableResult {
             arn: o.get_field("arn"),
             attributes: o.get_field("attributes"),

@@ -103,37 +103,37 @@ pub mod cloud_formation_stack {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CloudFormationStackArgs,
     ) -> CloudFormationStackResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CloudFormationStackArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> CloudFormationStackResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CloudFormationStackArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> CloudFormationStackResult {
-        let application_id_binding = args.application_id.get_output(context);
-        let capabilities_binding = args.capabilities.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let parameters_binding = args.parameters.get_output(context);
-        let semantic_version_binding = args.semantic_version.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let application_id_binding = args.application_id.get_output(ctx);
+        let capabilities_binding = args.capabilities.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let parameters_binding = args.parameters.get_output(ctx);
+        let semantic_version_binding = args.semantic_version.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:serverlessrepository/cloudFormationStack:CloudFormationStack"
                 .into(),
@@ -167,7 +167,7 @@ pub mod cloud_formation_stack {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         CloudFormationStackResult {
             id: o.get_id(),
             urn: o.get_urn(),

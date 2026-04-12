@@ -80,33 +80,33 @@ pub mod domain_service_access_policy {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DomainServiceAccessPolicyArgs,
     ) -> DomainServiceAccessPolicyResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DomainServiceAccessPolicyArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DomainServiceAccessPolicyResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DomainServiceAccessPolicyArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DomainServiceAccessPolicyResult {
-        let access_policy_binding = args.access_policy.get_output(context);
-        let domain_name_binding = args.domain_name.get_output(context);
+        let access_policy_binding = args.access_policy.get_output(ctx);
+        let domain_name_binding = args.domain_name.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:cloudsearch/domainServiceAccessPolicy:DomainServiceAccessPolicy"
                 .into(),
@@ -124,7 +124,7 @@ pub mod domain_service_access_policy {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DomainServiceAccessPolicyResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -87,37 +87,37 @@ pub mod integration_account_session {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IntegrationAccountSessionArgs,
     ) -> IntegrationAccountSessionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IntegrationAccountSessionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> IntegrationAccountSessionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IntegrationAccountSessionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> IntegrationAccountSessionResult {
-        let content_binding = args.content.get_output(context);
+        let content_binding = args.content.get_output(ctx);
         let integration_account_name_binding = args
             .integration_account_name
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:logicapps/integrationAccountSession:IntegrationAccountSession"
                 .into(),
@@ -143,7 +143,7 @@ pub mod integration_account_session {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         IntegrationAccountSessionResult {
             id: o.get_id(),
             urn: o.get_urn(),

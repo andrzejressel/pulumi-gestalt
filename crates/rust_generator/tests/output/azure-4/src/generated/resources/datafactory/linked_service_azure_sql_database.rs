@@ -167,54 +167,50 @@ pub mod linked_service_azure_sql_database {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LinkedServiceAzureSqlDatabaseArgs,
     ) -> LinkedServiceAzureSqlDatabaseResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LinkedServiceAzureSqlDatabaseArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> LinkedServiceAzureSqlDatabaseResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LinkedServiceAzureSqlDatabaseArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> LinkedServiceAzureSqlDatabaseResult {
-        let additional_properties_binding = args
-            .additional_properties
-            .get_output(context);
-        let annotations_binding = args.annotations.get_output(context);
-        let connection_string_binding = args.connection_string.get_output(context);
-        let credential_name_binding = args.credential_name.get_output(context);
-        let data_factory_id_binding = args.data_factory_id.get_output(context);
-        let description_binding = args.description.get_output(context);
+        let additional_properties_binding = args.additional_properties.get_output(ctx);
+        let annotations_binding = args.annotations.get_output(ctx);
+        let connection_string_binding = args.connection_string.get_output(ctx);
+        let credential_name_binding = args.credential_name.get_output(ctx);
+        let data_factory_id_binding = args.data_factory_id.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
         let integration_runtime_name_binding = args
             .integration_runtime_name
-            .get_output(context);
+            .get_output(ctx);
         let key_vault_connection_string_binding = args
             .key_vault_connection_string
-            .get_output(context);
-        let key_vault_password_binding = args.key_vault_password.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let parameters_binding = args.parameters.get_output(context);
-        let service_principal_id_binding = args.service_principal_id.get_output(context);
-        let service_principal_key_binding = args
-            .service_principal_key
-            .get_output(context);
-        let tenant_id_binding = args.tenant_id.get_output(context);
-        let use_managed_identity_binding = args.use_managed_identity.get_output(context);
+            .get_output(ctx);
+        let key_vault_password_binding = args.key_vault_password.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let parameters_binding = args.parameters.get_output(ctx);
+        let service_principal_id_binding = args.service_principal_id.get_output(ctx);
+        let service_principal_key_binding = args.service_principal_key.get_output(ctx);
+        let tenant_id_binding = args.tenant_id.get_output(ctx);
+        let use_managed_identity_binding = args.use_managed_identity.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:datafactory/linkedServiceAzureSqlDatabase:LinkedServiceAzureSqlDatabase"
                 .into(),
@@ -284,7 +280,7 @@ pub mod linked_service_azure_sql_database {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         LinkedServiceAzureSqlDatabaseResult {
             id: o.get_id(),
             urn: o.get_urn(),

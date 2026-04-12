@@ -36,13 +36,13 @@ pub mod get_replication_subnet_group {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetReplicationSubnetGroupArgs,
     ) -> GetReplicationSubnetGroupResult {
         let replication_subnet_group_id_binding = args
             .replication_subnet_group_id
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:dms/getReplicationSubnetGroup:getReplicationSubnetGroup".into(),
             version: super::super::super::get_version(),
@@ -57,7 +57,7 @@ pub mod get_replication_subnet_group {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetReplicationSubnetGroupResult {
             id: o.get_field("id"),
             replication_subnet_group_arn: o.get_field("replicationSubnetGroupArn"),

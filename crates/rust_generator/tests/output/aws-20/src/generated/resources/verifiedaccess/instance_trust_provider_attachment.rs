@@ -70,37 +70,37 @@ pub mod instance_trust_provider_attachment {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceTrustProviderAttachmentArgs,
     ) -> InstanceTrustProviderAttachmentResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceTrustProviderAttachmentArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> InstanceTrustProviderAttachmentResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceTrustProviderAttachmentArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> InstanceTrustProviderAttachmentResult {
         let verifiedaccess_instance_id_binding = args
             .verifiedaccess_instance_id
-            .get_output(context);
+            .get_output(ctx);
         let verifiedaccess_trust_provider_id_binding = args
             .verifiedaccess_trust_provider_id
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:verifiedaccess/instanceTrustProviderAttachment:InstanceTrustProviderAttachment"
                 .into(),
@@ -118,7 +118,7 @@ pub mod instance_trust_provider_attachment {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         InstanceTrustProviderAttachmentResult {
             id: o.get_id(),
             urn: o.get_urn(),

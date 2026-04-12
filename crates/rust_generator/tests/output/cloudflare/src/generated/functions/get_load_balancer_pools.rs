@@ -42,12 +42,12 @@ pub mod get_load_balancer_pools {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetLoadBalancerPoolsArgs,
     ) -> GetLoadBalancerPoolsResult {
-        let account_id_binding = args.account_id.get_output(context);
-        let filter_binding = args.filter.get_output(context);
-        let pools_binding = args.pools.get_output(context);
+        let account_id_binding = args.account_id.get_output(ctx);
+        let filter_binding = args.filter.get_output(ctx);
+        let pools_binding = args.pools.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "cloudflare:index/getLoadBalancerPools:getLoadBalancerPools".into(),
             version: super::super::get_version(),
@@ -66,7 +66,7 @@ pub mod get_load_balancer_pools {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetLoadBalancerPoolsResult {
             account_id: o.get_field("accountId"),
             filter: o.get_field("filter"),

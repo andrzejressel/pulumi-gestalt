@@ -407,48 +407,48 @@ pub mod vpc_flow_logs_config {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcFlowLogsConfigArgs,
     ) -> VpcFlowLogsConfigResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcFlowLogsConfigArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> VpcFlowLogsConfigResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcFlowLogsConfigArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> VpcFlowLogsConfigResult {
-        let aggregation_interval_binding = args.aggregation_interval.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let filter_expr_binding = args.filter_expr.get_output(context);
-        let flow_sampling_binding = args.flow_sampling.get_output(context);
+        let aggregation_interval_binding = args.aggregation_interval.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let filter_expr_binding = args.filter_expr.get_output(ctx);
+        let flow_sampling_binding = args.flow_sampling.get_output(ctx);
         let interconnect_attachment_binding = args
             .interconnect_attachment
-            .get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let metadata_binding = args.metadata.get_output(context);
-        let metadata_fields_binding = args.metadata_fields.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let state_binding = args.state.get_output(context);
+            .get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let metadata_binding = args.metadata.get_output(ctx);
+        let metadata_fields_binding = args.metadata_fields.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let state_binding = args.state.get_output(ctx);
         let vpc_flow_logs_config_id_binding = args
             .vpc_flow_logs_config_id
-            .get_output(context);
-        let vpn_tunnel_binding = args.vpn_tunnel.get_output(context);
+            .get_output(ctx);
+        let vpn_tunnel_binding = args.vpn_tunnel.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:networkmanagement/vpcFlowLogsConfig:VpcFlowLogsConfig".into(),
             name: name.to_string(),
@@ -509,7 +509,7 @@ pub mod vpc_flow_logs_config {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         VpcFlowLogsConfigResult {
             id: o.get_id(),
             urn: o.get_urn(),

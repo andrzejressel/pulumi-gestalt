@@ -39,12 +39,12 @@ pub mod get_ai_endpoint_iam_policy {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetAiEndpointIamPolicyArgs,
     ) -> GetAiEndpointIamPolicyResult {
-        let endpoint_binding = args.endpoint.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let project_binding = args.project.get_output(context);
+        let endpoint_binding = args.endpoint.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:vertex/getAiEndpointIamPolicy:getAiEndpointIamPolicy".into(),
             version: super::super::super::get_version(),
@@ -63,7 +63,7 @@ pub mod get_ai_endpoint_iam_policy {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetAiEndpointIamPolicyResult {
             endpoint: o.get_field("endpoint"),
             etag: o.get_field("etag"),

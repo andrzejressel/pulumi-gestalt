@@ -411,47 +411,47 @@ pub mod bare_metal_admin_cluster {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BareMetalAdminClusterArgs,
     ) -> BareMetalAdminClusterResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BareMetalAdminClusterArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> BareMetalAdminClusterResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BareMetalAdminClusterArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> BareMetalAdminClusterResult {
-        let annotations_binding = args.annotations.get_output(context);
-        let bare_metal_version_binding = args.bare_metal_version.get_output(context);
-        let cluster_operations_binding = args.cluster_operations.get_output(context);
-        let control_plane_binding = args.control_plane.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let load_balancer_binding = args.load_balancer.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let maintenance_config_binding = args.maintenance_config.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_config_binding = args.network_config.get_output(context);
-        let node_access_config_binding = args.node_access_config.get_output(context);
-        let node_config_binding = args.node_config.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let proxy_binding = args.proxy.get_output(context);
-        let security_config_binding = args.security_config.get_output(context);
-        let storage_binding = args.storage.get_output(context);
+        let annotations_binding = args.annotations.get_output(ctx);
+        let bare_metal_version_binding = args.bare_metal_version.get_output(ctx);
+        let cluster_operations_binding = args.cluster_operations.get_output(ctx);
+        let control_plane_binding = args.control_plane.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let load_balancer_binding = args.load_balancer.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let maintenance_config_binding = args.maintenance_config.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_config_binding = args.network_config.get_output(ctx);
+        let node_access_config_binding = args.node_access_config.get_output(ctx);
+        let node_config_binding = args.node_config.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let proxy_binding = args.proxy.get_output(ctx);
+        let security_config_binding = args.security_config.get_output(ctx);
+        let storage_binding = args.storage.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:gkeonprem/bareMetalAdminCluster:BareMetalAdminCluster".into(),
             name: name.to_string(),
@@ -524,7 +524,7 @@ pub mod bare_metal_admin_cluster {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         BareMetalAdminClusterResult {
             id: o.get_id(),
             urn: o.get_urn(),

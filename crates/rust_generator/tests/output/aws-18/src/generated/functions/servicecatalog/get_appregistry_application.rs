@@ -33,10 +33,10 @@ pub mod get_appregistry_application {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetAppregistryApplicationArgs,
     ) -> GetAppregistryApplicationResult {
-        let id_binding = args.id.get_output(context);
+        let id_binding = args.id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:servicecatalog/getAppregistryApplication:getAppregistryApplication"
                 .into(),
@@ -48,7 +48,7 @@ pub mod get_appregistry_application {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetAppregistryApplicationResult {
             application_tag: o.get_field("applicationTag"),
             arn: o.get_field("arn"),

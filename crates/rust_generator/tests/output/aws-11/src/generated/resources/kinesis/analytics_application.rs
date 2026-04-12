@@ -297,44 +297,42 @@ pub mod analytics_application {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AnalyticsApplicationArgs,
     ) -> AnalyticsApplicationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AnalyticsApplicationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AnalyticsApplicationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AnalyticsApplicationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AnalyticsApplicationResult {
         let cloudwatch_logging_options_binding = args
             .cloudwatch_logging_options
-            .get_output(context);
-        let code_binding = args.code.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let inputs_binding = args.inputs.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let outputs_binding = args.outputs.get_output(context);
-        let reference_data_sources_binding = args
-            .reference_data_sources
-            .get_output(context);
-        let start_application_binding = args.start_application.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let code_binding = args.code.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let inputs_binding = args.inputs.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let outputs_binding = args.outputs.get_output(ctx);
+        let reference_data_sources_binding = args.reference_data_sources.get_output(ctx);
+        let start_application_binding = args.start_application.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:kinesis/analyticsApplication:AnalyticsApplication".into(),
             name: name.to_string(),
@@ -379,7 +377,7 @@ pub mod analytics_application {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AnalyticsApplicationResult {
             id: o.get_id(),
             urn: o.get_urn(),

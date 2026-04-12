@@ -183,47 +183,47 @@ pub mod diagnostic_setting {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DiagnosticSettingArgs,
     ) -> DiagnosticSettingResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DiagnosticSettingArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DiagnosticSettingResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DiagnosticSettingArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DiagnosticSettingResult {
-        let enabled_logs_binding = args.enabled_logs.get_output(context);
+        let enabled_logs_binding = args.enabled_logs.get_output(ctx);
         let eventhub_authorization_rule_id_binding = args
             .eventhub_authorization_rule_id
-            .get_output(context);
-        let eventhub_name_binding = args.eventhub_name.get_output(context);
+            .get_output(ctx);
+        let eventhub_name_binding = args.eventhub_name.get_output(ctx);
         let log_analytics_destination_type_binding = args
             .log_analytics_destination_type
-            .get_output(context);
+            .get_output(ctx);
         let log_analytics_workspace_id_binding = args
             .log_analytics_workspace_id
-            .get_output(context);
-        let metrics_binding = args.metrics.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let partner_solution_id_binding = args.partner_solution_id.get_output(context);
-        let storage_account_id_binding = args.storage_account_id.get_output(context);
-        let target_resource_id_binding = args.target_resource_id.get_output(context);
+            .get_output(ctx);
+        let metrics_binding = args.metrics.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let partner_solution_id_binding = args.partner_solution_id.get_output(ctx);
+        let storage_account_id_binding = args.storage_account_id.get_output(ctx);
+        let target_resource_id_binding = args.target_resource_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:monitoring/diagnosticSetting:DiagnosticSetting".into(),
             name: name.to_string(),
@@ -272,7 +272,7 @@ pub mod diagnostic_setting {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DiagnosticSettingResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -367,80 +367,70 @@ pub mod function {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FunctionArgs,
     ) -> FunctionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FunctionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> FunctionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FunctionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> FunctionResult {
-        let available_memory_mb_binding = args.available_memory_mb.get_output(context);
+        let available_memory_mb_binding = args.available_memory_mb.get_output(ctx);
         let build_environment_variables_binding = args
             .build_environment_variables
-            .get_output(context);
-        let build_service_account_binding = args
-            .build_service_account
-            .get_output(context);
-        let build_worker_pool_binding = args.build_worker_pool.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let docker_registry_binding = args.docker_registry.get_output(context);
-        let docker_repository_binding = args.docker_repository.get_output(context);
-        let entry_point_binding = args.entry_point.get_output(context);
-        let environment_variables_binding = args
-            .environment_variables
-            .get_output(context);
-        let event_trigger_binding = args.event_trigger.get_output(context);
+            .get_output(ctx);
+        let build_service_account_binding = args.build_service_account.get_output(ctx);
+        let build_worker_pool_binding = args.build_worker_pool.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let docker_registry_binding = args.docker_registry.get_output(ctx);
+        let docker_repository_binding = args.docker_repository.get_output(ctx);
+        let entry_point_binding = args.entry_point.get_output(ctx);
+        let environment_variables_binding = args.environment_variables.get_output(ctx);
+        let event_trigger_binding = args.event_trigger.get_output(ctx);
         let https_trigger_security_level_binding = args
             .https_trigger_security_level
-            .get_output(context);
-        let https_trigger_url_binding = args.https_trigger_url.get_output(context);
-        let ingress_settings_binding = args.ingress_settings.get_output(context);
-        let kms_key_name_binding = args.kms_key_name.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let max_instances_binding = args.max_instances.get_output(context);
-        let min_instances_binding = args.min_instances.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let region_binding = args.region.get_output(context);
-        let runtime_binding = args.runtime.get_output(context);
+            .get_output(ctx);
+        let https_trigger_url_binding = args.https_trigger_url.get_output(ctx);
+        let ingress_settings_binding = args.ingress_settings.get_output(ctx);
+        let kms_key_name_binding = args.kms_key_name.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let max_instances_binding = args.max_instances.get_output(ctx);
+        let min_instances_binding = args.min_instances.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let region_binding = args.region.get_output(ctx);
+        let runtime_binding = args.runtime.get_output(ctx);
         let secret_environment_variables_binding = args
             .secret_environment_variables
-            .get_output(context);
-        let secret_volumes_binding = args.secret_volumes.get_output(context);
-        let service_account_email_binding = args
-            .service_account_email
-            .get_output(context);
-        let source_archive_bucket_binding = args
-            .source_archive_bucket
-            .get_output(context);
-        let source_archive_object_binding = args
-            .source_archive_object
-            .get_output(context);
-        let source_repository_binding = args.source_repository.get_output(context);
-        let timeout_binding = args.timeout.get_output(context);
-        let trigger_http_binding = args.trigger_http.get_output(context);
-        let vpc_connector_binding = args.vpc_connector.get_output(context);
+            .get_output(ctx);
+        let secret_volumes_binding = args.secret_volumes.get_output(ctx);
+        let service_account_email_binding = args.service_account_email.get_output(ctx);
+        let source_archive_bucket_binding = args.source_archive_bucket.get_output(ctx);
+        let source_archive_object_binding = args.source_archive_object.get_output(ctx);
+        let source_repository_binding = args.source_repository.get_output(ctx);
+        let timeout_binding = args.timeout.get_output(ctx);
+        let trigger_http_binding = args.trigger_http.get_output(ctx);
+        let vpc_connector_binding = args.vpc_connector.get_output(ctx);
         let vpc_connector_egress_settings_binding = args
             .vpc_connector_egress_settings
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:cloudfunctions/function:Function".into(),
             name: name.to_string(),
@@ -573,7 +563,7 @@ pub mod function {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         FunctionResult {
             id: o.get_id(),
             urn: o.get_urn(),

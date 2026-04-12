@@ -197,55 +197,53 @@ pub mod endpoint {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EndpointArgs,
     ) -> EndpointResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EndpointArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> EndpointResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EndpointArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> EndpointResult {
         let content_types_to_compresses_binding = args
             .content_types_to_compresses
-            .get_output(context);
-        let delivery_rules_binding = args.delivery_rules.get_output(context);
-        let geo_filters_binding = args.geo_filters.get_output(context);
-        let global_delivery_rule_binding = args.global_delivery_rule.get_output(context);
-        let is_compression_enabled_binding = args
-            .is_compression_enabled
-            .get_output(context);
-        let is_http_allowed_binding = args.is_http_allowed.get_output(context);
-        let is_https_allowed_binding = args.is_https_allowed.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let optimization_type_binding = args.optimization_type.get_output(context);
-        let origin_host_header_binding = args.origin_host_header.get_output(context);
-        let origin_path_binding = args.origin_path.get_output(context);
-        let origins_binding = args.origins.get_output(context);
-        let probe_path_binding = args.probe_path.get_output(context);
-        let profile_name_binding = args.profile_name.get_output(context);
+            .get_output(ctx);
+        let delivery_rules_binding = args.delivery_rules.get_output(ctx);
+        let geo_filters_binding = args.geo_filters.get_output(ctx);
+        let global_delivery_rule_binding = args.global_delivery_rule.get_output(ctx);
+        let is_compression_enabled_binding = args.is_compression_enabled.get_output(ctx);
+        let is_http_allowed_binding = args.is_http_allowed.get_output(ctx);
+        let is_https_allowed_binding = args.is_https_allowed.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let optimization_type_binding = args.optimization_type.get_output(ctx);
+        let origin_host_header_binding = args.origin_host_header.get_output(ctx);
+        let origin_path_binding = args.origin_path.get_output(ctx);
+        let origins_binding = args.origins.get_output(ctx);
+        let probe_path_binding = args.probe_path.get_output(ctx);
+        let profile_name_binding = args.profile_name.get_output(ctx);
         let querystring_caching_behaviour_binding = args
             .querystring_caching_behaviour
-            .get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:cdn/endpoint:Endpoint".into(),
             name: name.to_string(),
@@ -326,7 +324,7 @@ pub mod endpoint {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         EndpointResult {
             id: o.get_id(),
             urn: o.get_urn(),

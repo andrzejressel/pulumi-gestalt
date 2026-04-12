@@ -254,35 +254,35 @@ pub mod metastore_service_iam_policy {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MetastoreServiceIamPolicyArgs,
     ) -> MetastoreServiceIamPolicyResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MetastoreServiceIamPolicyArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> MetastoreServiceIamPolicyResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MetastoreServiceIamPolicyArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> MetastoreServiceIamPolicyResult {
-        let location_binding = args.location.get_output(context);
-        let policy_data_binding = args.policy_data.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let service_id_binding = args.service_id.get_output(context);
+        let location_binding = args.location.get_output(ctx);
+        let policy_data_binding = args.policy_data.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let service_id_binding = args.service_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:dataproc/metastoreServiceIamPolicy:MetastoreServiceIamPolicy"
                 .into(),
@@ -308,7 +308,7 @@ pub mod metastore_service_iam_policy {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         MetastoreServiceIamPolicyResult {
             id: o.get_id(),
             urn: o.get_urn(),

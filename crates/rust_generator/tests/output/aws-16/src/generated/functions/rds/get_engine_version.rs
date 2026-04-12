@@ -112,27 +112,25 @@ pub mod get_engine_version {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetEngineVersionArgs,
     ) -> GetEngineVersionResult {
-        let default_only_binding = args.default_only.get_output(context);
-        let engine_binding = args.engine.get_output(context);
-        let filters_binding = args.filters.get_output(context);
-        let has_major_target_binding = args.has_major_target.get_output(context);
-        let has_minor_target_binding = args.has_minor_target.get_output(context);
-        let include_all_binding = args.include_all.get_output(context);
-        let latest_binding = args.latest.get_output(context);
-        let parameter_group_family_binding = args
-            .parameter_group_family
-            .get_output(context);
+        let default_only_binding = args.default_only.get_output(ctx);
+        let engine_binding = args.engine.get_output(ctx);
+        let filters_binding = args.filters.get_output(ctx);
+        let has_major_target_binding = args.has_major_target.get_output(ctx);
+        let has_minor_target_binding = args.has_minor_target.get_output(ctx);
+        let include_all_binding = args.include_all.get_output(ctx);
+        let latest_binding = args.latest.get_output(ctx);
+        let parameter_group_family_binding = args.parameter_group_family.get_output(ctx);
         let preferred_major_targets_binding = args
             .preferred_major_targets
-            .get_output(context);
+            .get_output(ctx);
         let preferred_upgrade_targets_binding = args
             .preferred_upgrade_targets
-            .get_output(context);
-        let preferred_versions_binding = args.preferred_versions.get_output(context);
-        let version_binding = args.version.get_output(context);
+            .get_output(ctx);
+        let preferred_versions_binding = args.preferred_versions.get_output(ctx);
+        let version_binding = args.version.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:rds/getEngineVersion:getEngineVersion".into(),
             version: super::super::super::get_version(),
@@ -187,7 +185,7 @@ pub mod get_engine_version {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetEngineVersionResult {
             default_character_set: o.get_field("defaultCharacterSet"),
             default_only: o.get_field("defaultOnly"),

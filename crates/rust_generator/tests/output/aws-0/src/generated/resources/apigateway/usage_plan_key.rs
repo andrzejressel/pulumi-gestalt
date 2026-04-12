@@ -88,34 +88,34 @@ pub mod usage_plan_key {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: UsagePlanKeyArgs,
     ) -> UsagePlanKeyResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: UsagePlanKeyArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> UsagePlanKeyResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: UsagePlanKeyArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> UsagePlanKeyResult {
-        let key_id_binding = args.key_id.get_output(context);
-        let key_type_binding = args.key_type.get_output(context);
-        let usage_plan_id_binding = args.usage_plan_id.get_output(context);
+        let key_id_binding = args.key_id.get_output(ctx);
+        let key_type_binding = args.key_type.get_output(ctx);
+        let usage_plan_id_binding = args.usage_plan_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:apigateway/usagePlanKey:UsagePlanKey".into(),
             name: name.to_string(),
@@ -136,7 +136,7 @@ pub mod usage_plan_key {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         UsagePlanKeyResult {
             id: o.get_id(),
             urn: o.get_urn(),

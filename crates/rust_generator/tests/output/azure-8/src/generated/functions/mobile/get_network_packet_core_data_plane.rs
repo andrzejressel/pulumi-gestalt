@@ -43,13 +43,13 @@ pub mod get_network_packet_core_data_plane {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetNetworkPacketCoreDataPlaneArgs,
     ) -> GetNetworkPacketCoreDataPlaneResult {
         let mobile_network_packet_core_control_plane_id_binding = args
             .mobile_network_packet_core_control_plane_id
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:mobile/getNetworkPacketCoreDataPlane:getNetworkPacketCoreDataPlane"
                 .into(),
@@ -66,7 +66,7 @@ pub mod get_network_packet_core_data_plane {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetNetworkPacketCoreDataPlaneResult {
             id: o.get_field("id"),
             location: o.get_field("location"),

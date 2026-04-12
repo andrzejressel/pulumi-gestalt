@@ -26,11 +26,11 @@ pub mod func_with_all_optional_inputs {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: FuncWithAllOptionalInputsArgs,
     ) -> FuncWithAllOptionalInputsResult {
-        let a_binding = args.a.get_output(context);
-        let b_binding = args.b.get_output(context);
+        let a_binding = args.a.get_output(ctx);
+        let b_binding = args.b.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "example::funcWithAllOptionalInputs".into(),
             version: super::super::get_version(),
@@ -45,7 +45,7 @@ pub mod func_with_all_optional_inputs {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         FuncWithAllOptionalInputsResult {
             r: o.get_field("r"),
         }

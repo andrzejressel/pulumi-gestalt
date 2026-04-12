@@ -161,43 +161,43 @@ pub mod ami_from_instance {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AmiFromInstanceArgs,
     ) -> AmiFromInstanceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AmiFromInstanceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AmiFromInstanceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AmiFromInstanceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AmiFromInstanceResult {
-        let deprecation_time_binding = args.deprecation_time.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let ebs_block_devices_binding = args.ebs_block_devices.get_output(context);
+        let deprecation_time_binding = args.deprecation_time.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let ebs_block_devices_binding = args.ebs_block_devices.get_output(ctx);
         let ephemeral_block_devices_binding = args
             .ephemeral_block_devices
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let snapshot_without_reboot_binding = args
             .snapshot_without_reboot
-            .get_output(context);
-        let source_instance_id_binding = args.source_instance_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let source_instance_id_binding = args.source_instance_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/amiFromInstance:AmiFromInstance".into(),
             name: name.to_string(),
@@ -238,7 +238,7 @@ pub mod ami_from_instance {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AmiFromInstanceResult {
             id: o.get_id(),
             urn: o.get_urn(),

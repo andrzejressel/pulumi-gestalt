@@ -312,43 +312,43 @@ pub mod internal_range {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InternalRangeArgs,
     ) -> InternalRangeResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InternalRangeArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> InternalRangeResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InternalRangeArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> InternalRangeResult {
-        let description_binding = args.description.get_output(context);
-        let ip_cidr_range_binding = args.ip_cidr_range.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let migration_binding = args.migration.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_binding = args.network.get_output(context);
-        let overlaps_binding = args.overlaps.get_output(context);
-        let peering_binding = args.peering.get_output(context);
-        let prefix_length_binding = args.prefix_length.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let target_cidr_ranges_binding = args.target_cidr_ranges.get_output(context);
-        let usage_binding = args.usage.get_output(context);
+        let description_binding = args.description.get_output(ctx);
+        let ip_cidr_range_binding = args.ip_cidr_range.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let migration_binding = args.migration.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_binding = args.network.get_output(ctx);
+        let overlaps_binding = args.overlaps.get_output(ctx);
+        let peering_binding = args.peering.get_output(ctx);
+        let prefix_length_binding = args.prefix_length.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let target_cidr_ranges_binding = args.target_cidr_ranges.get_output(ctx);
+        let usage_binding = args.usage.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:networkconnectivity/internalRange:InternalRange".into(),
             name: name.to_string(),
@@ -405,7 +405,7 @@ pub mod internal_range {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         InternalRangeResult {
             id: o.get_id(),
             urn: o.get_urn(),

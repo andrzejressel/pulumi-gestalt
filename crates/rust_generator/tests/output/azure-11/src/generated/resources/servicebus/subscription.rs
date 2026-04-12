@@ -166,58 +166,58 @@ pub mod subscription {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SubscriptionArgs,
     ) -> SubscriptionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SubscriptionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> SubscriptionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SubscriptionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> SubscriptionResult {
-        let auto_delete_on_idle_binding = args.auto_delete_on_idle.get_output(context);
+        let auto_delete_on_idle_binding = args.auto_delete_on_idle.get_output(ctx);
         let batched_operations_enabled_binding = args
             .batched_operations_enabled
-            .get_output(context);
+            .get_output(ctx);
         let client_scoped_subscription_binding = args
             .client_scoped_subscription
-            .get_output(context);
+            .get_output(ctx);
         let client_scoped_subscription_enabled_binding = args
             .client_scoped_subscription_enabled
-            .get_output(context);
+            .get_output(ctx);
         let dead_lettering_on_filter_evaluation_error_binding = args
             .dead_lettering_on_filter_evaluation_error
-            .get_output(context);
+            .get_output(ctx);
         let dead_lettering_on_message_expiration_binding = args
             .dead_lettering_on_message_expiration
-            .get_output(context);
-        let default_message_ttl_binding = args.default_message_ttl.get_output(context);
+            .get_output(ctx);
+        let default_message_ttl_binding = args.default_message_ttl.get_output(ctx);
         let forward_dead_lettered_messages_to_binding = args
             .forward_dead_lettered_messages_to
-            .get_output(context);
-        let forward_to_binding = args.forward_to.get_output(context);
-        let lock_duration_binding = args.lock_duration.get_output(context);
-        let max_delivery_count_binding = args.max_delivery_count.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let requires_session_binding = args.requires_session.get_output(context);
-        let status_binding = args.status.get_output(context);
-        let topic_id_binding = args.topic_id.get_output(context);
+            .get_output(ctx);
+        let forward_to_binding = args.forward_to.get_output(ctx);
+        let lock_duration_binding = args.lock_duration.get_output(ctx);
+        let max_delivery_count_binding = args.max_delivery_count.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let requires_session_binding = args.requires_session.get_output(ctx);
+        let status_binding = args.status.get_output(ctx);
+        let topic_id_binding = args.topic_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:servicebus/subscription:Subscription".into(),
             name: name.to_string(),
@@ -286,7 +286,7 @@ pub mod subscription {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         SubscriptionResult {
             id: o.get_id(),
             urn: o.get_urn(),

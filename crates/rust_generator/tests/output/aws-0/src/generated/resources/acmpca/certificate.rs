@@ -115,41 +115,41 @@ pub mod certificate {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CertificateArgs,
     ) -> CertificateResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CertificateArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> CertificateResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CertificateArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> CertificateResult {
-        let api_passthrough_binding = args.api_passthrough.get_output(context);
+        let api_passthrough_binding = args.api_passthrough.get_output(ctx);
         let certificate_authority_arn_binding = args
             .certificate_authority_arn
-            .get_output(context);
+            .get_output(ctx);
         let certificate_signing_request_binding = args
             .certificate_signing_request
-            .get_output(context);
-        let signing_algorithm_binding = args.signing_algorithm.get_output(context);
-        let template_arn_binding = args.template_arn.get_output(context);
-        let validity_binding = args.validity.get_output(context);
+            .get_output(ctx);
+        let signing_algorithm_binding = args.signing_algorithm.get_output(ctx);
+        let template_arn_binding = args.template_arn.get_output(ctx);
+        let validity_binding = args.validity.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:acmpca/certificate:Certificate".into(),
             name: name.to_string(),
@@ -182,7 +182,7 @@ pub mod certificate {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         CertificateResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -68,13 +68,13 @@ pub mod get_snapshot {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetSnapshotArgs,
     ) -> GetSnapshotResult {
-        let filter_binding = args.filter.get_output(context);
-        let most_recent_binding = args.most_recent.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
+        let filter_binding = args.filter.get_output(ctx);
+        let most_recent_binding = args.most_recent.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:compute/getSnapshot:getSnapshot".into(),
             version: super::super::super::get_version(),
@@ -97,7 +97,7 @@ pub mod get_snapshot {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetSnapshotResult {
             chain_name: o.get_field("chainName"),
             creation_timestamp: o.get_field("creationTimestamp"),

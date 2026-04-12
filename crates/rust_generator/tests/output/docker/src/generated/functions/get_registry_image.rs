@@ -31,11 +31,11 @@ pub mod get_registry_image {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetRegistryImageArgs,
     ) -> GetRegistryImageResult {
-        let insecure_skip_verify_binding = args.insecure_skip_verify.get_output(context);
-        let name_binding = args.name.get_output(context);
+        let insecure_skip_verify_binding = args.insecure_skip_verify.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "docker:index/getRegistryImage:getRegistryImage".into(),
             version: super::super::get_version(),
@@ -50,7 +50,7 @@ pub mod get_registry_image {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetRegistryImageResult {
             id: o.get_field("id"),
             insecure_skip_verify: o.get_field("insecureSkipVerify"),

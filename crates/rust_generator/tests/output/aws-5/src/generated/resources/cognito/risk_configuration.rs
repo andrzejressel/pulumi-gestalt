@@ -110,42 +110,42 @@ pub mod risk_configuration {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RiskConfigurationArgs,
     ) -> RiskConfigurationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RiskConfigurationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> RiskConfigurationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RiskConfigurationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> RiskConfigurationResult {
         let account_takeover_risk_configuration_binding = args
             .account_takeover_risk_configuration
-            .get_output(context);
-        let client_id_binding = args.client_id.get_output(context);
+            .get_output(ctx);
+        let client_id_binding = args.client_id.get_output(ctx);
         let compromised_credentials_risk_configuration_binding = args
             .compromised_credentials_risk_configuration
-            .get_output(context);
+            .get_output(ctx);
         let risk_exception_configuration_binding = args
             .risk_exception_configuration
-            .get_output(context);
-        let user_pool_id_binding = args.user_pool_id.get_output(context);
+            .get_output(ctx);
+        let user_pool_id_binding = args.user_pool_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:cognito/riskConfiguration:RiskConfiguration".into(),
             name: name.to_string(),
@@ -175,7 +175,7 @@ pub mod risk_configuration {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         RiskConfigurationResult {
             id: o.get_id(),
             urn: o.get_urn(),

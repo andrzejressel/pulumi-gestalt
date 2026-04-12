@@ -270,36 +270,36 @@ pub mod consent_store_iam_member {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ConsentStoreIamMemberArgs,
     ) -> ConsentStoreIamMemberResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ConsentStoreIamMemberArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ConsentStoreIamMemberResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ConsentStoreIamMemberArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ConsentStoreIamMemberResult {
-        let condition_binding = args.condition.get_output(context);
-        let consent_store_id_binding = args.consent_store_id.get_output(context);
-        let dataset_binding = args.dataset.get_output(context);
-        let member_binding = args.member.get_output(context);
-        let role_binding = args.role.get_output(context);
+        let condition_binding = args.condition.get_output(ctx);
+        let consent_store_id_binding = args.consent_store_id.get_output(ctx);
+        let dataset_binding = args.dataset.get_output(ctx);
+        let member_binding = args.member.get_output(ctx);
+        let role_binding = args.role.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:healthcare/consentStoreIamMember:ConsentStoreIamMember".into(),
             name: name.to_string(),
@@ -328,7 +328,7 @@ pub mod consent_store_iam_member {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ConsentStoreIamMemberResult {
             id: o.get_id(),
             urn: o.get_urn(),

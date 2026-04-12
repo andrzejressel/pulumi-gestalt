@@ -156,58 +156,52 @@ pub mod security_solution {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SecuritySolutionArgs,
     ) -> SecuritySolutionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SecuritySolutionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> SecuritySolutionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SecuritySolutionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> SecuritySolutionResult {
-        let additional_workspaces_binding = args
-            .additional_workspaces
-            .get_output(context);
-        let disabled_data_sources_binding = args
-            .disabled_data_sources
-            .get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let enabled_binding = args.enabled.get_output(context);
-        let events_to_exports_binding = args.events_to_exports.get_output(context);
-        let iothub_ids_binding = args.iothub_ids.get_output(context);
-        let location_binding = args.location.get_output(context);
+        let additional_workspaces_binding = args.additional_workspaces.get_output(ctx);
+        let disabled_data_sources_binding = args.disabled_data_sources.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let enabled_binding = args.enabled.get_output(ctx);
+        let events_to_exports_binding = args.events_to_exports.get_output(ctx);
+        let iothub_ids_binding = args.iothub_ids.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
         let log_analytics_workspace_id_binding = args
             .log_analytics_workspace_id
-            .get_output(context);
+            .get_output(ctx);
         let log_unmasked_ips_enabled_binding = args
             .log_unmasked_ips_enabled
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let query_for_resources_binding = args.query_for_resources.get_output(context);
-        let query_subscription_ids_binding = args
-            .query_subscription_ids
-            .get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let query_for_resources_binding = args.query_for_resources.get_output(ctx);
+        let query_subscription_ids_binding = args.query_subscription_ids.get_output(ctx);
         let recommendations_enabled_binding = args
             .recommendations_enabled
-            .get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:iot/securitySolution:SecuritySolution".into(),
             name: name.to_string(),
@@ -276,7 +270,7 @@ pub mod security_solution {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         SecuritySolutionResult {
             id: o.get_id(),
             urn: o.get_urn(),

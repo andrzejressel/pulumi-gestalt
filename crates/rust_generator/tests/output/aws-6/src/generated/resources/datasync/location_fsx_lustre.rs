@@ -82,35 +82,35 @@ pub mod location_fsx_lustre {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LocationFsxLustreArgs,
     ) -> LocationFsxLustreResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LocationFsxLustreArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> LocationFsxLustreResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LocationFsxLustreArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> LocationFsxLustreResult {
-        let fsx_filesystem_arn_binding = args.fsx_filesystem_arn.get_output(context);
-        let security_group_arns_binding = args.security_group_arns.get_output(context);
-        let subdirectory_binding = args.subdirectory.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let fsx_filesystem_arn_binding = args.fsx_filesystem_arn.get_output(ctx);
+        let security_group_arns_binding = args.security_group_arns.get_output(ctx);
+        let subdirectory_binding = args.subdirectory.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:datasync/locationFsxLustre:LocationFsxLustre".into(),
             name: name.to_string(),
@@ -135,7 +135,7 @@ pub mod location_fsx_lustre {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         LocationFsxLustreResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -506,55 +506,53 @@ pub mod bare_metal_cluster {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BareMetalClusterArgs,
     ) -> BareMetalClusterResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BareMetalClusterArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> BareMetalClusterResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BareMetalClusterArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> BareMetalClusterResult {
         let admin_cluster_membership_binding = args
             .admin_cluster_membership
-            .get_output(context);
-        let annotations_binding = args.annotations.get_output(context);
-        let bare_metal_version_binding = args.bare_metal_version.get_output(context);
-        let binary_authorization_binding = args.binary_authorization.get_output(context);
-        let cluster_operations_binding = args.cluster_operations.get_output(context);
-        let control_plane_binding = args.control_plane.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let load_balancer_binding = args.load_balancer.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let maintenance_config_binding = args.maintenance_config.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_config_binding = args.network_config.get_output(context);
-        let node_access_config_binding = args.node_access_config.get_output(context);
-        let node_config_binding = args.node_config.get_output(context);
-        let os_environment_config_binding = args
-            .os_environment_config
-            .get_output(context);
-        let project_binding = args.project.get_output(context);
-        let proxy_binding = args.proxy.get_output(context);
-        let security_config_binding = args.security_config.get_output(context);
-        let storage_binding = args.storage.get_output(context);
-        let upgrade_policy_binding = args.upgrade_policy.get_output(context);
+            .get_output(ctx);
+        let annotations_binding = args.annotations.get_output(ctx);
+        let bare_metal_version_binding = args.bare_metal_version.get_output(ctx);
+        let binary_authorization_binding = args.binary_authorization.get_output(ctx);
+        let cluster_operations_binding = args.cluster_operations.get_output(ctx);
+        let control_plane_binding = args.control_plane.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let load_balancer_binding = args.load_balancer.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let maintenance_config_binding = args.maintenance_config.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_config_binding = args.network_config.get_output(ctx);
+        let node_access_config_binding = args.node_access_config.get_output(ctx);
+        let node_config_binding = args.node_config.get_output(ctx);
+        let os_environment_config_binding = args.os_environment_config.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let proxy_binding = args.proxy.get_output(ctx);
+        let security_config_binding = args.security_config.get_output(ctx);
+        let storage_binding = args.storage.get_output(ctx);
+        let upgrade_policy_binding = args.upgrade_policy.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:gkeonprem/bareMetalCluster:BareMetalCluster".into(),
             name: name.to_string(),
@@ -643,7 +641,7 @@ pub mod bare_metal_cluster {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         BareMetalClusterResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -105,38 +105,38 @@ pub mod identity_provider_aad {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IdentityProviderAadArgs,
     ) -> IdentityProviderAadResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IdentityProviderAadArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> IdentityProviderAadResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IdentityProviderAadArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> IdentityProviderAadResult {
-        let allowed_tenants_binding = args.allowed_tenants.get_output(context);
-        let api_management_name_binding = args.api_management_name.get_output(context);
-        let client_id_binding = args.client_id.get_output(context);
-        let client_library_binding = args.client_library.get_output(context);
-        let client_secret_binding = args.client_secret.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let signin_tenant_binding = args.signin_tenant.get_output(context);
+        let allowed_tenants_binding = args.allowed_tenants.get_output(ctx);
+        let api_management_name_binding = args.api_management_name.get_output(ctx);
+        let client_id_binding = args.client_id.get_output(ctx);
+        let client_library_binding = args.client_library.get_output(ctx);
+        let client_secret_binding = args.client_secret.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let signin_tenant_binding = args.signin_tenant.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:apimanagement/identityProviderAad:IdentityProviderAad".into(),
             name: name.to_string(),
@@ -173,7 +173,7 @@ pub mod identity_provider_aad {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         IdentityProviderAadResult {
             id: o.get_id(),
             urn: o.get_urn(),

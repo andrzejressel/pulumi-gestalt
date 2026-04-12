@@ -27,10 +27,10 @@ pub mod get_access_keys {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetAccessKeysArgs,
     ) -> GetAccessKeysResult {
-        let user_binding = args.user.get_output(context);
+        let user_binding = args.user.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:iam/getAccessKeys:getAccessKeys".into(),
             version: super::super::super::get_version(),
@@ -41,7 +41,7 @@ pub mod get_access_keys {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetAccessKeysResult {
             access_keys: o.get_field("accessKeys"),
             id: o.get_field("id"),

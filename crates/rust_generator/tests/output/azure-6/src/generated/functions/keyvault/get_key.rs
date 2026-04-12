@@ -58,12 +58,9 @@ pub mod get_key {
     /// Registers a new resource with the given unique name and arguments
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
-    pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
-        args: GetKeyArgs,
-    ) -> GetKeyResult {
-        let key_vault_id_binding = args.key_vault_id.get_output(context);
-        let name_binding = args.name.get_output(context);
+    pub fn invoke(ctx: &pulumi_gestalt_rust::Context, args: GetKeyArgs) -> GetKeyResult {
+        let key_vault_id_binding = args.key_vault_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:keyvault/getKey:getKey".into(),
             version: super::super::super::get_version(),
@@ -78,7 +75,7 @@ pub mod get_key {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetKeyResult {
             curve: o.get_field("curve"),
             e: o.get_field("e"),

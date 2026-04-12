@@ -314,54 +314,54 @@ pub mod standard_app_version {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StandardAppVersionArgs,
     ) -> StandardAppVersionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StandardAppVersionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> StandardAppVersionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StandardAppVersionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> StandardAppVersionResult {
-        let app_engine_apis_binding = args.app_engine_apis.get_output(context);
-        let automatic_scaling_binding = args.automatic_scaling.get_output(context);
-        let basic_scaling_binding = args.basic_scaling.get_output(context);
+        let app_engine_apis_binding = args.app_engine_apis.get_output(ctx);
+        let automatic_scaling_binding = args.automatic_scaling.get_output(ctx);
+        let basic_scaling_binding = args.basic_scaling.get_output(ctx);
         let delete_service_on_destroy_binding = args
             .delete_service_on_destroy
-            .get_output(context);
-        let deployment_binding = args.deployment.get_output(context);
-        let entrypoint_binding = args.entrypoint.get_output(context);
-        let env_variables_binding = args.env_variables.get_output(context);
-        let handlers_binding = args.handlers.get_output(context);
-        let inbound_services_binding = args.inbound_services.get_output(context);
-        let instance_class_binding = args.instance_class.get_output(context);
-        let libraries_binding = args.libraries.get_output(context);
-        let manual_scaling_binding = args.manual_scaling.get_output(context);
-        let noop_on_destroy_binding = args.noop_on_destroy.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let runtime_binding = args.runtime.get_output(context);
-        let runtime_api_version_binding = args.runtime_api_version.get_output(context);
-        let service_binding = args.service.get_output(context);
-        let service_account_binding = args.service_account.get_output(context);
-        let threadsafe_binding = args.threadsafe.get_output(context);
-        let version_id_binding = args.version_id.get_output(context);
-        let vpc_access_connector_binding = args.vpc_access_connector.get_output(context);
+            .get_output(ctx);
+        let deployment_binding = args.deployment.get_output(ctx);
+        let entrypoint_binding = args.entrypoint.get_output(ctx);
+        let env_variables_binding = args.env_variables.get_output(ctx);
+        let handlers_binding = args.handlers.get_output(ctx);
+        let inbound_services_binding = args.inbound_services.get_output(ctx);
+        let instance_class_binding = args.instance_class.get_output(ctx);
+        let libraries_binding = args.libraries.get_output(ctx);
+        let manual_scaling_binding = args.manual_scaling.get_output(ctx);
+        let noop_on_destroy_binding = args.noop_on_destroy.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let runtime_binding = args.runtime.get_output(ctx);
+        let runtime_api_version_binding = args.runtime_api_version.get_output(ctx);
+        let service_binding = args.service.get_output(ctx);
+        let service_account_binding = args.service_account.get_output(ctx);
+        let threadsafe_binding = args.threadsafe.get_output(ctx);
+        let version_id_binding = args.version_id.get_output(ctx);
+        let vpc_access_connector_binding = args.vpc_access_connector.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:appengine/standardAppVersion:StandardAppVersion".into(),
             name: name.to_string(),
@@ -454,7 +454,7 @@ pub mod standard_app_version {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         StandardAppVersionResult {
             id: o.get_id(),
             urn: o.get_urn(),

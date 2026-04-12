@@ -431,61 +431,57 @@ pub mod trail {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TrailArgs,
     ) -> TrailResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TrailArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> TrailResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TrailArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> TrailResult {
         let advanced_event_selectors_binding = args
             .advanced_event_selectors
-            .get_output(context);
+            .get_output(ctx);
         let cloud_watch_logs_group_arn_binding = args
             .cloud_watch_logs_group_arn
-            .get_output(context);
+            .get_output(ctx);
         let cloud_watch_logs_role_arn_binding = args
             .cloud_watch_logs_role_arn
-            .get_output(context);
+            .get_output(ctx);
         let enable_log_file_validation_binding = args
             .enable_log_file_validation
-            .get_output(context);
-        let enable_logging_binding = args.enable_logging.get_output(context);
-        let event_selectors_binding = args.event_selectors.get_output(context);
+            .get_output(ctx);
+        let enable_logging_binding = args.enable_logging.get_output(ctx);
+        let event_selectors_binding = args.event_selectors.get_output(ctx);
         let include_global_service_events_binding = args
             .include_global_service_events
-            .get_output(context);
-        let insight_selectors_binding = args.insight_selectors.get_output(context);
-        let is_multi_region_trail_binding = args
-            .is_multi_region_trail
-            .get_output(context);
-        let is_organization_trail_binding = args
-            .is_organization_trail
-            .get_output(context);
-        let kms_key_id_binding = args.kms_key_id.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let s3_bucket_name_binding = args.s3_bucket_name.get_output(context);
-        let s3_key_prefix_binding = args.s3_key_prefix.get_output(context);
-        let sns_topic_name_binding = args.sns_topic_name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let insight_selectors_binding = args.insight_selectors.get_output(ctx);
+        let is_multi_region_trail_binding = args.is_multi_region_trail.get_output(ctx);
+        let is_organization_trail_binding = args.is_organization_trail.get_output(ctx);
+        let kms_key_id_binding = args.kms_key_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let s3_bucket_name_binding = args.s3_bucket_name.get_output(ctx);
+        let s3_key_prefix_binding = args.s3_key_prefix.get_output(ctx);
+        let sns_topic_name_binding = args.sns_topic_name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:cloudtrail/trail:Trail".into(),
             name: name.to_string(),
@@ -558,7 +554,7 @@ pub mod trail {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         TrailResult {
             id: o.get_id(),
             urn: o.get_urn(),

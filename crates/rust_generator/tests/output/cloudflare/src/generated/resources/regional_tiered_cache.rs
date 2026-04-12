@@ -58,33 +58,33 @@ pub mod regional_tiered_cache {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RegionalTieredCacheArgs,
     ) -> RegionalTieredCacheResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RegionalTieredCacheArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> RegionalTieredCacheResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RegionalTieredCacheArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> RegionalTieredCacheResult {
-        let value_binding = args.value.get_output(context);
-        let zone_id_binding = args.zone_id.get_output(context);
+        let value_binding = args.value.get_output(ctx);
+        let zone_id_binding = args.zone_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "cloudflare:index/regionalTieredCache:RegionalTieredCache".into(),
             name: name.to_string(),
@@ -101,7 +101,7 @@ pub mod regional_tiered_cache {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         RegionalTieredCacheResult {
             id: o.get_id(),
             urn: o.get_urn(),

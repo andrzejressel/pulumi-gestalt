@@ -437,86 +437,82 @@ pub mod event_source_mapping {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EventSourceMappingArgs,
     ) -> EventSourceMappingResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EventSourceMappingArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> EventSourceMappingResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EventSourceMappingArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> EventSourceMappingResult {
         let amazon_managed_kafka_event_source_config_binding = args
             .amazon_managed_kafka_event_source_config
-            .get_output(context);
-        let batch_size_binding = args.batch_size.get_output(context);
+            .get_output(ctx);
+        let batch_size_binding = args.batch_size.get_output(ctx);
         let bisect_batch_on_function_error_binding = args
             .bisect_batch_on_function_error
-            .get_output(context);
-        let destination_config_binding = args.destination_config.get_output(context);
+            .get_output(ctx);
+        let destination_config_binding = args.destination_config.get_output(ctx);
         let document_db_event_source_config_binding = args
             .document_db_event_source_config
-            .get_output(context);
-        let enabled_binding = args.enabled.get_output(context);
-        let event_source_arn_binding = args.event_source_arn.get_output(context);
-        let filter_criteria_binding = args.filter_criteria.get_output(context);
-        let function_name_binding = args.function_name.get_output(context);
+            .get_output(ctx);
+        let enabled_binding = args.enabled.get_output(ctx);
+        let event_source_arn_binding = args.event_source_arn.get_output(ctx);
+        let filter_criteria_binding = args.filter_criteria.get_output(ctx);
+        let function_name_binding = args.function_name.get_output(ctx);
         let function_response_types_binding = args
             .function_response_types
-            .get_output(context);
-        let kms_key_arn_binding = args.kms_key_arn.get_output(context);
+            .get_output(ctx);
+        let kms_key_arn_binding = args.kms_key_arn.get_output(ctx);
         let maximum_batching_window_in_seconds_binding = args
             .maximum_batching_window_in_seconds
-            .get_output(context);
+            .get_output(ctx);
         let maximum_record_age_in_seconds_binding = args
             .maximum_record_age_in_seconds
-            .get_output(context);
-        let maximum_retry_attempts_binding = args
-            .maximum_retry_attempts
-            .get_output(context);
-        let metrics_config_binding = args.metrics_config.get_output(context);
-        let parallelization_factor_binding = args
-            .parallelization_factor
-            .get_output(context);
+            .get_output(ctx);
+        let maximum_retry_attempts_binding = args.maximum_retry_attempts.get_output(ctx);
+        let metrics_config_binding = args.metrics_config.get_output(ctx);
+        let parallelization_factor_binding = args.parallelization_factor.get_output(ctx);
         let provisioned_poller_config_binding = args
             .provisioned_poller_config
-            .get_output(context);
-        let queues_binding = args.queues.get_output(context);
-        let scaling_config_binding = args.scaling_config.get_output(context);
+            .get_output(ctx);
+        let queues_binding = args.queues.get_output(ctx);
+        let scaling_config_binding = args.scaling_config.get_output(ctx);
         let self_managed_event_source_binding = args
             .self_managed_event_source
-            .get_output(context);
+            .get_output(ctx);
         let self_managed_kafka_event_source_config_binding = args
             .self_managed_kafka_event_source_config
-            .get_output(context);
+            .get_output(ctx);
         let source_access_configurations_binding = args
             .source_access_configurations
-            .get_output(context);
-        let starting_position_binding = args.starting_position.get_output(context);
+            .get_output(ctx);
+        let starting_position_binding = args.starting_position.get_output(ctx);
         let starting_position_timestamp_binding = args
             .starting_position_timestamp
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let topics_binding = args.topics.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let topics_binding = args.topics.get_output(ctx);
         let tumbling_window_in_seconds_binding = args
             .tumbling_window_in_seconds
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:lambda/eventSourceMapping:EventSourceMapping".into(),
             name: name.to_string(),
@@ -633,7 +629,7 @@ pub mod event_source_mapping {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         EventSourceMappingResult {
             id: o.get_id(),
             urn: o.get_urn(),

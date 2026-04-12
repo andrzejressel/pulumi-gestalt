@@ -130,37 +130,35 @@ pub mod instance_automated_backups_replication {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceAutomatedBackupsReplicationArgs,
     ) -> InstanceAutomatedBackupsReplicationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceAutomatedBackupsReplicationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> InstanceAutomatedBackupsReplicationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceAutomatedBackupsReplicationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> InstanceAutomatedBackupsReplicationResult {
-        let kms_key_id_binding = args.kms_key_id.get_output(context);
-        let pre_signed_url_binding = args.pre_signed_url.get_output(context);
-        let retention_period_binding = args.retention_period.get_output(context);
-        let source_db_instance_arn_binding = args
-            .source_db_instance_arn
-            .get_output(context);
+        let kms_key_id_binding = args.kms_key_id.get_output(ctx);
+        let pre_signed_url_binding = args.pre_signed_url.get_output(ctx);
+        let retention_period_binding = args.retention_period.get_output(ctx);
+        let source_db_instance_arn_binding = args.source_db_instance_arn.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:rds/instanceAutomatedBackupsReplication:InstanceAutomatedBackupsReplication"
                 .into(),
@@ -186,7 +184,7 @@ pub mod instance_automated_backups_replication {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         InstanceAutomatedBackupsReplicationResult {
             id: o.get_id(),
             urn: o.get_urn(),

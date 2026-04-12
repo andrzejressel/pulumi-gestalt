@@ -157,43 +157,43 @@ pub mod table {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TableArgs,
     ) -> TableResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TableArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> TableResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TableArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> TableResult {
         let automated_backup_policy_binding = args
             .automated_backup_policy
-            .get_output(context);
+            .get_output(ctx);
         let change_stream_retention_binding = args
             .change_stream_retention
-            .get_output(context);
-        let column_families_binding = args.column_families.get_output(context);
-        let deletion_protection_binding = args.deletion_protection.get_output(context);
-        let instance_name_binding = args.instance_name.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let split_keys_binding = args.split_keys.get_output(context);
+            .get_output(ctx);
+        let column_families_binding = args.column_families.get_output(ctx);
+        let deletion_protection_binding = args.deletion_protection.get_output(ctx);
+        let instance_name_binding = args.instance_name.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let split_keys_binding = args.split_keys.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:bigtable/table:Table".into(),
             name: name.to_string(),
@@ -234,7 +234,7 @@ pub mod table {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         TableResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -444,51 +444,51 @@ pub mod gateway {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GatewayArgs,
     ) -> GatewayResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GatewayArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> GatewayResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GatewayArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> GatewayResult {
-        let addresses_binding = args.addresses.get_output(context);
-        let certificate_urls_binding = args.certificate_urls.get_output(context);
+        let addresses_binding = args.addresses.get_output(ctx);
+        let certificate_urls_binding = args.certificate_urls.get_output(ctx);
         let delete_swg_autogen_router_on_destroy_binding = args
             .delete_swg_autogen_router_on_destroy
-            .get_output(context);
-        let description_binding = args.description.get_output(context);
+            .get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
         let gateway_security_policy_binding = args
             .gateway_security_policy
-            .get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_binding = args.network.get_output(context);
-        let ports_binding = args.ports.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let routing_mode_binding = args.routing_mode.get_output(context);
-        let scope_binding = args.scope.get_output(context);
-        let server_tls_policy_binding = args.server_tls_policy.get_output(context);
-        let subnetwork_binding = args.subnetwork.get_output(context);
-        let type__binding = args.type_.get_output(context);
+            .get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_binding = args.network.get_output(ctx);
+        let ports_binding = args.ports.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let routing_mode_binding = args.routing_mode.get_output(ctx);
+        let scope_binding = args.scope.get_output(ctx);
+        let server_tls_policy_binding = args.server_tls_policy.get_output(ctx);
+        let subnetwork_binding = args.subnetwork.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:networkservices/gateway:Gateway".into(),
             name: name.to_string(),
@@ -561,7 +561,7 @@ pub mod gateway {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         GatewayResult {
             id: o.get_id(),
             urn: o.get_urn(),

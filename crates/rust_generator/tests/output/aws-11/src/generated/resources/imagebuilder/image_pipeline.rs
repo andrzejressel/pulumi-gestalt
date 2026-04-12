@@ -151,55 +151,55 @@ pub mod image_pipeline {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ImagePipelineArgs,
     ) -> ImagePipelineResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ImagePipelineArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ImagePipelineResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ImagePipelineArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ImagePipelineResult {
-        let container_recipe_arn_binding = args.container_recipe_arn.get_output(context);
-        let description_binding = args.description.get_output(context);
+        let container_recipe_arn_binding = args.container_recipe_arn.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
         let distribution_configuration_arn_binding = args
             .distribution_configuration_arn
-            .get_output(context);
+            .get_output(ctx);
         let enhanced_image_metadata_enabled_binding = args
             .enhanced_image_metadata_enabled
-            .get_output(context);
-        let execution_role_binding = args.execution_role.get_output(context);
-        let image_recipe_arn_binding = args.image_recipe_arn.get_output(context);
+            .get_output(ctx);
+        let execution_role_binding = args.execution_role.get_output(ctx);
+        let image_recipe_arn_binding = args.image_recipe_arn.get_output(ctx);
         let image_scanning_configuration_binding = args
             .image_scanning_configuration
-            .get_output(context);
+            .get_output(ctx);
         let image_tests_configuration_binding = args
             .image_tests_configuration
-            .get_output(context);
+            .get_output(ctx);
         let infrastructure_configuration_arn_binding = args
             .infrastructure_configuration_arn
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let schedule_binding = args.schedule.get_output(context);
-        let status_binding = args.status.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let workflows_binding = args.workflows.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let schedule_binding = args.schedule.get_output(ctx);
+        let status_binding = args.status.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let workflows_binding = args.workflows.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:imagebuilder/imagePipeline:ImagePipeline".into(),
             name: name.to_string(),
@@ -264,7 +264,7 @@ pub mod image_pipeline {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ImagePipelineResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -191,52 +191,50 @@ pub mod task_set {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TaskSetArgs,
     ) -> TaskSetResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TaskSetArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> TaskSetResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TaskSetArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> TaskSetResult {
         let capacity_provider_strategies_binding = args
             .capacity_provider_strategies
-            .get_output(context);
-        let cluster_binding = args.cluster.get_output(context);
-        let external_id_binding = args.external_id.get_output(context);
-        let force_delete_binding = args.force_delete.get_output(context);
-        let launch_type_binding = args.launch_type.get_output(context);
-        let load_balancers_binding = args.load_balancers.get_output(context);
-        let network_configuration_binding = args
-            .network_configuration
-            .get_output(context);
-        let platform_version_binding = args.platform_version.get_output(context);
-        let scale_binding = args.scale.get_output(context);
-        let service_binding = args.service.get_output(context);
-        let service_registries_binding = args.service_registries.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let task_definition_binding = args.task_definition.get_output(context);
-        let wait_until_stable_binding = args.wait_until_stable.get_output(context);
+            .get_output(ctx);
+        let cluster_binding = args.cluster.get_output(ctx);
+        let external_id_binding = args.external_id.get_output(ctx);
+        let force_delete_binding = args.force_delete.get_output(ctx);
+        let launch_type_binding = args.launch_type.get_output(ctx);
+        let load_balancers_binding = args.load_balancers.get_output(ctx);
+        let network_configuration_binding = args.network_configuration.get_output(ctx);
+        let platform_version_binding = args.platform_version.get_output(ctx);
+        let scale_binding = args.scale.get_output(ctx);
+        let service_binding = args.service.get_output(ctx);
+        let service_registries_binding = args.service_registries.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let task_definition_binding = args.task_definition.get_output(ctx);
+        let wait_until_stable_binding = args.wait_until_stable.get_output(ctx);
         let wait_until_stable_timeout_binding = args
             .wait_until_stable_timeout
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ecs/taskSet:TaskSet".into(),
             name: name.to_string(),
@@ -305,7 +303,7 @@ pub mod task_set {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         TaskSetResult {
             id: o.get_id(),
             urn: o.get_urn(),

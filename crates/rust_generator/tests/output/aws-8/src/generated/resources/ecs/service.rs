@@ -393,93 +393,83 @@ pub mod service {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServiceArgs,
     ) -> ServiceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServiceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ServiceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServiceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ServiceResult {
-        let alarms_binding = args.alarms.get_output(context);
+        let alarms_binding = args.alarms.get_output(ctx);
         let availability_zone_rebalancing_binding = args
             .availability_zone_rebalancing
-            .get_output(context);
+            .get_output(ctx);
         let capacity_provider_strategies_binding = args
             .capacity_provider_strategies
-            .get_output(context);
-        let cluster_binding = args.cluster.get_output(context);
+            .get_output(ctx);
+        let cluster_binding = args.cluster.get_output(ctx);
         let deployment_circuit_breaker_binding = args
             .deployment_circuit_breaker
-            .get_output(context);
-        let deployment_controller_binding = args
-            .deployment_controller
-            .get_output(context);
+            .get_output(ctx);
+        let deployment_controller_binding = args.deployment_controller.get_output(ctx);
         let deployment_maximum_percent_binding = args
             .deployment_maximum_percent
-            .get_output(context);
+            .get_output(ctx);
         let deployment_minimum_healthy_percent_binding = args
             .deployment_minimum_healthy_percent
-            .get_output(context);
-        let desired_count_binding = args.desired_count.get_output(context);
+            .get_output(ctx);
+        let desired_count_binding = args.desired_count.get_output(ctx);
         let enable_ecs_managed_tags_binding = args
             .enable_ecs_managed_tags
-            .get_output(context);
-        let enable_execute_command_binding = args
-            .enable_execute_command
-            .get_output(context);
-        let force_delete_binding = args.force_delete.get_output(context);
-        let force_new_deployment_binding = args.force_new_deployment.get_output(context);
+            .get_output(ctx);
+        let enable_execute_command_binding = args.enable_execute_command.get_output(ctx);
+        let force_delete_binding = args.force_delete.get_output(ctx);
+        let force_new_deployment_binding = args.force_new_deployment.get_output(ctx);
         let health_check_grace_period_seconds_binding = args
             .health_check_grace_period_seconds
-            .get_output(context);
-        let iam_role_binding = args.iam_role.get_output(context);
-        let launch_type_binding = args.launch_type.get_output(context);
-        let load_balancers_binding = args.load_balancers.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_configuration_binding = args
-            .network_configuration
-            .get_output(context);
+            .get_output(ctx);
+        let iam_role_binding = args.iam_role.get_output(ctx);
+        let launch_type_binding = args.launch_type.get_output(ctx);
+        let load_balancers_binding = args.load_balancers.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_configuration_binding = args.network_configuration.get_output(ctx);
         let ordered_placement_strategies_binding = args
             .ordered_placement_strategies
-            .get_output(context);
-        let placement_constraints_binding = args
-            .placement_constraints
-            .get_output(context);
-        let platform_version_binding = args.platform_version.get_output(context);
-        let propagate_tags_binding = args.propagate_tags.get_output(context);
-        let scheduling_strategy_binding = args.scheduling_strategy.get_output(context);
+            .get_output(ctx);
+        let placement_constraints_binding = args.placement_constraints.get_output(ctx);
+        let platform_version_binding = args.platform_version.get_output(ctx);
+        let propagate_tags_binding = args.propagate_tags.get_output(ctx);
+        let scheduling_strategy_binding = args.scheduling_strategy.get_output(ctx);
         let service_connect_configuration_binding = args
             .service_connect_configuration
-            .get_output(context);
-        let service_registries_binding = args.service_registries.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let task_definition_binding = args.task_definition.get_output(context);
-        let triggers_binding = args.triggers.get_output(context);
-        let volume_configuration_binding = args.volume_configuration.get_output(context);
+            .get_output(ctx);
+        let service_registries_binding = args.service_registries.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let task_definition_binding = args.task_definition.get_output(ctx);
+        let triggers_binding = args.triggers.get_output(ctx);
+        let volume_configuration_binding = args.volume_configuration.get_output(ctx);
         let vpc_lattice_configurations_binding = args
             .vpc_lattice_configurations
-            .get_output(context);
-        let wait_for_steady_state_binding = args
-            .wait_for_steady_state
-            .get_output(context);
+            .get_output(ctx);
+        let wait_for_steady_state_binding = args.wait_for_steady_state.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ecs/service:Service".into(),
             name: name.to_string(),
@@ -616,7 +606,7 @@ pub mod service {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ServiceResult {
             id: o.get_id(),
             urn: o.get_urn(),

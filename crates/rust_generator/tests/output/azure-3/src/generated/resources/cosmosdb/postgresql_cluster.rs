@@ -208,72 +208,70 @@ pub mod postgresql_cluster {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PostgresqlClusterArgs,
     ) -> PostgresqlClusterResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PostgresqlClusterArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> PostgresqlClusterResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PostgresqlClusterArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> PostgresqlClusterResult {
         let administrator_login_password_binding = args
             .administrator_login_password
-            .get_output(context);
-        let citus_version_binding = args.citus_version.get_output(context);
+            .get_output(ctx);
+        let citus_version_binding = args.citus_version.get_output(ctx);
         let coordinator_public_ip_access_enabled_binding = args
             .coordinator_public_ip_access_enabled
-            .get_output(context);
+            .get_output(ctx);
         let coordinator_server_edition_binding = args
             .coordinator_server_edition
-            .get_output(context);
+            .get_output(ctx);
         let coordinator_storage_quota_in_mb_binding = args
             .coordinator_storage_quota_in_mb
-            .get_output(context);
+            .get_output(ctx);
         let coordinator_vcore_count_binding = args
             .coordinator_vcore_count
-            .get_output(context);
-        let ha_enabled_binding = args.ha_enabled.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let maintenance_window_binding = args.maintenance_window.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let node_count_binding = args.node_count.get_output(context);
+            .get_output(ctx);
+        let ha_enabled_binding = args.ha_enabled.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let maintenance_window_binding = args.maintenance_window.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let node_count_binding = args.node_count.get_output(ctx);
         let node_public_ip_access_enabled_binding = args
             .node_public_ip_access_enabled
-            .get_output(context);
-        let node_server_edition_binding = args.node_server_edition.get_output(context);
+            .get_output(ctx);
+        let node_server_edition_binding = args.node_server_edition.get_output(ctx);
         let node_storage_quota_in_mb_binding = args
             .node_storage_quota_in_mb
-            .get_output(context);
-        let node_vcores_binding = args.node_vcores.get_output(context);
-        let point_in_time_in_utc_binding = args.point_in_time_in_utc.get_output(context);
-        let preferred_primary_zone_binding = args
-            .preferred_primary_zone
-            .get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+            .get_output(ctx);
+        let node_vcores_binding = args.node_vcores.get_output(ctx);
+        let point_in_time_in_utc_binding = args.point_in_time_in_utc.get_output(ctx);
+        let preferred_primary_zone_binding = args.preferred_primary_zone.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let shards_on_coordinator_enabled_binding = args
             .shards_on_coordinator_enabled
-            .get_output(context);
-        let source_location_binding = args.source_location.get_output(context);
-        let source_resource_id_binding = args.source_resource_id.get_output(context);
-        let sql_version_binding = args.sql_version.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let source_location_binding = args.source_location.get_output(ctx);
+        let source_resource_id_binding = args.source_resource_id.get_output(ctx);
+        let sql_version_binding = args.sql_version.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:cosmosdb/postgresqlCluster:PostgresqlCluster".into(),
             name: name.to_string(),
@@ -374,7 +372,7 @@ pub mod postgresql_cluster {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         PostgresqlClusterResult {
             id: o.get_id(),
             urn: o.get_urn(),

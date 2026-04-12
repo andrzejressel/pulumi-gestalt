@@ -27,11 +27,11 @@ pub mod get_tracker_association {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetTrackerAssociationArgs,
     ) -> GetTrackerAssociationResult {
-        let consumer_arn_binding = args.consumer_arn.get_output(context);
-        let tracker_name_binding = args.tracker_name.get_output(context);
+        let consumer_arn_binding = args.consumer_arn.get_output(ctx);
+        let tracker_name_binding = args.tracker_name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:location/getTrackerAssociation:getTrackerAssociation".into(),
             version: super::super::super::get_version(),
@@ -46,7 +46,7 @@ pub mod get_tracker_association {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetTrackerAssociationResult {
             consumer_arn: o.get_field("consumerArn"),
             id: o.get_field("id"),

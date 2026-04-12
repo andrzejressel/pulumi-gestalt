@@ -56,14 +56,14 @@ pub mod get_key_pair {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetKeyPairArgs,
     ) -> GetKeyPairResult {
-        let filters_binding = args.filters.get_output(context);
-        let include_public_key_binding = args.include_public_key.get_output(context);
-        let key_name_binding = args.key_name.get_output(context);
-        let key_pair_id_binding = args.key_pair_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let filters_binding = args.filters.get_output(ctx);
+        let include_public_key_binding = args.include_public_key.get_output(ctx);
+        let key_name_binding = args.key_name.get_output(ctx);
+        let key_pair_id_binding = args.key_pair_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ec2/getKeyPair:getKeyPair".into(),
             version: super::super::super::get_version(),
@@ -90,7 +90,7 @@ pub mod get_key_pair {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetKeyPairResult {
             arn: o.get_field("arn"),
             create_time: o.get_field("createTime"),

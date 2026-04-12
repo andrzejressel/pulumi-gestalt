@@ -83,34 +83,34 @@ pub mod field_level_encryption_profile {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FieldLevelEncryptionProfileArgs,
     ) -> FieldLevelEncryptionProfileResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FieldLevelEncryptionProfileArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> FieldLevelEncryptionProfileResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FieldLevelEncryptionProfileArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> FieldLevelEncryptionProfileResult {
-        let comment_binding = args.comment.get_output(context);
-        let encryption_entities_binding = args.encryption_entities.get_output(context);
-        let name_binding = args.name.get_output(context);
+        let comment_binding = args.comment.get_output(ctx);
+        let encryption_entities_binding = args.encryption_entities.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:cloudfront/fieldLevelEncryptionProfile:FieldLevelEncryptionProfile"
                 .into(),
@@ -132,7 +132,7 @@ pub mod field_level_encryption_profile {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         FieldLevelEncryptionProfileResult {
             id: o.get_id(),
             urn: o.get_urn(),

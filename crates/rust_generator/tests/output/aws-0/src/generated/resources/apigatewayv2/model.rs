@@ -78,36 +78,36 @@ pub mod model {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ModelArgs,
     ) -> ModelResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ModelArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ModelResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ModelArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ModelResult {
-        let api_id_binding = args.api_id.get_output(context);
-        let content_type_binding = args.content_type.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let schema_binding = args.schema.get_output(context);
+        let api_id_binding = args.api_id.get_output(ctx);
+        let content_type_binding = args.content_type.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let schema_binding = args.schema.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:apigatewayv2/model:Model".into(),
             name: name.to_string(),
@@ -136,7 +136,7 @@ pub mod model {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ModelResult {
             id: o.get_id(),
             urn: o.get_urn(),

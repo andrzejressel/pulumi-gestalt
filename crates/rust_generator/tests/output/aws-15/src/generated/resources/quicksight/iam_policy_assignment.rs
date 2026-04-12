@@ -96,37 +96,37 @@ pub mod iam_policy_assignment {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IamPolicyAssignmentArgs,
     ) -> IamPolicyAssignmentResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IamPolicyAssignmentArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> IamPolicyAssignmentResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IamPolicyAssignmentArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> IamPolicyAssignmentResult {
-        let assignment_name_binding = args.assignment_name.get_output(context);
-        let assignment_status_binding = args.assignment_status.get_output(context);
-        let aws_account_id_binding = args.aws_account_id.get_output(context);
-        let identities_binding = args.identities.get_output(context);
-        let namespace_binding = args.namespace.get_output(context);
-        let policy_arn_binding = args.policy_arn.get_output(context);
+        let assignment_name_binding = args.assignment_name.get_output(ctx);
+        let assignment_status_binding = args.assignment_status.get_output(ctx);
+        let aws_account_id_binding = args.aws_account_id.get_output(ctx);
+        let identities_binding = args.identities.get_output(ctx);
+        let namespace_binding = args.namespace.get_output(ctx);
+        let policy_arn_binding = args.policy_arn.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:quicksight/iamPolicyAssignment:IamPolicyAssignment".into(),
             name: name.to_string(),
@@ -159,7 +159,7 @@ pub mod iam_policy_assignment {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         IamPolicyAssignmentResult {
             id: o.get_id(),
             urn: o.get_urn(),

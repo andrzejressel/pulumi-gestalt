@@ -64,35 +64,35 @@ pub mod email_identity_feedback_attributes {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EmailIdentityFeedbackAttributesArgs,
     ) -> EmailIdentityFeedbackAttributesResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EmailIdentityFeedbackAttributesArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> EmailIdentityFeedbackAttributesResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EmailIdentityFeedbackAttributesArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> EmailIdentityFeedbackAttributesResult {
         let email_forwarding_enabled_binding = args
             .email_forwarding_enabled
-            .get_output(context);
-        let email_identity_binding = args.email_identity.get_output(context);
+            .get_output(ctx);
+        let email_identity_binding = args.email_identity.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:sesv2/emailIdentityFeedbackAttributes:EmailIdentityFeedbackAttributes"
                 .into(),
@@ -110,7 +110,7 @@ pub mod email_identity_feedback_attributes {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         EmailIdentityFeedbackAttributesResult {
             id: o.get_id(),
             urn: o.get_urn(),

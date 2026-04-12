@@ -101,38 +101,38 @@ pub mod link {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LinkArgs,
     ) -> LinkResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LinkArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> LinkResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LinkArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> LinkResult {
-        let bandwidth_binding = args.bandwidth.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let global_network_id_binding = args.global_network_id.get_output(context);
-        let provider_name_binding = args.provider_name.get_output(context);
-        let site_id_binding = args.site_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let type__binding = args.type_.get_output(context);
+        let bandwidth_binding = args.bandwidth.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let global_network_id_binding = args.global_network_id.get_output(ctx);
+        let provider_name_binding = args.provider_name.get_output(ctx);
+        let site_id_binding = args.site_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:networkmanager/link:Link".into(),
             name: name.to_string(),
@@ -169,7 +169,7 @@ pub mod link {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         LinkResult {
             id: o.get_id(),
             urn: o.get_urn(),

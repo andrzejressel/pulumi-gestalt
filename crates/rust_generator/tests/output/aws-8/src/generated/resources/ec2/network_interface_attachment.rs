@@ -68,34 +68,34 @@ pub mod network_interface_attachment {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkInterfaceAttachmentArgs,
     ) -> NetworkInterfaceAttachmentResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkInterfaceAttachmentArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> NetworkInterfaceAttachmentResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkInterfaceAttachmentArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> NetworkInterfaceAttachmentResult {
-        let device_index_binding = args.device_index.get_output(context);
-        let instance_id_binding = args.instance_id.get_output(context);
-        let network_interface_id_binding = args.network_interface_id.get_output(context);
+        let device_index_binding = args.device_index.get_output(ctx);
+        let instance_id_binding = args.instance_id.get_output(ctx);
+        let network_interface_id_binding = args.network_interface_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/networkInterfaceAttachment:NetworkInterfaceAttachment"
                 .into(),
@@ -117,7 +117,7 @@ pub mod network_interface_attachment {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         NetworkInterfaceAttachmentResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -280,64 +280,62 @@ pub mod standard {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StandardArgs,
     ) -> StandardResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StandardArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> StandardResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StandardArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> StandardResult {
-        let app_service_plan_id_binding = args.app_service_plan_id.get_output(context);
-        let app_settings_binding = args.app_settings.get_output(context);
-        let bundle_version_binding = args.bundle_version.get_output(context);
+        let app_service_plan_id_binding = args.app_service_plan_id.get_output(ctx);
+        let app_settings_binding = args.app_settings.get_output(ctx);
+        let bundle_version_binding = args.bundle_version.get_output(ctx);
         let client_affinity_enabled_binding = args
             .client_affinity_enabled
-            .get_output(context);
+            .get_output(ctx);
         let client_certificate_mode_binding = args
             .client_certificate_mode
-            .get_output(context);
-        let connection_strings_binding = args.connection_strings.get_output(context);
-        let enabled_binding = args.enabled.get_output(context);
-        let https_only_binding = args.https_only.get_output(context);
-        let identity_binding = args.identity.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let public_network_access_binding = args
-            .public_network_access
-            .get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let site_config_binding = args.site_config.get_output(context);
+            .get_output(ctx);
+        let connection_strings_binding = args.connection_strings.get_output(ctx);
+        let enabled_binding = args.enabled.get_output(ctx);
+        let https_only_binding = args.https_only.get_output(ctx);
+        let identity_binding = args.identity.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let public_network_access_binding = args.public_network_access.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let site_config_binding = args.site_config.get_output(ctx);
         let storage_account_access_key_binding = args
             .storage_account_access_key
-            .get_output(context);
-        let storage_account_name_binding = args.storage_account_name.get_output(context);
+            .get_output(ctx);
+        let storage_account_name_binding = args.storage_account_name.get_output(ctx);
         let storage_account_share_name_binding = args
             .storage_account_share_name
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let use_extension_bundle_binding = args.use_extension_bundle.get_output(context);
-        let version_binding = args.version.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let use_extension_bundle_binding = args.use_extension_bundle.get_output(ctx);
+        let version_binding = args.version.get_output(ctx);
         let virtual_network_subnet_id_binding = args
             .virtual_network_subnet_id
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:logicapps/standard:Standard".into(),
             name: name.to_string(),
@@ -430,7 +428,7 @@ pub mod standard {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         StandardResult {
             id: o.get_id(),
             urn: o.get_urn(),

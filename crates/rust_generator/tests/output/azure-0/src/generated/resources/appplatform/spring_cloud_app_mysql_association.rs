@@ -128,37 +128,37 @@ pub mod spring_cloud_app_mysql_association {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SpringCloudAppMysqlAssociationArgs,
     ) -> SpringCloudAppMysqlAssociationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SpringCloudAppMysqlAssociationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> SpringCloudAppMysqlAssociationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SpringCloudAppMysqlAssociationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> SpringCloudAppMysqlAssociationResult {
-        let database_name_binding = args.database_name.get_output(context);
-        let mysql_server_id_binding = args.mysql_server_id.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let password_binding = args.password.get_output(context);
-        let spring_cloud_app_id_binding = args.spring_cloud_app_id.get_output(context);
-        let username_binding = args.username.get_output(context);
+        let database_name_binding = args.database_name.get_output(ctx);
+        let mysql_server_id_binding = args.mysql_server_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let password_binding = args.password.get_output(ctx);
+        let spring_cloud_app_id_binding = args.spring_cloud_app_id.get_output(ctx);
+        let username_binding = args.username.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:appplatform/springCloudAppMysqlAssociation:SpringCloudAppMysqlAssociation"
                 .into(),
@@ -192,7 +192,7 @@ pub mod spring_cloud_app_mysql_association {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         SpringCloudAppMysqlAssociationResult {
             id: o.get_id(),
             urn: o.get_urn(),

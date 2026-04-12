@@ -47,11 +47,11 @@ pub mod get_confidential_ledger {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetConfidentialLedgerArgs,
     ) -> GetConfidentialLedgerResult {
-        let name_binding = args.name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:compute/getConfidentialLedger:getConfidentialLedger".into(),
             version: super::super::super::get_version(),
@@ -66,7 +66,7 @@ pub mod get_confidential_ledger {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetConfidentialLedgerResult {
             azuread_based_service_principals: o
                 .get_field("azureadBasedServicePrincipals"),

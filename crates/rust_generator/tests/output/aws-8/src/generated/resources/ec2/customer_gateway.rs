@@ -92,38 +92,38 @@ pub mod customer_gateway {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CustomerGatewayArgs,
     ) -> CustomerGatewayResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CustomerGatewayArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> CustomerGatewayResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CustomerGatewayArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> CustomerGatewayResult {
-        let bgp_asn_binding = args.bgp_asn.get_output(context);
-        let bgp_asn_extended_binding = args.bgp_asn_extended.get_output(context);
-        let certificate_arn_binding = args.certificate_arn.get_output(context);
-        let device_name_binding = args.device_name.get_output(context);
-        let ip_address_binding = args.ip_address.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let type__binding = args.type_.get_output(context);
+        let bgp_asn_binding = args.bgp_asn.get_output(ctx);
+        let bgp_asn_extended_binding = args.bgp_asn_extended.get_output(ctx);
+        let certificate_arn_binding = args.certificate_arn.get_output(ctx);
+        let device_name_binding = args.device_name.get_output(ctx);
+        let ip_address_binding = args.ip_address.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/customerGateway:CustomerGateway".into(),
             name: name.to_string(),
@@ -160,7 +160,7 @@ pub mod customer_gateway {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         CustomerGatewayResult {
             id: o.get_id(),
             urn: o.get_urn(),

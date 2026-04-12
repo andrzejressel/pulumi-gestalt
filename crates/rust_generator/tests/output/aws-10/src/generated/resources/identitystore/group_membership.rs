@@ -83,34 +83,34 @@ pub mod group_membership {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GroupMembershipArgs,
     ) -> GroupMembershipResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GroupMembershipArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> GroupMembershipResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GroupMembershipArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> GroupMembershipResult {
-        let group_id_binding = args.group_id.get_output(context);
-        let identity_store_id_binding = args.identity_store_id.get_output(context);
-        let member_id_binding = args.member_id.get_output(context);
+        let group_id_binding = args.group_id.get_output(ctx);
+        let identity_store_id_binding = args.identity_store_id.get_output(ctx);
+        let member_id_binding = args.member_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:identitystore/groupMembership:GroupMembership".into(),
             name: name.to_string(),
@@ -131,7 +131,7 @@ pub mod group_membership {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         GroupMembershipResult {
             id: o.get_id(),
             urn: o.get_urn(),

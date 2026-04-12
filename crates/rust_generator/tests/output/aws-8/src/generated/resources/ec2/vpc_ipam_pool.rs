@@ -197,56 +197,54 @@ pub mod vpc_ipam_pool {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcIpamPoolArgs,
     ) -> VpcIpamPoolResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcIpamPoolArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> VpcIpamPoolResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcIpamPoolArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> VpcIpamPoolResult {
-        let address_family_binding = args.address_family.get_output(context);
+        let address_family_binding = args.address_family.get_output(ctx);
         let allocation_default_netmask_length_binding = args
             .allocation_default_netmask_length
-            .get_output(context);
+            .get_output(ctx);
         let allocation_max_netmask_length_binding = args
             .allocation_max_netmask_length
-            .get_output(context);
+            .get_output(ctx);
         let allocation_min_netmask_length_binding = args
             .allocation_min_netmask_length
-            .get_output(context);
+            .get_output(ctx);
         let allocation_resource_tags_binding = args
             .allocation_resource_tags
-            .get_output(context);
-        let auto_import_binding = args.auto_import.get_output(context);
-        let aws_service_binding = args.aws_service.get_output(context);
-        let cascade_binding = args.cascade.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let ipam_scope_id_binding = args.ipam_scope_id.get_output(context);
-        let locale_binding = args.locale.get_output(context);
-        let public_ip_source_binding = args.public_ip_source.get_output(context);
-        let publicly_advertisable_binding = args
-            .publicly_advertisable
-            .get_output(context);
-        let source_ipam_pool_id_binding = args.source_ipam_pool_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let auto_import_binding = args.auto_import.get_output(ctx);
+        let aws_service_binding = args.aws_service.get_output(ctx);
+        let cascade_binding = args.cascade.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let ipam_scope_id_binding = args.ipam_scope_id.get_output(ctx);
+        let locale_binding = args.locale.get_output(ctx);
+        let public_ip_source_binding = args.public_ip_source.get_output(ctx);
+        let publicly_advertisable_binding = args.publicly_advertisable.get_output(ctx);
+        let source_ipam_pool_id_binding = args.source_ipam_pool_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/vpcIpamPool:VpcIpamPool".into(),
             name: name.to_string(),
@@ -315,7 +313,7 @@ pub mod vpc_ipam_pool {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         VpcIpamPoolResult {
             id: o.get_id(),
             urn: o.get_urn(),

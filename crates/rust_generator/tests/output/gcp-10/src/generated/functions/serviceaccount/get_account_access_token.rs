@@ -37,15 +37,13 @@ pub mod get_account_access_token {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetAccountAccessTokenArgs,
     ) -> GetAccountAccessTokenResult {
-        let delegates_binding = args.delegates.get_output(context);
-        let lifetime_binding = args.lifetime.get_output(context);
-        let scopes_binding = args.scopes.get_output(context);
-        let target_service_account_binding = args
-            .target_service_account
-            .get_output(context);
+        let delegates_binding = args.delegates.get_output(ctx);
+        let lifetime_binding = args.lifetime.get_output(ctx);
+        let scopes_binding = args.scopes.get_output(ctx);
+        let target_service_account_binding = args.target_service_account.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:serviceaccount/getAccountAccessToken:getAccountAccessToken"
                 .into(),
@@ -69,7 +67,7 @@ pub mod get_account_access_token {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetAccountAccessTokenResult {
             access_token: o.get_field("accessToken"),
             delegates: o.get_field("delegates"),

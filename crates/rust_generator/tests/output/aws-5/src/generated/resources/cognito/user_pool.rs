@@ -310,77 +310,75 @@ pub mod user_pool {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: UserPoolArgs,
     ) -> UserPoolResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: UserPoolArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> UserPoolResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: UserPoolArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> UserPoolResult {
         let account_recovery_setting_binding = args
             .account_recovery_setting
-            .get_output(context);
+            .get_output(ctx);
         let admin_create_user_config_binding = args
             .admin_create_user_config
-            .get_output(context);
-        let alias_attributes_binding = args.alias_attributes.get_output(context);
+            .get_output(ctx);
+        let alias_attributes_binding = args.alias_attributes.get_output(ctx);
         let auto_verified_attributes_binding = args
             .auto_verified_attributes
-            .get_output(context);
-        let deletion_protection_binding = args.deletion_protection.get_output(context);
-        let device_configuration_binding = args.device_configuration.get_output(context);
-        let email_configuration_binding = args.email_configuration.get_output(context);
+            .get_output(ctx);
+        let deletion_protection_binding = args.deletion_protection.get_output(ctx);
+        let device_configuration_binding = args.device_configuration.get_output(ctx);
+        let email_configuration_binding = args.email_configuration.get_output(ctx);
         let email_verification_message_binding = args
             .email_verification_message
-            .get_output(context);
+            .get_output(ctx);
         let email_verification_subject_binding = args
             .email_verification_subject
-            .get_output(context);
-        let lambda_config_binding = args.lambda_config.get_output(context);
-        let mfa_configuration_binding = args.mfa_configuration.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let password_policy_binding = args.password_policy.get_output(context);
-        let schemas_binding = args.schemas.get_output(context);
+            .get_output(ctx);
+        let lambda_config_binding = args.lambda_config.get_output(ctx);
+        let mfa_configuration_binding = args.mfa_configuration.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let password_policy_binding = args.password_policy.get_output(ctx);
+        let schemas_binding = args.schemas.get_output(ctx);
         let sms_authentication_message_binding = args
             .sms_authentication_message
-            .get_output(context);
-        let sms_configuration_binding = args.sms_configuration.get_output(context);
+            .get_output(ctx);
+        let sms_configuration_binding = args.sms_configuration.get_output(ctx);
         let sms_verification_message_binding = args
             .sms_verification_message
-            .get_output(context);
+            .get_output(ctx);
         let software_token_mfa_configuration_binding = args
             .software_token_mfa_configuration
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let user_attribute_update_settings_binding = args
             .user_attribute_update_settings
-            .get_output(context);
-        let user_pool_add_ons_binding = args.user_pool_add_ons.get_output(context);
-        let username_attributes_binding = args.username_attributes.get_output(context);
-        let username_configuration_binding = args
-            .username_configuration
-            .get_output(context);
+            .get_output(ctx);
+        let user_pool_add_ons_binding = args.user_pool_add_ons.get_output(ctx);
+        let username_attributes_binding = args.username_attributes.get_output(ctx);
+        let username_configuration_binding = args.username_configuration.get_output(ctx);
         let verification_message_template_binding = args
             .verification_message_template
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:cognito/userPool:UserPool".into(),
             name: name.to_string(),
@@ -485,7 +483,7 @@ pub mod user_pool {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         UserPoolResult {
             id: o.get_id(),
             urn: o.get_urn(),

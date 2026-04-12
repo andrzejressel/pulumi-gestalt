@@ -62,35 +62,35 @@ pub mod rds_db_instance {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RdsDbInstanceArgs,
     ) -> RdsDbInstanceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RdsDbInstanceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> RdsDbInstanceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RdsDbInstanceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> RdsDbInstanceResult {
-        let db_password_binding = args.db_password.get_output(context);
-        let db_user_binding = args.db_user.get_output(context);
-        let rds_db_instance_arn_binding = args.rds_db_instance_arn.get_output(context);
-        let stack_id_binding = args.stack_id.get_output(context);
+        let db_password_binding = args.db_password.get_output(ctx);
+        let db_user_binding = args.db_user.get_output(ctx);
+        let rds_db_instance_arn_binding = args.rds_db_instance_arn.get_output(ctx);
+        let stack_id_binding = args.stack_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:opsworks/rdsDbInstance:RdsDbInstance".into(),
             name: name.to_string(),
@@ -115,7 +115,7 @@ pub mod rds_db_instance {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         RdsDbInstanceResult {
             id: o.get_id(),
             urn: o.get_urn(),

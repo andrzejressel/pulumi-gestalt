@@ -125,45 +125,43 @@ pub mod custom_action_type {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CustomActionTypeArgs,
     ) -> CustomActionTypeResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CustomActionTypeArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> CustomActionTypeResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CustomActionTypeArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> CustomActionTypeResult {
-        let category_binding = args.category.get_output(context);
+        let category_binding = args.category.get_output(ctx);
         let configuration_properties_binding = args
             .configuration_properties
-            .get_output(context);
-        let input_artifact_details_binding = args
-            .input_artifact_details
-            .get_output(context);
+            .get_output(ctx);
+        let input_artifact_details_binding = args.input_artifact_details.get_output(ctx);
         let output_artifact_details_binding = args
             .output_artifact_details
-            .get_output(context);
-        let provider_name_binding = args.provider_name.get_output(context);
-        let settings_binding = args.settings.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let version_binding = args.version.get_output(context);
+            .get_output(ctx);
+        let provider_name_binding = args.provider_name.get_output(ctx);
+        let settings_binding = args.settings.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let version_binding = args.version.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:codepipeline/customActionType:CustomActionType".into(),
             name: name.to_string(),
@@ -204,7 +202,7 @@ pub mod custom_action_type {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         CustomActionTypeResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -337,66 +337,64 @@ pub mod bucket {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BucketArgs,
     ) -> BucketResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BucketArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> BucketResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BucketArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> BucketResult {
-        let autoclass_binding = args.autoclass.get_output(context);
-        let cors_binding = args.cors.get_output(context);
+        let autoclass_binding = args.autoclass.get_output(ctx);
+        let cors_binding = args.cors.get_output(ctx);
         let custom_placement_config_binding = args
             .custom_placement_config
-            .get_output(context);
+            .get_output(ctx);
         let default_event_based_hold_binding = args
             .default_event_based_hold
-            .get_output(context);
+            .get_output(ctx);
         let enable_object_retention_binding = args
             .enable_object_retention
-            .get_output(context);
-        let encryption_binding = args.encryption.get_output(context);
-        let force_destroy_binding = args.force_destroy.get_output(context);
-        let hierarchical_namespace_binding = args
-            .hierarchical_namespace
-            .get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let lifecycle_rules_binding = args.lifecycle_rules.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let logging_binding = args.logging.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
+            .get_output(ctx);
+        let encryption_binding = args.encryption.get_output(ctx);
+        let force_destroy_binding = args.force_destroy.get_output(ctx);
+        let hierarchical_namespace_binding = args.hierarchical_namespace.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let lifecycle_rules_binding = args.lifecycle_rules.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let logging_binding = args.logging.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let public_access_prevention_binding = args
             .public_access_prevention
-            .get_output(context);
-        let requester_pays_binding = args.requester_pays.get_output(context);
-        let retention_policy_binding = args.retention_policy.get_output(context);
-        let rpo_binding = args.rpo.get_output(context);
-        let soft_delete_policy_binding = args.soft_delete_policy.get_output(context);
-        let storage_class_binding = args.storage_class.get_output(context);
+            .get_output(ctx);
+        let requester_pays_binding = args.requester_pays.get_output(ctx);
+        let retention_policy_binding = args.retention_policy.get_output(ctx);
+        let rpo_binding = args.rpo.get_output(ctx);
+        let soft_delete_policy_binding = args.soft_delete_policy.get_output(ctx);
+        let storage_class_binding = args.storage_class.get_output(ctx);
         let uniform_bucket_level_access_binding = args
             .uniform_bucket_level_access
-            .get_output(context);
-        let versioning_binding = args.versioning.get_output(context);
-        let website_binding = args.website.get_output(context);
+            .get_output(ctx);
+        let versioning_binding = args.versioning.get_output(ctx);
+        let website_binding = args.website.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:storage/bucket:Bucket".into(),
             name: name.to_string(),
@@ -497,7 +495,7 @@ pub mod bucket {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         BucketResult {
             id: o.get_id(),
             urn: o.get_urn(),

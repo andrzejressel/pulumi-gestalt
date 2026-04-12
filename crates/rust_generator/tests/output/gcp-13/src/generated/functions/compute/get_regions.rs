@@ -30,11 +30,11 @@ pub mod get_regions {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetRegionsArgs,
     ) -> GetRegionsResult {
-        let project_binding = args.project.get_output(context);
-        let status_binding = args.status.get_output(context);
+        let project_binding = args.project.get_output(ctx);
+        let status_binding = args.status.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:compute/getRegions:getRegions".into(),
             version: super::super::super::get_version(),
@@ -49,7 +49,7 @@ pub mod get_regions {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetRegionsResult {
             id: o.get_field("id"),
             names: o.get_field("names"),

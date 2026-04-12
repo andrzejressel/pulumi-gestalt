@@ -37,12 +37,12 @@ pub mod get_public_configurations {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetPublicConfigurationsArgs,
     ) -> GetPublicConfigurationsResult {
-        let location_binding = args.location.get_output(context);
-        let recur_every_binding = args.recur_every.get_output(context);
-        let scope_binding = args.scope.get_output(context);
+        let location_binding = args.location.get_output(ctx);
+        let recur_every_binding = args.recur_every.get_output(ctx);
+        let scope_binding = args.scope.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:maintenance/getPublicConfigurations:getPublicConfigurations"
                 .into(),
@@ -62,7 +62,7 @@ pub mod get_public_configurations {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetPublicConfigurationsResult {
             configs: o.get_field("configs"),
             id: o.get_field("id"),

@@ -79,11 +79,11 @@ pub mod get_index {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetIndexArgs,
     ) -> GetIndexResult {
-        let id_binding = args.id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let id_binding = args.id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:kendra/getIndex:getIndex".into(),
             version: super::super::super::get_version(),
@@ -98,7 +98,7 @@ pub mod get_index {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetIndexResult {
             arn: o.get_field("arn"),
             capacity_units: o.get_field("capacityUnits"),

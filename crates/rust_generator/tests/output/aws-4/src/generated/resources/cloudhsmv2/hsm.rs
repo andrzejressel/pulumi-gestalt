@@ -77,35 +77,35 @@ pub mod hsm {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: HsmArgs,
     ) -> HsmResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: HsmArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> HsmResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: HsmArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> HsmResult {
-        let availability_zone_binding = args.availability_zone.get_output(context);
-        let cluster_id_binding = args.cluster_id.get_output(context);
-        let ip_address_binding = args.ip_address.get_output(context);
-        let subnet_id_binding = args.subnet_id.get_output(context);
+        let availability_zone_binding = args.availability_zone.get_output(ctx);
+        let cluster_id_binding = args.cluster_id.get_output(ctx);
+        let ip_address_binding = args.ip_address.get_output(ctx);
+        let subnet_id_binding = args.subnet_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:cloudhsmv2/hsm:Hsm".into(),
             name: name.to_string(),
@@ -130,7 +130,7 @@ pub mod hsm {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         HsmResult {
             id: o.get_id(),
             urn: o.get_urn(),

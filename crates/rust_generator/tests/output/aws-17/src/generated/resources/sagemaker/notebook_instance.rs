@@ -176,57 +176,53 @@ pub mod notebook_instance {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NotebookInstanceArgs,
     ) -> NotebookInstanceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NotebookInstanceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> NotebookInstanceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NotebookInstanceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> NotebookInstanceResult {
-        let accelerator_types_binding = args.accelerator_types.get_output(context);
+        let accelerator_types_binding = args.accelerator_types.get_output(ctx);
         let additional_code_repositories_binding = args
             .additional_code_repositories
-            .get_output(context);
+            .get_output(ctx);
         let default_code_repository_binding = args
             .default_code_repository
-            .get_output(context);
-        let direct_internet_access_binding = args
-            .direct_internet_access
-            .get_output(context);
+            .get_output(ctx);
+        let direct_internet_access_binding = args.direct_internet_access.get_output(ctx);
         let instance_metadata_service_configuration_binding = args
             .instance_metadata_service_configuration
-            .get_output(context);
-        let instance_type_binding = args.instance_type.get_output(context);
-        let kms_key_id_binding = args.kms_key_id.get_output(context);
-        let lifecycle_config_name_binding = args
-            .lifecycle_config_name
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let platform_identifier_binding = args.platform_identifier.get_output(context);
-        let role_arn_binding = args.role_arn.get_output(context);
-        let root_access_binding = args.root_access.get_output(context);
-        let security_groups_binding = args.security_groups.get_output(context);
-        let subnet_id_binding = args.subnet_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let volume_size_binding = args.volume_size.get_output(context);
+            .get_output(ctx);
+        let instance_type_binding = args.instance_type.get_output(ctx);
+        let kms_key_id_binding = args.kms_key_id.get_output(ctx);
+        let lifecycle_config_name_binding = args.lifecycle_config_name.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let platform_identifier_binding = args.platform_identifier.get_output(ctx);
+        let role_arn_binding = args.role_arn.get_output(ctx);
+        let root_access_binding = args.root_access.get_output(ctx);
+        let security_groups_binding = args.security_groups.get_output(ctx);
+        let subnet_id_binding = args.subnet_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let volume_size_binding = args.volume_size.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:sagemaker/notebookInstance:NotebookInstance".into(),
             name: name.to_string(),
@@ -299,7 +295,7 @@ pub mod notebook_instance {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         NotebookInstanceResult {
             id: o.get_id(),
             urn: o.get_urn(),

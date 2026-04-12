@@ -449,37 +449,37 @@ pub mod tunnel_dest_group_iam_binding {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TunnelDestGroupIamBindingArgs,
     ) -> TunnelDestGroupIamBindingResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TunnelDestGroupIamBindingArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> TunnelDestGroupIamBindingResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TunnelDestGroupIamBindingArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> TunnelDestGroupIamBindingResult {
-        let condition_binding = args.condition.get_output(context);
-        let dest_group_binding = args.dest_group.get_output(context);
-        let members_binding = args.members.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let region_binding = args.region.get_output(context);
-        let role_binding = args.role.get_output(context);
+        let condition_binding = args.condition.get_output(ctx);
+        let dest_group_binding = args.dest_group.get_output(ctx);
+        let members_binding = args.members.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let region_binding = args.region.get_output(ctx);
+        let role_binding = args.role.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:iap/tunnelDestGroupIamBinding:TunnelDestGroupIamBinding".into(),
             name: name.to_string(),
@@ -512,7 +512,7 @@ pub mod tunnel_dest_group_iam_binding {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         TunnelDestGroupIamBindingResult {
             id: o.get_id(),
             urn: o.get_urn(),

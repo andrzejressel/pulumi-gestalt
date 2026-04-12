@@ -373,63 +373,59 @@ pub mod managed_instance {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ManagedInstanceArgs,
     ) -> ManagedInstanceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ManagedInstanceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ManagedInstanceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ManagedInstanceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ManagedInstanceResult {
-        let administrator_login_binding = args.administrator_login.get_output(context);
+        let administrator_login_binding = args.administrator_login.get_output(ctx);
         let administrator_login_password_binding = args
             .administrator_login_password
-            .get_output(context);
-        let collation_binding = args.collation.get_output(context);
-        let dns_zone_partner_id_binding = args.dns_zone_partner_id.get_output(context);
-        let identity_binding = args.identity.get_output(context);
-        let license_type_binding = args.license_type.get_output(context);
-        let location_binding = args.location.get_output(context);
+            .get_output(ctx);
+        let collation_binding = args.collation.get_output(ctx);
+        let dns_zone_partner_id_binding = args.dns_zone_partner_id.get_output(ctx);
+        let identity_binding = args.identity.get_output(ctx);
+        let license_type_binding = args.license_type.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
         let maintenance_configuration_name_binding = args
             .maintenance_configuration_name
-            .get_output(context);
-        let minimum_tls_version_binding = args.minimum_tls_version.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let proxy_override_binding = args.proxy_override.get_output(context);
+            .get_output(ctx);
+        let minimum_tls_version_binding = args.minimum_tls_version.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let proxy_override_binding = args.proxy_override.get_output(ctx);
         let public_data_endpoint_enabled_binding = args
             .public_data_endpoint_enabled
-            .get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let service_principal_type_binding = args
-            .service_principal_type
-            .get_output(context);
-        let sku_name_binding = args.sku_name.get_output(context);
-        let storage_account_type_binding = args.storage_account_type.get_output(context);
-        let storage_size_in_gb_binding = args.storage_size_in_gb.get_output(context);
-        let subnet_id_binding = args.subnet_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let timezone_id_binding = args.timezone_id.get_output(context);
-        let vcores_binding = args.vcores.get_output(context);
-        let zone_redundant_enabled_binding = args
-            .zone_redundant_enabled
-            .get_output(context);
+            .get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let service_principal_type_binding = args.service_principal_type.get_output(ctx);
+        let sku_name_binding = args.sku_name.get_output(ctx);
+        let storage_account_type_binding = args.storage_account_type.get_output(ctx);
+        let storage_size_in_gb_binding = args.storage_size_in_gb.get_output(ctx);
+        let subnet_id_binding = args.subnet_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let timezone_id_binding = args.timezone_id.get_output(ctx);
+        let vcores_binding = args.vcores.get_output(ctx);
+        let zone_redundant_enabled_binding = args.zone_redundant_enabled.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:mssql/managedInstance:ManagedInstance".into(),
             name: name.to_string(),
@@ -526,7 +522,7 @@ pub mod managed_instance {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ManagedInstanceResult {
             id: o.get_id(),
             urn: o.get_urn(),

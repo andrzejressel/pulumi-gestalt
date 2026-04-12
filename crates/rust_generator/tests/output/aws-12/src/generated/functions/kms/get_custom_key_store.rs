@@ -34,13 +34,11 @@ pub mod get_custom_key_store {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetCustomKeyStoreArgs,
     ) -> GetCustomKeyStoreResult {
-        let custom_key_store_id_binding = args.custom_key_store_id.get_output(context);
-        let custom_key_store_name_binding = args
-            .custom_key_store_name
-            .get_output(context);
+        let custom_key_store_id_binding = args.custom_key_store_id.get_output(ctx);
+        let custom_key_store_name_binding = args.custom_key_store_name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:kms/getCustomKeyStore:getCustomKeyStore".into(),
             version: super::super::super::get_version(),
@@ -55,7 +53,7 @@ pub mod get_custom_key_store {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetCustomKeyStoreResult {
             cloud_hsm_cluster_id: o.get_field("cloudHsmClusterId"),
             connection_state: o.get_field("connectionState"),

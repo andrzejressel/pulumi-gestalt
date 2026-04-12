@@ -67,33 +67,33 @@ pub mod device {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DeviceArgs,
     ) -> DeviceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DeviceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DeviceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DeviceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DeviceResult {
-        let device_binding = args.device.get_output(context);
-        let device_fleet_name_binding = args.device_fleet_name.get_output(context);
+        let device_binding = args.device.get_output(ctx);
+        let device_fleet_name_binding = args.device_fleet_name.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:sagemaker/device:Device".into(),
             name: name.to_string(),
@@ -110,7 +110,7 @@ pub mod device {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DeviceResult {
             id: o.get_id(),
             urn: o.get_urn(),

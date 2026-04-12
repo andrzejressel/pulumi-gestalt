@@ -104,21 +104,21 @@ pub mod get_vpc_peering_connection {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetVpcPeeringConnectionArgs,
     ) -> GetVpcPeeringConnectionResult {
-        let cidr_block_binding = args.cidr_block.get_output(context);
-        let filters_binding = args.filters.get_output(context);
-        let id_binding = args.id.get_output(context);
-        let owner_id_binding = args.owner_id.get_output(context);
-        let peer_cidr_block_binding = args.peer_cidr_block.get_output(context);
-        let peer_owner_id_binding = args.peer_owner_id.get_output(context);
-        let peer_region_binding = args.peer_region.get_output(context);
-        let peer_vpc_id_binding = args.peer_vpc_id.get_output(context);
-        let region_binding = args.region.get_output(context);
-        let status_binding = args.status.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let vpc_id_binding = args.vpc_id.get_output(context);
+        let cidr_block_binding = args.cidr_block.get_output(ctx);
+        let filters_binding = args.filters.get_output(ctx);
+        let id_binding = args.id.get_output(ctx);
+        let owner_id_binding = args.owner_id.get_output(ctx);
+        let peer_cidr_block_binding = args.peer_cidr_block.get_output(ctx);
+        let peer_owner_id_binding = args.peer_owner_id.get_output(ctx);
+        let peer_region_binding = args.peer_region.get_output(ctx);
+        let peer_vpc_id_binding = args.peer_vpc_id.get_output(ctx);
+        let region_binding = args.region.get_output(ctx);
+        let status_binding = args.status.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let vpc_id_binding = args.vpc_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ec2/getVpcPeeringConnection:getVpcPeeringConnection".into(),
             version: super::super::super::get_version(),
@@ -173,7 +173,7 @@ pub mod get_vpc_peering_connection {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetVpcPeeringConnectionResult {
             accepter: o.get_field("accepter"),
             cidr_block: o.get_field("cidrBlock"),

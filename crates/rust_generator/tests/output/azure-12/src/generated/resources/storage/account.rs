@@ -566,93 +566,93 @@ pub mod account {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccountArgs,
     ) -> AccountResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccountArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AccountResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccountArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AccountResult {
-        let access_tier_binding = args.access_tier.get_output(context);
-        let account_kind_binding = args.account_kind.get_output(context);
+        let access_tier_binding = args.access_tier.get_output(ctx);
+        let account_kind_binding = args.account_kind.get_output(ctx);
         let account_replication_type_binding = args
             .account_replication_type
-            .get_output(context);
-        let account_tier_binding = args.account_tier.get_output(context);
+            .get_output(ctx);
+        let account_tier_binding = args.account_tier.get_output(ctx);
         let allow_nested_items_to_be_public_binding = args
             .allow_nested_items_to_be_public
-            .get_output(context);
-        let allowed_copy_scope_binding = args.allowed_copy_scope.get_output(context);
+            .get_output(ctx);
+        let allowed_copy_scope_binding = args.allowed_copy_scope.get_output(ctx);
         let azure_files_authentication_binding = args
             .azure_files_authentication
-            .get_output(context);
-        let blob_properties_binding = args.blob_properties.get_output(context);
+            .get_output(ctx);
+        let blob_properties_binding = args.blob_properties.get_output(ctx);
         let cross_tenant_replication_enabled_binding = args
             .cross_tenant_replication_enabled
-            .get_output(context);
-        let custom_domain_binding = args.custom_domain.get_output(context);
-        let customer_managed_key_binding = args.customer_managed_key.get_output(context);
+            .get_output(ctx);
+        let custom_domain_binding = args.custom_domain.get_output(ctx);
+        let customer_managed_key_binding = args.customer_managed_key.get_output(ctx);
         let default_to_oauth_authentication_binding = args
             .default_to_oauth_authentication
-            .get_output(context);
-        let dns_endpoint_type_binding = args.dns_endpoint_type.get_output(context);
-        let edge_zone_binding = args.edge_zone.get_output(context);
+            .get_output(ctx);
+        let dns_endpoint_type_binding = args.dns_endpoint_type.get_output(ctx);
+        let edge_zone_binding = args.edge_zone.get_output(ctx);
         let https_traffic_only_enabled_binding = args
             .https_traffic_only_enabled
-            .get_output(context);
-        let identity_binding = args.identity.get_output(context);
-        let immutability_policy_binding = args.immutability_policy.get_output(context);
+            .get_output(ctx);
+        let identity_binding = args.identity.get_output(ctx);
+        let immutability_policy_binding = args.immutability_policy.get_output(ctx);
         let infrastructure_encryption_enabled_binding = args
             .infrastructure_encryption_enabled
-            .get_output(context);
-        let is_hns_enabled_binding = args.is_hns_enabled.get_output(context);
+            .get_output(ctx);
+        let is_hns_enabled_binding = args.is_hns_enabled.get_output(ctx);
         let large_file_share_enabled_binding = args
             .large_file_share_enabled
-            .get_output(context);
-        let local_user_enabled_binding = args.local_user_enabled.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let min_tls_version_binding = args.min_tls_version.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_rules_binding = args.network_rules.get_output(context);
-        let nfsv3_enabled_binding = args.nfsv3_enabled.get_output(context);
+            .get_output(ctx);
+        let local_user_enabled_binding = args.local_user_enabled.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let min_tls_version_binding = args.min_tls_version.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_rules_binding = args.network_rules.get_output(ctx);
+        let nfsv3_enabled_binding = args.nfsv3_enabled.get_output(ctx);
         let public_network_access_enabled_binding = args
             .public_network_access_enabled
-            .get_output(context);
+            .get_output(ctx);
         let queue_encryption_key_type_binding = args
             .queue_encryption_key_type
-            .get_output(context);
-        let queue_properties_binding = args.queue_properties.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let routing_binding = args.routing.get_output(context);
-        let sas_policy_binding = args.sas_policy.get_output(context);
-        let sftp_enabled_binding = args.sftp_enabled.get_output(context);
-        let share_properties_binding = args.share_properties.get_output(context);
+            .get_output(ctx);
+        let queue_properties_binding = args.queue_properties.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let routing_binding = args.routing.get_output(ctx);
+        let sas_policy_binding = args.sas_policy.get_output(ctx);
+        let sftp_enabled_binding = args.sftp_enabled.get_output(ctx);
+        let share_properties_binding = args.share_properties.get_output(ctx);
         let shared_access_key_enabled_binding = args
             .shared_access_key_enabled
-            .get_output(context);
-        let static_website_binding = args.static_website.get_output(context);
+            .get_output(ctx);
+        let static_website_binding = args.static_website.get_output(ctx);
         let table_encryption_key_type_binding = args
             .table_encryption_key_type
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:storage/account:Account".into(),
             name: name.to_string(),
@@ -813,7 +813,7 @@ pub mod account {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AccountResult {
             id: o.get_id(),
             urn: o.get_urn(),

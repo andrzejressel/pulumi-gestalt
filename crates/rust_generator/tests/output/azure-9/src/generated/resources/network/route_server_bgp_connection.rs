@@ -111,35 +111,35 @@ pub mod route_server_bgp_connection {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RouteServerBgpConnectionArgs,
     ) -> RouteServerBgpConnectionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RouteServerBgpConnectionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> RouteServerBgpConnectionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RouteServerBgpConnectionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> RouteServerBgpConnectionResult {
-        let name_binding = args.name.get_output(context);
-        let peer_asn_binding = args.peer_asn.get_output(context);
-        let peer_ip_binding = args.peer_ip.get_output(context);
-        let route_server_id_binding = args.route_server_id.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let peer_asn_binding = args.peer_asn.get_output(ctx);
+        let peer_ip_binding = args.peer_ip.get_output(ctx);
+        let route_server_id_binding = args.route_server_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:network/routeServerBgpConnection:RouteServerBgpConnection"
                 .into(),
@@ -165,7 +165,7 @@ pub mod route_server_bgp_connection {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         RouteServerBgpConnectionResult {
             id: o.get_id(),
             urn: o.get_urn(),

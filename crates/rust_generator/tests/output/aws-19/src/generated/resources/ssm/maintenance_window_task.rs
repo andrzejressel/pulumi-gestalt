@@ -220,45 +220,45 @@ pub mod maintenance_window_task {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MaintenanceWindowTaskArgs,
     ) -> MaintenanceWindowTaskResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MaintenanceWindowTaskArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> MaintenanceWindowTaskResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MaintenanceWindowTaskArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> MaintenanceWindowTaskResult {
-        let cutoff_behavior_binding = args.cutoff_behavior.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let max_concurrency_binding = args.max_concurrency.get_output(context);
-        let max_errors_binding = args.max_errors.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let priority_binding = args.priority.get_output(context);
-        let service_role_arn_binding = args.service_role_arn.get_output(context);
-        let targets_binding = args.targets.get_output(context);
-        let task_arn_binding = args.task_arn.get_output(context);
+        let cutoff_behavior_binding = args.cutoff_behavior.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let max_concurrency_binding = args.max_concurrency.get_output(ctx);
+        let max_errors_binding = args.max_errors.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let priority_binding = args.priority.get_output(ctx);
+        let service_role_arn_binding = args.service_role_arn.get_output(ctx);
+        let targets_binding = args.targets.get_output(ctx);
+        let task_arn_binding = args.task_arn.get_output(ctx);
         let task_invocation_parameters_binding = args
             .task_invocation_parameters
-            .get_output(context);
-        let task_type_binding = args.task_type.get_output(context);
-        let window_id_binding = args.window_id.get_output(context);
+            .get_output(ctx);
+        let task_type_binding = args.task_type.get_output(ctx);
+        let window_id_binding = args.window_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ssm/maintenanceWindowTask:MaintenanceWindowTask".into(),
             name: name.to_string(),
@@ -315,7 +315,7 @@ pub mod maintenance_window_task {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         MaintenanceWindowTaskResult {
             id: o.get_id(),
             urn: o.get_urn(),

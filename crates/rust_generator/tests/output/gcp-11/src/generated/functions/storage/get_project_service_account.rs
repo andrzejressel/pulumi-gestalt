@@ -33,11 +33,11 @@ pub mod get_project_service_account {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetProjectServiceAccountArgs,
     ) -> GetProjectServiceAccountResult {
-        let project_binding = args.project.get_output(context);
-        let user_project_binding = args.user_project.get_output(context);
+        let project_binding = args.project.get_output(ctx);
+        let user_project_binding = args.user_project.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:storage/getProjectServiceAccount:getProjectServiceAccount"
                 .into(),
@@ -53,7 +53,7 @@ pub mod get_project_service_account {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetProjectServiceAccountResult {
             email_address: o.get_field("emailAddress"),
             id: o.get_field("id"),

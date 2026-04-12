@@ -97,33 +97,33 @@ pub mod encryption_config {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EncryptionConfigArgs,
     ) -> EncryptionConfigResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EncryptionConfigArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> EncryptionConfigResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EncryptionConfigArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> EncryptionConfigResult {
-        let key_id_binding = args.key_id.get_output(context);
-        let type__binding = args.type_.get_output(context);
+        let key_id_binding = args.key_id.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:xray/encryptionConfig:EncryptionConfig".into(),
             name: name.to_string(),
@@ -140,7 +140,7 @@ pub mod encryption_config {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         EncryptionConfigResult {
             id: o.get_id(),
             urn: o.get_urn(),

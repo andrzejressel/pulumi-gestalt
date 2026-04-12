@@ -66,33 +66,33 @@ pub mod vpc_endpoint_subnet_association {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcEndpointSubnetAssociationArgs,
     ) -> VpcEndpointSubnetAssociationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcEndpointSubnetAssociationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> VpcEndpointSubnetAssociationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcEndpointSubnetAssociationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> VpcEndpointSubnetAssociationResult {
-        let subnet_id_binding = args.subnet_id.get_output(context);
-        let vpc_endpoint_id_binding = args.vpc_endpoint_id.get_output(context);
+        let subnet_id_binding = args.subnet_id.get_output(ctx);
+        let vpc_endpoint_id_binding = args.vpc_endpoint_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/vpcEndpointSubnetAssociation:VpcEndpointSubnetAssociation"
                 .into(),
@@ -110,7 +110,7 @@ pub mod vpc_endpoint_subnet_association {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         VpcEndpointSubnetAssociationResult {
             id: o.get_id(),
             urn: o.get_urn(),

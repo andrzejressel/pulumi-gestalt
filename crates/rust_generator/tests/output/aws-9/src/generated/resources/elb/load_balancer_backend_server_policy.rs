@@ -88,34 +88,34 @@ pub mod load_balancer_backend_server_policy {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LoadBalancerBackendServerPolicyArgs,
     ) -> LoadBalancerBackendServerPolicyResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LoadBalancerBackendServerPolicyArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> LoadBalancerBackendServerPolicyResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LoadBalancerBackendServerPolicyArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> LoadBalancerBackendServerPolicyResult {
-        let instance_port_binding = args.instance_port.get_output(context);
-        let load_balancer_name_binding = args.load_balancer_name.get_output(context);
-        let policy_names_binding = args.policy_names.get_output(context);
+        let instance_port_binding = args.instance_port.get_output(ctx);
+        let load_balancer_name_binding = args.load_balancer_name.get_output(ctx);
+        let policy_names_binding = args.policy_names.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:elb/loadBalancerBackendServerPolicy:LoadBalancerBackendServerPolicy"
                 .into(),
@@ -137,7 +137,7 @@ pub mod load_balancer_backend_server_policy {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         LoadBalancerBackendServerPolicyResult {
             id: o.get_id(),
             urn: o.get_urn(),

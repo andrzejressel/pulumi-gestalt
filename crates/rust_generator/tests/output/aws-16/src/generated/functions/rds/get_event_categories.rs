@@ -25,10 +25,10 @@ pub mod get_event_categories {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetEventCategoriesArgs,
     ) -> GetEventCategoriesResult {
-        let source_type_binding = args.source_type.get_output(context);
+        let source_type_binding = args.source_type.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:rds/getEventCategories:getEventCategories".into(),
             version: super::super::super::get_version(),
@@ -39,7 +39,7 @@ pub mod get_event_categories {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetEventCategoriesResult {
             event_categories: o.get_field("eventCategories"),
             id: o.get_field("id"),

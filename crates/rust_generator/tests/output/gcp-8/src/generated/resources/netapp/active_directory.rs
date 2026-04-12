@@ -243,54 +243,52 @@ pub mod active_directory {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ActiveDirectoryArgs,
     ) -> ActiveDirectoryResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ActiveDirectoryArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ActiveDirectoryResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ActiveDirectoryArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ActiveDirectoryResult {
-        let administrators_binding = args.administrators.get_output(context);
-        let aes_encryption_binding = args.aes_encryption.get_output(context);
-        let backup_operators_binding = args.backup_operators.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let dns_binding = args.dns.get_output(context);
-        let domain_binding = args.domain.get_output(context);
-        let encrypt_dc_connections_binding = args
-            .encrypt_dc_connections
-            .get_output(context);
-        let kdc_hostname_binding = args.kdc_hostname.get_output(context);
-        let kdc_ip_binding = args.kdc_ip.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let ldap_signing_binding = args.ldap_signing.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let net_bios_prefix_binding = args.net_bios_prefix.get_output(context);
-        let nfs_users_with_ldap_binding = args.nfs_users_with_ldap.get_output(context);
-        let organizational_unit_binding = args.organizational_unit.get_output(context);
-        let password_binding = args.password.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let security_operators_binding = args.security_operators.get_output(context);
-        let site_binding = args.site.get_output(context);
-        let username_binding = args.username.get_output(context);
+        let administrators_binding = args.administrators.get_output(ctx);
+        let aes_encryption_binding = args.aes_encryption.get_output(ctx);
+        let backup_operators_binding = args.backup_operators.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let dns_binding = args.dns.get_output(ctx);
+        let domain_binding = args.domain.get_output(ctx);
+        let encrypt_dc_connections_binding = args.encrypt_dc_connections.get_output(ctx);
+        let kdc_hostname_binding = args.kdc_hostname.get_output(ctx);
+        let kdc_ip_binding = args.kdc_ip.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let ldap_signing_binding = args.ldap_signing.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let net_bios_prefix_binding = args.net_bios_prefix.get_output(ctx);
+        let nfs_users_with_ldap_binding = args.nfs_users_with_ldap.get_output(ctx);
+        let organizational_unit_binding = args.organizational_unit.get_output(ctx);
+        let password_binding = args.password.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let security_operators_binding = args.security_operators.get_output(ctx);
+        let site_binding = args.site.get_output(ctx);
+        let username_binding = args.username.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:netapp/activeDirectory:ActiveDirectory".into(),
             name: name.to_string(),
@@ -383,7 +381,7 @@ pub mod active_directory {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ActiveDirectoryResult {
             id: o.get_id(),
             urn: o.get_urn(),

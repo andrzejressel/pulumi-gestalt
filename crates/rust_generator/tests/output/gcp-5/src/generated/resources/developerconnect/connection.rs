@@ -226,39 +226,39 @@ pub mod connection {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ConnectionArgs,
     ) -> ConnectionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ConnectionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ConnectionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ConnectionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ConnectionResult {
-        let annotations_binding = args.annotations.get_output(context);
-        let connection_id_binding = args.connection_id.get_output(context);
-        let disabled_binding = args.disabled.get_output(context);
-        let etag_binding = args.etag.get_output(context);
-        let github_config_binding = args.github_config.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let project_binding = args.project.get_output(context);
+        let annotations_binding = args.annotations.get_output(ctx);
+        let connection_id_binding = args.connection_id.get_output(ctx);
+        let disabled_binding = args.disabled.get_output(ctx);
+        let etag_binding = args.etag.get_output(ctx);
+        let github_config_binding = args.github_config.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:developerconnect/connection:Connection".into(),
             name: name.to_string(),
@@ -299,7 +299,7 @@ pub mod connection {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ConnectionResult {
             id: o.get_id(),
             urn: o.get_urn(),

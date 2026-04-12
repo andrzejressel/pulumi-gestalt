@@ -187,66 +187,60 @@ pub mod authorization_server {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AuthorizationServerArgs,
     ) -> AuthorizationServerResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AuthorizationServerArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AuthorizationServerResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AuthorizationServerArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AuthorizationServerResult {
-        let api_management_name_binding = args.api_management_name.get_output(context);
-        let authorization_endpoint_binding = args
-            .authorization_endpoint
-            .get_output(context);
-        let authorization_methods_binding = args
-            .authorization_methods
-            .get_output(context);
+        let api_management_name_binding = args.api_management_name.get_output(ctx);
+        let authorization_endpoint_binding = args.authorization_endpoint.get_output(ctx);
+        let authorization_methods_binding = args.authorization_methods.get_output(ctx);
         let bearer_token_sending_methods_binding = args
             .bearer_token_sending_methods
-            .get_output(context);
+            .get_output(ctx);
         let client_authentication_methods_binding = args
             .client_authentication_methods
-            .get_output(context);
-        let client_id_binding = args.client_id.get_output(context);
+            .get_output(ctx);
+        let client_id_binding = args.client_id.get_output(ctx);
         let client_registration_endpoint_binding = args
             .client_registration_endpoint
-            .get_output(context);
-        let client_secret_binding = args.client_secret.get_output(context);
-        let default_scope_binding = args.default_scope.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let grant_types_binding = args.grant_types.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+            .get_output(ctx);
+        let client_secret_binding = args.client_secret.get_output(ctx);
+        let default_scope_binding = args.default_scope.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let grant_types_binding = args.grant_types.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let resource_owner_password_binding = args
             .resource_owner_password
-            .get_output(context);
+            .get_output(ctx);
         let resource_owner_username_binding = args
             .resource_owner_username
-            .get_output(context);
-        let support_state_binding = args.support_state.get_output(context);
-        let token_body_parameters_binding = args
-            .token_body_parameters
-            .get_output(context);
-        let token_endpoint_binding = args.token_endpoint.get_output(context);
+            .get_output(ctx);
+        let support_state_binding = args.support_state.get_output(ctx);
+        let token_body_parameters_binding = args.token_body_parameters.get_output(ctx);
+        let token_endpoint_binding = args.token_endpoint.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:apimanagement/authorizationServer:AuthorizationServer".into(),
             name: name.to_string(),
@@ -331,7 +325,7 @@ pub mod authorization_server {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AuthorizationServerResult {
             id: o.get_id(),
             urn: o.get_urn(),

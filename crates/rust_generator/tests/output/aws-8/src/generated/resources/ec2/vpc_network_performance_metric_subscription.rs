@@ -62,35 +62,35 @@ pub mod vpc_network_performance_metric_subscription {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcNetworkPerformanceMetricSubscriptionArgs,
     ) -> VpcNetworkPerformanceMetricSubscriptionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcNetworkPerformanceMetricSubscriptionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> VpcNetworkPerformanceMetricSubscriptionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcNetworkPerformanceMetricSubscriptionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> VpcNetworkPerformanceMetricSubscriptionResult {
-        let destination_binding = args.destination.get_output(context);
-        let metric_binding = args.metric.get_output(context);
-        let source_binding = args.source.get_output(context);
-        let statistic_binding = args.statistic.get_output(context);
+        let destination_binding = args.destination.get_output(ctx);
+        let metric_binding = args.metric.get_output(ctx);
+        let source_binding = args.source.get_output(ctx);
+        let statistic_binding = args.statistic.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/vpcNetworkPerformanceMetricSubscription:VpcNetworkPerformanceMetricSubscription"
                 .into(),
@@ -116,7 +116,7 @@ pub mod vpc_network_performance_metric_subscription {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         VpcNetworkPerformanceMetricSubscriptionResult {
             id: o.get_id(),
             urn: o.get_urn(),

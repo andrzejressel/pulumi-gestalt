@@ -35,14 +35,14 @@ pub mod get_db_servers {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetDbServersArgs,
     ) -> GetDbServersResult {
         let cloud_exadata_infrastructure_binding = args
             .cloud_exadata_infrastructure
-            .get_output(context);
-        let location_binding = args.location.get_output(context);
-        let project_binding = args.project.get_output(context);
+            .get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:oracledatabase/getDbServers:getDbServers".into(),
             version: super::super::super::get_version(),
@@ -61,7 +61,7 @@ pub mod get_db_servers {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetDbServersResult {
             cloud_exadata_infrastructure: o.get_field("cloudExadataInfrastructure"),
             db_servers: o.get_field("dbServers"),

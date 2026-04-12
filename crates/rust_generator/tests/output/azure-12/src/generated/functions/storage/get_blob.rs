@@ -52,15 +52,13 @@ pub mod get_blob {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetBlobArgs,
     ) -> GetBlobResult {
-        let metadata_binding = args.metadata.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let storage_account_name_binding = args.storage_account_name.get_output(context);
-        let storage_container_name_binding = args
-            .storage_container_name
-            .get_output(context);
+        let metadata_binding = args.metadata.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let storage_account_name_binding = args.storage_account_name.get_output(ctx);
+        let storage_container_name_binding = args.storage_container_name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:storage/getBlob:getBlob".into(),
             version: super::super::super::get_version(),
@@ -83,7 +81,7 @@ pub mod get_blob {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetBlobResult {
             access_tier: o.get_field("accessTier"),
             content_md5: o.get_field("contentMd5"),

@@ -137,53 +137,49 @@ pub mod account_subscription {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccountSubscriptionArgs,
     ) -> AccountSubscriptionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccountSubscriptionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AccountSubscriptionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccountSubscriptionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AccountSubscriptionResult {
-        let account_name_binding = args.account_name.get_output(context);
-        let active_directory_name_binding = args
-            .active_directory_name
-            .get_output(context);
-        let admin_groups_binding = args.admin_groups.get_output(context);
-        let authentication_method_binding = args
-            .authentication_method
-            .get_output(context);
-        let author_groups_binding = args.author_groups.get_output(context);
-        let aws_account_id_binding = args.aws_account_id.get_output(context);
-        let contact_number_binding = args.contact_number.get_output(context);
-        let directory_id_binding = args.directory_id.get_output(context);
-        let edition_binding = args.edition.get_output(context);
-        let email_address_binding = args.email_address.get_output(context);
-        let first_name_binding = args.first_name.get_output(context);
+        let account_name_binding = args.account_name.get_output(ctx);
+        let active_directory_name_binding = args.active_directory_name.get_output(ctx);
+        let admin_groups_binding = args.admin_groups.get_output(ctx);
+        let authentication_method_binding = args.authentication_method.get_output(ctx);
+        let author_groups_binding = args.author_groups.get_output(ctx);
+        let aws_account_id_binding = args.aws_account_id.get_output(ctx);
+        let contact_number_binding = args.contact_number.get_output(ctx);
+        let directory_id_binding = args.directory_id.get_output(ctx);
+        let edition_binding = args.edition.get_output(ctx);
+        let email_address_binding = args.email_address.get_output(ctx);
+        let first_name_binding = args.first_name.get_output(ctx);
         let iam_identity_center_instance_arn_binding = args
             .iam_identity_center_instance_arn
-            .get_output(context);
-        let last_name_binding = args.last_name.get_output(context);
-        let notification_email_binding = args.notification_email.get_output(context);
-        let reader_groups_binding = args.reader_groups.get_output(context);
-        let realm_binding = args.realm.get_output(context);
+            .get_output(ctx);
+        let last_name_binding = args.last_name.get_output(ctx);
+        let notification_email_binding = args.notification_email.get_output(ctx);
+        let reader_groups_binding = args.reader_groups.get_output(ctx);
+        let realm_binding = args.realm.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:quicksight/accountSubscription:AccountSubscription".into(),
             name: name.to_string(),
@@ -256,7 +252,7 @@ pub mod account_subscription {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AccountSubscriptionResult {
             id: o.get_id(),
             urn: o.get_urn(),

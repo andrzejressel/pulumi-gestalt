@@ -31,11 +31,11 @@ pub mod get_bot_association {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetBotAssociationArgs,
     ) -> GetBotAssociationResult {
-        let instance_id_binding = args.instance_id.get_output(context);
-        let lex_bot_binding = args.lex_bot.get_output(context);
+        let instance_id_binding = args.instance_id.get_output(ctx);
+        let lex_bot_binding = args.lex_bot.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:connect/getBotAssociation:getBotAssociation".into(),
             version: super::super::super::get_version(),
@@ -50,7 +50,7 @@ pub mod get_bot_association {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetBotAssociationResult {
             id: o.get_field("id"),
             instance_id: o.get_field("instanceId"),

@@ -172,54 +172,50 @@ pub mod application {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ApplicationArgs,
     ) -> ApplicationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ApplicationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ApplicationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ApplicationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ApplicationResult {
-        let app_sources_binding = args.app_sources.get_output(context);
-        let auto_bundle_on_deploy_binding = args
-            .auto_bundle_on_deploy
-            .get_output(context);
-        let aws_flow_ruby_settings_binding = args
-            .aws_flow_ruby_settings
-            .get_output(context);
-        let data_source_arn_binding = args.data_source_arn.get_output(context);
+        let app_sources_binding = args.app_sources.get_output(ctx);
+        let auto_bundle_on_deploy_binding = args.auto_bundle_on_deploy.get_output(ctx);
+        let aws_flow_ruby_settings_binding = args.aws_flow_ruby_settings.get_output(ctx);
+        let data_source_arn_binding = args.data_source_arn.get_output(ctx);
         let data_source_database_name_binding = args
             .data_source_database_name
-            .get_output(context);
-        let data_source_type_binding = args.data_source_type.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let document_root_binding = args.document_root.get_output(context);
-        let domains_binding = args.domains.get_output(context);
-        let enable_ssl_binding = args.enable_ssl.get_output(context);
-        let environments_binding = args.environments.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let rails_env_binding = args.rails_env.get_output(context);
-        let short_name_binding = args.short_name.get_output(context);
-        let ssl_configurations_binding = args.ssl_configurations.get_output(context);
-        let stack_id_binding = args.stack_id.get_output(context);
-        let type__binding = args.type_.get_output(context);
+            .get_output(ctx);
+        let data_source_type_binding = args.data_source_type.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let document_root_binding = args.document_root.get_output(ctx);
+        let domains_binding = args.domains.get_output(ctx);
+        let enable_ssl_binding = args.enable_ssl.get_output(ctx);
+        let environments_binding = args.environments.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let rails_env_binding = args.rails_env.get_output(ctx);
+        let short_name_binding = args.short_name.get_output(ctx);
+        let ssl_configurations_binding = args.ssl_configurations.get_output(ctx);
+        let stack_id_binding = args.stack_id.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:opsworks/application:Application".into(),
             name: name.to_string(),
@@ -296,7 +292,7 @@ pub mod application {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ApplicationResult {
             id: o.get_id(),
             urn: o.get_urn(),

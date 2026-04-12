@@ -256,45 +256,39 @@ pub mod network_attachment {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkAttachmentArgs,
     ) -> NetworkAttachmentResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkAttachmentArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> NetworkAttachmentResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkAttachmentArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> NetworkAttachmentResult {
-        let connection_preference_binding = args
-            .connection_preference
-            .get_output(context);
-        let description_binding = args.description.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let producer_accept_lists_binding = args
-            .producer_accept_lists
-            .get_output(context);
-        let producer_reject_lists_binding = args
-            .producer_reject_lists
-            .get_output(context);
-        let project_binding = args.project.get_output(context);
-        let region_binding = args.region.get_output(context);
-        let subnetworks_binding = args.subnetworks.get_output(context);
+        let connection_preference_binding = args.connection_preference.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let producer_accept_lists_binding = args.producer_accept_lists.get_output(ctx);
+        let producer_reject_lists_binding = args.producer_reject_lists.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let region_binding = args.region.get_output(ctx);
+        let subnetworks_binding = args.subnetworks.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:compute/networkAttachment:NetworkAttachment".into(),
             name: name.to_string(),
@@ -335,7 +329,7 @@ pub mod network_attachment {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         NetworkAttachmentResult {
             id: o.get_id(),
             urn: o.get_urn(),

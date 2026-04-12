@@ -165,44 +165,44 @@ pub mod cx_webhook {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CxWebhookArgs,
     ) -> CxWebhookResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CxWebhookArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> CxWebhookResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CxWebhookArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> CxWebhookResult {
-        let disabled_binding = args.disabled.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
+        let disabled_binding = args.disabled.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
         let enable_spell_correction_binding = args
             .enable_spell_correction
-            .get_output(context);
+            .get_output(ctx);
         let enable_stackdriver_logging_binding = args
             .enable_stackdriver_logging
-            .get_output(context);
-        let generic_web_service_binding = args.generic_web_service.get_output(context);
-        let parent_binding = args.parent.get_output(context);
-        let security_settings_binding = args.security_settings.get_output(context);
-        let service_directory_binding = args.service_directory.get_output(context);
-        let timeout_binding = args.timeout.get_output(context);
+            .get_output(ctx);
+        let generic_web_service_binding = args.generic_web_service.get_output(ctx);
+        let parent_binding = args.parent.get_output(ctx);
+        let security_settings_binding = args.security_settings.get_output(ctx);
+        let service_directory_binding = args.service_directory.get_output(ctx);
+        let timeout_binding = args.timeout.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:diagflow/cxWebhook:CxWebhook".into(),
             name: name.to_string(),
@@ -247,7 +247,7 @@ pub mod cx_webhook {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         CxWebhookResult {
             id: o.get_id(),
             urn: o.get_urn(),

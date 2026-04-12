@@ -37,11 +37,11 @@ pub mod get_availability_set {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetAvailabilitySetArgs,
     ) -> GetAvailabilitySetResult {
-        let name_binding = args.name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:compute/getAvailabilitySet:getAvailabilitySet".into(),
             version: super::super::super::get_version(),
@@ -56,7 +56,7 @@ pub mod get_availability_set {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetAvailabilitySetResult {
             id: o.get_field("id"),
             location: o.get_field("location"),

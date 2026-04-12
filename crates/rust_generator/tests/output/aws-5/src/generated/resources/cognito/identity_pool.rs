@@ -142,50 +142,50 @@ pub mod identity_pool {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IdentityPoolArgs,
     ) -> IdentityPoolResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IdentityPoolArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> IdentityPoolResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IdentityPoolArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> IdentityPoolResult {
-        let allow_classic_flow_binding = args.allow_classic_flow.get_output(context);
+        let allow_classic_flow_binding = args.allow_classic_flow.get_output(ctx);
         let allow_unauthenticated_identities_binding = args
             .allow_unauthenticated_identities
-            .get_output(context);
+            .get_output(ctx);
         let cognito_identity_providers_binding = args
             .cognito_identity_providers
-            .get_output(context);
+            .get_output(ctx);
         let developer_provider_name_binding = args
             .developer_provider_name
-            .get_output(context);
-        let identity_pool_name_binding = args.identity_pool_name.get_output(context);
+            .get_output(ctx);
+        let identity_pool_name_binding = args.identity_pool_name.get_output(ctx);
         let openid_connect_provider_arns_binding = args
             .openid_connect_provider_arns
-            .get_output(context);
-        let saml_provider_arns_binding = args.saml_provider_arns.get_output(context);
+            .get_output(ctx);
+        let saml_provider_arns_binding = args.saml_provider_arns.get_output(ctx);
         let supported_login_providers_binding = args
             .supported_login_providers
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:cognito/identityPool:IdentityPool".into(),
             name: name.to_string(),
@@ -230,7 +230,7 @@ pub mod identity_pool {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         IdentityPoolResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -77,35 +77,35 @@ pub mod data_catalog_encryption_settings {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataCatalogEncryptionSettingsArgs,
     ) -> DataCatalogEncryptionSettingsResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataCatalogEncryptionSettingsArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DataCatalogEncryptionSettingsResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataCatalogEncryptionSettingsArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DataCatalogEncryptionSettingsResult {
-        let catalog_id_binding = args.catalog_id.get_output(context);
+        let catalog_id_binding = args.catalog_id.get_output(ctx);
         let data_catalog_encryption_settings_binding = args
             .data_catalog_encryption_settings
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:glue/dataCatalogEncryptionSettings:DataCatalogEncryptionSettings"
                 .into(),
@@ -123,7 +123,7 @@ pub mod data_catalog_encryption_settings {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DataCatalogEncryptionSettingsResult {
             id: o.get_id(),
             urn: o.get_urn(),

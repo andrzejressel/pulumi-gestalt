@@ -234,61 +234,59 @@ pub mod replication_instance {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ReplicationInstanceArgs,
     ) -> ReplicationInstanceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ReplicationInstanceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ReplicationInstanceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ReplicationInstanceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ReplicationInstanceResult {
-        let allocated_storage_binding = args.allocated_storage.get_output(context);
+        let allocated_storage_binding = args.allocated_storage.get_output(ctx);
         let allow_major_version_upgrade_binding = args
             .allow_major_version_upgrade
-            .get_output(context);
-        let apply_immediately_binding = args.apply_immediately.get_output(context);
+            .get_output(ctx);
+        let apply_immediately_binding = args.apply_immediately.get_output(ctx);
         let auto_minor_version_upgrade_binding = args
             .auto_minor_version_upgrade
-            .get_output(context);
-        let availability_zone_binding = args.availability_zone.get_output(context);
-        let engine_version_binding = args.engine_version.get_output(context);
-        let kms_key_arn_binding = args.kms_key_arn.get_output(context);
-        let multi_az_binding = args.multi_az.get_output(context);
-        let network_type_binding = args.network_type.get_output(context);
+            .get_output(ctx);
+        let availability_zone_binding = args.availability_zone.get_output(ctx);
+        let engine_version_binding = args.engine_version.get_output(ctx);
+        let kms_key_arn_binding = args.kms_key_arn.get_output(ctx);
+        let multi_az_binding = args.multi_az.get_output(ctx);
+        let network_type_binding = args.network_type.get_output(ctx);
         let preferred_maintenance_window_binding = args
             .preferred_maintenance_window
-            .get_output(context);
-        let publicly_accessible_binding = args.publicly_accessible.get_output(context);
+            .get_output(ctx);
+        let publicly_accessible_binding = args.publicly_accessible.get_output(ctx);
         let replication_instance_class_binding = args
             .replication_instance_class
-            .get_output(context);
+            .get_output(ctx);
         let replication_instance_id_binding = args
             .replication_instance_id
-            .get_output(context);
+            .get_output(ctx);
         let replication_subnet_group_id_binding = args
             .replication_subnet_group_id
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let vpc_security_group_ids_binding = args
-            .vpc_security_group_ids
-            .get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let vpc_security_group_ids_binding = args.vpc_security_group_ids.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:dms/replicationInstance:ReplicationInstance".into(),
             name: name.to_string(),
@@ -361,7 +359,7 @@ pub mod replication_instance {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ReplicationInstanceResult {
             id: o.get_id(),
             urn: o.get_urn(),

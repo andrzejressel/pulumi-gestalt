@@ -62,17 +62,17 @@ pub mod get_zero_trust_infrastructure_access_targets {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetZeroTrustInfrastructureAccessTargetsArgs,
     ) -> GetZeroTrustInfrastructureAccessTargetsResult {
-        let account_id_binding = args.account_id.get_output(context);
-        let created_after_binding = args.created_after.get_output(context);
-        let hostname_binding = args.hostname.get_output(context);
-        let hostname_contains_binding = args.hostname_contains.get_output(context);
-        let ipv4_binding = args.ipv4.get_output(context);
-        let ipv6_binding = args.ipv6.get_output(context);
-        let modified_after_binding = args.modified_after.get_output(context);
-        let virtual_network_id_binding = args.virtual_network_id.get_output(context);
+        let account_id_binding = args.account_id.get_output(ctx);
+        let created_after_binding = args.created_after.get_output(ctx);
+        let hostname_binding = args.hostname.get_output(ctx);
+        let hostname_contains_binding = args.hostname_contains.get_output(ctx);
+        let ipv4_binding = args.ipv4.get_output(ctx);
+        let ipv6_binding = args.ipv6.get_output(ctx);
+        let modified_after_binding = args.modified_after.get_output(ctx);
+        let virtual_network_id_binding = args.virtual_network_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "cloudflare:index/getZeroTrustInfrastructureAccessTargets:getZeroTrustInfrastructureAccessTargets"
                 .into(),
@@ -112,7 +112,7 @@ pub mod get_zero_trust_infrastructure_access_targets {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetZeroTrustInfrastructureAccessTargetsResult {
             account_id: o.get_field("accountId"),
             created_after: o.get_field("createdAfter"),

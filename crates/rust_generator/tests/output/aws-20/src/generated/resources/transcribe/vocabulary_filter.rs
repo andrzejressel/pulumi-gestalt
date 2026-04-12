@@ -92,40 +92,38 @@ pub mod vocabulary_filter {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VocabularyFilterArgs,
     ) -> VocabularyFilterResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VocabularyFilterArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> VocabularyFilterResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VocabularyFilterArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> VocabularyFilterResult {
-        let language_code_binding = args.language_code.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let language_code_binding = args.language_code.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let vocabulary_filter_file_uri_binding = args
             .vocabulary_filter_file_uri
-            .get_output(context);
-        let vocabulary_filter_name_binding = args
-            .vocabulary_filter_name
-            .get_output(context);
-        let words_binding = args.words.get_output(context);
+            .get_output(ctx);
+        let vocabulary_filter_name_binding = args.vocabulary_filter_name.get_output(ctx);
+        let words_binding = args.words.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:transcribe/vocabularyFilter:VocabularyFilter".into(),
             name: name.to_string(),
@@ -154,7 +152,7 @@ pub mod vocabulary_filter {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         VocabularyFilterResult {
             id: o.get_id(),
             urn: o.get_urn(),

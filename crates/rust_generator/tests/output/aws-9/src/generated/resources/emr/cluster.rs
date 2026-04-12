@@ -556,82 +556,72 @@ pub mod cluster {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterArgs,
     ) -> ClusterResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ClusterResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ClusterResult {
-        let additional_info_binding = args.additional_info.get_output(context);
-        let applications_binding = args.applications.get_output(context);
+        let additional_info_binding = args.additional_info.get_output(ctx);
+        let applications_binding = args.applications.get_output(ctx);
         let auto_termination_policy_binding = args
             .auto_termination_policy
-            .get_output(context);
-        let autoscaling_role_binding = args.autoscaling_role.get_output(context);
-        let bootstrap_actions_binding = args.bootstrap_actions.get_output(context);
-        let configurations_binding = args.configurations.get_output(context);
-        let configurations_json_binding = args.configurations_json.get_output(context);
-        let core_instance_fleet_binding = args.core_instance_fleet.get_output(context);
-        let core_instance_group_binding = args.core_instance_group.get_output(context);
-        let custom_ami_id_binding = args.custom_ami_id.get_output(context);
-        let ebs_root_volume_size_binding = args.ebs_root_volume_size.get_output(context);
-        let ec2_attributes_binding = args.ec2_attributes.get_output(context);
+            .get_output(ctx);
+        let autoscaling_role_binding = args.autoscaling_role.get_output(ctx);
+        let bootstrap_actions_binding = args.bootstrap_actions.get_output(ctx);
+        let configurations_binding = args.configurations.get_output(ctx);
+        let configurations_json_binding = args.configurations_json.get_output(ctx);
+        let core_instance_fleet_binding = args.core_instance_fleet.get_output(ctx);
+        let core_instance_group_binding = args.core_instance_group.get_output(ctx);
+        let custom_ami_id_binding = args.custom_ami_id.get_output(ctx);
+        let ebs_root_volume_size_binding = args.ebs_root_volume_size.get_output(ctx);
+        let ec2_attributes_binding = args.ec2_attributes.get_output(ctx);
         let keep_job_flow_alive_when_no_steps_binding = args
             .keep_job_flow_alive_when_no_steps
-            .get_output(context);
-        let kerberos_attributes_binding = args.kerberos_attributes.get_output(context);
-        let list_steps_states_binding = args.list_steps_states.get_output(context);
+            .get_output(ctx);
+        let kerberos_attributes_binding = args.kerberos_attributes.get_output(ctx);
+        let list_steps_states_binding = args.list_steps_states.get_output(ctx);
         let log_encryption_kms_key_id_binding = args
             .log_encryption_kms_key_id
-            .get_output(context);
-        let log_uri_binding = args.log_uri.get_output(context);
-        let master_instance_fleet_binding = args
-            .master_instance_fleet
-            .get_output(context);
-        let master_instance_group_binding = args
-            .master_instance_group
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
+            .get_output(ctx);
+        let log_uri_binding = args.log_uri.get_output(ctx);
+        let master_instance_fleet_binding = args.master_instance_fleet.get_output(ctx);
+        let master_instance_group_binding = args.master_instance_group.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let placement_group_configs_binding = args
             .placement_group_configs
-            .get_output(context);
-        let release_label_binding = args.release_label.get_output(context);
-        let scale_down_behavior_binding = args.scale_down_behavior.get_output(context);
-        let security_configuration_binding = args
-            .security_configuration
-            .get_output(context);
-        let service_role_binding = args.service_role.get_output(context);
-        let step_concurrency_level_binding = args
-            .step_concurrency_level
-            .get_output(context);
-        let steps_binding = args.steps.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let termination_protection_binding = args
-            .termination_protection
-            .get_output(context);
+            .get_output(ctx);
+        let release_label_binding = args.release_label.get_output(ctx);
+        let scale_down_behavior_binding = args.scale_down_behavior.get_output(ctx);
+        let security_configuration_binding = args.security_configuration.get_output(ctx);
+        let service_role_binding = args.service_role.get_output(ctx);
+        let step_concurrency_level_binding = args.step_concurrency_level.get_output(ctx);
+        let steps_binding = args.steps.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let termination_protection_binding = args.termination_protection.get_output(ctx);
         let unhealthy_node_replacement_binding = args
             .unhealthy_node_replacement
-            .get_output(context);
-        let visible_to_all_users_binding = args.visible_to_all_users.get_output(context);
+            .get_output(ctx);
+        let visible_to_all_users_binding = args.visible_to_all_users.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:emr/cluster:Cluster".into(),
             name: name.to_string(),
@@ -764,7 +754,7 @@ pub mod cluster {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ClusterResult {
             id: o.get_id(),
             urn: o.get_urn(),

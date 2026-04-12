@@ -193,79 +193,79 @@ pub mod replicated_vm {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ReplicatedVMArgs,
     ) -> ReplicatedVMResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ReplicatedVMArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ReplicatedVMResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ReplicatedVMArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ReplicatedVMResult {
-        let managed_disks_binding = args.managed_disks.get_output(context);
-        let multi_vm_group_name_binding = args.multi_vm_group_name.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_interfaces_binding = args.network_interfaces.get_output(context);
+        let managed_disks_binding = args.managed_disks.get_output(ctx);
+        let multi_vm_group_name_binding = args.multi_vm_group_name.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_interfaces_binding = args.network_interfaces.get_output(ctx);
         let recovery_replication_policy_id_binding = args
             .recovery_replication_policy_id
-            .get_output(context);
-        let recovery_vault_name_binding = args.recovery_vault_name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+            .get_output(ctx);
+        let recovery_vault_name_binding = args.recovery_vault_name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let source_recovery_fabric_name_binding = args
             .source_recovery_fabric_name
-            .get_output(context);
+            .get_output(ctx);
         let source_recovery_protection_container_name_binding = args
             .source_recovery_protection_container_name
-            .get_output(context);
-        let source_vm_id_binding = args.source_vm_id.get_output(context);
+            .get_output(ctx);
+        let source_vm_id_binding = args.source_vm_id.get_output(ctx);
         let target_availability_set_id_binding = args
             .target_availability_set_id
-            .get_output(context);
+            .get_output(ctx);
         let target_boot_diagnostic_storage_account_id_binding = args
             .target_boot_diagnostic_storage_account_id
-            .get_output(context);
+            .get_output(ctx);
         let target_capacity_reservation_group_id_binding = args
             .target_capacity_reservation_group_id
-            .get_output(context);
-        let target_edge_zone_binding = args.target_edge_zone.get_output(context);
-        let target_network_id_binding = args.target_network_id.get_output(context);
+            .get_output(ctx);
+        let target_edge_zone_binding = args.target_edge_zone.get_output(ctx);
+        let target_network_id_binding = args.target_network_id.get_output(ctx);
         let target_proximity_placement_group_id_binding = args
             .target_proximity_placement_group_id
-            .get_output(context);
+            .get_output(ctx);
         let target_recovery_fabric_id_binding = args
             .target_recovery_fabric_id
-            .get_output(context);
+            .get_output(ctx);
         let target_recovery_protection_container_id_binding = args
             .target_recovery_protection_container_id
-            .get_output(context);
+            .get_output(ctx);
         let target_resource_group_id_binding = args
             .target_resource_group_id
-            .get_output(context);
+            .get_output(ctx);
         let target_virtual_machine_scale_set_id_binding = args
             .target_virtual_machine_scale_set_id
-            .get_output(context);
+            .get_output(ctx);
         let target_virtual_machine_size_binding = args
             .target_virtual_machine_size
-            .get_output(context);
-        let target_zone_binding = args.target_zone.get_output(context);
-        let test_network_id_binding = args.test_network_id.get_output(context);
-        let unmanaged_disks_binding = args.unmanaged_disks.get_output(context);
+            .get_output(ctx);
+        let target_zone_binding = args.target_zone.get_output(ctx);
+        let test_network_id_binding = args.test_network_id.get_output(ctx);
+        let unmanaged_disks_binding = args.unmanaged_disks.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:siterecovery/replicatedVM:ReplicatedVM".into(),
             name: name.to_string(),
@@ -370,7 +370,7 @@ pub mod replicated_vm {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ReplicatedVMResult {
             id: o.get_id(),
             urn: o.get_urn(),

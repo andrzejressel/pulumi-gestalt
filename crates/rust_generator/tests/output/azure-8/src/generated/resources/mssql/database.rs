@@ -435,90 +435,88 @@ pub mod database {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DatabaseArgs,
     ) -> DatabaseResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DatabaseArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DatabaseResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DatabaseArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DatabaseResult {
         let auto_pause_delay_in_minutes_binding = args
             .auto_pause_delay_in_minutes
-            .get_output(context);
-        let collation_binding = args.collation.get_output(context);
-        let create_mode_binding = args.create_mode.get_output(context);
+            .get_output(ctx);
+        let collation_binding = args.collation.get_output(ctx);
+        let create_mode_binding = args.create_mode.get_output(ctx);
         let creation_source_database_id_binding = args
             .creation_source_database_id
-            .get_output(context);
-        let elastic_pool_id_binding = args.elastic_pool_id.get_output(context);
-        let enclave_type_binding = args.enclave_type.get_output(context);
-        let geo_backup_enabled_binding = args.geo_backup_enabled.get_output(context);
-        let identity_binding = args.identity.get_output(context);
-        let import_binding = args.import.get_output(context);
-        let ledger_enabled_binding = args.ledger_enabled.get_output(context);
-        let license_type_binding = args.license_type.get_output(context);
+            .get_output(ctx);
+        let elastic_pool_id_binding = args.elastic_pool_id.get_output(ctx);
+        let enclave_type_binding = args.enclave_type.get_output(ctx);
+        let geo_backup_enabled_binding = args.geo_backup_enabled.get_output(ctx);
+        let identity_binding = args.identity.get_output(ctx);
+        let import_binding = args.import.get_output(ctx);
+        let ledger_enabled_binding = args.ledger_enabled.get_output(ctx);
+        let license_type_binding = args.license_type.get_output(ctx);
         let long_term_retention_policy_binding = args
             .long_term_retention_policy
-            .get_output(context);
+            .get_output(ctx);
         let maintenance_configuration_name_binding = args
             .maintenance_configuration_name
-            .get_output(context);
-        let max_size_gb_binding = args.max_size_gb.get_output(context);
-        let min_capacity_binding = args.min_capacity.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let read_replica_count_binding = args.read_replica_count.get_output(context);
-        let read_scale_binding = args.read_scale.get_output(context);
-        let recover_database_id_binding = args.recover_database_id.get_output(context);
-        let recovery_point_id_binding = args.recovery_point_id.get_output(context);
+            .get_output(ctx);
+        let max_size_gb_binding = args.max_size_gb.get_output(ctx);
+        let min_capacity_binding = args.min_capacity.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let read_replica_count_binding = args.read_replica_count.get_output(ctx);
+        let read_scale_binding = args.read_scale.get_output(ctx);
+        let recover_database_id_binding = args.recover_database_id.get_output(ctx);
+        let recovery_point_id_binding = args.recovery_point_id.get_output(ctx);
         let restore_dropped_database_id_binding = args
             .restore_dropped_database_id
-            .get_output(context);
+            .get_output(ctx);
         let restore_long_term_retention_backup_id_binding = args
             .restore_long_term_retention_backup_id
-            .get_output(context);
-        let restore_point_in_time_binding = args
-            .restore_point_in_time
-            .get_output(context);
-        let sample_name_binding = args.sample_name.get_output(context);
-        let secondary_type_binding = args.secondary_type.get_output(context);
-        let server_id_binding = args.server_id.get_output(context);
+            .get_output(ctx);
+        let restore_point_in_time_binding = args.restore_point_in_time.get_output(ctx);
+        let sample_name_binding = args.sample_name.get_output(ctx);
+        let secondary_type_binding = args.secondary_type.get_output(ctx);
+        let server_id_binding = args.server_id.get_output(ctx);
         let short_term_retention_policy_binding = args
             .short_term_retention_policy
-            .get_output(context);
-        let sku_name_binding = args.sku_name.get_output(context);
-        let storage_account_type_binding = args.storage_account_type.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let sku_name_binding = args.sku_name.get_output(ctx);
+        let storage_account_type_binding = args.storage_account_type.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let threat_detection_policy_binding = args
             .threat_detection_policy
-            .get_output(context);
+            .get_output(ctx);
         let transparent_data_encryption_enabled_binding = args
             .transparent_data_encryption_enabled
-            .get_output(context);
+            .get_output(ctx);
         let transparent_data_encryption_key_automatic_rotation_enabled_binding = args
             .transparent_data_encryption_key_automatic_rotation_enabled
-            .get_output(context);
+            .get_output(ctx);
         let transparent_data_encryption_key_vault_key_id_binding = args
             .transparent_data_encryption_key_vault_key_id
-            .get_output(context);
-        let zone_redundant_binding = args.zone_redundant.get_output(context);
+            .get_output(ctx);
+        let zone_redundant_binding = args.zone_redundant.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:mssql/database:Database".into(),
             name: name.to_string(),
@@ -669,7 +667,7 @@ pub mod database {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DatabaseResult {
             id: o.get_id(),
             urn: o.get_urn(),

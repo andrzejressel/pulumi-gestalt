@@ -100,41 +100,41 @@ pub mod restore_testing_plan {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RestoreTestingPlanArgs,
     ) -> RestoreTestingPlanResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RestoreTestingPlanArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> RestoreTestingPlanResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RestoreTestingPlanArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> RestoreTestingPlanResult {
-        let name_binding = args.name.get_output(context);
+        let name_binding = args.name.get_output(ctx);
         let recovery_point_selection_binding = args
             .recovery_point_selection
-            .get_output(context);
-        let schedule_expression_binding = args.schedule_expression.get_output(context);
+            .get_output(ctx);
+        let schedule_expression_binding = args.schedule_expression.get_output(ctx);
         let schedule_expression_timezone_binding = args
             .schedule_expression_timezone
-            .get_output(context);
-        let start_window_hours_binding = args.start_window_hours.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let start_window_hours_binding = args.start_window_hours.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:backup/restoreTestingPlan:RestoreTestingPlan".into(),
             name: name.to_string(),
@@ -167,7 +167,7 @@ pub mod restore_testing_plan {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         RestoreTestingPlanResult {
             id: o.get_id(),
             urn: o.get_urn(),

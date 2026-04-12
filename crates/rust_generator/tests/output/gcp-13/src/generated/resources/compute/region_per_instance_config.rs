@@ -226,48 +226,48 @@ pub mod region_per_instance_config {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RegionPerInstanceConfigArgs,
     ) -> RegionPerInstanceConfigResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RegionPerInstanceConfigArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> RegionPerInstanceConfigResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RegionPerInstanceConfigArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> RegionPerInstanceConfigResult {
-        let minimal_action_binding = args.minimal_action.get_output(context);
+        let minimal_action_binding = args.minimal_action.get_output(ctx);
         let most_disruptive_allowed_action_binding = args
             .most_disruptive_allowed_action
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let preserved_state_binding = args.preserved_state.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let region_binding = args.region.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let preserved_state_binding = args.preserved_state.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let region_binding = args.region.get_output(ctx);
         let region_instance_group_manager_binding = args
             .region_instance_group_manager
-            .get_output(context);
+            .get_output(ctx);
         let remove_instance_on_destroy_binding = args
             .remove_instance_on_destroy
-            .get_output(context);
+            .get_output(ctx);
         let remove_instance_state_on_destroy_binding = args
             .remove_instance_state_on_destroy
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:compute/regionPerInstanceConfig:RegionPerInstanceConfig".into(),
             name: name.to_string(),
@@ -312,7 +312,7 @@ pub mod region_per_instance_config {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         RegionPerInstanceConfigResult {
             id: o.get_id(),
             urn: o.get_urn(),

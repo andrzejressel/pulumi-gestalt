@@ -108,35 +108,35 @@ pub mod security_device_group {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SecurityDeviceGroupArgs,
     ) -> SecurityDeviceGroupResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SecurityDeviceGroupArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> SecurityDeviceGroupResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SecurityDeviceGroupArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> SecurityDeviceGroupResult {
-        let allow_rule_binding = args.allow_rule.get_output(context);
-        let iothub_id_binding = args.iothub_id.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let range_rules_binding = args.range_rules.get_output(context);
+        let allow_rule_binding = args.allow_rule.get_output(ctx);
+        let iothub_id_binding = args.iothub_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let range_rules_binding = args.range_rules.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:iot/securityDeviceGroup:SecurityDeviceGroup".into(),
             name: name.to_string(),
@@ -161,7 +161,7 @@ pub mod security_device_group {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         SecurityDeviceGroupResult {
             id: o.get_id(),
             urn: o.get_urn(),

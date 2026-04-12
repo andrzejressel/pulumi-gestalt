@@ -220,56 +220,52 @@ pub mod load_balancer {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LoadBalancerArgs,
     ) -> LoadBalancerResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LoadBalancerArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> LoadBalancerResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LoadBalancerArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> LoadBalancerResult {
-        let access_logs_binding = args.access_logs.get_output(context);
-        let availability_zones_binding = args.availability_zones.get_output(context);
-        let connection_draining_binding = args.connection_draining.get_output(context);
+        let access_logs_binding = args.access_logs.get_output(ctx);
+        let availability_zones_binding = args.availability_zones.get_output(ctx);
+        let connection_draining_binding = args.connection_draining.get_output(ctx);
         let connection_draining_timeout_binding = args
             .connection_draining_timeout
-            .get_output(context);
+            .get_output(ctx);
         let cross_zone_load_balancing_binding = args
             .cross_zone_load_balancing
-            .get_output(context);
-        let desync_mitigation_mode_binding = args
-            .desync_mitigation_mode
-            .get_output(context);
-        let health_check_binding = args.health_check.get_output(context);
-        let idle_timeout_binding = args.idle_timeout.get_output(context);
-        let instances_binding = args.instances.get_output(context);
-        let internal_binding = args.internal.get_output(context);
-        let listeners_binding = args.listeners.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let name_prefix_binding = args.name_prefix.get_output(context);
-        let security_groups_binding = args.security_groups.get_output(context);
-        let source_security_group_binding = args
-            .source_security_group
-            .get_output(context);
-        let subnets_binding = args.subnets.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let desync_mitigation_mode_binding = args.desync_mitigation_mode.get_output(ctx);
+        let health_check_binding = args.health_check.get_output(ctx);
+        let idle_timeout_binding = args.idle_timeout.get_output(ctx);
+        let instances_binding = args.instances.get_output(ctx);
+        let internal_binding = args.internal.get_output(ctx);
+        let listeners_binding = args.listeners.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let name_prefix_binding = args.name_prefix.get_output(ctx);
+        let security_groups_binding = args.security_groups.get_output(ctx);
+        let source_security_group_binding = args.source_security_group.get_output(ctx);
+        let subnets_binding = args.subnets.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:elb/loadBalancer:LoadBalancer".into(),
             name: name.to_string(),
@@ -346,7 +342,7 @@ pub mod load_balancer {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         LoadBalancerResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -108,39 +108,39 @@ pub mod analytics_item {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AnalyticsItemArgs,
     ) -> AnalyticsItemResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AnalyticsItemArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AnalyticsItemResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AnalyticsItemArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AnalyticsItemResult {
         let application_insights_id_binding = args
             .application_insights_id
-            .get_output(context);
-        let content_binding = args.content.get_output(context);
-        let function_alias_binding = args.function_alias.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let scope_binding = args.scope.get_output(context);
-        let type__binding = args.type_.get_output(context);
+            .get_output(ctx);
+        let content_binding = args.content.get_output(ctx);
+        let function_alias_binding = args.function_alias.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let scope_binding = args.scope.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:appinsights/analyticsItem:AnalyticsItem".into(),
             name: name.to_string(),
@@ -173,7 +173,7 @@ pub mod analytics_item {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AnalyticsItemResult {
             id: o.get_id(),
             urn: o.get_urn(),

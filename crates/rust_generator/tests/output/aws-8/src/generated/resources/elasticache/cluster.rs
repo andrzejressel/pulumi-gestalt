@@ -407,76 +407,72 @@ pub mod cluster {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterArgs,
     ) -> ClusterResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ClusterResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ClusterResult {
-        let apply_immediately_binding = args.apply_immediately.get_output(context);
+        let apply_immediately_binding = args.apply_immediately.get_output(ctx);
         let auto_minor_version_upgrade_binding = args
             .auto_minor_version_upgrade
-            .get_output(context);
-        let availability_zone_binding = args.availability_zone.get_output(context);
-        let az_mode_binding = args.az_mode.get_output(context);
-        let cluster_id_binding = args.cluster_id.get_output(context);
-        let engine_binding = args.engine.get_output(context);
-        let engine_version_binding = args.engine_version.get_output(context);
+            .get_output(ctx);
+        let availability_zone_binding = args.availability_zone.get_output(ctx);
+        let az_mode_binding = args.az_mode.get_output(ctx);
+        let cluster_id_binding = args.cluster_id.get_output(ctx);
+        let engine_binding = args.engine.get_output(ctx);
+        let engine_version_binding = args.engine_version.get_output(ctx);
         let final_snapshot_identifier_binding = args
             .final_snapshot_identifier
-            .get_output(context);
-        let ip_discovery_binding = args.ip_discovery.get_output(context);
+            .get_output(ctx);
+        let ip_discovery_binding = args.ip_discovery.get_output(ctx);
         let log_delivery_configurations_binding = args
             .log_delivery_configurations
-            .get_output(context);
-        let maintenance_window_binding = args.maintenance_window.get_output(context);
-        let network_type_binding = args.network_type.get_output(context);
-        let node_type_binding = args.node_type.get_output(context);
-        let notification_topic_arn_binding = args
-            .notification_topic_arn
-            .get_output(context);
-        let num_cache_nodes_binding = args.num_cache_nodes.get_output(context);
-        let outpost_mode_binding = args.outpost_mode.get_output(context);
-        let parameter_group_name_binding = args.parameter_group_name.get_output(context);
-        let port_binding = args.port.get_output(context);
+            .get_output(ctx);
+        let maintenance_window_binding = args.maintenance_window.get_output(ctx);
+        let network_type_binding = args.network_type.get_output(ctx);
+        let node_type_binding = args.node_type.get_output(ctx);
+        let notification_topic_arn_binding = args.notification_topic_arn.get_output(ctx);
+        let num_cache_nodes_binding = args.num_cache_nodes.get_output(ctx);
+        let outpost_mode_binding = args.outpost_mode.get_output(ctx);
+        let parameter_group_name_binding = args.parameter_group_name.get_output(ctx);
+        let port_binding = args.port.get_output(ctx);
         let preferred_availability_zones_binding = args
             .preferred_availability_zones
-            .get_output(context);
-        let preferred_outpost_arn_binding = args
-            .preferred_outpost_arn
-            .get_output(context);
-        let replication_group_id_binding = args.replication_group_id.get_output(context);
-        let security_group_ids_binding = args.security_group_ids.get_output(context);
-        let snapshot_arns_binding = args.snapshot_arns.get_output(context);
-        let snapshot_name_binding = args.snapshot_name.get_output(context);
+            .get_output(ctx);
+        let preferred_outpost_arn_binding = args.preferred_outpost_arn.get_output(ctx);
+        let replication_group_id_binding = args.replication_group_id.get_output(ctx);
+        let security_group_ids_binding = args.security_group_ids.get_output(ctx);
+        let snapshot_arns_binding = args.snapshot_arns.get_output(ctx);
+        let snapshot_name_binding = args.snapshot_name.get_output(ctx);
         let snapshot_retention_limit_binding = args
             .snapshot_retention_limit
-            .get_output(context);
-        let snapshot_window_binding = args.snapshot_window.get_output(context);
-        let subnet_group_name_binding = args.subnet_group_name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let snapshot_window_binding = args.snapshot_window.get_output(ctx);
+        let subnet_group_name_binding = args.subnet_group_name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let transit_encryption_enabled_binding = args
             .transit_encryption_enabled
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:elasticache/cluster:Cluster".into(),
             name: name.to_string(),
@@ -601,7 +597,7 @@ pub mod cluster {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ClusterResult {
             id: o.get_id(),
             urn: o.get_urn(),

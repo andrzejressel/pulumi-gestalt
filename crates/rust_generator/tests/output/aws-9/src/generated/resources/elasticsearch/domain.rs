@@ -365,57 +365,53 @@ pub mod domain {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DomainArgs,
     ) -> DomainResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DomainArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DomainResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DomainArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DomainResult {
-        let access_policies_binding = args.access_policies.get_output(context);
-        let advanced_options_binding = args.advanced_options.get_output(context);
+        let access_policies_binding = args.access_policies.get_output(ctx);
+        let advanced_options_binding = args.advanced_options.get_output(ctx);
         let advanced_security_options_binding = args
             .advanced_security_options
-            .get_output(context);
-        let auto_tune_options_binding = args.auto_tune_options.get_output(context);
-        let cluster_config_binding = args.cluster_config.get_output(context);
-        let cognito_options_binding = args.cognito_options.get_output(context);
+            .get_output(ctx);
+        let auto_tune_options_binding = args.auto_tune_options.get_output(ctx);
+        let cluster_config_binding = args.cluster_config.get_output(ctx);
+        let cognito_options_binding = args.cognito_options.get_output(ctx);
         let domain_endpoint_options_binding = args
             .domain_endpoint_options
-            .get_output(context);
-        let domain_name_binding = args.domain_name.get_output(context);
-        let ebs_options_binding = args.ebs_options.get_output(context);
-        let elasticsearch_version_binding = args
-            .elasticsearch_version
-            .get_output(context);
-        let encrypt_at_rest_binding = args.encrypt_at_rest.get_output(context);
-        let log_publishing_options_binding = args
-            .log_publishing_options
-            .get_output(context);
+            .get_output(ctx);
+        let domain_name_binding = args.domain_name.get_output(ctx);
+        let ebs_options_binding = args.ebs_options.get_output(ctx);
+        let elasticsearch_version_binding = args.elasticsearch_version.get_output(ctx);
+        let encrypt_at_rest_binding = args.encrypt_at_rest.get_output(ctx);
+        let log_publishing_options_binding = args.log_publishing_options.get_output(ctx);
         let node_to_node_encryption_binding = args
             .node_to_node_encryption
-            .get_output(context);
-        let snapshot_options_binding = args.snapshot_options.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let vpc_options_binding = args.vpc_options.get_output(context);
+            .get_output(ctx);
+        let snapshot_options_binding = args.snapshot_options.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let vpc_options_binding = args.vpc_options.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:elasticsearch/domain:Domain".into(),
             name: name.to_string(),
@@ -488,7 +484,7 @@ pub mod domain {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DomainResult {
             id: o.get_id(),
             urn: o.get_urn(),

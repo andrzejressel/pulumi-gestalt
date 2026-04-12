@@ -121,43 +121,43 @@ pub mod security_group_egress_rule {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SecurityGroupEgressRuleArgs,
     ) -> SecurityGroupEgressRuleResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SecurityGroupEgressRuleArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> SecurityGroupEgressRuleResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SecurityGroupEgressRuleArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> SecurityGroupEgressRuleResult {
-        let cidr_ipv4_binding = args.cidr_ipv4.get_output(context);
-        let cidr_ipv6_binding = args.cidr_ipv6.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let from_port_binding = args.from_port.get_output(context);
-        let ip_protocol_binding = args.ip_protocol.get_output(context);
-        let prefix_list_id_binding = args.prefix_list_id.get_output(context);
+        let cidr_ipv4_binding = args.cidr_ipv4.get_output(ctx);
+        let cidr_ipv6_binding = args.cidr_ipv6.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let from_port_binding = args.from_port.get_output(ctx);
+        let ip_protocol_binding = args.ip_protocol.get_output(ctx);
+        let prefix_list_id_binding = args.prefix_list_id.get_output(ctx);
         let referenced_security_group_id_binding = args
             .referenced_security_group_id
-            .get_output(context);
-        let security_group_id_binding = args.security_group_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let to_port_binding = args.to_port.get_output(context);
+            .get_output(ctx);
+        let security_group_id_binding = args.security_group_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let to_port_binding = args.to_port.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:vpc/securityGroupEgressRule:SecurityGroupEgressRule".into(),
             name: name.to_string(),
@@ -206,7 +206,7 @@ pub mod security_group_egress_rule {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         SecurityGroupEgressRuleResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -84,20 +84,18 @@ pub mod get_cluster_snapshot {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetClusterSnapshotArgs,
     ) -> GetClusterSnapshotResult {
-        let db_cluster_identifier_binding = args
-            .db_cluster_identifier
-            .get_output(context);
+        let db_cluster_identifier_binding = args.db_cluster_identifier.get_output(ctx);
         let db_cluster_snapshot_identifier_binding = args
             .db_cluster_snapshot_identifier
-            .get_output(context);
-        let include_public_binding = args.include_public.get_output(context);
-        let include_shared_binding = args.include_shared.get_output(context);
-        let most_recent_binding = args.most_recent.get_output(context);
-        let snapshot_type_binding = args.snapshot_type.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let include_public_binding = args.include_public.get_output(ctx);
+        let include_shared_binding = args.include_shared.get_output(ctx);
+        let most_recent_binding = args.most_recent.get_output(ctx);
+        let snapshot_type_binding = args.snapshot_type.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:rds/getClusterSnapshot:getClusterSnapshot".into(),
             version: super::super::super::get_version(),
@@ -132,7 +130,7 @@ pub mod get_cluster_snapshot {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetClusterSnapshotResult {
             allocated_storage: o.get_field("allocatedStorage"),
             availability_zones: o.get_field("availabilityZones"),

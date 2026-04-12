@@ -50,13 +50,13 @@ pub mod get_ip_ranges {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetIpRangesArgs,
     ) -> GetIpRangesResult {
-        let id_binding = args.id.get_output(context);
-        let regions_binding = args.regions.get_output(context);
-        let services_binding = args.services.get_output(context);
-        let url_binding = args.url.get_output(context);
+        let id_binding = args.id.get_output(ctx);
+        let regions_binding = args.regions.get_output(ctx);
+        let services_binding = args.services.get_output(ctx);
+        let url_binding = args.url.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:index/getIpRanges:getIpRanges".into(),
             version: super::super::get_version(),
@@ -79,7 +79,7 @@ pub mod get_ip_ranges {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetIpRangesResult {
             cidr_blocks: o.get_field("cidrBlocks"),
             create_date: o.get_field("createDate"),

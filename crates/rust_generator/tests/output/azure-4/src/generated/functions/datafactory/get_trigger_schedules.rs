@@ -25,10 +25,10 @@ pub mod get_trigger_schedules {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetTriggerSchedulesArgs,
     ) -> GetTriggerSchedulesResult {
-        let data_factory_id_binding = args.data_factory_id.get_output(context);
+        let data_factory_id_binding = args.data_factory_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:datafactory/getTriggerSchedules:getTriggerSchedules".into(),
             version: super::super::super::get_version(),
@@ -39,7 +39,7 @@ pub mod get_trigger_schedules {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetTriggerSchedulesResult {
             data_factory_id: o.get_field("dataFactoryId"),
             id: o.get_field("id"),

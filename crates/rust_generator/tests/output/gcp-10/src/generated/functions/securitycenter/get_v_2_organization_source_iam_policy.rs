@@ -31,11 +31,11 @@ pub mod get_v_2_organization_source_iam_policy {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetV2OrganizationSourceIamPolicyArgs,
     ) -> GetV2OrganizationSourceIamPolicyResult {
-        let organization_binding = args.organization.get_output(context);
-        let source_binding = args.source.get_output(context);
+        let organization_binding = args.organization.get_output(ctx);
+        let source_binding = args.source.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:securitycenter/getV2OrganizationSourceIamPolicy:getV2OrganizationSourceIamPolicy"
                 .into(),
@@ -51,7 +51,7 @@ pub mod get_v_2_organization_source_iam_policy {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetV2OrganizationSourceIamPolicyResult {
             etag: o.get_field("etag"),
             id: o.get_field("id"),

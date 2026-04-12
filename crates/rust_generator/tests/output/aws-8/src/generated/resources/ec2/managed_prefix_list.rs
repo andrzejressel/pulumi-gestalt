@@ -107,36 +107,36 @@ pub mod managed_prefix_list {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ManagedPrefixListArgs,
     ) -> ManagedPrefixListResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ManagedPrefixListArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ManagedPrefixListResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ManagedPrefixListArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ManagedPrefixListResult {
-        let address_family_binding = args.address_family.get_output(context);
-        let entries_binding = args.entries.get_output(context);
-        let max_entries_binding = args.max_entries.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let address_family_binding = args.address_family.get_output(ctx);
+        let entries_binding = args.entries.get_output(ctx);
+        let max_entries_binding = args.max_entries.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/managedPrefixList:ManagedPrefixList".into(),
             name: name.to_string(),
@@ -165,7 +165,7 @@ pub mod managed_prefix_list {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ManagedPrefixListResult {
             id: o.get_id(),
             urn: o.get_urn(),

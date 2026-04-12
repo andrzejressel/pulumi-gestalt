@@ -388,38 +388,38 @@ pub mod record_set {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RecordSetArgs,
     ) -> RecordSetResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RecordSetArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> RecordSetResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RecordSetArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> RecordSetResult {
-        let managed_zone_binding = args.managed_zone.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let routing_policy_binding = args.routing_policy.get_output(context);
-        let rrdatas_binding = args.rrdatas.get_output(context);
-        let ttl_binding = args.ttl.get_output(context);
-        let type__binding = args.type_.get_output(context);
+        let managed_zone_binding = args.managed_zone.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let routing_policy_binding = args.routing_policy.get_output(ctx);
+        let rrdatas_binding = args.rrdatas.get_output(ctx);
+        let ttl_binding = args.ttl.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:dns/recordSet:RecordSet".into(),
             name: name.to_string(),
@@ -456,7 +456,7 @@ pub mod record_set {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         RecordSetResult {
             id: o.get_id(),
             urn: o.get_urn(),
