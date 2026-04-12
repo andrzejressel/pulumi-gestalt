@@ -57,13 +57,13 @@ pub mod get_data_source {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetDataSourceArgs,
     ) -> GetDataSourceResult {
-        let backup_vault_id_binding = args.backup_vault_id.get_output(context);
-        let data_source_id_binding = args.data_source_id.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let project_binding = args.project.get_output(context);
+        let backup_vault_id_binding = args.backup_vault_id.get_output(ctx);
+        let data_source_id_binding = args.data_source_id.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:backupdisasterrecovery/getDataSource:getDataSource".into(),
             version: super::super::super::get_version(),
@@ -86,7 +86,7 @@ pub mod get_data_source {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetDataSourceResult {
             backup_config_infos: o.get_field("backupConfigInfos"),
             backup_count: o.get_field("backupCount"),

@@ -80,36 +80,36 @@ pub mod sharedflow_deployment {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SharedflowDeploymentArgs,
     ) -> SharedflowDeploymentResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SharedflowDeploymentArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> SharedflowDeploymentResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SharedflowDeploymentArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> SharedflowDeploymentResult {
-        let environment_binding = args.environment.get_output(context);
-        let org_id_binding = args.org_id.get_output(context);
-        let revision_binding = args.revision.get_output(context);
-        let service_account_binding = args.service_account.get_output(context);
-        let sharedflow_id_binding = args.sharedflow_id.get_output(context);
+        let environment_binding = args.environment.get_output(ctx);
+        let org_id_binding = args.org_id.get_output(ctx);
+        let revision_binding = args.revision.get_output(ctx);
+        let service_account_binding = args.service_account.get_output(ctx);
+        let sharedflow_id_binding = args.sharedflow_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:apigee/sharedflowDeployment:SharedflowDeployment".into(),
             name: name.to_string(),
@@ -138,7 +138,7 @@ pub mod sharedflow_deployment {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         SharedflowDeploymentResult {
             id: o.get_id(),
             urn: o.get_urn(),

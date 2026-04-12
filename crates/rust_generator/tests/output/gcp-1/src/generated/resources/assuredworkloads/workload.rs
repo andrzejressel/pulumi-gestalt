@@ -273,54 +273,54 @@ pub mod workload {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkloadArgs,
     ) -> WorkloadResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkloadArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> WorkloadResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkloadArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> WorkloadResult {
-        let billing_account_binding = args.billing_account.get_output(context);
-        let compliance_regime_binding = args.compliance_regime.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
+        let billing_account_binding = args.billing_account.get_output(ctx);
+        let compliance_regime_binding = args.compliance_regime.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
         let enable_sovereign_controls_binding = args
             .enable_sovereign_controls
-            .get_output(context);
-        let kms_settings_binding = args.kms_settings.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let organization_binding = args.organization.get_output(context);
-        let partner_binding = args.partner.get_output(context);
-        let partner_permissions_binding = args.partner_permissions.get_output(context);
+            .get_output(ctx);
+        let kms_settings_binding = args.kms_settings.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let organization_binding = args.organization.get_output(ctx);
+        let partner_binding = args.partner.get_output(ctx);
+        let partner_permissions_binding = args.partner_permissions.get_output(ctx);
         let partner_services_billing_account_binding = args
             .partner_services_billing_account
-            .get_output(context);
+            .get_output(ctx);
         let provisioned_resources_parent_binding = args
             .provisioned_resources_parent
-            .get_output(context);
-        let resource_settings_binding = args.resource_settings.get_output(context);
+            .get_output(ctx);
+        let resource_settings_binding = args.resource_settings.get_output(ctx);
         let violation_notifications_enabled_binding = args
             .violation_notifications_enabled
-            .get_output(context);
-        let workload_options_binding = args.workload_options.get_output(context);
+            .get_output(ctx);
+        let workload_options_binding = args.workload_options.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:assuredworkloads/workload:Workload".into(),
             name: name.to_string(),
@@ -389,7 +389,7 @@ pub mod workload {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         WorkloadResult {
             id: o.get_id(),
             urn: o.get_urn(),

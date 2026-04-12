@@ -450,50 +450,50 @@ pub mod connection {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ConnectionArgs,
     ) -> ConnectionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ConnectionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ConnectionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ConnectionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ConnectionResult {
-        let auth_config_binding = args.auth_config.get_output(context);
-        let config_variables_binding = args.config_variables.get_output(context);
-        let connector_version_binding = args.connector_version.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let destination_configs_binding = args.destination_configs.get_output(context);
-        let eventing_config_binding = args.eventing_config.get_output(context);
+        let auth_config_binding = args.auth_config.get_output(ctx);
+        let config_variables_binding = args.config_variables.get_output(ctx);
+        let connector_version_binding = args.connector_version.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let destination_configs_binding = args.destination_configs.get_output(ctx);
+        let eventing_config_binding = args.eventing_config.get_output(ctx);
         let eventing_enablement_type_binding = args
             .eventing_enablement_type
-            .get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let lock_config_binding = args.lock_config.get_output(context);
-        let log_config_binding = args.log_config.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let node_config_binding = args.node_config.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let service_account_binding = args.service_account.get_output(context);
-        let ssl_config_binding = args.ssl_config.get_output(context);
-        let suspended_binding = args.suspended.get_output(context);
+            .get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let lock_config_binding = args.lock_config.get_output(ctx);
+        let log_config_binding = args.log_config.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let node_config_binding = args.node_config.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let service_account_binding = args.service_account.get_output(ctx);
+        let ssl_config_binding = args.ssl_config.get_output(ctx);
+        let suspended_binding = args.suspended.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:integrationconnectors/connection:Connection".into(),
             name: name.to_string(),
@@ -570,7 +570,7 @@ pub mod connection {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ConnectionResult {
             id: o.get_id(),
             urn: o.get_urn(),

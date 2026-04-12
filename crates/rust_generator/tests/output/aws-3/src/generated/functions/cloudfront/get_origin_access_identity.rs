@@ -40,10 +40,10 @@ pub mod get_origin_access_identity {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetOriginAccessIdentityArgs,
     ) -> GetOriginAccessIdentityResult {
-        let id_binding = args.id.get_output(context);
+        let id_binding = args.id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:cloudfront/getOriginAccessIdentity:getOriginAccessIdentity"
                 .into(),
@@ -55,7 +55,7 @@ pub mod get_origin_access_identity {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetOriginAccessIdentityResult {
             caller_reference: o.get_field("callerReference"),
             cloudfront_access_identity_path: o.get_field("cloudfrontAccessIdentityPath"),

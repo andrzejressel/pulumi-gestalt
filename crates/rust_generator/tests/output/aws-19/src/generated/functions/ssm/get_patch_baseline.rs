@@ -65,13 +65,13 @@ pub mod get_patch_baseline {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetPatchBaselineArgs,
     ) -> GetPatchBaselineResult {
-        let default_baseline_binding = args.default_baseline.get_output(context);
-        let name_prefix_binding = args.name_prefix.get_output(context);
-        let operating_system_binding = args.operating_system.get_output(context);
-        let owner_binding = args.owner.get_output(context);
+        let default_baseline_binding = args.default_baseline.get_output(ctx);
+        let name_prefix_binding = args.name_prefix.get_output(ctx);
+        let operating_system_binding = args.operating_system.get_output(ctx);
+        let owner_binding = args.owner.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ssm/getPatchBaseline:getPatchBaseline".into(),
             version: super::super::super::get_version(),
@@ -94,7 +94,7 @@ pub mod get_patch_baseline {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetPatchBaselineResult {
             approval_rules: o.get_field("approvalRules"),
             approved_patches: o.get_field("approvedPatches"),

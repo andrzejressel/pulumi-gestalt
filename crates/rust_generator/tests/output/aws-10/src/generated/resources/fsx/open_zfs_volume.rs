@@ -141,57 +141,49 @@ pub mod open_zfs_volume {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OpenZfsVolumeArgs,
     ) -> OpenZfsVolumeResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OpenZfsVolumeArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> OpenZfsVolumeResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OpenZfsVolumeArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> OpenZfsVolumeResult {
-        let copy_tags_to_snapshots_binding = args
-            .copy_tags_to_snapshots
-            .get_output(context);
-        let data_compression_type_binding = args
-            .data_compression_type
-            .get_output(context);
-        let delete_volume_options_binding = args
-            .delete_volume_options
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let nfs_exports_binding = args.nfs_exports.get_output(context);
-        let origin_snapshot_binding = args.origin_snapshot.get_output(context);
-        let parent_volume_id_binding = args.parent_volume_id.get_output(context);
-        let read_only_binding = args.read_only.get_output(context);
-        let record_size_kib_binding = args.record_size_kib.get_output(context);
+        let copy_tags_to_snapshots_binding = args.copy_tags_to_snapshots.get_output(ctx);
+        let data_compression_type_binding = args.data_compression_type.get_output(ctx);
+        let delete_volume_options_binding = args.delete_volume_options.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let nfs_exports_binding = args.nfs_exports.get_output(ctx);
+        let origin_snapshot_binding = args.origin_snapshot.get_output(ctx);
+        let parent_volume_id_binding = args.parent_volume_id.get_output(ctx);
+        let read_only_binding = args.read_only.get_output(ctx);
+        let record_size_kib_binding = args.record_size_kib.get_output(ctx);
         let storage_capacity_quota_gib_binding = args
             .storage_capacity_quota_gib
-            .get_output(context);
+            .get_output(ctx);
         let storage_capacity_reservation_gib_binding = args
             .storage_capacity_reservation_gib
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let user_and_group_quotas_binding = args
-            .user_and_group_quotas
-            .get_output(context);
-        let volume_type_binding = args.volume_type.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let user_and_group_quotas_binding = args.user_and_group_quotas.get_output(ctx);
+        let volume_type_binding = args.volume_type.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:fsx/openZfsVolume:OpenZfsVolume".into(),
             name: name.to_string(),
@@ -256,7 +248,7 @@ pub mod open_zfs_volume {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         OpenZfsVolumeResult {
             id: o.get_id(),
             urn: o.get_urn(),

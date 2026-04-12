@@ -597,46 +597,44 @@ pub mod job {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: JobArgs,
     ) -> JobResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: JobArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> JobResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: JobArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> JobResult {
-        let annotations_binding = args.annotations.get_output(context);
-        let binary_authorization_binding = args.binary_authorization.get_output(context);
-        let client_binding = args.client.get_output(context);
-        let client_version_binding = args.client_version.get_output(context);
-        let deletion_protection_binding = args.deletion_protection.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let launch_stage_binding = args.launch_stage.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let run_execution_token_binding = args.run_execution_token.get_output(context);
-        let start_execution_token_binding = args
-            .start_execution_token
-            .get_output(context);
-        let template_binding = args.template.get_output(context);
+        let annotations_binding = args.annotations.get_output(ctx);
+        let binary_authorization_binding = args.binary_authorization.get_output(ctx);
+        let client_binding = args.client.get_output(ctx);
+        let client_version_binding = args.client_version.get_output(ctx);
+        let deletion_protection_binding = args.deletion_protection.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let launch_stage_binding = args.launch_stage.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let run_execution_token_binding = args.run_execution_token.get_output(ctx);
+        let start_execution_token_binding = args.start_execution_token.get_output(ctx);
+        let template_binding = args.template.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:cloudrunv2/job:Job".into(),
             name: name.to_string(),
@@ -697,7 +695,7 @@ pub mod job {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         JobResult {
             id: o.get_id(),
             urn: o.get_urn(),

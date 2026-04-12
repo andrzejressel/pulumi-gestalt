@@ -454,41 +454,41 @@ pub mod batch {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BatchArgs,
     ) -> BatchResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BatchArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> BatchResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BatchArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> BatchResult {
-        let batch_id_binding = args.batch_id.get_output(context);
-        let environment_config_binding = args.environment_config.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let pyspark_batch_binding = args.pyspark_batch.get_output(context);
-        let runtime_config_binding = args.runtime_config.get_output(context);
-        let spark_batch_binding = args.spark_batch.get_output(context);
-        let spark_r_batch_binding = args.spark_r_batch.get_output(context);
-        let spark_sql_batch_binding = args.spark_sql_batch.get_output(context);
+        let batch_id_binding = args.batch_id.get_output(ctx);
+        let environment_config_binding = args.environment_config.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let pyspark_batch_binding = args.pyspark_batch.get_output(ctx);
+        let runtime_config_binding = args.runtime_config.get_output(ctx);
+        let spark_batch_binding = args.spark_batch.get_output(ctx);
+        let spark_r_batch_binding = args.spark_r_batch.get_output(ctx);
+        let spark_sql_batch_binding = args.spark_sql_batch.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:dataproc/batch:Batch".into(),
             name: name.to_string(),
@@ -537,7 +537,7 @@ pub mod batch {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         BatchResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -188,60 +188,60 @@ pub mod fleet {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FleetArgs,
     ) -> FleetResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FleetArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> FleetResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FleetArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> FleetResult {
-        let context_binding = args.context.get_output(context);
+        let context_binding = args.context.get_output(ctx);
         let excess_capacity_termination_policy_binding = args
             .excess_capacity_termination_policy
-            .get_output(context);
-        let fleet_instance_sets_binding = args.fleet_instance_sets.get_output(context);
-        let fleet_state_binding = args.fleet_state.get_output(context);
-        let fulfilled_capacity_binding = args.fulfilled_capacity.get_output(context);
+            .get_output(ctx);
+        let fleet_instance_sets_binding = args.fleet_instance_sets.get_output(ctx);
+        let fleet_state_binding = args.fleet_state.get_output(ctx);
+        let fulfilled_capacity_binding = args.fulfilled_capacity.get_output(ctx);
         let fulfilled_on_demand_capacity_binding = args
             .fulfilled_on_demand_capacity
-            .get_output(context);
+            .get_output(ctx);
         let launch_template_configs_binding = args
             .launch_template_configs
-            .get_output(context);
-        let on_demand_options_binding = args.on_demand_options.get_output(context);
+            .get_output(ctx);
+        let on_demand_options_binding = args.on_demand_options.get_output(ctx);
         let replace_unhealthy_instances_binding = args
             .replace_unhealthy_instances
-            .get_output(context);
-        let spot_options_binding = args.spot_options.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let spot_options_binding = args.spot_options.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let target_capacity_specification_binding = args
             .target_capacity_specification
-            .get_output(context);
-        let terminate_instances_binding = args.terminate_instances.get_output(context);
+            .get_output(ctx);
+        let terminate_instances_binding = args.terminate_instances.get_output(ctx);
         let terminate_instances_with_expiration_binding = args
             .terminate_instances_with_expiration
-            .get_output(context);
-        let type__binding = args.type_.get_output(context);
-        let valid_from_binding = args.valid_from.get_output(context);
-        let valid_until_binding = args.valid_until.get_output(context);
+            .get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
+        let valid_from_binding = args.valid_from.get_output(ctx);
+        let valid_until_binding = args.valid_until.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/fleet:Fleet".into(),
             name: name.to_string(),
@@ -318,7 +318,7 @@ pub mod fleet {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         FleetResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -104,41 +104,39 @@ pub mod custom_data_identifier {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CustomDataIdentifierArgs,
     ) -> CustomDataIdentifierResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CustomDataIdentifierArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> CustomDataIdentifierResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CustomDataIdentifierArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> CustomDataIdentifierResult {
-        let description_binding = args.description.get_output(context);
-        let ignore_words_binding = args.ignore_words.get_output(context);
-        let keywords_binding = args.keywords.get_output(context);
-        let maximum_match_distance_binding = args
-            .maximum_match_distance
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let name_prefix_binding = args.name_prefix.get_output(context);
-        let regex_binding = args.regex.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let description_binding = args.description.get_output(ctx);
+        let ignore_words_binding = args.ignore_words.get_output(ctx);
+        let keywords_binding = args.keywords.get_output(ctx);
+        let maximum_match_distance_binding = args.maximum_match_distance.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let name_prefix_binding = args.name_prefix.get_output(ctx);
+        let regex_binding = args.regex.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:macie/customDataIdentifier:CustomDataIdentifier".into(),
             name: name.to_string(),
@@ -179,7 +177,7 @@ pub mod custom_data_identifier {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         CustomDataIdentifierResult {
             id: o.get_id(),
             urn: o.get_urn(),

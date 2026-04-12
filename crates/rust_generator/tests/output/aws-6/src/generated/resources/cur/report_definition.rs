@@ -128,47 +128,45 @@ pub mod report_definition {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ReportDefinitionArgs,
     ) -> ReportDefinitionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ReportDefinitionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ReportDefinitionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ReportDefinitionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ReportDefinitionResult {
-        let additional_artifacts_binding = args.additional_artifacts.get_output(context);
+        let additional_artifacts_binding = args.additional_artifacts.get_output(ctx);
         let additional_schema_elements_binding = args
             .additional_schema_elements
-            .get_output(context);
-        let compression_binding = args.compression.get_output(context);
-        let format_binding = args.format.get_output(context);
-        let refresh_closed_reports_binding = args
-            .refresh_closed_reports
-            .get_output(context);
-        let report_name_binding = args.report_name.get_output(context);
-        let report_versioning_binding = args.report_versioning.get_output(context);
-        let s3_bucket_binding = args.s3_bucket.get_output(context);
-        let s3_prefix_binding = args.s3_prefix.get_output(context);
-        let s3_region_binding = args.s3_region.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let time_unit_binding = args.time_unit.get_output(context);
+            .get_output(ctx);
+        let compression_binding = args.compression.get_output(ctx);
+        let format_binding = args.format.get_output(ctx);
+        let refresh_closed_reports_binding = args.refresh_closed_reports.get_output(ctx);
+        let report_name_binding = args.report_name.get_output(ctx);
+        let report_versioning_binding = args.report_versioning.get_output(ctx);
+        let s3_bucket_binding = args.s3_bucket.get_output(ctx);
+        let s3_prefix_binding = args.s3_prefix.get_output(ctx);
+        let s3_region_binding = args.s3_region.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let time_unit_binding = args.time_unit.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:cur/reportDefinition:ReportDefinition".into(),
             name: name.to_string(),
@@ -225,7 +223,7 @@ pub mod report_definition {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ReportDefinitionResult {
             id: o.get_id(),
             urn: o.get_urn(),

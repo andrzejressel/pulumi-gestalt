@@ -102,39 +102,39 @@ pub mod prefix_list_reference {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PrefixListReferenceArgs,
     ) -> PrefixListReferenceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PrefixListReferenceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> PrefixListReferenceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PrefixListReferenceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> PrefixListReferenceResult {
-        let blackhole_binding = args.blackhole.get_output(context);
-        let prefix_list_id_binding = args.prefix_list_id.get_output(context);
+        let blackhole_binding = args.blackhole.get_output(ctx);
+        let prefix_list_id_binding = args.prefix_list_id.get_output(ctx);
         let transit_gateway_attachment_id_binding = args
             .transit_gateway_attachment_id
-            .get_output(context);
+            .get_output(ctx);
         let transit_gateway_route_table_id_binding = args
             .transit_gateway_route_table_id
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2transitgateway/prefixListReference:PrefixListReference"
                 .into(),
@@ -160,7 +160,7 @@ pub mod prefix_list_reference {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         PrefixListReferenceResult {
             id: o.get_id(),
             urn: o.get_urn(),

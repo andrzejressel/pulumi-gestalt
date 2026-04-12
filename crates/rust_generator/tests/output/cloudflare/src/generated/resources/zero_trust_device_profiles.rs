@@ -160,52 +160,50 @@ pub mod zero_trust_device_profiles {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ZeroTrustDeviceProfilesArgs,
     ) -> ZeroTrustDeviceProfilesResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ZeroTrustDeviceProfilesArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ZeroTrustDeviceProfilesResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ZeroTrustDeviceProfilesArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ZeroTrustDeviceProfilesResult {
-        let account_id_binding = args.account_id.get_output(context);
-        let allow_mode_switch_binding = args.allow_mode_switch.get_output(context);
-        let allow_updates_binding = args.allow_updates.get_output(context);
-        let allowed_to_leave_binding = args.allowed_to_leave.get_output(context);
-        let auto_connect_binding = args.auto_connect.get_output(context);
-        let captive_portal_binding = args.captive_portal.get_output(context);
-        let default_binding = args.default.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let disable_auto_fallback_binding = args
-            .disable_auto_fallback
-            .get_output(context);
-        let enabled_binding = args.enabled.get_output(context);
-        let exclude_office_ips_binding = args.exclude_office_ips.get_output(context);
-        let match__binding = args.match_.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let precedence_binding = args.precedence.get_output(context);
-        let service_mode_v2_mode_binding = args.service_mode_v2_mode.get_output(context);
-        let service_mode_v2_port_binding = args.service_mode_v2_port.get_output(context);
-        let support_url_binding = args.support_url.get_output(context);
-        let switch_locked_binding = args.switch_locked.get_output(context);
-        let tunnel_protocol_binding = args.tunnel_protocol.get_output(context);
+        let account_id_binding = args.account_id.get_output(ctx);
+        let allow_mode_switch_binding = args.allow_mode_switch.get_output(ctx);
+        let allow_updates_binding = args.allow_updates.get_output(ctx);
+        let allowed_to_leave_binding = args.allowed_to_leave.get_output(ctx);
+        let auto_connect_binding = args.auto_connect.get_output(ctx);
+        let captive_portal_binding = args.captive_portal.get_output(ctx);
+        let default_binding = args.default.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let disable_auto_fallback_binding = args.disable_auto_fallback.get_output(ctx);
+        let enabled_binding = args.enabled.get_output(ctx);
+        let exclude_office_ips_binding = args.exclude_office_ips.get_output(ctx);
+        let match__binding = args.match_.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let precedence_binding = args.precedence.get_output(ctx);
+        let service_mode_v2_mode_binding = args.service_mode_v2_mode.get_output(ctx);
+        let service_mode_v2_port_binding = args.service_mode_v2_port.get_output(ctx);
+        let support_url_binding = args.support_url.get_output(ctx);
+        let switch_locked_binding = args.switch_locked.get_output(ctx);
+        let tunnel_protocol_binding = args.tunnel_protocol.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "cloudflare:index/zeroTrustDeviceProfiles:ZeroTrustDeviceProfiles"
                 .into(),
@@ -291,7 +289,7 @@ pub mod zero_trust_device_profiles {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ZeroTrustDeviceProfilesResult {
             id: o.get_id(),
             urn: o.get_urn(),

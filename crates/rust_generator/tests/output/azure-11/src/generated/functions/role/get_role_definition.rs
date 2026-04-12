@@ -45,12 +45,12 @@ pub mod get_role_definition {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetRoleDefinitionArgs,
     ) -> GetRoleDefinitionResult {
-        let name_binding = args.name.get_output(context);
-        let role_definition_id_binding = args.role_definition_id.get_output(context);
-        let scope_binding = args.scope.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let role_definition_id_binding = args.role_definition_id.get_output(ctx);
+        let scope_binding = args.scope.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:role/getRoleDefinition:getRoleDefinition".into(),
             version: super::super::super::get_version(),
@@ -69,7 +69,7 @@ pub mod get_role_definition {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetRoleDefinitionResult {
             assignable_scopes: o.get_field("assignableScopes"),
             description: o.get_field("description"),

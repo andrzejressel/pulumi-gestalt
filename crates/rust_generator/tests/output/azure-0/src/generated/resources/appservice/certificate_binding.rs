@@ -137,34 +137,34 @@ pub mod certificate_binding {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CertificateBindingArgs,
     ) -> CertificateBindingResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CertificateBindingArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> CertificateBindingResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CertificateBindingArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> CertificateBindingResult {
-        let certificate_id_binding = args.certificate_id.get_output(context);
-        let hostname_binding_id_binding = args.hostname_binding_id.get_output(context);
-        let ssl_state_binding = args.ssl_state.get_output(context);
+        let certificate_id_binding = args.certificate_id.get_output(ctx);
+        let hostname_binding_id_binding = args.hostname_binding_id.get_output(ctx);
+        let ssl_state_binding = args.ssl_state.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:appservice/certificateBinding:CertificateBinding".into(),
             name: name.to_string(),
@@ -185,7 +185,7 @@ pub mod certificate_binding {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         CertificateBindingResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -163,50 +163,44 @@ pub mod table {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TableArgs,
     ) -> TableResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TableArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> TableResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TableArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> TableResult {
-        let capacity_specification_binding = args
-            .capacity_specification
-            .get_output(context);
-        let client_side_timestamps_binding = args
-            .client_side_timestamps
-            .get_output(context);
-        let comment_binding = args.comment.get_output(context);
-        let default_time_to_live_binding = args.default_time_to_live.get_output(context);
+        let capacity_specification_binding = args.capacity_specification.get_output(ctx);
+        let client_side_timestamps_binding = args.client_side_timestamps.get_output(ctx);
+        let comment_binding = args.comment.get_output(ctx);
+        let default_time_to_live_binding = args.default_time_to_live.get_output(ctx);
         let encryption_specification_binding = args
             .encryption_specification
-            .get_output(context);
-        let keyspace_name_binding = args.keyspace_name.get_output(context);
-        let point_in_time_recovery_binding = args
-            .point_in_time_recovery
-            .get_output(context);
-        let schema_definition_binding = args.schema_definition.get_output(context);
-        let table_name_binding = args.table_name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let ttl_binding = args.ttl.get_output(context);
+            .get_output(ctx);
+        let keyspace_name_binding = args.keyspace_name.get_output(ctx);
+        let point_in_time_recovery_binding = args.point_in_time_recovery.get_output(ctx);
+        let schema_definition_binding = args.schema_definition.get_output(ctx);
+        let table_name_binding = args.table_name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let ttl_binding = args.ttl.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:keyspaces/table:Table".into(),
             name: name.to_string(),
@@ -259,7 +253,7 @@ pub mod table {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         TableResult {
             id: o.get_id(),
             urn: o.get_urn(),

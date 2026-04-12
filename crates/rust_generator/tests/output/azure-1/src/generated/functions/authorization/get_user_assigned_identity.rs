@@ -37,11 +37,11 @@ pub mod get_user_assigned_identity {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetUserAssignedIdentityArgs,
     ) -> GetUserAssignedIdentityResult {
-        let name_binding = args.name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:authorization/getUserAssignedIdentity:getUserAssignedIdentity"
                 .into(),
@@ -57,7 +57,7 @@ pub mod get_user_assigned_identity {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetUserAssignedIdentityResult {
             client_id: o.get_field("clientId"),
             id: o.get_field("id"),

@@ -45,14 +45,14 @@ pub mod get_backup_plan_association {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetBackupPlanAssociationArgs,
     ) -> GetBackupPlanAssociationResult {
         let backup_plan_association_id_binding = args
             .backup_plan_association_id
-            .get_output(context);
-        let location_binding = args.location.get_output(context);
-        let project_binding = args.project.get_output(context);
+            .get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:backupdisasterrecovery/getBackupPlanAssociation:getBackupPlanAssociation"
                 .into(),
@@ -72,7 +72,7 @@ pub mod get_backup_plan_association {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetBackupPlanAssociationResult {
             backup_plan: o.get_field("backupPlan"),
             backup_plan_association_id: o.get_field("backupPlanAssociationId"),

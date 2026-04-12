@@ -37,11 +37,11 @@ pub mod get_serverless_security_policy {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetServerlessSecurityPolicyArgs,
     ) -> GetServerlessSecurityPolicyResult {
-        let name_binding = args.name.get_output(context);
-        let type__binding = args.type_.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:opensearch/getServerlessSecurityPolicy:getServerlessSecurityPolicy"
                 .into(),
@@ -57,7 +57,7 @@ pub mod get_serverless_security_policy {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetServerlessSecurityPolicyResult {
             created_date: o.get_field("createdDate"),
             description: o.get_field("description"),

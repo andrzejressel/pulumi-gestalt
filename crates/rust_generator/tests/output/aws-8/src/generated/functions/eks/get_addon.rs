@@ -50,12 +50,12 @@ pub mod get_addon {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetAddonArgs,
     ) -> GetAddonResult {
-        let addon_name_binding = args.addon_name.get_output(context);
-        let cluster_name_binding = args.cluster_name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let addon_name_binding = args.addon_name.get_output(ctx);
+        let cluster_name_binding = args.cluster_name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:eks/getAddon:getAddon".into(),
             version: super::super::super::get_version(),
@@ -74,7 +74,7 @@ pub mod get_addon {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetAddonResult {
             addon_name: o.get_field("addonName"),
             addon_version: o.get_field("addonVersion"),

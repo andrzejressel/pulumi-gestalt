@@ -37,12 +37,12 @@ pub mod get_cipher_text {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetCipherTextArgs,
     ) -> GetCipherTextResult {
-        let context_binding = args.context.get_output(context);
-        let key_id_binding = args.key_id.get_output(context);
-        let plaintext_binding = args.plaintext.get_output(context);
+        let context_binding = args.context.get_output(ctx);
+        let key_id_binding = args.key_id.get_output(ctx);
+        let plaintext_binding = args.plaintext.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:kms/getCipherText:getCipherText".into(),
             version: super::super::super::get_version(),
@@ -61,7 +61,7 @@ pub mod get_cipher_text {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetCipherTextResult {
             ciphertext_blob: o.get_field("ciphertextBlob"),
             context: o.get_field("context"),

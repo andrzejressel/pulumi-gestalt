@@ -35,11 +35,11 @@ pub mod get_asset {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetAssetArgs,
     ) -> GetAssetResult {
-        let arn_binding = args.arn.get_output(context);
-        let asset_id_binding = args.asset_id.get_output(context);
+        let arn_binding = args.arn.get_output(ctx);
+        let asset_id_binding = args.asset_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:outposts/getAsset:getAsset".into(),
             version: super::super::super::get_version(),
@@ -54,7 +54,7 @@ pub mod get_asset {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetAssetResult {
             arn: o.get_field("arn"),
             asset_id: o.get_field("assetId"),

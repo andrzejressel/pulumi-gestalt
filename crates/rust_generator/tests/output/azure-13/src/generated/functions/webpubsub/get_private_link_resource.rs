@@ -29,10 +29,10 @@ pub mod get_private_link_resource {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetPrivateLinkResourceArgs,
     ) -> GetPrivateLinkResourceResult {
-        let web_pubsub_id_binding = args.web_pubsub_id.get_output(context);
+        let web_pubsub_id_binding = args.web_pubsub_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:webpubsub/getPrivateLinkResource:getPrivateLinkResource"
                 .into(),
@@ -44,7 +44,7 @@ pub mod get_private_link_resource {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetPrivateLinkResourceResult {
             id: o.get_field("id"),
             shared_private_link_resource_types: o

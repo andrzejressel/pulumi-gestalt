@@ -267,49 +267,45 @@ pub mod topic_subscription {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TopicSubscriptionArgs,
     ) -> TopicSubscriptionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TopicSubscriptionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> TopicSubscriptionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TopicSubscriptionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> TopicSubscriptionResult {
         let confirmation_timeout_in_minutes_binding = args
             .confirmation_timeout_in_minutes
-            .get_output(context);
-        let delivery_policy_binding = args.delivery_policy.get_output(context);
-        let endpoint_binding = args.endpoint.get_output(context);
-        let endpoint_auto_confirms_binding = args
-            .endpoint_auto_confirms
-            .get_output(context);
-        let filter_policy_binding = args.filter_policy.get_output(context);
-        let filter_policy_scope_binding = args.filter_policy_scope.get_output(context);
-        let protocol_binding = args.protocol.get_output(context);
-        let raw_message_delivery_binding = args.raw_message_delivery.get_output(context);
-        let redrive_policy_binding = args.redrive_policy.get_output(context);
-        let replay_policy_binding = args.replay_policy.get_output(context);
-        let subscription_role_arn_binding = args
-            .subscription_role_arn
-            .get_output(context);
-        let topic_binding = args.topic.get_output(context);
+            .get_output(ctx);
+        let delivery_policy_binding = args.delivery_policy.get_output(ctx);
+        let endpoint_binding = args.endpoint.get_output(ctx);
+        let endpoint_auto_confirms_binding = args.endpoint_auto_confirms.get_output(ctx);
+        let filter_policy_binding = args.filter_policy.get_output(ctx);
+        let filter_policy_scope_binding = args.filter_policy_scope.get_output(ctx);
+        let protocol_binding = args.protocol.get_output(ctx);
+        let raw_message_delivery_binding = args.raw_message_delivery.get_output(ctx);
+        let redrive_policy_binding = args.redrive_policy.get_output(ctx);
+        let replay_policy_binding = args.replay_policy.get_output(ctx);
+        let subscription_role_arn_binding = args.subscription_role_arn.get_output(ctx);
+        let topic_binding = args.topic.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:sns/topicSubscription:TopicSubscription".into(),
             name: name.to_string(),
@@ -366,7 +362,7 @@ pub mod topic_subscription {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         TopicSubscriptionResult {
             id: o.get_id(),
             urn: o.get_urn(),

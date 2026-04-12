@@ -140,51 +140,51 @@ pub mod zero_trust_access_policy {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ZeroTrustAccessPolicyArgs,
     ) -> ZeroTrustAccessPolicyResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ZeroTrustAccessPolicyArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ZeroTrustAccessPolicyResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ZeroTrustAccessPolicyArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ZeroTrustAccessPolicyResult {
-        let account_id_binding = args.account_id.get_output(context);
-        let application_id_binding = args.application_id.get_output(context);
-        let approval_groups_binding = args.approval_groups.get_output(context);
-        let approval_required_binding = args.approval_required.get_output(context);
-        let connection_rules_binding = args.connection_rules.get_output(context);
-        let decision_binding = args.decision.get_output(context);
-        let excludes_binding = args.excludes.get_output(context);
-        let includes_binding = args.includes.get_output(context);
-        let isolation_required_binding = args.isolation_required.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let precedence_binding = args.precedence.get_output(context);
+        let account_id_binding = args.account_id.get_output(ctx);
+        let application_id_binding = args.application_id.get_output(ctx);
+        let approval_groups_binding = args.approval_groups.get_output(ctx);
+        let approval_required_binding = args.approval_required.get_output(ctx);
+        let connection_rules_binding = args.connection_rules.get_output(ctx);
+        let decision_binding = args.decision.get_output(ctx);
+        let excludes_binding = args.excludes.get_output(ctx);
+        let includes_binding = args.includes.get_output(ctx);
+        let isolation_required_binding = args.isolation_required.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let precedence_binding = args.precedence.get_output(ctx);
         let purpose_justification_prompt_binding = args
             .purpose_justification_prompt
-            .get_output(context);
+            .get_output(ctx);
         let purpose_justification_required_binding = args
             .purpose_justification_required
-            .get_output(context);
-        let requires_binding = args.requires.get_output(context);
-        let session_duration_binding = args.session_duration.get_output(context);
-        let zone_id_binding = args.zone_id.get_output(context);
+            .get_output(ctx);
+        let requires_binding = args.requires.get_output(ctx);
+        let session_duration_binding = args.session_duration.get_output(ctx);
+        let zone_id_binding = args.zone_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "cloudflare:index/zeroTrustAccessPolicy:ZeroTrustAccessPolicy".into(),
             name: name.to_string(),
@@ -257,7 +257,7 @@ pub mod zero_trust_access_policy {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ZeroTrustAccessPolicyResult {
             id: o.get_id(),
             urn: o.get_urn(),

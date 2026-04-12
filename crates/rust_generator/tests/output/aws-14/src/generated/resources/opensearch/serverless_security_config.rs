@@ -63,35 +63,35 @@ pub mod serverless_security_config {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServerlessSecurityConfigArgs,
     ) -> ServerlessSecurityConfigResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServerlessSecurityConfigArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ServerlessSecurityConfigResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServerlessSecurityConfigArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ServerlessSecurityConfigResult {
-        let description_binding = args.description.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let saml_options_binding = args.saml_options.get_output(context);
-        let type__binding = args.type_.get_output(context);
+        let description_binding = args.description.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let saml_options_binding = args.saml_options.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:opensearch/serverlessSecurityConfig:ServerlessSecurityConfig"
                 .into(),
@@ -117,7 +117,7 @@ pub mod serverless_security_config {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ServerlessSecurityConfigResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -23,13 +23,13 @@ pub mod get_ip_ranges {
     /// Registers a new resource with the given unique name and arguments
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
-    pub fn invoke(context: &pulumi_gestalt_rust::Context) -> GetIpRangesResult {
+    pub fn invoke(ctx: &pulumi_gestalt_rust::Context) -> GetIpRangesResult {
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "cloudflare:index/getIpRanges:getIpRanges".into(),
             version: super::super::get_version(),
             object: &[],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetIpRangesResult {
             china_ipv4_cidr_blocks: o.get_field("chinaIpv4CidrBlocks"),
             china_ipv6_cidr_blocks: o.get_field("chinaIpv6CidrBlocks"),

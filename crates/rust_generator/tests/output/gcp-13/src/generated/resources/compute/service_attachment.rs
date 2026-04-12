@@ -561,56 +561,46 @@ pub mod service_attachment {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServiceAttachmentArgs,
     ) -> ServiceAttachmentResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServiceAttachmentArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ServiceAttachmentResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServiceAttachmentArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ServiceAttachmentResult {
-        let connection_preference_binding = args
-            .connection_preference
-            .get_output(context);
-        let consumer_accept_lists_binding = args
-            .consumer_accept_lists
-            .get_output(context);
-        let consumer_reject_lists_binding = args
-            .consumer_reject_lists
-            .get_output(context);
-        let description_binding = args.description.get_output(context);
-        let domain_names_binding = args.domain_names.get_output(context);
-        let enable_proxy_protocol_binding = args
-            .enable_proxy_protocol
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let nat_subnets_binding = args.nat_subnets.get_output(context);
-        let project_binding = args.project.get_output(context);
+        let connection_preference_binding = args.connection_preference.get_output(ctx);
+        let consumer_accept_lists_binding = args.consumer_accept_lists.get_output(ctx);
+        let consumer_reject_lists_binding = args.consumer_reject_lists.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let domain_names_binding = args.domain_names.get_output(ctx);
+        let enable_proxy_protocol_binding = args.enable_proxy_protocol.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let nat_subnets_binding = args.nat_subnets.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let propagated_connection_limit_binding = args
             .propagated_connection_limit
-            .get_output(context);
-        let reconcile_connections_binding = args
-            .reconcile_connections
-            .get_output(context);
-        let region_binding = args.region.get_output(context);
-        let target_service_binding = args.target_service.get_output(context);
+            .get_output(ctx);
+        let reconcile_connections_binding = args.reconcile_connections.get_output(ctx);
+        let region_binding = args.region.get_output(ctx);
+        let target_service_binding = args.target_service.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:compute/serviceAttachment:ServiceAttachment".into(),
             name: name.to_string(),
@@ -671,7 +661,7 @@ pub mod service_attachment {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ServiceAttachmentResult {
             id: o.get_id(),
             urn: o.get_urn(),

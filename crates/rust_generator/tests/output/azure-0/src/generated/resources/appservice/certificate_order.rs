@@ -139,41 +139,41 @@ pub mod certificate_order {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CertificateOrderArgs,
     ) -> CertificateOrderResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CertificateOrderArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> CertificateOrderResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CertificateOrderArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> CertificateOrderResult {
-        let auto_renew_binding = args.auto_renew.get_output(context);
-        let csr_binding = args.csr.get_output(context);
-        let distinguished_name_binding = args.distinguished_name.get_output(context);
-        let key_size_binding = args.key_size.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let product_type_binding = args.product_type.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let validity_in_years_binding = args.validity_in_years.get_output(context);
+        let auto_renew_binding = args.auto_renew.get_output(ctx);
+        let csr_binding = args.csr.get_output(ctx);
+        let distinguished_name_binding = args.distinguished_name.get_output(ctx);
+        let key_size_binding = args.key_size.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let product_type_binding = args.product_type.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let validity_in_years_binding = args.validity_in_years.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:appservice/certificateOrder:CertificateOrder".into(),
             name: name.to_string(),
@@ -222,7 +222,7 @@ pub mod certificate_order {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         CertificateOrderResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -108,34 +108,34 @@ pub mod extension_association {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ExtensionAssociationArgs,
     ) -> ExtensionAssociationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ExtensionAssociationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ExtensionAssociationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ExtensionAssociationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ExtensionAssociationResult {
-        let extension_arn_binding = args.extension_arn.get_output(context);
-        let parameters_binding = args.parameters.get_output(context);
-        let resource_arn_binding = args.resource_arn.get_output(context);
+        let extension_arn_binding = args.extension_arn.get_output(ctx);
+        let parameters_binding = args.parameters.get_output(ctx);
+        let resource_arn_binding = args.resource_arn.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:appconfig/extensionAssociation:ExtensionAssociation".into(),
             name: name.to_string(),
@@ -156,7 +156,7 @@ pub mod extension_association {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ExtensionAssociationResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -56,13 +56,13 @@ pub mod get_mesh_istio_service {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetMeshIstioServiceArgs,
     ) -> GetMeshIstioServiceResult {
-        let mesh_uid_binding = args.mesh_uid.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let service_name_binding = args.service_name.get_output(context);
-        let service_namespace_binding = args.service_namespace.get_output(context);
+        let mesh_uid_binding = args.mesh_uid.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let service_name_binding = args.service_name.get_output(ctx);
+        let service_namespace_binding = args.service_namespace.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:monitoring/getMeshIstioService:getMeshIstioService".into(),
             version: super::super::super::get_version(),
@@ -85,7 +85,7 @@ pub mod get_mesh_istio_service {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetMeshIstioServiceResult {
             display_name: o.get_field("displayName"),
             id: o.get_field("id"),

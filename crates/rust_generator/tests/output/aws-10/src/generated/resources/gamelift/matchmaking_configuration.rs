@@ -129,54 +129,54 @@ pub mod matchmaking_configuration {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MatchmakingConfigurationArgs,
     ) -> MatchmakingConfigurationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MatchmakingConfigurationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> MatchmakingConfigurationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MatchmakingConfigurationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> MatchmakingConfigurationResult {
-        let acceptance_required_binding = args.acceptance_required.get_output(context);
+        let acceptance_required_binding = args.acceptance_required.get_output(ctx);
         let acceptance_timeout_seconds_binding = args
             .acceptance_timeout_seconds
-            .get_output(context);
+            .get_output(ctx);
         let additional_player_count_binding = args
             .additional_player_count
-            .get_output(context);
-        let backfill_mode_binding = args.backfill_mode.get_output(context);
-        let custom_event_data_binding = args.custom_event_data.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let flex_match_mode_binding = args.flex_match_mode.get_output(context);
-        let game_properties_binding = args.game_properties.get_output(context);
-        let game_session_data_binding = args.game_session_data.get_output(context);
+            .get_output(ctx);
+        let backfill_mode_binding = args.backfill_mode.get_output(ctx);
+        let custom_event_data_binding = args.custom_event_data.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let flex_match_mode_binding = args.flex_match_mode.get_output(ctx);
+        let game_properties_binding = args.game_properties.get_output(ctx);
+        let game_session_data_binding = args.game_session_data.get_output(ctx);
         let game_session_queue_arns_binding = args
             .game_session_queue_arns
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let notification_target_binding = args.notification_target.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let notification_target_binding = args.notification_target.get_output(ctx);
         let request_timeout_seconds_binding = args
             .request_timeout_seconds
-            .get_output(context);
-        let rule_set_name_binding = args.rule_set_name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let rule_set_name_binding = args.rule_set_name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:gamelift/matchmakingConfiguration:MatchmakingConfiguration"
                 .into(),
@@ -246,7 +246,7 @@ pub mod matchmaking_configuration {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         MatchmakingConfigurationResult {
             id: o.get_id(),
             urn: o.get_urn(),

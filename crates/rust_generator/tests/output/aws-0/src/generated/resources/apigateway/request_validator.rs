@@ -72,39 +72,37 @@ pub mod request_validator {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RequestValidatorArgs,
     ) -> RequestValidatorResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RequestValidatorArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> RequestValidatorResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RequestValidatorArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> RequestValidatorResult {
-        let name_binding = args.name.get_output(context);
-        let rest_api_binding = args.rest_api.get_output(context);
-        let validate_request_body_binding = args
-            .validate_request_body
-            .get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let rest_api_binding = args.rest_api.get_output(ctx);
+        let validate_request_body_binding = args.validate_request_body.get_output(ctx);
         let validate_request_parameters_binding = args
             .validate_request_parameters
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:apigateway/requestValidator:RequestValidator".into(),
             name: name.to_string(),
@@ -129,7 +127,7 @@ pub mod request_validator {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         RequestValidatorResult {
             id: o.get_id(),
             urn: o.get_urn(),

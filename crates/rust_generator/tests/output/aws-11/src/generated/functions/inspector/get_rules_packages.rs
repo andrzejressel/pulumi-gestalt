@@ -15,13 +15,13 @@ pub mod get_rules_packages {
     /// Registers a new resource with the given unique name and arguments
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
-    pub fn invoke(context: &pulumi_gestalt_rust::Context) -> GetRulesPackagesResult {
+    pub fn invoke(ctx: &pulumi_gestalt_rust::Context) -> GetRulesPackagesResult {
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:inspector/getRulesPackages:getRulesPackages".into(),
             version: super::super::super::get_version(),
             object: &[],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetRulesPackagesResult {
             arns: o.get_field("arns"),
             id: o.get_field("id"),

@@ -120,43 +120,43 @@ pub mod volume {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VolumeArgs,
     ) -> VolumeResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VolumeArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> VolumeResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VolumeArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> VolumeResult {
-        let availability_zone_binding = args.availability_zone.get_output(context);
-        let encrypted_binding = args.encrypted.get_output(context);
-        let final_snapshot_binding = args.final_snapshot.get_output(context);
-        let iops_binding = args.iops.get_output(context);
-        let kms_key_id_binding = args.kms_key_id.get_output(context);
-        let multi_attach_enabled_binding = args.multi_attach_enabled.get_output(context);
-        let outpost_arn_binding = args.outpost_arn.get_output(context);
-        let size_binding = args.size.get_output(context);
-        let snapshot_id_binding = args.snapshot_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let throughput_binding = args.throughput.get_output(context);
-        let type__binding = args.type_.get_output(context);
+        let availability_zone_binding = args.availability_zone.get_output(ctx);
+        let encrypted_binding = args.encrypted.get_output(ctx);
+        let final_snapshot_binding = args.final_snapshot.get_output(ctx);
+        let iops_binding = args.iops.get_output(ctx);
+        let kms_key_id_binding = args.kms_key_id.get_output(ctx);
+        let multi_attach_enabled_binding = args.multi_attach_enabled.get_output(ctx);
+        let outpost_arn_binding = args.outpost_arn.get_output(ctx);
+        let size_binding = args.size.get_output(ctx);
+        let snapshot_id_binding = args.snapshot_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let throughput_binding = args.throughput.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ebs/volume:Volume".into(),
             name: name.to_string(),
@@ -213,7 +213,7 @@ pub mod volume {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         VolumeResult {
             id: o.get_id(),
             urn: o.get_urn(),

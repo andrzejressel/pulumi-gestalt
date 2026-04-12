@@ -370,63 +370,59 @@ pub mod table {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TableArgs,
     ) -> TableResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TableArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> TableResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TableArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> TableResult {
-        let biglake_configuration_binding = args
-            .biglake_configuration
-            .get_output(context);
-        let clusterings_binding = args.clusterings.get_output(context);
-        let dataset_id_binding = args.dataset_id.get_output(context);
-        let deletion_protection_binding = args.deletion_protection.get_output(context);
-        let description_binding = args.description.get_output(context);
+        let biglake_configuration_binding = args.biglake_configuration.get_output(ctx);
+        let clusterings_binding = args.clusterings.get_output(ctx);
+        let dataset_id_binding = args.dataset_id.get_output(ctx);
+        let deletion_protection_binding = args.deletion_protection.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
         let encryption_configuration_binding = args
             .encryption_configuration
-            .get_output(context);
-        let expiration_time_binding = args.expiration_time.get_output(context);
+            .get_output(ctx);
+        let expiration_time_binding = args.expiration_time.get_output(ctx);
         let external_data_configuration_binding = args
             .external_data_configuration
-            .get_output(context);
-        let friendly_name_binding = args.friendly_name.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let materialized_view_binding = args.materialized_view.get_output(context);
-        let max_staleness_binding = args.max_staleness.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let range_partitioning_binding = args.range_partitioning.get_output(context);
+            .get_output(ctx);
+        let friendly_name_binding = args.friendly_name.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let materialized_view_binding = args.materialized_view.get_output(ctx);
+        let max_staleness_binding = args.max_staleness.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let range_partitioning_binding = args.range_partitioning.get_output(ctx);
         let require_partition_filter_binding = args
             .require_partition_filter
-            .get_output(context);
-        let resource_tags_binding = args.resource_tags.get_output(context);
-        let schema_binding = args.schema.get_output(context);
-        let table_constraints_binding = args.table_constraints.get_output(context);
-        let table_id_binding = args.table_id.get_output(context);
-        let table_replication_info_binding = args
-            .table_replication_info
-            .get_output(context);
-        let time_partitioning_binding = args.time_partitioning.get_output(context);
-        let view_binding = args.view.get_output(context);
+            .get_output(ctx);
+        let resource_tags_binding = args.resource_tags.get_output(ctx);
+        let schema_binding = args.schema.get_output(ctx);
+        let table_constraints_binding = args.table_constraints.get_output(ctx);
+        let table_id_binding = args.table_id.get_output(ctx);
+        let table_replication_info_binding = args.table_replication_info.get_output(ctx);
+        let time_partitioning_binding = args.time_partitioning.get_output(ctx);
+        let view_binding = args.view.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:bigquery/table:Table".into(),
             name: name.to_string(),
@@ -523,7 +519,7 @@ pub mod table {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         TableResult {
             id: o.get_id(),
             urn: o.get_urn(),

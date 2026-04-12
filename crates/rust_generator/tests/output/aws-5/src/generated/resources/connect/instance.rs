@@ -167,54 +167,50 @@ pub mod instance {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceArgs,
     ) -> InstanceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> InstanceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> InstanceResult {
         let auto_resolve_best_voices_enabled_binding = args
             .auto_resolve_best_voices_enabled
-            .get_output(context);
+            .get_output(ctx);
         let contact_flow_logs_enabled_binding = args
             .contact_flow_logs_enabled
-            .get_output(context);
-        let contact_lens_enabled_binding = args.contact_lens_enabled.get_output(context);
-        let directory_id_binding = args.directory_id.get_output(context);
-        let early_media_enabled_binding = args.early_media_enabled.get_output(context);
+            .get_output(ctx);
+        let contact_lens_enabled_binding = args.contact_lens_enabled.get_output(ctx);
+        let directory_id_binding = args.directory_id.get_output(ctx);
+        let early_media_enabled_binding = args.early_media_enabled.get_output(ctx);
         let identity_management_type_binding = args
             .identity_management_type
-            .get_output(context);
-        let inbound_calls_enabled_binding = args
-            .inbound_calls_enabled
-            .get_output(context);
-        let instance_alias_binding = args.instance_alias.get_output(context);
+            .get_output(ctx);
+        let inbound_calls_enabled_binding = args.inbound_calls_enabled.get_output(ctx);
+        let instance_alias_binding = args.instance_alias.get_output(ctx);
         let multi_party_conference_enabled_binding = args
             .multi_party_conference_enabled
-            .get_output(context);
-        let outbound_calls_enabled_binding = args
-            .outbound_calls_enabled
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let outbound_calls_enabled_binding = args.outbound_calls_enabled.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:connect/instance:Instance".into(),
             name: name.to_string(),
@@ -267,7 +263,7 @@ pub mod instance {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         InstanceResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -27,13 +27,13 @@ pub mod get_enrollment_account_scope {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetEnrollmentAccountScopeArgs,
     ) -> GetEnrollmentAccountScopeResult {
-        let billing_account_name_binding = args.billing_account_name.get_output(context);
+        let billing_account_name_binding = args.billing_account_name.get_output(ctx);
         let enrollment_account_name_binding = args
             .enrollment_account_name
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:billing/getEnrollmentAccountScope:getEnrollmentAccountScope"
                 .into(),
@@ -49,7 +49,7 @@ pub mod get_enrollment_account_scope {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetEnrollmentAccountScopeResult {
             billing_account_name: o.get_field("billingAccountName"),
             enrollment_account_name: o.get_field("enrollmentAccountName"),

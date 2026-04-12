@@ -33,10 +33,10 @@ pub mod get_serverless_vpc_endpoint {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetServerlessVpcEndpointArgs,
     ) -> GetServerlessVpcEndpointResult {
-        let vpc_endpoint_id_binding = args.vpc_endpoint_id.get_output(context);
+        let vpc_endpoint_id_binding = args.vpc_endpoint_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:opensearch/getServerlessVpcEndpoint:getServerlessVpcEndpoint"
                 .into(),
@@ -48,7 +48,7 @@ pub mod get_serverless_vpc_endpoint {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetServerlessVpcEndpointResult {
             created_date: o.get_field("createdDate"),
             id: o.get_field("id"),

@@ -60,13 +60,13 @@ pub mod get_job_definition {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetJobDefinitionArgs,
     ) -> GetJobDefinitionResult {
-        let arn_binding = args.arn.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let revision_binding = args.revision.get_output(context);
-        let status_binding = args.status.get_output(context);
+        let arn_binding = args.arn.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let revision_binding = args.revision.get_output(ctx);
+        let status_binding = args.status.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:batch/getJobDefinition:getJobDefinition".into(),
             version: super::super::super::get_version(),
@@ -89,7 +89,7 @@ pub mod get_job_definition {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetJobDefinitionResult {
             arn: o.get_field("arn"),
             arn_prefix: o.get_field("arnPrefix"),

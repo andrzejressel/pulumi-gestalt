@@ -107,33 +107,33 @@ pub mod service_perimeter_dry_run_resource {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServicePerimeterDryRunResourceArgs,
     ) -> ServicePerimeterDryRunResourceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServicePerimeterDryRunResourceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ServicePerimeterDryRunResourceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServicePerimeterDryRunResourceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ServicePerimeterDryRunResourceResult {
-        let perimeter_name_binding = args.perimeter_name.get_output(context);
-        let resource_binding = args.resource.get_output(context);
+        let perimeter_name_binding = args.perimeter_name.get_output(ctx);
+        let resource_binding = args.resource.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:accesscontextmanager/servicePerimeterDryRunResource:ServicePerimeterDryRunResource"
                 .into(),
@@ -151,7 +151,7 @@ pub mod service_perimeter_dry_run_resource {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ServicePerimeterDryRunResourceResult {
             id: o.get_id(),
             urn: o.get_urn(),

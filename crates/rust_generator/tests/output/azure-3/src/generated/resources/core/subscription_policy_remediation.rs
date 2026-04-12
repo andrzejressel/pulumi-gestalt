@@ -115,44 +115,44 @@ pub mod subscription_policy_remediation {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SubscriptionPolicyRemediationArgs,
     ) -> SubscriptionPolicyRemediationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SubscriptionPolicyRemediationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> SubscriptionPolicyRemediationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SubscriptionPolicyRemediationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> SubscriptionPolicyRemediationResult {
-        let failure_percentage_binding = args.failure_percentage.get_output(context);
-        let location_filters_binding = args.location_filters.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let parallel_deployments_binding = args.parallel_deployments.get_output(context);
-        let policy_assignment_id_binding = args.policy_assignment_id.get_output(context);
+        let failure_percentage_binding = args.failure_percentage.get_output(ctx);
+        let location_filters_binding = args.location_filters.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let parallel_deployments_binding = args.parallel_deployments.get_output(ctx);
+        let policy_assignment_id_binding = args.policy_assignment_id.get_output(ctx);
         let policy_definition_reference_id_binding = args
             .policy_definition_reference_id
-            .get_output(context);
-        let resource_count_binding = args.resource_count.get_output(context);
+            .get_output(ctx);
+        let resource_count_binding = args.resource_count.get_output(ctx);
         let resource_discovery_mode_binding = args
             .resource_discovery_mode
-            .get_output(context);
-        let subscription_id_binding = args.subscription_id.get_output(context);
+            .get_output(ctx);
+        let subscription_id_binding = args.subscription_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:core/subscriptionPolicyRemediation:SubscriptionPolicyRemediation"
                 .into(),
@@ -198,7 +198,7 @@ pub mod subscription_policy_remediation {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         SubscriptionPolicyRemediationResult {
             id: o.get_id(),
             urn: o.get_urn(),

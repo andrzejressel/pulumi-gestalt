@@ -159,54 +159,48 @@ pub mod endpoint {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EndpointArgs,
     ) -> EndpointResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EndpointArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> EndpointResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EndpointArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> EndpointResult {
-        let application_domain_binding = args.application_domain.get_output(context);
-        let attachment_type_binding = args.attachment_type.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let domain_certificate_arn_binding = args
-            .domain_certificate_arn
-            .get_output(context);
-        let endpoint_domain_prefix_binding = args
-            .endpoint_domain_prefix
-            .get_output(context);
-        let endpoint_type_binding = args.endpoint_type.get_output(context);
-        let load_balancer_options_binding = args
-            .load_balancer_options
-            .get_output(context);
+        let application_domain_binding = args.application_domain.get_output(ctx);
+        let attachment_type_binding = args.attachment_type.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let domain_certificate_arn_binding = args.domain_certificate_arn.get_output(ctx);
+        let endpoint_domain_prefix_binding = args.endpoint_domain_prefix.get_output(ctx);
+        let endpoint_type_binding = args.endpoint_type.get_output(ctx);
+        let load_balancer_options_binding = args.load_balancer_options.get_output(ctx);
         let network_interface_options_binding = args
             .network_interface_options
-            .get_output(context);
-        let policy_document_binding = args.policy_document.get_output(context);
-        let security_group_ids_binding = args.security_group_ids.get_output(context);
-        let sse_specification_binding = args.sse_specification.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let policy_document_binding = args.policy_document.get_output(ctx);
+        let security_group_ids_binding = args.security_group_ids.get_output(ctx);
+        let sse_specification_binding = args.sse_specification.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let verified_access_group_id_binding = args
             .verified_access_group_id
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:verifiedaccess/endpoint:Endpoint".into(),
             name: name.to_string(),
@@ -267,7 +261,7 @@ pub mod endpoint {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         EndpointResult {
             id: o.get_id(),
             urn: o.get_urn(),

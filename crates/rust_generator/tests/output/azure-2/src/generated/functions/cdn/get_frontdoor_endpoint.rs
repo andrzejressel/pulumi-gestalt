@@ -37,12 +37,12 @@ pub mod get_frontdoor_endpoint {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetFrontdoorEndpointArgs,
     ) -> GetFrontdoorEndpointResult {
-        let name_binding = args.name.get_output(context);
-        let profile_name_binding = args.profile_name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let profile_name_binding = args.profile_name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:cdn/getFrontdoorEndpoint:getFrontdoorEndpoint".into(),
             version: super::super::super::get_version(),
@@ -61,7 +61,7 @@ pub mod get_frontdoor_endpoint {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetFrontdoorEndpointResult {
             enabled: o.get_field("enabled"),
             host_name: o.get_field("hostName"),

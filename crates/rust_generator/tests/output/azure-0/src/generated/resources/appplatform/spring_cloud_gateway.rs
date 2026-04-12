@@ -246,63 +246,61 @@ pub mod spring_cloud_gateway {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SpringCloudGatewayArgs,
     ) -> SpringCloudGatewayResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SpringCloudGatewayArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> SpringCloudGatewayResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SpringCloudGatewayArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> SpringCloudGatewayResult {
-        let api_metadata_binding = args.api_metadata.get_output(context);
+        let api_metadata_binding = args.api_metadata.get_output(ctx);
         let application_performance_monitoring_ids_binding = args
             .application_performance_monitoring_ids
-            .get_output(context);
+            .get_output(ctx);
         let application_performance_monitoring_types_binding = args
             .application_performance_monitoring_types
-            .get_output(context);
-        let client_authorization_binding = args.client_authorization.get_output(context);
-        let cors_binding = args.cors.get_output(context);
-        let environment_variables_binding = args
-            .environment_variables
-            .get_output(context);
-        let https_only_binding = args.https_only.get_output(context);
-        let instance_count_binding = args.instance_count.get_output(context);
+            .get_output(ctx);
+        let client_authorization_binding = args.client_authorization.get_output(ctx);
+        let cors_binding = args.cors.get_output(ctx);
+        let environment_variables_binding = args.environment_variables.get_output(ctx);
+        let https_only_binding = args.https_only.get_output(ctx);
+        let instance_count_binding = args.instance_count.get_output(ctx);
         let local_response_cache_per_instance_binding = args
             .local_response_cache_per_instance
-            .get_output(context);
+            .get_output(ctx);
         let local_response_cache_per_route_binding = args
             .local_response_cache_per_route
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let public_network_access_enabled_binding = args
             .public_network_access_enabled
-            .get_output(context);
-        let quota_binding = args.quota.get_output(context);
+            .get_output(ctx);
+        let quota_binding = args.quota.get_output(ctx);
         let sensitive_environment_variables_binding = args
             .sensitive_environment_variables
-            .get_output(context);
+            .get_output(ctx);
         let spring_cloud_service_id_binding = args
             .spring_cloud_service_id
-            .get_output(context);
-        let sso_binding = args.sso.get_output(context);
+            .get_output(ctx);
+        let sso_binding = args.sso.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:appplatform/springCloudGateway:SpringCloudGateway".into(),
             name: name.to_string(),
@@ -375,7 +373,7 @@ pub mod spring_cloud_gateway {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         SpringCloudGatewayResult {
             id: o.get_id(),
             urn: o.get_urn(),

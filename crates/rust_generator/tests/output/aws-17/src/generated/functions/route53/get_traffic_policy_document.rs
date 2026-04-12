@@ -65,15 +65,15 @@ pub mod get_traffic_policy_document {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetTrafficPolicyDocumentArgs,
     ) -> GetTrafficPolicyDocumentResult {
-        let endpoints_binding = args.endpoints.get_output(context);
-        let record_type_binding = args.record_type.get_output(context);
-        let rules_binding = args.rules.get_output(context);
-        let start_endpoint_binding = args.start_endpoint.get_output(context);
-        let start_rule_binding = args.start_rule.get_output(context);
-        let version_binding = args.version.get_output(context);
+        let endpoints_binding = args.endpoints.get_output(ctx);
+        let record_type_binding = args.record_type.get_output(ctx);
+        let rules_binding = args.rules.get_output(ctx);
+        let start_endpoint_binding = args.start_endpoint.get_output(ctx);
+        let start_rule_binding = args.start_rule.get_output(ctx);
+        let version_binding = args.version.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:route53/getTrafficPolicyDocument:getTrafficPolicyDocument"
                 .into(),
@@ -105,7 +105,7 @@ pub mod get_traffic_policy_document {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetTrafficPolicyDocumentResult {
             endpoints: o.get_field("endpoints"),
             id: o.get_field("id"),

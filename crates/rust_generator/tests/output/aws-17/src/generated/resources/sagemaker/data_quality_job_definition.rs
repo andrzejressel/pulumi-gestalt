@@ -184,49 +184,47 @@ pub mod data_quality_job_definition {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataQualityJobDefinitionArgs,
     ) -> DataQualityJobDefinitionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataQualityJobDefinitionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DataQualityJobDefinitionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataQualityJobDefinitionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DataQualityJobDefinitionResult {
         let data_quality_app_specification_binding = args
             .data_quality_app_specification
-            .get_output(context);
+            .get_output(ctx);
         let data_quality_baseline_config_binding = args
             .data_quality_baseline_config
-            .get_output(context);
-        let data_quality_job_input_binding = args
-            .data_quality_job_input
-            .get_output(context);
+            .get_output(ctx);
+        let data_quality_job_input_binding = args.data_quality_job_input.get_output(ctx);
         let data_quality_job_output_config_binding = args
             .data_quality_job_output_config
-            .get_output(context);
-        let job_resources_binding = args.job_resources.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_config_binding = args.network_config.get_output(context);
-        let role_arn_binding = args.role_arn.get_output(context);
-        let stopping_condition_binding = args.stopping_condition.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let job_resources_binding = args.job_resources.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_config_binding = args.network_config.get_output(ctx);
+        let role_arn_binding = args.role_arn.get_output(ctx);
+        let stopping_condition_binding = args.stopping_condition.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:sagemaker/dataQualityJobDefinition:DataQualityJobDefinition"
                 .into(),
@@ -276,7 +274,7 @@ pub mod data_quality_job_definition {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DataQualityJobDefinitionResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -143,42 +143,42 @@ pub mod environment {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EnvironmentArgs,
     ) -> EnvironmentResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EnvironmentArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> EnvironmentResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EnvironmentArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> EnvironmentResult {
-        let account_identifier_binding = args.account_identifier.get_output(context);
-        let account_region_binding = args.account_region.get_output(context);
-        let blueprint_identifier_binding = args.blueprint_identifier.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let domain_identifier_binding = args.domain_identifier.get_output(context);
-        let glossary_terms_binding = args.glossary_terms.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let profile_identifier_binding = args.profile_identifier.get_output(context);
-        let project_identifier_binding = args.project_identifier.get_output(context);
-        let timeouts_binding = args.timeouts.get_output(context);
-        let user_parameters_binding = args.user_parameters.get_output(context);
+        let account_identifier_binding = args.account_identifier.get_output(ctx);
+        let account_region_binding = args.account_region.get_output(ctx);
+        let blueprint_identifier_binding = args.blueprint_identifier.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let domain_identifier_binding = args.domain_identifier.get_output(ctx);
+        let glossary_terms_binding = args.glossary_terms.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let profile_identifier_binding = args.profile_identifier.get_output(ctx);
+        let project_identifier_binding = args.project_identifier.get_output(ctx);
+        let timeouts_binding = args.timeouts.get_output(ctx);
+        let user_parameters_binding = args.user_parameters.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:datazone/environment:Environment".into(),
             name: name.to_string(),
@@ -231,7 +231,7 @@ pub mod environment {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         EnvironmentResult {
             id: o.get_id(),
             urn: o.get_urn(),

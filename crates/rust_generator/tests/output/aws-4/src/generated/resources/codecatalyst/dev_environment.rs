@@ -112,41 +112,41 @@ pub mod dev_environment {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DevEnvironmentArgs,
     ) -> DevEnvironmentResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DevEnvironmentArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DevEnvironmentResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DevEnvironmentArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DevEnvironmentResult {
-        let alias_binding = args.alias.get_output(context);
-        let ides_binding = args.ides.get_output(context);
+        let alias_binding = args.alias.get_output(ctx);
+        let ides_binding = args.ides.get_output(ctx);
         let inactivity_timeout_minutes_binding = args
             .inactivity_timeout_minutes
-            .get_output(context);
-        let instance_type_binding = args.instance_type.get_output(context);
-        let persistent_storage_binding = args.persistent_storage.get_output(context);
-        let project_name_binding = args.project_name.get_output(context);
-        let repositories_binding = args.repositories.get_output(context);
-        let space_name_binding = args.space_name.get_output(context);
+            .get_output(ctx);
+        let instance_type_binding = args.instance_type.get_output(ctx);
+        let persistent_storage_binding = args.persistent_storage.get_output(ctx);
+        let project_name_binding = args.project_name.get_output(ctx);
+        let repositories_binding = args.repositories.get_output(ctx);
+        let space_name_binding = args.space_name.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:codecatalyst/devEnvironment:DevEnvironment".into(),
             name: name.to_string(),
@@ -187,7 +187,7 @@ pub mod dev_environment {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DevEnvironmentResult {
             id: o.get_id(),
             urn: o.get_urn(),

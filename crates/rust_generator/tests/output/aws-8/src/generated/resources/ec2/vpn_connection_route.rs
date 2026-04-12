@@ -67,35 +67,33 @@ pub mod vpn_connection_route {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpnConnectionRouteArgs,
     ) -> VpnConnectionRouteResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpnConnectionRouteArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> VpnConnectionRouteResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpnConnectionRouteArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> VpnConnectionRouteResult {
-        let destination_cidr_block_binding = args
-            .destination_cidr_block
-            .get_output(context);
-        let vpn_connection_id_binding = args.vpn_connection_id.get_output(context);
+        let destination_cidr_block_binding = args.destination_cidr_block.get_output(ctx);
+        let vpn_connection_id_binding = args.vpn_connection_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/vpnConnectionRoute:VpnConnectionRoute".into(),
             name: name.to_string(),
@@ -112,7 +110,7 @@ pub mod vpn_connection_route {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         VpnConnectionRouteResult {
             id: o.get_id(),
             urn: o.get_urn(),

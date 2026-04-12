@@ -122,37 +122,37 @@ pub mod mongo_role_definition {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MongoRoleDefinitionArgs,
     ) -> MongoRoleDefinitionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MongoRoleDefinitionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> MongoRoleDefinitionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MongoRoleDefinitionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> MongoRoleDefinitionResult {
         let cosmos_mongo_database_id_binding = args
             .cosmos_mongo_database_id
-            .get_output(context);
-        let inherited_role_names_binding = args.inherited_role_names.get_output(context);
-        let privileges_binding = args.privileges.get_output(context);
-        let role_name_binding = args.role_name.get_output(context);
+            .get_output(ctx);
+        let inherited_role_names_binding = args.inherited_role_names.get_output(ctx);
+        let privileges_binding = args.privileges.get_output(ctx);
+        let role_name_binding = args.role_name.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:cosmosdb/mongoRoleDefinition:MongoRoleDefinition".into(),
             name: name.to_string(),
@@ -177,7 +177,7 @@ pub mod mongo_role_definition {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         MongoRoleDefinitionResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -164,9 +164,9 @@ impl Default for Context {
 impl Context {
     pub fn new() -> Self {
         let runtime = Runtime::new().unwrap();
-        let context = runtime.block_on(integration::Context::new());
+        let ctx = runtime.block_on(integration::Context::new());
         Self {
-            inner: context,
+            inner: ctx,
             runtime: Rc::new(runtime),
         }
     }

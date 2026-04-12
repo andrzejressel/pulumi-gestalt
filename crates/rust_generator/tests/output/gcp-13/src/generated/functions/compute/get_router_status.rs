@@ -44,12 +44,12 @@ pub mod get_router_status {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetRouterStatusArgs,
     ) -> GetRouterStatusResult {
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let region_binding = args.region.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let region_binding = args.region.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:compute/getRouterStatus:getRouterStatus".into(),
             version: super::super::super::get_version(),
@@ -68,7 +68,7 @@ pub mod get_router_status {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetRouterStatusResult {
             best_routes: o.get_field("bestRoutes"),
             best_routes_for_routers: o.get_field("bestRoutesForRouters"),

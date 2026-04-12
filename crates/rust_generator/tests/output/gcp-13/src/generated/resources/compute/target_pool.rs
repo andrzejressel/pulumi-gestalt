@@ -166,41 +166,41 @@ pub mod target_pool {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TargetPoolArgs,
     ) -> TargetPoolResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TargetPoolArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> TargetPoolResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TargetPoolArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> TargetPoolResult {
-        let backup_pool_binding = args.backup_pool.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let failover_ratio_binding = args.failover_ratio.get_output(context);
-        let health_checks_binding = args.health_checks.get_output(context);
-        let instances_binding = args.instances.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let region_binding = args.region.get_output(context);
-        let security_policy_binding = args.security_policy.get_output(context);
-        let session_affinity_binding = args.session_affinity.get_output(context);
+        let backup_pool_binding = args.backup_pool.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let failover_ratio_binding = args.failover_ratio.get_output(ctx);
+        let health_checks_binding = args.health_checks.get_output(ctx);
+        let instances_binding = args.instances.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let region_binding = args.region.get_output(ctx);
+        let security_policy_binding = args.security_policy.get_output(ctx);
+        let session_affinity_binding = args.session_affinity.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:compute/targetPool:TargetPool".into(),
             name: name.to_string(),
@@ -249,7 +249,7 @@ pub mod target_pool {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         TargetPoolResult {
             id: o.get_id(),
             urn: o.get_urn(),

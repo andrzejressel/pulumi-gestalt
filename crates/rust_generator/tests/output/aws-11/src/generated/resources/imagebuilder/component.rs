@@ -137,44 +137,42 @@ pub mod component {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ComponentArgs,
     ) -> ComponentResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ComponentArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ComponentResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ComponentArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ComponentResult {
-        let change_description_binding = args.change_description.get_output(context);
-        let data_binding = args.data.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let kms_key_id_binding = args.kms_key_id.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let platform_binding = args.platform.get_output(context);
-        let skip_destroy_binding = args.skip_destroy.get_output(context);
-        let supported_os_versions_binding = args
-            .supported_os_versions
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let uri_binding = args.uri.get_output(context);
-        let version_binding = args.version.get_output(context);
+        let change_description_binding = args.change_description.get_output(ctx);
+        let data_binding = args.data.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let kms_key_id_binding = args.kms_key_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let platform_binding = args.platform.get_output(ctx);
+        let skip_destroy_binding = args.skip_destroy.get_output(ctx);
+        let supported_os_versions_binding = args.supported_os_versions.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let uri_binding = args.uri.get_output(ctx);
+        let version_binding = args.version.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:imagebuilder/component:Component".into(),
             name: name.to_string(),
@@ -227,7 +225,7 @@ pub mod component {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ComponentResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -241,41 +241,41 @@ pub mod metric_descriptor {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MetricDescriptorArgs,
     ) -> MetricDescriptorResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MetricDescriptorArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> MetricDescriptorResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MetricDescriptorArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> MetricDescriptorResult {
-        let description_binding = args.description.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let launch_stage_binding = args.launch_stage.get_output(context);
-        let metadata_binding = args.metadata.get_output(context);
-        let metric_kind_binding = args.metric_kind.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let type__binding = args.type_.get_output(context);
-        let unit_binding = args.unit.get_output(context);
-        let value_type_binding = args.value_type.get_output(context);
+        let description_binding = args.description.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let launch_stage_binding = args.launch_stage.get_output(ctx);
+        let metadata_binding = args.metadata.get_output(ctx);
+        let metric_kind_binding = args.metric_kind.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
+        let unit_binding = args.unit.get_output(ctx);
+        let value_type_binding = args.value_type.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:monitoring/metricDescriptor:MetricDescriptor".into(),
             name: name.to_string(),
@@ -324,7 +324,7 @@ pub mod metric_descriptor {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         MetricDescriptorResult {
             id: o.get_id(),
             urn: o.get_urn(),

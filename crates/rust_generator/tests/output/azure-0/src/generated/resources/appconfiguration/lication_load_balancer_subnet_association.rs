@@ -120,37 +120,37 @@ pub mod lication_load_balancer_subnet_association {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LicationLoadBalancerSubnetAssociationArgs,
     ) -> LicationLoadBalancerSubnetAssociationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LicationLoadBalancerSubnetAssociationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> LicationLoadBalancerSubnetAssociationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LicationLoadBalancerSubnetAssociationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> LicationLoadBalancerSubnetAssociationResult {
         let application_load_balancer_id_binding = args
             .application_load_balancer_id
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let subnet_id_binding = args.subnet_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let subnet_id_binding = args.subnet_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:appconfiguration/licationLoadBalancerSubnetAssociation:LicationLoadBalancerSubnetAssociation"
                 .into(),
@@ -176,7 +176,7 @@ pub mod lication_load_balancer_subnet_association {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         LicationLoadBalancerSubnetAssociationResult {
             id: o.get_id(),
             urn: o.get_urn(),

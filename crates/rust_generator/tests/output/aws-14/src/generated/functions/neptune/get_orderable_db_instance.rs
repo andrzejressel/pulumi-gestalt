@@ -75,17 +75,17 @@ pub mod get_orderable_db_instance {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetOrderableDbInstanceArgs,
     ) -> GetOrderableDbInstanceResult {
-        let engine_binding = args.engine.get_output(context);
-        let engine_version_binding = args.engine_version.get_output(context);
-        let instance_class_binding = args.instance_class.get_output(context);
-        let license_model_binding = args.license_model.get_output(context);
+        let engine_binding = args.engine.get_output(ctx);
+        let engine_version_binding = args.engine_version.get_output(ctx);
+        let instance_class_binding = args.instance_class.get_output(ctx);
+        let license_model_binding = args.license_model.get_output(ctx);
         let preferred_instance_classes_binding = args
             .preferred_instance_classes
-            .get_output(context);
-        let vpc_binding = args.vpc.get_output(context);
+            .get_output(ctx);
+        let vpc_binding = args.vpc.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:neptune/getOrderableDbInstance:getOrderableDbInstance".into(),
             version: super::super::super::get_version(),
@@ -116,7 +116,7 @@ pub mod get_orderable_db_instance {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetOrderableDbInstanceResult {
             availability_zones: o.get_field("availabilityZones"),
             engine: o.get_field("engine"),

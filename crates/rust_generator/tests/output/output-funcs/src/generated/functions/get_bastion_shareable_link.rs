@@ -30,12 +30,12 @@ pub mod get_bastion_shareable_link {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetBastionShareableLinkArgs,
     ) -> GetBastionShareableLinkResult {
-        let bastion_host_name_binding = args.bastion_host_name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let vms_binding = args.vms.get_output(context);
+        let bastion_host_name_binding = args.bastion_host_name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let vms_binding = args.vms.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "mypkg::getBastionShareableLink".into(),
             version: super::super::get_version(),
@@ -54,7 +54,7 @@ pub mod get_bastion_shareable_link {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetBastionShareableLinkResult {
             next_link: o.get_field("nextLink"),
         }

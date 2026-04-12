@@ -901,144 +901,134 @@ pub mod instance {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceArgs,
     ) -> InstanceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> InstanceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> InstanceResult {
-        let allocated_storage_binding = args.allocated_storage.get_output(context);
+        let allocated_storage_binding = args.allocated_storage.get_output(ctx);
         let allow_major_version_upgrade_binding = args
             .allow_major_version_upgrade
-            .get_output(context);
-        let apply_immediately_binding = args.apply_immediately.get_output(context);
+            .get_output(ctx);
+        let apply_immediately_binding = args.apply_immediately.get_output(ctx);
         let auto_minor_version_upgrade_binding = args
             .auto_minor_version_upgrade
-            .get_output(context);
-        let availability_zone_binding = args.availability_zone.get_output(context);
+            .get_output(ctx);
+        let availability_zone_binding = args.availability_zone.get_output(ctx);
         let backup_retention_period_binding = args
             .backup_retention_period
-            .get_output(context);
-        let backup_target_binding = args.backup_target.get_output(context);
-        let backup_window_binding = args.backup_window.get_output(context);
-        let blue_green_update_binding = args.blue_green_update.get_output(context);
-        let ca_cert_identifier_binding = args.ca_cert_identifier.get_output(context);
-        let character_set_name_binding = args.character_set_name.get_output(context);
-        let copy_tags_to_snapshot_binding = args
-            .copy_tags_to_snapshot
-            .get_output(context);
+            .get_output(ctx);
+        let backup_target_binding = args.backup_target.get_output(ctx);
+        let backup_window_binding = args.backup_window.get_output(ctx);
+        let blue_green_update_binding = args.blue_green_update.get_output(ctx);
+        let ca_cert_identifier_binding = args.ca_cert_identifier.get_output(ctx);
+        let character_set_name_binding = args.character_set_name.get_output(ctx);
+        let copy_tags_to_snapshot_binding = args.copy_tags_to_snapshot.get_output(ctx);
         let custom_iam_instance_profile_binding = args
             .custom_iam_instance_profile
-            .get_output(context);
+            .get_output(ctx);
         let customer_owned_ip_enabled_binding = args
             .customer_owned_ip_enabled
-            .get_output(context);
-        let db_name_binding = args.db_name.get_output(context);
-        let db_subnet_group_name_binding = args.db_subnet_group_name.get_output(context);
-        let dedicated_log_volume_binding = args.dedicated_log_volume.get_output(context);
+            .get_output(ctx);
+        let db_name_binding = args.db_name.get_output(ctx);
+        let db_subnet_group_name_binding = args.db_subnet_group_name.get_output(ctx);
+        let dedicated_log_volume_binding = args.dedicated_log_volume.get_output(ctx);
         let delete_automated_backups_binding = args
             .delete_automated_backups
-            .get_output(context);
-        let deletion_protection_binding = args.deletion_protection.get_output(context);
-        let domain_binding = args.domain.get_output(context);
-        let domain_auth_secret_arn_binding = args
-            .domain_auth_secret_arn
-            .get_output(context);
-        let domain_dns_ips_binding = args.domain_dns_ips.get_output(context);
-        let domain_fqdn_binding = args.domain_fqdn.get_output(context);
-        let domain_iam_role_name_binding = args.domain_iam_role_name.get_output(context);
-        let domain_ou_binding = args.domain_ou.get_output(context);
+            .get_output(ctx);
+        let deletion_protection_binding = args.deletion_protection.get_output(ctx);
+        let domain_binding = args.domain.get_output(ctx);
+        let domain_auth_secret_arn_binding = args.domain_auth_secret_arn.get_output(ctx);
+        let domain_dns_ips_binding = args.domain_dns_ips.get_output(ctx);
+        let domain_fqdn_binding = args.domain_fqdn.get_output(ctx);
+        let domain_iam_role_name_binding = args.domain_iam_role_name.get_output(ctx);
+        let domain_ou_binding = args.domain_ou.get_output(ctx);
         let enabled_cloudwatch_logs_exports_binding = args
             .enabled_cloudwatch_logs_exports
-            .get_output(context);
-        let engine_binding = args.engine.get_output(context);
+            .get_output(ctx);
+        let engine_binding = args.engine.get_output(ctx);
         let engine_lifecycle_support_binding = args
             .engine_lifecycle_support
-            .get_output(context);
-        let engine_version_binding = args.engine_version.get_output(context);
+            .get_output(ctx);
+        let engine_version_binding = args.engine_version.get_output(ctx);
         let final_snapshot_identifier_binding = args
             .final_snapshot_identifier
-            .get_output(context);
+            .get_output(ctx);
         let iam_database_authentication_enabled_binding = args
             .iam_database_authentication_enabled
-            .get_output(context);
-        let identifier_binding = args.identifier.get_output(context);
-        let identifier_prefix_binding = args.identifier_prefix.get_output(context);
-        let instance_class_binding = args.instance_class.get_output(context);
-        let iops_binding = args.iops.get_output(context);
-        let kms_key_id_binding = args.kms_key_id.get_output(context);
-        let license_model_binding = args.license_model.get_output(context);
-        let maintenance_window_binding = args.maintenance_window.get_output(context);
+            .get_output(ctx);
+        let identifier_binding = args.identifier.get_output(ctx);
+        let identifier_prefix_binding = args.identifier_prefix.get_output(ctx);
+        let instance_class_binding = args.instance_class.get_output(ctx);
+        let iops_binding = args.iops.get_output(ctx);
+        let kms_key_id_binding = args.kms_key_id.get_output(ctx);
+        let license_model_binding = args.license_model.get_output(ctx);
+        let maintenance_window_binding = args.maintenance_window.get_output(ctx);
         let manage_master_user_password_binding = args
             .manage_master_user_password
-            .get_output(context);
+            .get_output(ctx);
         let master_user_secret_kms_key_id_binding = args
             .master_user_secret_kms_key_id
-            .get_output(context);
-        let max_allocated_storage_binding = args
-            .max_allocated_storage
-            .get_output(context);
-        let monitoring_interval_binding = args.monitoring_interval.get_output(context);
-        let monitoring_role_arn_binding = args.monitoring_role_arn.get_output(context);
-        let multi_az_binding = args.multi_az.get_output(context);
-        let name_binding = args.name.get_output(context);
+            .get_output(ctx);
+        let max_allocated_storage_binding = args.max_allocated_storage.get_output(ctx);
+        let monitoring_interval_binding = args.monitoring_interval.get_output(ctx);
+        let monitoring_role_arn_binding = args.monitoring_role_arn.get_output(ctx);
+        let multi_az_binding = args.multi_az.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let nchar_character_set_name_binding = args
             .nchar_character_set_name
-            .get_output(context);
-        let network_type_binding = args.network_type.get_output(context);
-        let option_group_name_binding = args.option_group_name.get_output(context);
-        let parameter_group_name_binding = args.parameter_group_name.get_output(context);
-        let password_binding = args.password.get_output(context);
+            .get_output(ctx);
+        let network_type_binding = args.network_type.get_output(ctx);
+        let option_group_name_binding = args.option_group_name.get_output(ctx);
+        let parameter_group_name_binding = args.parameter_group_name.get_output(ctx);
+        let password_binding = args.password.get_output(ctx);
         let performance_insights_enabled_binding = args
             .performance_insights_enabled
-            .get_output(context);
+            .get_output(ctx);
         let performance_insights_kms_key_id_binding = args
             .performance_insights_kms_key_id
-            .get_output(context);
+            .get_output(ctx);
         let performance_insights_retention_period_binding = args
             .performance_insights_retention_period
-            .get_output(context);
-        let port_binding = args.port.get_output(context);
-        let publicly_accessible_binding = args.publicly_accessible.get_output(context);
-        let replica_mode_binding = args.replica_mode.get_output(context);
-        let replicate_source_db_binding = args.replicate_source_db.get_output(context);
+            .get_output(ctx);
+        let port_binding = args.port.get_output(ctx);
+        let publicly_accessible_binding = args.publicly_accessible.get_output(ctx);
+        let replica_mode_binding = args.replica_mode.get_output(ctx);
+        let replicate_source_db_binding = args.replicate_source_db.get_output(ctx);
         let restore_to_point_in_time_binding = args
             .restore_to_point_in_time
-            .get_output(context);
-        let s3_import_binding = args.s3_import.get_output(context);
-        let skip_final_snapshot_binding = args.skip_final_snapshot.get_output(context);
-        let snapshot_identifier_binding = args.snapshot_identifier.get_output(context);
-        let storage_encrypted_binding = args.storage_encrypted.get_output(context);
-        let storage_throughput_binding = args.storage_throughput.get_output(context);
-        let storage_type_binding = args.storage_type.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let timezone_binding = args.timezone.get_output(context);
-        let upgrade_storage_config_binding = args
-            .upgrade_storage_config
-            .get_output(context);
-        let username_binding = args.username.get_output(context);
-        let vpc_security_group_ids_binding = args
-            .vpc_security_group_ids
-            .get_output(context);
+            .get_output(ctx);
+        let s3_import_binding = args.s3_import.get_output(ctx);
+        let skip_final_snapshot_binding = args.skip_final_snapshot.get_output(ctx);
+        let snapshot_identifier_binding = args.snapshot_identifier.get_output(ctx);
+        let storage_encrypted_binding = args.storage_encrypted.get_output(ctx);
+        let storage_throughput_binding = args.storage_throughput.get_output(ctx);
+        let storage_type_binding = args.storage_type.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let timezone_binding = args.timezone.get_output(ctx);
+        let upgrade_storage_config_binding = args.upgrade_storage_config.get_output(ctx);
+        let username_binding = args.username.get_output(ctx);
+        let vpc_security_group_ids_binding = args.vpc_security_group_ids.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:rds/instance:Instance".into(),
             name: name.to_string(),
@@ -1323,7 +1313,7 @@ pub mod instance {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         InstanceResult {
             id: o.get_id(),
             urn: o.get_urn(),

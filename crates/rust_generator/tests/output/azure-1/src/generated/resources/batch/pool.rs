@@ -348,74 +348,72 @@ pub mod pool {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PoolArgs,
     ) -> PoolResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PoolArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> PoolResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PoolArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> PoolResult {
-        let account_name_binding = args.account_name.get_output(context);
-        let auto_scale_binding = args.auto_scale.get_output(context);
-        let certificates_binding = args.certificates.get_output(context);
+        let account_name_binding = args.account_name.get_output(ctx);
+        let auto_scale_binding = args.auto_scale.get_output(ctx);
+        let certificates_binding = args.certificates.get_output(ctx);
         let container_configuration_binding = args
             .container_configuration
-            .get_output(context);
-        let data_disks_binding = args.data_disks.get_output(context);
-        let disk_encryptions_binding = args.disk_encryptions.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let extensions_binding = args.extensions.get_output(context);
-        let fixed_scale_binding = args.fixed_scale.get_output(context);
-        let identity_binding = args.identity.get_output(context);
+            .get_output(ctx);
+        let data_disks_binding = args.data_disks.get_output(ctx);
+        let disk_encryptions_binding = args.disk_encryptions.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let extensions_binding = args.extensions.get_output(ctx);
+        let fixed_scale_binding = args.fixed_scale.get_output(ctx);
+        let identity_binding = args.identity.get_output(ctx);
         let inter_node_communication_binding = args
             .inter_node_communication
-            .get_output(context);
-        let license_type_binding = args.license_type.get_output(context);
-        let max_tasks_per_node_binding = args.max_tasks_per_node.get_output(context);
-        let metadata_binding = args.metadata.get_output(context);
-        let mounts_binding = args.mounts.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_configuration_binding = args
-            .network_configuration
-            .get_output(context);
-        let node_agent_sku_id_binding = args.node_agent_sku_id.get_output(context);
-        let node_placements_binding = args.node_placements.get_output(context);
-        let os_disk_placement_binding = args.os_disk_placement.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let start_task_binding = args.start_task.get_output(context);
+            .get_output(ctx);
+        let license_type_binding = args.license_type.get_output(ctx);
+        let max_tasks_per_node_binding = args.max_tasks_per_node.get_output(ctx);
+        let metadata_binding = args.metadata.get_output(ctx);
+        let mounts_binding = args.mounts.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_configuration_binding = args.network_configuration.get_output(ctx);
+        let node_agent_sku_id_binding = args.node_agent_sku_id.get_output(ctx);
+        let node_placements_binding = args.node_placements.get_output(ctx);
+        let os_disk_placement_binding = args.os_disk_placement.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let start_task_binding = args.start_task.get_output(ctx);
         let stop_pending_resize_operation_binding = args
             .stop_pending_resize_operation
-            .get_output(context);
+            .get_output(ctx);
         let storage_image_reference_binding = args
             .storage_image_reference
-            .get_output(context);
+            .get_output(ctx);
         let target_node_communication_mode_binding = args
             .target_node_communication_mode
-            .get_output(context);
+            .get_output(ctx);
         let task_scheduling_policies_binding = args
             .task_scheduling_policies
-            .get_output(context);
-        let user_accounts_binding = args.user_accounts.get_output(context);
-        let vm_size_binding = args.vm_size.get_output(context);
-        let windows_binding = args.windows.get_output(context);
+            .get_output(ctx);
+        let user_accounts_binding = args.user_accounts.get_output(ctx);
+        let vm_size_binding = args.vm_size.get_output(ctx);
+        let windows_binding = args.windows.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:batch/pool:Pool".into(),
             name: name.to_string(),
@@ -540,7 +538,7 @@ pub mod pool {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         PoolResult {
             id: o.get_id(),
             urn: o.get_urn(),

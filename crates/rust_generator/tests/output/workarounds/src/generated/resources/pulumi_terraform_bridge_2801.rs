@@ -27,32 +27,32 @@ pub mod pulumi_terraform_bridge_2801 {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PulumiTerraformBridge2801Args,
     ) -> PulumiTerraformBridge2801Result {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PulumiTerraformBridge2801Args,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> PulumiTerraformBridge2801Result {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PulumiTerraformBridge2801Args,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> PulumiTerraformBridge2801Result {
-        let type__binding = args.type_.get_output(context);
+        let type__binding = args.type_.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "example:index:PulumiTerraformBridge2801".into(),
             name: name.to_string(),
@@ -65,7 +65,7 @@ pub mod pulumi_terraform_bridge_2801 {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         PulumiTerraformBridge2801Result {
             id: o.get_id(),
             urn: o.get_urn(),

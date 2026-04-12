@@ -204,44 +204,44 @@ pub mod certificate_issuance_config {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CertificateIssuanceConfigArgs,
     ) -> CertificateIssuanceConfigResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CertificateIssuanceConfigArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> CertificateIssuanceConfigResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CertificateIssuanceConfigArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> CertificateIssuanceConfigResult {
         let certificate_authority_config_binding = args
             .certificate_authority_config
-            .get_output(context);
-        let description_binding = args.description.get_output(context);
-        let key_algorithm_binding = args.key_algorithm.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let lifetime_binding = args.lifetime.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
+            .get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let key_algorithm_binding = args.key_algorithm.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let lifetime_binding = args.lifetime.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let rotation_window_percentage_binding = args
             .rotation_window_percentage
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:certificatemanager/certificateIssuanceConfig:CertificateIssuanceConfig"
                 .into(),
@@ -287,7 +287,7 @@ pub mod certificate_issuance_config {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         CertificateIssuanceConfigResult {
             id: o.get_id(),
             urn: o.get_urn(),

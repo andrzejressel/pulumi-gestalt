@@ -60,22 +60,22 @@ pub mod get_logs {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetLogsArgs,
     ) -> GetLogsResult {
-        let details_binding = args.details.get_output(context);
-        let discard_headers_binding = args.discard_headers.get_output(context);
-        let follow_binding = args.follow.get_output(context);
+        let details_binding = args.details.get_output(ctx);
+        let discard_headers_binding = args.discard_headers.get_output(ctx);
+        let follow_binding = args.follow.get_output(ctx);
         let logs_list_string_enabled_binding = args
             .logs_list_string_enabled
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let show_stderr_binding = args.show_stderr.get_output(context);
-        let show_stdout_binding = args.show_stdout.get_output(context);
-        let since_binding = args.since.get_output(context);
-        let tail_binding = args.tail.get_output(context);
-        let timestamps_binding = args.timestamps.get_output(context);
-        let until_binding = args.until.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let show_stderr_binding = args.show_stderr.get_output(ctx);
+        let show_stdout_binding = args.show_stdout.get_output(ctx);
+        let since_binding = args.since.get_output(ctx);
+        let tail_binding = args.tail.get_output(ctx);
+        let timestamps_binding = args.timestamps.get_output(ctx);
+        let until_binding = args.until.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "docker:index/getLogs:getLogs".into(),
             version: super::super::get_version(),
@@ -126,7 +126,7 @@ pub mod get_logs {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetLogsResult {
             details: o.get_field("details"),
             discard_headers: o.get_field("discardHeaders"),

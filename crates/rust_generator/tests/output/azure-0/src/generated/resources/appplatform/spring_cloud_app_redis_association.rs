@@ -102,36 +102,36 @@ pub mod spring_cloud_app_redis_association {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SpringCloudAppRedisAssociationArgs,
     ) -> SpringCloudAppRedisAssociationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SpringCloudAppRedisAssociationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> SpringCloudAppRedisAssociationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SpringCloudAppRedisAssociationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> SpringCloudAppRedisAssociationResult {
-        let name_binding = args.name.get_output(context);
-        let redis_access_key_binding = args.redis_access_key.get_output(context);
-        let redis_cache_id_binding = args.redis_cache_id.get_output(context);
-        let spring_cloud_app_id_binding = args.spring_cloud_app_id.get_output(context);
-        let ssl_enabled_binding = args.ssl_enabled.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let redis_access_key_binding = args.redis_access_key.get_output(ctx);
+        let redis_cache_id_binding = args.redis_cache_id.get_output(ctx);
+        let spring_cloud_app_id_binding = args.spring_cloud_app_id.get_output(ctx);
+        let ssl_enabled_binding = args.ssl_enabled.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:appplatform/springCloudAppRedisAssociation:SpringCloudAppRedisAssociation"
                 .into(),
@@ -161,7 +161,7 @@ pub mod spring_cloud_app_redis_association {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         SpringCloudAppRedisAssociationResult {
             id: o.get_id(),
             urn: o.get_urn(),

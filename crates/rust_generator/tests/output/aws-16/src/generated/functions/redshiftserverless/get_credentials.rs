@@ -37,12 +37,12 @@ pub mod get_credentials {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetCredentialsArgs,
     ) -> GetCredentialsResult {
-        let db_name_binding = args.db_name.get_output(context);
-        let duration_seconds_binding = args.duration_seconds.get_output(context);
-        let workgroup_name_binding = args.workgroup_name.get_output(context);
+        let db_name_binding = args.db_name.get_output(ctx);
+        let duration_seconds_binding = args.duration_seconds.get_output(ctx);
+        let workgroup_name_binding = args.workgroup_name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:redshiftserverless/getCredentials:getCredentials".into(),
             version: super::super::super::get_version(),
@@ -61,7 +61,7 @@ pub mod get_credentials {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetCredentialsResult {
             db_name: o.get_field("dbName"),
             db_password: o.get_field("dbPassword"),

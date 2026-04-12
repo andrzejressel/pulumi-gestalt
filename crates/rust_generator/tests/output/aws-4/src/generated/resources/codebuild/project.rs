@@ -371,60 +371,56 @@ pub mod project {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProjectArgs,
     ) -> ProjectResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProjectArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ProjectResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProjectArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ProjectResult {
-        let artifacts_binding = args.artifacts.get_output(context);
-        let badge_enabled_binding = args.badge_enabled.get_output(context);
-        let build_batch_config_binding = args.build_batch_config.get_output(context);
-        let build_timeout_binding = args.build_timeout.get_output(context);
-        let cache_binding = args.cache.get_output(context);
-        let concurrent_build_limit_binding = args
-            .concurrent_build_limit
-            .get_output(context);
-        let description_binding = args.description.get_output(context);
-        let encryption_key_binding = args.encryption_key.get_output(context);
-        let environment_binding = args.environment.get_output(context);
-        let file_system_locations_binding = args
-            .file_system_locations
-            .get_output(context);
-        let logs_config_binding = args.logs_config.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_visibility_binding = args.project_visibility.get_output(context);
-        let queued_timeout_binding = args.queued_timeout.get_output(context);
-        let resource_access_role_binding = args.resource_access_role.get_output(context);
-        let secondary_artifacts_binding = args.secondary_artifacts.get_output(context);
+        let artifacts_binding = args.artifacts.get_output(ctx);
+        let badge_enabled_binding = args.badge_enabled.get_output(ctx);
+        let build_batch_config_binding = args.build_batch_config.get_output(ctx);
+        let build_timeout_binding = args.build_timeout.get_output(ctx);
+        let cache_binding = args.cache.get_output(ctx);
+        let concurrent_build_limit_binding = args.concurrent_build_limit.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let encryption_key_binding = args.encryption_key.get_output(ctx);
+        let environment_binding = args.environment.get_output(ctx);
+        let file_system_locations_binding = args.file_system_locations.get_output(ctx);
+        let logs_config_binding = args.logs_config.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_visibility_binding = args.project_visibility.get_output(ctx);
+        let queued_timeout_binding = args.queued_timeout.get_output(ctx);
+        let resource_access_role_binding = args.resource_access_role.get_output(ctx);
+        let secondary_artifacts_binding = args.secondary_artifacts.get_output(ctx);
         let secondary_source_versions_binding = args
             .secondary_source_versions
-            .get_output(context);
-        let secondary_sources_binding = args.secondary_sources.get_output(context);
-        let service_role_binding = args.service_role.get_output(context);
-        let source_binding = args.source.get_output(context);
-        let source_version_binding = args.source_version.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let vpc_config_binding = args.vpc_config.get_output(context);
+            .get_output(ctx);
+        let secondary_sources_binding = args.secondary_sources.get_output(ctx);
+        let service_role_binding = args.service_role.get_output(ctx);
+        let source_binding = args.source.get_output(ctx);
+        let source_version_binding = args.source_version.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let vpc_config_binding = args.vpc_config.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:codebuild/project:Project".into(),
             name: name.to_string(),
@@ -525,7 +521,7 @@ pub mod project {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ProjectResult {
             id: o.get_id(),
             urn: o.get_urn(),

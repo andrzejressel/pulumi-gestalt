@@ -105,36 +105,36 @@ pub mod network_manager_scope_connection {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkManagerScopeConnectionArgs,
     ) -> NetworkManagerScopeConnectionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkManagerScopeConnectionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> NetworkManagerScopeConnectionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkManagerScopeConnectionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> NetworkManagerScopeConnectionResult {
-        let description_binding = args.description.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_manager_id_binding = args.network_manager_id.get_output(context);
-        let target_scope_id_binding = args.target_scope_id.get_output(context);
-        let tenant_id_binding = args.tenant_id.get_output(context);
+        let description_binding = args.description.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_manager_id_binding = args.network_manager_id.get_output(ctx);
+        let target_scope_id_binding = args.target_scope_id.get_output(ctx);
+        let tenant_id_binding = args.tenant_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:network/networkManagerScopeConnection:NetworkManagerScopeConnection"
                 .into(),
@@ -164,7 +164,7 @@ pub mod network_manager_scope_connection {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         NetworkManagerScopeConnectionResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -60,12 +60,12 @@ pub mod get_thesaurus {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetThesaurusArgs,
     ) -> GetThesaurusResult {
-        let index_id_binding = args.index_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let thesaurus_id_binding = args.thesaurus_id.get_output(context);
+        let index_id_binding = args.index_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let thesaurus_id_binding = args.thesaurus_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:kendra/getThesaurus:getThesaurus".into(),
             version: super::super::super::get_version(),
@@ -84,7 +84,7 @@ pub mod get_thesaurus {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetThesaurusResult {
             arn: o.get_field("arn"),
             created_at: o.get_field("createdAt"),

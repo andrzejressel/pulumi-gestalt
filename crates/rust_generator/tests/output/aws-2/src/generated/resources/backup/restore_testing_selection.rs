@@ -124,51 +124,51 @@ pub mod restore_testing_selection {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RestoreTestingSelectionArgs,
     ) -> RestoreTestingSelectionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RestoreTestingSelectionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> RestoreTestingSelectionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RestoreTestingSelectionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> RestoreTestingSelectionResult {
-        let iam_role_arn_binding = args.iam_role_arn.get_output(context);
-        let name_binding = args.name.get_output(context);
+        let iam_role_arn_binding = args.iam_role_arn.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let protected_resource_arns_binding = args
             .protected_resource_arns
-            .get_output(context);
+            .get_output(ctx);
         let protected_resource_conditions_binding = args
             .protected_resource_conditions
-            .get_output(context);
+            .get_output(ctx);
         let protected_resource_type_binding = args
             .protected_resource_type
-            .get_output(context);
+            .get_output(ctx);
         let restore_metadata_overrides_binding = args
             .restore_metadata_overrides
-            .get_output(context);
+            .get_output(ctx);
         let restore_testing_plan_name_binding = args
             .restore_testing_plan_name
-            .get_output(context);
+            .get_output(ctx);
         let validation_window_hours_binding = args
             .validation_window_hours
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:backup/restoreTestingSelection:RestoreTestingSelection".into(),
             name: name.to_string(),
@@ -209,7 +209,7 @@ pub mod restore_testing_selection {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         RestoreTestingSelectionResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -36,12 +36,12 @@ pub mod get_testable_permissions {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetTestablePermissionsArgs,
     ) -> GetTestablePermissionsResult {
-        let custom_support_level_binding = args.custom_support_level.get_output(context);
-        let full_resource_name_binding = args.full_resource_name.get_output(context);
-        let stages_binding = args.stages.get_output(context);
+        let custom_support_level_binding = args.custom_support_level.get_output(ctx);
+        let full_resource_name_binding = args.full_resource_name.get_output(ctx);
+        let stages_binding = args.stages.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:iam/getTestablePermissions:getTestablePermissions".into(),
             version: super::super::super::get_version(),
@@ -60,7 +60,7 @@ pub mod get_testable_permissions {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetTestablePermissionsResult {
             custom_support_level: o.get_field("customSupportLevel"),
             full_resource_name: o.get_field("fullResourceName"),

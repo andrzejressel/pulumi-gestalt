@@ -155,40 +155,40 @@ pub mod voice_connector_streaming {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VoiceConnectorStreamingArgs,
     ) -> VoiceConnectorStreamingResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VoiceConnectorStreamingArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> VoiceConnectorStreamingResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VoiceConnectorStreamingArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> VoiceConnectorStreamingResult {
-        let data_retention_binding = args.data_retention.get_output(context);
-        let disabled_binding = args.disabled.get_output(context);
+        let data_retention_binding = args.data_retention.get_output(ctx);
+        let disabled_binding = args.disabled.get_output(ctx);
         let media_insights_configuration_binding = args
             .media_insights_configuration
-            .get_output(context);
+            .get_output(ctx);
         let streaming_notification_targets_binding = args
             .streaming_notification_targets
-            .get_output(context);
-        let voice_connector_id_binding = args.voice_connector_id.get_output(context);
+            .get_output(ctx);
+        let voice_connector_id_binding = args.voice_connector_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:chime/voiceConnectorStreaming:VoiceConnectorStreaming".into(),
             name: name.to_string(),
@@ -217,7 +217,7 @@ pub mod voice_connector_streaming {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         VoiceConnectorStreamingResult {
             id: o.get_id(),
             urn: o.get_urn(),

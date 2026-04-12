@@ -132,50 +132,48 @@ pub mod rest_api {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RestApiArgs,
     ) -> RestApiResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RestApiArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> RestApiResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RestApiArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> RestApiResult {
-        let api_key_source_binding = args.api_key_source.get_output(context);
-        let binary_media_types_binding = args.binary_media_types.get_output(context);
-        let body_binding = args.body.get_output(context);
-        let description_binding = args.description.get_output(context);
+        let api_key_source_binding = args.api_key_source.get_output(ctx);
+        let binary_media_types_binding = args.binary_media_types.get_output(ctx);
+        let body_binding = args.body.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
         let disable_execute_api_endpoint_binding = args
             .disable_execute_api_endpoint
-            .get_output(context);
-        let endpoint_configuration_binding = args
-            .endpoint_configuration
-            .get_output(context);
-        let fail_on_warnings_binding = args.fail_on_warnings.get_output(context);
+            .get_output(ctx);
+        let endpoint_configuration_binding = args.endpoint_configuration.get_output(ctx);
+        let fail_on_warnings_binding = args.fail_on_warnings.get_output(ctx);
         let minimum_compression_size_binding = args
             .minimum_compression_size
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let parameters_binding = args.parameters.get_output(context);
-        let policy_binding = args.policy.get_output(context);
-        let put_rest_api_mode_binding = args.put_rest_api_mode.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let parameters_binding = args.parameters.get_output(ctx);
+        let policy_binding = args.policy.get_output(ctx);
+        let put_rest_api_mode_binding = args.put_rest_api_mode.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:apigateway/restApi:RestApi".into(),
             name: name.to_string(),
@@ -236,7 +234,7 @@ pub mod rest_api {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         RestApiResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -33,10 +33,10 @@ pub mod get_origin_access_control {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetOriginAccessControlArgs,
     ) -> GetOriginAccessControlResult {
-        let id_binding = args.id.get_output(context);
+        let id_binding = args.id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:cloudfront/getOriginAccessControl:getOriginAccessControl".into(),
             version: super::super::super::get_version(),
@@ -47,7 +47,7 @@ pub mod get_origin_access_control {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetOriginAccessControlResult {
             description: o.get_field("description"),
             etag: o.get_field("etag"),

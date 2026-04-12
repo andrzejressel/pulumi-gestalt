@@ -31,11 +31,11 @@ pub mod get_s_quota_infos {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetSQuotaInfosArgs,
     ) -> GetSQuotaInfosResult {
-        let parent_binding = args.parent.get_output(context);
-        let service_binding = args.service.get_output(context);
+        let parent_binding = args.parent.get_output(ctx);
+        let service_binding = args.service.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:cloudquota/getSQuotaInfos:getSQuotaInfos".into(),
             version: super::super::super::get_version(),
@@ -50,7 +50,7 @@ pub mod get_s_quota_infos {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetSQuotaInfosResult {
             id: o.get_field("id"),
             parent: o.get_field("parent"),

@@ -120,39 +120,39 @@ pub mod application_version {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ApplicationVersionArgs,
     ) -> ApplicationVersionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ApplicationVersionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ApplicationVersionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ApplicationVersionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ApplicationVersionResult {
-        let application_binding = args.application.get_output(context);
-        let bucket_binding = args.bucket.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let force_delete_binding = args.force_delete.get_output(context);
-        let key_binding = args.key.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let process_binding = args.process.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let application_binding = args.application.get_output(ctx);
+        let bucket_binding = args.bucket.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let force_delete_binding = args.force_delete.get_output(ctx);
+        let key_binding = args.key.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let process_binding = args.process.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:elasticbeanstalk/applicationVersion:ApplicationVersion".into(),
             name: name.to_string(),
@@ -193,7 +193,7 @@ pub mod application_version {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ApplicationVersionResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -202,57 +202,57 @@ pub mod agent_agent {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AgentAgentArgs,
     ) -> AgentAgentResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AgentAgentArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AgentAgentResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AgentAgentArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AgentAgentResult {
-        let agent_collaboration_binding = args.agent_collaboration.get_output(context);
-        let agent_name_binding = args.agent_name.get_output(context);
+        let agent_collaboration_binding = args.agent_collaboration.get_output(ctx);
+        let agent_name_binding = args.agent_name.get_output(ctx);
         let agent_resource_role_arn_binding = args
             .agent_resource_role_arn
-            .get_output(context);
+            .get_output(ctx);
         let customer_encryption_key_arn_binding = args
             .customer_encryption_key_arn
-            .get_output(context);
-        let description_binding = args.description.get_output(context);
-        let foundation_model_binding = args.foundation_model.get_output(context);
+            .get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let foundation_model_binding = args.foundation_model.get_output(ctx);
         let guardrail_configurations_binding = args
             .guardrail_configurations
-            .get_output(context);
+            .get_output(ctx);
         let idle_session_ttl_in_seconds_binding = args
             .idle_session_ttl_in_seconds
-            .get_output(context);
-        let instruction_binding = args.instruction.get_output(context);
-        let prepare_agent_binding = args.prepare_agent.get_output(context);
+            .get_output(ctx);
+        let instruction_binding = args.instruction.get_output(ctx);
+        let prepare_agent_binding = args.prepare_agent.get_output(ctx);
         let prompt_override_configurations_binding = args
             .prompt_override_configurations
-            .get_output(context);
+            .get_output(ctx);
         let skip_resource_in_use_check_binding = args
             .skip_resource_in_use_check
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let timeouts_binding = args.timeouts.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let timeouts_binding = args.timeouts.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:bedrock/agentAgent:AgentAgent".into(),
             name: name.to_string(),
@@ -317,7 +317,7 @@ pub mod agent_agent {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AgentAgentResult {
             id: o.get_id(),
             urn: o.get_urn(),

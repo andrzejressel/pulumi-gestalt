@@ -97,44 +97,42 @@ pub mod hsm_configuration {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: HsmConfigurationArgs,
     ) -> HsmConfigurationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: HsmConfigurationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> HsmConfigurationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: HsmConfigurationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> HsmConfigurationResult {
-        let description_binding = args.description.get_output(context);
+        let description_binding = args.description.get_output(ctx);
         let hsm_configuration_identifier_binding = args
             .hsm_configuration_identifier
-            .get_output(context);
-        let hsm_ip_address_binding = args.hsm_ip_address.get_output(context);
-        let hsm_partition_name_binding = args.hsm_partition_name.get_output(context);
-        let hsm_partition_password_binding = args
-            .hsm_partition_password
-            .get_output(context);
+            .get_output(ctx);
+        let hsm_ip_address_binding = args.hsm_ip_address.get_output(ctx);
+        let hsm_partition_name_binding = args.hsm_partition_name.get_output(ctx);
+        let hsm_partition_password_binding = args.hsm_partition_password.get_output(ctx);
         let hsm_server_public_certificate_binding = args
             .hsm_server_public_certificate
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:redshift/hsmConfiguration:HsmConfiguration".into(),
             name: name.to_string(),
@@ -171,7 +169,7 @@ pub mod hsm_configuration {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         HsmConfigurationResult {
             id: o.get_id(),
             urn: o.get_urn(),

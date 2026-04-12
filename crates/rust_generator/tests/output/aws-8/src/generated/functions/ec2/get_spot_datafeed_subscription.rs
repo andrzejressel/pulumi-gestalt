@@ -18,7 +18,7 @@ pub mod get_spot_datafeed_subscription {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
     ) -> GetSpotDatafeedSubscriptionResult {
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ec2/getSpotDatafeedSubscription:getSpotDatafeedSubscription"
@@ -26,7 +26,7 @@ pub mod get_spot_datafeed_subscription {
             version: super::super::super::get_version(),
             object: &[],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetSpotDatafeedSubscriptionResult {
             bucket: o.get_field("bucket"),
             id: o.get_field("id"),

@@ -169,14 +169,14 @@ pub mod get_instance_template {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetInstanceTemplateArgs,
     ) -> GetInstanceTemplateResult {
-        let filter_binding = args.filter.get_output(context);
-        let most_recent_binding = args.most_recent.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let self_link_unique_binding = args.self_link_unique.get_output(context);
+        let filter_binding = args.filter.get_output(ctx);
+        let most_recent_binding = args.most_recent.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let self_link_unique_binding = args.self_link_unique.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:compute/getInstanceTemplate:getInstanceTemplate".into(),
             version: super::super::super::get_version(),
@@ -203,7 +203,7 @@ pub mod get_instance_template {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetInstanceTemplateResult {
             advanced_machine_features: o.get_field("advancedMachineFeatures"),
             can_ip_forward: o.get_field("canIpForward"),

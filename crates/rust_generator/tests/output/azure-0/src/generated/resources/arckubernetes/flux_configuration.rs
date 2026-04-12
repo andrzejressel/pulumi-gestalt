@@ -146,42 +146,42 @@ pub mod flux_configuration {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FluxConfigurationArgs,
     ) -> FluxConfigurationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FluxConfigurationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> FluxConfigurationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FluxConfigurationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> FluxConfigurationResult {
-        let blob_storage_binding = args.blob_storage.get_output(context);
-        let bucket_binding = args.bucket.get_output(context);
-        let cluster_id_binding = args.cluster_id.get_output(context);
+        let blob_storage_binding = args.blob_storage.get_output(ctx);
+        let bucket_binding = args.bucket.get_output(ctx);
+        let cluster_id_binding = args.cluster_id.get_output(ctx);
         let continuous_reconciliation_enabled_binding = args
             .continuous_reconciliation_enabled
-            .get_output(context);
-        let git_repository_binding = args.git_repository.get_output(context);
-        let kustomizations_binding = args.kustomizations.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let namespace_binding = args.namespace.get_output(context);
-        let scope_binding = args.scope.get_output(context);
+            .get_output(ctx);
+        let git_repository_binding = args.git_repository.get_output(ctx);
+        let kustomizations_binding = args.kustomizations.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let namespace_binding = args.namespace.get_output(ctx);
+        let scope_binding = args.scope.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:arckubernetes/fluxConfiguration:FluxConfiguration".into(),
             name: name.to_string(),
@@ -226,7 +226,7 @@ pub mod flux_configuration {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         FluxConfigurationResult {
             id: o.get_id(),
             urn: o.get_urn(),

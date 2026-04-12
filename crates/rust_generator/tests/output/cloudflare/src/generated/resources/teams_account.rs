@@ -244,56 +244,56 @@ pub mod teams_account {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TeamsAccountArgs,
     ) -> TeamsAccountResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TeamsAccountArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> TeamsAccountResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TeamsAccountArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> TeamsAccountResult {
-        let account_id_binding = args.account_id.get_output(context);
-        let activity_log_enabled_binding = args.activity_log_enabled.get_output(context);
-        let antivirus_binding = args.antivirus.get_output(context);
-        let block_page_binding = args.block_page.get_output(context);
-        let body_scanning_binding = args.body_scanning.get_output(context);
-        let certificate_binding = args.certificate.get_output(context);
-        let custom_certificate_binding = args.custom_certificate.get_output(context);
+        let account_id_binding = args.account_id.get_output(ctx);
+        let activity_log_enabled_binding = args.activity_log_enabled.get_output(ctx);
+        let antivirus_binding = args.antivirus.get_output(ctx);
+        let block_page_binding = args.block_page.get_output(ctx);
+        let body_scanning_binding = args.body_scanning.get_output(ctx);
+        let certificate_binding = args.certificate.get_output(ctx);
+        let custom_certificate_binding = args.custom_certificate.get_output(ctx);
         let extended_email_matching_binding = args
             .extended_email_matching
-            .get_output(context);
-        let fips_binding = args.fips.get_output(context);
-        let logging_binding = args.logging.get_output(context);
+            .get_output(ctx);
+        let fips_binding = args.fips.get_output(ctx);
+        let logging_binding = args.logging.get_output(ctx);
         let non_identity_browser_isolation_enabled_binding = args
             .non_identity_browser_isolation_enabled
-            .get_output(context);
-        let payload_log_binding = args.payload_log.get_output(context);
+            .get_output(ctx);
+        let payload_log_binding = args.payload_log.get_output(ctx);
         let protocol_detection_enabled_binding = args
             .protocol_detection_enabled
-            .get_output(context);
-        let proxy_binding = args.proxy.get_output(context);
-        let ssh_session_log_binding = args.ssh_session_log.get_output(context);
-        let tls_decrypt_enabled_binding = args.tls_decrypt_enabled.get_output(context);
+            .get_output(ctx);
+        let proxy_binding = args.proxy.get_output(ctx);
+        let ssh_session_log_binding = args.ssh_session_log.get_output(ctx);
+        let tls_decrypt_enabled_binding = args.tls_decrypt_enabled.get_output(ctx);
         let url_browser_isolation_enabled_binding = args
             .url_browser_isolation_enabled
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "cloudflare:index/teamsAccount:TeamsAccount".into(),
             name: name.to_string(),
@@ -370,7 +370,7 @@ pub mod teams_account {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         TeamsAccountResult {
             id: o.get_id(),
             urn: o.get_urn(),

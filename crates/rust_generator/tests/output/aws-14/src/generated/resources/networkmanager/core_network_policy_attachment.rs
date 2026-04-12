@@ -96,33 +96,33 @@ pub mod core_network_policy_attachment {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CoreNetworkPolicyAttachmentArgs,
     ) -> CoreNetworkPolicyAttachmentResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CoreNetworkPolicyAttachmentArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> CoreNetworkPolicyAttachmentResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CoreNetworkPolicyAttachmentArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> CoreNetworkPolicyAttachmentResult {
-        let core_network_id_binding = args.core_network_id.get_output(context);
-        let policy_document_binding = args.policy_document.get_output(context);
+        let core_network_id_binding = args.core_network_id.get_output(ctx);
+        let policy_document_binding = args.policy_document.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:networkmanager/coreNetworkPolicyAttachment:CoreNetworkPolicyAttachment"
                 .into(),
@@ -140,7 +140,7 @@ pub mod core_network_policy_attachment {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         CoreNetworkPolicyAttachmentResult {
             id: o.get_id(),
             urn: o.get_urn(),

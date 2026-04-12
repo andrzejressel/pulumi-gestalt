@@ -228,44 +228,42 @@ pub mod autonomous_database {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AutonomousDatabaseArgs,
     ) -> AutonomousDatabaseResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AutonomousDatabaseArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AutonomousDatabaseResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AutonomousDatabaseArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AutonomousDatabaseResult {
-        let admin_password_binding = args.admin_password.get_output(context);
-        let autonomous_database_id_binding = args
-            .autonomous_database_id
-            .get_output(context);
-        let cidr_binding = args.cidr.get_output(context);
-        let database_binding = args.database.get_output(context);
-        let deletion_protection_binding = args.deletion_protection.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let network_binding = args.network.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let properties_binding = args.properties.get_output(context);
+        let admin_password_binding = args.admin_password.get_output(ctx);
+        let autonomous_database_id_binding = args.autonomous_database_id.get_output(ctx);
+        let cidr_binding = args.cidr.get_output(ctx);
+        let database_binding = args.database.get_output(ctx);
+        let deletion_protection_binding = args.deletion_protection.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let network_binding = args.network.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let properties_binding = args.properties.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:oracledatabase/autonomousDatabase:AutonomousDatabase".into(),
             name: name.to_string(),
@@ -318,7 +316,7 @@ pub mod autonomous_database {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AutonomousDatabaseResult {
             id: o.get_id(),
             urn: o.get_urn(),

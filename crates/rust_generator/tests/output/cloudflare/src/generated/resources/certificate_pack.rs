@@ -88,45 +88,41 @@ pub mod certificate_pack {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CertificatePackArgs,
     ) -> CertificatePackResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CertificatePackArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> CertificatePackResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CertificatePackArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> CertificatePackResult {
-        let certificate_authority_binding = args
-            .certificate_authority
-            .get_output(context);
-        let cloudflare_branding_binding = args.cloudflare_branding.get_output(context);
-        let hosts_binding = args.hosts.get_output(context);
-        let type__binding = args.type_.get_output(context);
-        let validation_errors_binding = args.validation_errors.get_output(context);
-        let validation_method_binding = args.validation_method.get_output(context);
-        let validation_records_binding = args.validation_records.get_output(context);
-        let validity_days_binding = args.validity_days.get_output(context);
-        let wait_for_active_status_binding = args
-            .wait_for_active_status
-            .get_output(context);
-        let zone_id_binding = args.zone_id.get_output(context);
+        let certificate_authority_binding = args.certificate_authority.get_output(ctx);
+        let cloudflare_branding_binding = args.cloudflare_branding.get_output(ctx);
+        let hosts_binding = args.hosts.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
+        let validation_errors_binding = args.validation_errors.get_output(ctx);
+        let validation_method_binding = args.validation_method.get_output(ctx);
+        let validation_records_binding = args.validation_records.get_output(ctx);
+        let validity_days_binding = args.validity_days.get_output(ctx);
+        let wait_for_active_status_binding = args.wait_for_active_status.get_output(ctx);
+        let zone_id_binding = args.zone_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "cloudflare:index/certificatePack:CertificatePack".into(),
             name: name.to_string(),
@@ -175,7 +171,7 @@ pub mod certificate_pack {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         CertificatePackResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -901,58 +901,58 @@ pub mod trigger {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TriggerArgs,
     ) -> TriggerResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TriggerArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> TriggerResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TriggerArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> TriggerResult {
-        let approval_config_binding = args.approval_config.get_output(context);
+        let approval_config_binding = args.approval_config.get_output(ctx);
         let bitbucket_server_trigger_config_binding = args
             .bitbucket_server_trigger_config
-            .get_output(context);
-        let build_binding = args.build.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let disabled_binding = args.disabled.get_output(context);
-        let filename_binding = args.filename.get_output(context);
-        let filter_binding = args.filter.get_output(context);
-        let git_file_source_binding = args.git_file_source.get_output(context);
-        let github_binding = args.github.get_output(context);
-        let ignored_files_binding = args.ignored_files.get_output(context);
-        let include_build_logs_binding = args.include_build_logs.get_output(context);
-        let included_files_binding = args.included_files.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let pubsub_config_binding = args.pubsub_config.get_output(context);
+            .get_output(ctx);
+        let build_binding = args.build.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let disabled_binding = args.disabled.get_output(ctx);
+        let filename_binding = args.filename.get_output(ctx);
+        let filter_binding = args.filter.get_output(ctx);
+        let git_file_source_binding = args.git_file_source.get_output(ctx);
+        let github_binding = args.github.get_output(ctx);
+        let ignored_files_binding = args.ignored_files.get_output(ctx);
+        let include_build_logs_binding = args.include_build_logs.get_output(ctx);
+        let included_files_binding = args.included_files.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let pubsub_config_binding = args.pubsub_config.get_output(ctx);
         let repository_event_config_binding = args
             .repository_event_config
-            .get_output(context);
-        let service_account_binding = args.service_account.get_output(context);
-        let source_to_build_binding = args.source_to_build.get_output(context);
-        let substitutions_binding = args.substitutions.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let trigger_template_binding = args.trigger_template.get_output(context);
-        let webhook_config_binding = args.webhook_config.get_output(context);
+            .get_output(ctx);
+        let service_account_binding = args.service_account.get_output(ctx);
+        let source_to_build_binding = args.source_to_build.get_output(ctx);
+        let substitutions_binding = args.substitutions.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let trigger_template_binding = args.trigger_template.get_output(ctx);
+        let webhook_config_binding = args.webhook_config.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:cloudbuild/trigger:Trigger".into(),
             name: name.to_string(),
@@ -1053,7 +1053,7 @@ pub mod trigger {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         TriggerResult {
             id: o.get_id(),
             urn: o.get_urn(),

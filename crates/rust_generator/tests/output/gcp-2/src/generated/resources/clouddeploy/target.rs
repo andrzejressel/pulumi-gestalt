@@ -286,46 +286,46 @@ pub mod target {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TargetArgs,
     ) -> TargetResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TargetArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> TargetResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TargetArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> TargetResult {
-        let annotations_binding = args.annotations.get_output(context);
-        let anthos_cluster_binding = args.anthos_cluster.get_output(context);
-        let associated_entities_binding = args.associated_entities.get_output(context);
-        let custom_target_binding = args.custom_target.get_output(context);
-        let deploy_parameters_binding = args.deploy_parameters.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let execution_configs_binding = args.execution_configs.get_output(context);
-        let gke_binding = args.gke.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let multi_target_binding = args.multi_target.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let require_approval_binding = args.require_approval.get_output(context);
-        let run_binding = args.run.get_output(context);
+        let annotations_binding = args.annotations.get_output(ctx);
+        let anthos_cluster_binding = args.anthos_cluster.get_output(ctx);
+        let associated_entities_binding = args.associated_entities.get_output(ctx);
+        let custom_target_binding = args.custom_target.get_output(ctx);
+        let deploy_parameters_binding = args.deploy_parameters.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let execution_configs_binding = args.execution_configs.get_output(ctx);
+        let gke_binding = args.gke.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let multi_target_binding = args.multi_target.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let require_approval_binding = args.require_approval.get_output(ctx);
+        let run_binding = args.run.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:clouddeploy/target:Target".into(),
             name: name.to_string(),
@@ -394,7 +394,7 @@ pub mod target {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         TargetResult {
             id: o.get_id(),
             urn: o.get_urn(),

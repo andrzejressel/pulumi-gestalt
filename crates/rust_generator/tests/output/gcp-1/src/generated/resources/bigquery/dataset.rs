@@ -512,65 +512,61 @@ pub mod dataset {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DatasetArgs,
     ) -> DatasetResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DatasetArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DatasetResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DatasetArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DatasetResult {
-        let accesses_binding = args.accesses.get_output(context);
-        let dataset_id_binding = args.dataset_id.get_output(context);
-        let default_collation_binding = args.default_collation.get_output(context);
+        let accesses_binding = args.accesses.get_output(ctx);
+        let dataset_id_binding = args.dataset_id.get_output(ctx);
+        let default_collation_binding = args.default_collation.get_output(ctx);
         let default_encryption_configuration_binding = args
             .default_encryption_configuration
-            .get_output(context);
+            .get_output(ctx);
         let default_partition_expiration_ms_binding = args
             .default_partition_expiration_ms
-            .get_output(context);
+            .get_output(ctx);
         let default_table_expiration_ms_binding = args
             .default_table_expiration_ms
-            .get_output(context);
+            .get_output(ctx);
         let delete_contents_on_destroy_binding = args
             .delete_contents_on_destroy
-            .get_output(context);
-        let description_binding = args.description.get_output(context);
+            .get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
         let external_catalog_dataset_options_binding = args
             .external_catalog_dataset_options
-            .get_output(context);
+            .get_output(ctx);
         let external_dataset_reference_binding = args
             .external_dataset_reference
-            .get_output(context);
-        let friendly_name_binding = args.friendly_name.get_output(context);
-        let is_case_insensitive_binding = args.is_case_insensitive.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let max_time_travel_hours_binding = args
-            .max_time_travel_hours
-            .get_output(context);
-        let project_binding = args.project.get_output(context);
-        let resource_tags_binding = args.resource_tags.get_output(context);
-        let storage_billing_model_binding = args
-            .storage_billing_model
-            .get_output(context);
+            .get_output(ctx);
+        let friendly_name_binding = args.friendly_name.get_output(ctx);
+        let is_case_insensitive_binding = args.is_case_insensitive.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let max_time_travel_hours_binding = args.max_time_travel_hours.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let resource_tags_binding = args.resource_tags.get_output(ctx);
+        let storage_billing_model_binding = args.storage_billing_model.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:bigquery/dataset:Dataset".into(),
             name: name.to_string(),
@@ -651,7 +647,7 @@ pub mod dataset {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DatasetResult {
             id: o.get_id(),
             urn: o.get_urn(),

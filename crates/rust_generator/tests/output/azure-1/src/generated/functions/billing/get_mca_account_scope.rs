@@ -31,12 +31,12 @@ pub mod get_mca_account_scope {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetMcaAccountScopeArgs,
     ) -> GetMcaAccountScopeResult {
-        let billing_account_name_binding = args.billing_account_name.get_output(context);
-        let billing_profile_name_binding = args.billing_profile_name.get_output(context);
-        let invoice_section_name_binding = args.invoice_section_name.get_output(context);
+        let billing_account_name_binding = args.billing_account_name.get_output(ctx);
+        let billing_profile_name_binding = args.billing_profile_name.get_output(ctx);
+        let invoice_section_name_binding = args.invoice_section_name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:billing/getMcaAccountScope:getMcaAccountScope".into(),
             version: super::super::super::get_version(),
@@ -55,7 +55,7 @@ pub mod get_mca_account_scope {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetMcaAccountScopeResult {
             billing_account_name: o.get_field("billingAccountName"),
             billing_profile_name: o.get_field("billingProfileName"),

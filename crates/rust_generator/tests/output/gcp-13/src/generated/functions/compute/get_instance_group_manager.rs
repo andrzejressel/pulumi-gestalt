@@ -97,13 +97,13 @@ pub mod get_instance_group_manager {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetInstanceGroupManagerArgs,
     ) -> GetInstanceGroupManagerResult {
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let self_link_binding = args.self_link.get_output(context);
-        let zone_binding = args.zone.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let self_link_binding = args.self_link.get_output(ctx);
+        let zone_binding = args.zone.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:compute/getInstanceGroupManager:getInstanceGroupManager".into(),
             version: super::super::super::get_version(),
@@ -126,7 +126,7 @@ pub mod get_instance_group_manager {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetInstanceGroupManagerResult {
             all_instances_configs: o.get_field("allInstancesConfigs"),
             auto_healing_policies: o.get_field("autoHealingPolicies"),

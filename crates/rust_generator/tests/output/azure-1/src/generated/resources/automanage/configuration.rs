@@ -179,58 +179,56 @@ pub mod configuration {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ConfigurationArgs,
     ) -> ConfigurationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ConfigurationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ConfigurationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ConfigurationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ConfigurationResult {
-        let antimalware_binding = args.antimalware.get_output(context);
+        let antimalware_binding = args.antimalware.get_output(ctx);
         let automation_account_enabled_binding = args
             .automation_account_enabled
-            .get_output(context);
+            .get_output(ctx);
         let azure_security_baseline_binding = args
             .azure_security_baseline
-            .get_output(context);
-        let backup_binding = args.backup.get_output(context);
+            .get_output(ctx);
+        let backup_binding = args.backup.get_output(ctx);
         let boot_diagnostics_enabled_binding = args
             .boot_diagnostics_enabled
-            .get_output(context);
+            .get_output(ctx);
         let defender_for_cloud_enabled_binding = args
             .defender_for_cloud_enabled
-            .get_output(context);
+            .get_output(ctx);
         let guest_configuration_enabled_binding = args
             .guest_configuration_enabled
-            .get_output(context);
-        let location_binding = args.location.get_output(context);
-        let log_analytics_enabled_binding = args
-            .log_analytics_enabled
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+            .get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let log_analytics_enabled_binding = args.log_analytics_enabled.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let status_change_alert_enabled_binding = args
             .status_change_alert_enabled
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:automanage/configuration:Configuration".into(),
             name: name.to_string(),
@@ -291,7 +289,7 @@ pub mod configuration {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ConfigurationResult {
             id: o.get_id(),
             urn: o.get_urn(),

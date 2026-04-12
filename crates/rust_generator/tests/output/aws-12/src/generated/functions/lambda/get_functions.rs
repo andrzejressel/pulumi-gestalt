@@ -17,13 +17,13 @@ pub mod get_functions {
     /// Registers a new resource with the given unique name and arguments
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
-    pub fn invoke(context: &pulumi_gestalt_rust::Context) -> GetFunctionsResult {
+    pub fn invoke(ctx: &pulumi_gestalt_rust::Context) -> GetFunctionsResult {
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:lambda/getFunctions:getFunctions".into(),
             version: super::super::super::get_version(),
             object: &[],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetFunctionsResult {
             function_arns: o.get_field("functionArns"),
             function_names: o.get_field("functionNames"),

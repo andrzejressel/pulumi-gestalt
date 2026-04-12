@@ -147,45 +147,43 @@ pub mod application {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ApplicationArgs,
     ) -> ApplicationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ApplicationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ApplicationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ApplicationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ApplicationResult {
-        let application_group_id_binding = args.application_group_id.get_output(context);
+        let application_group_id_binding = args.application_group_id.get_output(ctx);
         let command_line_argument_policy_binding = args
             .command_line_argument_policy
-            .get_output(context);
-        let command_line_arguments_binding = args
-            .command_line_arguments
-            .get_output(context);
-        let description_binding = args.description.get_output(context);
-        let friendly_name_binding = args.friendly_name.get_output(context);
-        let icon_index_binding = args.icon_index.get_output(context);
-        let icon_path_binding = args.icon_path.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let path_binding = args.path.get_output(context);
-        let show_in_portal_binding = args.show_in_portal.get_output(context);
+            .get_output(ctx);
+        let command_line_arguments_binding = args.command_line_arguments.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let friendly_name_binding = args.friendly_name.get_output(ctx);
+        let icon_index_binding = args.icon_index.get_output(ctx);
+        let icon_path_binding = args.icon_path.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let path_binding = args.path.get_output(ctx);
+        let show_in_portal_binding = args.show_in_portal.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:desktopvirtualization/application:Application".into(),
             name: name.to_string(),
@@ -234,7 +232,7 @@ pub mod application {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ApplicationResult {
             id: o.get_id(),
             urn: o.get_urn(),

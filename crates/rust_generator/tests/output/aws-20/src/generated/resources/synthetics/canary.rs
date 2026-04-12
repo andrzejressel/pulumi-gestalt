@@ -187,53 +187,53 @@ pub mod canary {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CanaryArgs,
     ) -> CanaryResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CanaryArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> CanaryResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CanaryArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> CanaryResult {
-        let artifact_config_binding = args.artifact_config.get_output(context);
-        let artifact_s3_location_binding = args.artifact_s3_location.get_output(context);
-        let delete_lambda_binding = args.delete_lambda.get_output(context);
-        let execution_role_arn_binding = args.execution_role_arn.get_output(context);
+        let artifact_config_binding = args.artifact_config.get_output(ctx);
+        let artifact_s3_location_binding = args.artifact_s3_location.get_output(ctx);
+        let delete_lambda_binding = args.delete_lambda.get_output(ctx);
+        let execution_role_arn_binding = args.execution_role_arn.get_output(ctx);
         let failure_retention_period_binding = args
             .failure_retention_period
-            .get_output(context);
-        let handler_binding = args.handler.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let run_config_binding = args.run_config.get_output(context);
-        let runtime_version_binding = args.runtime_version.get_output(context);
-        let s3_bucket_binding = args.s3_bucket.get_output(context);
-        let s3_key_binding = args.s3_key.get_output(context);
-        let s3_version_binding = args.s3_version.get_output(context);
-        let schedule_binding = args.schedule.get_output(context);
-        let start_canary_binding = args.start_canary.get_output(context);
+            .get_output(ctx);
+        let handler_binding = args.handler.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let run_config_binding = args.run_config.get_output(ctx);
+        let runtime_version_binding = args.runtime_version.get_output(ctx);
+        let s3_bucket_binding = args.s3_bucket.get_output(ctx);
+        let s3_key_binding = args.s3_key.get_output(ctx);
+        let s3_version_binding = args.s3_version.get_output(ctx);
+        let schedule_binding = args.schedule.get_output(ctx);
+        let start_canary_binding = args.start_canary.get_output(ctx);
         let success_retention_period_binding = args
             .success_retention_period
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let vpc_config_binding = args.vpc_config.get_output(context);
-        let zip_file_binding = args.zip_file.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let vpc_config_binding = args.vpc_config.get_output(ctx);
+        let zip_file_binding = args.zip_file.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:synthetics/canary:Canary".into(),
             name: name.to_string(),
@@ -314,7 +314,7 @@ pub mod canary {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         CanaryResult {
             id: o.get_id(),
             urn: o.get_urn(),

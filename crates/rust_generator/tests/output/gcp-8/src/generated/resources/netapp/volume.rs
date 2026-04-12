@@ -323,54 +323,54 @@ pub mod volume {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VolumeArgs,
     ) -> VolumeResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VolumeArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> VolumeResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VolumeArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> VolumeResult {
-        let backup_config_binding = args.backup_config.get_output(context);
-        let capacity_gib_binding = args.capacity_gib.get_output(context);
-        let deletion_policy_binding = args.deletion_policy.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let export_policy_binding = args.export_policy.get_output(context);
-        let kerberos_enabled_binding = args.kerberos_enabled.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let large_capacity_binding = args.large_capacity.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let multiple_endpoints_binding = args.multiple_endpoints.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let protocols_binding = args.protocols.get_output(context);
-        let restore_parameters_binding = args.restore_parameters.get_output(context);
-        let restricted_actions_binding = args.restricted_actions.get_output(context);
-        let security_style_binding = args.security_style.get_output(context);
-        let share_name_binding = args.share_name.get_output(context);
-        let smb_settings_binding = args.smb_settings.get_output(context);
-        let snapshot_directory_binding = args.snapshot_directory.get_output(context);
-        let snapshot_policy_binding = args.snapshot_policy.get_output(context);
-        let storage_pool_binding = args.storage_pool.get_output(context);
-        let tiering_policy_binding = args.tiering_policy.get_output(context);
-        let unix_permissions_binding = args.unix_permissions.get_output(context);
+        let backup_config_binding = args.backup_config.get_output(ctx);
+        let capacity_gib_binding = args.capacity_gib.get_output(ctx);
+        let deletion_policy_binding = args.deletion_policy.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let export_policy_binding = args.export_policy.get_output(ctx);
+        let kerberos_enabled_binding = args.kerberos_enabled.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let large_capacity_binding = args.large_capacity.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let multiple_endpoints_binding = args.multiple_endpoints.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let protocols_binding = args.protocols.get_output(ctx);
+        let restore_parameters_binding = args.restore_parameters.get_output(ctx);
+        let restricted_actions_binding = args.restricted_actions.get_output(ctx);
+        let security_style_binding = args.security_style.get_output(ctx);
+        let share_name_binding = args.share_name.get_output(ctx);
+        let smb_settings_binding = args.smb_settings.get_output(ctx);
+        let snapshot_directory_binding = args.snapshot_directory.get_output(ctx);
+        let snapshot_policy_binding = args.snapshot_policy.get_output(ctx);
+        let storage_pool_binding = args.storage_pool.get_output(ctx);
+        let tiering_policy_binding = args.tiering_policy.get_output(ctx);
+        let unix_permissions_binding = args.unix_permissions.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:netapp/volume:Volume".into(),
             name: name.to_string(),
@@ -471,7 +471,7 @@ pub mod volume {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         VolumeResult {
             id: o.get_id(),
             urn: o.get_urn(),

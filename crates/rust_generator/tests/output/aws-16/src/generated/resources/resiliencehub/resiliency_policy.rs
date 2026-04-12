@@ -122,40 +122,40 @@ pub mod resiliency_policy {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ResiliencyPolicyArgs,
     ) -> ResiliencyPolicyResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ResiliencyPolicyArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ResiliencyPolicyResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ResiliencyPolicyArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ResiliencyPolicyResult {
         let data_location_constraint_binding = args
             .data_location_constraint
-            .get_output(context);
-        let description_binding = args.description.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let policy_binding = args.policy.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let tier_binding = args.tier.get_output(context);
-        let timeouts_binding = args.timeouts.get_output(context);
+            .get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let policy_binding = args.policy.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let tier_binding = args.tier.get_output(ctx);
+        let timeouts_binding = args.timeouts.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:resiliencehub/resiliencyPolicy:ResiliencyPolicy".into(),
             name: name.to_string(),
@@ -192,7 +192,7 @@ pub mod resiliency_policy {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ResiliencyPolicyResult {
             id: o.get_id(),
             urn: o.get_urn(),

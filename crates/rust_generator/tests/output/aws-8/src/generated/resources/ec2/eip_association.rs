@@ -109,37 +109,37 @@ pub mod eip_association {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EipAssociationArgs,
     ) -> EipAssociationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EipAssociationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> EipAssociationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EipAssociationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> EipAssociationResult {
-        let allocation_id_binding = args.allocation_id.get_output(context);
-        let allow_reassociation_binding = args.allow_reassociation.get_output(context);
-        let instance_id_binding = args.instance_id.get_output(context);
-        let network_interface_id_binding = args.network_interface_id.get_output(context);
-        let private_ip_address_binding = args.private_ip_address.get_output(context);
-        let public_ip_binding = args.public_ip.get_output(context);
+        let allocation_id_binding = args.allocation_id.get_output(ctx);
+        let allow_reassociation_binding = args.allow_reassociation.get_output(ctx);
+        let instance_id_binding = args.instance_id.get_output(ctx);
+        let network_interface_id_binding = args.network_interface_id.get_output(ctx);
+        let private_ip_address_binding = args.private_ip_address.get_output(ctx);
+        let public_ip_binding = args.public_ip.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/eipAssociation:EipAssociation".into(),
             name: name.to_string(),
@@ -172,7 +172,7 @@ pub mod eip_association {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         EipAssociationResult {
             id: o.get_id(),
             urn: o.get_urn(),

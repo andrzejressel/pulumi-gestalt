@@ -41,11 +41,11 @@ pub mod get_folder {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetFolderArgs,
     ) -> GetFolderResult {
-        let folder_binding = args.folder.get_output(context);
-        let lookup_organization_binding = args.lookup_organization.get_output(context);
+        let folder_binding = args.folder.get_output(ctx);
+        let lookup_organization_binding = args.lookup_organization.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:organizations/getFolder:getFolder".into(),
             version: super::super::super::get_version(),
@@ -60,7 +60,7 @@ pub mod get_folder {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetFolderResult {
             create_time: o.get_field("createTime"),
             deletion_protection: o.get_field("deletionProtection"),

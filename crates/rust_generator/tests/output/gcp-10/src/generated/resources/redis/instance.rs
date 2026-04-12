@@ -554,58 +554,58 @@ pub mod instance {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceArgs,
     ) -> InstanceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> InstanceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> InstanceResult {
         let alternative_location_id_binding = args
             .alternative_location_id
-            .get_output(context);
-        let auth_enabled_binding = args.auth_enabled.get_output(context);
-        let authorized_network_binding = args.authorized_network.get_output(context);
-        let connect_mode_binding = args.connect_mode.get_output(context);
-        let customer_managed_key_binding = args.customer_managed_key.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let location_id_binding = args.location_id.get_output(context);
-        let maintenance_policy_binding = args.maintenance_policy.get_output(context);
-        let maintenance_version_binding = args.maintenance_version.get_output(context);
-        let memory_size_gb_binding = args.memory_size_gb.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let persistence_config_binding = args.persistence_config.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let read_replicas_mode_binding = args.read_replicas_mode.get_output(context);
-        let redis_configs_binding = args.redis_configs.get_output(context);
-        let redis_version_binding = args.redis_version.get_output(context);
-        let region_binding = args.region.get_output(context);
-        let replica_count_binding = args.replica_count.get_output(context);
-        let reserved_ip_range_binding = args.reserved_ip_range.get_output(context);
-        let secondary_ip_range_binding = args.secondary_ip_range.get_output(context);
-        let tier_binding = args.tier.get_output(context);
+            .get_output(ctx);
+        let auth_enabled_binding = args.auth_enabled.get_output(ctx);
+        let authorized_network_binding = args.authorized_network.get_output(ctx);
+        let connect_mode_binding = args.connect_mode.get_output(ctx);
+        let customer_managed_key_binding = args.customer_managed_key.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let location_id_binding = args.location_id.get_output(ctx);
+        let maintenance_policy_binding = args.maintenance_policy.get_output(ctx);
+        let maintenance_version_binding = args.maintenance_version.get_output(ctx);
+        let memory_size_gb_binding = args.memory_size_gb.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let persistence_config_binding = args.persistence_config.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let read_replicas_mode_binding = args.read_replicas_mode.get_output(ctx);
+        let redis_configs_binding = args.redis_configs.get_output(ctx);
+        let redis_version_binding = args.redis_version.get_output(ctx);
+        let region_binding = args.region.get_output(ctx);
+        let replica_count_binding = args.replica_count.get_output(ctx);
+        let reserved_ip_range_binding = args.reserved_ip_range.get_output(ctx);
+        let secondary_ip_range_binding = args.secondary_ip_range.get_output(ctx);
+        let tier_binding = args.tier.get_output(ctx);
         let transit_encryption_mode_binding = args
             .transit_encryption_mode
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:redis/instance:Instance".into(),
             name: name.to_string(),
@@ -706,7 +706,7 @@ pub mod instance {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         InstanceResult {
             id: o.get_id(),
             urn: o.get_urn(),

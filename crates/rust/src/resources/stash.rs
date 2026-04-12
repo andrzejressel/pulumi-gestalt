@@ -27,27 +27,27 @@ pub struct StashResult {
 }
 
 /// Registers a new stash resource with the given unique name and arguments.
-pub fn create(context: &Context, name: &str, args: StashArgs) -> StashResult {
-    __create(context, name, args, None)
+pub fn create(ctx: &Context, name: &str, args: StashArgs) -> StashResult {
+    __create(ctx, name, args, None)
 }
 
 /// Same as [`create`], but with additional generic options that control registration behavior.
 pub fn create_with_options(
-    context: &Context,
+    ctx: &Context,
     name: &str,
     args: StashArgs,
     options: CustomResourceOptions,
 ) -> StashResult {
-    __create(context, name, args, Some(options))
+    __create(ctx, name, args, Some(options))
 }
 
 fn __create(
-    context: &Context,
+    ctx: &Context,
     name: &str,
     args: StashArgs,
     options: Option<CustomResourceOptions>,
 ) -> StashResult {
-    let input_binding = args.input.get_output(context);
+    let input_binding = args.input.get_output(ctx);
     let request = RegisterResourceRequest {
         type_: "pulumi:index:Stash".into(),
         name: name.to_string(),
@@ -58,7 +58,7 @@ fn __create(
         }],
         options,
     };
-    let composite = context.register_resource(request);
+    let composite = ctx.register_resource(request);
 
     StashResult {
         id: composite.get_id(),

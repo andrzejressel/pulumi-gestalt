@@ -467,97 +467,95 @@ pub mod container {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ContainerArgs,
     ) -> ContainerResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ContainerArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ContainerResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ContainerArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ContainerResult {
-        let attach_binding = args.attach.get_output(context);
-        let capabilities_binding = args.capabilities.get_output(context);
-        let cgroupns_mode_binding = args.cgroupns_mode.get_output(context);
-        let command_binding = args.command.get_output(context);
+        let attach_binding = args.attach.get_output(ctx);
+        let capabilities_binding = args.capabilities.get_output(ctx);
+        let cgroupns_mode_binding = args.cgroupns_mode.get_output(ctx);
+        let command_binding = args.command.get_output(ctx);
         let container_read_refresh_timeout_milliseconds_binding = args
             .container_read_refresh_timeout_milliseconds
-            .get_output(context);
-        let cpu_set_binding = args.cpu_set.get_output(context);
-        let cpu_shares_binding = args.cpu_shares.get_output(context);
-        let destroy_grace_seconds_binding = args
-            .destroy_grace_seconds
-            .get_output(context);
-        let devices_binding = args.devices.get_output(context);
-        let dns_binding = args.dns.get_output(context);
-        let dns_opts_binding = args.dns_opts.get_output(context);
-        let dns_searches_binding = args.dns_searches.get_output(context);
-        let domainname_binding = args.domainname.get_output(context);
-        let entrypoints_binding = args.entrypoints.get_output(context);
-        let envs_binding = args.envs.get_output(context);
-        let gpus_binding = args.gpus.get_output(context);
-        let group_adds_binding = args.group_adds.get_output(context);
-        let healthcheck_binding = args.healthcheck.get_output(context);
-        let hostname_binding = args.hostname.get_output(context);
-        let hosts_binding = args.hosts.get_output(context);
-        let image_binding = args.image.get_output(context);
-        let init_binding = args.init.get_output(context);
-        let ipc_mode_binding = args.ipc_mode.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let log_driver_binding = args.log_driver.get_output(context);
-        let log_opts_binding = args.log_opts.get_output(context);
-        let logs_binding = args.logs.get_output(context);
-        let max_retry_count_binding = args.max_retry_count.get_output(context);
-        let memory_binding = args.memory.get_output(context);
-        let memory_swap_binding = args.memory_swap.get_output(context);
-        let mounts_binding = args.mounts.get_output(context);
-        let must_run_binding = args.must_run.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_mode_binding = args.network_mode.get_output(context);
-        let networks_advanced_binding = args.networks_advanced.get_output(context);
-        let pid_mode_binding = args.pid_mode.get_output(context);
-        let ports_binding = args.ports.get_output(context);
-        let privileged_binding = args.privileged.get_output(context);
-        let publish_all_ports_binding = args.publish_all_ports.get_output(context);
-        let read_only_binding = args.read_only.get_output(context);
-        let remove_volumes_binding = args.remove_volumes.get_output(context);
-        let restart_binding = args.restart.get_output(context);
-        let rm_binding = args.rm.get_output(context);
-        let runtime_binding = args.runtime.get_output(context);
-        let security_opts_binding = args.security_opts.get_output(context);
-        let shm_size_binding = args.shm_size.get_output(context);
-        let start_binding = args.start.get_output(context);
-        let stdin_open_binding = args.stdin_open.get_output(context);
-        let stop_signal_binding = args.stop_signal.get_output(context);
-        let stop_timeout_binding = args.stop_timeout.get_output(context);
-        let storage_opts_binding = args.storage_opts.get_output(context);
-        let sysctls_binding = args.sysctls.get_output(context);
-        let tmpfs_binding = args.tmpfs.get_output(context);
-        let tty_binding = args.tty.get_output(context);
-        let ulimits_binding = args.ulimits.get_output(context);
-        let uploads_binding = args.uploads.get_output(context);
-        let user_binding = args.user.get_output(context);
-        let userns_mode_binding = args.userns_mode.get_output(context);
-        let volumes_binding = args.volumes.get_output(context);
-        let wait_binding = args.wait.get_output(context);
-        let wait_timeout_binding = args.wait_timeout.get_output(context);
-        let working_dir_binding = args.working_dir.get_output(context);
+            .get_output(ctx);
+        let cpu_set_binding = args.cpu_set.get_output(ctx);
+        let cpu_shares_binding = args.cpu_shares.get_output(ctx);
+        let destroy_grace_seconds_binding = args.destroy_grace_seconds.get_output(ctx);
+        let devices_binding = args.devices.get_output(ctx);
+        let dns_binding = args.dns.get_output(ctx);
+        let dns_opts_binding = args.dns_opts.get_output(ctx);
+        let dns_searches_binding = args.dns_searches.get_output(ctx);
+        let domainname_binding = args.domainname.get_output(ctx);
+        let entrypoints_binding = args.entrypoints.get_output(ctx);
+        let envs_binding = args.envs.get_output(ctx);
+        let gpus_binding = args.gpus.get_output(ctx);
+        let group_adds_binding = args.group_adds.get_output(ctx);
+        let healthcheck_binding = args.healthcheck.get_output(ctx);
+        let hostname_binding = args.hostname.get_output(ctx);
+        let hosts_binding = args.hosts.get_output(ctx);
+        let image_binding = args.image.get_output(ctx);
+        let init_binding = args.init.get_output(ctx);
+        let ipc_mode_binding = args.ipc_mode.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let log_driver_binding = args.log_driver.get_output(ctx);
+        let log_opts_binding = args.log_opts.get_output(ctx);
+        let logs_binding = args.logs.get_output(ctx);
+        let max_retry_count_binding = args.max_retry_count.get_output(ctx);
+        let memory_binding = args.memory.get_output(ctx);
+        let memory_swap_binding = args.memory_swap.get_output(ctx);
+        let mounts_binding = args.mounts.get_output(ctx);
+        let must_run_binding = args.must_run.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_mode_binding = args.network_mode.get_output(ctx);
+        let networks_advanced_binding = args.networks_advanced.get_output(ctx);
+        let pid_mode_binding = args.pid_mode.get_output(ctx);
+        let ports_binding = args.ports.get_output(ctx);
+        let privileged_binding = args.privileged.get_output(ctx);
+        let publish_all_ports_binding = args.publish_all_ports.get_output(ctx);
+        let read_only_binding = args.read_only.get_output(ctx);
+        let remove_volumes_binding = args.remove_volumes.get_output(ctx);
+        let restart_binding = args.restart.get_output(ctx);
+        let rm_binding = args.rm.get_output(ctx);
+        let runtime_binding = args.runtime.get_output(ctx);
+        let security_opts_binding = args.security_opts.get_output(ctx);
+        let shm_size_binding = args.shm_size.get_output(ctx);
+        let start_binding = args.start.get_output(ctx);
+        let stdin_open_binding = args.stdin_open.get_output(ctx);
+        let stop_signal_binding = args.stop_signal.get_output(ctx);
+        let stop_timeout_binding = args.stop_timeout.get_output(ctx);
+        let storage_opts_binding = args.storage_opts.get_output(ctx);
+        let sysctls_binding = args.sysctls.get_output(ctx);
+        let tmpfs_binding = args.tmpfs.get_output(ctx);
+        let tty_binding = args.tty.get_output(ctx);
+        let ulimits_binding = args.ulimits.get_output(ctx);
+        let uploads_binding = args.uploads.get_output(ctx);
+        let user_binding = args.user.get_output(ctx);
+        let userns_mode_binding = args.userns_mode.get_output(ctx);
+        let volumes_binding = args.volumes.get_output(ctx);
+        let wait_binding = args.wait.get_output(ctx);
+        let wait_timeout_binding = args.wait_timeout.get_output(ctx);
+        let working_dir_binding = args.working_dir.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "docker:index/container:Container".into(),
             name: name.to_string(),
@@ -815,7 +813,7 @@ pub mod container {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ContainerResult {
             id: o.get_id(),
             urn: o.get_urn(),

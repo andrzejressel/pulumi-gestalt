@@ -319,52 +319,52 @@ pub mod flow_log {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FlowLogArgs,
     ) -> FlowLogResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FlowLogArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> FlowLogResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FlowLogArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> FlowLogResult {
         let deliver_cross_account_role_binding = args
             .deliver_cross_account_role
-            .get_output(context);
-        let destination_options_binding = args.destination_options.get_output(context);
-        let eni_id_binding = args.eni_id.get_output(context);
-        let iam_role_arn_binding = args.iam_role_arn.get_output(context);
-        let log_destination_binding = args.log_destination.get_output(context);
-        let log_destination_type_binding = args.log_destination_type.get_output(context);
-        let log_format_binding = args.log_format.get_output(context);
-        let log_group_name_binding = args.log_group_name.get_output(context);
+            .get_output(ctx);
+        let destination_options_binding = args.destination_options.get_output(ctx);
+        let eni_id_binding = args.eni_id.get_output(ctx);
+        let iam_role_arn_binding = args.iam_role_arn.get_output(ctx);
+        let log_destination_binding = args.log_destination.get_output(ctx);
+        let log_destination_type_binding = args.log_destination_type.get_output(ctx);
+        let log_format_binding = args.log_format.get_output(ctx);
+        let log_group_name_binding = args.log_group_name.get_output(ctx);
         let max_aggregation_interval_binding = args
             .max_aggregation_interval
-            .get_output(context);
-        let subnet_id_binding = args.subnet_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let traffic_type_binding = args.traffic_type.get_output(context);
+            .get_output(ctx);
+        let subnet_id_binding = args.subnet_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let traffic_type_binding = args.traffic_type.get_output(ctx);
         let transit_gateway_attachment_id_binding = args
             .transit_gateway_attachment_id
-            .get_output(context);
-        let transit_gateway_id_binding = args.transit_gateway_id.get_output(context);
-        let vpc_id_binding = args.vpc_id.get_output(context);
+            .get_output(ctx);
+        let transit_gateway_id_binding = args.transit_gateway_id.get_output(ctx);
+        let vpc_id_binding = args.vpc_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/flowLog:FlowLog".into(),
             name: name.to_string(),
@@ -433,7 +433,7 @@ pub mod flow_log {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         FlowLogResult {
             id: o.get_id(),
             urn: o.get_urn(),

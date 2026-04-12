@@ -135,42 +135,42 @@ pub mod failover_group {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FailoverGroupArgs,
     ) -> FailoverGroupResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FailoverGroupArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> FailoverGroupResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FailoverGroupArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> FailoverGroupResult {
-        let databases_binding = args.databases.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let partner_servers_binding = args.partner_servers.get_output(context);
+        let databases_binding = args.databases.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let partner_servers_binding = args.partner_servers.get_output(ctx);
         let read_write_endpoint_failover_policy_binding = args
             .read_write_endpoint_failover_policy
-            .get_output(context);
+            .get_output(ctx);
         let readonly_endpoint_failover_policy_enabled_binding = args
             .readonly_endpoint_failover_policy_enabled
-            .get_output(context);
-        let server_id_binding = args.server_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let server_id_binding = args.server_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:mssql/failoverGroup:FailoverGroup".into(),
             name: name.to_string(),
@@ -207,7 +207,7 @@ pub mod failover_group {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         FailoverGroupResult {
             id: o.get_id(),
             urn: o.get_urn(),

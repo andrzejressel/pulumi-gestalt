@@ -109,38 +109,38 @@ pub mod data_lake_gen_2_path {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataLakeGen2PathArgs,
     ) -> DataLakeGen2PathResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataLakeGen2PathArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DataLakeGen2PathResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataLakeGen2PathArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DataLakeGen2PathResult {
-        let aces_binding = args.aces.get_output(context);
-        let filesystem_name_binding = args.filesystem_name.get_output(context);
-        let group_binding = args.group.get_output(context);
-        let owner_binding = args.owner.get_output(context);
-        let path_binding = args.path.get_output(context);
-        let resource_binding = args.resource.get_output(context);
-        let storage_account_id_binding = args.storage_account_id.get_output(context);
+        let aces_binding = args.aces.get_output(ctx);
+        let filesystem_name_binding = args.filesystem_name.get_output(ctx);
+        let group_binding = args.group.get_output(ctx);
+        let owner_binding = args.owner.get_output(ctx);
+        let path_binding = args.path.get_output(ctx);
+        let resource_binding = args.resource.get_output(ctx);
+        let storage_account_id_binding = args.storage_account_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:storage/dataLakeGen2Path:DataLakeGen2Path".into(),
             name: name.to_string(),
@@ -177,7 +177,7 @@ pub mod data_lake_gen_2_path {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DataLakeGen2PathResult {
             id: o.get_id(),
             urn: o.get_urn(),

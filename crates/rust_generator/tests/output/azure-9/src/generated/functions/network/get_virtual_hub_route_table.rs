@@ -40,12 +40,12 @@ pub mod get_virtual_hub_route_table {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetVirtualHubRouteTableArgs,
     ) -> GetVirtualHubRouteTableResult {
-        let name_binding = args.name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let virtual_hub_name_binding = args.virtual_hub_name.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let virtual_hub_name_binding = args.virtual_hub_name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:network/getVirtualHubRouteTable:getVirtualHubRouteTable"
                 .into(),
@@ -65,7 +65,7 @@ pub mod get_virtual_hub_route_table {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetVirtualHubRouteTableResult {
             id: o.get_field("id"),
             labels: o.get_field("labels"),

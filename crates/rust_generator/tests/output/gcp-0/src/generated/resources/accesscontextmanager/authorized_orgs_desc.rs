@@ -166,39 +166,39 @@ pub mod authorized_orgs_desc {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AuthorizedOrgsDescArgs,
     ) -> AuthorizedOrgsDescResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AuthorizedOrgsDescArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AuthorizedOrgsDescResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AuthorizedOrgsDescArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AuthorizedOrgsDescResult {
-        let asset_type_binding = args.asset_type.get_output(context);
+        let asset_type_binding = args.asset_type.get_output(ctx);
         let authorization_direction_binding = args
             .authorization_direction
-            .get_output(context);
-        let authorization_type_binding = args.authorization_type.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let orgs_binding = args.orgs.get_output(context);
-        let parent_binding = args.parent.get_output(context);
+            .get_output(ctx);
+        let authorization_type_binding = args.authorization_type.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let orgs_binding = args.orgs.get_output(ctx);
+        let parent_binding = args.parent.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:accesscontextmanager/authorizedOrgsDesc:AuthorizedOrgsDesc"
                 .into(),
@@ -232,7 +232,7 @@ pub mod authorized_orgs_desc {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AuthorizedOrgsDescResult {
             id: o.get_id(),
             urn: o.get_urn(),

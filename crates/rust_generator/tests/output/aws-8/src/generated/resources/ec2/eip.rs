@@ -242,46 +242,46 @@ pub mod eip {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EipArgs,
     ) -> EipResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EipArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> EipResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EipArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> EipResult {
-        let address_binding = args.address.get_output(context);
+        let address_binding = args.address.get_output(ctx);
         let associate_with_private_ip_binding = args
             .associate_with_private_ip
-            .get_output(context);
+            .get_output(ctx);
         let customer_owned_ipv4_pool_binding = args
             .customer_owned_ipv4_pool
-            .get_output(context);
-        let domain_binding = args.domain.get_output(context);
-        let instance_binding = args.instance.get_output(context);
-        let ipam_pool_id_binding = args.ipam_pool_id.get_output(context);
-        let network_border_group_binding = args.network_border_group.get_output(context);
-        let network_interface_binding = args.network_interface.get_output(context);
-        let public_ipv4_pool_binding = args.public_ipv4_pool.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let vpc_binding = args.vpc.get_output(context);
+            .get_output(ctx);
+        let domain_binding = args.domain.get_output(ctx);
+        let instance_binding = args.instance.get_output(ctx);
+        let ipam_pool_id_binding = args.ipam_pool_id.get_output(ctx);
+        let network_border_group_binding = args.network_border_group.get_output(ctx);
+        let network_interface_binding = args.network_interface.get_output(ctx);
+        let public_ipv4_pool_binding = args.public_ipv4_pool.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let vpc_binding = args.vpc.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/eip:Eip".into(),
             name: name.to_string(),
@@ -334,7 +334,7 @@ pub mod eip {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         EipResult {
             id: o.get_id(),
             urn: o.get_urn(),

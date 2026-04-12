@@ -48,12 +48,12 @@ pub mod get_internet_gateway {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetInternetGatewayArgs,
     ) -> GetInternetGatewayResult {
-        let filters_binding = args.filters.get_output(context);
-        let internet_gateway_id_binding = args.internet_gateway_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let filters_binding = args.filters.get_output(ctx);
+        let internet_gateway_id_binding = args.internet_gateway_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ec2/getInternetGateway:getInternetGateway".into(),
             version: super::super::super::get_version(),
@@ -72,7 +72,7 @@ pub mod get_internet_gateway {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetInternetGatewayResult {
             arn: o.get_field("arn"),
             attachments: o.get_field("attachments"),

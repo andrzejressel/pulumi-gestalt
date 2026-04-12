@@ -71,39 +71,37 @@ pub mod custom_key_store {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CustomKeyStoreArgs,
     ) -> CustomKeyStoreResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CustomKeyStoreArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> CustomKeyStoreResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CustomKeyStoreArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> CustomKeyStoreResult {
-        let cloud_hsm_cluster_id_binding = args.cloud_hsm_cluster_id.get_output(context);
-        let custom_key_store_name_binding = args
-            .custom_key_store_name
-            .get_output(context);
-        let key_store_password_binding = args.key_store_password.get_output(context);
+        let cloud_hsm_cluster_id_binding = args.cloud_hsm_cluster_id.get_output(ctx);
+        let custom_key_store_name_binding = args.custom_key_store_name.get_output(ctx);
+        let key_store_password_binding = args.key_store_password.get_output(ctx);
         let trust_anchor_certificate_binding = args
             .trust_anchor_certificate
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:kms/customKeyStore:CustomKeyStore".into(),
             name: name.to_string(),
@@ -128,7 +126,7 @@ pub mod custom_key_store {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         CustomKeyStoreResult {
             id: o.get_id(),
             urn: o.get_urn(),

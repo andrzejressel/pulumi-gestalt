@@ -39,11 +39,11 @@ pub mod get_organization_policy {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetOrganizationPolicyArgs,
     ) -> GetOrganizationPolicyResult {
-        let constraint_binding = args.constraint.get_output(context);
-        let project_binding = args.project.get_output(context);
+        let constraint_binding = args.constraint.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:projects/getOrganizationPolicy:getOrganizationPolicy".into(),
             version: super::super::super::get_version(),
@@ -58,7 +58,7 @@ pub mod get_organization_policy {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetOrganizationPolicyResult {
             boolean_policies: o.get_field("booleanPolicies"),
             constraint: o.get_field("constraint"),

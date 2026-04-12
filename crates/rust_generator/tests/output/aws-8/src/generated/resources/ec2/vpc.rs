@@ -195,50 +195,50 @@ pub mod vpc {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcArgs,
     ) -> VpcResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> VpcResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> VpcResult {
         let assign_generated_ipv6_cidr_block_binding = args
             .assign_generated_ipv6_cidr_block
-            .get_output(context);
-        let cidr_block_binding = args.cidr_block.get_output(context);
-        let enable_dns_hostnames_binding = args.enable_dns_hostnames.get_output(context);
-        let enable_dns_support_binding = args.enable_dns_support.get_output(context);
+            .get_output(ctx);
+        let cidr_block_binding = args.cidr_block.get_output(ctx);
+        let enable_dns_hostnames_binding = args.enable_dns_hostnames.get_output(ctx);
+        let enable_dns_support_binding = args.enable_dns_support.get_output(ctx);
         let enable_network_address_usage_metrics_binding = args
             .enable_network_address_usage_metrics
-            .get_output(context);
-        let instance_tenancy_binding = args.instance_tenancy.get_output(context);
-        let ipv4_ipam_pool_id_binding = args.ipv4_ipam_pool_id.get_output(context);
-        let ipv4_netmask_length_binding = args.ipv4_netmask_length.get_output(context);
-        let ipv6_cidr_block_binding = args.ipv6_cidr_block.get_output(context);
+            .get_output(ctx);
+        let instance_tenancy_binding = args.instance_tenancy.get_output(ctx);
+        let ipv4_ipam_pool_id_binding = args.ipv4_ipam_pool_id.get_output(ctx);
+        let ipv4_netmask_length_binding = args.ipv4_netmask_length.get_output(ctx);
+        let ipv6_cidr_block_binding = args.ipv6_cidr_block.get_output(ctx);
         let ipv6_cidr_block_network_border_group_binding = args
             .ipv6_cidr_block_network_border_group
-            .get_output(context);
-        let ipv6_ipam_pool_id_binding = args.ipv6_ipam_pool_id.get_output(context);
-        let ipv6_netmask_length_binding = args.ipv6_netmask_length.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let ipv6_ipam_pool_id_binding = args.ipv6_ipam_pool_id.get_output(ctx);
+        let ipv6_netmask_length_binding = args.ipv6_netmask_length.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/vpc:Vpc".into(),
             name: name.to_string(),
@@ -299,7 +299,7 @@ pub mod vpc {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         VpcResult {
             id: o.get_id(),
             urn: o.get_urn(),

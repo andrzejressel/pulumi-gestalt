@@ -28,12 +28,9 @@ pub mod get_sas {
     /// Registers a new resource with the given unique name and arguments
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
-    pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
-        args: GetSasArgs,
-    ) -> GetSasResult {
-        let connection_string_binding = args.connection_string.get_output(context);
-        let expiry_binding = args.expiry.get_output(context);
+    pub fn invoke(ctx: &pulumi_gestalt_rust::Context, args: GetSasArgs) -> GetSasResult {
+        let connection_string_binding = args.connection_string.get_output(ctx);
+        let expiry_binding = args.expiry.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:eventhub/getSas:getSas".into(),
             version: super::super::super::get_version(),
@@ -48,7 +45,7 @@ pub mod get_sas {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetSasResult {
             connection_string: o.get_field("connectionString"),
             expiry: o.get_field("expiry"),

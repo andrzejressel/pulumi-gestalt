@@ -29,11 +29,11 @@ pub mod get_policies_for_target {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetPoliciesForTargetArgs,
     ) -> GetPoliciesForTargetResult {
-        let filter_binding = args.filter.get_output(context);
-        let target_id_binding = args.target_id.get_output(context);
+        let filter_binding = args.filter.get_output(ctx);
+        let target_id_binding = args.target_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:organizations/getPoliciesForTarget:getPoliciesForTarget".into(),
             version: super::super::super::get_version(),
@@ -48,7 +48,7 @@ pub mod get_policies_for_target {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetPoliciesForTargetResult {
             filter: o.get_field("filter"),
             id: o.get_field("id"),

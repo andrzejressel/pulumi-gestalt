@@ -41,11 +41,11 @@ pub mod get_virtual_network_peering {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetVirtualNetworkPeeringArgs,
     ) -> GetVirtualNetworkPeeringResult {
-        let name_binding = args.name.get_output(context);
-        let virtual_network_id_binding = args.virtual_network_id.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let virtual_network_id_binding = args.virtual_network_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:network/getVirtualNetworkPeering:getVirtualNetworkPeering"
                 .into(),
@@ -61,7 +61,7 @@ pub mod get_virtual_network_peering {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetVirtualNetworkPeeringResult {
             allow_forwarded_traffic: o.get_field("allowForwardedTraffic"),
             allow_gateway_transit: o.get_field("allowGatewayTransit"),

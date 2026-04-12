@@ -121,44 +121,44 @@ pub mod primary_contact {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PrimaryContactArgs,
     ) -> PrimaryContactResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PrimaryContactArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> PrimaryContactResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PrimaryContactArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> PrimaryContactResult {
-        let account_id_binding = args.account_id.get_output(context);
-        let address_line1_binding = args.address_line1.get_output(context);
-        let address_line2_binding = args.address_line2.get_output(context);
-        let address_line3_binding = args.address_line3.get_output(context);
-        let city_binding = args.city.get_output(context);
-        let company_name_binding = args.company_name.get_output(context);
-        let country_code_binding = args.country_code.get_output(context);
-        let district_or_county_binding = args.district_or_county.get_output(context);
-        let full_name_binding = args.full_name.get_output(context);
-        let phone_number_binding = args.phone_number.get_output(context);
-        let postal_code_binding = args.postal_code.get_output(context);
-        let state_or_region_binding = args.state_or_region.get_output(context);
-        let website_url_binding = args.website_url.get_output(context);
+        let account_id_binding = args.account_id.get_output(ctx);
+        let address_line1_binding = args.address_line1.get_output(ctx);
+        let address_line2_binding = args.address_line2.get_output(ctx);
+        let address_line3_binding = args.address_line3.get_output(ctx);
+        let city_binding = args.city.get_output(ctx);
+        let company_name_binding = args.company_name.get_output(ctx);
+        let country_code_binding = args.country_code.get_output(ctx);
+        let district_or_county_binding = args.district_or_county.get_output(ctx);
+        let full_name_binding = args.full_name.get_output(ctx);
+        let phone_number_binding = args.phone_number.get_output(ctx);
+        let postal_code_binding = args.postal_code.get_output(ctx);
+        let state_or_region_binding = args.state_or_region.get_output(ctx);
+        let website_url_binding = args.website_url.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:account/primaryContact:PrimaryContact".into(),
             name: name.to_string(),
@@ -219,7 +219,7 @@ pub mod primary_contact {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         PrimaryContactResult {
             id: o.get_id(),
             urn: o.get_urn(),

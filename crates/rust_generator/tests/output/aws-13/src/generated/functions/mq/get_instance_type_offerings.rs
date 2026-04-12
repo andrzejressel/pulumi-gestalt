@@ -40,12 +40,12 @@ pub mod get_instance_type_offerings {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetInstanceTypeOfferingsArgs,
     ) -> GetInstanceTypeOfferingsResult {
-        let engine_type_binding = args.engine_type.get_output(context);
-        let host_instance_type_binding = args.host_instance_type.get_output(context);
-        let storage_type_binding = args.storage_type.get_output(context);
+        let engine_type_binding = args.engine_type.get_output(ctx);
+        let host_instance_type_binding = args.host_instance_type.get_output(ctx);
+        let storage_type_binding = args.storage_type.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:mq/getInstanceTypeOfferings:getInstanceTypeOfferings".into(),
             version: super::super::super::get_version(),
@@ -64,7 +64,7 @@ pub mod get_instance_type_offerings {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetInstanceTypeOfferingsResult {
             broker_instance_options: o.get_field("brokerInstanceOptions"),
             engine_type: o.get_field("engineType"),

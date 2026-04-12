@@ -25,10 +25,10 @@ pub mod get_state_machine_versions {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetStateMachineVersionsArgs,
     ) -> GetStateMachineVersionsResult {
-        let statemachine_arn_binding = args.statemachine_arn.get_output(context);
+        let statemachine_arn_binding = args.statemachine_arn.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:sfn/getStateMachineVersions:getStateMachineVersions".into(),
             version: super::super::super::get_version(),
@@ -39,7 +39,7 @@ pub mod get_state_machine_versions {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetStateMachineVersionsResult {
             id: o.get_field("id"),
             statemachine_arn: o.get_field("statemachineArn"),

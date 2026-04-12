@@ -199,52 +199,52 @@ pub mod local_rulestack_rule {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LocalRulestackRuleArgs,
     ) -> LocalRulestackRuleResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LocalRulestackRuleArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> LocalRulestackRuleResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LocalRulestackRuleArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> LocalRulestackRuleResult {
-        let action_binding = args.action.get_output(context);
-        let applications_binding = args.applications.get_output(context);
-        let audit_comment_binding = args.audit_comment.get_output(context);
-        let category_binding = args.category.get_output(context);
-        let decryption_rule_type_binding = args.decryption_rule_type.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let destination_binding = args.destination.get_output(context);
-        let enabled_binding = args.enabled.get_output(context);
+        let action_binding = args.action.get_output(ctx);
+        let applications_binding = args.applications.get_output(ctx);
+        let audit_comment_binding = args.audit_comment.get_output(ctx);
+        let category_binding = args.category.get_output(ctx);
+        let decryption_rule_type_binding = args.decryption_rule_type.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let destination_binding = args.destination.get_output(ctx);
+        let enabled_binding = args.enabled.get_output(ctx);
         let inspection_certificate_id_binding = args
             .inspection_certificate_id
-            .get_output(context);
-        let logging_enabled_binding = args.logging_enabled.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let negate_destination_binding = args.negate_destination.get_output(context);
-        let negate_source_binding = args.negate_source.get_output(context);
-        let priority_binding = args.priority.get_output(context);
-        let protocol_binding = args.protocol.get_output(context);
-        let protocol_ports_binding = args.protocol_ports.get_output(context);
-        let rulestack_id_binding = args.rulestack_id.get_output(context);
-        let source_binding = args.source.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let logging_enabled_binding = args.logging_enabled.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let negate_destination_binding = args.negate_destination.get_output(ctx);
+        let negate_source_binding = args.negate_source.get_output(ctx);
+        let priority_binding = args.priority.get_output(ctx);
+        let protocol_binding = args.protocol.get_output(ctx);
+        let protocol_ports_binding = args.protocol_ports.get_output(ctx);
+        let rulestack_id_binding = args.rulestack_id.get_output(ctx);
+        let source_binding = args.source.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:paloalto/localRulestackRule:LocalRulestackRule".into(),
             name: name.to_string(),
@@ -329,7 +329,7 @@ pub mod local_rulestack_rule {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         LocalRulestackRuleResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -45,13 +45,13 @@ pub mod get_backup_run {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetBackupRunArgs,
     ) -> GetBackupRunResult {
-        let backup_id_binding = args.backup_id.get_output(context);
-        let instance_binding = args.instance.get_output(context);
-        let most_recent_binding = args.most_recent.get_output(context);
-        let project_binding = args.project.get_output(context);
+        let backup_id_binding = args.backup_id.get_output(ctx);
+        let instance_binding = args.instance.get_output(ctx);
+        let most_recent_binding = args.most_recent.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:sql/getBackupRun:getBackupRun".into(),
             version: super::super::super::get_version(),
@@ -74,7 +74,7 @@ pub mod get_backup_run {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetBackupRunResult {
             backup_id: o.get_field("backupId"),
             id: o.get_field("id"),

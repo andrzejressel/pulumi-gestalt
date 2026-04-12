@@ -146,44 +146,40 @@ pub mod queue {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: QueueArgs,
     ) -> QueueResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: QueueArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> QueueResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: QueueArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> QueueResult {
-        let description_binding = args.description.get_output(context);
-        let hours_of_operation_id_binding = args
-            .hours_of_operation_id
-            .get_output(context);
-        let instance_id_binding = args.instance_id.get_output(context);
-        let max_contacts_binding = args.max_contacts.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let outbound_caller_config_binding = args
-            .outbound_caller_config
-            .get_output(context);
-        let quick_connect_ids_binding = args.quick_connect_ids.get_output(context);
-        let status_binding = args.status.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let description_binding = args.description.get_output(ctx);
+        let hours_of_operation_id_binding = args.hours_of_operation_id.get_output(ctx);
+        let instance_id_binding = args.instance_id.get_output(ctx);
+        let max_contacts_binding = args.max_contacts.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let outbound_caller_config_binding = args.outbound_caller_config.get_output(ctx);
+        let quick_connect_ids_binding = args.quick_connect_ids.get_output(ctx);
+        let status_binding = args.status.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:connect/queue:Queue".into(),
             name: name.to_string(),
@@ -228,7 +224,7 @@ pub mod queue {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         QueueResult {
             id: o.get_id(),
             urn: o.get_urn(),

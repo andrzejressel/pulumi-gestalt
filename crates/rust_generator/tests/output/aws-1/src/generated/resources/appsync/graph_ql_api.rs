@@ -161,58 +161,56 @@ pub mod graph_ql_api {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GraphQLApiArgs,
     ) -> GraphQLApiResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GraphQLApiArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> GraphQLApiResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GraphQLApiArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> GraphQLApiResult {
         let additional_authentication_providers_binding = args
             .additional_authentication_providers
-            .get_output(context);
-        let api_type_binding = args.api_type.get_output(context);
-        let authentication_type_binding = args.authentication_type.get_output(context);
+            .get_output(ctx);
+        let api_type_binding = args.api_type.get_output(ctx);
+        let authentication_type_binding = args.authentication_type.get_output(ctx);
         let enhanced_metrics_config_binding = args
             .enhanced_metrics_config
-            .get_output(context);
-        let introspection_config_binding = args.introspection_config.get_output(context);
+            .get_output(ctx);
+        let introspection_config_binding = args.introspection_config.get_output(ctx);
         let lambda_authorizer_config_binding = args
             .lambda_authorizer_config
-            .get_output(context);
-        let log_config_binding = args.log_config.get_output(context);
+            .get_output(ctx);
+        let log_config_binding = args.log_config.get_output(ctx);
         let merged_api_execution_role_arn_binding = args
             .merged_api_execution_role_arn
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let openid_connect_config_binding = args
-            .openid_connect_config
-            .get_output(context);
-        let query_depth_limit_binding = args.query_depth_limit.get_output(context);
-        let resolver_count_limit_binding = args.resolver_count_limit.get_output(context);
-        let schema_binding = args.schema.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let user_pool_config_binding = args.user_pool_config.get_output(context);
-        let visibility_binding = args.visibility.get_output(context);
-        let xray_enabled_binding = args.xray_enabled.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let openid_connect_config_binding = args.openid_connect_config.get_output(ctx);
+        let query_depth_limit_binding = args.query_depth_limit.get_output(ctx);
+        let resolver_count_limit_binding = args.resolver_count_limit.get_output(ctx);
+        let schema_binding = args.schema.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let user_pool_config_binding = args.user_pool_config.get_output(ctx);
+        let visibility_binding = args.visibility.get_output(ctx);
+        let xray_enabled_binding = args.xray_enabled.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:appsync/graphQLApi:GraphQLApi".into(),
             name: name.to_string(),
@@ -289,7 +287,7 @@ pub mod graph_ql_api {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         GraphQLApiResult {
             id: o.get_id(),
             urn: o.get_urn(),

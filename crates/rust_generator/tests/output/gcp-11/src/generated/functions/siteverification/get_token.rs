@@ -40,12 +40,12 @@ pub mod get_token {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetTokenArgs,
     ) -> GetTokenResult {
-        let identifier_binding = args.identifier.get_output(context);
-        let type__binding = args.type_.get_output(context);
-        let verification_method_binding = args.verification_method.get_output(context);
+        let identifier_binding = args.identifier.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
+        let verification_method_binding = args.verification_method.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:siteverification/getToken:getToken".into(),
             version: super::super::super::get_version(),
@@ -64,7 +64,7 @@ pub mod get_token {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetTokenResult {
             id: o.get_field("id"),
             identifier: o.get_field("identifier"),

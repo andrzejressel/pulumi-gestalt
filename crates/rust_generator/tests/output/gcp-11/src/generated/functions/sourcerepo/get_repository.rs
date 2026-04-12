@@ -33,11 +33,11 @@ pub mod get_repository {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetRepositoryArgs,
     ) -> GetRepositoryResult {
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:sourcerepo/getRepository:getRepository".into(),
             version: super::super::super::get_version(),
@@ -52,7 +52,7 @@ pub mod get_repository {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetRepositoryResult {
             create_ignore_already_exists: o.get_field("createIgnoreAlreadyExists"),
             id: o.get_field("id"),

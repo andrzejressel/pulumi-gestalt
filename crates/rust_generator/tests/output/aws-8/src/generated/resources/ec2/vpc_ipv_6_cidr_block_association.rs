@@ -90,39 +90,39 @@ pub mod vpc_ipv_6_cidr_block_association {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcIpv6CidrBlockAssociationArgs,
     ) -> VpcIpv6CidrBlockAssociationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcIpv6CidrBlockAssociationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> VpcIpv6CidrBlockAssociationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcIpv6CidrBlockAssociationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> VpcIpv6CidrBlockAssociationResult {
         let assign_generated_ipv6_cidr_block_binding = args
             .assign_generated_ipv6_cidr_block
-            .get_output(context);
-        let ipv6_cidr_block_binding = args.ipv6_cidr_block.get_output(context);
-        let ipv6_ipam_pool_id_binding = args.ipv6_ipam_pool_id.get_output(context);
-        let ipv6_netmask_length_binding = args.ipv6_netmask_length.get_output(context);
-        let ipv6_pool_binding = args.ipv6_pool.get_output(context);
-        let vpc_id_binding = args.vpc_id.get_output(context);
+            .get_output(ctx);
+        let ipv6_cidr_block_binding = args.ipv6_cidr_block.get_output(ctx);
+        let ipv6_ipam_pool_id_binding = args.ipv6_ipam_pool_id.get_output(ctx);
+        let ipv6_netmask_length_binding = args.ipv6_netmask_length.get_output(ctx);
+        let ipv6_pool_binding = args.ipv6_pool.get_output(ctx);
+        let vpc_id_binding = args.vpc_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/vpcIpv6CidrBlockAssociation:VpcIpv6CidrBlockAssociation"
                 .into(),
@@ -156,7 +156,7 @@ pub mod vpc_ipv_6_cidr_block_association {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         VpcIpv6CidrBlockAssociationResult {
             id: o.get_id(),
             urn: o.get_urn(),

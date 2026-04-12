@@ -58,11 +58,11 @@ pub mod get_image_recipe {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetImageRecipeArgs,
     ) -> GetImageRecipeResult {
-        let arn_binding = args.arn.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let arn_binding = args.arn.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:imagebuilder/getImageRecipe:getImageRecipe".into(),
             version: super::super::super::get_version(),
@@ -77,7 +77,7 @@ pub mod get_image_recipe {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetImageRecipeResult {
             arn: o.get_field("arn"),
             block_device_mappings: o.get_field("blockDeviceMappings"),

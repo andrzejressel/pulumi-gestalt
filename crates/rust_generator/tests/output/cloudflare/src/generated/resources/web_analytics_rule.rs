@@ -89,37 +89,37 @@ pub mod web_analytics_rule {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WebAnalyticsRuleArgs,
     ) -> WebAnalyticsRuleResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WebAnalyticsRuleArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> WebAnalyticsRuleResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WebAnalyticsRuleArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> WebAnalyticsRuleResult {
-        let account_id_binding = args.account_id.get_output(context);
-        let host_binding = args.host.get_output(context);
-        let inclusive_binding = args.inclusive.get_output(context);
-        let is_paused_binding = args.is_paused.get_output(context);
-        let paths_binding = args.paths.get_output(context);
-        let ruleset_id_binding = args.ruleset_id.get_output(context);
+        let account_id_binding = args.account_id.get_output(ctx);
+        let host_binding = args.host.get_output(ctx);
+        let inclusive_binding = args.inclusive.get_output(ctx);
+        let is_paused_binding = args.is_paused.get_output(ctx);
+        let paths_binding = args.paths.get_output(ctx);
+        let ruleset_id_binding = args.ruleset_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "cloudflare:index/webAnalyticsRule:WebAnalyticsRule".into(),
             name: name.to_string(),
@@ -152,7 +152,7 @@ pub mod web_analytics_rule {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         WebAnalyticsRuleResult {
             id: o.get_id(),
             urn: o.get_urn(),

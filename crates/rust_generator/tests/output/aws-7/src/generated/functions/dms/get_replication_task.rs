@@ -55,11 +55,11 @@ pub mod get_replication_task {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetReplicationTaskArgs,
     ) -> GetReplicationTaskResult {
-        let replication_task_id_binding = args.replication_task_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let replication_task_id_binding = args.replication_task_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:dms/getReplicationTask:getReplicationTask".into(),
             version: super::super::super::get_version(),
@@ -74,7 +74,7 @@ pub mod get_replication_task {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetReplicationTaskResult {
             cdc_start_position: o.get_field("cdcStartPosition"),
             cdc_start_time: o.get_field("cdcStartTime"),

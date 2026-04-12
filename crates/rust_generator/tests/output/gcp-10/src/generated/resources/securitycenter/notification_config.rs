@@ -123,36 +123,36 @@ pub mod notification_config {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NotificationConfigArgs,
     ) -> NotificationConfigResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NotificationConfigArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> NotificationConfigResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NotificationConfigArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> NotificationConfigResult {
-        let config_id_binding = args.config_id.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let organization_binding = args.organization.get_output(context);
-        let pubsub_topic_binding = args.pubsub_topic.get_output(context);
-        let streaming_config_binding = args.streaming_config.get_output(context);
+        let config_id_binding = args.config_id.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let organization_binding = args.organization.get_output(ctx);
+        let pubsub_topic_binding = args.pubsub_topic.get_output(ctx);
+        let streaming_config_binding = args.streaming_config.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:securitycenter/notificationConfig:NotificationConfig".into(),
             name: name.to_string(),
@@ -181,7 +181,7 @@ pub mod notification_config {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         NotificationConfigResult {
             id: o.get_id(),
             urn: o.get_urn(),

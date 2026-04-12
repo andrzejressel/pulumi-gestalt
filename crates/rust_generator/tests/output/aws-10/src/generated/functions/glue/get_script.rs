@@ -43,12 +43,12 @@ pub mod get_script {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetScriptArgs,
     ) -> GetScriptResult {
-        let dag_edges_binding = args.dag_edges.get_output(context);
-        let dag_nodes_binding = args.dag_nodes.get_output(context);
-        let language_binding = args.language.get_output(context);
+        let dag_edges_binding = args.dag_edges.get_output(ctx);
+        let dag_nodes_binding = args.dag_nodes.get_output(ctx);
+        let language_binding = args.language.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:glue/getScript:getScript".into(),
             version: super::super::super::get_version(),
@@ -67,7 +67,7 @@ pub mod get_script {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetScriptResult {
             dag_edges: o.get_field("dagEdges"),
             dag_nodes: o.get_field("dagNodes"),

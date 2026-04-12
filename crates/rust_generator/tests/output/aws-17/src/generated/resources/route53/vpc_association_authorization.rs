@@ -93,34 +93,34 @@ pub mod vpc_association_authorization {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcAssociationAuthorizationArgs,
     ) -> VpcAssociationAuthorizationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcAssociationAuthorizationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> VpcAssociationAuthorizationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcAssociationAuthorizationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> VpcAssociationAuthorizationResult {
-        let vpc_id_binding = args.vpc_id.get_output(context);
-        let vpc_region_binding = args.vpc_region.get_output(context);
-        let zone_id_binding = args.zone_id.get_output(context);
+        let vpc_id_binding = args.vpc_id.get_output(ctx);
+        let vpc_region_binding = args.vpc_region.get_output(ctx);
+        let zone_id_binding = args.zone_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:route53/vpcAssociationAuthorization:VpcAssociationAuthorization"
                 .into(),
@@ -142,7 +142,7 @@ pub mod vpc_association_authorization {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         VpcAssociationAuthorizationResult {
             id: o.get_id(),
             urn: o.get_urn(),

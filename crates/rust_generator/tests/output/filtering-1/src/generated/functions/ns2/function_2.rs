@@ -26,11 +26,11 @@ pub mod function_2 {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: Function2Args,
     ) -> Function2Result {
-        let common_type_binding = args.common_type.get_output(context);
-        let type2_binding = args.type2.get_output(context);
+        let common_type_binding = args.common_type.get_output(ctx);
+        let type2_binding = args.type2.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "example:ns2:Function2".into(),
             version: super::super::super::get_version(),
@@ -45,7 +45,7 @@ pub mod function_2 {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         Function2Result {
             result: o.get_field("result"),
         }

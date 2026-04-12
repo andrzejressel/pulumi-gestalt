@@ -184,44 +184,42 @@ pub mod database {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DatabaseArgs,
     ) -> DatabaseResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DatabaseArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DatabaseResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DatabaseArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DatabaseResult {
-        let database_dialect_binding = args.database_dialect.get_output(context);
-        let ddls_binding = args.ddls.get_output(context);
-        let deletion_protection_binding = args.deletion_protection.get_output(context);
-        let enable_drop_protection_binding = args
-            .enable_drop_protection
-            .get_output(context);
-        let encryption_config_binding = args.encryption_config.get_output(context);
-        let instance_binding = args.instance.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
+        let database_dialect_binding = args.database_dialect.get_output(ctx);
+        let ddls_binding = args.ddls.get_output(ctx);
+        let deletion_protection_binding = args.deletion_protection.get_output(ctx);
+        let enable_drop_protection_binding = args.enable_drop_protection.get_output(ctx);
+        let encryption_config_binding = args.encryption_config.get_output(ctx);
+        let instance_binding = args.instance.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let version_retention_period_binding = args
             .version_retention_period
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:spanner/database:Database".into(),
             name: name.to_string(),
@@ -266,7 +264,7 @@ pub mod database {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DatabaseResult {
             id: o.get_id(),
             urn: o.get_urn(),

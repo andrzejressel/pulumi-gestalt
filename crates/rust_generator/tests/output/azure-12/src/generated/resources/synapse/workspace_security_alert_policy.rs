@@ -143,43 +143,43 @@ pub mod workspace_security_alert_policy {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkspaceSecurityAlertPolicyArgs,
     ) -> WorkspaceSecurityAlertPolicyResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkspaceSecurityAlertPolicyArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> WorkspaceSecurityAlertPolicyResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkspaceSecurityAlertPolicyArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> WorkspaceSecurityAlertPolicyResult {
-        let disabled_alerts_binding = args.disabled_alerts.get_output(context);
+        let disabled_alerts_binding = args.disabled_alerts.get_output(ctx);
         let email_account_admins_enabled_binding = args
             .email_account_admins_enabled
-            .get_output(context);
-        let email_addresses_binding = args.email_addresses.get_output(context);
-        let policy_state_binding = args.policy_state.get_output(context);
-        let retention_days_binding = args.retention_days.get_output(context);
+            .get_output(ctx);
+        let email_addresses_binding = args.email_addresses.get_output(ctx);
+        let policy_state_binding = args.policy_state.get_output(ctx);
+        let retention_days_binding = args.retention_days.get_output(ctx);
         let storage_account_access_key_binding = args
             .storage_account_access_key
-            .get_output(context);
-        let storage_endpoint_binding = args.storage_endpoint.get_output(context);
-        let synapse_workspace_id_binding = args.synapse_workspace_id.get_output(context);
+            .get_output(ctx);
+        let storage_endpoint_binding = args.storage_endpoint.get_output(ctx);
+        let synapse_workspace_id_binding = args.synapse_workspace_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:synapse/workspaceSecurityAlertPolicy:WorkspaceSecurityAlertPolicy"
                 .into(),
@@ -221,7 +221,7 @@ pub mod workspace_security_alert_policy {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         WorkspaceSecurityAlertPolicyResult {
             id: o.get_id(),
             urn: o.get_urn(),

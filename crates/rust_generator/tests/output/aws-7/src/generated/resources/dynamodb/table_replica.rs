@@ -110,41 +110,39 @@ pub mod table_replica {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TableReplicaArgs,
     ) -> TableReplicaResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TableReplicaArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> TableReplicaResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TableReplicaArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> TableReplicaResult {
         let deletion_protection_enabled_binding = args
             .deletion_protection_enabled
-            .get_output(context);
-        let global_table_arn_binding = args.global_table_arn.get_output(context);
-        let kms_key_arn_binding = args.kms_key_arn.get_output(context);
-        let point_in_time_recovery_binding = args
-            .point_in_time_recovery
-            .get_output(context);
-        let table_class_override_binding = args.table_class_override.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let global_table_arn_binding = args.global_table_arn.get_output(ctx);
+        let kms_key_arn_binding = args.kms_key_arn.get_output(ctx);
+        let point_in_time_recovery_binding = args.point_in_time_recovery.get_output(ctx);
+        let table_class_override_binding = args.table_class_override.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:dynamodb/tableReplica:TableReplica".into(),
             name: name.to_string(),
@@ -177,7 +175,7 @@ pub mod table_replica {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         TableReplicaResult {
             id: o.get_id(),
             urn: o.get_urn(),

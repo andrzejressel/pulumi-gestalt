@@ -71,35 +71,35 @@ pub mod zero_trust_tunnel_virtual_network {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ZeroTrustTunnelVirtualNetworkArgs,
     ) -> ZeroTrustTunnelVirtualNetworkResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ZeroTrustTunnelVirtualNetworkArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ZeroTrustTunnelVirtualNetworkResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ZeroTrustTunnelVirtualNetworkArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ZeroTrustTunnelVirtualNetworkResult {
-        let account_id_binding = args.account_id.get_output(context);
-        let comment_binding = args.comment.get_output(context);
-        let is_default_network_binding = args.is_default_network.get_output(context);
-        let name_binding = args.name.get_output(context);
+        let account_id_binding = args.account_id.get_output(ctx);
+        let comment_binding = args.comment.get_output(ctx);
+        let is_default_network_binding = args.is_default_network.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "cloudflare:index/zeroTrustTunnelVirtualNetwork:ZeroTrustTunnelVirtualNetwork"
                 .into(),
@@ -125,7 +125,7 @@ pub mod zero_trust_tunnel_virtual_network {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ZeroTrustTunnelVirtualNetworkResult {
             id: o.get_id(),
             urn: o.get_urn(),

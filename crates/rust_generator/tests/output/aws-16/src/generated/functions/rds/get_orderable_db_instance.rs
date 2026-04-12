@@ -149,58 +149,54 @@ pub mod get_orderable_db_instance {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetOrderableDbInstanceArgs,
     ) -> GetOrderableDbInstanceResult {
         let availability_zone_group_binding = args
             .availability_zone_group
-            .get_output(context);
-        let engine_binding = args.engine.get_output(context);
-        let engine_latest_version_binding = args
-            .engine_latest_version
-            .get_output(context);
-        let engine_version_binding = args.engine_version.get_output(context);
-        let instance_class_binding = args.instance_class.get_output(context);
-        let license_model_binding = args.license_model.get_output(context);
+            .get_output(ctx);
+        let engine_binding = args.engine.get_output(ctx);
+        let engine_latest_version_binding = args.engine_latest_version.get_output(ctx);
+        let engine_version_binding = args.engine_version.get_output(ctx);
+        let instance_class_binding = args.instance_class.get_output(ctx);
+        let license_model_binding = args.license_model.get_output(ctx);
         let preferred_engine_versions_binding = args
             .preferred_engine_versions
-            .get_output(context);
+            .get_output(ctx);
         let preferred_instance_classes_binding = args
             .preferred_instance_classes
-            .get_output(context);
-        let read_replica_capable_binding = args.read_replica_capable.get_output(context);
-        let storage_type_binding = args.storage_type.get_output(context);
-        let supported_engine_modes_binding = args
-            .supported_engine_modes
-            .get_output(context);
+            .get_output(ctx);
+        let read_replica_capable_binding = args.read_replica_capable.get_output(ctx);
+        let storage_type_binding = args.storage_type.get_output(ctx);
+        let supported_engine_modes_binding = args.supported_engine_modes.get_output(ctx);
         let supported_network_types_binding = args
             .supported_network_types
-            .get_output(context);
-        let supports_clusters_binding = args.supports_clusters.get_output(context);
+            .get_output(ctx);
+        let supports_clusters_binding = args.supports_clusters.get_output(ctx);
         let supports_enhanced_monitoring_binding = args
             .supports_enhanced_monitoring
-            .get_output(context);
+            .get_output(ctx);
         let supports_global_databases_binding = args
             .supports_global_databases
-            .get_output(context);
+            .get_output(ctx);
         let supports_iam_database_authentication_binding = args
             .supports_iam_database_authentication
-            .get_output(context);
-        let supports_iops_binding = args.supports_iops.get_output(context);
+            .get_output(ctx);
+        let supports_iops_binding = args.supports_iops.get_output(ctx);
         let supports_kerberos_authentication_binding = args
             .supports_kerberos_authentication
-            .get_output(context);
-        let supports_multi_az_binding = args.supports_multi_az.get_output(context);
+            .get_output(ctx);
+        let supports_multi_az_binding = args.supports_multi_az.get_output(ctx);
         let supports_performance_insights_binding = args
             .supports_performance_insights
-            .get_output(context);
+            .get_output(ctx);
         let supports_storage_autoscaling_binding = args
             .supports_storage_autoscaling
-            .get_output(context);
+            .get_output(ctx);
         let supports_storage_encryption_binding = args
             .supports_storage_encryption
-            .get_output(context);
-        let vpc_binding = args.vpc.get_output(context);
+            .get_output(ctx);
+        let vpc_binding = args.vpc.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:rds/getOrderableDbInstance:getOrderableDbInstance".into(),
             version: super::super::super::get_version(),
@@ -299,7 +295,7 @@ pub mod get_orderable_db_instance {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetOrderableDbInstanceResult {
             availability_zone_group: o.get_field("availabilityZoneGroup"),
             availability_zones: o.get_field("availabilityZones"),

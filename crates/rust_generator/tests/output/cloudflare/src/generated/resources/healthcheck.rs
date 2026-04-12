@@ -200,53 +200,51 @@ pub mod healthcheck {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: HealthcheckArgs,
     ) -> HealthcheckResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: HealthcheckArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> HealthcheckResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: HealthcheckArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> HealthcheckResult {
-        let address_binding = args.address.get_output(context);
-        let allow_insecure_binding = args.allow_insecure.get_output(context);
-        let check_regions_binding = args.check_regions.get_output(context);
-        let consecutive_fails_binding = args.consecutive_fails.get_output(context);
-        let consecutive_successes_binding = args
-            .consecutive_successes
-            .get_output(context);
-        let description_binding = args.description.get_output(context);
-        let expected_body_binding = args.expected_body.get_output(context);
-        let expected_codes_binding = args.expected_codes.get_output(context);
-        let follow_redirects_binding = args.follow_redirects.get_output(context);
-        let headers_binding = args.headers.get_output(context);
-        let interval_binding = args.interval.get_output(context);
-        let method_binding = args.method.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let path_binding = args.path.get_output(context);
-        let port_binding = args.port.get_output(context);
-        let retries_binding = args.retries.get_output(context);
-        let suspended_binding = args.suspended.get_output(context);
-        let timeout_binding = args.timeout.get_output(context);
-        let type__binding = args.type_.get_output(context);
-        let zone_id_binding = args.zone_id.get_output(context);
+        let address_binding = args.address.get_output(ctx);
+        let allow_insecure_binding = args.allow_insecure.get_output(ctx);
+        let check_regions_binding = args.check_regions.get_output(ctx);
+        let consecutive_fails_binding = args.consecutive_fails.get_output(ctx);
+        let consecutive_successes_binding = args.consecutive_successes.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let expected_body_binding = args.expected_body.get_output(ctx);
+        let expected_codes_binding = args.expected_codes.get_output(ctx);
+        let follow_redirects_binding = args.follow_redirects.get_output(ctx);
+        let headers_binding = args.headers.get_output(ctx);
+        let interval_binding = args.interval.get_output(ctx);
+        let method_binding = args.method.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let path_binding = args.path.get_output(ctx);
+        let port_binding = args.port.get_output(ctx);
+        let retries_binding = args.retries.get_output(ctx);
+        let suspended_binding = args.suspended.get_output(ctx);
+        let timeout_binding = args.timeout.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
+        let zone_id_binding = args.zone_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "cloudflare:index/healthcheck:Healthcheck".into(),
             name: name.to_string(),
@@ -335,7 +333,7 @@ pub mod healthcheck {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         HealthcheckResult {
             id: o.get_id(),
             urn: o.get_urn(),

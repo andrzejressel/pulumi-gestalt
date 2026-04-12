@@ -203,52 +203,48 @@ pub mod service {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServiceArgs,
     ) -> ServiceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServiceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ServiceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServiceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ServiceResult {
         let auto_scaling_configuration_arn_binding = args
             .auto_scaling_configuration_arn
-            .get_output(context);
+            .get_output(ctx);
         let encryption_configuration_binding = args
             .encryption_configuration
-            .get_output(context);
+            .get_output(ctx);
         let health_check_configuration_binding = args
             .health_check_configuration
-            .get_output(context);
-        let instance_configuration_binding = args
-            .instance_configuration
-            .get_output(context);
-        let network_configuration_binding = args
-            .network_configuration
-            .get_output(context);
+            .get_output(ctx);
+        let instance_configuration_binding = args.instance_configuration.get_output(ctx);
+        let network_configuration_binding = args.network_configuration.get_output(ctx);
         let observability_configuration_binding = args
             .observability_configuration
-            .get_output(context);
-        let service_name_binding = args.service_name.get_output(context);
-        let source_configuration_binding = args.source_configuration.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let service_name_binding = args.service_name.get_output(ctx);
+        let source_configuration_binding = args.source_configuration.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:apprunner/service:Service".into(),
             name: name.to_string(),
@@ -293,7 +289,7 @@ pub mod service {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ServiceResult {
             id: o.get_id(),
             urn: o.get_urn(),

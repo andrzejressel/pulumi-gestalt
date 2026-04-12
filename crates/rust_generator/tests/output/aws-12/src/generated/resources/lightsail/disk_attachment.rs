@@ -83,34 +83,34 @@ pub mod disk_attachment {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: Disk_attachmentArgs,
     ) -> Disk_attachmentResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: Disk_attachmentArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> Disk_attachmentResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: Disk_attachmentArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> Disk_attachmentResult {
-        let disk_name_binding = args.disk_name.get_output(context);
-        let disk_path_binding = args.disk_path.get_output(context);
-        let instance_name_binding = args.instance_name.get_output(context);
+        let disk_name_binding = args.disk_name.get_output(ctx);
+        let disk_path_binding = args.disk_path.get_output(ctx);
+        let instance_name_binding = args.instance_name.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:lightsail/disk_attachment:Disk_attachment".into(),
             name: name.to_string(),
@@ -131,7 +131,7 @@ pub mod disk_attachment {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         Disk_attachmentResult {
             id: o.get_id(),
             urn: o.get_urn(),

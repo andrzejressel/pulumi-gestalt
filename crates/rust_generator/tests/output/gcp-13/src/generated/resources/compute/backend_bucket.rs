@@ -264,42 +264,42 @@ pub mod backend_bucket {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BackendBucketArgs,
     ) -> BackendBucketResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BackendBucketArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> BackendBucketResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BackendBucketArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> BackendBucketResult {
-        let bucket_name_binding = args.bucket_name.get_output(context);
-        let cdn_policy_binding = args.cdn_policy.get_output(context);
-        let compression_mode_binding = args.compression_mode.get_output(context);
+        let bucket_name_binding = args.bucket_name.get_output(ctx);
+        let cdn_policy_binding = args.cdn_policy.get_output(ctx);
+        let compression_mode_binding = args.compression_mode.get_output(ctx);
         let custom_response_headers_binding = args
             .custom_response_headers
-            .get_output(context);
-        let description_binding = args.description.get_output(context);
-        let edge_security_policy_binding = args.edge_security_policy.get_output(context);
-        let enable_cdn_binding = args.enable_cdn.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
+            .get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let edge_security_policy_binding = args.edge_security_policy.get_output(ctx);
+        let enable_cdn_binding = args.enable_cdn.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:compute/backendBucket:BackendBucket".into(),
             name: name.to_string(),
@@ -344,7 +344,7 @@ pub mod backend_bucket {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         BackendBucketResult {
             id: o.get_id(),
             urn: o.get_urn(),

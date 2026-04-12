@@ -29,10 +29,10 @@ pub mod get_adbs_national_character_sets {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetAdbsNationalCharacterSetsArgs,
     ) -> GetAdbsNationalCharacterSetsResult {
-        let location_binding = args.location.get_output(context);
+        let location_binding = args.location.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:oracle/getAdbsNationalCharacterSets:getAdbsNationalCharacterSets"
                 .into(),
@@ -44,7 +44,7 @@ pub mod get_adbs_national_character_sets {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetAdbsNationalCharacterSetsResult {
             character_sets: o.get_field("characterSets"),
             id: o.get_field("id"),

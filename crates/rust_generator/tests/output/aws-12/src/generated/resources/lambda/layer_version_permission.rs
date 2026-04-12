@@ -94,38 +94,38 @@ pub mod layer_version_permission {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LayerVersionPermissionArgs,
     ) -> LayerVersionPermissionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LayerVersionPermissionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> LayerVersionPermissionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LayerVersionPermissionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> LayerVersionPermissionResult {
-        let action_binding = args.action.get_output(context);
-        let layer_name_binding = args.layer_name.get_output(context);
-        let organization_id_binding = args.organization_id.get_output(context);
-        let principal_binding = args.principal.get_output(context);
-        let skip_destroy_binding = args.skip_destroy.get_output(context);
-        let statement_id_binding = args.statement_id.get_output(context);
-        let version_number_binding = args.version_number.get_output(context);
+        let action_binding = args.action.get_output(ctx);
+        let layer_name_binding = args.layer_name.get_output(ctx);
+        let organization_id_binding = args.organization_id.get_output(ctx);
+        let principal_binding = args.principal.get_output(ctx);
+        let skip_destroy_binding = args.skip_destroy.get_output(ctx);
+        let statement_id_binding = args.statement_id.get_output(ctx);
+        let version_number_binding = args.version_number.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:lambda/layerVersionPermission:LayerVersionPermission".into(),
             name: name.to_string(),
@@ -162,7 +162,7 @@ pub mod layer_version_permission {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         LayerVersionPermissionResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -29,10 +29,10 @@ pub mod get_origin_access_identities {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetOriginAccessIdentitiesArgs,
     ) -> GetOriginAccessIdentitiesResult {
-        let comments_binding = args.comments.get_output(context);
+        let comments_binding = args.comments.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:cloudfront/getOriginAccessIdentities:getOriginAccessIdentities"
                 .into(),
@@ -44,7 +44,7 @@ pub mod get_origin_access_identities {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetOriginAccessIdentitiesResult {
             comments: o.get_field("comments"),
             iam_arns: o.get_field("iamArns"),

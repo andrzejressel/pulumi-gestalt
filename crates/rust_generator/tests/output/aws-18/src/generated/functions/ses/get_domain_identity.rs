@@ -28,10 +28,10 @@ pub mod get_domain_identity {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetDomainIdentityArgs,
     ) -> GetDomainIdentityResult {
-        let domain_binding = args.domain.get_output(context);
+        let domain_binding = args.domain.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ses/getDomainIdentity:getDomainIdentity".into(),
             version: super::super::super::get_version(),
@@ -42,7 +42,7 @@ pub mod get_domain_identity {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetDomainIdentityResult {
             arn: o.get_field("arn"),
             domain: o.get_field("domain"),

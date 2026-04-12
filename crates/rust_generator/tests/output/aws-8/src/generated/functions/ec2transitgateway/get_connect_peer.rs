@@ -60,14 +60,14 @@ pub mod get_connect_peer {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetConnectPeerArgs,
     ) -> GetConnectPeerResult {
-        let filters_binding = args.filters.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let filters_binding = args.filters.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let transit_gateway_connect_peer_id_binding = args
             .transit_gateway_connect_peer_id
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ec2transitgateway/getConnectPeer:getConnectPeer".into(),
             version: super::super::super::get_version(),
@@ -86,7 +86,7 @@ pub mod get_connect_peer {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetConnectPeerResult {
             arn: o.get_field("arn"),
             bgp_asn: o.get_field("bgpAsn"),

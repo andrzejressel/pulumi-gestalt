@@ -330,45 +330,43 @@ pub mod listener {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ListenerArgs,
     ) -> ListenerResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ListenerArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ListenerResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ListenerArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ListenerResult {
-        let alpn_policy_binding = args.alpn_policy.get_output(context);
-        let certificate_arn_binding = args.certificate_arn.get_output(context);
-        let default_actions_binding = args.default_actions.get_output(context);
-        let load_balancer_arn_binding = args.load_balancer_arn.get_output(context);
-        let mutual_authentication_binding = args
-            .mutual_authentication
-            .get_output(context);
-        let port_binding = args.port.get_output(context);
-        let protocol_binding = args.protocol.get_output(context);
-        let ssl_policy_binding = args.ssl_policy.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let alpn_policy_binding = args.alpn_policy.get_output(ctx);
+        let certificate_arn_binding = args.certificate_arn.get_output(ctx);
+        let default_actions_binding = args.default_actions.get_output(ctx);
+        let load_balancer_arn_binding = args.load_balancer_arn.get_output(ctx);
+        let mutual_authentication_binding = args.mutual_authentication.get_output(ctx);
+        let port_binding = args.port.get_output(ctx);
+        let protocol_binding = args.protocol.get_output(ctx);
+        let ssl_policy_binding = args.ssl_policy.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let tcp_idle_timeout_seconds_binding = args
             .tcp_idle_timeout_seconds
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:alb/listener:Listener".into(),
             name: name.to_string(),
@@ -417,7 +415,7 @@ pub mod listener {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ListenerResult {
             id: o.get_id(),
             urn: o.get_urn(),

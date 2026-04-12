@@ -209,50 +209,50 @@ pub mod v_2_models_slot_type {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: V2modelsSlotTypeArgs,
     ) -> V2modelsSlotTypeResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: V2modelsSlotTypeArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> V2modelsSlotTypeResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: V2modelsSlotTypeArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> V2modelsSlotTypeResult {
-        let bot_id_binding = args.bot_id.get_output(context);
-        let bot_version_binding = args.bot_version.get_output(context);
+        let bot_id_binding = args.bot_id.get_output(ctx);
+        let bot_version_binding = args.bot_version.get_output(ctx);
         let composite_slot_type_setting_binding = args
             .composite_slot_type_setting
-            .get_output(context);
-        let description_binding = args.description.get_output(context);
+            .get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
         let external_source_setting_binding = args
             .external_source_setting
-            .get_output(context);
-        let locale_id_binding = args.locale_id.get_output(context);
-        let name_binding = args.name.get_output(context);
+            .get_output(ctx);
+        let locale_id_binding = args.locale_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let parent_slot_type_signature_binding = args
             .parent_slot_type_signature
-            .get_output(context);
-        let slot_type_values_binding = args.slot_type_values.get_output(context);
-        let timeouts_binding = args.timeouts.get_output(context);
+            .get_output(ctx);
+        let slot_type_values_binding = args.slot_type_values.get_output(ctx);
+        let timeouts_binding = args.timeouts.get_output(ctx);
         let value_selection_setting_binding = args
             .value_selection_setting
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:lex/v2modelsSlotType:V2modelsSlotType".into(),
             name: name.to_string(),
@@ -305,7 +305,7 @@ pub mod v_2_models_slot_type {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         V2modelsSlotTypeResult {
             id: o.get_id(),
             urn: o.get_urn(),

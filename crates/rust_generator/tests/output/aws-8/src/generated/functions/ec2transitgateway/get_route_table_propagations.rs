@@ -46,13 +46,13 @@ pub mod get_route_table_propagations {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetRouteTablePropagationsArgs,
     ) -> GetRouteTablePropagationsResult {
-        let filters_binding = args.filters.get_output(context);
+        let filters_binding = args.filters.get_output(ctx);
         let transit_gateway_route_table_id_binding = args
             .transit_gateway_route_table_id
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ec2transitgateway/getRouteTablePropagations:getRouteTablePropagations"
                 .into(),
@@ -68,7 +68,7 @@ pub mod get_route_table_propagations {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetRouteTablePropagationsResult {
             filters: o.get_field("filters"),
             id: o.get_field("id"),

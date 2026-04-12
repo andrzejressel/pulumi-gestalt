@@ -27,10 +27,10 @@ pub mod get_resolver_firewall_config {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetResolverFirewallConfigArgs,
     ) -> GetResolverFirewallConfigResult {
-        let resource_id_binding = args.resource_id.get_output(context);
+        let resource_id_binding = args.resource_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:route53/getResolverFirewallConfig:getResolverFirewallConfig"
                 .into(),
@@ -42,7 +42,7 @@ pub mod get_resolver_firewall_config {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetResolverFirewallConfigResult {
             firewall_fail_open: o.get_field("firewallFailOpen"),
             id: o.get_field("id"),

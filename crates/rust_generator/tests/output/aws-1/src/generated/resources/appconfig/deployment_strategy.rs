@@ -99,43 +99,43 @@ pub mod deployment_strategy {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DeploymentStrategyArgs,
     ) -> DeploymentStrategyResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DeploymentStrategyArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DeploymentStrategyResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DeploymentStrategyArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DeploymentStrategyResult {
         let deployment_duration_in_minutes_binding = args
             .deployment_duration_in_minutes
-            .get_output(context);
-        let description_binding = args.description.get_output(context);
+            .get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
         let final_bake_time_in_minutes_binding = args
             .final_bake_time_in_minutes
-            .get_output(context);
-        let growth_factor_binding = args.growth_factor.get_output(context);
-        let growth_type_binding = args.growth_type.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let replicate_to_binding = args.replicate_to.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let growth_factor_binding = args.growth_factor.get_output(ctx);
+        let growth_type_binding = args.growth_type.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let replicate_to_binding = args.replicate_to.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:appconfig/deploymentStrategy:DeploymentStrategy".into(),
             name: name.to_string(),
@@ -176,7 +176,7 @@ pub mod deployment_strategy {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DeploymentStrategyResult {
             id: o.get_id(),
             urn: o.get_urn(),

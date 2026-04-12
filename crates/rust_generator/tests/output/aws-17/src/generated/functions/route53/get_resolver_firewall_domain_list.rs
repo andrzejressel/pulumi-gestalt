@@ -34,12 +34,12 @@ pub mod get_resolver_firewall_domain_list {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetResolverFirewallDomainListArgs,
     ) -> GetResolverFirewallDomainListResult {
         let firewall_domain_list_id_binding = args
             .firewall_domain_list_id
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:route53/getResolverFirewallDomainList:getResolverFirewallDomainList"
                 .into(),
@@ -51,7 +51,7 @@ pub mod get_resolver_firewall_domain_list {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetResolverFirewallDomainListResult {
             arn: o.get_field("arn"),
             creation_time: o.get_field("creationTime"),

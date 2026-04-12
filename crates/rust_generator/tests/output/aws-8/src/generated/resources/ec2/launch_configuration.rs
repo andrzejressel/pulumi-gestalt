@@ -181,53 +181,53 @@ pub mod launch_configuration {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LaunchConfigurationArgs,
     ) -> LaunchConfigurationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LaunchConfigurationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> LaunchConfigurationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LaunchConfigurationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> LaunchConfigurationResult {
         let associate_public_ip_address_binding = args
             .associate_public_ip_address
-            .get_output(context);
-        let ebs_block_devices_binding = args.ebs_block_devices.get_output(context);
-        let ebs_optimized_binding = args.ebs_optimized.get_output(context);
-        let enable_monitoring_binding = args.enable_monitoring.get_output(context);
+            .get_output(ctx);
+        let ebs_block_devices_binding = args.ebs_block_devices.get_output(ctx);
+        let ebs_optimized_binding = args.ebs_optimized.get_output(ctx);
+        let enable_monitoring_binding = args.enable_monitoring.get_output(ctx);
         let ephemeral_block_devices_binding = args
             .ephemeral_block_devices
-            .get_output(context);
-        let iam_instance_profile_binding = args.iam_instance_profile.get_output(context);
-        let image_id_binding = args.image_id.get_output(context);
-        let instance_type_binding = args.instance_type.get_output(context);
-        let key_name_binding = args.key_name.get_output(context);
-        let metadata_options_binding = args.metadata_options.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let name_prefix_binding = args.name_prefix.get_output(context);
-        let placement_tenancy_binding = args.placement_tenancy.get_output(context);
-        let root_block_device_binding = args.root_block_device.get_output(context);
-        let security_groups_binding = args.security_groups.get_output(context);
-        let spot_price_binding = args.spot_price.get_output(context);
-        let user_data_binding = args.user_data.get_output(context);
-        let user_data_base64_binding = args.user_data_base64.get_output(context);
+            .get_output(ctx);
+        let iam_instance_profile_binding = args.iam_instance_profile.get_output(ctx);
+        let image_id_binding = args.image_id.get_output(ctx);
+        let instance_type_binding = args.instance_type.get_output(ctx);
+        let key_name_binding = args.key_name.get_output(ctx);
+        let metadata_options_binding = args.metadata_options.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let name_prefix_binding = args.name_prefix.get_output(ctx);
+        let placement_tenancy_binding = args.placement_tenancy.get_output(ctx);
+        let root_block_device_binding = args.root_block_device.get_output(ctx);
+        let security_groups_binding = args.security_groups.get_output(ctx);
+        let spot_price_binding = args.spot_price.get_output(ctx);
+        let user_data_binding = args.user_data.get_output(ctx);
+        let user_data_base64_binding = args.user_data_base64.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/launchConfiguration:LaunchConfiguration".into(),
             name: name.to_string(),
@@ -308,7 +308,7 @@ pub mod launch_configuration {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         LaunchConfigurationResult {
             id: o.get_id(),
             urn: o.get_urn(),

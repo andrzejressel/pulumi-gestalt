@@ -120,35 +120,35 @@ pub mod network_firewall_policy_association {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkFirewallPolicyAssociationArgs,
     ) -> NetworkFirewallPolicyAssociationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkFirewallPolicyAssociationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> NetworkFirewallPolicyAssociationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkFirewallPolicyAssociationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> NetworkFirewallPolicyAssociationResult {
-        let attachment_target_binding = args.attachment_target.get_output(context);
-        let firewall_policy_binding = args.firewall_policy.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
+        let attachment_target_binding = args.attachment_target.get_output(ctx);
+        let firewall_policy_binding = args.firewall_policy.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:compute/networkFirewallPolicyAssociation:NetworkFirewallPolicyAssociation"
                 .into(),
@@ -174,7 +174,7 @@ pub mod network_firewall_policy_association {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         NetworkFirewallPolicyAssociationResult {
             id: o.get_id(),
             urn: o.get_urn(),

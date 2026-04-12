@@ -127,39 +127,39 @@ pub mod environment_storage {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EnvironmentStorageArgs,
     ) -> EnvironmentStorageResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EnvironmentStorageArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> EnvironmentStorageResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EnvironmentStorageArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> EnvironmentStorageResult {
-        let access_key_binding = args.access_key.get_output(context);
-        let access_mode_binding = args.access_mode.get_output(context);
-        let account_name_binding = args.account_name.get_output(context);
+        let access_key_binding = args.access_key.get_output(ctx);
+        let access_mode_binding = args.access_mode.get_output(ctx);
+        let account_name_binding = args.account_name.get_output(ctx);
         let container_app_environment_id_binding = args
             .container_app_environment_id
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let share_name_binding = args.share_name.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let share_name_binding = args.share_name.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:containerapp/environmentStorage:EnvironmentStorage".into(),
             name: name.to_string(),
@@ -192,7 +192,7 @@ pub mod environment_storage {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         EnvironmentStorageResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -303,46 +303,46 @@ pub mod interconnect {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InterconnectArgs,
     ) -> InterconnectResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InterconnectArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> InterconnectResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InterconnectArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> InterconnectResult {
-        let admin_enabled_binding = args.admin_enabled.get_output(context);
-        let customer_name_binding = args.customer_name.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let interconnect_type_binding = args.interconnect_type.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let link_type_binding = args.link_type.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let macsec_binding = args.macsec.get_output(context);
-        let macsec_enabled_binding = args.macsec_enabled.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let noc_contact_email_binding = args.noc_contact_email.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let remote_location_binding = args.remote_location.get_output(context);
-        let requested_features_binding = args.requested_features.get_output(context);
-        let requested_link_count_binding = args.requested_link_count.get_output(context);
+        let admin_enabled_binding = args.admin_enabled.get_output(ctx);
+        let customer_name_binding = args.customer_name.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let interconnect_type_binding = args.interconnect_type.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let link_type_binding = args.link_type.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let macsec_binding = args.macsec.get_output(ctx);
+        let macsec_enabled_binding = args.macsec_enabled.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let noc_contact_email_binding = args.noc_contact_email.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let remote_location_binding = args.remote_location.get_output(ctx);
+        let requested_features_binding = args.requested_features.get_output(ctx);
+        let requested_link_count_binding = args.requested_link_count.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:compute/interconnect:Interconnect".into(),
             name: name.to_string(),
@@ -411,7 +411,7 @@ pub mod interconnect {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         InterconnectResult {
             id: o.get_id(),
             urn: o.get_urn(),

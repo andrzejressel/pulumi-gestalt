@@ -183,61 +183,59 @@ pub mod analytics_workspace {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AnalyticsWorkspaceArgs,
     ) -> AnalyticsWorkspaceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AnalyticsWorkspaceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AnalyticsWorkspaceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AnalyticsWorkspaceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AnalyticsWorkspaceResult {
         let allow_resource_only_permissions_binding = args
             .allow_resource_only_permissions
-            .get_output(context);
-        let cmk_for_query_forced_binding = args.cmk_for_query_forced.get_output(context);
-        let daily_quota_gb_binding = args.daily_quota_gb.get_output(context);
+            .get_output(ctx);
+        let cmk_for_query_forced_binding = args.cmk_for_query_forced.get_output(ctx);
+        let daily_quota_gb_binding = args.daily_quota_gb.get_output(ctx);
         let data_collection_rule_id_binding = args
             .data_collection_rule_id
-            .get_output(context);
-        let identity_binding = args.identity.get_output(context);
+            .get_output(ctx);
+        let identity_binding = args.identity.get_output(ctx);
         let immediate_data_purge_on30_days_enabled_binding = args
             .immediate_data_purge_on30_days_enabled
-            .get_output(context);
+            .get_output(ctx);
         let internet_ingestion_enabled_binding = args
             .internet_ingestion_enabled
-            .get_output(context);
-        let internet_query_enabled_binding = args
-            .internet_query_enabled
-            .get_output(context);
+            .get_output(ctx);
+        let internet_query_enabled_binding = args.internet_query_enabled.get_output(ctx);
         let local_authentication_disabled_binding = args
             .local_authentication_disabled
-            .get_output(context);
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
+            .get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let reservation_capacity_in_gb_per_day_binding = args
             .reservation_capacity_in_gb_per_day
-            .get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let retention_in_days_binding = args.retention_in_days.get_output(context);
-        let sku_binding = args.sku.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let retention_in_days_binding = args.retention_in_days.get_output(ctx);
+        let sku_binding = args.sku.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:operationalinsights/analyticsWorkspace:AnalyticsWorkspace"
                 .into(),
@@ -311,7 +309,7 @@ pub mod analytics_workspace {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AnalyticsWorkspaceResult {
             id: o.get_id(),
             urn: o.get_urn(),

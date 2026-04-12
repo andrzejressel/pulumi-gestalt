@@ -113,37 +113,37 @@ pub mod custom_routing_accelerator {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CustomRoutingAcceleratorArgs,
     ) -> CustomRoutingAcceleratorResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CustomRoutingAcceleratorArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> CustomRoutingAcceleratorResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CustomRoutingAcceleratorArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> CustomRoutingAcceleratorResult {
-        let attributes_binding = args.attributes.get_output(context);
-        let enabled_binding = args.enabled.get_output(context);
-        let ip_address_type_binding = args.ip_address_type.get_output(context);
-        let ip_addresses_binding = args.ip_addresses.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let attributes_binding = args.attributes.get_output(ctx);
+        let enabled_binding = args.enabled.get_output(ctx);
+        let ip_address_type_binding = args.ip_address_type.get_output(ctx);
+        let ip_addresses_binding = args.ip_addresses.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:globalaccelerator/customRoutingAccelerator:CustomRoutingAccelerator"
                 .into(),
@@ -177,7 +177,7 @@ pub mod custom_routing_accelerator {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         CustomRoutingAcceleratorResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -35,11 +35,11 @@ pub mod get_list {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetListArgs,
     ) -> GetListResult {
-        let account_id_binding = args.account_id.get_output(context);
-        let name_binding = args.name.get_output(context);
+        let account_id_binding = args.account_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "cloudflare:index/getList:getList".into(),
             version: super::super::get_version(),
@@ -54,7 +54,7 @@ pub mod get_list {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetListResult {
             account_id: o.get_field("accountId"),
             description: o.get_field("description"),

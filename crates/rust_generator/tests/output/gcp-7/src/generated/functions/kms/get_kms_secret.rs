@@ -37,14 +37,14 @@ pub mod get_kms_secret {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetKmsSecretArgs,
     ) -> GetKmsSecretResult {
         let additional_authenticated_data_binding = args
             .additional_authenticated_data
-            .get_output(context);
-        let ciphertext_binding = args.ciphertext.get_output(context);
-        let crypto_key_binding = args.crypto_key.get_output(context);
+            .get_output(ctx);
+        let ciphertext_binding = args.ciphertext.get_output(ctx);
+        let crypto_key_binding = args.crypto_key.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:kms/getKMSSecret:getKMSSecret".into(),
             version: super::super::super::get_version(),
@@ -63,7 +63,7 @@ pub mod get_kms_secret {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetKmsSecretResult {
             additional_authenticated_data: o.get_field("additionalAuthenticatedData"),
             ciphertext: o.get_field("ciphertext"),

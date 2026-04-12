@@ -102,36 +102,36 @@ pub mod public_certificate {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PublicCertificateArgs,
     ) -> PublicCertificateResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PublicCertificateArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> PublicCertificateResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PublicCertificateArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> PublicCertificateResult {
-        let app_service_name_binding = args.app_service_name.get_output(context);
-        let blob_binding = args.blob.get_output(context);
-        let certificate_location_binding = args.certificate_location.get_output(context);
-        let certificate_name_binding = args.certificate_name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+        let app_service_name_binding = args.app_service_name.get_output(ctx);
+        let blob_binding = args.blob.get_output(ctx);
+        let certificate_location_binding = args.certificate_location.get_output(ctx);
+        let certificate_name_binding = args.certificate_name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:appservice/publicCertificate:PublicCertificate".into(),
             name: name.to_string(),
@@ -160,7 +160,7 @@ pub mod public_certificate {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         PublicCertificateResult {
             id: o.get_id(),
             urn: o.get_urn(),

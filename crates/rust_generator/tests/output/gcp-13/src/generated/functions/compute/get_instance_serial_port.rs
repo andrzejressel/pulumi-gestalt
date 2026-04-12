@@ -41,13 +41,13 @@ pub mod get_instance_serial_port {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetInstanceSerialPortArgs,
     ) -> GetInstanceSerialPortResult {
-        let instance_binding = args.instance.get_output(context);
-        let port_binding = args.port.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let zone_binding = args.zone.get_output(context);
+        let instance_binding = args.instance.get_output(ctx);
+        let port_binding = args.port.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let zone_binding = args.zone.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:compute/getInstanceSerialPort:getInstanceSerialPort".into(),
             version: super::super::super::get_version(),
@@ -70,7 +70,7 @@ pub mod get_instance_serial_port {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetInstanceSerialPortResult {
             contents: o.get_field("contents"),
             id: o.get_field("id"),

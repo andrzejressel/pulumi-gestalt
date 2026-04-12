@@ -39,15 +39,13 @@ pub mod get_models {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetModelsArgs,
     ) -> GetModelsResult {
-        let by_customization_type_binding = args
-            .by_customization_type
-            .get_output(context);
-        let by_inference_type_binding = args.by_inference_type.get_output(context);
-        let by_output_modality_binding = args.by_output_modality.get_output(context);
-        let by_provider_binding = args.by_provider.get_output(context);
+        let by_customization_type_binding = args.by_customization_type.get_output(ctx);
+        let by_inference_type_binding = args.by_inference_type.get_output(ctx);
+        let by_output_modality_binding = args.by_output_modality.get_output(ctx);
+        let by_provider_binding = args.by_provider.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:bedrockfoundation/getModels:getModels".into(),
             version: super::super::super::get_version(),
@@ -70,7 +68,7 @@ pub mod get_models {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetModelsResult {
             by_customization_type: o.get_field("byCustomizationType"),
             by_inference_type: o.get_field("byInferenceType"),

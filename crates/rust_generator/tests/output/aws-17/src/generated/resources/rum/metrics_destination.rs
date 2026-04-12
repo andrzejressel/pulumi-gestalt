@@ -68,35 +68,35 @@ pub mod metrics_destination {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MetricsDestinationArgs,
     ) -> MetricsDestinationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MetricsDestinationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> MetricsDestinationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MetricsDestinationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> MetricsDestinationResult {
-        let app_monitor_name_binding = args.app_monitor_name.get_output(context);
-        let destination_binding = args.destination.get_output(context);
-        let destination_arn_binding = args.destination_arn.get_output(context);
-        let iam_role_arn_binding = args.iam_role_arn.get_output(context);
+        let app_monitor_name_binding = args.app_monitor_name.get_output(ctx);
+        let destination_binding = args.destination.get_output(ctx);
+        let destination_arn_binding = args.destination_arn.get_output(ctx);
+        let iam_role_arn_binding = args.iam_role_arn.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:rum/metricsDestination:MetricsDestination".into(),
             name: name.to_string(),
@@ -121,7 +121,7 @@ pub mod metrics_destination {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         MetricsDestinationResult {
             id: o.get_id(),
             urn: o.get_urn(),

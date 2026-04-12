@@ -294,62 +294,58 @@ pub mod gateway {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GatewayArgs,
     ) -> GatewayResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GatewayArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> GatewayResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GatewayArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> GatewayResult {
-        let activation_key_binding = args.activation_key.get_output(context);
+        let activation_key_binding = args.activation_key.get_output(ctx);
         let average_download_rate_limit_in_bits_per_sec_binding = args
             .average_download_rate_limit_in_bits_per_sec
-            .get_output(context);
+            .get_output(ctx);
         let average_upload_rate_limit_in_bits_per_sec_binding = args
             .average_upload_rate_limit_in_bits_per_sec
-            .get_output(context);
+            .get_output(ctx);
         let cloudwatch_log_group_arn_binding = args
             .cloudwatch_log_group_arn
-            .get_output(context);
-        let gateway_ip_address_binding = args.gateway_ip_address.get_output(context);
-        let gateway_name_binding = args.gateway_name.get_output(context);
-        let gateway_timezone_binding = args.gateway_timezone.get_output(context);
-        let gateway_type_binding = args.gateway_type.get_output(context);
-        let gateway_vpc_endpoint_binding = args.gateway_vpc_endpoint.get_output(context);
-        let maintenance_start_time_binding = args
-            .maintenance_start_time
-            .get_output(context);
-        let medium_changer_type_binding = args.medium_changer_type.get_output(context);
+            .get_output(ctx);
+        let gateway_ip_address_binding = args.gateway_ip_address.get_output(ctx);
+        let gateway_name_binding = args.gateway_name.get_output(ctx);
+        let gateway_timezone_binding = args.gateway_timezone.get_output(ctx);
+        let gateway_type_binding = args.gateway_type.get_output(ctx);
+        let gateway_vpc_endpoint_binding = args.gateway_vpc_endpoint.get_output(ctx);
+        let maintenance_start_time_binding = args.maintenance_start_time.get_output(ctx);
+        let medium_changer_type_binding = args.medium_changer_type.get_output(ctx);
         let smb_active_directory_settings_binding = args
             .smb_active_directory_settings
-            .get_output(context);
+            .get_output(ctx);
         let smb_file_share_visibility_binding = args
             .smb_file_share_visibility
-            .get_output(context);
-        let smb_guest_password_binding = args.smb_guest_password.get_output(context);
-        let smb_security_strategy_binding = args
-            .smb_security_strategy
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let tape_drive_type_binding = args.tape_drive_type.get_output(context);
+            .get_output(ctx);
+        let smb_guest_password_binding = args.smb_guest_password.get_output(ctx);
+        let smb_security_strategy_binding = args.smb_security_strategy.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let tape_drive_type_binding = args.tape_drive_type.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:storagegateway/gateway:Gateway".into(),
             name: name.to_string(),
@@ -427,7 +423,7 @@ pub mod gateway {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         GatewayResult {
             id: o.get_id(),
             urn: o.get_urn(),

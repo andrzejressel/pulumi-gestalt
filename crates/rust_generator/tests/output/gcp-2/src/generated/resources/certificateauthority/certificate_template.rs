@@ -233,42 +233,40 @@ pub mod certificate_template {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CertificateTemplateArgs,
     ) -> CertificateTemplateResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CertificateTemplateArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> CertificateTemplateResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CertificateTemplateArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> CertificateTemplateResult {
-        let description_binding = args.description.get_output(context);
-        let identity_constraints_binding = args.identity_constraints.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let maximum_lifetime_binding = args.maximum_lifetime.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let passthrough_extensions_binding = args
-            .passthrough_extensions
-            .get_output(context);
-        let predefined_values_binding = args.predefined_values.get_output(context);
-        let project_binding = args.project.get_output(context);
+        let description_binding = args.description.get_output(ctx);
+        let identity_constraints_binding = args.identity_constraints.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let maximum_lifetime_binding = args.maximum_lifetime.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let passthrough_extensions_binding = args.passthrough_extensions.get_output(ctx);
+        let predefined_values_binding = args.predefined_values.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:certificateauthority/certificateTemplate:CertificateTemplate"
                 .into(),
@@ -314,7 +312,7 @@ pub mod certificate_template {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         CertificateTemplateResult {
             id: o.get_id(),
             urn: o.get_urn(),

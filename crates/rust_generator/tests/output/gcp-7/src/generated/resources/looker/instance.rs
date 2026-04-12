@@ -453,52 +453,52 @@ pub mod instance {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceArgs,
     ) -> InstanceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> InstanceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> InstanceResult {
-        let admin_settings_binding = args.admin_settings.get_output(context);
-        let consumer_network_binding = args.consumer_network.get_output(context);
-        let custom_domain_binding = args.custom_domain.get_output(context);
-        let deletion_policy_binding = args.deletion_policy.get_output(context);
+        let admin_settings_binding = args.admin_settings.get_output(ctx);
+        let consumer_network_binding = args.consumer_network.get_output(ctx);
+        let custom_domain_binding = args.custom_domain.get_output(ctx);
+        let deletion_policy_binding = args.deletion_policy.get_output(ctx);
         let deny_maintenance_period_binding = args
             .deny_maintenance_period
-            .get_output(context);
-        let encryption_config_binding = args.encryption_config.get_output(context);
-        let fips_enabled_binding = args.fips_enabled.get_output(context);
-        let maintenance_window_binding = args.maintenance_window.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let oauth_config_binding = args.oauth_config.get_output(context);
-        let platform_edition_binding = args.platform_edition.get_output(context);
-        let private_ip_enabled_binding = args.private_ip_enabled.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let psc_config_binding = args.psc_config.get_output(context);
-        let psc_enabled_binding = args.psc_enabled.get_output(context);
-        let public_ip_enabled_binding = args.public_ip_enabled.get_output(context);
-        let region_binding = args.region.get_output(context);
-        let reserved_range_binding = args.reserved_range.get_output(context);
-        let user_metadata_binding = args.user_metadata.get_output(context);
+            .get_output(ctx);
+        let encryption_config_binding = args.encryption_config.get_output(ctx);
+        let fips_enabled_binding = args.fips_enabled.get_output(ctx);
+        let maintenance_window_binding = args.maintenance_window.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let oauth_config_binding = args.oauth_config.get_output(ctx);
+        let platform_edition_binding = args.platform_edition.get_output(ctx);
+        let private_ip_enabled_binding = args.private_ip_enabled.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let psc_config_binding = args.psc_config.get_output(ctx);
+        let psc_enabled_binding = args.psc_enabled.get_output(ctx);
+        let public_ip_enabled_binding = args.public_ip_enabled.get_output(ctx);
+        let region_binding = args.region.get_output(ctx);
+        let reserved_range_binding = args.reserved_range.get_output(ctx);
+        let user_metadata_binding = args.user_metadata.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:looker/instance:Instance".into(),
             name: name.to_string(),
@@ -583,7 +583,7 @@ pub mod instance {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         InstanceResult {
             id: o.get_id(),
             urn: o.get_urn(),

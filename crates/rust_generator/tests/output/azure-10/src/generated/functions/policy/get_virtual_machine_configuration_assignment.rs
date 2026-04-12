@@ -43,12 +43,12 @@ pub mod get_virtual_machine_configuration_assignment {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetVirtualMachineConfigurationAssignmentArgs,
     ) -> GetVirtualMachineConfigurationAssignmentResult {
-        let name_binding = args.name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let virtual_machine_name_binding = args.virtual_machine_name.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let virtual_machine_name_binding = args.virtual_machine_name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:policy/getVirtualMachineConfigurationAssignment:getVirtualMachineConfigurationAssignment"
                 .into(),
@@ -68,7 +68,7 @@ pub mod get_virtual_machine_configuration_assignment {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetVirtualMachineConfigurationAssignmentResult {
             assignment_hash: o.get_field("assignmentHash"),
             compliance_status: o.get_field("complianceStatus"),

@@ -27,10 +27,10 @@ pub mod get_user_pools {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetUserPoolsArgs,
     ) -> GetUserPoolsResult {
-        let name_binding = args.name.get_output(context);
+        let name_binding = args.name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:cognito/getUserPools:getUserPools".into(),
             version: super::super::super::get_version(),
@@ -41,7 +41,7 @@ pub mod get_user_pools {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetUserPoolsResult {
             arns: o.get_field("arns"),
             id: o.get_field("id"),

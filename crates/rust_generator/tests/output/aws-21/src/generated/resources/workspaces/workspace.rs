@@ -129,45 +129,43 @@ pub mod workspace {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkspaceArgs,
     ) -> WorkspaceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkspaceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> WorkspaceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkspaceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> WorkspaceResult {
-        let bundle_id_binding = args.bundle_id.get_output(context);
-        let directory_id_binding = args.directory_id.get_output(context);
+        let bundle_id_binding = args.bundle_id.get_output(ctx);
+        let directory_id_binding = args.directory_id.get_output(ctx);
         let root_volume_encryption_enabled_binding = args
             .root_volume_encryption_enabled
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let user_name_binding = args.user_name.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let user_name_binding = args.user_name.get_output(ctx);
         let user_volume_encryption_enabled_binding = args
             .user_volume_encryption_enabled
-            .get_output(context);
-        let volume_encryption_key_binding = args
-            .volume_encryption_key
-            .get_output(context);
-        let workspace_properties_binding = args.workspace_properties.get_output(context);
+            .get_output(ctx);
+        let volume_encryption_key_binding = args.volume_encryption_key.get_output(ctx);
+        let workspace_properties_binding = args.workspace_properties.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:workspaces/workspace:Workspace".into(),
             name: name.to_string(),
@@ -208,7 +206,7 @@ pub mod workspace {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         WorkspaceResult {
             id: o.get_id(),
             urn: o.get_urn(),

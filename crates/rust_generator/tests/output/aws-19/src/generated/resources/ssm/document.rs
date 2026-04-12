@@ -168,40 +168,40 @@ pub mod document {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DocumentArgs,
     ) -> DocumentResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DocumentArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DocumentResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DocumentArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DocumentResult {
-        let attachments_sources_binding = args.attachments_sources.get_output(context);
-        let content_binding = args.content.get_output(context);
-        let document_format_binding = args.document_format.get_output(context);
-        let document_type_binding = args.document_type.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let permissions_binding = args.permissions.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let target_type_binding = args.target_type.get_output(context);
-        let version_name_binding = args.version_name.get_output(context);
+        let attachments_sources_binding = args.attachments_sources.get_output(ctx);
+        let content_binding = args.content.get_output(ctx);
+        let document_format_binding = args.document_format.get_output(ctx);
+        let document_type_binding = args.document_type.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let permissions_binding = args.permissions.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let target_type_binding = args.target_type.get_output(ctx);
+        let version_name_binding = args.version_name.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ssm/document:Document".into(),
             name: name.to_string(),
@@ -246,7 +246,7 @@ pub mod document {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DocumentResult {
             id: o.get_id(),
             urn: o.get_urn(),

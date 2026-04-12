@@ -185,67 +185,63 @@ pub mod network_security_rule {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkSecurityRuleArgs,
     ) -> NetworkSecurityRuleResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkSecurityRuleArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> NetworkSecurityRuleResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkSecurityRuleArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> NetworkSecurityRuleResult {
-        let access_binding = args.access.get_output(context);
-        let description_binding = args.description.get_output(context);
+        let access_binding = args.access.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
         let destination_address_prefix_binding = args
             .destination_address_prefix
-            .get_output(context);
+            .get_output(ctx);
         let destination_address_prefixes_binding = args
             .destination_address_prefixes
-            .get_output(context);
+            .get_output(ctx);
         let destination_application_security_group_ids_binding = args
             .destination_application_security_group_ids
-            .get_output(context);
-        let destination_port_range_binding = args
-            .destination_port_range
-            .get_output(context);
+            .get_output(ctx);
+        let destination_port_range_binding = args.destination_port_range.get_output(ctx);
         let destination_port_ranges_binding = args
             .destination_port_ranges
-            .get_output(context);
-        let direction_binding = args.direction.get_output(context);
-        let name_binding = args.name.get_output(context);
+            .get_output(ctx);
+        let direction_binding = args.direction.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let network_security_group_name_binding = args
             .network_security_group_name
-            .get_output(context);
-        let priority_binding = args.priority.get_output(context);
-        let protocol_binding = args.protocol.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let source_address_prefix_binding = args
-            .source_address_prefix
-            .get_output(context);
+            .get_output(ctx);
+        let priority_binding = args.priority.get_output(ctx);
+        let protocol_binding = args.protocol.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let source_address_prefix_binding = args.source_address_prefix.get_output(ctx);
         let source_address_prefixes_binding = args
             .source_address_prefixes
-            .get_output(context);
+            .get_output(ctx);
         let source_application_security_group_ids_binding = args
             .source_application_security_group_ids
-            .get_output(context);
-        let source_port_range_binding = args.source_port_range.get_output(context);
-        let source_port_ranges_binding = args.source_port_ranges.get_output(context);
+            .get_output(ctx);
+        let source_port_range_binding = args.source_port_range.get_output(ctx);
+        let source_port_ranges_binding = args.source_port_ranges.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:network/networkSecurityRule:NetworkSecurityRule".into(),
             name: name.to_string(),
@@ -327,7 +323,7 @@ pub mod network_security_rule {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         NetworkSecurityRuleResult {
             id: o.get_id(),
             urn: o.get_urn(),

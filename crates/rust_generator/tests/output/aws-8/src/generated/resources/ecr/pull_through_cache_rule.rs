@@ -71,38 +71,34 @@ pub mod pull_through_cache_rule {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PullThroughCacheRuleArgs,
     ) -> PullThroughCacheRuleResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PullThroughCacheRuleArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> PullThroughCacheRuleResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PullThroughCacheRuleArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> PullThroughCacheRuleResult {
-        let credential_arn_binding = args.credential_arn.get_output(context);
-        let ecr_repository_prefix_binding = args
-            .ecr_repository_prefix
-            .get_output(context);
-        let upstream_registry_url_binding = args
-            .upstream_registry_url
-            .get_output(context);
+        let credential_arn_binding = args.credential_arn.get_output(ctx);
+        let ecr_repository_prefix_binding = args.ecr_repository_prefix.get_output(ctx);
+        let upstream_registry_url_binding = args.upstream_registry_url.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ecr/pullThroughCacheRule:PullThroughCacheRule".into(),
             name: name.to_string(),
@@ -123,7 +119,7 @@ pub mod pull_through_cache_rule {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         PullThroughCacheRuleResult {
             id: o.get_id(),
             urn: o.get_urn(),

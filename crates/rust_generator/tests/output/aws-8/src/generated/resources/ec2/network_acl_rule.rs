@@ -142,42 +142,42 @@ pub mod network_acl_rule {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkAclRuleArgs,
     ) -> NetworkAclRuleResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkAclRuleArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> NetworkAclRuleResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkAclRuleArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> NetworkAclRuleResult {
-        let cidr_block_binding = args.cidr_block.get_output(context);
-        let egress_binding = args.egress.get_output(context);
-        let from_port_binding = args.from_port.get_output(context);
-        let icmp_code_binding = args.icmp_code.get_output(context);
-        let icmp_type_binding = args.icmp_type.get_output(context);
-        let ipv6_cidr_block_binding = args.ipv6_cidr_block.get_output(context);
-        let network_acl_id_binding = args.network_acl_id.get_output(context);
-        let protocol_binding = args.protocol.get_output(context);
-        let rule_action_binding = args.rule_action.get_output(context);
-        let rule_number_binding = args.rule_number.get_output(context);
-        let to_port_binding = args.to_port.get_output(context);
+        let cidr_block_binding = args.cidr_block.get_output(ctx);
+        let egress_binding = args.egress.get_output(ctx);
+        let from_port_binding = args.from_port.get_output(ctx);
+        let icmp_code_binding = args.icmp_code.get_output(ctx);
+        let icmp_type_binding = args.icmp_type.get_output(ctx);
+        let ipv6_cidr_block_binding = args.ipv6_cidr_block.get_output(ctx);
+        let network_acl_id_binding = args.network_acl_id.get_output(ctx);
+        let protocol_binding = args.protocol.get_output(ctx);
+        let rule_action_binding = args.rule_action.get_output(ctx);
+        let rule_number_binding = args.rule_number.get_output(ctx);
+        let to_port_binding = args.to_port.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/networkAclRule:NetworkAclRule".into(),
             name: name.to_string(),
@@ -230,7 +230,7 @@ pub mod network_acl_rule {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         NetworkAclRuleResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -29,11 +29,11 @@ pub mod get_resource_group_template_deployment {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetResourceGroupTemplateDeploymentArgs,
     ) -> GetResourceGroupTemplateDeploymentResult {
-        let name_binding = args.name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:core/getResourceGroupTemplateDeployment:getResourceGroupTemplateDeployment"
                 .into(),
@@ -49,7 +49,7 @@ pub mod get_resource_group_template_deployment {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetResourceGroupTemplateDeploymentResult {
             id: o.get_field("id"),
             name: o.get_field("name"),

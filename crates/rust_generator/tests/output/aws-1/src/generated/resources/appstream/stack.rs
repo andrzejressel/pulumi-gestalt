@@ -174,45 +174,45 @@ pub mod stack {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StackArgs,
     ) -> StackResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StackArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> StackResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StackArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> StackResult {
-        let access_endpoints_binding = args.access_endpoints.get_output(context);
-        let application_settings_binding = args.application_settings.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let embed_host_domains_binding = args.embed_host_domains.get_output(context);
-        let feedback_url_binding = args.feedback_url.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let redirect_url_binding = args.redirect_url.get_output(context);
-        let storage_connectors_binding = args.storage_connectors.get_output(context);
+        let access_endpoints_binding = args.access_endpoints.get_output(ctx);
+        let application_settings_binding = args.application_settings.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let embed_host_domains_binding = args.embed_host_domains.get_output(ctx);
+        let feedback_url_binding = args.feedback_url.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let redirect_url_binding = args.redirect_url.get_output(ctx);
+        let storage_connectors_binding = args.storage_connectors.get_output(ctx);
         let streaming_experience_settings_binding = args
             .streaming_experience_settings
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let user_settings_binding = args.user_settings.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let user_settings_binding = args.user_settings.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:appstream/stack:Stack".into(),
             name: name.to_string(),
@@ -269,7 +269,7 @@ pub mod stack {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         StackResult {
             id: o.get_id(),
             urn: o.get_urn(),

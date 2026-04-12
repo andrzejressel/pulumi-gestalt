@@ -49,14 +49,12 @@ pub mod get_policy_defintion_built_in {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetPolicyDefintionBuiltInArgs,
     ) -> GetPolicyDefintionBuiltInResult {
-        let display_name_binding = args.display_name.get_output(context);
-        let management_group_name_binding = args
-            .management_group_name
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let management_group_name_binding = args.management_group_name.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:policy/getPolicyDefintionBuiltIn:getPolicyDefintionBuiltIn"
                 .into(),
@@ -76,7 +74,7 @@ pub mod get_policy_defintion_built_in {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetPolicyDefintionBuiltInResult {
             description: o.get_field("description"),
             display_name: o.get_field("displayName"),

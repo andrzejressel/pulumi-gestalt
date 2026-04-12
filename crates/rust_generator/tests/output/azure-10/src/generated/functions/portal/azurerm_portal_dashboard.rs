@@ -40,13 +40,13 @@ pub mod azurerm_portal_dashboard {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: AzurermPortalDashboardArgs,
     ) -> AzurermPortalDashboardResult {
-        let dashboard_properties_binding = args.dashboard_properties.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+        let dashboard_properties_binding = args.dashboard_properties.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:portal/azurerm_portal_dashboard:azurerm_portal_dashboard"
                 .into(),
@@ -70,7 +70,7 @@ pub mod azurerm_portal_dashboard {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         AzurermPortalDashboardResult {
             dashboard_properties: o.get_field("dashboardProperties"),
             display_name: o.get_field("displayName"),

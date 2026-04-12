@@ -210,36 +210,36 @@ pub mod document {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DocumentArgs,
     ) -> DocumentResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DocumentArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DocumentResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DocumentArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DocumentResult {
-        let collection_binding = args.collection.get_output(context);
-        let database_binding = args.database.get_output(context);
-        let document_id_binding = args.document_id.get_output(context);
-        let fields_binding = args.fields.get_output(context);
-        let project_binding = args.project.get_output(context);
+        let collection_binding = args.collection.get_output(ctx);
+        let database_binding = args.database.get_output(ctx);
+        let document_id_binding = args.document_id.get_output(ctx);
+        let fields_binding = args.fields.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:firestore/document:Document".into(),
             name: name.to_string(),
@@ -268,7 +268,7 @@ pub mod document {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DocumentResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -219,56 +219,54 @@ pub mod virtual_network_peering {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VirtualNetworkPeeringArgs,
     ) -> VirtualNetworkPeeringResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VirtualNetworkPeeringArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> VirtualNetworkPeeringResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VirtualNetworkPeeringArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> VirtualNetworkPeeringResult {
         let allow_forwarded_traffic_binding = args
             .allow_forwarded_traffic
-            .get_output(context);
-        let allow_gateway_transit_binding = args
-            .allow_gateway_transit
-            .get_output(context);
+            .get_output(ctx);
+        let allow_gateway_transit_binding = args.allow_gateway_transit.get_output(ctx);
         let allow_virtual_network_access_binding = args
             .allow_virtual_network_access
-            .get_output(context);
-        let local_subnet_names_binding = args.local_subnet_names.get_output(context);
-        let name_binding = args.name.get_output(context);
+            .get_output(ctx);
+        let local_subnet_names_binding = args.local_subnet_names.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let only_ipv6_peering_enabled_binding = args
             .only_ipv6_peering_enabled
-            .get_output(context);
+            .get_output(ctx);
         let peer_complete_virtual_networks_enabled_binding = args
             .peer_complete_virtual_networks_enabled
-            .get_output(context);
-        let remote_subnet_names_binding = args.remote_subnet_names.get_output(context);
+            .get_output(ctx);
+        let remote_subnet_names_binding = args.remote_subnet_names.get_output(ctx);
         let remote_virtual_network_id_binding = args
             .remote_virtual_network_id
-            .get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let triggers_binding = args.triggers.get_output(context);
-        let use_remote_gateways_binding = args.use_remote_gateways.get_output(context);
-        let virtual_network_name_binding = args.virtual_network_name.get_output(context);
+            .get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let triggers_binding = args.triggers.get_output(ctx);
+        let use_remote_gateways_binding = args.use_remote_gateways.get_output(ctx);
+        let virtual_network_name_binding = args.virtual_network_name.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:network/virtualNetworkPeering:VirtualNetworkPeering".into(),
             name: name.to_string(),
@@ -329,7 +327,7 @@ pub mod virtual_network_peering {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         VirtualNetworkPeeringResult {
             id: o.get_id(),
             urn: o.get_urn(),

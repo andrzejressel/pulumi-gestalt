@@ -64,17 +64,17 @@ pub mod get_object_signed_url {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetObjectSignedUrlArgs,
     ) -> GetObjectSignedUrlResult {
-        let bucket_binding = args.bucket.get_output(context);
-        let content_md5_binding = args.content_md5.get_output(context);
-        let content_type_binding = args.content_type.get_output(context);
-        let credentials_binding = args.credentials.get_output(context);
-        let duration_binding = args.duration.get_output(context);
-        let extension_headers_binding = args.extension_headers.get_output(context);
-        let http_method_binding = args.http_method.get_output(context);
-        let path_binding = args.path.get_output(context);
+        let bucket_binding = args.bucket.get_output(ctx);
+        let content_md5_binding = args.content_md5.get_output(ctx);
+        let content_type_binding = args.content_type.get_output(ctx);
+        let credentials_binding = args.credentials.get_output(ctx);
+        let duration_binding = args.duration.get_output(ctx);
+        let extension_headers_binding = args.extension_headers.get_output(ctx);
+        let http_method_binding = args.http_method.get_output(ctx);
+        let path_binding = args.path.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:storage/getObjectSignedUrl:getObjectSignedUrl".into(),
             version: super::super::super::get_version(),
@@ -113,7 +113,7 @@ pub mod get_object_signed_url {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetObjectSignedUrlResult {
             bucket: o.get_field("bucket"),
             content_md5: o.get_field("contentMd5"),

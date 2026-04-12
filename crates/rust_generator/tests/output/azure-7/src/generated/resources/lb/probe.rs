@@ -124,39 +124,39 @@ pub mod probe {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProbeArgs,
     ) -> ProbeResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProbeArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ProbeResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProbeArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ProbeResult {
-        let interval_in_seconds_binding = args.interval_in_seconds.get_output(context);
-        let loadbalancer_id_binding = args.loadbalancer_id.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let number_of_probes_binding = args.number_of_probes.get_output(context);
-        let port_binding = args.port.get_output(context);
-        let probe_threshold_binding = args.probe_threshold.get_output(context);
-        let protocol_binding = args.protocol.get_output(context);
-        let request_path_binding = args.request_path.get_output(context);
+        let interval_in_seconds_binding = args.interval_in_seconds.get_output(ctx);
+        let loadbalancer_id_binding = args.loadbalancer_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let number_of_probes_binding = args.number_of_probes.get_output(ctx);
+        let port_binding = args.port.get_output(ctx);
+        let probe_threshold_binding = args.probe_threshold.get_output(ctx);
+        let protocol_binding = args.protocol.get_output(ctx);
+        let request_path_binding = args.request_path.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:lb/probe:Probe".into(),
             name: name.to_string(),
@@ -197,7 +197,7 @@ pub mod probe {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ProbeResult {
             id: o.get_id(),
             urn: o.get_urn(),

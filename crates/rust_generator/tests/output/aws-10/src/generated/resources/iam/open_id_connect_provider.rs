@@ -100,35 +100,35 @@ pub mod open_id_connect_provider {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OpenIdConnectProviderArgs,
     ) -> OpenIdConnectProviderResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OpenIdConnectProviderArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> OpenIdConnectProviderResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OpenIdConnectProviderArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> OpenIdConnectProviderResult {
-        let client_id_lists_binding = args.client_id_lists.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let thumbprint_lists_binding = args.thumbprint_lists.get_output(context);
-        let url_binding = args.url.get_output(context);
+        let client_id_lists_binding = args.client_id_lists.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let thumbprint_lists_binding = args.thumbprint_lists.get_output(ctx);
+        let url_binding = args.url.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:iam/openIdConnectProvider:OpenIdConnectProvider".into(),
             name: name.to_string(),
@@ -153,7 +153,7 @@ pub mod open_id_connect_provider {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         OpenIdConnectProviderResult {
             id: o.get_id(),
             urn: o.get_urn(),

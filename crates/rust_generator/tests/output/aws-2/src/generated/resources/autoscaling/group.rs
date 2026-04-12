@@ -832,99 +832,87 @@ pub mod group {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GroupArgs,
     ) -> GroupResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GroupArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> GroupResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GroupArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> GroupResult {
         let availability_zone_distribution_binding = args
             .availability_zone_distribution
-            .get_output(context);
-        let availability_zones_binding = args.availability_zones.get_output(context);
-        let capacity_rebalance_binding = args.capacity_rebalance.get_output(context);
-        let context_binding = args.context.get_output(context);
-        let default_cooldown_binding = args.default_cooldown.get_output(context);
+            .get_output(ctx);
+        let availability_zones_binding = args.availability_zones.get_output(ctx);
+        let capacity_rebalance_binding = args.capacity_rebalance.get_output(ctx);
+        let context_binding = args.context.get_output(ctx);
+        let default_cooldown_binding = args.default_cooldown.get_output(ctx);
         let default_instance_warmup_binding = args
             .default_instance_warmup
-            .get_output(context);
-        let desired_capacity_binding = args.desired_capacity.get_output(context);
-        let desired_capacity_type_binding = args
-            .desired_capacity_type
-            .get_output(context);
-        let enabled_metrics_binding = args.enabled_metrics.get_output(context);
-        let force_delete_binding = args.force_delete.get_output(context);
-        let force_delete_warm_pool_binding = args
-            .force_delete_warm_pool
-            .get_output(context);
+            .get_output(ctx);
+        let desired_capacity_binding = args.desired_capacity.get_output(ctx);
+        let desired_capacity_type_binding = args.desired_capacity_type.get_output(ctx);
+        let enabled_metrics_binding = args.enabled_metrics.get_output(ctx);
+        let force_delete_binding = args.force_delete.get_output(ctx);
+        let force_delete_warm_pool_binding = args.force_delete_warm_pool.get_output(ctx);
         let health_check_grace_period_binding = args
             .health_check_grace_period
-            .get_output(context);
-        let health_check_type_binding = args.health_check_type.get_output(context);
+            .get_output(ctx);
+        let health_check_type_binding = args.health_check_type.get_output(ctx);
         let ignore_failed_scaling_activities_binding = args
             .ignore_failed_scaling_activities
-            .get_output(context);
+            .get_output(ctx);
         let initial_lifecycle_hooks_binding = args
             .initial_lifecycle_hooks
-            .get_output(context);
+            .get_output(ctx);
         let instance_maintenance_policy_binding = args
             .instance_maintenance_policy
-            .get_output(context);
-        let instance_refresh_binding = args.instance_refresh.get_output(context);
-        let launch_configuration_binding = args.launch_configuration.get_output(context);
-        let launch_template_binding = args.launch_template.get_output(context);
-        let load_balancers_binding = args.load_balancers.get_output(context);
-        let max_instance_lifetime_binding = args
-            .max_instance_lifetime
-            .get_output(context);
-        let max_size_binding = args.max_size.get_output(context);
-        let metrics_granularity_binding = args.metrics_granularity.get_output(context);
-        let min_elb_capacity_binding = args.min_elb_capacity.get_output(context);
-        let min_size_binding = args.min_size.get_output(context);
-        let mixed_instances_policy_binding = args
-            .mixed_instances_policy
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let name_prefix_binding = args.name_prefix.get_output(context);
-        let placement_group_binding = args.placement_group.get_output(context);
-        let protect_from_scale_in_binding = args
-            .protect_from_scale_in
-            .get_output(context);
+            .get_output(ctx);
+        let instance_refresh_binding = args.instance_refresh.get_output(ctx);
+        let launch_configuration_binding = args.launch_configuration.get_output(ctx);
+        let launch_template_binding = args.launch_template.get_output(ctx);
+        let load_balancers_binding = args.load_balancers.get_output(ctx);
+        let max_instance_lifetime_binding = args.max_instance_lifetime.get_output(ctx);
+        let max_size_binding = args.max_size.get_output(ctx);
+        let metrics_granularity_binding = args.metrics_granularity.get_output(ctx);
+        let min_elb_capacity_binding = args.min_elb_capacity.get_output(ctx);
+        let min_size_binding = args.min_size.get_output(ctx);
+        let mixed_instances_policy_binding = args.mixed_instances_policy.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let name_prefix_binding = args.name_prefix.get_output(ctx);
+        let placement_group_binding = args.placement_group.get_output(ctx);
+        let protect_from_scale_in_binding = args.protect_from_scale_in.get_output(ctx);
         let service_linked_role_arn_binding = args
             .service_linked_role_arn
-            .get_output(context);
-        let suspended_processes_binding = args.suspended_processes.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let target_group_arns_binding = args.target_group_arns.get_output(context);
-        let termination_policies_binding = args.termination_policies.get_output(context);
-        let traffic_sources_binding = args.traffic_sources.get_output(context);
-        let vpc_zone_identifiers_binding = args.vpc_zone_identifiers.get_output(context);
+            .get_output(ctx);
+        let suspended_processes_binding = args.suspended_processes.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let target_group_arns_binding = args.target_group_arns.get_output(ctx);
+        let termination_policies_binding = args.termination_policies.get_output(ctx);
+        let traffic_sources_binding = args.traffic_sources.get_output(ctx);
+        let vpc_zone_identifiers_binding = args.vpc_zone_identifiers.get_output(ctx);
         let wait_for_capacity_timeout_binding = args
             .wait_for_capacity_timeout
-            .get_output(context);
-        let wait_for_elb_capacity_binding = args
-            .wait_for_elb_capacity
-            .get_output(context);
-        let warm_pool_binding = args.warm_pool.get_output(context);
+            .get_output(ctx);
+        let wait_for_elb_capacity_binding = args.wait_for_elb_capacity.get_output(ctx);
+        let warm_pool_binding = args.warm_pool.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:autoscaling/group:Group".into(),
             name: name.to_string(),
@@ -1093,7 +1081,7 @@ pub mod group {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         GroupResult {
             id: o.get_id(),
             urn: o.get_urn(),

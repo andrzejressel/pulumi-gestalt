@@ -154,45 +154,45 @@ pub mod user {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: UserArgs,
     ) -> UserResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: UserArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> UserResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: UserArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> UserResult {
-        let addresses_binding = args.addresses.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let emails_binding = args.emails.get_output(context);
-        let identity_store_id_binding = args.identity_store_id.get_output(context);
-        let locale_binding = args.locale.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let nickname_binding = args.nickname.get_output(context);
-        let phone_numbers_binding = args.phone_numbers.get_output(context);
-        let preferred_language_binding = args.preferred_language.get_output(context);
-        let profile_url_binding = args.profile_url.get_output(context);
-        let timezone_binding = args.timezone.get_output(context);
-        let title_binding = args.title.get_output(context);
-        let user_name_binding = args.user_name.get_output(context);
-        let user_type_binding = args.user_type.get_output(context);
+        let addresses_binding = args.addresses.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let emails_binding = args.emails.get_output(ctx);
+        let identity_store_id_binding = args.identity_store_id.get_output(ctx);
+        let locale_binding = args.locale.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let nickname_binding = args.nickname.get_output(ctx);
+        let phone_numbers_binding = args.phone_numbers.get_output(ctx);
+        let preferred_language_binding = args.preferred_language.get_output(ctx);
+        let profile_url_binding = args.profile_url.get_output(ctx);
+        let timezone_binding = args.timezone.get_output(ctx);
+        let title_binding = args.title.get_output(ctx);
+        let user_name_binding = args.user_name.get_output(ctx);
+        let user_type_binding = args.user_type.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:identitystore/user:User".into(),
             name: name.to_string(),
@@ -257,7 +257,7 @@ pub mod user {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         UserResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -44,12 +44,9 @@ pub mod get_lab {
     /// Registers a new resource with the given unique name and arguments
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
-    pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
-        args: GetLabArgs,
-    ) -> GetLabResult {
-        let name_binding = args.name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+    pub fn invoke(ctx: &pulumi_gestalt_rust::Context, args: GetLabArgs) -> GetLabResult {
+        let name_binding = args.name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:devtest/getLab:getLab".into(),
             version: super::super::super::get_version(),
@@ -64,7 +61,7 @@ pub mod get_lab {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetLabResult {
             artifacts_storage_account_id: o.get_field("artifactsStorageAccountId"),
             default_premium_storage_account_id: o

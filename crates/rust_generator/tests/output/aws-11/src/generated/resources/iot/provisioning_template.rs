@@ -156,43 +156,39 @@ pub mod provisioning_template {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProvisioningTemplateArgs,
     ) -> ProvisioningTemplateResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProvisioningTemplateArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ProvisioningTemplateResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProvisioningTemplateArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ProvisioningTemplateResult {
-        let description_binding = args.description.get_output(context);
-        let enabled_binding = args.enabled.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let pre_provisioning_hook_binding = args
-            .pre_provisioning_hook
-            .get_output(context);
-        let provisioning_role_arn_binding = args
-            .provisioning_role_arn
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let template_body_binding = args.template_body.get_output(context);
-        let type__binding = args.type_.get_output(context);
+        let description_binding = args.description.get_output(ctx);
+        let enabled_binding = args.enabled.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let pre_provisioning_hook_binding = args.pre_provisioning_hook.get_output(ctx);
+        let provisioning_role_arn_binding = args.provisioning_role_arn.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let template_body_binding = args.template_body.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:iot/provisioningTemplate:ProvisioningTemplate".into(),
             name: name.to_string(),
@@ -233,7 +229,7 @@ pub mod provisioning_template {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ProvisioningTemplateResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -109,39 +109,39 @@ pub mod virtual_machine_manager_virtual_machine_template {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VirtualMachineManagerVirtualMachineTemplateArgs,
     ) -> VirtualMachineManagerVirtualMachineTemplateResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VirtualMachineManagerVirtualMachineTemplateArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> VirtualMachineManagerVirtualMachineTemplateResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VirtualMachineManagerVirtualMachineTemplateArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> VirtualMachineManagerVirtualMachineTemplateResult {
-        let custom_location_id_binding = args.custom_location_id.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+        let custom_location_id_binding = args.custom_location_id.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let system_center_virtual_machine_manager_server_inventory_item_id_binding = args
             .system_center_virtual_machine_manager_server_inventory_item_id
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:systemcenter/virtualMachineManagerVirtualMachineTemplate:VirtualMachineManagerVirtualMachineTemplate"
                 .into(),
@@ -177,7 +177,7 @@ pub mod virtual_machine_manager_virtual_machine_template {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         VirtualMachineManagerVirtualMachineTemplateResult {
             id: o.get_id(),
             urn: o.get_urn(),

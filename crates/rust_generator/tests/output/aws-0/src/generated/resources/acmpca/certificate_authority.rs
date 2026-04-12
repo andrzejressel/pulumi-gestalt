@@ -221,47 +221,47 @@ pub mod certificate_authority {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CertificateAuthorityArgs,
     ) -> CertificateAuthorityResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CertificateAuthorityArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> CertificateAuthorityResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CertificateAuthorityArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> CertificateAuthorityResult {
         let certificate_authority_configuration_binding = args
             .certificate_authority_configuration
-            .get_output(context);
-        let enabled_binding = args.enabled.get_output(context);
+            .get_output(ctx);
+        let enabled_binding = args.enabled.get_output(ctx);
         let key_storage_security_standard_binding = args
             .key_storage_security_standard
-            .get_output(context);
+            .get_output(ctx);
         let permanent_deletion_time_in_days_binding = args
             .permanent_deletion_time_in_days
-            .get_output(context);
+            .get_output(ctx);
         let revocation_configuration_binding = args
             .revocation_configuration
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let type__binding = args.type_.get_output(context);
-        let usage_mode_binding = args.usage_mode.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
+        let usage_mode_binding = args.usage_mode.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:acmpca/certificateAuthority:CertificateAuthority".into(),
             name: name.to_string(),
@@ -302,7 +302,7 @@ pub mod certificate_authority {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         CertificateAuthorityResult {
             id: o.get_id(),
             urn: o.get_urn(),

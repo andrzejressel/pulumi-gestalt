@@ -344,49 +344,45 @@ pub mod edge_cache_origin {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EdgeCacheOriginArgs,
     ) -> EdgeCacheOriginResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EdgeCacheOriginArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> EdgeCacheOriginResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EdgeCacheOriginArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> EdgeCacheOriginResult {
-        let aws_v4_authentication_binding = args
-            .aws_v4_authentication
-            .get_output(context);
-        let description_binding = args.description.get_output(context);
-        let failover_origin_binding = args.failover_origin.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let max_attempts_binding = args.max_attempts.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let origin_address_binding = args.origin_address.get_output(context);
-        let origin_override_action_binding = args
-            .origin_override_action
-            .get_output(context);
-        let origin_redirect_binding = args.origin_redirect.get_output(context);
-        let port_binding = args.port.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let protocol_binding = args.protocol.get_output(context);
-        let retry_conditions_binding = args.retry_conditions.get_output(context);
-        let timeout_binding = args.timeout.get_output(context);
+        let aws_v4_authentication_binding = args.aws_v4_authentication.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let failover_origin_binding = args.failover_origin.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let max_attempts_binding = args.max_attempts.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let origin_address_binding = args.origin_address.get_output(ctx);
+        let origin_override_action_binding = args.origin_override_action.get_output(ctx);
+        let origin_redirect_binding = args.origin_redirect.get_output(ctx);
+        let port_binding = args.port.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let protocol_binding = args.protocol.get_output(ctx);
+        let retry_conditions_binding = args.retry_conditions.get_output(ctx);
+        let timeout_binding = args.timeout.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:networkservices/edgeCacheOrigin:EdgeCacheOrigin".into(),
             name: name.to_string(),
@@ -451,7 +447,7 @@ pub mod edge_cache_origin {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         EdgeCacheOriginResult {
             id: o.get_id(),
             urn: o.get_urn(),

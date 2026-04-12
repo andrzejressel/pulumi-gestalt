@@ -50,13 +50,13 @@ pub mod get_image {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetImageArgs,
     ) -> GetImageResult {
-        let name_binding = args.name.get_output(context);
-        let name_regex_binding = args.name_regex.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let sort_descending_binding = args.sort_descending.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let name_regex_binding = args.name_regex.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let sort_descending_binding = args.sort_descending.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:compute/getImage:getImage".into(),
             version: super::super::super::get_version(),
@@ -79,7 +79,7 @@ pub mod get_image {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetImageResult {
             data_disks: o.get_field("dataDisks"),
             id: o.get_field("id"),

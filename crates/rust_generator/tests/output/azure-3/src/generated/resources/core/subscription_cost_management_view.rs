@@ -127,41 +127,41 @@ pub mod subscription_cost_management_view {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SubscriptionCostManagementViewArgs,
     ) -> SubscriptionCostManagementViewResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SubscriptionCostManagementViewArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> SubscriptionCostManagementViewResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SubscriptionCostManagementViewArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> SubscriptionCostManagementViewResult {
-        let accumulated_binding = args.accumulated.get_output(context);
-        let chart_type_binding = args.chart_type.get_output(context);
-        let dataset_binding = args.dataset.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let kpis_binding = args.kpis.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let pivots_binding = args.pivots.get_output(context);
-        let report_type_binding = args.report_type.get_output(context);
-        let subscription_id_binding = args.subscription_id.get_output(context);
-        let timeframe_binding = args.timeframe.get_output(context);
+        let accumulated_binding = args.accumulated.get_output(ctx);
+        let chart_type_binding = args.chart_type.get_output(ctx);
+        let dataset_binding = args.dataset.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let kpis_binding = args.kpis.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let pivots_binding = args.pivots.get_output(ctx);
+        let report_type_binding = args.report_type.get_output(ctx);
+        let subscription_id_binding = args.subscription_id.get_output(ctx);
+        let timeframe_binding = args.timeframe.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:core/subscriptionCostManagementView:SubscriptionCostManagementView"
                 .into(),
@@ -211,7 +211,7 @@ pub mod subscription_cost_management_view {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         SubscriptionCostManagementViewResult {
             id: o.get_id(),
             urn: o.get_urn(),

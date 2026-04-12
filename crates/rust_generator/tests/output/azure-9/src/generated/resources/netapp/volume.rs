@@ -225,84 +225,82 @@ pub mod volume {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VolumeArgs,
     ) -> VolumeResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VolumeArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> VolumeResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VolumeArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> VolumeResult {
-        let account_name_binding = args.account_name.get_output(context);
+        let account_name_binding = args.account_name.get_output(ctx);
         let azure_vmware_data_store_enabled_binding = args
             .azure_vmware_data_store_enabled
-            .get_output(context);
+            .get_output(ctx);
         let create_from_snapshot_resource_id_binding = args
             .create_from_snapshot_resource_id
-            .get_output(context);
+            .get_output(ctx);
         let data_protection_backup_policy_binding = args
             .data_protection_backup_policy
-            .get_output(context);
+            .get_output(ctx);
         let data_protection_replication_binding = args
             .data_protection_replication
-            .get_output(context);
+            .get_output(ctx);
         let data_protection_snapshot_policy_binding = args
             .data_protection_snapshot_policy
-            .get_output(context);
-        let encryption_key_source_binding = args
-            .encryption_key_source
-            .get_output(context);
-        let export_policy_rules_binding = args.export_policy_rules.get_output(context);
-        let kerberos_enabled_binding = args.kerberos_enabled.get_output(context);
+            .get_output(ctx);
+        let encryption_key_source_binding = args.encryption_key_source.get_output(ctx);
+        let export_policy_rules_binding = args.export_policy_rules.get_output(ctx);
+        let kerberos_enabled_binding = args.kerberos_enabled.get_output(ctx);
         let key_vault_private_endpoint_id_binding = args
             .key_vault_private_endpoint_id
-            .get_output(context);
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_features_binding = args.network_features.get_output(context);
-        let pool_name_binding = args.pool_name.get_output(context);
-        let protocols_binding = args.protocols.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let security_style_binding = args.security_style.get_output(context);
-        let service_level_binding = args.service_level.get_output(context);
+            .get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_features_binding = args.network_features.get_output(ctx);
+        let pool_name_binding = args.pool_name.get_output(ctx);
+        let protocols_binding = args.protocols.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let security_style_binding = args.security_style.get_output(ctx);
+        let service_level_binding = args.service_level.get_output(ctx);
         let smb3_protocol_encryption_enabled_binding = args
             .smb3_protocol_encryption_enabled
-            .get_output(context);
+            .get_output(ctx);
         let smb_access_based_enumeration_enabled_binding = args
             .smb_access_based_enumeration_enabled
-            .get_output(context);
+            .get_output(ctx);
         let smb_continuous_availability_enabled_binding = args
             .smb_continuous_availability_enabled
-            .get_output(context);
+            .get_output(ctx);
         let smb_non_browsable_enabled_binding = args
             .smb_non_browsable_enabled
-            .get_output(context);
+            .get_output(ctx);
         let snapshot_directory_visible_binding = args
             .snapshot_directory_visible
-            .get_output(context);
-        let storage_quota_in_gb_binding = args.storage_quota_in_gb.get_output(context);
-        let subnet_id_binding = args.subnet_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let throughput_in_mibps_binding = args.throughput_in_mibps.get_output(context);
-        let volume_path_binding = args.volume_path.get_output(context);
-        let zone_binding = args.zone.get_output(context);
+            .get_output(ctx);
+        let storage_quota_in_gb_binding = args.storage_quota_in_gb.get_output(ctx);
+        let subnet_id_binding = args.subnet_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let throughput_in_mibps_binding = args.throughput_in_mibps.get_output(ctx);
+        let volume_path_binding = args.volume_path.get_output(ctx);
+        let zone_binding = args.zone.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:netapp/volume:Volume".into(),
             name: name.to_string(),
@@ -427,7 +425,7 @@ pub mod volume {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         VolumeResult {
             id: o.get_id(),
             urn: o.get_urn(),

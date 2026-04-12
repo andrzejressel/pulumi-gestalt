@@ -16,11 +16,8 @@ pub mod func_with_empty_outputs {
     /// Registers a new resource with the given unique name and arguments
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
-    pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
-        args: FuncWithEmptyOutputsArgs,
-    ) {
-        let name_binding = args.name.get_output(context);
+    pub fn invoke(ctx: &pulumi_gestalt_rust::Context, args: FuncWithEmptyOutputsArgs) {
+        let name_binding = args.name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "mypkg::funcWithEmptyOutputs".into(),
             version: super::super::get_version(),
@@ -31,6 +28,6 @@ pub mod func_with_empty_outputs {
                 },
             ],
         };
-        context.invoke_resource(request);
+        ctx.invoke_resource(request);
     }
 }

@@ -76,14 +76,14 @@ pub mod get_catalog_table {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetCatalogTableArgs,
     ) -> GetCatalogTableResult {
-        let catalog_id_binding = args.catalog_id.get_output(context);
-        let database_name_binding = args.database_name.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let query_as_of_time_binding = args.query_as_of_time.get_output(context);
-        let transaction_id_binding = args.transaction_id.get_output(context);
+        let catalog_id_binding = args.catalog_id.get_output(ctx);
+        let database_name_binding = args.database_name.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let query_as_of_time_binding = args.query_as_of_time.get_output(ctx);
+        let transaction_id_binding = args.transaction_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:glue/getCatalogTable:getCatalogTable".into(),
             version: super::super::super::get_version(),
@@ -110,7 +110,7 @@ pub mod get_catalog_table {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetCatalogTableResult {
             arn: o.get_field("arn"),
             catalog_id: o.get_field("catalogId"),

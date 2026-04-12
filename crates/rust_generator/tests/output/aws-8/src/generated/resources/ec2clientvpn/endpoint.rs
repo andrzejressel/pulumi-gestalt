@@ -174,59 +174,49 @@ pub mod endpoint {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EndpointArgs,
     ) -> EndpointResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EndpointArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> EndpointResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EndpointArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> EndpointResult {
-        let authentication_options_binding = args
-            .authentication_options
-            .get_output(context);
-        let client_cidr_block_binding = args.client_cidr_block.get_output(context);
-        let client_connect_options_binding = args
-            .client_connect_options
-            .get_output(context);
+        let authentication_options_binding = args.authentication_options.get_output(ctx);
+        let client_cidr_block_binding = args.client_cidr_block.get_output(ctx);
+        let client_connect_options_binding = args.client_connect_options.get_output(ctx);
         let client_login_banner_options_binding = args
             .client_login_banner_options
-            .get_output(context);
-        let connection_log_options_binding = args
-            .connection_log_options
-            .get_output(context);
-        let description_binding = args.description.get_output(context);
-        let dns_servers_binding = args.dns_servers.get_output(context);
-        let security_group_ids_binding = args.security_group_ids.get_output(context);
-        let self_service_portal_binding = args.self_service_portal.get_output(context);
-        let server_certificate_arn_binding = args
-            .server_certificate_arn
-            .get_output(context);
-        let session_timeout_hours_binding = args
-            .session_timeout_hours
-            .get_output(context);
-        let split_tunnel_binding = args.split_tunnel.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let transport_protocol_binding = args.transport_protocol.get_output(context);
-        let vpc_id_binding = args.vpc_id.get_output(context);
-        let vpn_port_binding = args.vpn_port.get_output(context);
+            .get_output(ctx);
+        let connection_log_options_binding = args.connection_log_options.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let dns_servers_binding = args.dns_servers.get_output(ctx);
+        let security_group_ids_binding = args.security_group_ids.get_output(ctx);
+        let self_service_portal_binding = args.self_service_portal.get_output(ctx);
+        let server_certificate_arn_binding = args.server_certificate_arn.get_output(ctx);
+        let session_timeout_hours_binding = args.session_timeout_hours.get_output(ctx);
+        let split_tunnel_binding = args.split_tunnel.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let transport_protocol_binding = args.transport_protocol.get_output(ctx);
+        let vpc_id_binding = args.vpc_id.get_output(ctx);
+        let vpn_port_binding = args.vpn_port.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2clientvpn/endpoint:Endpoint".into(),
             name: name.to_string(),
@@ -299,7 +289,7 @@ pub mod endpoint {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         EndpointResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -88,38 +88,38 @@ pub mod turnstile_widget {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TurnstileWidgetArgs,
     ) -> TurnstileWidgetResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TurnstileWidgetArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> TurnstileWidgetResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TurnstileWidgetArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> TurnstileWidgetResult {
-        let account_id_binding = args.account_id.get_output(context);
-        let bot_fight_mode_binding = args.bot_fight_mode.get_output(context);
-        let domains_binding = args.domains.get_output(context);
-        let mode_binding = args.mode.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let offlabel_binding = args.offlabel.get_output(context);
-        let region_binding = args.region.get_output(context);
+        let account_id_binding = args.account_id.get_output(ctx);
+        let bot_fight_mode_binding = args.bot_fight_mode.get_output(ctx);
+        let domains_binding = args.domains.get_output(ctx);
+        let mode_binding = args.mode.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let offlabel_binding = args.offlabel.get_output(ctx);
+        let region_binding = args.region.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "cloudflare:index/turnstileWidget:TurnstileWidget".into(),
             name: name.to_string(),
@@ -156,7 +156,7 @@ pub mod turnstile_widget {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         TurnstileWidgetResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -34,9 +34,9 @@ pub use native::{
 ///     Ok(())
 /// }).unwrap();
 pub fn run<F: Fn(&Context) -> Result<()>>(f: F) -> Result<()> {
-    let context = Context::new();
-    f(&context).context("Failed to run Pulumi program")?;
-    context.finish();
+    let ctx = Context::new();
+    f(&ctx).context("Failed to run Pulumi program")?;
+    ctx.finish();
     Ok(())
 }
 

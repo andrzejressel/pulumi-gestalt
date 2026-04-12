@@ -129,51 +129,47 @@ pub mod endpoint_group {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EndpointGroupArgs,
     ) -> EndpointGroupResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EndpointGroupArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> EndpointGroupResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EndpointGroupArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> EndpointGroupResult {
         let endpoint_configurations_binding = args
             .endpoint_configurations
-            .get_output(context);
-        let endpoint_group_region_binding = args
-            .endpoint_group_region
-            .get_output(context);
+            .get_output(ctx);
+        let endpoint_group_region_binding = args.endpoint_group_region.get_output(ctx);
         let health_check_interval_seconds_binding = args
             .health_check_interval_seconds
-            .get_output(context);
-        let health_check_path_binding = args.health_check_path.get_output(context);
-        let health_check_port_binding = args.health_check_port.get_output(context);
-        let health_check_protocol_binding = args
-            .health_check_protocol
-            .get_output(context);
-        let listener_arn_binding = args.listener_arn.get_output(context);
-        let port_overrides_binding = args.port_overrides.get_output(context);
-        let threshold_count_binding = args.threshold_count.get_output(context);
+            .get_output(ctx);
+        let health_check_path_binding = args.health_check_path.get_output(ctx);
+        let health_check_port_binding = args.health_check_port.get_output(ctx);
+        let health_check_protocol_binding = args.health_check_protocol.get_output(ctx);
+        let listener_arn_binding = args.listener_arn.get_output(ctx);
+        let port_overrides_binding = args.port_overrides.get_output(ctx);
+        let threshold_count_binding = args.threshold_count.get_output(ctx);
         let traffic_dial_percentage_binding = args
             .traffic_dial_percentage
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:globalaccelerator/endpointGroup:EndpointGroup".into(),
             name: name.to_string(),
@@ -222,7 +218,7 @@ pub mod endpoint_group {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         EndpointGroupResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -28,10 +28,10 @@ pub mod get_tag_value_iam_policy {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetTagValueIamPolicyArgs,
     ) -> GetTagValueIamPolicyResult {
-        let tag_value_binding = args.tag_value.get_output(context);
+        let tag_value_binding = args.tag_value.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:tags/getTagValueIamPolicy:getTagValueIamPolicy".into(),
             version: super::super::super::get_version(),
@@ -42,7 +42,7 @@ pub mod get_tag_value_iam_policy {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetTagValueIamPolicyResult {
             etag: o.get_field("etag"),
             id: o.get_field("id"),

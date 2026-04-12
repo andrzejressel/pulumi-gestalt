@@ -97,37 +97,37 @@ pub mod mover_source_endpoint {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MoverSourceEndpointArgs,
     ) -> MoverSourceEndpointResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MoverSourceEndpointArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> MoverSourceEndpointResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MoverSourceEndpointArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> MoverSourceEndpointResult {
-        let description_binding = args.description.get_output(context);
-        let export_binding = args.export.get_output(context);
-        let host_binding = args.host.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let nfs_version_binding = args.nfs_version.get_output(context);
-        let storage_mover_id_binding = args.storage_mover_id.get_output(context);
+        let description_binding = args.description.get_output(ctx);
+        let export_binding = args.export.get_output(ctx);
+        let host_binding = args.host.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let nfs_version_binding = args.nfs_version.get_output(ctx);
+        let storage_mover_id_binding = args.storage_mover_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:storage/moverSourceEndpoint:MoverSourceEndpoint".into(),
             name: name.to_string(),
@@ -160,7 +160,7 @@ pub mod mover_source_endpoint {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         MoverSourceEndpointResult {
             id: o.get_id(),
             urn: o.get_urn(),

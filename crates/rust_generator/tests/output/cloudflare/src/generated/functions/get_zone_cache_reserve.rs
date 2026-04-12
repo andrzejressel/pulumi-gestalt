@@ -26,10 +26,10 @@ pub mod get_zone_cache_reserve {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetZoneCacheReserveArgs,
     ) -> GetZoneCacheReserveResult {
-        let zone_id_binding = args.zone_id.get_output(context);
+        let zone_id_binding = args.zone_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "cloudflare:index/getZoneCacheReserve:getZoneCacheReserve".into(),
             version: super::super::get_version(),
@@ -40,7 +40,7 @@ pub mod get_zone_cache_reserve {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetZoneCacheReserveResult {
             enabled: o.get_field("enabled"),
             id: o.get_field("id"),

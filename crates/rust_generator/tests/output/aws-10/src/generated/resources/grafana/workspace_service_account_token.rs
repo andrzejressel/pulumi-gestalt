@@ -78,35 +78,35 @@ pub mod workspace_service_account_token {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkspaceServiceAccountTokenArgs,
     ) -> WorkspaceServiceAccountTokenResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkspaceServiceAccountTokenArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> WorkspaceServiceAccountTokenResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkspaceServiceAccountTokenArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> WorkspaceServiceAccountTokenResult {
-        let name_binding = args.name.get_output(context);
-        let seconds_to_live_binding = args.seconds_to_live.get_output(context);
-        let service_account_id_binding = args.service_account_id.get_output(context);
-        let workspace_id_binding = args.workspace_id.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let seconds_to_live_binding = args.seconds_to_live.get_output(ctx);
+        let service_account_id_binding = args.service_account_id.get_output(ctx);
+        let workspace_id_binding = args.workspace_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:grafana/workspaceServiceAccountToken:WorkspaceServiceAccountToken"
                 .into(),
@@ -132,7 +132,7 @@ pub mod workspace_service_account_token {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         WorkspaceServiceAccountTokenResult {
             id: o.get_id(),
             urn: o.get_urn(),

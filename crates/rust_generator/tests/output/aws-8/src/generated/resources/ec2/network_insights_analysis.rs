@@ -115,37 +115,37 @@ pub mod network_insights_analysis {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkInsightsAnalysisArgs,
     ) -> NetworkInsightsAnalysisResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkInsightsAnalysisArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> NetworkInsightsAnalysisResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkInsightsAnalysisArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> NetworkInsightsAnalysisResult {
-        let filter_in_arns_binding = args.filter_in_arns.get_output(context);
+        let filter_in_arns_binding = args.filter_in_arns.get_output(ctx);
         let network_insights_path_id_binding = args
             .network_insights_path_id
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let wait_for_completion_binding = args.wait_for_completion.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let wait_for_completion_binding = args.wait_for_completion.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/networkInsightsAnalysis:NetworkInsightsAnalysis".into(),
             name: name.to_string(),
@@ -170,7 +170,7 @@ pub mod network_insights_analysis {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         NetworkInsightsAnalysisResult {
             id: o.get_id(),
             urn: o.get_urn(),

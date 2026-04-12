@@ -54,11 +54,11 @@ pub mod get_component {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetComponentArgs,
     ) -> GetComponentResult {
-        let arn_binding = args.arn.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let arn_binding = args.arn.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:imagebuilder/getComponent:getComponent".into(),
             version: super::super::super::get_version(),
@@ -73,7 +73,7 @@ pub mod get_component {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetComponentResult {
             arn: o.get_field("arn"),
             change_description: o.get_field("changeDescription"),

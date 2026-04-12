@@ -117,37 +117,37 @@ pub mod reserved_cache_node {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ReservedCacheNodeArgs,
     ) -> ReservedCacheNodeResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ReservedCacheNodeArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ReservedCacheNodeResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ReservedCacheNodeArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ReservedCacheNodeResult {
-        let cache_node_count_binding = args.cache_node_count.get_output(context);
+        let cache_node_count_binding = args.cache_node_count.get_output(ctx);
         let reserved_cache_nodes_offering_id_binding = args
             .reserved_cache_nodes_offering_id
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let timeouts_binding = args.timeouts.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let timeouts_binding = args.timeouts.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:elasticache/reservedCacheNode:ReservedCacheNode".into(),
             name: name.to_string(),
@@ -172,7 +172,7 @@ pub mod reserved_cache_node {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ReservedCacheNodeResult {
             id: o.get_id(),
             urn: o.get_urn(),

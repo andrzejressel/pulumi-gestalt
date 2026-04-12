@@ -244,53 +244,53 @@ pub mod association {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AssociationArgs,
     ) -> AssociationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AssociationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AssociationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AssociationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AssociationResult {
         let apply_only_at_cron_interval_binding = args
             .apply_only_at_cron_interval
-            .get_output(context);
-        let association_name_binding = args.association_name.get_output(context);
+            .get_output(ctx);
+        let association_name_binding = args.association_name.get_output(ctx);
         let automation_target_parameter_name_binding = args
             .automation_target_parameter_name
-            .get_output(context);
-        let compliance_severity_binding = args.compliance_severity.get_output(context);
-        let document_version_binding = args.document_version.get_output(context);
-        let instance_id_binding = args.instance_id.get_output(context);
-        let max_concurrency_binding = args.max_concurrency.get_output(context);
-        let max_errors_binding = args.max_errors.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let output_location_binding = args.output_location.get_output(context);
-        let parameters_binding = args.parameters.get_output(context);
-        let schedule_expression_binding = args.schedule_expression.get_output(context);
-        let sync_compliance_binding = args.sync_compliance.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let targets_binding = args.targets.get_output(context);
+            .get_output(ctx);
+        let compliance_severity_binding = args.compliance_severity.get_output(ctx);
+        let document_version_binding = args.document_version.get_output(ctx);
+        let instance_id_binding = args.instance_id.get_output(ctx);
+        let max_concurrency_binding = args.max_concurrency.get_output(ctx);
+        let max_errors_binding = args.max_errors.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let output_location_binding = args.output_location.get_output(ctx);
+        let parameters_binding = args.parameters.get_output(ctx);
+        let schedule_expression_binding = args.schedule_expression.get_output(ctx);
+        let sync_compliance_binding = args.sync_compliance.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let targets_binding = args.targets.get_output(ctx);
         let wait_for_success_timeout_seconds_binding = args
             .wait_for_success_timeout_seconds
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ssm/association:Association".into(),
             name: name.to_string(),
@@ -363,7 +363,7 @@ pub mod association {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AssociationResult {
             id: o.get_id(),
             urn: o.get_urn(),

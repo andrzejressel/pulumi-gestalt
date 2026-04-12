@@ -127,35 +127,35 @@ pub mod partition_index {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PartitionIndexArgs,
     ) -> PartitionIndexResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PartitionIndexArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> PartitionIndexResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PartitionIndexArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> PartitionIndexResult {
-        let catalog_id_binding = args.catalog_id.get_output(context);
-        let database_name_binding = args.database_name.get_output(context);
-        let partition_index_binding = args.partition_index.get_output(context);
-        let table_name_binding = args.table_name.get_output(context);
+        let catalog_id_binding = args.catalog_id.get_output(ctx);
+        let database_name_binding = args.database_name.get_output(ctx);
+        let partition_index_binding = args.partition_index.get_output(ctx);
+        let table_name_binding = args.table_name.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:glue/partitionIndex:PartitionIndex".into(),
             name: name.to_string(),
@@ -180,7 +180,7 @@ pub mod partition_index {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         PartitionIndexResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -286,65 +286,65 @@ pub mod instance {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceArgs,
     ) -> InstanceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> InstanceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> InstanceResult {
-        let agent_version_binding = args.agent_version.get_output(context);
-        let ami_id_binding = args.ami_id.get_output(context);
-        let architecture_binding = args.architecture.get_output(context);
-        let auto_scaling_type_binding = args.auto_scaling_type.get_output(context);
-        let availability_zone_binding = args.availability_zone.get_output(context);
-        let created_at_binding = args.created_at.get_output(context);
-        let delete_ebs_binding = args.delete_ebs.get_output(context);
-        let delete_eip_binding = args.delete_eip.get_output(context);
-        let ebs_block_devices_binding = args.ebs_block_devices.get_output(context);
-        let ebs_optimized_binding = args.ebs_optimized.get_output(context);
-        let ecs_cluster_arn_binding = args.ecs_cluster_arn.get_output(context);
-        let elastic_ip_binding = args.elastic_ip.get_output(context);
+        let agent_version_binding = args.agent_version.get_output(ctx);
+        let ami_id_binding = args.ami_id.get_output(ctx);
+        let architecture_binding = args.architecture.get_output(ctx);
+        let auto_scaling_type_binding = args.auto_scaling_type.get_output(ctx);
+        let availability_zone_binding = args.availability_zone.get_output(ctx);
+        let created_at_binding = args.created_at.get_output(ctx);
+        let delete_ebs_binding = args.delete_ebs.get_output(ctx);
+        let delete_eip_binding = args.delete_eip.get_output(ctx);
+        let ebs_block_devices_binding = args.ebs_block_devices.get_output(ctx);
+        let ebs_optimized_binding = args.ebs_optimized.get_output(ctx);
+        let ecs_cluster_arn_binding = args.ecs_cluster_arn.get_output(ctx);
+        let elastic_ip_binding = args.elastic_ip.get_output(ctx);
         let ephemeral_block_devices_binding = args
             .ephemeral_block_devices
-            .get_output(context);
-        let hostname_binding = args.hostname.get_output(context);
-        let infrastructure_class_binding = args.infrastructure_class.get_output(context);
+            .get_output(ctx);
+        let hostname_binding = args.hostname.get_output(ctx);
+        let infrastructure_class_binding = args.infrastructure_class.get_output(ctx);
         let install_updates_on_boot_binding = args
             .install_updates_on_boot
-            .get_output(context);
-        let instance_profile_arn_binding = args.instance_profile_arn.get_output(context);
-        let instance_type_binding = args.instance_type.get_output(context);
-        let layer_ids_binding = args.layer_ids.get_output(context);
-        let os_binding = args.os.get_output(context);
-        let root_block_devices_binding = args.root_block_devices.get_output(context);
-        let root_device_type_binding = args.root_device_type.get_output(context);
-        let security_group_ids_binding = args.security_group_ids.get_output(context);
-        let ssh_key_name_binding = args.ssh_key_name.get_output(context);
-        let stack_id_binding = args.stack_id.get_output(context);
-        let state_binding = args.state.get_output(context);
-        let status_binding = args.status.get_output(context);
-        let subnet_id_binding = args.subnet_id.get_output(context);
-        let tenancy_binding = args.tenancy.get_output(context);
-        let virtualization_type_binding = args.virtualization_type.get_output(context);
+            .get_output(ctx);
+        let instance_profile_arn_binding = args.instance_profile_arn.get_output(ctx);
+        let instance_type_binding = args.instance_type.get_output(ctx);
+        let layer_ids_binding = args.layer_ids.get_output(ctx);
+        let os_binding = args.os.get_output(ctx);
+        let root_block_devices_binding = args.root_block_devices.get_output(ctx);
+        let root_device_type_binding = args.root_device_type.get_output(ctx);
+        let security_group_ids_binding = args.security_group_ids.get_output(ctx);
+        let ssh_key_name_binding = args.ssh_key_name.get_output(ctx);
+        let stack_id_binding = args.stack_id.get_output(ctx);
+        let state_binding = args.state.get_output(ctx);
+        let status_binding = args.status.get_output(ctx);
+        let subnet_id_binding = args.subnet_id.get_output(ctx);
+        let tenancy_binding = args.tenancy.get_output(ctx);
+        let virtualization_type_binding = args.virtualization_type.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:opsworks/instance:Instance".into(),
             name: name.to_string(),
@@ -473,7 +473,7 @@ pub mod instance {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         InstanceResult {
             id: o.get_id(),
             urn: o.get_urn(),

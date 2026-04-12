@@ -217,60 +217,58 @@ pub mod ontap_volume {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OntapVolumeArgs,
     ) -> OntapVolumeResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OntapVolumeArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> OntapVolumeResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OntapVolumeArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> OntapVolumeResult {
         let aggregate_configuration_binding = args
             .aggregate_configuration
-            .get_output(context);
+            .get_output(ctx);
         let bypass_snaplock_enterprise_retention_binding = args
             .bypass_snaplock_enterprise_retention
-            .get_output(context);
-        let copy_tags_to_backups_binding = args.copy_tags_to_backups.get_output(context);
-        let final_backup_tags_binding = args.final_backup_tags.get_output(context);
-        let junction_path_binding = args.junction_path.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let ontap_volume_type_binding = args.ontap_volume_type.get_output(context);
-        let security_style_binding = args.security_style.get_output(context);
-        let size_in_bytes_binding = args.size_in_bytes.get_output(context);
-        let size_in_megabytes_binding = args.size_in_megabytes.get_output(context);
-        let skip_final_backup_binding = args.skip_final_backup.get_output(context);
-        let snaplock_configuration_binding = args
-            .snaplock_configuration
-            .get_output(context);
-        let snapshot_policy_binding = args.snapshot_policy.get_output(context);
+            .get_output(ctx);
+        let copy_tags_to_backups_binding = args.copy_tags_to_backups.get_output(ctx);
+        let final_backup_tags_binding = args.final_backup_tags.get_output(ctx);
+        let junction_path_binding = args.junction_path.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let ontap_volume_type_binding = args.ontap_volume_type.get_output(ctx);
+        let security_style_binding = args.security_style.get_output(ctx);
+        let size_in_bytes_binding = args.size_in_bytes.get_output(ctx);
+        let size_in_megabytes_binding = args.size_in_megabytes.get_output(ctx);
+        let skip_final_backup_binding = args.skip_final_backup.get_output(ctx);
+        let snaplock_configuration_binding = args.snaplock_configuration.get_output(ctx);
+        let snapshot_policy_binding = args.snapshot_policy.get_output(ctx);
         let storage_efficiency_enabled_binding = args
             .storage_efficiency_enabled
-            .get_output(context);
+            .get_output(ctx);
         let storage_virtual_machine_id_binding = args
             .storage_virtual_machine_id
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let tiering_policy_binding = args.tiering_policy.get_output(context);
-        let volume_style_binding = args.volume_style.get_output(context);
-        let volume_type_binding = args.volume_type.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let tiering_policy_binding = args.tiering_policy.get_output(ctx);
+        let volume_style_binding = args.volume_style.get_output(ctx);
+        let volume_type_binding = args.volume_type.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:fsx/ontapVolume:OntapVolume".into(),
             name: name.to_string(),
@@ -355,7 +353,7 @@ pub mod ontap_volume {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         OntapVolumeResult {
             id: o.get_id(),
             urn: o.get_urn(),

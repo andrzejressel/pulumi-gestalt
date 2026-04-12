@@ -401,65 +401,59 @@ pub mod deployment_group {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DeploymentGroupArgs,
     ) -> DeploymentGroupResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DeploymentGroupArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DeploymentGroupResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DeploymentGroupArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DeploymentGroupResult {
-        let alarm_configuration_binding = args.alarm_configuration.get_output(context);
-        let app_name_binding = args.app_name.get_output(context);
+        let alarm_configuration_binding = args.alarm_configuration.get_output(ctx);
+        let app_name_binding = args.app_name.get_output(ctx);
         let auto_rollback_configuration_binding = args
             .auto_rollback_configuration
-            .get_output(context);
-        let autoscaling_groups_binding = args.autoscaling_groups.get_output(context);
+            .get_output(ctx);
+        let autoscaling_groups_binding = args.autoscaling_groups.get_output(ctx);
         let blue_green_deployment_config_binding = args
             .blue_green_deployment_config
-            .get_output(context);
-        let deployment_config_name_binding = args
-            .deployment_config_name
-            .get_output(context);
-        let deployment_group_name_binding = args
-            .deployment_group_name
-            .get_output(context);
-        let deployment_style_binding = args.deployment_style.get_output(context);
-        let ec2_tag_filters_binding = args.ec2_tag_filters.get_output(context);
-        let ec2_tag_sets_binding = args.ec2_tag_sets.get_output(context);
-        let ecs_service_binding = args.ecs_service.get_output(context);
-        let load_balancer_info_binding = args.load_balancer_info.get_output(context);
+            .get_output(ctx);
+        let deployment_config_name_binding = args.deployment_config_name.get_output(ctx);
+        let deployment_group_name_binding = args.deployment_group_name.get_output(ctx);
+        let deployment_style_binding = args.deployment_style.get_output(ctx);
+        let ec2_tag_filters_binding = args.ec2_tag_filters.get_output(ctx);
+        let ec2_tag_sets_binding = args.ec2_tag_sets.get_output(ctx);
+        let ecs_service_binding = args.ecs_service.get_output(ctx);
+        let load_balancer_info_binding = args.load_balancer_info.get_output(ctx);
         let on_premises_instance_tag_filters_binding = args
             .on_premises_instance_tag_filters
-            .get_output(context);
+            .get_output(ctx);
         let outdated_instances_strategy_binding = args
             .outdated_instances_strategy
-            .get_output(context);
-        let service_role_arn_binding = args.service_role_arn.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let service_role_arn_binding = args.service_role_arn.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let termination_hook_enabled_binding = args
             .termination_hook_enabled
-            .get_output(context);
-        let trigger_configurations_binding = args
-            .trigger_configurations
-            .get_output(context);
+            .get_output(ctx);
+        let trigger_configurations_binding = args.trigger_configurations.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:codedeploy/deploymentGroup:DeploymentGroup".into(),
             name: name.to_string(),
@@ -540,7 +534,7 @@ pub mod deployment_group {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DeploymentGroupResult {
             id: o.get_id(),
             urn: o.get_urn(),

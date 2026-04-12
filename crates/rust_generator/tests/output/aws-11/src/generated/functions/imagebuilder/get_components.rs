@@ -35,11 +35,11 @@ pub mod get_components {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetComponentsArgs,
     ) -> GetComponentsResult {
-        let filters_binding = args.filters.get_output(context);
-        let owner_binding = args.owner.get_output(context);
+        let filters_binding = args.filters.get_output(ctx);
+        let owner_binding = args.owner.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:imagebuilder/getComponents:getComponents".into(),
             version: super::super::super::get_version(),
@@ -54,7 +54,7 @@ pub mod get_components {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetComponentsResult {
             arns: o.get_field("arns"),
             filters: o.get_field("filters"),

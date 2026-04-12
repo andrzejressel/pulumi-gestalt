@@ -293,41 +293,41 @@ pub mod rule_group {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RuleGroupArgs,
     ) -> RuleGroupResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RuleGroupArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> RuleGroupResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RuleGroupArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> RuleGroupResult {
-        let capacity_binding = args.capacity.get_output(context);
-        let description_binding = args.description.get_output(context);
+        let capacity_binding = args.capacity.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
         let encryption_configuration_binding = args
             .encryption_configuration
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let rule_group_binding = args.rule_group.get_output(context);
-        let rules_binding = args.rules.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let type__binding = args.type_.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let rule_group_binding = args.rule_group.get_output(ctx);
+        let rules_binding = args.rules.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:networkfirewall/ruleGroup:RuleGroup".into(),
             name: name.to_string(),
@@ -368,7 +368,7 @@ pub mod rule_group {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         RuleGroupResult {
             id: o.get_id(),
             urn: o.get_urn(),

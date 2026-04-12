@@ -213,37 +213,37 @@ pub mod organization_policy {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OrganizationPolicyArgs,
     ) -> OrganizationPolicyResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OrganizationPolicyArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> OrganizationPolicyResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OrganizationPolicyArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> OrganizationPolicyResult {
-        let boolean_policy_binding = args.boolean_policy.get_output(context);
-        let constraint_binding = args.constraint.get_output(context);
-        let list_policy_binding = args.list_policy.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let restore_policy_binding = args.restore_policy.get_output(context);
-        let version_binding = args.version.get_output(context);
+        let boolean_policy_binding = args.boolean_policy.get_output(ctx);
+        let constraint_binding = args.constraint.get_output(ctx);
+        let list_policy_binding = args.list_policy.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let restore_policy_binding = args.restore_policy.get_output(ctx);
+        let version_binding = args.version.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:projects/organizationPolicy:OrganizationPolicy".into(),
             name: name.to_string(),
@@ -276,7 +276,7 @@ pub mod organization_policy {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         OrganizationPolicyResult {
             id: o.get_id(),
             urn: o.get_urn(),

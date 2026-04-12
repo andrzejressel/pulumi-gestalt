@@ -343,49 +343,47 @@ pub mod job_definition {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: JobDefinitionArgs,
     ) -> JobDefinitionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: JobDefinitionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> JobDefinitionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: JobDefinitionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> JobDefinitionResult {
-        let container_properties_binding = args.container_properties.get_output(context);
+        let container_properties_binding = args.container_properties.get_output(ctx);
         let deregister_on_new_revision_binding = args
             .deregister_on_new_revision
-            .get_output(context);
-        let ecs_properties_binding = args.ecs_properties.get_output(context);
-        let eks_properties_binding = args.eks_properties.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let node_properties_binding = args.node_properties.get_output(context);
-        let parameters_binding = args.parameters.get_output(context);
-        let platform_capabilities_binding = args
-            .platform_capabilities
-            .get_output(context);
-        let propagate_tags_binding = args.propagate_tags.get_output(context);
-        let retry_strategy_binding = args.retry_strategy.get_output(context);
-        let scheduling_priority_binding = args.scheduling_priority.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let timeout_binding = args.timeout.get_output(context);
-        let type__binding = args.type_.get_output(context);
+            .get_output(ctx);
+        let ecs_properties_binding = args.ecs_properties.get_output(ctx);
+        let eks_properties_binding = args.eks_properties.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let node_properties_binding = args.node_properties.get_output(ctx);
+        let parameters_binding = args.parameters.get_output(ctx);
+        let platform_capabilities_binding = args.platform_capabilities.get_output(ctx);
+        let propagate_tags_binding = args.propagate_tags.get_output(ctx);
+        let retry_strategy_binding = args.retry_strategy.get_output(ctx);
+        let scheduling_priority_binding = args.scheduling_priority.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let timeout_binding = args.timeout.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:batch/jobDefinition:JobDefinition".into(),
             name: name.to_string(),
@@ -450,7 +448,7 @@ pub mod job_definition {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         JobDefinitionResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -27,10 +27,10 @@ pub mod get_email_identity_mail_from_attributes {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetEmailIdentityMailFromAttributesArgs,
     ) -> GetEmailIdentityMailFromAttributesResult {
-        let email_identity_binding = args.email_identity.get_output(context);
+        let email_identity_binding = args.email_identity.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:sesv2/getEmailIdentityMailFromAttributes:getEmailIdentityMailFromAttributes"
                 .into(),
@@ -42,7 +42,7 @@ pub mod get_email_identity_mail_from_attributes {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetEmailIdentityMailFromAttributesResult {
             behavior_on_mx_failure: o.get_field("behaviorOnMxFailure"),
             email_identity: o.get_field("emailIdentity"),

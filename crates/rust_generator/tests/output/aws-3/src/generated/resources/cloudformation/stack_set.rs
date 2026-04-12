@@ -207,49 +207,47 @@ pub mod stack_set {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StackSetArgs,
     ) -> StackSetResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StackSetArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> StackSetResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StackSetArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> StackSetResult {
         let administration_role_arn_binding = args
             .administration_role_arn
-            .get_output(context);
-        let auto_deployment_binding = args.auto_deployment.get_output(context);
-        let call_as_binding = args.call_as.get_output(context);
-        let capabilities_binding = args.capabilities.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let execution_role_name_binding = args.execution_role_name.get_output(context);
-        let managed_execution_binding = args.managed_execution.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let operation_preferences_binding = args
-            .operation_preferences
-            .get_output(context);
-        let parameters_binding = args.parameters.get_output(context);
-        let permission_model_binding = args.permission_model.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let template_body_binding = args.template_body.get_output(context);
-        let template_url_binding = args.template_url.get_output(context);
+            .get_output(ctx);
+        let auto_deployment_binding = args.auto_deployment.get_output(ctx);
+        let call_as_binding = args.call_as.get_output(ctx);
+        let capabilities_binding = args.capabilities.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let execution_role_name_binding = args.execution_role_name.get_output(ctx);
+        let managed_execution_binding = args.managed_execution.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let operation_preferences_binding = args.operation_preferences.get_output(ctx);
+        let parameters_binding = args.parameters.get_output(ctx);
+        let permission_model_binding = args.permission_model.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let template_body_binding = args.template_body.get_output(ctx);
+        let template_url_binding = args.template_url.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:cloudformation/stackSet:StackSet".into(),
             name: name.to_string(),
@@ -314,7 +312,7 @@ pub mod stack_set {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         StackSetResult {
             id: o.get_id(),
             urn: o.get_urn(),

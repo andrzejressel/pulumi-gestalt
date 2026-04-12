@@ -102,38 +102,36 @@ pub mod service_integration {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServiceIntegrationArgs,
     ) -> ServiceIntegrationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServiceIntegrationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ServiceIntegrationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServiceIntegrationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ServiceIntegrationResult {
         let kms_server_side_encryption_binding = args
             .kms_server_side_encryption
-            .get_output(context);
-        let logs_anomaly_detection_binding = args
-            .logs_anomaly_detection
-            .get_output(context);
-        let ops_center_binding = args.ops_center.get_output(context);
+            .get_output(ctx);
+        let logs_anomaly_detection_binding = args.logs_anomaly_detection.get_output(ctx);
+        let ops_center_binding = args.ops_center.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:devopsguru/serviceIntegration:ServiceIntegration".into(),
             name: name.to_string(),
@@ -154,7 +152,7 @@ pub mod service_integration {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ServiceIntegrationResult {
             id: o.get_id(),
             urn: o.get_urn(),

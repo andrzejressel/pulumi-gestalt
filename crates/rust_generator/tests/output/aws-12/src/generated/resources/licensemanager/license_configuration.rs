@@ -110,42 +110,40 @@ pub mod license_configuration {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LicenseConfigurationArgs,
     ) -> LicenseConfigurationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LicenseConfigurationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> LicenseConfigurationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LicenseConfigurationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> LicenseConfigurationResult {
-        let description_binding = args.description.get_output(context);
-        let license_count_binding = args.license_count.get_output(context);
+        let description_binding = args.description.get_output(ctx);
+        let license_count_binding = args.license_count.get_output(ctx);
         let license_count_hard_limit_binding = args
             .license_count_hard_limit
-            .get_output(context);
-        let license_counting_type_binding = args
-            .license_counting_type
-            .get_output(context);
-        let license_rules_binding = args.license_rules.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let license_counting_type_binding = args.license_counting_type.get_output(ctx);
+        let license_rules_binding = args.license_rules.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:licensemanager/licenseConfiguration:LicenseConfiguration".into(),
             name: name.to_string(),
@@ -182,7 +180,7 @@ pub mod license_configuration {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         LicenseConfigurationResult {
             id: o.get_id(),
             urn: o.get_urn(),

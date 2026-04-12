@@ -497,56 +497,56 @@ pub mod instance {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceArgs,
     ) -> InstanceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> InstanceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> InstanceResult {
-        let accelerators_binding = args.accelerators.get_output(context);
-        let crypto_key_config_binding = args.crypto_key_config.get_output(context);
+        let accelerators_binding = args.accelerators.get_output(ctx);
+        let crypto_key_config_binding = args.crypto_key_config.get_output(ctx);
         let dataproc_service_account_binding = args
             .dataproc_service_account
-            .get_output(context);
-        let description_binding = args.description.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let enable_rbac_binding = args.enable_rbac.get_output(context);
+            .get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let enable_rbac_binding = args.enable_rbac.get_output(ctx);
         let enable_stackdriver_logging_binding = args
             .enable_stackdriver_logging
-            .get_output(context);
+            .get_output(ctx);
         let enable_stackdriver_monitoring_binding = args
             .enable_stackdriver_monitoring
-            .get_output(context);
-        let event_publish_config_binding = args.event_publish_config.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_config_binding = args.network_config.get_output(context);
-        let options_binding = args.options.get_output(context);
-        let private_instance_binding = args.private_instance.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let region_binding = args.region.get_output(context);
-        let type__binding = args.type_.get_output(context);
-        let version_binding = args.version.get_output(context);
-        let zone_binding = args.zone.get_output(context);
+            .get_output(ctx);
+        let event_publish_config_binding = args.event_publish_config.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_config_binding = args.network_config.get_output(ctx);
+        let options_binding = args.options.get_output(ctx);
+        let private_instance_binding = args.private_instance.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let region_binding = args.region.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
+        let version_binding = args.version.get_output(ctx);
+        let zone_binding = args.zone.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:datafusion/instance:Instance".into(),
             name: name.to_string(),
@@ -631,7 +631,7 @@ pub mod instance {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         InstanceResult {
             id: o.get_id(),
             urn: o.get_urn(),

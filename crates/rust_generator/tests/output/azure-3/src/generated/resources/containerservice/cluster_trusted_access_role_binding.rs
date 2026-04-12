@@ -151,37 +151,35 @@ pub mod cluster_trusted_access_role_binding {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterTrustedAccessRoleBindingArgs,
     ) -> ClusterTrustedAccessRoleBindingResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterTrustedAccessRoleBindingArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ClusterTrustedAccessRoleBindingResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterTrustedAccessRoleBindingArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ClusterTrustedAccessRoleBindingResult {
-        let kubernetes_cluster_id_binding = args
-            .kubernetes_cluster_id
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let roles_binding = args.roles.get_output(context);
-        let source_resource_id_binding = args.source_resource_id.get_output(context);
+        let kubernetes_cluster_id_binding = args.kubernetes_cluster_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let roles_binding = args.roles.get_output(ctx);
+        let source_resource_id_binding = args.source_resource_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:containerservice/clusterTrustedAccessRoleBinding:ClusterTrustedAccessRoleBinding"
                 .into(),
@@ -207,7 +205,7 @@ pub mod cluster_trusted_access_role_binding {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ClusterTrustedAccessRoleBindingResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -727,55 +727,53 @@ pub mod subscription {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SubscriptionArgs,
     ) -> SubscriptionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SubscriptionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> SubscriptionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SubscriptionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> SubscriptionResult {
-        let ack_deadline_seconds_binding = args.ack_deadline_seconds.get_output(context);
-        let bigquery_config_binding = args.bigquery_config.get_output(context);
-        let cloud_storage_config_binding = args.cloud_storage_config.get_output(context);
-        let dead_letter_policy_binding = args.dead_letter_policy.get_output(context);
+        let ack_deadline_seconds_binding = args.ack_deadline_seconds.get_output(ctx);
+        let bigquery_config_binding = args.bigquery_config.get_output(ctx);
+        let cloud_storage_config_binding = args.cloud_storage_config.get_output(ctx);
+        let dead_letter_policy_binding = args.dead_letter_policy.get_output(ctx);
         let enable_exactly_once_delivery_binding = args
             .enable_exactly_once_delivery
-            .get_output(context);
+            .get_output(ctx);
         let enable_message_ordering_binding = args
             .enable_message_ordering
-            .get_output(context);
-        let expiration_policy_binding = args.expiration_policy.get_output(context);
-        let filter_binding = args.filter.get_output(context);
-        let labels_binding = args.labels.get_output(context);
+            .get_output(ctx);
+        let expiration_policy_binding = args.expiration_policy.get_output(ctx);
+        let filter_binding = args.filter.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
         let message_retention_duration_binding = args
             .message_retention_duration
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let push_config_binding = args.push_config.get_output(context);
-        let retain_acked_messages_binding = args
-            .retain_acked_messages
-            .get_output(context);
-        let retry_policy_binding = args.retry_policy.get_output(context);
-        let topic_binding = args.topic.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let push_config_binding = args.push_config.get_output(ctx);
+        let retain_acked_messages_binding = args.retain_acked_messages.get_output(ctx);
+        let retry_policy_binding = args.retry_policy.get_output(ctx);
+        let topic_binding = args.topic.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:pubsub/subscription:Subscription".into(),
             name: name.to_string(),
@@ -848,7 +846,7 @@ pub mod subscription {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         SubscriptionResult {
             id: o.get_id(),
             urn: o.get_urn(),

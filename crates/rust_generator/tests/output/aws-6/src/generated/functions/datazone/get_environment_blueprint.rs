@@ -35,12 +35,12 @@ pub mod get_environment_blueprint {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetEnvironmentBlueprintArgs,
     ) -> GetEnvironmentBlueprintResult {
-        let domain_id_binding = args.domain_id.get_output(context);
-        let managed_binding = args.managed.get_output(context);
-        let name_binding = args.name.get_output(context);
+        let domain_id_binding = args.domain_id.get_output(ctx);
+        let managed_binding = args.managed.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:datazone/getEnvironmentBlueprint:getEnvironmentBlueprint".into(),
             version: super::super::super::get_version(),
@@ -59,7 +59,7 @@ pub mod get_environment_blueprint {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetEnvironmentBlueprintResult {
             blueprint_provider: o.get_field("blueprintProvider"),
             description: o.get_field("description"),

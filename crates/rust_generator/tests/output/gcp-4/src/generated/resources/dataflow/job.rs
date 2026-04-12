@@ -269,61 +269,55 @@ pub mod job {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: JobArgs,
     ) -> JobResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: JobArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> JobResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: JobArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> JobResult {
-        let additional_experiments_binding = args
-            .additional_experiments
-            .get_output(context);
+        let additional_experiments_binding = args.additional_experiments.get_output(ctx);
         let enable_streaming_engine_binding = args
             .enable_streaming_engine
-            .get_output(context);
-        let ip_configuration_binding = args.ip_configuration.get_output(context);
-        let kms_key_name_binding = args.kms_key_name.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let machine_type_binding = args.machine_type.get_output(context);
-        let max_workers_binding = args.max_workers.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_binding = args.network.get_output(context);
-        let on_delete_binding = args.on_delete.get_output(context);
-        let parameters_binding = args.parameters.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let region_binding = args.region.get_output(context);
-        let service_account_email_binding = args
-            .service_account_email
-            .get_output(context);
+            .get_output(ctx);
+        let ip_configuration_binding = args.ip_configuration.get_output(ctx);
+        let kms_key_name_binding = args.kms_key_name.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let machine_type_binding = args.machine_type.get_output(ctx);
+        let max_workers_binding = args.max_workers.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_binding = args.network.get_output(ctx);
+        let on_delete_binding = args.on_delete.get_output(ctx);
+        let parameters_binding = args.parameters.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let region_binding = args.region.get_output(ctx);
+        let service_account_email_binding = args.service_account_email.get_output(ctx);
         let skip_wait_on_job_termination_binding = args
             .skip_wait_on_job_termination
-            .get_output(context);
-        let subnetwork_binding = args.subnetwork.get_output(context);
-        let temp_gcs_location_binding = args.temp_gcs_location.get_output(context);
-        let template_gcs_path_binding = args.template_gcs_path.get_output(context);
-        let transform_name_mapping_binding = args
-            .transform_name_mapping
-            .get_output(context);
-        let zone_binding = args.zone.get_output(context);
+            .get_output(ctx);
+        let subnetwork_binding = args.subnetwork.get_output(ctx);
+        let temp_gcs_location_binding = args.temp_gcs_location.get_output(ctx);
+        let template_gcs_path_binding = args.template_gcs_path.get_output(ctx);
+        let transform_name_mapping_binding = args.transform_name_mapping.get_output(ctx);
+        let zone_binding = args.zone.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:dataflow/job:Job".into(),
             name: name.to_string(),
@@ -412,7 +406,7 @@ pub mod job {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         JobResult {
             id: o.get_id(),
             urn: o.get_urn(),

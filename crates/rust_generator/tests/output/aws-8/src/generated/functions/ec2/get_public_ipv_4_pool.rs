@@ -42,11 +42,11 @@ pub mod get_public_ipv_4_pool {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetPublicIpv4PoolArgs,
     ) -> GetPublicIpv4PoolResult {
-        let pool_id_binding = args.pool_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let pool_id_binding = args.pool_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ec2/getPublicIpv4Pool:getPublicIpv4Pool".into(),
             version: super::super::super::get_version(),
@@ -61,7 +61,7 @@ pub mod get_public_ipv_4_pool {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetPublicIpv4PoolResult {
             description: o.get_field("description"),
             id: o.get_field("id"),

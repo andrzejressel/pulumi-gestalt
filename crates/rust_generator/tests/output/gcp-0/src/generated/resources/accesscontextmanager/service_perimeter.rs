@@ -331,41 +331,41 @@ pub mod service_perimeter {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServicePerimeterArgs,
     ) -> ServicePerimeterResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServicePerimeterArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ServicePerimeterResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServicePerimeterArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ServicePerimeterResult {
-        let description_binding = args.description.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let parent_binding = args.parent.get_output(context);
-        let perimeter_type_binding = args.perimeter_type.get_output(context);
-        let spec_binding = args.spec.get_output(context);
-        let status_binding = args.status.get_output(context);
-        let title_binding = args.title.get_output(context);
+        let description_binding = args.description.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let parent_binding = args.parent.get_output(ctx);
+        let perimeter_type_binding = args.perimeter_type.get_output(ctx);
+        let spec_binding = args.spec.get_output(ctx);
+        let status_binding = args.status.get_output(ctx);
+        let title_binding = args.title.get_output(ctx);
         let use_explicit_dry_run_spec_binding = args
             .use_explicit_dry_run_spec
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:accesscontextmanager/servicePerimeter:ServicePerimeter".into(),
             name: name.to_string(),
@@ -406,7 +406,7 @@ pub mod service_perimeter {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ServicePerimeterResult {
             id: o.get_id(),
             urn: o.get_urn(),

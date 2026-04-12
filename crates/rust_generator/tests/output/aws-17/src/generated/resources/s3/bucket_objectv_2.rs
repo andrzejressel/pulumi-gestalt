@@ -378,63 +378,61 @@ pub mod bucket_objectv_2 {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BucketObjectv2Args,
     ) -> BucketObjectv2Result {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BucketObjectv2Args,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> BucketObjectv2Result {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BucketObjectv2Args,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> BucketObjectv2Result {
-        let acl_binding = args.acl.get_output(context);
-        let bucket_binding = args.bucket.get_output(context);
-        let bucket_key_enabled_binding = args.bucket_key_enabled.get_output(context);
-        let cache_control_binding = args.cache_control.get_output(context);
-        let checksum_algorithm_binding = args.checksum_algorithm.get_output(context);
-        let content_binding = args.content.get_output(context);
-        let content_base64_binding = args.content_base64.get_output(context);
-        let content_disposition_binding = args.content_disposition.get_output(context);
-        let content_encoding_binding = args.content_encoding.get_output(context);
-        let content_language_binding = args.content_language.get_output(context);
-        let content_type_binding = args.content_type.get_output(context);
-        let etag_binding = args.etag.get_output(context);
-        let force_destroy_binding = args.force_destroy.get_output(context);
-        let key_binding = args.key.get_output(context);
-        let kms_key_id_binding = args.kms_key_id.get_output(context);
-        let metadata_binding = args.metadata.get_output(context);
+        let acl_binding = args.acl.get_output(ctx);
+        let bucket_binding = args.bucket.get_output(ctx);
+        let bucket_key_enabled_binding = args.bucket_key_enabled.get_output(ctx);
+        let cache_control_binding = args.cache_control.get_output(ctx);
+        let checksum_algorithm_binding = args.checksum_algorithm.get_output(ctx);
+        let content_binding = args.content.get_output(ctx);
+        let content_base64_binding = args.content_base64.get_output(ctx);
+        let content_disposition_binding = args.content_disposition.get_output(ctx);
+        let content_encoding_binding = args.content_encoding.get_output(ctx);
+        let content_language_binding = args.content_language.get_output(ctx);
+        let content_type_binding = args.content_type.get_output(ctx);
+        let etag_binding = args.etag.get_output(ctx);
+        let force_destroy_binding = args.force_destroy.get_output(ctx);
+        let key_binding = args.key.get_output(ctx);
+        let kms_key_id_binding = args.kms_key_id.get_output(ctx);
+        let metadata_binding = args.metadata.get_output(ctx);
         let object_lock_legal_hold_status_binding = args
             .object_lock_legal_hold_status
-            .get_output(context);
-        let object_lock_mode_binding = args.object_lock_mode.get_output(context);
+            .get_output(ctx);
+        let object_lock_mode_binding = args.object_lock_mode.get_output(ctx);
         let object_lock_retain_until_date_binding = args
             .object_lock_retain_until_date
-            .get_output(context);
-        let override_provider_binding = args.override_provider.get_output(context);
-        let server_side_encryption_binding = args
-            .server_side_encryption
-            .get_output(context);
-        let source_binding = args.source.get_output(context);
-        let source_hash_binding = args.source_hash.get_output(context);
-        let storage_class_binding = args.storage_class.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let website_redirect_binding = args.website_redirect.get_output(context);
+            .get_output(ctx);
+        let override_provider_binding = args.override_provider.get_output(ctx);
+        let server_side_encryption_binding = args.server_side_encryption.get_output(ctx);
+        let source_binding = args.source.get_output(ctx);
+        let source_hash_binding = args.source_hash.get_output(ctx);
+        let storage_class_binding = args.storage_class.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let website_redirect_binding = args.website_redirect.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:s3/bucketObjectv2:BucketObjectv2".into(),
             name: name.to_string(),
@@ -547,7 +545,7 @@ pub mod bucket_objectv_2 {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         BucketObjectv2Result {
             id: o.get_id(),
             urn: o.get_urn(),

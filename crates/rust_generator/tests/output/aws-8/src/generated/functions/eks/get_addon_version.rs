@@ -34,12 +34,12 @@ pub mod get_addon_version {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetAddonVersionArgs,
     ) -> GetAddonVersionResult {
-        let addon_name_binding = args.addon_name.get_output(context);
-        let kubernetes_version_binding = args.kubernetes_version.get_output(context);
-        let most_recent_binding = args.most_recent.get_output(context);
+        let addon_name_binding = args.addon_name.get_output(ctx);
+        let kubernetes_version_binding = args.kubernetes_version.get_output(ctx);
+        let most_recent_binding = args.most_recent.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:eks/getAddonVersion:getAddonVersion".into(),
             version: super::super::super::get_version(),
@@ -58,7 +58,7 @@ pub mod get_addon_version {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetAddonVersionResult {
             addon_name: o.get_field("addonName"),
             id: o.get_field("id"),

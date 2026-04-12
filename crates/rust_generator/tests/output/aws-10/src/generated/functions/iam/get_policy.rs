@@ -53,13 +53,13 @@ pub mod get_policy {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetPolicyArgs,
     ) -> GetPolicyResult {
-        let arn_binding = args.arn.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let path_prefix_binding = args.path_prefix.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let arn_binding = args.arn.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let path_prefix_binding = args.path_prefix.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:iam/getPolicy:getPolicy".into(),
             version: super::super::super::get_version(),
@@ -82,7 +82,7 @@ pub mod get_policy {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetPolicyResult {
             arn: o.get_field("arn"),
             attachment_count: o.get_field("attachmentCount"),

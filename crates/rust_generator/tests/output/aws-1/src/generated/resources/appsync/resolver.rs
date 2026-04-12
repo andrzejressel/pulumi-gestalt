@@ -215,44 +215,44 @@ pub mod resolver {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ResolverArgs,
     ) -> ResolverResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ResolverArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ResolverResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ResolverArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ResolverResult {
-        let api_id_binding = args.api_id.get_output(context);
-        let caching_config_binding = args.caching_config.get_output(context);
-        let code_binding = args.code.get_output(context);
-        let data_source_binding = args.data_source.get_output(context);
-        let field_binding = args.field.get_output(context);
-        let kind_binding = args.kind.get_output(context);
-        let max_batch_size_binding = args.max_batch_size.get_output(context);
-        let pipeline_config_binding = args.pipeline_config.get_output(context);
-        let request_template_binding = args.request_template.get_output(context);
-        let response_template_binding = args.response_template.get_output(context);
-        let runtime_binding = args.runtime.get_output(context);
-        let sync_config_binding = args.sync_config.get_output(context);
-        let type__binding = args.type_.get_output(context);
+        let api_id_binding = args.api_id.get_output(ctx);
+        let caching_config_binding = args.caching_config.get_output(ctx);
+        let code_binding = args.code.get_output(ctx);
+        let data_source_binding = args.data_source.get_output(ctx);
+        let field_binding = args.field.get_output(ctx);
+        let kind_binding = args.kind.get_output(ctx);
+        let max_batch_size_binding = args.max_batch_size.get_output(ctx);
+        let pipeline_config_binding = args.pipeline_config.get_output(ctx);
+        let request_template_binding = args.request_template.get_output(ctx);
+        let response_template_binding = args.response_template.get_output(ctx);
+        let runtime_binding = args.runtime.get_output(ctx);
+        let sync_config_binding = args.sync_config.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:appsync/resolver:Resolver".into(),
             name: name.to_string(),
@@ -313,7 +313,7 @@ pub mod resolver {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ResolverResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -193,48 +193,48 @@ pub mod bucket_object {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BucketObjectArgs,
     ) -> BucketObjectResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BucketObjectArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> BucketObjectResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BucketObjectArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> BucketObjectResult {
-        let bucket_binding = args.bucket.get_output(context);
-        let cache_control_binding = args.cache_control.get_output(context);
-        let content_binding = args.content.get_output(context);
-        let content_disposition_binding = args.content_disposition.get_output(context);
-        let content_encoding_binding = args.content_encoding.get_output(context);
-        let content_language_binding = args.content_language.get_output(context);
-        let content_type_binding = args.content_type.get_output(context);
-        let customer_encryption_binding = args.customer_encryption.get_output(context);
-        let detect_md5hash_binding = args.detect_md5hash.get_output(context);
-        let event_based_hold_binding = args.event_based_hold.get_output(context);
-        let kms_key_name_binding = args.kms_key_name.get_output(context);
-        let metadata_binding = args.metadata.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let retention_binding = args.retention.get_output(context);
-        let source_binding = args.source.get_output(context);
-        let storage_class_binding = args.storage_class.get_output(context);
-        let temporary_hold_binding = args.temporary_hold.get_output(context);
+        let bucket_binding = args.bucket.get_output(ctx);
+        let cache_control_binding = args.cache_control.get_output(ctx);
+        let content_binding = args.content.get_output(ctx);
+        let content_disposition_binding = args.content_disposition.get_output(ctx);
+        let content_encoding_binding = args.content_encoding.get_output(ctx);
+        let content_language_binding = args.content_language.get_output(ctx);
+        let content_type_binding = args.content_type.get_output(ctx);
+        let customer_encryption_binding = args.customer_encryption.get_output(ctx);
+        let detect_md5hash_binding = args.detect_md5hash.get_output(ctx);
+        let event_based_hold_binding = args.event_based_hold.get_output(ctx);
+        let kms_key_name_binding = args.kms_key_name.get_output(ctx);
+        let metadata_binding = args.metadata.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let retention_binding = args.retention.get_output(ctx);
+        let source_binding = args.source.get_output(ctx);
+        let storage_class_binding = args.storage_class.get_output(ctx);
+        let temporary_hold_binding = args.temporary_hold.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:storage/bucketObject:BucketObject".into(),
             name: name.to_string(),
@@ -311,7 +311,7 @@ pub mod bucket_object {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         BucketObjectResult {
             id: o.get_id(),
             urn: o.get_urn(),

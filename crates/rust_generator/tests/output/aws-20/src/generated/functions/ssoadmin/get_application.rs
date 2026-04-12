@@ -44,11 +44,11 @@ pub mod get_application {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetApplicationArgs,
     ) -> GetApplicationResult {
-        let application_arn_binding = args.application_arn.get_output(context);
-        let portal_options_binding = args.portal_options.get_output(context);
+        let application_arn_binding = args.application_arn.get_output(ctx);
+        let portal_options_binding = args.portal_options.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ssoadmin/getApplication:getApplication".into(),
             version: super::super::super::get_version(),
@@ -63,7 +63,7 @@ pub mod get_application {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetApplicationResult {
             application_account: o.get_field("applicationAccount"),
             application_arn: o.get_field("applicationArn"),

@@ -321,64 +321,62 @@ pub mod target_group {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TargetGroupArgs,
     ) -> TargetGroupResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TargetGroupArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> TargetGroupResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TargetGroupArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> TargetGroupResult {
-        let connection_termination_binding = args
-            .connection_termination
-            .get_output(context);
-        let deregistration_delay_binding = args.deregistration_delay.get_output(context);
-        let health_check_binding = args.health_check.get_output(context);
-        let ip_address_type_binding = args.ip_address_type.get_output(context);
+        let connection_termination_binding = args.connection_termination.get_output(ctx);
+        let deregistration_delay_binding = args.deregistration_delay.get_output(ctx);
+        let health_check_binding = args.health_check.get_output(ctx);
+        let ip_address_type_binding = args.ip_address_type.get_output(ctx);
         let lambda_multi_value_headers_enabled_binding = args
             .lambda_multi_value_headers_enabled
-            .get_output(context);
+            .get_output(ctx);
         let load_balancing_algorithm_type_binding = args
             .load_balancing_algorithm_type
-            .get_output(context);
+            .get_output(ctx);
         let load_balancing_anomaly_mitigation_binding = args
             .load_balancing_anomaly_mitigation
-            .get_output(context);
+            .get_output(ctx);
         let load_balancing_cross_zone_enabled_binding = args
             .load_balancing_cross_zone_enabled
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let name_prefix_binding = args.name_prefix.get_output(context);
-        let port_binding = args.port.get_output(context);
-        let preserve_client_ip_binding = args.preserve_client_ip.get_output(context);
-        let protocol_binding = args.protocol.get_output(context);
-        let protocol_version_binding = args.protocol_version.get_output(context);
-        let proxy_protocol_v2_binding = args.proxy_protocol_v2.get_output(context);
-        let slow_start_binding = args.slow_start.get_output(context);
-        let stickiness_binding = args.stickiness.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let target_failovers_binding = args.target_failovers.get_output(context);
-        let target_group_health_binding = args.target_group_health.get_output(context);
-        let target_health_states_binding = args.target_health_states.get_output(context);
-        let target_type_binding = args.target_type.get_output(context);
-        let vpc_id_binding = args.vpc_id.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let name_prefix_binding = args.name_prefix.get_output(ctx);
+        let port_binding = args.port.get_output(ctx);
+        let preserve_client_ip_binding = args.preserve_client_ip.get_output(ctx);
+        let protocol_binding = args.protocol.get_output(ctx);
+        let protocol_version_binding = args.protocol_version.get_output(ctx);
+        let proxy_protocol_v2_binding = args.proxy_protocol_v2.get_output(ctx);
+        let slow_start_binding = args.slow_start.get_output(ctx);
+        let stickiness_binding = args.stickiness.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let target_failovers_binding = args.target_failovers.get_output(ctx);
+        let target_group_health_binding = args.target_group_health.get_output(ctx);
+        let target_health_states_binding = args.target_health_states.get_output(ctx);
+        let target_type_binding = args.target_type.get_output(ctx);
+        let vpc_id_binding = args.vpc_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:alb/targetGroup:TargetGroup".into(),
             name: name.to_string(),
@@ -479,7 +477,7 @@ pub mod target_group {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         TargetGroupResult {
             id: o.get_id(),
             urn: o.get_urn(),

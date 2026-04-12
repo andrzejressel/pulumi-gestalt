@@ -396,117 +396,105 @@ pub mod s_3_endpoint {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: S3EndpointArgs,
     ) -> S3EndpointResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: S3EndpointArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> S3EndpointResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: S3EndpointArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> S3EndpointResult {
-        let add_column_name_binding = args.add_column_name.get_output(context);
+        let add_column_name_binding = args.add_column_name.get_output(ctx);
         let add_trailing_padding_character_binding = args
             .add_trailing_padding_character
-            .get_output(context);
-        let bucket_folder_binding = args.bucket_folder.get_output(context);
-        let bucket_name_binding = args.bucket_name.get_output(context);
-        let canned_acl_for_objects_binding = args
-            .canned_acl_for_objects
-            .get_output(context);
+            .get_output(ctx);
+        let bucket_folder_binding = args.bucket_folder.get_output(ctx);
+        let bucket_name_binding = args.bucket_name.get_output(ctx);
+        let canned_acl_for_objects_binding = args.canned_acl_for_objects.get_output(ctx);
         let cdc_inserts_and_updates_binding = args
             .cdc_inserts_and_updates
-            .get_output(context);
-        let cdc_inserts_only_binding = args.cdc_inserts_only.get_output(context);
-        let cdc_max_batch_interval_binding = args
-            .cdc_max_batch_interval
-            .get_output(context);
-        let cdc_min_file_size_binding = args.cdc_min_file_size.get_output(context);
-        let cdc_path_binding = args.cdc_path.get_output(context);
-        let certificate_arn_binding = args.certificate_arn.get_output(context);
-        let compression_type_binding = args.compression_type.get_output(context);
-        let csv_delimiter_binding = args.csv_delimiter.get_output(context);
-        let csv_no_sup_value_binding = args.csv_no_sup_value.get_output(context);
-        let csv_null_value_binding = args.csv_null_value.get_output(context);
-        let csv_row_delimiter_binding = args.csv_row_delimiter.get_output(context);
-        let data_format_binding = args.data_format.get_output(context);
-        let data_page_size_binding = args.data_page_size.get_output(context);
+            .get_output(ctx);
+        let cdc_inserts_only_binding = args.cdc_inserts_only.get_output(ctx);
+        let cdc_max_batch_interval_binding = args.cdc_max_batch_interval.get_output(ctx);
+        let cdc_min_file_size_binding = args.cdc_min_file_size.get_output(ctx);
+        let cdc_path_binding = args.cdc_path.get_output(ctx);
+        let certificate_arn_binding = args.certificate_arn.get_output(ctx);
+        let compression_type_binding = args.compression_type.get_output(ctx);
+        let csv_delimiter_binding = args.csv_delimiter.get_output(ctx);
+        let csv_no_sup_value_binding = args.csv_no_sup_value.get_output(ctx);
+        let csv_null_value_binding = args.csv_null_value.get_output(ctx);
+        let csv_row_delimiter_binding = args.csv_row_delimiter.get_output(ctx);
+        let data_format_binding = args.data_format.get_output(ctx);
+        let data_page_size_binding = args.data_page_size.get_output(ctx);
         let date_partition_delimiter_binding = args
             .date_partition_delimiter
-            .get_output(context);
-        let date_partition_enabled_binding = args
-            .date_partition_enabled
-            .get_output(context);
+            .get_output(ctx);
+        let date_partition_enabled_binding = args.date_partition_enabled.get_output(ctx);
         let date_partition_sequence_binding = args
             .date_partition_sequence
-            .get_output(context);
+            .get_output(ctx);
         let date_partition_timezone_binding = args
             .date_partition_timezone
-            .get_output(context);
+            .get_output(ctx);
         let detach_target_on_lob_lookup_failure_parquet_binding = args
             .detach_target_on_lob_lookup_failure_parquet
-            .get_output(context);
-        let dict_page_size_limit_binding = args.dict_page_size_limit.get_output(context);
-        let enable_statistics_binding = args.enable_statistics.get_output(context);
-        let encoding_type_binding = args.encoding_type.get_output(context);
-        let encryption_mode_binding = args.encryption_mode.get_output(context);
-        let endpoint_id_binding = args.endpoint_id.get_output(context);
-        let endpoint_type_binding = args.endpoint_type.get_output(context);
-        let expected_bucket_owner_binding = args
-            .expected_bucket_owner
-            .get_output(context);
+            .get_output(ctx);
+        let dict_page_size_limit_binding = args.dict_page_size_limit.get_output(ctx);
+        let enable_statistics_binding = args.enable_statistics.get_output(ctx);
+        let encoding_type_binding = args.encoding_type.get_output(ctx);
+        let encryption_mode_binding = args.encryption_mode.get_output(ctx);
+        let endpoint_id_binding = args.endpoint_id.get_output(ctx);
+        let endpoint_type_binding = args.endpoint_type.get_output(ctx);
+        let expected_bucket_owner_binding = args.expected_bucket_owner.get_output(ctx);
         let external_table_definition_binding = args
             .external_table_definition
-            .get_output(context);
+            .get_output(ctx);
         let glue_catalog_generation_binding = args
             .glue_catalog_generation
-            .get_output(context);
-        let ignore_header_rows_binding = args.ignore_header_rows.get_output(context);
+            .get_output(ctx);
+        let ignore_header_rows_binding = args.ignore_header_rows.get_output(ctx);
         let include_op_for_full_load_binding = args
             .include_op_for_full_load
-            .get_output(context);
-        let kms_key_arn_binding = args.kms_key_arn.get_output(context);
-        let max_file_size_binding = args.max_file_size.get_output(context);
+            .get_output(ctx);
+        let kms_key_arn_binding = args.kms_key_arn.get_output(ctx);
+        let max_file_size_binding = args.max_file_size.get_output(ctx);
         let parquet_timestamp_in_millisecond_binding = args
             .parquet_timestamp_in_millisecond
-            .get_output(context);
-        let parquet_version_binding = args.parquet_version.get_output(context);
-        let preserve_transactions_binding = args
-            .preserve_transactions
-            .get_output(context);
-        let rfc4180_binding = args.rfc4180.get_output(context);
-        let row_group_length_binding = args.row_group_length.get_output(context);
+            .get_output(ctx);
+        let parquet_version_binding = args.parquet_version.get_output(ctx);
+        let preserve_transactions_binding = args.preserve_transactions.get_output(ctx);
+        let rfc4180_binding = args.rfc4180.get_output(ctx);
+        let row_group_length_binding = args.row_group_length.get_output(ctx);
         let server_side_encryption_kms_key_id_binding = args
             .server_side_encryption_kms_key_id
-            .get_output(context);
+            .get_output(ctx);
         let service_access_role_arn_binding = args
             .service_access_role_arn
-            .get_output(context);
-        let ssl_mode_binding = args.ssl_mode.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let timestamp_column_name_binding = args
-            .timestamp_column_name
-            .get_output(context);
-        let use_csv_no_sup_value_binding = args.use_csv_no_sup_value.get_output(context);
+            .get_output(ctx);
+        let ssl_mode_binding = args.ssl_mode.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let timestamp_column_name_binding = args.timestamp_column_name.get_output(ctx);
+        let use_csv_no_sup_value_binding = args.use_csv_no_sup_value.get_output(ctx);
         let use_task_start_time_for_full_load_timestamp_binding = args
             .use_task_start_time_for_full_load_timestamp
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:dms/s3Endpoint:S3Endpoint".into(),
             name: name.to_string(),
@@ -709,7 +697,7 @@ pub mod s_3_endpoint {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         S3EndpointResult {
             id: o.get_id(),
             urn: o.get_urn(),

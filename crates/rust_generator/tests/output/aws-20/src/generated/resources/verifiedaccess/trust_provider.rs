@@ -110,45 +110,43 @@ pub mod trust_provider {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TrustProviderArgs,
     ) -> TrustProviderResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TrustProviderArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> TrustProviderResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TrustProviderArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> TrustProviderResult {
-        let description_binding = args.description.get_output(context);
-        let device_options_binding = args.device_options.get_output(context);
+        let description_binding = args.description.get_output(ctx);
+        let device_options_binding = args.device_options.get_output(ctx);
         let device_trust_provider_type_binding = args
             .device_trust_provider_type
-            .get_output(context);
-        let oidc_options_binding = args.oidc_options.get_output(context);
-        let policy_reference_name_binding = args
-            .policy_reference_name
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let trust_provider_type_binding = args.trust_provider_type.get_output(context);
+            .get_output(ctx);
+        let oidc_options_binding = args.oidc_options.get_output(ctx);
+        let policy_reference_name_binding = args.policy_reference_name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let trust_provider_type_binding = args.trust_provider_type.get_output(ctx);
         let user_trust_provider_type_binding = args
             .user_trust_provider_type
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:verifiedaccess/trustProvider:TrustProvider".into(),
             name: name.to_string(),
@@ -189,7 +187,7 @@ pub mod trust_provider {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         TrustProviderResult {
             id: o.get_id(),
             urn: o.get_urn(),

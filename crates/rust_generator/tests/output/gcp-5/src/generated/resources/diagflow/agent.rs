@@ -198,49 +198,47 @@ pub mod agent {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AgentArgs,
     ) -> AgentResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AgentArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AgentResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AgentArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AgentResult {
-        let api_version_binding = args.api_version.get_output(context);
-        let avatar_uri_binding = args.avatar_uri.get_output(context);
+        let api_version_binding = args.api_version.get_output(ctx);
+        let avatar_uri_binding = args.avatar_uri.get_output(ctx);
         let classification_threshold_binding = args
             .classification_threshold
-            .get_output(context);
-        let default_language_code_binding = args
-            .default_language_code
-            .get_output(context);
-        let description_binding = args.description.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let enable_logging_binding = args.enable_logging.get_output(context);
-        let match_mode_binding = args.match_mode.get_output(context);
-        let project_binding = args.project.get_output(context);
+            .get_output(ctx);
+        let default_language_code_binding = args.default_language_code.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let enable_logging_binding = args.enable_logging.get_output(ctx);
+        let match_mode_binding = args.match_mode.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let supported_language_codes_binding = args
             .supported_language_codes
-            .get_output(context);
-        let tier_binding = args.tier.get_output(context);
-        let time_zone_binding = args.time_zone.get_output(context);
+            .get_output(ctx);
+        let tier_binding = args.tier.get_output(ctx);
+        let time_zone_binding = args.time_zone.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:diagflow/agent:Agent".into(),
             name: name.to_string(),
@@ -297,7 +295,7 @@ pub mod agent {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AgentResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -37,14 +37,12 @@ pub mod get_resolver_firewall_rules {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetResolverFirewallRulesArgs,
     ) -> GetResolverFirewallRulesResult {
-        let action_binding = args.action.get_output(context);
-        let firewall_rule_group_id_binding = args
-            .firewall_rule_group_id
-            .get_output(context);
-        let priority_binding = args.priority.get_output(context);
+        let action_binding = args.action.get_output(ctx);
+        let firewall_rule_group_id_binding = args.firewall_rule_group_id.get_output(ctx);
+        let priority_binding = args.priority.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:route53/getResolverFirewallRules:getResolverFirewallRules"
                 .into(),
@@ -64,7 +62,7 @@ pub mod get_resolver_firewall_rules {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetResolverFirewallRulesResult {
             action: o.get_field("action"),
             firewall_rule_group_id: o.get_field("firewallRuleGroupId"),

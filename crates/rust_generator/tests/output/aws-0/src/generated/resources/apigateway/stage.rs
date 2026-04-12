@@ -152,50 +152,44 @@ pub mod stage {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StageArgs,
     ) -> StageResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StageArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> StageResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StageArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> StageResult {
-        let access_log_settings_binding = args.access_log_settings.get_output(context);
-        let cache_cluster_enabled_binding = args
-            .cache_cluster_enabled
-            .get_output(context);
-        let cache_cluster_size_binding = args.cache_cluster_size.get_output(context);
-        let canary_settings_binding = args.canary_settings.get_output(context);
-        let client_certificate_id_binding = args
-            .client_certificate_id
-            .get_output(context);
-        let deployment_binding = args.deployment.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let documentation_version_binding = args
-            .documentation_version
-            .get_output(context);
-        let rest_api_binding = args.rest_api.get_output(context);
-        let stage_name_binding = args.stage_name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let variables_binding = args.variables.get_output(context);
-        let xray_tracing_enabled_binding = args.xray_tracing_enabled.get_output(context);
+        let access_log_settings_binding = args.access_log_settings.get_output(ctx);
+        let cache_cluster_enabled_binding = args.cache_cluster_enabled.get_output(ctx);
+        let cache_cluster_size_binding = args.cache_cluster_size.get_output(ctx);
+        let canary_settings_binding = args.canary_settings.get_output(ctx);
+        let client_certificate_id_binding = args.client_certificate_id.get_output(ctx);
+        let deployment_binding = args.deployment.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let documentation_version_binding = args.documentation_version.get_output(ctx);
+        let rest_api_binding = args.rest_api.get_output(ctx);
+        let stage_name_binding = args.stage_name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let variables_binding = args.variables.get_output(ctx);
+        let xray_tracing_enabled_binding = args.xray_tracing_enabled.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:apigateway/stage:Stage".into(),
             name: name.to_string(),
@@ -256,7 +250,7 @@ pub mod stage {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         StageResult {
             id: o.get_id(),
             urn: o.get_urn(),

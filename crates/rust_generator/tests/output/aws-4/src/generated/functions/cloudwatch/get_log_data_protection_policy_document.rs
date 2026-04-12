@@ -47,13 +47,13 @@ pub mod get_log_data_protection_policy_document {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetLogDataProtectionPolicyDocumentArgs,
     ) -> GetLogDataProtectionPolicyDocumentResult {
-        let description_binding = args.description.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let statements_binding = args.statements.get_output(context);
-        let version_binding = args.version.get_output(context);
+        let description_binding = args.description.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let statements_binding = args.statements.get_output(ctx);
+        let version_binding = args.version.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:cloudwatch/getLogDataProtectionPolicyDocument:getLogDataProtectionPolicyDocument"
                 .into(),
@@ -77,7 +77,7 @@ pub mod get_log_data_protection_policy_document {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetLogDataProtectionPolicyDocumentResult {
             description: o.get_field("description"),
             id: o.get_field("id"),

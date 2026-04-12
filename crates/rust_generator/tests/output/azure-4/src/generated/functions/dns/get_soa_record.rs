@@ -52,12 +52,12 @@ pub mod get_soa_record {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetSoaRecordArgs,
     ) -> GetSoaRecordResult {
-        let name_binding = args.name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let zone_name_binding = args.zone_name.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let zone_name_binding = args.zone_name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:dns/getSoaRecord:getSoaRecord".into(),
             version: super::super::super::get_version(),
@@ -76,7 +76,7 @@ pub mod get_soa_record {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetSoaRecordResult {
             email: o.get_field("email"),
             expire_time: o.get_field("expireTime"),

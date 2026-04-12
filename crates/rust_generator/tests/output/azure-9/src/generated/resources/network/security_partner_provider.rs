@@ -115,39 +115,37 @@ pub mod security_partner_provider {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SecurityPartnerProviderArgs,
     ) -> SecurityPartnerProviderResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SecurityPartnerProviderArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> SecurityPartnerProviderResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SecurityPartnerProviderArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> SecurityPartnerProviderResult {
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let security_provider_name_binding = args
-            .security_provider_name
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let virtual_hub_id_binding = args.virtual_hub_id.get_output(context);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let security_provider_name_binding = args.security_provider_name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let virtual_hub_id_binding = args.virtual_hub_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:network/securityPartnerProvider:SecurityPartnerProvider"
                 .into(),
@@ -181,7 +179,7 @@ pub mod security_partner_provider {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         SecurityPartnerProviderResult {
             id: o.get_id(),
             urn: o.get_urn(),

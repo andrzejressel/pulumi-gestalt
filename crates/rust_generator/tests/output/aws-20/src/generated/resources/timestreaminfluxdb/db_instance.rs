@@ -310,53 +310,51 @@ pub mod db_instance {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DbInstanceArgs,
     ) -> DbInstanceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DbInstanceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DbInstanceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DbInstanceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DbInstanceResult {
-        let allocated_storage_binding = args.allocated_storage.get_output(context);
-        let bucket_binding = args.bucket.get_output(context);
-        let db_instance_type_binding = args.db_instance_type.get_output(context);
+        let allocated_storage_binding = args.allocated_storage.get_output(ctx);
+        let bucket_binding = args.bucket.get_output(ctx);
+        let db_instance_type_binding = args.db_instance_type.get_output(ctx);
         let db_parameter_group_identifier_binding = args
             .db_parameter_group_identifier
-            .get_output(context);
-        let db_storage_type_binding = args.db_storage_type.get_output(context);
-        let deployment_type_binding = args.deployment_type.get_output(context);
+            .get_output(ctx);
+        let db_storage_type_binding = args.db_storage_type.get_output(ctx);
+        let deployment_type_binding = args.deployment_type.get_output(ctx);
         let log_delivery_configuration_binding = args
             .log_delivery_configuration
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let organization_binding = args.organization.get_output(context);
-        let password_binding = args.password.get_output(context);
-        let publicly_accessible_binding = args.publicly_accessible.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let timeouts_binding = args.timeouts.get_output(context);
-        let username_binding = args.username.get_output(context);
-        let vpc_security_group_ids_binding = args
-            .vpc_security_group_ids
-            .get_output(context);
-        let vpc_subnet_ids_binding = args.vpc_subnet_ids.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let organization_binding = args.organization.get_output(ctx);
+        let password_binding = args.password.get_output(ctx);
+        let publicly_accessible_binding = args.publicly_accessible.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let timeouts_binding = args.timeouts.get_output(ctx);
+        let username_binding = args.username.get_output(ctx);
+        let vpc_security_group_ids_binding = args.vpc_security_group_ids.get_output(ctx);
+        let vpc_subnet_ids_binding = args.vpc_subnet_ids.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:timestreaminfluxdb/dbInstance:DbInstance".into(),
             name: name.to_string(),
@@ -429,7 +427,7 @@ pub mod db_instance {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DbInstanceResult {
             id: o.get_id(),
             urn: o.get_urn(),

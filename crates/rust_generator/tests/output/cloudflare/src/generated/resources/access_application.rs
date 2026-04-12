@@ -242,85 +242,81 @@ pub mod access_application {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccessApplicationArgs,
     ) -> AccessApplicationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccessApplicationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AccessApplicationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccessApplicationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AccessApplicationResult {
-        let account_id_binding = args.account_id.get_output(context);
+        let account_id_binding = args.account_id.get_output(ctx);
         let allow_authenticate_via_warp_binding = args
             .allow_authenticate_via_warp
-            .get_output(context);
-        let allowed_idps_binding = args.allowed_idps.get_output(context);
-        let app_launcher_logo_url_binding = args
-            .app_launcher_logo_url
-            .get_output(context);
-        let app_launcher_visible_binding = args.app_launcher_visible.get_output(context);
+            .get_output(ctx);
+        let allowed_idps_binding = args.allowed_idps.get_output(ctx);
+        let app_launcher_logo_url_binding = args.app_launcher_logo_url.get_output(ctx);
+        let app_launcher_visible_binding = args.app_launcher_visible.get_output(ctx);
         let auto_redirect_to_identity_binding = args
             .auto_redirect_to_identity
-            .get_output(context);
-        let bg_color_binding = args.bg_color.get_output(context);
-        let cors_headers_binding = args.cors_headers.get_output(context);
-        let custom_deny_message_binding = args.custom_deny_message.get_output(context);
-        let custom_deny_url_binding = args.custom_deny_url.get_output(context);
+            .get_output(ctx);
+        let bg_color_binding = args.bg_color.get_output(ctx);
+        let cors_headers_binding = args.cors_headers.get_output(ctx);
+        let custom_deny_message_binding = args.custom_deny_message.get_output(ctx);
+        let custom_deny_url_binding = args.custom_deny_url.get_output(ctx);
         let custom_non_identity_deny_url_binding = args
             .custom_non_identity_deny_url
-            .get_output(context);
-        let custom_pages_binding = args.custom_pages.get_output(context);
-        let domain_binding = args.domain.get_output(context);
-        let enable_binding_cookie_binding = args
-            .enable_binding_cookie
-            .get_output(context);
-        let footer_links_binding = args.footer_links.get_output(context);
-        let header_bg_color_binding = args.header_bg_color.get_output(context);
+            .get_output(ctx);
+        let custom_pages_binding = args.custom_pages.get_output(ctx);
+        let domain_binding = args.domain.get_output(ctx);
+        let enable_binding_cookie_binding = args.enable_binding_cookie.get_output(ctx);
+        let footer_links_binding = args.footer_links.get_output(ctx);
+        let header_bg_color_binding = args.header_bg_color.get_output(ctx);
         let http_only_cookie_attribute_binding = args
             .http_only_cookie_attribute
-            .get_output(context);
-        let landing_page_design_binding = args.landing_page_design.get_output(context);
-        let logo_url_binding = args.logo_url.get_output(context);
-        let name_binding = args.name.get_output(context);
+            .get_output(ctx);
+        let landing_page_design_binding = args.landing_page_design.get_output(ctx);
+        let logo_url_binding = args.logo_url.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let options_preflight_bypass_binding = args
             .options_preflight_bypass
-            .get_output(context);
-        let policies_binding = args.policies.get_output(context);
-        let saas_app_binding = args.saas_app.get_output(context);
+            .get_output(ctx);
+        let policies_binding = args.policies.get_output(ctx);
+        let saas_app_binding = args.saas_app.get_output(ctx);
         let same_site_cookie_attribute_binding = args
             .same_site_cookie_attribute
-            .get_output(context);
-        let scim_config_binding = args.scim_config.get_output(context);
-        let self_hosted_domains_binding = args.self_hosted_domains.get_output(context);
+            .get_output(ctx);
+        let scim_config_binding = args.scim_config.get_output(ctx);
+        let self_hosted_domains_binding = args.self_hosted_domains.get_output(ctx);
         let service_auth401_redirect_binding = args
             .service_auth401_redirect
-            .get_output(context);
-        let session_duration_binding = args.session_duration.get_output(context);
+            .get_output(ctx);
+        let session_duration_binding = args.session_duration.get_output(ctx);
         let skip_app_launcher_login_page_binding = args
             .skip_app_launcher_login_page
-            .get_output(context);
-        let skip_interstitial_binding = args.skip_interstitial.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let target_criterias_binding = args.target_criterias.get_output(context);
-        let type__binding = args.type_.get_output(context);
-        let zone_id_binding = args.zone_id.get_output(context);
+            .get_output(ctx);
+        let skip_interstitial_binding = args.skip_interstitial.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let target_criterias_binding = args.target_criterias.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
+        let zone_id_binding = args.zone_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "cloudflare:index/accessApplication:AccessApplication".into(),
             name: name.to_string(),
@@ -465,7 +461,7 @@ pub mod access_application {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AccessApplicationResult {
             id: o.get_id(),
             urn: o.get_urn(),

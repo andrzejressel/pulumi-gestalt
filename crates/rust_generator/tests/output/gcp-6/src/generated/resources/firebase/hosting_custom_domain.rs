@@ -319,39 +319,37 @@ pub mod hosting_custom_domain {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: HostingCustomDomainArgs,
     ) -> HostingCustomDomainResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: HostingCustomDomainArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> HostingCustomDomainResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: HostingCustomDomainArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> HostingCustomDomainResult {
-        let cert_preference_binding = args.cert_preference.get_output(context);
-        let custom_domain_binding = args.custom_domain.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let redirect_target_binding = args.redirect_target.get_output(context);
-        let site_id_binding = args.site_id.get_output(context);
-        let wait_dns_verification_binding = args
-            .wait_dns_verification
-            .get_output(context);
+        let cert_preference_binding = args.cert_preference.get_output(ctx);
+        let custom_domain_binding = args.custom_domain.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let redirect_target_binding = args.redirect_target.get_output(ctx);
+        let site_id_binding = args.site_id.get_output(ctx);
+        let wait_dns_verification_binding = args.wait_dns_verification.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:firebase/hostingCustomDomain:HostingCustomDomain".into(),
             name: name.to_string(),
@@ -384,7 +382,7 @@ pub mod hosting_custom_domain {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         HostingCustomDomainResult {
             id: o.get_id(),
             urn: o.get_urn(),

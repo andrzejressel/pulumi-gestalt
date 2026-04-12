@@ -58,15 +58,15 @@ pub mod get_istio_canonical_service {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetIstioCanonicalServiceArgs,
     ) -> GetIstioCanonicalServiceResult {
-        let canonical_service_binding = args.canonical_service.get_output(context);
+        let canonical_service_binding = args.canonical_service.get_output(ctx);
         let canonical_service_namespace_binding = args
             .canonical_service_namespace
-            .get_output(context);
-        let mesh_uid_binding = args.mesh_uid.get_output(context);
-        let project_binding = args.project.get_output(context);
+            .get_output(ctx);
+        let mesh_uid_binding = args.mesh_uid.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:monitoring/getIstioCanonicalService:getIstioCanonicalService"
                 .into(),
@@ -90,7 +90,7 @@ pub mod get_istio_canonical_service {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetIstioCanonicalServiceResult {
             canonical_service: o.get_field("canonicalService"),
             canonical_service_namespace: o.get_field("canonicalServiceNamespace"),

@@ -43,11 +43,11 @@ pub mod get_function {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetFunctionArgs,
     ) -> GetFunctionResult {
-        let name_binding = args.name.get_output(context);
-        let stage_binding = args.stage.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let stage_binding = args.stage.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:cloudfront/getFunction:getFunction".into(),
             version: super::super::super::get_version(),
@@ -62,7 +62,7 @@ pub mod get_function {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetFunctionResult {
             arn: o.get_field("arn"),
             code: o.get_field("code"),

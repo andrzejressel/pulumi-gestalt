@@ -57,20 +57,20 @@ pub mod get_policy_document {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetPolicyDocumentArgs,
     ) -> GetPolicyDocumentResult {
-        let override_json_binding = args.override_json.get_output(context);
+        let override_json_binding = args.override_json.get_output(ctx);
         let override_policy_documents_binding = args
             .override_policy_documents
-            .get_output(context);
-        let policy_id_binding = args.policy_id.get_output(context);
-        let source_json_binding = args.source_json.get_output(context);
+            .get_output(ctx);
+        let policy_id_binding = args.policy_id.get_output(ctx);
+        let source_json_binding = args.source_json.get_output(ctx);
         let source_policy_documents_binding = args
             .source_policy_documents
-            .get_output(context);
-        let statements_binding = args.statements.get_output(context);
-        let version_binding = args.version.get_output(context);
+            .get_output(ctx);
+        let statements_binding = args.statements.get_output(ctx);
+        let version_binding = args.version.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:iam/getPolicyDocument:getPolicyDocument".into(),
             version: super::super::super::get_version(),
@@ -105,7 +105,7 @@ pub mod get_policy_document {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetPolicyDocumentResult {
             id: o.get_field("id"),
             json: o.get_field("json"),

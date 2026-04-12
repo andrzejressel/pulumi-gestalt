@@ -185,55 +185,55 @@ pub mod public_ip {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PublicIpArgs,
     ) -> PublicIpResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PublicIpArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> PublicIpResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PublicIpArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> PublicIpResult {
-        let allocation_method_binding = args.allocation_method.get_output(context);
-        let ddos_protection_mode_binding = args.ddos_protection_mode.get_output(context);
+        let allocation_method_binding = args.allocation_method.get_output(ctx);
+        let ddos_protection_mode_binding = args.ddos_protection_mode.get_output(ctx);
         let ddos_protection_plan_id_binding = args
             .ddos_protection_plan_id
-            .get_output(context);
-        let domain_name_label_binding = args.domain_name_label.get_output(context);
+            .get_output(ctx);
+        let domain_name_label_binding = args.domain_name_label.get_output(ctx);
         let domain_name_label_scope_binding = args
             .domain_name_label_scope
-            .get_output(context);
-        let edge_zone_binding = args.edge_zone.get_output(context);
+            .get_output(ctx);
+        let edge_zone_binding = args.edge_zone.get_output(ctx);
         let idle_timeout_in_minutes_binding = args
             .idle_timeout_in_minutes
-            .get_output(context);
-        let ip_tags_binding = args.ip_tags.get_output(context);
-        let ip_version_binding = args.ip_version.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let public_ip_prefix_id_binding = args.public_ip_prefix_id.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let reverse_fqdn_binding = args.reverse_fqdn.get_output(context);
-        let sku_binding = args.sku.get_output(context);
-        let sku_tier_binding = args.sku_tier.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let zones_binding = args.zones.get_output(context);
+            .get_output(ctx);
+        let ip_tags_binding = args.ip_tags.get_output(ctx);
+        let ip_version_binding = args.ip_version.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let public_ip_prefix_id_binding = args.public_ip_prefix_id.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let reverse_fqdn_binding = args.reverse_fqdn.get_output(ctx);
+        let sku_binding = args.sku.get_output(ctx);
+        let sku_tier_binding = args.sku_tier.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let zones_binding = args.zones.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:network/publicIp:PublicIp".into(),
             name: name.to_string(),
@@ -314,7 +314,7 @@ pub mod public_ip {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         PublicIpResult {
             id: o.get_id(),
             urn: o.get_urn(),

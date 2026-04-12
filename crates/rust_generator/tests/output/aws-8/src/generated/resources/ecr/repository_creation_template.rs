@@ -158,42 +158,42 @@ pub mod repository_creation_template {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RepositoryCreationTemplateArgs,
     ) -> RepositoryCreationTemplateResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RepositoryCreationTemplateArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> RepositoryCreationTemplateResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RepositoryCreationTemplateArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> RepositoryCreationTemplateResult {
-        let applied_fors_binding = args.applied_fors.get_output(context);
-        let custom_role_arn_binding = args.custom_role_arn.get_output(context);
-        let description_binding = args.description.get_output(context);
+        let applied_fors_binding = args.applied_fors.get_output(ctx);
+        let custom_role_arn_binding = args.custom_role_arn.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
         let encryption_configurations_binding = args
             .encryption_configurations
-            .get_output(context);
-        let image_tag_mutability_binding = args.image_tag_mutability.get_output(context);
-        let lifecycle_policy_binding = args.lifecycle_policy.get_output(context);
-        let prefix_binding = args.prefix.get_output(context);
-        let repository_policy_binding = args.repository_policy.get_output(context);
-        let resource_tags_binding = args.resource_tags.get_output(context);
+            .get_output(ctx);
+        let image_tag_mutability_binding = args.image_tag_mutability.get_output(ctx);
+        let lifecycle_policy_binding = args.lifecycle_policy.get_output(ctx);
+        let prefix_binding = args.prefix.get_output(ctx);
+        let repository_policy_binding = args.repository_policy.get_output(ctx);
+        let resource_tags_binding = args.resource_tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ecr/repositoryCreationTemplate:RepositoryCreationTemplate"
                 .into(),
@@ -239,7 +239,7 @@ pub mod repository_creation_template {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         RepositoryCreationTemplateResult {
             id: o.get_id(),
             urn: o.get_urn(),

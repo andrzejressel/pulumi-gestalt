@@ -209,55 +209,53 @@ pub mod deployment {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DeploymentArgs,
     ) -> DeploymentResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DeploymentArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DeploymentResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DeploymentArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DeploymentResult {
-        let auto_scale_profiles_binding = args.auto_scale_profiles.get_output(context);
+        let auto_scale_profiles_binding = args.auto_scale_profiles.get_output(ctx);
         let automatic_upgrade_channel_binding = args
             .automatic_upgrade_channel
-            .get_output(context);
-        let capacity_binding = args.capacity.get_output(context);
+            .get_output(ctx);
+        let capacity_binding = args.capacity.get_output(ctx);
         let diagnose_support_enabled_binding = args
             .diagnose_support_enabled
-            .get_output(context);
-        let email_binding = args.email.get_output(context);
-        let frontend_privates_binding = args.frontend_privates.get_output(context);
-        let frontend_public_binding = args.frontend_public.get_output(context);
-        let identity_binding = args.identity.get_output(context);
-        let location_binding = args.location.get_output(context);
+            .get_output(ctx);
+        let email_binding = args.email.get_output(ctx);
+        let frontend_privates_binding = args.frontend_privates.get_output(ctx);
+        let frontend_public_binding = args.frontend_public.get_output(ctx);
+        let identity_binding = args.identity.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
         let logging_storage_accounts_binding = args
             .logging_storage_accounts
-            .get_output(context);
-        let managed_resource_group_binding = args
-            .managed_resource_group
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_interfaces_binding = args.network_interfaces.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let sku_binding = args.sku.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let managed_resource_group_binding = args.managed_resource_group.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_interfaces_binding = args.network_interfaces.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let sku_binding = args.sku.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:nginx/deployment:Deployment".into(),
             name: name.to_string(),
@@ -330,7 +328,7 @@ pub mod deployment {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DeploymentResult {
             id: o.get_id(),
             urn: o.get_urn(),

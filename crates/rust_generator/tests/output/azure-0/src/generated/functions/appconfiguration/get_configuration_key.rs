@@ -45,14 +45,12 @@ pub mod get_configuration_key {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetConfigurationKeyArgs,
     ) -> GetConfigurationKeyResult {
-        let configuration_store_id_binding = args
-            .configuration_store_id
-            .get_output(context);
-        let key_binding = args.key.get_output(context);
-        let label_binding = args.label.get_output(context);
+        let configuration_store_id_binding = args.configuration_store_id.get_output(ctx);
+        let key_binding = args.key.get_output(ctx);
+        let label_binding = args.label.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:appconfiguration/getConfigurationKey:getConfigurationKey"
                 .into(),
@@ -72,7 +70,7 @@ pub mod get_configuration_key {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetConfigurationKeyResult {
             configuration_store_id: o.get_field("configurationStoreId"),
             content_type: o.get_field("contentType"),

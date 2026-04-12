@@ -353,54 +353,54 @@ pub mod data_set {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataSetArgs,
     ) -> DataSetResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataSetArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DataSetResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataSetArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DataSetResult {
-        let aws_account_id_binding = args.aws_account_id.get_output(context);
-        let column_groups_binding = args.column_groups.get_output(context);
+        let aws_account_id_binding = args.aws_account_id.get_output(ctx);
+        let column_groups_binding = args.column_groups.get_output(ctx);
         let column_level_permission_rules_binding = args
             .column_level_permission_rules
-            .get_output(context);
-        let data_set_id_binding = args.data_set_id.get_output(context);
+            .get_output(ctx);
+        let data_set_id_binding = args.data_set_id.get_output(ctx);
         let data_set_usage_configuration_binding = args
             .data_set_usage_configuration
-            .get_output(context);
-        let field_folders_binding = args.field_folders.get_output(context);
-        let import_mode_binding = args.import_mode.get_output(context);
-        let logical_table_maps_binding = args.logical_table_maps.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let permissions_binding = args.permissions.get_output(context);
-        let physical_table_maps_binding = args.physical_table_maps.get_output(context);
-        let refresh_properties_binding = args.refresh_properties.get_output(context);
+            .get_output(ctx);
+        let field_folders_binding = args.field_folders.get_output(ctx);
+        let import_mode_binding = args.import_mode.get_output(ctx);
+        let logical_table_maps_binding = args.logical_table_maps.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let permissions_binding = args.permissions.get_output(ctx);
+        let physical_table_maps_binding = args.physical_table_maps.get_output(ctx);
+        let refresh_properties_binding = args.refresh_properties.get_output(ctx);
         let row_level_permission_data_set_binding = args
             .row_level_permission_data_set
-            .get_output(context);
+            .get_output(ctx);
         let row_level_permission_tag_configuration_binding = args
             .row_level_permission_tag_configuration
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:quicksight/dataSet:DataSet".into(),
             name: name.to_string(),
@@ -469,7 +469,7 @@ pub mod data_set {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DataSetResult {
             id: o.get_id(),
             urn: o.get_urn(),

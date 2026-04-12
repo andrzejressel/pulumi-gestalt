@@ -152,36 +152,36 @@ pub mod link {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LinkArgs,
     ) -> LinkResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LinkArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> LinkResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LinkArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> LinkResult {
-        let label_template_binding = args.label_template.get_output(context);
-        let link_configuration_binding = args.link_configuration.get_output(context);
-        let resource_types_binding = args.resource_types.get_output(context);
-        let sink_identifier_binding = args.sink_identifier.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let label_template_binding = args.label_template.get_output(ctx);
+        let link_configuration_binding = args.link_configuration.get_output(ctx);
+        let resource_types_binding = args.resource_types.get_output(ctx);
+        let sink_identifier_binding = args.sink_identifier.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:oam/link:Link".into(),
             name: name.to_string(),
@@ -210,7 +210,7 @@ pub mod link {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         LinkResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -59,13 +59,13 @@ pub mod get_group {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetGroupArgs,
     ) -> GetGroupResult {
-        let alternate_identifier_binding = args.alternate_identifier.get_output(context);
-        let filter_binding = args.filter.get_output(context);
-        let group_id_binding = args.group_id.get_output(context);
-        let identity_store_id_binding = args.identity_store_id.get_output(context);
+        let alternate_identifier_binding = args.alternate_identifier.get_output(ctx);
+        let filter_binding = args.filter.get_output(ctx);
+        let group_id_binding = args.group_id.get_output(ctx);
+        let identity_store_id_binding = args.identity_store_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:identitystore/getGroup:getGroup".into(),
             version: super::super::super::get_version(),
@@ -88,7 +88,7 @@ pub mod get_group {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetGroupResult {
             alternate_identifier: o.get_field("alternateIdentifier"),
             description: o.get_field("description"),

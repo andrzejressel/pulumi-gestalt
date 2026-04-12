@@ -44,13 +44,13 @@ pub mod get_listing_iam_policy {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetListingIamPolicyArgs,
     ) -> GetListingIamPolicyResult {
-        let data_exchange_id_binding = args.data_exchange_id.get_output(context);
-        let listing_id_binding = args.listing_id.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let project_binding = args.project.get_output(context);
+        let data_exchange_id_binding = args.data_exchange_id.get_output(ctx);
+        let listing_id_binding = args.listing_id.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:bigqueryanalyticshub/getListingIamPolicy:getListingIamPolicy"
                 .into(),
@@ -74,7 +74,7 @@ pub mod get_listing_iam_policy {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetListingIamPolicyResult {
             data_exchange_id: o.get_field("dataExchangeId"),
             etag: o.get_field("etag"),

@@ -140,43 +140,41 @@ pub mod dataset_cosmos_db_api {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DatasetCosmosDBApiArgs,
     ) -> DatasetCosmosDBApiResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DatasetCosmosDBApiArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DatasetCosmosDBApiResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DatasetCosmosDBApiArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DatasetCosmosDBApiResult {
-        let additional_properties_binding = args
-            .additional_properties
-            .get_output(context);
-        let annotations_binding = args.annotations.get_output(context);
-        let collection_name_binding = args.collection_name.get_output(context);
-        let data_factory_id_binding = args.data_factory_id.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let folder_binding = args.folder.get_output(context);
-        let linked_service_name_binding = args.linked_service_name.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let parameters_binding = args.parameters.get_output(context);
-        let schema_columns_binding = args.schema_columns.get_output(context);
+        let additional_properties_binding = args.additional_properties.get_output(ctx);
+        let annotations_binding = args.annotations.get_output(ctx);
+        let collection_name_binding = args.collection_name.get_output(ctx);
+        let data_factory_id_binding = args.data_factory_id.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let folder_binding = args.folder.get_output(ctx);
+        let linked_service_name_binding = args.linked_service_name.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let parameters_binding = args.parameters.get_output(ctx);
+        let schema_columns_binding = args.schema_columns.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:datafactory/datasetCosmosDBApi:DatasetCosmosDBApi".into(),
             name: name.to_string(),
@@ -225,7 +223,7 @@ pub mod dataset_cosmos_db_api {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DatasetCosmosDBApiResult {
             id: o.get_id(),
             urn: o.get_urn(),

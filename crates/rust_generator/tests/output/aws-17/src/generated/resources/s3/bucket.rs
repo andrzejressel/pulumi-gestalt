@@ -533,58 +533,58 @@ pub mod bucket {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BucketArgs,
     ) -> BucketResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BucketArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> BucketResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BucketArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> BucketResult {
-        let acceleration_status_binding = args.acceleration_status.get_output(context);
-        let acl_binding = args.acl.get_output(context);
-        let arn_binding = args.arn.get_output(context);
-        let bucket_binding = args.bucket.get_output(context);
-        let bucket_prefix_binding = args.bucket_prefix.get_output(context);
-        let cors_rules_binding = args.cors_rules.get_output(context);
-        let force_destroy_binding = args.force_destroy.get_output(context);
-        let grants_binding = args.grants.get_output(context);
-        let hosted_zone_id_binding = args.hosted_zone_id.get_output(context);
-        let lifecycle_rules_binding = args.lifecycle_rules.get_output(context);
-        let loggings_binding = args.loggings.get_output(context);
+        let acceleration_status_binding = args.acceleration_status.get_output(ctx);
+        let acl_binding = args.acl.get_output(ctx);
+        let arn_binding = args.arn.get_output(ctx);
+        let bucket_binding = args.bucket.get_output(ctx);
+        let bucket_prefix_binding = args.bucket_prefix.get_output(ctx);
+        let cors_rules_binding = args.cors_rules.get_output(ctx);
+        let force_destroy_binding = args.force_destroy.get_output(ctx);
+        let grants_binding = args.grants.get_output(ctx);
+        let hosted_zone_id_binding = args.hosted_zone_id.get_output(ctx);
+        let lifecycle_rules_binding = args.lifecycle_rules.get_output(ctx);
+        let loggings_binding = args.loggings.get_output(ctx);
         let object_lock_configuration_binding = args
             .object_lock_configuration
-            .get_output(context);
-        let policy_binding = args.policy.get_output(context);
+            .get_output(ctx);
+        let policy_binding = args.policy.get_output(ctx);
         let replication_configuration_binding = args
             .replication_configuration
-            .get_output(context);
-        let request_payer_binding = args.request_payer.get_output(context);
+            .get_output(ctx);
+        let request_payer_binding = args.request_payer.get_output(ctx);
         let server_side_encryption_configuration_binding = args
             .server_side_encryption_configuration
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let versioning_binding = args.versioning.get_output(context);
-        let website_binding = args.website.get_output(context);
-        let website_domain_binding = args.website_domain.get_output(context);
-        let website_endpoint_binding = args.website_endpoint.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let versioning_binding = args.versioning.get_output(ctx);
+        let website_binding = args.website.get_output(ctx);
+        let website_domain_binding = args.website_domain.get_output(ctx);
+        let website_endpoint_binding = args.website_endpoint.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:s3/bucket:Bucket".into(),
             name: name.to_string(),
@@ -677,7 +677,7 @@ pub mod bucket {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         BucketResult {
             id: o.get_id(),
             urn: o.get_urn(),

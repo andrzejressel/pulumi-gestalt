@@ -189,60 +189,56 @@ pub mod host_pool {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: HostPoolArgs,
     ) -> HostPoolResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: HostPoolArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> HostPoolResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: HostPoolArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> HostPoolResult {
-        let custom_rdp_properties_binding = args
-            .custom_rdp_properties
-            .get_output(context);
-        let description_binding = args.description.get_output(context);
-        let friendly_name_binding = args.friendly_name.get_output(context);
-        let load_balancer_type_binding = args.load_balancer_type.get_output(context);
-        let location_binding = args.location.get_output(context);
+        let custom_rdp_properties_binding = args.custom_rdp_properties.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let friendly_name_binding = args.friendly_name.get_output(ctx);
+        let load_balancer_type_binding = args.load_balancer_type.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
         let maximum_sessions_allowed_binding = args
             .maximum_sessions_allowed
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let personal_desktop_assignment_type_binding = args
             .personal_desktop_assignment_type
-            .get_output(context);
+            .get_output(ctx);
         let preferred_app_group_type_binding = args
             .preferred_app_group_type
-            .get_output(context);
-        let public_network_access_binding = args
-            .public_network_access
-            .get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+            .get_output(ctx);
+        let public_network_access_binding = args.public_network_access.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let scheduled_agent_updates_binding = args
             .scheduled_agent_updates
-            .get_output(context);
-        let start_vm_on_connect_binding = args.start_vm_on_connect.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let type__binding = args.type_.get_output(context);
-        let validate_environment_binding = args.validate_environment.get_output(context);
-        let vm_template_binding = args.vm_template.get_output(context);
+            .get_output(ctx);
+        let start_vm_on_connect_binding = args.start_vm_on_connect.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
+        let validate_environment_binding = args.validate_environment.get_output(ctx);
+        let vm_template_binding = args.vm_template.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:desktopvirtualization/hostPool:HostPool".into(),
             name: name.to_string(),
@@ -319,7 +315,7 @@ pub mod host_pool {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         HostPoolResult {
             id: o.get_id(),
             urn: o.get_urn(),

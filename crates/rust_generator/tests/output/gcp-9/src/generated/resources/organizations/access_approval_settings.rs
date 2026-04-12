@@ -188,35 +188,35 @@ pub mod access_approval_settings {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccessApprovalSettingsArgs,
     ) -> AccessApprovalSettingsResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccessApprovalSettingsArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AccessApprovalSettingsResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccessApprovalSettingsArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AccessApprovalSettingsResult {
-        let active_key_version_binding = args.active_key_version.get_output(context);
-        let enrolled_services_binding = args.enrolled_services.get_output(context);
-        let notification_emails_binding = args.notification_emails.get_output(context);
-        let organization_id_binding = args.organization_id.get_output(context);
+        let active_key_version_binding = args.active_key_version.get_output(ctx);
+        let enrolled_services_binding = args.enrolled_services.get_output(ctx);
+        let notification_emails_binding = args.notification_emails.get_output(ctx);
+        let organization_id_binding = args.organization_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:organizations/accessApprovalSettings:AccessApprovalSettings"
                 .into(),
@@ -242,7 +242,7 @@ pub mod access_approval_settings {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AccessApprovalSettingsResult {
             id: o.get_id(),
             urn: o.get_urn(),

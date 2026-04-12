@@ -142,37 +142,37 @@ pub mod notification {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NotificationArgs,
     ) -> NotificationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NotificationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> NotificationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NotificationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> NotificationResult {
-        let bucket_binding = args.bucket.get_output(context);
-        let custom_attributes_binding = args.custom_attributes.get_output(context);
-        let event_types_binding = args.event_types.get_output(context);
-        let object_name_prefix_binding = args.object_name_prefix.get_output(context);
-        let payload_format_binding = args.payload_format.get_output(context);
-        let topic_binding = args.topic.get_output(context);
+        let bucket_binding = args.bucket.get_output(ctx);
+        let custom_attributes_binding = args.custom_attributes.get_output(ctx);
+        let event_types_binding = args.event_types.get_output(ctx);
+        let object_name_prefix_binding = args.object_name_prefix.get_output(ctx);
+        let payload_format_binding = args.payload_format.get_output(ctx);
+        let topic_binding = args.topic.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:storage/notification:Notification".into(),
             name: name.to_string(),
@@ -205,7 +205,7 @@ pub mod notification {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         NotificationResult {
             id: o.get_id(),
             urn: o.get_urn(),

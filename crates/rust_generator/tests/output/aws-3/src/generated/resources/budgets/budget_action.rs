@@ -186,41 +186,41 @@ pub mod budget_action {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BudgetActionArgs,
     ) -> BudgetActionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BudgetActionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> BudgetActionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BudgetActionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> BudgetActionResult {
-        let account_id_binding = args.account_id.get_output(context);
-        let action_threshold_binding = args.action_threshold.get_output(context);
-        let action_type_binding = args.action_type.get_output(context);
-        let approval_model_binding = args.approval_model.get_output(context);
-        let budget_name_binding = args.budget_name.get_output(context);
-        let definition_binding = args.definition.get_output(context);
-        let execution_role_arn_binding = args.execution_role_arn.get_output(context);
-        let notification_type_binding = args.notification_type.get_output(context);
-        let subscribers_binding = args.subscribers.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let account_id_binding = args.account_id.get_output(ctx);
+        let action_threshold_binding = args.action_threshold.get_output(ctx);
+        let action_type_binding = args.action_type.get_output(ctx);
+        let approval_model_binding = args.approval_model.get_output(ctx);
+        let budget_name_binding = args.budget_name.get_output(ctx);
+        let definition_binding = args.definition.get_output(ctx);
+        let execution_role_arn_binding = args.execution_role_arn.get_output(ctx);
+        let notification_type_binding = args.notification_type.get_output(ctx);
+        let subscribers_binding = args.subscribers.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:budgets/budgetAction:BudgetAction".into(),
             name: name.to_string(),
@@ -269,7 +269,7 @@ pub mod budget_action {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         BudgetActionResult {
             id: o.get_id(),
             urn: o.get_urn(),

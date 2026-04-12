@@ -185,42 +185,38 @@ pub mod region_resize_request {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RegionResizeRequestArgs,
     ) -> RegionResizeRequestResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RegionResizeRequestArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> RegionResizeRequestResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RegionResizeRequestArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> RegionResizeRequestResult {
-        let description_binding = args.description.get_output(context);
-        let instance_group_manager_binding = args
-            .instance_group_manager
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let region_binding = args.region.get_output(context);
-        let requested_run_duration_binding = args
-            .requested_run_duration
-            .get_output(context);
-        let resize_by_binding = args.resize_by.get_output(context);
+        let description_binding = args.description.get_output(ctx);
+        let instance_group_manager_binding = args.instance_group_manager.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let region_binding = args.region.get_output(ctx);
+        let requested_run_duration_binding = args.requested_run_duration.get_output(ctx);
+        let resize_by_binding = args.resize_by.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:compute/regionResizeRequest:RegionResizeRequest".into(),
             name: name.to_string(),
@@ -257,7 +253,7 @@ pub mod region_resize_request {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         RegionResizeRequestResult {
             id: o.get_id(),
             urn: o.get_urn(),

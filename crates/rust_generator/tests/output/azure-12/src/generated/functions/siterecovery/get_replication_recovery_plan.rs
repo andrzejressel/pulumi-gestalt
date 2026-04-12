@@ -44,11 +44,11 @@ pub mod get_replication_recovery_plan {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetReplicationRecoveryPlanArgs,
     ) -> GetReplicationRecoveryPlanResult {
-        let name_binding = args.name.get_output(context);
-        let recovery_vault_id_binding = args.recovery_vault_id.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let recovery_vault_id_binding = args.recovery_vault_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:siterecovery/getReplicationRecoveryPlan:getReplicationRecoveryPlan"
                 .into(),
@@ -64,7 +64,7 @@ pub mod get_replication_recovery_plan {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetReplicationRecoveryPlanResult {
             azure_to_azure_settings: o.get_field("azureToAzureSettings"),
             failover_deployment_model: o.get_field("failoverDeploymentModel"),

@@ -408,42 +408,42 @@ pub mod slo {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SloArgs,
     ) -> SloResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SloArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> SloResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SloArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> SloResult {
-        let basic_sli_binding = args.basic_sli.get_output(context);
-        let calendar_period_binding = args.calendar_period.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let goal_binding = args.goal.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let request_based_sli_binding = args.request_based_sli.get_output(context);
-        let rolling_period_days_binding = args.rolling_period_days.get_output(context);
-        let service_binding = args.service.get_output(context);
-        let slo_id_binding = args.slo_id.get_output(context);
-        let user_labels_binding = args.user_labels.get_output(context);
-        let windows_based_sli_binding = args.windows_based_sli.get_output(context);
+        let basic_sli_binding = args.basic_sli.get_output(ctx);
+        let calendar_period_binding = args.calendar_period.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let goal_binding = args.goal.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let request_based_sli_binding = args.request_based_sli.get_output(ctx);
+        let rolling_period_days_binding = args.rolling_period_days.get_output(ctx);
+        let service_binding = args.service.get_output(ctx);
+        let slo_id_binding = args.slo_id.get_output(ctx);
+        let user_labels_binding = args.user_labels.get_output(ctx);
+        let windows_based_sli_binding = args.windows_based_sli.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:monitoring/slo:Slo".into(),
             name: name.to_string(),
@@ -496,7 +496,7 @@ pub mod slo {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         SloResult {
             id: o.get_id(),
             urn: o.get_urn(),

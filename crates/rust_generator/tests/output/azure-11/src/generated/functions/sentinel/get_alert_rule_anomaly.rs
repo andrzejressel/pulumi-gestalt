@@ -81,14 +81,14 @@ pub mod get_alert_rule_anomaly {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetAlertRuleAnomalyArgs,
     ) -> GetAlertRuleAnomalyResult {
-        let display_name_binding = args.display_name.get_output(context);
+        let display_name_binding = args.display_name.get_output(ctx);
         let log_analytics_workspace_id_binding = args
             .log_analytics_workspace_id
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:sentinel/getAlertRuleAnomaly:getAlertRuleAnomaly".into(),
             version: super::super::super::get_version(),
@@ -107,7 +107,7 @@ pub mod get_alert_rule_anomaly {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetAlertRuleAnomalyResult {
             anomaly_settings_version: o.get_field("anomalySettingsVersion"),
             anomaly_version: o.get_field("anomalyVersion"),

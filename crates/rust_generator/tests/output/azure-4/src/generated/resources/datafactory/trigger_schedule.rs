@@ -156,45 +156,45 @@ pub mod trigger_schedule {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TriggerScheduleArgs,
     ) -> TriggerScheduleResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TriggerScheduleArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> TriggerScheduleResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TriggerScheduleArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> TriggerScheduleResult {
-        let activated_binding = args.activated.get_output(context);
-        let annotations_binding = args.annotations.get_output(context);
-        let data_factory_id_binding = args.data_factory_id.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let end_time_binding = args.end_time.get_output(context);
-        let frequency_binding = args.frequency.get_output(context);
-        let interval_binding = args.interval.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let pipeline_name_binding = args.pipeline_name.get_output(context);
-        let pipeline_parameters_binding = args.pipeline_parameters.get_output(context);
-        let pipelines_binding = args.pipelines.get_output(context);
-        let schedule_binding = args.schedule.get_output(context);
-        let start_time_binding = args.start_time.get_output(context);
-        let time_zone_binding = args.time_zone.get_output(context);
+        let activated_binding = args.activated.get_output(ctx);
+        let annotations_binding = args.annotations.get_output(ctx);
+        let data_factory_id_binding = args.data_factory_id.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let end_time_binding = args.end_time.get_output(ctx);
+        let frequency_binding = args.frequency.get_output(ctx);
+        let interval_binding = args.interval.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let pipeline_name_binding = args.pipeline_name.get_output(ctx);
+        let pipeline_parameters_binding = args.pipeline_parameters.get_output(ctx);
+        let pipelines_binding = args.pipelines.get_output(ctx);
+        let schedule_binding = args.schedule.get_output(ctx);
+        let start_time_binding = args.start_time.get_output(ctx);
+        let time_zone_binding = args.time_zone.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:datafactory/triggerSchedule:TriggerSchedule".into(),
             name: name.to_string(),
@@ -259,7 +259,7 @@ pub mod trigger_schedule {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         TriggerScheduleResult {
             id: o.get_id(),
             urn: o.get_urn(),

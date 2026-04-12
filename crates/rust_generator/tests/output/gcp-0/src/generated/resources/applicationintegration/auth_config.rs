@@ -201,42 +201,42 @@ pub mod auth_config {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AuthConfigArgs,
     ) -> AuthConfigResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AuthConfigArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AuthConfigResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AuthConfigArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AuthConfigResult {
-        let client_certificate_binding = args.client_certificate.get_output(context);
-        let decrypted_credential_binding = args.decrypted_credential.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
+        let client_certificate_binding = args.client_certificate.get_output(ctx);
+        let decrypted_credential_binding = args.decrypted_credential.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
         let expiry_notification_durations_binding = args
             .expiry_notification_durations
-            .get_output(context);
-        let location_binding = args.location.get_output(context);
-        let override_valid_time_binding = args.override_valid_time.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let visibility_binding = args.visibility.get_output(context);
+            .get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let override_valid_time_binding = args.override_valid_time.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let visibility_binding = args.visibility.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:applicationintegration/authConfig:AuthConfig".into(),
             name: name.to_string(),
@@ -281,7 +281,7 @@ pub mod auth_config {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AuthConfigResult {
             id: o.get_id(),
             urn: o.get_urn(),

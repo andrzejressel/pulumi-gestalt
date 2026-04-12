@@ -102,45 +102,45 @@ pub mod output_powerbi {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OutputPowerbiArgs,
     ) -> OutputPowerbiResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OutputPowerbiArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> OutputPowerbiResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OutputPowerbiArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> OutputPowerbiResult {
-        let dataset_binding = args.dataset.get_output(context);
-        let group_id_binding = args.group_id.get_output(context);
-        let group_name_binding = args.group_name.get_output(context);
-        let name_binding = args.name.get_output(context);
+        let dataset_binding = args.dataset.get_output(ctx);
+        let group_id_binding = args.group_id.get_output(ctx);
+        let group_name_binding = args.group_name.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let stream_analytics_job_id_binding = args
             .stream_analytics_job_id
-            .get_output(context);
-        let table_binding = args.table.get_output(context);
+            .get_output(ctx);
+        let table_binding = args.table.get_output(ctx);
         let token_user_display_name_binding = args
             .token_user_display_name
-            .get_output(context);
+            .get_output(ctx);
         let token_user_principal_name_binding = args
             .token_user_principal_name
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:streamanalytics/outputPowerbi:OutputPowerbi".into(),
             name: name.to_string(),
@@ -181,7 +181,7 @@ pub mod output_powerbi {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         OutputPowerbiResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -260,49 +260,49 @@ pub mod patch_baseline {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PatchBaselineArgs,
     ) -> PatchBaselineResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PatchBaselineArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> PatchBaselineResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PatchBaselineArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> PatchBaselineResult {
-        let approval_rules_binding = args.approval_rules.get_output(context);
-        let approved_patches_binding = args.approved_patches.get_output(context);
+        let approval_rules_binding = args.approval_rules.get_output(ctx);
+        let approved_patches_binding = args.approved_patches.get_output(ctx);
         let approved_patches_compliance_level_binding = args
             .approved_patches_compliance_level
-            .get_output(context);
+            .get_output(ctx);
         let approved_patches_enable_non_security_binding = args
             .approved_patches_enable_non_security
-            .get_output(context);
-        let description_binding = args.description.get_output(context);
-        let global_filters_binding = args.global_filters.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let operating_system_binding = args.operating_system.get_output(context);
-        let rejected_patches_binding = args.rejected_patches.get_output(context);
+            .get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let global_filters_binding = args.global_filters.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let operating_system_binding = args.operating_system.get_output(ctx);
+        let rejected_patches_binding = args.rejected_patches.get_output(ctx);
         let rejected_patches_action_binding = args
             .rejected_patches_action
-            .get_output(context);
-        let sources_binding = args.sources.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let sources_binding = args.sources.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ssm/patchBaseline:PatchBaseline".into(),
             name: name.to_string(),
@@ -359,7 +359,7 @@ pub mod patch_baseline {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         PatchBaselineResult {
             id: o.get_id(),
             urn: o.get_urn(),

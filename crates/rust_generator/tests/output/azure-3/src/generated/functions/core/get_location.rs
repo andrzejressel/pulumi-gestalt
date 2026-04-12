@@ -29,10 +29,10 @@ pub mod get_location {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetLocationArgs,
     ) -> GetLocationResult {
-        let location_binding = args.location.get_output(context);
+        let location_binding = args.location.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:core/getLocation:getLocation".into(),
             version: super::super::super::get_version(),
@@ -43,7 +43,7 @@ pub mod get_location {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetLocationResult {
             display_name: o.get_field("displayName"),
             id: o.get_field("id"),

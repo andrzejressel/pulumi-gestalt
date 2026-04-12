@@ -34,11 +34,11 @@ pub mod get_consent_store_iam_policy {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetConsentStoreIamPolicyArgs,
     ) -> GetConsentStoreIamPolicyResult {
-        let consent_store_id_binding = args.consent_store_id.get_output(context);
-        let dataset_binding = args.dataset.get_output(context);
+        let consent_store_id_binding = args.consent_store_id.get_output(ctx);
+        let dataset_binding = args.dataset.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:healthcare/getConsentStoreIamPolicy:getConsentStoreIamPolicy"
                 .into(),
@@ -54,7 +54,7 @@ pub mod get_consent_store_iam_policy {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetConsentStoreIamPolicyResult {
             consent_store_id: o.get_field("consentStoreId"),
             dataset: o.get_field("dataset"),

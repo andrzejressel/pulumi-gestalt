@@ -161,42 +161,40 @@ pub mod event_destination {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EventDestinationArgs,
     ) -> EventDestinationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EventDestinationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> EventDestinationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EventDestinationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> EventDestinationResult {
         let cloudwatch_destinations_binding = args
             .cloudwatch_destinations
-            .get_output(context);
-        let configuration_set_name_binding = args
-            .configuration_set_name
-            .get_output(context);
-        let enabled_binding = args.enabled.get_output(context);
-        let kinesis_destination_binding = args.kinesis_destination.get_output(context);
-        let matching_types_binding = args.matching_types.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let sns_destination_binding = args.sns_destination.get_output(context);
+            .get_output(ctx);
+        let configuration_set_name_binding = args.configuration_set_name.get_output(ctx);
+        let enabled_binding = args.enabled.get_output(ctx);
+        let kinesis_destination_binding = args.kinesis_destination.get_output(ctx);
+        let matching_types_binding = args.matching_types.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let sns_destination_binding = args.sns_destination.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ses/eventDestination:EventDestination".into(),
             name: name.to_string(),
@@ -233,7 +231,7 @@ pub mod event_destination {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         EventDestinationResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -222,50 +222,46 @@ pub mod frontdoor {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FrontdoorArgs,
     ) -> FrontdoorResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FrontdoorArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> FrontdoorResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FrontdoorArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> FrontdoorResult {
         let backend_pool_health_probes_binding = args
             .backend_pool_health_probes
-            .get_output(context);
+            .get_output(ctx);
         let backend_pool_load_balancings_binding = args
             .backend_pool_load_balancings
-            .get_output(context);
-        let backend_pool_settings_binding = args
-            .backend_pool_settings
-            .get_output(context);
-        let backend_pools_binding = args.backend_pools.get_output(context);
-        let friendly_name_binding = args.friendly_name.get_output(context);
-        let frontend_endpoints_binding = args.frontend_endpoints.get_output(context);
-        let load_balancer_enabled_binding = args
-            .load_balancer_enabled
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let routing_rules_binding = args.routing_rules.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let backend_pool_settings_binding = args.backend_pool_settings.get_output(ctx);
+        let backend_pools_binding = args.backend_pools.get_output(ctx);
+        let friendly_name_binding = args.friendly_name.get_output(ctx);
+        let frontend_endpoints_binding = args.frontend_endpoints.get_output(ctx);
+        let load_balancer_enabled_binding = args.load_balancer_enabled.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let routing_rules_binding = args.routing_rules.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:frontdoor/frontdoor:Frontdoor".into(),
             name: name.to_string(),
@@ -318,7 +314,7 @@ pub mod frontdoor {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         FrontdoorResult {
             id: o.get_id(),
             urn: o.get_urn(),

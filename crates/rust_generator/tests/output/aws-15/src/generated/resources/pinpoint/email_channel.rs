@@ -116,37 +116,37 @@ pub mod email_channel {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EmailChannelArgs,
     ) -> EmailChannelResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EmailChannelArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> EmailChannelResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EmailChannelArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> EmailChannelResult {
-        let application_id_binding = args.application_id.get_output(context);
-        let configuration_set_binding = args.configuration_set.get_output(context);
-        let enabled_binding = args.enabled.get_output(context);
-        let from_address_binding = args.from_address.get_output(context);
-        let identity_binding = args.identity.get_output(context);
-        let role_arn_binding = args.role_arn.get_output(context);
+        let application_id_binding = args.application_id.get_output(ctx);
+        let configuration_set_binding = args.configuration_set.get_output(ctx);
+        let enabled_binding = args.enabled.get_output(ctx);
+        let from_address_binding = args.from_address.get_output(ctx);
+        let identity_binding = args.identity.get_output(ctx);
+        let role_arn_binding = args.role_arn.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:pinpoint/emailChannel:EmailChannel".into(),
             name: name.to_string(),
@@ -179,7 +179,7 @@ pub mod email_channel {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         EmailChannelResult {
             id: o.get_id(),
             urn: o.get_urn(),

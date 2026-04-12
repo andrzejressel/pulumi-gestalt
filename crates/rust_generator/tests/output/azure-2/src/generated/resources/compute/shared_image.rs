@@ -239,83 +239,79 @@ pub mod shared_image {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SharedImageArgs,
     ) -> SharedImageResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SharedImageArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> SharedImageResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SharedImageArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> SharedImageResult {
         let accelerated_network_support_enabled_binding = args
             .accelerated_network_support_enabled
-            .get_output(context);
-        let architecture_binding = args.architecture.get_output(context);
+            .get_output(ctx);
+        let architecture_binding = args.architecture.get_output(ctx);
         let confidential_vm_enabled_binding = args
             .confidential_vm_enabled
-            .get_output(context);
+            .get_output(ctx);
         let confidential_vm_supported_binding = args
             .confidential_vm_supported
-            .get_output(context);
-        let description_binding = args.description.get_output(context);
+            .get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
         let disk_controller_type_nvme_enabled_binding = args
             .disk_controller_type_nvme_enabled
-            .get_output(context);
+            .get_output(ctx);
         let disk_types_not_alloweds_binding = args
             .disk_types_not_alloweds
-            .get_output(context);
-        let end_of_life_date_binding = args.end_of_life_date.get_output(context);
-        let eula_binding = args.eula.get_output(context);
-        let gallery_name_binding = args.gallery_name.get_output(context);
-        let hibernation_enabled_binding = args.hibernation_enabled.get_output(context);
-        let hyper_v_generation_binding = args.hyper_v_generation.get_output(context);
-        let identifier_binding = args.identifier.get_output(context);
-        let location_binding = args.location.get_output(context);
+            .get_output(ctx);
+        let end_of_life_date_binding = args.end_of_life_date.get_output(ctx);
+        let eula_binding = args.eula.get_output(ctx);
+        let gallery_name_binding = args.gallery_name.get_output(ctx);
+        let hibernation_enabled_binding = args.hibernation_enabled.get_output(ctx);
+        let hyper_v_generation_binding = args.hyper_v_generation.get_output(ctx);
+        let identifier_binding = args.identifier.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
         let max_recommended_memory_in_gb_binding = args
             .max_recommended_memory_in_gb
-            .get_output(context);
+            .get_output(ctx);
         let max_recommended_vcpu_count_binding = args
             .max_recommended_vcpu_count
-            .get_output(context);
+            .get_output(ctx);
         let min_recommended_memory_in_gb_binding = args
             .min_recommended_memory_in_gb
-            .get_output(context);
+            .get_output(ctx);
         let min_recommended_vcpu_count_binding = args
             .min_recommended_vcpu_count
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let os_type_binding = args.os_type.get_output(context);
-        let privacy_statement_uri_binding = args
-            .privacy_statement_uri
-            .get_output(context);
-        let purchase_plan_binding = args.purchase_plan.get_output(context);
-        let release_note_uri_binding = args.release_note_uri.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let specialized_binding = args.specialized.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let trusted_launch_enabled_binding = args
-            .trusted_launch_enabled
-            .get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let os_type_binding = args.os_type.get_output(ctx);
+        let privacy_statement_uri_binding = args.privacy_statement_uri.get_output(ctx);
+        let purchase_plan_binding = args.purchase_plan.get_output(ctx);
+        let release_note_uri_binding = args.release_note_uri.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let specialized_binding = args.specialized.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let trusted_launch_enabled_binding = args.trusted_launch_enabled.get_output(ctx);
         let trusted_launch_supported_binding = args
             .trusted_launch_supported
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:compute/sharedImage:SharedImage".into(),
             name: name.to_string(),
@@ -436,7 +432,7 @@ pub mod shared_image {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         SharedImageResult {
             id: o.get_id(),
             urn: o.get_urn(),

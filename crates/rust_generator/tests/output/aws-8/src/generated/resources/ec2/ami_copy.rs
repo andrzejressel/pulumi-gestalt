@@ -167,46 +167,46 @@ pub mod ami_copy {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AmiCopyArgs,
     ) -> AmiCopyResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AmiCopyArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AmiCopyResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AmiCopyArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AmiCopyResult {
-        let deprecation_time_binding = args.deprecation_time.get_output(context);
-        let description_binding = args.description.get_output(context);
+        let deprecation_time_binding = args.deprecation_time.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
         let destination_outpost_arn_binding = args
             .destination_outpost_arn
-            .get_output(context);
-        let ebs_block_devices_binding = args.ebs_block_devices.get_output(context);
-        let encrypted_binding = args.encrypted.get_output(context);
+            .get_output(ctx);
+        let ebs_block_devices_binding = args.ebs_block_devices.get_output(ctx);
+        let encrypted_binding = args.encrypted.get_output(ctx);
         let ephemeral_block_devices_binding = args
             .ephemeral_block_devices
-            .get_output(context);
-        let kms_key_id_binding = args.kms_key_id.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let source_ami_id_binding = args.source_ami_id.get_output(context);
-        let source_ami_region_binding = args.source_ami_region.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let kms_key_id_binding = args.kms_key_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let source_ami_id_binding = args.source_ami_id.get_output(ctx);
+        let source_ami_region_binding = args.source_ami_region.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/amiCopy:AmiCopy".into(),
             name: name.to_string(),
@@ -259,7 +259,7 @@ pub mod ami_copy {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AmiCopyResult {
             id: o.get_id(),
             urn: o.get_urn(),

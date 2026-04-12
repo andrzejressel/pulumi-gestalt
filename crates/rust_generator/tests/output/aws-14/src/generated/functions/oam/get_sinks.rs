@@ -15,13 +15,13 @@ pub mod get_sinks {
     /// Registers a new resource with the given unique name and arguments
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
-    pub fn invoke(context: &pulumi_gestalt_rust::Context) -> GetSinksResult {
+    pub fn invoke(ctx: &pulumi_gestalt_rust::Context) -> GetSinksResult {
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:oam/getSinks:getSinks".into(),
             version: super::super::super::get_version(),
             object: &[],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetSinksResult {
             arns: o.get_field("arns"),
             id: o.get_field("id"),

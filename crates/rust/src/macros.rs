@@ -8,10 +8,10 @@ use serde::Serialize;
 /// use anyhow::Result;
 /// use pulumi_gestalt_rust::*;
 ///
-/// fn pulumi_main(context: &Context) -> Result<()> {
-///   let a = context.new_output(&1);
-///   let b = context.new_output(&"test".to_string());
-///   let formatted: Output<String> = pulumi_format!(context, "{} {}", a, b); // "1 test"
+/// fn pulumi_main(ctx: &Context) -> Result<()> {
+///   let a = ctx.new_output(&1);
+///   let b = ctx.new_output(&"test".to_string());
+///   let formatted: Output<String> = pulumi_format!(ctx, "{} {}", a, b); // "1 test"
 ///   Ok(())
 /// }
 #[macro_export]
@@ -250,9 +250,9 @@ macro_rules! pulumi_format {
 /// use anyhow::Result;
 /// use pulumi_gestalt_rust::*;
 ///
-/// fn pulumi_main(context: &Context) -> Result<()> {
-///   let a = context.new_output(&1);
-///   let b = context.new_output(&"test".to_string());
+/// fn pulumi_main(ctx: &Context) -> Result<()> {
+///   let a = ctx.new_output(&1);
+///   let b = ctx.new_output(&"test".to_string());
 ///   let combined: Output<(i32, String)> = pulumi_combine!(a, b);
 ///   Ok(())
 /// }

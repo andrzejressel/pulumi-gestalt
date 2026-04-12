@@ -149,46 +149,42 @@ pub mod stage {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StageArgs,
     ) -> StageResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StageArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> StageResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StageArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> StageResult {
-        let access_log_settings_binding = args.access_log_settings.get_output(context);
-        let api_id_binding = args.api_id.get_output(context);
-        let auto_deploy_binding = args.auto_deploy.get_output(context);
-        let client_certificate_id_binding = args
-            .client_certificate_id
-            .get_output(context);
-        let default_route_settings_binding = args
-            .default_route_settings
-            .get_output(context);
-        let deployment_id_binding = args.deployment_id.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let route_settings_binding = args.route_settings.get_output(context);
-        let stage_variables_binding = args.stage_variables.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let access_log_settings_binding = args.access_log_settings.get_output(ctx);
+        let api_id_binding = args.api_id.get_output(ctx);
+        let auto_deploy_binding = args.auto_deploy.get_output(ctx);
+        let client_certificate_id_binding = args.client_certificate_id.get_output(ctx);
+        let default_route_settings_binding = args.default_route_settings.get_output(ctx);
+        let deployment_id_binding = args.deployment_id.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let route_settings_binding = args.route_settings.get_output(ctx);
+        let stage_variables_binding = args.stage_variables.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:apigatewayv2/stage:Stage".into(),
             name: name.to_string(),
@@ -241,7 +237,7 @@ pub mod stage {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         StageResult {
             id: o.get_id(),
             urn: o.get_urn(),

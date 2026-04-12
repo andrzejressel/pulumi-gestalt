@@ -37,12 +37,12 @@ pub mod get_replication_policy {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetReplicationPolicyArgs,
     ) -> GetReplicationPolicyResult {
-        let name_binding = args.name.get_output(context);
-        let recovery_vault_name_binding = args.recovery_vault_name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let recovery_vault_name_binding = args.recovery_vault_name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:siterecovery/getReplicationPolicy:getReplicationPolicy".into(),
             version: super::super::super::get_version(),
@@ -61,7 +61,7 @@ pub mod get_replication_policy {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetReplicationPolicyResult {
             application_consistent_snapshot_frequency_in_minutes: o
                 .get_field("applicationConsistentSnapshotFrequencyInMinutes"),

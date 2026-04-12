@@ -39,12 +39,12 @@ pub mod get_resolver_firewall_rule_group_association {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetResolverFirewallRuleGroupAssociationArgs,
     ) -> GetResolverFirewallRuleGroupAssociationResult {
         let firewall_rule_group_association_id_binding = args
             .firewall_rule_group_association_id
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:route53/getResolverFirewallRuleGroupAssociation:getResolverFirewallRuleGroupAssociation"
                 .into(),
@@ -56,7 +56,7 @@ pub mod get_resolver_firewall_rule_group_association {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetResolverFirewallRuleGroupAssociationResult {
             arn: o.get_field("arn"),
             creation_time: o.get_field("creationTime"),
