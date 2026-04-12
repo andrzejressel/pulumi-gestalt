@@ -7,6 +7,6 @@ fn pulumi_main(context: &pulumi_gestalt_rust::Context) -> Result<()> {
         .require_config(None, "input")
         .expect("Expected config [input] to exist");
     let hash = pulumi_gestalt_rust::stdlib::sha1(input);
-    pulumi_gestalt_rust::add_export("hash", &context.new_output(&hash));
+    context.add_export("hash", &hash);
     Ok(())
 }

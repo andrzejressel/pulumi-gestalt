@@ -1,3 +1,4 @@
+use crate::any_export::IntoOutputAny;
 use anyhow::{Context as anyhowContext, Result, bail};
 use bon::Builder;
 use pulumi_gestalt_rust_integration as integration;
@@ -190,6 +191,10 @@ impl Context {
             runtime: self.runtime.clone(),
         }
     }
+    pub fn add_export(&self, key: &str, input: &impl IntoOutputAny) {
+        input.as_output(self).add_to_export(key);
+    }
+
     pub fn register_resource(
         &self,
         request: RegisterResourceRequest<Output<()>>,
@@ -295,6 +300,28 @@ impl Context {
                 bail!("Config `{full_key}` does not exist")
             }
         }
+    }
+
+    pub fn require_config_secret_deserialize<T>(
+        &self,
+        name: Option<&str>,
+        key: &str,
+    ) -> Result<Output<T>>
+    where
+        T: for<'de> Deserialize<'de> + Serialize,
+    {
+        let secret_output = self
+            .require_config_secret(name, key)
+            .context("Failed to obtain secret config value")?;
+
+        let key = key.to_string();
+        Ok(secret_output.map(move |s| {
+            serde_json::from_str(&s)
+                .with_context(|| {
+                    format!("Failed to deserialize secret config value for key `{key}`")
+                })
+                .unwrap()
+        }))
     }
 
     pub fn get_organization(&self) -> &str {

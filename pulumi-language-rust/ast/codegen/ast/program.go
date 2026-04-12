@@ -595,6 +595,7 @@ func transformConfigVariable(variable *pcl.ConfigVariable) (*astproto.ConfigVari
 		LogicalName:  variable.LogicalName(),
 		ConfigType:   configType,
 		DefaultValue: defaultValue,
+		Secret:       variable.Secret,
 	}, nil
 }
 

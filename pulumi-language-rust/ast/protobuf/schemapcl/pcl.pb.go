@@ -604,6 +604,7 @@ type ConfigVariable struct {
 	LogicalName   string                 `protobuf:"bytes,2,opt,name=logicalName,proto3" json:"logicalName,omitempty"`
 	ConfigType    *ConfigType            `protobuf:"bytes,3,opt,name=configType,proto3" json:"configType,omitempty"`
 	DefaultValue  *Expression            `protobuf:"bytes,4,opt,name=defaultValue,proto3" json:"defaultValue,omitempty"`
+	Secret        bool                   `protobuf:"varint,5,opt,name=secret,proto3" json:"secret,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -664,6 +665,13 @@ func (x *ConfigVariable) GetDefaultValue() *Expression {
 		return x.DefaultValue
 	}
 	return nil
+}
+
+func (x *ConfigVariable) GetSecret() bool {
+	if x != nil {
+		return x.Secret
+	}
+	return false
 }
 
 type ConfigType struct {
@@ -2447,14 +2455,15 @@ const file_pcl_proto_rawDesc = "" +
 	"\rLocalVariable\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12 \n" +
 	"\vlogicalName\x18\x02 \x01(\tR\vlogicalName\x12+\n" +
-	"\x05value\x18\x03 \x01(\v2\x15.pulumipcl.ExpressionR\x05value\"\xb8\x01\n" +
+	"\x05value\x18\x03 \x01(\v2\x15.pulumipcl.ExpressionR\x05value\"\xd0\x01\n" +
 	"\x0eConfigVariable\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12 \n" +
 	"\vlogicalName\x18\x02 \x01(\tR\vlogicalName\x125\n" +
 	"\n" +
 	"configType\x18\x03 \x01(\v2\x15.pulumipcl.ConfigTypeR\n" +
 	"configType\x129\n" +
-	"\fdefaultValue\x18\x04 \x01(\v2\x15.pulumipcl.ExpressionR\fdefaultValue\"\xc3\x02\n" +
+	"\fdefaultValue\x18\x04 \x01(\v2\x15.pulumipcl.ExpressionR\fdefaultValue\x12\x16\n" +
+	"\x06secret\x18\x05 \x01(\bR\x06secret\"\xc3\x02\n" +
 	"\n" +
 	"ConfigType\x122\n" +
 	"\n" +

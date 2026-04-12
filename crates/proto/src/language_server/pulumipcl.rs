@@ -88,6 +88,8 @@ pub struct ConfigVariable {
     pub config_type: ::core::option::Option<ConfigType>,
     #[prost(message, optional, tag = "4")]
     pub default_value: ::core::option::Option<Expression>,
+    #[prost(bool, tag = "5")]
+    pub secret: bool,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ConfigType {
