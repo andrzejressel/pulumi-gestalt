@@ -298,44 +298,44 @@ pub mod stream_processor {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StreamProcessorArgs,
     ) -> StreamProcessorResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StreamProcessorArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> StreamProcessorResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StreamProcessorArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> StreamProcessorResult {
         let data_sharing_preference_binding = args
             .data_sharing_preference
-            .get_output(context);
-        let input_binding = args.input.get_output(context);
-        let kms_key_id_binding = args.kms_key_id.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let notification_channel_binding = args.notification_channel.get_output(context);
-        let output_binding = args.output.get_output(context);
-        let regions_of_interests_binding = args.regions_of_interests.get_output(context);
-        let role_arn_binding = args.role_arn.get_output(context);
-        let settings_binding = args.settings.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let timeouts_binding = args.timeouts.get_output(context);
+            .get_output(ctx);
+        let input_binding = args.input.get_output(ctx);
+        let kms_key_id_binding = args.kms_key_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let notification_channel_binding = args.notification_channel.get_output(ctx);
+        let output_binding = args.output.get_output(ctx);
+        let regions_of_interests_binding = args.regions_of_interests.get_output(ctx);
+        let role_arn_binding = args.role_arn.get_output(ctx);
+        let settings_binding = args.settings.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let timeouts_binding = args.timeouts.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:rekognition/streamProcessor:StreamProcessor".into(),
             name: name.to_string(),
@@ -388,7 +388,7 @@ pub mod stream_processor {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         StreamProcessorResult {
             id: o.get_id(),
             urn: o.get_urn(),

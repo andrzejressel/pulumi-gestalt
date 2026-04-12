@@ -52,11 +52,11 @@ pub mod get_identity_pool {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetIdentityPoolArgs,
     ) -> GetIdentityPoolResult {
-        let identity_pool_name_binding = args.identity_pool_name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let identity_pool_name_binding = args.identity_pool_name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:cognito/getIdentityPool:getIdentityPool".into(),
             version: super::super::super::get_version(),
@@ -71,7 +71,7 @@ pub mod get_identity_pool {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetIdentityPoolResult {
             allow_classic_flow: o.get_field("allowClassicFlow"),
             allow_unauthenticated_identities: o

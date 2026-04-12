@@ -57,15 +57,15 @@ pub mod get_network_attached_data_network {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetNetworkAttachedDataNetworkArgs,
     ) -> GetNetworkAttachedDataNetworkResult {
         let mobile_network_data_network_name_binding = args
             .mobile_network_data_network_name
-            .get_output(context);
+            .get_output(ctx);
         let mobile_network_packet_core_data_plane_id_binding = args
             .mobile_network_packet_core_data_plane_id
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:mobile/getNetworkAttachedDataNetwork:getNetworkAttachedDataNetwork"
                 .into(),
@@ -81,7 +81,7 @@ pub mod get_network_attached_data_network {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetNetworkAttachedDataNetworkResult {
             dns_addresses: o.get_field("dnsAddresses"),
             id: o.get_field("id"),

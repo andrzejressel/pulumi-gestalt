@@ -29,11 +29,11 @@ pub mod get_registry_repository {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetRegistryRepositoryArgs,
     ) -> GetRegistryRepositoryResult {
-        let project_binding = args.project.get_output(context);
-        let region_binding = args.region.get_output(context);
+        let project_binding = args.project.get_output(ctx);
+        let region_binding = args.region.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:container/getRegistryRepository:getRegistryRepository".into(),
             version: super::super::super::get_version(),
@@ -48,7 +48,7 @@ pub mod get_registry_repository {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetRegistryRepositoryResult {
             id: o.get_field("id"),
             project: o.get_field("project"),

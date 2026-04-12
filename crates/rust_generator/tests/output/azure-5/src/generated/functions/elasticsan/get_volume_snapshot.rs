@@ -33,11 +33,11 @@ pub mod get_volume_snapshot {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetVolumeSnapshotArgs,
     ) -> GetVolumeSnapshotResult {
-        let name_binding = args.name.get_output(context);
-        let volume_group_id_binding = args.volume_group_id.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let volume_group_id_binding = args.volume_group_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:elasticsan/getVolumeSnapshot:getVolumeSnapshot".into(),
             version: super::super::super::get_version(),
@@ -52,7 +52,7 @@ pub mod get_volume_snapshot {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetVolumeSnapshotResult {
             id: o.get_field("id"),
             name: o.get_field("name"),

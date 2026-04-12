@@ -214,39 +214,39 @@ pub mod vpc_peering_connection {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcPeeringConnectionArgs,
     ) -> VpcPeeringConnectionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcPeeringConnectionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> VpcPeeringConnectionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcPeeringConnectionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> VpcPeeringConnectionResult {
-        let accepter_binding = args.accepter.get_output(context);
-        let auto_accept_binding = args.auto_accept.get_output(context);
-        let peer_owner_id_binding = args.peer_owner_id.get_output(context);
-        let peer_region_binding = args.peer_region.get_output(context);
-        let peer_vpc_id_binding = args.peer_vpc_id.get_output(context);
-        let requester_binding = args.requester.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let vpc_id_binding = args.vpc_id.get_output(context);
+        let accepter_binding = args.accepter.get_output(ctx);
+        let auto_accept_binding = args.auto_accept.get_output(ctx);
+        let peer_owner_id_binding = args.peer_owner_id.get_output(ctx);
+        let peer_region_binding = args.peer_region.get_output(ctx);
+        let peer_vpc_id_binding = args.peer_vpc_id.get_output(ctx);
+        let requester_binding = args.requester.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let vpc_id_binding = args.vpc_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/vpcPeeringConnection:VpcPeeringConnection".into(),
             name: name.to_string(),
@@ -287,7 +287,7 @@ pub mod vpc_peering_connection {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         VpcPeeringConnectionResult {
             id: o.get_id(),
             urn: o.get_urn(),

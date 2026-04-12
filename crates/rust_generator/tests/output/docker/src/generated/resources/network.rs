@@ -148,43 +148,43 @@ pub mod network {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkArgs,
     ) -> NetworkResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> NetworkResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> NetworkResult {
-        let attachable_binding = args.attachable.get_output(context);
-        let check_duplicate_binding = args.check_duplicate.get_output(context);
-        let driver_binding = args.driver.get_output(context);
-        let ingress_binding = args.ingress.get_output(context);
-        let internal_binding = args.internal.get_output(context);
-        let ipam_configs_binding = args.ipam_configs.get_output(context);
-        let ipam_driver_binding = args.ipam_driver.get_output(context);
-        let ipam_options_binding = args.ipam_options.get_output(context);
-        let ipv6_binding = args.ipv6.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let options_binding = args.options.get_output(context);
+        let attachable_binding = args.attachable.get_output(ctx);
+        let check_duplicate_binding = args.check_duplicate.get_output(ctx);
+        let driver_binding = args.driver.get_output(ctx);
+        let ingress_binding = args.ingress.get_output(ctx);
+        let internal_binding = args.internal.get_output(ctx);
+        let ipam_configs_binding = args.ipam_configs.get_output(ctx);
+        let ipam_driver_binding = args.ipam_driver.get_output(ctx);
+        let ipam_options_binding = args.ipam_options.get_output(ctx);
+        let ipv6_binding = args.ipv6.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let options_binding = args.options.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "docker:index/network:Network".into(),
             name: name.to_string(),
@@ -241,7 +241,7 @@ pub mod network {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         NetworkResult {
             id: o.get_id(),
             urn: o.get_urn(),

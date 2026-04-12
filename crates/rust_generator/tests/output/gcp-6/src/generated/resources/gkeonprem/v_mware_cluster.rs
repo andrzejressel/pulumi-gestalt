@@ -446,57 +446,57 @@ pub mod v_mware_cluster {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VMwareClusterArgs,
     ) -> VMwareClusterResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VMwareClusterArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> VMwareClusterResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VMwareClusterArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> VMwareClusterResult {
         let admin_cluster_membership_binding = args
             .admin_cluster_membership
-            .get_output(context);
-        let annotations_binding = args.annotations.get_output(context);
-        let anti_affinity_groups_binding = args.anti_affinity_groups.get_output(context);
-        let authorization_binding = args.authorization.get_output(context);
-        let auto_repair_config_binding = args.auto_repair_config.get_output(context);
-        let control_plane_node_binding = args.control_plane_node.get_output(context);
-        let dataplane_v2_binding = args.dataplane_v2.get_output(context);
-        let description_binding = args.description.get_output(context);
+            .get_output(ctx);
+        let annotations_binding = args.annotations.get_output(ctx);
+        let anti_affinity_groups_binding = args.anti_affinity_groups.get_output(ctx);
+        let authorization_binding = args.authorization.get_output(ctx);
+        let auto_repair_config_binding = args.auto_repair_config.get_output(ctx);
+        let control_plane_node_binding = args.control_plane_node.get_output(ctx);
+        let dataplane_v2_binding = args.dataplane_v2.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
         let disable_bundled_ingress_binding = args
             .disable_bundled_ingress
-            .get_output(context);
+            .get_output(ctx);
         let enable_control_plane_v2_binding = args
             .enable_control_plane_v2
-            .get_output(context);
-        let load_balancer_binding = args.load_balancer.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_config_binding = args.network_config.get_output(context);
-        let on_prem_version_binding = args.on_prem_version.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let storage_binding = args.storage.get_output(context);
-        let upgrade_policy_binding = args.upgrade_policy.get_output(context);
-        let vcenter_binding = args.vcenter.get_output(context);
-        let vm_tracking_enabled_binding = args.vm_tracking_enabled.get_output(context);
+            .get_output(ctx);
+        let load_balancer_binding = args.load_balancer.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_config_binding = args.network_config.get_output(ctx);
+        let on_prem_version_binding = args.on_prem_version.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let storage_binding = args.storage.get_output(ctx);
+        let upgrade_policy_binding = args.upgrade_policy.get_output(ctx);
+        let vcenter_binding = args.vcenter.get_output(ctx);
+        let vm_tracking_enabled_binding = args.vm_tracking_enabled.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:gkeonprem/vMwareCluster:VMwareCluster".into(),
             name: name.to_string(),
@@ -585,7 +585,7 @@ pub mod v_mware_cluster {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         VMwareClusterResult {
             id: o.get_id(),
             urn: o.get_urn(),

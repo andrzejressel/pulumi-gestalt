@@ -46,15 +46,15 @@ pub mod get_database_instances {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetDatabaseInstancesArgs,
     ) -> GetDatabaseInstancesResult {
-        let database_version_binding = args.database_version.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let region_binding = args.region.get_output(context);
-        let state_binding = args.state.get_output(context);
-        let tier_binding = args.tier.get_output(context);
-        let zone_binding = args.zone.get_output(context);
+        let database_version_binding = args.database_version.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let region_binding = args.region.get_output(ctx);
+        let state_binding = args.state.get_output(ctx);
+        let tier_binding = args.tier.get_output(ctx);
+        let zone_binding = args.zone.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:sql/getDatabaseInstances:getDatabaseInstances".into(),
             version: super::super::super::get_version(),
@@ -85,7 +85,7 @@ pub mod get_database_instances {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetDatabaseInstancesResult {
             database_version: o.get_field("databaseVersion"),
             id: o.get_field("id"),

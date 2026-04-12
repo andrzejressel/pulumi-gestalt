@@ -177,62 +177,60 @@ pub mod autonomous_database {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AutonomousDatabaseArgs,
     ) -> AutonomousDatabaseResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AutonomousDatabaseArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AutonomousDatabaseResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AutonomousDatabaseArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AutonomousDatabaseResult {
-        let admin_password_binding = args.admin_password.get_output(context);
-        let auto_scaling_enabled_binding = args.auto_scaling_enabled.get_output(context);
+        let admin_password_binding = args.admin_password.get_output(ctx);
+        let auto_scaling_enabled_binding = args.auto_scaling_enabled.get_output(ctx);
         let auto_scaling_for_storage_enabled_binding = args
             .auto_scaling_for_storage_enabled
-            .get_output(context);
+            .get_output(ctx);
         let backup_retention_period_in_days_binding = args
             .backup_retention_period_in_days
-            .get_output(context);
-        let character_set_binding = args.character_set.get_output(context);
-        let compute_count_binding = args.compute_count.get_output(context);
-        let compute_model_binding = args.compute_model.get_output(context);
-        let customer_contacts_binding = args.customer_contacts.get_output(context);
+            .get_output(ctx);
+        let character_set_binding = args.character_set.get_output(ctx);
+        let compute_count_binding = args.compute_count.get_output(ctx);
+        let compute_model_binding = args.compute_model.get_output(ctx);
+        let customer_contacts_binding = args.customer_contacts.get_output(ctx);
         let data_storage_size_in_tbs_binding = args
             .data_storage_size_in_tbs
-            .get_output(context);
-        let db_version_binding = args.db_version.get_output(context);
-        let db_workload_binding = args.db_workload.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let license_model_binding = args.license_model.get_output(context);
-        let location_binding = args.location.get_output(context);
+            .get_output(ctx);
+        let db_version_binding = args.db_version.get_output(ctx);
+        let db_workload_binding = args.db_workload.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let license_model_binding = args.license_model.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
         let mtls_connection_required_binding = args
             .mtls_connection_required
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let national_character_set_binding = args
-            .national_character_set
-            .get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let subnet_id_binding = args.subnet_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let virtual_network_id_binding = args.virtual_network_id.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let national_character_set_binding = args.national_character_set.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let subnet_id_binding = args.subnet_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let virtual_network_id_binding = args.virtual_network_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:oracle/autonomousDatabase:AutonomousDatabase".into(),
             name: name.to_string(),
@@ -325,7 +323,7 @@ pub mod autonomous_database {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AutonomousDatabaseResult {
             id: o.get_id(),
             urn: o.get_urn(),

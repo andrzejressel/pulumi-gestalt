@@ -45,13 +45,13 @@ pub mod get_permission_set {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetPermissionSetArgs,
     ) -> GetPermissionSetResult {
-        let arn_binding = args.arn.get_output(context);
-        let instance_arn_binding = args.instance_arn.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let arn_binding = args.arn.get_output(ctx);
+        let instance_arn_binding = args.instance_arn.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ssoadmin/getPermissionSet:getPermissionSet".into(),
             version: super::super::super::get_version(),
@@ -74,7 +74,7 @@ pub mod get_permission_set {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetPermissionSetResult {
             arn: o.get_field("arn"),
             created_date: o.get_field("createdDate"),

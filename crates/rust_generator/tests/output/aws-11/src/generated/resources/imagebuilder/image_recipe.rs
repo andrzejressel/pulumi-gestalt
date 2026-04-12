@@ -138,45 +138,41 @@ pub mod image_recipe {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ImageRecipeArgs,
     ) -> ImageRecipeResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ImageRecipeArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ImageRecipeResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ImageRecipeArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ImageRecipeResult {
-        let block_device_mappings_binding = args
-            .block_device_mappings
-            .get_output(context);
-        let components_binding = args.components.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let parent_image_binding = args.parent_image.get_output(context);
-        let systems_manager_agent_binding = args
-            .systems_manager_agent
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let user_data_base64_binding = args.user_data_base64.get_output(context);
-        let version_binding = args.version.get_output(context);
-        let working_directory_binding = args.working_directory.get_output(context);
+        let block_device_mappings_binding = args.block_device_mappings.get_output(ctx);
+        let components_binding = args.components.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let parent_image_binding = args.parent_image.get_output(ctx);
+        let systems_manager_agent_binding = args.systems_manager_agent.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let user_data_base64_binding = args.user_data_base64.get_output(ctx);
+        let version_binding = args.version.get_output(ctx);
+        let working_directory_binding = args.working_directory.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:imagebuilder/imageRecipe:ImageRecipe".into(),
             name: name.to_string(),
@@ -225,7 +221,7 @@ pub mod image_recipe {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ImageRecipeResult {
             id: o.get_id(),
             urn: o.get_urn(),

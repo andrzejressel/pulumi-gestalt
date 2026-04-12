@@ -188,56 +188,56 @@ pub mod virtual_machine_scale_set_extension {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VirtualMachineScaleSetExtensionArgs,
     ) -> VirtualMachineScaleSetExtensionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VirtualMachineScaleSetExtensionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> VirtualMachineScaleSetExtensionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VirtualMachineScaleSetExtensionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> VirtualMachineScaleSetExtensionResult {
         let auto_upgrade_minor_version_binding = args
             .auto_upgrade_minor_version
-            .get_output(context);
+            .get_output(ctx);
         let automatic_upgrade_enabled_binding = args
             .automatic_upgrade_enabled
-            .get_output(context);
+            .get_output(ctx);
         let failure_suppression_enabled_binding = args
             .failure_suppression_enabled
-            .get_output(context);
-        let force_update_tag_binding = args.force_update_tag.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let protected_settings_binding = args.protected_settings.get_output(context);
+            .get_output(ctx);
+        let force_update_tag_binding = args.force_update_tag.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let protected_settings_binding = args.protected_settings.get_output(ctx);
         let protected_settings_from_key_vault_binding = args
             .protected_settings_from_key_vault
-            .get_output(context);
+            .get_output(ctx);
         let provision_after_extensions_binding = args
             .provision_after_extensions
-            .get_output(context);
-        let publisher_binding = args.publisher.get_output(context);
-        let settings_binding = args.settings.get_output(context);
-        let type__binding = args.type_.get_output(context);
-        let type_handler_version_binding = args.type_handler_version.get_output(context);
+            .get_output(ctx);
+        let publisher_binding = args.publisher.get_output(ctx);
+        let settings_binding = args.settings.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
+        let type_handler_version_binding = args.type_handler_version.get_output(ctx);
         let virtual_machine_scale_set_id_binding = args
             .virtual_machine_scale_set_id
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:compute/virtualMachineScaleSetExtension:VirtualMachineScaleSetExtension"
                 .into(),
@@ -299,7 +299,7 @@ pub mod virtual_machine_scale_set_extension {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         VirtualMachineScaleSetExtensionResult {
             id: o.get_id(),
             urn: o.get_urn(),

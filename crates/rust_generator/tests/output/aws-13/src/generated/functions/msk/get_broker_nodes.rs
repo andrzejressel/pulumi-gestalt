@@ -26,10 +26,10 @@ pub mod get_broker_nodes {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetBrokerNodesArgs,
     ) -> GetBrokerNodesResult {
-        let cluster_arn_binding = args.cluster_arn.get_output(context);
+        let cluster_arn_binding = args.cluster_arn.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:msk/getBrokerNodes:getBrokerNodes".into(),
             version: super::super::super::get_version(),
@@ -40,7 +40,7 @@ pub mod get_broker_nodes {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetBrokerNodesResult {
             cluster_arn: o.get_field("clusterArn"),
             id: o.get_field("id"),

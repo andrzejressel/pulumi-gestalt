@@ -59,14 +59,14 @@ pub mod get_listener_rule {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetListenerRuleArgs,
     ) -> GetListenerRuleResult {
-        let actions_binding = args.actions.get_output(context);
-        let arn_binding = args.arn.get_output(context);
-        let conditions_binding = args.conditions.get_output(context);
-        let listener_arn_binding = args.listener_arn.get_output(context);
-        let priority_binding = args.priority.get_output(context);
+        let actions_binding = args.actions.get_output(ctx);
+        let arn_binding = args.arn.get_output(ctx);
+        let conditions_binding = args.conditions.get_output(ctx);
+        let listener_arn_binding = args.listener_arn.get_output(ctx);
+        let priority_binding = args.priority.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:lb/getListenerRule:getListenerRule".into(),
             version: super::super::super::get_version(),
@@ -93,7 +93,7 @@ pub mod get_listener_rule {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetListenerRuleResult {
             actions: o.get_field("actions"),
             arn: o.get_field("arn"),

@@ -90,43 +90,43 @@ pub mod integration_response {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IntegrationResponseArgs,
     ) -> IntegrationResponseResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IntegrationResponseArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> IntegrationResponseResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IntegrationResponseArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> IntegrationResponseResult {
-        let api_id_binding = args.api_id.get_output(context);
+        let api_id_binding = args.api_id.get_output(ctx);
         let content_handling_strategy_binding = args
             .content_handling_strategy
-            .get_output(context);
-        let integration_id_binding = args.integration_id.get_output(context);
+            .get_output(ctx);
+        let integration_id_binding = args.integration_id.get_output(ctx);
         let integration_response_key_binding = args
             .integration_response_key
-            .get_output(context);
-        let response_templates_binding = args.response_templates.get_output(context);
+            .get_output(ctx);
+        let response_templates_binding = args.response_templates.get_output(ctx);
         let template_selection_expression_binding = args
             .template_selection_expression
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:apigatewayv2/integrationResponse:IntegrationResponse".into(),
             name: name.to_string(),
@@ -159,7 +159,7 @@ pub mod integration_response {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         IntegrationResponseResult {
             id: o.get_id(),
             urn: o.get_urn(),

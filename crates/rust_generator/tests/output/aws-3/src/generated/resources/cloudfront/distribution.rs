@@ -375,60 +375,56 @@ pub mod distribution {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DistributionArgs,
     ) -> DistributionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DistributionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DistributionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DistributionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DistributionResult {
-        let aliases_binding = args.aliases.get_output(context);
-        let comment_binding = args.comment.get_output(context);
+        let aliases_binding = args.aliases.get_output(ctx);
+        let comment_binding = args.comment.get_output(ctx);
         let continuous_deployment_policy_id_binding = args
             .continuous_deployment_policy_id
-            .get_output(context);
-        let custom_error_responses_binding = args
-            .custom_error_responses
-            .get_output(context);
-        let default_cache_behavior_binding = args
-            .default_cache_behavior
-            .get_output(context);
-        let default_root_object_binding = args.default_root_object.get_output(context);
-        let enabled_binding = args.enabled.get_output(context);
-        let http_version_binding = args.http_version.get_output(context);
-        let is_ipv6_enabled_binding = args.is_ipv6_enabled.get_output(context);
-        let logging_config_binding = args.logging_config.get_output(context);
+            .get_output(ctx);
+        let custom_error_responses_binding = args.custom_error_responses.get_output(ctx);
+        let default_cache_behavior_binding = args.default_cache_behavior.get_output(ctx);
+        let default_root_object_binding = args.default_root_object.get_output(ctx);
+        let enabled_binding = args.enabled.get_output(ctx);
+        let http_version_binding = args.http_version.get_output(ctx);
+        let is_ipv6_enabled_binding = args.is_ipv6_enabled.get_output(ctx);
+        let logging_config_binding = args.logging_config.get_output(ctx);
         let ordered_cache_behaviors_binding = args
             .ordered_cache_behaviors
-            .get_output(context);
-        let origin_groups_binding = args.origin_groups.get_output(context);
-        let origins_binding = args.origins.get_output(context);
-        let price_class_binding = args.price_class.get_output(context);
-        let restrictions_binding = args.restrictions.get_output(context);
-        let retain_on_delete_binding = args.retain_on_delete.get_output(context);
-        let staging_binding = args.staging.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let viewer_certificate_binding = args.viewer_certificate.get_output(context);
-        let wait_for_deployment_binding = args.wait_for_deployment.get_output(context);
-        let web_acl_id_binding = args.web_acl_id.get_output(context);
+            .get_output(ctx);
+        let origin_groups_binding = args.origin_groups.get_output(ctx);
+        let origins_binding = args.origins.get_output(ctx);
+        let price_class_binding = args.price_class.get_output(ctx);
+        let restrictions_binding = args.restrictions.get_output(ctx);
+        let retain_on_delete_binding = args.retain_on_delete.get_output(ctx);
+        let staging_binding = args.staging.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let viewer_certificate_binding = args.viewer_certificate.get_output(ctx);
+        let wait_for_deployment_binding = args.wait_for_deployment.get_output(ctx);
+        let web_acl_id_binding = args.web_acl_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:cloudfront/distribution:Distribution".into(),
             name: name.to_string(),
@@ -521,7 +517,7 @@ pub mod distribution {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DistributionResult {
             id: o.get_id(),
             urn: o.get_urn(),

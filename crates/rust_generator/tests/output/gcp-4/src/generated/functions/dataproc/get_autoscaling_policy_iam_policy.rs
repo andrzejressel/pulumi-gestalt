@@ -44,12 +44,12 @@ pub mod get_autoscaling_policy_iam_policy {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetAutoscalingPolicyIamPolicyArgs,
     ) -> GetAutoscalingPolicyIamPolicyResult {
-        let location_binding = args.location.get_output(context);
-        let policy_id_binding = args.policy_id.get_output(context);
-        let project_binding = args.project.get_output(context);
+        let location_binding = args.location.get_output(ctx);
+        let policy_id_binding = args.policy_id.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:dataproc/getAutoscalingPolicyIamPolicy:getAutoscalingPolicyIamPolicy"
                 .into(),
@@ -69,7 +69,7 @@ pub mod get_autoscaling_policy_iam_policy {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetAutoscalingPolicyIamPolicyResult {
             etag: o.get_field("etag"),
             id: o.get_field("id"),

@@ -104,38 +104,38 @@ pub mod data_share_consumer_association {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataShareConsumerAssociationArgs,
     ) -> DataShareConsumerAssociationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataShareConsumerAssociationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DataShareConsumerAssociationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataShareConsumerAssociationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DataShareConsumerAssociationResult {
-        let allow_writes_binding = args.allow_writes.get_output(context);
+        let allow_writes_binding = args.allow_writes.get_output(ctx);
         let associate_entire_account_binding = args
             .associate_entire_account
-            .get_output(context);
-        let consumer_arn_binding = args.consumer_arn.get_output(context);
-        let consumer_region_binding = args.consumer_region.get_output(context);
-        let data_share_arn_binding = args.data_share_arn.get_output(context);
+            .get_output(ctx);
+        let consumer_arn_binding = args.consumer_arn.get_output(ctx);
+        let consumer_region_binding = args.consumer_region.get_output(ctx);
+        let data_share_arn_binding = args.data_share_arn.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:redshift/dataShareConsumerAssociation:DataShareConsumerAssociation"
                 .into(),
@@ -165,7 +165,7 @@ pub mod data_share_consumer_association {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DataShareConsumerAssociationResult {
             id: o.get_id(),
             urn: o.get_urn(),

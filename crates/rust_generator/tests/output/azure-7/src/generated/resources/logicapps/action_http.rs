@@ -122,39 +122,39 @@ pub mod action_http {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ActionHttpArgs,
     ) -> ActionHttpResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ActionHttpArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ActionHttpResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ActionHttpArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ActionHttpResult {
-        let body_binding = args.body.get_output(context);
-        let headers_binding = args.headers.get_output(context);
-        let logic_app_id_binding = args.logic_app_id.get_output(context);
-        let method_binding = args.method.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let queries_binding = args.queries.get_output(context);
-        let run_afters_binding = args.run_afters.get_output(context);
-        let uri_binding = args.uri.get_output(context);
+        let body_binding = args.body.get_output(ctx);
+        let headers_binding = args.headers.get_output(ctx);
+        let logic_app_id_binding = args.logic_app_id.get_output(ctx);
+        let method_binding = args.method.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let queries_binding = args.queries.get_output(ctx);
+        let run_afters_binding = args.run_afters.get_output(ctx);
+        let uri_binding = args.uri.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:logicapps/actionHttp:ActionHttp".into(),
             name: name.to_string(),
@@ -195,7 +195,7 @@ pub mod action_http {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ActionHttpResult {
             id: o.get_id(),
             urn: o.get_urn(),

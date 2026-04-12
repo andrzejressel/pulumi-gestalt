@@ -386,63 +386,61 @@ pub mod server {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServerArgs,
     ) -> ServerResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServerArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ServerResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServerArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ServerResult {
-        let certificate_binding = args.certificate.get_output(context);
-        let directory_id_binding = args.directory_id.get_output(context);
-        let domain_binding = args.domain.get_output(context);
-        let endpoint_details_binding = args.endpoint_details.get_output(context);
-        let endpoint_type_binding = args.endpoint_type.get_output(context);
-        let force_destroy_binding = args.force_destroy.get_output(context);
-        let function_binding = args.function.get_output(context);
-        let host_key_binding = args.host_key.get_output(context);
-        let identity_provider_type_binding = args
-            .identity_provider_type
-            .get_output(context);
-        let invocation_role_binding = args.invocation_role.get_output(context);
-        let logging_role_binding = args.logging_role.get_output(context);
+        let certificate_binding = args.certificate.get_output(ctx);
+        let directory_id_binding = args.directory_id.get_output(ctx);
+        let domain_binding = args.domain.get_output(ctx);
+        let endpoint_details_binding = args.endpoint_details.get_output(ctx);
+        let endpoint_type_binding = args.endpoint_type.get_output(ctx);
+        let force_destroy_binding = args.force_destroy.get_output(ctx);
+        let function_binding = args.function.get_output(ctx);
+        let host_key_binding = args.host_key.get_output(ctx);
+        let identity_provider_type_binding = args.identity_provider_type.get_output(ctx);
+        let invocation_role_binding = args.invocation_role.get_output(ctx);
+        let logging_role_binding = args.logging_role.get_output(ctx);
         let post_authentication_login_banner_binding = args
             .post_authentication_login_banner
-            .get_output(context);
+            .get_output(ctx);
         let pre_authentication_login_banner_binding = args
             .pre_authentication_login_banner
-            .get_output(context);
-        let protocol_details_binding = args.protocol_details.get_output(context);
-        let protocols_binding = args.protocols.get_output(context);
-        let s3_storage_options_binding = args.s3_storage_options.get_output(context);
-        let security_policy_name_binding = args.security_policy_name.get_output(context);
+            .get_output(ctx);
+        let protocol_details_binding = args.protocol_details.get_output(ctx);
+        let protocols_binding = args.protocols.get_output(ctx);
+        let s3_storage_options_binding = args.s3_storage_options.get_output(ctx);
+        let security_policy_name_binding = args.security_policy_name.get_output(ctx);
         let sftp_authentication_methods_binding = args
             .sftp_authentication_methods
-            .get_output(context);
+            .get_output(ctx);
         let structured_log_destinations_binding = args
             .structured_log_destinations
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let url_binding = args.url.get_output(context);
-        let workflow_details_binding = args.workflow_details.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let url_binding = args.url.get_output(ctx);
+        let workflow_details_binding = args.workflow_details.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:transfer/server:Server".into(),
             name: name.to_string(),
@@ -539,7 +537,7 @@ pub mod server {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ServerResult {
             id: o.get_id(),
             urn: o.get_urn(),

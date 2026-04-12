@@ -147,37 +147,37 @@ pub mod zone {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ZoneArgs,
     ) -> ZoneResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ZoneArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ZoneResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ZoneArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ZoneResult {
-        let comment_binding = args.comment.get_output(context);
-        let delegation_set_id_binding = args.delegation_set_id.get_output(context);
-        let force_destroy_binding = args.force_destroy.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let vpcs_binding = args.vpcs.get_output(context);
+        let comment_binding = args.comment.get_output(ctx);
+        let delegation_set_id_binding = args.delegation_set_id.get_output(ctx);
+        let force_destroy_binding = args.force_destroy.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let vpcs_binding = args.vpcs.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:route53/zone:Zone".into(),
             name: name.to_string(),
@@ -210,7 +210,7 @@ pub mod zone {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ZoneResult {
             id: o.get_id(),
             urn: o.get_urn(),

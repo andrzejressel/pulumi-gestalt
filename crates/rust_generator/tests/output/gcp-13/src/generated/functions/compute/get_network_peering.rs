@@ -35,11 +35,11 @@ pub mod get_network_peering {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetNetworkPeeringArgs,
     ) -> GetNetworkPeeringResult {
-        let name_binding = args.name.get_output(context);
-        let network_binding = args.network.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let network_binding = args.network.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:compute/getNetworkPeering:getNetworkPeering".into(),
             version: super::super::super::get_version(),
@@ -54,7 +54,7 @@ pub mod get_network_peering {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetNetworkPeeringResult {
             export_custom_routes: o.get_field("exportCustomRoutes"),
             export_subnet_routes_with_public_ip: o

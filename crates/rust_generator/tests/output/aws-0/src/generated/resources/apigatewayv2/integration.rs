@@ -256,55 +256,53 @@ pub mod integration {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IntegrationArgs,
     ) -> IntegrationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IntegrationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> IntegrationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IntegrationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> IntegrationResult {
-        let api_id_binding = args.api_id.get_output(context);
-        let connection_id_binding = args.connection_id.get_output(context);
-        let connection_type_binding = args.connection_type.get_output(context);
+        let api_id_binding = args.api_id.get_output(ctx);
+        let connection_id_binding = args.connection_id.get_output(ctx);
+        let connection_type_binding = args.connection_type.get_output(ctx);
         let content_handling_strategy_binding = args
             .content_handling_strategy
-            .get_output(context);
-        let credentials_arn_binding = args.credentials_arn.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let integration_method_binding = args.integration_method.get_output(context);
-        let integration_subtype_binding = args.integration_subtype.get_output(context);
-        let integration_type_binding = args.integration_type.get_output(context);
-        let integration_uri_binding = args.integration_uri.get_output(context);
-        let passthrough_behavior_binding = args.passthrough_behavior.get_output(context);
-        let payload_format_version_binding = args
-            .payload_format_version
-            .get_output(context);
-        let request_parameters_binding = args.request_parameters.get_output(context);
-        let request_templates_binding = args.request_templates.get_output(context);
-        let response_parameters_binding = args.response_parameters.get_output(context);
+            .get_output(ctx);
+        let credentials_arn_binding = args.credentials_arn.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let integration_method_binding = args.integration_method.get_output(ctx);
+        let integration_subtype_binding = args.integration_subtype.get_output(ctx);
+        let integration_type_binding = args.integration_type.get_output(ctx);
+        let integration_uri_binding = args.integration_uri.get_output(ctx);
+        let passthrough_behavior_binding = args.passthrough_behavior.get_output(ctx);
+        let payload_format_version_binding = args.payload_format_version.get_output(ctx);
+        let request_parameters_binding = args.request_parameters.get_output(ctx);
+        let request_templates_binding = args.request_templates.get_output(ctx);
+        let response_parameters_binding = args.response_parameters.get_output(ctx);
         let template_selection_expression_binding = args
             .template_selection_expression
-            .get_output(context);
-        let timeout_milliseconds_binding = args.timeout_milliseconds.get_output(context);
-        let tls_config_binding = args.tls_config.get_output(context);
+            .get_output(ctx);
+        let timeout_milliseconds_binding = args.timeout_milliseconds.get_output(ctx);
+        let tls_config_binding = args.tls_config.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:apigatewayv2/integration:Integration".into(),
             name: name.to_string(),
@@ -385,7 +383,7 @@ pub mod integration {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         IntegrationResult {
             id: o.get_id(),
             urn: o.get_urn(),

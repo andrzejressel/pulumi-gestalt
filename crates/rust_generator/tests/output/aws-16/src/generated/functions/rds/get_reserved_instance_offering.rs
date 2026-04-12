@@ -45,14 +45,14 @@ pub mod get_reserved_instance_offering {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetReservedInstanceOfferingArgs,
     ) -> GetReservedInstanceOfferingResult {
-        let db_instance_class_binding = args.db_instance_class.get_output(context);
-        let duration_binding = args.duration.get_output(context);
-        let multi_az_binding = args.multi_az.get_output(context);
-        let offering_type_binding = args.offering_type.get_output(context);
-        let product_description_binding = args.product_description.get_output(context);
+        let db_instance_class_binding = args.db_instance_class.get_output(ctx);
+        let duration_binding = args.duration.get_output(ctx);
+        let multi_az_binding = args.multi_az.get_output(ctx);
+        let offering_type_binding = args.offering_type.get_output(ctx);
+        let product_description_binding = args.product_description.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:rds/getReservedInstanceOffering:getReservedInstanceOffering"
                 .into(),
@@ -80,7 +80,7 @@ pub mod get_reserved_instance_offering {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetReservedInstanceOfferingResult {
             currency_code: o.get_field("currencyCode"),
             db_instance_class: o.get_field("dbInstanceClass"),

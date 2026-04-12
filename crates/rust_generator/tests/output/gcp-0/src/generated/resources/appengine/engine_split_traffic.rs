@@ -138,35 +138,35 @@ pub mod engine_split_traffic {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EngineSplitTrafficArgs,
     ) -> EngineSplitTrafficResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EngineSplitTrafficArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> EngineSplitTrafficResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EngineSplitTrafficArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> EngineSplitTrafficResult {
-        let migrate_traffic_binding = args.migrate_traffic.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let service_binding = args.service.get_output(context);
-        let split_binding = args.split.get_output(context);
+        let migrate_traffic_binding = args.migrate_traffic.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let service_binding = args.service.get_output(ctx);
+        let split_binding = args.split.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:appengine/engineSplitTraffic:EngineSplitTraffic".into(),
             name: name.to_string(),
@@ -191,7 +191,7 @@ pub mod engine_split_traffic {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         EngineSplitTrafficResult {
             id: o.get_id(),
             urn: o.get_urn(),

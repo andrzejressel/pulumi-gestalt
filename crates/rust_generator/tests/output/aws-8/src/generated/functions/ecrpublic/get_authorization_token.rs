@@ -21,15 +21,13 @@ pub mod get_authorization_token {
     /// Registers a new resource with the given unique name and arguments
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
-    pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
-    ) -> GetAuthorizationTokenResult {
+    pub fn invoke(ctx: &pulumi_gestalt_rust::Context) -> GetAuthorizationTokenResult {
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ecrpublic/getAuthorizationToken:getAuthorizationToken".into(),
             version: super::super::super::get_version(),
             object: &[],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetAuthorizationTokenResult {
             authorization_token: o.get_field("authorizationToken"),
             expires_at: o.get_field("expiresAt"),

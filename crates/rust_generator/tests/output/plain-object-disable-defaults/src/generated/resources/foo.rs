@@ -44,37 +44,37 @@ pub mod foo {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FooArgs,
     ) -> FooResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FooArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> FooResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FooArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> FooResult {
-        let argument_binding = args.argument.get_output(context);
+        let argument_binding = args.argument.get_output(ctx);
         let backup_kube_client_settings_binding = args
             .backup_kube_client_settings
-            .get_output(context);
-        let kube_client_settings_binding = args.kube_client_settings.get_output(context);
-        let settings_binding = args.settings.get_output(context);
+            .get_output(ctx);
+        let kube_client_settings_binding = args.kube_client_settings.get_output(ctx);
+        let settings_binding = args.settings.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "example:index:Foo".into(),
             name: name.to_string(),
@@ -99,7 +99,7 @@ pub mod foo {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         FooResult {
             id: o.get_id(),
             urn: o.get_urn(),

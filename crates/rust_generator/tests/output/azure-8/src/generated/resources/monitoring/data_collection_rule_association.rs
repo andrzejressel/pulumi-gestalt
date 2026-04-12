@@ -193,40 +193,40 @@ pub mod data_collection_rule_association {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataCollectionRuleAssociationArgs,
     ) -> DataCollectionRuleAssociationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataCollectionRuleAssociationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DataCollectionRuleAssociationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataCollectionRuleAssociationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DataCollectionRuleAssociationResult {
         let data_collection_endpoint_id_binding = args
             .data_collection_endpoint_id
-            .get_output(context);
+            .get_output(ctx);
         let data_collection_rule_id_binding = args
             .data_collection_rule_id
-            .get_output(context);
-        let description_binding = args.description.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let target_resource_id_binding = args.target_resource_id.get_output(context);
+            .get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let target_resource_id_binding = args.target_resource_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:monitoring/dataCollectionRuleAssociation:DataCollectionRuleAssociation"
                 .into(),
@@ -256,7 +256,7 @@ pub mod data_collection_rule_association {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DataCollectionRuleAssociationResult {
             id: o.get_id(),
             urn: o.get_urn(),

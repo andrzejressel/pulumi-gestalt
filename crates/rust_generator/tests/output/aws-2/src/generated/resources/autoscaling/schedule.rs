@@ -121,44 +121,40 @@ pub mod schedule {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ScheduleArgs,
     ) -> ScheduleResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ScheduleArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ScheduleResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ScheduleArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ScheduleResult {
-        let autoscaling_group_name_binding = args
-            .autoscaling_group_name
-            .get_output(context);
-        let desired_capacity_binding = args.desired_capacity.get_output(context);
-        let end_time_binding = args.end_time.get_output(context);
-        let max_size_binding = args.max_size.get_output(context);
-        let min_size_binding = args.min_size.get_output(context);
-        let recurrence_binding = args.recurrence.get_output(context);
-        let scheduled_action_name_binding = args
-            .scheduled_action_name
-            .get_output(context);
-        let start_time_binding = args.start_time.get_output(context);
-        let time_zone_binding = args.time_zone.get_output(context);
+        let autoscaling_group_name_binding = args.autoscaling_group_name.get_output(ctx);
+        let desired_capacity_binding = args.desired_capacity.get_output(ctx);
+        let end_time_binding = args.end_time.get_output(ctx);
+        let max_size_binding = args.max_size.get_output(ctx);
+        let min_size_binding = args.min_size.get_output(ctx);
+        let recurrence_binding = args.recurrence.get_output(ctx);
+        let scheduled_action_name_binding = args.scheduled_action_name.get_output(ctx);
+        let start_time_binding = args.start_time.get_output(ctx);
+        let time_zone_binding = args.time_zone.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:autoscaling/schedule:Schedule".into(),
             name: name.to_string(),
@@ -203,7 +199,7 @@ pub mod schedule {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ScheduleResult {
             id: o.get_id(),
             urn: o.get_urn(),

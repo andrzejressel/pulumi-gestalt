@@ -7,10 +7,10 @@ fn main() {
     pulumi_gestalt_rust::run(pulumi_main).unwrap();
 }
 
-fn pulumi_main(context: &Context) -> Result<()> {
+fn pulumi_main(ctx: &Context) -> Result<()> {
     let stash_input = "stash-value".to_pulumi_any();
     let stash = stash::create(
-        context,
+        ctx,
         "example_stash",
         StashArgs::builder().input(stash_input).build_struct(),
     );

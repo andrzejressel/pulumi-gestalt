@@ -334,57 +334,57 @@ pub mod metric_alarm {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MetricAlarmArgs,
     ) -> MetricAlarmResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MetricAlarmArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> MetricAlarmResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MetricAlarmArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> MetricAlarmResult {
-        let actions_enabled_binding = args.actions_enabled.get_output(context);
-        let alarm_actions_binding = args.alarm_actions.get_output(context);
-        let alarm_description_binding = args.alarm_description.get_output(context);
-        let comparison_operator_binding = args.comparison_operator.get_output(context);
-        let datapoints_to_alarm_binding = args.datapoints_to_alarm.get_output(context);
-        let dimensions_binding = args.dimensions.get_output(context);
+        let actions_enabled_binding = args.actions_enabled.get_output(ctx);
+        let alarm_actions_binding = args.alarm_actions.get_output(ctx);
+        let alarm_description_binding = args.alarm_description.get_output(ctx);
+        let comparison_operator_binding = args.comparison_operator.get_output(ctx);
+        let datapoints_to_alarm_binding = args.datapoints_to_alarm.get_output(ctx);
+        let dimensions_binding = args.dimensions.get_output(ctx);
         let evaluate_low_sample_count_percentiles_binding = args
             .evaluate_low_sample_count_percentiles
-            .get_output(context);
-        let evaluation_periods_binding = args.evaluation_periods.get_output(context);
-        let extended_statistic_binding = args.extended_statistic.get_output(context);
+            .get_output(ctx);
+        let evaluation_periods_binding = args.evaluation_periods.get_output(ctx);
+        let extended_statistic_binding = args.extended_statistic.get_output(ctx);
         let insufficient_data_actions_binding = args
             .insufficient_data_actions
-            .get_output(context);
-        let metric_name_binding = args.metric_name.get_output(context);
-        let metric_queries_binding = args.metric_queries.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let namespace_binding = args.namespace.get_output(context);
-        let ok_actions_binding = args.ok_actions.get_output(context);
-        let period_binding = args.period.get_output(context);
-        let statistic_binding = args.statistic.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let threshold_binding = args.threshold.get_output(context);
-        let threshold_metric_id_binding = args.threshold_metric_id.get_output(context);
-        let treat_missing_data_binding = args.treat_missing_data.get_output(context);
-        let unit_binding = args.unit.get_output(context);
+            .get_output(ctx);
+        let metric_name_binding = args.metric_name.get_output(ctx);
+        let metric_queries_binding = args.metric_queries.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let namespace_binding = args.namespace.get_output(ctx);
+        let ok_actions_binding = args.ok_actions.get_output(ctx);
+        let period_binding = args.period.get_output(ctx);
+        let statistic_binding = args.statistic.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let threshold_binding = args.threshold.get_output(ctx);
+        let threshold_metric_id_binding = args.threshold_metric_id.get_output(ctx);
+        let treat_missing_data_binding = args.treat_missing_data.get_output(ctx);
+        let unit_binding = args.unit.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:cloudwatch/metricAlarm:MetricAlarm".into(),
             name: name.to_string(),
@@ -481,7 +481,7 @@ pub mod metric_alarm {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         MetricAlarmResult {
             id: o.get_id(),
             urn: o.get_urn(),

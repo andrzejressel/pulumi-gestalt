@@ -226,46 +226,44 @@ pub mod game_server_group {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GameServerGroupArgs,
     ) -> GameServerGroupResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GameServerGroupArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> GameServerGroupResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GameServerGroupArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> GameServerGroupResult {
-        let auto_scaling_policy_binding = args.auto_scaling_policy.get_output(context);
-        let balancing_strategy_binding = args.balancing_strategy.get_output(context);
-        let game_server_group_name_binding = args
-            .game_server_group_name
-            .get_output(context);
+        let auto_scaling_policy_binding = args.auto_scaling_policy.get_output(ctx);
+        let balancing_strategy_binding = args.balancing_strategy.get_output(ctx);
+        let game_server_group_name_binding = args.game_server_group_name.get_output(ctx);
         let game_server_protection_policy_binding = args
             .game_server_protection_policy
-            .get_output(context);
-        let instance_definitions_binding = args.instance_definitions.get_output(context);
-        let launch_template_binding = args.launch_template.get_output(context);
-        let max_size_binding = args.max_size.get_output(context);
-        let min_size_binding = args.min_size.get_output(context);
-        let role_arn_binding = args.role_arn.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let vpc_subnets_binding = args.vpc_subnets.get_output(context);
+            .get_output(ctx);
+        let instance_definitions_binding = args.instance_definitions.get_output(ctx);
+        let launch_template_binding = args.launch_template.get_output(ctx);
+        let max_size_binding = args.max_size.get_output(ctx);
+        let min_size_binding = args.min_size.get_output(ctx);
+        let role_arn_binding = args.role_arn.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let vpc_subnets_binding = args.vpc_subnets.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:gamelift/gameServerGroup:GameServerGroup".into(),
             name: name.to_string(),
@@ -318,7 +316,7 @@ pub mod game_server_group {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         GameServerGroupResult {
             id: o.get_id(),
             urn: o.get_urn(),

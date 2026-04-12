@@ -336,51 +336,51 @@ pub mod authority {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AuthorityArgs,
     ) -> AuthorityResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AuthorityArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AuthorityResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AuthorityArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AuthorityResult {
         let certificate_authority_id_binding = args
             .certificate_authority_id
-            .get_output(context);
-        let config_binding = args.config.get_output(context);
-        let deletion_protection_binding = args.deletion_protection.get_output(context);
-        let desired_state_binding = args.desired_state.get_output(context);
-        let gcs_bucket_binding = args.gcs_bucket.get_output(context);
+            .get_output(ctx);
+        let config_binding = args.config.get_output(ctx);
+        let deletion_protection_binding = args.deletion_protection.get_output(ctx);
+        let desired_state_binding = args.desired_state.get_output(ctx);
+        let gcs_bucket_binding = args.gcs_bucket.get_output(ctx);
         let ignore_active_certificates_on_deletion_binding = args
             .ignore_active_certificates_on_deletion
-            .get_output(context);
-        let key_spec_binding = args.key_spec.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let lifetime_binding = args.lifetime.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let pem_ca_certificate_binding = args.pem_ca_certificate.get_output(context);
-        let pool_binding = args.pool.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let skip_grace_period_binding = args.skip_grace_period.get_output(context);
-        let subordinate_config_binding = args.subordinate_config.get_output(context);
-        let type__binding = args.type_.get_output(context);
+            .get_output(ctx);
+        let key_spec_binding = args.key_spec.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let lifetime_binding = args.lifetime.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let pem_ca_certificate_binding = args.pem_ca_certificate.get_output(ctx);
+        let pool_binding = args.pool.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let skip_grace_period_binding = args.skip_grace_period.get_output(ctx);
+        let subordinate_config_binding = args.subordinate_config.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:certificateauthority/authority:Authority".into(),
             name: name.to_string(),
@@ -453,7 +453,7 @@ pub mod authority {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AuthorityResult {
             id: o.get_id(),
             urn: o.get_urn(),

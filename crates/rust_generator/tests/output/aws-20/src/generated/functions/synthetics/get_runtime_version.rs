@@ -41,12 +41,12 @@ pub mod get_runtime_version {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetRuntimeVersionArgs,
     ) -> GetRuntimeVersionResult {
-        let latest_binding = args.latest.get_output(context);
-        let prefix_binding = args.prefix.get_output(context);
-        let version_binding = args.version.get_output(context);
+        let latest_binding = args.latest.get_output(ctx);
+        let prefix_binding = args.prefix.get_output(ctx);
+        let version_binding = args.version.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:synthetics/getRuntimeVersion:getRuntimeVersion".into(),
             version: super::super::super::get_version(),
@@ -65,7 +65,7 @@ pub mod get_runtime_version {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetRuntimeVersionResult {
             deprecation_date: o.get_field("deprecationDate"),
             description: o.get_field("description"),

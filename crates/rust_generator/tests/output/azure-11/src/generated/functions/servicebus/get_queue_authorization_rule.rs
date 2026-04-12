@@ -53,14 +53,14 @@ pub mod get_queue_authorization_rule {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetQueueAuthorizationRuleArgs,
     ) -> GetQueueAuthorizationRuleResult {
-        let name_binding = args.name.get_output(context);
-        let namespace_name_binding = args.namespace_name.get_output(context);
-        let queue_id_binding = args.queue_id.get_output(context);
-        let queue_name_binding = args.queue_name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let namespace_name_binding = args.namespace_name.get_output(ctx);
+        let queue_id_binding = args.queue_id.get_output(ctx);
+        let queue_name_binding = args.queue_name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:servicebus/getQueueAuthorizationRule:getQueueAuthorizationRule"
                 .into(),
@@ -88,7 +88,7 @@ pub mod get_queue_authorization_rule {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetQueueAuthorizationRuleResult {
             id: o.get_field("id"),
             listen: o.get_field("listen"),

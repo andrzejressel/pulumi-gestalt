@@ -61,16 +61,14 @@ pub mod get_availability_zone {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetAvailabilityZoneArgs,
     ) -> GetAvailabilityZoneResult {
-        let all_availability_zones_binding = args
-            .all_availability_zones
-            .get_output(context);
-        let filters_binding = args.filters.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let state_binding = args.state.get_output(context);
-        let zone_id_binding = args.zone_id.get_output(context);
+        let all_availability_zones_binding = args.all_availability_zones.get_output(ctx);
+        let filters_binding = args.filters.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let state_binding = args.state.get_output(ctx);
+        let zone_id_binding = args.zone_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:index/getAvailabilityZone:getAvailabilityZone".into(),
             version: super::super::get_version(),
@@ -97,7 +95,7 @@ pub mod get_availability_zone {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetAvailabilityZoneResult {
             all_availability_zones: o.get_field("allAvailabilityZones"),
             filters: o.get_field("filters"),

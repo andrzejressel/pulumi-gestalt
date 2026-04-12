@@ -136,48 +136,46 @@ pub mod teams_channel_configuration {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TeamsChannelConfigurationArgs,
     ) -> TeamsChannelConfigurationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TeamsChannelConfigurationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> TeamsChannelConfigurationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TeamsChannelConfigurationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> TeamsChannelConfigurationResult {
-        let channel_id_binding = args.channel_id.get_output(context);
-        let channel_name_binding = args.channel_name.get_output(context);
-        let configuration_name_binding = args.configuration_name.get_output(context);
-        let guardrail_policy_arns_binding = args
-            .guardrail_policy_arns
-            .get_output(context);
-        let iam_role_arn_binding = args.iam_role_arn.get_output(context);
-        let logging_level_binding = args.logging_level.get_output(context);
-        let sns_topic_arns_binding = args.sns_topic_arns.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let team_id_binding = args.team_id.get_output(context);
-        let team_name_binding = args.team_name.get_output(context);
-        let tenant_id_binding = args.tenant_id.get_output(context);
-        let timeouts_binding = args.timeouts.get_output(context);
+        let channel_id_binding = args.channel_id.get_output(ctx);
+        let channel_name_binding = args.channel_name.get_output(ctx);
+        let configuration_name_binding = args.configuration_name.get_output(ctx);
+        let guardrail_policy_arns_binding = args.guardrail_policy_arns.get_output(ctx);
+        let iam_role_arn_binding = args.iam_role_arn.get_output(ctx);
+        let logging_level_binding = args.logging_level.get_output(ctx);
+        let sns_topic_arns_binding = args.sns_topic_arns.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let team_id_binding = args.team_id.get_output(ctx);
+        let team_name_binding = args.team_name.get_output(ctx);
+        let tenant_id_binding = args.tenant_id.get_output(ctx);
+        let timeouts_binding = args.timeouts.get_output(ctx);
         let user_authorization_required_binding = args
             .user_authorization_required
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:chatbot/teamsChannelConfiguration:TeamsChannelConfiguration"
                 .into(),
@@ -239,7 +237,7 @@ pub mod teams_channel_configuration {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         TeamsChannelConfigurationResult {
             id: o.get_id(),
             urn: o.get_urn(),

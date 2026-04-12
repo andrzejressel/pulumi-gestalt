@@ -113,39 +113,39 @@ pub mod location_azure_blob {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LocationAzureBlobArgs,
     ) -> LocationAzureBlobResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LocationAzureBlobArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> LocationAzureBlobResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LocationAzureBlobArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> LocationAzureBlobResult {
-        let access_tier_binding = args.access_tier.get_output(context);
-        let agent_arns_binding = args.agent_arns.get_output(context);
-        let authentication_type_binding = args.authentication_type.get_output(context);
-        let blob_type_binding = args.blob_type.get_output(context);
-        let container_url_binding = args.container_url.get_output(context);
-        let sas_configuration_binding = args.sas_configuration.get_output(context);
-        let subdirectory_binding = args.subdirectory.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let access_tier_binding = args.access_tier.get_output(ctx);
+        let agent_arns_binding = args.agent_arns.get_output(ctx);
+        let authentication_type_binding = args.authentication_type.get_output(ctx);
+        let blob_type_binding = args.blob_type.get_output(ctx);
+        let container_url_binding = args.container_url.get_output(ctx);
+        let sas_configuration_binding = args.sas_configuration.get_output(ctx);
+        let subdirectory_binding = args.subdirectory.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:datasync/locationAzureBlob:LocationAzureBlob".into(),
             name: name.to_string(),
@@ -186,7 +186,7 @@ pub mod location_azure_blob {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         LocationAzureBlobResult {
             id: o.get_id(),
             urn: o.get_urn(),

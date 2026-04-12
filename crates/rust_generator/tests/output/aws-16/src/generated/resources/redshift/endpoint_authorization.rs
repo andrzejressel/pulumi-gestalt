@@ -76,35 +76,35 @@ pub mod endpoint_authorization {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EndpointAuthorizationArgs,
     ) -> EndpointAuthorizationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EndpointAuthorizationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> EndpointAuthorizationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EndpointAuthorizationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> EndpointAuthorizationResult {
-        let account_binding = args.account.get_output(context);
-        let cluster_identifier_binding = args.cluster_identifier.get_output(context);
-        let force_delete_binding = args.force_delete.get_output(context);
-        let vpc_ids_binding = args.vpc_ids.get_output(context);
+        let account_binding = args.account.get_output(ctx);
+        let cluster_identifier_binding = args.cluster_identifier.get_output(ctx);
+        let force_delete_binding = args.force_delete.get_output(ctx);
+        let vpc_ids_binding = args.vpc_ids.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:redshift/endpointAuthorization:EndpointAuthorization".into(),
             name: name.to_string(),
@@ -129,7 +129,7 @@ pub mod endpoint_authorization {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         EndpointAuthorizationResult {
             id: o.get_id(),
             urn: o.get_urn(),

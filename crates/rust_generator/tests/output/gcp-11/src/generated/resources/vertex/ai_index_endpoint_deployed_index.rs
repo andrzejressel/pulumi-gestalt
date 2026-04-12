@@ -354,45 +354,43 @@ pub mod ai_index_endpoint_deployed_index {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AiIndexEndpointDeployedIndexArgs,
     ) -> AiIndexEndpointDeployedIndexResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AiIndexEndpointDeployedIndexArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AiIndexEndpointDeployedIndexResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AiIndexEndpointDeployedIndexArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AiIndexEndpointDeployedIndexResult {
-        let automatic_resources_binding = args.automatic_resources.get_output(context);
-        let dedicated_resources_binding = args.dedicated_resources.get_output(context);
+        let automatic_resources_binding = args.automatic_resources.get_output(ctx);
+        let dedicated_resources_binding = args.dedicated_resources.get_output(ctx);
         let deployed_index_auth_config_binding = args
             .deployed_index_auth_config
-            .get_output(context);
-        let deployed_index_id_binding = args.deployed_index_id.get_output(context);
-        let deployment_group_binding = args.deployment_group.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let enable_access_logging_binding = args
-            .enable_access_logging
-            .get_output(context);
-        let index_binding = args.index.get_output(context);
-        let index_endpoint_binding = args.index_endpoint.get_output(context);
-        let reserved_ip_ranges_binding = args.reserved_ip_ranges.get_output(context);
+            .get_output(ctx);
+        let deployed_index_id_binding = args.deployed_index_id.get_output(ctx);
+        let deployment_group_binding = args.deployment_group.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let enable_access_logging_binding = args.enable_access_logging.get_output(ctx);
+        let index_binding = args.index.get_output(ctx);
+        let index_endpoint_binding = args.index_endpoint.get_output(ctx);
+        let reserved_ip_ranges_binding = args.reserved_ip_ranges.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:vertex/aiIndexEndpointDeployedIndex:AiIndexEndpointDeployedIndex"
                 .into(),
@@ -442,7 +440,7 @@ pub mod ai_index_endpoint_deployed_index {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AiIndexEndpointDeployedIndexResult {
             id: o.get_id(),
             urn: o.get_urn(),

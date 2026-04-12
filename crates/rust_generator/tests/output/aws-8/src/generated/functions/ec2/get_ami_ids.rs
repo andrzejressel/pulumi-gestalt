@@ -57,15 +57,15 @@ pub mod get_ami_ids {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetAmiIdsArgs,
     ) -> GetAmiIdsResult {
-        let executable_users_binding = args.executable_users.get_output(context);
-        let filters_binding = args.filters.get_output(context);
-        let include_deprecated_binding = args.include_deprecated.get_output(context);
-        let name_regex_binding = args.name_regex.get_output(context);
-        let owners_binding = args.owners.get_output(context);
-        let sort_ascending_binding = args.sort_ascending.get_output(context);
+        let executable_users_binding = args.executable_users.get_output(ctx);
+        let filters_binding = args.filters.get_output(ctx);
+        let include_deprecated_binding = args.include_deprecated.get_output(ctx);
+        let name_regex_binding = args.name_regex.get_output(ctx);
+        let owners_binding = args.owners.get_output(ctx);
+        let sort_ascending_binding = args.sort_ascending.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ec2/getAmiIds:getAmiIds".into(),
             version: super::super::super::get_version(),
@@ -96,7 +96,7 @@ pub mod get_ami_ids {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetAmiIdsResult {
             executable_users: o.get_field("executableUsers"),
             filters: o.get_field("filters"),

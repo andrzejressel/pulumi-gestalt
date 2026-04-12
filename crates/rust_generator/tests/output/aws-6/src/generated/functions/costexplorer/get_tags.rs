@@ -55,14 +55,14 @@ pub mod get_tags {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetTagsArgs,
     ) -> GetTagsResult {
-        let filter_binding = args.filter.get_output(context);
-        let search_string_binding = args.search_string.get_output(context);
-        let sort_bies_binding = args.sort_bies.get_output(context);
-        let tag_key_binding = args.tag_key.get_output(context);
-        let time_period_binding = args.time_period.get_output(context);
+        let filter_binding = args.filter.get_output(ctx);
+        let search_string_binding = args.search_string.get_output(ctx);
+        let sort_bies_binding = args.sort_bies.get_output(ctx);
+        let tag_key_binding = args.tag_key.get_output(ctx);
+        let time_period_binding = args.time_period.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:costexplorer/getTags:getTags".into(),
             version: super::super::super::get_version(),
@@ -89,7 +89,7 @@ pub mod get_tags {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetTagsResult {
             filter: o.get_field("filter"),
             id: o.get_field("id"),

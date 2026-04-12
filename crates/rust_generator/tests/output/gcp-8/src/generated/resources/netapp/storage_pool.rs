@@ -219,45 +219,45 @@ pub mod storage_pool {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StoragePoolArgs,
     ) -> StoragePoolResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StoragePoolArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> StoragePoolResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StoragePoolArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> StoragePoolResult {
-        let active_directory_binding = args.active_directory.get_output(context);
-        let allow_auto_tiering_binding = args.allow_auto_tiering.get_output(context);
-        let capacity_gib_binding = args.capacity_gib.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let kms_config_binding = args.kms_config.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let ldap_enabled_binding = args.ldap_enabled.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_binding = args.network.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let replica_zone_binding = args.replica_zone.get_output(context);
-        let service_level_binding = args.service_level.get_output(context);
-        let zone_binding = args.zone.get_output(context);
+        let active_directory_binding = args.active_directory.get_output(ctx);
+        let allow_auto_tiering_binding = args.allow_auto_tiering.get_output(ctx);
+        let capacity_gib_binding = args.capacity_gib.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let kms_config_binding = args.kms_config.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let ldap_enabled_binding = args.ldap_enabled.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_binding = args.network.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let replica_zone_binding = args.replica_zone.get_output(ctx);
+        let service_level_binding = args.service_level.get_output(ctx);
+        let zone_binding = args.zone.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:netapp/storagePool:StoragePool".into(),
             name: name.to_string(),
@@ -322,7 +322,7 @@ pub mod storage_pool {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         StoragePoolResult {
             id: o.get_id(),
             urn: o.get_urn(),

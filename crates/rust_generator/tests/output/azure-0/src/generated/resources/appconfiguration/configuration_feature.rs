@@ -163,47 +163,45 @@ pub mod configuration_feature {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ConfigurationFeatureArgs,
     ) -> ConfigurationFeatureResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ConfigurationFeatureArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ConfigurationFeatureResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ConfigurationFeatureArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ConfigurationFeatureResult {
-        let configuration_store_id_binding = args
-            .configuration_store_id
-            .get_output(context);
-        let description_binding = args.description.get_output(context);
-        let enabled_binding = args.enabled.get_output(context);
-        let etag_binding = args.etag.get_output(context);
-        let key_binding = args.key.get_output(context);
-        let label_binding = args.label.get_output(context);
-        let locked_binding = args.locked.get_output(context);
-        let name_binding = args.name.get_output(context);
+        let configuration_store_id_binding = args.configuration_store_id.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let enabled_binding = args.enabled.get_output(ctx);
+        let etag_binding = args.etag.get_output(ctx);
+        let key_binding = args.key.get_output(ctx);
+        let label_binding = args.label.get_output(ctx);
+        let locked_binding = args.locked.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let percentage_filter_value_binding = args
             .percentage_filter_value
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let targeting_filters_binding = args.targeting_filters.get_output(context);
-        let timewindow_filters_binding = args.timewindow_filters.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let targeting_filters_binding = args.targeting_filters.get_output(ctx);
+        let timewindow_filters_binding = args.timewindow_filters.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:appconfiguration/configurationFeature:ConfigurationFeature"
                 .into(),
@@ -261,7 +259,7 @@ pub mod configuration_feature {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ConfigurationFeatureResult {
             id: o.get_id(),
             urn: o.get_urn(),

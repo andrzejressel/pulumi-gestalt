@@ -25,10 +25,10 @@ pub mod get_configuration_profiles {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetConfigurationProfilesArgs,
     ) -> GetConfigurationProfilesResult {
-        let application_id_binding = args.application_id.get_output(context);
+        let application_id_binding = args.application_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:appconfig/getConfigurationProfiles:getConfigurationProfiles"
                 .into(),
@@ -40,7 +40,7 @@ pub mod get_configuration_profiles {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetConfigurationProfilesResult {
             application_id: o.get_field("applicationId"),
             configuration_profile_ids: o.get_field("configurationProfileIds"),

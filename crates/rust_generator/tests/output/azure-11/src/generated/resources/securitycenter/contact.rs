@@ -79,36 +79,36 @@ pub mod contact {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ContactArgs,
     ) -> ContactResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ContactArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ContactResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ContactArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ContactResult {
-        let alert_notifications_binding = args.alert_notifications.get_output(context);
-        let alerts_to_admins_binding = args.alerts_to_admins.get_output(context);
-        let email_binding = args.email.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let phone_binding = args.phone.get_output(context);
+        let alert_notifications_binding = args.alert_notifications.get_output(ctx);
+        let alerts_to_admins_binding = args.alerts_to_admins.get_output(ctx);
+        let email_binding = args.email.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let phone_binding = args.phone.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:securitycenter/contact:Contact".into(),
             name: name.to_string(),
@@ -137,7 +137,7 @@ pub mod contact {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ContactResult {
             id: o.get_id(),
             urn: o.get_urn(),

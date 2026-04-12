@@ -327,65 +327,61 @@ pub mod app {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AppArgs,
     ) -> AppResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AppArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AppResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AppArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AppResult {
-        let access_token_binding = args.access_token.get_output(context);
+        let access_token_binding = args.access_token.get_output(ctx);
         let auto_branch_creation_config_binding = args
             .auto_branch_creation_config
-            .get_output(context);
+            .get_output(ctx);
         let auto_branch_creation_patterns_binding = args
             .auto_branch_creation_patterns
-            .get_output(context);
-        let basic_auth_credentials_binding = args
-            .basic_auth_credentials
-            .get_output(context);
-        let build_spec_binding = args.build_spec.get_output(context);
-        let cache_config_binding = args.cache_config.get_output(context);
-        let custom_headers_binding = args.custom_headers.get_output(context);
-        let custom_rules_binding = args.custom_rules.get_output(context);
-        let description_binding = args.description.get_output(context);
+            .get_output(ctx);
+        let basic_auth_credentials_binding = args.basic_auth_credentials.get_output(ctx);
+        let build_spec_binding = args.build_spec.get_output(ctx);
+        let cache_config_binding = args.cache_config.get_output(ctx);
+        let custom_headers_binding = args.custom_headers.get_output(ctx);
+        let custom_rules_binding = args.custom_rules.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
         let enable_auto_branch_creation_binding = args
             .enable_auto_branch_creation
-            .get_output(context);
-        let enable_basic_auth_binding = args.enable_basic_auth.get_output(context);
+            .get_output(ctx);
+        let enable_basic_auth_binding = args.enable_basic_auth.get_output(ctx);
         let enable_branch_auto_build_binding = args
             .enable_branch_auto_build
-            .get_output(context);
+            .get_output(ctx);
         let enable_branch_auto_deletion_binding = args
             .enable_branch_auto_deletion
-            .get_output(context);
-        let environment_variables_binding = args
-            .environment_variables
-            .get_output(context);
-        let iam_service_role_arn_binding = args.iam_service_role_arn.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let oauth_token_binding = args.oauth_token.get_output(context);
-        let platform_binding = args.platform.get_output(context);
-        let repository_binding = args.repository.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let environment_variables_binding = args.environment_variables.get_output(ctx);
+        let iam_service_role_arn_binding = args.iam_service_role_arn.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let oauth_token_binding = args.oauth_token.get_output(ctx);
+        let platform_binding = args.platform.get_output(ctx);
+        let repository_binding = args.repository.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:amplify/app:App".into(),
             name: name.to_string(),
@@ -474,7 +470,7 @@ pub mod app {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AppResult {
             id: o.get_id(),
             urn: o.get_urn(),

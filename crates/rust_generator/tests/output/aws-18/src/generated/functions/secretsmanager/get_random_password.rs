@@ -53,19 +53,19 @@ pub mod get_random_password {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetRandomPasswordArgs,
     ) -> GetRandomPasswordResult {
-        let exclude_characters_binding = args.exclude_characters.get_output(context);
-        let exclude_lowercase_binding = args.exclude_lowercase.get_output(context);
-        let exclude_numbers_binding = args.exclude_numbers.get_output(context);
-        let exclude_punctuation_binding = args.exclude_punctuation.get_output(context);
-        let exclude_uppercase_binding = args.exclude_uppercase.get_output(context);
-        let include_space_binding = args.include_space.get_output(context);
-        let password_length_binding = args.password_length.get_output(context);
+        let exclude_characters_binding = args.exclude_characters.get_output(ctx);
+        let exclude_lowercase_binding = args.exclude_lowercase.get_output(ctx);
+        let exclude_numbers_binding = args.exclude_numbers.get_output(ctx);
+        let exclude_punctuation_binding = args.exclude_punctuation.get_output(ctx);
+        let exclude_uppercase_binding = args.exclude_uppercase.get_output(ctx);
+        let include_space_binding = args.include_space.get_output(ctx);
+        let password_length_binding = args.password_length.get_output(ctx);
         let require_each_included_type_binding = args
             .require_each_included_type
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:secretsmanager/getRandomPassword:getRandomPassword".into(),
             version: super::super::super::get_version(),
@@ -104,7 +104,7 @@ pub mod get_random_password {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetRandomPasswordResult {
             exclude_characters: o.get_field("excludeCharacters"),
             exclude_lowercase: o.get_field("excludeLowercase"),

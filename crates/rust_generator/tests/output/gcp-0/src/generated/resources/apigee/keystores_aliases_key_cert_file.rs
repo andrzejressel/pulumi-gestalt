@@ -102,39 +102,39 @@ pub mod keystores_aliases_key_cert_file {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: KeystoresAliasesKeyCertFileArgs,
     ) -> KeystoresAliasesKeyCertFileResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: KeystoresAliasesKeyCertFileArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> KeystoresAliasesKeyCertFileResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: KeystoresAliasesKeyCertFileArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> KeystoresAliasesKeyCertFileResult {
-        let alias_binding = args.alias.get_output(context);
-        let cert_binding = args.cert.get_output(context);
-        let certs_info_binding = args.certs_info.get_output(context);
-        let environment_binding = args.environment.get_output(context);
-        let key_binding = args.key.get_output(context);
-        let keystore_binding = args.keystore.get_output(context);
-        let org_id_binding = args.org_id.get_output(context);
-        let password_binding = args.password.get_output(context);
+        let alias_binding = args.alias.get_output(ctx);
+        let cert_binding = args.cert.get_output(ctx);
+        let certs_info_binding = args.certs_info.get_output(ctx);
+        let environment_binding = args.environment.get_output(ctx);
+        let key_binding = args.key.get_output(ctx);
+        let keystore_binding = args.keystore.get_output(ctx);
+        let org_id_binding = args.org_id.get_output(ctx);
+        let password_binding = args.password.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:apigee/keystoresAliasesKeyCertFile:KeystoresAliasesKeyCertFile"
                 .into(),
@@ -176,7 +176,7 @@ pub mod keystores_aliases_key_cert_file {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         KeystoresAliasesKeyCertFileResult {
             id: o.get_id(),
             urn: o.get_urn(),

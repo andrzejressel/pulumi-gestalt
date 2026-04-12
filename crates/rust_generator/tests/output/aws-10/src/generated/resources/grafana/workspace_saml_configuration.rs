@@ -141,48 +141,46 @@ pub mod workspace_saml_configuration {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkspaceSamlConfigurationArgs,
     ) -> WorkspaceSamlConfigurationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkspaceSamlConfigurationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> WorkspaceSamlConfigurationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkspaceSamlConfigurationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> WorkspaceSamlConfigurationResult {
-        let admin_role_values_binding = args.admin_role_values.get_output(context);
-        let allowed_organizations_binding = args
-            .allowed_organizations
-            .get_output(context);
-        let editor_role_values_binding = args.editor_role_values.get_output(context);
-        let email_assertion_binding = args.email_assertion.get_output(context);
-        let groups_assertion_binding = args.groups_assertion.get_output(context);
-        let idp_metadata_url_binding = args.idp_metadata_url.get_output(context);
-        let idp_metadata_xml_binding = args.idp_metadata_xml.get_output(context);
-        let login_assertion_binding = args.login_assertion.get_output(context);
+        let admin_role_values_binding = args.admin_role_values.get_output(ctx);
+        let allowed_organizations_binding = args.allowed_organizations.get_output(ctx);
+        let editor_role_values_binding = args.editor_role_values.get_output(ctx);
+        let email_assertion_binding = args.email_assertion.get_output(ctx);
+        let groups_assertion_binding = args.groups_assertion.get_output(ctx);
+        let idp_metadata_url_binding = args.idp_metadata_url.get_output(ctx);
+        let idp_metadata_xml_binding = args.idp_metadata_xml.get_output(ctx);
+        let login_assertion_binding = args.login_assertion.get_output(ctx);
         let login_validity_duration_binding = args
             .login_validity_duration
-            .get_output(context);
-        let name_assertion_binding = args.name_assertion.get_output(context);
-        let org_assertion_binding = args.org_assertion.get_output(context);
-        let role_assertion_binding = args.role_assertion.get_output(context);
-        let workspace_id_binding = args.workspace_id.get_output(context);
+            .get_output(ctx);
+        let name_assertion_binding = args.name_assertion.get_output(ctx);
+        let org_assertion_binding = args.org_assertion.get_output(ctx);
+        let role_assertion_binding = args.role_assertion.get_output(ctx);
+        let workspace_id_binding = args.workspace_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:grafana/workspaceSamlConfiguration:WorkspaceSamlConfiguration"
                 .into(),
@@ -244,7 +242,7 @@ pub mod workspace_saml_configuration {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         WorkspaceSamlConfigurationResult {
             id: o.get_id(),
             urn: o.get_urn(),

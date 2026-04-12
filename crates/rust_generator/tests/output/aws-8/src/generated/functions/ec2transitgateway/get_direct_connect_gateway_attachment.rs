@@ -50,13 +50,13 @@ pub mod get_direct_connect_gateway_attachment {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetDirectConnectGatewayAttachmentArgs,
     ) -> GetDirectConnectGatewayAttachmentResult {
-        let dx_gateway_id_binding = args.dx_gateway_id.get_output(context);
-        let filters_binding = args.filters.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let transit_gateway_id_binding = args.transit_gateway_id.get_output(context);
+        let dx_gateway_id_binding = args.dx_gateway_id.get_output(ctx);
+        let filters_binding = args.filters.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let transit_gateway_id_binding = args.transit_gateway_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ec2transitgateway/getDirectConnectGatewayAttachment:getDirectConnectGatewayAttachment"
                 .into(),
@@ -80,7 +80,7 @@ pub mod get_direct_connect_gateway_attachment {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetDirectConnectGatewayAttachmentResult {
             dx_gateway_id: o.get_field("dxGatewayId"),
             filters: o.get_field("filters"),

@@ -45,11 +45,11 @@ pub mod get_intent {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetIntentArgs,
     ) -> GetIntentResult {
-        let name_binding = args.name.get_output(context);
-        let version_binding = args.version.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let version_binding = args.version.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:lex/getIntent:getIntent".into(),
             version: super::super::super::get_version(),
@@ -64,7 +64,7 @@ pub mod get_intent {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetIntentResult {
             arn: o.get_field("arn"),
             checksum: o.get_field("checksum"),

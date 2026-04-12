@@ -72,36 +72,34 @@ pub mod attachment {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AttachmentArgs,
     ) -> AttachmentResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AttachmentArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AttachmentResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AttachmentArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AttachmentResult {
-        let autoscaling_group_name_binding = args
-            .autoscaling_group_name
-            .get_output(context);
-        let elb_binding = args.elb.get_output(context);
-        let lb_target_group_arn_binding = args.lb_target_group_arn.get_output(context);
+        let autoscaling_group_name_binding = args.autoscaling_group_name.get_output(ctx);
+        let elb_binding = args.elb.get_output(ctx);
+        let lb_target_group_arn_binding = args.lb_target_group_arn.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:autoscaling/attachment:Attachment".into(),
             name: name.to_string(),
@@ -122,7 +120,7 @@ pub mod attachment {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AttachmentResult {
             id: o.get_id(),
             urn: o.get_urn(),

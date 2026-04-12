@@ -578,54 +578,54 @@ pub mod cluster {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterArgs,
     ) -> ClusterResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ClusterResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ClusterResult {
-        let authorization_mode_binding = args.authorization_mode.get_output(context);
+        let authorization_mode_binding = args.authorization_mode.get_output(ctx);
         let cross_cluster_replication_config_binding = args
             .cross_cluster_replication_config
-            .get_output(context);
+            .get_output(ctx);
         let deletion_protection_enabled_binding = args
             .deletion_protection_enabled
-            .get_output(context);
-        let maintenance_policy_binding = args.maintenance_policy.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let node_type_binding = args.node_type.get_output(context);
-        let persistence_config_binding = args.persistence_config.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let psc_configs_binding = args.psc_configs.get_output(context);
-        let redis_configs_binding = args.redis_configs.get_output(context);
-        let region_binding = args.region.get_output(context);
-        let replica_count_binding = args.replica_count.get_output(context);
-        let shard_count_binding = args.shard_count.get_output(context);
+            .get_output(ctx);
+        let maintenance_policy_binding = args.maintenance_policy.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let node_type_binding = args.node_type.get_output(ctx);
+        let persistence_config_binding = args.persistence_config.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let psc_configs_binding = args.psc_configs.get_output(ctx);
+        let redis_configs_binding = args.redis_configs.get_output(ctx);
+        let region_binding = args.region.get_output(ctx);
+        let replica_count_binding = args.replica_count.get_output(ctx);
+        let shard_count_binding = args.shard_count.get_output(ctx);
         let transit_encryption_mode_binding = args
             .transit_encryption_mode
-            .get_output(context);
+            .get_output(ctx);
         let zone_distribution_config_binding = args
             .zone_distribution_config
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:redis/cluster:Cluster".into(),
             name: name.to_string(),
@@ -694,7 +694,7 @@ pub mod cluster {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ClusterResult {
             id: o.get_id(),
             urn: o.get_urn(),

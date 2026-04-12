@@ -72,34 +72,34 @@ pub mod notebook_instance_lifecycle_configuration {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NotebookInstanceLifecycleConfigurationArgs,
     ) -> NotebookInstanceLifecycleConfigurationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NotebookInstanceLifecycleConfigurationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> NotebookInstanceLifecycleConfigurationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NotebookInstanceLifecycleConfigurationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> NotebookInstanceLifecycleConfigurationResult {
-        let name_binding = args.name.get_output(context);
-        let on_create_binding = args.on_create.get_output(context);
-        let on_start_binding = args.on_start.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let on_create_binding = args.on_create.get_output(ctx);
+        let on_start_binding = args.on_start.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:sagemaker/notebookInstanceLifecycleConfiguration:NotebookInstanceLifecycleConfiguration"
                 .into(),
@@ -121,7 +121,7 @@ pub mod notebook_instance_lifecycle_configuration {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         NotebookInstanceLifecycleConfigurationResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -324,45 +324,45 @@ pub mod permissions {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PermissionsArgs,
     ) -> PermissionsResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PermissionsArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> PermissionsResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PermissionsArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> PermissionsResult {
-        let catalog_id_binding = args.catalog_id.get_output(context);
-        let catalog_resource_binding = args.catalog_resource.get_output(context);
-        let data_cells_filter_binding = args.data_cells_filter.get_output(context);
-        let data_location_binding = args.data_location.get_output(context);
-        let database_binding = args.database.get_output(context);
-        let lf_tag_binding = args.lf_tag.get_output(context);
-        let lf_tag_policy_binding = args.lf_tag_policy.get_output(context);
-        let permissions_binding = args.permissions.get_output(context);
+        let catalog_id_binding = args.catalog_id.get_output(ctx);
+        let catalog_resource_binding = args.catalog_resource.get_output(ctx);
+        let data_cells_filter_binding = args.data_cells_filter.get_output(ctx);
+        let data_location_binding = args.data_location.get_output(ctx);
+        let database_binding = args.database.get_output(ctx);
+        let lf_tag_binding = args.lf_tag.get_output(ctx);
+        let lf_tag_policy_binding = args.lf_tag_policy.get_output(ctx);
+        let permissions_binding = args.permissions.get_output(ctx);
         let permissions_with_grant_options_binding = args
             .permissions_with_grant_options
-            .get_output(context);
-        let principal_binding = args.principal.get_output(context);
-        let table_binding = args.table.get_output(context);
-        let table_with_columns_binding = args.table_with_columns.get_output(context);
+            .get_output(ctx);
+        let principal_binding = args.principal.get_output(ctx);
+        let table_binding = args.table.get_output(ctx);
+        let table_with_columns_binding = args.table_with_columns.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:lakeformation/permissions:Permissions".into(),
             name: name.to_string(),
@@ -419,7 +419,7 @@ pub mod permissions {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         PermissionsResult {
             id: o.get_id(),
             urn: o.get_urn(),

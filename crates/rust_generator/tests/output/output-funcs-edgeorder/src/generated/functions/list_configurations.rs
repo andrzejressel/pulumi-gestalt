@@ -36,16 +36,14 @@ pub mod list_configurations {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: ListConfigurationsArgs,
     ) -> ListConfigurationsResult {
-        let configuration_filters_binding = args
-            .configuration_filters
-            .get_output(context);
+        let configuration_filters_binding = args.configuration_filters.get_output(ctx);
         let customer_subscription_details_binding = args
             .customer_subscription_details
-            .get_output(context);
-        let skip_token_binding = args.skip_token.get_output(context);
+            .get_output(ctx);
+        let skip_token_binding = args.skip_token.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "myedgeorder::listConfigurations".into(),
             version: super::super::get_version(),
@@ -64,7 +62,7 @@ pub mod list_configurations {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         ListConfigurationsResult {
             next_link: o.get_field("nextLink"),
             value: o.get_field("value"),

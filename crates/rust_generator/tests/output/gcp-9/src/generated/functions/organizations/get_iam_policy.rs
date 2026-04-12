@@ -47,11 +47,11 @@ pub mod get_iam_policy {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetIamPolicyArgs,
     ) -> GetIamPolicyResult {
-        let audit_configs_binding = args.audit_configs.get_output(context);
-        let bindings_binding = args.bindings.get_output(context);
+        let audit_configs_binding = args.audit_configs.get_output(ctx);
+        let bindings_binding = args.bindings.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:organizations/getIAMPolicy:getIAMPolicy".into(),
             version: super::super::super::get_version(),
@@ -66,7 +66,7 @@ pub mod get_iam_policy {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetIamPolicyResult {
             audit_configs: o.get_field("auditConfigs"),
             bindings: o.get_field("bindings"),

@@ -25,10 +25,10 @@ pub mod get_user_pool_signing_certificate {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetUserPoolSigningCertificateArgs,
     ) -> GetUserPoolSigningCertificateResult {
-        let user_pool_id_binding = args.user_pool_id.get_output(context);
+        let user_pool_id_binding = args.user_pool_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:cognito/getUserPoolSigningCertificate:getUserPoolSigningCertificate"
                 .into(),
@@ -40,7 +40,7 @@ pub mod get_user_pool_signing_certificate {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetUserPoolSigningCertificateResult {
             certificate: o.get_field("certificate"),
             id: o.get_field("id"),

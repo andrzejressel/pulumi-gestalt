@@ -170,46 +170,44 @@ pub mod authorizer {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AuthorizerArgs,
     ) -> AuthorizerResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AuthorizerArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AuthorizerResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AuthorizerArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AuthorizerResult {
-        let authorizer_credentials_binding = args
-            .authorizer_credentials
-            .get_output(context);
+        let authorizer_credentials_binding = args.authorizer_credentials.get_output(ctx);
         let authorizer_result_ttl_in_seconds_binding = args
             .authorizer_result_ttl_in_seconds
-            .get_output(context);
-        let authorizer_uri_binding = args.authorizer_uri.get_output(context);
-        let identity_source_binding = args.identity_source.get_output(context);
+            .get_output(ctx);
+        let authorizer_uri_binding = args.authorizer_uri.get_output(ctx);
+        let identity_source_binding = args.identity_source.get_output(ctx);
         let identity_validation_expression_binding = args
             .identity_validation_expression
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let provider_arns_binding = args.provider_arns.get_output(context);
-        let rest_api_binding = args.rest_api.get_output(context);
-        let type__binding = args.type_.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let provider_arns_binding = args.provider_arns.get_output(ctx);
+        let rest_api_binding = args.rest_api.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:apigateway/authorizer:Authorizer".into(),
             name: name.to_string(),
@@ -254,7 +252,7 @@ pub mod authorizer {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AuthorizerResult {
             id: o.get_id(),
             urn: o.get_urn(),

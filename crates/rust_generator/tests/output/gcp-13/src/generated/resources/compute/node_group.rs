@@ -267,42 +267,42 @@ pub mod node_group {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NodeGroupArgs,
     ) -> NodeGroupResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NodeGroupArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> NodeGroupResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NodeGroupArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> NodeGroupResult {
-        let autoscaling_policy_binding = args.autoscaling_policy.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let initial_size_binding = args.initial_size.get_output(context);
-        let maintenance_interval_binding = args.maintenance_interval.get_output(context);
-        let maintenance_policy_binding = args.maintenance_policy.get_output(context);
-        let maintenance_window_binding = args.maintenance_window.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let node_template_binding = args.node_template.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let share_settings_binding = args.share_settings.get_output(context);
-        let zone_binding = args.zone.get_output(context);
+        let autoscaling_policy_binding = args.autoscaling_policy.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let initial_size_binding = args.initial_size.get_output(ctx);
+        let maintenance_interval_binding = args.maintenance_interval.get_output(ctx);
+        let maintenance_policy_binding = args.maintenance_policy.get_output(ctx);
+        let maintenance_window_binding = args.maintenance_window.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let node_template_binding = args.node_template.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let share_settings_binding = args.share_settings.get_output(ctx);
+        let zone_binding = args.zone.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:compute/nodeGroup:NodeGroup".into(),
             name: name.to_string(),
@@ -355,7 +355,7 @@ pub mod node_group {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         NodeGroupResult {
             id: o.get_id(),
             urn: o.get_urn(),

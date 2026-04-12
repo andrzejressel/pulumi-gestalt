@@ -44,14 +44,11 @@ pub mod get_sdk {
     /// Registers a new resource with the given unique name and arguments
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
-    pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
-        args: GetSdkArgs,
-    ) -> GetSdkResult {
-        let parameters_binding = args.parameters.get_output(context);
-        let rest_api_id_binding = args.rest_api_id.get_output(context);
-        let sdk_type_binding = args.sdk_type.get_output(context);
-        let stage_name_binding = args.stage_name.get_output(context);
+    pub fn invoke(ctx: &pulumi_gestalt_rust::Context, args: GetSdkArgs) -> GetSdkResult {
+        let parameters_binding = args.parameters.get_output(ctx);
+        let rest_api_id_binding = args.rest_api_id.get_output(ctx);
+        let sdk_type_binding = args.sdk_type.get_output(ctx);
+        let stage_name_binding = args.stage_name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:apigateway/getSdk:getSdk".into(),
             version: super::super::super::get_version(),
@@ -74,7 +71,7 @@ pub mod get_sdk {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetSdkResult {
             body: o.get_field("body"),
             content_disposition: o.get_field("contentDisposition"),

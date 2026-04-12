@@ -315,54 +315,54 @@ pub mod database {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DatabaseArgs,
     ) -> DatabaseResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DatabaseArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DatabaseResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DatabaseArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DatabaseResult {
-        let apply_immediately_binding = args.apply_immediately.get_output(context);
-        let availability_zone_binding = args.availability_zone.get_output(context);
+        let apply_immediately_binding = args.apply_immediately.get_output(ctx);
+        let availability_zone_binding = args.availability_zone.get_output(ctx);
         let backup_retention_enabled_binding = args
             .backup_retention_enabled
-            .get_output(context);
-        let blueprint_id_binding = args.blueprint_id.get_output(context);
-        let bundle_id_binding = args.bundle_id.get_output(context);
-        let final_snapshot_name_binding = args.final_snapshot_name.get_output(context);
-        let master_database_name_binding = args.master_database_name.get_output(context);
-        let master_password_binding = args.master_password.get_output(context);
-        let master_username_binding = args.master_username.get_output(context);
+            .get_output(ctx);
+        let blueprint_id_binding = args.blueprint_id.get_output(ctx);
+        let bundle_id_binding = args.bundle_id.get_output(ctx);
+        let final_snapshot_name_binding = args.final_snapshot_name.get_output(ctx);
+        let master_database_name_binding = args.master_database_name.get_output(ctx);
+        let master_password_binding = args.master_password.get_output(ctx);
+        let master_username_binding = args.master_username.get_output(ctx);
         let preferred_backup_window_binding = args
             .preferred_backup_window
-            .get_output(context);
+            .get_output(ctx);
         let preferred_maintenance_window_binding = args
             .preferred_maintenance_window
-            .get_output(context);
-        let publicly_accessible_binding = args.publicly_accessible.get_output(context);
+            .get_output(ctx);
+        let publicly_accessible_binding = args.publicly_accessible.get_output(ctx);
         let relational_database_name_binding = args
             .relational_database_name
-            .get_output(context);
-        let skip_final_snapshot_binding = args.skip_final_snapshot.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let skip_final_snapshot_binding = args.skip_final_snapshot.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:lightsail/database:Database".into(),
             name: name.to_string(),
@@ -431,7 +431,7 @@ pub mod database {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DatabaseResult {
             id: o.get_id(),
             urn: o.get_urn(),

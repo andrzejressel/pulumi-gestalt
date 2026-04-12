@@ -122,43 +122,43 @@ pub mod query_pack_query {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: QueryPackQueryArgs,
     ) -> QueryPackQueryResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: QueryPackQueryArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> QueryPackQueryResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: QueryPackQueryArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> QueryPackQueryResult {
         let additional_settings_json_binding = args
             .additional_settings_json
-            .get_output(context);
-        let body_binding = args.body.get_output(context);
-        let categories_binding = args.categories.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let query_pack_id_binding = args.query_pack_id.get_output(context);
-        let resource_types_binding = args.resource_types.get_output(context);
-        let solutions_binding = args.solutions.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let body_binding = args.body.get_output(ctx);
+        let categories_binding = args.categories.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let query_pack_id_binding = args.query_pack_id.get_output(ctx);
+        let resource_types_binding = args.resource_types.get_output(ctx);
+        let solutions_binding = args.solutions.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:operationalinsights/queryPackQuery:QueryPackQuery".into(),
             name: name.to_string(),
@@ -207,7 +207,7 @@ pub mod query_pack_query {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         QueryPackQueryResult {
             id: o.get_id(),
             urn: o.get_urn(),

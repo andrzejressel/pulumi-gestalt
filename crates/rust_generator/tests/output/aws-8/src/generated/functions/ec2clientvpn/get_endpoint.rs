@@ -85,14 +85,12 @@ pub mod get_endpoint {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetEndpointArgs,
     ) -> GetEndpointResult {
-        let client_vpn_endpoint_id_binding = args
-            .client_vpn_endpoint_id
-            .get_output(context);
-        let filters_binding = args.filters.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let client_vpn_endpoint_id_binding = args.client_vpn_endpoint_id.get_output(ctx);
+        let filters_binding = args.filters.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ec2clientvpn/getEndpoint:getEndpoint".into(),
             version: super::super::super::get_version(),
@@ -111,7 +109,7 @@ pub mod get_endpoint {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetEndpointResult {
             arn: o.get_field("arn"),
             authentication_options: o.get_field("authenticationOptions"),

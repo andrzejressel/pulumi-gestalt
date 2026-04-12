@@ -213,60 +213,54 @@ pub mod spring_cloud_service {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SpringCloudServiceArgs,
     ) -> SpringCloudServiceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SpringCloudServiceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> SpringCloudServiceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SpringCloudServiceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> SpringCloudServiceResult {
-        let build_agent_pool_size_binding = args
-            .build_agent_pool_size
-            .get_output(context);
+        let build_agent_pool_size_binding = args.build_agent_pool_size.get_output(ctx);
         let config_server_git_setting_binding = args
             .config_server_git_setting
-            .get_output(context);
-        let container_registries_binding = args.container_registries.get_output(context);
-        let default_build_service_binding = args
-            .default_build_service
-            .get_output(context);
-        let location_binding = args.location.get_output(context);
+            .get_output(ctx);
+        let container_registries_binding = args.container_registries.get_output(ctx);
+        let default_build_service_binding = args.default_build_service.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
         let log_stream_public_endpoint_enabled_binding = args
             .log_stream_public_endpoint_enabled
-            .get_output(context);
-        let managed_environment_id_binding = args
-            .managed_environment_id
-            .get_output(context);
-        let marketplace_binding = args.marketplace.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_binding = args.network.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+            .get_output(ctx);
+        let managed_environment_id_binding = args.managed_environment_id.get_output(ctx);
+        let marketplace_binding = args.marketplace.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_binding = args.network.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let service_registry_enabled_binding = args
             .service_registry_enabled
-            .get_output(context);
-        let sku_name_binding = args.sku_name.get_output(context);
-        let sku_tier_binding = args.sku_tier.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let trace_binding = args.trace.get_output(context);
-        let zone_redundant_binding = args.zone_redundant.get_output(context);
+            .get_output(ctx);
+        let sku_name_binding = args.sku_name.get_output(ctx);
+        let sku_tier_binding = args.sku_tier.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let trace_binding = args.trace.get_output(ctx);
+        let zone_redundant_binding = args.zone_redundant.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:appplatform/springCloudService:SpringCloudService".into(),
             name: name.to_string(),
@@ -343,7 +337,7 @@ pub mod spring_cloud_service {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         SpringCloudServiceResult {
             id: o.get_id(),
             urn: o.get_urn(),

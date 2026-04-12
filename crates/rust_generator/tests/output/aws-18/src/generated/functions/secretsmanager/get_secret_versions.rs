@@ -35,11 +35,11 @@ pub mod get_secret_versions {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetSecretVersionsArgs,
     ) -> GetSecretVersionsResult {
-        let include_deprecated_binding = args.include_deprecated.get_output(context);
-        let secret_id_binding = args.secret_id.get_output(context);
+        let include_deprecated_binding = args.include_deprecated.get_output(ctx);
+        let secret_id_binding = args.secret_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:secretsmanager/getSecretVersions:getSecretVersions".into(),
             version: super::super::super::get_version(),
@@ -54,7 +54,7 @@ pub mod get_secret_versions {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetSecretVersionsResult {
             arn: o.get_field("arn"),
             id: o.get_field("id"),

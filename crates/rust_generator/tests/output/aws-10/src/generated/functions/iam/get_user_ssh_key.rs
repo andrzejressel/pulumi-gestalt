@@ -37,12 +37,12 @@ pub mod get_user_ssh_key {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetUserSshKeyArgs,
     ) -> GetUserSshKeyResult {
-        let encoding_binding = args.encoding.get_output(context);
-        let ssh_public_key_id_binding = args.ssh_public_key_id.get_output(context);
-        let username_binding = args.username.get_output(context);
+        let encoding_binding = args.encoding.get_output(ctx);
+        let ssh_public_key_id_binding = args.ssh_public_key_id.get_output(ctx);
+        let username_binding = args.username.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:iam/getUserSshKey:getUserSshKey".into(),
             version: super::super::super::get_version(),
@@ -61,7 +61,7 @@ pub mod get_user_ssh_key {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetUserSshKeyResult {
             encoding: o.get_field("encoding"),
             fingerprint: o.get_field("fingerprint"),

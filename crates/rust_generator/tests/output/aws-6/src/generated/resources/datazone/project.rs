@@ -111,37 +111,37 @@ pub mod project {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProjectArgs,
     ) -> ProjectResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProjectArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ProjectResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProjectArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ProjectResult {
-        let description_binding = args.description.get_output(context);
-        let domain_identifier_binding = args.domain_identifier.get_output(context);
-        let glossary_terms_binding = args.glossary_terms.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let skip_deletion_check_binding = args.skip_deletion_check.get_output(context);
-        let timeouts_binding = args.timeouts.get_output(context);
+        let description_binding = args.description.get_output(ctx);
+        let domain_identifier_binding = args.domain_identifier.get_output(ctx);
+        let glossary_terms_binding = args.glossary_terms.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let skip_deletion_check_binding = args.skip_deletion_check.get_output(ctx);
+        let timeouts_binding = args.timeouts.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:datazone/project:Project".into(),
             name: name.to_string(),
@@ -174,7 +174,7 @@ pub mod project {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ProjectResult {
             id: o.get_id(),
             urn: o.get_urn(),

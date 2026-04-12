@@ -37,13 +37,13 @@ pub mod get_resolver_inbound_endpoint {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetResolverInboundEndpointArgs,
     ) -> GetResolverInboundEndpointResult {
-        let name_binding = args.name.get_output(context);
+        let name_binding = args.name.get_output(ctx);
         let private_dns_resolver_id_binding = args
             .private_dns_resolver_id
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:privatedns/getResolverInboundEndpoint:getResolverInboundEndpoint"
                 .into(),
@@ -59,7 +59,7 @@ pub mod get_resolver_inbound_endpoint {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetResolverInboundEndpointResult {
             id: o.get_field("id"),
             ip_configurations: o.get_field("ipConfigurations"),

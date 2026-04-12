@@ -117,39 +117,39 @@ pub mod automation_rule {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AutomationRuleArgs,
     ) -> AutomationRuleResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AutomationRuleArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AutomationRuleResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AutomationRuleArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AutomationRuleResult {
-        let actions_binding = args.actions.get_output(context);
-        let criteria_binding = args.criteria.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let is_terminal_binding = args.is_terminal.get_output(context);
-        let rule_name_binding = args.rule_name.get_output(context);
-        let rule_order_binding = args.rule_order.get_output(context);
-        let rule_status_binding = args.rule_status.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let actions_binding = args.actions.get_output(ctx);
+        let criteria_binding = args.criteria.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let is_terminal_binding = args.is_terminal.get_output(ctx);
+        let rule_name_binding = args.rule_name.get_output(ctx);
+        let rule_order_binding = args.rule_order.get_output(ctx);
+        let rule_status_binding = args.rule_status.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:securityhub/automationRule:AutomationRule".into(),
             name: name.to_string(),
@@ -190,7 +190,7 @@ pub mod automation_rule {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AutomationRuleResult {
             id: o.get_id(),
             urn: o.get_urn(),

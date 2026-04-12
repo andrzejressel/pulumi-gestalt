@@ -88,36 +88,36 @@ pub mod data_connector_iot {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataConnectorIotArgs,
     ) -> DataConnectorIotResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataConnectorIotArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DataConnectorIotResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataConnectorIotArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DataConnectorIotResult {
         let log_analytics_workspace_id_binding = args
             .log_analytics_workspace_id
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let subscription_id_binding = args.subscription_id.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let subscription_id_binding = args.subscription_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:sentinel/dataConnectorIot:DataConnectorIot".into(),
             name: name.to_string(),
@@ -138,7 +138,7 @@ pub mod data_connector_iot {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DataConnectorIotResult {
             id: o.get_id(),
             urn: o.get_urn(),

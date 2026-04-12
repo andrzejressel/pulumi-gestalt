@@ -53,15 +53,15 @@ pub mod get_query_log_config {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetQueryLogConfigArgs,
     ) -> GetQueryLogConfigResult {
-        let filters_binding = args.filters.get_output(context);
-        let name_binding = args.name.get_output(context);
+        let filters_binding = args.filters.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let resolver_query_log_config_id_binding = args
             .resolver_query_log_config_id
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:route53/getQueryLogConfig:getQueryLogConfig".into(),
             version: super::super::super::get_version(),
@@ -84,7 +84,7 @@ pub mod get_query_log_config {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetQueryLogConfigResult {
             arn: o.get_field("arn"),
             destination_arn: o.get_field("destinationArn"),

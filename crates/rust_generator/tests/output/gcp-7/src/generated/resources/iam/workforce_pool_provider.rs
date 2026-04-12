@@ -449,44 +449,44 @@ pub mod workforce_pool_provider {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkforcePoolProviderArgs,
     ) -> WorkforcePoolProviderResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkforcePoolProviderArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> WorkforcePoolProviderResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkforcePoolProviderArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> WorkforcePoolProviderResult {
-        let attribute_condition_binding = args.attribute_condition.get_output(context);
-        let attribute_mapping_binding = args.attribute_mapping.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let disabled_binding = args.disabled.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
+        let attribute_condition_binding = args.attribute_condition.get_output(ctx);
+        let attribute_mapping_binding = args.attribute_mapping.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let disabled_binding = args.disabled.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
         let extra_attributes_oauth2_client_binding = args
             .extra_attributes_oauth2_client
-            .get_output(context);
-        let location_binding = args.location.get_output(context);
-        let oidc_binding = args.oidc.get_output(context);
-        let provider_id_binding = args.provider_id.get_output(context);
-        let saml_binding = args.saml.get_output(context);
-        let workforce_pool_id_binding = args.workforce_pool_id.get_output(context);
+            .get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let oidc_binding = args.oidc.get_output(ctx);
+        let provider_id_binding = args.provider_id.get_output(ctx);
+        let saml_binding = args.saml.get_output(ctx);
+        let workforce_pool_id_binding = args.workforce_pool_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:iam/workforcePoolProvider:WorkforcePoolProvider".into(),
             name: name.to_string(),
@@ -539,7 +539,7 @@ pub mod workforce_pool_provider {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         WorkforcePoolProviderResult {
             id: o.get_id(),
             urn: o.get_urn(),

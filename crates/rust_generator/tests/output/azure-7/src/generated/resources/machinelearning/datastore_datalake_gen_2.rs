@@ -156,43 +156,41 @@ pub mod datastore_datalake_gen_2 {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DatastoreDatalakeGen2Args,
     ) -> DatastoreDatalakeGen2Result {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DatastoreDatalakeGen2Args,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DatastoreDatalakeGen2Result {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DatastoreDatalakeGen2Args,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DatastoreDatalakeGen2Result {
-        let authority_url_binding = args.authority_url.get_output(context);
-        let client_id_binding = args.client_id.get_output(context);
-        let client_secret_binding = args.client_secret.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let service_data_identity_binding = args
-            .service_data_identity
-            .get_output(context);
-        let storage_container_id_binding = args.storage_container_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let tenant_id_binding = args.tenant_id.get_output(context);
-        let workspace_id_binding = args.workspace_id.get_output(context);
+        let authority_url_binding = args.authority_url.get_output(ctx);
+        let client_id_binding = args.client_id.get_output(ctx);
+        let client_secret_binding = args.client_secret.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let service_data_identity_binding = args.service_data_identity.get_output(ctx);
+        let storage_container_id_binding = args.storage_container_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let tenant_id_binding = args.tenant_id.get_output(ctx);
+        let workspace_id_binding = args.workspace_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:machinelearning/datastoreDatalakeGen2:DatastoreDatalakeGen2"
                 .into(),
@@ -242,7 +240,7 @@ pub mod datastore_datalake_gen_2 {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DatastoreDatalakeGen2Result {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -41,12 +41,12 @@ pub mod get_instance_iam_policy {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetInstanceIamPolicyArgs,
     ) -> GetInstanceIamPolicyResult {
-        let instance_id_binding = args.instance_id.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let project_binding = args.project.get_output(context);
+        let instance_id_binding = args.instance_id.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:securesourcemanager/getInstanceIamPolicy:getInstanceIamPolicy"
                 .into(),
@@ -66,7 +66,7 @@ pub mod get_instance_iam_policy {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetInstanceIamPolicyResult {
             etag: o.get_field("etag"),
             id: o.get_field("id"),

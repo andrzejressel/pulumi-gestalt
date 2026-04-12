@@ -789,51 +789,49 @@ pub mod repository {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RepositoryArgs,
     ) -> RepositoryResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RepositoryArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> RepositoryResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RepositoryArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> RepositoryResult {
-        let cleanup_policies_binding = args.cleanup_policies.get_output(context);
-        let cleanup_policy_dry_run_binding = args
-            .cleanup_policy_dry_run
-            .get_output(context);
-        let description_binding = args.description.get_output(context);
-        let docker_config_binding = args.docker_config.get_output(context);
-        let format_binding = args.format.get_output(context);
-        let kms_key_name_binding = args.kms_key_name.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let maven_config_binding = args.maven_config.get_output(context);
-        let mode_binding = args.mode.get_output(context);
-        let project_binding = args.project.get_output(context);
+        let cleanup_policies_binding = args.cleanup_policies.get_output(ctx);
+        let cleanup_policy_dry_run_binding = args.cleanup_policy_dry_run.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let docker_config_binding = args.docker_config.get_output(ctx);
+        let format_binding = args.format.get_output(ctx);
+        let kms_key_name_binding = args.kms_key_name.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let maven_config_binding = args.maven_config.get_output(ctx);
+        let mode_binding = args.mode.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let remote_repository_config_binding = args
             .remote_repository_config
-            .get_output(context);
-        let repository_id_binding = args.repository_id.get_output(context);
+            .get_output(ctx);
+        let repository_id_binding = args.repository_id.get_output(ctx);
         let virtual_repository_config_binding = args
             .virtual_repository_config
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:artifactregistry/repository:Repository".into(),
             name: name.to_string(),
@@ -898,7 +896,7 @@ pub mod repository {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         RepositoryResult {
             id: o.get_id(),
             urn: o.get_urn(),

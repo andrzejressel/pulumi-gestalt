@@ -137,35 +137,35 @@ pub mod default_object_access_control {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DefaultObjectAccessControlArgs,
     ) -> DefaultObjectAccessControlResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DefaultObjectAccessControlArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DefaultObjectAccessControlResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DefaultObjectAccessControlArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DefaultObjectAccessControlResult {
-        let bucket_binding = args.bucket.get_output(context);
-        let entity_binding = args.entity.get_output(context);
-        let object_binding = args.object.get_output(context);
-        let role_binding = args.role.get_output(context);
+        let bucket_binding = args.bucket.get_output(ctx);
+        let entity_binding = args.entity.get_output(ctx);
+        let object_binding = args.object.get_output(ctx);
+        let role_binding = args.role.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:storage/defaultObjectAccessControl:DefaultObjectAccessControl"
                 .into(),
@@ -191,7 +191,7 @@ pub mod default_object_access_control {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DefaultObjectAccessControlResult {
             id: o.get_id(),
             urn: o.get_urn(),

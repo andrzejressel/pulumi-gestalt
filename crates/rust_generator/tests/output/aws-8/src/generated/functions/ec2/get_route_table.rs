@@ -64,15 +64,15 @@ pub mod get_route_table {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetRouteTableArgs,
     ) -> GetRouteTableResult {
-        let filters_binding = args.filters.get_output(context);
-        let gateway_id_binding = args.gateway_id.get_output(context);
-        let route_table_id_binding = args.route_table_id.get_output(context);
-        let subnet_id_binding = args.subnet_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let vpc_id_binding = args.vpc_id.get_output(context);
+        let filters_binding = args.filters.get_output(ctx);
+        let gateway_id_binding = args.gateway_id.get_output(ctx);
+        let route_table_id_binding = args.route_table_id.get_output(ctx);
+        let subnet_id_binding = args.subnet_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let vpc_id_binding = args.vpc_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ec2/getRouteTable:getRouteTable".into(),
             version: super::super::super::get_version(),
@@ -103,7 +103,7 @@ pub mod get_route_table {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetRouteTableResult {
             arn: o.get_field("arn"),
             associations: o.get_field("associations"),

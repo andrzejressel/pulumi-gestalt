@@ -42,12 +42,12 @@ pub mod get_accelerator {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetAcceleratorArgs,
     ) -> GetAcceleratorResult {
-        let arn_binding = args.arn.get_output(context);
-        let id_binding = args.id.get_output(context);
-        let name_binding = args.name.get_output(context);
+        let arn_binding = args.arn.get_output(ctx);
+        let id_binding = args.id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:globalaccelerator/getAccelerator:getAccelerator".into(),
             version: super::super::super::get_version(),
@@ -66,7 +66,7 @@ pub mod get_accelerator {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetAcceleratorResult {
             arn: o.get_field("arn"),
             attributes: o.get_field("attributes"),

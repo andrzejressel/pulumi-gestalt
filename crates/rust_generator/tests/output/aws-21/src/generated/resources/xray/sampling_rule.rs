@@ -132,44 +132,44 @@ pub mod sampling_rule {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SamplingRuleArgs,
     ) -> SamplingRuleResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SamplingRuleArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> SamplingRuleResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SamplingRuleArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> SamplingRuleResult {
-        let attributes_binding = args.attributes.get_output(context);
-        let fixed_rate_binding = args.fixed_rate.get_output(context);
-        let host_binding = args.host.get_output(context);
-        let http_method_binding = args.http_method.get_output(context);
-        let priority_binding = args.priority.get_output(context);
-        let reservoir_size_binding = args.reservoir_size.get_output(context);
-        let resource_arn_binding = args.resource_arn.get_output(context);
-        let rule_name_binding = args.rule_name.get_output(context);
-        let service_name_binding = args.service_name.get_output(context);
-        let service_type_binding = args.service_type.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let url_path_binding = args.url_path.get_output(context);
-        let version_binding = args.version.get_output(context);
+        let attributes_binding = args.attributes.get_output(ctx);
+        let fixed_rate_binding = args.fixed_rate.get_output(ctx);
+        let host_binding = args.host.get_output(ctx);
+        let http_method_binding = args.http_method.get_output(ctx);
+        let priority_binding = args.priority.get_output(ctx);
+        let reservoir_size_binding = args.reservoir_size.get_output(ctx);
+        let resource_arn_binding = args.resource_arn.get_output(ctx);
+        let rule_name_binding = args.rule_name.get_output(ctx);
+        let service_name_binding = args.service_name.get_output(ctx);
+        let service_type_binding = args.service_type.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let url_path_binding = args.url_path.get_output(ctx);
+        let version_binding = args.version.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:xray/samplingRule:SamplingRule".into(),
             name: name.to_string(),
@@ -230,7 +230,7 @@ pub mod sampling_rule {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         SamplingRuleResult {
             id: o.get_id(),
             urn: o.get_urn(),

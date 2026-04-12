@@ -24,10 +24,10 @@ pub mod get_billing_service_account {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetBillingServiceAccountArgs,
     ) -> GetBillingServiceAccountResult {
-        let id_binding = args.id.get_output(context);
+        let id_binding = args.id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:index/getBillingServiceAccount:getBillingServiceAccount".into(),
             version: super::super::get_version(),
@@ -38,7 +38,7 @@ pub mod get_billing_service_account {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetBillingServiceAccountResult {
             arn: o.get_field("arn"),
             id: o.get_field("id"),

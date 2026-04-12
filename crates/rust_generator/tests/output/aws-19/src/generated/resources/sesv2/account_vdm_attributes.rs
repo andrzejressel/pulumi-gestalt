@@ -86,34 +86,34 @@ pub mod account_vdm_attributes {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccountVdmAttributesArgs,
     ) -> AccountVdmAttributesResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccountVdmAttributesArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AccountVdmAttributesResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccountVdmAttributesArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AccountVdmAttributesResult {
-        let dashboard_attributes_binding = args.dashboard_attributes.get_output(context);
-        let guardian_attributes_binding = args.guardian_attributes.get_output(context);
-        let vdm_enabled_binding = args.vdm_enabled.get_output(context);
+        let dashboard_attributes_binding = args.dashboard_attributes.get_output(ctx);
+        let guardian_attributes_binding = args.guardian_attributes.get_output(ctx);
+        let vdm_enabled_binding = args.vdm_enabled.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:sesv2/accountVdmAttributes:AccountVdmAttributes".into(),
             name: name.to_string(),
@@ -134,7 +134,7 @@ pub mod account_vdm_attributes {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AccountVdmAttributesResult {
             id: o.get_id(),
             urn: o.get_urn(),

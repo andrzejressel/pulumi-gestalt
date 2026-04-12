@@ -157,40 +157,40 @@ pub mod webhook {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WebhookArgs,
     ) -> WebhookResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WebhookArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> WebhookResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WebhookArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> WebhookResult {
-        let authentication_binding = args.authentication.get_output(context);
+        let authentication_binding = args.authentication.get_output(ctx);
         let authentication_configuration_binding = args
             .authentication_configuration
-            .get_output(context);
-        let filters_binding = args.filters.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let target_action_binding = args.target_action.get_output(context);
-        let target_pipeline_binding = args.target_pipeline.get_output(context);
+            .get_output(ctx);
+        let filters_binding = args.filters.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let target_action_binding = args.target_action.get_output(ctx);
+        let target_pipeline_binding = args.target_pipeline.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:codepipeline/webhook:Webhook".into(),
             name: name.to_string(),
@@ -227,7 +227,7 @@ pub mod webhook {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         WebhookResult {
             id: o.get_id(),
             urn: o.get_urn(),

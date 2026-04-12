@@ -60,12 +60,12 @@ pub mod get_theme {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetThemeArgs,
     ) -> GetThemeResult {
-        let aws_account_id_binding = args.aws_account_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let theme_id_binding = args.theme_id.get_output(context);
+        let aws_account_id_binding = args.aws_account_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let theme_id_binding = args.theme_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:quicksight/getTheme:getTheme".into(),
             version: super::super::super::get_version(),
@@ -84,7 +84,7 @@ pub mod get_theme {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetThemeResult {
             arn: o.get_field("arn"),
             aws_account_id: o.get_field("awsAccountId"),

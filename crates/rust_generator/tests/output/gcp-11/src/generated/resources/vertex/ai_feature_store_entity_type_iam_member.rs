@@ -115,36 +115,36 @@ pub mod ai_feature_store_entity_type_iam_member {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AiFeatureStoreEntityTypeIamMemberArgs,
     ) -> AiFeatureStoreEntityTypeIamMemberResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AiFeatureStoreEntityTypeIamMemberArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AiFeatureStoreEntityTypeIamMemberResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AiFeatureStoreEntityTypeIamMemberArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AiFeatureStoreEntityTypeIamMemberResult {
-        let condition_binding = args.condition.get_output(context);
-        let entitytype_binding = args.entitytype.get_output(context);
-        let featurestore_binding = args.featurestore.get_output(context);
-        let member_binding = args.member.get_output(context);
-        let role_binding = args.role.get_output(context);
+        let condition_binding = args.condition.get_output(ctx);
+        let entitytype_binding = args.entitytype.get_output(ctx);
+        let featurestore_binding = args.featurestore.get_output(ctx);
+        let member_binding = args.member.get_output(ctx);
+        let role_binding = args.role.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:vertex/aiFeatureStoreEntityTypeIamMember:AiFeatureStoreEntityTypeIamMember"
                 .into(),
@@ -174,7 +174,7 @@ pub mod ai_feature_store_entity_type_iam_member {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AiFeatureStoreEntityTypeIamMemberResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -36,12 +36,12 @@ pub mod get_regions {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetRegionsArgs,
     ) -> GetRegionsResult {
-        let all_regions_binding = args.all_regions.get_output(context);
-        let filters_binding = args.filters.get_output(context);
-        let id_binding = args.id.get_output(context);
+        let all_regions_binding = args.all_regions.get_output(ctx);
+        let filters_binding = args.filters.get_output(ctx);
+        let id_binding = args.id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:index/getRegions:getRegions".into(),
             version: super::super::get_version(),
@@ -60,7 +60,7 @@ pub mod get_regions {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetRegionsResult {
             all_regions: o.get_field("allRegions"),
             filters: o.get_field("filters"),

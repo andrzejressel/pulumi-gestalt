@@ -88,37 +88,37 @@ pub mod snapshot_schedule {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SnapshotScheduleArgs,
     ) -> SnapshotScheduleResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SnapshotScheduleArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> SnapshotScheduleResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SnapshotScheduleArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> SnapshotScheduleResult {
-        let definitions_binding = args.definitions.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let force_destroy_binding = args.force_destroy.get_output(context);
-        let identifier_binding = args.identifier.get_output(context);
-        let identifier_prefix_binding = args.identifier_prefix.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let definitions_binding = args.definitions.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let force_destroy_binding = args.force_destroy.get_output(ctx);
+        let identifier_binding = args.identifier.get_output(ctx);
+        let identifier_prefix_binding = args.identifier_prefix.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:redshift/snapshotSchedule:SnapshotSchedule".into(),
             name: name.to_string(),
@@ -151,7 +151,7 @@ pub mod snapshot_schedule {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         SnapshotScheduleResult {
             id: o.get_id(),
             urn: o.get_urn(),

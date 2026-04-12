@@ -47,11 +47,11 @@ pub mod get_cost_category {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetCostCategoryArgs,
     ) -> GetCostCategoryResult {
-        let cost_category_arn_binding = args.cost_category_arn.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let cost_category_arn_binding = args.cost_category_arn.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:costexplorer/getCostCategory:getCostCategory".into(),
             version: super::super::super::get_version(),
@@ -66,7 +66,7 @@ pub mod get_cost_category {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetCostCategoryResult {
             cost_category_arn: o.get_field("costCategoryArn"),
             default_value: o.get_field("defaultValue"),

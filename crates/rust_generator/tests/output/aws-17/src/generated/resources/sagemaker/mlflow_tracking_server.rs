@@ -107,43 +107,43 @@ pub mod mlflow_tracking_server {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MlflowTrackingServerArgs,
     ) -> MlflowTrackingServerResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MlflowTrackingServerArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> MlflowTrackingServerResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MlflowTrackingServerArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> MlflowTrackingServerResult {
-        let artifact_store_uri_binding = args.artifact_store_uri.get_output(context);
+        let artifact_store_uri_binding = args.artifact_store_uri.get_output(ctx);
         let automatic_model_registration_binding = args
             .automatic_model_registration
-            .get_output(context);
-        let mlflow_version_binding = args.mlflow_version.get_output(context);
-        let role_arn_binding = args.role_arn.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let tracking_server_name_binding = args.tracking_server_name.get_output(context);
-        let tracking_server_size_binding = args.tracking_server_size.get_output(context);
+            .get_output(ctx);
+        let mlflow_version_binding = args.mlflow_version.get_output(ctx);
+        let role_arn_binding = args.role_arn.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let tracking_server_name_binding = args.tracking_server_name.get_output(ctx);
+        let tracking_server_size_binding = args.tracking_server_size.get_output(ctx);
         let weekly_maintenance_window_start_binding = args
             .weekly_maintenance_window_start
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:sagemaker/mlflowTrackingServer:MlflowTrackingServer".into(),
             name: name.to_string(),
@@ -184,7 +184,7 @@ pub mod mlflow_tracking_server {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         MlflowTrackingServerResult {
             id: o.get_id(),
             urn: o.get_urn(),

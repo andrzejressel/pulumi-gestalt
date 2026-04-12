@@ -31,10 +31,10 @@ pub mod get_secrets {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetSecretsArgs,
     ) -> GetSecretsResult {
-        let key_vault_id_binding = args.key_vault_id.get_output(context);
+        let key_vault_id_binding = args.key_vault_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:keyvault/getSecrets:getSecrets".into(),
             version: super::super::super::get_version(),
@@ -45,7 +45,7 @@ pub mod get_secrets {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetSecretsResult {
             id: o.get_field("id"),
             key_vault_id: o.get_field("keyVaultId"),

@@ -103,36 +103,36 @@ pub mod function_url {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FunctionUrlArgs,
     ) -> FunctionUrlResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FunctionUrlArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> FunctionUrlResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FunctionUrlArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> FunctionUrlResult {
-        let authorization_type_binding = args.authorization_type.get_output(context);
-        let cors_binding = args.cors.get_output(context);
-        let function_name_binding = args.function_name.get_output(context);
-        let invoke_mode_binding = args.invoke_mode.get_output(context);
-        let qualifier_binding = args.qualifier.get_output(context);
+        let authorization_type_binding = args.authorization_type.get_output(ctx);
+        let cors_binding = args.cors.get_output(ctx);
+        let function_name_binding = args.function_name.get_output(ctx);
+        let invoke_mode_binding = args.invoke_mode.get_output(ctx);
+        let qualifier_binding = args.qualifier.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:lambda/functionUrl:FunctionUrl".into(),
             name: name.to_string(),
@@ -161,7 +161,7 @@ pub mod function_url {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         FunctionUrlResult {
             id: o.get_id(),
             urn: o.get_urn(),

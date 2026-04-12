@@ -106,43 +106,41 @@ pub mod database {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DatabaseArgs,
     ) -> DatabaseResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DatabaseArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DatabaseResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DatabaseArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DatabaseResult {
-        let acl_configuration_binding = args.acl_configuration.get_output(context);
-        let bucket_binding = args.bucket.get_output(context);
-        let comment_binding = args.comment.get_output(context);
+        let acl_configuration_binding = args.acl_configuration.get_output(ctx);
+        let bucket_binding = args.bucket.get_output(ctx);
+        let comment_binding = args.comment.get_output(ctx);
         let encryption_configuration_binding = args
             .encryption_configuration
-            .get_output(context);
-        let expected_bucket_owner_binding = args
-            .expected_bucket_owner
-            .get_output(context);
-        let force_destroy_binding = args.force_destroy.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let properties_binding = args.properties.get_output(context);
+            .get_output(ctx);
+        let expected_bucket_owner_binding = args.expected_bucket_owner.get_output(ctx);
+        let force_destroy_binding = args.force_destroy.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let properties_binding = args.properties.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:athena/database:Database".into(),
             name: name.to_string(),
@@ -183,7 +181,7 @@ pub mod database {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DatabaseResult {
             id: o.get_id(),
             urn: o.get_urn(),

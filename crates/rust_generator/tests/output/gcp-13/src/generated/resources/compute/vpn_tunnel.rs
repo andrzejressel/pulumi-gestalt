@@ -309,58 +309,54 @@ pub mod vpn_tunnel {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VPNTunnelArgs,
     ) -> VPNTunnelResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VPNTunnelArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> VPNTunnelResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VPNTunnelArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> VPNTunnelResult {
-        let description_binding = args.description.get_output(context);
-        let ike_version_binding = args.ike_version.get_output(context);
-        let labels_binding = args.labels.get_output(context);
+        let description_binding = args.description.get_output(ctx);
+        let ike_version_binding = args.ike_version.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
         let local_traffic_selectors_binding = args
             .local_traffic_selectors
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let peer_external_gateway_binding = args
-            .peer_external_gateway
-            .get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let peer_external_gateway_binding = args.peer_external_gateway.get_output(ctx);
         let peer_external_gateway_interface_binding = args
             .peer_external_gateway_interface
-            .get_output(context);
-        let peer_gcp_gateway_binding = args.peer_gcp_gateway.get_output(context);
-        let peer_ip_binding = args.peer_ip.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let region_binding = args.region.get_output(context);
+            .get_output(ctx);
+        let peer_gcp_gateway_binding = args.peer_gcp_gateway.get_output(ctx);
+        let peer_ip_binding = args.peer_ip.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let region_binding = args.region.get_output(ctx);
         let remote_traffic_selectors_binding = args
             .remote_traffic_selectors
-            .get_output(context);
-        let router_binding = args.router.get_output(context);
-        let shared_secret_binding = args.shared_secret.get_output(context);
-        let target_vpn_gateway_binding = args.target_vpn_gateway.get_output(context);
-        let vpn_gateway_binding = args.vpn_gateway.get_output(context);
-        let vpn_gateway_interface_binding = args
-            .vpn_gateway_interface
-            .get_output(context);
+            .get_output(ctx);
+        let router_binding = args.router.get_output(ctx);
+        let shared_secret_binding = args.shared_secret.get_output(ctx);
+        let target_vpn_gateway_binding = args.target_vpn_gateway.get_output(ctx);
+        let vpn_gateway_binding = args.vpn_gateway.get_output(ctx);
+        let vpn_gateway_interface_binding = args.vpn_gateway_interface.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:compute/vPNTunnel:VPNTunnel".into(),
             name: name.to_string(),
@@ -437,7 +433,7 @@ pub mod vpn_tunnel {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         VPNTunnelResult {
             id: o.get_id(),
             urn: o.get_urn(),

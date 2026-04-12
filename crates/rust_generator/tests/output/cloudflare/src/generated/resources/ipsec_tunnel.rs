@@ -146,51 +146,49 @@ pub mod ipsec_tunnel {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IpsecTunnelArgs,
     ) -> IpsecTunnelResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IpsecTunnelArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> IpsecTunnelResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IpsecTunnelArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> IpsecTunnelResult {
-        let account_id_binding = args.account_id.get_output(context);
-        let allow_null_cipher_binding = args.allow_null_cipher.get_output(context);
-        let cloudflare_endpoint_binding = args.cloudflare_endpoint.get_output(context);
-        let customer_endpoint_binding = args.customer_endpoint.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let fqdn_id_binding = args.fqdn_id.get_output(context);
-        let health_check_direction_binding = args
-            .health_check_direction
-            .get_output(context);
-        let health_check_enabled_binding = args.health_check_enabled.get_output(context);
-        let health_check_rate_binding = args.health_check_rate.get_output(context);
-        let health_check_target_binding = args.health_check_target.get_output(context);
-        let health_check_type_binding = args.health_check_type.get_output(context);
-        let hex_id_binding = args.hex_id.get_output(context);
-        let interface_address_binding = args.interface_address.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let psk_binding = args.psk.get_output(context);
-        let remote_id_binding = args.remote_id.get_output(context);
-        let replay_protection_binding = args.replay_protection.get_output(context);
-        let user_id_binding = args.user_id.get_output(context);
+        let account_id_binding = args.account_id.get_output(ctx);
+        let allow_null_cipher_binding = args.allow_null_cipher.get_output(ctx);
+        let cloudflare_endpoint_binding = args.cloudflare_endpoint.get_output(ctx);
+        let customer_endpoint_binding = args.customer_endpoint.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let fqdn_id_binding = args.fqdn_id.get_output(ctx);
+        let health_check_direction_binding = args.health_check_direction.get_output(ctx);
+        let health_check_enabled_binding = args.health_check_enabled.get_output(ctx);
+        let health_check_rate_binding = args.health_check_rate.get_output(ctx);
+        let health_check_target_binding = args.health_check_target.get_output(ctx);
+        let health_check_type_binding = args.health_check_type.get_output(ctx);
+        let hex_id_binding = args.hex_id.get_output(ctx);
+        let interface_address_binding = args.interface_address.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let psk_binding = args.psk.get_output(ctx);
+        let remote_id_binding = args.remote_id.get_output(ctx);
+        let replay_protection_binding = args.replay_protection.get_output(ctx);
+        let user_id_binding = args.user_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "cloudflare:index/ipsecTunnel:IpsecTunnel".into(),
             name: name.to_string(),
@@ -271,7 +269,7 @@ pub mod ipsec_tunnel {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         IpsecTunnelResult {
             id: o.get_id(),
             urn: o.get_urn(),

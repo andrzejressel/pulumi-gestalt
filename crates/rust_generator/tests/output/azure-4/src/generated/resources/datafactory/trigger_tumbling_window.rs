@@ -184,48 +184,46 @@ pub mod trigger_tumbling_window {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TriggerTumblingWindowArgs,
     ) -> TriggerTumblingWindowResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TriggerTumblingWindowArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> TriggerTumblingWindowResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TriggerTumblingWindowArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> TriggerTumblingWindowResult {
-        let activated_binding = args.activated.get_output(context);
-        let additional_properties_binding = args
-            .additional_properties
-            .get_output(context);
-        let annotations_binding = args.annotations.get_output(context);
-        let data_factory_id_binding = args.data_factory_id.get_output(context);
-        let delay_binding = args.delay.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let end_time_binding = args.end_time.get_output(context);
-        let frequency_binding = args.frequency.get_output(context);
-        let interval_binding = args.interval.get_output(context);
-        let max_concurrency_binding = args.max_concurrency.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let pipeline_binding = args.pipeline.get_output(context);
-        let retry_binding = args.retry.get_output(context);
-        let start_time_binding = args.start_time.get_output(context);
-        let trigger_dependencies_binding = args.trigger_dependencies.get_output(context);
+        let activated_binding = args.activated.get_output(ctx);
+        let additional_properties_binding = args.additional_properties.get_output(ctx);
+        let annotations_binding = args.annotations.get_output(ctx);
+        let data_factory_id_binding = args.data_factory_id.get_output(ctx);
+        let delay_binding = args.delay.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let end_time_binding = args.end_time.get_output(ctx);
+        let frequency_binding = args.frequency.get_output(ctx);
+        let interval_binding = args.interval.get_output(ctx);
+        let max_concurrency_binding = args.max_concurrency.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let pipeline_binding = args.pipeline.get_output(ctx);
+        let retry_binding = args.retry.get_output(ctx);
+        let start_time_binding = args.start_time.get_output(ctx);
+        let trigger_dependencies_binding = args.trigger_dependencies.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:datafactory/triggerTumblingWindow:TriggerTumblingWindow"
                 .into(),
@@ -295,7 +293,7 @@ pub mod trigger_tumbling_window {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         TriggerTumblingWindowResult {
             id: o.get_id(),
             urn: o.get_urn(),

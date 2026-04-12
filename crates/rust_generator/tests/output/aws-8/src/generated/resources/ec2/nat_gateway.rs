@@ -163,45 +163,45 @@ pub mod nat_gateway {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NatGatewayArgs,
     ) -> NatGatewayResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NatGatewayArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> NatGatewayResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NatGatewayArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> NatGatewayResult {
-        let allocation_id_binding = args.allocation_id.get_output(context);
-        let connectivity_type_binding = args.connectivity_type.get_output(context);
-        let private_ip_binding = args.private_ip.get_output(context);
+        let allocation_id_binding = args.allocation_id.get_output(ctx);
+        let connectivity_type_binding = args.connectivity_type.get_output(ctx);
+        let private_ip_binding = args.private_ip.get_output(ctx);
         let secondary_allocation_ids_binding = args
             .secondary_allocation_ids
-            .get_output(context);
+            .get_output(ctx);
         let secondary_private_ip_address_count_binding = args
             .secondary_private_ip_address_count
-            .get_output(context);
+            .get_output(ctx);
         let secondary_private_ip_addresses_binding = args
             .secondary_private_ip_addresses
-            .get_output(context);
-        let subnet_id_binding = args.subnet_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let subnet_id_binding = args.subnet_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/natGateway:NatGateway".into(),
             name: name.to_string(),
@@ -242,7 +242,7 @@ pub mod nat_gateway {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         NatGatewayResult {
             id: o.get_id(),
             urn: o.get_urn(),

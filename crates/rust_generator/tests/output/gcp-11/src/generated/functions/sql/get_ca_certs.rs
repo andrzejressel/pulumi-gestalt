@@ -33,11 +33,11 @@ pub mod get_ca_certs {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetCaCertsArgs,
     ) -> GetCaCertsResult {
-        let instance_binding = args.instance.get_output(context);
-        let project_binding = args.project.get_output(context);
+        let instance_binding = args.instance.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:sql/getCaCerts:getCaCerts".into(),
             version: super::super::super::get_version(),
@@ -52,7 +52,7 @@ pub mod get_ca_certs {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetCaCertsResult {
             active_version: o.get_field("activeVersion"),
             certs: o.get_field("certs"),

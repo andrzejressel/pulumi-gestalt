@@ -117,35 +117,35 @@ pub mod reserved_instance {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ReservedInstanceArgs,
     ) -> ReservedInstanceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ReservedInstanceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ReservedInstanceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ReservedInstanceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ReservedInstanceResult {
-        let instance_count_binding = args.instance_count.get_output(context);
-        let offering_id_binding = args.offering_id.get_output(context);
-        let reservation_id_binding = args.reservation_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let instance_count_binding = args.instance_count.get_output(ctx);
+        let offering_id_binding = args.offering_id.get_output(ctx);
+        let reservation_id_binding = args.reservation_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:rds/reservedInstance:ReservedInstance".into(),
             name: name.to_string(),
@@ -170,7 +170,7 @@ pub mod reserved_instance {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ReservedInstanceResult {
             id: o.get_id(),
             urn: o.get_urn(),

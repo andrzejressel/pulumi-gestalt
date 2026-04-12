@@ -87,35 +87,35 @@ pub mod product_group {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProductGroupArgs,
     ) -> ProductGroupResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProductGroupArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ProductGroupResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProductGroupArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ProductGroupResult {
-        let api_management_name_binding = args.api_management_name.get_output(context);
-        let group_name_binding = args.group_name.get_output(context);
-        let product_id_binding = args.product_id.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+        let api_management_name_binding = args.api_management_name.get_output(ctx);
+        let group_name_binding = args.group_name.get_output(ctx);
+        let product_id_binding = args.product_id.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:apimanagement/productGroup:ProductGroup".into(),
             name: name.to_string(),
@@ -140,7 +140,7 @@ pub mod product_group {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ProductGroupResult {
             id: o.get_id(),
             urn: o.get_urn(),

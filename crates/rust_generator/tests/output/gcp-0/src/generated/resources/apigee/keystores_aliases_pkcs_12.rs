@@ -94,38 +94,38 @@ pub mod keystores_aliases_pkcs_12 {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: KeystoresAliasesPkcs12Args,
     ) -> KeystoresAliasesPkcs12Result {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: KeystoresAliasesPkcs12Args,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> KeystoresAliasesPkcs12Result {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: KeystoresAliasesPkcs12Args,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> KeystoresAliasesPkcs12Result {
-        let alias_binding = args.alias.get_output(context);
-        let environment_binding = args.environment.get_output(context);
-        let file_binding = args.file.get_output(context);
-        let filehash_binding = args.filehash.get_output(context);
-        let keystore_binding = args.keystore.get_output(context);
-        let org_id_binding = args.org_id.get_output(context);
-        let password_binding = args.password.get_output(context);
+        let alias_binding = args.alias.get_output(ctx);
+        let environment_binding = args.environment.get_output(ctx);
+        let file_binding = args.file.get_output(ctx);
+        let filehash_binding = args.filehash.get_output(ctx);
+        let keystore_binding = args.keystore.get_output(ctx);
+        let org_id_binding = args.org_id.get_output(ctx);
+        let password_binding = args.password.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:apigee/keystoresAliasesPkcs12:KeystoresAliasesPkcs12".into(),
             name: name.to_string(),
@@ -162,7 +162,7 @@ pub mod keystores_aliases_pkcs_12 {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         KeystoresAliasesPkcs12Result {
             id: o.get_id(),
             urn: o.get_urn(),

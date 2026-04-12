@@ -84,38 +84,36 @@ pub mod endpoint_access {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EndpointAccessArgs,
     ) -> EndpointAccessResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EndpointAccessArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> EndpointAccessResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EndpointAccessArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> EndpointAccessResult {
-        let cluster_identifier_binding = args.cluster_identifier.get_output(context);
-        let endpoint_name_binding = args.endpoint_name.get_output(context);
-        let resource_owner_binding = args.resource_owner.get_output(context);
-        let subnet_group_name_binding = args.subnet_group_name.get_output(context);
-        let vpc_security_group_ids_binding = args
-            .vpc_security_group_ids
-            .get_output(context);
+        let cluster_identifier_binding = args.cluster_identifier.get_output(ctx);
+        let endpoint_name_binding = args.endpoint_name.get_output(ctx);
+        let resource_owner_binding = args.resource_owner.get_output(ctx);
+        let subnet_group_name_binding = args.subnet_group_name.get_output(ctx);
+        let vpc_security_group_ids_binding = args.vpc_security_group_ids.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:redshift/endpointAccess:EndpointAccess".into(),
             name: name.to_string(),
@@ -144,7 +142,7 @@ pub mod endpoint_access {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         EndpointAccessResult {
             id: o.get_id(),
             urn: o.get_urn(),

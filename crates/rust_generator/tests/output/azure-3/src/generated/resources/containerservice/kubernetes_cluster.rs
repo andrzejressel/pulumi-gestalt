@@ -728,131 +728,119 @@ pub mod kubernetes_cluster {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: KubernetesClusterArgs,
     ) -> KubernetesClusterResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: KubernetesClusterArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> KubernetesClusterResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: KubernetesClusterArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> KubernetesClusterResult {
-        let aci_connector_linux_binding = args.aci_connector_linux.get_output(context);
+        let aci_connector_linux_binding = args.aci_connector_linux.get_output(ctx);
         let api_server_access_profile_binding = args
             .api_server_access_profile
-            .get_output(context);
-        let auto_scaler_profile_binding = args.auto_scaler_profile.get_output(context);
+            .get_output(ctx);
+        let auto_scaler_profile_binding = args.auto_scaler_profile.get_output(ctx);
         let automatic_upgrade_channel_binding = args
             .automatic_upgrade_channel
-            .get_output(context);
+            .get_output(ctx);
         let azure_active_directory_role_based_access_control_binding = args
             .azure_active_directory_role_based_access_control
-            .get_output(context);
-        let azure_policy_enabled_binding = args.azure_policy_enabled.get_output(context);
-        let confidential_computing_binding = args
-            .confidential_computing
-            .get_output(context);
-        let cost_analysis_enabled_binding = args
-            .cost_analysis_enabled
-            .get_output(context);
-        let default_node_pool_binding = args.default_node_pool.get_output(context);
-        let disk_encryption_set_id_binding = args
-            .disk_encryption_set_id
-            .get_output(context);
-        let dns_prefix_binding = args.dns_prefix.get_output(context);
+            .get_output(ctx);
+        let azure_policy_enabled_binding = args.azure_policy_enabled.get_output(ctx);
+        let confidential_computing_binding = args.confidential_computing.get_output(ctx);
+        let cost_analysis_enabled_binding = args.cost_analysis_enabled.get_output(ctx);
+        let default_node_pool_binding = args.default_node_pool.get_output(ctx);
+        let disk_encryption_set_id_binding = args.disk_encryption_set_id.get_output(ctx);
+        let dns_prefix_binding = args.dns_prefix.get_output(ctx);
         let dns_prefix_private_cluster_binding = args
             .dns_prefix_private_cluster
-            .get_output(context);
-        let edge_zone_binding = args.edge_zone.get_output(context);
+            .get_output(ctx);
+        let edge_zone_binding = args.edge_zone.get_output(ctx);
         let http_application_routing_enabled_binding = args
             .http_application_routing_enabled
-            .get_output(context);
-        let http_proxy_config_binding = args.http_proxy_config.get_output(context);
-        let identity_binding = args.identity.get_output(context);
-        let image_cleaner_enabled_binding = args
-            .image_cleaner_enabled
-            .get_output(context);
+            .get_output(ctx);
+        let http_proxy_config_binding = args.http_proxy_config.get_output(ctx);
+        let identity_binding = args.identity.get_output(ctx);
+        let image_cleaner_enabled_binding = args.image_cleaner_enabled.get_output(ctx);
         let image_cleaner_interval_hours_binding = args
             .image_cleaner_interval_hours
-            .get_output(context);
+            .get_output(ctx);
         let ingress_application_gateway_binding = args
             .ingress_application_gateway
-            .get_output(context);
-        let key_management_service_binding = args
-            .key_management_service
-            .get_output(context);
+            .get_output(ctx);
+        let key_management_service_binding = args.key_management_service.get_output(ctx);
         let key_vault_secrets_provider_binding = args
             .key_vault_secrets_provider
-            .get_output(context);
-        let kubelet_identity_binding = args.kubelet_identity.get_output(context);
-        let kubernetes_version_binding = args.kubernetes_version.get_output(context);
-        let linux_profile_binding = args.linux_profile.get_output(context);
-        let local_account_disabled_binding = args
-            .local_account_disabled
-            .get_output(context);
-        let location_binding = args.location.get_output(context);
-        let maintenance_window_binding = args.maintenance_window.get_output(context);
+            .get_output(ctx);
+        let kubelet_identity_binding = args.kubelet_identity.get_output(ctx);
+        let kubernetes_version_binding = args.kubernetes_version.get_output(ctx);
+        let linux_profile_binding = args.linux_profile.get_output(ctx);
+        let local_account_disabled_binding = args.local_account_disabled.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let maintenance_window_binding = args.maintenance_window.get_output(ctx);
         let maintenance_window_auto_upgrade_binding = args
             .maintenance_window_auto_upgrade
-            .get_output(context);
+            .get_output(ctx);
         let maintenance_window_node_os_binding = args
             .maintenance_window_node_os
-            .get_output(context);
-        let microsoft_defender_binding = args.microsoft_defender.get_output(context);
-        let monitor_metrics_binding = args.monitor_metrics.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_profile_binding = args.network_profile.get_output(context);
+            .get_output(ctx);
+        let microsoft_defender_binding = args.microsoft_defender.get_output(ctx);
+        let monitor_metrics_binding = args.monitor_metrics.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_profile_binding = args.network_profile.get_output(ctx);
         let node_os_upgrade_channel_binding = args
             .node_os_upgrade_channel
-            .get_output(context);
-        let node_resource_group_binding = args.node_resource_group.get_output(context);
-        let oidc_issuer_enabled_binding = args.oidc_issuer_enabled.get_output(context);
-        let oms_agent_binding = args.oms_agent.get_output(context);
+            .get_output(ctx);
+        let node_resource_group_binding = args.node_resource_group.get_output(ctx);
+        let oidc_issuer_enabled_binding = args.oidc_issuer_enabled.get_output(ctx);
+        let oms_agent_binding = args.oms_agent.get_output(ctx);
         let open_service_mesh_enabled_binding = args
             .open_service_mesh_enabled
-            .get_output(context);
+            .get_output(ctx);
         let private_cluster_enabled_binding = args
             .private_cluster_enabled
-            .get_output(context);
+            .get_output(ctx);
         let private_cluster_public_fqdn_enabled_binding = args
             .private_cluster_public_fqdn_enabled
-            .get_output(context);
-        let private_dns_zone_id_binding = args.private_dns_zone_id.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+            .get_output(ctx);
+        let private_dns_zone_id_binding = args.private_dns_zone_id.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let role_based_access_control_enabled_binding = args
             .role_based_access_control_enabled
-            .get_output(context);
-        let run_command_enabled_binding = args.run_command_enabled.get_output(context);
-        let service_mesh_profile_binding = args.service_mesh_profile.get_output(context);
-        let service_principal_binding = args.service_principal.get_output(context);
-        let sku_tier_binding = args.sku_tier.get_output(context);
-        let storage_profile_binding = args.storage_profile.get_output(context);
-        let support_plan_binding = args.support_plan.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let web_app_routing_binding = args.web_app_routing.get_output(context);
-        let windows_profile_binding = args.windows_profile.get_output(context);
+            .get_output(ctx);
+        let run_command_enabled_binding = args.run_command_enabled.get_output(ctx);
+        let service_mesh_profile_binding = args.service_mesh_profile.get_output(ctx);
+        let service_principal_binding = args.service_principal.get_output(ctx);
+        let sku_tier_binding = args.sku_tier.get_output(ctx);
+        let storage_profile_binding = args.storage_profile.get_output(ctx);
+        let support_plan_binding = args.support_plan.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let web_app_routing_binding = args.web_app_routing.get_output(ctx);
+        let windows_profile_binding = args.windows_profile.get_output(ctx);
         let workload_autoscaler_profile_binding = args
             .workload_autoscaler_profile
-            .get_output(context);
+            .get_output(ctx);
         let workload_identity_enabled_binding = args
             .workload_identity_enabled
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:containerservice/kubernetesCluster:KubernetesCluster".into(),
             name: name.to_string(),
@@ -1078,7 +1066,7 @@ pub mod kubernetes_cluster {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         KubernetesClusterResult {
             id: o.get_id(),
             urn: o.get_urn(),

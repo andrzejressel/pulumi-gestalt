@@ -35,12 +35,9 @@ pub mod get_acl {
     /// Registers a new resource with the given unique name and arguments
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
-    pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
-        args: GetAclArgs,
-    ) -> GetAclResult {
-        let name_binding = args.name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+    pub fn invoke(ctx: &pulumi_gestalt_rust::Context, args: GetAclArgs) -> GetAclResult {
+        let name_binding = args.name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:memorydb/getAcl:getAcl".into(),
             version: super::super::super::get_version(),
@@ -55,7 +52,7 @@ pub mod get_acl {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetAclResult {
             arn: o.get_field("arn"),
             id: o.get_field("id"),

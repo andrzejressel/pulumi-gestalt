@@ -93,33 +93,33 @@ pub mod multi_region_access_point {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MultiRegionAccessPointArgs,
     ) -> MultiRegionAccessPointResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MultiRegionAccessPointArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> MultiRegionAccessPointResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MultiRegionAccessPointArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> MultiRegionAccessPointResult {
-        let account_id_binding = args.account_id.get_output(context);
-        let details_binding = args.details.get_output(context);
+        let account_id_binding = args.account_id.get_output(ctx);
+        let details_binding = args.details.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:s3control/multiRegionAccessPoint:MultiRegionAccessPoint".into(),
             name: name.to_string(),
@@ -136,7 +136,7 @@ pub mod multi_region_access_point {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         MultiRegionAccessPointResult {
             id: o.get_id(),
             urn: o.get_urn(),

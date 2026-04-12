@@ -172,61 +172,55 @@ pub mod nfs_file_share {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NfsFileShareArgs,
     ) -> NfsFileShareResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NfsFileShareArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> NfsFileShareResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NfsFileShareArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> NfsFileShareResult {
-        let audit_destination_arn_binding = args
-            .audit_destination_arn
-            .get_output(context);
-        let bucket_region_binding = args.bucket_region.get_output(context);
-        let cache_attributes_binding = args.cache_attributes.get_output(context);
-        let client_lists_binding = args.client_lists.get_output(context);
-        let default_storage_class_binding = args
-            .default_storage_class
-            .get_output(context);
-        let file_share_name_binding = args.file_share_name.get_output(context);
-        let gateway_arn_binding = args.gateway_arn.get_output(context);
+        let audit_destination_arn_binding = args.audit_destination_arn.get_output(ctx);
+        let bucket_region_binding = args.bucket_region.get_output(ctx);
+        let cache_attributes_binding = args.cache_attributes.get_output(ctx);
+        let client_lists_binding = args.client_lists.get_output(ctx);
+        let default_storage_class_binding = args.default_storage_class.get_output(ctx);
+        let file_share_name_binding = args.file_share_name.get_output(ctx);
+        let gateway_arn_binding = args.gateway_arn.get_output(ctx);
         let guess_mime_type_enabled_binding = args
             .guess_mime_type_enabled
-            .get_output(context);
-        let kms_encrypted_binding = args.kms_encrypted.get_output(context);
-        let kms_key_arn_binding = args.kms_key_arn.get_output(context);
-        let location_arn_binding = args.location_arn.get_output(context);
+            .get_output(ctx);
+        let kms_encrypted_binding = args.kms_encrypted.get_output(ctx);
+        let kms_key_arn_binding = args.kms_key_arn.get_output(ctx);
+        let location_arn_binding = args.location_arn.get_output(ctx);
         let nfs_file_share_defaults_binding = args
             .nfs_file_share_defaults
-            .get_output(context);
-        let notification_policy_binding = args.notification_policy.get_output(context);
-        let object_acl_binding = args.object_acl.get_output(context);
-        let read_only_binding = args.read_only.get_output(context);
-        let requester_pays_binding = args.requester_pays.get_output(context);
-        let role_arn_binding = args.role_arn.get_output(context);
-        let squash_binding = args.squash.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let vpc_endpoint_dns_name_binding = args
-            .vpc_endpoint_dns_name
-            .get_output(context);
+            .get_output(ctx);
+        let notification_policy_binding = args.notification_policy.get_output(ctx);
+        let object_acl_binding = args.object_acl.get_output(ctx);
+        let read_only_binding = args.read_only.get_output(ctx);
+        let requester_pays_binding = args.requester_pays.get_output(ctx);
+        let role_arn_binding = args.role_arn.get_output(ctx);
+        let squash_binding = args.squash.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let vpc_endpoint_dns_name_binding = args.vpc_endpoint_dns_name.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:storagegateway/nfsFileShare:NfsFileShare".into(),
             name: name.to_string(),
@@ -315,7 +309,7 @@ pub mod nfs_file_share {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         NfsFileShareResult {
             id: o.get_id(),
             urn: o.get_urn(),

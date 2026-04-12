@@ -127,49 +127,47 @@ pub mod replication_task {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ReplicationTaskArgs,
     ) -> ReplicationTaskResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ReplicationTaskArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ReplicationTaskResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ReplicationTaskArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ReplicationTaskResult {
-        let cdc_start_position_binding = args.cdc_start_position.get_output(context);
-        let cdc_start_time_binding = args.cdc_start_time.get_output(context);
-        let migration_type_binding = args.migration_type.get_output(context);
+        let cdc_start_position_binding = args.cdc_start_position.get_output(ctx);
+        let cdc_start_time_binding = args.cdc_start_time.get_output(ctx);
+        let migration_type_binding = args.migration_type.get_output(ctx);
         let replication_instance_arn_binding = args
             .replication_instance_arn
-            .get_output(context);
-        let replication_task_id_binding = args.replication_task_id.get_output(context);
+            .get_output(ctx);
+        let replication_task_id_binding = args.replication_task_id.get_output(ctx);
         let replication_task_settings_binding = args
             .replication_task_settings
-            .get_output(context);
-        let resource_identifier_binding = args.resource_identifier.get_output(context);
-        let source_endpoint_arn_binding = args.source_endpoint_arn.get_output(context);
-        let start_replication_task_binding = args
-            .start_replication_task
-            .get_output(context);
-        let table_mappings_binding = args.table_mappings.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let target_endpoint_arn_binding = args.target_endpoint_arn.get_output(context);
+            .get_output(ctx);
+        let resource_identifier_binding = args.resource_identifier.get_output(ctx);
+        let source_endpoint_arn_binding = args.source_endpoint_arn.get_output(ctx);
+        let start_replication_task_binding = args.start_replication_task.get_output(ctx);
+        let table_mappings_binding = args.table_mappings.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let target_endpoint_arn_binding = args.target_endpoint_arn.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:dms/replicationTask:ReplicationTask".into(),
             name: name.to_string(),
@@ -226,7 +224,7 @@ pub mod replication_task {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ReplicationTaskResult {
             id: o.get_id(),
             urn: o.get_urn(),

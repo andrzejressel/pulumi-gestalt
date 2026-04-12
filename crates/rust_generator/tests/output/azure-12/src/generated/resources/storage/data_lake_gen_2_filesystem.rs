@@ -111,40 +111,40 @@ pub mod data_lake_gen_2_filesystem {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataLakeGen2FilesystemArgs,
     ) -> DataLakeGen2FilesystemResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataLakeGen2FilesystemArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DataLakeGen2FilesystemResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataLakeGen2FilesystemArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DataLakeGen2FilesystemResult {
-        let aces_binding = args.aces.get_output(context);
+        let aces_binding = args.aces.get_output(ctx);
         let default_encryption_scope_binding = args
             .default_encryption_scope
-            .get_output(context);
-        let group_binding = args.group.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let owner_binding = args.owner.get_output(context);
-        let properties_binding = args.properties.get_output(context);
-        let storage_account_id_binding = args.storage_account_id.get_output(context);
+            .get_output(ctx);
+        let group_binding = args.group.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let owner_binding = args.owner.get_output(ctx);
+        let properties_binding = args.properties.get_output(ctx);
+        let storage_account_id_binding = args.storage_account_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:storage/dataLakeGen2Filesystem:DataLakeGen2Filesystem".into(),
             name: name.to_string(),
@@ -181,7 +181,7 @@ pub mod data_lake_gen_2_filesystem {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DataLakeGen2FilesystemResult {
             id: o.get_id(),
             urn: o.get_urn(),

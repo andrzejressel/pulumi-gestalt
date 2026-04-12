@@ -167,53 +167,51 @@ pub mod policy {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PolicyArgs,
     ) -> PolicyResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PolicyArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> PolicyResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PolicyArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> PolicyResult {
         let delete_all_policy_resources_binding = args
             .delete_all_policy_resources
-            .get_output(context);
+            .get_output(ctx);
         let delete_unused_fm_managed_resources_binding = args
             .delete_unused_fm_managed_resources
-            .get_output(context);
-        let description_binding = args.description.get_output(context);
-        let exclude_map_binding = args.exclude_map.get_output(context);
-        let exclude_resource_tags_binding = args
-            .exclude_resource_tags
-            .get_output(context);
-        let include_map_binding = args.include_map.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let remediation_enabled_binding = args.remediation_enabled.get_output(context);
-        let resource_set_ids_binding = args.resource_set_ids.get_output(context);
-        let resource_tags_binding = args.resource_tags.get_output(context);
-        let resource_type_binding = args.resource_type.get_output(context);
-        let resource_type_lists_binding = args.resource_type_lists.get_output(context);
+            .get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let exclude_map_binding = args.exclude_map.get_output(ctx);
+        let exclude_resource_tags_binding = args.exclude_resource_tags.get_output(ctx);
+        let include_map_binding = args.include_map.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let remediation_enabled_binding = args.remediation_enabled.get_output(ctx);
+        let resource_set_ids_binding = args.resource_set_ids.get_output(ctx);
+        let resource_tags_binding = args.resource_tags.get_output(ctx);
+        let resource_type_binding = args.resource_type.get_output(ctx);
+        let resource_type_lists_binding = args.resource_type_lists.get_output(ctx);
         let security_service_policy_data_binding = args
             .security_service_policy_data
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:fms/policy:Policy".into(),
             name: name.to_string(),
@@ -278,7 +276,7 @@ pub mod policy {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         PolicyResult {
             id: o.get_id(),
             urn: o.get_urn(),

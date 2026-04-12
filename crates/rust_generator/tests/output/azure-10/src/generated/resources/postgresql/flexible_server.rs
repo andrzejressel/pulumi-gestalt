@@ -342,67 +342,63 @@ pub mod flexible_server {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FlexibleServerArgs,
     ) -> FlexibleServerResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FlexibleServerArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> FlexibleServerResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FlexibleServerArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> FlexibleServerResult {
-        let administrator_login_binding = args.administrator_login.get_output(context);
-        let administrator_password_binding = args
-            .administrator_password
-            .get_output(context);
-        let authentication_binding = args.authentication.get_output(context);
-        let auto_grow_enabled_binding = args.auto_grow_enabled.get_output(context);
-        let backup_retention_days_binding = args
-            .backup_retention_days
-            .get_output(context);
-        let create_mode_binding = args.create_mode.get_output(context);
-        let customer_managed_key_binding = args.customer_managed_key.get_output(context);
-        let delegated_subnet_id_binding = args.delegated_subnet_id.get_output(context);
+        let administrator_login_binding = args.administrator_login.get_output(ctx);
+        let administrator_password_binding = args.administrator_password.get_output(ctx);
+        let authentication_binding = args.authentication.get_output(ctx);
+        let auto_grow_enabled_binding = args.auto_grow_enabled.get_output(ctx);
+        let backup_retention_days_binding = args.backup_retention_days.get_output(ctx);
+        let create_mode_binding = args.create_mode.get_output(ctx);
+        let customer_managed_key_binding = args.customer_managed_key.get_output(ctx);
+        let delegated_subnet_id_binding = args.delegated_subnet_id.get_output(ctx);
         let geo_redundant_backup_enabled_binding = args
             .geo_redundant_backup_enabled
-            .get_output(context);
-        let high_availability_binding = args.high_availability.get_output(context);
-        let identity_binding = args.identity.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let maintenance_window_binding = args.maintenance_window.get_output(context);
-        let name_binding = args.name.get_output(context);
+            .get_output(ctx);
+        let high_availability_binding = args.high_availability.get_output(ctx);
+        let identity_binding = args.identity.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let maintenance_window_binding = args.maintenance_window.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let point_in_time_restore_time_in_utc_binding = args
             .point_in_time_restore_time_in_utc
-            .get_output(context);
-        let private_dns_zone_id_binding = args.private_dns_zone_id.get_output(context);
+            .get_output(ctx);
+        let private_dns_zone_id_binding = args.private_dns_zone_id.get_output(ctx);
         let public_network_access_enabled_binding = args
             .public_network_access_enabled
-            .get_output(context);
-        let replication_role_binding = args.replication_role.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let sku_name_binding = args.sku_name.get_output(context);
-        let source_server_id_binding = args.source_server_id.get_output(context);
-        let storage_mb_binding = args.storage_mb.get_output(context);
-        let storage_tier_binding = args.storage_tier.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let version_binding = args.version.get_output(context);
-        let zone_binding = args.zone.get_output(context);
+            .get_output(ctx);
+        let replication_role_binding = args.replication_role.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let sku_name_binding = args.sku_name.get_output(ctx);
+        let source_server_id_binding = args.source_server_id.get_output(ctx);
+        let storage_mb_binding = args.storage_mb.get_output(ctx);
+        let storage_tier_binding = args.storage_tier.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let version_binding = args.version.get_output(ctx);
+        let zone_binding = args.zone.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:postgresql/flexibleServer:FlexibleServer".into(),
             name: name.to_string(),
@@ -515,7 +511,7 @@ pub mod flexible_server {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         FlexibleServerResult {
             id: o.get_id(),
             urn: o.get_urn(),

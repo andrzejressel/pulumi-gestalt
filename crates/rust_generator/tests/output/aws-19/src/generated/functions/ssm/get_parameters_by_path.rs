@@ -39,12 +39,12 @@ pub mod get_parameters_by_path {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetParametersByPathArgs,
     ) -> GetParametersByPathResult {
-        let path_binding = args.path.get_output(context);
-        let recursive_binding = args.recursive.get_output(context);
-        let with_decryption_binding = args.with_decryption.get_output(context);
+        let path_binding = args.path.get_output(ctx);
+        let recursive_binding = args.recursive.get_output(ctx);
+        let with_decryption_binding = args.with_decryption.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ssm/getParametersByPath:getParametersByPath".into(),
             version: super::super::super::get_version(),
@@ -63,7 +63,7 @@ pub mod get_parameters_by_path {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetParametersByPathResult {
             arns: o.get_field("arns"),
             id: o.get_field("id"),

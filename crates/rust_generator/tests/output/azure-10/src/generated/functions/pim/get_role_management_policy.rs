@@ -51,11 +51,11 @@ pub mod get_role_management_policy {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetRoleManagementPolicyArgs,
     ) -> GetRoleManagementPolicyResult {
-        let role_definition_id_binding = args.role_definition_id.get_output(context);
-        let scope_binding = args.scope.get_output(context);
+        let role_definition_id_binding = args.role_definition_id.get_output(ctx);
+        let scope_binding = args.scope.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:pim/getRoleManagementPolicy:getRoleManagementPolicy".into(),
             version: super::super::super::get_version(),
@@ -70,7 +70,7 @@ pub mod get_role_management_policy {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetRoleManagementPolicyResult {
             activation_rules: o.get_field("activationRules"),
             active_assignment_rules: o.get_field("activeAssignmentRules"),

@@ -39,12 +39,12 @@ pub mod get_service_tags {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetServiceTagsArgs,
     ) -> GetServiceTagsResult {
-        let location_binding = args.location.get_output(context);
-        let location_filter_binding = args.location_filter.get_output(context);
-        let service_binding = args.service.get_output(context);
+        let location_binding = args.location.get_output(ctx);
+        let location_filter_binding = args.location_filter.get_output(ctx);
+        let service_binding = args.service.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:network/getServiceTags:getServiceTags".into(),
             version: super::super::super::get_version(),
@@ -63,7 +63,7 @@ pub mod get_service_tags {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetServiceTagsResult {
             address_prefixes: o.get_field("addressPrefixes"),
             id: o.get_field("id"),

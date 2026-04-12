@@ -181,41 +181,41 @@ pub mod service_lb_policies {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServiceLbPoliciesArgs,
     ) -> ServiceLbPoliciesResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServiceLbPoliciesArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ServiceLbPoliciesResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServiceLbPoliciesArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ServiceLbPoliciesResult {
-        let auto_capacity_drain_binding = args.auto_capacity_drain.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let failover_config_binding = args.failover_config.get_output(context);
-        let labels_binding = args.labels.get_output(context);
+        let auto_capacity_drain_binding = args.auto_capacity_drain.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let failover_config_binding = args.failover_config.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
         let load_balancing_algorithm_binding = args
             .load_balancing_algorithm
-            .get_output(context);
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
+            .get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:networkservices/serviceLbPolicies:ServiceLbPolicies".into(),
             name: name.to_string(),
@@ -256,7 +256,7 @@ pub mod service_lb_policies {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ServiceLbPoliciesResult {
             id: o.get_id(),
             urn: o.get_urn(),

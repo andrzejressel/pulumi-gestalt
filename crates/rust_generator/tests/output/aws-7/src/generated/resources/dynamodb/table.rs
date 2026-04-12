@@ -352,69 +352,63 @@ pub mod table {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TableArgs,
     ) -> TableResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TableArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> TableResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TableArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> TableResult {
-        let attributes_binding = args.attributes.get_output(context);
-        let billing_mode_binding = args.billing_mode.get_output(context);
+        let attributes_binding = args.attributes.get_output(ctx);
+        let billing_mode_binding = args.billing_mode.get_output(ctx);
         let deletion_protection_enabled_binding = args
             .deletion_protection_enabled
-            .get_output(context);
+            .get_output(ctx);
         let global_secondary_indexes_binding = args
             .global_secondary_indexes
-            .get_output(context);
-        let hash_key_binding = args.hash_key.get_output(context);
-        let import_table_binding = args.import_table.get_output(context);
+            .get_output(ctx);
+        let hash_key_binding = args.hash_key.get_output(ctx);
+        let import_table_binding = args.import_table.get_output(ctx);
         let local_secondary_indexes_binding = args
             .local_secondary_indexes
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let on_demand_throughput_binding = args.on_demand_throughput.get_output(context);
-        let point_in_time_recovery_binding = args
-            .point_in_time_recovery
-            .get_output(context);
-        let range_key_binding = args.range_key.get_output(context);
-        let read_capacity_binding = args.read_capacity.get_output(context);
-        let replicas_binding = args.replicas.get_output(context);
-        let restore_date_time_binding = args.restore_date_time.get_output(context);
-        let restore_source_name_binding = args.restore_source_name.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let on_demand_throughput_binding = args.on_demand_throughput.get_output(ctx);
+        let point_in_time_recovery_binding = args.point_in_time_recovery.get_output(ctx);
+        let range_key_binding = args.range_key.get_output(ctx);
+        let read_capacity_binding = args.read_capacity.get_output(ctx);
+        let replicas_binding = args.replicas.get_output(ctx);
+        let restore_date_time_binding = args.restore_date_time.get_output(ctx);
+        let restore_source_name_binding = args.restore_source_name.get_output(ctx);
         let restore_source_table_arn_binding = args
             .restore_source_table_arn
-            .get_output(context);
-        let restore_to_latest_time_binding = args
-            .restore_to_latest_time
-            .get_output(context);
-        let server_side_encryption_binding = args
-            .server_side_encryption
-            .get_output(context);
-        let stream_enabled_binding = args.stream_enabled.get_output(context);
-        let stream_view_type_binding = args.stream_view_type.get_output(context);
-        let table_class_binding = args.table_class.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let ttl_binding = args.ttl.get_output(context);
-        let write_capacity_binding = args.write_capacity.get_output(context);
+            .get_output(ctx);
+        let restore_to_latest_time_binding = args.restore_to_latest_time.get_output(ctx);
+        let server_side_encryption_binding = args.server_side_encryption.get_output(ctx);
+        let stream_enabled_binding = args.stream_enabled.get_output(ctx);
+        let stream_view_type_binding = args.stream_view_type.get_output(ctx);
+        let table_class_binding = args.table_class.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let ttl_binding = args.ttl.get_output(ctx);
+        let write_capacity_binding = args.write_capacity.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:dynamodb/table:Table".into(),
             name: name.to_string(),
@@ -519,7 +513,7 @@ pub mod table {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         TableResult {
             id: o.get_id(),
             urn: o.get_urn(),

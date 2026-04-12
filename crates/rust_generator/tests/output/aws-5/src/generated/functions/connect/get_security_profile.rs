@@ -46,13 +46,13 @@ pub mod get_security_profile {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetSecurityProfileArgs,
     ) -> GetSecurityProfileResult {
-        let instance_id_binding = args.instance_id.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let security_profile_id_binding = args.security_profile_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let instance_id_binding = args.instance_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let security_profile_id_binding = args.security_profile_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:connect/getSecurityProfile:getSecurityProfile".into(),
             version: super::super::super::get_version(),
@@ -75,7 +75,7 @@ pub mod get_security_profile {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetSecurityProfileResult {
             arn: o.get_field("arn"),
             description: o.get_field("description"),

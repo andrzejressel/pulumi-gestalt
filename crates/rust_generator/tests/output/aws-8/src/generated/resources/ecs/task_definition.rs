@@ -368,58 +368,52 @@ pub mod task_definition {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TaskDefinitionArgs,
     ) -> TaskDefinitionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TaskDefinitionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> TaskDefinitionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TaskDefinitionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> TaskDefinitionResult {
-        let container_definitions_binding = args
-            .container_definitions
-            .get_output(context);
-        let cpu_binding = args.cpu.get_output(context);
-        let ephemeral_storage_binding = args.ephemeral_storage.get_output(context);
-        let execution_role_arn_binding = args.execution_role_arn.get_output(context);
-        let family_binding = args.family.get_output(context);
-        let inference_accelerators_binding = args
-            .inference_accelerators
-            .get_output(context);
-        let ipc_mode_binding = args.ipc_mode.get_output(context);
-        let memory_binding = args.memory.get_output(context);
-        let network_mode_binding = args.network_mode.get_output(context);
-        let pid_mode_binding = args.pid_mode.get_output(context);
-        let placement_constraints_binding = args
-            .placement_constraints
-            .get_output(context);
-        let proxy_configuration_binding = args.proxy_configuration.get_output(context);
+        let container_definitions_binding = args.container_definitions.get_output(ctx);
+        let cpu_binding = args.cpu.get_output(ctx);
+        let ephemeral_storage_binding = args.ephemeral_storage.get_output(ctx);
+        let execution_role_arn_binding = args.execution_role_arn.get_output(ctx);
+        let family_binding = args.family.get_output(ctx);
+        let inference_accelerators_binding = args.inference_accelerators.get_output(ctx);
+        let ipc_mode_binding = args.ipc_mode.get_output(ctx);
+        let memory_binding = args.memory.get_output(ctx);
+        let network_mode_binding = args.network_mode.get_output(ctx);
+        let pid_mode_binding = args.pid_mode.get_output(ctx);
+        let placement_constraints_binding = args.placement_constraints.get_output(ctx);
+        let proxy_configuration_binding = args.proxy_configuration.get_output(ctx);
         let requires_compatibilities_binding = args
             .requires_compatibilities
-            .get_output(context);
-        let runtime_platform_binding = args.runtime_platform.get_output(context);
-        let skip_destroy_binding = args.skip_destroy.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let task_role_arn_binding = args.task_role_arn.get_output(context);
-        let track_latest_binding = args.track_latest.get_output(context);
-        let volumes_binding = args.volumes.get_output(context);
+            .get_output(ctx);
+        let runtime_platform_binding = args.runtime_platform.get_output(ctx);
+        let skip_destroy_binding = args.skip_destroy.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let task_role_arn_binding = args.task_role_arn.get_output(ctx);
+        let track_latest_binding = args.track_latest.get_output(ctx);
+        let volumes_binding = args.volumes.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ecs/taskDefinition:TaskDefinition".into(),
             name: name.to_string(),
@@ -504,7 +498,7 @@ pub mod task_definition {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         TaskDefinitionResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -62,12 +62,12 @@ pub mod get_fhir_service {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetFhirServiceArgs,
     ) -> GetFhirServiceResult {
-        let name_binding = args.name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let workspace_id_binding = args.workspace_id.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let workspace_id_binding = args.workspace_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:healthcare/getFhirService:getFhirService".into(),
             version: super::super::super::get_version(),
@@ -86,7 +86,7 @@ pub mod get_fhir_service {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetFhirServiceResult {
             access_policy_object_ids: o.get_field("accessPolicyObjectIds"),
             authentications: o.get_field("authentications"),

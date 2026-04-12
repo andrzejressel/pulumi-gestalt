@@ -94,27 +94,27 @@ pub mod get_principal_policy_simulation {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetPrincipalPolicySimulationArgs,
     ) -> GetPrincipalPolicySimulationResult {
-        let action_names_binding = args.action_names.get_output(context);
+        let action_names_binding = args.action_names.get_output(ctx);
         let additional_policies_jsons_binding = args
             .additional_policies_jsons
-            .get_output(context);
-        let caller_arn_binding = args.caller_arn.get_output(context);
-        let contexts_binding = args.contexts.get_output(context);
+            .get_output(ctx);
+        let caller_arn_binding = args.caller_arn.get_output(ctx);
+        let contexts_binding = args.contexts.get_output(ctx);
         let permissions_boundary_policies_jsons_binding = args
             .permissions_boundary_policies_jsons
-            .get_output(context);
-        let policy_source_arn_binding = args.policy_source_arn.get_output(context);
-        let resource_arns_binding = args.resource_arns.get_output(context);
+            .get_output(ctx);
+        let policy_source_arn_binding = args.policy_source_arn.get_output(ctx);
+        let resource_arns_binding = args.resource_arns.get_output(ctx);
         let resource_handling_option_binding = args
             .resource_handling_option
-            .get_output(context);
+            .get_output(ctx);
         let resource_owner_account_id_binding = args
             .resource_owner_account_id
-            .get_output(context);
-        let resource_policy_json_binding = args.resource_policy_json.get_output(context);
+            .get_output(ctx);
+        let resource_policy_json_binding = args.resource_policy_json.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:iam/getPrincipalPolicySimulation:getPrincipalPolicySimulation"
                 .into(),
@@ -162,7 +162,7 @@ pub mod get_principal_policy_simulation {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetPrincipalPolicySimulationResult {
             action_names: o.get_field("actionNames"),
             additional_policies_jsons: o.get_field("additionalPoliciesJsons"),

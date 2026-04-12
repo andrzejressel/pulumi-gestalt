@@ -199,40 +199,40 @@ pub mod address_group {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AddressGroupArgs,
     ) -> AddressGroupResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AddressGroupArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AddressGroupResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AddressGroupArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AddressGroupResult {
-        let capacity_binding = args.capacity.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let items_binding = args.items.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let parent_binding = args.parent.get_output(context);
-        let purposes_binding = args.purposes.get_output(context);
-        let type__binding = args.type_.get_output(context);
+        let capacity_binding = args.capacity.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let items_binding = args.items.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let parent_binding = args.parent.get_output(ctx);
+        let purposes_binding = args.purposes.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:networksecurity/addressGroup:AddressGroup".into(),
             name: name.to_string(),
@@ -277,7 +277,7 @@ pub mod address_group {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AddressGroupResult {
             id: o.get_id(),
             urn: o.get_urn(),

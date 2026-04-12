@@ -14,13 +14,13 @@ pub mod get_zones {
     /// Registers a new resource with the given unique name and arguments
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
-    pub fn invoke(context: &pulumi_gestalt_rust::Context) -> GetZonesResult {
+    pub fn invoke(ctx: &pulumi_gestalt_rust::Context) -> GetZonesResult {
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:route53/getZones:getZones".into(),
             version: super::super::super::get_version(),
             object: &[],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetZonesResult {
             id: o.get_field("id"),
             ids: o.get_field("ids"),

@@ -172,8 +172,8 @@ fn main() {
     run_loop(&ctx);
 }
 
-fn run_loop(context: &Context) {
-    let mut function_requests = context.finish(&[]);
+fn run_loop(ctx: &Context) {
+    let mut function_requests = ctx.finish(&[]);
 
     loop {
         if function_requests.is_empty() {
@@ -201,6 +201,6 @@ fn run_loop(context: &Context) {
             )
             .collect();
 
-        function_requests = context.finish(&function_results);
+        function_requests = ctx.finish(&function_results);
     }
 }

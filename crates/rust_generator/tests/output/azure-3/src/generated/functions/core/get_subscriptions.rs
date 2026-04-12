@@ -31,13 +31,11 @@ pub mod get_subscriptions {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetSubscriptionsArgs,
     ) -> GetSubscriptionsResult {
-        let display_name_contains_binding = args
-            .display_name_contains
-            .get_output(context);
-        let display_name_prefix_binding = args.display_name_prefix.get_output(context);
+        let display_name_contains_binding = args.display_name_contains.get_output(ctx);
+        let display_name_prefix_binding = args.display_name_prefix.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:core/getSubscriptions:getSubscriptions".into(),
             version: super::super::super::get_version(),
@@ -52,7 +50,7 @@ pub mod get_subscriptions {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetSubscriptionsResult {
             display_name_contains: o.get_field("displayNameContains"),
             display_name_prefix: o.get_field("displayNamePrefix"),

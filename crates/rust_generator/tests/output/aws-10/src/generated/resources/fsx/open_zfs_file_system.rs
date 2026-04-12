@@ -209,65 +209,65 @@ pub mod open_zfs_file_system {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OpenZfsFileSystemArgs,
     ) -> OpenZfsFileSystemResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OpenZfsFileSystemArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> OpenZfsFileSystemResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OpenZfsFileSystemArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> OpenZfsFileSystemResult {
         let automatic_backup_retention_days_binding = args
             .automatic_backup_retention_days
-            .get_output(context);
-        let backup_id_binding = args.backup_id.get_output(context);
-        let copy_tags_to_backups_binding = args.copy_tags_to_backups.get_output(context);
-        let copy_tags_to_volumes_binding = args.copy_tags_to_volumes.get_output(context);
+            .get_output(ctx);
+        let backup_id_binding = args.backup_id.get_output(ctx);
+        let copy_tags_to_backups_binding = args.copy_tags_to_backups.get_output(ctx);
+        let copy_tags_to_volumes_binding = args.copy_tags_to_volumes.get_output(ctx);
         let daily_automatic_backup_start_time_binding = args
             .daily_automatic_backup_start_time
-            .get_output(context);
-        let delete_options_binding = args.delete_options.get_output(context);
-        let deployment_type_binding = args.deployment_type.get_output(context);
+            .get_output(ctx);
+        let delete_options_binding = args.delete_options.get_output(ctx);
+        let deployment_type_binding = args.deployment_type.get_output(ctx);
         let disk_iops_configuration_binding = args
             .disk_iops_configuration
-            .get_output(context);
+            .get_output(ctx);
         let endpoint_ip_address_range_binding = args
             .endpoint_ip_address_range
-            .get_output(context);
-        let final_backup_tags_binding = args.final_backup_tags.get_output(context);
-        let kms_key_id_binding = args.kms_key_id.get_output(context);
-        let preferred_subnet_id_binding = args.preferred_subnet_id.get_output(context);
+            .get_output(ctx);
+        let final_backup_tags_binding = args.final_backup_tags.get_output(ctx);
+        let kms_key_id_binding = args.kms_key_id.get_output(ctx);
+        let preferred_subnet_id_binding = args.preferred_subnet_id.get_output(ctx);
         let root_volume_configuration_binding = args
             .root_volume_configuration
-            .get_output(context);
-        let route_table_ids_binding = args.route_table_ids.get_output(context);
-        let security_group_ids_binding = args.security_group_ids.get_output(context);
-        let skip_final_backup_binding = args.skip_final_backup.get_output(context);
-        let storage_capacity_binding = args.storage_capacity.get_output(context);
-        let storage_type_binding = args.storage_type.get_output(context);
-        let subnet_ids_binding = args.subnet_ids.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let throughput_capacity_binding = args.throughput_capacity.get_output(context);
+            .get_output(ctx);
+        let route_table_ids_binding = args.route_table_ids.get_output(ctx);
+        let security_group_ids_binding = args.security_group_ids.get_output(ctx);
+        let skip_final_backup_binding = args.skip_final_backup.get_output(ctx);
+        let storage_capacity_binding = args.storage_capacity.get_output(ctx);
+        let storage_type_binding = args.storage_type.get_output(ctx);
+        let subnet_ids_binding = args.subnet_ids.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let throughput_capacity_binding = args.throughput_capacity.get_output(ctx);
         let weekly_maintenance_start_time_binding = args
             .weekly_maintenance_start_time
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:fsx/openZfsFileSystem:OpenZfsFileSystem".into(),
             name: name.to_string(),
@@ -364,7 +364,7 @@ pub mod open_zfs_file_system {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         OpenZfsFileSystemResult {
             id: o.get_id(),
             urn: o.get_urn(),

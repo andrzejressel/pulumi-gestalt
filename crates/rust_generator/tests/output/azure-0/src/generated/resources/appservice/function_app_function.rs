@@ -229,38 +229,38 @@ pub mod function_app_function {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FunctionAppFunctionArgs,
     ) -> FunctionAppFunctionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FunctionAppFunctionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> FunctionAppFunctionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FunctionAppFunctionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> FunctionAppFunctionResult {
-        let config_json_binding = args.config_json.get_output(context);
-        let enabled_binding = args.enabled.get_output(context);
-        let files_binding = args.files.get_output(context);
-        let function_app_id_binding = args.function_app_id.get_output(context);
-        let language_binding = args.language.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let test_data_binding = args.test_data.get_output(context);
+        let config_json_binding = args.config_json.get_output(ctx);
+        let enabled_binding = args.enabled.get_output(ctx);
+        let files_binding = args.files.get_output(ctx);
+        let function_app_id_binding = args.function_app_id.get_output(ctx);
+        let language_binding = args.language.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let test_data_binding = args.test_data.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:appservice/functionAppFunction:FunctionAppFunction".into(),
             name: name.to_string(),
@@ -297,7 +297,7 @@ pub mod function_app_function {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         FunctionAppFunctionResult {
             id: o.get_id(),
             urn: o.get_urn(),

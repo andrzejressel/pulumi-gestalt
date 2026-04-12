@@ -33,12 +33,12 @@ pub mod get_assets {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetAssetsArgs,
     ) -> GetAssetsResult {
-        let arn_binding = args.arn.get_output(context);
-        let host_id_filters_binding = args.host_id_filters.get_output(context);
-        let status_id_filters_binding = args.status_id_filters.get_output(context);
+        let arn_binding = args.arn.get_output(ctx);
+        let host_id_filters_binding = args.host_id_filters.get_output(ctx);
+        let status_id_filters_binding = args.status_id_filters.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:outposts/getAssets:getAssets".into(),
             version: super::super::super::get_version(),
@@ -57,7 +57,7 @@ pub mod get_assets {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetAssetsResult {
             arn: o.get_field("arn"),
             asset_ids: o.get_field("assetIds"),

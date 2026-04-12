@@ -430,55 +430,55 @@ pub mod instance {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceArgs,
     ) -> InstanceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> InstanceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> InstanceResult {
-        let authorization_mode_binding = args.authorization_mode.get_output(context);
+        let authorization_mode_binding = args.authorization_mode.get_output(ctx);
         let deletion_protection_enabled_binding = args
             .deletion_protection_enabled
-            .get_output(context);
+            .get_output(ctx);
         let desired_psc_auto_connections_binding = args
             .desired_psc_auto_connections
-            .get_output(context);
-        let engine_configs_binding = args.engine_configs.get_output(context);
-        let engine_version_binding = args.engine_version.get_output(context);
-        let instance_id_binding = args.instance_id.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let mode_binding = args.mode.get_output(context);
-        let node_type_binding = args.node_type.get_output(context);
-        let persistence_config_binding = args.persistence_config.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let replica_count_binding = args.replica_count.get_output(context);
-        let shard_count_binding = args.shard_count.get_output(context);
+            .get_output(ctx);
+        let engine_configs_binding = args.engine_configs.get_output(ctx);
+        let engine_version_binding = args.engine_version.get_output(ctx);
+        let instance_id_binding = args.instance_id.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let mode_binding = args.mode.get_output(ctx);
+        let node_type_binding = args.node_type.get_output(ctx);
+        let persistence_config_binding = args.persistence_config.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let replica_count_binding = args.replica_count.get_output(ctx);
+        let shard_count_binding = args.shard_count.get_output(ctx);
         let transit_encryption_mode_binding = args
             .transit_encryption_mode
-            .get_output(context);
+            .get_output(ctx);
         let zone_distribution_config_binding = args
             .zone_distribution_config
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:memorystore/instance:Instance".into(),
             name: name.to_string(),
@@ -551,7 +551,7 @@ pub mod instance {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         InstanceResult {
             id: o.get_id(),
             urn: o.get_urn(),

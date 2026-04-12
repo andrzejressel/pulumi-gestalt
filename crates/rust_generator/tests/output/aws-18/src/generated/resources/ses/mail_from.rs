@@ -114,36 +114,34 @@ pub mod mail_from {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MailFromArgs,
     ) -> MailFromResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MailFromArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> MailFromResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MailFromArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> MailFromResult {
-        let behavior_on_mx_failure_binding = args
-            .behavior_on_mx_failure
-            .get_output(context);
-        let domain_binding = args.domain.get_output(context);
-        let mail_from_domain_binding = args.mail_from_domain.get_output(context);
+        let behavior_on_mx_failure_binding = args.behavior_on_mx_failure.get_output(ctx);
+        let domain_binding = args.domain.get_output(ctx);
+        let mail_from_domain_binding = args.mail_from_domain.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ses/mailFrom:MailFrom".into(),
             name: name.to_string(),
@@ -164,7 +162,7 @@ pub mod mail_from {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         MailFromResult {
             id: o.get_id(),
             urn: o.get_urn(),

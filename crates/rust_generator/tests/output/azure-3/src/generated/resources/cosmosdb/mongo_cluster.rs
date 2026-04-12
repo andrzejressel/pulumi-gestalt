@@ -181,55 +181,47 @@ pub mod mongo_cluster {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MongoClusterArgs,
     ) -> MongoClusterResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MongoClusterArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> MongoClusterResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MongoClusterArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> MongoClusterResult {
-        let administrator_password_binding = args
-            .administrator_password
-            .get_output(context);
-        let administrator_username_binding = args
-            .administrator_username
-            .get_output(context);
-        let compute_tier_binding = args.compute_tier.get_output(context);
-        let create_mode_binding = args.create_mode.get_output(context);
-        let high_availability_mode_binding = args
-            .high_availability_mode
-            .get_output(context);
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let preview_features_binding = args.preview_features.get_output(context);
-        let public_network_access_binding = args
-            .public_network_access
-            .get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let shard_count_binding = args.shard_count.get_output(context);
-        let source_location_binding = args.source_location.get_output(context);
-        let source_server_id_binding = args.source_server_id.get_output(context);
-        let storage_size_in_gb_binding = args.storage_size_in_gb.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let version_binding = args.version.get_output(context);
+        let administrator_password_binding = args.administrator_password.get_output(ctx);
+        let administrator_username_binding = args.administrator_username.get_output(ctx);
+        let compute_tier_binding = args.compute_tier.get_output(ctx);
+        let create_mode_binding = args.create_mode.get_output(ctx);
+        let high_availability_mode_binding = args.high_availability_mode.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let preview_features_binding = args.preview_features.get_output(ctx);
+        let public_network_access_binding = args.public_network_access.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let shard_count_binding = args.shard_count.get_output(ctx);
+        let source_location_binding = args.source_location.get_output(ctx);
+        let source_server_id_binding = args.source_server_id.get_output(ctx);
+        let storage_size_in_gb_binding = args.storage_size_in_gb.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let version_binding = args.version.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:cosmosdb/mongoCluster:MongoCluster".into(),
             name: name.to_string(),
@@ -302,7 +294,7 @@ pub mod mongo_cluster {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         MongoClusterResult {
             id: o.get_id(),
             urn: o.get_urn(),

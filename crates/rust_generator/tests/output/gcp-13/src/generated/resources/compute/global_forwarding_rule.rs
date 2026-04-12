@@ -901,55 +901,53 @@ pub mod global_forwarding_rule {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GlobalForwardingRuleArgs,
     ) -> GlobalForwardingRuleResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GlobalForwardingRuleArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> GlobalForwardingRuleResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GlobalForwardingRuleArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> GlobalForwardingRuleResult {
         let allow_psc_global_access_binding = args
             .allow_psc_global_access
-            .get_output(context);
-        let description_binding = args.description.get_output(context);
-        let ip_address_binding = args.ip_address.get_output(context);
-        let ip_protocol_binding = args.ip_protocol.get_output(context);
-        let ip_version_binding = args.ip_version.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let load_balancing_scheme_binding = args
-            .load_balancing_scheme
-            .get_output(context);
-        let metadata_filters_binding = args.metadata_filters.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_binding = args.network.get_output(context);
-        let network_tier_binding = args.network_tier.get_output(context);
-        let no_automate_dns_zone_binding = args.no_automate_dns_zone.get_output(context);
-        let port_range_binding = args.port_range.get_output(context);
-        let project_binding = args.project.get_output(context);
+            .get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let ip_address_binding = args.ip_address.get_output(ctx);
+        let ip_protocol_binding = args.ip_protocol.get_output(ctx);
+        let ip_version_binding = args.ip_version.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let load_balancing_scheme_binding = args.load_balancing_scheme.get_output(ctx);
+        let metadata_filters_binding = args.metadata_filters.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_binding = args.network.get_output(ctx);
+        let network_tier_binding = args.network_tier.get_output(ctx);
+        let no_automate_dns_zone_binding = args.no_automate_dns_zone.get_output(ctx);
+        let port_range_binding = args.port_range.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let service_directory_registrations_binding = args
             .service_directory_registrations
-            .get_output(context);
-        let source_ip_ranges_binding = args.source_ip_ranges.get_output(context);
-        let subnetwork_binding = args.subnetwork.get_output(context);
-        let target_binding = args.target.get_output(context);
+            .get_output(ctx);
+        let source_ip_ranges_binding = args.source_ip_ranges.get_output(ctx);
+        let subnetwork_binding = args.subnetwork.get_output(ctx);
+        let target_binding = args.target.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:compute/globalForwardingRule:GlobalForwardingRule".into(),
             name: name.to_string(),
@@ -1030,7 +1028,7 @@ pub mod global_forwarding_rule {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         GlobalForwardingRuleResult {
             id: o.get_id(),
             urn: o.get_urn(),

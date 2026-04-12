@@ -47,12 +47,12 @@ pub mod get_service_quota {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetServiceQuotaArgs,
     ) -> GetServiceQuotaResult {
-        let quota_code_binding = args.quota_code.get_output(context);
-        let quota_name_binding = args.quota_name.get_output(context);
-        let service_code_binding = args.service_code.get_output(context);
+        let quota_code_binding = args.quota_code.get_output(ctx);
+        let quota_name_binding = args.quota_name.get_output(ctx);
+        let service_code_binding = args.service_code.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:servicequotas/getServiceQuota:getServiceQuota".into(),
             version: super::super::super::get_version(),
@@ -71,7 +71,7 @@ pub mod get_service_quota {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetServiceQuotaResult {
             adjustable: o.get_field("adjustable"),
             arn: o.get_field("arn"),

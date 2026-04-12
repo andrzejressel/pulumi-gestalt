@@ -60,15 +60,15 @@ pub mod get_layer_version {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetLayerVersionArgs,
     ) -> GetLayerVersionResult {
         let compatible_architecture_binding = args
             .compatible_architecture
-            .get_output(context);
-        let compatible_runtime_binding = args.compatible_runtime.get_output(context);
-        let layer_name_binding = args.layer_name.get_output(context);
-        let version_binding = args.version.get_output(context);
+            .get_output(ctx);
+        let compatible_runtime_binding = args.compatible_runtime.get_output(ctx);
+        let layer_name_binding = args.layer_name.get_output(ctx);
+        let version_binding = args.version.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:lambda/getLayerVersion:getLayerVersion".into(),
             version: super::super::super::get_version(),
@@ -91,7 +91,7 @@ pub mod get_layer_version {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetLayerVersionResult {
             arn: o.get_field("arn"),
             code_sha256: o.get_field("codeSha256"),

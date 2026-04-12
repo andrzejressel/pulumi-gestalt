@@ -217,47 +217,47 @@ pub mod global_replication_group {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GlobalReplicationGroupArgs,
     ) -> GlobalReplicationGroupResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GlobalReplicationGroupArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> GlobalReplicationGroupResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GlobalReplicationGroupArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> GlobalReplicationGroupResult {
         let automatic_failover_enabled_binding = args
             .automatic_failover_enabled
-            .get_output(context);
-        let cache_node_type_binding = args.cache_node_type.get_output(context);
-        let engine_version_binding = args.engine_version.get_output(context);
+            .get_output(ctx);
+        let cache_node_type_binding = args.cache_node_type.get_output(ctx);
+        let engine_version_binding = args.engine_version.get_output(ctx);
         let global_replication_group_description_binding = args
             .global_replication_group_description
-            .get_output(context);
+            .get_output(ctx);
         let global_replication_group_id_suffix_binding = args
             .global_replication_group_id_suffix
-            .get_output(context);
-        let num_node_groups_binding = args.num_node_groups.get_output(context);
-        let parameter_group_name_binding = args.parameter_group_name.get_output(context);
+            .get_output(ctx);
+        let num_node_groups_binding = args.num_node_groups.get_output(ctx);
+        let parameter_group_name_binding = args.parameter_group_name.get_output(ctx);
         let primary_replication_group_id_binding = args
             .primary_replication_group_id
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:elasticache/globalReplicationGroup:GlobalReplicationGroup"
                 .into(),
@@ -299,7 +299,7 @@ pub mod global_replication_group {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         GlobalReplicationGroupResult {
             id: o.get_id(),
             urn: o.get_urn(),

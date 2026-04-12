@@ -464,74 +464,74 @@ pub mod callback_function {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CallbackFunctionArgs,
     ) -> CallbackFunctionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CallbackFunctionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> CallbackFunctionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CallbackFunctionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> CallbackFunctionResult {
-        let architectures_binding = args.architectures.get_output(context);
-        let callback_binding = args.callback.get_output(context);
-        let callback_factory_binding = args.callback_factory.get_output(context);
-        let code_path_options_binding = args.code_path_options.get_output(context);
+        let architectures_binding = args.architectures.get_output(ctx);
+        let callback_binding = args.callback.get_output(ctx);
+        let callback_factory_binding = args.callback_factory.get_output(ctx);
+        let code_path_options_binding = args.code_path_options.get_output(ctx);
         let code_signing_config_arn_binding = args
             .code_signing_config_arn
-            .get_output(context);
-        let dead_letter_config_binding = args.dead_letter_config.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let environment_binding = args.environment.get_output(context);
-        let ephemeral_storage_binding = args.ephemeral_storage.get_output(context);
-        let file_system_config_binding = args.file_system_config.get_output(context);
-        let image_config_binding = args.image_config.get_output(context);
-        let image_uri_binding = args.image_uri.get_output(context);
-        let kms_key_arn_binding = args.kms_key_arn.get_output(context);
-        let layers_binding = args.layers.get_output(context);
-        let logging_config_binding = args.logging_config.get_output(context);
-        let memory_size_binding = args.memory_size.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let package_type_binding = args.package_type.get_output(context);
-        let policies_binding = args.policies.get_output(context);
-        let publish_binding = args.publish.get_output(context);
+            .get_output(ctx);
+        let dead_letter_config_binding = args.dead_letter_config.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let environment_binding = args.environment.get_output(ctx);
+        let ephemeral_storage_binding = args.ephemeral_storage.get_output(ctx);
+        let file_system_config_binding = args.file_system_config.get_output(ctx);
+        let image_config_binding = args.image_config.get_output(ctx);
+        let image_uri_binding = args.image_uri.get_output(ctx);
+        let kms_key_arn_binding = args.kms_key_arn.get_output(ctx);
+        let layers_binding = args.layers.get_output(ctx);
+        let logging_config_binding = args.logging_config.get_output(ctx);
+        let memory_size_binding = args.memory_size.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let package_type_binding = args.package_type.get_output(ctx);
+        let policies_binding = args.policies.get_output(ctx);
+        let publish_binding = args.publish.get_output(ctx);
         let replace_security_groups_on_destroy_binding = args
             .replace_security_groups_on_destroy
-            .get_output(context);
+            .get_output(ctx);
         let replacement_security_group_ids_binding = args
             .replacement_security_group_ids
-            .get_output(context);
+            .get_output(ctx);
         let reserved_concurrent_executions_binding = args
             .reserved_concurrent_executions
-            .get_output(context);
-        let role_binding = args.role.get_output(context);
-        let runtime_binding = args.runtime.get_output(context);
-        let s3_bucket_binding = args.s3_bucket.get_output(context);
-        let s3_key_binding = args.s3_key.get_output(context);
-        let s3_object_version_binding = args.s3_object_version.get_output(context);
-        let skip_destroy_binding = args.skip_destroy.get_output(context);
-        let snap_start_binding = args.snap_start.get_output(context);
-        let source_code_hash_binding = args.source_code_hash.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let timeout_binding = args.timeout.get_output(context);
-        let tracing_config_binding = args.tracing_config.get_output(context);
-        let vpc_config_binding = args.vpc_config.get_output(context);
+            .get_output(ctx);
+        let role_binding = args.role.get_output(ctx);
+        let runtime_binding = args.runtime.get_output(ctx);
+        let s3_bucket_binding = args.s3_bucket.get_output(ctx);
+        let s3_key_binding = args.s3_key.get_output(ctx);
+        let s3_object_version_binding = args.s3_object_version.get_output(ctx);
+        let skip_destroy_binding = args.skip_destroy.get_output(ctx);
+        let snap_start_binding = args.snap_start.get_output(ctx);
+        let source_code_hash_binding = args.source_code_hash.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let timeout_binding = args.timeout.get_output(ctx);
+        let tracing_config_binding = args.tracing_config.get_output(ctx);
+        let vpc_config_binding = args.vpc_config.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:lambda/callbackFunction:CallbackFunction".into(),
             name: name.to_string(),
@@ -680,7 +680,7 @@ pub mod callback_function {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         CallbackFunctionResult {
             id: o.get_id(),
             urn: o.get_urn(),

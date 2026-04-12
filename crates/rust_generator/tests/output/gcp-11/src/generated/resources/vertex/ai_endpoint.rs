@@ -317,50 +317,50 @@ pub mod ai_endpoint {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AiEndpointArgs,
     ) -> AiEndpointResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AiEndpointArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AiEndpointResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AiEndpointArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AiEndpointResult {
         let dedicated_endpoint_enabled_binding = args
             .dedicated_endpoint_enabled
-            .get_output(context);
-        let description_binding = args.description.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let encryption_spec_binding = args.encryption_spec.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_binding = args.network.get_output(context);
+            .get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let encryption_spec_binding = args.encryption_spec.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_binding = args.network.get_output(ctx);
         let predict_request_response_logging_config_binding = args
             .predict_request_response_logging_config
-            .get_output(context);
+            .get_output(ctx);
         let private_service_connect_config_binding = args
             .private_service_connect_config
-            .get_output(context);
-        let project_binding = args.project.get_output(context);
-        let region_binding = args.region.get_output(context);
-        let traffic_split_binding = args.traffic_split.get_output(context);
+            .get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let region_binding = args.region.get_output(ctx);
+        let traffic_split_binding = args.traffic_split.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:vertex/aiEndpoint:AiEndpoint".into(),
             name: name.to_string(),
@@ -421,7 +421,7 @@ pub mod ai_endpoint {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AiEndpointResult {
             id: o.get_id(),
             urn: o.get_urn(),

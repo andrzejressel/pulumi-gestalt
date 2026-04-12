@@ -474,45 +474,43 @@ pub mod edge_cache_service {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EdgeCacheServiceArgs,
     ) -> EdgeCacheServiceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EdgeCacheServiceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> EdgeCacheServiceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EdgeCacheServiceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> EdgeCacheServiceResult {
-        let description_binding = args.description.get_output(context);
-        let disable_http2_binding = args.disable_http2.get_output(context);
-        let disable_quic_binding = args.disable_quic.get_output(context);
-        let edge_security_policy_binding = args.edge_security_policy.get_output(context);
-        let edge_ssl_certificates_binding = args
-            .edge_ssl_certificates
-            .get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let log_config_binding = args.log_config.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let require_tls_binding = args.require_tls.get_output(context);
-        let routing_binding = args.routing.get_output(context);
-        let ssl_policy_binding = args.ssl_policy.get_output(context);
+        let description_binding = args.description.get_output(ctx);
+        let disable_http2_binding = args.disable_http2.get_output(ctx);
+        let disable_quic_binding = args.disable_quic.get_output(ctx);
+        let edge_security_policy_binding = args.edge_security_policy.get_output(ctx);
+        let edge_ssl_certificates_binding = args.edge_ssl_certificates.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let log_config_binding = args.log_config.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let require_tls_binding = args.require_tls.get_output(ctx);
+        let routing_binding = args.routing.get_output(ctx);
+        let ssl_policy_binding = args.ssl_policy.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:networkservices/edgeCacheService:EdgeCacheService".into(),
             name: name.to_string(),
@@ -569,7 +567,7 @@ pub mod edge_cache_service {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         EdgeCacheServiceResult {
             id: o.get_id(),
             urn: o.get_urn(),

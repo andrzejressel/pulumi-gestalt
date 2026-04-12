@@ -194,48 +194,48 @@ pub mod catalog_table {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CatalogTableArgs,
     ) -> CatalogTableResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CatalogTableArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> CatalogTableResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CatalogTableArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> CatalogTableResult {
-        let catalog_id_binding = args.catalog_id.get_output(context);
-        let database_name_binding = args.database_name.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let name_binding = args.name.get_output(context);
+        let catalog_id_binding = args.catalog_id.get_output(ctx);
+        let database_name_binding = args.database_name.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let open_table_format_input_binding = args
             .open_table_format_input
-            .get_output(context);
-        let owner_binding = args.owner.get_output(context);
-        let parameters_binding = args.parameters.get_output(context);
-        let partition_indices_binding = args.partition_indices.get_output(context);
-        let partition_keys_binding = args.partition_keys.get_output(context);
-        let retention_binding = args.retention.get_output(context);
-        let storage_descriptor_binding = args.storage_descriptor.get_output(context);
-        let table_type_binding = args.table_type.get_output(context);
-        let target_table_binding = args.target_table.get_output(context);
-        let view_expanded_text_binding = args.view_expanded_text.get_output(context);
-        let view_original_text_binding = args.view_original_text.get_output(context);
+            .get_output(ctx);
+        let owner_binding = args.owner.get_output(ctx);
+        let parameters_binding = args.parameters.get_output(ctx);
+        let partition_indices_binding = args.partition_indices.get_output(ctx);
+        let partition_keys_binding = args.partition_keys.get_output(ctx);
+        let retention_binding = args.retention.get_output(ctx);
+        let storage_descriptor_binding = args.storage_descriptor.get_output(ctx);
+        let table_type_binding = args.table_type.get_output(ctx);
+        let target_table_binding = args.target_table.get_output(ctx);
+        let view_expanded_text_binding = args.view_expanded_text.get_output(ctx);
+        let view_original_text_binding = args.view_original_text.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:glue/catalogTable:CatalogTable".into(),
             name: name.to_string(),
@@ -304,7 +304,7 @@ pub mod catalog_table {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         CatalogTableResult {
             id: o.get_id(),
             urn: o.get_urn(),

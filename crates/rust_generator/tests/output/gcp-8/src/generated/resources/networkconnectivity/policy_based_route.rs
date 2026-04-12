@@ -228,46 +228,44 @@ pub mod policy_based_route {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PolicyBasedRouteArgs,
     ) -> PolicyBasedRouteResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PolicyBasedRouteArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> PolicyBasedRouteResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PolicyBasedRouteArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> PolicyBasedRouteResult {
-        let description_binding = args.description.get_output(context);
-        let filter_binding = args.filter.get_output(context);
+        let description_binding = args.description.get_output(ctx);
+        let filter_binding = args.filter.get_output(ctx);
         let interconnect_attachment_binding = args
             .interconnect_attachment
-            .get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_binding = args.network.get_output(context);
-        let next_hop_ilb_ip_binding = args.next_hop_ilb_ip.get_output(context);
-        let next_hop_other_routes_binding = args
-            .next_hop_other_routes
-            .get_output(context);
-        let priority_binding = args.priority.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let virtual_machine_binding = args.virtual_machine.get_output(context);
+            .get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_binding = args.network.get_output(ctx);
+        let next_hop_ilb_ip_binding = args.next_hop_ilb_ip.get_output(ctx);
+        let next_hop_other_routes_binding = args.next_hop_other_routes.get_output(ctx);
+        let priority_binding = args.priority.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let virtual_machine_binding = args.virtual_machine.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:networkconnectivity/policyBasedRoute:PolicyBasedRoute".into(),
             name: name.to_string(),
@@ -320,7 +318,7 @@ pub mod policy_based_route {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         PolicyBasedRouteResult {
             id: o.get_id(),
             urn: o.get_urn(),

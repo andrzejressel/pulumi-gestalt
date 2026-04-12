@@ -204,41 +204,41 @@ pub mod cloud_exadata_infrastructure {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CloudExadataInfrastructureArgs,
     ) -> CloudExadataInfrastructureResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CloudExadataInfrastructureArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> CloudExadataInfrastructureResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CloudExadataInfrastructureArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> CloudExadataInfrastructureResult {
         let cloud_exadata_infrastructure_id_binding = args
             .cloud_exadata_infrastructure_id
-            .get_output(context);
-        let deletion_protection_binding = args.deletion_protection.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let gcp_oracle_zone_binding = args.gcp_oracle_zone.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let properties_binding = args.properties.get_output(context);
+            .get_output(ctx);
+        let deletion_protection_binding = args.deletion_protection.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let gcp_oracle_zone_binding = args.gcp_oracle_zone.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let properties_binding = args.properties.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:oracledatabase/cloudExadataInfrastructure:CloudExadataInfrastructure"
                 .into(),
@@ -280,7 +280,7 @@ pub mod cloud_exadata_infrastructure {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         CloudExadataInfrastructureResult {
             id: o.get_id(),
             urn: o.get_urn(),

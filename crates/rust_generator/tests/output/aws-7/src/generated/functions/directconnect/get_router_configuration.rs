@@ -52,13 +52,11 @@ pub mod get_router_configuration {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetRouterConfigurationArgs,
     ) -> GetRouterConfigurationResult {
-        let router_type_identifier_binding = args
-            .router_type_identifier
-            .get_output(context);
-        let virtual_interface_id_binding = args.virtual_interface_id.get_output(context);
+        let router_type_identifier_binding = args.router_type_identifier.get_output(ctx);
+        let virtual_interface_id_binding = args.virtual_interface_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:directconnect/getRouterConfiguration:getRouterConfiguration"
                 .into(),
@@ -74,7 +72,7 @@ pub mod get_router_configuration {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetRouterConfigurationResult {
             customer_router_config: o.get_field("customerRouterConfig"),
             id: o.get_field("id"),

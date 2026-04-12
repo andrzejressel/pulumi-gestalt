@@ -31,11 +31,11 @@ pub mod get_containers {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetContainersArgs,
     ) -> GetContainersResult {
-        let name_prefix_binding = args.name_prefix.get_output(context);
-        let storage_account_id_binding = args.storage_account_id.get_output(context);
+        let name_prefix_binding = args.name_prefix.get_output(ctx);
+        let storage_account_id_binding = args.storage_account_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:storage/getContainers:getContainers".into(),
             version: super::super::super::get_version(),
@@ -50,7 +50,7 @@ pub mod get_containers {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetContainersResult {
             containers: o.get_field("containers"),
             id: o.get_field("id"),

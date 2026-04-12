@@ -39,11 +39,11 @@ pub mod get_user {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetUserArgs,
     ) -> GetUserResult {
-        let tags_binding = args.tags.get_output(context);
-        let user_name_binding = args.user_name.get_output(context);
+        let tags_binding = args.tags.get_output(ctx);
+        let user_name_binding = args.user_name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:iam/getUser:getUser".into(),
             version: super::super::super::get_version(),
@@ -58,7 +58,7 @@ pub mod get_user {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetUserResult {
             arn: o.get_field("arn"),
             id: o.get_field("id"),

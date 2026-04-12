@@ -174,43 +174,41 @@ pub mod synapse_spark {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SynapseSparkArgs,
     ) -> SynapseSparkResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SynapseSparkArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> SynapseSparkResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SynapseSparkArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> SynapseSparkResult {
-        let description_binding = args.description.get_output(context);
-        let identity_binding = args.identity.get_output(context);
-        let local_auth_enabled_binding = args.local_auth_enabled.get_output(context);
-        let location_binding = args.location.get_output(context);
+        let description_binding = args.description.get_output(ctx);
+        let identity_binding = args.identity.get_output(ctx);
+        let local_auth_enabled_binding = args.local_auth_enabled.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
         let machine_learning_workspace_id_binding = args
             .machine_learning_workspace_id
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let synapse_spark_pool_id_binding = args
-            .synapse_spark_pool_id
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let synapse_spark_pool_id_binding = args.synapse_spark_pool_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:machinelearning/synapseSpark:SynapseSpark".into(),
             name: name.to_string(),
@@ -251,7 +249,7 @@ pub mod synapse_spark {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         SynapseSparkResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -36,11 +36,11 @@ pub mod get_contact {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetContactArgs,
     ) -> GetContactResult {
-        let arn_binding = args.arn.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let arn_binding = args.arn.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ssmcontacts/getContact:getContact".into(),
             version: super::super::super::get_version(),
@@ -55,7 +55,7 @@ pub mod get_contact {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetContactResult {
             alias: o.get_field("alias"),
             arn: o.get_field("arn"),

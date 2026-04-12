@@ -139,42 +139,42 @@ pub mod tag_rule {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TagRuleArgs,
     ) -> TagRuleResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TagRuleArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> TagRuleResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TagRuleArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> TagRuleResult {
-        let activity_log_enabled_binding = args.activity_log_enabled.get_output(context);
+        let activity_log_enabled_binding = args.activity_log_enabled.get_output(ctx);
         let azure_active_directory_log_enabled_binding = args
             .azure_active_directory_log_enabled
-            .get_output(context);
-        let log_tag_filters_binding = args.log_tag_filters.get_output(context);
-        let metric_enabled_binding = args.metric_enabled.get_output(context);
-        let metric_tag_filters_binding = args.metric_tag_filters.get_output(context);
-        let monitor_id_binding = args.monitor_id.get_output(context);
+            .get_output(ctx);
+        let log_tag_filters_binding = args.log_tag_filters.get_output(ctx);
+        let metric_enabled_binding = args.metric_enabled.get_output(ctx);
+        let metric_tag_filters_binding = args.metric_tag_filters.get_output(ctx);
+        let monitor_id_binding = args.monitor_id.get_output(ctx);
         let subscription_log_enabled_binding = args
             .subscription_log_enabled
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:newrelic/tagRule:TagRule".into(),
             name: name.to_string(),
@@ -211,7 +211,7 @@ pub mod tag_rule {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         TagRuleResult {
             id: o.get_id(),
             urn: o.get_urn(),

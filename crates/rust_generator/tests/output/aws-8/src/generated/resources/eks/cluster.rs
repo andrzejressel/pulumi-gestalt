@@ -460,58 +460,56 @@ pub mod cluster {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterArgs,
     ) -> ClusterResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ClusterResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ClusterResult {
-        let access_config_binding = args.access_config.get_output(context);
+        let access_config_binding = args.access_config.get_output(ctx);
         let bootstrap_self_managed_addons_binding = args
             .bootstrap_self_managed_addons
-            .get_output(context);
-        let compute_config_binding = args.compute_config.get_output(context);
+            .get_output(ctx);
+        let compute_config_binding = args.compute_config.get_output(ctx);
         let default_addons_to_removes_binding = args
             .default_addons_to_removes
-            .get_output(context);
+            .get_output(ctx);
         let enabled_cluster_log_types_binding = args
             .enabled_cluster_log_types
-            .get_output(context);
-        let encryption_config_binding = args.encryption_config.get_output(context);
+            .get_output(ctx);
+        let encryption_config_binding = args.encryption_config.get_output(ctx);
         let kubernetes_network_config_binding = args
             .kubernetes_network_config
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let outpost_config_binding = args.outpost_config.get_output(context);
-        let remote_network_config_binding = args
-            .remote_network_config
-            .get_output(context);
-        let role_arn_binding = args.role_arn.get_output(context);
-        let storage_config_binding = args.storage_config.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let upgrade_policy_binding = args.upgrade_policy.get_output(context);
-        let version_binding = args.version.get_output(context);
-        let vpc_config_binding = args.vpc_config.get_output(context);
-        let zonal_shift_config_binding = args.zonal_shift_config.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let outpost_config_binding = args.outpost_config.get_output(ctx);
+        let remote_network_config_binding = args.remote_network_config.get_output(ctx);
+        let role_arn_binding = args.role_arn.get_output(ctx);
+        let storage_config_binding = args.storage_config.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let upgrade_policy_binding = args.upgrade_policy.get_output(ctx);
+        let version_binding = args.version.get_output(ctx);
+        let vpc_config_binding = args.vpc_config.get_output(ctx);
+        let zonal_shift_config_binding = args.zonal_shift_config.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:eks/cluster:Cluster".into(),
             name: name.to_string(),
@@ -588,7 +586,7 @@ pub mod cluster {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ClusterResult {
             id: o.get_id(),
             urn: o.get_urn(),

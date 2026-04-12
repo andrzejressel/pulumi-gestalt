@@ -86,34 +86,34 @@ pub mod instance_state {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceStateArgs,
     ) -> InstanceStateResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceStateArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> InstanceStateResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceStateArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> InstanceStateResult {
-        let force_binding = args.force.get_output(context);
-        let instance_id_binding = args.instance_id.get_output(context);
-        let state_binding = args.state.get_output(context);
+        let force_binding = args.force.get_output(ctx);
+        let instance_id_binding = args.instance_id.get_output(ctx);
+        let state_binding = args.state.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2transitgateway/instanceState:InstanceState".into(),
             name: name.to_string(),
@@ -134,7 +134,7 @@ pub mod instance_state {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         InstanceStateResult {
             id: o.get_id(),
             urn: o.get_urn(),

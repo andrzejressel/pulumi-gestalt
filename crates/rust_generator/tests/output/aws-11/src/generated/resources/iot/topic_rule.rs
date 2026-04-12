@@ -279,57 +279,57 @@ pub mod topic_rule {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TopicRuleArgs,
     ) -> TopicRuleResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TopicRuleArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> TopicRuleResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TopicRuleArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> TopicRuleResult {
-        let cloudwatch_alarms_binding = args.cloudwatch_alarms.get_output(context);
-        let cloudwatch_logs_binding = args.cloudwatch_logs.get_output(context);
-        let cloudwatch_metrics_binding = args.cloudwatch_metrics.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let dynamodbs_binding = args.dynamodbs.get_output(context);
-        let dynamodbv2s_binding = args.dynamodbv2s.get_output(context);
-        let elasticsearch_binding = args.elasticsearch.get_output(context);
-        let enabled_binding = args.enabled.get_output(context);
-        let error_action_binding = args.error_action.get_output(context);
-        let firehoses_binding = args.firehoses.get_output(context);
-        let https_binding = args.https.get_output(context);
-        let iot_analytics_binding = args.iot_analytics.get_output(context);
-        let iot_events_binding = args.iot_events.get_output(context);
-        let kafkas_binding = args.kafkas.get_output(context);
-        let kineses_binding = args.kineses.get_output(context);
-        let lambdas_binding = args.lambdas.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let republishes_binding = args.republishes.get_output(context);
-        let s3_binding = args.s3.get_output(context);
-        let sns_binding = args.sns.get_output(context);
-        let sql_binding = args.sql.get_output(context);
-        let sql_version_binding = args.sql_version.get_output(context);
-        let sqs_binding = args.sqs.get_output(context);
-        let step_functions_binding = args.step_functions.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let timestreams_binding = args.timestreams.get_output(context);
+        let cloudwatch_alarms_binding = args.cloudwatch_alarms.get_output(ctx);
+        let cloudwatch_logs_binding = args.cloudwatch_logs.get_output(ctx);
+        let cloudwatch_metrics_binding = args.cloudwatch_metrics.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let dynamodbs_binding = args.dynamodbs.get_output(ctx);
+        let dynamodbv2s_binding = args.dynamodbv2s.get_output(ctx);
+        let elasticsearch_binding = args.elasticsearch.get_output(ctx);
+        let enabled_binding = args.enabled.get_output(ctx);
+        let error_action_binding = args.error_action.get_output(ctx);
+        let firehoses_binding = args.firehoses.get_output(ctx);
+        let https_binding = args.https.get_output(ctx);
+        let iot_analytics_binding = args.iot_analytics.get_output(ctx);
+        let iot_events_binding = args.iot_events.get_output(ctx);
+        let kafkas_binding = args.kafkas.get_output(ctx);
+        let kineses_binding = args.kineses.get_output(ctx);
+        let lambdas_binding = args.lambdas.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let republishes_binding = args.republishes.get_output(ctx);
+        let s3_binding = args.s3.get_output(ctx);
+        let sns_binding = args.sns.get_output(ctx);
+        let sql_binding = args.sql.get_output(ctx);
+        let sql_version_binding = args.sql_version.get_output(ctx);
+        let sqs_binding = args.sqs.get_output(ctx);
+        let step_functions_binding = args.step_functions.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let timestreams_binding = args.timestreams.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:iot/topicRule:TopicRule".into(),
             name: name.to_string(),
@@ -442,7 +442,7 @@ pub mod topic_rule {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         TopicRuleResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -243,43 +243,41 @@ pub mod entry {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EntryArgs,
     ) -> EntryResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EntryArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> EntryResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EntryArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> EntryResult {
-        let description_binding = args.description.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let entry_group_binding = args.entry_group.get_output(context);
-        let entry_id_binding = args.entry_id.get_output(context);
-        let gcs_fileset_spec_binding = args.gcs_fileset_spec.get_output(context);
-        let linked_resource_binding = args.linked_resource.get_output(context);
-        let schema_binding = args.schema.get_output(context);
-        let type__binding = args.type_.get_output(context);
-        let user_specified_system_binding = args
-            .user_specified_system
-            .get_output(context);
-        let user_specified_type_binding = args.user_specified_type.get_output(context);
+        let description_binding = args.description.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let entry_group_binding = args.entry_group.get_output(ctx);
+        let entry_id_binding = args.entry_id.get_output(ctx);
+        let gcs_fileset_spec_binding = args.gcs_fileset_spec.get_output(ctx);
+        let linked_resource_binding = args.linked_resource.get_output(ctx);
+        let schema_binding = args.schema.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
+        let user_specified_system_binding = args.user_specified_system.get_output(ctx);
+        let user_specified_type_binding = args.user_specified_type.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:datacatalog/entry:Entry".into(),
             name: name.to_string(),
@@ -328,7 +326,7 @@ pub mod entry {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         EntryResult {
             id: o.get_id(),
             urn: o.get_urn(),

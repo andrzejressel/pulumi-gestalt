@@ -44,13 +44,13 @@ pub mod get_rulesets {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetRulesetsArgs,
     ) -> GetRulesetsResult {
-        let account_id_binding = args.account_id.get_output(context);
-        let filter_binding = args.filter.get_output(context);
-        let include_rules_binding = args.include_rules.get_output(context);
-        let zone_id_binding = args.zone_id.get_output(context);
+        let account_id_binding = args.account_id.get_output(ctx);
+        let filter_binding = args.filter.get_output(ctx);
+        let include_rules_binding = args.include_rules.get_output(ctx);
+        let zone_id_binding = args.zone_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "cloudflare:index/getRulesets:getRulesets".into(),
             version: super::super::get_version(),
@@ -73,7 +73,7 @@ pub mod get_rulesets {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetRulesetsResult {
             account_id: o.get_field("accountId"),
             filter: o.get_field("filter"),

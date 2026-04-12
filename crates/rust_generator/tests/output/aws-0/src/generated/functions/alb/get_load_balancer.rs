@@ -73,12 +73,12 @@ pub mod get_load_balancer {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetLoadBalancerArgs,
     ) -> GetLoadBalancerResult {
-        let arn_binding = args.arn.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let arn_binding = args.arn.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:alb/getLoadBalancer:getLoadBalancer".into(),
             version: super::super::super::get_version(),
@@ -97,7 +97,7 @@ pub mod get_load_balancer {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetLoadBalancerResult {
             access_logs: o.get_field("accessLogs"),
             arn: o.get_field("arn"),

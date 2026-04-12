@@ -129,42 +129,42 @@ pub mod workgroup {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkgroupArgs,
     ) -> WorkgroupResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkgroupArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> WorkgroupResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkgroupArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> WorkgroupResult {
-        let base_capacity_binding = args.base_capacity.get_output(context);
-        let config_parameters_binding = args.config_parameters.get_output(context);
-        let enhanced_vpc_routing_binding = args.enhanced_vpc_routing.get_output(context);
-        let max_capacity_binding = args.max_capacity.get_output(context);
-        let namespace_name_binding = args.namespace_name.get_output(context);
-        let port_binding = args.port.get_output(context);
-        let publicly_accessible_binding = args.publicly_accessible.get_output(context);
-        let security_group_ids_binding = args.security_group_ids.get_output(context);
-        let subnet_ids_binding = args.subnet_ids.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let workgroup_name_binding = args.workgroup_name.get_output(context);
+        let base_capacity_binding = args.base_capacity.get_output(ctx);
+        let config_parameters_binding = args.config_parameters.get_output(ctx);
+        let enhanced_vpc_routing_binding = args.enhanced_vpc_routing.get_output(ctx);
+        let max_capacity_binding = args.max_capacity.get_output(ctx);
+        let namespace_name_binding = args.namespace_name.get_output(ctx);
+        let port_binding = args.port.get_output(ctx);
+        let publicly_accessible_binding = args.publicly_accessible.get_output(ctx);
+        let security_group_ids_binding = args.security_group_ids.get_output(ctx);
+        let subnet_ids_binding = args.subnet_ids.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let workgroup_name_binding = args.workgroup_name.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:redshiftserverless/workgroup:Workgroup".into(),
             name: name.to_string(),
@@ -217,7 +217,7 @@ pub mod workgroup {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         WorkgroupResult {
             id: o.get_id(),
             urn: o.get_urn(),

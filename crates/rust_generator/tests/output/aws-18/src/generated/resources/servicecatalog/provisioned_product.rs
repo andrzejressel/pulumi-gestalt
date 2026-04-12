@@ -186,55 +186,55 @@ pub mod provisioned_product {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProvisionedProductArgs,
     ) -> ProvisionedProductResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProvisionedProductArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ProvisionedProductResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProvisionedProductArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ProvisionedProductResult {
-        let accept_language_binding = args.accept_language.get_output(context);
-        let ignore_errors_binding = args.ignore_errors.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let notification_arns_binding = args.notification_arns.get_output(context);
-        let path_id_binding = args.path_id.get_output(context);
-        let path_name_binding = args.path_name.get_output(context);
-        let product_id_binding = args.product_id.get_output(context);
-        let product_name_binding = args.product_name.get_output(context);
+        let accept_language_binding = args.accept_language.get_output(ctx);
+        let ignore_errors_binding = args.ignore_errors.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let notification_arns_binding = args.notification_arns.get_output(ctx);
+        let path_id_binding = args.path_id.get_output(ctx);
+        let path_name_binding = args.path_name.get_output(ctx);
+        let product_id_binding = args.product_id.get_output(ctx);
+        let product_name_binding = args.product_name.get_output(ctx);
         let provisioning_artifact_id_binding = args
             .provisioning_artifact_id
-            .get_output(context);
+            .get_output(ctx);
         let provisioning_artifact_name_binding = args
             .provisioning_artifact_name
-            .get_output(context);
+            .get_output(ctx);
         let provisioning_parameters_binding = args
             .provisioning_parameters
-            .get_output(context);
+            .get_output(ctx);
         let retain_physical_resources_binding = args
             .retain_physical_resources
-            .get_output(context);
+            .get_output(ctx);
         let stack_set_provisioning_preferences_binding = args
             .stack_set_provisioning_preferences
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:servicecatalog/provisionedProduct:ProvisionedProduct".into(),
             name: name.to_string(),
@@ -299,7 +299,7 @@ pub mod provisioned_product {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ProvisionedProductResult {
             id: o.get_id(),
             urn: o.get_urn(),

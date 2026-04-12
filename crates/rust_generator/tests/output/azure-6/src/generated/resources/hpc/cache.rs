@@ -209,54 +209,52 @@ pub mod cache {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CacheArgs,
     ) -> CacheResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CacheArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> CacheResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CacheArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> CacheResult {
         let automatically_rotate_key_to_latest_enabled_binding = args
             .automatically_rotate_key_to_latest_enabled
-            .get_output(context);
-        let cache_size_in_gb_binding = args.cache_size_in_gb.get_output(context);
-        let default_access_policy_binding = args
-            .default_access_policy
-            .get_output(context);
+            .get_output(ctx);
+        let cache_size_in_gb_binding = args.cache_size_in_gb.get_output(ctx);
+        let default_access_policy_binding = args.default_access_policy.get_output(ctx);
         let directory_active_directory_binding = args
             .directory_active_directory
-            .get_output(context);
-        let directory_flat_file_binding = args.directory_flat_file.get_output(context);
-        let directory_ldap_binding = args.directory_ldap.get_output(context);
-        let dns_binding = args.dns.get_output(context);
-        let identity_binding = args.identity.get_output(context);
-        let key_vault_key_id_binding = args.key_vault_key_id.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let mtu_binding = args.mtu.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let ntp_server_binding = args.ntp_server.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let sku_name_binding = args.sku_name.get_output(context);
-        let subnet_id_binding = args.subnet_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let directory_flat_file_binding = args.directory_flat_file.get_output(ctx);
+        let directory_ldap_binding = args.directory_ldap.get_output(ctx);
+        let dns_binding = args.dns.get_output(ctx);
+        let identity_binding = args.identity.get_output(ctx);
+        let key_vault_key_id_binding = args.key_vault_key_id.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let mtu_binding = args.mtu.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let ntp_server_binding = args.ntp_server.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let sku_name_binding = args.sku_name.get_output(ctx);
+        let subnet_id_binding = args.subnet_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:hpc/cache:Cache".into(),
             name: name.to_string(),
@@ -334,7 +332,7 @@ pub mod cache {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         CacheResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -50,12 +50,10 @@ pub mod get_variables {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetVariablesArgs,
     ) -> GetVariablesResult {
-        let automation_account_id_binding = args
-            .automation_account_id
-            .get_output(context);
+        let automation_account_id_binding = args.automation_account_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:automation/getVariables:getVariables".into(),
             version: super::super::super::get_version(),
@@ -66,7 +64,7 @@ pub mod get_variables {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetVariablesResult {
             automation_account_id: o.get_field("automationAccountId"),
             bools: o.get_field("bools"),

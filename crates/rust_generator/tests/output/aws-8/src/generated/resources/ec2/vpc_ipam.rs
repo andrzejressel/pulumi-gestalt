@@ -111,37 +111,37 @@ pub mod vpc_ipam {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcIpamArgs,
     ) -> VpcIpamResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcIpamArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> VpcIpamResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcIpamArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> VpcIpamResult {
-        let cascade_binding = args.cascade.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let enable_private_gua_binding = args.enable_private_gua.get_output(context);
-        let operating_regions_binding = args.operating_regions.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let tier_binding = args.tier.get_output(context);
+        let cascade_binding = args.cascade.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let enable_private_gua_binding = args.enable_private_gua.get_output(ctx);
+        let operating_regions_binding = args.operating_regions.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let tier_binding = args.tier.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/vpcIpam:VpcIpam".into(),
             name: name.to_string(),
@@ -174,7 +174,7 @@ pub mod vpc_ipam {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         VpcIpamResult {
             id: o.get_id(),
             urn: o.get_urn(),

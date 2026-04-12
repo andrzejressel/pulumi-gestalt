@@ -92,39 +92,37 @@ pub mod provisioned_model_throughput {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProvisionedModelThroughputArgs,
     ) -> ProvisionedModelThroughputResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProvisionedModelThroughputArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ProvisionedModelThroughputResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProvisionedModelThroughputArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ProvisionedModelThroughputResult {
-        let commitment_duration_binding = args.commitment_duration.get_output(context);
-        let model_arn_binding = args.model_arn.get_output(context);
-        let model_units_binding = args.model_units.get_output(context);
-        let provisioned_model_name_binding = args
-            .provisioned_model_name
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let timeouts_binding = args.timeouts.get_output(context);
+        let commitment_duration_binding = args.commitment_duration.get_output(ctx);
+        let model_arn_binding = args.model_arn.get_output(ctx);
+        let model_units_binding = args.model_units.get_output(ctx);
+        let provisioned_model_name_binding = args.provisioned_model_name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let timeouts_binding = args.timeouts.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:bedrock/provisionedModelThroughput:ProvisionedModelThroughput"
                 .into(),
@@ -158,7 +156,7 @@ pub mod provisioned_model_throughput {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ProvisionedModelThroughputResult {
             id: o.get_id(),
             urn: o.get_urn(),

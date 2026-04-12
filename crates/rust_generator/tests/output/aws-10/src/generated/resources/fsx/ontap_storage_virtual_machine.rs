@@ -143,41 +143,41 @@ pub mod ontap_storage_virtual_machine {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OntapStorageVirtualMachineArgs,
     ) -> OntapStorageVirtualMachineResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OntapStorageVirtualMachineArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> OntapStorageVirtualMachineResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OntapStorageVirtualMachineArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> OntapStorageVirtualMachineResult {
         let active_directory_configuration_binding = args
             .active_directory_configuration
-            .get_output(context);
-        let file_system_id_binding = args.file_system_id.get_output(context);
-        let name_binding = args.name.get_output(context);
+            .get_output(ctx);
+        let file_system_id_binding = args.file_system_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let root_volume_security_style_binding = args
             .root_volume_security_style
-            .get_output(context);
-        let svm_admin_password_binding = args.svm_admin_password.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let svm_admin_password_binding = args.svm_admin_password.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:fsx/ontapStorageVirtualMachine:OntapStorageVirtualMachine"
                 .into(),
@@ -211,7 +211,7 @@ pub mod ontap_storage_virtual_machine {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         OntapStorageVirtualMachineResult {
             id: o.get_id(),
             urn: o.get_urn(),

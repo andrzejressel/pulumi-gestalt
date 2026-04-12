@@ -272,44 +272,44 @@ pub mod compute_environment {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ComputeEnvironmentArgs,
     ) -> ComputeEnvironmentResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ComputeEnvironmentArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ComputeEnvironmentResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ComputeEnvironmentArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ComputeEnvironmentResult {
         let compute_environment_name_binding = args
             .compute_environment_name
-            .get_output(context);
+            .get_output(ctx);
         let compute_environment_name_prefix_binding = args
             .compute_environment_name_prefix
-            .get_output(context);
-        let compute_resources_binding = args.compute_resources.get_output(context);
-        let eks_configuration_binding = args.eks_configuration.get_output(context);
-        let service_role_binding = args.service_role.get_output(context);
-        let state_binding = args.state.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let type__binding = args.type_.get_output(context);
-        let update_policy_binding = args.update_policy.get_output(context);
+            .get_output(ctx);
+        let compute_resources_binding = args.compute_resources.get_output(ctx);
+        let eks_configuration_binding = args.eks_configuration.get_output(ctx);
+        let service_role_binding = args.service_role.get_output(ctx);
+        let state_binding = args.state.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
+        let update_policy_binding = args.update_policy.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:batch/computeEnvironment:ComputeEnvironment".into(),
             name: name.to_string(),
@@ -354,7 +354,7 @@ pub mod compute_environment {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ComputeEnvironmentResult {
             id: o.get_id(),
             urn: o.get_urn(),

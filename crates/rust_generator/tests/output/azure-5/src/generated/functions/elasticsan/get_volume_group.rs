@@ -43,11 +43,11 @@ pub mod get_volume_group {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetVolumeGroupArgs,
     ) -> GetVolumeGroupResult {
-        let elastic_san_id_binding = args.elastic_san_id.get_output(context);
-        let name_binding = args.name.get_output(context);
+        let elastic_san_id_binding = args.elastic_san_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:elasticsan/getVolumeGroup:getVolumeGroup".into(),
             version: super::super::super::get_version(),
@@ -62,7 +62,7 @@ pub mod get_volume_group {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetVolumeGroupResult {
             elastic_san_id: o.get_field("elasticSanId"),
             encryption_type: o.get_field("encryptionType"),

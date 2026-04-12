@@ -33,13 +33,11 @@ pub mod get_registry_cache_rule {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetRegistryCacheRuleArgs,
     ) -> GetRegistryCacheRuleResult {
-        let container_registry_id_binding = args
-            .container_registry_id
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
+        let container_registry_id_binding = args.container_registry_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:containerservice/getRegistryCacheRule:getRegistryCacheRule"
                 .into(),
@@ -55,7 +53,7 @@ pub mod get_registry_cache_rule {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetRegistryCacheRuleResult {
             container_registry_id: o.get_field("containerRegistryId"),
             credential_set_id: o.get_field("credentialSetId"),

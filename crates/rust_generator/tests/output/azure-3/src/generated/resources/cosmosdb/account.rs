@@ -343,92 +343,84 @@ pub mod account {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccountArgs,
     ) -> AccountResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccountArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AccountResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccountArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AccountResult {
         let access_key_metadata_writes_enabled_binding = args
             .access_key_metadata_writes_enabled
-            .get_output(context);
-        let analytical_storage_binding = args.analytical_storage.get_output(context);
+            .get_output(ctx);
+        let analytical_storage_binding = args.analytical_storage.get_output(ctx);
         let analytical_storage_enabled_binding = args
             .analytical_storage_enabled
-            .get_output(context);
+            .get_output(ctx);
         let automatic_failover_enabled_binding = args
             .automatic_failover_enabled
-            .get_output(context);
-        let backup_binding = args.backup.get_output(context);
-        let burst_capacity_enabled_binding = args
-            .burst_capacity_enabled
-            .get_output(context);
-        let capabilities_binding = args.capabilities.get_output(context);
-        let capacity_binding = args.capacity.get_output(context);
-        let consistency_policy_binding = args.consistency_policy.get_output(context);
-        let cors_rule_binding = args.cors_rule.get_output(context);
-        let create_mode_binding = args.create_mode.get_output(context);
-        let default_identity_type_binding = args
-            .default_identity_type
-            .get_output(context);
-        let free_tier_enabled_binding = args.free_tier_enabled.get_output(context);
-        let geo_locations_binding = args.geo_locations.get_output(context);
-        let identity_binding = args.identity.get_output(context);
-        let ip_range_filters_binding = args.ip_range_filters.get_output(context);
+            .get_output(ctx);
+        let backup_binding = args.backup.get_output(ctx);
+        let burst_capacity_enabled_binding = args.burst_capacity_enabled.get_output(ctx);
+        let capabilities_binding = args.capabilities.get_output(ctx);
+        let capacity_binding = args.capacity.get_output(ctx);
+        let consistency_policy_binding = args.consistency_policy.get_output(ctx);
+        let cors_rule_binding = args.cors_rule.get_output(ctx);
+        let create_mode_binding = args.create_mode.get_output(ctx);
+        let default_identity_type_binding = args.default_identity_type.get_output(ctx);
+        let free_tier_enabled_binding = args.free_tier_enabled.get_output(ctx);
+        let geo_locations_binding = args.geo_locations.get_output(ctx);
+        let identity_binding = args.identity.get_output(ctx);
+        let ip_range_filters_binding = args.ip_range_filters.get_output(ctx);
         let is_virtual_network_filter_enabled_binding = args
             .is_virtual_network_filter_enabled
-            .get_output(context);
-        let key_vault_key_id_binding = args.key_vault_key_id.get_output(context);
-        let kind_binding = args.kind.get_output(context);
+            .get_output(ctx);
+        let key_vault_key_id_binding = args.key_vault_key_id.get_output(ctx);
+        let kind_binding = args.kind.get_output(ctx);
         let local_authentication_disabled_binding = args
             .local_authentication_disabled
-            .get_output(context);
-        let location_binding = args.location.get_output(context);
-        let managed_hsm_key_id_binding = args.managed_hsm_key_id.get_output(context);
-        let minimal_tls_version_binding = args.minimal_tls_version.get_output(context);
-        let mongo_server_version_binding = args.mongo_server_version.get_output(context);
+            .get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let managed_hsm_key_id_binding = args.managed_hsm_key_id.get_output(ctx);
+        let minimal_tls_version_binding = args.minimal_tls_version.get_output(ctx);
+        let mongo_server_version_binding = args.mongo_server_version.get_output(ctx);
         let multiple_write_locations_enabled_binding = args
             .multiple_write_locations_enabled
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let network_acl_bypass_for_azure_services_binding = args
             .network_acl_bypass_for_azure_services
-            .get_output(context);
-        let network_acl_bypass_ids_binding = args
-            .network_acl_bypass_ids
-            .get_output(context);
-        let offer_type_binding = args.offer_type.get_output(context);
+            .get_output(ctx);
+        let network_acl_bypass_ids_binding = args.network_acl_bypass_ids.get_output(ctx);
+        let offer_type_binding = args.offer_type.get_output(ctx);
         let partition_merge_enabled_binding = args
             .partition_merge_enabled
-            .get_output(context);
+            .get_output(ctx);
         let public_network_access_enabled_binding = args
             .public_network_access_enabled
-            .get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let restore_binding = args.restore.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let virtual_network_rules_binding = args
-            .virtual_network_rules
-            .get_output(context);
+            .get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let restore_binding = args.restore.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let virtual_network_rules_binding = args.virtual_network_rules.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:cosmosdb/account:Account".into(),
             name: name.to_string(),
@@ -577,7 +569,7 @@ pub mod account {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AccountResult {
             id: o.get_id(),
             urn: o.get_urn(),

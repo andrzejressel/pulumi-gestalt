@@ -33,12 +33,12 @@ pub mod get_local_disk {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetLocalDiskArgs,
     ) -> GetLocalDiskResult {
-        let disk_node_binding = args.disk_node.get_output(context);
-        let disk_path_binding = args.disk_path.get_output(context);
-        let gateway_arn_binding = args.gateway_arn.get_output(context);
+        let disk_node_binding = args.disk_node.get_output(ctx);
+        let disk_path_binding = args.disk_path.get_output(ctx);
+        let gateway_arn_binding = args.gateway_arn.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:storagegateway/getLocalDisk:getLocalDisk".into(),
             version: super::super::super::get_version(),
@@ -57,7 +57,7 @@ pub mod get_local_disk {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetLocalDiskResult {
             disk_id: o.get_field("diskId"),
             disk_node: o.get_field("diskNode"),

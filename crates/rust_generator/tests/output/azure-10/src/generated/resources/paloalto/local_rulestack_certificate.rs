@@ -99,39 +99,39 @@ pub mod local_rulestack_certificate {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LocalRulestackCertificateArgs,
     ) -> LocalRulestackCertificateResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LocalRulestackCertificateArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> LocalRulestackCertificateResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LocalRulestackCertificateArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> LocalRulestackCertificateResult {
-        let audit_comment_binding = args.audit_comment.get_output(context);
-        let description_binding = args.description.get_output(context);
+        let audit_comment_binding = args.audit_comment.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
         let key_vault_certificate_id_binding = args
             .key_vault_certificate_id
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let rulestack_id_binding = args.rulestack_id.get_output(context);
-        let self_signed_binding = args.self_signed.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let rulestack_id_binding = args.rulestack_id.get_output(ctx);
+        let self_signed_binding = args.self_signed.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:paloalto/localRulestackCertificate:LocalRulestackCertificate"
                 .into(),
@@ -165,7 +165,7 @@ pub mod local_rulestack_certificate {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         LocalRulestackCertificateResult {
             id: o.get_id(),
             urn: o.get_urn(),

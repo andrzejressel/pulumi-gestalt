@@ -129,34 +129,34 @@ pub mod scaling_plan_host_pool_association {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ScalingPlanHostPoolAssociationArgs,
     ) -> ScalingPlanHostPoolAssociationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ScalingPlanHostPoolAssociationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ScalingPlanHostPoolAssociationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ScalingPlanHostPoolAssociationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ScalingPlanHostPoolAssociationResult {
-        let enabled_binding = args.enabled.get_output(context);
-        let host_pool_id_binding = args.host_pool_id.get_output(context);
-        let scaling_plan_id_binding = args.scaling_plan_id.get_output(context);
+        let enabled_binding = args.enabled.get_output(ctx);
+        let host_pool_id_binding = args.host_pool_id.get_output(ctx);
+        let scaling_plan_id_binding = args.scaling_plan_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:desktopvirtualization/scalingPlanHostPoolAssociation:ScalingPlanHostPoolAssociation"
                 .into(),
@@ -178,7 +178,7 @@ pub mod scaling_plan_host_pool_association {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ScalingPlanHostPoolAssociationResult {
             id: o.get_id(),
             urn: o.get_urn(),

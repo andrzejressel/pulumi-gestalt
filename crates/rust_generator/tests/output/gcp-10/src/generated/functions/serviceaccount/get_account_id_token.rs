@@ -37,15 +37,13 @@ pub mod get_account_id_token {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetAccountIdTokenArgs,
     ) -> GetAccountIdTokenResult {
-        let delegates_binding = args.delegates.get_output(context);
-        let include_email_binding = args.include_email.get_output(context);
-        let target_audience_binding = args.target_audience.get_output(context);
-        let target_service_account_binding = args
-            .target_service_account
-            .get_output(context);
+        let delegates_binding = args.delegates.get_output(ctx);
+        let include_email_binding = args.include_email.get_output(ctx);
+        let target_audience_binding = args.target_audience.get_output(ctx);
+        let target_service_account_binding = args.target_service_account.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:serviceaccount/getAccountIdToken:getAccountIdToken".into(),
             version: super::super::super::get_version(),
@@ -68,7 +66,7 @@ pub mod get_account_id_token {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetAccountIdTokenResult {
             delegates: o.get_field("delegates"),
             id: o.get_field("id"),

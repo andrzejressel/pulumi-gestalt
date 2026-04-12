@@ -233,36 +233,36 @@ pub mod management_folder_security_health_analytics_custom_module {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ManagementFolderSecurityHealthAnalyticsCustomModuleArgs,
     ) -> ManagementFolderSecurityHealthAnalyticsCustomModuleResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ManagementFolderSecurityHealthAnalyticsCustomModuleArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ManagementFolderSecurityHealthAnalyticsCustomModuleResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ManagementFolderSecurityHealthAnalyticsCustomModuleArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ManagementFolderSecurityHealthAnalyticsCustomModuleResult {
-        let custom_config_binding = args.custom_config.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let enablement_state_binding = args.enablement_state.get_output(context);
-        let folder_binding = args.folder.get_output(context);
-        let location_binding = args.location.get_output(context);
+        let custom_config_binding = args.custom_config.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let enablement_state_binding = args.enablement_state.get_output(ctx);
+        let folder_binding = args.folder.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:securitycenter/managementFolderSecurityHealthAnalyticsCustomModule:ManagementFolderSecurityHealthAnalyticsCustomModule"
                 .into(),
@@ -292,7 +292,7 @@ pub mod management_folder_security_health_analytics_custom_module {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ManagementFolderSecurityHealthAnalyticsCustomModuleResult {
             id: o.get_id(),
             urn: o.get_urn(),

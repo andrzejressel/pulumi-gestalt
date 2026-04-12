@@ -124,47 +124,47 @@ pub mod firewall {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FirewallArgs,
     ) -> FirewallResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FirewallArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> FirewallResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FirewallArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> FirewallResult {
-        let delete_protection_binding = args.delete_protection.get_output(context);
-        let description_binding = args.description.get_output(context);
+        let delete_protection_binding = args.delete_protection.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
         let encryption_configuration_binding = args
             .encryption_configuration
-            .get_output(context);
-        let firewall_policy_arn_binding = args.firewall_policy_arn.get_output(context);
+            .get_output(ctx);
+        let firewall_policy_arn_binding = args.firewall_policy_arn.get_output(ctx);
         let firewall_policy_change_protection_binding = args
             .firewall_policy_change_protection
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let subnet_change_protection_binding = args
             .subnet_change_protection
-            .get_output(context);
-        let subnet_mappings_binding = args.subnet_mappings.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let vpc_id_binding = args.vpc_id.get_output(context);
+            .get_output(ctx);
+        let subnet_mappings_binding = args.subnet_mappings.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let vpc_id_binding = args.vpc_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:networkfirewall/firewall:Firewall".into(),
             name: name.to_string(),
@@ -213,7 +213,7 @@ pub mod firewall {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         FirewallResult {
             id: o.get_id(),
             urn: o.get_urn(),

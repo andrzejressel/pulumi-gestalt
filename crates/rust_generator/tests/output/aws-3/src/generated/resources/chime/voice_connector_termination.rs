@@ -88,37 +88,37 @@ pub mod voice_connector_termination {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VoiceConnectorTerminationArgs,
     ) -> VoiceConnectorTerminationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VoiceConnectorTerminationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> VoiceConnectorTerminationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VoiceConnectorTerminationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> VoiceConnectorTerminationResult {
-        let calling_regions_binding = args.calling_regions.get_output(context);
-        let cidr_allow_lists_binding = args.cidr_allow_lists.get_output(context);
-        let cps_limit_binding = args.cps_limit.get_output(context);
-        let default_phone_number_binding = args.default_phone_number.get_output(context);
-        let disabled_binding = args.disabled.get_output(context);
-        let voice_connector_id_binding = args.voice_connector_id.get_output(context);
+        let calling_regions_binding = args.calling_regions.get_output(ctx);
+        let cidr_allow_lists_binding = args.cidr_allow_lists.get_output(ctx);
+        let cps_limit_binding = args.cps_limit.get_output(ctx);
+        let default_phone_number_binding = args.default_phone_number.get_output(ctx);
+        let disabled_binding = args.disabled.get_output(ctx);
+        let voice_connector_id_binding = args.voice_connector_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:chime/voiceConnectorTermination:VoiceConnectorTermination"
                 .into(),
@@ -152,7 +152,7 @@ pub mod voice_connector_termination {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         VoiceConnectorTerminationResult {
             id: o.get_id(),
             urn: o.get_urn(),

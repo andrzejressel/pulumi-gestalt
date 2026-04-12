@@ -47,36 +47,36 @@ pub mod credential_user_managed_identity {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CredentialUserManagedIdentityArgs,
     ) -> CredentialUserManagedIdentityResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CredentialUserManagedIdentityArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> CredentialUserManagedIdentityResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CredentialUserManagedIdentityArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> CredentialUserManagedIdentityResult {
-        let annotations_binding = args.annotations.get_output(context);
-        let data_factory_id_binding = args.data_factory_id.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let identity_id_binding = args.identity_id.get_output(context);
-        let name_binding = args.name.get_output(context);
+        let annotations_binding = args.annotations.get_output(ctx);
+        let data_factory_id_binding = args.data_factory_id.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let identity_id_binding = args.identity_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:datafactory/credentialUserManagedIdentity:CredentialUserManagedIdentity"
                 .into(),
@@ -106,7 +106,7 @@ pub mod credential_user_managed_identity {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         CredentialUserManagedIdentityResult {
             id: o.get_id(),
             urn: o.get_urn(),

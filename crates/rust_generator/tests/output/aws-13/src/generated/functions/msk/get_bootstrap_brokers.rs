@@ -47,10 +47,10 @@ pub mod get_bootstrap_brokers {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetBootstrapBrokersArgs,
     ) -> GetBootstrapBrokersResult {
-        let cluster_arn_binding = args.cluster_arn.get_output(context);
+        let cluster_arn_binding = args.cluster_arn.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:msk/getBootstrapBrokers:getBootstrapBrokers".into(),
             version: super::super::super::get_version(),
@@ -61,7 +61,7 @@ pub mod get_bootstrap_brokers {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetBootstrapBrokersResult {
             bootstrap_brokers: o.get_field("bootstrapBrokers"),
             bootstrap_brokers_public_sasl_iam: o

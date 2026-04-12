@@ -49,11 +49,11 @@ pub mod get_lb_rule {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetLbRuleArgs,
     ) -> GetLbRuleResult {
-        let loadbalancer_id_binding = args.loadbalancer_id.get_output(context);
-        let name_binding = args.name.get_output(context);
+        let loadbalancer_id_binding = args.loadbalancer_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:lb/getLBRule:getLBRule".into(),
             version: super::super::super::get_version(),
@@ -68,7 +68,7 @@ pub mod get_lb_rule {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetLbRuleResult {
             backend_address_pool_id: o.get_field("backendAddressPoolId"),
             backend_port: o.get_field("backendPort"),

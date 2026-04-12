@@ -494,45 +494,45 @@ pub mod region_target_https_proxy {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RegionTargetHttpsProxyArgs,
     ) -> RegionTargetHttpsProxyResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RegionTargetHttpsProxyArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> RegionTargetHttpsProxyResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RegionTargetHttpsProxyArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> RegionTargetHttpsProxyResult {
         let certificate_manager_certificates_binding = args
             .certificate_manager_certificates
-            .get_output(context);
-        let description_binding = args.description.get_output(context);
+            .get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
         let http_keep_alive_timeout_sec_binding = args
             .http_keep_alive_timeout_sec
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let region_binding = args.region.get_output(context);
-        let server_tls_policy_binding = args.server_tls_policy.get_output(context);
-        let ssl_certificates_binding = args.ssl_certificates.get_output(context);
-        let ssl_policy_binding = args.ssl_policy.get_output(context);
-        let url_map_binding = args.url_map.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let region_binding = args.region.get_output(ctx);
+        let server_tls_policy_binding = args.server_tls_policy.get_output(ctx);
+        let ssl_certificates_binding = args.ssl_certificates.get_output(ctx);
+        let ssl_policy_binding = args.ssl_policy.get_output(ctx);
+        let url_map_binding = args.url_map.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:compute/regionTargetHttpsProxy:RegionTargetHttpsProxy".into(),
             name: name.to_string(),
@@ -581,7 +581,7 @@ pub mod region_target_https_proxy {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         RegionTargetHttpsProxyResult {
             id: o.get_id(),
             urn: o.get_urn(),

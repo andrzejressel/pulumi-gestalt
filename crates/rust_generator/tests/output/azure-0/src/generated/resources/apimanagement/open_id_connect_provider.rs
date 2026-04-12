@@ -112,39 +112,39 @@ pub mod open_id_connect_provider {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OpenIdConnectProviderArgs,
     ) -> OpenIdConnectProviderResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OpenIdConnectProviderArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> OpenIdConnectProviderResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OpenIdConnectProviderArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> OpenIdConnectProviderResult {
-        let api_management_name_binding = args.api_management_name.get_output(context);
-        let client_id_binding = args.client_id.get_output(context);
-        let client_secret_binding = args.client_secret.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let metadata_endpoint_binding = args.metadata_endpoint.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+        let api_management_name_binding = args.api_management_name.get_output(ctx);
+        let client_id_binding = args.client_id.get_output(ctx);
+        let client_secret_binding = args.client_secret.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let metadata_endpoint_binding = args.metadata_endpoint.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:apimanagement/openIdConnectProvider:OpenIdConnectProvider"
                 .into(),
@@ -186,7 +186,7 @@ pub mod open_id_connect_provider {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         OpenIdConnectProviderResult {
             id: o.get_id(),
             urn: o.get_urn(),

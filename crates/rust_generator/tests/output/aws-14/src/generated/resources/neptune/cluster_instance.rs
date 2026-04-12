@@ -191,59 +191,59 @@ pub mod cluster_instance {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterInstanceArgs,
     ) -> ClusterInstanceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterInstanceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ClusterInstanceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterInstanceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ClusterInstanceResult {
-        let apply_immediately_binding = args.apply_immediately.get_output(context);
+        let apply_immediately_binding = args.apply_immediately.get_output(ctx);
         let auto_minor_version_upgrade_binding = args
             .auto_minor_version_upgrade
-            .get_output(context);
-        let availability_zone_binding = args.availability_zone.get_output(context);
-        let cluster_identifier_binding = args.cluster_identifier.get_output(context);
-        let engine_binding = args.engine.get_output(context);
-        let engine_version_binding = args.engine_version.get_output(context);
-        let identifier_binding = args.identifier.get_output(context);
-        let identifier_prefix_binding = args.identifier_prefix.get_output(context);
-        let instance_class_binding = args.instance_class.get_output(context);
+            .get_output(ctx);
+        let availability_zone_binding = args.availability_zone.get_output(ctx);
+        let cluster_identifier_binding = args.cluster_identifier.get_output(ctx);
+        let engine_binding = args.engine.get_output(ctx);
+        let engine_version_binding = args.engine_version.get_output(ctx);
+        let identifier_binding = args.identifier.get_output(ctx);
+        let identifier_prefix_binding = args.identifier_prefix.get_output(ctx);
+        let instance_class_binding = args.instance_class.get_output(ctx);
         let neptune_parameter_group_name_binding = args
             .neptune_parameter_group_name
-            .get_output(context);
+            .get_output(ctx);
         let neptune_subnet_group_name_binding = args
             .neptune_subnet_group_name
-            .get_output(context);
-        let port_binding = args.port.get_output(context);
+            .get_output(ctx);
+        let port_binding = args.port.get_output(ctx);
         let preferred_backup_window_binding = args
             .preferred_backup_window
-            .get_output(context);
+            .get_output(ctx);
         let preferred_maintenance_window_binding = args
             .preferred_maintenance_window
-            .get_output(context);
-        let promotion_tier_binding = args.promotion_tier.get_output(context);
-        let publicly_accessible_binding = args.publicly_accessible.get_output(context);
-        let skip_final_snapshot_binding = args.skip_final_snapshot.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let promotion_tier_binding = args.promotion_tier.get_output(ctx);
+        let publicly_accessible_binding = args.publicly_accessible.get_output(ctx);
+        let skip_final_snapshot_binding = args.skip_final_snapshot.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:neptune/clusterInstance:ClusterInstance".into(),
             name: name.to_string(),
@@ -324,7 +324,7 @@ pub mod cluster_instance {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ClusterInstanceResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -111,37 +111,37 @@ pub mod organization_configuration {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OrganizationConfigurationArgs,
     ) -> OrganizationConfigurationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OrganizationConfigurationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> OrganizationConfigurationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OrganizationConfigurationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> OrganizationConfigurationResult {
-        let auto_enable_binding = args.auto_enable.get_output(context);
+        let auto_enable_binding = args.auto_enable.get_output(ctx);
         let auto_enable_organization_members_binding = args
             .auto_enable_organization_members
-            .get_output(context);
-        let datasources_binding = args.datasources.get_output(context);
-        let detector_id_binding = args.detector_id.get_output(context);
+            .get_output(ctx);
+        let datasources_binding = args.datasources.get_output(ctx);
+        let detector_id_binding = args.detector_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:guardduty/organizationConfiguration:OrganizationConfiguration"
                 .into(),
@@ -167,7 +167,7 @@ pub mod organization_configuration {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         OrganizationConfigurationResult {
             id: o.get_id(),
             urn: o.get_urn(),

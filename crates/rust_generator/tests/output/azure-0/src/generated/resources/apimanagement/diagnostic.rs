@@ -208,51 +208,49 @@ pub mod diagnostic {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DiagnosticArgs,
     ) -> DiagnosticResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DiagnosticArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DiagnosticResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DiagnosticArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DiagnosticResult {
-        let always_log_errors_binding = args.always_log_errors.get_output(context);
+        let always_log_errors_binding = args.always_log_errors.get_output(ctx);
         let api_management_logger_id_binding = args
             .api_management_logger_id
-            .get_output(context);
-        let api_management_name_binding = args.api_management_name.get_output(context);
-        let backend_request_binding = args.backend_request.get_output(context);
-        let backend_response_binding = args.backend_response.get_output(context);
-        let frontend_request_binding = args.frontend_request.get_output(context);
-        let frontend_response_binding = args.frontend_response.get_output(context);
+            .get_output(ctx);
+        let api_management_name_binding = args.api_management_name.get_output(ctx);
+        let backend_request_binding = args.backend_request.get_output(ctx);
+        let backend_response_binding = args.backend_response.get_output(ctx);
+        let frontend_request_binding = args.frontend_request.get_output(ctx);
+        let frontend_response_binding = args.frontend_response.get_output(ctx);
         let http_correlation_protocol_binding = args
             .http_correlation_protocol
-            .get_output(context);
-        let identifier_binding = args.identifier.get_output(context);
-        let log_client_ip_binding = args.log_client_ip.get_output(context);
-        let operation_name_format_binding = args
-            .operation_name_format
-            .get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let sampling_percentage_binding = args.sampling_percentage.get_output(context);
-        let verbosity_binding = args.verbosity.get_output(context);
+            .get_output(ctx);
+        let identifier_binding = args.identifier.get_output(ctx);
+        let log_client_ip_binding = args.log_client_ip.get_output(ctx);
+        let operation_name_format_binding = args.operation_name_format.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let sampling_percentage_binding = args.sampling_percentage.get_output(ctx);
+        let verbosity_binding = args.verbosity.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:apimanagement/diagnostic:Diagnostic".into(),
             name: name.to_string(),
@@ -317,7 +315,7 @@ pub mod diagnostic {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DiagnosticResult {
             id: o.get_id(),
             urn: o.get_urn(),

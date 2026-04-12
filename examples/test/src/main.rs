@@ -6,22 +6,22 @@ use pulumi_gestalt_rust::{Context, CustomResourceOptions, add_export};
 fn main() {
     pulumi_gestalt_rust::run(pulumi_main).unwrap();
 }
-fn pulumi_main(context: &Context) -> Result<()> {
+fn pulumi_main(ctx: &Context) -> Result<()> {
     let combine_string_res = pulumi_gestalt_providers_test::combine_string::create(
-        context,
+        ctx,
         "ABC",
         CombineStringArgs::builder().suffix("SUFFIX").build_struct(),
     );
 
     let provider = pulumi_gestalt_providers_test::provider::create(
-        context,
+        ctx,
         "test_provider",
         ProviderArgs::builder().prefix("MY_PREFIX").build_struct(),
     );
 
     let combine_string_with_provider =
         pulumi_gestalt_providers_test::combine_string::create_with_options(
-            context,
+            ctx,
             "DEF",
             CombineStringArgs::builder().suffix("SUFFIX").build_struct(),
             CustomResourceOptions::builder().provider(&provider).build(),

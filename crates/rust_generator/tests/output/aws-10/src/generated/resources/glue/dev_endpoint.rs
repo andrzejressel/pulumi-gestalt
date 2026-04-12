@@ -175,50 +175,48 @@ pub mod dev_endpoint {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DevEndpointArgs,
     ) -> DevEndpointResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DevEndpointArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DevEndpointResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DevEndpointArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DevEndpointResult {
-        let arguments_binding = args.arguments.get_output(context);
-        let extra_jars_s3_path_binding = args.extra_jars_s3_path.get_output(context);
+        let arguments_binding = args.arguments.get_output(ctx);
+        let extra_jars_s3_path_binding = args.extra_jars_s3_path.get_output(ctx);
         let extra_python_libs_s3_path_binding = args
             .extra_python_libs_s3_path
-            .get_output(context);
-        let glue_version_binding = args.glue_version.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let number_of_nodes_binding = args.number_of_nodes.get_output(context);
-        let number_of_workers_binding = args.number_of_workers.get_output(context);
-        let public_key_binding = args.public_key.get_output(context);
-        let public_keys_binding = args.public_keys.get_output(context);
-        let role_arn_binding = args.role_arn.get_output(context);
-        let security_configuration_binding = args
-            .security_configuration
-            .get_output(context);
-        let security_group_ids_binding = args.security_group_ids.get_output(context);
-        let subnet_id_binding = args.subnet_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let worker_type_binding = args.worker_type.get_output(context);
+            .get_output(ctx);
+        let glue_version_binding = args.glue_version.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let number_of_nodes_binding = args.number_of_nodes.get_output(ctx);
+        let number_of_workers_binding = args.number_of_workers.get_output(ctx);
+        let public_key_binding = args.public_key.get_output(ctx);
+        let public_keys_binding = args.public_keys.get_output(ctx);
+        let role_arn_binding = args.role_arn.get_output(ctx);
+        let security_configuration_binding = args.security_configuration.get_output(ctx);
+        let security_group_ids_binding = args.security_group_ids.get_output(ctx);
+        let subnet_id_binding = args.subnet_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let worker_type_binding = args.worker_type.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:glue/devEndpoint:DevEndpoint".into(),
             name: name.to_string(),
@@ -287,7 +285,7 @@ pub mod dev_endpoint {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DevEndpointResult {
             id: o.get_id(),
             urn: o.get_urn(),

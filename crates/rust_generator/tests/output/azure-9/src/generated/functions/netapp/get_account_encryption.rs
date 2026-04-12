@@ -26,10 +26,10 @@ pub mod get_account_encryption {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetAccountEncryptionArgs,
     ) -> GetAccountEncryptionResult {
-        let netapp_account_id_binding = args.netapp_account_id.get_output(context);
+        let netapp_account_id_binding = args.netapp_account_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:netapp/getAccountEncryption:getAccountEncryption".into(),
             version: super::super::super::get_version(),
@@ -40,7 +40,7 @@ pub mod get_account_encryption {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetAccountEncryptionResult {
             encryption_key: o.get_field("encryptionKey"),
             id: o.get_field("id"),

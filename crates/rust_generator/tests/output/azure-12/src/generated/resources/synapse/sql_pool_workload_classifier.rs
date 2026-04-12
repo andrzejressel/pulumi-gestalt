@@ -143,39 +143,39 @@ pub mod sql_pool_workload_classifier {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SqlPoolWorkloadClassifierArgs,
     ) -> SqlPoolWorkloadClassifierResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SqlPoolWorkloadClassifierArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> SqlPoolWorkloadClassifierResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SqlPoolWorkloadClassifierArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> SqlPoolWorkloadClassifierResult {
-        let context_binding = args.context.get_output(context);
-        let end_time_binding = args.end_time.get_output(context);
-        let importance_binding = args.importance.get_output(context);
-        let label_binding = args.label.get_output(context);
-        let member_name_binding = args.member_name.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let start_time_binding = args.start_time.get_output(context);
-        let workload_group_id_binding = args.workload_group_id.get_output(context);
+        let context_binding = args.context.get_output(ctx);
+        let end_time_binding = args.end_time.get_output(ctx);
+        let importance_binding = args.importance.get_output(ctx);
+        let label_binding = args.label.get_output(ctx);
+        let member_name_binding = args.member_name.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let start_time_binding = args.start_time.get_output(ctx);
+        let workload_group_id_binding = args.workload_group_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:synapse/sqlPoolWorkloadClassifier:SqlPoolWorkloadClassifier"
                 .into(),
@@ -217,7 +217,7 @@ pub mod sql_pool_workload_classifier {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         SqlPoolWorkloadClassifierResult {
             id: o.get_id(),
             urn: o.get_urn(),

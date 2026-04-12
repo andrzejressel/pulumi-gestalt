@@ -242,35 +242,35 @@ pub mod bucket_replication_config {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BucketReplicationConfigArgs,
     ) -> BucketReplicationConfigResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BucketReplicationConfigArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> BucketReplicationConfigResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BucketReplicationConfigArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> BucketReplicationConfigResult {
-        let bucket_binding = args.bucket.get_output(context);
-        let role_binding = args.role.get_output(context);
-        let rules_binding = args.rules.get_output(context);
-        let token_binding = args.token.get_output(context);
+        let bucket_binding = args.bucket.get_output(ctx);
+        let role_binding = args.role.get_output(ctx);
+        let rules_binding = args.rules.get_output(ctx);
+        let token_binding = args.token.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:s3/bucketReplicationConfig:BucketReplicationConfig".into(),
             name: name.to_string(),
@@ -295,7 +295,7 @@ pub mod bucket_replication_config {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         BucketReplicationConfigResult {
             id: o.get_id(),
             urn: o.get_urn(),

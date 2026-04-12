@@ -136,41 +136,39 @@ pub mod firewall_endpoint_association {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FirewallEndpointAssociationArgs,
     ) -> FirewallEndpointAssociationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FirewallEndpointAssociationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> FirewallEndpointAssociationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FirewallEndpointAssociationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> FirewallEndpointAssociationResult {
-        let disabled_binding = args.disabled.get_output(context);
-        let firewall_endpoint_binding = args.firewall_endpoint.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_binding = args.network.get_output(context);
-        let parent_binding = args.parent.get_output(context);
-        let tls_inspection_policy_binding = args
-            .tls_inspection_policy
-            .get_output(context);
+        let disabled_binding = args.disabled.get_output(ctx);
+        let firewall_endpoint_binding = args.firewall_endpoint.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_binding = args.network.get_output(ctx);
+        let parent_binding = args.parent.get_output(ctx);
+        let tls_inspection_policy_binding = args.tls_inspection_policy.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:networksecurity/firewallEndpointAssociation:FirewallEndpointAssociation"
                 .into(),
@@ -212,7 +210,7 @@ pub mod firewall_endpoint_association {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         FirewallEndpointAssociationResult {
             id: o.get_id(),
             urn: o.get_urn(),

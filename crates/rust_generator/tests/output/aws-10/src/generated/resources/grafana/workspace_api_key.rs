@@ -66,35 +66,35 @@ pub mod workspace_api_key {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkspaceApiKeyArgs,
     ) -> WorkspaceApiKeyResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkspaceApiKeyArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> WorkspaceApiKeyResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkspaceApiKeyArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> WorkspaceApiKeyResult {
-        let key_name_binding = args.key_name.get_output(context);
-        let key_role_binding = args.key_role.get_output(context);
-        let seconds_to_live_binding = args.seconds_to_live.get_output(context);
-        let workspace_id_binding = args.workspace_id.get_output(context);
+        let key_name_binding = args.key_name.get_output(ctx);
+        let key_role_binding = args.key_role.get_output(ctx);
+        let seconds_to_live_binding = args.seconds_to_live.get_output(ctx);
+        let workspace_id_binding = args.workspace_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:grafana/workspaceApiKey:WorkspaceApiKey".into(),
             name: name.to_string(),
@@ -119,7 +119,7 @@ pub mod workspace_api_key {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         WorkspaceApiKeyResult {
             id: o.get_id(),
             urn: o.get_urn(),

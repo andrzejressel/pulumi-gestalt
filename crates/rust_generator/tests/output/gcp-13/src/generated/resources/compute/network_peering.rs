@@ -127,43 +127,43 @@ pub mod network_peering {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkPeeringArgs,
     ) -> NetworkPeeringResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkPeeringArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> NetworkPeeringResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkPeeringArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> NetworkPeeringResult {
-        let export_custom_routes_binding = args.export_custom_routes.get_output(context);
+        let export_custom_routes_binding = args.export_custom_routes.get_output(ctx);
         let export_subnet_routes_with_public_ip_binding = args
             .export_subnet_routes_with_public_ip
-            .get_output(context);
-        let import_custom_routes_binding = args.import_custom_routes.get_output(context);
+            .get_output(ctx);
+        let import_custom_routes_binding = args.import_custom_routes.get_output(ctx);
         let import_subnet_routes_with_public_ip_binding = args
             .import_subnet_routes_with_public_ip
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_binding = args.network.get_output(context);
-        let peer_network_binding = args.peer_network.get_output(context);
-        let stack_type_binding = args.stack_type.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_binding = args.network.get_output(ctx);
+        let peer_network_binding = args.peer_network.get_output(ctx);
+        let stack_type_binding = args.stack_type.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:compute/networkPeering:NetworkPeering".into(),
             name: name.to_string(),
@@ -204,7 +204,7 @@ pub mod network_peering {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         NetworkPeeringResult {
             id: o.get_id(),
             urn: o.get_urn(),

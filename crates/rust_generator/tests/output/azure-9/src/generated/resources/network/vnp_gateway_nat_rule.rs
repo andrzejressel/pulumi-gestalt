@@ -138,38 +138,38 @@ pub mod vnp_gateway_nat_rule {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VnpGatewayNatRuleArgs,
     ) -> VnpGatewayNatRuleResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VnpGatewayNatRuleArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> VnpGatewayNatRuleResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VnpGatewayNatRuleArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> VnpGatewayNatRuleResult {
-        let external_mappings_binding = args.external_mappings.get_output(context);
-        let internal_mappings_binding = args.internal_mappings.get_output(context);
-        let ip_configuration_id_binding = args.ip_configuration_id.get_output(context);
-        let mode_binding = args.mode.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let type__binding = args.type_.get_output(context);
-        let vpn_gateway_id_binding = args.vpn_gateway_id.get_output(context);
+        let external_mappings_binding = args.external_mappings.get_output(ctx);
+        let internal_mappings_binding = args.internal_mappings.get_output(ctx);
+        let ip_configuration_id_binding = args.ip_configuration_id.get_output(ctx);
+        let mode_binding = args.mode.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
+        let vpn_gateway_id_binding = args.vpn_gateway_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:network/vnpGatewayNatRule:VnpGatewayNatRule".into(),
             name: name.to_string(),
@@ -206,7 +206,7 @@ pub mod vnp_gateway_nat_rule {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         VnpGatewayNatRuleResult {
             id: o.get_id(),
             urn: o.get_urn(),

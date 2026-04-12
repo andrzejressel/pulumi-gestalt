@@ -342,45 +342,45 @@ pub mod image {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ImageArgs,
     ) -> ImageResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ImageArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ImageResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ImageArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ImageResult {
-        let description_binding = args.description.get_output(context);
-        let disk_size_gb_binding = args.disk_size_gb.get_output(context);
-        let family_binding = args.family.get_output(context);
-        let guest_os_features_binding = args.guest_os_features.get_output(context);
-        let image_encryption_key_binding = args.image_encryption_key.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let licenses_binding = args.licenses.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let raw_disk_binding = args.raw_disk.get_output(context);
-        let source_disk_binding = args.source_disk.get_output(context);
-        let source_image_binding = args.source_image.get_output(context);
-        let source_snapshot_binding = args.source_snapshot.get_output(context);
-        let storage_locations_binding = args.storage_locations.get_output(context);
+        let description_binding = args.description.get_output(ctx);
+        let disk_size_gb_binding = args.disk_size_gb.get_output(ctx);
+        let family_binding = args.family.get_output(ctx);
+        let guest_os_features_binding = args.guest_os_features.get_output(ctx);
+        let image_encryption_key_binding = args.image_encryption_key.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let licenses_binding = args.licenses.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let raw_disk_binding = args.raw_disk.get_output(ctx);
+        let source_disk_binding = args.source_disk.get_output(ctx);
+        let source_image_binding = args.source_image.get_output(ctx);
+        let source_snapshot_binding = args.source_snapshot.get_output(ctx);
+        let storage_locations_binding = args.storage_locations.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:compute/image:Image".into(),
             name: name.to_string(),
@@ -445,7 +445,7 @@ pub mod image {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ImageResult {
             id: o.get_id(),
             urn: o.get_urn(),

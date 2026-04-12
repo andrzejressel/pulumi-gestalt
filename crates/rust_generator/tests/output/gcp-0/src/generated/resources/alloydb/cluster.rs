@@ -530,62 +530,60 @@ pub mod cluster {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterArgs,
     ) -> ClusterResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ClusterResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ClusterResult {
-        let annotations_binding = args.annotations.get_output(context);
+        let annotations_binding = args.annotations.get_output(ctx);
         let automated_backup_policy_binding = args
             .automated_backup_policy
-            .get_output(context);
-        let cluster_id_binding = args.cluster_id.get_output(context);
-        let cluster_type_binding = args.cluster_type.get_output(context);
+            .get_output(ctx);
+        let cluster_id_binding = args.cluster_id.get_output(ctx);
+        let cluster_type_binding = args.cluster_type.get_output(ctx);
         let continuous_backup_config_binding = args
             .continuous_backup_config
-            .get_output(context);
-        let database_version_binding = args.database_version.get_output(context);
-        let deletion_policy_binding = args.deletion_policy.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let encryption_config_binding = args.encryption_config.get_output(context);
-        let etag_binding = args.etag.get_output(context);
-        let initial_user_binding = args.initial_user.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let location_binding = args.location.get_output(context);
+            .get_output(ctx);
+        let database_version_binding = args.database_version.get_output(ctx);
+        let deletion_policy_binding = args.deletion_policy.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let encryption_config_binding = args.encryption_config.get_output(ctx);
+        let etag_binding = args.etag.get_output(ctx);
+        let initial_user_binding = args.initial_user.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
         let maintenance_update_policy_binding = args
             .maintenance_update_policy
-            .get_output(context);
-        let network_config_binding = args.network_config.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let psc_config_binding = args.psc_config.get_output(context);
-        let restore_backup_source_binding = args
-            .restore_backup_source
-            .get_output(context);
+            .get_output(ctx);
+        let network_config_binding = args.network_config.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let psc_config_binding = args.psc_config.get_output(ctx);
+        let restore_backup_source_binding = args.restore_backup_source.get_output(ctx);
         let restore_continuous_backup_source_binding = args
             .restore_continuous_backup_source
-            .get_output(context);
-        let secondary_config_binding = args.secondary_config.get_output(context);
-        let subscription_type_binding = args.subscription_type.get_output(context);
+            .get_output(ctx);
+        let secondary_config_binding = args.secondary_config.get_output(ctx);
+        let subscription_type_binding = args.subscription_type.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:alloydb/cluster:Cluster".into(),
             name: name.to_string(),
@@ -678,7 +676,7 @@ pub mod cluster {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ClusterResult {
             id: o.get_id(),
             urn: o.get_urn(),

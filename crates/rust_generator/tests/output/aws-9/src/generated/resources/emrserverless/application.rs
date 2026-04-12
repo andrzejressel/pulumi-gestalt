@@ -202,51 +202,49 @@ pub mod application {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ApplicationArgs,
     ) -> ApplicationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ApplicationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ApplicationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ApplicationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ApplicationResult {
-        let architecture_binding = args.architecture.get_output(context);
+        let architecture_binding = args.architecture.get_output(ctx);
         let auto_start_configuration_binding = args
             .auto_start_configuration
-            .get_output(context);
+            .get_output(ctx);
         let auto_stop_configuration_binding = args
             .auto_stop_configuration
-            .get_output(context);
-        let image_configuration_binding = args.image_configuration.get_output(context);
-        let initial_capacities_binding = args.initial_capacities.get_output(context);
+            .get_output(ctx);
+        let image_configuration_binding = args.image_configuration.get_output(ctx);
+        let initial_capacities_binding = args.initial_capacities.get_output(ctx);
         let interactive_configuration_binding = args
             .interactive_configuration
-            .get_output(context);
-        let maximum_capacity_binding = args.maximum_capacity.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_configuration_binding = args
-            .network_configuration
-            .get_output(context);
-        let release_label_binding = args.release_label.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let type__binding = args.type_.get_output(context);
+            .get_output(ctx);
+        let maximum_capacity_binding = args.maximum_capacity.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_configuration_binding = args.network_configuration.get_output(ctx);
+        let release_label_binding = args.release_label.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:emrserverless/application:Application".into(),
             name: name.to_string(),
@@ -303,7 +301,7 @@ pub mod application {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ApplicationResult {
             id: o.get_id(),
             urn: o.get_urn(),

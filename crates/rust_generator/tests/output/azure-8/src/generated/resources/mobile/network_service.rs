@@ -140,38 +140,38 @@ pub mod network_service {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkServiceArgs,
     ) -> NetworkServiceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkServiceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> NetworkServiceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkServiceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> NetworkServiceResult {
-        let location_binding = args.location.get_output(context);
-        let mobile_network_id_binding = args.mobile_network_id.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let pcc_rules_binding = args.pcc_rules.get_output(context);
-        let service_precedence_binding = args.service_precedence.get_output(context);
-        let service_qos_policy_binding = args.service_qos_policy.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let location_binding = args.location.get_output(ctx);
+        let mobile_network_id_binding = args.mobile_network_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let pcc_rules_binding = args.pcc_rules.get_output(ctx);
+        let service_precedence_binding = args.service_precedence.get_output(ctx);
+        let service_qos_policy_binding = args.service_qos_policy.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:mobile/networkService:NetworkService".into(),
             name: name.to_string(),
@@ -208,7 +208,7 @@ pub mod network_service {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         NetworkServiceResult {
             id: o.get_id(),
             urn: o.get_urn(),

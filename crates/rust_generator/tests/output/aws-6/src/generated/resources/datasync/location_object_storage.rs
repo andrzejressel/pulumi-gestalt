@@ -113,41 +113,41 @@ pub mod location_object_storage {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LocationObjectStorageArgs,
     ) -> LocationObjectStorageResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LocationObjectStorageArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> LocationObjectStorageResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LocationObjectStorageArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> LocationObjectStorageResult {
-        let access_key_binding = args.access_key.get_output(context);
-        let agent_arns_binding = args.agent_arns.get_output(context);
-        let bucket_name_binding = args.bucket_name.get_output(context);
-        let secret_key_binding = args.secret_key.get_output(context);
-        let server_certificate_binding = args.server_certificate.get_output(context);
-        let server_hostname_binding = args.server_hostname.get_output(context);
-        let server_port_binding = args.server_port.get_output(context);
-        let server_protocol_binding = args.server_protocol.get_output(context);
-        let subdirectory_binding = args.subdirectory.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let access_key_binding = args.access_key.get_output(ctx);
+        let agent_arns_binding = args.agent_arns.get_output(ctx);
+        let bucket_name_binding = args.bucket_name.get_output(ctx);
+        let secret_key_binding = args.secret_key.get_output(ctx);
+        let server_certificate_binding = args.server_certificate.get_output(ctx);
+        let server_hostname_binding = args.server_hostname.get_output(ctx);
+        let server_port_binding = args.server_port.get_output(ctx);
+        let server_protocol_binding = args.server_protocol.get_output(ctx);
+        let subdirectory_binding = args.subdirectory.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:datasync/locationObjectStorage:LocationObjectStorage".into(),
             name: name.to_string(),
@@ -196,7 +196,7 @@ pub mod location_object_storage {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         LocationObjectStorageResult {
             id: o.get_id(),
             urn: o.get_urn(),

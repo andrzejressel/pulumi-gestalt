@@ -274,43 +274,41 @@ pub mod alert_policy {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AlertPolicyArgs,
     ) -> AlertPolicyResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AlertPolicyArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AlertPolicyResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AlertPolicyArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AlertPolicyResult {
-        let alert_strategy_binding = args.alert_strategy.get_output(context);
-        let combiner_binding = args.combiner.get_output(context);
-        let conditions_binding = args.conditions.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let documentation_binding = args.documentation.get_output(context);
-        let enabled_binding = args.enabled.get_output(context);
-        let notification_channels_binding = args
-            .notification_channels
-            .get_output(context);
-        let project_binding = args.project.get_output(context);
-        let severity_binding = args.severity.get_output(context);
-        let user_labels_binding = args.user_labels.get_output(context);
+        let alert_strategy_binding = args.alert_strategy.get_output(ctx);
+        let combiner_binding = args.combiner.get_output(ctx);
+        let conditions_binding = args.conditions.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let documentation_binding = args.documentation.get_output(ctx);
+        let enabled_binding = args.enabled.get_output(ctx);
+        let notification_channels_binding = args.notification_channels.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let severity_binding = args.severity.get_output(ctx);
+        let user_labels_binding = args.user_labels.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:monitoring/alertPolicy:AlertPolicy".into(),
             name: name.to_string(),
@@ -359,7 +357,7 @@ pub mod alert_policy {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AlertPolicyResult {
             id: o.get_id(),
             urn: o.get_urn(),

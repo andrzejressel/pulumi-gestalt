@@ -203,43 +203,43 @@ pub mod vpn_connection {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpnConnectionArgs,
     ) -> VpnConnectionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpnConnectionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> VpnConnectionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpnConnectionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> VpnConnectionResult {
-        let cluster_binding = args.cluster.get_output(context);
+        let cluster_binding = args.cluster.get_output(ctx);
         let enable_high_availability_binding = args
             .enable_high_availability
-            .get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let nat_gateway_ip_binding = args.nat_gateway_ip.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let router_binding = args.router.get_output(context);
-        let vpc_binding = args.vpc.get_output(context);
-        let vpc_project_binding = args.vpc_project.get_output(context);
+            .get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let nat_gateway_ip_binding = args.nat_gateway_ip.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let router_binding = args.router.get_output(ctx);
+        let vpc_binding = args.vpc.get_output(ctx);
+        let vpc_project_binding = args.vpc_project.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:edgecontainer/vpnConnection:VpnConnection".into(),
             name: name.to_string(),
@@ -288,7 +288,7 @@ pub mod vpn_connection {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         VpnConnectionResult {
             id: o.get_id(),
             urn: o.get_urn(),

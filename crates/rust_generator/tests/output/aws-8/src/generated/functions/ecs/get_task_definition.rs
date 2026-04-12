@@ -39,10 +39,10 @@ pub mod get_task_definition {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetTaskDefinitionArgs,
     ) -> GetTaskDefinitionResult {
-        let task_definition_binding = args.task_definition.get_output(context);
+        let task_definition_binding = args.task_definition.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ecs/getTaskDefinition:getTaskDefinition".into(),
             version: super::super::super::get_version(),
@@ -53,7 +53,7 @@ pub mod get_task_definition {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetTaskDefinitionResult {
             arn: o.get_field("arn"),
             arn_without_revision: o.get_field("arnWithoutRevision"),

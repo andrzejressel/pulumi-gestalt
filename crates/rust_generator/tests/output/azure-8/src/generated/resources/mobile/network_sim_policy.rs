@@ -180,46 +180,46 @@ pub mod network_sim_policy {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkSimPolicyArgs,
     ) -> NetworkSimPolicyResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkSimPolicyArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> NetworkSimPolicyResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkSimPolicyArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> NetworkSimPolicyResult {
-        let default_slice_id_binding = args.default_slice_id.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let mobile_network_id_binding = args.mobile_network_id.get_output(context);
-        let name_binding = args.name.get_output(context);
+        let default_slice_id_binding = args.default_slice_id.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let mobile_network_id_binding = args.mobile_network_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let rat_frequency_selection_priority_index_binding = args
             .rat_frequency_selection_priority_index
-            .get_output(context);
+            .get_output(ctx);
         let registration_timer_in_seconds_binding = args
             .registration_timer_in_seconds
-            .get_output(context);
-        let slices_binding = args.slices.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let slices_binding = args.slices.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let user_equipment_aggregate_maximum_bit_rate_binding = args
             .user_equipment_aggregate_maximum_bit_rate
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:mobile/networkSimPolicy:NetworkSimPolicy".into(),
             name: name.to_string(),
@@ -264,7 +264,7 @@ pub mod network_sim_policy {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         NetworkSimPolicyResult {
             id: o.get_id(),
             urn: o.get_urn(),

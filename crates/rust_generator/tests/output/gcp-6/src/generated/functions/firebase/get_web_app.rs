@@ -40,11 +40,11 @@ pub mod get_web_app {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetWebAppArgs,
     ) -> GetWebAppResult {
-        let app_id_binding = args.app_id.get_output(context);
-        let project_binding = args.project.get_output(context);
+        let app_id_binding = args.app_id.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:firebase/getWebApp:getWebApp".into(),
             version: super::super::super::get_version(),
@@ -59,7 +59,7 @@ pub mod get_web_app {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetWebAppResult {
             api_key_id: o.get_field("apiKeyId"),
             app_id: o.get_field("appId"),

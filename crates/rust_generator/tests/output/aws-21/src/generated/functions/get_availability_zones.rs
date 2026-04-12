@@ -52,16 +52,14 @@ pub mod get_availability_zones {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetAvailabilityZonesArgs,
     ) -> GetAvailabilityZonesResult {
-        let all_availability_zones_binding = args
-            .all_availability_zones
-            .get_output(context);
-        let exclude_names_binding = args.exclude_names.get_output(context);
-        let exclude_zone_ids_binding = args.exclude_zone_ids.get_output(context);
-        let filters_binding = args.filters.get_output(context);
-        let state_binding = args.state.get_output(context);
+        let all_availability_zones_binding = args.all_availability_zones.get_output(ctx);
+        let exclude_names_binding = args.exclude_names.get_output(ctx);
+        let exclude_zone_ids_binding = args.exclude_zone_ids.get_output(ctx);
+        let filters_binding = args.filters.get_output(ctx);
+        let state_binding = args.state.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:index/getAvailabilityZones:getAvailabilityZones".into(),
             version: super::super::get_version(),
@@ -88,7 +86,7 @@ pub mod get_availability_zones {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetAvailabilityZonesResult {
             all_availability_zones: o.get_field("allAvailabilityZones"),
             exclude_names: o.get_field("excludeNames"),

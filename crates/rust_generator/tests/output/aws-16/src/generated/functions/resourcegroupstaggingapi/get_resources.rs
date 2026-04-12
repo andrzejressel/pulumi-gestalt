@@ -61,20 +61,18 @@ pub mod get_resources {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetResourcesArgs,
     ) -> GetResourcesResult {
         let exclude_compliant_resources_binding = args
             .exclude_compliant_resources
-            .get_output(context);
+            .get_output(ctx);
         let include_compliance_details_binding = args
             .include_compliance_details
-            .get_output(context);
-        let resource_arn_lists_binding = args.resource_arn_lists.get_output(context);
-        let resource_type_filters_binding = args
-            .resource_type_filters
-            .get_output(context);
-        let tag_filters_binding = args.tag_filters.get_output(context);
+            .get_output(ctx);
+        let resource_arn_lists_binding = args.resource_arn_lists.get_output(ctx);
+        let resource_type_filters_binding = args.resource_type_filters.get_output(ctx);
+        let tag_filters_binding = args.tag_filters.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:resourcegroupstaggingapi/getResources:getResources".into(),
             version: super::super::super::get_version(),
@@ -101,7 +99,7 @@ pub mod get_resources {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetResourcesResult {
             exclude_compliant_resources: o.get_field("excludeCompliantResources"),
             id: o.get_field("id"),

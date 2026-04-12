@@ -170,42 +170,42 @@ pub mod service {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServiceArgs,
     ) -> ServiceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServiceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ServiceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServiceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ServiceResult {
-        let description_binding = args.description.get_output(context);
-        let dns_config_binding = args.dns_config.get_output(context);
-        let force_destroy_binding = args.force_destroy.get_output(context);
-        let health_check_config_binding = args.health_check_config.get_output(context);
+        let description_binding = args.description.get_output(ctx);
+        let dns_config_binding = args.dns_config.get_output(ctx);
+        let force_destroy_binding = args.force_destroy.get_output(ctx);
+        let health_check_config_binding = args.health_check_config.get_output(ctx);
         let health_check_custom_config_binding = args
             .health_check_custom_config
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let namespace_id_binding = args.namespace_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let type__binding = args.type_.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let namespace_id_binding = args.namespace_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:servicediscovery/service:Service".into(),
             name: name.to_string(),
@@ -250,7 +250,7 @@ pub mod service {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ServiceResult {
             id: o.get_id(),
             urn: o.get_urn(),

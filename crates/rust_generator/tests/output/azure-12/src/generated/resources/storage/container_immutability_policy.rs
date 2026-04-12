@@ -106,44 +106,44 @@ pub mod container_immutability_policy {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ContainerImmutabilityPolicyArgs,
     ) -> ContainerImmutabilityPolicyResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ContainerImmutabilityPolicyArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ContainerImmutabilityPolicyResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ContainerImmutabilityPolicyArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ContainerImmutabilityPolicyResult {
         let immutability_period_in_days_binding = args
             .immutability_period_in_days
-            .get_output(context);
-        let locked_binding = args.locked.get_output(context);
+            .get_output(ctx);
+        let locked_binding = args.locked.get_output(ctx);
         let protected_append_writes_all_enabled_binding = args
             .protected_append_writes_all_enabled
-            .get_output(context);
+            .get_output(ctx);
         let protected_append_writes_enabled_binding = args
             .protected_append_writes_enabled
-            .get_output(context);
+            .get_output(ctx);
         let storage_container_resource_manager_id_binding = args
             .storage_container_resource_manager_id
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:storage/containerImmutabilityPolicy:ContainerImmutabilityPolicy"
                 .into(),
@@ -173,7 +173,7 @@ pub mod container_immutability_policy {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ContainerImmutabilityPolicyResult {
             id: o.get_id(),
             urn: o.get_urn(),

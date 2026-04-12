@@ -85,38 +85,38 @@ pub mod cluster {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterArgs,
     ) -> ClusterResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ClusterResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ClusterResult {
-        let hsm_type_binding = args.hsm_type.get_output(context);
-        let mode_binding = args.mode.get_output(context);
+        let hsm_type_binding = args.hsm_type.get_output(ctx);
+        let mode_binding = args.mode.get_output(ctx);
         let source_backup_identifier_binding = args
             .source_backup_identifier
-            .get_output(context);
-        let subnet_ids_binding = args.subnet_ids.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let subnet_ids_binding = args.subnet_ids.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:cloudhsmv2/cluster:Cluster".into(),
             name: name.to_string(),
@@ -145,7 +145,7 @@ pub mod cluster {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ClusterResult {
             id: o.get_id(),
             urn: o.get_urn(),

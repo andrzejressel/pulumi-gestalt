@@ -58,35 +58,33 @@ pub mod traffic_source_attachment {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TrafficSourceAttachmentArgs,
     ) -> TrafficSourceAttachmentResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TrafficSourceAttachmentArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> TrafficSourceAttachmentResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TrafficSourceAttachmentArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> TrafficSourceAttachmentResult {
-        let autoscaling_group_name_binding = args
-            .autoscaling_group_name
-            .get_output(context);
-        let traffic_source_binding = args.traffic_source.get_output(context);
+        let autoscaling_group_name_binding = args.autoscaling_group_name.get_output(ctx);
+        let traffic_source_binding = args.traffic_source.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:autoscaling/trafficSourceAttachment:TrafficSourceAttachment"
                 .into(),
@@ -104,7 +102,7 @@ pub mod traffic_source_attachment {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         TrafficSourceAttachmentResult {
             id: o.get_id(),
             urn: o.get_urn(),

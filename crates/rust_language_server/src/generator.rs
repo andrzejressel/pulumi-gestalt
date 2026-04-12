@@ -80,11 +80,11 @@ fn convert_config_variable(config_variable: &ConfigVariable) -> Result<String> {
     if config_variable.secret {
         match &config_variable.config_type {
             ConfigType::String => Ok(format!(
-                "let {} = context.require_config_secret(None, \"{}\").expect(\"Expected config [{}] to exist\");",
+                "let {} = ctx.require_config_secret(None, \"{}\").expect(\"Expected config [{}] to exist\");",
                 config_variable.name, config_variable.name, config_variable.name
             )),
             config_type => Ok(format!(
-                "let {} = context.require_config_secret_deserialize::<{}>(None, \"{}\").expect(\"Expected config [{}] to exist\");",
+                "let {} = ctx.require_config_secret_deserialize::<{}>(None, \"{}\").expect(\"Expected config [{}] to exist\");",
                 config_variable.name,
                 generate_config_type(config_type),
                 config_variable.name,
@@ -94,11 +94,11 @@ fn convert_config_variable(config_variable: &ConfigVariable) -> Result<String> {
     } else {
         match &config_variable.config_type {
             ConfigType::String => Ok(format!(
-                "let {} = context.require_config(None, \"{}\").expect(\"Expected config [{}] to exist\");",
+                "let {} = ctx.require_config(None, \"{}\").expect(\"Expected config [{}] to exist\");",
                 config_variable.name, config_variable.name, config_variable.name
             )),
             config_type => Ok(format!(
-                "let {} = context.require_config_deserialize::<{}>(None, \"{}\").expect(\"Expected config [{}] to exist\");",
+                "let {} = ctx.require_config_deserialize::<{}>(None, \"{}\").expect(\"Expected config [{}] to exist\");",
                 config_variable.name,
                 generate_config_type(config_type),
                 config_variable.name,
@@ -135,11 +135,11 @@ fn convert_output_variable(output_variable: &OutputVariable) -> Result<String> {
     let value = convert_expression(&output_variable.value).context("Failed to convert value")?;
     match value {
         ExpressionType::EmptyList => Ok(format!(
-            "context.add_export(\"{}\", &Vec::<String>::new());",
+            "ctx.add_export(\"{}\", &Vec::<String>::new());",
             output_variable.name
         )),
         ExpressionType::Other(s) => Ok(format!(
-            "context.add_export(\"{}\", &{});",
+            "ctx.add_export(\"{}\", &{});",
             output_variable.name, s
         )),
     }
@@ -278,7 +278,7 @@ fn convert_stdlib_function_call(
             if let OutputType(_) = arg_type.value {
                 Ok(format!("{}.secret()", args))
             } else {
-                Ok(format!("context.new_secret(&{})", args))
+                Ok(format!("ctx.new_secret(&{})", args))
             }
         }
         "unsecret" => {
@@ -287,7 +287,7 @@ fn convert_stdlib_function_call(
             if let OutputType(_) = arg_type.value {
                 Ok(format!("{}.unsecret()", args))
             } else {
-                Ok(format!("context.new_output(&{})", args))
+                Ok(format!("ctx.new_output(&{})", args))
             }
         }
         "element" => {
@@ -346,19 +346,19 @@ fn convert_stdlib_function_call(
         }
         "rootDirectory" => {
             ensure_arity(name, arg_count, 0)?;
-            Ok("(&context.get_root_directory()).to_string()".to_string())
+            Ok("(&ctx.get_root_directory()).to_string()".to_string())
         }
         "stack" => {
             ensure_arity(name, arg_count, 0)?;
-            Ok("(&context.get_stack()).to_string()".to_string())
+            Ok("(&ctx.get_stack()).to_string()".to_string())
         }
         "organization" => {
             ensure_arity(name, arg_count, 0)?;
-            Ok("(&context.get_organization()).to_string()".to_string())
+            Ok("(&ctx.get_organization()).to_string()".to_string())
         }
         "project" => {
             ensure_arity(name, arg_count, 0)?;
-            Ok("(&context.get_project()).to_string()".to_string())
+            Ok("(&ctx.get_project()).to_string()".to_string())
         }
         "entries" => {
             ensure_arity(name, arg_count, 1)?;

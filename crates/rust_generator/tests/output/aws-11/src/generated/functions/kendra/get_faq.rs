@@ -57,13 +57,10 @@ pub mod get_faq {
     /// Registers a new resource with the given unique name and arguments
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
-    pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
-        args: GetFaqArgs,
-    ) -> GetFaqResult {
-        let faq_id_binding = args.faq_id.get_output(context);
-        let index_id_binding = args.index_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+    pub fn invoke(ctx: &pulumi_gestalt_rust::Context, args: GetFaqArgs) -> GetFaqResult {
+        let faq_id_binding = args.faq_id.get_output(ctx);
+        let index_id_binding = args.index_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:kendra/getFaq:getFaq".into(),
             version: super::super::super::get_version(),
@@ -82,7 +79,7 @@ pub mod get_faq {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetFaqResult {
             arn: o.get_field("arn"),
             created_at: o.get_field("createdAt"),

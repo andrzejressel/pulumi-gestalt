@@ -213,51 +213,47 @@ pub mod branch_rule {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BranchRuleArgs,
     ) -> BranchRuleResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BranchRuleArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> BranchRuleResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BranchRuleArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> BranchRuleResult {
-        let allow_stale_reviews_binding = args.allow_stale_reviews.get_output(context);
-        let branch_rule_id_binding = args.branch_rule_id.get_output(context);
-        let disabled_binding = args.disabled.get_output(context);
-        let include_pattern_binding = args.include_pattern.get_output(context);
-        let location_binding = args.location.get_output(context);
+        let allow_stale_reviews_binding = args.allow_stale_reviews.get_output(ctx);
+        let branch_rule_id_binding = args.branch_rule_id.get_output(ctx);
+        let disabled_binding = args.disabled.get_output(ctx);
+        let include_pattern_binding = args.include_pattern.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
         let minimum_approvals_count_binding = args
             .minimum_approvals_count
-            .get_output(context);
-        let minimum_reviews_count_binding = args
-            .minimum_reviews_count
-            .get_output(context);
-        let project_binding = args.project.get_output(context);
-        let repository_id_binding = args.repository_id.get_output(context);
+            .get_output(ctx);
+        let minimum_reviews_count_binding = args.minimum_reviews_count.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let repository_id_binding = args.repository_id.get_output(ctx);
         let require_comments_resolved_binding = args
             .require_comments_resolved
-            .get_output(context);
-        let require_linear_history_binding = args
-            .require_linear_history
-            .get_output(context);
-        let require_pull_request_binding = args.require_pull_request.get_output(context);
+            .get_output(ctx);
+        let require_linear_history_binding = args.require_linear_history.get_output(ctx);
+        let require_pull_request_binding = args.require_pull_request.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:securesourcemanager/branchRule:BranchRule".into(),
             name: name.to_string(),
@@ -314,7 +310,7 @@ pub mod branch_rule {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         BranchRuleResult {
             id: o.get_id(),
             urn: o.get_urn(),

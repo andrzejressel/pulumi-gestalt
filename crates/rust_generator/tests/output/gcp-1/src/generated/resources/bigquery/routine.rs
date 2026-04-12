@@ -470,48 +470,48 @@ pub mod routine {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RoutineArgs,
     ) -> RoutineResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RoutineArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> RoutineResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RoutineArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> RoutineResult {
-        let arguments_binding = args.arguments.get_output(context);
-        let data_governance_type_binding = args.data_governance_type.get_output(context);
-        let dataset_id_binding = args.dataset_id.get_output(context);
-        let definition_body_binding = args.definition_body.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let determinism_level_binding = args.determinism_level.get_output(context);
-        let imported_libraries_binding = args.imported_libraries.get_output(context);
-        let language_binding = args.language.get_output(context);
-        let project_binding = args.project.get_output(context);
+        let arguments_binding = args.arguments.get_output(ctx);
+        let data_governance_type_binding = args.data_governance_type.get_output(ctx);
+        let dataset_id_binding = args.dataset_id.get_output(ctx);
+        let definition_body_binding = args.definition_body.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let determinism_level_binding = args.determinism_level.get_output(ctx);
+        let imported_libraries_binding = args.imported_libraries.get_output(ctx);
+        let language_binding = args.language.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let remote_function_options_binding = args
             .remote_function_options
-            .get_output(context);
-        let return_table_type_binding = args.return_table_type.get_output(context);
-        let return_type_binding = args.return_type.get_output(context);
-        let routine_id_binding = args.routine_id.get_output(context);
-        let routine_type_binding = args.routine_type.get_output(context);
-        let spark_options_binding = args.spark_options.get_output(context);
+            .get_output(ctx);
+        let return_table_type_binding = args.return_table_type.get_output(ctx);
+        let return_type_binding = args.return_type.get_output(ctx);
+        let routine_id_binding = args.routine_id.get_output(ctx);
+        let routine_type_binding = args.routine_type.get_output(ctx);
+        let spark_options_binding = args.spark_options.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:bigquery/routine:Routine".into(),
             name: name.to_string(),
@@ -580,7 +580,7 @@ pub mod routine {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         RoutineResult {
             id: o.get_id(),
             urn: o.get_urn(),

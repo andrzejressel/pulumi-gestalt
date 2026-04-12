@@ -238,46 +238,44 @@ pub mod environment {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EnvironmentArgs,
     ) -> EnvironmentResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EnvironmentArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> EnvironmentResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EnvironmentArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> EnvironmentResult {
-        let application_binding = args.application.get_output(context);
-        let cname_prefix_binding = args.cname_prefix.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let platform_arn_binding = args.platform_arn.get_output(context);
-        let poll_interval_binding = args.poll_interval.get_output(context);
-        let settings_binding = args.settings.get_output(context);
-        let solution_stack_name_binding = args.solution_stack_name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let template_name_binding = args.template_name.get_output(context);
-        let tier_binding = args.tier.get_output(context);
-        let version_binding = args.version.get_output(context);
-        let wait_for_ready_timeout_binding = args
-            .wait_for_ready_timeout
-            .get_output(context);
+        let application_binding = args.application.get_output(ctx);
+        let cname_prefix_binding = args.cname_prefix.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let platform_arn_binding = args.platform_arn.get_output(ctx);
+        let poll_interval_binding = args.poll_interval.get_output(ctx);
+        let settings_binding = args.settings.get_output(ctx);
+        let solution_stack_name_binding = args.solution_stack_name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let template_name_binding = args.template_name.get_output(ctx);
+        let tier_binding = args.tier.get_output(ctx);
+        let version_binding = args.version.get_output(ctx);
+        let wait_for_ready_timeout_binding = args.wait_for_ready_timeout.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:elasticbeanstalk/environment:Environment".into(),
             name: name.to_string(),
@@ -338,7 +336,7 @@ pub mod environment {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         EnvironmentResult {
             id: o.get_id(),
             urn: o.get_urn(),

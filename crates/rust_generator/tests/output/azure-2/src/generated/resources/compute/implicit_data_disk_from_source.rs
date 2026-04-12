@@ -174,41 +174,41 @@ pub mod implicit_data_disk_from_source {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ImplicitDataDiskFromSourceArgs,
     ) -> ImplicitDataDiskFromSourceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ImplicitDataDiskFromSourceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ImplicitDataDiskFromSourceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ImplicitDataDiskFromSourceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ImplicitDataDiskFromSourceResult {
-        let caching_binding = args.caching.get_output(context);
-        let create_option_binding = args.create_option.get_output(context);
-        let disk_size_gb_binding = args.disk_size_gb.get_output(context);
-        let lun_binding = args.lun.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let source_resource_id_binding = args.source_resource_id.get_output(context);
-        let virtual_machine_id_binding = args.virtual_machine_id.get_output(context);
+        let caching_binding = args.caching.get_output(ctx);
+        let create_option_binding = args.create_option.get_output(ctx);
+        let disk_size_gb_binding = args.disk_size_gb.get_output(ctx);
+        let lun_binding = args.lun.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let source_resource_id_binding = args.source_resource_id.get_output(ctx);
+        let virtual_machine_id_binding = args.virtual_machine_id.get_output(ctx);
         let write_accelerator_enabled_binding = args
             .write_accelerator_enabled
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:compute/implicitDataDiskFromSource:ImplicitDataDiskFromSource"
                 .into(),
@@ -250,7 +250,7 @@ pub mod implicit_data_disk_from_source {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ImplicitDataDiskFromSourceResult {
             id: o.get_id(),
             urn: o.get_urn(),

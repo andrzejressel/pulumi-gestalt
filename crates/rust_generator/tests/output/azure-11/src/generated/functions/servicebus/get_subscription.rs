@@ -56,14 +56,14 @@ pub mod get_subscription {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetSubscriptionArgs,
     ) -> GetSubscriptionResult {
-        let name_binding = args.name.get_output(context);
-        let namespace_name_binding = args.namespace_name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let topic_id_binding = args.topic_id.get_output(context);
-        let topic_name_binding = args.topic_name.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let namespace_name_binding = args.namespace_name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let topic_id_binding = args.topic_id.get_output(ctx);
+        let topic_name_binding = args.topic_name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:servicebus/getSubscription:getSubscription".into(),
             version: super::super::super::get_version(),
@@ -90,7 +90,7 @@ pub mod get_subscription {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetSubscriptionResult {
             auto_delete_on_idle: o.get_field("autoDeleteOnIdle"),
             dead_lettering_on_filter_evaluation_error: o

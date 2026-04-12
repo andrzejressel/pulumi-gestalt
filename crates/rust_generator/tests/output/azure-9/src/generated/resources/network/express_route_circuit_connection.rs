@@ -173,37 +173,37 @@ pub mod express_route_circuit_connection {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ExpressRouteCircuitConnectionArgs,
     ) -> ExpressRouteCircuitConnectionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ExpressRouteCircuitConnectionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ExpressRouteCircuitConnectionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ExpressRouteCircuitConnectionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ExpressRouteCircuitConnectionResult {
-        let address_prefix_ipv4_binding = args.address_prefix_ipv4.get_output(context);
-        let address_prefix_ipv6_binding = args.address_prefix_ipv6.get_output(context);
-        let authorization_key_binding = args.authorization_key.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let peer_peering_id_binding = args.peer_peering_id.get_output(context);
-        let peering_id_binding = args.peering_id.get_output(context);
+        let address_prefix_ipv4_binding = args.address_prefix_ipv4.get_output(ctx);
+        let address_prefix_ipv6_binding = args.address_prefix_ipv6.get_output(ctx);
+        let authorization_key_binding = args.authorization_key.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let peer_peering_id_binding = args.peer_peering_id.get_output(ctx);
+        let peering_id_binding = args.peering_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:network/expressRouteCircuitConnection:ExpressRouteCircuitConnection"
                 .into(),
@@ -237,7 +237,7 @@ pub mod express_route_circuit_connection {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ExpressRouteCircuitConnectionResult {
             id: o.get_id(),
             urn: o.get_urn(),

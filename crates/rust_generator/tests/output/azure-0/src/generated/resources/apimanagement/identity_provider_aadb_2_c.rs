@@ -140,47 +140,43 @@ pub mod identity_provider_aadb_2_c {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IdentityProviderAadb2cArgs,
     ) -> IdentityProviderAadb2cResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IdentityProviderAadb2cArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> IdentityProviderAadb2cResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IdentityProviderAadb2cArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> IdentityProviderAadb2cResult {
-        let allowed_tenant_binding = args.allowed_tenant.get_output(context);
-        let api_management_name_binding = args.api_management_name.get_output(context);
-        let authority_binding = args.authority.get_output(context);
-        let client_id_binding = args.client_id.get_output(context);
-        let client_library_binding = args.client_library.get_output(context);
-        let client_secret_binding = args.client_secret.get_output(context);
-        let password_reset_policy_binding = args
-            .password_reset_policy
-            .get_output(context);
-        let profile_editing_policy_binding = args
-            .profile_editing_policy
-            .get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let signin_policy_binding = args.signin_policy.get_output(context);
-        let signin_tenant_binding = args.signin_tenant.get_output(context);
-        let signup_policy_binding = args.signup_policy.get_output(context);
+        let allowed_tenant_binding = args.allowed_tenant.get_output(ctx);
+        let api_management_name_binding = args.api_management_name.get_output(ctx);
+        let authority_binding = args.authority.get_output(ctx);
+        let client_id_binding = args.client_id.get_output(ctx);
+        let client_library_binding = args.client_library.get_output(ctx);
+        let client_secret_binding = args.client_secret.get_output(ctx);
+        let password_reset_policy_binding = args.password_reset_policy.get_output(ctx);
+        let profile_editing_policy_binding = args.profile_editing_policy.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let signin_policy_binding = args.signin_policy.get_output(ctx);
+        let signin_tenant_binding = args.signin_tenant.get_output(ctx);
+        let signup_policy_binding = args.signup_policy.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:apimanagement/identityProviderAadb2c:IdentityProviderAadb2c"
                 .into(),
@@ -238,7 +234,7 @@ pub mod identity_provider_aadb_2_c {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         IdentityProviderAadb2cResult {
             id: o.get_id(),
             urn: o.get_urn(),

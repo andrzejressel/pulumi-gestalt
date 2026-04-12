@@ -361,84 +361,78 @@ pub mod managed_disk {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ManagedDiskArgs,
     ) -> ManagedDiskResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ManagedDiskArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ManagedDiskResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ManagedDiskArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ManagedDiskResult {
-        let create_option_binding = args.create_option.get_output(context);
-        let disk_access_id_binding = args.disk_access_id.get_output(context);
-        let disk_encryption_set_id_binding = args
-            .disk_encryption_set_id
-            .get_output(context);
-        let disk_iops_read_only_binding = args.disk_iops_read_only.get_output(context);
-        let disk_iops_read_write_binding = args.disk_iops_read_write.get_output(context);
-        let disk_mbps_read_only_binding = args.disk_mbps_read_only.get_output(context);
-        let disk_mbps_read_write_binding = args.disk_mbps_read_write.get_output(context);
-        let disk_size_gb_binding = args.disk_size_gb.get_output(context);
-        let edge_zone_binding = args.edge_zone.get_output(context);
-        let encryption_settings_binding = args.encryption_settings.get_output(context);
+        let create_option_binding = args.create_option.get_output(ctx);
+        let disk_access_id_binding = args.disk_access_id.get_output(ctx);
+        let disk_encryption_set_id_binding = args.disk_encryption_set_id.get_output(ctx);
+        let disk_iops_read_only_binding = args.disk_iops_read_only.get_output(ctx);
+        let disk_iops_read_write_binding = args.disk_iops_read_write.get_output(ctx);
+        let disk_mbps_read_only_binding = args.disk_mbps_read_only.get_output(ctx);
+        let disk_mbps_read_write_binding = args.disk_mbps_read_write.get_output(ctx);
+        let disk_size_gb_binding = args.disk_size_gb.get_output(ctx);
+        let edge_zone_binding = args.edge_zone.get_output(ctx);
+        let encryption_settings_binding = args.encryption_settings.get_output(ctx);
         let gallery_image_reference_id_binding = args
             .gallery_image_reference_id
-            .get_output(context);
-        let hyper_v_generation_binding = args.hyper_v_generation.get_output(context);
-        let image_reference_id_binding = args.image_reference_id.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let logical_sector_size_binding = args.logical_sector_size.get_output(context);
-        let max_shares_binding = args.max_shares.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_access_policy_binding = args
-            .network_access_policy
-            .get_output(context);
+            .get_output(ctx);
+        let hyper_v_generation_binding = args.hyper_v_generation.get_output(ctx);
+        let image_reference_id_binding = args.image_reference_id.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let logical_sector_size_binding = args.logical_sector_size.get_output(ctx);
+        let max_shares_binding = args.max_shares.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_access_policy_binding = args.network_access_policy.get_output(ctx);
         let on_demand_bursting_enabled_binding = args
             .on_demand_bursting_enabled
-            .get_output(context);
+            .get_output(ctx);
         let optimized_frequent_attach_enabled_binding = args
             .optimized_frequent_attach_enabled
-            .get_output(context);
-        let os_type_binding = args.os_type.get_output(context);
+            .get_output(ctx);
+        let os_type_binding = args.os_type.get_output(ctx);
         let performance_plus_enabled_binding = args
             .performance_plus_enabled
-            .get_output(context);
+            .get_output(ctx);
         let public_network_access_enabled_binding = args
             .public_network_access_enabled
-            .get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+            .get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let secure_vm_disk_encryption_set_id_binding = args
             .secure_vm_disk_encryption_set_id
-            .get_output(context);
-        let security_type_binding = args.security_type.get_output(context);
-        let source_resource_id_binding = args.source_resource_id.get_output(context);
-        let source_uri_binding = args.source_uri.get_output(context);
-        let storage_account_id_binding = args.storage_account_id.get_output(context);
-        let storage_account_type_binding = args.storage_account_type.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let tier_binding = args.tier.get_output(context);
-        let trusted_launch_enabled_binding = args
-            .trusted_launch_enabled
-            .get_output(context);
-        let upload_size_bytes_binding = args.upload_size_bytes.get_output(context);
-        let zone_binding = args.zone.get_output(context);
+            .get_output(ctx);
+        let security_type_binding = args.security_type.get_output(ctx);
+        let source_resource_id_binding = args.source_resource_id.get_output(ctx);
+        let source_uri_binding = args.source_uri.get_output(ctx);
+        let storage_account_id_binding = args.storage_account_id.get_output(ctx);
+        let storage_account_type_binding = args.storage_account_type.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let tier_binding = args.tier.get_output(ctx);
+        let trusted_launch_enabled_binding = args.trusted_launch_enabled.get_output(ctx);
+        let upload_size_bytes_binding = args.upload_size_bytes.get_output(ctx);
+        let zone_binding = args.zone.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:compute/managedDisk:ManagedDisk".into(),
             name: name.to_string(),
@@ -587,7 +581,7 @@ pub mod managed_disk {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ManagedDiskResult {
             id: o.get_id(),
             urn: o.get_urn(),

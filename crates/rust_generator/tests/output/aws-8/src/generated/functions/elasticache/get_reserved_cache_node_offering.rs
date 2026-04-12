@@ -46,13 +46,13 @@ pub mod get_reserved_cache_node_offering {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetReservedCacheNodeOfferingArgs,
     ) -> GetReservedCacheNodeOfferingResult {
-        let cache_node_type_binding = args.cache_node_type.get_output(context);
-        let duration_binding = args.duration.get_output(context);
-        let offering_type_binding = args.offering_type.get_output(context);
-        let product_description_binding = args.product_description.get_output(context);
+        let cache_node_type_binding = args.cache_node_type.get_output(ctx);
+        let duration_binding = args.duration.get_output(ctx);
+        let offering_type_binding = args.offering_type.get_output(ctx);
+        let product_description_binding = args.product_description.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:elasticache/getReservedCacheNodeOffering:getReservedCacheNodeOffering"
                 .into(),
@@ -76,7 +76,7 @@ pub mod get_reserved_cache_node_offering {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetReservedCacheNodeOfferingResult {
             cache_node_type: o.get_field("cacheNodeType"),
             duration: o.get_field("duration"),

@@ -102,39 +102,39 @@ pub mod dedicated_host {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DedicatedHostArgs,
     ) -> DedicatedHostResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DedicatedHostArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DedicatedHostResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DedicatedHostArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DedicatedHostResult {
-        let asset_id_binding = args.asset_id.get_output(context);
-        let auto_placement_binding = args.auto_placement.get_output(context);
-        let availability_zone_binding = args.availability_zone.get_output(context);
-        let host_recovery_binding = args.host_recovery.get_output(context);
-        let instance_family_binding = args.instance_family.get_output(context);
-        let instance_type_binding = args.instance_type.get_output(context);
-        let outpost_arn_binding = args.outpost_arn.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let asset_id_binding = args.asset_id.get_output(ctx);
+        let auto_placement_binding = args.auto_placement.get_output(ctx);
+        let availability_zone_binding = args.availability_zone.get_output(ctx);
+        let host_recovery_binding = args.host_recovery.get_output(ctx);
+        let instance_family_binding = args.instance_family.get_output(ctx);
+        let instance_type_binding = args.instance_type.get_output(ctx);
+        let outpost_arn_binding = args.outpost_arn.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/dedicatedHost:DedicatedHost".into(),
             name: name.to_string(),
@@ -175,7 +175,7 @@ pub mod dedicated_host {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DedicatedHostResult {
             id: o.get_id(),
             urn: o.get_urn(),

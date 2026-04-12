@@ -33,11 +33,11 @@ pub mod get_project_service {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetProjectServiceArgs,
     ) -> GetProjectServiceResult {
-        let project_binding = args.project.get_output(context);
-        let service_binding = args.service.get_output(context);
+        let project_binding = args.project.get_output(ctx);
+        let service_binding = args.service.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:projects/getProjectService:getProjectService".into(),
             version: super::super::super::get_version(),
@@ -52,7 +52,7 @@ pub mod get_project_service {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetProjectServiceResult {
             check_if_service_has_usage_on_destroy: o
                 .get_field("checkIfServiceHasUsageOnDestroy"),

@@ -88,36 +88,36 @@ pub mod origin_ca_certificate {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OriginCaCertificateArgs,
     ) -> OriginCaCertificateResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OriginCaCertificateArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> OriginCaCertificateResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OriginCaCertificateArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> OriginCaCertificateResult {
-        let csr_binding = args.csr.get_output(context);
-        let hostnames_binding = args.hostnames.get_output(context);
-        let min_days_for_renewal_binding = args.min_days_for_renewal.get_output(context);
-        let request_type_binding = args.request_type.get_output(context);
-        let requested_validity_binding = args.requested_validity.get_output(context);
+        let csr_binding = args.csr.get_output(ctx);
+        let hostnames_binding = args.hostnames.get_output(ctx);
+        let min_days_for_renewal_binding = args.min_days_for_renewal.get_output(ctx);
+        let request_type_binding = args.request_type.get_output(ctx);
+        let requested_validity_binding = args.requested_validity.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "cloudflare:index/originCaCertificate:OriginCaCertificate".into(),
             name: name.to_string(),
@@ -146,7 +146,7 @@ pub mod origin_ca_certificate {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         OriginCaCertificateResult {
             id: o.get_id(),
             urn: o.get_urn(),

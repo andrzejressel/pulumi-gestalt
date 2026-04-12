@@ -129,50 +129,46 @@ pub mod network_profile {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkProfileArgs,
     ) -> NetworkProfileResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkProfileArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> NetworkProfileResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkProfileArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> NetworkProfileResult {
-        let description_binding = args.description.get_output(context);
+        let description_binding = args.description.get_output(ctx);
         let downlink_bandwidth_bits_binding = args
             .downlink_bandwidth_bits
-            .get_output(context);
-        let downlink_delay_ms_binding = args.downlink_delay_ms.get_output(context);
-        let downlink_jitter_ms_binding = args.downlink_jitter_ms.get_output(context);
-        let downlink_loss_percent_binding = args
-            .downlink_loss_percent
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_arn_binding = args.project_arn.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let type__binding = args.type_.get_output(context);
-        let uplink_bandwidth_bits_binding = args
-            .uplink_bandwidth_bits
-            .get_output(context);
-        let uplink_delay_ms_binding = args.uplink_delay_ms.get_output(context);
-        let uplink_jitter_ms_binding = args.uplink_jitter_ms.get_output(context);
-        let uplink_loss_percent_binding = args.uplink_loss_percent.get_output(context);
+            .get_output(ctx);
+        let downlink_delay_ms_binding = args.downlink_delay_ms.get_output(ctx);
+        let downlink_jitter_ms_binding = args.downlink_jitter_ms.get_output(ctx);
+        let downlink_loss_percent_binding = args.downlink_loss_percent.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_arn_binding = args.project_arn.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
+        let uplink_bandwidth_bits_binding = args.uplink_bandwidth_bits.get_output(ctx);
+        let uplink_delay_ms_binding = args.uplink_delay_ms.get_output(ctx);
+        let uplink_jitter_ms_binding = args.uplink_jitter_ms.get_output(ctx);
+        let uplink_loss_percent_binding = args.uplink_loss_percent.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:devicefarm/networkProfile:NetworkProfile".into(),
             name: name.to_string(),
@@ -233,7 +229,7 @@ pub mod network_profile {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         NetworkProfileResult {
             id: o.get_id(),
             urn: o.get_urn(),

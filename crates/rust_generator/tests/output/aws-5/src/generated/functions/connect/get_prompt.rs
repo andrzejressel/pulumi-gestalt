@@ -31,11 +31,11 @@ pub mod get_prompt {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetPromptArgs,
     ) -> GetPromptResult {
-        let instance_id_binding = args.instance_id.get_output(context);
-        let name_binding = args.name.get_output(context);
+        let instance_id_binding = args.instance_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:connect/getPrompt:getPrompt".into(),
             version: super::super::super::get_version(),
@@ -50,7 +50,7 @@ pub mod get_prompt {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetPromptResult {
             arn: o.get_field("arn"),
             id: o.get_field("id"),

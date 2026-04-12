@@ -355,50 +355,50 @@ pub mod v_2_vm {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: V2VmArgs,
     ) -> V2VmResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: V2VmArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> V2VmResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: V2VmArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> V2VmResult {
-        let accelerator_config_binding = args.accelerator_config.get_output(context);
-        let accelerator_type_binding = args.accelerator_type.get_output(context);
-        let cidr_block_binding = args.cidr_block.get_output(context);
-        let data_disks_binding = args.data_disks.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let metadata_binding = args.metadata.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_config_binding = args.network_config.get_output(context);
-        let network_configs_binding = args.network_configs.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let runtime_version_binding = args.runtime_version.get_output(context);
-        let scheduling_config_binding = args.scheduling_config.get_output(context);
-        let service_account_binding = args.service_account.get_output(context);
+        let accelerator_config_binding = args.accelerator_config.get_output(ctx);
+        let accelerator_type_binding = args.accelerator_type.get_output(ctx);
+        let cidr_block_binding = args.cidr_block.get_output(ctx);
+        let data_disks_binding = args.data_disks.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let metadata_binding = args.metadata.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_config_binding = args.network_config.get_output(ctx);
+        let network_configs_binding = args.network_configs.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let runtime_version_binding = args.runtime_version.get_output(ctx);
+        let scheduling_config_binding = args.scheduling_config.get_output(ctx);
+        let service_account_binding = args.service_account.get_output(ctx);
         let shielded_instance_config_binding = args
             .shielded_instance_config
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let zone_binding = args.zone.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let zone_binding = args.zone.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:tpu/v2Vm:V2Vm".into(),
             name: name.to_string(),
@@ -475,7 +475,7 @@ pub mod v_2_vm {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         V2VmResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -84,35 +84,35 @@ pub mod random_integer {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RandomIntegerArgs,
     ) -> RandomIntegerResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RandomIntegerArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> RandomIntegerResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RandomIntegerArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> RandomIntegerResult {
-        let keepers_binding = args.keepers.get_output(context);
-        let max_binding = args.max.get_output(context);
-        let min_binding = args.min.get_output(context);
-        let seed_binding = args.seed.get_output(context);
+        let keepers_binding = args.keepers.get_output(ctx);
+        let max_binding = args.max.get_output(ctx);
+        let min_binding = args.min.get_output(ctx);
+        let seed_binding = args.seed.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "random:index/randomInteger:RandomInteger".into(),
             name: name.to_string(),
@@ -137,7 +137,7 @@ pub mod random_integer {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         RandomIntegerResult {
             id: o.get_id(),
             urn: o.get_urn(),

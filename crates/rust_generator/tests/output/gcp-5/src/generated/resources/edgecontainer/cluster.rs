@@ -326,52 +326,52 @@ pub mod cluster {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterArgs,
     ) -> ClusterResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ClusterResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ClusterResult {
-        let authorization_binding = args.authorization.get_output(context);
-        let control_plane_binding = args.control_plane.get_output(context);
+        let authorization_binding = args.authorization.get_output(ctx);
+        let control_plane_binding = args.control_plane.get_output(ctx);
         let control_plane_encryption_binding = args
             .control_plane_encryption
-            .get_output(context);
+            .get_output(ctx);
         let default_max_pods_per_node_binding = args
             .default_max_pods_per_node
-            .get_output(context);
+            .get_output(ctx);
         let external_load_balancer_ipv4_address_pools_binding = args
             .external_load_balancer_ipv4_address_pools
-            .get_output(context);
-        let fleet_binding = args.fleet.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let maintenance_policy_binding = args.maintenance_policy.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let networking_binding = args.networking.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let release_channel_binding = args.release_channel.get_output(context);
-        let system_addons_config_binding = args.system_addons_config.get_output(context);
-        let target_version_binding = args.target_version.get_output(context);
+            .get_output(ctx);
+        let fleet_binding = args.fleet.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let maintenance_policy_binding = args.maintenance_policy.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let networking_binding = args.networking.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let release_channel_binding = args.release_channel.get_output(ctx);
+        let system_addons_config_binding = args.system_addons_config.get_output(ctx);
+        let target_version_binding = args.target_version.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:edgecontainer/cluster:Cluster".into(),
             name: name.to_string(),
@@ -440,7 +440,7 @@ pub mod cluster {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ClusterResult {
             id: o.get_id(),
             urn: o.get_urn(),

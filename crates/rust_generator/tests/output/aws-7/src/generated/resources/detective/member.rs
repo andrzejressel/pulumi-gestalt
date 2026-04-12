@@ -88,38 +88,38 @@ pub mod member {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MemberArgs,
     ) -> MemberResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MemberArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> MemberResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MemberArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> MemberResult {
-        let account_id_binding = args.account_id.get_output(context);
+        let account_id_binding = args.account_id.get_output(ctx);
         let disable_email_notification_binding = args
             .disable_email_notification
-            .get_output(context);
-        let email_address_binding = args.email_address.get_output(context);
-        let graph_arn_binding = args.graph_arn.get_output(context);
-        let message_binding = args.message.get_output(context);
+            .get_output(ctx);
+        let email_address_binding = args.email_address.get_output(ctx);
+        let graph_arn_binding = args.graph_arn.get_output(ctx);
+        let message_binding = args.message.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:detective/member:Member".into(),
             name: name.to_string(),
@@ -148,7 +148,7 @@ pub mod member {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         MemberResult {
             id: o.get_id(),
             urn: o.get_urn(),

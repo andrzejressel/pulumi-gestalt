@@ -27,10 +27,10 @@ pub mod get_group_memberships {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetGroupMembershipsArgs,
     ) -> GetGroupMembershipsResult {
-        let group_binding = args.group.get_output(context);
+        let group_binding = args.group.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:cloudidentity/getGroupMemberships:getGroupMemberships".into(),
             version: super::super::super::get_version(),
@@ -41,7 +41,7 @@ pub mod get_group_memberships {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetGroupMembershipsResult {
             group: o.get_field("group"),
             id: o.get_field("id"),

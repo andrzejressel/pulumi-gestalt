@@ -229,37 +229,37 @@ pub mod field {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FieldArgs,
     ) -> FieldResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FieldArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> FieldResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FieldArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> FieldResult {
-        let collection_binding = args.collection.get_output(context);
-        let database_binding = args.database.get_output(context);
-        let field_binding = args.field.get_output(context);
-        let index_config_binding = args.index_config.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let ttl_config_binding = args.ttl_config.get_output(context);
+        let collection_binding = args.collection.get_output(ctx);
+        let database_binding = args.database.get_output(ctx);
+        let field_binding = args.field.get_output(ctx);
+        let index_config_binding = args.index_config.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let ttl_config_binding = args.ttl_config.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:firestore/field:Field".into(),
             name: name.to_string(),
@@ -292,7 +292,7 @@ pub mod field {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         FieldResult {
             id: o.get_id(),
             urn: o.get_urn(),

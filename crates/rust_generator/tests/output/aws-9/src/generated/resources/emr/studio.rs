@@ -137,50 +137,50 @@ pub mod studio {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StudioArgs,
     ) -> StudioResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StudioArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> StudioResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StudioArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> StudioResult {
-        let auth_mode_binding = args.auth_mode.get_output(context);
-        let default_s3_location_binding = args.default_s3_location.get_output(context);
-        let description_binding = args.description.get_output(context);
+        let auth_mode_binding = args.auth_mode.get_output(ctx);
+        let default_s3_location_binding = args.default_s3_location.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
         let engine_security_group_id_binding = args
             .engine_security_group_id
-            .get_output(context);
-        let idp_auth_url_binding = args.idp_auth_url.get_output(context);
+            .get_output(ctx);
+        let idp_auth_url_binding = args.idp_auth_url.get_output(ctx);
         let idp_relay_state_parameter_name_binding = args
             .idp_relay_state_parameter_name
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let service_role_binding = args.service_role.get_output(context);
-        let subnet_ids_binding = args.subnet_ids.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let user_role_binding = args.user_role.get_output(context);
-        let vpc_id_binding = args.vpc_id.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let service_role_binding = args.service_role.get_output(ctx);
+        let subnet_ids_binding = args.subnet_ids.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let user_role_binding = args.user_role.get_output(ctx);
+        let vpc_id_binding = args.vpc_id.get_output(ctx);
         let workspace_security_group_id_binding = args
             .workspace_security_group_id
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:emr/studio:Studio".into(),
             name: name.to_string(),
@@ -241,7 +241,7 @@ pub mod studio {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         StudioResult {
             id: o.get_id(),
             urn: o.get_urn(),

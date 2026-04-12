@@ -284,67 +284,65 @@ pub mod service {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServiceArgs,
     ) -> ServiceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServiceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ServiceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServiceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ServiceResult {
-        let additional_locations_binding = args.additional_locations.get_output(context);
-        let certificates_binding = args.certificates.get_output(context);
+        let additional_locations_binding = args.additional_locations.get_output(ctx);
+        let certificates_binding = args.certificates.get_output(ctx);
         let client_certificate_enabled_binding = args
             .client_certificate_enabled
-            .get_output(context);
-        let delegation_binding = args.delegation.get_output(context);
-        let gateway_disabled_binding = args.gateway_disabled.get_output(context);
-        let hostname_configuration_binding = args
-            .hostname_configuration
-            .get_output(context);
-        let identity_binding = args.identity.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let min_api_version_binding = args.min_api_version.get_output(context);
-        let name_binding = args.name.get_output(context);
+            .get_output(ctx);
+        let delegation_binding = args.delegation.get_output(ctx);
+        let gateway_disabled_binding = args.gateway_disabled.get_output(ctx);
+        let hostname_configuration_binding = args.hostname_configuration.get_output(ctx);
+        let identity_binding = args.identity.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let min_api_version_binding = args.min_api_version.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let notification_sender_email_binding = args
             .notification_sender_email
-            .get_output(context);
-        let protocols_binding = args.protocols.get_output(context);
-        let public_ip_address_id_binding = args.public_ip_address_id.get_output(context);
+            .get_output(ctx);
+        let protocols_binding = args.protocols.get_output(ctx);
+        let public_ip_address_id_binding = args.public_ip_address_id.get_output(ctx);
         let public_network_access_enabled_binding = args
             .public_network_access_enabled
-            .get_output(context);
-        let publisher_email_binding = args.publisher_email.get_output(context);
-        let publisher_name_binding = args.publisher_name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let security_binding = args.security.get_output(context);
-        let sign_in_binding = args.sign_in.get_output(context);
-        let sign_up_binding = args.sign_up.get_output(context);
-        let sku_name_binding = args.sku_name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let tenant_access_binding = args.tenant_access.get_output(context);
+            .get_output(ctx);
+        let publisher_email_binding = args.publisher_email.get_output(ctx);
+        let publisher_name_binding = args.publisher_name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let security_binding = args.security.get_output(ctx);
+        let sign_in_binding = args.sign_in.get_output(ctx);
+        let sign_up_binding = args.sign_up.get_output(ctx);
+        let sku_name_binding = args.sku_name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let tenant_access_binding = args.tenant_access.get_output(ctx);
         let virtual_network_configuration_binding = args
             .virtual_network_configuration
-            .get_output(context);
-        let virtual_network_type_binding = args.virtual_network_type.get_output(context);
-        let zones_binding = args.zones.get_output(context);
+            .get_output(ctx);
+        let virtual_network_type_binding = args.virtual_network_type.get_output(ctx);
+        let zones_binding = args.zones.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:apimanagement/service:Service".into(),
             name: name.to_string(),
@@ -457,7 +455,7 @@ pub mod service {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ServiceResult {
             id: o.get_id(),
             urn: o.get_urn(),

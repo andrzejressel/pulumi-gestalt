@@ -150,54 +150,52 @@ pub mod managed_hardware_security_module {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ManagedHardwareSecurityModuleArgs,
     ) -> ManagedHardwareSecurityModuleResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ManagedHardwareSecurityModuleArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ManagedHardwareSecurityModuleResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ManagedHardwareSecurityModuleArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ManagedHardwareSecurityModuleResult {
-        let admin_object_ids_binding = args.admin_object_ids.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_acls_binding = args.network_acls.get_output(context);
+        let admin_object_ids_binding = args.admin_object_ids.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_acls_binding = args.network_acls.get_output(ctx);
         let public_network_access_enabled_binding = args
             .public_network_access_enabled
-            .get_output(context);
+            .get_output(ctx);
         let purge_protection_enabled_binding = args
             .purge_protection_enabled
-            .get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+            .get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let security_domain_key_vault_certificate_ids_binding = args
             .security_domain_key_vault_certificate_ids
-            .get_output(context);
-        let security_domain_quorum_binding = args
-            .security_domain_quorum
-            .get_output(context);
-        let sku_name_binding = args.sku_name.get_output(context);
+            .get_output(ctx);
+        let security_domain_quorum_binding = args.security_domain_quorum.get_output(ctx);
+        let sku_name_binding = args.sku_name.get_output(ctx);
         let soft_delete_retention_days_binding = args
             .soft_delete_retention_days
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let tenant_id_binding = args.tenant_id.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let tenant_id_binding = args.tenant_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:keyvault/managedHardwareSecurityModule:ManagedHardwareSecurityModule"
                 .into(),
@@ -259,7 +257,7 @@ pub mod managed_hardware_security_module {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ManagedHardwareSecurityModuleResult {
             id: o.get_id(),
             urn: o.get_urn(),

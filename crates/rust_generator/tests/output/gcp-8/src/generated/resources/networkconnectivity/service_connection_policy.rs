@@ -184,39 +184,39 @@ pub mod service_connection_policy {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServiceConnectionPolicyArgs,
     ) -> ServiceConnectionPolicyResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServiceConnectionPolicyArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ServiceConnectionPolicyResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServiceConnectionPolicyArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ServiceConnectionPolicyResult {
-        let description_binding = args.description.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_binding = args.network.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let psc_config_binding = args.psc_config.get_output(context);
-        let service_class_binding = args.service_class.get_output(context);
+        let description_binding = args.description.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_binding = args.network.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let psc_config_binding = args.psc_config.get_output(ctx);
+        let service_class_binding = args.service_class.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:networkconnectivity/serviceConnectionPolicy:ServiceConnectionPolicy"
                 .into(),
@@ -258,7 +258,7 @@ pub mod service_connection_policy {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ServiceConnectionPolicyResult {
             id: o.get_id(),
             urn: o.get_urn(),

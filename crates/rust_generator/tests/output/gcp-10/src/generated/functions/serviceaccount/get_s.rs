@@ -26,8 +26,8 @@ pub mod get_s {
     /// Registers a new resource with the given unique name and arguments
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
-    pub fn invoke(context: &pulumi_gestalt_rust::Context, args: GetSArgs) -> GetSResult {
-        let project_binding = args.project.get_output(context);
+    pub fn invoke(ctx: &pulumi_gestalt_rust::Context, args: GetSArgs) -> GetSResult {
+        let project_binding = args.project.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:serviceaccount/getS:getS".into(),
             version: super::super::super::get_version(),
@@ -38,7 +38,7 @@ pub mod get_s {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetSResult {
             accounts: o.get_field("accounts"),
             id: o.get_field("id"),

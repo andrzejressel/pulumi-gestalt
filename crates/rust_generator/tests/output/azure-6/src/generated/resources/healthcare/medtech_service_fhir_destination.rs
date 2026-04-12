@@ -162,43 +162,43 @@ pub mod medtech_service_fhir_destination {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MedtechServiceFhirDestinationArgs,
     ) -> MedtechServiceFhirDestinationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MedtechServiceFhirDestinationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> MedtechServiceFhirDestinationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MedtechServiceFhirDestinationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> MedtechServiceFhirDestinationResult {
         let destination_fhir_mapping_json_binding = args
             .destination_fhir_mapping_json
-            .get_output(context);
+            .get_output(ctx);
         let destination_fhir_service_id_binding = args
             .destination_fhir_service_id
-            .get_output(context);
+            .get_output(ctx);
         let destination_identity_resolution_type_binding = args
             .destination_identity_resolution_type
-            .get_output(context);
-        let location_binding = args.location.get_output(context);
-        let medtech_service_id_binding = args.medtech_service_id.get_output(context);
-        let name_binding = args.name.get_output(context);
+            .get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let medtech_service_id_binding = args.medtech_service_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:healthcare/medtechServiceFhirDestination:MedtechServiceFhirDestination"
                 .into(),
@@ -232,7 +232,7 @@ pub mod medtech_service_fhir_destination {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         MedtechServiceFhirDestinationResult {
             id: o.get_id(),
             urn: o.get_urn(),

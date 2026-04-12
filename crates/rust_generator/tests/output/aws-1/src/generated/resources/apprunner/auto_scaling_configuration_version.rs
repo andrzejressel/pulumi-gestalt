@@ -89,38 +89,38 @@ pub mod auto_scaling_configuration_version {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AutoScalingConfigurationVersionArgs,
     ) -> AutoScalingConfigurationVersionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AutoScalingConfigurationVersionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AutoScalingConfigurationVersionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AutoScalingConfigurationVersionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AutoScalingConfigurationVersionResult {
         let auto_scaling_configuration_name_binding = args
             .auto_scaling_configuration_name
-            .get_output(context);
-        let max_concurrency_binding = args.max_concurrency.get_output(context);
-        let max_size_binding = args.max_size.get_output(context);
-        let min_size_binding = args.min_size.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let max_concurrency_binding = args.max_concurrency.get_output(ctx);
+        let max_size_binding = args.max_size.get_output(ctx);
+        let min_size_binding = args.min_size.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:apprunner/autoScalingConfigurationVersion:AutoScalingConfigurationVersion"
                 .into(),
@@ -150,7 +150,7 @@ pub mod auto_scaling_configuration_version {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AutoScalingConfigurationVersionResult {
             id: o.get_id(),
             urn: o.get_urn(),

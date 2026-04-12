@@ -290,62 +290,60 @@ pub mod broker {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BrokerArgs,
     ) -> BrokerResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BrokerArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> BrokerResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BrokerArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> BrokerResult {
-        let apply_immediately_binding = args.apply_immediately.get_output(context);
+        let apply_immediately_binding = args.apply_immediately.get_output(ctx);
         let authentication_strategy_binding = args
             .authentication_strategy
-            .get_output(context);
+            .get_output(ctx);
         let auto_minor_version_upgrade_binding = args
             .auto_minor_version_upgrade
-            .get_output(context);
-        let broker_name_binding = args.broker_name.get_output(context);
-        let configuration_binding = args.configuration.get_output(context);
-        let data_replication_mode_binding = args
-            .data_replication_mode
-            .get_output(context);
+            .get_output(ctx);
+        let broker_name_binding = args.broker_name.get_output(ctx);
+        let configuration_binding = args.configuration.get_output(ctx);
+        let data_replication_mode_binding = args.data_replication_mode.get_output(ctx);
         let data_replication_primary_broker_arn_binding = args
             .data_replication_primary_broker_arn
-            .get_output(context);
-        let deployment_mode_binding = args.deployment_mode.get_output(context);
-        let encryption_options_binding = args.encryption_options.get_output(context);
-        let engine_type_binding = args.engine_type.get_output(context);
-        let engine_version_binding = args.engine_version.get_output(context);
-        let host_instance_type_binding = args.host_instance_type.get_output(context);
-        let ldap_server_metadata_binding = args.ldap_server_metadata.get_output(context);
-        let logs_binding = args.logs.get_output(context);
+            .get_output(ctx);
+        let deployment_mode_binding = args.deployment_mode.get_output(ctx);
+        let encryption_options_binding = args.encryption_options.get_output(ctx);
+        let engine_type_binding = args.engine_type.get_output(ctx);
+        let engine_version_binding = args.engine_version.get_output(ctx);
+        let host_instance_type_binding = args.host_instance_type.get_output(ctx);
+        let ldap_server_metadata_binding = args.ldap_server_metadata.get_output(ctx);
+        let logs_binding = args.logs.get_output(ctx);
         let maintenance_window_start_time_binding = args
             .maintenance_window_start_time
-            .get_output(context);
-        let publicly_accessible_binding = args.publicly_accessible.get_output(context);
-        let security_groups_binding = args.security_groups.get_output(context);
-        let storage_type_binding = args.storage_type.get_output(context);
-        let subnet_ids_binding = args.subnet_ids.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let users_binding = args.users.get_output(context);
+            .get_output(ctx);
+        let publicly_accessible_binding = args.publicly_accessible.get_output(ctx);
+        let security_groups_binding = args.security_groups.get_output(ctx);
+        let storage_type_binding = args.storage_type.get_output(ctx);
+        let subnet_ids_binding = args.subnet_ids.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let users_binding = args.users.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:mq/broker:Broker".into(),
             name: name.to_string(),
@@ -438,7 +436,7 @@ pub mod broker {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         BrokerResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -72,12 +72,12 @@ pub mod get_infrastructure_configuration {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetInfrastructureConfigurationArgs,
     ) -> GetInfrastructureConfigurationResult {
-        let arn_binding = args.arn.get_output(context);
-        let resource_tags_binding = args.resource_tags.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let arn_binding = args.arn.get_output(ctx);
+        let resource_tags_binding = args.resource_tags.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:imagebuilder/getInfrastructureConfiguration:getInfrastructureConfiguration"
                 .into(),
@@ -97,7 +97,7 @@ pub mod get_infrastructure_configuration {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetInfrastructureConfigurationResult {
             arn: o.get_field("arn"),
             date_created: o.get_field("dateCreated"),

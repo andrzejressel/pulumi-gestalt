@@ -184,61 +184,53 @@ pub mod profile {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProfileArgs,
     ) -> ProfileResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProfileArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ProfileResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProfileArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ProfileResult {
-        let account_number_binding = args.account_number.get_output(context);
-        let additional_information_binding = args
-            .additional_information
-            .get_output(context);
-        let address_binding = args.address.get_output(context);
-        let attributes_binding = args.attributes.get_output(context);
-        let billing_address_binding = args.billing_address.get_output(context);
-        let birth_date_binding = args.birth_date.get_output(context);
-        let business_email_address_binding = args
-            .business_email_address
-            .get_output(context);
-        let business_name_binding = args.business_name.get_output(context);
-        let business_phone_number_binding = args
-            .business_phone_number
-            .get_output(context);
-        let domain_name_binding = args.domain_name.get_output(context);
-        let email_address_binding = args.email_address.get_output(context);
-        let first_name_binding = args.first_name.get_output(context);
-        let gender_string_binding = args.gender_string.get_output(context);
-        let home_phone_number_binding = args.home_phone_number.get_output(context);
-        let last_name_binding = args.last_name.get_output(context);
-        let mailing_address_binding = args.mailing_address.get_output(context);
-        let middle_name_binding = args.middle_name.get_output(context);
-        let mobile_phone_number_binding = args.mobile_phone_number.get_output(context);
-        let party_type_string_binding = args.party_type_string.get_output(context);
-        let personal_email_address_binding = args
-            .personal_email_address
-            .get_output(context);
-        let phone_number_binding = args.phone_number.get_output(context);
-        let shipping_address_binding = args.shipping_address.get_output(context);
+        let account_number_binding = args.account_number.get_output(ctx);
+        let additional_information_binding = args.additional_information.get_output(ctx);
+        let address_binding = args.address.get_output(ctx);
+        let attributes_binding = args.attributes.get_output(ctx);
+        let billing_address_binding = args.billing_address.get_output(ctx);
+        let birth_date_binding = args.birth_date.get_output(ctx);
+        let business_email_address_binding = args.business_email_address.get_output(ctx);
+        let business_name_binding = args.business_name.get_output(ctx);
+        let business_phone_number_binding = args.business_phone_number.get_output(ctx);
+        let domain_name_binding = args.domain_name.get_output(ctx);
+        let email_address_binding = args.email_address.get_output(ctx);
+        let first_name_binding = args.first_name.get_output(ctx);
+        let gender_string_binding = args.gender_string.get_output(ctx);
+        let home_phone_number_binding = args.home_phone_number.get_output(ctx);
+        let last_name_binding = args.last_name.get_output(ctx);
+        let mailing_address_binding = args.mailing_address.get_output(ctx);
+        let middle_name_binding = args.middle_name.get_output(ctx);
+        let mobile_phone_number_binding = args.mobile_phone_number.get_output(ctx);
+        let party_type_string_binding = args.party_type_string.get_output(ctx);
+        let personal_email_address_binding = args.personal_email_address.get_output(ctx);
+        let phone_number_binding = args.phone_number.get_output(ctx);
+        let shipping_address_binding = args.shipping_address.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:customerprofiles/profile:Profile".into(),
             name: name.to_string(),
@@ -335,7 +327,7 @@ pub mod profile {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ProfileResult {
             id: o.get_id(),
             urn: o.get_urn(),

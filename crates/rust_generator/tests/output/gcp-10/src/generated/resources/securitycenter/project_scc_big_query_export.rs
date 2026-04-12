@@ -180,36 +180,36 @@ pub mod project_scc_big_query_export {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProjectSccBigQueryExportArgs,
     ) -> ProjectSccBigQueryExportResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProjectSccBigQueryExportArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ProjectSccBigQueryExportResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProjectSccBigQueryExportArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ProjectSccBigQueryExportResult {
-        let big_query_export_id_binding = args.big_query_export_id.get_output(context);
-        let dataset_binding = args.dataset.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let filter_binding = args.filter.get_output(context);
-        let project_binding = args.project.get_output(context);
+        let big_query_export_id_binding = args.big_query_export_id.get_output(ctx);
+        let dataset_binding = args.dataset.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let filter_binding = args.filter.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:securitycenter/projectSccBigQueryExport:ProjectSccBigQueryExport"
                 .into(),
@@ -239,7 +239,7 @@ pub mod project_scc_big_query_export {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ProjectSccBigQueryExportResult {
             id: o.get_id(),
             urn: o.get_urn(),

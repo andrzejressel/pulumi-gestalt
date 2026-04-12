@@ -184,61 +184,53 @@ pub mod virtual_machine {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VirtualMachineArgs,
     ) -> VirtualMachineResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VirtualMachineArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> VirtualMachineResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VirtualMachineArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> VirtualMachineResult {
-        let assessment_binding = args.assessment.get_output(context);
-        let auto_backup_binding = args.auto_backup.get_output(context);
-        let auto_patching_binding = args.auto_patching.get_output(context);
-        let key_vault_credential_binding = args.key_vault_credential.get_output(context);
-        let r_services_enabled_binding = args.r_services_enabled.get_output(context);
-        let sql_connectivity_port_binding = args
-            .sql_connectivity_port
-            .get_output(context);
-        let sql_connectivity_type_binding = args
-            .sql_connectivity_type
-            .get_output(context);
+        let assessment_binding = args.assessment.get_output(ctx);
+        let auto_backup_binding = args.auto_backup.get_output(ctx);
+        let auto_patching_binding = args.auto_patching.get_output(ctx);
+        let key_vault_credential_binding = args.key_vault_credential.get_output(ctx);
+        let r_services_enabled_binding = args.r_services_enabled.get_output(ctx);
+        let sql_connectivity_port_binding = args.sql_connectivity_port.get_output(ctx);
+        let sql_connectivity_type_binding = args.sql_connectivity_type.get_output(ctx);
         let sql_connectivity_update_password_binding = args
             .sql_connectivity_update_password
-            .get_output(context);
+            .get_output(ctx);
         let sql_connectivity_update_username_binding = args
             .sql_connectivity_update_username
-            .get_output(context);
-        let sql_instance_binding = args.sql_instance.get_output(context);
-        let sql_license_type_binding = args.sql_license_type.get_output(context);
+            .get_output(ctx);
+        let sql_instance_binding = args.sql_instance.get_output(ctx);
+        let sql_license_type_binding = args.sql_license_type.get_output(ctx);
         let sql_virtual_machine_group_id_binding = args
             .sql_virtual_machine_group_id
-            .get_output(context);
-        let storage_configuration_binding = args
-            .storage_configuration
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let virtual_machine_id_binding = args.virtual_machine_id.get_output(context);
-        let wsfc_domain_credential_binding = args
-            .wsfc_domain_credential
-            .get_output(context);
+            .get_output(ctx);
+        let storage_configuration_binding = args.storage_configuration.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let virtual_machine_id_binding = args.virtual_machine_id.get_output(ctx);
+        let wsfc_domain_credential_binding = args.wsfc_domain_credential.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:mssql/virtualMachine:VirtualMachine".into(),
             name: name.to_string(),
@@ -311,7 +303,7 @@ pub mod virtual_machine {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         VirtualMachineResult {
             id: o.get_id(),
             urn: o.get_urn(),

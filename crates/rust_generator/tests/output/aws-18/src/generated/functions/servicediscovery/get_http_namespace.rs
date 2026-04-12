@@ -36,11 +36,11 @@ pub mod get_http_namespace {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetHttpNamespaceArgs,
     ) -> GetHttpNamespaceResult {
-        let name_binding = args.name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:servicediscovery/getHttpNamespace:getHttpNamespace".into(),
             version: super::super::super::get_version(),
@@ -55,7 +55,7 @@ pub mod get_http_namespace {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetHttpNamespaceResult {
             arn: o.get_field("arn"),
             description: o.get_field("description"),

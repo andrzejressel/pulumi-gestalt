@@ -152,51 +152,49 @@ pub mod linked_service_sftp {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LinkedServiceSftpArgs,
     ) -> LinkedServiceSftpResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LinkedServiceSftpArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> LinkedServiceSftpResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LinkedServiceSftpArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> LinkedServiceSftpResult {
-        let additional_properties_binding = args
-            .additional_properties
-            .get_output(context);
-        let annotations_binding = args.annotations.get_output(context);
-        let authentication_type_binding = args.authentication_type.get_output(context);
-        let data_factory_id_binding = args.data_factory_id.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let host_binding = args.host.get_output(context);
-        let host_key_fingerprint_binding = args.host_key_fingerprint.get_output(context);
+        let additional_properties_binding = args.additional_properties.get_output(ctx);
+        let annotations_binding = args.annotations.get_output(ctx);
+        let authentication_type_binding = args.authentication_type.get_output(ctx);
+        let data_factory_id_binding = args.data_factory_id.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let host_binding = args.host.get_output(ctx);
+        let host_key_fingerprint_binding = args.host_key_fingerprint.get_output(ctx);
         let integration_runtime_name_binding = args
             .integration_runtime_name
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let parameters_binding = args.parameters.get_output(context);
-        let password_binding = args.password.get_output(context);
-        let port_binding = args.port.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let parameters_binding = args.parameters.get_output(ctx);
+        let password_binding = args.password.get_output(ctx);
+        let port_binding = args.port.get_output(ctx);
         let skip_host_key_validation_binding = args
             .skip_host_key_validation
-            .get_output(context);
-        let username_binding = args.username.get_output(context);
+            .get_output(ctx);
+        let username_binding = args.username.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:datafactory/linkedServiceSftp:LinkedServiceSftp".into(),
             name: name.to_string(),
@@ -261,7 +259,7 @@ pub mod linked_service_sftp {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         LinkedServiceSftpResult {
             id: o.get_id(),
             urn: o.get_urn(),

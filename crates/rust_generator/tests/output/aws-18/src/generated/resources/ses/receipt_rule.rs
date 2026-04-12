@@ -163,45 +163,45 @@ pub mod receipt_rule {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ReceiptRuleArgs,
     ) -> ReceiptRuleResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ReceiptRuleArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ReceiptRuleResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ReceiptRuleArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ReceiptRuleResult {
-        let add_header_actions_binding = args.add_header_actions.get_output(context);
-        let after_binding = args.after.get_output(context);
-        let bounce_actions_binding = args.bounce_actions.get_output(context);
-        let enabled_binding = args.enabled.get_output(context);
-        let lambda_actions_binding = args.lambda_actions.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let recipients_binding = args.recipients.get_output(context);
-        let rule_set_name_binding = args.rule_set_name.get_output(context);
-        let s3_actions_binding = args.s3_actions.get_output(context);
-        let scan_enabled_binding = args.scan_enabled.get_output(context);
-        let sns_actions_binding = args.sns_actions.get_output(context);
-        let stop_actions_binding = args.stop_actions.get_output(context);
-        let tls_policy_binding = args.tls_policy.get_output(context);
-        let workmail_actions_binding = args.workmail_actions.get_output(context);
+        let add_header_actions_binding = args.add_header_actions.get_output(ctx);
+        let after_binding = args.after.get_output(ctx);
+        let bounce_actions_binding = args.bounce_actions.get_output(ctx);
+        let enabled_binding = args.enabled.get_output(ctx);
+        let lambda_actions_binding = args.lambda_actions.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let recipients_binding = args.recipients.get_output(ctx);
+        let rule_set_name_binding = args.rule_set_name.get_output(ctx);
+        let s3_actions_binding = args.s3_actions.get_output(ctx);
+        let scan_enabled_binding = args.scan_enabled.get_output(ctx);
+        let sns_actions_binding = args.sns_actions.get_output(ctx);
+        let stop_actions_binding = args.stop_actions.get_output(ctx);
+        let tls_policy_binding = args.tls_policy.get_output(ctx);
+        let workmail_actions_binding = args.workmail_actions.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ses/receiptRule:ReceiptRule".into(),
             name: name.to_string(),
@@ -266,7 +266,7 @@ pub mod receipt_rule {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ReceiptRuleResult {
             id: o.get_id(),
             urn: o.get_urn(),

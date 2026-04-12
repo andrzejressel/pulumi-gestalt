@@ -87,38 +87,38 @@ pub mod account_public_access_block {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccountPublicAccessBlockArgs,
     ) -> AccountPublicAccessBlockResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccountPublicAccessBlockArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AccountPublicAccessBlockResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccountPublicAccessBlockArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AccountPublicAccessBlockResult {
-        let account_id_binding = args.account_id.get_output(context);
-        let block_public_acls_binding = args.block_public_acls.get_output(context);
-        let block_public_policy_binding = args.block_public_policy.get_output(context);
-        let ignore_public_acls_binding = args.ignore_public_acls.get_output(context);
+        let account_id_binding = args.account_id.get_output(ctx);
+        let block_public_acls_binding = args.block_public_acls.get_output(ctx);
+        let block_public_policy_binding = args.block_public_policy.get_output(ctx);
+        let ignore_public_acls_binding = args.ignore_public_acls.get_output(ctx);
         let restrict_public_buckets_binding = args
             .restrict_public_buckets
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:s3/accountPublicAccessBlock:AccountPublicAccessBlock".into(),
             name: name.to_string(),
@@ -147,7 +147,7 @@ pub mod account_public_access_block {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AccountPublicAccessBlockResult {
             id: o.get_id(),
             urn: o.get_urn(),

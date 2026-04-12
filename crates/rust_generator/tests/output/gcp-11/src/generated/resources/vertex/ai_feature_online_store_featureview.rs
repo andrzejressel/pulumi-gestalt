@@ -590,42 +590,42 @@ pub mod ai_feature_online_store_featureview {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AiFeatureOnlineStoreFeatureviewArgs,
     ) -> AiFeatureOnlineStoreFeatureviewResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AiFeatureOnlineStoreFeatureviewArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AiFeatureOnlineStoreFeatureviewResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AiFeatureOnlineStoreFeatureviewArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AiFeatureOnlineStoreFeatureviewResult {
-        let big_query_source_binding = args.big_query_source.get_output(context);
-        let feature_online_store_binding = args.feature_online_store.get_output(context);
+        let big_query_source_binding = args.big_query_source.get_output(ctx);
+        let feature_online_store_binding = args.feature_online_store.get_output(ctx);
         let feature_registry_source_binding = args
             .feature_registry_source
-            .get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let region_binding = args.region.get_output(context);
-        let sync_config_binding = args.sync_config.get_output(context);
-        let vector_search_config_binding = args.vector_search_config.get_output(context);
+            .get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let region_binding = args.region.get_output(ctx);
+        let sync_config_binding = args.sync_config.get_output(ctx);
+        let vector_search_config_binding = args.vector_search_config.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:vertex/aiFeatureOnlineStoreFeatureview:AiFeatureOnlineStoreFeatureview"
                 .into(),
@@ -671,7 +671,7 @@ pub mod ai_feature_online_store_featureview {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AiFeatureOnlineStoreFeatureviewResult {
             id: o.get_id(),
             urn: o.get_urn(),

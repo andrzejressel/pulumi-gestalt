@@ -36,10 +36,10 @@ pub mod get_runtime_versions {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetRuntimeVersionsArgs,
     ) -> GetRuntimeVersionsResult {
-        let runtime_versions_binding = args.runtime_versions.get_output(context);
+        let runtime_versions_binding = args.runtime_versions.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:synthetics/getRuntimeVersions:getRuntimeVersions".into(),
             version: super::super::super::get_version(),
@@ -50,7 +50,7 @@ pub mod get_runtime_versions {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetRuntimeVersionsResult {
             id: o.get_field("id"),
             runtime_versions: o.get_field("runtimeVersions"),

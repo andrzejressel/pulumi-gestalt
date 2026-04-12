@@ -157,38 +157,38 @@ pub mod lite_topic {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LiteTopicArgs,
     ) -> LiteTopicResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LiteTopicArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> LiteTopicResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LiteTopicArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> LiteTopicResult {
-        let name_binding = args.name.get_output(context);
-        let partition_config_binding = args.partition_config.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let region_binding = args.region.get_output(context);
-        let reservation_config_binding = args.reservation_config.get_output(context);
-        let retention_config_binding = args.retention_config.get_output(context);
-        let zone_binding = args.zone.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let partition_config_binding = args.partition_config.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let region_binding = args.region.get_output(ctx);
+        let reservation_config_binding = args.reservation_config.get_output(ctx);
+        let retention_config_binding = args.retention_config.get_output(ctx);
+        let zone_binding = args.zone.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:pubsub/liteTopic:LiteTopic".into(),
             name: name.to_string(),
@@ -225,7 +225,7 @@ pub mod lite_topic {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         LiteTopicResult {
             id: o.get_id(),
             urn: o.get_urn(),

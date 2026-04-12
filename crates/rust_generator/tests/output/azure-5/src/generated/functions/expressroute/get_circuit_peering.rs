@@ -50,14 +50,14 @@ pub mod get_circuit_peering {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetCircuitPeeringArgs,
     ) -> GetCircuitPeeringResult {
         let express_route_circuit_name_binding = args
             .express_route_circuit_name
-            .get_output(context);
-        let peering_type_binding = args.peering_type.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+            .get_output(ctx);
+        let peering_type_binding = args.peering_type.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:expressroute/getCircuitPeering:getCircuitPeering".into(),
             version: super::super::super::get_version(),
@@ -76,7 +76,7 @@ pub mod get_circuit_peering {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetCircuitPeeringResult {
             azure_asn: o.get_field("azureAsn"),
             express_route_circuit_name: o.get_field("expressRouteCircuitName"),

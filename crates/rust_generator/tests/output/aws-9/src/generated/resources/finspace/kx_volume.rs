@@ -129,39 +129,39 @@ pub mod kx_volume {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: KxVolumeArgs,
     ) -> KxVolumeResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: KxVolumeArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> KxVolumeResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: KxVolumeArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> KxVolumeResult {
-        let availability_zones_binding = args.availability_zones.get_output(context);
-        let az_mode_binding = args.az_mode.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let environment_id_binding = args.environment_id.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let nas1_configurations_binding = args.nas1_configurations.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let type__binding = args.type_.get_output(context);
+        let availability_zones_binding = args.availability_zones.get_output(ctx);
+        let az_mode_binding = args.az_mode.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let environment_id_binding = args.environment_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let nas1_configurations_binding = args.nas1_configurations.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:finspace/kxVolume:KxVolume".into(),
             name: name.to_string(),
@@ -202,7 +202,7 @@ pub mod kx_volume {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         KxVolumeResult {
             id: o.get_id(),
             urn: o.get_urn(),

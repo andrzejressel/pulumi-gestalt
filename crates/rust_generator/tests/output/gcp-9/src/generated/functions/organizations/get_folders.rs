@@ -27,10 +27,10 @@ pub mod get_folders {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetFoldersArgs,
     ) -> GetFoldersResult {
-        let parent_id_binding = args.parent_id.get_output(context);
+        let parent_id_binding = args.parent_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:organizations/getFolders:getFolders".into(),
             version: super::super::super::get_version(),
@@ -41,7 +41,7 @@ pub mod get_folders {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetFoldersResult {
             folders: o.get_field("folders"),
             id: o.get_field("id"),

@@ -49,15 +49,13 @@ pub mod get_membership_binding {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetMembershipBindingArgs,
     ) -> GetMembershipBindingResult {
-        let location_binding = args.location.get_output(context);
-        let membership_binding_id_binding = args
-            .membership_binding_id
-            .get_output(context);
-        let membership_id_binding = args.membership_id.get_output(context);
-        let project_binding = args.project.get_output(context);
+        let location_binding = args.location.get_output(ctx);
+        let membership_binding_id_binding = args.membership_binding_id.get_output(ctx);
+        let membership_id_binding = args.membership_id.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:gkehub/getMembershipBinding:getMembershipBinding".into(),
             version: super::super::super::get_version(),
@@ -80,7 +78,7 @@ pub mod get_membership_binding {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetMembershipBindingResult {
             create_time: o.get_field("createTime"),
             delete_time: o.get_field("deleteTime"),

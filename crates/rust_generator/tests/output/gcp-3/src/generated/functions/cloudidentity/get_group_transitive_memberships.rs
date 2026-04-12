@@ -27,10 +27,10 @@ pub mod get_group_transitive_memberships {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetGroupTransitiveMembershipsArgs,
     ) -> GetGroupTransitiveMembershipsResult {
-        let group_binding = args.group.get_output(context);
+        let group_binding = args.group.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:cloudidentity/getGroupTransitiveMemberships:getGroupTransitiveMemberships"
                 .into(),
@@ -42,7 +42,7 @@ pub mod get_group_transitive_memberships {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetGroupTransitiveMembershipsResult {
             group: o.get_field("group"),
             id: o.get_field("id"),

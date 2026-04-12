@@ -179,51 +179,49 @@ pub mod container_recipe {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ContainerRecipeArgs,
     ) -> ContainerRecipeResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ContainerRecipeArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ContainerRecipeResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ContainerRecipeArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ContainerRecipeResult {
-        let components_binding = args.components.get_output(context);
-        let container_type_binding = args.container_type.get_output(context);
-        let description_binding = args.description.get_output(context);
+        let components_binding = args.components.get_output(ctx);
+        let container_type_binding = args.container_type.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
         let dockerfile_template_data_binding = args
             .dockerfile_template_data
-            .get_output(context);
+            .get_output(ctx);
         let dockerfile_template_uri_binding = args
             .dockerfile_template_uri
-            .get_output(context);
-        let instance_configuration_binding = args
-            .instance_configuration
-            .get_output(context);
-        let kms_key_id_binding = args.kms_key_id.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let parent_image_binding = args.parent_image.get_output(context);
-        let platform_override_binding = args.platform_override.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let target_repository_binding = args.target_repository.get_output(context);
-        let version_binding = args.version.get_output(context);
-        let working_directory_binding = args.working_directory.get_output(context);
+            .get_output(ctx);
+        let instance_configuration_binding = args.instance_configuration.get_output(ctx);
+        let kms_key_id_binding = args.kms_key_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let parent_image_binding = args.parent_image.get_output(ctx);
+        let platform_override_binding = args.platform_override.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let target_repository_binding = args.target_repository.get_output(ctx);
+        let version_binding = args.version.get_output(ctx);
+        let working_directory_binding = args.working_directory.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:imagebuilder/containerRecipe:ContainerRecipe".into(),
             name: name.to_string(),
@@ -288,7 +286,7 @@ pub mod container_recipe {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ContainerRecipeResult {
             id: o.get_id(),
             urn: o.get_urn(),

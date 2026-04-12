@@ -236,44 +236,44 @@ pub mod security_group_rule {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SecurityGroupRuleArgs,
     ) -> SecurityGroupRuleResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SecurityGroupRuleArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> SecurityGroupRuleResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SecurityGroupRuleArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> SecurityGroupRuleResult {
-        let cidr_blocks_binding = args.cidr_blocks.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let from_port_binding = args.from_port.get_output(context);
-        let ipv6_cidr_blocks_binding = args.ipv6_cidr_blocks.get_output(context);
-        let prefix_list_ids_binding = args.prefix_list_ids.get_output(context);
-        let protocol_binding = args.protocol.get_output(context);
-        let security_group_id_binding = args.security_group_id.get_output(context);
-        let self__binding = args.self_.get_output(context);
+        let cidr_blocks_binding = args.cidr_blocks.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let from_port_binding = args.from_port.get_output(ctx);
+        let ipv6_cidr_blocks_binding = args.ipv6_cidr_blocks.get_output(ctx);
+        let prefix_list_ids_binding = args.prefix_list_ids.get_output(ctx);
+        let protocol_binding = args.protocol.get_output(ctx);
+        let security_group_id_binding = args.security_group_id.get_output(ctx);
+        let self__binding = args.self_.get_output(ctx);
         let source_security_group_id_binding = args
             .source_security_group_id
-            .get_output(context);
-        let to_port_binding = args.to_port.get_output(context);
-        let type__binding = args.type_.get_output(context);
+            .get_output(ctx);
+        let to_port_binding = args.to_port.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/securityGroupRule:SecurityGroupRule".into(),
             name: name.to_string(),
@@ -326,7 +326,7 @@ pub mod security_group_rule {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         SecurityGroupRuleResult {
             id: o.get_id(),
             urn: o.get_urn(),

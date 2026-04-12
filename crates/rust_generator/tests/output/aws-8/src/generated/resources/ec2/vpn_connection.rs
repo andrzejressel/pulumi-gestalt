@@ -551,167 +551,159 @@ pub mod vpn_connection {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpnConnectionArgs,
     ) -> VpnConnectionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpnConnectionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> VpnConnectionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpnConnectionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> VpnConnectionResult {
-        let customer_gateway_id_binding = args.customer_gateway_id.get_output(context);
-        let enable_acceleration_binding = args.enable_acceleration.get_output(context);
+        let customer_gateway_id_binding = args.customer_gateway_id.get_output(ctx);
+        let enable_acceleration_binding = args.enable_acceleration.get_output(ctx);
         let local_ipv4_network_cidr_binding = args
             .local_ipv4_network_cidr
-            .get_output(context);
+            .get_output(ctx);
         let local_ipv6_network_cidr_binding = args
             .local_ipv6_network_cidr
-            .get_output(context);
+            .get_output(ctx);
         let outside_ip_address_type_binding = args
             .outside_ip_address_type
-            .get_output(context);
+            .get_output(ctx);
         let remote_ipv4_network_cidr_binding = args
             .remote_ipv4_network_cidr
-            .get_output(context);
+            .get_output(ctx);
         let remote_ipv6_network_cidr_binding = args
             .remote_ipv6_network_cidr
-            .get_output(context);
-        let static_routes_only_binding = args.static_routes_only.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let transit_gateway_id_binding = args.transit_gateway_id.get_output(context);
+            .get_output(ctx);
+        let static_routes_only_binding = args.static_routes_only.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let transit_gateway_id_binding = args.transit_gateway_id.get_output(ctx);
         let transport_transit_gateway_attachment_id_binding = args
             .transport_transit_gateway_attachment_id
-            .get_output(context);
+            .get_output(ctx);
         let tunnel1_dpd_timeout_action_binding = args
             .tunnel1_dpd_timeout_action
-            .get_output(context);
+            .get_output(ctx);
         let tunnel1_dpd_timeout_seconds_binding = args
             .tunnel1_dpd_timeout_seconds
-            .get_output(context);
+            .get_output(ctx);
         let tunnel1_enable_tunnel_lifecycle_control_binding = args
             .tunnel1_enable_tunnel_lifecycle_control
-            .get_output(context);
-        let tunnel1_ike_versions_binding = args.tunnel1_ike_versions.get_output(context);
-        let tunnel1_inside_cidr_binding = args.tunnel1_inside_cidr.get_output(context);
+            .get_output(ctx);
+        let tunnel1_ike_versions_binding = args.tunnel1_ike_versions.get_output(ctx);
+        let tunnel1_inside_cidr_binding = args.tunnel1_inside_cidr.get_output(ctx);
         let tunnel1_inside_ipv6_cidr_binding = args
             .tunnel1_inside_ipv6_cidr
-            .get_output(context);
-        let tunnel1_log_options_binding = args.tunnel1_log_options.get_output(context);
+            .get_output(ctx);
+        let tunnel1_log_options_binding = args.tunnel1_log_options.get_output(ctx);
         let tunnel1_phase1_dh_group_numbers_binding = args
             .tunnel1_phase1_dh_group_numbers
-            .get_output(context);
+            .get_output(ctx);
         let tunnel1_phase1_encryption_algorithms_binding = args
             .tunnel1_phase1_encryption_algorithms
-            .get_output(context);
+            .get_output(ctx);
         let tunnel1_phase1_integrity_algorithms_binding = args
             .tunnel1_phase1_integrity_algorithms
-            .get_output(context);
+            .get_output(ctx);
         let tunnel1_phase1_lifetime_seconds_binding = args
             .tunnel1_phase1_lifetime_seconds
-            .get_output(context);
+            .get_output(ctx);
         let tunnel1_phase2_dh_group_numbers_binding = args
             .tunnel1_phase2_dh_group_numbers
-            .get_output(context);
+            .get_output(ctx);
         let tunnel1_phase2_encryption_algorithms_binding = args
             .tunnel1_phase2_encryption_algorithms
-            .get_output(context);
+            .get_output(ctx);
         let tunnel1_phase2_integrity_algorithms_binding = args
             .tunnel1_phase2_integrity_algorithms
-            .get_output(context);
+            .get_output(ctx);
         let tunnel1_phase2_lifetime_seconds_binding = args
             .tunnel1_phase2_lifetime_seconds
-            .get_output(context);
-        let tunnel1_preshared_key_binding = args
-            .tunnel1_preshared_key
-            .get_output(context);
+            .get_output(ctx);
+        let tunnel1_preshared_key_binding = args.tunnel1_preshared_key.get_output(ctx);
         let tunnel1_rekey_fuzz_percentage_binding = args
             .tunnel1_rekey_fuzz_percentage
-            .get_output(context);
+            .get_output(ctx);
         let tunnel1_rekey_margin_time_seconds_binding = args
             .tunnel1_rekey_margin_time_seconds
-            .get_output(context);
+            .get_output(ctx);
         let tunnel1_replay_window_size_binding = args
             .tunnel1_replay_window_size
-            .get_output(context);
-        let tunnel1_startup_action_binding = args
-            .tunnel1_startup_action
-            .get_output(context);
+            .get_output(ctx);
+        let tunnel1_startup_action_binding = args.tunnel1_startup_action.get_output(ctx);
         let tunnel2_dpd_timeout_action_binding = args
             .tunnel2_dpd_timeout_action
-            .get_output(context);
+            .get_output(ctx);
         let tunnel2_dpd_timeout_seconds_binding = args
             .tunnel2_dpd_timeout_seconds
-            .get_output(context);
+            .get_output(ctx);
         let tunnel2_enable_tunnel_lifecycle_control_binding = args
             .tunnel2_enable_tunnel_lifecycle_control
-            .get_output(context);
-        let tunnel2_ike_versions_binding = args.tunnel2_ike_versions.get_output(context);
-        let tunnel2_inside_cidr_binding = args.tunnel2_inside_cidr.get_output(context);
+            .get_output(ctx);
+        let tunnel2_ike_versions_binding = args.tunnel2_ike_versions.get_output(ctx);
+        let tunnel2_inside_cidr_binding = args.tunnel2_inside_cidr.get_output(ctx);
         let tunnel2_inside_ipv6_cidr_binding = args
             .tunnel2_inside_ipv6_cidr
-            .get_output(context);
-        let tunnel2_log_options_binding = args.tunnel2_log_options.get_output(context);
+            .get_output(ctx);
+        let tunnel2_log_options_binding = args.tunnel2_log_options.get_output(ctx);
         let tunnel2_phase1_dh_group_numbers_binding = args
             .tunnel2_phase1_dh_group_numbers
-            .get_output(context);
+            .get_output(ctx);
         let tunnel2_phase1_encryption_algorithms_binding = args
             .tunnel2_phase1_encryption_algorithms
-            .get_output(context);
+            .get_output(ctx);
         let tunnel2_phase1_integrity_algorithms_binding = args
             .tunnel2_phase1_integrity_algorithms
-            .get_output(context);
+            .get_output(ctx);
         let tunnel2_phase1_lifetime_seconds_binding = args
             .tunnel2_phase1_lifetime_seconds
-            .get_output(context);
+            .get_output(ctx);
         let tunnel2_phase2_dh_group_numbers_binding = args
             .tunnel2_phase2_dh_group_numbers
-            .get_output(context);
+            .get_output(ctx);
         let tunnel2_phase2_encryption_algorithms_binding = args
             .tunnel2_phase2_encryption_algorithms
-            .get_output(context);
+            .get_output(ctx);
         let tunnel2_phase2_integrity_algorithms_binding = args
             .tunnel2_phase2_integrity_algorithms
-            .get_output(context);
+            .get_output(ctx);
         let tunnel2_phase2_lifetime_seconds_binding = args
             .tunnel2_phase2_lifetime_seconds
-            .get_output(context);
-        let tunnel2_preshared_key_binding = args
-            .tunnel2_preshared_key
-            .get_output(context);
+            .get_output(ctx);
+        let tunnel2_preshared_key_binding = args.tunnel2_preshared_key.get_output(ctx);
         let tunnel2_rekey_fuzz_percentage_binding = args
             .tunnel2_rekey_fuzz_percentage
-            .get_output(context);
+            .get_output(ctx);
         let tunnel2_rekey_margin_time_seconds_binding = args
             .tunnel2_rekey_margin_time_seconds
-            .get_output(context);
+            .get_output(ctx);
         let tunnel2_replay_window_size_binding = args
             .tunnel2_replay_window_size
-            .get_output(context);
-        let tunnel2_startup_action_binding = args
-            .tunnel2_startup_action
-            .get_output(context);
+            .get_output(ctx);
+        let tunnel2_startup_action_binding = args.tunnel2_startup_action.get_output(ctx);
         let tunnel_inside_ip_version_binding = args
             .tunnel_inside_ip_version
-            .get_output(context);
-        let type__binding = args.type_.get_output(context);
-        let vpn_gateway_id_binding = args.vpn_gateway_id.get_output(context);
+            .get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
+        let vpn_gateway_id_binding = args.vpn_gateway_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/vpnConnection:VpnConnection".into(),
             name: name.to_string(),
@@ -936,7 +928,7 @@ pub mod vpn_connection {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         VpnConnectionResult {
             id: o.get_id(),
             urn: o.get_urn(),

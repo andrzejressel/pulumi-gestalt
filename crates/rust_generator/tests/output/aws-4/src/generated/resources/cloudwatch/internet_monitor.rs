@@ -115,45 +115,45 @@ pub mod internet_monitor {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InternetMonitorArgs,
     ) -> InternetMonitorResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InternetMonitorArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> InternetMonitorResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InternetMonitorArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> InternetMonitorResult {
-        let health_events_config_binding = args.health_events_config.get_output(context);
+        let health_events_config_binding = args.health_events_config.get_output(ctx);
         let internet_measurements_log_delivery_binding = args
             .internet_measurements_log_delivery
-            .get_output(context);
+            .get_output(ctx);
         let max_city_networks_to_monitor_binding = args
             .max_city_networks_to_monitor
-            .get_output(context);
-        let monitor_name_binding = args.monitor_name.get_output(context);
-        let resources_binding = args.resources.get_output(context);
-        let status_binding = args.status.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let monitor_name_binding = args.monitor_name.get_output(ctx);
+        let resources_binding = args.resources.get_output(ctx);
+        let status_binding = args.status.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let traffic_percentage_to_monitor_binding = args
             .traffic_percentage_to_monitor
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:cloudwatch/internetMonitor:InternetMonitor".into(),
             name: name.to_string(),
@@ -194,7 +194,7 @@ pub mod internet_monitor {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         InternetMonitorResult {
             id: o.get_id(),
             urn: o.get_urn(),

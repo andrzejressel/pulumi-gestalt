@@ -366,52 +366,52 @@ pub mod firewall {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FirewallArgs,
     ) -> FirewallResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FirewallArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> FirewallResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FirewallArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> FirewallResult {
-        let allows_binding = args.allows.get_output(context);
-        let denies_binding = args.denies.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let destination_ranges_binding = args.destination_ranges.get_output(context);
-        let direction_binding = args.direction.get_output(context);
-        let disabled_binding = args.disabled.get_output(context);
-        let enable_logging_binding = args.enable_logging.get_output(context);
-        let log_config_binding = args.log_config.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_binding = args.network.get_output(context);
-        let priority_binding = args.priority.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let source_ranges_binding = args.source_ranges.get_output(context);
+        let allows_binding = args.allows.get_output(ctx);
+        let denies_binding = args.denies.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let destination_ranges_binding = args.destination_ranges.get_output(ctx);
+        let direction_binding = args.direction.get_output(ctx);
+        let disabled_binding = args.disabled.get_output(ctx);
+        let enable_logging_binding = args.enable_logging.get_output(ctx);
+        let log_config_binding = args.log_config.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_binding = args.network.get_output(ctx);
+        let priority_binding = args.priority.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let source_ranges_binding = args.source_ranges.get_output(ctx);
         let source_service_accounts_binding = args
             .source_service_accounts
-            .get_output(context);
-        let source_tags_binding = args.source_tags.get_output(context);
+            .get_output(ctx);
+        let source_tags_binding = args.source_tags.get_output(ctx);
         let target_service_accounts_binding = args
             .target_service_accounts
-            .get_output(context);
-        let target_tags_binding = args.target_tags.get_output(context);
+            .get_output(ctx);
+        let target_tags_binding = args.target_tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:compute/firewall:Firewall".into(),
             name: name.to_string(),
@@ -488,7 +488,7 @@ pub mod firewall {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         FirewallResult {
             id: o.get_id(),
             urn: o.get_urn(),

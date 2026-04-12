@@ -137,45 +137,45 @@ pub mod sql_pool_workload_group {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SqlPoolWorkloadGroupArgs,
     ) -> SqlPoolWorkloadGroupResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SqlPoolWorkloadGroupArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> SqlPoolWorkloadGroupResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SqlPoolWorkloadGroupArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> SqlPoolWorkloadGroupResult {
-        let importance_binding = args.importance.get_output(context);
-        let max_resource_percent_binding = args.max_resource_percent.get_output(context);
+        let importance_binding = args.importance.get_output(ctx);
+        let max_resource_percent_binding = args.max_resource_percent.get_output(ctx);
         let max_resource_percent_per_request_binding = args
             .max_resource_percent_per_request
-            .get_output(context);
-        let min_resource_percent_binding = args.min_resource_percent.get_output(context);
+            .get_output(ctx);
+        let min_resource_percent_binding = args.min_resource_percent.get_output(ctx);
         let min_resource_percent_per_request_binding = args
             .min_resource_percent_per_request
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let query_execution_timeout_in_seconds_binding = args
             .query_execution_timeout_in_seconds
-            .get_output(context);
-        let sql_pool_id_binding = args.sql_pool_id.get_output(context);
+            .get_output(ctx);
+        let sql_pool_id_binding = args.sql_pool_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:synapse/sqlPoolWorkloadGroup:SqlPoolWorkloadGroup".into(),
             name: name.to_string(),
@@ -216,7 +216,7 @@ pub mod sql_pool_workload_group {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         SqlPoolWorkloadGroupResult {
             id: o.get_id(),
             urn: o.get_urn(),

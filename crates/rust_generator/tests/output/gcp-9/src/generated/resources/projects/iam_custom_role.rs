@@ -116,37 +116,37 @@ pub mod iam_custom_role {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IAMCustomRoleArgs,
     ) -> IAMCustomRoleResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IAMCustomRoleArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> IAMCustomRoleResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IAMCustomRoleArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> IAMCustomRoleResult {
-        let description_binding = args.description.get_output(context);
-        let permissions_binding = args.permissions.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let role_id_binding = args.role_id.get_output(context);
-        let stage_binding = args.stage.get_output(context);
-        let title_binding = args.title.get_output(context);
+        let description_binding = args.description.get_output(ctx);
+        let permissions_binding = args.permissions.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let role_id_binding = args.role_id.get_output(ctx);
+        let stage_binding = args.stage.get_output(ctx);
+        let title_binding = args.title.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:projects/iAMCustomRole:IAMCustomRole".into(),
             name: name.to_string(),
@@ -179,7 +179,7 @@ pub mod iam_custom_role {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         IAMCustomRoleResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -42,11 +42,11 @@ pub mod get_crypto_key_versions {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetCryptoKeyVersionsArgs,
     ) -> GetCryptoKeyVersionsResult {
-        let crypto_key_binding = args.crypto_key.get_output(context);
-        let filter_binding = args.filter.get_output(context);
+        let crypto_key_binding = args.crypto_key.get_output(ctx);
+        let filter_binding = args.filter.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:kms/getCryptoKeyVersions:getCryptoKeyVersions".into(),
             version: super::super::super::get_version(),
@@ -61,7 +61,7 @@ pub mod get_crypto_key_versions {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetCryptoKeyVersionsResult {
             crypto_key: o.get_field("cryptoKey"),
             filter: o.get_field("filter"),

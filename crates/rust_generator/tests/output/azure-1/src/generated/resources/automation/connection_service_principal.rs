@@ -113,43 +113,41 @@ pub mod connection_service_principal {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ConnectionServicePrincipalArgs,
     ) -> ConnectionServicePrincipalResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ConnectionServicePrincipalArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ConnectionServicePrincipalResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ConnectionServicePrincipalArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ConnectionServicePrincipalResult {
-        let application_id_binding = args.application_id.get_output(context);
+        let application_id_binding = args.application_id.get_output(ctx);
         let automation_account_name_binding = args
             .automation_account_name
-            .get_output(context);
-        let certificate_thumbprint_binding = args
-            .certificate_thumbprint
-            .get_output(context);
-        let description_binding = args.description.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let subscription_id_binding = args.subscription_id.get_output(context);
-        let tenant_id_binding = args.tenant_id.get_output(context);
+            .get_output(ctx);
+        let certificate_thumbprint_binding = args.certificate_thumbprint.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let subscription_id_binding = args.subscription_id.get_output(ctx);
+        let tenant_id_binding = args.tenant_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:automation/connectionServicePrincipal:ConnectionServicePrincipal"
                 .into(),
@@ -191,7 +189,7 @@ pub mod connection_service_principal {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ConnectionServicePrincipalResult {
             id: o.get_id(),
             urn: o.get_urn(),

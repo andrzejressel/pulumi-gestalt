@@ -191,38 +191,38 @@ pub mod ai_feature_group_feature {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AiFeatureGroupFeatureArgs,
     ) -> AiFeatureGroupFeatureResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AiFeatureGroupFeatureArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AiFeatureGroupFeatureResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AiFeatureGroupFeatureArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AiFeatureGroupFeatureResult {
-        let description_binding = args.description.get_output(context);
-        let feature_group_binding = args.feature_group.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let region_binding = args.region.get_output(context);
-        let version_column_name_binding = args.version_column_name.get_output(context);
+        let description_binding = args.description.get_output(ctx);
+        let feature_group_binding = args.feature_group.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let region_binding = args.region.get_output(ctx);
+        let version_column_name_binding = args.version_column_name.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:vertex/aiFeatureGroupFeature:AiFeatureGroupFeature".into(),
             name: name.to_string(),
@@ -259,7 +259,7 @@ pub mod ai_feature_group_feature {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AiFeatureGroupFeatureResult {
             id: o.get_id(),
             urn: o.get_urn(),

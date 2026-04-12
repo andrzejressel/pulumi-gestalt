@@ -202,57 +202,55 @@ pub mod workers_script {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkersScriptArgs,
     ) -> WorkersScriptResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkersScriptArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> WorkersScriptResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkersScriptArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> WorkersScriptResult {
-        let account_id_binding = args.account_id.get_output(context);
+        let account_id_binding = args.account_id.get_output(ctx);
         let analytics_engine_bindings_binding = args
             .analytics_engine_bindings
-            .get_output(context);
-        let compatibility_date_binding = args.compatibility_date.get_output(context);
-        let compatibility_flags_binding = args.compatibility_flags.get_output(context);
-        let content_binding = args.content.get_output(context);
-        let d1_database_bindings_binding = args.d1_database_bindings.get_output(context);
-        let dispatch_namespace_binding = args.dispatch_namespace.get_output(context);
+            .get_output(ctx);
+        let compatibility_date_binding = args.compatibility_date.get_output(ctx);
+        let compatibility_flags_binding = args.compatibility_flags.get_output(ctx);
+        let content_binding = args.content.get_output(ctx);
+        let d1_database_bindings_binding = args.d1_database_bindings.get_output(ctx);
+        let dispatch_namespace_binding = args.dispatch_namespace.get_output(ctx);
         let hyperdrive_config_bindings_binding = args
             .hyperdrive_config_bindings
-            .get_output(context);
-        let kv_namespace_bindings_binding = args
-            .kv_namespace_bindings
-            .get_output(context);
-        let logpush_binding = args.logpush.get_output(context);
-        let module_binding = args.module.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let placements_binding = args.placements.get_output(context);
-        let plain_text_bindings_binding = args.plain_text_bindings.get_output(context);
-        let queue_bindings_binding = args.queue_bindings.get_output(context);
-        let r2_bucket_bindings_binding = args.r2_bucket_bindings.get_output(context);
-        let secret_text_bindings_binding = args.secret_text_bindings.get_output(context);
-        let service_bindings_binding = args.service_bindings.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let webassembly_bindings_binding = args.webassembly_bindings.get_output(context);
+            .get_output(ctx);
+        let kv_namespace_bindings_binding = args.kv_namespace_bindings.get_output(ctx);
+        let logpush_binding = args.logpush.get_output(ctx);
+        let module_binding = args.module.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let placements_binding = args.placements.get_output(ctx);
+        let plain_text_bindings_binding = args.plain_text_bindings.get_output(ctx);
+        let queue_bindings_binding = args.queue_bindings.get_output(ctx);
+        let r2_bucket_bindings_binding = args.r2_bucket_bindings.get_output(ctx);
+        let secret_text_bindings_binding = args.secret_text_bindings.get_output(ctx);
+        let service_bindings_binding = args.service_bindings.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let webassembly_bindings_binding = args.webassembly_bindings.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "cloudflare:index/workersScript:WorkersScript".into(),
             name: name.to_string(),
@@ -341,7 +339,7 @@ pub mod workers_script {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         WorkersScriptResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -135,37 +135,31 @@ pub mod get_task_execution {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetTaskExecutionArgs,
     ) -> GetTaskExecutionResult {
         let capacity_provider_strategies_binding = args
             .capacity_provider_strategies
-            .get_output(context);
-        let client_token_binding = args.client_token.get_output(context);
-        let cluster_binding = args.cluster.get_output(context);
-        let desired_count_binding = args.desired_count.get_output(context);
+            .get_output(ctx);
+        let client_token_binding = args.client_token.get_output(ctx);
+        let cluster_binding = args.cluster.get_output(ctx);
+        let desired_count_binding = args.desired_count.get_output(ctx);
         let enable_ecs_managed_tags_binding = args
             .enable_ecs_managed_tags
-            .get_output(context);
-        let enable_execute_command_binding = args
-            .enable_execute_command
-            .get_output(context);
-        let group_binding = args.group.get_output(context);
-        let launch_type_binding = args.launch_type.get_output(context);
-        let network_configuration_binding = args
-            .network_configuration
-            .get_output(context);
-        let overrides_binding = args.overrides.get_output(context);
-        let placement_constraints_binding = args
-            .placement_constraints
-            .get_output(context);
-        let placement_strategies_binding = args.placement_strategies.get_output(context);
-        let platform_version_binding = args.platform_version.get_output(context);
-        let propagate_tags_binding = args.propagate_tags.get_output(context);
-        let reference_id_binding = args.reference_id.get_output(context);
-        let started_by_binding = args.started_by.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let task_definition_binding = args.task_definition.get_output(context);
+            .get_output(ctx);
+        let enable_execute_command_binding = args.enable_execute_command.get_output(ctx);
+        let group_binding = args.group.get_output(ctx);
+        let launch_type_binding = args.launch_type.get_output(ctx);
+        let network_configuration_binding = args.network_configuration.get_output(ctx);
+        let overrides_binding = args.overrides.get_output(ctx);
+        let placement_constraints_binding = args.placement_constraints.get_output(ctx);
+        let placement_strategies_binding = args.placement_strategies.get_output(ctx);
+        let platform_version_binding = args.platform_version.get_output(ctx);
+        let propagate_tags_binding = args.propagate_tags.get_output(ctx);
+        let reference_id_binding = args.reference_id.get_output(ctx);
+        let started_by_binding = args.started_by.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let task_definition_binding = args.task_definition.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ecs/getTaskExecution:getTaskExecution".into(),
             version: super::super::super::get_version(),
@@ -244,7 +238,7 @@ pub mod get_task_execution {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetTaskExecutionResult {
             capacity_provider_strategies: o.get_field("capacityProviderStrategies"),
             client_token: o.get_field("clientToken"),

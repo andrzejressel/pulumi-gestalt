@@ -149,47 +149,45 @@ pub mod spring_cloud_container_deployment {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SpringCloudContainerDeploymentArgs,
     ) -> SpringCloudContainerDeploymentResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SpringCloudContainerDeploymentArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> SpringCloudContainerDeploymentResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SpringCloudContainerDeploymentArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> SpringCloudContainerDeploymentResult {
-        let addon_json_binding = args.addon_json.get_output(context);
+        let addon_json_binding = args.addon_json.get_output(ctx);
         let application_performance_monitoring_ids_binding = args
             .application_performance_monitoring_ids
-            .get_output(context);
-        let arguments_binding = args.arguments.get_output(context);
-        let commands_binding = args.commands.get_output(context);
-        let environment_variables_binding = args
-            .environment_variables
-            .get_output(context);
-        let image_binding = args.image.get_output(context);
-        let instance_count_binding = args.instance_count.get_output(context);
-        let language_framework_binding = args.language_framework.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let quota_binding = args.quota.get_output(context);
-        let server_binding = args.server.get_output(context);
-        let spring_cloud_app_id_binding = args.spring_cloud_app_id.get_output(context);
+            .get_output(ctx);
+        let arguments_binding = args.arguments.get_output(ctx);
+        let commands_binding = args.commands.get_output(ctx);
+        let environment_variables_binding = args.environment_variables.get_output(ctx);
+        let image_binding = args.image.get_output(ctx);
+        let instance_count_binding = args.instance_count.get_output(ctx);
+        let language_framework_binding = args.language_framework.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let quota_binding = args.quota.get_output(ctx);
+        let server_binding = args.server.get_output(ctx);
+        let spring_cloud_app_id_binding = args.spring_cloud_app_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:appplatform/springCloudContainerDeployment:SpringCloudContainerDeployment"
                 .into(),
@@ -247,7 +245,7 @@ pub mod spring_cloud_container_deployment {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         SpringCloudContainerDeploymentResult {
             id: o.get_id(),
             urn: o.get_urn(),

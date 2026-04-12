@@ -152,50 +152,50 @@ pub mod output_servicebus_topic {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OutputServicebusTopicArgs,
     ) -> OutputServicebusTopicResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OutputServicebusTopicArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> OutputServicebusTopicResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OutputServicebusTopicArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> OutputServicebusTopicResult {
-        let authentication_mode_binding = args.authentication_mode.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let property_columns_binding = args.property_columns.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let serialization_binding = args.serialization.get_output(context);
-        let servicebus_namespace_binding = args.servicebus_namespace.get_output(context);
+        let authentication_mode_binding = args.authentication_mode.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let property_columns_binding = args.property_columns.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let serialization_binding = args.serialization.get_output(ctx);
+        let servicebus_namespace_binding = args.servicebus_namespace.get_output(ctx);
         let shared_access_policy_key_binding = args
             .shared_access_policy_key
-            .get_output(context);
+            .get_output(ctx);
         let shared_access_policy_name_binding = args
             .shared_access_policy_name
-            .get_output(context);
+            .get_output(ctx);
         let stream_analytics_job_name_binding = args
             .stream_analytics_job_name
-            .get_output(context);
+            .get_output(ctx);
         let system_property_columns_binding = args
             .system_property_columns
-            .get_output(context);
-        let topic_name_binding = args.topic_name.get_output(context);
+            .get_output(ctx);
+        let topic_name_binding = args.topic_name.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:streamanalytics/outputServicebusTopic:OutputServicebusTopic"
                 .into(),
@@ -249,7 +249,7 @@ pub mod output_servicebus_topic {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         OutputServicebusTopicResult {
             id: o.get_id(),
             urn: o.get_urn(),
