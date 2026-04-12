@@ -37,33 +37,33 @@ pub mod nursery {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NurseryArgs,
     ) -> NurseryResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NurseryArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> NurseryResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NurseryArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> NurseryResult {
-        let sizes_binding = args.sizes.get_output(context);
-        let varieties_binding = args.varieties.get_output(context);
+        let sizes_binding = args.sizes.get_output(ctx);
+        let varieties_binding = args.varieties.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "plant:tree/v1:Nursery".into(),
             name: name.to_string(),
@@ -80,7 +80,7 @@ pub mod nursery {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         NurseryResult {
             id: o.get_id(),
             urn: o.get_urn(),

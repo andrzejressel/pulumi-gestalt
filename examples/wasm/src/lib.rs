@@ -201,6 +201,6 @@ fn run_loop(ctx: &Context) {
             )
             .collect();
 
-        function_requests = context.finish(&function_results);
+        function_requests = ctx.finish(&function_results);
     }
 }

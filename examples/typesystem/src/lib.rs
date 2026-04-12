@@ -154,8 +154,8 @@ mod tests {
         let case2 = UnionCase2::builder()
             .field_2("value2".to_string())
             .build_struct();
-        let enum_case1_output = context.new_output(&case1);
-        let enum_case2_output = context.new_output(&case2);
+        let enum_case1_output = ctx.new_output(&case1);
+        let enum_case2_output = ctx.new_output(&case2);
         let _ = TypesystemServerArgs::builder().required_union(OneOf2::left(case1));
         let _ = TypesystemServerArgs::builder().required_union(OneOf2::right(case2));
         let _ = TypesystemServerArgs::builder().required_union(enum_case1_output.map(OneOf2::left));

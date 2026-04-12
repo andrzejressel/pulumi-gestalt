@@ -17,8 +17,8 @@ pub mod func_with_const_input {
     /// Registers a new resource with the given unique name and arguments
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
-    pub fn invoke(context: &pulumi_gestalt_rust::Context, args: FuncWithConstInputArgs) {
-        let plain_input_binding = args.plain_input.get_output(context);
+    pub fn invoke(ctx: &pulumi_gestalt_rust::Context, args: FuncWithConstInputArgs) {
+        let plain_input_binding = args.plain_input.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "mypkg::funcWithConstInput".into(),
             version: super::super::get_version(),
@@ -29,6 +29,6 @@ pub mod func_with_const_input {
                 },
             ],
         };
-        context.invoke_resource(request);
+        ctx.invoke_resource(request);
     }
 }

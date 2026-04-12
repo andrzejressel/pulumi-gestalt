@@ -39,25 +39,25 @@ pub mod sql_resource_sql_container {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
     ) -> SqlResourceSqlContainerResult {
-        __create(context, name, None)
+        __create(ctx, name, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> SqlResourceSqlContainerResult {
-        __create(context, name, Some(options))
+        __create(ctx, name, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> SqlResourceSqlContainerResult {
@@ -68,7 +68,7 @@ pub mod sql_resource_sql_container {
             object: &[],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         SqlResourceSqlContainerResult {
             id: o.get_id(),
             urn: o.get_urn(),

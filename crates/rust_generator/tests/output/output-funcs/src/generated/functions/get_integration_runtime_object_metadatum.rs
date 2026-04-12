@@ -44,15 +44,15 @@ pub mod get_integration_runtime_object_metadatum {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetIntegrationRuntimeObjectMetadatumArgs,
     ) -> GetIntegrationRuntimeObjectMetadatumResult {
-        let factory_name_binding = args.factory_name.get_output(context);
+        let factory_name_binding = args.factory_name.get_output(ctx);
         let integration_runtime_name_binding = args
             .integration_runtime_name
-            .get_output(context);
-        let metadata_path_binding = args.metadata_path.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+            .get_output(ctx);
+        let metadata_path_binding = args.metadata_path.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "mypkg::getIntegrationRuntimeObjectMetadatum".into(),
             version: super::super::get_version(),
@@ -75,7 +75,7 @@ pub mod get_integration_runtime_object_metadatum {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetIntegrationRuntimeObjectMetadatumResult {
             next_link: o.get_field("nextLink"),
             value: o.get_field("value"),
