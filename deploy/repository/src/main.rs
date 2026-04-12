@@ -7,8 +7,9 @@ use crate::github::types::{
 };
 use GithubIntegration::{Any, GithubActions, GithubAdvancedSecurity, Mergify, ReleaserBot};
 use anyhow::Result;
+use github::issue_label::IssueLabelArgs;
 use github::types::RepositoryRulesetRulesRequiredStatusChecks;
-use pulumi_gestalt_rust::Context;
+use pulumi_gestalt_rust::{Context, Output};
 use std::ops::Deref;
 
 mod github;
@@ -63,6 +64,8 @@ fn pulumi_main(ctx: &Context) -> Result<()> {
             .iter()
             .map(|job_name| create_check(job_name, GithubActions))
             .collect();
+
+    create_labels(ctx, repository.id.clone());
 
     github::repository_ruleset::create(
         ctx,
@@ -122,6 +125,59 @@ fn pulumi_main(ctx: &Context) -> Result<()> {
     );
 
     Ok(())
+}
+
+fn create_labels(ctx: &Context, repository: Output<String>) {
+    github::issue_label::create(
+        ctx,
+        "ready-to-merge-label",
+        IssueLabelArgs::builder()
+            .name("ready-to-merge")
+            .color("0e8a16")
+            .description("Will be auto-merged by mergify")
+            .repository(repository.clone())
+            .build_struct(),
+    );
+
+    github::issue_label::create(
+        ctx,
+        "conformance-tests-label",
+        IssueLabelArgs::builder()
+            .name("conformance-tests")
+            .color("7393B3")
+            .repository(repository.clone())
+            .build_struct(),
+    );
+
+    github::issue_label::create(
+        ctx,
+        "conformance-tests-hard-label",
+        IssueLabelArgs::builder()
+            .name("conformance-tests/hard")
+            .color("880808")
+            .repository(repository.clone())
+            .build_struct(),
+    );
+
+    github::issue_label::create(
+        ctx,
+        "conformance-tests-medium-label",
+        IssueLabelArgs::builder()
+            .name("conformance-tests/medium")
+            .color("FDDA0D")
+            .repository(repository.clone())
+            .build_struct(),
+    );
+
+    github::issue_label::create(
+        ctx,
+        "conformance-tests-easy-label",
+        IssueLabelArgs::builder()
+            .name("conformance-tests/easy")
+            .color("AAFF00")
+            .repository(repository)
+            .build_struct(),
+    );
 }
 
 fn create_check(
