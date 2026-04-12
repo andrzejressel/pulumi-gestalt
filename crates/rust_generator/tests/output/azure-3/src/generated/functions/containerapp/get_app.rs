@@ -66,12 +66,9 @@ pub mod get_app {
     /// Registers a new resource with the given unique name and arguments
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
-    pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
-        args: GetAppArgs,
-    ) -> GetAppResult {
-        let name_binding = args.name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+    pub fn invoke(ctx: &pulumi_gestalt_rust::Context, args: GetAppArgs) -> GetAppResult {
+        let name_binding = args.name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:containerapp/getApp:getApp".into(),
             version: super::super::super::get_version(),
@@ -86,7 +83,7 @@ pub mod get_app {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetAppResult {
             container_app_environment_id: o.get_field("containerAppEnvironmentId"),
             custom_domain_verification_id: o.get_field("customDomainVerificationId"),

@@ -64,14 +64,14 @@ pub mod get_attachment {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetAttachmentArgs,
     ) -> GetAttachmentResult {
-        let filters_binding = args.filters.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let filters_binding = args.filters.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let transit_gateway_attachment_id_binding = args
             .transit_gateway_attachment_id
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ec2transitgateway/getAttachment:getAttachment".into(),
             version: super::super::super::get_version(),
@@ -90,7 +90,7 @@ pub mod get_attachment {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetAttachmentResult {
             arn: o.get_field("arn"),
             association_state: o.get_field("associationState"),

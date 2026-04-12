@@ -243,51 +243,51 @@ pub mod backup_vault {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BackupVaultArgs,
     ) -> BackupVaultResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BackupVaultArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> BackupVaultResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BackupVaultArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> BackupVaultResult {
-        let access_restriction_binding = args.access_restriction.get_output(context);
-        let allow_missing_binding = args.allow_missing.get_output(context);
-        let annotations_binding = args.annotations.get_output(context);
+        let access_restriction_binding = args.access_restriction.get_output(ctx);
+        let allow_missing_binding = args.allow_missing.get_output(ctx);
+        let annotations_binding = args.annotations.get_output(ctx);
         let backup_minimum_enforced_retention_duration_binding = args
             .backup_minimum_enforced_retention_duration
-            .get_output(context);
-        let backup_vault_id_binding = args.backup_vault_id.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let effective_time_binding = args.effective_time.get_output(context);
-        let force_delete_binding = args.force_delete.get_output(context);
-        let force_update_binding = args.force_update.get_output(context);
+            .get_output(ctx);
+        let backup_vault_id_binding = args.backup_vault_id.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let effective_time_binding = args.effective_time.get_output(ctx);
+        let force_delete_binding = args.force_delete.get_output(ctx);
+        let force_update_binding = args.force_update.get_output(ctx);
         let ignore_backup_plan_references_binding = args
             .ignore_backup_plan_references
-            .get_output(context);
+            .get_output(ctx);
         let ignore_inactive_datasources_binding = args
             .ignore_inactive_datasources
-            .get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let project_binding = args.project.get_output(context);
+            .get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:backupdisasterrecovery/backupVault:BackupVault".into(),
             name: name.to_string(),
@@ -353,7 +353,7 @@ pub mod backup_vault {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         BackupVaultResult {
             id: o.get_id(),
             urn: o.get_urn(),

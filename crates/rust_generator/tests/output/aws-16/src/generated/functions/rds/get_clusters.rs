@@ -31,10 +31,10 @@ pub mod get_clusters {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetClustersArgs,
     ) -> GetClustersResult {
-        let filters_binding = args.filters.get_output(context);
+        let filters_binding = args.filters.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:rds/getClusters:getClusters".into(),
             version: super::super::super::get_version(),
@@ -45,7 +45,7 @@ pub mod get_clusters {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetClustersResult {
             cluster_arns: o.get_field("clusterArns"),
             cluster_identifiers: o.get_field("clusterIdentifiers"),

@@ -110,35 +110,35 @@ pub mod customer_gateway_association {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CustomerGatewayAssociationArgs,
     ) -> CustomerGatewayAssociationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CustomerGatewayAssociationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> CustomerGatewayAssociationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CustomerGatewayAssociationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> CustomerGatewayAssociationResult {
-        let customer_gateway_arn_binding = args.customer_gateway_arn.get_output(context);
-        let device_id_binding = args.device_id.get_output(context);
-        let global_network_id_binding = args.global_network_id.get_output(context);
-        let link_id_binding = args.link_id.get_output(context);
+        let customer_gateway_arn_binding = args.customer_gateway_arn.get_output(ctx);
+        let device_id_binding = args.device_id.get_output(ctx);
+        let global_network_id_binding = args.global_network_id.get_output(ctx);
+        let link_id_binding = args.link_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:networkmanager/customerGatewayAssociation:CustomerGatewayAssociation"
                 .into(),
@@ -164,7 +164,7 @@ pub mod customer_gateway_association {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         CustomerGatewayAssociationResult {
             id: o.get_id(),
             urn: o.get_urn(),

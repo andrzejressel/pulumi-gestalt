@@ -34,14 +34,14 @@ pub mod get_registry_scope_map {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetRegistryScopeMapArgs,
     ) -> GetRegistryScopeMapResult {
         let container_registry_name_binding = args
             .container_registry_name
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:containerservice/getRegistryScopeMap:getRegistryScopeMap"
                 .into(),
@@ -61,7 +61,7 @@ pub mod get_registry_scope_map {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetRegistryScopeMapResult {
             actions: o.get_field("actions"),
             container_registry_name: o.get_field("containerRegistryName"),

@@ -119,50 +119,46 @@ pub mod bot_management {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BotManagementArgs,
     ) -> BotManagementResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BotManagementArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> BotManagementResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BotManagementArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> BotManagementResult {
-        let ai_bots_protection_binding = args.ai_bots_protection.get_output(context);
-        let auto_update_model_binding = args.auto_update_model.get_output(context);
-        let enable_js_binding = args.enable_js.get_output(context);
-        let fight_mode_binding = args.fight_mode.get_output(context);
-        let optimize_wordpress_binding = args.optimize_wordpress.get_output(context);
+        let ai_bots_protection_binding = args.ai_bots_protection.get_output(ctx);
+        let auto_update_model_binding = args.auto_update_model.get_output(ctx);
+        let enable_js_binding = args.enable_js.get_output(ctx);
+        let fight_mode_binding = args.fight_mode.get_output(ctx);
+        let optimize_wordpress_binding = args.optimize_wordpress.get_output(ctx);
         let sbfm_definitely_automated_binding = args
             .sbfm_definitely_automated
-            .get_output(context);
-        let sbfm_likely_automated_binding = args
-            .sbfm_likely_automated
-            .get_output(context);
+            .get_output(ctx);
+        let sbfm_likely_automated_binding = args.sbfm_likely_automated.get_output(ctx);
         let sbfm_static_resource_protection_binding = args
             .sbfm_static_resource_protection
-            .get_output(context);
-        let sbfm_verified_bots_binding = args.sbfm_verified_bots.get_output(context);
-        let suppress_session_score_binding = args
-            .suppress_session_score
-            .get_output(context);
-        let zone_id_binding = args.zone_id.get_output(context);
+            .get_output(ctx);
+        let sbfm_verified_bots_binding = args.sbfm_verified_bots.get_output(ctx);
+        let suppress_session_score_binding = args.suppress_session_score.get_output(ctx);
+        let zone_id_binding = args.zone_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "cloudflare:index/botManagement:BotManagement".into(),
             name: name.to_string(),
@@ -215,7 +211,7 @@ pub mod bot_management {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         BotManagementResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -310,42 +310,42 @@ pub mod dataset_access {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DatasetAccessArgs,
     ) -> DatasetAccessResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DatasetAccessArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DatasetAccessResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DatasetAccessArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DatasetAccessResult {
-        let authorized_dataset_binding = args.authorized_dataset.get_output(context);
-        let dataset_id_binding = args.dataset_id.get_output(context);
-        let domain_binding = args.domain.get_output(context);
-        let group_by_email_binding = args.group_by_email.get_output(context);
-        let iam_member_binding = args.iam_member.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let role_binding = args.role.get_output(context);
-        let routine_binding = args.routine.get_output(context);
-        let special_group_binding = args.special_group.get_output(context);
-        let user_by_email_binding = args.user_by_email.get_output(context);
-        let view_binding = args.view.get_output(context);
+        let authorized_dataset_binding = args.authorized_dataset.get_output(ctx);
+        let dataset_id_binding = args.dataset_id.get_output(ctx);
+        let domain_binding = args.domain.get_output(ctx);
+        let group_by_email_binding = args.group_by_email.get_output(ctx);
+        let iam_member_binding = args.iam_member.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let role_binding = args.role.get_output(ctx);
+        let routine_binding = args.routine.get_output(ctx);
+        let special_group_binding = args.special_group.get_output(ctx);
+        let user_by_email_binding = args.user_by_email.get_output(ctx);
+        let view_binding = args.view.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:bigquery/datasetAccess:DatasetAccess".into(),
             name: name.to_string(),
@@ -398,7 +398,7 @@ pub mod dataset_access {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DatasetAccessResult {
             id: o.get_id(),
             urn: o.get_urn(),

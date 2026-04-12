@@ -32,10 +32,10 @@ pub mod get_origin_ca_certificate {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetOriginCaCertificateArgs,
     ) -> GetOriginCaCertificateResult {
-        let id_binding = args.id.get_output(context);
+        let id_binding = args.id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "cloudflare:index/getOriginCaCertificate:getOriginCaCertificate"
                 .into(),
@@ -47,7 +47,7 @@ pub mod get_origin_ca_certificate {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetOriginCaCertificateResult {
             certificate: o.get_field("certificate"),
             expires_on: o.get_field("expiresOn"),

@@ -39,10 +39,10 @@ pub mod get_distribution_configurations {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetDistributionConfigurationsArgs,
     ) -> GetDistributionConfigurationsResult {
-        let filters_binding = args.filters.get_output(context);
+        let filters_binding = args.filters.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:imagebuilder/getDistributionConfigurations:getDistributionConfigurations"
                 .into(),
@@ -54,7 +54,7 @@ pub mod get_distribution_configurations {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetDistributionConfigurationsResult {
             arns: o.get_field("arns"),
             filters: o.get_field("filters"),

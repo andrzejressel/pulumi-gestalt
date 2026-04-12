@@ -29,10 +29,10 @@ pub mod get_user_hierarchy_structure {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetUserHierarchyStructureArgs,
     ) -> GetUserHierarchyStructureResult {
-        let instance_id_binding = args.instance_id.get_output(context);
+        let instance_id_binding = args.instance_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:connect/getUserHierarchyStructure:getUserHierarchyStructure"
                 .into(),
@@ -44,7 +44,7 @@ pub mod get_user_hierarchy_structure {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetUserHierarchyStructureResult {
             hierarchy_structures: o.get_field("hierarchyStructures"),
             id: o.get_field("id"),

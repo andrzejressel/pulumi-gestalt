@@ -47,15 +47,15 @@ pub mod get_cluster_credentials {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetClusterCredentialsArgs,
     ) -> GetClusterCredentialsResult {
-        let auto_create_binding = args.auto_create.get_output(context);
-        let cluster_identifier_binding = args.cluster_identifier.get_output(context);
-        let db_groups_binding = args.db_groups.get_output(context);
-        let db_name_binding = args.db_name.get_output(context);
-        let db_user_binding = args.db_user.get_output(context);
-        let duration_seconds_binding = args.duration_seconds.get_output(context);
+        let auto_create_binding = args.auto_create.get_output(ctx);
+        let cluster_identifier_binding = args.cluster_identifier.get_output(ctx);
+        let db_groups_binding = args.db_groups.get_output(ctx);
+        let db_name_binding = args.db_name.get_output(ctx);
+        let db_user_binding = args.db_user.get_output(ctx);
+        let duration_seconds_binding = args.duration_seconds.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:redshift/getClusterCredentials:getClusterCredentials".into(),
             version: super::super::super::get_version(),
@@ -86,7 +86,7 @@ pub mod get_cluster_credentials {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetClusterCredentialsResult {
             auto_create: o.get_field("autoCreate"),
             cluster_identifier: o.get_field("clusterIdentifier"),

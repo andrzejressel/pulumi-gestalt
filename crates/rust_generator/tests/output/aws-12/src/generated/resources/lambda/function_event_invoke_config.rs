@@ -196,40 +196,38 @@ pub mod function_event_invoke_config {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FunctionEventInvokeConfigArgs,
     ) -> FunctionEventInvokeConfigResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FunctionEventInvokeConfigArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> FunctionEventInvokeConfigResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FunctionEventInvokeConfigArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> FunctionEventInvokeConfigResult {
-        let destination_config_binding = args.destination_config.get_output(context);
-        let function_name_binding = args.function_name.get_output(context);
+        let destination_config_binding = args.destination_config.get_output(ctx);
+        let function_name_binding = args.function_name.get_output(ctx);
         let maximum_event_age_in_seconds_binding = args
             .maximum_event_age_in_seconds
-            .get_output(context);
-        let maximum_retry_attempts_binding = args
-            .maximum_retry_attempts
-            .get_output(context);
-        let qualifier_binding = args.qualifier.get_output(context);
+            .get_output(ctx);
+        let maximum_retry_attempts_binding = args.maximum_retry_attempts.get_output(ctx);
+        let qualifier_binding = args.qualifier.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:lambda/functionEventInvokeConfig:FunctionEventInvokeConfig"
                 .into(),
@@ -259,7 +257,7 @@ pub mod function_event_invoke_config {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         FunctionEventInvokeConfigResult {
             id: o.get_id(),
             urn: o.get_urn(),

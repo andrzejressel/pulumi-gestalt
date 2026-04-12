@@ -35,12 +35,12 @@ pub mod get_machine_types {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetMachineTypesArgs,
     ) -> GetMachineTypesResult {
-        let filter_binding = args.filter.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let zone_binding = args.zone.get_output(context);
+        let filter_binding = args.filter.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let zone_binding = args.zone.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:compute/getMachineTypes:getMachineTypes".into(),
             version: super::super::super::get_version(),
@@ -59,7 +59,7 @@ pub mod get_machine_types {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetMachineTypesResult {
             filter: o.get_field("filter"),
             id: o.get_field("id"),

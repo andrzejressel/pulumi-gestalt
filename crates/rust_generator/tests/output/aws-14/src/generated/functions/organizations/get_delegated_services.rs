@@ -29,10 +29,10 @@ pub mod get_delegated_services {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetDelegatedServicesArgs,
     ) -> GetDelegatedServicesResult {
-        let account_id_binding = args.account_id.get_output(context);
+        let account_id_binding = args.account_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:organizations/getDelegatedServices:getDelegatedServices".into(),
             version: super::super::super::get_version(),
@@ -43,7 +43,7 @@ pub mod get_delegated_services {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetDelegatedServicesResult {
             account_id: o.get_field("accountId"),
             delegated_services: o.get_field("delegatedServices"),

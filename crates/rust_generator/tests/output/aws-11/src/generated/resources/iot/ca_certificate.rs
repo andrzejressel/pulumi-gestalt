@@ -144,42 +144,42 @@ pub mod ca_certificate {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CaCertificateArgs,
     ) -> CaCertificateResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CaCertificateArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> CaCertificateResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CaCertificateArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> CaCertificateResult {
-        let active_binding = args.active.get_output(context);
+        let active_binding = args.active.get_output(ctx);
         let allow_auto_registration_binding = args
             .allow_auto_registration
-            .get_output(context);
-        let ca_certificate_pem_binding = args.ca_certificate_pem.get_output(context);
-        let certificate_mode_binding = args.certificate_mode.get_output(context);
-        let registration_config_binding = args.registration_config.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let ca_certificate_pem_binding = args.ca_certificate_pem.get_output(ctx);
+        let certificate_mode_binding = args.certificate_mode.get_output(ctx);
+        let registration_config_binding = args.registration_config.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let verification_certificate_pem_binding = args
             .verification_certificate_pem
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:iot/caCertificate:CaCertificate".into(),
             name: name.to_string(),
@@ -216,7 +216,7 @@ pub mod ca_certificate {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         CaCertificateResult {
             id: o.get_id(),
             urn: o.get_urn(),

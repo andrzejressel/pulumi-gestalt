@@ -139,38 +139,38 @@ pub mod tenant_inbound_saml_config {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TenantInboundSamlConfigArgs,
     ) -> TenantInboundSamlConfigResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TenantInboundSamlConfigArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> TenantInboundSamlConfigResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TenantInboundSamlConfigArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> TenantInboundSamlConfigResult {
-        let display_name_binding = args.display_name.get_output(context);
-        let enabled_binding = args.enabled.get_output(context);
-        let idp_config_binding = args.idp_config.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let sp_config_binding = args.sp_config.get_output(context);
-        let tenant_binding = args.tenant.get_output(context);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let enabled_binding = args.enabled.get_output(ctx);
+        let idp_config_binding = args.idp_config.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let sp_config_binding = args.sp_config.get_output(ctx);
+        let tenant_binding = args.tenant.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:identityplatform/tenantInboundSamlConfig:TenantInboundSamlConfig"
                 .into(),
@@ -208,7 +208,7 @@ pub mod tenant_inbound_saml_config {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         TenantInboundSamlConfigResult {
             id: o.get_id(),
             urn: o.get_urn(),

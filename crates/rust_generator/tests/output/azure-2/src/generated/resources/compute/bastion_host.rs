@@ -216,51 +216,49 @@ pub mod bastion_host {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BastionHostArgs,
     ) -> BastionHostResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BastionHostArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> BastionHostResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BastionHostArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> BastionHostResult {
-        let copy_paste_enabled_binding = args.copy_paste_enabled.get_output(context);
-        let file_copy_enabled_binding = args.file_copy_enabled.get_output(context);
-        let ip_configuration_binding = args.ip_configuration.get_output(context);
-        let ip_connect_enabled_binding = args.ip_connect_enabled.get_output(context);
-        let kerberos_enabled_binding = args.kerberos_enabled.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let scale_units_binding = args.scale_units.get_output(context);
+        let copy_paste_enabled_binding = args.copy_paste_enabled.get_output(ctx);
+        let file_copy_enabled_binding = args.file_copy_enabled.get_output(ctx);
+        let ip_configuration_binding = args.ip_configuration.get_output(ctx);
+        let ip_connect_enabled_binding = args.ip_connect_enabled.get_output(ctx);
+        let kerberos_enabled_binding = args.kerberos_enabled.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let scale_units_binding = args.scale_units.get_output(ctx);
         let session_recording_enabled_binding = args
             .session_recording_enabled
-            .get_output(context);
-        let shareable_link_enabled_binding = args
-            .shareable_link_enabled
-            .get_output(context);
-        let sku_binding = args.sku.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let tunneling_enabled_binding = args.tunneling_enabled.get_output(context);
-        let virtual_network_id_binding = args.virtual_network_id.get_output(context);
-        let zones_binding = args.zones.get_output(context);
+            .get_output(ctx);
+        let shareable_link_enabled_binding = args.shareable_link_enabled.get_output(ctx);
+        let sku_binding = args.sku.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let tunneling_enabled_binding = args.tunneling_enabled.get_output(ctx);
+        let virtual_network_id_binding = args.virtual_network_id.get_output(ctx);
+        let zones_binding = args.zones.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:compute/bastionHost:BastionHost".into(),
             name: name.to_string(),
@@ -333,7 +331,7 @@ pub mod bastion_host {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         BastionHostResult {
             id: o.get_id(),
             urn: o.get_urn(),

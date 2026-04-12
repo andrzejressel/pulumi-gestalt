@@ -220,53 +220,51 @@ pub mod guardrail {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GuardrailArgs,
     ) -> GuardrailResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GuardrailArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> GuardrailResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GuardrailArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> GuardrailResult {
         let blocked_input_messaging_binding = args
             .blocked_input_messaging
-            .get_output(context);
+            .get_output(ctx);
         let blocked_outputs_messaging_binding = args
             .blocked_outputs_messaging
-            .get_output(context);
-        let content_policy_config_binding = args
-            .content_policy_config
-            .get_output(context);
+            .get_output(ctx);
+        let content_policy_config_binding = args.content_policy_config.get_output(ctx);
         let contextual_grounding_policy_config_binding = args
             .contextual_grounding_policy_config
-            .get_output(context);
-        let description_binding = args.description.get_output(context);
-        let kms_key_arn_binding = args.kms_key_arn.get_output(context);
-        let name_binding = args.name.get_output(context);
+            .get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let kms_key_arn_binding = args.kms_key_arn.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let sensitive_information_policy_config_binding = args
             .sensitive_information_policy_config
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let timeouts_binding = args.timeouts.get_output(context);
-        let topic_policy_config_binding = args.topic_policy_config.get_output(context);
-        let word_policy_config_binding = args.word_policy_config.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let timeouts_binding = args.timeouts.get_output(ctx);
+        let topic_policy_config_binding = args.topic_policy_config.get_output(ctx);
+        let word_policy_config_binding = args.word_policy_config.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:bedrock/guardrail:Guardrail".into(),
             name: name.to_string(),
@@ -323,7 +321,7 @@ pub mod guardrail {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         GuardrailResult {
             id: o.get_id(),
             urn: o.get_urn(),

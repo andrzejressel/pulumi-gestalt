@@ -136,47 +136,47 @@ pub mod alert_rule_ms_security_incident {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AlertRuleMsSecurityIncidentArgs,
     ) -> AlertRuleMsSecurityIncidentResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AlertRuleMsSecurityIncidentArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AlertRuleMsSecurityIncidentResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AlertRuleMsSecurityIncidentArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AlertRuleMsSecurityIncidentResult {
         let alert_rule_template_guid_binding = args
             .alert_rule_template_guid
-            .get_output(context);
-        let description_binding = args.description.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
+            .get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
         let display_name_exclude_filters_binding = args
             .display_name_exclude_filters
-            .get_output(context);
-        let display_name_filters_binding = args.display_name_filters.get_output(context);
-        let enabled_binding = args.enabled.get_output(context);
+            .get_output(ctx);
+        let display_name_filters_binding = args.display_name_filters.get_output(ctx);
+        let enabled_binding = args.enabled.get_output(ctx);
         let log_analytics_workspace_id_binding = args
             .log_analytics_workspace_id
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let product_filter_binding = args.product_filter.get_output(context);
-        let severity_filters_binding = args.severity_filters.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let product_filter_binding = args.product_filter.get_output(ctx);
+        let severity_filters_binding = args.severity_filters.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:sentinel/alertRuleMsSecurityIncident:AlertRuleMsSecurityIncident"
                 .into(),
@@ -226,7 +226,7 @@ pub mod alert_rule_ms_security_incident {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AlertRuleMsSecurityIncidentResult {
             id: o.get_id(),
             urn: o.get_urn(),

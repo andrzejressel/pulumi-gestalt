@@ -74,12 +74,9 @@ pub mod get_key {
     /// Registers a new resource with the given unique name and arguments
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
-    pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
-        args: GetKeyArgs,
-    ) -> GetKeyResult {
-        let grant_tokens_binding = args.grant_tokens.get_output(context);
-        let key_id_binding = args.key_id.get_output(context);
+    pub fn invoke(ctx: &pulumi_gestalt_rust::Context, args: GetKeyArgs) -> GetKeyResult {
+        let grant_tokens_binding = args.grant_tokens.get_output(ctx);
+        let key_id_binding = args.key_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:kms/getKey:getKey".into(),
             version: super::super::super::get_version(),
@@ -94,7 +91,7 @@ pub mod get_key {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetKeyResult {
             arn: o.get_field("arn"),
             aws_account_id: o.get_field("awsAccountId"),

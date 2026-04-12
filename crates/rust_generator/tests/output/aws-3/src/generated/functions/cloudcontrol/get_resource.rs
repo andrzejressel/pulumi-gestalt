@@ -39,13 +39,13 @@ pub mod get_resource {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetResourceArgs,
     ) -> GetResourceResult {
-        let identifier_binding = args.identifier.get_output(context);
-        let role_arn_binding = args.role_arn.get_output(context);
-        let type_name_binding = args.type_name.get_output(context);
-        let type_version_id_binding = args.type_version_id.get_output(context);
+        let identifier_binding = args.identifier.get_output(ctx);
+        let role_arn_binding = args.role_arn.get_output(ctx);
+        let type_name_binding = args.type_name.get_output(ctx);
+        let type_version_id_binding = args.type_version_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:cloudcontrol/getResource:getResource".into(),
             version: super::super::super::get_version(),
@@ -68,7 +68,7 @@ pub mod get_resource {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetResourceResult {
             id: o.get_field("id"),
             identifier: o.get_field("identifier"),

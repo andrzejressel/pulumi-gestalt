@@ -167,43 +167,43 @@ pub mod api_config {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ApiConfigArgs,
     ) -> ApiConfigResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ApiConfigArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ApiConfigResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ApiConfigArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ApiConfigResult {
-        let api_binding = args.api.get_output(context);
-        let api_config_id_binding = args.api_config_id.get_output(context);
-        let api_config_id_prefix_binding = args.api_config_id_prefix.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let gateway_config_binding = args.gateway_config.get_output(context);
-        let grpc_services_binding = args.grpc_services.get_output(context);
-        let labels_binding = args.labels.get_output(context);
+        let api_binding = args.api.get_output(ctx);
+        let api_config_id_binding = args.api_config_id.get_output(ctx);
+        let api_config_id_prefix_binding = args.api_config_id_prefix.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let gateway_config_binding = args.gateway_config.get_output(ctx);
+        let grpc_services_binding = args.grpc_services.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
         let managed_service_configs_binding = args
             .managed_service_configs
-            .get_output(context);
-        let openapi_documents_binding = args.openapi_documents.get_output(context);
-        let project_binding = args.project.get_output(context);
+            .get_output(ctx);
+        let openapi_documents_binding = args.openapi_documents.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:apigateway/apiConfig:ApiConfig".into(),
             name: name.to_string(),
@@ -252,7 +252,7 @@ pub mod api_config {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ApiConfigResult {
             id: o.get_id(),
             urn: o.get_urn(),

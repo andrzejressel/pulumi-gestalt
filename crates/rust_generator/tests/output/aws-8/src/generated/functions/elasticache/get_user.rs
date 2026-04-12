@@ -54,16 +54,16 @@ pub mod get_user {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetUserArgs,
     ) -> GetUserResult {
-        let access_string_binding = args.access_string.get_output(context);
-        let authentication_modes_binding = args.authentication_modes.get_output(context);
-        let engine_binding = args.engine.get_output(context);
-        let no_password_required_binding = args.no_password_required.get_output(context);
-        let passwords_binding = args.passwords.get_output(context);
-        let user_id_binding = args.user_id.get_output(context);
-        let user_name_binding = args.user_name.get_output(context);
+        let access_string_binding = args.access_string.get_output(ctx);
+        let authentication_modes_binding = args.authentication_modes.get_output(ctx);
+        let engine_binding = args.engine.get_output(ctx);
+        let no_password_required_binding = args.no_password_required.get_output(ctx);
+        let passwords_binding = args.passwords.get_output(ctx);
+        let user_id_binding = args.user_id.get_output(ctx);
+        let user_name_binding = args.user_name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:elasticache/getUser:getUser".into(),
             version: super::super::super::get_version(),
@@ -98,7 +98,7 @@ pub mod get_user {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetUserResult {
             access_string: o.get_field("accessString"),
             authentication_modes: o.get_field("authenticationModes"),

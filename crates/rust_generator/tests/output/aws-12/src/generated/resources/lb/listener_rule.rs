@@ -208,36 +208,36 @@ pub mod listener_rule {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ListenerRuleArgs,
     ) -> ListenerRuleResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ListenerRuleArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ListenerRuleResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ListenerRuleArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ListenerRuleResult {
-        let actions_binding = args.actions.get_output(context);
-        let conditions_binding = args.conditions.get_output(context);
-        let listener_arn_binding = args.listener_arn.get_output(context);
-        let priority_binding = args.priority.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let actions_binding = args.actions.get_output(ctx);
+        let conditions_binding = args.conditions.get_output(ctx);
+        let listener_arn_binding = args.listener_arn.get_output(ctx);
+        let priority_binding = args.priority.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:lb/listenerRule:ListenerRule".into(),
             name: name.to_string(),
@@ -266,7 +266,7 @@ pub mod listener_rule {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ListenerRuleResult {
             id: o.get_id(),
             urn: o.get_urn(),

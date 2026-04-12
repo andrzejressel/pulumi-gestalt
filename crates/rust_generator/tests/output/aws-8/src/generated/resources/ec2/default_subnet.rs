@@ -135,58 +135,58 @@ pub mod default_subnet {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DefaultSubnetArgs,
     ) -> DefaultSubnetResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DefaultSubnetArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DefaultSubnetResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DefaultSubnetArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DefaultSubnetResult {
         let assign_ipv6_address_on_creation_binding = args
             .assign_ipv6_address_on_creation
-            .get_output(context);
-        let availability_zone_binding = args.availability_zone.get_output(context);
+            .get_output(ctx);
+        let availability_zone_binding = args.availability_zone.get_output(ctx);
         let customer_owned_ipv4_pool_binding = args
             .customer_owned_ipv4_pool
-            .get_output(context);
-        let enable_dns64_binding = args.enable_dns64.get_output(context);
+            .get_output(ctx);
+        let enable_dns64_binding = args.enable_dns64.get_output(ctx);
         let enable_resource_name_dns_a_record_on_launch_binding = args
             .enable_resource_name_dns_a_record_on_launch
-            .get_output(context);
+            .get_output(ctx);
         let enable_resource_name_dns_aaaa_record_on_launch_binding = args
             .enable_resource_name_dns_aaaa_record_on_launch
-            .get_output(context);
-        let force_destroy_binding = args.force_destroy.get_output(context);
-        let ipv6_cidr_block_binding = args.ipv6_cidr_block.get_output(context);
-        let ipv6_native_binding = args.ipv6_native.get_output(context);
+            .get_output(ctx);
+        let force_destroy_binding = args.force_destroy.get_output(ctx);
+        let ipv6_cidr_block_binding = args.ipv6_cidr_block.get_output(ctx);
+        let ipv6_native_binding = args.ipv6_native.get_output(ctx);
         let map_customer_owned_ip_on_launch_binding = args
             .map_customer_owned_ip_on_launch
-            .get_output(context);
+            .get_output(ctx);
         let map_public_ip_on_launch_binding = args
             .map_public_ip_on_launch
-            .get_output(context);
+            .get_output(ctx);
         let private_dns_hostname_type_on_launch_binding = args
             .private_dns_hostname_type_on_launch
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/defaultSubnet:DefaultSubnet".into(),
             name: name.to_string(),
@@ -249,7 +249,7 @@ pub mod default_subnet {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DefaultSubnetResult {
             id: o.get_id(),
             urn: o.get_urn(),

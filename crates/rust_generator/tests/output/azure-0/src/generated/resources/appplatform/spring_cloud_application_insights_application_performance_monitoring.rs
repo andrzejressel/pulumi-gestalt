@@ -124,43 +124,43 @@ pub mod spring_cloud_application_insights_application_performance_monitoring {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SpringCloudApplicationInsightsApplicationPerformanceMonitoringArgs,
     ) -> SpringCloudApplicationInsightsApplicationPerformanceMonitoringResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SpringCloudApplicationInsightsApplicationPerformanceMonitoringArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> SpringCloudApplicationInsightsApplicationPerformanceMonitoringResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SpringCloudApplicationInsightsApplicationPerformanceMonitoringArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> SpringCloudApplicationInsightsApplicationPerformanceMonitoringResult {
-        let connection_string_binding = args.connection_string.get_output(context);
-        let globally_enabled_binding = args.globally_enabled.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let role_instance_binding = args.role_instance.get_output(context);
-        let role_name_binding = args.role_name.get_output(context);
-        let sampling_percentage_binding = args.sampling_percentage.get_output(context);
+        let connection_string_binding = args.connection_string.get_output(ctx);
+        let globally_enabled_binding = args.globally_enabled.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let role_instance_binding = args.role_instance.get_output(ctx);
+        let role_name_binding = args.role_name.get_output(ctx);
+        let sampling_percentage_binding = args.sampling_percentage.get_output(ctx);
         let sampling_requests_per_second_binding = args
             .sampling_requests_per_second
-            .get_output(context);
+            .get_output(ctx);
         let spring_cloud_service_id_binding = args
             .spring_cloud_service_id
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:appplatform/springCloudApplicationInsightsApplicationPerformanceMonitoring:SpringCloudApplicationInsightsApplicationPerformanceMonitoring"
                 .into(),
@@ -202,7 +202,7 @@ pub mod spring_cloud_application_insights_application_performance_monitoring {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         SpringCloudApplicationInsightsApplicationPerformanceMonitoringResult {
             id: o.get_id(),
             urn: o.get_urn(),

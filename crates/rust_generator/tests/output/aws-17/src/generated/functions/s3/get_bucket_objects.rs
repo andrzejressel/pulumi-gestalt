@@ -53,16 +53,16 @@ pub mod get_bucket_objects {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetBucketObjectsArgs,
     ) -> GetBucketObjectsResult {
-        let bucket_binding = args.bucket.get_output(context);
-        let delimiter_binding = args.delimiter.get_output(context);
-        let encoding_type_binding = args.encoding_type.get_output(context);
-        let fetch_owner_binding = args.fetch_owner.get_output(context);
-        let max_keys_binding = args.max_keys.get_output(context);
-        let prefix_binding = args.prefix.get_output(context);
-        let start_after_binding = args.start_after.get_output(context);
+        let bucket_binding = args.bucket.get_output(ctx);
+        let delimiter_binding = args.delimiter.get_output(ctx);
+        let encoding_type_binding = args.encoding_type.get_output(ctx);
+        let fetch_owner_binding = args.fetch_owner.get_output(ctx);
+        let max_keys_binding = args.max_keys.get_output(ctx);
+        let prefix_binding = args.prefix.get_output(ctx);
+        let start_after_binding = args.start_after.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:s3/getBucketObjects:getBucketObjects".into(),
             version: super::super::super::get_version(),
@@ -97,7 +97,7 @@ pub mod get_bucket_objects {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetBucketObjectsResult {
             bucket: o.get_field("bucket"),
             common_prefixes: o.get_field("commonPrefixes"),

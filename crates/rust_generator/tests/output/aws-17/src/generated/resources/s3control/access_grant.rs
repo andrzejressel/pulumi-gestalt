@@ -133,42 +133,42 @@ pub mod access_grant {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccessGrantArgs,
     ) -> AccessGrantResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccessGrantArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AccessGrantResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccessGrantArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AccessGrantResult {
         let access_grants_location_configuration_binding = args
             .access_grants_location_configuration
-            .get_output(context);
+            .get_output(ctx);
         let access_grants_location_id_binding = args
             .access_grants_location_id
-            .get_output(context);
-        let account_id_binding = args.account_id.get_output(context);
-        let grantee_binding = args.grantee.get_output(context);
-        let permission_binding = args.permission.get_output(context);
-        let s3_prefix_type_binding = args.s3_prefix_type.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let account_id_binding = args.account_id.get_output(ctx);
+        let grantee_binding = args.grantee.get_output(ctx);
+        let permission_binding = args.permission.get_output(ctx);
+        let s3_prefix_type_binding = args.s3_prefix_type.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:s3control/accessGrant:AccessGrant".into(),
             name: name.to_string(),
@@ -205,7 +205,7 @@ pub mod access_grant {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AccessGrantResult {
             id: o.get_id(),
             urn: o.get_urn(),

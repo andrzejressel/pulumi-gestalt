@@ -43,15 +43,15 @@ pub mod get_service {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetServiceArgs,
     ) -> GetServiceResult {
-        let dns_name_binding = args.dns_name.get_output(context);
-        let id_binding = args.id.get_output(context);
-        let region_binding = args.region.get_output(context);
-        let reverse_dns_name_binding = args.reverse_dns_name.get_output(context);
-        let reverse_dns_prefix_binding = args.reverse_dns_prefix.get_output(context);
-        let service_id_binding = args.service_id.get_output(context);
+        let dns_name_binding = args.dns_name.get_output(ctx);
+        let id_binding = args.id.get_output(ctx);
+        let region_binding = args.region.get_output(ctx);
+        let reverse_dns_name_binding = args.reverse_dns_name.get_output(ctx);
+        let reverse_dns_prefix_binding = args.reverse_dns_prefix.get_output(ctx);
+        let service_id_binding = args.service_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:index/getService:getService".into(),
             version: super::super::get_version(),
@@ -82,7 +82,7 @@ pub mod get_service {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetServiceResult {
             dns_name: o.get_field("dnsName"),
             id: o.get_field("id"),

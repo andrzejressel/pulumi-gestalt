@@ -458,111 +458,105 @@ pub mod spot_instance_request {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SpotInstanceRequestArgs,
     ) -> SpotInstanceRequestResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SpotInstanceRequestArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> SpotInstanceRequestResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SpotInstanceRequestArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> SpotInstanceRequestResult {
-        let ami_binding = args.ami.get_output(context);
+        let ami_binding = args.ami.get_output(ctx);
         let associate_public_ip_address_binding = args
             .associate_public_ip_address
-            .get_output(context);
-        let availability_zone_binding = args.availability_zone.get_output(context);
-        let block_duration_minutes_binding = args
-            .block_duration_minutes
-            .get_output(context);
+            .get_output(ctx);
+        let availability_zone_binding = args.availability_zone.get_output(ctx);
+        let block_duration_minutes_binding = args.block_duration_minutes.get_output(ctx);
         let capacity_reservation_specification_binding = args
             .capacity_reservation_specification
-            .get_output(context);
-        let cpu_core_count_binding = args.cpu_core_count.get_output(context);
-        let cpu_options_binding = args.cpu_options.get_output(context);
-        let cpu_threads_per_core_binding = args.cpu_threads_per_core.get_output(context);
-        let credit_specification_binding = args.credit_specification.get_output(context);
-        let disable_api_stop_binding = args.disable_api_stop.get_output(context);
+            .get_output(ctx);
+        let cpu_core_count_binding = args.cpu_core_count.get_output(ctx);
+        let cpu_options_binding = args.cpu_options.get_output(ctx);
+        let cpu_threads_per_core_binding = args.cpu_threads_per_core.get_output(ctx);
+        let credit_specification_binding = args.credit_specification.get_output(ctx);
+        let disable_api_stop_binding = args.disable_api_stop.get_output(ctx);
         let disable_api_termination_binding = args
             .disable_api_termination
-            .get_output(context);
-        let ebs_block_devices_binding = args.ebs_block_devices.get_output(context);
-        let ebs_optimized_binding = args.ebs_optimized.get_output(context);
-        let enable_primary_ipv6_binding = args.enable_primary_ipv6.get_output(context);
-        let enclave_options_binding = args.enclave_options.get_output(context);
+            .get_output(ctx);
+        let ebs_block_devices_binding = args.ebs_block_devices.get_output(ctx);
+        let ebs_optimized_binding = args.ebs_optimized.get_output(ctx);
+        let enable_primary_ipv6_binding = args.enable_primary_ipv6.get_output(ctx);
+        let enclave_options_binding = args.enclave_options.get_output(ctx);
         let ephemeral_block_devices_binding = args
             .ephemeral_block_devices
-            .get_output(context);
-        let get_password_data_binding = args.get_password_data.get_output(context);
-        let hibernation_binding = args.hibernation.get_output(context);
-        let host_id_binding = args.host_id.get_output(context);
+            .get_output(ctx);
+        let get_password_data_binding = args.get_password_data.get_output(ctx);
+        let hibernation_binding = args.hibernation.get_output(ctx);
+        let host_id_binding = args.host_id.get_output(ctx);
         let host_resource_group_arn_binding = args
             .host_resource_group_arn
-            .get_output(context);
-        let iam_instance_profile_binding = args.iam_instance_profile.get_output(context);
+            .get_output(ctx);
+        let iam_instance_profile_binding = args.iam_instance_profile.get_output(ctx);
         let instance_initiated_shutdown_behavior_binding = args
             .instance_initiated_shutdown_behavior
-            .get_output(context);
+            .get_output(ctx);
         let instance_interruption_behavior_binding = args
             .instance_interruption_behavior
-            .get_output(context);
-        let instance_type_binding = args.instance_type.get_output(context);
-        let ipv6_address_count_binding = args.ipv6_address_count.get_output(context);
-        let ipv6_addresses_binding = args.ipv6_addresses.get_output(context);
-        let key_name_binding = args.key_name.get_output(context);
-        let launch_group_binding = args.launch_group.get_output(context);
-        let launch_template_binding = args.launch_template.get_output(context);
-        let maintenance_options_binding = args.maintenance_options.get_output(context);
-        let metadata_options_binding = args.metadata_options.get_output(context);
-        let monitoring_binding = args.monitoring.get_output(context);
-        let network_interfaces_binding = args.network_interfaces.get_output(context);
-        let placement_group_binding = args.placement_group.get_output(context);
+            .get_output(ctx);
+        let instance_type_binding = args.instance_type.get_output(ctx);
+        let ipv6_address_count_binding = args.ipv6_address_count.get_output(ctx);
+        let ipv6_addresses_binding = args.ipv6_addresses.get_output(ctx);
+        let key_name_binding = args.key_name.get_output(ctx);
+        let launch_group_binding = args.launch_group.get_output(ctx);
+        let launch_template_binding = args.launch_template.get_output(ctx);
+        let maintenance_options_binding = args.maintenance_options.get_output(ctx);
+        let metadata_options_binding = args.metadata_options.get_output(ctx);
+        let monitoring_binding = args.monitoring.get_output(ctx);
+        let network_interfaces_binding = args.network_interfaces.get_output(ctx);
+        let placement_group_binding = args.placement_group.get_output(ctx);
         let placement_partition_number_binding = args
             .placement_partition_number
-            .get_output(context);
+            .get_output(ctx);
         let private_dns_name_options_binding = args
             .private_dns_name_options
-            .get_output(context);
-        let private_ip_binding = args.private_ip.get_output(context);
-        let root_block_device_binding = args.root_block_device.get_output(context);
-        let secondary_private_ips_binding = args
-            .secondary_private_ips
-            .get_output(context);
-        let security_groups_binding = args.security_groups.get_output(context);
-        let source_dest_check_binding = args.source_dest_check.get_output(context);
-        let spot_price_binding = args.spot_price.get_output(context);
-        let spot_type_binding = args.spot_type.get_output(context);
-        let subnet_id_binding = args.subnet_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let tenancy_binding = args.tenancy.get_output(context);
-        let user_data_binding = args.user_data.get_output(context);
-        let user_data_base64_binding = args.user_data_base64.get_output(context);
+            .get_output(ctx);
+        let private_ip_binding = args.private_ip.get_output(ctx);
+        let root_block_device_binding = args.root_block_device.get_output(ctx);
+        let secondary_private_ips_binding = args.secondary_private_ips.get_output(ctx);
+        let security_groups_binding = args.security_groups.get_output(ctx);
+        let source_dest_check_binding = args.source_dest_check.get_output(ctx);
+        let spot_price_binding = args.spot_price.get_output(ctx);
+        let spot_type_binding = args.spot_type.get_output(ctx);
+        let subnet_id_binding = args.subnet_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let tenancy_binding = args.tenancy.get_output(ctx);
+        let user_data_binding = args.user_data.get_output(ctx);
+        let user_data_base64_binding = args.user_data_base64.get_output(ctx);
         let user_data_replace_on_change_binding = args
             .user_data_replace_on_change
-            .get_output(context);
-        let valid_from_binding = args.valid_from.get_output(context);
-        let valid_until_binding = args.valid_until.get_output(context);
-        let volume_tags_binding = args.volume_tags.get_output(context);
-        let vpc_security_group_ids_binding = args
-            .vpc_security_group_ids
-            .get_output(context);
-        let wait_for_fulfillment_binding = args.wait_for_fulfillment.get_output(context);
+            .get_output(ctx);
+        let valid_from_binding = args.valid_from.get_output(ctx);
+        let valid_until_binding = args.valid_until.get_output(ctx);
+        let volume_tags_binding = args.volume_tags.get_output(ctx);
+        let vpc_security_group_ids_binding = args.vpc_security_group_ids.get_output(ctx);
+        let wait_for_fulfillment_binding = args.wait_for_fulfillment.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/spotInstanceRequest:SpotInstanceRequest".into(),
             name: name.to_string(),
@@ -787,7 +781,7 @@ pub mod spot_instance_request {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         SpotInstanceRequestResult {
             id: o.get_id(),
             urn: o.get_urn(),

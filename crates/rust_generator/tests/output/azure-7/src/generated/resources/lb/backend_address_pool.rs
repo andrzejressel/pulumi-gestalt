@@ -123,36 +123,36 @@ pub mod backend_address_pool {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BackendAddressPoolArgs,
     ) -> BackendAddressPoolResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BackendAddressPoolArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> BackendAddressPoolResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BackendAddressPoolArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> BackendAddressPoolResult {
-        let loadbalancer_id_binding = args.loadbalancer_id.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let synchronous_mode_binding = args.synchronous_mode.get_output(context);
-        let tunnel_interfaces_binding = args.tunnel_interfaces.get_output(context);
-        let virtual_network_id_binding = args.virtual_network_id.get_output(context);
+        let loadbalancer_id_binding = args.loadbalancer_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let synchronous_mode_binding = args.synchronous_mode.get_output(ctx);
+        let tunnel_interfaces_binding = args.tunnel_interfaces.get_output(ctx);
+        let virtual_network_id_binding = args.virtual_network_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:lb/backendAddressPool:BackendAddressPool".into(),
             name: name.to_string(),
@@ -181,7 +181,7 @@ pub mod backend_address_pool {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         BackendAddressPoolResult {
             id: o.get_id(),
             urn: o.get_urn(),

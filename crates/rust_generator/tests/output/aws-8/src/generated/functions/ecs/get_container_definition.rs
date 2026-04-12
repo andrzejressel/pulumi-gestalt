@@ -47,11 +47,11 @@ pub mod get_container_definition {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetContainerDefinitionArgs,
     ) -> GetContainerDefinitionResult {
-        let container_name_binding = args.container_name.get_output(context);
-        let task_definition_binding = args.task_definition.get_output(context);
+        let container_name_binding = args.container_name.get_output(ctx);
+        let task_definition_binding = args.task_definition.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ecs/getContainerDefinition:getContainerDefinition".into(),
             version: super::super::super::get_version(),
@@ -66,7 +66,7 @@ pub mod get_container_definition {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetContainerDefinitionResult {
             container_name: o.get_field("containerName"),
             cpu: o.get_field("cpu"),

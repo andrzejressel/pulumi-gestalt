@@ -133,44 +133,44 @@ pub mod spectrum_application {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SpectrumApplicationArgs,
     ) -> SpectrumApplicationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SpectrumApplicationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> SpectrumApplicationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SpectrumApplicationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> SpectrumApplicationResult {
-        let argo_smart_routing_binding = args.argo_smart_routing.get_output(context);
-        let dns_binding = args.dns.get_output(context);
-        let edge_ips_binding = args.edge_ips.get_output(context);
-        let ip_firewall_binding = args.ip_firewall.get_output(context);
-        let origin_directs_binding = args.origin_directs.get_output(context);
-        let origin_dns_binding = args.origin_dns.get_output(context);
-        let origin_port_binding = args.origin_port.get_output(context);
-        let origin_port_range_binding = args.origin_port_range.get_output(context);
-        let protocol_binding = args.protocol.get_output(context);
-        let proxy_protocol_binding = args.proxy_protocol.get_output(context);
-        let tls_binding = args.tls.get_output(context);
-        let traffic_type_binding = args.traffic_type.get_output(context);
-        let zone_id_binding = args.zone_id.get_output(context);
+        let argo_smart_routing_binding = args.argo_smart_routing.get_output(ctx);
+        let dns_binding = args.dns.get_output(ctx);
+        let edge_ips_binding = args.edge_ips.get_output(ctx);
+        let ip_firewall_binding = args.ip_firewall.get_output(ctx);
+        let origin_directs_binding = args.origin_directs.get_output(ctx);
+        let origin_dns_binding = args.origin_dns.get_output(ctx);
+        let origin_port_binding = args.origin_port.get_output(ctx);
+        let origin_port_range_binding = args.origin_port_range.get_output(ctx);
+        let protocol_binding = args.protocol.get_output(ctx);
+        let proxy_protocol_binding = args.proxy_protocol.get_output(ctx);
+        let tls_binding = args.tls.get_output(ctx);
+        let traffic_type_binding = args.traffic_type.get_output(ctx);
+        let zone_id_binding = args.zone_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "cloudflare:index/spectrumApplication:SpectrumApplication".into(),
             name: name.to_string(),
@@ -231,7 +231,7 @@ pub mod spectrum_application {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         SpectrumApplicationResult {
             id: o.get_id(),
             urn: o.get_urn(),

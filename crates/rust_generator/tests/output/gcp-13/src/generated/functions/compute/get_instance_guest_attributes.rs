@@ -56,15 +56,15 @@ pub mod get_instance_guest_attributes {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetInstanceGuestAttributesArgs,
     ) -> GetInstanceGuestAttributesResult {
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let query_path_binding = args.query_path.get_output(context);
-        let region_binding = args.region.get_output(context);
-        let variable_key_binding = args.variable_key.get_output(context);
-        let zone_binding = args.zone.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let query_path_binding = args.query_path.get_output(ctx);
+        let region_binding = args.region.get_output(ctx);
+        let variable_key_binding = args.variable_key.get_output(ctx);
+        let zone_binding = args.zone.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:compute/getInstanceGuestAttributes:getInstanceGuestAttributes"
                 .into(),
@@ -96,7 +96,7 @@ pub mod get_instance_guest_attributes {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetInstanceGuestAttributesResult {
             id: o.get_field("id"),
             name: o.get_field("name"),

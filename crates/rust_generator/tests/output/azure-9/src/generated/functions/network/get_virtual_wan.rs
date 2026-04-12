@@ -43,11 +43,11 @@ pub mod get_virtual_wan {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetVirtualWanArgs,
     ) -> GetVirtualWanResult {
-        let name_binding = args.name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:network/getVirtualWan:getVirtualWan".into(),
             version: super::super::super::get_version(),
@@ -62,7 +62,7 @@ pub mod get_virtual_wan {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetVirtualWanResult {
             allow_branch_to_branch_traffic: o.get_field("allowBranchToBranchTraffic"),
             disable_vpn_encryption: o.get_field("disableVpnEncryption"),

@@ -83,42 +83,40 @@ pub mod custom_location {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CustomLocationArgs,
     ) -> CustomLocationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CustomLocationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> CustomLocationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CustomLocationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> CustomLocationResult {
-        let authentication_binding = args.authentication.get_output(context);
-        let cluster_extension_ids_binding = args
-            .cluster_extension_ids
-            .get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let host_resource_id_binding = args.host_resource_id.get_output(context);
-        let host_type_binding = args.host_type.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let namespace_binding = args.namespace.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+        let authentication_binding = args.authentication.get_output(ctx);
+        let cluster_extension_ids_binding = args.cluster_extension_ids.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let host_resource_id_binding = args.host_resource_id.get_output(ctx);
+        let host_type_binding = args.host_type.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let namespace_binding = args.namespace.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:extendedlocation/customLocation:CustomLocation".into(),
             name: name.to_string(),
@@ -163,7 +161,7 @@ pub mod custom_location {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         CustomLocationResult {
             id: o.get_id(),
             urn: o.get_urn(),

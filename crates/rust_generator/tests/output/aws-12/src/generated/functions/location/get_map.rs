@@ -41,12 +41,9 @@ pub mod get_map {
     /// Registers a new resource with the given unique name and arguments
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
-    pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
-        args: GetMapArgs,
-    ) -> GetMapResult {
-        let map_name_binding = args.map_name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+    pub fn invoke(ctx: &pulumi_gestalt_rust::Context, args: GetMapArgs) -> GetMapResult {
+        let map_name_binding = args.map_name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:location/getMap:getMap".into(),
             version: super::super::super::get_version(),
@@ -61,7 +58,7 @@ pub mod get_map {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetMapResult {
             configurations: o.get_field("configurations"),
             create_time: o.get_field("createTime"),

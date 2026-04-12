@@ -39,12 +39,12 @@ pub mod get_job_iam_policy {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetJobIamPolicyArgs,
     ) -> GetJobIamPolicyResult {
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:cloudrunv2/getJobIamPolicy:getJobIamPolicy".into(),
             version: super::super::super::get_version(),
@@ -63,7 +63,7 @@ pub mod get_job_iam_policy {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetJobIamPolicyResult {
             etag: o.get_field("etag"),
             id: o.get_field("id"),

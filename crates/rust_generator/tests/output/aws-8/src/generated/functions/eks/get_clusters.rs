@@ -15,13 +15,13 @@ pub mod get_clusters {
     /// Registers a new resource with the given unique name and arguments
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
-    pub fn invoke(context: &pulumi_gestalt_rust::Context) -> GetClustersResult {
+    pub fn invoke(ctx: &pulumi_gestalt_rust::Context) -> GetClustersResult {
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:eks/getClusters:getClusters".into(),
             version: super::super::super::get_version(),
             object: &[],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetClustersResult {
             id: o.get_field("id"),
             names: o.get_field("names"),

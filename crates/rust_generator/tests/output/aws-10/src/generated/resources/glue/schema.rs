@@ -106,38 +106,38 @@ pub mod schema {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SchemaArgs,
     ) -> SchemaResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SchemaArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> SchemaResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SchemaArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> SchemaResult {
-        let compatibility_binding = args.compatibility.get_output(context);
-        let data_format_binding = args.data_format.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let registry_arn_binding = args.registry_arn.get_output(context);
-        let schema_definition_binding = args.schema_definition.get_output(context);
-        let schema_name_binding = args.schema_name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let compatibility_binding = args.compatibility.get_output(ctx);
+        let data_format_binding = args.data_format.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let registry_arn_binding = args.registry_arn.get_output(ctx);
+        let schema_definition_binding = args.schema_definition.get_output(ctx);
+        let schema_name_binding = args.schema_name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:glue/schema:Schema".into(),
             name: name.to_string(),
@@ -174,7 +174,7 @@ pub mod schema {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         SchemaResult {
             id: o.get_id(),
             urn: o.get_urn(),

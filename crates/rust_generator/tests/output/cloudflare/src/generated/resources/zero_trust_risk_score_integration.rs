@@ -50,36 +50,36 @@ pub mod zero_trust_risk_score_integration {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ZeroTrustRiskScoreIntegrationArgs,
     ) -> ZeroTrustRiskScoreIntegrationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ZeroTrustRiskScoreIntegrationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ZeroTrustRiskScoreIntegrationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ZeroTrustRiskScoreIntegrationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ZeroTrustRiskScoreIntegrationResult {
-        let account_id_binding = args.account_id.get_output(context);
-        let active_binding = args.active.get_output(context);
-        let integration_type_binding = args.integration_type.get_output(context);
-        let reference_id_binding = args.reference_id.get_output(context);
-        let tenant_url_binding = args.tenant_url.get_output(context);
+        let account_id_binding = args.account_id.get_output(ctx);
+        let active_binding = args.active.get_output(ctx);
+        let integration_type_binding = args.integration_type.get_output(ctx);
+        let reference_id_binding = args.reference_id.get_output(ctx);
+        let tenant_url_binding = args.tenant_url.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "cloudflare:index/zeroTrustRiskScoreIntegration:ZeroTrustRiskScoreIntegration"
                 .into(),
@@ -109,7 +109,7 @@ pub mod zero_trust_risk_score_integration {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ZeroTrustRiskScoreIntegrationResult {
             id: o.get_id(),
             urn: o.get_urn(),

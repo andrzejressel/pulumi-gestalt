@@ -54,17 +54,17 @@ pub mod get_local_gateway_route_table {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetLocalGatewayRouteTableArgs,
     ) -> GetLocalGatewayRouteTableResult {
-        let filters_binding = args.filters.get_output(context);
-        let local_gateway_id_binding = args.local_gateway_id.get_output(context);
+        let filters_binding = args.filters.get_output(ctx);
+        let local_gateway_id_binding = args.local_gateway_id.get_output(ctx);
         let local_gateway_route_table_id_binding = args
             .local_gateway_route_table_id
-            .get_output(context);
-        let outpost_arn_binding = args.outpost_arn.get_output(context);
-        let state_binding = args.state.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let outpost_arn_binding = args.outpost_arn.get_output(ctx);
+        let state_binding = args.state.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ec2/getLocalGatewayRouteTable:getLocalGatewayRouteTable".into(),
             version: super::super::super::get_version(),
@@ -95,7 +95,7 @@ pub mod get_local_gateway_route_table {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetLocalGatewayRouteTableResult {
             filters: o.get_field("filters"),
             id: o.get_field("id"),

@@ -39,11 +39,11 @@ pub mod get_certificate {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetCertificateArgs,
     ) -> GetCertificateResult {
-        let id_binding = args.id.get_output(context);
-        let latest_valid_till_binding = args.latest_valid_till.get_output(context);
+        let id_binding = args.id.get_output(ctx);
+        let latest_valid_till_binding = args.latest_valid_till.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:rds/getCertificate:getCertificate".into(),
             version: super::super::super::get_version(),
@@ -58,7 +58,7 @@ pub mod get_certificate {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetCertificateResult {
             arn: o.get_field("arn"),
             certificate_type: o.get_field("certificateType"),

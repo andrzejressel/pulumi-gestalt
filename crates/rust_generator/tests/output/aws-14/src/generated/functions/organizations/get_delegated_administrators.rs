@@ -29,10 +29,10 @@ pub mod get_delegated_administrators {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetDelegatedAdministratorsArgs,
     ) -> GetDelegatedAdministratorsResult {
-        let service_principal_binding = args.service_principal.get_output(context);
+        let service_principal_binding = args.service_principal.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:organizations/getDelegatedAdministrators:getDelegatedAdministrators"
                 .into(),
@@ -44,7 +44,7 @@ pub mod get_delegated_administrators {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetDelegatedAdministratorsResult {
             delegated_administrators: o.get_field("delegatedAdministrators"),
             id: o.get_field("id"),

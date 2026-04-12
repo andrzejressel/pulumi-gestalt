@@ -151,39 +151,39 @@ pub mod response_plan {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ResponsePlanArgs,
     ) -> ResponsePlanResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ResponsePlanArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ResponsePlanResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ResponsePlanArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ResponsePlanResult {
-        let action_binding = args.action.get_output(context);
-        let chat_channels_binding = args.chat_channels.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let engagements_binding = args.engagements.get_output(context);
-        let incident_template_binding = args.incident_template.get_output(context);
-        let integration_binding = args.integration.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let action_binding = args.action.get_output(ctx);
+        let chat_channels_binding = args.chat_channels.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let engagements_binding = args.engagements.get_output(ctx);
+        let incident_template_binding = args.incident_template.get_output(ctx);
+        let integration_binding = args.integration.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ssmincidents/responsePlan:ResponsePlan".into(),
             name: name.to_string(),
@@ -224,7 +224,7 @@ pub mod response_plan {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ResponsePlanResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -60,12 +60,12 @@ pub mod get_bucket_object_content {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetBucketObjectContentArgs,
     ) -> GetBucketObjectContentResult {
-        let bucket_binding = args.bucket.get_output(context);
-        let content_binding = args.content.get_output(context);
-        let name_binding = args.name.get_output(context);
+        let bucket_binding = args.bucket.get_output(ctx);
+        let content_binding = args.content.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:storage/getBucketObjectContent:getBucketObjectContent".into(),
             version: super::super::super::get_version(),
@@ -84,7 +84,7 @@ pub mod get_bucket_object_content {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetBucketObjectContentResult {
             bucket: o.get_field("bucket"),
             cache_control: o.get_field("cacheControl"),

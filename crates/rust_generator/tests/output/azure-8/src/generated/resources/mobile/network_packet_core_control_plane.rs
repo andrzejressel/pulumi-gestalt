@@ -208,64 +208,64 @@ pub mod network_packet_core_control_plane {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkPacketCoreControlPlaneArgs,
     ) -> NetworkPacketCoreControlPlaneResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkPacketCoreControlPlaneArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> NetworkPacketCoreControlPlaneResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkPacketCoreControlPlaneArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> NetworkPacketCoreControlPlaneResult {
         let control_plane_access_ipv4_address_binding = args
             .control_plane_access_ipv4_address
-            .get_output(context);
+            .get_output(ctx);
         let control_plane_access_ipv4_gateway_binding = args
             .control_plane_access_ipv4_gateway
-            .get_output(context);
+            .get_output(ctx);
         let control_plane_access_ipv4_subnet_binding = args
             .control_plane_access_ipv4_subnet
-            .get_output(context);
+            .get_output(ctx);
         let control_plane_access_name_binding = args
             .control_plane_access_name
-            .get_output(context);
+            .get_output(ctx);
         let core_network_technology_binding = args
             .core_network_technology
-            .get_output(context);
-        let identity_binding = args.identity.get_output(context);
+            .get_output(ctx);
+        let identity_binding = args.identity.get_output(ctx);
         let interoperability_settings_json_binding = args
             .interoperability_settings_json
-            .get_output(context);
+            .get_output(ctx);
         let local_diagnostics_access_binding = args
             .local_diagnostics_access
-            .get_output(context);
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let platform_binding = args.platform.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let site_ids_binding = args.site_ids.get_output(context);
-        let sku_binding = args.sku.get_output(context);
-        let software_version_binding = args.software_version.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let platform_binding = args.platform.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let site_ids_binding = args.site_ids.get_output(ctx);
+        let sku_binding = args.sku.get_output(ctx);
+        let software_version_binding = args.software_version.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let user_equipment_mtu_in_bytes_binding = args
             .user_equipment_mtu_in_bytes
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:mobile/networkPacketCoreControlPlane:NetworkPacketCoreControlPlane"
                 .into(),
@@ -343,7 +343,7 @@ pub mod network_packet_core_control_plane {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         NetworkPacketCoreControlPlaneResult {
             id: o.get_id(),
             urn: o.get_urn(),

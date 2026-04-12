@@ -72,35 +72,35 @@ pub mod vault_lock_configuration {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VaultLockConfigurationArgs,
     ) -> VaultLockConfigurationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VaultLockConfigurationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> VaultLockConfigurationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VaultLockConfigurationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> VaultLockConfigurationResult {
-        let backup_vault_name_binding = args.backup_vault_name.get_output(context);
-        let changeable_for_days_binding = args.changeable_for_days.get_output(context);
-        let max_retention_days_binding = args.max_retention_days.get_output(context);
-        let min_retention_days_binding = args.min_retention_days.get_output(context);
+        let backup_vault_name_binding = args.backup_vault_name.get_output(ctx);
+        let changeable_for_days_binding = args.changeable_for_days.get_output(ctx);
+        let max_retention_days_binding = args.max_retention_days.get_output(ctx);
+        let min_retention_days_binding = args.min_retention_days.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:backup/vaultLockConfiguration:VaultLockConfiguration".into(),
             name: name.to_string(),
@@ -125,7 +125,7 @@ pub mod vault_lock_configuration {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         VaultLockConfigurationResult {
             id: o.get_id(),
             urn: o.get_urn(),

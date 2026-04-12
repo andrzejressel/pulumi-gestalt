@@ -49,14 +49,14 @@ pub mod get_export {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetExportArgs,
     ) -> GetExportResult {
-        let accepts_binding = args.accepts.get_output(context);
-        let export_type_binding = args.export_type.get_output(context);
-        let parameters_binding = args.parameters.get_output(context);
-        let rest_api_id_binding = args.rest_api_id.get_output(context);
-        let stage_name_binding = args.stage_name.get_output(context);
+        let accepts_binding = args.accepts.get_output(ctx);
+        let export_type_binding = args.export_type.get_output(ctx);
+        let parameters_binding = args.parameters.get_output(ctx);
+        let rest_api_id_binding = args.rest_api_id.get_output(ctx);
+        let stage_name_binding = args.stage_name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:apigateway/getExport:getExport".into(),
             version: super::super::super::get_version(),
@@ -83,7 +83,7 @@ pub mod get_export {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetExportResult {
             accepts: o.get_field("accepts"),
             body: o.get_field("body"),

@@ -30,10 +30,10 @@ pub mod get_dicom_store_iam_policy {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetDicomStoreIamPolicyArgs,
     ) -> GetDicomStoreIamPolicyResult {
-        let dicom_store_id_binding = args.dicom_store_id.get_output(context);
+        let dicom_store_id_binding = args.dicom_store_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:healthcare/getDicomStoreIamPolicy:getDicomStoreIamPolicy".into(),
             version: super::super::super::get_version(),
@@ -44,7 +44,7 @@ pub mod get_dicom_store_iam_policy {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetDicomStoreIamPolicyResult {
             dicom_store_id: o.get_field("dicomStoreId"),
             etag: o.get_field("etag"),

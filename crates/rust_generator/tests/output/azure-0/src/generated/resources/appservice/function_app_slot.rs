@@ -242,56 +242,54 @@ pub mod function_app_slot {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FunctionAppSlotArgs,
     ) -> FunctionAppSlotResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FunctionAppSlotArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> FunctionAppSlotResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FunctionAppSlotArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> FunctionAppSlotResult {
-        let app_service_plan_id_binding = args.app_service_plan_id.get_output(context);
-        let app_settings_binding = args.app_settings.get_output(context);
-        let auth_settings_binding = args.auth_settings.get_output(context);
-        let connection_strings_binding = args.connection_strings.get_output(context);
+        let app_service_plan_id_binding = args.app_service_plan_id.get_output(ctx);
+        let app_settings_binding = args.app_settings.get_output(ctx);
+        let auth_settings_binding = args.auth_settings.get_output(ctx);
+        let connection_strings_binding = args.connection_strings.get_output(ctx);
         let daily_memory_time_quota_binding = args
             .daily_memory_time_quota
-            .get_output(context);
-        let enable_builtin_logging_binding = args
-            .enable_builtin_logging
-            .get_output(context);
-        let enabled_binding = args.enabled.get_output(context);
-        let function_app_name_binding = args.function_app_name.get_output(context);
-        let https_only_binding = args.https_only.get_output(context);
-        let identity_binding = args.identity.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let os_type_binding = args.os_type.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let site_config_binding = args.site_config.get_output(context);
+            .get_output(ctx);
+        let enable_builtin_logging_binding = args.enable_builtin_logging.get_output(ctx);
+        let enabled_binding = args.enabled.get_output(ctx);
+        let function_app_name_binding = args.function_app_name.get_output(ctx);
+        let https_only_binding = args.https_only.get_output(ctx);
+        let identity_binding = args.identity.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let os_type_binding = args.os_type.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let site_config_binding = args.site_config.get_output(ctx);
         let storage_account_access_key_binding = args
             .storage_account_access_key
-            .get_output(context);
-        let storage_account_name_binding = args.storage_account_name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let version_binding = args.version.get_output(context);
+            .get_output(ctx);
+        let storage_account_name_binding = args.storage_account_name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let version_binding = args.version.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:appservice/functionAppSlot:FunctionAppSlot".into(),
             name: name.to_string(),
@@ -376,7 +374,7 @@ pub mod function_app_slot {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         FunctionAppSlotResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -33,10 +33,10 @@ pub mod get_repository {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetRepositoryArgs,
     ) -> GetRepositoryResult {
-        let repository_name_binding = args.repository_name.get_output(context);
+        let repository_name_binding = args.repository_name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:codecommit/getRepository:getRepository".into(),
             version: super::super::super::get_version(),
@@ -47,7 +47,7 @@ pub mod get_repository {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetRepositoryResult {
             arn: o.get_field("arn"),
             clone_url_http: o.get_field("cloneUrlHttp"),

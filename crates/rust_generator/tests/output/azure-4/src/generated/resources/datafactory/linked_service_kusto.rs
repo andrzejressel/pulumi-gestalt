@@ -176,50 +176,46 @@ pub mod linked_service_kusto {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LinkedServiceKustoArgs,
     ) -> LinkedServiceKustoResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LinkedServiceKustoArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> LinkedServiceKustoResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LinkedServiceKustoArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> LinkedServiceKustoResult {
-        let additional_properties_binding = args
-            .additional_properties
-            .get_output(context);
-        let annotations_binding = args.annotations.get_output(context);
-        let data_factory_id_binding = args.data_factory_id.get_output(context);
-        let description_binding = args.description.get_output(context);
+        let additional_properties_binding = args.additional_properties.get_output(ctx);
+        let annotations_binding = args.annotations.get_output(ctx);
+        let data_factory_id_binding = args.data_factory_id.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
         let integration_runtime_name_binding = args
             .integration_runtime_name
-            .get_output(context);
-        let kusto_database_name_binding = args.kusto_database_name.get_output(context);
-        let kusto_endpoint_binding = args.kusto_endpoint.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let parameters_binding = args.parameters.get_output(context);
-        let service_principal_id_binding = args.service_principal_id.get_output(context);
-        let service_principal_key_binding = args
-            .service_principal_key
-            .get_output(context);
-        let tenant_binding = args.tenant.get_output(context);
-        let use_managed_identity_binding = args.use_managed_identity.get_output(context);
+            .get_output(ctx);
+        let kusto_database_name_binding = args.kusto_database_name.get_output(ctx);
+        let kusto_endpoint_binding = args.kusto_endpoint.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let parameters_binding = args.parameters.get_output(ctx);
+        let service_principal_id_binding = args.service_principal_id.get_output(ctx);
+        let service_principal_key_binding = args.service_principal_key.get_output(ctx);
+        let tenant_binding = args.tenant.get_output(ctx);
+        let use_managed_identity_binding = args.use_managed_identity.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:datafactory/linkedServiceKusto:LinkedServiceKusto".into(),
             name: name.to_string(),
@@ -280,7 +276,7 @@ pub mod linked_service_kusto {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         LinkedServiceKustoResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -6,12 +6,12 @@ fn main() {
     pulumi_gestalt_rust::run(pulumi_main).unwrap();
 }
 
-fn pulumi_main(context: &Context) -> Result<(), Error> {
-    let custom_secret = context.new_secret(&10);
-    let non_secret = context.new_output(&1);
+fn pulumi_main(ctx: &Context) -> Result<(), Error> {
+    let custom_secret = ctx.new_secret(&10);
+    let non_secret = ctx.new_output(&1);
 
     let secret = random_bytes::create(
-        context,
+        ctx,
         "secret",
         random_bytes::RandomBytesArgs::builder()
             .length(custom_secret.clone())

@@ -233,44 +233,44 @@ pub mod config {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ConfigArgs,
     ) -> ConfigResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ConfigArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ConfigResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ConfigArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ConfigResult {
-        let authorized_domains_binding = args.authorized_domains.get_output(context);
+        let authorized_domains_binding = args.authorized_domains.get_output(ctx);
         let autodelete_anonymous_users_binding = args
             .autodelete_anonymous_users
-            .get_output(context);
-        let blocking_functions_binding = args.blocking_functions.get_output(context);
-        let client_binding = args.client.get_output(context);
-        let mfa_binding = args.mfa.get_output(context);
-        let monitoring_binding = args.monitoring.get_output(context);
-        let multi_tenant_binding = args.multi_tenant.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let quota_binding = args.quota.get_output(context);
-        let sign_in_binding = args.sign_in.get_output(context);
-        let sms_region_config_binding = args.sms_region_config.get_output(context);
+            .get_output(ctx);
+        let blocking_functions_binding = args.blocking_functions.get_output(ctx);
+        let client_binding = args.client.get_output(ctx);
+        let mfa_binding = args.mfa.get_output(ctx);
+        let monitoring_binding = args.monitoring.get_output(ctx);
+        let multi_tenant_binding = args.multi_tenant.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let quota_binding = args.quota.get_output(ctx);
+        let sign_in_binding = args.sign_in.get_output(ctx);
+        let sms_region_config_binding = args.sms_region_config.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:identityplatform/config:Config".into(),
             name: name.to_string(),
@@ -323,7 +323,7 @@ pub mod config {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ConfigResult {
             id: o.get_id(),
             urn: o.get_urn(),

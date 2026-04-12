@@ -63,11 +63,11 @@ pub mod get_database {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetDatabaseArgs,
     ) -> GetDatabaseResult {
-        let name_binding = args.name.get_output(context);
-        let server_id_binding = args.server_id.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let server_id_binding = args.server_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:mssql/getDatabase:getDatabase".into(),
             version: super::super::super::get_version(),
@@ -82,7 +82,7 @@ pub mod get_database {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetDatabaseResult {
             collation: o.get_field("collation"),
             elastic_pool_id: o.get_field("elasticPoolId"),

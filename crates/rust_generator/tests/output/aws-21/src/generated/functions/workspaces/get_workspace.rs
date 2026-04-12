@@ -50,13 +50,13 @@ pub mod get_workspace {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetWorkspaceArgs,
     ) -> GetWorkspaceResult {
-        let directory_id_binding = args.directory_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let user_name_binding = args.user_name.get_output(context);
-        let workspace_id_binding = args.workspace_id.get_output(context);
+        let directory_id_binding = args.directory_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let user_name_binding = args.user_name.get_output(ctx);
+        let workspace_id_binding = args.workspace_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:workspaces/getWorkspace:getWorkspace".into(),
             version: super::super::super::get_version(),
@@ -79,7 +79,7 @@ pub mod get_workspace {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetWorkspaceResult {
             bundle_id: o.get_field("bundleId"),
             computer_name: o.get_field("computerName"),

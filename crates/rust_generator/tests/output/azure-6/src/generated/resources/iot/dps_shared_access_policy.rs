@@ -126,39 +126,39 @@ pub mod dps_shared_access_policy {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DpsSharedAccessPolicyArgs,
     ) -> DpsSharedAccessPolicyResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DpsSharedAccessPolicyArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DpsSharedAccessPolicyResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DpsSharedAccessPolicyArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DpsSharedAccessPolicyResult {
-        let enrollment_read_binding = args.enrollment_read.get_output(context);
-        let enrollment_write_binding = args.enrollment_write.get_output(context);
-        let iothub_dps_name_binding = args.iothub_dps_name.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let registration_read_binding = args.registration_read.get_output(context);
-        let registration_write_binding = args.registration_write.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let service_config_binding = args.service_config.get_output(context);
+        let enrollment_read_binding = args.enrollment_read.get_output(ctx);
+        let enrollment_write_binding = args.enrollment_write.get_output(ctx);
+        let iothub_dps_name_binding = args.iothub_dps_name.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let registration_read_binding = args.registration_read.get_output(ctx);
+        let registration_write_binding = args.registration_write.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let service_config_binding = args.service_config.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:iot/dpsSharedAccessPolicy:DpsSharedAccessPolicy".into(),
             name: name.to_string(),
@@ -199,7 +199,7 @@ pub mod dps_shared_access_policy {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DpsSharedAccessPolicyResult {
             id: o.get_id(),
             urn: o.get_urn(),

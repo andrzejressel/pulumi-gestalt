@@ -310,71 +310,65 @@ pub mod user_pool_client {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: UserPoolClientArgs,
     ) -> UserPoolClientResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: UserPoolClientArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> UserPoolClientResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: UserPoolClientArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> UserPoolClientResult {
-        let access_token_validity_binding = args
-            .access_token_validity
-            .get_output(context);
-        let allowed_oauth_flows_binding = args.allowed_oauth_flows.get_output(context);
+        let access_token_validity_binding = args.access_token_validity.get_output(ctx);
+        let allowed_oauth_flows_binding = args.allowed_oauth_flows.get_output(ctx);
         let allowed_oauth_flows_user_pool_client_binding = args
             .allowed_oauth_flows_user_pool_client
-            .get_output(context);
-        let allowed_oauth_scopes_binding = args.allowed_oauth_scopes.get_output(context);
+            .get_output(ctx);
+        let allowed_oauth_scopes_binding = args.allowed_oauth_scopes.get_output(ctx);
         let analytics_configuration_binding = args
             .analytics_configuration
-            .get_output(context);
-        let auth_session_validity_binding = args
-            .auth_session_validity
-            .get_output(context);
-        let callback_urls_binding = args.callback_urls.get_output(context);
-        let default_redirect_uri_binding = args.default_redirect_uri.get_output(context);
+            .get_output(ctx);
+        let auth_session_validity_binding = args.auth_session_validity.get_output(ctx);
+        let callback_urls_binding = args.callback_urls.get_output(ctx);
+        let default_redirect_uri_binding = args.default_redirect_uri.get_output(ctx);
         let enable_propagate_additional_user_context_data_binding = args
             .enable_propagate_additional_user_context_data
-            .get_output(context);
+            .get_output(ctx);
         let enable_token_revocation_binding = args
             .enable_token_revocation
-            .get_output(context);
-        let explicit_auth_flows_binding = args.explicit_auth_flows.get_output(context);
-        let generate_secret_binding = args.generate_secret.get_output(context);
-        let id_token_validity_binding = args.id_token_validity.get_output(context);
-        let logout_urls_binding = args.logout_urls.get_output(context);
-        let name_binding = args.name.get_output(context);
+            .get_output(ctx);
+        let explicit_auth_flows_binding = args.explicit_auth_flows.get_output(ctx);
+        let generate_secret_binding = args.generate_secret.get_output(ctx);
+        let id_token_validity_binding = args.id_token_validity.get_output(ctx);
+        let logout_urls_binding = args.logout_urls.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let prevent_user_existence_errors_binding = args
             .prevent_user_existence_errors
-            .get_output(context);
-        let read_attributes_binding = args.read_attributes.get_output(context);
-        let refresh_token_validity_binding = args
-            .refresh_token_validity
-            .get_output(context);
+            .get_output(ctx);
+        let read_attributes_binding = args.read_attributes.get_output(ctx);
+        let refresh_token_validity_binding = args.refresh_token_validity.get_output(ctx);
         let supported_identity_providers_binding = args
             .supported_identity_providers
-            .get_output(context);
-        let token_validity_units_binding = args.token_validity_units.get_output(context);
-        let user_pool_id_binding = args.user_pool_id.get_output(context);
-        let write_attributes_binding = args.write_attributes.get_output(context);
+            .get_output(ctx);
+        let token_validity_units_binding = args.token_validity_units.get_output(ctx);
+        let user_pool_id_binding = args.user_pool_id.get_output(ctx);
+        let write_attributes_binding = args.write_attributes.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:cognito/userPoolClient:UserPoolClient".into(),
             name: name.to_string(),
@@ -472,7 +466,7 @@ pub mod user_pool_client {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         UserPoolClientResult {
             id: o.get_id(),
             urn: o.get_urn(),

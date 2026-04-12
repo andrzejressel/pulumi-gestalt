@@ -70,35 +70,35 @@ pub mod random_shuffle {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RandomShuffleArgs,
     ) -> RandomShuffleResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RandomShuffleArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> RandomShuffleResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RandomShuffleArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> RandomShuffleResult {
-        let inputs_binding = args.inputs.get_output(context);
-        let keepers_binding = args.keepers.get_output(context);
-        let result_count_binding = args.result_count.get_output(context);
-        let seed_binding = args.seed.get_output(context);
+        let inputs_binding = args.inputs.get_output(ctx);
+        let keepers_binding = args.keepers.get_output(ctx);
+        let result_count_binding = args.result_count.get_output(ctx);
+        let seed_binding = args.seed.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "random:index/randomShuffle:RandomShuffle".into(),
             name: name.to_string(),
@@ -123,7 +123,7 @@ pub mod random_shuffle {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         RandomShuffleResult {
             id: o.get_id(),
             urn: o.get_urn(),

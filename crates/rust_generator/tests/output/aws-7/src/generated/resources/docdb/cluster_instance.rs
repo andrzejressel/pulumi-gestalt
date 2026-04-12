@@ -225,56 +225,54 @@ pub mod cluster_instance {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterInstanceArgs,
     ) -> ClusterInstanceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterInstanceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ClusterInstanceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterInstanceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ClusterInstanceResult {
-        let apply_immediately_binding = args.apply_immediately.get_output(context);
+        let apply_immediately_binding = args.apply_immediately.get_output(ctx);
         let auto_minor_version_upgrade_binding = args
             .auto_minor_version_upgrade
-            .get_output(context);
-        let availability_zone_binding = args.availability_zone.get_output(context);
-        let ca_cert_identifier_binding = args.ca_cert_identifier.get_output(context);
-        let cluster_identifier_binding = args.cluster_identifier.get_output(context);
-        let copy_tags_to_snapshot_binding = args
-            .copy_tags_to_snapshot
-            .get_output(context);
+            .get_output(ctx);
+        let availability_zone_binding = args.availability_zone.get_output(ctx);
+        let ca_cert_identifier_binding = args.ca_cert_identifier.get_output(ctx);
+        let cluster_identifier_binding = args.cluster_identifier.get_output(ctx);
+        let copy_tags_to_snapshot_binding = args.copy_tags_to_snapshot.get_output(ctx);
         let enable_performance_insights_binding = args
             .enable_performance_insights
-            .get_output(context);
-        let engine_binding = args.engine.get_output(context);
-        let identifier_binding = args.identifier.get_output(context);
-        let identifier_prefix_binding = args.identifier_prefix.get_output(context);
-        let instance_class_binding = args.instance_class.get_output(context);
+            .get_output(ctx);
+        let engine_binding = args.engine.get_output(ctx);
+        let identifier_binding = args.identifier.get_output(ctx);
+        let identifier_prefix_binding = args.identifier_prefix.get_output(ctx);
+        let instance_class_binding = args.instance_class.get_output(ctx);
         let performance_insights_kms_key_id_binding = args
             .performance_insights_kms_key_id
-            .get_output(context);
+            .get_output(ctx);
         let preferred_maintenance_window_binding = args
             .preferred_maintenance_window
-            .get_output(context);
-        let promotion_tier_binding = args.promotion_tier.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let promotion_tier_binding = args.promotion_tier.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:docdb/clusterInstance:ClusterInstance".into(),
             name: name.to_string(),
@@ -343,7 +341,7 @@ pub mod cluster_instance {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ClusterInstanceResult {
             id: o.get_id(),
             urn: o.get_urn(),

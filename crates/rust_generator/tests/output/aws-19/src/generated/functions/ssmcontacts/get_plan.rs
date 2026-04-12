@@ -27,10 +27,10 @@ pub mod get_plan {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetPlanArgs,
     ) -> GetPlanResult {
-        let contact_id_binding = args.contact_id.get_output(context);
+        let contact_id_binding = args.contact_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ssmcontacts/getPlan:getPlan".into(),
             version: super::super::super::get_version(),
@@ -41,7 +41,7 @@ pub mod get_plan {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetPlanResult {
             contact_id: o.get_field("contactId"),
             id: o.get_field("id"),

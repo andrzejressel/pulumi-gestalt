@@ -273,58 +273,56 @@ pub mod server {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServerArgs,
     ) -> ServerResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServerArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ServerResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServerArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ServerResult {
-        let administrator_login_binding = args.administrator_login.get_output(context);
+        let administrator_login_binding = args.administrator_login.get_output(ctx);
         let administrator_login_password_binding = args
             .administrator_login_password
-            .get_output(context);
-        let azuread_administrator_binding = args
-            .azuread_administrator
-            .get_output(context);
-        let connection_policy_binding = args.connection_policy.get_output(context);
-        let identity_binding = args.identity.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let minimum_tls_version_binding = args.minimum_tls_version.get_output(context);
-        let name_binding = args.name.get_output(context);
+            .get_output(ctx);
+        let azuread_administrator_binding = args.azuread_administrator.get_output(ctx);
+        let connection_policy_binding = args.connection_policy.get_output(ctx);
+        let identity_binding = args.identity.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let minimum_tls_version_binding = args.minimum_tls_version.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let outbound_network_restriction_enabled_binding = args
             .outbound_network_restriction_enabled
-            .get_output(context);
+            .get_output(ctx);
         let primary_user_assigned_identity_id_binding = args
             .primary_user_assigned_identity_id
-            .get_output(context);
+            .get_output(ctx);
         let public_network_access_enabled_binding = args
             .public_network_access_enabled
-            .get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let transparent_data_encryption_key_vault_key_id_binding = args
             .transparent_data_encryption_key_vault_key_id
-            .get_output(context);
-        let version_binding = args.version.get_output(context);
+            .get_output(ctx);
+        let version_binding = args.version.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:mssql/server:Server".into(),
             name: name.to_string(),
@@ -394,7 +392,7 @@ pub mod server {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ServerResult {
             id: o.get_id(),
             urn: o.get_urn(),

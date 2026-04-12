@@ -37,11 +37,11 @@ pub mod get_dataset_data_lake_gen_2 {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetDatasetDataLakeGen2Args,
     ) -> GetDatasetDataLakeGen2Result {
-        let name_binding = args.name.get_output(context);
-        let share_id_binding = args.share_id.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let share_id_binding = args.share_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:datashare/getDatasetDataLakeGen2:getDatasetDataLakeGen2"
                 .into(),
@@ -57,7 +57,7 @@ pub mod get_dataset_data_lake_gen_2 {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetDatasetDataLakeGen2Result {
             display_name: o.get_field("displayName"),
             file_path: o.get_field("filePath"),

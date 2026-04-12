@@ -188,59 +188,57 @@ pub mod job {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: JobArgs,
     ) -> JobResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: JobArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> JobResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: JobArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> JobResult {
-        let compatibility_level_binding = args.compatibility_level.get_output(context);
-        let content_storage_policy_binding = args
-            .content_storage_policy
-            .get_output(context);
-        let data_locale_binding = args.data_locale.get_output(context);
+        let compatibility_level_binding = args.compatibility_level.get_output(ctx);
+        let content_storage_policy_binding = args.content_storage_policy.get_output(ctx);
+        let data_locale_binding = args.data_locale.get_output(ctx);
         let events_late_arrival_max_delay_in_seconds_binding = args
             .events_late_arrival_max_delay_in_seconds
-            .get_output(context);
+            .get_output(ctx);
         let events_out_of_order_max_delay_in_seconds_binding = args
             .events_out_of_order_max_delay_in_seconds
-            .get_output(context);
+            .get_output(ctx);
         let events_out_of_order_policy_binding = args
             .events_out_of_order_policy
-            .get_output(context);
-        let identity_binding = args.identity.get_output(context);
-        let job_storage_accounts_binding = args.job_storage_accounts.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let output_error_policy_binding = args.output_error_policy.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let sku_name_binding = args.sku_name.get_output(context);
+            .get_output(ctx);
+        let identity_binding = args.identity.get_output(ctx);
+        let job_storage_accounts_binding = args.job_storage_accounts.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let output_error_policy_binding = args.output_error_policy.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let sku_name_binding = args.sku_name.get_output(ctx);
         let stream_analytics_cluster_id_binding = args
             .stream_analytics_cluster_id
-            .get_output(context);
-        let streaming_units_binding = args.streaming_units.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let transformation_query_binding = args.transformation_query.get_output(context);
-        let type__binding = args.type_.get_output(context);
+            .get_output(ctx);
+        let streaming_units_binding = args.streaming_units.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let transformation_query_binding = args.transformation_query.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:streamanalytics/job:Job".into(),
             name: name.to_string(),
@@ -321,7 +319,7 @@ pub mod job {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         JobResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -109,41 +109,39 @@ pub mod application {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ApplicationArgs,
     ) -> ApplicationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ApplicationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ApplicationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ApplicationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ApplicationResult {
-        let auto_config_enabled_binding = args.auto_config_enabled.get_output(context);
-        let auto_create_binding = args.auto_create.get_output(context);
-        let cwe_monitor_enabled_binding = args.cwe_monitor_enabled.get_output(context);
-        let grouping_type_binding = args.grouping_type.get_output(context);
-        let ops_center_enabled_binding = args.ops_center_enabled.get_output(context);
-        let ops_item_sns_topic_arn_binding = args
-            .ops_item_sns_topic_arn
-            .get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let auto_config_enabled_binding = args.auto_config_enabled.get_output(ctx);
+        let auto_create_binding = args.auto_create.get_output(ctx);
+        let cwe_monitor_enabled_binding = args.cwe_monitor_enabled.get_output(ctx);
+        let grouping_type_binding = args.grouping_type.get_output(ctx);
+        let ops_center_enabled_binding = args.ops_center_enabled.get_output(ctx);
+        let ops_item_sns_topic_arn_binding = args.ops_item_sns_topic_arn.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:applicationinsights/application:Application".into(),
             name: name.to_string(),
@@ -184,7 +182,7 @@ pub mod application {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ApplicationResult {
             id: o.get_id(),
             urn: o.get_urn(),

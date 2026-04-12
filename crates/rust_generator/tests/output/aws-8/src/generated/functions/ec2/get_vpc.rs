@@ -80,17 +80,14 @@ pub mod get_vpc {
     /// Registers a new resource with the given unique name and arguments
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
-    pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
-        args: GetVpcArgs,
-    ) -> GetVpcResult {
-        let cidr_block_binding = args.cidr_block.get_output(context);
-        let default_binding = args.default.get_output(context);
-        let dhcp_options_id_binding = args.dhcp_options_id.get_output(context);
-        let filters_binding = args.filters.get_output(context);
-        let id_binding = args.id.get_output(context);
-        let state_binding = args.state.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+    pub fn invoke(ctx: &pulumi_gestalt_rust::Context, args: GetVpcArgs) -> GetVpcResult {
+        let cidr_block_binding = args.cidr_block.get_output(ctx);
+        let default_binding = args.default.get_output(ctx);
+        let dhcp_options_id_binding = args.dhcp_options_id.get_output(ctx);
+        let filters_binding = args.filters.get_output(ctx);
+        let id_binding = args.id.get_output(ctx);
+        let state_binding = args.state.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ec2/getVpc:getVpc".into(),
             version: super::super::super::get_version(),
@@ -125,7 +122,7 @@ pub mod get_vpc {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetVpcResult {
             arn: o.get_field("arn"),
             cidr_block: o.get_field("cidrBlock"),

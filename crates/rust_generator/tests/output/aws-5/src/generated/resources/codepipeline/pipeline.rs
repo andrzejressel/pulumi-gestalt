@@ -241,40 +241,40 @@ pub mod pipeline {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PipelineArgs,
     ) -> PipelineResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PipelineArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> PipelineResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PipelineArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> PipelineResult {
-        let artifact_stores_binding = args.artifact_stores.get_output(context);
-        let execution_mode_binding = args.execution_mode.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let pipeline_type_binding = args.pipeline_type.get_output(context);
-        let role_arn_binding = args.role_arn.get_output(context);
-        let stages_binding = args.stages.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let triggers_binding = args.triggers.get_output(context);
-        let variables_binding = args.variables.get_output(context);
+        let artifact_stores_binding = args.artifact_stores.get_output(ctx);
+        let execution_mode_binding = args.execution_mode.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let pipeline_type_binding = args.pipeline_type.get_output(ctx);
+        let role_arn_binding = args.role_arn.get_output(ctx);
+        let stages_binding = args.stages.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let triggers_binding = args.triggers.get_output(ctx);
+        let variables_binding = args.variables.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:codepipeline/pipeline:Pipeline".into(),
             name: name.to_string(),
@@ -319,7 +319,7 @@ pub mod pipeline {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         PipelineResult {
             id: o.get_id(),
             urn: o.get_urn(),

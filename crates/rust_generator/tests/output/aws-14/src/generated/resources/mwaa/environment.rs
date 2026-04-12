@@ -220,74 +220,66 @@ pub mod environment {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EnvironmentArgs,
     ) -> EnvironmentResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EnvironmentArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> EnvironmentResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EnvironmentArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> EnvironmentResult {
         let airflow_configuration_options_binding = args
             .airflow_configuration_options
-            .get_output(context);
-        let airflow_version_binding = args.airflow_version.get_output(context);
-        let dag_s3_path_binding = args.dag_s3_path.get_output(context);
-        let endpoint_management_binding = args.endpoint_management.get_output(context);
-        let environment_class_binding = args.environment_class.get_output(context);
-        let execution_role_arn_binding = args.execution_role_arn.get_output(context);
-        let kms_key_binding = args.kms_key.get_output(context);
-        let logging_configuration_binding = args
-            .logging_configuration
-            .get_output(context);
-        let max_webservers_binding = args.max_webservers.get_output(context);
-        let max_workers_binding = args.max_workers.get_output(context);
-        let min_webservers_binding = args.min_webservers.get_output(context);
-        let min_workers_binding = args.min_workers.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_configuration_binding = args
-            .network_configuration
-            .get_output(context);
+            .get_output(ctx);
+        let airflow_version_binding = args.airflow_version.get_output(ctx);
+        let dag_s3_path_binding = args.dag_s3_path.get_output(ctx);
+        let endpoint_management_binding = args.endpoint_management.get_output(ctx);
+        let environment_class_binding = args.environment_class.get_output(ctx);
+        let execution_role_arn_binding = args.execution_role_arn.get_output(ctx);
+        let kms_key_binding = args.kms_key.get_output(ctx);
+        let logging_configuration_binding = args.logging_configuration.get_output(ctx);
+        let max_webservers_binding = args.max_webservers.get_output(ctx);
+        let max_workers_binding = args.max_workers.get_output(ctx);
+        let min_webservers_binding = args.min_webservers.get_output(ctx);
+        let min_workers_binding = args.min_workers.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_configuration_binding = args.network_configuration.get_output(ctx);
         let plugins_s3_object_version_binding = args
             .plugins_s3_object_version
-            .get_output(context);
-        let plugins_s3_path_binding = args.plugins_s3_path.get_output(context);
+            .get_output(ctx);
+        let plugins_s3_path_binding = args.plugins_s3_path.get_output(ctx);
         let requirements_s3_object_version_binding = args
             .requirements_s3_object_version
-            .get_output(context);
-        let requirements_s3_path_binding = args.requirements_s3_path.get_output(context);
-        let schedulers_binding = args.schedulers.get_output(context);
-        let source_bucket_arn_binding = args.source_bucket_arn.get_output(context);
+            .get_output(ctx);
+        let requirements_s3_path_binding = args.requirements_s3_path.get_output(ctx);
+        let schedulers_binding = args.schedulers.get_output(ctx);
+        let source_bucket_arn_binding = args.source_bucket_arn.get_output(ctx);
         let startup_script_s3_object_version_binding = args
             .startup_script_s3_object_version
-            .get_output(context);
-        let startup_script_s3_path_binding = args
-            .startup_script_s3_path
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let webserver_access_mode_binding = args
-            .webserver_access_mode
-            .get_output(context);
+            .get_output(ctx);
+        let startup_script_s3_path_binding = args.startup_script_s3_path.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let webserver_access_mode_binding = args.webserver_access_mode.get_output(ctx);
         let weekly_maintenance_window_start_binding = args
             .weekly_maintenance_window_start
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:mwaa/environment:Environment".into(),
             name: name.to_string(),
@@ -396,7 +388,7 @@ pub mod environment {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         EnvironmentResult {
             id: o.get_id(),
             urn: o.get_urn(),

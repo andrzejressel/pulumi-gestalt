@@ -46,11 +46,11 @@ pub mod get_budget_subscription {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetBudgetSubscriptionArgs,
     ) -> GetBudgetSubscriptionResult {
-        let name_binding = args.name.get_output(context);
-        let subscription_id_binding = args.subscription_id.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let subscription_id_binding = args.subscription_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:consumption/getBudgetSubscription:getBudgetSubscription"
                 .into(),
@@ -66,7 +66,7 @@ pub mod get_budget_subscription {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetBudgetSubscriptionResult {
             amount: o.get_field("amount"),
             filters: o.get_field("filters"),

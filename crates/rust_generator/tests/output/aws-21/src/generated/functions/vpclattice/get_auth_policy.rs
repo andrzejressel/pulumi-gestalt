@@ -33,12 +33,12 @@ pub mod get_auth_policy {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetAuthPolicyArgs,
     ) -> GetAuthPolicyResult {
-        let policy_binding = args.policy.get_output(context);
-        let resource_identifier_binding = args.resource_identifier.get_output(context);
-        let state_binding = args.state.get_output(context);
+        let policy_binding = args.policy.get_output(ctx);
+        let resource_identifier_binding = args.resource_identifier.get_output(ctx);
+        let state_binding = args.state.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:vpclattice/getAuthPolicy:getAuthPolicy".into(),
             version: super::super::super::get_version(),
@@ -57,7 +57,7 @@ pub mod get_auth_policy {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetAuthPolicyResult {
             id: o.get_field("id"),
             policy: o.get_field("policy"),

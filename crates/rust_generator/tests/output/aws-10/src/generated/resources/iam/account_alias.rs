@@ -52,32 +52,32 @@ pub mod account_alias {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccountAliasArgs,
     ) -> AccountAliasResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccountAliasArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AccountAliasResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccountAliasArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AccountAliasResult {
-        let account_alias_binding = args.account_alias.get_output(context);
+        let account_alias_binding = args.account_alias.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:iam/accountAlias:AccountAlias".into(),
             name: name.to_string(),
@@ -90,7 +90,7 @@ pub mod account_alias {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AccountAliasResult {
             id: o.get_id(),
             urn: o.get_urn(),

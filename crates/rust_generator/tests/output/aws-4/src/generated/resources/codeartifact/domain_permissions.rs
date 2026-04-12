@@ -90,35 +90,35 @@ pub mod domain_permissions {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DomainPermissionsArgs,
     ) -> DomainPermissionsResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DomainPermissionsArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DomainPermissionsResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DomainPermissionsArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DomainPermissionsResult {
-        let domain_binding = args.domain.get_output(context);
-        let domain_owner_binding = args.domain_owner.get_output(context);
-        let policy_document_binding = args.policy_document.get_output(context);
-        let policy_revision_binding = args.policy_revision.get_output(context);
+        let domain_binding = args.domain.get_output(ctx);
+        let domain_owner_binding = args.domain_owner.get_output(ctx);
+        let policy_document_binding = args.policy_document.get_output(ctx);
+        let policy_revision_binding = args.policy_revision.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:codeartifact/domainPermissions:DomainPermissions".into(),
             name: name.to_string(),
@@ -143,7 +143,7 @@ pub mod domain_permissions {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DomainPermissionsResult {
             id: o.get_id(),
             urn: o.get_urn(),

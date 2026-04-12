@@ -150,44 +150,44 @@ pub mod stack {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StackArgs,
     ) -> StackResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StackArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> StackResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StackArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> StackResult {
-        let capabilities_binding = args.capabilities.get_output(context);
-        let disable_rollback_binding = args.disable_rollback.get_output(context);
-        let iam_role_arn_binding = args.iam_role_arn.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let notification_arns_binding = args.notification_arns.get_output(context);
-        let on_failure_binding = args.on_failure.get_output(context);
-        let parameters_binding = args.parameters.get_output(context);
-        let policy_body_binding = args.policy_body.get_output(context);
-        let policy_url_binding = args.policy_url.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let template_body_binding = args.template_body.get_output(context);
-        let template_url_binding = args.template_url.get_output(context);
-        let timeout_in_minutes_binding = args.timeout_in_minutes.get_output(context);
+        let capabilities_binding = args.capabilities.get_output(ctx);
+        let disable_rollback_binding = args.disable_rollback.get_output(ctx);
+        let iam_role_arn_binding = args.iam_role_arn.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let notification_arns_binding = args.notification_arns.get_output(ctx);
+        let on_failure_binding = args.on_failure.get_output(ctx);
+        let parameters_binding = args.parameters.get_output(ctx);
+        let policy_body_binding = args.policy_body.get_output(ctx);
+        let policy_url_binding = args.policy_url.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let template_body_binding = args.template_body.get_output(ctx);
+        let template_url_binding = args.template_url.get_output(ctx);
+        let timeout_in_minutes_binding = args.timeout_in_minutes.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:cloudformation/stack:Stack".into(),
             name: name.to_string(),
@@ -248,7 +248,7 @@ pub mod stack {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         StackResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -99,41 +99,39 @@ pub mod channel_sms {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ChannelSmsArgs,
     ) -> ChannelSmsResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ChannelSmsArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ChannelSmsResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ChannelSmsArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ChannelSmsResult {
-        let bot_name_binding = args.bot_name.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let phone_number_binding = args.phone_number.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+        let bot_name_binding = args.bot_name.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let phone_number_binding = args.phone_number.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let sms_channel_account_security_id_binding = args
             .sms_channel_account_security_id
-            .get_output(context);
-        let sms_channel_auth_token_binding = args
-            .sms_channel_auth_token
-            .get_output(context);
+            .get_output(ctx);
+        let sms_channel_auth_token_binding = args.sms_channel_auth_token.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:bot/channelSms:ChannelSms".into(),
             name: name.to_string(),
@@ -166,7 +164,7 @@ pub mod channel_sms {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ChannelSmsResult {
             id: o.get_id(),
             urn: o.get_urn(),

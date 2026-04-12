@@ -55,10 +55,10 @@ pub mod get_data_lake_settings {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetDataLakeSettingsArgs,
     ) -> GetDataLakeSettingsResult {
-        let catalog_id_binding = args.catalog_id.get_output(context);
+        let catalog_id_binding = args.catalog_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:lakeformation/getDataLakeSettings:getDataLakeSettings".into(),
             version: super::super::super::get_version(),
@@ -69,7 +69,7 @@ pub mod get_data_lake_settings {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetDataLakeSettingsResult {
             admins: o.get_field("admins"),
             allow_external_data_filtering: o.get_field("allowExternalDataFiltering"),

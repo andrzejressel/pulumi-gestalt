@@ -31,11 +31,11 @@ pub mod get_resource {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetResourceArgs,
     ) -> GetResourceResult {
-        let path_binding = args.path.get_output(context);
-        let rest_api_id_binding = args.rest_api_id.get_output(context);
+        let path_binding = args.path.get_output(ctx);
+        let rest_api_id_binding = args.rest_api_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:apigateway/getResource:getResource".into(),
             version: super::super::super::get_version(),
@@ -50,7 +50,7 @@ pub mod get_resource {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetResourceResult {
             id: o.get_field("id"),
             parent_id: o.get_field("parentId"),

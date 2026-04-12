@@ -111,46 +111,44 @@ pub mod gre_tunnel {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GreTunnelArgs,
     ) -> GreTunnelResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GreTunnelArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> GreTunnelResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GreTunnelArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> GreTunnelResult {
-        let account_id_binding = args.account_id.get_output(context);
+        let account_id_binding = args.account_id.get_output(ctx);
         let cloudflare_gre_endpoint_binding = args
             .cloudflare_gre_endpoint
-            .get_output(context);
-        let customer_gre_endpoint_binding = args
-            .customer_gre_endpoint
-            .get_output(context);
-        let description_binding = args.description.get_output(context);
-        let health_check_enabled_binding = args.health_check_enabled.get_output(context);
-        let health_check_target_binding = args.health_check_target.get_output(context);
-        let health_check_type_binding = args.health_check_type.get_output(context);
-        let interface_address_binding = args.interface_address.get_output(context);
-        let mtu_binding = args.mtu.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let ttl_binding = args.ttl.get_output(context);
+            .get_output(ctx);
+        let customer_gre_endpoint_binding = args.customer_gre_endpoint.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let health_check_enabled_binding = args.health_check_enabled.get_output(ctx);
+        let health_check_target_binding = args.health_check_target.get_output(ctx);
+        let health_check_type_binding = args.health_check_type.get_output(ctx);
+        let interface_address_binding = args.interface_address.get_output(ctx);
+        let mtu_binding = args.mtu.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let ttl_binding = args.ttl.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "cloudflare:index/greTunnel:GreTunnel".into(),
             name: name.to_string(),
@@ -203,7 +201,7 @@ pub mod gre_tunnel {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         GreTunnelResult {
             id: o.get_id(),
             urn: o.get_urn(),

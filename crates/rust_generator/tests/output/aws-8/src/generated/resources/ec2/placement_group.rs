@@ -92,36 +92,36 @@ pub mod placement_group {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PlacementGroupArgs,
     ) -> PlacementGroupResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PlacementGroupArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> PlacementGroupResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PlacementGroupArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> PlacementGroupResult {
-        let name_binding = args.name.get_output(context);
-        let partition_count_binding = args.partition_count.get_output(context);
-        let spread_level_binding = args.spread_level.get_output(context);
-        let strategy_binding = args.strategy.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let partition_count_binding = args.partition_count.get_output(ctx);
+        let spread_level_binding = args.spread_level.get_output(ctx);
+        let strategy_binding = args.strategy.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/placementGroup:PlacementGroup".into(),
             name: name.to_string(),
@@ -150,7 +150,7 @@ pub mod placement_group {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         PlacementGroupResult {
             id: o.get_id(),
             urn: o.get_urn(),

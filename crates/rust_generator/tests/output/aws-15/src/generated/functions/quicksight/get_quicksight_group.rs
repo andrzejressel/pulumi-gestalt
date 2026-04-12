@@ -39,12 +39,12 @@ pub mod get_quicksight_group {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetQuicksightGroupArgs,
     ) -> GetQuicksightGroupResult {
-        let aws_account_id_binding = args.aws_account_id.get_output(context);
-        let group_name_binding = args.group_name.get_output(context);
-        let namespace_binding = args.namespace.get_output(context);
+        let aws_account_id_binding = args.aws_account_id.get_output(ctx);
+        let group_name_binding = args.group_name.get_output(ctx);
+        let namespace_binding = args.namespace.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:quicksight/getQuicksightGroup:getQuicksightGroup".into(),
             version: super::super::super::get_version(),
@@ -63,7 +63,7 @@ pub mod get_quicksight_group {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetQuicksightGroupResult {
             arn: o.get_field("arn"),
             aws_account_id: o.get_field("awsAccountId"),

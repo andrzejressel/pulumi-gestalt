@@ -46,11 +46,11 @@ pub mod get_place_index {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetPlaceIndexArgs,
     ) -> GetPlaceIndexResult {
-        let index_name_binding = args.index_name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let index_name_binding = args.index_name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:location/getPlaceIndex:getPlaceIndex".into(),
             version: super::super::super::get_version(),
@@ -65,7 +65,7 @@ pub mod get_place_index {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetPlaceIndexResult {
             create_time: o.get_field("createTime"),
             data_source: o.get_field("dataSource"),

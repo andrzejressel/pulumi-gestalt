@@ -143,43 +143,43 @@ pub mod v_2_models_bot {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: V2modelsBotArgs,
     ) -> V2modelsBotResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: V2modelsBotArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> V2modelsBotResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: V2modelsBotArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> V2modelsBotResult {
-        let data_privacies_binding = args.data_privacies.get_output(context);
-        let description_binding = args.description.get_output(context);
+        let data_privacies_binding = args.data_privacies.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
         let idle_session_ttl_in_seconds_binding = args
             .idle_session_ttl_in_seconds
-            .get_output(context);
-        let members_binding = args.members.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let role_arn_binding = args.role_arn.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let test_bot_alias_tags_binding = args.test_bot_alias_tags.get_output(context);
-        let timeouts_binding = args.timeouts.get_output(context);
-        let type__binding = args.type_.get_output(context);
+            .get_output(ctx);
+        let members_binding = args.members.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let role_arn_binding = args.role_arn.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let test_bot_alias_tags_binding = args.test_bot_alias_tags.get_output(ctx);
+        let timeouts_binding = args.timeouts.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:lex/v2modelsBot:V2modelsBot".into(),
             name: name.to_string(),
@@ -228,7 +228,7 @@ pub mod v_2_models_bot {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         V2modelsBotResult {
             id: o.get_id(),
             urn: o.get_urn(),

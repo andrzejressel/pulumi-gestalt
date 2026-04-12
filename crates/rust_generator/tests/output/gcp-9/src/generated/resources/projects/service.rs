@@ -103,40 +103,40 @@ pub mod service {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServiceArgs,
     ) -> ServiceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServiceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ServiceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServiceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ServiceResult {
         let check_if_service_has_usage_on_destroy_binding = args
             .check_if_service_has_usage_on_destroy
-            .get_output(context);
+            .get_output(ctx);
         let disable_dependent_services_binding = args
             .disable_dependent_services
-            .get_output(context);
-        let disable_on_destroy_binding = args.disable_on_destroy.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let service_binding = args.service.get_output(context);
+            .get_output(ctx);
+        let disable_on_destroy_binding = args.disable_on_destroy.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let service_binding = args.service.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:projects/service:Service".into(),
             name: name.to_string(),
@@ -165,7 +165,7 @@ pub mod service {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ServiceResult {
             id: o.get_id(),
             urn: o.get_urn(),

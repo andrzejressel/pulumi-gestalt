@@ -47,10 +47,10 @@ pub mod get_netblock_ip_ranges {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetNetblockIpRangesArgs,
     ) -> GetNetblockIpRangesResult {
-        let range_type_binding = args.range_type.get_output(context);
+        let range_type_binding = args.range_type.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:compute/getNetblockIPRanges:getNetblockIPRanges".into(),
             version: super::super::super::get_version(),
@@ -61,7 +61,7 @@ pub mod get_netblock_ip_ranges {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetNetblockIpRangesResult {
             cidr_blocks: o.get_field("cidrBlocks"),
             cidr_blocks_ipv4s: o.get_field("cidrBlocksIpv4s"),

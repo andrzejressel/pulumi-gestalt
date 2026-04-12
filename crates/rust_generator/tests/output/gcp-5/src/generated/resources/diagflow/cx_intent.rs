@@ -220,46 +220,46 @@ pub mod cx_intent {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CxIntentArgs,
     ) -> CxIntentResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CxIntentArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> CxIntentResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CxIntentArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> CxIntentResult {
-        let description_binding = args.description.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
+        let description_binding = args.description.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
         let is_default_negative_intent_binding = args
             .is_default_negative_intent
-            .get_output(context);
+            .get_output(ctx);
         let is_default_welcome_intent_binding = args
             .is_default_welcome_intent
-            .get_output(context);
-        let is_fallback_binding = args.is_fallback.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let language_code_binding = args.language_code.get_output(context);
-        let parameters_binding = args.parameters.get_output(context);
-        let parent_binding = args.parent.get_output(context);
-        let priority_binding = args.priority.get_output(context);
-        let training_phrases_binding = args.training_phrases.get_output(context);
+            .get_output(ctx);
+        let is_fallback_binding = args.is_fallback.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let language_code_binding = args.language_code.get_output(ctx);
+        let parameters_binding = args.parameters.get_output(ctx);
+        let parent_binding = args.parent.get_output(ctx);
+        let priority_binding = args.priority.get_output(ctx);
+        let training_phrases_binding = args.training_phrases.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:diagflow/cxIntent:CxIntent".into(),
             name: name.to_string(),
@@ -312,7 +312,7 @@ pub mod cx_intent {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         CxIntentResult {
             id: o.get_id(),
             urn: o.get_urn(),

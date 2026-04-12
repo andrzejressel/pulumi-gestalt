@@ -139,38 +139,38 @@ pub mod connector {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ConnectorArgs,
     ) -> ConnectorResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ConnectorArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ConnectorResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ConnectorArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ConnectorResult {
-        let access_role_binding = args.access_role.get_output(context);
-        let as2_config_binding = args.as2_config.get_output(context);
-        let logging_role_binding = args.logging_role.get_output(context);
-        let security_policy_name_binding = args.security_policy_name.get_output(context);
-        let sftp_config_binding = args.sftp_config.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let url_binding = args.url.get_output(context);
+        let access_role_binding = args.access_role.get_output(ctx);
+        let as2_config_binding = args.as2_config.get_output(ctx);
+        let logging_role_binding = args.logging_role.get_output(ctx);
+        let security_policy_name_binding = args.security_policy_name.get_output(ctx);
+        let sftp_config_binding = args.sftp_config.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let url_binding = args.url.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:transfer/connector:Connector".into(),
             name: name.to_string(),
@@ -207,7 +207,7 @@ pub mod connector {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ConnectorResult {
             id: o.get_id(),
             urn: o.get_urn(),

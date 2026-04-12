@@ -185,51 +185,51 @@ pub mod bot {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BotArgs,
     ) -> BotResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BotArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> BotResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BotArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> BotResult {
-        let abort_statement_binding = args.abort_statement.get_output(context);
-        let child_directed_binding = args.child_directed.get_output(context);
-        let clarification_prompt_binding = args.clarification_prompt.get_output(context);
-        let create_version_binding = args.create_version.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let detect_sentiment_binding = args.detect_sentiment.get_output(context);
+        let abort_statement_binding = args.abort_statement.get_output(ctx);
+        let child_directed_binding = args.child_directed.get_output(ctx);
+        let clarification_prompt_binding = args.clarification_prompt.get_output(ctx);
+        let create_version_binding = args.create_version.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let detect_sentiment_binding = args.detect_sentiment.get_output(ctx);
         let enable_model_improvements_binding = args
             .enable_model_improvements
-            .get_output(context);
+            .get_output(ctx);
         let idle_session_ttl_in_seconds_binding = args
             .idle_session_ttl_in_seconds
-            .get_output(context);
-        let intents_binding = args.intents.get_output(context);
-        let locale_binding = args.locale.get_output(context);
-        let name_binding = args.name.get_output(context);
+            .get_output(ctx);
+        let intents_binding = args.intents.get_output(ctx);
+        let locale_binding = args.locale.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let nlu_intent_confidence_threshold_binding = args
             .nlu_intent_confidence_threshold
-            .get_output(context);
-        let process_behavior_binding = args.process_behavior.get_output(context);
-        let voice_id_binding = args.voice_id.get_output(context);
+            .get_output(ctx);
+        let process_behavior_binding = args.process_behavior.get_output(ctx);
+        let voice_id_binding = args.voice_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:lex/bot:Bot".into(),
             name: name.to_string(),
@@ -294,7 +294,7 @@ pub mod bot {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         BotResult {
             id: o.get_id(),
             urn: o.get_urn(),

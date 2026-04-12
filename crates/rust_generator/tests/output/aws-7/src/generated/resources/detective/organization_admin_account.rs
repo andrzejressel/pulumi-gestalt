@@ -57,32 +57,32 @@ pub mod organization_admin_account {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OrganizationAdminAccountArgs,
     ) -> OrganizationAdminAccountResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OrganizationAdminAccountArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> OrganizationAdminAccountResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: OrganizationAdminAccountArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> OrganizationAdminAccountResult {
-        let account_id_binding = args.account_id.get_output(context);
+        let account_id_binding = args.account_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:detective/organizationAdminAccount:OrganizationAdminAccount"
                 .into(),
@@ -96,7 +96,7 @@ pub mod organization_admin_account {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         OrganizationAdminAccountResult {
             id: o.get_id(),
             urn: o.get_urn(),

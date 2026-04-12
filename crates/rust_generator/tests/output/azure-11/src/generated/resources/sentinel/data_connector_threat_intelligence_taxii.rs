@@ -130,43 +130,43 @@ pub mod data_connector_threat_intelligence_taxii {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataConnectorThreatIntelligenceTaxiiArgs,
     ) -> DataConnectorThreatIntelligenceTaxiiResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataConnectorThreatIntelligenceTaxiiArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DataConnectorThreatIntelligenceTaxiiResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataConnectorThreatIntelligenceTaxiiArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DataConnectorThreatIntelligenceTaxiiResult {
-        let api_root_url_binding = args.api_root_url.get_output(context);
-        let collection_id_binding = args.collection_id.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
+        let api_root_url_binding = args.api_root_url.get_output(ctx);
+        let collection_id_binding = args.collection_id.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
         let log_analytics_workspace_id_binding = args
             .log_analytics_workspace_id
-            .get_output(context);
-        let lookback_date_binding = args.lookback_date.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let password_binding = args.password.get_output(context);
-        let polling_frequency_binding = args.polling_frequency.get_output(context);
-        let tenant_id_binding = args.tenant_id.get_output(context);
-        let user_name_binding = args.user_name.get_output(context);
+            .get_output(ctx);
+        let lookback_date_binding = args.lookback_date.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let password_binding = args.password.get_output(ctx);
+        let polling_frequency_binding = args.polling_frequency.get_output(ctx);
+        let tenant_id_binding = args.tenant_id.get_output(ctx);
+        let user_name_binding = args.user_name.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:sentinel/dataConnectorThreatIntelligenceTaxii:DataConnectorThreatIntelligenceTaxii"
                 .into(),
@@ -216,7 +216,7 @@ pub mod data_connector_threat_intelligence_taxii {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DataConnectorThreatIntelligenceTaxiiResult {
             id: o.get_id(),
             urn: o.get_urn(),

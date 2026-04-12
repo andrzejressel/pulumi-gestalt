@@ -64,32 +64,32 @@ pub mod domain_identity_verification {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DomainIdentityVerificationArgs,
     ) -> DomainIdentityVerificationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DomainIdentityVerificationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DomainIdentityVerificationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DomainIdentityVerificationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DomainIdentityVerificationResult {
-        let domain_binding = args.domain.get_output(context);
+        let domain_binding = args.domain.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ses/domainIdentityVerification:DomainIdentityVerification"
                 .into(),
@@ -103,7 +103,7 @@ pub mod domain_identity_verification {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DomainIdentityVerificationResult {
             id: o.get_id(),
             urn: o.get_urn(),

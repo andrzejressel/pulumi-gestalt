@@ -91,39 +91,39 @@ pub mod instance_profile {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceProfileArgs,
     ) -> InstanceProfileResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceProfileArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> InstanceProfileResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceProfileArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> InstanceProfileResult {
-        let description_binding = args.description.get_output(context);
+        let description_binding = args.description.get_output(ctx);
         let exclude_app_packages_from_cleanups_binding = args
             .exclude_app_packages_from_cleanups
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let package_cleanup_binding = args.package_cleanup.get_output(context);
-        let reboot_after_use_binding = args.reboot_after_use.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let package_cleanup_binding = args.package_cleanup.get_output(ctx);
+        let reboot_after_use_binding = args.reboot_after_use.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:devicefarm/instanceProfile:InstanceProfile".into(),
             name: name.to_string(),
@@ -156,7 +156,7 @@ pub mod instance_profile {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         InstanceProfileResult {
             id: o.get_id(),
             urn: o.get_urn(),

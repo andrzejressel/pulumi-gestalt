@@ -212,41 +212,41 @@ pub mod registration {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RegistrationArgs,
     ) -> RegistrationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RegistrationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> RegistrationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RegistrationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> RegistrationResult {
-        let contact_notices_binding = args.contact_notices.get_output(context);
-        let contact_settings_binding = args.contact_settings.get_output(context);
-        let dns_settings_binding = args.dns_settings.get_output(context);
-        let domain_name_binding = args.domain_name.get_output(context);
-        let domain_notices_binding = args.domain_notices.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let management_settings_binding = args.management_settings.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let yearly_price_binding = args.yearly_price.get_output(context);
+        let contact_notices_binding = args.contact_notices.get_output(ctx);
+        let contact_settings_binding = args.contact_settings.get_output(ctx);
+        let dns_settings_binding = args.dns_settings.get_output(ctx);
+        let domain_name_binding = args.domain_name.get_output(ctx);
+        let domain_notices_binding = args.domain_notices.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let management_settings_binding = args.management_settings.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let yearly_price_binding = args.yearly_price.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:clouddomains/registration:Registration".into(),
             name: name.to_string(),
@@ -295,7 +295,7 @@ pub mod registration {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         RegistrationResult {
             id: o.get_id(),
             urn: o.get_urn(),

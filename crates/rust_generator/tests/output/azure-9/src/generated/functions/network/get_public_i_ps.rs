@@ -39,13 +39,13 @@ pub mod get_public_i_ps {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetPublicIPsArgs,
     ) -> GetPublicIPsResult {
-        let allocation_type_binding = args.allocation_type.get_output(context);
-        let attachment_status_binding = args.attachment_status.get_output(context);
-        let name_prefix_binding = args.name_prefix.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+        let allocation_type_binding = args.allocation_type.get_output(ctx);
+        let attachment_status_binding = args.attachment_status.get_output(ctx);
+        let name_prefix_binding = args.name_prefix.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:network/getPublicIPs:getPublicIPs".into(),
             version: super::super::super::get_version(),
@@ -68,7 +68,7 @@ pub mod get_public_i_ps {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetPublicIPsResult {
             allocation_type: o.get_field("allocationType"),
             attachment_status: o.get_field("attachmentStatus"),

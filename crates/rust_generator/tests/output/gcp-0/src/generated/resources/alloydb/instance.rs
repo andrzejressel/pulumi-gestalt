@@ -376,51 +376,49 @@ pub mod instance {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceArgs,
     ) -> InstanceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> InstanceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> InstanceResult {
-        let annotations_binding = args.annotations.get_output(context);
-        let availability_type_binding = args.availability_type.get_output(context);
+        let annotations_binding = args.annotations.get_output(ctx);
+        let availability_type_binding = args.availability_type.get_output(ctx);
         let client_connection_config_binding = args
             .client_connection_config
-            .get_output(context);
-        let cluster_binding = args.cluster.get_output(context);
-        let database_flags_binding = args.database_flags.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let gce_zone_binding = args.gce_zone.get_output(context);
-        let instance_id_binding = args.instance_id.get_output(context);
-        let instance_type_binding = args.instance_type.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let machine_config_binding = args.machine_config.get_output(context);
-        let network_config_binding = args.network_config.get_output(context);
-        let observability_config_binding = args.observability_config.get_output(context);
-        let psc_instance_config_binding = args.psc_instance_config.get_output(context);
-        let query_insights_config_binding = args
-            .query_insights_config
-            .get_output(context);
-        let read_pool_config_binding = args.read_pool_config.get_output(context);
+            .get_output(ctx);
+        let cluster_binding = args.cluster.get_output(ctx);
+        let database_flags_binding = args.database_flags.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let gce_zone_binding = args.gce_zone.get_output(ctx);
+        let instance_id_binding = args.instance_id.get_output(ctx);
+        let instance_type_binding = args.instance_type.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let machine_config_binding = args.machine_config.get_output(ctx);
+        let network_config_binding = args.network_config.get_output(ctx);
+        let observability_config_binding = args.observability_config.get_output(ctx);
+        let psc_instance_config_binding = args.psc_instance_config.get_output(ctx);
+        let query_insights_config_binding = args.query_insights_config.get_output(ctx);
+        let read_pool_config_binding = args.read_pool_config.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:alloydb/instance:Instance".into(),
             name: name.to_string(),
@@ -493,7 +491,7 @@ pub mod instance {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         InstanceResult {
             id: o.get_id(),
             urn: o.get_urn(),

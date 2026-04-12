@@ -29,12 +29,10 @@ pub mod get_pull_through_cache_rule {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetPullThroughCacheRuleArgs,
     ) -> GetPullThroughCacheRuleResult {
-        let ecr_repository_prefix_binding = args
-            .ecr_repository_prefix
-            .get_output(context);
+        let ecr_repository_prefix_binding = args.ecr_repository_prefix.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ecr/getPullThroughCacheRule:getPullThroughCacheRule".into(),
             version: super::super::super::get_version(),
@@ -45,7 +43,7 @@ pub mod get_pull_through_cache_rule {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetPullThroughCacheRuleResult {
             credential_arn: o.get_field("credentialArn"),
             ecr_repository_prefix: o.get_field("ecrRepositoryPrefix"),

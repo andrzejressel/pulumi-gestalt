@@ -53,15 +53,15 @@ pub mod get_resolver_rule {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetResolverRuleArgs,
     ) -> GetResolverRuleResult {
-        let domain_name_binding = args.domain_name.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let resolver_endpoint_id_binding = args.resolver_endpoint_id.get_output(context);
-        let resolver_rule_id_binding = args.resolver_rule_id.get_output(context);
-        let rule_type_binding = args.rule_type.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let domain_name_binding = args.domain_name.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let resolver_endpoint_id_binding = args.resolver_endpoint_id.get_output(ctx);
+        let resolver_rule_id_binding = args.resolver_rule_id.get_output(ctx);
+        let rule_type_binding = args.rule_type.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:route53/getResolverRule:getResolverRule".into(),
             version: super::super::super::get_version(),
@@ -92,7 +92,7 @@ pub mod get_resolver_rule {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetResolverRuleResult {
             arn: o.get_field("arn"),
             domain_name: o.get_field("domainName"),

@@ -120,43 +120,43 @@ pub mod provisioning_artifact {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProvisioningArtifactArgs,
     ) -> ProvisioningArtifactResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProvisioningArtifactArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ProvisioningArtifactResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProvisioningArtifactArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ProvisioningArtifactResult {
-        let accept_language_binding = args.accept_language.get_output(context);
-        let active_binding = args.active.get_output(context);
-        let description_binding = args.description.get_output(context);
+        let accept_language_binding = args.accept_language.get_output(ctx);
+        let active_binding = args.active.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
         let disable_template_validation_binding = args
             .disable_template_validation
-            .get_output(context);
-        let guidance_binding = args.guidance.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let product_id_binding = args.product_id.get_output(context);
-        let template_physical_id_binding = args.template_physical_id.get_output(context);
-        let template_url_binding = args.template_url.get_output(context);
-        let type__binding = args.type_.get_output(context);
+            .get_output(ctx);
+        let guidance_binding = args.guidance.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let product_id_binding = args.product_id.get_output(ctx);
+        let template_physical_id_binding = args.template_physical_id.get_output(ctx);
+        let template_url_binding = args.template_url.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:servicecatalog/provisioningArtifact:ProvisioningArtifact".into(),
             name: name.to_string(),
@@ -205,7 +205,7 @@ pub mod provisioning_artifact {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ProvisioningArtifactResult {
             id: o.get_id(),
             urn: o.get_urn(),

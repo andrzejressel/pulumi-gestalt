@@ -137,37 +137,37 @@ pub mod web_acl_logging_configuration {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WebAclLoggingConfigurationArgs,
     ) -> WebAclLoggingConfigurationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WebAclLoggingConfigurationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> WebAclLoggingConfigurationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WebAclLoggingConfigurationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> WebAclLoggingConfigurationResult {
         let log_destination_configs_binding = args
             .log_destination_configs
-            .get_output(context);
-        let logging_filter_binding = args.logging_filter.get_output(context);
-        let redacted_fields_binding = args.redacted_fields.get_output(context);
-        let resource_arn_binding = args.resource_arn.get_output(context);
+            .get_output(ctx);
+        let logging_filter_binding = args.logging_filter.get_output(ctx);
+        let redacted_fields_binding = args.redacted_fields.get_output(ctx);
+        let resource_arn_binding = args.resource_arn.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:wafv2/webAclLoggingConfiguration:WebAclLoggingConfiguration"
                 .into(),
@@ -193,7 +193,7 @@ pub mod web_acl_logging_configuration {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         WebAclLoggingConfigurationResult {
             id: o.get_id(),
             urn: o.get_urn(),

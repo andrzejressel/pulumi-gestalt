@@ -36,13 +36,13 @@ pub mod get_workload_identity_pool {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetWorkloadIdentityPoolArgs,
     ) -> GetWorkloadIdentityPoolResult {
-        let project_binding = args.project.get_output(context);
+        let project_binding = args.project.get_output(ctx);
         let workload_identity_pool_id_binding = args
             .workload_identity_pool_id
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:iam/getWorkloadIdentityPool:getWorkloadIdentityPool".into(),
             version: super::super::super::get_version(),
@@ -57,7 +57,7 @@ pub mod get_workload_identity_pool {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetWorkloadIdentityPoolResult {
             description: o.get_field("description"),
             disabled: o.get_field("disabled"),

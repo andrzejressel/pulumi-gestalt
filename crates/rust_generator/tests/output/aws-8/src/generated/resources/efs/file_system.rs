@@ -157,45 +157,43 @@ pub mod file_system {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FileSystemArgs,
     ) -> FileSystemResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FileSystemArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> FileSystemResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FileSystemArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> FileSystemResult {
-        let availability_zone_name_binding = args
-            .availability_zone_name
-            .get_output(context);
-        let creation_token_binding = args.creation_token.get_output(context);
-        let encrypted_binding = args.encrypted.get_output(context);
-        let kms_key_id_binding = args.kms_key_id.get_output(context);
-        let lifecycle_policies_binding = args.lifecycle_policies.get_output(context);
-        let performance_mode_binding = args.performance_mode.get_output(context);
-        let protection_binding = args.protection.get_output(context);
+        let availability_zone_name_binding = args.availability_zone_name.get_output(ctx);
+        let creation_token_binding = args.creation_token.get_output(ctx);
+        let encrypted_binding = args.encrypted.get_output(ctx);
+        let kms_key_id_binding = args.kms_key_id.get_output(ctx);
+        let lifecycle_policies_binding = args.lifecycle_policies.get_output(ctx);
+        let performance_mode_binding = args.performance_mode.get_output(ctx);
+        let protection_binding = args.protection.get_output(ctx);
         let provisioned_throughput_in_mibps_binding = args
             .provisioned_throughput_in_mibps
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let throughput_mode_binding = args.throughput_mode.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let throughput_mode_binding = args.throughput_mode.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:efs/fileSystem:FileSystem".into(),
             name: name.to_string(),
@@ -244,7 +242,7 @@ pub mod file_system {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         FileSystemResult {
             id: o.get_id(),
             urn: o.get_urn(),

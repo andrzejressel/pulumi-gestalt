@@ -571,47 +571,47 @@ pub mod workload_identity_pool_provider {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkloadIdentityPoolProviderArgs,
     ) -> WorkloadIdentityPoolProviderResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkloadIdentityPoolProviderArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> WorkloadIdentityPoolProviderResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkloadIdentityPoolProviderArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> WorkloadIdentityPoolProviderResult {
-        let attribute_condition_binding = args.attribute_condition.get_output(context);
-        let attribute_mapping_binding = args.attribute_mapping.get_output(context);
-        let aws_binding = args.aws.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let disabled_binding = args.disabled.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let oidc_binding = args.oidc.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let saml_binding = args.saml.get_output(context);
+        let attribute_condition_binding = args.attribute_condition.get_output(ctx);
+        let attribute_mapping_binding = args.attribute_mapping.get_output(ctx);
+        let aws_binding = args.aws.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let disabled_binding = args.disabled.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let oidc_binding = args.oidc.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let saml_binding = args.saml.get_output(ctx);
         let workload_identity_pool_id_binding = args
             .workload_identity_pool_id
-            .get_output(context);
+            .get_output(ctx);
         let workload_identity_pool_provider_id_binding = args
             .workload_identity_pool_provider_id
-            .get_output(context);
-        let x509_binding = args.x509.get_output(context);
+            .get_output(ctx);
+        let x509_binding = args.x509.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:iam/workloadIdentityPoolProvider:WorkloadIdentityPoolProvider"
                 .into(),
@@ -669,7 +669,7 @@ pub mod workload_identity_pool_provider {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         WorkloadIdentityPoolProviderResult {
             id: o.get_id(),
             urn: o.get_urn(),

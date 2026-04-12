@@ -153,41 +153,41 @@ pub mod inventory {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InventoryArgs,
     ) -> InventoryResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InventoryArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> InventoryResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InventoryArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> InventoryResult {
-        let bucket_binding = args.bucket.get_output(context);
-        let destination_binding = args.destination.get_output(context);
-        let enabled_binding = args.enabled.get_output(context);
-        let filter_binding = args.filter.get_output(context);
+        let bucket_binding = args.bucket.get_output(ctx);
+        let destination_binding = args.destination.get_output(ctx);
+        let enabled_binding = args.enabled.get_output(ctx);
+        let filter_binding = args.filter.get_output(ctx);
         let included_object_versions_binding = args
             .included_object_versions
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let optional_fields_binding = args.optional_fields.get_output(context);
-        let schedule_binding = args.schedule.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let optional_fields_binding = args.optional_fields.get_output(ctx);
+        let schedule_binding = args.schedule.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:s3/inventory:Inventory".into(),
             name: name.to_string(),
@@ -228,7 +228,7 @@ pub mod inventory {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         InventoryResult {
             id: o.get_id(),
             urn: o.get_urn(),

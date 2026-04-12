@@ -35,12 +35,12 @@ pub mod get_db_nodes {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetDbNodesArgs,
     ) -> GetDbNodesResult {
-        let cloud_vm_cluster_binding = args.cloud_vm_cluster.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let project_binding = args.project.get_output(context);
+        let cloud_vm_cluster_binding = args.cloud_vm_cluster.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:oracledatabase/getDbNodes:getDbNodes".into(),
             version: super::super::super::get_version(),
@@ -59,7 +59,7 @@ pub mod get_db_nodes {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetDbNodesResult {
             cloud_vm_cluster: o.get_field("cloudVmCluster"),
             db_nodes: o.get_field("dbNodes"),

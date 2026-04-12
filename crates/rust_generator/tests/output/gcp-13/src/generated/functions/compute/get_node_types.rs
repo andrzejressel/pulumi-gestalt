@@ -32,11 +32,11 @@ pub mod get_node_types {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetNodeTypesArgs,
     ) -> GetNodeTypesResult {
-        let project_binding = args.project.get_output(context);
-        let zone_binding = args.zone.get_output(context);
+        let project_binding = args.project.get_output(ctx);
+        let zone_binding = args.zone.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:compute/getNodeTypes:getNodeTypes".into(),
             version: super::super::super::get_version(),
@@ -51,7 +51,7 @@ pub mod get_node_types {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetNodeTypesResult {
             id: o.get_field("id"),
             names: o.get_field("names"),

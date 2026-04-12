@@ -100,36 +100,36 @@ pub mod instance_connect_endpoint {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceConnectEndpointArgs,
     ) -> InstanceConnectEndpointResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceConnectEndpointArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> InstanceConnectEndpointResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: InstanceConnectEndpointArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> InstanceConnectEndpointResult {
-        let preserve_client_ip_binding = args.preserve_client_ip.get_output(context);
-        let security_group_ids_binding = args.security_group_ids.get_output(context);
-        let subnet_id_binding = args.subnet_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let timeouts_binding = args.timeouts.get_output(context);
+        let preserve_client_ip_binding = args.preserve_client_ip.get_output(ctx);
+        let security_group_ids_binding = args.security_group_ids.get_output(ctx);
+        let subnet_id_binding = args.subnet_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let timeouts_binding = args.timeouts.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2transitgateway/instanceConnectEndpoint:InstanceConnectEndpoint"
                 .into(),
@@ -159,7 +159,7 @@ pub mod instance_connect_endpoint {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         InstanceConnectEndpointResult {
             id: o.get_id(),
             urn: o.get_urn(),

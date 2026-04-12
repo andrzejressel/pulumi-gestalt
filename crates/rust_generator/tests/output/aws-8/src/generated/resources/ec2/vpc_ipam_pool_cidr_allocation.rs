@@ -143,36 +143,36 @@ pub mod vpc_ipam_pool_cidr_allocation {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcIpamPoolCidrAllocationArgs,
     ) -> VpcIpamPoolCidrAllocationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcIpamPoolCidrAllocationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> VpcIpamPoolCidrAllocationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcIpamPoolCidrAllocationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> VpcIpamPoolCidrAllocationResult {
-        let cidr_binding = args.cidr.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let disallowed_cidrs_binding = args.disallowed_cidrs.get_output(context);
-        let ipam_pool_id_binding = args.ipam_pool_id.get_output(context);
-        let netmask_length_binding = args.netmask_length.get_output(context);
+        let cidr_binding = args.cidr.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let disallowed_cidrs_binding = args.disallowed_cidrs.get_output(ctx);
+        let ipam_pool_id_binding = args.ipam_pool_id.get_output(ctx);
+        let netmask_length_binding = args.netmask_length.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/vpcIpamPoolCidrAllocation:VpcIpamPoolCidrAllocation".into(),
             name: name.to_string(),
@@ -201,7 +201,7 @@ pub mod vpc_ipam_pool_cidr_allocation {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         VpcIpamPoolCidrAllocationResult {
             id: o.get_id(),
             urn: o.get_urn(),

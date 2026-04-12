@@ -175,46 +175,44 @@ pub mod job_queue {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: JobQueueArgs,
     ) -> JobQueueResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: JobQueueArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> JobQueueResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: JobQueueArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> JobQueueResult {
         let compute_environment_orders_binding = args
             .compute_environment_orders
-            .get_output(context);
-        let compute_environments_binding = args.compute_environments.get_output(context);
+            .get_output(ctx);
+        let compute_environments_binding = args.compute_environments.get_output(ctx);
         let job_state_time_limit_actions_binding = args
             .job_state_time_limit_actions
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let priority_binding = args.priority.get_output(context);
-        let scheduling_policy_arn_binding = args
-            .scheduling_policy_arn
-            .get_output(context);
-        let state_binding = args.state.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let timeouts_binding = args.timeouts.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let priority_binding = args.priority.get_output(ctx);
+        let scheduling_policy_arn_binding = args.scheduling_policy_arn.get_output(ctx);
+        let state_binding = args.state.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let timeouts_binding = args.timeouts.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:batch/jobQueue:JobQueue".into(),
             name: name.to_string(),
@@ -259,7 +257,7 @@ pub mod job_queue {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         JobQueueResult {
             id: o.get_id(),
             urn: o.get_urn(),

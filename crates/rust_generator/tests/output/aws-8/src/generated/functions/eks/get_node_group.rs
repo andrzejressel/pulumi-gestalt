@@ -78,12 +78,12 @@ pub mod get_node_group {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetNodeGroupArgs,
     ) -> GetNodeGroupResult {
-        let cluster_name_binding = args.cluster_name.get_output(context);
-        let node_group_name_binding = args.node_group_name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let cluster_name_binding = args.cluster_name.get_output(ctx);
+        let node_group_name_binding = args.node_group_name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:eks/getNodeGroup:getNodeGroup".into(),
             version: super::super::super::get_version(),
@@ -102,7 +102,7 @@ pub mod get_node_group {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetNodeGroupResult {
             ami_type: o.get_field("amiType"),
             arn: o.get_field("arn"),

@@ -376,43 +376,43 @@ pub mod aws_cluster {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AwsClusterArgs,
     ) -> AwsClusterResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AwsClusterArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AwsClusterResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AwsClusterArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AwsClusterResult {
-        let annotations_binding = args.annotations.get_output(context);
-        let authorization_binding = args.authorization.get_output(context);
-        let aws_region_binding = args.aws_region.get_output(context);
-        let binary_authorization_binding = args.binary_authorization.get_output(context);
-        let control_plane_binding = args.control_plane.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let fleet_binding = args.fleet.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let logging_config_binding = args.logging_config.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let networking_binding = args.networking.get_output(context);
-        let project_binding = args.project.get_output(context);
+        let annotations_binding = args.annotations.get_output(ctx);
+        let authorization_binding = args.authorization.get_output(ctx);
+        let aws_region_binding = args.aws_region.get_output(ctx);
+        let binary_authorization_binding = args.binary_authorization.get_output(ctx);
+        let control_plane_binding = args.control_plane.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let fleet_binding = args.fleet.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let logging_config_binding = args.logging_config.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let networking_binding = args.networking.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:container/awsCluster:AwsCluster".into(),
             name: name.to_string(),
@@ -469,7 +469,7 @@ pub mod aws_cluster {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AwsClusterResult {
             id: o.get_id(),
             urn: o.get_urn(),

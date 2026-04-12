@@ -239,40 +239,40 @@ pub mod chat_engine {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ChatEngineArgs,
     ) -> ChatEngineResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ChatEngineArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ChatEngineResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ChatEngineArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ChatEngineResult {
-        let chat_engine_config_binding = args.chat_engine_config.get_output(context);
-        let collection_id_binding = args.collection_id.get_output(context);
-        let common_config_binding = args.common_config.get_output(context);
-        let data_store_ids_binding = args.data_store_ids.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let engine_id_binding = args.engine_id.get_output(context);
-        let industry_vertical_binding = args.industry_vertical.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let project_binding = args.project.get_output(context);
+        let chat_engine_config_binding = args.chat_engine_config.get_output(ctx);
+        let collection_id_binding = args.collection_id.get_output(ctx);
+        let common_config_binding = args.common_config.get_output(ctx);
+        let data_store_ids_binding = args.data_store_ids.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let engine_id_binding = args.engine_id.get_output(ctx);
+        let industry_vertical_binding = args.industry_vertical.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:discoveryengine/chatEngine:ChatEngine".into(),
             name: name.to_string(),
@@ -317,7 +317,7 @@ pub mod chat_engine {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ChatEngineResult {
             id: o.get_id(),
             urn: o.get_urn(),

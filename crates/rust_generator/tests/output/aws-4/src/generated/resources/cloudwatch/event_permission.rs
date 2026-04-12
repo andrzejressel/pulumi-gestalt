@@ -101,36 +101,36 @@ pub mod event_permission {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EventPermissionArgs,
     ) -> EventPermissionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EventPermissionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> EventPermissionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EventPermissionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> EventPermissionResult {
-        let action_binding = args.action.get_output(context);
-        let condition_binding = args.condition.get_output(context);
-        let event_bus_name_binding = args.event_bus_name.get_output(context);
-        let principal_binding = args.principal.get_output(context);
-        let statement_id_binding = args.statement_id.get_output(context);
+        let action_binding = args.action.get_output(ctx);
+        let condition_binding = args.condition.get_output(ctx);
+        let event_bus_name_binding = args.event_bus_name.get_output(ctx);
+        let principal_binding = args.principal.get_output(ctx);
+        let statement_id_binding = args.statement_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:cloudwatch/eventPermission:EventPermission".into(),
             name: name.to_string(),
@@ -159,7 +159,7 @@ pub mod event_permission {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         EventPermissionResult {
             id: o.get_id(),
             urn: o.get_urn(),

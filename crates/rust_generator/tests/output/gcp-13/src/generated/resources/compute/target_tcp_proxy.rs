@@ -152,37 +152,37 @@ pub mod target_tcp_proxy {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TargetTCPProxyArgs,
     ) -> TargetTCPProxyResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TargetTCPProxyArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> TargetTCPProxyResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TargetTCPProxyArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> TargetTCPProxyResult {
-        let backend_service_binding = args.backend_service.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let proxy_bind_binding = args.proxy_bind.get_output(context);
-        let proxy_header_binding = args.proxy_header.get_output(context);
+        let backend_service_binding = args.backend_service.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let proxy_bind_binding = args.proxy_bind.get_output(ctx);
+        let proxy_header_binding = args.proxy_header.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:compute/targetTCPProxy:TargetTCPProxy".into(),
             name: name.to_string(),
@@ -215,7 +215,7 @@ pub mod target_tcp_proxy {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         TargetTCPProxyResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -296,76 +296,76 @@ pub mod windows_web_app {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WindowsWebAppArgs,
     ) -> WindowsWebAppResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WindowsWebAppArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> WindowsWebAppResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WindowsWebAppArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> WindowsWebAppResult {
-        let app_settings_binding = args.app_settings.get_output(context);
-        let auth_settings_binding = args.auth_settings.get_output(context);
-        let auth_settings_v2_binding = args.auth_settings_v2.get_output(context);
-        let backup_binding = args.backup.get_output(context);
+        let app_settings_binding = args.app_settings.get_output(ctx);
+        let auth_settings_binding = args.auth_settings.get_output(ctx);
+        let auth_settings_v2_binding = args.auth_settings_v2.get_output(ctx);
+        let backup_binding = args.backup.get_output(ctx);
         let client_affinity_enabled_binding = args
             .client_affinity_enabled
-            .get_output(context);
+            .get_output(ctx);
         let client_certificate_enabled_binding = args
             .client_certificate_enabled
-            .get_output(context);
+            .get_output(ctx);
         let client_certificate_exclusion_paths_binding = args
             .client_certificate_exclusion_paths
-            .get_output(context);
+            .get_output(ctx);
         let client_certificate_mode_binding = args
             .client_certificate_mode
-            .get_output(context);
-        let connection_strings_binding = args.connection_strings.get_output(context);
-        let enabled_binding = args.enabled.get_output(context);
+            .get_output(ctx);
+        let connection_strings_binding = args.connection_strings.get_output(ctx);
+        let enabled_binding = args.enabled.get_output(ctx);
         let ftp_publish_basic_authentication_enabled_binding = args
             .ftp_publish_basic_authentication_enabled
-            .get_output(context);
-        let https_only_binding = args.https_only.get_output(context);
-        let identity_binding = args.identity.get_output(context);
+            .get_output(ctx);
+        let https_only_binding = args.https_only.get_output(ctx);
+        let identity_binding = args.identity.get_output(ctx);
         let key_vault_reference_identity_id_binding = args
             .key_vault_reference_identity_id
-            .get_output(context);
-        let location_binding = args.location.get_output(context);
-        let logs_binding = args.logs.get_output(context);
-        let name_binding = args.name.get_output(context);
+            .get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let logs_binding = args.logs.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let public_network_access_enabled_binding = args
             .public_network_access_enabled
-            .get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let service_plan_id_binding = args.service_plan_id.get_output(context);
-        let site_config_binding = args.site_config.get_output(context);
-        let sticky_settings_binding = args.sticky_settings.get_output(context);
-        let storage_accounts_binding = args.storage_accounts.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let service_plan_id_binding = args.service_plan_id.get_output(ctx);
+        let site_config_binding = args.site_config.get_output(ctx);
+        let sticky_settings_binding = args.sticky_settings.get_output(ctx);
+        let storage_accounts_binding = args.storage_accounts.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let virtual_network_subnet_id_binding = args
             .virtual_network_subnet_id
-            .get_output(context);
+            .get_output(ctx);
         let webdeploy_publish_basic_authentication_enabled_binding = args
             .webdeploy_publish_basic_authentication_enabled
-            .get_output(context);
-        let zip_deploy_file_binding = args.zip_deploy_file.get_output(context);
+            .get_output(ctx);
+        let zip_deploy_file_binding = args.zip_deploy_file.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:appservice/windowsWebApp:WindowsWebApp".into(),
             name: name.to_string(),
@@ -483,7 +483,7 @@ pub mod windows_web_app {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         WindowsWebAppResult {
             id: o.get_id(),
             urn: o.get_urn(),

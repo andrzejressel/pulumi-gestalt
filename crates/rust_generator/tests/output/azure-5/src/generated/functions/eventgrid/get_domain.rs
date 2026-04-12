@@ -57,11 +57,11 @@ pub mod get_domain {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetDomainArgs,
     ) -> GetDomainResult {
-        let name_binding = args.name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:eventgrid/getDomain:getDomain".into(),
             version: super::super::super::get_version(),
@@ -76,7 +76,7 @@ pub mod get_domain {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetDomainResult {
             endpoint: o.get_field("endpoint"),
             id: o.get_field("id"),

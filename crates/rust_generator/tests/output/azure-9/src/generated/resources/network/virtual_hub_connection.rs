@@ -113,40 +113,40 @@ pub mod virtual_hub_connection {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VirtualHubConnectionArgs,
     ) -> VirtualHubConnectionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VirtualHubConnectionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> VirtualHubConnectionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VirtualHubConnectionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> VirtualHubConnectionResult {
         let internet_security_enabled_binding = args
             .internet_security_enabled
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let remote_virtual_network_id_binding = args
             .remote_virtual_network_id
-            .get_output(context);
-        let routing_binding = args.routing.get_output(context);
-        let virtual_hub_id_binding = args.virtual_hub_id.get_output(context);
+            .get_output(ctx);
+        let routing_binding = args.routing.get_output(ctx);
+        let virtual_hub_id_binding = args.virtual_hub_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:network/virtualHubConnection:VirtualHubConnection".into(),
             name: name.to_string(),
@@ -175,7 +175,7 @@ pub mod virtual_hub_connection {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         VirtualHubConnectionResult {
             id: o.get_id(),
             urn: o.get_urn(),

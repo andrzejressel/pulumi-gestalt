@@ -58,13 +58,13 @@ pub mod get_replication_instance {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetReplicationInstanceArgs,
     ) -> GetReplicationInstanceResult {
         let replication_instance_id_binding = args
             .replication_instance_id
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:dms/getReplicationInstance:getReplicationInstance".into(),
             version: super::super::super::get_version(),
@@ -79,7 +79,7 @@ pub mod get_replication_instance {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetReplicationInstanceResult {
             allocated_storage: o.get_field("allocatedStorage"),
             auto_minor_version_upgrade: o.get_field("autoMinorVersionUpgrade"),

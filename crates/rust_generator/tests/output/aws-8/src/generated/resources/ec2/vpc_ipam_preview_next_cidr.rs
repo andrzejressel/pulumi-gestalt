@@ -82,34 +82,34 @@ pub mod vpc_ipam_preview_next_cidr {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcIpamPreviewNextCidrArgs,
     ) -> VpcIpamPreviewNextCidrResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcIpamPreviewNextCidrArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> VpcIpamPreviewNextCidrResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcIpamPreviewNextCidrArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> VpcIpamPreviewNextCidrResult {
-        let disallowed_cidrs_binding = args.disallowed_cidrs.get_output(context);
-        let ipam_pool_id_binding = args.ipam_pool_id.get_output(context);
-        let netmask_length_binding = args.netmask_length.get_output(context);
+        let disallowed_cidrs_binding = args.disallowed_cidrs.get_output(ctx);
+        let ipam_pool_id_binding = args.ipam_pool_id.get_output(ctx);
+        let netmask_length_binding = args.netmask_length.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/vpcIpamPreviewNextCidr:VpcIpamPreviewNextCidr".into(),
             name: name.to_string(),
@@ -130,7 +130,7 @@ pub mod vpc_ipam_preview_next_cidr {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         VpcIpamPreviewNextCidrResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -118,42 +118,42 @@ pub mod teams_rule {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TeamsRuleArgs,
     ) -> TeamsRuleResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TeamsRuleArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> TeamsRuleResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TeamsRuleArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> TeamsRuleResult {
-        let account_id_binding = args.account_id.get_output(context);
-        let action_binding = args.action.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let device_posture_binding = args.device_posture.get_output(context);
-        let enabled_binding = args.enabled.get_output(context);
-        let filters_binding = args.filters.get_output(context);
-        let identity_binding = args.identity.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let precedence_binding = args.precedence.get_output(context);
-        let rule_settings_binding = args.rule_settings.get_output(context);
-        let traffic_binding = args.traffic.get_output(context);
+        let account_id_binding = args.account_id.get_output(ctx);
+        let action_binding = args.action.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let device_posture_binding = args.device_posture.get_output(ctx);
+        let enabled_binding = args.enabled.get_output(ctx);
+        let filters_binding = args.filters.get_output(ctx);
+        let identity_binding = args.identity.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let precedence_binding = args.precedence.get_output(ctx);
+        let rule_settings_binding = args.rule_settings.get_output(ctx);
+        let traffic_binding = args.traffic.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "cloudflare:index/teamsRule:TeamsRule".into(),
             name: name.to_string(),
@@ -206,7 +206,7 @@ pub mod teams_rule {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         TeamsRuleResult {
             id: o.get_id(),
             urn: o.get_urn(),

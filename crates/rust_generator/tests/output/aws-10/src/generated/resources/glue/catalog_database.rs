@@ -145,42 +145,42 @@ pub mod catalog_database {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CatalogDatabaseArgs,
     ) -> CatalogDatabaseResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CatalogDatabaseArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> CatalogDatabaseResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CatalogDatabaseArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> CatalogDatabaseResult {
-        let catalog_id_binding = args.catalog_id.get_output(context);
+        let catalog_id_binding = args.catalog_id.get_output(ctx);
         let create_table_default_permissions_binding = args
             .create_table_default_permissions
-            .get_output(context);
-        let description_binding = args.description.get_output(context);
-        let federated_database_binding = args.federated_database.get_output(context);
-        let location_uri_binding = args.location_uri.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let parameters_binding = args.parameters.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let target_database_binding = args.target_database.get_output(context);
+            .get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let federated_database_binding = args.federated_database.get_output(ctx);
+        let location_uri_binding = args.location_uri.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let parameters_binding = args.parameters.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let target_database_binding = args.target_database.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:glue/catalogDatabase:CatalogDatabase".into(),
             name: name.to_string(),
@@ -225,7 +225,7 @@ pub mod catalog_database {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         CatalogDatabaseResult {
             id: o.get_id(),
             urn: o.get_urn(),

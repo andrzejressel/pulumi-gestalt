@@ -333,49 +333,43 @@ pub mod cluster {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterArgs,
     ) -> ClusterResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ClusterResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ClusterResult {
-        let broker_node_group_info_binding = args
-            .broker_node_group_info
-            .get_output(context);
-        let client_authentication_binding = args
-            .client_authentication
-            .get_output(context);
-        let cluster_name_binding = args.cluster_name.get_output(context);
-        let configuration_info_binding = args.configuration_info.get_output(context);
-        let encryption_info_binding = args.encryption_info.get_output(context);
-        let enhanced_monitoring_binding = args.enhanced_monitoring.get_output(context);
-        let kafka_version_binding = args.kafka_version.get_output(context);
-        let logging_info_binding = args.logging_info.get_output(context);
-        let number_of_broker_nodes_binding = args
-            .number_of_broker_nodes
-            .get_output(context);
-        let open_monitoring_binding = args.open_monitoring.get_output(context);
-        let storage_mode_binding = args.storage_mode.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let broker_node_group_info_binding = args.broker_node_group_info.get_output(ctx);
+        let client_authentication_binding = args.client_authentication.get_output(ctx);
+        let cluster_name_binding = args.cluster_name.get_output(ctx);
+        let configuration_info_binding = args.configuration_info.get_output(ctx);
+        let encryption_info_binding = args.encryption_info.get_output(ctx);
+        let enhanced_monitoring_binding = args.enhanced_monitoring.get_output(ctx);
+        let kafka_version_binding = args.kafka_version.get_output(ctx);
+        let logging_info_binding = args.logging_info.get_output(ctx);
+        let number_of_broker_nodes_binding = args.number_of_broker_nodes.get_output(ctx);
+        let open_monitoring_binding = args.open_monitoring.get_output(ctx);
+        let storage_mode_binding = args.storage_mode.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:msk/cluster:Cluster".into(),
             name: name.to_string(),
@@ -432,7 +426,7 @@ pub mod cluster {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ClusterResult {
             id: o.get_id(),
             urn: o.get_urn(),

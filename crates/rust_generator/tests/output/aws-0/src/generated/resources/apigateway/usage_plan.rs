@@ -86,38 +86,38 @@ pub mod usage_plan {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: UsagePlanArgs,
     ) -> UsagePlanResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: UsagePlanArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> UsagePlanResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: UsagePlanArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> UsagePlanResult {
-        let api_stages_binding = args.api_stages.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let product_code_binding = args.product_code.get_output(context);
-        let quota_settings_binding = args.quota_settings.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let throttle_settings_binding = args.throttle_settings.get_output(context);
+        let api_stages_binding = args.api_stages.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let product_code_binding = args.product_code.get_output(ctx);
+        let quota_settings_binding = args.quota_settings.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let throttle_settings_binding = args.throttle_settings.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:apigateway/usagePlan:UsagePlan".into(),
             name: name.to_string(),
@@ -154,7 +154,7 @@ pub mod usage_plan {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         UsagePlanResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -185,50 +185,50 @@ pub mod ami {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AmiArgs,
     ) -> AmiResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AmiArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AmiResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AmiArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AmiResult {
-        let architecture_binding = args.architecture.get_output(context);
-        let boot_mode_binding = args.boot_mode.get_output(context);
-        let deprecation_time_binding = args.deprecation_time.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let ebs_block_devices_binding = args.ebs_block_devices.get_output(context);
-        let ena_support_binding = args.ena_support.get_output(context);
+        let architecture_binding = args.architecture.get_output(ctx);
+        let boot_mode_binding = args.boot_mode.get_output(ctx);
+        let deprecation_time_binding = args.deprecation_time.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let ebs_block_devices_binding = args.ebs_block_devices.get_output(ctx);
+        let ena_support_binding = args.ena_support.get_output(ctx);
         let ephemeral_block_devices_binding = args
             .ephemeral_block_devices
-            .get_output(context);
-        let image_location_binding = args.image_location.get_output(context);
-        let imds_support_binding = args.imds_support.get_output(context);
-        let kernel_id_binding = args.kernel_id.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let ramdisk_id_binding = args.ramdisk_id.get_output(context);
-        let root_device_name_binding = args.root_device_name.get_output(context);
-        let sriov_net_support_binding = args.sriov_net_support.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let tpm_support_binding = args.tpm_support.get_output(context);
-        let virtualization_type_binding = args.virtualization_type.get_output(context);
+            .get_output(ctx);
+        let image_location_binding = args.image_location.get_output(ctx);
+        let imds_support_binding = args.imds_support.get_output(ctx);
+        let kernel_id_binding = args.kernel_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let ramdisk_id_binding = args.ramdisk_id.get_output(ctx);
+        let root_device_name_binding = args.root_device_name.get_output(ctx);
+        let sriov_net_support_binding = args.sriov_net_support.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let tpm_support_binding = args.tpm_support.get_output(ctx);
+        let virtualization_type_binding = args.virtualization_type.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/ami:Ami".into(),
             name: name.to_string(),
@@ -305,7 +305,7 @@ pub mod ami {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AmiResult {
             id: o.get_id(),
             urn: o.get_urn(),

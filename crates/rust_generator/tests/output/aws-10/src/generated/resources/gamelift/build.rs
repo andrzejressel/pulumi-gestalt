@@ -94,36 +94,36 @@ pub mod build {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BuildArgs,
     ) -> BuildResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BuildArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> BuildResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BuildArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> BuildResult {
-        let name_binding = args.name.get_output(context);
-        let operating_system_binding = args.operating_system.get_output(context);
-        let storage_location_binding = args.storage_location.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let version_binding = args.version.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let operating_system_binding = args.operating_system.get_output(ctx);
+        let storage_location_binding = args.storage_location.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let version_binding = args.version.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:gamelift/build:Build".into(),
             name: name.to_string(),
@@ -152,7 +152,7 @@ pub mod build {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         BuildResult {
             id: o.get_id(),
             urn: o.get_urn(),

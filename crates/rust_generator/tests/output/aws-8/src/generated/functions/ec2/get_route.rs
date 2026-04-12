@@ -83,33 +83,29 @@ pub mod get_route {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetRouteArgs,
     ) -> GetRouteResult {
-        let carrier_gateway_id_binding = args.carrier_gateway_id.get_output(context);
-        let core_network_arn_binding = args.core_network_arn.get_output(context);
-        let destination_cidr_block_binding = args
-            .destination_cidr_block
-            .get_output(context);
+        let carrier_gateway_id_binding = args.carrier_gateway_id.get_output(ctx);
+        let core_network_arn_binding = args.core_network_arn.get_output(ctx);
+        let destination_cidr_block_binding = args.destination_cidr_block.get_output(ctx);
         let destination_ipv6_cidr_block_binding = args
             .destination_ipv6_cidr_block
-            .get_output(context);
+            .get_output(ctx);
         let destination_prefix_list_id_binding = args
             .destination_prefix_list_id
-            .get_output(context);
-        let egress_only_gateway_id_binding = args
-            .egress_only_gateway_id
-            .get_output(context);
-        let gateway_id_binding = args.gateway_id.get_output(context);
-        let instance_id_binding = args.instance_id.get_output(context);
-        let local_gateway_id_binding = args.local_gateway_id.get_output(context);
-        let nat_gateway_id_binding = args.nat_gateway_id.get_output(context);
-        let network_interface_id_binding = args.network_interface_id.get_output(context);
-        let route_table_id_binding = args.route_table_id.get_output(context);
-        let transit_gateway_id_binding = args.transit_gateway_id.get_output(context);
+            .get_output(ctx);
+        let egress_only_gateway_id_binding = args.egress_only_gateway_id.get_output(ctx);
+        let gateway_id_binding = args.gateway_id.get_output(ctx);
+        let instance_id_binding = args.instance_id.get_output(ctx);
+        let local_gateway_id_binding = args.local_gateway_id.get_output(ctx);
+        let nat_gateway_id_binding = args.nat_gateway_id.get_output(ctx);
+        let network_interface_id_binding = args.network_interface_id.get_output(ctx);
+        let route_table_id_binding = args.route_table_id.get_output(ctx);
+        let transit_gateway_id_binding = args.transit_gateway_id.get_output(ctx);
         let vpc_peering_connection_id_binding = args
             .vpc_peering_connection_id
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ec2/getRoute:getRoute".into(),
             version: super::super::super::get_version(),
@@ -172,7 +168,7 @@ pub mod get_route {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetRouteResult {
             carrier_gateway_id: o.get_field("carrierGatewayId"),
             core_network_arn: o.get_field("coreNetworkArn"),

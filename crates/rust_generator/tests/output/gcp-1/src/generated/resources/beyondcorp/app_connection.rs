@@ -230,40 +230,40 @@ pub mod app_connection {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AppConnectionArgs,
     ) -> AppConnectionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AppConnectionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AppConnectionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AppConnectionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AppConnectionResult {
-        let application_endpoint_binding = args.application_endpoint.get_output(context);
-        let connectors_binding = args.connectors.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let gateway_binding = args.gateway.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let region_binding = args.region.get_output(context);
-        let type__binding = args.type_.get_output(context);
+        let application_endpoint_binding = args.application_endpoint.get_output(ctx);
+        let connectors_binding = args.connectors.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let gateway_binding = args.gateway.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let region_binding = args.region.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:beyondcorp/appConnection:AppConnection".into(),
             name: name.to_string(),
@@ -308,7 +308,7 @@ pub mod app_connection {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AppConnectionResult {
             id: o.get_id(),
             urn: o.get_urn(),

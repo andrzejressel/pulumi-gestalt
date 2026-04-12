@@ -70,14 +70,14 @@ pub mod get_image {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetImageArgs,
     ) -> GetImageResult {
-        let arn_binding = args.arn.get_output(context);
-        let most_recent_binding = args.most_recent.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let name_regex_binding = args.name_regex.get_output(context);
-        let type__binding = args.type_.get_output(context);
+        let arn_binding = args.arn.get_output(ctx);
+        let most_recent_binding = args.most_recent.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let name_regex_binding = args.name_regex.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:appstream/getImage:getImage".into(),
             version: super::super::super::get_version(),
@@ -104,7 +104,7 @@ pub mod get_image {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetImageResult {
             applications: o.get_field("applications"),
             appstream_agent_version: o.get_field("appstreamAgentVersion"),

@@ -52,11 +52,11 @@ pub mod get_repository_creation_template {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetRepositoryCreationTemplateArgs,
     ) -> GetRepositoryCreationTemplateResult {
-        let prefix_binding = args.prefix.get_output(context);
-        let resource_tags_binding = args.resource_tags.get_output(context);
+        let prefix_binding = args.prefix.get_output(ctx);
+        let resource_tags_binding = args.resource_tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ecr/getRepositoryCreationTemplate:getRepositoryCreationTemplate"
                 .into(),
@@ -72,7 +72,7 @@ pub mod get_repository_creation_template {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetRepositoryCreationTemplateResult {
             applied_fors: o.get_field("appliedFors"),
             custom_role_arn: o.get_field("customRoleArn"),

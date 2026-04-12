@@ -40,13 +40,13 @@ pub mod get_agent_agent_versions {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetAgentAgentVersionsArgs,
     ) -> GetAgentAgentVersionsResult {
-        let agent_id_binding = args.agent_id.get_output(context);
+        let agent_id_binding = args.agent_id.get_output(ctx);
         let agent_version_summaries_binding = args
             .agent_version_summaries
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:bedrock/getAgentAgentVersions:getAgentAgentVersions".into(),
             version: super::super::super::get_version(),
@@ -61,7 +61,7 @@ pub mod get_agent_agent_versions {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetAgentAgentVersionsResult {
             agent_id: o.get_field("agentId"),
             agent_version_summaries: o.get_field("agentVersionSummaries"),

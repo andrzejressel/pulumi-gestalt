@@ -114,42 +114,42 @@ pub mod composite_alarm {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CompositeAlarmArgs,
     ) -> CompositeAlarmResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CompositeAlarmArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> CompositeAlarmResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CompositeAlarmArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> CompositeAlarmResult {
-        let actions_enabled_binding = args.actions_enabled.get_output(context);
-        let actions_suppressor_binding = args.actions_suppressor.get_output(context);
-        let alarm_actions_binding = args.alarm_actions.get_output(context);
-        let alarm_description_binding = args.alarm_description.get_output(context);
-        let alarm_name_binding = args.alarm_name.get_output(context);
-        let alarm_rule_binding = args.alarm_rule.get_output(context);
+        let actions_enabled_binding = args.actions_enabled.get_output(ctx);
+        let actions_suppressor_binding = args.actions_suppressor.get_output(ctx);
+        let alarm_actions_binding = args.alarm_actions.get_output(ctx);
+        let alarm_description_binding = args.alarm_description.get_output(ctx);
+        let alarm_name_binding = args.alarm_name.get_output(ctx);
+        let alarm_rule_binding = args.alarm_rule.get_output(ctx);
         let insufficient_data_actions_binding = args
             .insufficient_data_actions
-            .get_output(context);
-        let ok_actions_binding = args.ok_actions.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let ok_actions_binding = args.ok_actions.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:cloudwatch/compositeAlarm:CompositeAlarm".into(),
             name: name.to_string(),
@@ -194,7 +194,7 @@ pub mod composite_alarm {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         CompositeAlarmResult {
             id: o.get_id(),
             urn: o.get_urn(),

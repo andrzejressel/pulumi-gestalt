@@ -102,34 +102,34 @@ pub mod container_service_deployment_version {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ContainerServiceDeploymentVersionArgs,
     ) -> ContainerServiceDeploymentVersionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ContainerServiceDeploymentVersionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ContainerServiceDeploymentVersionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ContainerServiceDeploymentVersionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ContainerServiceDeploymentVersionResult {
-        let containers_binding = args.containers.get_output(context);
-        let public_endpoint_binding = args.public_endpoint.get_output(context);
-        let service_name_binding = args.service_name.get_output(context);
+        let containers_binding = args.containers.get_output(ctx);
+        let public_endpoint_binding = args.public_endpoint.get_output(ctx);
+        let service_name_binding = args.service_name.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:lightsail/containerServiceDeploymentVersion:ContainerServiceDeploymentVersion"
                 .into(),
@@ -151,7 +151,7 @@ pub mod container_service_deployment_version {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ContainerServiceDeploymentVersionResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -285,57 +285,57 @@ pub mod io_t_hub {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IoTHubArgs,
     ) -> IoTHubResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IoTHubArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> IoTHubResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IoTHubArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> IoTHubResult {
-        let cloud_to_device_binding = args.cloud_to_device.get_output(context);
-        let endpoints_binding = args.endpoints.get_output(context);
-        let enrichments_binding = args.enrichments.get_output(context);
+        let cloud_to_device_binding = args.cloud_to_device.get_output(ctx);
+        let endpoints_binding = args.endpoints.get_output(ctx);
+        let enrichments_binding = args.enrichments.get_output(ctx);
         let event_hub_partition_count_binding = args
             .event_hub_partition_count
-            .get_output(context);
+            .get_output(ctx);
         let event_hub_retention_in_days_binding = args
             .event_hub_retention_in_days
-            .get_output(context);
-        let fallback_route_binding = args.fallback_route.get_output(context);
-        let file_upload_binding = args.file_upload.get_output(context);
-        let identity_binding = args.identity.get_output(context);
+            .get_output(ctx);
+        let fallback_route_binding = args.fallback_route.get_output(ctx);
+        let file_upload_binding = args.file_upload.get_output(ctx);
+        let identity_binding = args.identity.get_output(ctx);
         let local_authentication_enabled_binding = args
             .local_authentication_enabled
-            .get_output(context);
-        let location_binding = args.location.get_output(context);
-        let min_tls_version_binding = args.min_tls_version.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_rule_sets_binding = args.network_rule_sets.get_output(context);
+            .get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let min_tls_version_binding = args.min_tls_version.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_rule_sets_binding = args.network_rule_sets.get_output(ctx);
         let public_network_access_enabled_binding = args
             .public_network_access_enabled
-            .get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let routes_binding = args.routes.get_output(context);
-        let sku_binding = args.sku.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let routes_binding = args.routes.get_output(ctx);
+        let sku_binding = args.sku.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:iot/ioTHub:IoTHub".into(),
             name: name.to_string(),
@@ -416,7 +416,7 @@ pub mod io_t_hub {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         IoTHubResult {
             id: o.get_id(),
             urn: o.get_urn(),

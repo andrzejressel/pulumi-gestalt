@@ -65,12 +65,12 @@ pub mod get_s_quota_info {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetSQuotaInfoArgs,
     ) -> GetSQuotaInfoResult {
-        let parent_binding = args.parent.get_output(context);
-        let quota_id_binding = args.quota_id.get_output(context);
-        let service_binding = args.service.get_output(context);
+        let parent_binding = args.parent.get_output(ctx);
+        let quota_id_binding = args.quota_id.get_output(ctx);
+        let service_binding = args.service.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:cloudquota/getSQuotaInfo:getSQuotaInfo".into(),
             version: super::super::super::get_version(),
@@ -89,7 +89,7 @@ pub mod get_s_quota_info {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetSQuotaInfoResult {
             container_type: o.get_field("containerType"),
             dimensions: o.get_field("dimensions"),

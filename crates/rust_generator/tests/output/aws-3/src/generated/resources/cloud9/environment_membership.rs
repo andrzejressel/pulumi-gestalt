@@ -77,34 +77,34 @@ pub mod environment_membership {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EnvironmentMembershipArgs,
     ) -> EnvironmentMembershipResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EnvironmentMembershipArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> EnvironmentMembershipResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EnvironmentMembershipArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> EnvironmentMembershipResult {
-        let environment_id_binding = args.environment_id.get_output(context);
-        let permissions_binding = args.permissions.get_output(context);
-        let user_arn_binding = args.user_arn.get_output(context);
+        let environment_id_binding = args.environment_id.get_output(ctx);
+        let permissions_binding = args.permissions.get_output(ctx);
+        let user_arn_binding = args.user_arn.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:cloud9/environmentMembership:EnvironmentMembership".into(),
             name: name.to_string(),
@@ -125,7 +125,7 @@ pub mod environment_membership {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         EnvironmentMembershipResult {
             id: o.get_id(),
             urn: o.get_urn(),

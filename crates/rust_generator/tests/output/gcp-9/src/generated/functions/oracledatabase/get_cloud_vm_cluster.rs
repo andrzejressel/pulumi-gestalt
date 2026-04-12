@@ -55,12 +55,12 @@ pub mod get_cloud_vm_cluster {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetCloudVmClusterArgs,
     ) -> GetCloudVmClusterResult {
-        let cloud_vm_cluster_id_binding = args.cloud_vm_cluster_id.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let project_binding = args.project.get_output(context);
+        let cloud_vm_cluster_id_binding = args.cloud_vm_cluster_id.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:oracledatabase/getCloudVmCluster:getCloudVmCluster".into(),
             version: super::super::super::get_version(),
@@ -79,7 +79,7 @@ pub mod get_cloud_vm_cluster {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetCloudVmClusterResult {
             backup_subnet_cidr: o.get_field("backupSubnetCidr"),
             cidr: o.get_field("cidr"),

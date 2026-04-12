@@ -110,43 +110,43 @@ pub mod zone_cache_variants {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ZoneCacheVariantsArgs,
     ) -> ZoneCacheVariantsResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ZoneCacheVariantsArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ZoneCacheVariantsResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ZoneCacheVariantsArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ZoneCacheVariantsResult {
-        let avifs_binding = args.avifs.get_output(context);
-        let bmps_binding = args.bmps.get_output(context);
-        let gifs_binding = args.gifs.get_output(context);
-        let jp2s_binding = args.jp2s.get_output(context);
-        let jpegs_binding = args.jpegs.get_output(context);
-        let jpg2s_binding = args.jpg2s.get_output(context);
-        let jpgs_binding = args.jpgs.get_output(context);
-        let pngs_binding = args.pngs.get_output(context);
-        let tiffs_binding = args.tiffs.get_output(context);
-        let tifs_binding = args.tifs.get_output(context);
-        let webps_binding = args.webps.get_output(context);
-        let zone_id_binding = args.zone_id.get_output(context);
+        let avifs_binding = args.avifs.get_output(ctx);
+        let bmps_binding = args.bmps.get_output(ctx);
+        let gifs_binding = args.gifs.get_output(ctx);
+        let jp2s_binding = args.jp2s.get_output(ctx);
+        let jpegs_binding = args.jpegs.get_output(ctx);
+        let jpg2s_binding = args.jpg2s.get_output(ctx);
+        let jpgs_binding = args.jpgs.get_output(ctx);
+        let pngs_binding = args.pngs.get_output(ctx);
+        let tiffs_binding = args.tiffs.get_output(ctx);
+        let tifs_binding = args.tifs.get_output(ctx);
+        let webps_binding = args.webps.get_output(ctx);
+        let zone_id_binding = args.zone_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "cloudflare:index/zoneCacheVariants:ZoneCacheVariants".into(),
             name: name.to_string(),
@@ -203,7 +203,7 @@ pub mod zone_cache_variants {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ZoneCacheVariantsResult {
             id: o.get_id(),
             urn: o.get_urn(),

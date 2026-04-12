@@ -43,11 +43,11 @@ pub mod get_resolver_endpoint {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetResolverEndpointArgs,
     ) -> GetResolverEndpointResult {
-        let filters_binding = args.filters.get_output(context);
-        let resolver_endpoint_id_binding = args.resolver_endpoint_id.get_output(context);
+        let filters_binding = args.filters.get_output(ctx);
+        let resolver_endpoint_id_binding = args.resolver_endpoint_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:route53/getResolverEndpoint:getResolverEndpoint".into(),
             version: super::super::super::get_version(),
@@ -62,7 +62,7 @@ pub mod get_resolver_endpoint {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetResolverEndpointResult {
             arn: o.get_field("arn"),
             direction: o.get_field("direction"),

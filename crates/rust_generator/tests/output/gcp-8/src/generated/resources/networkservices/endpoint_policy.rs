@@ -183,43 +183,41 @@ pub mod endpoint_policy {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EndpointPolicyArgs,
     ) -> EndpointPolicyResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EndpointPolicyArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> EndpointPolicyResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EndpointPolicyArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> EndpointPolicyResult {
-        let authorization_policy_binding = args.authorization_policy.get_output(context);
-        let client_tls_policy_binding = args.client_tls_policy.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let endpoint_matcher_binding = args.endpoint_matcher.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let server_tls_policy_binding = args.server_tls_policy.get_output(context);
-        let traffic_port_selector_binding = args
-            .traffic_port_selector
-            .get_output(context);
-        let type__binding = args.type_.get_output(context);
+        let authorization_policy_binding = args.authorization_policy.get_output(ctx);
+        let client_tls_policy_binding = args.client_tls_policy.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let endpoint_matcher_binding = args.endpoint_matcher.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let server_tls_policy_binding = args.server_tls_policy.get_output(ctx);
+        let traffic_port_selector_binding = args.traffic_port_selector.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:networkservices/endpointPolicy:EndpointPolicy".into(),
             name: name.to_string(),
@@ -268,7 +266,7 @@ pub mod endpoint_policy {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         EndpointPolicyResult {
             id: o.get_id(),
             urn: o.get_urn(),

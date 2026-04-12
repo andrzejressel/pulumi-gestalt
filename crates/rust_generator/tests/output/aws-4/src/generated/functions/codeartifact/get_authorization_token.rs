@@ -35,12 +35,12 @@ pub mod get_authorization_token {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetAuthorizationTokenArgs,
     ) -> GetAuthorizationTokenResult {
-        let domain_binding = args.domain.get_output(context);
-        let domain_owner_binding = args.domain_owner.get_output(context);
-        let duration_seconds_binding = args.duration_seconds.get_output(context);
+        let domain_binding = args.domain.get_output(ctx);
+        let domain_owner_binding = args.domain_owner.get_output(ctx);
+        let duration_seconds_binding = args.duration_seconds.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:codeartifact/getAuthorizationToken:getAuthorizationToken".into(),
             version: super::super::super::get_version(),
@@ -59,7 +59,7 @@ pub mod get_authorization_token {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetAuthorizationTokenResult {
             authorization_token: o.get_field("authorizationToken"),
             domain: o.get_field("domain"),

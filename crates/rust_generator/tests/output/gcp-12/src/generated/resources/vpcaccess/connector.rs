@@ -200,42 +200,42 @@ pub mod connector {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ConnectorArgs,
     ) -> ConnectorResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ConnectorArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ConnectorResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ConnectorArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ConnectorResult {
-        let ip_cidr_range_binding = args.ip_cidr_range.get_output(context);
-        let machine_type_binding = args.machine_type.get_output(context);
-        let max_instances_binding = args.max_instances.get_output(context);
-        let max_throughput_binding = args.max_throughput.get_output(context);
-        let min_instances_binding = args.min_instances.get_output(context);
-        let min_throughput_binding = args.min_throughput.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_binding = args.network.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let region_binding = args.region.get_output(context);
-        let subnet_binding = args.subnet.get_output(context);
+        let ip_cidr_range_binding = args.ip_cidr_range.get_output(ctx);
+        let machine_type_binding = args.machine_type.get_output(ctx);
+        let max_instances_binding = args.max_instances.get_output(ctx);
+        let max_throughput_binding = args.max_throughput.get_output(ctx);
+        let min_instances_binding = args.min_instances.get_output(ctx);
+        let min_throughput_binding = args.min_throughput.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_binding = args.network.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let region_binding = args.region.get_output(ctx);
+        let subnet_binding = args.subnet.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:vpcaccess/connector:Connector".into(),
             name: name.to_string(),
@@ -288,7 +288,7 @@ pub mod connector {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ConnectorResult {
             id: o.get_id(),
             urn: o.get_urn(),

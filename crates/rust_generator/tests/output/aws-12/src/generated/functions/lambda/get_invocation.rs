@@ -34,12 +34,12 @@ pub mod get_invocation {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetInvocationArgs,
     ) -> GetInvocationResult {
-        let function_name_binding = args.function_name.get_output(context);
-        let input_binding = args.input.get_output(context);
-        let qualifier_binding = args.qualifier.get_output(context);
+        let function_name_binding = args.function_name.get_output(ctx);
+        let input_binding = args.input.get_output(ctx);
+        let qualifier_binding = args.qualifier.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:lambda/getInvocation:getInvocation".into(),
             version: super::super::super::get_version(),
@@ -58,7 +58,7 @@ pub mod get_invocation {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetInvocationResult {
             function_name: o.get_field("functionName"),
             id: o.get_field("id"),

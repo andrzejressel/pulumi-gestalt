@@ -23,10 +23,10 @@ pub mod get_geographical_location {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetGeographicalLocationArgs,
     ) -> GetGeographicalLocationResult {
-        let name_binding = args.name.get_output(context);
+        let name_binding = args.name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:trafficmanager/getGeographicalLocation:getGeographicalLocation"
                 .into(),
@@ -38,7 +38,7 @@ pub mod get_geographical_location {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetGeographicalLocationResult {
             id: o.get_field("id"),
             name: o.get_field("name"),

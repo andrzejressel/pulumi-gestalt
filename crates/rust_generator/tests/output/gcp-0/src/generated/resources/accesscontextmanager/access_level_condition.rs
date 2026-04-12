@@ -224,41 +224,39 @@ pub mod access_level_condition {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccessLevelConditionArgs,
     ) -> AccessLevelConditionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccessLevelConditionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AccessLevelConditionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccessLevelConditionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AccessLevelConditionResult {
-        let access_level_binding = args.access_level.get_output(context);
-        let device_policy_binding = args.device_policy.get_output(context);
-        let ip_subnetworks_binding = args.ip_subnetworks.get_output(context);
-        let members_binding = args.members.get_output(context);
-        let negate_binding = args.negate.get_output(context);
-        let regions_binding = args.regions.get_output(context);
-        let required_access_levels_binding = args
-            .required_access_levels
-            .get_output(context);
-        let vpc_network_sources_binding = args.vpc_network_sources.get_output(context);
+        let access_level_binding = args.access_level.get_output(ctx);
+        let device_policy_binding = args.device_policy.get_output(ctx);
+        let ip_subnetworks_binding = args.ip_subnetworks.get_output(ctx);
+        let members_binding = args.members.get_output(ctx);
+        let negate_binding = args.negate.get_output(ctx);
+        let regions_binding = args.regions.get_output(ctx);
+        let required_access_levels_binding = args.required_access_levels.get_output(ctx);
+        let vpc_network_sources_binding = args.vpc_network_sources.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:accesscontextmanager/accessLevelCondition:AccessLevelCondition"
                 .into(),
@@ -300,7 +298,7 @@ pub mod access_level_condition {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AccessLevelConditionResult {
             id: o.get_id(),
             urn: o.get_urn(),

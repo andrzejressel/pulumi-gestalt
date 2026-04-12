@@ -155,43 +155,43 @@ pub mod parameter {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ParameterArgs,
     ) -> ParameterResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ParameterArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ParameterResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ParameterArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ParameterResult {
-        let allowed_pattern_binding = args.allowed_pattern.get_output(context);
-        let arn_binding = args.arn.get_output(context);
-        let data_type_binding = args.data_type.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let insecure_value_binding = args.insecure_value.get_output(context);
-        let key_id_binding = args.key_id.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let overwrite_binding = args.overwrite.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let tier_binding = args.tier.get_output(context);
-        let type__binding = args.type_.get_output(context);
-        let value_binding = args.value.get_output(context);
+        let allowed_pattern_binding = args.allowed_pattern.get_output(ctx);
+        let arn_binding = args.arn.get_output(ctx);
+        let data_type_binding = args.data_type.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let insecure_value_binding = args.insecure_value.get_output(ctx);
+        let key_id_binding = args.key_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let overwrite_binding = args.overwrite.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let tier_binding = args.tier.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
+        let value_binding = args.value.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ssm/parameter:Parameter".into(),
             name: name.to_string(),
@@ -248,7 +248,7 @@ pub mod parameter {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ParameterResult {
             id: o.get_id(),
             urn: o.get_urn(),

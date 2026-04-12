@@ -61,16 +61,14 @@ pub mod get_regional_secret_version {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetRegionalSecretVersionArgs,
     ) -> GetRegionalSecretVersionResult {
-        let is_secret_data_base64_binding = args
-            .is_secret_data_base64
-            .get_output(context);
-        let location_binding = args.location.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let secret_binding = args.secret.get_output(context);
-        let version_binding = args.version.get_output(context);
+        let is_secret_data_base64_binding = args.is_secret_data_base64.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let secret_binding = args.secret.get_output(ctx);
+        let version_binding = args.version.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:secretmanager/getRegionalSecretVersion:getRegionalSecretVersion"
                 .into(),
@@ -98,7 +96,7 @@ pub mod get_regional_secret_version {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetRegionalSecretVersionResult {
             create_time: o.get_field("createTime"),
             customer_managed_encryptions: o.get_field("customerManagedEncryptions"),

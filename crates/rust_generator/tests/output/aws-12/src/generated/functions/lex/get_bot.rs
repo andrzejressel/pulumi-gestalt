@@ -56,12 +56,9 @@ pub mod get_bot {
     /// Registers a new resource with the given unique name and arguments
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
-    pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
-        args: GetBotArgs,
-    ) -> GetBotResult {
-        let name_binding = args.name.get_output(context);
-        let version_binding = args.version.get_output(context);
+    pub fn invoke(ctx: &pulumi_gestalt_rust::Context, args: GetBotArgs) -> GetBotResult {
+        let name_binding = args.name.get_output(ctx);
+        let version_binding = args.version.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:lex/getBot:getBot".into(),
             version: super::super::super::get_version(),
@@ -76,7 +73,7 @@ pub mod get_bot {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetBotResult {
             arn: o.get_field("arn"),
             checksum: o.get_field("checksum"),

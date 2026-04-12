@@ -65,13 +65,13 @@ pub mod get_router_nat {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetRouterNatArgs,
     ) -> GetRouterNatResult {
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let region_binding = args.region.get_output(context);
-        let router_binding = args.router.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let region_binding = args.region.get_output(ctx);
+        let router_binding = args.router.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:compute/getRouterNat:getRouterNat".into(),
             version: super::super::super::get_version(),
@@ -94,7 +94,7 @@ pub mod get_router_nat {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetRouterNatResult {
             auto_network_tier: o.get_field("autoNetworkTier"),
             drain_nat_ips: o.get_field("drainNatIps"),

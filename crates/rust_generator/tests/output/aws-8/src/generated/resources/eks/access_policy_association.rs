@@ -75,35 +75,35 @@ pub mod access_policy_association {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccessPolicyAssociationArgs,
     ) -> AccessPolicyAssociationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccessPolicyAssociationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AccessPolicyAssociationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccessPolicyAssociationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AccessPolicyAssociationResult {
-        let access_scope_binding = args.access_scope.get_output(context);
-        let cluster_name_binding = args.cluster_name.get_output(context);
-        let policy_arn_binding = args.policy_arn.get_output(context);
-        let principal_arn_binding = args.principal_arn.get_output(context);
+        let access_scope_binding = args.access_scope.get_output(ctx);
+        let cluster_name_binding = args.cluster_name.get_output(ctx);
+        let policy_arn_binding = args.policy_arn.get_output(ctx);
+        let principal_arn_binding = args.principal_arn.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:eks/accessPolicyAssociation:AccessPolicyAssociation".into(),
             name: name.to_string(),
@@ -128,7 +128,7 @@ pub mod access_policy_association {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AccessPolicyAssociationResult {
             id: o.get_id(),
             urn: o.get_urn(),

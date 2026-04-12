@@ -10,10 +10,10 @@ fn main() {
     pulumi_gestalt_rust::run(pulumi_main).unwrap();
 }
 
-fn pulumi_main(context: &Context) -> Result<()> {
-    let length: Output<i32> = context.new_output(&12).map(|i: i32| i * 3);
+fn pulumi_main(ctx: &Context) -> Result<()> {
+    let length: Output<i32> = ctx.new_output(&12).map(|i: i32| i * 3);
     let random_string = random_string::create(
-        context,
+        ctx,
         "test",
         RandomStringArgs::builder().length(length).build_struct(),
     );
@@ -25,7 +25,7 @@ fn pulumi_main(context: &Context) -> Result<()> {
     let number = random_string.min_upper.map(|i| i * 2);
 
     let cont = container::create(
-        context,
+        ctx,
         "container",
         ContainerArgs::builder()
             .attach(true)

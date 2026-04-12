@@ -209,40 +209,40 @@ pub mod container_service {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ContainerServiceArgs,
     ) -> ContainerServiceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ContainerServiceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ContainerServiceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ContainerServiceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ContainerServiceResult {
-        let is_disabled_binding = args.is_disabled.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let power_binding = args.power.get_output(context);
+        let is_disabled_binding = args.is_disabled.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let power_binding = args.power.get_output(ctx);
         let private_registry_access_binding = args
             .private_registry_access
-            .get_output(context);
-        let public_domain_names_binding = args.public_domain_names.get_output(context);
-        let scale_binding = args.scale.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let public_domain_names_binding = args.public_domain_names.get_output(ctx);
+        let scale_binding = args.scale.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:lightsail/containerService:ContainerService".into(),
             name: name.to_string(),
@@ -279,7 +279,7 @@ pub mod container_service {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ContainerServiceResult {
             id: o.get_id(),
             urn: o.get_urn(),

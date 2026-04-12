@@ -119,40 +119,38 @@ pub mod spring_cloud_java_deployment {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SpringCloudJavaDeploymentArgs,
     ) -> SpringCloudJavaDeploymentResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SpringCloudJavaDeploymentArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> SpringCloudJavaDeploymentResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SpringCloudJavaDeploymentArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> SpringCloudJavaDeploymentResult {
-        let environment_variables_binding = args
-            .environment_variables
-            .get_output(context);
-        let instance_count_binding = args.instance_count.get_output(context);
-        let jvm_options_binding = args.jvm_options.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let quota_binding = args.quota.get_output(context);
-        let runtime_version_binding = args.runtime_version.get_output(context);
-        let spring_cloud_app_id_binding = args.spring_cloud_app_id.get_output(context);
+        let environment_variables_binding = args.environment_variables.get_output(ctx);
+        let instance_count_binding = args.instance_count.get_output(ctx);
+        let jvm_options_binding = args.jvm_options.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let quota_binding = args.quota.get_output(ctx);
+        let runtime_version_binding = args.runtime_version.get_output(ctx);
+        let spring_cloud_app_id_binding = args.spring_cloud_app_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:appplatform/springCloudJavaDeployment:SpringCloudJavaDeployment"
                 .into(),
@@ -190,7 +188,7 @@ pub mod spring_cloud_java_deployment {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         SpringCloudJavaDeploymentResult {
             id: o.get_id(),
             urn: o.get_urn(),

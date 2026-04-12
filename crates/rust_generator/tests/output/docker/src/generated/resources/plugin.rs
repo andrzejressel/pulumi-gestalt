@@ -101,42 +101,40 @@ pub mod plugin {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PluginArgs,
     ) -> PluginResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PluginArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> PluginResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PluginArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> PluginResult {
-        let alias_binding = args.alias.get_output(context);
-        let enable_timeout_binding = args.enable_timeout.get_output(context);
-        let enabled_binding = args.enabled.get_output(context);
-        let envs_binding = args.envs.get_output(context);
-        let force_destroy_binding = args.force_destroy.get_output(context);
-        let force_disable_binding = args.force_disable.get_output(context);
-        let grant_all_permissions_binding = args
-            .grant_all_permissions
-            .get_output(context);
-        let grant_permissions_binding = args.grant_permissions.get_output(context);
-        let name_binding = args.name.get_output(context);
+        let alias_binding = args.alias.get_output(ctx);
+        let enable_timeout_binding = args.enable_timeout.get_output(ctx);
+        let enabled_binding = args.enabled.get_output(ctx);
+        let envs_binding = args.envs.get_output(ctx);
+        let force_destroy_binding = args.force_destroy.get_output(ctx);
+        let force_disable_binding = args.force_disable.get_output(ctx);
+        let grant_all_permissions_binding = args.grant_all_permissions.get_output(ctx);
+        let grant_permissions_binding = args.grant_permissions.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "docker:index/plugin:Plugin".into(),
             name: name.to_string(),
@@ -181,7 +179,7 @@ pub mod plugin {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         PluginResult {
             id: o.get_id(),
             urn: o.get_urn(),

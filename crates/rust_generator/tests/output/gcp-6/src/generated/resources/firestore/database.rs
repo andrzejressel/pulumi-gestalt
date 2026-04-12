@@ -376,47 +376,47 @@ pub mod database {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DatabaseArgs,
     ) -> DatabaseResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DatabaseArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DatabaseResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DatabaseArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DatabaseResult {
         let app_engine_integration_mode_binding = args
             .app_engine_integration_mode
-            .get_output(context);
-        let cmek_config_binding = args.cmek_config.get_output(context);
-        let concurrency_mode_binding = args.concurrency_mode.get_output(context);
+            .get_output(ctx);
+        let cmek_config_binding = args.cmek_config.get_output(ctx);
+        let concurrency_mode_binding = args.concurrency_mode.get_output(ctx);
         let delete_protection_state_binding = args
             .delete_protection_state
-            .get_output(context);
-        let deletion_policy_binding = args.deletion_policy.get_output(context);
-        let location_id_binding = args.location_id.get_output(context);
-        let name_binding = args.name.get_output(context);
+            .get_output(ctx);
+        let deletion_policy_binding = args.deletion_policy.get_output(ctx);
+        let location_id_binding = args.location_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let point_in_time_recovery_enablement_binding = args
             .point_in_time_recovery_enablement
-            .get_output(context);
-        let project_binding = args.project.get_output(context);
-        let type__binding = args.type_.get_output(context);
+            .get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:firestore/database:Database".into(),
             name: name.to_string(),
@@ -465,7 +465,7 @@ pub mod database {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DatabaseResult {
             id: o.get_id(),
             urn: o.get_urn(),

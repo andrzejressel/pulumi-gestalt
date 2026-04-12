@@ -88,36 +88,36 @@ pub mod logically_air_gapped_vault {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LogicallyAirGappedVaultArgs,
     ) -> LogicallyAirGappedVaultResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LogicallyAirGappedVaultArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> LogicallyAirGappedVaultResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LogicallyAirGappedVaultArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> LogicallyAirGappedVaultResult {
-        let max_retention_days_binding = args.max_retention_days.get_output(context);
-        let min_retention_days_binding = args.min_retention_days.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let timeouts_binding = args.timeouts.get_output(context);
+        let max_retention_days_binding = args.max_retention_days.get_output(ctx);
+        let min_retention_days_binding = args.min_retention_days.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let timeouts_binding = args.timeouts.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:backup/logicallyAirGappedVault:LogicallyAirGappedVault".into(),
             name: name.to_string(),
@@ -146,7 +146,7 @@ pub mod logically_air_gapped_vault {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         LogicallyAirGappedVaultResult {
             id: o.get_id(),
             urn: o.get_urn(),

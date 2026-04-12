@@ -128,37 +128,37 @@ pub mod vpc_ipam_pool_cidr {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcIpamPoolCidrArgs,
     ) -> VpcIpamPoolCidrResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcIpamPoolCidrArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> VpcIpamPoolCidrResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VpcIpamPoolCidrArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> VpcIpamPoolCidrResult {
-        let cidr_binding = args.cidr.get_output(context);
+        let cidr_binding = args.cidr.get_output(ctx);
         let cidr_authorization_context_binding = args
             .cidr_authorization_context
-            .get_output(context);
-        let ipam_pool_id_binding = args.ipam_pool_id.get_output(context);
-        let netmask_length_binding = args.netmask_length.get_output(context);
+            .get_output(ctx);
+        let ipam_pool_id_binding = args.ipam_pool_id.get_output(ctx);
+        let netmask_length_binding = args.netmask_length.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/vpcIpamPoolCidr:VpcIpamPoolCidr".into(),
             name: name.to_string(),
@@ -183,7 +183,7 @@ pub mod vpc_ipam_pool_cidr {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         VpcIpamPoolCidrResult {
             id: o.get_id(),
             urn: o.get_urn(),

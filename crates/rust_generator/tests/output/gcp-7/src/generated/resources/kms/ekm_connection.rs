@@ -127,38 +127,38 @@ pub mod ekm_connection {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EkmConnectionArgs,
     ) -> EkmConnectionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EkmConnectionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> EkmConnectionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EkmConnectionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> EkmConnectionResult {
-        let crypto_space_path_binding = args.crypto_space_path.get_output(context);
-        let etag_binding = args.etag.get_output(context);
-        let key_management_mode_binding = args.key_management_mode.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let service_resolvers_binding = args.service_resolvers.get_output(context);
+        let crypto_space_path_binding = args.crypto_space_path.get_output(ctx);
+        let etag_binding = args.etag.get_output(ctx);
+        let key_management_mode_binding = args.key_management_mode.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let service_resolvers_binding = args.service_resolvers.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:kms/ekmConnection:EkmConnection".into(),
             name: name.to_string(),
@@ -195,7 +195,7 @@ pub mod ekm_connection {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         EkmConnectionResult {
             id: o.get_id(),
             urn: o.get_urn(),

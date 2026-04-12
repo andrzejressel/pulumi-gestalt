@@ -712,71 +712,69 @@ pub mod router_peer {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RouterPeerArgs,
     ) -> RouterPeerResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RouterPeerArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> RouterPeerResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RouterPeerArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> RouterPeerResult {
-        let advertise_mode_binding = args.advertise_mode.get_output(context);
-        let advertised_groups_binding = args.advertised_groups.get_output(context);
-        let advertised_ip_ranges_binding = args.advertised_ip_ranges.get_output(context);
+        let advertise_mode_binding = args.advertise_mode.get_output(ctx);
+        let advertised_groups_binding = args.advertised_groups.get_output(ctx);
+        let advertised_ip_ranges_binding = args.advertised_ip_ranges.get_output(ctx);
         let advertised_route_priority_binding = args
             .advertised_route_priority
-            .get_output(context);
-        let bfd_binding = args.bfd.get_output(context);
+            .get_output(ctx);
+        let bfd_binding = args.bfd.get_output(ctx);
         let custom_learned_ip_ranges_binding = args
             .custom_learned_ip_ranges
-            .get_output(context);
+            .get_output(ctx);
         let custom_learned_route_priority_binding = args
             .custom_learned_route_priority
-            .get_output(context);
-        let enable_binding = args.enable.get_output(context);
-        let enable_ipv4_binding = args.enable_ipv4.get_output(context);
-        let enable_ipv6_binding = args.enable_ipv6.get_output(context);
-        let export_policies_binding = args.export_policies.get_output(context);
-        let import_policies_binding = args.import_policies.get_output(context);
-        let interface_binding = args.interface.get_output(context);
-        let ip_address_binding = args.ip_address.get_output(context);
-        let ipv4_nexthop_address_binding = args.ipv4_nexthop_address.get_output(context);
-        let ipv6_nexthop_address_binding = args.ipv6_nexthop_address.get_output(context);
-        let md5_authentication_key_binding = args
-            .md5_authentication_key
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let peer_asn_binding = args.peer_asn.get_output(context);
-        let peer_ip_address_binding = args.peer_ip_address.get_output(context);
+            .get_output(ctx);
+        let enable_binding = args.enable.get_output(ctx);
+        let enable_ipv4_binding = args.enable_ipv4.get_output(ctx);
+        let enable_ipv6_binding = args.enable_ipv6.get_output(ctx);
+        let export_policies_binding = args.export_policies.get_output(ctx);
+        let import_policies_binding = args.import_policies.get_output(ctx);
+        let interface_binding = args.interface.get_output(ctx);
+        let ip_address_binding = args.ip_address.get_output(ctx);
+        let ipv4_nexthop_address_binding = args.ipv4_nexthop_address.get_output(ctx);
+        let ipv6_nexthop_address_binding = args.ipv6_nexthop_address.get_output(ctx);
+        let md5_authentication_key_binding = args.md5_authentication_key.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let peer_asn_binding = args.peer_asn.get_output(ctx);
+        let peer_ip_address_binding = args.peer_ip_address.get_output(ctx);
         let peer_ipv4_nexthop_address_binding = args
             .peer_ipv4_nexthop_address
-            .get_output(context);
+            .get_output(ctx);
         let peer_ipv6_nexthop_address_binding = args
             .peer_ipv6_nexthop_address
-            .get_output(context);
-        let project_binding = args.project.get_output(context);
-        let region_binding = args.region.get_output(context);
-        let router_binding = args.router.get_output(context);
+            .get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let region_binding = args.region.get_output(ctx);
+        let router_binding = args.router.get_output(ctx);
         let router_appliance_instance_binding = args
             .router_appliance_instance
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:compute/routerPeer:RouterPeer".into(),
             name: name.to_string(),
@@ -889,7 +887,7 @@ pub mod router_peer {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         RouterPeerResult {
             id: o.get_id(),
             urn: o.get_urn(),

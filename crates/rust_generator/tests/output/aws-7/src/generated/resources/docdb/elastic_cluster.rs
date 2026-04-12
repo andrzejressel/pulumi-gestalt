@@ -145,53 +145,51 @@ pub mod elastic_cluster {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ElasticClusterArgs,
     ) -> ElasticClusterResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ElasticClusterArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ElasticClusterResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ElasticClusterArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ElasticClusterResult {
-        let admin_user_name_binding = args.admin_user_name.get_output(context);
-        let admin_user_password_binding = args.admin_user_password.get_output(context);
-        let auth_type_binding = args.auth_type.get_output(context);
+        let admin_user_name_binding = args.admin_user_name.get_output(ctx);
+        let admin_user_password_binding = args.admin_user_password.get_output(ctx);
+        let auth_type_binding = args.auth_type.get_output(ctx);
         let backup_retention_period_binding = args
             .backup_retention_period
-            .get_output(context);
-        let kms_key_id_binding = args.kms_key_id.get_output(context);
-        let name_binding = args.name.get_output(context);
+            .get_output(ctx);
+        let kms_key_id_binding = args.kms_key_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let preferred_backup_window_binding = args
             .preferred_backup_window
-            .get_output(context);
+            .get_output(ctx);
         let preferred_maintenance_window_binding = args
             .preferred_maintenance_window
-            .get_output(context);
-        let shard_capacity_binding = args.shard_capacity.get_output(context);
-        let shard_count_binding = args.shard_count.get_output(context);
-        let subnet_ids_binding = args.subnet_ids.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let timeouts_binding = args.timeouts.get_output(context);
-        let vpc_security_group_ids_binding = args
-            .vpc_security_group_ids
-            .get_output(context);
+            .get_output(ctx);
+        let shard_capacity_binding = args.shard_capacity.get_output(ctx);
+        let shard_count_binding = args.shard_count.get_output(ctx);
+        let subnet_ids_binding = args.subnet_ids.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let timeouts_binding = args.timeouts.get_output(ctx);
+        let vpc_security_group_ids_binding = args.vpc_security_group_ids.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:docdb/elasticCluster:ElasticCluster".into(),
             name: name.to_string(),
@@ -256,7 +254,7 @@ pub mod elastic_cluster {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ElasticClusterResult {
             id: o.get_id(),
             urn: o.get_urn(),

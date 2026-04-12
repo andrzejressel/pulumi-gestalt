@@ -66,12 +66,12 @@ pub mod get_file_system {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetFileSystemArgs,
     ) -> GetFileSystemResult {
-        let creation_token_binding = args.creation_token.get_output(context);
-        let file_system_id_binding = args.file_system_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let creation_token_binding = args.creation_token.get_output(ctx);
+        let file_system_id_binding = args.file_system_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:efs/getFileSystem:getFileSystem".into(),
             version: super::super::super::get_version(),
@@ -90,7 +90,7 @@ pub mod get_file_system {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetFileSystemResult {
             arn: o.get_field("arn"),
             availability_zone_id: o.get_field("availabilityZoneId"),

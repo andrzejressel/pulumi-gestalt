@@ -37,15 +37,13 @@ pub mod get_account_jwt {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetAccountJwtArgs,
     ) -> GetAccountJwtResult {
-        let delegates_binding = args.delegates.get_output(context);
-        let expires_in_binding = args.expires_in.get_output(context);
-        let payload_binding = args.payload.get_output(context);
-        let target_service_account_binding = args
-            .target_service_account
-            .get_output(context);
+        let delegates_binding = args.delegates.get_output(ctx);
+        let expires_in_binding = args.expires_in.get_output(ctx);
+        let payload_binding = args.payload.get_output(ctx);
+        let target_service_account_binding = args.target_service_account.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:serviceaccount/getAccountJwt:getAccountJwt".into(),
             version: super::super::super::get_version(),
@@ -68,7 +66,7 @@ pub mod get_account_jwt {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetAccountJwtResult {
             delegates: o.get_field("delegates"),
             expires_in: o.get_field("expiresIn"),

@@ -727,53 +727,53 @@ pub mod event_target {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EventTargetArgs,
     ) -> EventTargetResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EventTargetArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> EventTargetResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EventTargetArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> EventTargetResult {
-        let appsync_target_binding = args.appsync_target.get_output(context);
-        let arn_binding = args.arn.get_output(context);
-        let batch_target_binding = args.batch_target.get_output(context);
-        let dead_letter_config_binding = args.dead_letter_config.get_output(context);
-        let ecs_target_binding = args.ecs_target.get_output(context);
-        let event_bus_name_binding = args.event_bus_name.get_output(context);
-        let force_destroy_binding = args.force_destroy.get_output(context);
-        let http_target_binding = args.http_target.get_output(context);
-        let input_binding = args.input.get_output(context);
-        let input_path_binding = args.input_path.get_output(context);
-        let input_transformer_binding = args.input_transformer.get_output(context);
-        let kinesis_target_binding = args.kinesis_target.get_output(context);
-        let redshift_target_binding = args.redshift_target.get_output(context);
-        let retry_policy_binding = args.retry_policy.get_output(context);
-        let role_arn_binding = args.role_arn.get_output(context);
-        let rule_binding = args.rule.get_output(context);
-        let run_command_targets_binding = args.run_command_targets.get_output(context);
+        let appsync_target_binding = args.appsync_target.get_output(ctx);
+        let arn_binding = args.arn.get_output(ctx);
+        let batch_target_binding = args.batch_target.get_output(ctx);
+        let dead_letter_config_binding = args.dead_letter_config.get_output(ctx);
+        let ecs_target_binding = args.ecs_target.get_output(ctx);
+        let event_bus_name_binding = args.event_bus_name.get_output(ctx);
+        let force_destroy_binding = args.force_destroy.get_output(ctx);
+        let http_target_binding = args.http_target.get_output(ctx);
+        let input_binding = args.input.get_output(ctx);
+        let input_path_binding = args.input_path.get_output(ctx);
+        let input_transformer_binding = args.input_transformer.get_output(ctx);
+        let kinesis_target_binding = args.kinesis_target.get_output(ctx);
+        let redshift_target_binding = args.redshift_target.get_output(ctx);
+        let retry_policy_binding = args.retry_policy.get_output(ctx);
+        let role_arn_binding = args.role_arn.get_output(ctx);
+        let rule_binding = args.rule.get_output(ctx);
+        let run_command_targets_binding = args.run_command_targets.get_output(ctx);
         let sagemaker_pipeline_target_binding = args
             .sagemaker_pipeline_target
-            .get_output(context);
-        let sqs_target_binding = args.sqs_target.get_output(context);
-        let target_id_binding = args.target_id.get_output(context);
+            .get_output(ctx);
+        let sqs_target_binding = args.sqs_target.get_output(ctx);
+        let target_id_binding = args.target_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:cloudwatch/eventTarget:EventTarget".into(),
             name: name.to_string(),
@@ -862,7 +862,7 @@ pub mod event_target {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         EventTargetResult {
             id: o.get_id(),
             urn: o.get_urn(),

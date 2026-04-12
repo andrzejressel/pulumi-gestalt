@@ -242,45 +242,45 @@ pub mod intent {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IntentArgs,
     ) -> IntentResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IntentArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> IntentResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: IntentArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> IntentResult {
-        let conclusion_statement_binding = args.conclusion_statement.get_output(context);
-        let confirmation_prompt_binding = args.confirmation_prompt.get_output(context);
-        let create_version_binding = args.create_version.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let dialog_code_hook_binding = args.dialog_code_hook.get_output(context);
-        let follow_up_prompt_binding = args.follow_up_prompt.get_output(context);
-        let fulfillment_activity_binding = args.fulfillment_activity.get_output(context);
-        let name_binding = args.name.get_output(context);
+        let conclusion_statement_binding = args.conclusion_statement.get_output(ctx);
+        let confirmation_prompt_binding = args.confirmation_prompt.get_output(ctx);
+        let create_version_binding = args.create_version.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let dialog_code_hook_binding = args.dialog_code_hook.get_output(ctx);
+        let follow_up_prompt_binding = args.follow_up_prompt.get_output(ctx);
+        let fulfillment_activity_binding = args.fulfillment_activity.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let parent_intent_signature_binding = args
             .parent_intent_signature
-            .get_output(context);
-        let rejection_statement_binding = args.rejection_statement.get_output(context);
-        let sample_utterances_binding = args.sample_utterances.get_output(context);
-        let slots_binding = args.slots.get_output(context);
+            .get_output(ctx);
+        let rejection_statement_binding = args.rejection_statement.get_output(ctx);
+        let sample_utterances_binding = args.sample_utterances.get_output(ctx);
+        let slots_binding = args.slots.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:lex/intent:Intent".into(),
             name: name.to_string(),
@@ -337,7 +337,7 @@ pub mod intent {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         IntentResult {
             id: o.get_id(),
             urn: o.get_urn(),

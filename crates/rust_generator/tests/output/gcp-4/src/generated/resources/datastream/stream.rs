@@ -1099,47 +1099,47 @@ pub mod stream {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StreamArgs,
     ) -> StreamResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StreamArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> StreamResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StreamArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> StreamResult {
-        let backfill_all_binding = args.backfill_all.get_output(context);
-        let backfill_none_binding = args.backfill_none.get_output(context);
+        let backfill_all_binding = args.backfill_all.get_output(ctx);
+        let backfill_none_binding = args.backfill_none.get_output(ctx);
         let create_without_validation_binding = args
             .create_without_validation
-            .get_output(context);
+            .get_output(ctx);
         let customer_managed_encryption_key_binding = args
             .customer_managed_encryption_key
-            .get_output(context);
-        let desired_state_binding = args.desired_state.get_output(context);
-        let destination_config_binding = args.destination_config.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let source_config_binding = args.source_config.get_output(context);
-        let stream_id_binding = args.stream_id.get_output(context);
+            .get_output(ctx);
+        let desired_state_binding = args.desired_state.get_output(ctx);
+        let destination_config_binding = args.destination_config.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let source_config_binding = args.source_config.get_output(ctx);
+        let stream_id_binding = args.stream_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:datastream/stream:Stream".into(),
             name: name.to_string(),
@@ -1196,7 +1196,7 @@ pub mod stream {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         StreamResult {
             id: o.get_id(),
             urn: o.get_urn(),

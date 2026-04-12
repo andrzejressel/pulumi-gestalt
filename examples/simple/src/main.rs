@@ -9,11 +9,11 @@ fn main() {
     pulumi_gestalt_rust::run(pulumi_main).unwrap();
 }
 
-fn pulumi_main(context: &Context) -> Result<()> {
-    let length: Output<i32> = context.new_output(&12).map(|i: i32| i * 3);
+fn pulumi_main(ctx: &Context) -> Result<()> {
+    let length: Output<i32> = ctx.new_output(&12).map(|i: i32| i * 3);
 
     let random_string = random_string::create(
-        context,
+        ctx,
         "test",
         RandomStringArgs::builder().length(length).build_struct(),
     );
@@ -27,25 +27,25 @@ fn pulumi_main(context: &Context) -> Result<()> {
     // Optional values are deserialized as None
     let keepers = random_string.keepers.map(|map| format!("Keepers: {map:?}"));
 
-    let val1 = context.new_output(&1);
-    let val2 = context.new_output(&"abc".to_string());
+    let val1 = ctx.new_output(&1);
+    let val2 = ctx.new_output(&"abc".to_string());
 
     // Outputs can be reused
     let combined = pulumi_combine!(val1.clone(), val2.clone());
     let combined_2 = pulumi_combine!(val1, val2);
 
-    let combined_string = pulumi_format!(&context, "Values: {:?}", combined);
-    let combined_2_string = pulumi_format!(&context, "Values: {:?}", combined_2);
+    let combined_string = pulumi_format!(&ctx, "Values: {:?}", combined);
+    let combined_2_string = pulumi_format!(&ctx, "Values: {:?}", combined_2);
 
     let random_string_2 = random_string::create(
-        context,
+        ctx,
         "test_2",
         RandomStringArgs::builder()
             .length(keepers.map(|s| s.len() as i32))
             .build_struct(),
     );
 
-    let config_value = context
+    let config_value = ctx
         .require_config(None, "plain_text")
         .context("Failed to load required plaintext config `plain_text`")?;
     if config_value != "plain_value" {
@@ -53,7 +53,7 @@ fn pulumi_main(context: &Context) -> Result<()> {
         panic!("Unexpected config value: {}", config_value);
     }
 
-    let secret_config = context
+    let secret_config = ctx
         .require_config_secret(None, "secret")
         .context("Failed to load required secret config `secret`")?;
 

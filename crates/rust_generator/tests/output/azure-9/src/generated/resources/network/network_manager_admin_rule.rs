@@ -171,46 +171,46 @@ pub mod network_manager_admin_rule {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkManagerAdminRuleArgs,
     ) -> NetworkManagerAdminRuleResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkManagerAdminRuleArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> NetworkManagerAdminRuleResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NetworkManagerAdminRuleArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> NetworkManagerAdminRuleResult {
-        let action_binding = args.action.get_output(context);
+        let action_binding = args.action.get_output(ctx);
         let admin_rule_collection_id_binding = args
             .admin_rule_collection_id
-            .get_output(context);
-        let description_binding = args.description.get_output(context);
+            .get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
         let destination_port_ranges_binding = args
             .destination_port_ranges
-            .get_output(context);
-        let destinations_binding = args.destinations.get_output(context);
-        let direction_binding = args.direction.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let priority_binding = args.priority.get_output(context);
-        let protocol_binding = args.protocol.get_output(context);
-        let source_port_ranges_binding = args.source_port_ranges.get_output(context);
-        let sources_binding = args.sources.get_output(context);
+            .get_output(ctx);
+        let destinations_binding = args.destinations.get_output(ctx);
+        let direction_binding = args.direction.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let priority_binding = args.priority.get_output(ctx);
+        let protocol_binding = args.protocol.get_output(ctx);
+        let source_port_ranges_binding = args.source_port_ranges.get_output(ctx);
+        let sources_binding = args.sources.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:network/networkManagerAdminRule:NetworkManagerAdminRule"
                 .into(),
@@ -264,7 +264,7 @@ pub mod network_manager_admin_rule {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         NetworkManagerAdminRuleResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -41,14 +41,12 @@ pub mod get_snapshot_ids {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetSnapshotIdsArgs,
     ) -> GetSnapshotIdsResult {
-        let filters_binding = args.filters.get_output(context);
-        let owners_binding = args.owners.get_output(context);
-        let restorable_by_user_ids_binding = args
-            .restorable_by_user_ids
-            .get_output(context);
+        let filters_binding = args.filters.get_output(ctx);
+        let owners_binding = args.owners.get_output(ctx);
+        let restorable_by_user_ids_binding = args.restorable_by_user_ids.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ebs/getSnapshotIds:getSnapshotIds".into(),
             version: super::super::super::get_version(),
@@ -67,7 +65,7 @@ pub mod get_snapshot_ids {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetSnapshotIdsResult {
             filters: o.get_field("filters"),
             id: o.get_field("id"),

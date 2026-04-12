@@ -41,10 +41,10 @@ pub mod get_project {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetProjectArgs,
     ) -> GetProjectResult {
-        let project_id_binding = args.project_id.get_output(context);
+        let project_id_binding = args.project_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:organizations/getProject:getProject".into(),
             version: super::super::super::get_version(),
@@ -55,7 +55,7 @@ pub mod get_project {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetProjectResult {
             auto_create_network: o.get_field("autoCreateNetwork"),
             billing_account: o.get_field("billingAccount"),

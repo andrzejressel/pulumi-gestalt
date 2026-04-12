@@ -92,43 +92,41 @@ pub mod assessment_policy {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AssessmentPolicyArgs,
     ) -> AssessmentPolicyResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AssessmentPolicyArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AssessmentPolicyResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AssessmentPolicyArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AssessmentPolicyResult {
-        let categories_binding = args.categories.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let implementation_effort_binding = args
-            .implementation_effort
-            .get_output(context);
+        let categories_binding = args.categories.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let implementation_effort_binding = args.implementation_effort.get_output(ctx);
         let remediation_description_binding = args
             .remediation_description
-            .get_output(context);
-        let severity_binding = args.severity.get_output(context);
-        let threats_binding = args.threats.get_output(context);
-        let user_impact_binding = args.user_impact.get_output(context);
+            .get_output(ctx);
+        let severity_binding = args.severity.get_output(ctx);
+        let threats_binding = args.threats.get_output(ctx);
+        let user_impact_binding = args.user_impact.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:securitycenter/assessmentPolicy:AssessmentPolicy".into(),
             name: name.to_string(),
@@ -169,7 +167,7 @@ pub mod assessment_policy {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AssessmentPolicyResult {
             id: o.get_id(),
             urn: o.get_urn(),

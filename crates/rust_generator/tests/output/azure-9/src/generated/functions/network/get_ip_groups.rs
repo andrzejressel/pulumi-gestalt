@@ -33,11 +33,11 @@ pub mod get_ip_groups {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetIpGroupsArgs,
     ) -> GetIpGroupsResult {
-        let name_binding = args.name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:network/getIpGroups:getIpGroups".into(),
             version: super::super::super::get_version(),
@@ -52,7 +52,7 @@ pub mod get_ip_groups {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetIpGroupsResult {
             id: o.get_field("id"),
             ids: o.get_field("ids"),

@@ -85,11 +85,11 @@ pub mod get_cluster {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetClusterArgs,
     ) -> GetClusterResult {
-        let cluster_id_binding = args.cluster_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let cluster_id_binding = args.cluster_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:elasticache/getCluster:getCluster".into(),
             version: super::super::super::get_version(),
@@ -104,7 +104,7 @@ pub mod get_cluster {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetClusterResult {
             arn: o.get_field("arn"),
             availability_zone: o.get_field("availabilityZone"),

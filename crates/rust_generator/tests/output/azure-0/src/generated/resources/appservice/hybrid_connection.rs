@@ -139,37 +139,37 @@ pub mod hybrid_connection {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: HybridConnectionArgs,
     ) -> HybridConnectionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: HybridConnectionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> HybridConnectionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: HybridConnectionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> HybridConnectionResult {
-        let app_service_name_binding = args.app_service_name.get_output(context);
-        let hostname_binding = args.hostname.get_output(context);
-        let port_binding = args.port.get_output(context);
-        let relay_id_binding = args.relay_id.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let send_key_name_binding = args.send_key_name.get_output(context);
+        let app_service_name_binding = args.app_service_name.get_output(ctx);
+        let hostname_binding = args.hostname.get_output(ctx);
+        let port_binding = args.port.get_output(ctx);
+        let relay_id_binding = args.relay_id.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let send_key_name_binding = args.send_key_name.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:appservice/hybridConnection:HybridConnection".into(),
             name: name.to_string(),
@@ -202,7 +202,7 @@ pub mod hybrid_connection {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         HybridConnectionResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -35,11 +35,11 @@ pub mod get_patch_baselines {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetPatchBaselinesArgs,
     ) -> GetPatchBaselinesResult {
-        let default_baselines_binding = args.default_baselines.get_output(context);
-        let filters_binding = args.filters.get_output(context);
+        let default_baselines_binding = args.default_baselines.get_output(ctx);
+        let filters_binding = args.filters.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ssm/getPatchBaselines:getPatchBaselines".into(),
             version: super::super::super::get_version(),
@@ -54,7 +54,7 @@ pub mod get_patch_baselines {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetPatchBaselinesResult {
             baseline_identities: o.get_field("baselineIdentities"),
             default_baselines: o.get_field("defaultBaselines"),

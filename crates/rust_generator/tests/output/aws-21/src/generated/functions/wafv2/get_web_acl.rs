@@ -31,11 +31,11 @@ pub mod get_web_acl {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetWebAclArgs,
     ) -> GetWebAclResult {
-        let name_binding = args.name.get_output(context);
-        let scope_binding = args.scope.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let scope_binding = args.scope.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:wafv2/getWebAcl:getWebAcl".into(),
             version: super::super::super::get_version(),
@@ -50,7 +50,7 @@ pub mod get_web_acl {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetWebAclResult {
             arn: o.get_field("arn"),
             description: o.get_field("description"),

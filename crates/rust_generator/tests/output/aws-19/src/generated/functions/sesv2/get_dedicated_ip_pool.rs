@@ -38,11 +38,11 @@ pub mod get_dedicated_ip_pool {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetDedicatedIpPoolArgs,
     ) -> GetDedicatedIpPoolResult {
-        let pool_name_binding = args.pool_name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let pool_name_binding = args.pool_name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:sesv2/getDedicatedIpPool:getDedicatedIpPool".into(),
             version: super::super::super::get_version(),
@@ -57,7 +57,7 @@ pub mod get_dedicated_ip_pool {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetDedicatedIpPoolResult {
             arn: o.get_field("arn"),
             dedicated_ips: o.get_field("dedicatedIps"),

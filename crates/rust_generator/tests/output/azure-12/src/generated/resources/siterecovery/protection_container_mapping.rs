@@ -87,45 +87,45 @@ pub mod protection_container_mapping {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProtectionContainerMappingArgs,
     ) -> ProtectionContainerMappingResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProtectionContainerMappingArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ProtectionContainerMappingResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProtectionContainerMappingArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ProtectionContainerMappingResult {
-        let automatic_update_binding = args.automatic_update.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let recovery_fabric_name_binding = args.recovery_fabric_name.get_output(context);
+        let automatic_update_binding = args.automatic_update.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let recovery_fabric_name_binding = args.recovery_fabric_name.get_output(ctx);
         let recovery_replication_policy_id_binding = args
             .recovery_replication_policy_id
-            .get_output(context);
+            .get_output(ctx);
         let recovery_source_protection_container_name_binding = args
             .recovery_source_protection_container_name
-            .get_output(context);
+            .get_output(ctx);
         let recovery_target_protection_container_id_binding = args
             .recovery_target_protection_container_id
-            .get_output(context);
-        let recovery_vault_name_binding = args.recovery_vault_name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+            .get_output(ctx);
+        let recovery_vault_name_binding = args.recovery_vault_name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:siterecovery/protectionContainerMapping:ProtectionContainerMapping"
                 .into(),
@@ -167,7 +167,7 @@ pub mod protection_container_mapping {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ProtectionContainerMappingResult {
             id: o.get_id(),
             urn: o.get_urn(),

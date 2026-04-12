@@ -57,14 +57,12 @@ pub mod get_autonomous_database {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetAutonomousDatabaseArgs,
     ) -> GetAutonomousDatabaseResult {
-        let autonomous_database_id_binding = args
-            .autonomous_database_id
-            .get_output(context);
-        let location_binding = args.location.get_output(context);
-        let project_binding = args.project.get_output(context);
+        let autonomous_database_id_binding = args.autonomous_database_id.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:oracledatabase/getAutonomousDatabase:getAutonomousDatabase"
                 .into(),
@@ -84,7 +82,7 @@ pub mod get_autonomous_database {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetAutonomousDatabaseResult {
             admin_password: o.get_field("adminPassword"),
             autonomous_database_id: o.get_field("autonomousDatabaseId"),

@@ -34,11 +34,11 @@ pub mod get_external_address {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetExternalAddressArgs,
     ) -> GetExternalAddressResult {
-        let name_binding = args.name.get_output(context);
-        let parent_binding = args.parent.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let parent_binding = args.parent.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:vmwareengine/getExternalAddress:getExternalAddress".into(),
             version: super::super::super::get_version(),
@@ -53,7 +53,7 @@ pub mod get_external_address {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetExternalAddressResult {
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),

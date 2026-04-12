@@ -275,50 +275,50 @@ pub mod addon {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AddonArgs,
     ) -> AddonResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AddonArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AddonResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AddonArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AddonResult {
-        let addon_name_binding = args.addon_name.get_output(context);
-        let addon_version_binding = args.addon_version.get_output(context);
-        let cluster_name_binding = args.cluster_name.get_output(context);
-        let configuration_values_binding = args.configuration_values.get_output(context);
+        let addon_name_binding = args.addon_name.get_output(ctx);
+        let addon_version_binding = args.addon_version.get_output(ctx);
+        let cluster_name_binding = args.cluster_name.get_output(ctx);
+        let configuration_values_binding = args.configuration_values.get_output(ctx);
         let pod_identity_associations_binding = args
             .pod_identity_associations
-            .get_output(context);
-        let preserve_binding = args.preserve.get_output(context);
-        let resolve_conflicts_binding = args.resolve_conflicts.get_output(context);
+            .get_output(ctx);
+        let preserve_binding = args.preserve.get_output(ctx);
+        let resolve_conflicts_binding = args.resolve_conflicts.get_output(ctx);
         let resolve_conflicts_on_create_binding = args
             .resolve_conflicts_on_create
-            .get_output(context);
+            .get_output(ctx);
         let resolve_conflicts_on_update_binding = args
             .resolve_conflicts_on_update
-            .get_output(context);
+            .get_output(ctx);
         let service_account_role_arn_binding = args
             .service_account_role_arn
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:eks/addon:Addon".into(),
             name: name.to_string(),
@@ -371,7 +371,7 @@ pub mod addon {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AddonResult {
             id: o.get_id(),
             urn: o.get_urn(),

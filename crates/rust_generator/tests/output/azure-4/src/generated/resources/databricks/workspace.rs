@@ -204,77 +204,77 @@ pub mod workspace {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkspaceArgs,
     ) -> WorkspaceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkspaceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> WorkspaceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkspaceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> WorkspaceResult {
-        let access_connector_id_binding = args.access_connector_id.get_output(context);
-        let custom_parameters_binding = args.custom_parameters.get_output(context);
+        let access_connector_id_binding = args.access_connector_id.get_output(ctx);
+        let custom_parameters_binding = args.custom_parameters.get_output(ctx);
         let customer_managed_key_enabled_binding = args
             .customer_managed_key_enabled
-            .get_output(context);
+            .get_output(ctx);
         let default_storage_firewall_enabled_binding = args
             .default_storage_firewall_enabled
-            .get_output(context);
+            .get_output(ctx);
         let enhanced_security_compliance_binding = args
             .enhanced_security_compliance
-            .get_output(context);
+            .get_output(ctx);
         let infrastructure_encryption_enabled_binding = args
             .infrastructure_encryption_enabled
-            .get_output(context);
+            .get_output(ctx);
         let load_balancer_backend_address_pool_id_binding = args
             .load_balancer_backend_address_pool_id
-            .get_output(context);
-        let location_binding = args.location.get_output(context);
+            .get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
         let managed_disk_cmk_key_vault_id_binding = args
             .managed_disk_cmk_key_vault_id
-            .get_output(context);
+            .get_output(ctx);
         let managed_disk_cmk_key_vault_key_id_binding = args
             .managed_disk_cmk_key_vault_key_id
-            .get_output(context);
+            .get_output(ctx);
         let managed_disk_cmk_rotation_to_latest_version_enabled_binding = args
             .managed_disk_cmk_rotation_to_latest_version_enabled
-            .get_output(context);
+            .get_output(ctx);
         let managed_resource_group_name_binding = args
             .managed_resource_group_name
-            .get_output(context);
+            .get_output(ctx);
         let managed_services_cmk_key_vault_id_binding = args
             .managed_services_cmk_key_vault_id
-            .get_output(context);
+            .get_output(ctx);
         let managed_services_cmk_key_vault_key_id_binding = args
             .managed_services_cmk_key_vault_key_id
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let network_security_group_rules_required_binding = args
             .network_security_group_rules_required
-            .get_output(context);
+            .get_output(ctx);
         let public_network_access_enabled_binding = args
             .public_network_access_enabled
-            .get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let sku_binding = args.sku.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let sku_binding = args.sku.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:databricks/workspace:Workspace".into(),
             name: name.to_string(),
@@ -364,7 +364,7 @@ pub mod workspace {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         WorkspaceResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -90,33 +90,33 @@ pub mod voice_connector_termination_credentials {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VoiceConnectorTerminationCredentialsArgs,
     ) -> VoiceConnectorTerminationCredentialsResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VoiceConnectorTerminationCredentialsArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> VoiceConnectorTerminationCredentialsResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: VoiceConnectorTerminationCredentialsArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> VoiceConnectorTerminationCredentialsResult {
-        let credentials_binding = args.credentials.get_output(context);
-        let voice_connector_id_binding = args.voice_connector_id.get_output(context);
+        let credentials_binding = args.credentials.get_output(ctx);
+        let voice_connector_id_binding = args.voice_connector_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:chime/voiceConnectorTerminationCredentials:VoiceConnectorTerminationCredentials"
                 .into(),
@@ -134,7 +134,7 @@ pub mod voice_connector_termination_credentials {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         VoiceConnectorTerminationCredentialsResult {
             id: o.get_id(),
             urn: o.get_urn(),

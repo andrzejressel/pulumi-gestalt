@@ -118,38 +118,36 @@ pub mod taxonomy {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TaxonomyArgs,
     ) -> TaxonomyResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TaxonomyArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> TaxonomyResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TaxonomyArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> TaxonomyResult {
-        let activated_policy_types_binding = args
-            .activated_policy_types
-            .get_output(context);
-        let description_binding = args.description.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let region_binding = args.region.get_output(context);
+        let activated_policy_types_binding = args.activated_policy_types.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let region_binding = args.region.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:datacatalog/taxonomy:Taxonomy".into(),
             name: name.to_string(),
@@ -178,7 +176,7 @@ pub mod taxonomy {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         TaxonomyResult {
             id: o.get_id(),
             urn: o.get_urn(),

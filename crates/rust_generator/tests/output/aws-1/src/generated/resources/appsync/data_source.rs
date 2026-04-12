@@ -190,47 +190,47 @@ pub mod data_source {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataSourceArgs,
     ) -> DataSourceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataSourceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DataSourceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataSourceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DataSourceResult {
-        let api_id_binding = args.api_id.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let dynamodb_config_binding = args.dynamodb_config.get_output(context);
-        let elasticsearch_config_binding = args.elasticsearch_config.get_output(context);
-        let event_bridge_config_binding = args.event_bridge_config.get_output(context);
-        let http_config_binding = args.http_config.get_output(context);
-        let lambda_config_binding = args.lambda_config.get_output(context);
-        let name_binding = args.name.get_output(context);
+        let api_id_binding = args.api_id.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let dynamodb_config_binding = args.dynamodb_config.get_output(ctx);
+        let elasticsearch_config_binding = args.elasticsearch_config.get_output(ctx);
+        let event_bridge_config_binding = args.event_bridge_config.get_output(ctx);
+        let http_config_binding = args.http_config.get_output(ctx);
+        let lambda_config_binding = args.lambda_config.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let opensearchservice_config_binding = args
             .opensearchservice_config
-            .get_output(context);
+            .get_output(ctx);
         let relational_database_config_binding = args
             .relational_database_config
-            .get_output(context);
-        let service_role_arn_binding = args.service_role_arn.get_output(context);
-        let type__binding = args.type_.get_output(context);
+            .get_output(ctx);
+        let service_role_arn_binding = args.service_role_arn.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:appsync/dataSource:DataSource".into(),
             name: name.to_string(),
@@ -287,7 +287,7 @@ pub mod data_source {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DataSourceResult {
             id: o.get_id(),
             urn: o.get_urn(),

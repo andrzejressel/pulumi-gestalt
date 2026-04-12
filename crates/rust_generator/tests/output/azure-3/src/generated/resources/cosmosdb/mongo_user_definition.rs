@@ -119,37 +119,37 @@ pub mod mongo_user_definition {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MongoUserDefinitionArgs,
     ) -> MongoUserDefinitionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MongoUserDefinitionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> MongoUserDefinitionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MongoUserDefinitionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> MongoUserDefinitionResult {
         let cosmos_mongo_database_id_binding = args
             .cosmos_mongo_database_id
-            .get_output(context);
-        let inherited_role_names_binding = args.inherited_role_names.get_output(context);
-        let password_binding = args.password.get_output(context);
-        let username_binding = args.username.get_output(context);
+            .get_output(ctx);
+        let inherited_role_names_binding = args.inherited_role_names.get_output(ctx);
+        let password_binding = args.password.get_output(ctx);
+        let username_binding = args.username.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:cosmosdb/mongoUserDefinition:MongoUserDefinition".into(),
             name: name.to_string(),
@@ -174,7 +174,7 @@ pub mod mongo_user_definition {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         MongoUserDefinitionResult {
             id: o.get_id(),
             urn: o.get_urn(),

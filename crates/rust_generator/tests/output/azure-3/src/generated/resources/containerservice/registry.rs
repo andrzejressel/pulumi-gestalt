@@ -284,66 +284,60 @@ pub mod registry {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RegistryArgs,
     ) -> RegistryResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RegistryArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> RegistryResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RegistryArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> RegistryResult {
-        let admin_enabled_binding = args.admin_enabled.get_output(context);
-        let anonymous_pull_enabled_binding = args
-            .anonymous_pull_enabled
-            .get_output(context);
-        let data_endpoint_enabled_binding = args
-            .data_endpoint_enabled
-            .get_output(context);
-        let encryption_binding = args.encryption.get_output(context);
-        let export_policy_enabled_binding = args
-            .export_policy_enabled
-            .get_output(context);
-        let georeplications_binding = args.georeplications.get_output(context);
-        let identity_binding = args.identity.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
+        let admin_enabled_binding = args.admin_enabled.get_output(ctx);
+        let anonymous_pull_enabled_binding = args.anonymous_pull_enabled.get_output(ctx);
+        let data_endpoint_enabled_binding = args.data_endpoint_enabled.get_output(ctx);
+        let encryption_binding = args.encryption.get_output(ctx);
+        let export_policy_enabled_binding = args.export_policy_enabled.get_output(ctx);
+        let georeplications_binding = args.georeplications.get_output(ctx);
+        let identity_binding = args.identity.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let network_rule_bypass_option_binding = args
             .network_rule_bypass_option
-            .get_output(context);
-        let network_rule_set_binding = args.network_rule_set.get_output(context);
+            .get_output(ctx);
+        let network_rule_set_binding = args.network_rule_set.get_output(ctx);
         let public_network_access_enabled_binding = args
             .public_network_access_enabled
-            .get_output(context);
+            .get_output(ctx);
         let quarantine_policy_enabled_binding = args
             .quarantine_policy_enabled
-            .get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+            .get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let retention_policy_in_days_binding = args
             .retention_policy_in_days
-            .get_output(context);
-        let sku_binding = args.sku.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let trust_policy_enabled_binding = args.trust_policy_enabled.get_output(context);
+            .get_output(ctx);
+        let sku_binding = args.sku.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let trust_policy_enabled_binding = args.trust_policy_enabled.get_output(ctx);
         let zone_redundancy_enabled_binding = args
             .zone_redundancy_enabled
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:containerservice/registry:Registry".into(),
             name: name.to_string(),
@@ -428,7 +422,7 @@ pub mod registry {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         RegistryResult {
             id: o.get_id(),
             urn: o.get_urn(),

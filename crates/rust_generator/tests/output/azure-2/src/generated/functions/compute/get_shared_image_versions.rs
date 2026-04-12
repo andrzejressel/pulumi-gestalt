@@ -43,13 +43,13 @@ pub mod get_shared_image_versions {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetSharedImageVersionsArgs,
     ) -> GetSharedImageVersionsResult {
-        let gallery_name_binding = args.gallery_name.get_output(context);
-        let image_name_binding = args.image_name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let tags_filter_binding = args.tags_filter.get_output(context);
+        let gallery_name_binding = args.gallery_name.get_output(ctx);
+        let image_name_binding = args.image_name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let tags_filter_binding = args.tags_filter.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:compute/getSharedImageVersions:getSharedImageVersions".into(),
             version: super::super::super::get_version(),
@@ -72,7 +72,7 @@ pub mod get_shared_image_versions {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetSharedImageVersionsResult {
             gallery_name: o.get_field("galleryName"),
             id: o.get_field("id"),

@@ -360,73 +360,71 @@ pub mod region_instance_template {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RegionInstanceTemplateArgs,
     ) -> RegionInstanceTemplateResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RegionInstanceTemplateArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> RegionInstanceTemplateResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RegionInstanceTemplateArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> RegionInstanceTemplateResult {
         let advanced_machine_features_binding = args
             .advanced_machine_features
-            .get_output(context);
-        let can_ip_forward_binding = args.can_ip_forward.get_output(context);
+            .get_output(ctx);
+        let can_ip_forward_binding = args.can_ip_forward.get_output(ctx);
         let confidential_instance_config_binding = args
             .confidential_instance_config
-            .get_output(context);
-        let description_binding = args.description.get_output(context);
-        let disks_binding = args.disks.get_output(context);
-        let enable_display_binding = args.enable_display.get_output(context);
-        let guest_accelerators_binding = args.guest_accelerators.get_output(context);
-        let instance_description_binding = args.instance_description.get_output(context);
+            .get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let disks_binding = args.disks.get_output(ctx);
+        let enable_display_binding = args.enable_display.get_output(ctx);
+        let guest_accelerators_binding = args.guest_accelerators.get_output(ctx);
+        let instance_description_binding = args.instance_description.get_output(ctx);
         let key_revocation_action_type_binding = args
             .key_revocation_action_type
-            .get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let machine_type_binding = args.machine_type.get_output(context);
-        let metadata_binding = args.metadata.get_output(context);
+            .get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let machine_type_binding = args.machine_type.get_output(ctx);
+        let metadata_binding = args.metadata.get_output(ctx);
         let metadata_startup_script_binding = args
             .metadata_startup_script
-            .get_output(context);
-        let min_cpu_platform_binding = args.min_cpu_platform.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let name_prefix_binding = args.name_prefix.get_output(context);
-        let network_interfaces_binding = args.network_interfaces.get_output(context);
+            .get_output(ctx);
+        let min_cpu_platform_binding = args.min_cpu_platform.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let name_prefix_binding = args.name_prefix.get_output(ctx);
+        let network_interfaces_binding = args.network_interfaces.get_output(ctx);
         let network_performance_config_binding = args
             .network_performance_config
-            .get_output(context);
-        let partner_metadata_binding = args.partner_metadata.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let region_binding = args.region.get_output(context);
-        let reservation_affinity_binding = args.reservation_affinity.get_output(context);
-        let resource_manager_tags_binding = args
-            .resource_manager_tags
-            .get_output(context);
-        let resource_policies_binding = args.resource_policies.get_output(context);
-        let scheduling_binding = args.scheduling.get_output(context);
-        let service_account_binding = args.service_account.get_output(context);
+            .get_output(ctx);
+        let partner_metadata_binding = args.partner_metadata.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let region_binding = args.region.get_output(ctx);
+        let reservation_affinity_binding = args.reservation_affinity.get_output(ctx);
+        let resource_manager_tags_binding = args.resource_manager_tags.get_output(ctx);
+        let resource_policies_binding = args.resource_policies.get_output(ctx);
+        let scheduling_binding = args.scheduling.get_output(ctx);
+        let service_account_binding = args.service_account.get_output(ctx);
         let shielded_instance_config_binding = args
             .shielded_instance_config
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:compute/regionInstanceTemplate:RegionInstanceTemplate".into(),
             name: name.to_string(),
@@ -547,7 +545,7 @@ pub mod region_instance_template {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         RegionInstanceTemplateResult {
             id: o.get_id(),
             urn: o.get_urn(),

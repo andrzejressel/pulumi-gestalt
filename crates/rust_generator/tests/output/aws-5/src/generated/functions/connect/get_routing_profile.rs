@@ -52,13 +52,13 @@ pub mod get_routing_profile {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetRoutingProfileArgs,
     ) -> GetRoutingProfileResult {
-        let instance_id_binding = args.instance_id.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let routing_profile_id_binding = args.routing_profile_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let instance_id_binding = args.instance_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let routing_profile_id_binding = args.routing_profile_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:connect/getRoutingProfile:getRoutingProfile".into(),
             version: super::super::super::get_version(),
@@ -81,7 +81,7 @@ pub mod get_routing_profile {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetRoutingProfileResult {
             arn: o.get_field("arn"),
             default_outbound_queue_id: o.get_field("defaultOutboundQueueId"),

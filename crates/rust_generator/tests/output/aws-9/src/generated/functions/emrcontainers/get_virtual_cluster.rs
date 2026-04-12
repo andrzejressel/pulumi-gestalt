@@ -44,11 +44,11 @@ pub mod get_virtual_cluster {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetVirtualClusterArgs,
     ) -> GetVirtualClusterResult {
-        let tags_binding = args.tags.get_output(context);
-        let virtual_cluster_id_binding = args.virtual_cluster_id.get_output(context);
+        let tags_binding = args.tags.get_output(ctx);
+        let virtual_cluster_id_binding = args.virtual_cluster_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:emrcontainers/getVirtualCluster:getVirtualCluster".into(),
             version: super::super::super::get_version(),
@@ -63,7 +63,7 @@ pub mod get_virtual_cluster {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetVirtualClusterResult {
             arn: o.get_field("arn"),
             container_providers: o.get_field("containerProviders"),

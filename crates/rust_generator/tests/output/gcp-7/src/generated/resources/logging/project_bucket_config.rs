@@ -216,40 +216,40 @@ pub mod project_bucket_config {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProjectBucketConfigArgs,
     ) -> ProjectBucketConfigResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProjectBucketConfigArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ProjectBucketConfigResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ProjectBucketConfigArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ProjectBucketConfigResult {
-        let bucket_id_binding = args.bucket_id.get_output(context);
-        let cmek_settings_binding = args.cmek_settings.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let enable_analytics_binding = args.enable_analytics.get_output(context);
-        let index_configs_binding = args.index_configs.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let locked_binding = args.locked.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let retention_days_binding = args.retention_days.get_output(context);
+        let bucket_id_binding = args.bucket_id.get_output(ctx);
+        let cmek_settings_binding = args.cmek_settings.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let enable_analytics_binding = args.enable_analytics.get_output(ctx);
+        let index_configs_binding = args.index_configs.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let locked_binding = args.locked.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let retention_days_binding = args.retention_days.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:logging/projectBucketConfig:ProjectBucketConfig".into(),
             name: name.to_string(),
@@ -294,7 +294,7 @@ pub mod project_bucket_config {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ProjectBucketConfigResult {
             id: o.get_id(),
             urn: o.get_urn(),

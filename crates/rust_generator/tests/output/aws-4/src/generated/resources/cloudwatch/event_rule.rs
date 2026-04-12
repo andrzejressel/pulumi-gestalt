@@ -164,42 +164,42 @@ pub mod event_rule {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EventRuleArgs,
     ) -> EventRuleResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EventRuleArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> EventRuleResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EventRuleArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> EventRuleResult {
-        let description_binding = args.description.get_output(context);
-        let event_bus_name_binding = args.event_bus_name.get_output(context);
-        let event_pattern_binding = args.event_pattern.get_output(context);
-        let force_destroy_binding = args.force_destroy.get_output(context);
-        let is_enabled_binding = args.is_enabled.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let name_prefix_binding = args.name_prefix.get_output(context);
-        let role_arn_binding = args.role_arn.get_output(context);
-        let schedule_expression_binding = args.schedule_expression.get_output(context);
-        let state_binding = args.state.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let description_binding = args.description.get_output(ctx);
+        let event_bus_name_binding = args.event_bus_name.get_output(ctx);
+        let event_pattern_binding = args.event_pattern.get_output(ctx);
+        let force_destroy_binding = args.force_destroy.get_output(ctx);
+        let is_enabled_binding = args.is_enabled.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let name_prefix_binding = args.name_prefix.get_output(ctx);
+        let role_arn_binding = args.role_arn.get_output(ctx);
+        let schedule_expression_binding = args.schedule_expression.get_output(ctx);
+        let state_binding = args.state.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:cloudwatch/eventRule:EventRule".into(),
             name: name.to_string(),
@@ -252,7 +252,7 @@ pub mod event_rule {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         EventRuleResult {
             id: o.get_id(),
             urn: o.get_urn(),

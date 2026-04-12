@@ -29,10 +29,10 @@ pub mod get_instance_profiles {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetInstanceProfilesArgs,
     ) -> GetInstanceProfilesResult {
-        let role_name_binding = args.role_name.get_output(context);
+        let role_name_binding = args.role_name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:iam/getInstanceProfiles:getInstanceProfiles".into(),
             version: super::super::super::get_version(),
@@ -43,7 +43,7 @@ pub mod get_instance_profiles {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetInstanceProfilesResult {
             arns: o.get_field("arns"),
             id: o.get_field("id"),

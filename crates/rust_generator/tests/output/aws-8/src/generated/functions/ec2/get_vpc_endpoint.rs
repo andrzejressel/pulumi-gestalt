@@ -84,15 +84,15 @@ pub mod get_vpc_endpoint {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetVpcEndpointArgs,
     ) -> GetVpcEndpointResult {
-        let filters_binding = args.filters.get_output(context);
-        let id_binding = args.id.get_output(context);
-        let service_name_binding = args.service_name.get_output(context);
-        let state_binding = args.state.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let vpc_id_binding = args.vpc_id.get_output(context);
+        let filters_binding = args.filters.get_output(ctx);
+        let id_binding = args.id.get_output(ctx);
+        let service_name_binding = args.service_name.get_output(ctx);
+        let state_binding = args.state.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let vpc_id_binding = args.vpc_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ec2/getVpcEndpoint:getVpcEndpoint".into(),
             version: super::super::super::get_version(),
@@ -123,7 +123,7 @@ pub mod get_vpc_endpoint {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetVpcEndpointResult {
             arn: o.get_field("arn"),
             cidr_blocks: o.get_field("cidrBlocks"),

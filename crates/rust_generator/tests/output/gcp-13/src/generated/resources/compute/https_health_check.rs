@@ -178,41 +178,41 @@ pub mod https_health_check {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: HttpsHealthCheckArgs,
     ) -> HttpsHealthCheckResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: HttpsHealthCheckArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> HttpsHealthCheckResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: HttpsHealthCheckArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> HttpsHealthCheckResult {
-        let check_interval_sec_binding = args.check_interval_sec.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let healthy_threshold_binding = args.healthy_threshold.get_output(context);
-        let host_binding = args.host.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let port_binding = args.port.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let request_path_binding = args.request_path.get_output(context);
-        let timeout_sec_binding = args.timeout_sec.get_output(context);
-        let unhealthy_threshold_binding = args.unhealthy_threshold.get_output(context);
+        let check_interval_sec_binding = args.check_interval_sec.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let healthy_threshold_binding = args.healthy_threshold.get_output(ctx);
+        let host_binding = args.host.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let port_binding = args.port.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let request_path_binding = args.request_path.get_output(ctx);
+        let timeout_sec_binding = args.timeout_sec.get_output(ctx);
+        let unhealthy_threshold_binding = args.unhealthy_threshold.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:compute/httpsHealthCheck:HttpsHealthCheck".into(),
             name: name.to_string(),
@@ -261,7 +261,7 @@ pub mod https_health_check {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         HttpsHealthCheckResult {
             id: o.get_id(),
             urn: o.get_urn(),

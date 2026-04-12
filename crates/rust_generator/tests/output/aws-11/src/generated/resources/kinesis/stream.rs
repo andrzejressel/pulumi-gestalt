@@ -118,43 +118,43 @@ pub mod stream {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StreamArgs,
     ) -> StreamResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StreamArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> StreamResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StreamArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> StreamResult {
-        let arn_binding = args.arn.get_output(context);
-        let encryption_type_binding = args.encryption_type.get_output(context);
+        let arn_binding = args.arn.get_output(ctx);
+        let encryption_type_binding = args.encryption_type.get_output(ctx);
         let enforce_consumer_deletion_binding = args
             .enforce_consumer_deletion
-            .get_output(context);
-        let kms_key_id_binding = args.kms_key_id.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let retention_period_binding = args.retention_period.get_output(context);
-        let shard_count_binding = args.shard_count.get_output(context);
-        let shard_level_metrics_binding = args.shard_level_metrics.get_output(context);
-        let stream_mode_details_binding = args.stream_mode_details.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let kms_key_id_binding = args.kms_key_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let retention_period_binding = args.retention_period.get_output(ctx);
+        let shard_count_binding = args.shard_count.get_output(ctx);
+        let shard_level_metrics_binding = args.shard_level_metrics.get_output(ctx);
+        let stream_mode_details_binding = args.stream_mode_details.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:kinesis/stream:Stream".into(),
             name: name.to_string(),
@@ -203,7 +203,7 @@ pub mod stream {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         StreamResult {
             id: o.get_id(),
             urn: o.get_urn(),

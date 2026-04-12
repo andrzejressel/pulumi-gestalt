@@ -41,11 +41,11 @@ pub mod get_hosting_channel {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetHostingChannelArgs,
     ) -> GetHostingChannelResult {
-        let channel_id_binding = args.channel_id.get_output(context);
-        let site_id_binding = args.site_id.get_output(context);
+        let channel_id_binding = args.channel_id.get_output(ctx);
+        let site_id_binding = args.site_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:firebase/getHostingChannel:getHostingChannel".into(),
             version: super::super::super::get_version(),
@@ -60,7 +60,7 @@ pub mod get_hosting_channel {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetHostingChannelResult {
             channel_id: o.get_field("channelId"),
             effective_labels: o.get_field("effectiveLabels"),

@@ -39,13 +39,13 @@ pub mod get_orderable_cluster {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetOrderableClusterArgs,
     ) -> GetOrderableClusterResult {
-        let cluster_type_binding = args.cluster_type.get_output(context);
-        let cluster_version_binding = args.cluster_version.get_output(context);
-        let node_type_binding = args.node_type.get_output(context);
-        let preferred_node_types_binding = args.preferred_node_types.get_output(context);
+        let cluster_type_binding = args.cluster_type.get_output(ctx);
+        let cluster_version_binding = args.cluster_version.get_output(ctx);
+        let node_type_binding = args.node_type.get_output(ctx);
+        let preferred_node_types_binding = args.preferred_node_types.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:redshift/getOrderableCluster:getOrderableCluster".into(),
             version: super::super::super::get_version(),
@@ -68,7 +68,7 @@ pub mod get_orderable_cluster {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetOrderableClusterResult {
             availability_zones: o.get_field("availabilityZones"),
             cluster_type: o.get_field("clusterType"),

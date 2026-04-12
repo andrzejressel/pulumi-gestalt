@@ -104,35 +104,35 @@ pub mod custom_log_source {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CustomLogSourceArgs,
     ) -> CustomLogSourceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CustomLogSourceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> CustomLogSourceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CustomLogSourceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> CustomLogSourceResult {
-        let configuration_binding = args.configuration.get_output(context);
-        let event_classes_binding = args.event_classes.get_output(context);
-        let source_name_binding = args.source_name.get_output(context);
-        let source_version_binding = args.source_version.get_output(context);
+        let configuration_binding = args.configuration.get_output(ctx);
+        let event_classes_binding = args.event_classes.get_output(ctx);
+        let source_name_binding = args.source_name.get_output(ctx);
+        let source_version_binding = args.source_version.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:securitylake/customLogSource:CustomLogSource".into(),
             name: name.to_string(),
@@ -157,7 +157,7 @@ pub mod custom_log_source {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         CustomLogSourceResult {
             id: o.get_id(),
             urn: o.get_urn(),

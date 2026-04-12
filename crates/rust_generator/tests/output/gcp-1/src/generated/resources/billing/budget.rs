@@ -336,38 +336,38 @@ pub mod budget {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BudgetArgs,
     ) -> BudgetResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BudgetArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> BudgetResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BudgetArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> BudgetResult {
-        let all_updates_rule_binding = args.all_updates_rule.get_output(context);
-        let amount_binding = args.amount.get_output(context);
-        let billing_account_binding = args.billing_account.get_output(context);
-        let budget_filter_binding = args.budget_filter.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let ownership_scope_binding = args.ownership_scope.get_output(context);
-        let threshold_rules_binding = args.threshold_rules.get_output(context);
+        let all_updates_rule_binding = args.all_updates_rule.get_output(ctx);
+        let amount_binding = args.amount.get_output(ctx);
+        let billing_account_binding = args.billing_account.get_output(ctx);
+        let budget_filter_binding = args.budget_filter.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let ownership_scope_binding = args.ownership_scope.get_output(ctx);
+        let threshold_rules_binding = args.threshold_rules.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:billing/budget:Budget".into(),
             name: name.to_string(),
@@ -404,7 +404,7 @@ pub mod budget {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         BudgetResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -150,40 +150,40 @@ pub mod alert_processing_rule_action_group {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AlertProcessingRuleActionGroupArgs,
     ) -> AlertProcessingRuleActionGroupResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AlertProcessingRuleActionGroupArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AlertProcessingRuleActionGroupResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AlertProcessingRuleActionGroupArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AlertProcessingRuleActionGroupResult {
-        let add_action_group_ids_binding = args.add_action_group_ids.get_output(context);
-        let condition_binding = args.condition.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let enabled_binding = args.enabled.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let schedule_binding = args.schedule.get_output(context);
-        let scopes_binding = args.scopes.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let add_action_group_ids_binding = args.add_action_group_ids.get_output(ctx);
+        let condition_binding = args.condition.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let enabled_binding = args.enabled.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let schedule_binding = args.schedule.get_output(ctx);
+        let scopes_binding = args.scopes.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:monitoring/alertProcessingRuleActionGroup:AlertProcessingRuleActionGroup"
                 .into(),
@@ -229,7 +229,7 @@ pub mod alert_processing_rule_action_group {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AlertProcessingRuleActionGroupResult {
             id: o.get_id(),
             urn: o.get_urn(),

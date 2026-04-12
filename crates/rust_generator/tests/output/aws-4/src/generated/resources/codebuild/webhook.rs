@@ -132,36 +132,36 @@ pub mod webhook {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WebhookArgs,
     ) -> WebhookResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WebhookArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> WebhookResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WebhookArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> WebhookResult {
-        let branch_filter_binding = args.branch_filter.get_output(context);
-        let build_type_binding = args.build_type.get_output(context);
-        let filter_groups_binding = args.filter_groups.get_output(context);
-        let project_name_binding = args.project_name.get_output(context);
-        let scope_configuration_binding = args.scope_configuration.get_output(context);
+        let branch_filter_binding = args.branch_filter.get_output(ctx);
+        let build_type_binding = args.build_type.get_output(ctx);
+        let filter_groups_binding = args.filter_groups.get_output(ctx);
+        let project_name_binding = args.project_name.get_output(ctx);
+        let scope_configuration_binding = args.scope_configuration.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:codebuild/webhook:Webhook".into(),
             name: name.to_string(),
@@ -190,7 +190,7 @@ pub mod webhook {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         WebhookResult {
             id: o.get_id(),
             urn: o.get_urn(),

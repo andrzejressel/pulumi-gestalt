@@ -41,10 +41,10 @@ pub mod get_inference_profile {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetInferenceProfileArgs,
     ) -> GetInferenceProfileResult {
-        let inference_profile_id_binding = args.inference_profile_id.get_output(context);
+        let inference_profile_id_binding = args.inference_profile_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:bedrock/getInferenceProfile:getInferenceProfile".into(),
             version: super::super::super::get_version(),
@@ -55,7 +55,7 @@ pub mod get_inference_profile {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetInferenceProfileResult {
             created_at: o.get_field("createdAt"),
             description: o.get_field("description"),

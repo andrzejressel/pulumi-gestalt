@@ -43,8 +43,8 @@ struct MyState {
 impl HostContext for MyState {
     async fn new(&mut self) -> wasmtime::Result<Resource<Context>> {
         let engine = pulumi_gestalt_rust_integration::Context::new().await;
-        let context = SingleThreadedContext::new(engine);
-        let id = self.table.push(context)?;
+        let ctx = SingleThreadedContext::new(engine);
+        let id = self.table.push(ctx)?;
         Ok(id)
     }
 

@@ -1019,154 +1019,144 @@ pub mod cluster {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterArgs,
     ) -> ClusterResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ClusterResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClusterArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ClusterResult {
-        let addons_config_binding = args.addons_config.get_output(context);
-        let allow_net_admin_binding = args.allow_net_admin.get_output(context);
+        let addons_config_binding = args.addons_config.get_output(ctx);
+        let allow_net_admin_binding = args.allow_net_admin.get_output(ctx);
         let authenticator_groups_config_binding = args
             .authenticator_groups_config
-            .get_output(context);
-        let binary_authorization_binding = args.binary_authorization.get_output(context);
-        let cluster_autoscaling_binding = args.cluster_autoscaling.get_output(context);
-        let cluster_ipv4_cidr_binding = args.cluster_ipv4_cidr.get_output(context);
-        let cluster_telemetry_binding = args.cluster_telemetry.get_output(context);
-        let confidential_nodes_binding = args.confidential_nodes.get_output(context);
+            .get_output(ctx);
+        let binary_authorization_binding = args.binary_authorization.get_output(ctx);
+        let cluster_autoscaling_binding = args.cluster_autoscaling.get_output(ctx);
+        let cluster_ipv4_cidr_binding = args.cluster_ipv4_cidr.get_output(ctx);
+        let cluster_telemetry_binding = args.cluster_telemetry.get_output(ctx);
+        let confidential_nodes_binding = args.confidential_nodes.get_output(ctx);
         let control_plane_endpoints_config_binding = args
             .control_plane_endpoints_config
-            .get_output(context);
-        let cost_management_config_binding = args
-            .cost_management_config
-            .get_output(context);
-        let database_encryption_binding = args.database_encryption.get_output(context);
-        let datapath_provider_binding = args.datapath_provider.get_output(context);
+            .get_output(ctx);
+        let cost_management_config_binding = args.cost_management_config.get_output(ctx);
+        let database_encryption_binding = args.database_encryption.get_output(ctx);
+        let datapath_provider_binding = args.datapath_provider.get_output(ctx);
         let default_max_pods_per_node_binding = args
             .default_max_pods_per_node
-            .get_output(context);
-        let default_snat_status_binding = args.default_snat_status.get_output(context);
-        let deletion_protection_binding = args.deletion_protection.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let dns_config_binding = args.dns_config.get_output(context);
-        let enable_autopilot_binding = args.enable_autopilot.get_output(context);
+            .get_output(ctx);
+        let default_snat_status_binding = args.default_snat_status.get_output(ctx);
+        let deletion_protection_binding = args.deletion_protection.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let dns_config_binding = args.dns_config.get_output(ctx);
+        let enable_autopilot_binding = args.enable_autopilot.get_output(ctx);
         let enable_cilium_clusterwide_network_policy_binding = args
             .enable_cilium_clusterwide_network_policy
-            .get_output(context);
+            .get_output(ctx);
         let enable_fqdn_network_policy_binding = args
             .enable_fqdn_network_policy
-            .get_output(context);
+            .get_output(ctx);
         let enable_intranode_visibility_binding = args
             .enable_intranode_visibility
-            .get_output(context);
-        let enable_k8s_beta_apis_binding = args.enable_k8s_beta_apis.get_output(context);
+            .get_output(ctx);
+        let enable_k8s_beta_apis_binding = args.enable_k8s_beta_apis.get_output(ctx);
         let enable_kubernetes_alpha_binding = args
             .enable_kubernetes_alpha
-            .get_output(context);
+            .get_output(ctx);
         let enable_l4_ilb_subsetting_binding = args
             .enable_l4_ilb_subsetting
-            .get_output(context);
-        let enable_legacy_abac_binding = args.enable_legacy_abac.get_output(context);
+            .get_output(ctx);
+        let enable_legacy_abac_binding = args.enable_legacy_abac.get_output(ctx);
         let enable_multi_networking_binding = args
             .enable_multi_networking
-            .get_output(context);
-        let enable_shielded_nodes_binding = args
-            .enable_shielded_nodes
-            .get_output(context);
-        let enable_tpu_binding = args.enable_tpu.get_output(context);
-        let enterprise_config_binding = args.enterprise_config.get_output(context);
-        let fleet_binding = args.fleet.get_output(context);
-        let gateway_api_config_binding = args.gateway_api_config.get_output(context);
+            .get_output(ctx);
+        let enable_shielded_nodes_binding = args.enable_shielded_nodes.get_output(ctx);
+        let enable_tpu_binding = args.enable_tpu.get_output(ctx);
+        let enterprise_config_binding = args.enterprise_config.get_output(ctx);
+        let fleet_binding = args.fleet.get_output(ctx);
+        let gateway_api_config_binding = args.gateway_api_config.get_output(ctx);
         let identity_service_config_binding = args
             .identity_service_config
-            .get_output(context);
-        let initial_node_count_binding = args.initial_node_count.get_output(context);
-        let ip_allocation_policy_binding = args.ip_allocation_policy.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let logging_config_binding = args.logging_config.get_output(context);
-        let logging_service_binding = args.logging_service.get_output(context);
-        let maintenance_policy_binding = args.maintenance_policy.get_output(context);
-        let master_auth_binding = args.master_auth.get_output(context);
+            .get_output(ctx);
+        let initial_node_count_binding = args.initial_node_count.get_output(ctx);
+        let ip_allocation_policy_binding = args.ip_allocation_policy.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let logging_config_binding = args.logging_config.get_output(ctx);
+        let logging_service_binding = args.logging_service.get_output(ctx);
+        let maintenance_policy_binding = args.maintenance_policy.get_output(ctx);
+        let master_auth_binding = args.master_auth.get_output(ctx);
         let master_authorized_networks_config_binding = args
             .master_authorized_networks_config
-            .get_output(context);
-        let mesh_certificates_binding = args.mesh_certificates.get_output(context);
-        let min_master_version_binding = args.min_master_version.get_output(context);
-        let monitoring_config_binding = args.monitoring_config.get_output(context);
-        let monitoring_service_binding = args.monitoring_service.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_binding = args.network.get_output(context);
-        let network_policy_binding = args.network_policy.get_output(context);
-        let networking_mode_binding = args.networking_mode.get_output(context);
-        let node_config_binding = args.node_config.get_output(context);
-        let node_locations_binding = args.node_locations.get_output(context);
-        let node_pool_auto_config_binding = args
-            .node_pool_auto_config
-            .get_output(context);
-        let node_pool_defaults_binding = args.node_pool_defaults.get_output(context);
-        let node_pools_binding = args.node_pools.get_output(context);
-        let node_version_binding = args.node_version.get_output(context);
-        let notification_config_binding = args.notification_config.get_output(context);
+            .get_output(ctx);
+        let mesh_certificates_binding = args.mesh_certificates.get_output(ctx);
+        let min_master_version_binding = args.min_master_version.get_output(ctx);
+        let monitoring_config_binding = args.monitoring_config.get_output(ctx);
+        let monitoring_service_binding = args.monitoring_service.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_binding = args.network.get_output(ctx);
+        let network_policy_binding = args.network_policy.get_output(ctx);
+        let networking_mode_binding = args.networking_mode.get_output(ctx);
+        let node_config_binding = args.node_config.get_output(ctx);
+        let node_locations_binding = args.node_locations.get_output(ctx);
+        let node_pool_auto_config_binding = args.node_pool_auto_config.get_output(ctx);
+        let node_pool_defaults_binding = args.node_pool_defaults.get_output(ctx);
+        let node_pools_binding = args.node_pools.get_output(ctx);
+        let node_version_binding = args.node_version.get_output(ctx);
+        let notification_config_binding = args.notification_config.get_output(ctx);
         let pod_security_policy_config_binding = args
             .pod_security_policy_config
-            .get_output(context);
-        let private_cluster_config_binding = args
-            .private_cluster_config
-            .get_output(context);
+            .get_output(ctx);
+        let private_cluster_config_binding = args.private_cluster_config.get_output(ctx);
         let private_ipv6_google_access_binding = args
             .private_ipv6_google_access
-            .get_output(context);
-        let project_binding = args.project.get_output(context);
-        let protect_config_binding = args.protect_config.get_output(context);
-        let release_channel_binding = args.release_channel.get_output(context);
+            .get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let protect_config_binding = args.protect_config.get_output(ctx);
+        let release_channel_binding = args.release_channel.get_output(ctx);
         let remove_default_node_pool_binding = args
             .remove_default_node_pool
-            .get_output(context);
-        let resource_labels_binding = args.resource_labels.get_output(context);
+            .get_output(ctx);
+        let resource_labels_binding = args.resource_labels.get_output(ctx);
         let resource_usage_export_config_binding = args
             .resource_usage_export_config
-            .get_output(context);
-        let secret_manager_config_binding = args
-            .secret_manager_config
-            .get_output(context);
+            .get_output(ctx);
+        let secret_manager_config_binding = args.secret_manager_config.get_output(ctx);
         let security_posture_config_binding = args
             .security_posture_config
-            .get_output(context);
+            .get_output(ctx);
         let service_external_ips_config_binding = args
             .service_external_ips_config
-            .get_output(context);
-        let subnetwork_binding = args.subnetwork.get_output(context);
-        let tpu_config_binding = args.tpu_config.get_output(context);
+            .get_output(ctx);
+        let subnetwork_binding = args.subnetwork.get_output(ctx);
+        let tpu_config_binding = args.tpu_config.get_output(ctx);
         let user_managed_keys_config_binding = args
             .user_managed_keys_config
-            .get_output(context);
+            .get_output(ctx);
         let vertical_pod_autoscaling_binding = args
             .vertical_pod_autoscaling
-            .get_output(context);
-        let workload_alts_config_binding = args.workload_alts_config.get_output(context);
+            .get_output(ctx);
+        let workload_alts_config_binding = args.workload_alts_config.get_output(ctx);
         let workload_identity_config_binding = args
             .workload_identity_config
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:container/cluster:Cluster".into(),
             name: name.to_string(),
@@ -1467,7 +1457,7 @@ pub mod cluster {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ClusterResult {
             id: o.get_id(),
             urn: o.get_urn(),

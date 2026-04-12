@@ -109,9 +109,9 @@ mod tests {
 
     #[allow(dead_code)]
     fn compilation_test() {
-        let context = get_context();
+        let ctx = get_context();
         // String
-        let output = context.new_output(&"Hello, World!".to_string());
+        let output = ctx.new_output(&"Hello, World!".to_string());
 
         let _ = TypesystemServerArgs::builder().required_string_input("&str");
         let _ = TypesystemServerArgs::builder().required_string_input("String".to_string());
@@ -183,10 +183,10 @@ mod tests {
 
     #[allow(dead_code)]
     fn resource_compilation_test() {
-        let context = get_context();
+        let ctx = get_context();
 
         pulumi_gestalt_providers_typesystem::deep::nested::module::some_resource::create(
-            context,
+            ctx,
             "test",
             SomeResourceArgs::builder().build_struct(),
         );
@@ -194,9 +194,9 @@ mod tests {
 
     #[allow(dead_code)]
     fn function_compilation_test() {
-        let context = get_context();
+        let ctx = get_context();
         pulumi_gestalt_providers_typesystem::functions::deep::nested::module::some_function::invoke(
-            context,
+            ctx,
         );
     }
 

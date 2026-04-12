@@ -127,46 +127,46 @@ pub mod capacity_reservation {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CapacityReservationArgs,
     ) -> CapacityReservationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CapacityReservationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> CapacityReservationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CapacityReservationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> CapacityReservationResult {
-        let availability_zone_binding = args.availability_zone.get_output(context);
-        let ebs_optimized_binding = args.ebs_optimized.get_output(context);
-        let end_date_binding = args.end_date.get_output(context);
-        let end_date_type_binding = args.end_date_type.get_output(context);
-        let ephemeral_storage_binding = args.ephemeral_storage.get_output(context);
-        let instance_count_binding = args.instance_count.get_output(context);
+        let availability_zone_binding = args.availability_zone.get_output(ctx);
+        let ebs_optimized_binding = args.ebs_optimized.get_output(ctx);
+        let end_date_binding = args.end_date.get_output(ctx);
+        let end_date_type_binding = args.end_date_type.get_output(ctx);
+        let ephemeral_storage_binding = args.ephemeral_storage.get_output(ctx);
+        let instance_count_binding = args.instance_count.get_output(ctx);
         let instance_match_criteria_binding = args
             .instance_match_criteria
-            .get_output(context);
-        let instance_platform_binding = args.instance_platform.get_output(context);
-        let instance_type_binding = args.instance_type.get_output(context);
-        let outpost_arn_binding = args.outpost_arn.get_output(context);
-        let placement_group_arn_binding = args.placement_group_arn.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let tenancy_binding = args.tenancy.get_output(context);
+            .get_output(ctx);
+        let instance_platform_binding = args.instance_platform.get_output(ctx);
+        let instance_type_binding = args.instance_type.get_output(ctx);
+        let outpost_arn_binding = args.outpost_arn.get_output(ctx);
+        let placement_group_arn_binding = args.placement_group_arn.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let tenancy_binding = args.tenancy.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/capacityReservation:CapacityReservation".into(),
             name: name.to_string(),
@@ -227,7 +227,7 @@ pub mod capacity_reservation {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         CapacityReservationResult {
             id: o.get_id(),
             urn: o.get_urn(),

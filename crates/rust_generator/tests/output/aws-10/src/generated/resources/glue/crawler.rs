@@ -352,59 +352,55 @@ pub mod crawler {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CrawlerArgs,
     ) -> CrawlerResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CrawlerArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> CrawlerResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: CrawlerArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> CrawlerResult {
-        let catalog_targets_binding = args.catalog_targets.get_output(context);
-        let classifiers_binding = args.classifiers.get_output(context);
-        let configuration_binding = args.configuration.get_output(context);
-        let database_name_binding = args.database_name.get_output(context);
-        let delta_targets_binding = args.delta_targets.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let dynamodb_targets_binding = args.dynamodb_targets.get_output(context);
-        let hudi_targets_binding = args.hudi_targets.get_output(context);
-        let iceberg_targets_binding = args.iceberg_targets.get_output(context);
-        let jdbc_targets_binding = args.jdbc_targets.get_output(context);
+        let catalog_targets_binding = args.catalog_targets.get_output(ctx);
+        let classifiers_binding = args.classifiers.get_output(ctx);
+        let configuration_binding = args.configuration.get_output(ctx);
+        let database_name_binding = args.database_name.get_output(ctx);
+        let delta_targets_binding = args.delta_targets.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let dynamodb_targets_binding = args.dynamodb_targets.get_output(ctx);
+        let hudi_targets_binding = args.hudi_targets.get_output(ctx);
+        let iceberg_targets_binding = args.iceberg_targets.get_output(ctx);
+        let jdbc_targets_binding = args.jdbc_targets.get_output(ctx);
         let lake_formation_configuration_binding = args
             .lake_formation_configuration
-            .get_output(context);
-        let lineage_configuration_binding = args
-            .lineage_configuration
-            .get_output(context);
-        let mongodb_targets_binding = args.mongodb_targets.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let recrawl_policy_binding = args.recrawl_policy.get_output(context);
-        let role_binding = args.role.get_output(context);
-        let s3_targets_binding = args.s3_targets.get_output(context);
-        let schedule_binding = args.schedule.get_output(context);
-        let schema_change_policy_binding = args.schema_change_policy.get_output(context);
-        let security_configuration_binding = args
-            .security_configuration
-            .get_output(context);
-        let table_prefix_binding = args.table_prefix.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let lineage_configuration_binding = args.lineage_configuration.get_output(ctx);
+        let mongodb_targets_binding = args.mongodb_targets.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let recrawl_policy_binding = args.recrawl_policy.get_output(ctx);
+        let role_binding = args.role.get_output(ctx);
+        let s3_targets_binding = args.s3_targets.get_output(ctx);
+        let schedule_binding = args.schedule.get_output(ctx);
+        let schema_change_policy_binding = args.schema_change_policy.get_output(ctx);
+        let security_configuration_binding = args.security_configuration.get_output(ctx);
+        let table_prefix_binding = args.table_prefix.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:glue/crawler:Crawler".into(),
             name: name.to_string(),
@@ -501,7 +497,7 @@ pub mod crawler {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         CrawlerResult {
             id: o.get_id(),
             urn: o.get_urn(),

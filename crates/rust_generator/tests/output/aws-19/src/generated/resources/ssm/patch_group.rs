@@ -57,33 +57,33 @@ pub mod patch_group {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PatchGroupArgs,
     ) -> PatchGroupResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PatchGroupArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> PatchGroupResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PatchGroupArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> PatchGroupResult {
-        let baseline_id_binding = args.baseline_id.get_output(context);
-        let patch_group_binding = args.patch_group.get_output(context);
+        let baseline_id_binding = args.baseline_id.get_output(ctx);
+        let patch_group_binding = args.patch_group.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ssm/patchGroup:PatchGroup".into(),
             name: name.to_string(),
@@ -100,7 +100,7 @@ pub mod patch_group {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         PatchGroupResult {
             id: o.get_id(),
             urn: o.get_urn(),

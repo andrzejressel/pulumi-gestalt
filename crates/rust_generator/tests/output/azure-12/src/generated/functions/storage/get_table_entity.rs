@@ -35,12 +35,12 @@ pub mod get_table_entity {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetTableEntityArgs,
     ) -> GetTableEntityResult {
-        let partition_key_binding = args.partition_key.get_output(context);
-        let row_key_binding = args.row_key.get_output(context);
-        let storage_table_id_binding = args.storage_table_id.get_output(context);
+        let partition_key_binding = args.partition_key.get_output(ctx);
+        let row_key_binding = args.row_key.get_output(ctx);
+        let storage_table_id_binding = args.storage_table_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:storage/getTableEntity:getTableEntity".into(),
             version: super::super::super::get_version(),
@@ -59,7 +59,7 @@ pub mod get_table_entity {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetTableEntityResult {
             entity: o.get_field("entity"),
             id: o.get_field("id"),

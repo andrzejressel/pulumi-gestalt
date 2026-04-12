@@ -181,42 +181,42 @@ pub mod method {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MethodArgs,
     ) -> MethodResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MethodArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> MethodResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MethodArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> MethodResult {
-        let api_key_required_binding = args.api_key_required.get_output(context);
-        let authorization_binding = args.authorization.get_output(context);
-        let authorization_scopes_binding = args.authorization_scopes.get_output(context);
-        let authorizer_id_binding = args.authorizer_id.get_output(context);
-        let http_method_binding = args.http_method.get_output(context);
-        let operation_name_binding = args.operation_name.get_output(context);
-        let request_models_binding = args.request_models.get_output(context);
-        let request_parameters_binding = args.request_parameters.get_output(context);
-        let request_validator_id_binding = args.request_validator_id.get_output(context);
-        let resource_id_binding = args.resource_id.get_output(context);
-        let rest_api_binding = args.rest_api.get_output(context);
+        let api_key_required_binding = args.api_key_required.get_output(ctx);
+        let authorization_binding = args.authorization.get_output(ctx);
+        let authorization_scopes_binding = args.authorization_scopes.get_output(ctx);
+        let authorizer_id_binding = args.authorizer_id.get_output(ctx);
+        let http_method_binding = args.http_method.get_output(ctx);
+        let operation_name_binding = args.operation_name.get_output(ctx);
+        let request_models_binding = args.request_models.get_output(ctx);
+        let request_parameters_binding = args.request_parameters.get_output(ctx);
+        let request_validator_id_binding = args.request_validator_id.get_output(ctx);
+        let resource_id_binding = args.resource_id.get_output(ctx);
+        let rest_api_binding = args.rest_api.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:apigateway/method:Method".into(),
             name: name.to_string(),
@@ -269,7 +269,7 @@ pub mod method {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         MethodResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -164,41 +164,39 @@ pub mod gateway_association {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GatewayAssociationArgs,
     ) -> GatewayAssociationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GatewayAssociationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> GatewayAssociationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GatewayAssociationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> GatewayAssociationResult {
-        let allowed_prefixes_binding = args.allowed_prefixes.get_output(context);
-        let associated_gateway_id_binding = args
-            .associated_gateway_id
-            .get_output(context);
+        let allowed_prefixes_binding = args.allowed_prefixes.get_output(ctx);
+        let associated_gateway_id_binding = args.associated_gateway_id.get_output(ctx);
         let associated_gateway_owner_account_id_binding = args
             .associated_gateway_owner_account_id
-            .get_output(context);
-        let dx_gateway_id_binding = args.dx_gateway_id.get_output(context);
-        let proposal_id_binding = args.proposal_id.get_output(context);
-        let vpn_gateway_id_binding = args.vpn_gateway_id.get_output(context);
+            .get_output(ctx);
+        let dx_gateway_id_binding = args.dx_gateway_id.get_output(ctx);
+        let proposal_id_binding = args.proposal_id.get_output(ctx);
+        let vpn_gateway_id_binding = args.vpn_gateway_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:directconnect/gatewayAssociation:GatewayAssociation".into(),
             name: name.to_string(),
@@ -231,7 +229,7 @@ pub mod gateway_association {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         GatewayAssociationResult {
             id: o.get_id(),
             urn: o.get_urn(),

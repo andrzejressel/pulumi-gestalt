@@ -92,36 +92,36 @@ pub mod data_connector_dynamics_365 {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataConnectorDynamics365Args,
     ) -> DataConnectorDynamics365Result {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataConnectorDynamics365Args,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DataConnectorDynamics365Result {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DataConnectorDynamics365Args,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DataConnectorDynamics365Result {
         let log_analytics_workspace_id_binding = args
             .log_analytics_workspace_id
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let tenant_id_binding = args.tenant_id.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let tenant_id_binding = args.tenant_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:sentinel/dataConnectorDynamics365:DataConnectorDynamics365"
                 .into(),
@@ -143,7 +143,7 @@ pub mod data_connector_dynamics_365 {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DataConnectorDynamics365Result {
             id: o.get_id(),
             urn: o.get_urn(),

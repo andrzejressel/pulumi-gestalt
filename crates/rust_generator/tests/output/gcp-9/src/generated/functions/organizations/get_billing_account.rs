@@ -43,13 +43,13 @@ pub mod get_billing_account {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetBillingAccountArgs,
     ) -> GetBillingAccountResult {
-        let billing_account_binding = args.billing_account.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let lookup_projects_binding = args.lookup_projects.get_output(context);
-        let open_binding = args.open.get_output(context);
+        let billing_account_binding = args.billing_account.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let lookup_projects_binding = args.lookup_projects.get_output(ctx);
+        let open_binding = args.open.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:organizations/getBillingAccount:getBillingAccount".into(),
             version: super::super::super::get_version(),
@@ -72,7 +72,7 @@ pub mod get_billing_account {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetBillingAccountResult {
             billing_account: o.get_field("billingAccount"),
             display_name: o.get_field("displayName"),

@@ -254,43 +254,41 @@ pub mod bitbucket_server_config {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BitbucketServerConfigArgs,
     ) -> BitbucketServerConfigResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BitbucketServerConfigArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> BitbucketServerConfigResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BitbucketServerConfigArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> BitbucketServerConfigResult {
-        let api_key_binding = args.api_key.get_output(context);
-        let config_id_binding = args.config_id.get_output(context);
-        let connected_repositories_binding = args
-            .connected_repositories
-            .get_output(context);
-        let host_uri_binding = args.host_uri.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let peered_network_binding = args.peered_network.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let secrets_binding = args.secrets.get_output(context);
-        let ssl_ca_binding = args.ssl_ca.get_output(context);
-        let username_binding = args.username.get_output(context);
+        let api_key_binding = args.api_key.get_output(ctx);
+        let config_id_binding = args.config_id.get_output(ctx);
+        let connected_repositories_binding = args.connected_repositories.get_output(ctx);
+        let host_uri_binding = args.host_uri.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let peered_network_binding = args.peered_network.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let secrets_binding = args.secrets.get_output(ctx);
+        let ssl_ca_binding = args.ssl_ca.get_output(ctx);
+        let username_binding = args.username.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:cloudbuild/bitbucketServerConfig:BitbucketServerConfig".into(),
             name: name.to_string(),
@@ -339,7 +337,7 @@ pub mod bitbucket_server_config {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         BitbucketServerConfigResult {
             id: o.get_id(),
             urn: o.get_urn(),

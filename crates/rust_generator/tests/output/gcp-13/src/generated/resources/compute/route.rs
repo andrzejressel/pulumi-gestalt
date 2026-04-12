@@ -399,46 +399,44 @@ pub mod route {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RouteArgs,
     ) -> RouteResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RouteArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> RouteResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RouteArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> RouteResult {
-        let description_binding = args.description.get_output(context);
-        let dest_range_binding = args.dest_range.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let network_binding = args.network.get_output(context);
-        let next_hop_gateway_binding = args.next_hop_gateway.get_output(context);
-        let next_hop_ilb_binding = args.next_hop_ilb.get_output(context);
-        let next_hop_instance_binding = args.next_hop_instance.get_output(context);
-        let next_hop_instance_zone_binding = args
-            .next_hop_instance_zone
-            .get_output(context);
-        let next_hop_ip_binding = args.next_hop_ip.get_output(context);
-        let next_hop_vpn_tunnel_binding = args.next_hop_vpn_tunnel.get_output(context);
-        let priority_binding = args.priority.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let description_binding = args.description.get_output(ctx);
+        let dest_range_binding = args.dest_range.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let network_binding = args.network.get_output(ctx);
+        let next_hop_gateway_binding = args.next_hop_gateway.get_output(ctx);
+        let next_hop_ilb_binding = args.next_hop_ilb.get_output(ctx);
+        let next_hop_instance_binding = args.next_hop_instance.get_output(ctx);
+        let next_hop_instance_zone_binding = args.next_hop_instance_zone.get_output(ctx);
+        let next_hop_ip_binding = args.next_hop_ip.get_output(ctx);
+        let next_hop_vpn_tunnel_binding = args.next_hop_vpn_tunnel.get_output(ctx);
+        let priority_binding = args.priority.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:compute/route:Route".into(),
             name: name.to_string(),
@@ -499,7 +497,7 @@ pub mod route {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         RouteResult {
             id: o.get_id(),
             urn: o.get_urn(),

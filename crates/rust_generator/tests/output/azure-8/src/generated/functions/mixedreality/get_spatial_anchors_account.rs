@@ -34,11 +34,11 @@ pub mod get_spatial_anchors_account {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetSpatialAnchorsAccountArgs,
     ) -> GetSpatialAnchorsAccountResult {
-        let name_binding = args.name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:mixedreality/getSpatialAnchorsAccount:getSpatialAnchorsAccount"
                 .into(),
@@ -54,7 +54,7 @@ pub mod get_spatial_anchors_account {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetSpatialAnchorsAccountResult {
             account_domain: o.get_field("accountDomain"),
             account_id: o.get_field("accountId"),

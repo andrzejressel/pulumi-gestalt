@@ -171,47 +171,47 @@ pub mod route {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RouteArgs,
     ) -> RouteResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RouteArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> RouteResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RouteArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> RouteResult {
-        let api_id_binding = args.api_id.get_output(context);
-        let api_key_required_binding = args.api_key_required.get_output(context);
-        let authorization_scopes_binding = args.authorization_scopes.get_output(context);
-        let authorization_type_binding = args.authorization_type.get_output(context);
-        let authorizer_id_binding = args.authorizer_id.get_output(context);
+        let api_id_binding = args.api_id.get_output(ctx);
+        let api_key_required_binding = args.api_key_required.get_output(ctx);
+        let authorization_scopes_binding = args.authorization_scopes.get_output(ctx);
+        let authorization_type_binding = args.authorization_type.get_output(ctx);
+        let authorizer_id_binding = args.authorizer_id.get_output(ctx);
         let model_selection_expression_binding = args
             .model_selection_expression
-            .get_output(context);
-        let operation_name_binding = args.operation_name.get_output(context);
-        let request_models_binding = args.request_models.get_output(context);
-        let request_parameters_binding = args.request_parameters.get_output(context);
-        let route_key_binding = args.route_key.get_output(context);
+            .get_output(ctx);
+        let operation_name_binding = args.operation_name.get_output(ctx);
+        let request_models_binding = args.request_models.get_output(ctx);
+        let request_parameters_binding = args.request_parameters.get_output(ctx);
+        let route_key_binding = args.route_key.get_output(ctx);
         let route_response_selection_expression_binding = args
             .route_response_selection_expression
-            .get_output(context);
-        let target_binding = args.target.get_output(context);
+            .get_output(ctx);
+        let target_binding = args.target.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:apigatewayv2/route:Route".into(),
             name: name.to_string(),
@@ -268,7 +268,7 @@ pub mod route {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         RouteResult {
             id: o.get_id(),
             urn: o.get_urn(),

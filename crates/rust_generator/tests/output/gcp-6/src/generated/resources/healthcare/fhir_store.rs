@@ -372,57 +372,55 @@ pub mod fhir_store {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FhirStoreArgs,
     ) -> FhirStoreResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FhirStoreArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> FhirStoreResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FhirStoreArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> FhirStoreResult {
         let complex_data_type_reference_parsing_binding = args
             .complex_data_type_reference_parsing
-            .get_output(context);
-        let dataset_binding = args.dataset.get_output(context);
+            .get_output(ctx);
+        let dataset_binding = args.dataset.get_output(ctx);
         let default_search_handling_strict_binding = args
             .default_search_handling_strict
-            .get_output(context);
+            .get_output(ctx);
         let disable_referential_integrity_binding = args
             .disable_referential_integrity
-            .get_output(context);
+            .get_output(ctx);
         let disable_resource_versioning_binding = args
             .disable_resource_versioning
-            .get_output(context);
-        let enable_history_import_binding = args
-            .enable_history_import
-            .get_output(context);
+            .get_output(ctx);
+        let enable_history_import_binding = args.enable_history_import.get_output(ctx);
         let enable_history_modifications_binding = args
             .enable_history_modifications
-            .get_output(context);
-        let enable_update_create_binding = args.enable_update_create.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let notification_config_binding = args.notification_config.get_output(context);
-        let notification_configs_binding = args.notification_configs.get_output(context);
-        let stream_configs_binding = args.stream_configs.get_output(context);
-        let version_binding = args.version.get_output(context);
+            .get_output(ctx);
+        let enable_update_create_binding = args.enable_update_create.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let notification_config_binding = args.notification_config.get_output(ctx);
+        let notification_configs_binding = args.notification_configs.get_output(ctx);
+        let stream_configs_binding = args.stream_configs.get_output(ctx);
+        let version_binding = args.version.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:healthcare/fhirStore:FhirStore".into(),
             name: name.to_string(),
@@ -487,7 +485,7 @@ pub mod fhir_store {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         FhirStoreResult {
             id: o.get_id(),
             urn: o.get_urn(),

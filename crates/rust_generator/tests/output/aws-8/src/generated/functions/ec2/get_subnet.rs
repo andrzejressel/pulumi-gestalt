@@ -97,19 +97,19 @@ pub mod get_subnet {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetSubnetArgs,
     ) -> GetSubnetResult {
-        let availability_zone_binding = args.availability_zone.get_output(context);
-        let availability_zone_id_binding = args.availability_zone_id.get_output(context);
-        let cidr_block_binding = args.cidr_block.get_output(context);
-        let default_for_az_binding = args.default_for_az.get_output(context);
-        let filters_binding = args.filters.get_output(context);
-        let id_binding = args.id.get_output(context);
-        let ipv6_cidr_block_binding = args.ipv6_cidr_block.get_output(context);
-        let state_binding = args.state.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let vpc_id_binding = args.vpc_id.get_output(context);
+        let availability_zone_binding = args.availability_zone.get_output(ctx);
+        let availability_zone_id_binding = args.availability_zone_id.get_output(ctx);
+        let cidr_block_binding = args.cidr_block.get_output(ctx);
+        let default_for_az_binding = args.default_for_az.get_output(ctx);
+        let filters_binding = args.filters.get_output(ctx);
+        let id_binding = args.id.get_output(ctx);
+        let ipv6_cidr_block_binding = args.ipv6_cidr_block.get_output(ctx);
+        let state_binding = args.state.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let vpc_id_binding = args.vpc_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ec2/getSubnet:getSubnet".into(),
             version: super::super::super::get_version(),
@@ -156,7 +156,7 @@ pub mod get_subnet {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetSubnetResult {
             arn: o.get_field("arn"),
             assign_ipv6_address_on_creation: o.get_field("assignIpv6AddressOnCreation"),

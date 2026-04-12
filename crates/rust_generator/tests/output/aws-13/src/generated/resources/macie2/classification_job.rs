@@ -140,44 +140,44 @@ pub mod classification_job {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClassificationJobArgs,
     ) -> ClassificationJobResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClassificationJobArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ClassificationJobResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ClassificationJobArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ClassificationJobResult {
         let custom_data_identifier_ids_binding = args
             .custom_data_identifier_ids
-            .get_output(context);
-        let description_binding = args.description.get_output(context);
-        let initial_run_binding = args.initial_run.get_output(context);
-        let job_status_binding = args.job_status.get_output(context);
-        let job_type_binding = args.job_type.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let name_prefix_binding = args.name_prefix.get_output(context);
-        let s3_job_definition_binding = args.s3_job_definition.get_output(context);
-        let sampling_percentage_binding = args.sampling_percentage.get_output(context);
-        let schedule_frequency_binding = args.schedule_frequency.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let initial_run_binding = args.initial_run.get_output(ctx);
+        let job_status_binding = args.job_status.get_output(ctx);
+        let job_type_binding = args.job_type.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let name_prefix_binding = args.name_prefix.get_output(ctx);
+        let s3_job_definition_binding = args.s3_job_definition.get_output(ctx);
+        let sampling_percentage_binding = args.sampling_percentage.get_output(ctx);
+        let schedule_frequency_binding = args.schedule_frequency.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:macie2/classificationJob:ClassificationJob".into(),
             name: name.to_string(),
@@ -230,7 +230,7 @@ pub mod classification_job {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ClassificationJobResult {
             id: o.get_id(),
             urn: o.get_urn(),

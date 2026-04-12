@@ -203,60 +203,60 @@ pub mod alert_rule_nrt {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AlertRuleNrtArgs,
     ) -> AlertRuleNrtResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AlertRuleNrtArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AlertRuleNrtResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AlertRuleNrtArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AlertRuleNrtResult {
         let alert_details_overrides_binding = args
             .alert_details_overrides
-            .get_output(context);
+            .get_output(ctx);
         let alert_rule_template_guid_binding = args
             .alert_rule_template_guid
-            .get_output(context);
+            .get_output(ctx);
         let alert_rule_template_version_binding = args
             .alert_rule_template_version
-            .get_output(context);
-        let custom_details_binding = args.custom_details.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let enabled_binding = args.enabled.get_output(context);
-        let entity_mappings_binding = args.entity_mappings.get_output(context);
-        let event_grouping_binding = args.event_grouping.get_output(context);
-        let incident_binding = args.incident.get_output(context);
+            .get_output(ctx);
+        let custom_details_binding = args.custom_details.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let enabled_binding = args.enabled.get_output(ctx);
+        let entity_mappings_binding = args.entity_mappings.get_output(ctx);
+        let event_grouping_binding = args.event_grouping.get_output(ctx);
+        let incident_binding = args.incident.get_output(ctx);
         let log_analytics_workspace_id_binding = args
             .log_analytics_workspace_id
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let query_binding = args.query.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let query_binding = args.query.get_output(ctx);
         let sentinel_entity_mappings_binding = args
             .sentinel_entity_mappings
-            .get_output(context);
-        let severity_binding = args.severity.get_output(context);
-        let suppression_duration_binding = args.suppression_duration.get_output(context);
-        let suppression_enabled_binding = args.suppression_enabled.get_output(context);
-        let tactics_binding = args.tactics.get_output(context);
-        let techniques_binding = args.techniques.get_output(context);
+            .get_output(ctx);
+        let severity_binding = args.severity.get_output(ctx);
+        let suppression_duration_binding = args.suppression_duration.get_output(ctx);
+        let suppression_enabled_binding = args.suppression_enabled.get_output(ctx);
+        let tactics_binding = args.tactics.get_output(ctx);
+        let techniques_binding = args.techniques.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:sentinel/alertRuleNrt:AlertRuleNrt".into(),
             name: name.to_string(),
@@ -341,7 +341,7 @@ pub mod alert_rule_nrt {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AlertRuleNrtResult {
             id: o.get_id(),
             urn: o.get_urn(),

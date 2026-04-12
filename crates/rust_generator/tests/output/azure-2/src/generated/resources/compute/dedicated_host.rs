@@ -112,45 +112,43 @@ pub mod dedicated_host {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DedicatedHostArgs,
     ) -> DedicatedHostResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DedicatedHostArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DedicatedHostResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DedicatedHostArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DedicatedHostResult {
         let auto_replace_on_failure_binding = args
             .auto_replace_on_failure
-            .get_output(context);
+            .get_output(ctx);
         let dedicated_host_group_id_binding = args
             .dedicated_host_group_id
-            .get_output(context);
-        let license_type_binding = args.license_type.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let platform_fault_domain_binding = args
-            .platform_fault_domain
-            .get_output(context);
-        let sku_name_binding = args.sku_name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let license_type_binding = args.license_type.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let platform_fault_domain_binding = args.platform_fault_domain.get_output(ctx);
+        let sku_name_binding = args.sku_name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:compute/dedicatedHost:DedicatedHost".into(),
             name: name.to_string(),
@@ -191,7 +189,7 @@ pub mod dedicated_host {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DedicatedHostResult {
             id: o.get_id(),
             urn: o.get_urn(),

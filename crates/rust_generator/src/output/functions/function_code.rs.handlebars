@@ -42,14 +42,14 @@ pub struct {{function.struct_name}}Result {
 ///
 #[allow(non_snake_case, unused_imports, dead_code)]
 pub fn invoke(
-    context: &pulumi_gestalt_rust::Context,
+    ctx: &pulumi_gestalt_rust::Context,
 {{#if function.input_properties}}
     args: {{function.struct_name}}Args
 {{/if}}
 ){{#if function.output_properties}} -> {{function.struct_name}}Result{{/if}} {
 
 {{#each function.input_properties}}
-    let {{arg_name}}_binding = args.{{arg_name}}.get_output(context);
+    let {{arg_name}}_binding = args.{{arg_name}}.get_output(ctx);
 {{/each}}
 
     let request = pulumi_gestalt_rust::InvokeResourceRequest {
@@ -63,14 +63,14 @@ pub fn invoke(
     };
 
 {{#if function.output_properties}}
-    let o = context.invoke_resource(request);
+    let o = ctx.invoke_resource(request);
     {{function.struct_name}}Result {
     {{#each function.output_properties}}
         {{arg_name}}: o.get_field("{{name}}"),
     {{/each}}
     }
 {{else}}
-    context.invoke_resource(request);
+    ctx.invoke_resource(request);
 {{/if}}
 }
 

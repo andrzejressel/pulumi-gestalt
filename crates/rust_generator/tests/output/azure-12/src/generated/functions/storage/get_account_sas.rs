@@ -71,18 +71,18 @@ pub mod get_account_sas {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetAccountSasArgs,
     ) -> GetAccountSasResult {
-        let connection_string_binding = args.connection_string.get_output(context);
-        let expiry_binding = args.expiry.get_output(context);
-        let https_only_binding = args.https_only.get_output(context);
-        let ip_addresses_binding = args.ip_addresses.get_output(context);
-        let permissions_binding = args.permissions.get_output(context);
-        let resource_types_binding = args.resource_types.get_output(context);
-        let services_binding = args.services.get_output(context);
-        let signed_version_binding = args.signed_version.get_output(context);
-        let start_binding = args.start.get_output(context);
+        let connection_string_binding = args.connection_string.get_output(ctx);
+        let expiry_binding = args.expiry.get_output(ctx);
+        let https_only_binding = args.https_only.get_output(ctx);
+        let ip_addresses_binding = args.ip_addresses.get_output(ctx);
+        let permissions_binding = args.permissions.get_output(ctx);
+        let resource_types_binding = args.resource_types.get_output(ctx);
+        let services_binding = args.services.get_output(ctx);
+        let signed_version_binding = args.signed_version.get_output(ctx);
+        let start_binding = args.start.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:storage/getAccountSAS:getAccountSAS".into(),
             version: super::super::super::get_version(),
@@ -125,7 +125,7 @@ pub mod get_account_sas {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetAccountSasResult {
             connection_string: o.get_field("connectionString"),
             expiry: o.get_field("expiry"),

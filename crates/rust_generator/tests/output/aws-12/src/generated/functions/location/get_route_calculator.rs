@@ -40,11 +40,11 @@ pub mod get_route_calculator {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetRouteCalculatorArgs,
     ) -> GetRouteCalculatorResult {
-        let calculator_name_binding = args.calculator_name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let calculator_name_binding = args.calculator_name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:location/getRouteCalculator:getRouteCalculator".into(),
             version: super::super::super::get_version(),
@@ -59,7 +59,7 @@ pub mod get_route_calculator {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetRouteCalculatorResult {
             calculator_arn: o.get_field("calculatorArn"),
             calculator_name: o.get_field("calculatorName"),

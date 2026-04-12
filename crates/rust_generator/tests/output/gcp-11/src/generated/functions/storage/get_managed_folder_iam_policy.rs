@@ -27,11 +27,11 @@ pub mod get_managed_folder_iam_policy {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetManagedFolderIamPolicyArgs,
     ) -> GetManagedFolderIamPolicyResult {
-        let bucket_binding = args.bucket.get_output(context);
-        let managed_folder_binding = args.managed_folder.get_output(context);
+        let bucket_binding = args.bucket.get_output(ctx);
+        let managed_folder_binding = args.managed_folder.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:storage/getManagedFolderIamPolicy:getManagedFolderIamPolicy"
                 .into(),
@@ -47,7 +47,7 @@ pub mod get_managed_folder_iam_policy {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetManagedFolderIamPolicyResult {
             bucket: o.get_field("bucket"),
             etag: o.get_field("etag"),

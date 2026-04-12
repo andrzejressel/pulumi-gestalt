@@ -33,11 +33,11 @@ pub mod get_selection {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetSelectionArgs,
     ) -> GetSelectionResult {
-        let plan_id_binding = args.plan_id.get_output(context);
-        let selection_id_binding = args.selection_id.get_output(context);
+        let plan_id_binding = args.plan_id.get_output(ctx);
+        let selection_id_binding = args.selection_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:backup/getSelection:getSelection".into(),
             version: super::super::super::get_version(),
@@ -52,7 +52,7 @@ pub mod get_selection {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetSelectionResult {
             iam_role_arn: o.get_field("iamRoleArn"),
             id: o.get_field("id"),

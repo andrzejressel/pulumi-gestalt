@@ -152,47 +152,43 @@ pub mod traffic_mirror_filter_rule {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TrafficMirrorFilterRuleArgs,
     ) -> TrafficMirrorFilterRuleResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TrafficMirrorFilterRuleArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> TrafficMirrorFilterRuleResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TrafficMirrorFilterRuleArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> TrafficMirrorFilterRuleResult {
-        let description_binding = args.description.get_output(context);
-        let destination_cidr_block_binding = args
-            .destination_cidr_block
-            .get_output(context);
-        let destination_port_range_binding = args
-            .destination_port_range
-            .get_output(context);
-        let protocol_binding = args.protocol.get_output(context);
-        let rule_action_binding = args.rule_action.get_output(context);
-        let rule_number_binding = args.rule_number.get_output(context);
-        let source_cidr_block_binding = args.source_cidr_block.get_output(context);
-        let source_port_range_binding = args.source_port_range.get_output(context);
-        let traffic_direction_binding = args.traffic_direction.get_output(context);
+        let description_binding = args.description.get_output(ctx);
+        let destination_cidr_block_binding = args.destination_cidr_block.get_output(ctx);
+        let destination_port_range_binding = args.destination_port_range.get_output(ctx);
+        let protocol_binding = args.protocol.get_output(ctx);
+        let rule_action_binding = args.rule_action.get_output(ctx);
+        let rule_number_binding = args.rule_number.get_output(ctx);
+        let source_cidr_block_binding = args.source_cidr_block.get_output(ctx);
+        let source_port_range_binding = args.source_port_range.get_output(ctx);
+        let traffic_direction_binding = args.traffic_direction.get_output(ctx);
         let traffic_mirror_filter_id_binding = args
             .traffic_mirror_filter_id
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/trafficMirrorFilterRule:TrafficMirrorFilterRule".into(),
             name: name.to_string(),
@@ -241,7 +237,7 @@ pub mod traffic_mirror_filter_rule {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         TrafficMirrorFilterRuleResult {
             id: o.get_id(),
             urn: o.get_urn(),

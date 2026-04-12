@@ -103,41 +103,41 @@ pub mod log_anomaly_detector {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LogAnomalyDetectorArgs,
     ) -> LogAnomalyDetectorResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LogAnomalyDetectorArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> LogAnomalyDetectorResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: LogAnomalyDetectorArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> LogAnomalyDetectorResult {
         let anomaly_visibility_time_binding = args
             .anomaly_visibility_time
-            .get_output(context);
-        let detector_name_binding = args.detector_name.get_output(context);
-        let enabled_binding = args.enabled.get_output(context);
-        let evaluation_frequency_binding = args.evaluation_frequency.get_output(context);
-        let filter_pattern_binding = args.filter_pattern.get_output(context);
-        let kms_key_id_binding = args.kms_key_id.get_output(context);
-        let log_group_arn_lists_binding = args.log_group_arn_lists.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let detector_name_binding = args.detector_name.get_output(ctx);
+        let enabled_binding = args.enabled.get_output(ctx);
+        let evaluation_frequency_binding = args.evaluation_frequency.get_output(ctx);
+        let filter_pattern_binding = args.filter_pattern.get_output(ctx);
+        let kms_key_id_binding = args.kms_key_id.get_output(ctx);
+        let log_group_arn_lists_binding = args.log_group_arn_lists.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:cloudwatch/logAnomalyDetector:LogAnomalyDetector".into(),
             name: name.to_string(),
@@ -178,7 +178,7 @@ pub mod log_anomaly_detector {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         LogAnomalyDetectorResult {
             id: o.get_id(),
             urn: o.get_urn(),

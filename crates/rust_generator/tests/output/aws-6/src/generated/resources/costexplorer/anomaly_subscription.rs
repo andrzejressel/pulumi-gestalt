@@ -287,38 +287,38 @@ pub mod anomaly_subscription {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AnomalySubscriptionArgs,
     ) -> AnomalySubscriptionResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AnomalySubscriptionArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AnomalySubscriptionResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AnomalySubscriptionArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AnomalySubscriptionResult {
-        let account_id_binding = args.account_id.get_output(context);
-        let frequency_binding = args.frequency.get_output(context);
-        let monitor_arn_lists_binding = args.monitor_arn_lists.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let subscribers_binding = args.subscribers.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let threshold_expression_binding = args.threshold_expression.get_output(context);
+        let account_id_binding = args.account_id.get_output(ctx);
+        let frequency_binding = args.frequency.get_output(ctx);
+        let monitor_arn_lists_binding = args.monitor_arn_lists.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let subscribers_binding = args.subscribers.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let threshold_expression_binding = args.threshold_expression.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:costexplorer/anomalySubscription:AnomalySubscription".into(),
             name: name.to_string(),
@@ -355,7 +355,7 @@ pub mod anomaly_subscription {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AnomalySubscriptionResult {
             id: o.get_id(),
             urn: o.get_urn(),

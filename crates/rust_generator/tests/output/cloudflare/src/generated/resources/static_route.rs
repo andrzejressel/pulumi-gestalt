@@ -95,39 +95,39 @@ pub mod static_route {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StaticRouteArgs,
     ) -> StaticRouteResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StaticRouteArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> StaticRouteResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StaticRouteArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> StaticRouteResult {
-        let account_id_binding = args.account_id.get_output(context);
-        let colo_names_binding = args.colo_names.get_output(context);
-        let colo_regions_binding = args.colo_regions.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let nexthop_binding = args.nexthop.get_output(context);
-        let prefix_binding = args.prefix.get_output(context);
-        let priority_binding = args.priority.get_output(context);
-        let weight_binding = args.weight.get_output(context);
+        let account_id_binding = args.account_id.get_output(ctx);
+        let colo_names_binding = args.colo_names.get_output(ctx);
+        let colo_regions_binding = args.colo_regions.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let nexthop_binding = args.nexthop.get_output(ctx);
+        let prefix_binding = args.prefix.get_output(ctx);
+        let priority_binding = args.priority.get_output(ctx);
+        let weight_binding = args.weight.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "cloudflare:index/staticRoute:StaticRoute".into(),
             name: name.to_string(),
@@ -168,7 +168,7 @@ pub mod static_route {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         StaticRouteResult {
             id: o.get_id(),
             urn: o.get_urn(),

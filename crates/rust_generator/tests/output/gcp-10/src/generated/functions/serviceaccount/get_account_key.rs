@@ -37,12 +37,12 @@ pub mod get_account_key {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetAccountKeyArgs,
     ) -> GetAccountKeyResult {
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let public_key_type_binding = args.public_key_type.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let public_key_type_binding = args.public_key_type.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:serviceaccount/getAccountKey:getAccountKey".into(),
             version: super::super::super::get_version(),
@@ -61,7 +61,7 @@ pub mod get_account_key {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetAccountKeyResult {
             id: o.get_field("id"),
             key_algorithm: o.get_field("keyAlgorithm"),

@@ -165,40 +165,38 @@ pub mod file_system_association {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FileSystemAssociationArgs,
     ) -> FileSystemAssociationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FileSystemAssociationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> FileSystemAssociationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FileSystemAssociationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> FileSystemAssociationResult {
-        let audit_destination_arn_binding = args
-            .audit_destination_arn
-            .get_output(context);
-        let cache_attributes_binding = args.cache_attributes.get_output(context);
-        let gateway_arn_binding = args.gateway_arn.get_output(context);
-        let location_arn_binding = args.location_arn.get_output(context);
-        let password_binding = args.password.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let username_binding = args.username.get_output(context);
+        let audit_destination_arn_binding = args.audit_destination_arn.get_output(ctx);
+        let cache_attributes_binding = args.cache_attributes.get_output(ctx);
+        let gateway_arn_binding = args.gateway_arn.get_output(ctx);
+        let location_arn_binding = args.location_arn.get_output(ctx);
+        let password_binding = args.password.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let username_binding = args.username.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:storagegateway/fileSystemAssociation:FileSystemAssociation"
                 .into(),
@@ -236,7 +234,7 @@ pub mod file_system_association {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         FileSystemAssociationResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -30,11 +30,11 @@ pub mod get_service_consumers_iam_policy {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetServiceConsumersIamPolicyArgs,
     ) -> GetServiceConsumersIamPolicyResult {
-        let consumer_project_binding = args.consumer_project.get_output(context);
-        let service_name_binding = args.service_name.get_output(context);
+        let consumer_project_binding = args.consumer_project.get_output(ctx);
+        let service_name_binding = args.service_name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:endpoints/getServiceConsumersIamPolicy:getServiceConsumersIamPolicy"
                 .into(),
@@ -50,7 +50,7 @@ pub mod get_service_consumers_iam_policy {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetServiceConsumersIamPolicyResult {
             consumer_project: o.get_field("consumerProject"),
             etag: o.get_field("etag"),

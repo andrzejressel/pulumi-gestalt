@@ -272,60 +272,56 @@ pub mod branch {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BranchArgs,
     ) -> BranchResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BranchArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> BranchResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BranchArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> BranchResult {
-        let app_id_binding = args.app_id.get_output(context);
+        let app_id_binding = args.app_id.get_output(ctx);
         let backend_environment_arn_binding = args
             .backend_environment_arn
-            .get_output(context);
-        let basic_auth_credentials_binding = args
-            .basic_auth_credentials
-            .get_output(context);
-        let branch_name_binding = args.branch_name.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let enable_auto_build_binding = args.enable_auto_build.get_output(context);
-        let enable_basic_auth_binding = args.enable_basic_auth.get_output(context);
-        let enable_notification_binding = args.enable_notification.get_output(context);
+            .get_output(ctx);
+        let basic_auth_credentials_binding = args.basic_auth_credentials.get_output(ctx);
+        let branch_name_binding = args.branch_name.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let enable_auto_build_binding = args.enable_auto_build.get_output(ctx);
+        let enable_basic_auth_binding = args.enable_basic_auth.get_output(ctx);
+        let enable_notification_binding = args.enable_notification.get_output(ctx);
         let enable_performance_mode_binding = args
             .enable_performance_mode
-            .get_output(context);
+            .get_output(ctx);
         let enable_pull_request_preview_binding = args
             .enable_pull_request_preview
-            .get_output(context);
-        let environment_variables_binding = args
-            .environment_variables
-            .get_output(context);
-        let framework_binding = args.framework.get_output(context);
+            .get_output(ctx);
+        let environment_variables_binding = args.environment_variables.get_output(ctx);
+        let framework_binding = args.framework.get_output(ctx);
         let pull_request_environment_name_binding = args
             .pull_request_environment_name
-            .get_output(context);
-        let stage_binding = args.stage.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let ttl_binding = args.ttl.get_output(context);
+            .get_output(ctx);
+        let stage_binding = args.stage.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let ttl_binding = args.ttl.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:amplify/branch:Branch".into(),
             name: name.to_string(),
@@ -402,7 +398,7 @@ pub mod branch {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         BranchResult {
             id: o.get_id(),
             urn: o.get_urn(),

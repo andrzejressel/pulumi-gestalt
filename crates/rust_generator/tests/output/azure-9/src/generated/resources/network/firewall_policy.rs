@@ -186,54 +186,54 @@ pub mod firewall_policy {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FirewallPolicyArgs,
     ) -> FirewallPolicyResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FirewallPolicyArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> FirewallPolicyResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FirewallPolicyArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> FirewallPolicyResult {
         let auto_learn_private_ranges_enabled_binding = args
             .auto_learn_private_ranges_enabled
-            .get_output(context);
-        let base_policy_id_binding = args.base_policy_id.get_output(context);
-        let dns_binding = args.dns.get_output(context);
-        let explicit_proxy_binding = args.explicit_proxy.get_output(context);
-        let identity_binding = args.identity.get_output(context);
-        let insights_binding = args.insights.get_output(context);
-        let intrusion_detection_binding = args.intrusion_detection.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let private_ip_ranges_binding = args.private_ip_ranges.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let sku_binding = args.sku.get_output(context);
-        let sql_redirect_allowed_binding = args.sql_redirect_allowed.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let base_policy_id_binding = args.base_policy_id.get_output(ctx);
+        let dns_binding = args.dns.get_output(ctx);
+        let explicit_proxy_binding = args.explicit_proxy.get_output(ctx);
+        let identity_binding = args.identity.get_output(ctx);
+        let insights_binding = args.insights.get_output(ctx);
+        let intrusion_detection_binding = args.intrusion_detection.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let private_ip_ranges_binding = args.private_ip_ranges.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let sku_binding = args.sku.get_output(ctx);
+        let sql_redirect_allowed_binding = args.sql_redirect_allowed.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let threat_intelligence_allowlist_binding = args
             .threat_intelligence_allowlist
-            .get_output(context);
+            .get_output(ctx);
         let threat_intelligence_mode_binding = args
             .threat_intelligence_mode
-            .get_output(context);
-        let tls_certificate_binding = args.tls_certificate.get_output(context);
+            .get_output(ctx);
+        let tls_certificate_binding = args.tls_certificate.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:network/firewallPolicy:FirewallPolicy".into(),
             name: name.to_string(),
@@ -310,7 +310,7 @@ pub mod firewall_policy {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         FirewallPolicyResult {
             id: o.get_id(),
             urn: o.get_urn(),

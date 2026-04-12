@@ -121,40 +121,40 @@ pub mod statement {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StatementArgs,
     ) -> StatementResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StatementArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> StatementResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: StatementArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> StatementResult {
-        let cluster_identifier_binding = args.cluster_identifier.get_output(context);
-        let database_binding = args.database.get_output(context);
-        let db_user_binding = args.db_user.get_output(context);
-        let parameters_binding = args.parameters.get_output(context);
-        let secret_arn_binding = args.secret_arn.get_output(context);
-        let sql_binding = args.sql.get_output(context);
-        let statement_name_binding = args.statement_name.get_output(context);
-        let with_event_binding = args.with_event.get_output(context);
-        let workgroup_name_binding = args.workgroup_name.get_output(context);
+        let cluster_identifier_binding = args.cluster_identifier.get_output(ctx);
+        let database_binding = args.database.get_output(ctx);
+        let db_user_binding = args.db_user.get_output(ctx);
+        let parameters_binding = args.parameters.get_output(ctx);
+        let secret_arn_binding = args.secret_arn.get_output(ctx);
+        let sql_binding = args.sql.get_output(ctx);
+        let statement_name_binding = args.statement_name.get_output(ctx);
+        let with_event_binding = args.with_event.get_output(ctx);
+        let workgroup_name_binding = args.workgroup_name.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:redshiftdata/statement:Statement".into(),
             name: name.to_string(),
@@ -199,7 +199,7 @@ pub mod statement {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         StatementResult {
             id: o.get_id(),
             urn: o.get_urn(),

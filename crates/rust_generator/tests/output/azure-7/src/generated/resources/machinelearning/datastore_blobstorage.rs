@@ -162,44 +162,44 @@ pub mod datastore_blobstorage {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DatastoreBlobstorageArgs,
     ) -> DatastoreBlobstorageResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DatastoreBlobstorageArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DatastoreBlobstorageResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DatastoreBlobstorageArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DatastoreBlobstorageResult {
-        let account_key_binding = args.account_key.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let is_default_binding = args.is_default.get_output(context);
-        let name_binding = args.name.get_output(context);
+        let account_key_binding = args.account_key.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let is_default_binding = args.is_default.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let service_data_auth_identity_binding = args
             .service_data_auth_identity
-            .get_output(context);
+            .get_output(ctx);
         let shared_access_signature_binding = args
             .shared_access_signature
-            .get_output(context);
-        let storage_container_id_binding = args.storage_container_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let workspace_id_binding = args.workspace_id.get_output(context);
+            .get_output(ctx);
+        let storage_container_id_binding = args.storage_container_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let workspace_id_binding = args.workspace_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:machinelearning/datastoreBlobstorage:DatastoreBlobstorage"
                 .into(),
@@ -245,7 +245,7 @@ pub mod datastore_blobstorage {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DatastoreBlobstorageResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -37,13 +37,13 @@ pub mod get_repository_endpoint {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetRepositoryEndpointArgs,
     ) -> GetRepositoryEndpointResult {
-        let domain_binding = args.domain.get_output(context);
-        let domain_owner_binding = args.domain_owner.get_output(context);
-        let format_binding = args.format.get_output(context);
-        let repository_binding = args.repository.get_output(context);
+        let domain_binding = args.domain.get_output(ctx);
+        let domain_owner_binding = args.domain_owner.get_output(ctx);
+        let format_binding = args.format.get_output(ctx);
+        let repository_binding = args.repository.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:codeartifact/getRepositoryEndpoint:getRepositoryEndpoint".into(),
             version: super::super::super::get_version(),
@@ -66,7 +66,7 @@ pub mod get_repository_endpoint {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetRepositoryEndpointResult {
             domain: o.get_field("domain"),
             domain_owner: o.get_field("domainOwner"),

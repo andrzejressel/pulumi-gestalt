@@ -77,16 +77,16 @@ pub mod get_vpc_iam_pool {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetVpcIamPoolArgs,
     ) -> GetVpcIamPoolResult {
         let allocation_resource_tags_binding = args
             .allocation_resource_tags
-            .get_output(context);
-        let filters_binding = args.filters.get_output(context);
-        let id_binding = args.id.get_output(context);
-        let ipam_pool_id_binding = args.ipam_pool_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+            .get_output(ctx);
+        let filters_binding = args.filters.get_output(ctx);
+        let id_binding = args.id.get_output(ctx);
+        let ipam_pool_id_binding = args.ipam_pool_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ec2/getVpcIamPool:getVpcIamPool".into(),
             version: super::super::super::get_version(),
@@ -113,7 +113,7 @@ pub mod get_vpc_iam_pool {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetVpcIamPoolResult {
             address_family: o.get_field("addressFamily"),
             allocation_default_netmask_length: o

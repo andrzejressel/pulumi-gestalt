@@ -146,41 +146,41 @@ pub mod traffic_manager_azure_endpoint {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TrafficManagerAzureEndpointArgs,
     ) -> TrafficManagerAzureEndpointResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TrafficManagerAzureEndpointArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> TrafficManagerAzureEndpointResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TrafficManagerAzureEndpointArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> TrafficManagerAzureEndpointResult {
-        let always_serve_enabled_binding = args.always_serve_enabled.get_output(context);
-        let custom_headers_binding = args.custom_headers.get_output(context);
-        let enabled_binding = args.enabled.get_output(context);
-        let geo_mappings_binding = args.geo_mappings.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let priority_binding = args.priority.get_output(context);
-        let profile_id_binding = args.profile_id.get_output(context);
-        let subnets_binding = args.subnets.get_output(context);
-        let target_resource_id_binding = args.target_resource_id.get_output(context);
-        let weight_binding = args.weight.get_output(context);
+        let always_serve_enabled_binding = args.always_serve_enabled.get_output(ctx);
+        let custom_headers_binding = args.custom_headers.get_output(ctx);
+        let enabled_binding = args.enabled.get_output(ctx);
+        let geo_mappings_binding = args.geo_mappings.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let priority_binding = args.priority.get_output(ctx);
+        let profile_id_binding = args.profile_id.get_output(ctx);
+        let subnets_binding = args.subnets.get_output(ctx);
+        let target_resource_id_binding = args.target_resource_id.get_output(ctx);
+        let weight_binding = args.weight.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:network/trafficManagerAzureEndpoint:TrafficManagerAzureEndpoint"
                 .into(),
@@ -230,7 +230,7 @@ pub mod traffic_manager_azure_endpoint {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         TrafficManagerAzureEndpointResult {
             id: o.get_id(),
             urn: o.get_urn(),

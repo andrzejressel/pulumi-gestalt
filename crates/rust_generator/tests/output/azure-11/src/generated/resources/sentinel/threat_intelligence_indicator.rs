@@ -230,51 +230,51 @@ pub mod threat_intelligence_indicator {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ThreatIntelligenceIndicatorArgs,
     ) -> ThreatIntelligenceIndicatorResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ThreatIntelligenceIndicatorArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ThreatIntelligenceIndicatorResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ThreatIntelligenceIndicatorArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ThreatIntelligenceIndicatorResult {
-        let confidence_binding = args.confidence.get_output(context);
-        let created_by_binding = args.created_by.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let extension_binding = args.extension.get_output(context);
-        let external_references_binding = args.external_references.get_output(context);
-        let granular_markings_binding = args.granular_markings.get_output(context);
-        let kill_chain_phases_binding = args.kill_chain_phases.get_output(context);
-        let language_binding = args.language.get_output(context);
-        let object_marking_refs_binding = args.object_marking_refs.get_output(context);
-        let pattern_binding = args.pattern.get_output(context);
-        let pattern_type_binding = args.pattern_type.get_output(context);
-        let pattern_version_binding = args.pattern_version.get_output(context);
-        let revoked_binding = args.revoked.get_output(context);
-        let source_binding = args.source.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let threat_types_binding = args.threat_types.get_output(context);
-        let validate_from_utc_binding = args.validate_from_utc.get_output(context);
-        let validate_until_utc_binding = args.validate_until_utc.get_output(context);
-        let workspace_id_binding = args.workspace_id.get_output(context);
+        let confidence_binding = args.confidence.get_output(ctx);
+        let created_by_binding = args.created_by.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let extension_binding = args.extension.get_output(ctx);
+        let external_references_binding = args.external_references.get_output(ctx);
+        let granular_markings_binding = args.granular_markings.get_output(ctx);
+        let kill_chain_phases_binding = args.kill_chain_phases.get_output(ctx);
+        let language_binding = args.language.get_output(ctx);
+        let object_marking_refs_binding = args.object_marking_refs.get_output(ctx);
+        let pattern_binding = args.pattern.get_output(ctx);
+        let pattern_type_binding = args.pattern_type.get_output(ctx);
+        let pattern_version_binding = args.pattern_version.get_output(ctx);
+        let revoked_binding = args.revoked.get_output(ctx);
+        let source_binding = args.source.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let threat_types_binding = args.threat_types.get_output(ctx);
+        let validate_from_utc_binding = args.validate_from_utc.get_output(ctx);
+        let validate_until_utc_binding = args.validate_until_utc.get_output(ctx);
+        let workspace_id_binding = args.workspace_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:sentinel/threatIntelligenceIndicator:ThreatIntelligenceIndicator"
                 .into(),
@@ -364,7 +364,7 @@ pub mod threat_intelligence_indicator {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ThreatIntelligenceIndicatorResult {
             id: o.get_id(),
             urn: o.get_urn(),

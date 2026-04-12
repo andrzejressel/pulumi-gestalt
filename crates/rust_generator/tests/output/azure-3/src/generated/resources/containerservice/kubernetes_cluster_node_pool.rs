@@ -367,84 +367,80 @@ pub mod kubernetes_cluster_node_pool {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: KubernetesClusterNodePoolArgs,
     ) -> KubernetesClusterNodePoolResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: KubernetesClusterNodePoolArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> KubernetesClusterNodePoolResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: KubernetesClusterNodePoolArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> KubernetesClusterNodePoolResult {
-        let auto_scaling_enabled_binding = args.auto_scaling_enabled.get_output(context);
+        let auto_scaling_enabled_binding = args.auto_scaling_enabled.get_output(ctx);
         let capacity_reservation_group_id_binding = args
             .capacity_reservation_group_id
-            .get_output(context);
-        let eviction_policy_binding = args.eviction_policy.get_output(context);
-        let fips_enabled_binding = args.fips_enabled.get_output(context);
-        let gpu_instance_binding = args.gpu_instance.get_output(context);
+            .get_output(ctx);
+        let eviction_policy_binding = args.eviction_policy.get_output(ctx);
+        let fips_enabled_binding = args.fips_enabled.get_output(ctx);
+        let gpu_instance_binding = args.gpu_instance.get_output(ctx);
         let host_encryption_enabled_binding = args
             .host_encryption_enabled
-            .get_output(context);
-        let host_group_id_binding = args.host_group_id.get_output(context);
-        let kubelet_config_binding = args.kubelet_config.get_output(context);
-        let kubelet_disk_type_binding = args.kubelet_disk_type.get_output(context);
-        let kubernetes_cluster_id_binding = args
-            .kubernetes_cluster_id
-            .get_output(context);
-        let linux_os_config_binding = args.linux_os_config.get_output(context);
-        let max_count_binding = args.max_count.get_output(context);
-        let max_pods_binding = args.max_pods.get_output(context);
-        let min_count_binding = args.min_count.get_output(context);
-        let mode_binding = args.mode.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let node_count_binding = args.node_count.get_output(context);
-        let node_labels_binding = args.node_labels.get_output(context);
-        let node_network_profile_binding = args.node_network_profile.get_output(context);
-        let node_public_ip_enabled_binding = args
-            .node_public_ip_enabled
-            .get_output(context);
+            .get_output(ctx);
+        let host_group_id_binding = args.host_group_id.get_output(ctx);
+        let kubelet_config_binding = args.kubelet_config.get_output(ctx);
+        let kubelet_disk_type_binding = args.kubelet_disk_type.get_output(ctx);
+        let kubernetes_cluster_id_binding = args.kubernetes_cluster_id.get_output(ctx);
+        let linux_os_config_binding = args.linux_os_config.get_output(ctx);
+        let max_count_binding = args.max_count.get_output(ctx);
+        let max_pods_binding = args.max_pods.get_output(ctx);
+        let min_count_binding = args.min_count.get_output(ctx);
+        let mode_binding = args.mode.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let node_count_binding = args.node_count.get_output(ctx);
+        let node_labels_binding = args.node_labels.get_output(ctx);
+        let node_network_profile_binding = args.node_network_profile.get_output(ctx);
+        let node_public_ip_enabled_binding = args.node_public_ip_enabled.get_output(ctx);
         let node_public_ip_prefix_id_binding = args
             .node_public_ip_prefix_id
-            .get_output(context);
-        let node_taints_binding = args.node_taints.get_output(context);
-        let orchestrator_version_binding = args.orchestrator_version.get_output(context);
-        let os_disk_size_gb_binding = args.os_disk_size_gb.get_output(context);
-        let os_disk_type_binding = args.os_disk_type.get_output(context);
-        let os_sku_binding = args.os_sku.get_output(context);
-        let os_type_binding = args.os_type.get_output(context);
-        let pod_subnet_id_binding = args.pod_subnet_id.get_output(context);
-        let priority_binding = args.priority.get_output(context);
+            .get_output(ctx);
+        let node_taints_binding = args.node_taints.get_output(ctx);
+        let orchestrator_version_binding = args.orchestrator_version.get_output(ctx);
+        let os_disk_size_gb_binding = args.os_disk_size_gb.get_output(ctx);
+        let os_disk_type_binding = args.os_disk_type.get_output(ctx);
+        let os_sku_binding = args.os_sku.get_output(ctx);
+        let os_type_binding = args.os_type.get_output(ctx);
+        let pod_subnet_id_binding = args.pod_subnet_id.get_output(ctx);
+        let priority_binding = args.priority.get_output(ctx);
         let proximity_placement_group_id_binding = args
             .proximity_placement_group_id
-            .get_output(context);
-        let scale_down_mode_binding = args.scale_down_mode.get_output(context);
-        let snapshot_id_binding = args.snapshot_id.get_output(context);
-        let spot_max_price_binding = args.spot_max_price.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let ultra_ssd_enabled_binding = args.ultra_ssd_enabled.get_output(context);
-        let upgrade_settings_binding = args.upgrade_settings.get_output(context);
-        let vm_size_binding = args.vm_size.get_output(context);
-        let vnet_subnet_id_binding = args.vnet_subnet_id.get_output(context);
-        let windows_profile_binding = args.windows_profile.get_output(context);
-        let workload_runtime_binding = args.workload_runtime.get_output(context);
-        let zones_binding = args.zones.get_output(context);
+            .get_output(ctx);
+        let scale_down_mode_binding = args.scale_down_mode.get_output(ctx);
+        let snapshot_id_binding = args.snapshot_id.get_output(ctx);
+        let spot_max_price_binding = args.spot_max_price.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let ultra_ssd_enabled_binding = args.ultra_ssd_enabled.get_output(ctx);
+        let upgrade_settings_binding = args.upgrade_settings.get_output(ctx);
+        let vm_size_binding = args.vm_size.get_output(ctx);
+        let vnet_subnet_id_binding = args.vnet_subnet_id.get_output(ctx);
+        let windows_profile_binding = args.windows_profile.get_output(ctx);
+        let workload_runtime_binding = args.workload_runtime.get_output(ctx);
+        let zones_binding = args.zones.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:containerservice/kubernetesClusterNodePool:KubernetesClusterNodePool"
                 .into(),
@@ -618,7 +614,7 @@ pub mod kubernetes_cluster_node_pool {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         KubernetesClusterNodePoolResult {
             id: o.get_id(),
             urn: o.get_urn(),

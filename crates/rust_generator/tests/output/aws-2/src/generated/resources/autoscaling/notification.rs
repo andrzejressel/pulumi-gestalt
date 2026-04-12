@@ -81,34 +81,34 @@ pub mod notification {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NotificationArgs,
     ) -> NotificationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NotificationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> NotificationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NotificationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> NotificationResult {
-        let group_names_binding = args.group_names.get_output(context);
-        let notifications_binding = args.notifications.get_output(context);
-        let topic_arn_binding = args.topic_arn.get_output(context);
+        let group_names_binding = args.group_names.get_output(ctx);
+        let notifications_binding = args.notifications.get_output(ctx);
+        let topic_arn_binding = args.topic_arn.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:autoscaling/notification:Notification".into(),
             name: name.to_string(),
@@ -129,7 +129,7 @@ pub mod notification {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         NotificationResult {
             id: o.get_id(),
             urn: o.get_urn(),

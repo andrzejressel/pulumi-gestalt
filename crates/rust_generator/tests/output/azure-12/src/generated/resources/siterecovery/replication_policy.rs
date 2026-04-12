@@ -68,40 +68,40 @@ pub mod replication_policy {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ReplicationPolicyArgs,
     ) -> ReplicationPolicyResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ReplicationPolicyArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ReplicationPolicyResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ReplicationPolicyArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ReplicationPolicyResult {
         let application_consistent_snapshot_frequency_in_minutes_binding = args
             .application_consistent_snapshot_frequency_in_minutes
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let recovery_point_retention_in_minutes_binding = args
             .recovery_point_retention_in_minutes
-            .get_output(context);
-        let recovery_vault_name_binding = args.recovery_vault_name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
+            .get_output(ctx);
+        let recovery_vault_name_binding = args.recovery_vault_name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:siterecovery/replicationPolicy:ReplicationPolicy".into(),
             name: name.to_string(),
@@ -131,7 +131,7 @@ pub mod replication_policy {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ReplicationPolicyResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -35,13 +35,13 @@ pub mod get_recommendations {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetRecommendationsArgs,
     ) -> GetRecommendationsResult {
-        let filter_by_categories_binding = args.filter_by_categories.get_output(context);
+        let filter_by_categories_binding = args.filter_by_categories.get_output(ctx);
         let filter_by_resource_groups_binding = args
             .filter_by_resource_groups
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:advisor/getRecommendations:getRecommendations".into(),
             version: super::super::super::get_version(),
@@ -56,7 +56,7 @@ pub mod get_recommendations {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetRecommendationsResult {
             filter_by_categories: o.get_field("filterByCategories"),
             filter_by_resource_groups: o.get_field("filterByResourceGroups"),

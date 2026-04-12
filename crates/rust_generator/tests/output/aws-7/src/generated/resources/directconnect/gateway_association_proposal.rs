@@ -85,39 +85,37 @@ pub mod gateway_association_proposal {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GatewayAssociationProposalArgs,
     ) -> GatewayAssociationProposalResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GatewayAssociationProposalArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> GatewayAssociationProposalResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GatewayAssociationProposalArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> GatewayAssociationProposalResult {
-        let allowed_prefixes_binding = args.allowed_prefixes.get_output(context);
-        let associated_gateway_id_binding = args
-            .associated_gateway_id
-            .get_output(context);
-        let dx_gateway_id_binding = args.dx_gateway_id.get_output(context);
+        let allowed_prefixes_binding = args.allowed_prefixes.get_output(ctx);
+        let associated_gateway_id_binding = args.associated_gateway_id.get_output(ctx);
+        let dx_gateway_id_binding = args.dx_gateway_id.get_output(ctx);
         let dx_gateway_owner_account_id_binding = args
             .dx_gateway_owner_account_id
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:directconnect/gatewayAssociationProposal:GatewayAssociationProposal"
                 .into(),
@@ -143,7 +141,7 @@ pub mod gateway_association_proposal {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         GatewayAssociationProposalResult {
             id: o.get_id(),
             urn: o.get_urn(),

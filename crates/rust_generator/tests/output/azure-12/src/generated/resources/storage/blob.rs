@@ -158,48 +158,46 @@ pub mod blob {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BlobArgs,
     ) -> BlobResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BlobArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> BlobResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BlobArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> BlobResult {
-        let access_tier_binding = args.access_tier.get_output(context);
-        let cache_control_binding = args.cache_control.get_output(context);
-        let content_md5_binding = args.content_md5.get_output(context);
-        let content_type_binding = args.content_type.get_output(context);
-        let encryption_scope_binding = args.encryption_scope.get_output(context);
-        let metadata_binding = args.metadata.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let parallelism_binding = args.parallelism.get_output(context);
-        let size_binding = args.size.get_output(context);
-        let source_binding = args.source.get_output(context);
-        let source_content_binding = args.source_content.get_output(context);
-        let source_uri_binding = args.source_uri.get_output(context);
-        let storage_account_name_binding = args.storage_account_name.get_output(context);
-        let storage_container_name_binding = args
-            .storage_container_name
-            .get_output(context);
-        let type__binding = args.type_.get_output(context);
+        let access_tier_binding = args.access_tier.get_output(ctx);
+        let cache_control_binding = args.cache_control.get_output(ctx);
+        let content_md5_binding = args.content_md5.get_output(ctx);
+        let content_type_binding = args.content_type.get_output(ctx);
+        let encryption_scope_binding = args.encryption_scope.get_output(ctx);
+        let metadata_binding = args.metadata.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let parallelism_binding = args.parallelism.get_output(ctx);
+        let size_binding = args.size.get_output(ctx);
+        let source_binding = args.source.get_output(ctx);
+        let source_content_binding = args.source_content.get_output(ctx);
+        let source_uri_binding = args.source_uri.get_output(ctx);
+        let storage_account_name_binding = args.storage_account_name.get_output(ctx);
+        let storage_container_name_binding = args.storage_container_name.get_output(ctx);
+        let type__binding = args.type_.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:storage/blob:Blob".into(),
             name: name.to_string(),
@@ -268,7 +266,7 @@ pub mod blob {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         BlobResult {
             id: o.get_id(),
             urn: o.get_urn(),

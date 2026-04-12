@@ -341,46 +341,46 @@ pub mod budget {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BudgetArgs,
     ) -> BudgetResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BudgetArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> BudgetResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BudgetArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> BudgetResult {
-        let account_id_binding = args.account_id.get_output(context);
-        let auto_adjust_data_binding = args.auto_adjust_data.get_output(context);
-        let budget_type_binding = args.budget_type.get_output(context);
-        let cost_filters_binding = args.cost_filters.get_output(context);
-        let cost_types_binding = args.cost_types.get_output(context);
-        let limit_amount_binding = args.limit_amount.get_output(context);
-        let limit_unit_binding = args.limit_unit.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let name_prefix_binding = args.name_prefix.get_output(context);
-        let notifications_binding = args.notifications.get_output(context);
-        let planned_limits_binding = args.planned_limits.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let time_period_end_binding = args.time_period_end.get_output(context);
-        let time_period_start_binding = args.time_period_start.get_output(context);
-        let time_unit_binding = args.time_unit.get_output(context);
+        let account_id_binding = args.account_id.get_output(ctx);
+        let auto_adjust_data_binding = args.auto_adjust_data.get_output(ctx);
+        let budget_type_binding = args.budget_type.get_output(ctx);
+        let cost_filters_binding = args.cost_filters.get_output(ctx);
+        let cost_types_binding = args.cost_types.get_output(ctx);
+        let limit_amount_binding = args.limit_amount.get_output(ctx);
+        let limit_unit_binding = args.limit_unit.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let name_prefix_binding = args.name_prefix.get_output(ctx);
+        let notifications_binding = args.notifications.get_output(ctx);
+        let planned_limits_binding = args.planned_limits.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let time_period_end_binding = args.time_period_end.get_output(ctx);
+        let time_period_start_binding = args.time_period_start.get_output(ctx);
+        let time_unit_binding = args.time_unit.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:budgets/budget:Budget".into(),
             name: name.to_string(),
@@ -449,7 +449,7 @@ pub mod budget {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         BudgetResult {
             id: o.get_id(),
             urn: o.get_urn(),

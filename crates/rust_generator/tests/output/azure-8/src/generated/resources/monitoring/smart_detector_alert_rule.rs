@@ -145,42 +145,42 @@ pub mod smart_detector_alert_rule {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SmartDetectorAlertRuleArgs,
     ) -> SmartDetectorAlertRuleResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SmartDetectorAlertRuleArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> SmartDetectorAlertRuleResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SmartDetectorAlertRuleArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> SmartDetectorAlertRuleResult {
-        let action_group_binding = args.action_group.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let detector_type_binding = args.detector_type.get_output(context);
-        let enabled_binding = args.enabled.get_output(context);
-        let frequency_binding = args.frequency.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let scope_resource_ids_binding = args.scope_resource_ids.get_output(context);
-        let severity_binding = args.severity.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let throttling_duration_binding = args.throttling_duration.get_output(context);
+        let action_group_binding = args.action_group.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let detector_type_binding = args.detector_type.get_output(ctx);
+        let enabled_binding = args.enabled.get_output(ctx);
+        let frequency_binding = args.frequency.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let scope_resource_ids_binding = args.scope_resource_ids.get_output(ctx);
+        let severity_binding = args.severity.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let throttling_duration_binding = args.throttling_duration.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:monitoring/smartDetectorAlertRule:SmartDetectorAlertRule"
                 .into(),
@@ -234,7 +234,7 @@ pub mod smart_detector_alert_rule {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         SmartDetectorAlertRuleResult {
             id: o.get_id(),
             urn: o.get_urn(),

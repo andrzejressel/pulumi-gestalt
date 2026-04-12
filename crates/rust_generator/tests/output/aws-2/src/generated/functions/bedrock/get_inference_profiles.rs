@@ -19,13 +19,13 @@ pub mod get_inference_profiles {
     /// Registers a new resource with the given unique name and arguments
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
-    pub fn invoke(context: &pulumi_gestalt_rust::Context) -> GetInferenceProfilesResult {
+    pub fn invoke(ctx: &pulumi_gestalt_rust::Context) -> GetInferenceProfilesResult {
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:bedrock/getInferenceProfiles:getInferenceProfiles".into(),
             version: super::super::super::get_version(),
             object: &[],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetInferenceProfilesResult {
             id: o.get_field("id"),
             inference_profile_summaries: o.get_field("inferenceProfileSummaries"),

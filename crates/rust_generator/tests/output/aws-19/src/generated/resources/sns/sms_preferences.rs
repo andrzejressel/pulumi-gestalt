@@ -78,43 +78,41 @@ pub mod sms_preferences {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SmsPreferencesArgs,
     ) -> SmsPreferencesResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SmsPreferencesArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> SmsPreferencesResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SmsPreferencesArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> SmsPreferencesResult {
-        let default_sender_id_binding = args.default_sender_id.get_output(context);
-        let default_sms_type_binding = args.default_sms_type.get_output(context);
+        let default_sender_id_binding = args.default_sender_id.get_output(ctx);
+        let default_sms_type_binding = args.default_sms_type.get_output(ctx);
         let delivery_status_iam_role_arn_binding = args
             .delivery_status_iam_role_arn
-            .get_output(context);
+            .get_output(ctx);
         let delivery_status_success_sampling_rate_binding = args
             .delivery_status_success_sampling_rate
-            .get_output(context);
-        let monthly_spend_limit_binding = args.monthly_spend_limit.get_output(context);
-        let usage_report_s3_bucket_binding = args
-            .usage_report_s3_bucket
-            .get_output(context);
+            .get_output(ctx);
+        let monthly_spend_limit_binding = args.monthly_spend_limit.get_output(ctx);
+        let usage_report_s3_bucket_binding = args.usage_report_s3_bucket.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:sns/smsPreferences:SmsPreferences".into(),
             name: name.to_string(),
@@ -147,7 +145,7 @@ pub mod sms_preferences {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         SmsPreferencesResult {
             id: o.get_id(),
             urn: o.get_urn(),

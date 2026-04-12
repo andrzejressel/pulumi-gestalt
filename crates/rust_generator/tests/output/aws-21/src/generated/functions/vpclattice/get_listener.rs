@@ -56,12 +56,12 @@ pub mod get_listener {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetListenerArgs,
     ) -> GetListenerResult {
-        let listener_identifier_binding = args.listener_identifier.get_output(context);
-        let service_identifier_binding = args.service_identifier.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let listener_identifier_binding = args.listener_identifier.get_output(ctx);
+        let service_identifier_binding = args.service_identifier.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:vpclattice/getListener:getListener".into(),
             version: super::super::super::get_version(),
@@ -80,7 +80,7 @@ pub mod get_listener {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetListenerResult {
             arn: o.get_field("arn"),
             created_at: o.get_field("createdAt"),

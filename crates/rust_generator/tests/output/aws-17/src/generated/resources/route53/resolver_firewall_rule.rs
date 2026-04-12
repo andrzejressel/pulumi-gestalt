@@ -122,52 +122,48 @@ pub mod resolver_firewall_rule {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ResolverFirewallRuleArgs,
     ) -> ResolverFirewallRuleResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ResolverFirewallRuleArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ResolverFirewallRuleResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ResolverFirewallRuleArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ResolverFirewallRuleResult {
-        let action_binding = args.action.get_output(context);
+        let action_binding = args.action.get_output(ctx);
         let block_override_dns_type_binding = args
             .block_override_dns_type
-            .get_output(context);
-        let block_override_domain_binding = args
-            .block_override_domain
-            .get_output(context);
-        let block_override_ttl_binding = args.block_override_ttl.get_output(context);
-        let block_response_binding = args.block_response.get_output(context);
+            .get_output(ctx);
+        let block_override_domain_binding = args.block_override_domain.get_output(ctx);
+        let block_override_ttl_binding = args.block_override_ttl.get_output(ctx);
+        let block_response_binding = args.block_response.get_output(ctx);
         let firewall_domain_list_id_binding = args
             .firewall_domain_list_id
-            .get_output(context);
+            .get_output(ctx);
         let firewall_domain_redirection_action_binding = args
             .firewall_domain_redirection_action
-            .get_output(context);
-        let firewall_rule_group_id_binding = args
-            .firewall_rule_group_id
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let priority_binding = args.priority.get_output(context);
-        let q_type_binding = args.q_type.get_output(context);
+            .get_output(ctx);
+        let firewall_rule_group_id_binding = args.firewall_rule_group_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let priority_binding = args.priority.get_output(ctx);
+        let q_type_binding = args.q_type.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:route53/resolverFirewallRule:ResolverFirewallRule".into(),
             name: name.to_string(),
@@ -220,7 +216,7 @@ pub mod resolver_firewall_rule {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ResolverFirewallRuleResult {
             id: o.get_id(),
             urn: o.get_urn(),

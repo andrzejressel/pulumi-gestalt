@@ -188,43 +188,43 @@ pub mod document_classifier {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DocumentClassifierArgs,
     ) -> DocumentClassifierResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DocumentClassifierArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DocumentClassifierResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DocumentClassifierArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DocumentClassifierResult {
-        let data_access_role_arn_binding = args.data_access_role_arn.get_output(context);
-        let input_data_config_binding = args.input_data_config.get_output(context);
-        let language_code_binding = args.language_code.get_output(context);
-        let mode_binding = args.mode.get_output(context);
-        let model_kms_key_id_binding = args.model_kms_key_id.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let output_data_config_binding = args.output_data_config.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let version_name_binding = args.version_name.get_output(context);
-        let version_name_prefix_binding = args.version_name_prefix.get_output(context);
-        let volume_kms_key_id_binding = args.volume_kms_key_id.get_output(context);
-        let vpc_config_binding = args.vpc_config.get_output(context);
+        let data_access_role_arn_binding = args.data_access_role_arn.get_output(ctx);
+        let input_data_config_binding = args.input_data_config.get_output(ctx);
+        let language_code_binding = args.language_code.get_output(ctx);
+        let mode_binding = args.mode.get_output(ctx);
+        let model_kms_key_id_binding = args.model_kms_key_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let output_data_config_binding = args.output_data_config.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let version_name_binding = args.version_name.get_output(ctx);
+        let version_name_prefix_binding = args.version_name_prefix.get_output(ctx);
+        let volume_kms_key_id_binding = args.volume_kms_key_id.get_output(ctx);
+        let vpc_config_binding = args.vpc_config.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:comprehend/documentClassifier:DocumentClassifier".into(),
             name: name.to_string(),
@@ -281,7 +281,7 @@ pub mod document_classifier {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DocumentClassifierResult {
             id: o.get_id(),
             urn: o.get_urn(),

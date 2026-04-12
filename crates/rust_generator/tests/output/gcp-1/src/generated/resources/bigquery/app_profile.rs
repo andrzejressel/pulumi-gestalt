@@ -311,50 +311,48 @@ pub mod app_profile {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AppProfileArgs,
     ) -> AppProfileResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AppProfileArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AppProfileResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AppProfileArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AppProfileResult {
-        let app_profile_id_binding = args.app_profile_id.get_output(context);
+        let app_profile_id_binding = args.app_profile_id.get_output(ctx);
         let data_boost_isolation_read_only_binding = args
             .data_boost_isolation_read_only
-            .get_output(context);
-        let description_binding = args.description.get_output(context);
-        let ignore_warnings_binding = args.ignore_warnings.get_output(context);
-        let instance_binding = args.instance.get_output(context);
+            .get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let ignore_warnings_binding = args.ignore_warnings.get_output(ctx);
+        let instance_binding = args.instance.get_output(ctx);
         let multi_cluster_routing_cluster_ids_binding = args
             .multi_cluster_routing_cluster_ids
-            .get_output(context);
+            .get_output(ctx);
         let multi_cluster_routing_use_any_binding = args
             .multi_cluster_routing_use_any
-            .get_output(context);
-        let project_binding = args.project.get_output(context);
-        let row_affinity_binding = args.row_affinity.get_output(context);
-        let single_cluster_routing_binding = args
-            .single_cluster_routing
-            .get_output(context);
-        let standard_isolation_binding = args.standard_isolation.get_output(context);
+            .get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let row_affinity_binding = args.row_affinity.get_output(ctx);
+        let single_cluster_routing_binding = args.single_cluster_routing.get_output(ctx);
+        let standard_isolation_binding = args.standard_isolation.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:bigquery/appProfile:AppProfile".into(),
             name: name.to_string(),
@@ -407,7 +405,7 @@ pub mod app_profile {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AppProfileResult {
             id: o.get_id(),
             urn: o.get_urn(),

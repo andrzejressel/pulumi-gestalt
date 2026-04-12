@@ -149,41 +149,39 @@ pub mod configuration_set {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ConfigurationSetArgs,
     ) -> ConfigurationSetResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ConfigurationSetArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ConfigurationSetResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ConfigurationSetArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ConfigurationSetResult {
-        let configuration_set_name_binding = args
-            .configuration_set_name
-            .get_output(context);
-        let delivery_options_binding = args.delivery_options.get_output(context);
-        let reputation_options_binding = args.reputation_options.get_output(context);
-        let sending_options_binding = args.sending_options.get_output(context);
-        let suppression_options_binding = args.suppression_options.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let tracking_options_binding = args.tracking_options.get_output(context);
-        let vdm_options_binding = args.vdm_options.get_output(context);
+        let configuration_set_name_binding = args.configuration_set_name.get_output(ctx);
+        let delivery_options_binding = args.delivery_options.get_output(ctx);
+        let reputation_options_binding = args.reputation_options.get_output(ctx);
+        let sending_options_binding = args.sending_options.get_output(ctx);
+        let suppression_options_binding = args.suppression_options.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let tracking_options_binding = args.tracking_options.get_output(ctx);
+        let vdm_options_binding = args.vdm_options.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:sesv2/configurationSet:ConfigurationSet".into(),
             name: name.to_string(),
@@ -224,7 +222,7 @@ pub mod configuration_set {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ConfigurationSetResult {
             id: o.get_id(),
             urn: o.get_urn(),

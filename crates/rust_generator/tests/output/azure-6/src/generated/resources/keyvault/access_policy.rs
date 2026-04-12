@@ -145,41 +145,41 @@ pub mod access_policy {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccessPolicyArgs,
     ) -> AccessPolicyResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccessPolicyArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AccessPolicyResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AccessPolicyArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AccessPolicyResult {
-        let application_id_binding = args.application_id.get_output(context);
+        let application_id_binding = args.application_id.get_output(ctx);
         let certificate_permissions_binding = args
             .certificate_permissions
-            .get_output(context);
-        let key_permissions_binding = args.key_permissions.get_output(context);
-        let key_vault_id_binding = args.key_vault_id.get_output(context);
-        let object_id_binding = args.object_id.get_output(context);
-        let secret_permissions_binding = args.secret_permissions.get_output(context);
-        let storage_permissions_binding = args.storage_permissions.get_output(context);
-        let tenant_id_binding = args.tenant_id.get_output(context);
+            .get_output(ctx);
+        let key_permissions_binding = args.key_permissions.get_output(ctx);
+        let key_vault_id_binding = args.key_vault_id.get_output(ctx);
+        let object_id_binding = args.object_id.get_output(ctx);
+        let secret_permissions_binding = args.secret_permissions.get_output(ctx);
+        let storage_permissions_binding = args.storage_permissions.get_output(ctx);
+        let tenant_id_binding = args.tenant_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:keyvault/accessPolicy:AccessPolicy".into(),
             name: name.to_string(),
@@ -220,7 +220,7 @@ pub mod access_policy {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AccessPolicyResult {
             id: o.get_id(),
             urn: o.get_urn(),

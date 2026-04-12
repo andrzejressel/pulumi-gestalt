@@ -79,35 +79,35 @@ pub mod spring_cloud_application_live_view {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SpringCloudApplicationLiveViewArgs,
     ) -> SpringCloudApplicationLiveViewResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SpringCloudApplicationLiveViewArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> SpringCloudApplicationLiveViewResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SpringCloudApplicationLiveViewArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> SpringCloudApplicationLiveViewResult {
-        let name_binding = args.name.get_output(context);
+        let name_binding = args.name.get_output(ctx);
         let spring_cloud_service_id_binding = args
             .spring_cloud_service_id
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:appplatform/springCloudApplicationLiveView:SpringCloudApplicationLiveView"
                 .into(),
@@ -125,7 +125,7 @@ pub mod spring_cloud_application_live_view {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         SpringCloudApplicationLiveViewResult {
             id: o.get_id(),
             urn: o.get_urn(),

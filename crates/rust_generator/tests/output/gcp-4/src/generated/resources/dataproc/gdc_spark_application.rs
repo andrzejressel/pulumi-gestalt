@@ -399,57 +399,57 @@ pub mod gdc_spark_application {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GdcSparkApplicationArgs,
     ) -> GdcSparkApplicationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GdcSparkApplicationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> GdcSparkApplicationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: GdcSparkApplicationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> GdcSparkApplicationResult {
-        let annotations_binding = args.annotations.get_output(context);
+        let annotations_binding = args.annotations.get_output(ctx);
         let application_environment_binding = args
             .application_environment
-            .get_output(context);
-        let dependency_images_binding = args.dependency_images.get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let namespace_binding = args.namespace.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let properties_binding = args.properties.get_output(context);
+            .get_output(ctx);
+        let dependency_images_binding = args.dependency_images.get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let namespace_binding = args.namespace.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let properties_binding = args.properties.get_output(ctx);
         let pyspark_application_config_binding = args
             .pyspark_application_config
-            .get_output(context);
-        let serviceinstance_binding = args.serviceinstance.get_output(context);
+            .get_output(ctx);
+        let serviceinstance_binding = args.serviceinstance.get_output(ctx);
         let spark_application_config_binding = args
             .spark_application_config
-            .get_output(context);
-        let spark_application_id_binding = args.spark_application_id.get_output(context);
+            .get_output(ctx);
+        let spark_application_id_binding = args.spark_application_id.get_output(ctx);
         let spark_r_application_config_binding = args
             .spark_r_application_config
-            .get_output(context);
+            .get_output(ctx);
         let spark_sql_application_config_binding = args
             .spark_sql_application_config
-            .get_output(context);
-        let version_binding = args.version.get_output(context);
+            .get_output(ctx);
+        let version_binding = args.version.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:dataproc/gdcSparkApplication:GdcSparkApplication".into(),
             name: name.to_string(),
@@ -522,7 +522,7 @@ pub mod gdc_spark_application {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         GdcSparkApplicationResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -37,11 +37,11 @@ pub mod get_plugin {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetPluginArgs,
     ) -> GetPluginResult {
-        let alias_binding = args.alias.get_output(context);
-        let id_binding = args.id.get_output(context);
+        let alias_binding = args.alias.get_output(ctx);
+        let id_binding = args.id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "docker:index/getPlugin:getPlugin".into(),
             version: super::super::get_version(),
@@ -56,7 +56,7 @@ pub mod get_plugin {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetPluginResult {
             alias: o.get_field("alias"),
             enabled: o.get_field("enabled"),

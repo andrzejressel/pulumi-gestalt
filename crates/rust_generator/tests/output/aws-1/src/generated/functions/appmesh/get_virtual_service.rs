@@ -50,13 +50,13 @@ pub mod get_virtual_service {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetVirtualServiceArgs,
     ) -> GetVirtualServiceResult {
-        let mesh_name_binding = args.mesh_name.get_output(context);
-        let mesh_owner_binding = args.mesh_owner.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let mesh_name_binding = args.mesh_name.get_output(ctx);
+        let mesh_owner_binding = args.mesh_owner.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:appmesh/getVirtualService:getVirtualService".into(),
             version: super::super::super::get_version(),
@@ -79,7 +79,7 @@ pub mod get_virtual_service {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetVirtualServiceResult {
             arn: o.get_field("arn"),
             created_date: o.get_field("createdDate"),

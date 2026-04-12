@@ -443,77 +443,69 @@ pub mod region_instance_group_manager {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RegionInstanceGroupManagerArgs,
     ) -> RegionInstanceGroupManagerResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RegionInstanceGroupManagerArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> RegionInstanceGroupManagerResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: RegionInstanceGroupManagerArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> RegionInstanceGroupManagerResult {
-        let all_instances_config_binding = args.all_instances_config.get_output(context);
-        let auto_healing_policies_binding = args
-            .auto_healing_policies
-            .get_output(context);
-        let base_instance_name_binding = args.base_instance_name.get_output(context);
-        let description_binding = args.description.get_output(context);
+        let all_instances_config_binding = args.all_instances_config.get_output(ctx);
+        let auto_healing_policies_binding = args.auto_healing_policies.get_output(ctx);
+        let base_instance_name_binding = args.base_instance_name.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
         let distribution_policy_target_shape_binding = args
             .distribution_policy_target_shape
-            .get_output(context);
+            .get_output(ctx);
         let distribution_policy_zones_binding = args
             .distribution_policy_zones
-            .get_output(context);
+            .get_output(ctx);
         let instance_flexibility_policy_binding = args
             .instance_flexibility_policy
-            .get_output(context);
+            .get_output(ctx);
         let instance_lifecycle_policy_binding = args
             .instance_lifecycle_policy
-            .get_output(context);
+            .get_output(ctx);
         let list_managed_instances_results_binding = args
             .list_managed_instances_results
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let named_ports_binding = args.named_ports.get_output(context);
-        let params_binding = args.params.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let region_binding = args.region.get_output(context);
-        let standby_policy_binding = args.standby_policy.get_output(context);
-        let stateful_disks_binding = args.stateful_disks.get_output(context);
-        let stateful_external_ips_binding = args
-            .stateful_external_ips
-            .get_output(context);
-        let stateful_internal_ips_binding = args
-            .stateful_internal_ips
-            .get_output(context);
-        let target_pools_binding = args.target_pools.get_output(context);
-        let target_size_binding = args.target_size.get_output(context);
-        let target_stopped_size_binding = args.target_stopped_size.get_output(context);
-        let target_suspended_size_binding = args
-            .target_suspended_size
-            .get_output(context);
-        let update_policy_binding = args.update_policy.get_output(context);
-        let versions_binding = args.versions.get_output(context);
-        let wait_for_instances_binding = args.wait_for_instances.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let named_ports_binding = args.named_ports.get_output(ctx);
+        let params_binding = args.params.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let region_binding = args.region.get_output(ctx);
+        let standby_policy_binding = args.standby_policy.get_output(ctx);
+        let stateful_disks_binding = args.stateful_disks.get_output(ctx);
+        let stateful_external_ips_binding = args.stateful_external_ips.get_output(ctx);
+        let stateful_internal_ips_binding = args.stateful_internal_ips.get_output(ctx);
+        let target_pools_binding = args.target_pools.get_output(ctx);
+        let target_size_binding = args.target_size.get_output(ctx);
+        let target_stopped_size_binding = args.target_stopped_size.get_output(ctx);
+        let target_suspended_size_binding = args.target_suspended_size.get_output(ctx);
+        let update_policy_binding = args.update_policy.get_output(ctx);
+        let versions_binding = args.versions.get_output(ctx);
+        let wait_for_instances_binding = args.wait_for_instances.get_output(ctx);
         let wait_for_instances_status_binding = args
             .wait_for_instances_status
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:compute/regionInstanceGroupManager:RegionInstanceGroupManager"
                 .into(),
@@ -627,7 +619,7 @@ pub mod region_instance_group_manager {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         RegionInstanceGroupManagerResult {
             id: o.get_id(),
             urn: o.get_urn(),

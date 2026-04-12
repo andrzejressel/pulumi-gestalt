@@ -768,63 +768,55 @@ pub mod workstation_config {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkstationConfigArgs,
     ) -> WorkstationConfigResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkstationConfigArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> WorkstationConfigResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkstationConfigArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> WorkstationConfigResult {
-        let allowed_ports_binding = args.allowed_ports.get_output(context);
-        let annotations_binding = args.annotations.get_output(context);
-        let container_binding = args.container.get_output(context);
+        let allowed_ports_binding = args.allowed_ports.get_output(ctx);
+        let annotations_binding = args.annotations.get_output(ctx);
+        let container_binding = args.container.get_output(ctx);
         let disable_tcp_connections_binding = args
             .disable_tcp_connections
-            .get_output(context);
-        let display_name_binding = args.display_name.get_output(context);
-        let enable_audit_agent_binding = args.enable_audit_agent.get_output(context);
-        let encryption_key_binding = args.encryption_key.get_output(context);
-        let ephemeral_directories_binding = args
-            .ephemeral_directories
-            .get_output(context);
-        let host_binding = args.host.get_output(context);
-        let idle_timeout_binding = args.idle_timeout.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let location_binding = args.location.get_output(context);
+            .get_output(ctx);
+        let display_name_binding = args.display_name.get_output(ctx);
+        let enable_audit_agent_binding = args.enable_audit_agent.get_output(ctx);
+        let encryption_key_binding = args.encryption_key.get_output(ctx);
+        let ephemeral_directories_binding = args.ephemeral_directories.get_output(ctx);
+        let host_binding = args.host.get_output(ctx);
+        let idle_timeout_binding = args.idle_timeout.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
         let max_usable_workstations_binding = args
             .max_usable_workstations
-            .get_output(context);
-        let persistent_directories_binding = args
-            .persistent_directories
-            .get_output(context);
-        let project_binding = args.project.get_output(context);
-        let readiness_checks_binding = args.readiness_checks.get_output(context);
-        let replica_zones_binding = args.replica_zones.get_output(context);
-        let running_timeout_binding = args.running_timeout.get_output(context);
-        let workstation_cluster_id_binding = args
-            .workstation_cluster_id
-            .get_output(context);
-        let workstation_config_id_binding = args
-            .workstation_config_id
-            .get_output(context);
+            .get_output(ctx);
+        let persistent_directories_binding = args.persistent_directories.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let readiness_checks_binding = args.readiness_checks.get_output(ctx);
+        let replica_zones_binding = args.replica_zones.get_output(ctx);
+        let running_timeout_binding = args.running_timeout.get_output(ctx);
+        let workstation_cluster_id_binding = args.workstation_cluster_id.get_output(ctx);
+        let workstation_config_id_binding = args.workstation_config_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:workstations/workstationConfig:WorkstationConfig".into(),
             name: name.to_string(),
@@ -913,7 +905,7 @@ pub mod workstation_config {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         WorkstationConfigResult {
             id: o.get_id(),
             urn: o.get_urn(),

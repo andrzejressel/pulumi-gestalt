@@ -113,42 +113,42 @@ pub mod key {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: KeyArgs,
     ) -> KeyResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: KeyArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> KeyResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: KeyArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> KeyResult {
         let deletion_window_in_days_binding = args
             .deletion_window_in_days
-            .get_output(context);
-        let enabled_binding = args.enabled.get_output(context);
-        let exportable_binding = args.exportable.get_output(context);
-        let key_attributes_binding = args.key_attributes.get_output(context);
+            .get_output(ctx);
+        let enabled_binding = args.enabled.get_output(ctx);
+        let exportable_binding = args.exportable.get_output(ctx);
+        let key_attributes_binding = args.key_attributes.get_output(ctx);
         let key_check_value_algorithm_binding = args
             .key_check_value_algorithm
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let timeouts_binding = args.timeouts.get_output(context);
+            .get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let timeouts_binding = args.timeouts.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:paymentcryptography/key:Key".into(),
             name: name.to_string(),
@@ -185,7 +185,7 @@ pub mod key {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         KeyResult {
             id: o.get_id(),
             urn: o.get_urn(),

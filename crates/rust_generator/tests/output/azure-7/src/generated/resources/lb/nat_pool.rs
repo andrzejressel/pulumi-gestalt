@@ -146,46 +146,46 @@ pub mod nat_pool {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NatPoolArgs,
     ) -> NatPoolResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NatPoolArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> NatPoolResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NatPoolArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> NatPoolResult {
-        let backend_port_binding = args.backend_port.get_output(context);
-        let floating_ip_enabled_binding = args.floating_ip_enabled.get_output(context);
+        let backend_port_binding = args.backend_port.get_output(ctx);
+        let floating_ip_enabled_binding = args.floating_ip_enabled.get_output(ctx);
         let frontend_ip_configuration_name_binding = args
             .frontend_ip_configuration_name
-            .get_output(context);
-        let frontend_port_end_binding = args.frontend_port_end.get_output(context);
-        let frontend_port_start_binding = args.frontend_port_start.get_output(context);
+            .get_output(ctx);
+        let frontend_port_end_binding = args.frontend_port_end.get_output(ctx);
+        let frontend_port_start_binding = args.frontend_port_start.get_output(ctx);
         let idle_timeout_in_minutes_binding = args
             .idle_timeout_in_minutes
-            .get_output(context);
-        let loadbalancer_id_binding = args.loadbalancer_id.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let protocol_binding = args.protocol.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let tcp_reset_enabled_binding = args.tcp_reset_enabled.get_output(context);
+            .get_output(ctx);
+        let loadbalancer_id_binding = args.loadbalancer_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let protocol_binding = args.protocol.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let tcp_reset_enabled_binding = args.tcp_reset_enabled.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:lb/natPool:NatPool".into(),
             name: name.to_string(),
@@ -238,7 +238,7 @@ pub mod nat_pool {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         NatPoolResult {
             id: o.get_id(),
             urn: o.get_urn(),

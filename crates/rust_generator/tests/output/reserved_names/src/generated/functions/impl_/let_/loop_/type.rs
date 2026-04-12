@@ -21,8 +21,8 @@ pub mod type_ {
     /// Registers a new resource with the given unique name and arguments
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
-    pub fn invoke(context: &pulumi_gestalt_rust::Context, args: TypeArgs) -> TypeResult {
-        let type__binding = args.type_.get_output(context);
+    pub fn invoke(ctx: &pulumi_gestalt_rust::Context, args: TypeArgs) -> TypeResult {
+        let type__binding = args.type_.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "example:impl/let/loop:Type".into(),
             version: super::super::super::super::super::get_version(),
@@ -33,7 +33,7 @@ pub mod type_ {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         TypeResult {
             type_: o.get_field("type"),
         }

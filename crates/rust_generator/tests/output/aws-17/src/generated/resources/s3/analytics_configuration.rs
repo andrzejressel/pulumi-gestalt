@@ -107,37 +107,35 @@ pub mod analytics_configuration {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AnalyticsConfigurationArgs,
     ) -> AnalyticsConfigurationResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AnalyticsConfigurationArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AnalyticsConfigurationResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AnalyticsConfigurationArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AnalyticsConfigurationResult {
-        let bucket_binding = args.bucket.get_output(context);
-        let filter_binding = args.filter.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let storage_class_analysis_binding = args
-            .storage_class_analysis
-            .get_output(context);
+        let bucket_binding = args.bucket.get_output(ctx);
+        let filter_binding = args.filter.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let storage_class_analysis_binding = args.storage_class_analysis.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:s3/analyticsConfiguration:AnalyticsConfiguration".into(),
             name: name.to_string(),
@@ -162,7 +160,7 @@ pub mod analytics_configuration {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AnalyticsConfigurationResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -408,82 +408,80 @@ pub mod spot_fleet_request {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SpotFleetRequestArgs,
     ) -> SpotFleetRequestResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SpotFleetRequestArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> SpotFleetRequestResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: SpotFleetRequestArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> SpotFleetRequestResult {
-        let allocation_strategy_binding = args.allocation_strategy.get_output(context);
-        let context_binding = args.context.get_output(context);
+        let allocation_strategy_binding = args.allocation_strategy.get_output(ctx);
+        let context_binding = args.context.get_output(ctx);
         let excess_capacity_termination_policy_binding = args
             .excess_capacity_termination_policy
-            .get_output(context);
-        let fleet_type_binding = args.fleet_type.get_output(context);
-        let iam_fleet_role_binding = args.iam_fleet_role.get_output(context);
+            .get_output(ctx);
+        let fleet_type_binding = args.fleet_type.get_output(ctx);
+        let iam_fleet_role_binding = args.iam_fleet_role.get_output(ctx);
         let instance_interruption_behaviour_binding = args
             .instance_interruption_behaviour
-            .get_output(context);
+            .get_output(ctx);
         let instance_pools_to_use_count_binding = args
             .instance_pools_to_use_count
-            .get_output(context);
-        let launch_specifications_binding = args
-            .launch_specifications
-            .get_output(context);
+            .get_output(ctx);
+        let launch_specifications_binding = args.launch_specifications.get_output(ctx);
         let launch_template_configs_binding = args
             .launch_template_configs
-            .get_output(context);
-        let load_balancers_binding = args.load_balancers.get_output(context);
+            .get_output(ctx);
+        let load_balancers_binding = args.load_balancers.get_output(ctx);
         let on_demand_allocation_strategy_binding = args
             .on_demand_allocation_strategy
-            .get_output(context);
+            .get_output(ctx);
         let on_demand_max_total_price_binding = args
             .on_demand_max_total_price
-            .get_output(context);
+            .get_output(ctx);
         let on_demand_target_capacity_binding = args
             .on_demand_target_capacity
-            .get_output(context);
+            .get_output(ctx);
         let replace_unhealthy_instances_binding = args
             .replace_unhealthy_instances
-            .get_output(context);
+            .get_output(ctx);
         let spot_maintenance_strategies_binding = args
             .spot_maintenance_strategies
-            .get_output(context);
-        let spot_price_binding = args.spot_price.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let target_capacity_binding = args.target_capacity.get_output(context);
+            .get_output(ctx);
+        let spot_price_binding = args.spot_price.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let target_capacity_binding = args.target_capacity.get_output(ctx);
         let target_capacity_unit_type_binding = args
             .target_capacity_unit_type
-            .get_output(context);
-        let target_group_arns_binding = args.target_group_arns.get_output(context);
+            .get_output(ctx);
+        let target_group_arns_binding = args.target_group_arns.get_output(ctx);
         let terminate_instances_on_delete_binding = args
             .terminate_instances_on_delete
-            .get_output(context);
+            .get_output(ctx);
         let terminate_instances_with_expiration_binding = args
             .terminate_instances_with_expiration
-            .get_output(context);
-        let valid_from_binding = args.valid_from.get_output(context);
-        let valid_until_binding = args.valid_until.get_output(context);
-        let wait_for_fulfillment_binding = args.wait_for_fulfillment.get_output(context);
+            .get_output(ctx);
+        let valid_from_binding = args.valid_from.get_output(ctx);
+        let valid_until_binding = args.valid_until.get_output(ctx);
+        let wait_for_fulfillment_binding = args.wait_for_fulfillment.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/spotFleetRequest:SpotFleetRequest".into(),
             name: name.to_string(),
@@ -592,7 +590,7 @@ pub mod spot_fleet_request {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         SpotFleetRequestResult {
             id: o.get_id(),
             urn: o.get_urn(),

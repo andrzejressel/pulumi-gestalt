@@ -35,11 +35,11 @@ pub mod get_workspace_private_endpoint_connection {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetWorkspacePrivateEndpointConnectionArgs,
     ) -> GetWorkspacePrivateEndpointConnectionResult {
-        let private_endpoint_id_binding = args.private_endpoint_id.get_output(context);
-        let workspace_id_binding = args.workspace_id.get_output(context);
+        let private_endpoint_id_binding = args.private_endpoint_id.get_output(ctx);
+        let workspace_id_binding = args.workspace_id.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:databricks/getWorkspacePrivateEndpointConnection:getWorkspacePrivateEndpointConnection"
                 .into(),
@@ -55,7 +55,7 @@ pub mod get_workspace_private_endpoint_connection {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetWorkspacePrivateEndpointConnectionResult {
             connections: o.get_field("connections"),
             id: o.get_field("id"),

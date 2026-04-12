@@ -142,42 +142,42 @@ pub mod environment_dapr_component {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EnvironmentDaprComponentArgs,
     ) -> EnvironmentDaprComponentResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EnvironmentDaprComponentArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> EnvironmentDaprComponentResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: EnvironmentDaprComponentArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> EnvironmentDaprComponentResult {
-        let component_type_binding = args.component_type.get_output(context);
+        let component_type_binding = args.component_type.get_output(ctx);
         let container_app_environment_id_binding = args
             .container_app_environment_id
-            .get_output(context);
-        let ignore_errors_binding = args.ignore_errors.get_output(context);
-        let init_timeout_binding = args.init_timeout.get_output(context);
-        let metadatas_binding = args.metadatas.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let scopes_binding = args.scopes.get_output(context);
-        let secrets_binding = args.secrets.get_output(context);
-        let version_binding = args.version.get_output(context);
+            .get_output(ctx);
+        let ignore_errors_binding = args.ignore_errors.get_output(ctx);
+        let init_timeout_binding = args.init_timeout.get_output(ctx);
+        let metadatas_binding = args.metadatas.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let scopes_binding = args.scopes.get_output(ctx);
+        let secrets_binding = args.secrets.get_output(ctx);
+        let version_binding = args.version.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:containerapp/environmentDaprComponent:EnvironmentDaprComponent"
                 .into(),
@@ -223,7 +223,7 @@ pub mod environment_dapr_component {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         EnvironmentDaprComponentResult {
             id: o.get_id(),
             urn: o.get_urn(),

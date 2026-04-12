@@ -659,51 +659,49 @@ pub mod metastore_service {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MetastoreServiceArgs,
     ) -> MetastoreServiceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MetastoreServiceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> MetastoreServiceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: MetastoreServiceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> MetastoreServiceResult {
-        let database_type_binding = args.database_type.get_output(context);
-        let deletion_protection_binding = args.deletion_protection.get_output(context);
-        let encryption_config_binding = args.encryption_config.get_output(context);
-        let hive_metastore_config_binding = args
-            .hive_metastore_config
-            .get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let maintenance_window_binding = args.maintenance_window.get_output(context);
-        let metadata_integration_binding = args.metadata_integration.get_output(context);
-        let network_binding = args.network.get_output(context);
-        let network_config_binding = args.network_config.get_output(context);
-        let port_binding = args.port.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let release_channel_binding = args.release_channel.get_output(context);
-        let scaling_config_binding = args.scaling_config.get_output(context);
-        let scheduled_backup_binding = args.scheduled_backup.get_output(context);
-        let service_id_binding = args.service_id.get_output(context);
-        let telemetry_config_binding = args.telemetry_config.get_output(context);
-        let tier_binding = args.tier.get_output(context);
+        let database_type_binding = args.database_type.get_output(ctx);
+        let deletion_protection_binding = args.deletion_protection.get_output(ctx);
+        let encryption_config_binding = args.encryption_config.get_output(ctx);
+        let hive_metastore_config_binding = args.hive_metastore_config.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let maintenance_window_binding = args.maintenance_window.get_output(ctx);
+        let metadata_integration_binding = args.metadata_integration.get_output(ctx);
+        let network_binding = args.network.get_output(ctx);
+        let network_config_binding = args.network_config.get_output(ctx);
+        let port_binding = args.port.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let release_channel_binding = args.release_channel.get_output(ctx);
+        let scaling_config_binding = args.scaling_config.get_output(ctx);
+        let scheduled_backup_binding = args.scheduled_backup.get_output(ctx);
+        let service_id_binding = args.service_id.get_output(ctx);
+        let telemetry_config_binding = args.telemetry_config.get_output(ctx);
+        let tier_binding = args.tier.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:dataproc/metastoreService:MetastoreService".into(),
             name: name.to_string(),
@@ -784,7 +782,7 @@ pub mod metastore_service {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         MetastoreServiceResult {
             id: o.get_id(),
             urn: o.get_urn(),

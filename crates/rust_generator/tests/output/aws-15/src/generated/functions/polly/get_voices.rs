@@ -43,15 +43,15 @@ pub mod get_voices {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetVoicesArgs,
     ) -> GetVoicesResult {
-        let engine_binding = args.engine.get_output(context);
+        let engine_binding = args.engine.get_output(ctx);
         let include_additional_language_codes_binding = args
             .include_additional_language_codes
-            .get_output(context);
-        let language_code_binding = args.language_code.get_output(context);
-        let voices_binding = args.voices.get_output(context);
+            .get_output(ctx);
+        let language_code_binding = args.language_code.get_output(ctx);
+        let voices_binding = args.voices.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:polly/getVoices:getVoices".into(),
             version: super::super::super::get_version(),
@@ -74,7 +74,7 @@ pub mod get_voices {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetVoicesResult {
             engine: o.get_field("engine"),
             id: o.get_field("id"),

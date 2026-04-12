@@ -166,34 +166,34 @@ pub mod app_check_service_config {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AppCheckServiceConfigArgs,
     ) -> AppCheckServiceConfigResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AppCheckServiceConfigArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AppCheckServiceConfigResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AppCheckServiceConfigArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AppCheckServiceConfigResult {
-        let enforcement_mode_binding = args.enforcement_mode.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let service_id_binding = args.service_id.get_output(context);
+        let enforcement_mode_binding = args.enforcement_mode.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let service_id_binding = args.service_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:firebase/appCheckServiceConfig:AppCheckServiceConfig".into(),
             name: name.to_string(),
@@ -214,7 +214,7 @@ pub mod app_check_service_config {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AppCheckServiceConfigResult {
             id: o.get_id(),
             urn: o.get_urn(),

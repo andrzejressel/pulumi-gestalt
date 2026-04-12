@@ -184,42 +184,42 @@ pub mod analysis {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AnalysisArgs,
     ) -> AnalysisResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AnalysisArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AnalysisResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AnalysisArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AnalysisResult {
-        let analysis_id_binding = args.analysis_id.get_output(context);
-        let aws_account_id_binding = args.aws_account_id.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let parameters_binding = args.parameters.get_output(context);
-        let permissions_binding = args.permissions.get_output(context);
+        let analysis_id_binding = args.analysis_id.get_output(ctx);
+        let aws_account_id_binding = args.aws_account_id.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let parameters_binding = args.parameters.get_output(ctx);
+        let permissions_binding = args.permissions.get_output(ctx);
         let recovery_window_in_days_binding = args
             .recovery_window_in_days
-            .get_output(context);
-        let source_entity_binding = args.source_entity.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let theme_arn_binding = args.theme_arn.get_output(context);
+            .get_output(ctx);
+        let source_entity_binding = args.source_entity.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let theme_arn_binding = args.theme_arn.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:quicksight/analysis:Analysis".into(),
             name: name.to_string(),
@@ -264,7 +264,7 @@ pub mod analysis {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AnalysisResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -47,13 +47,13 @@ pub mod get_server_certificate {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetServerCertificateArgs,
     ) -> GetServerCertificateResult {
-        let latest_binding = args.latest.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let name_prefix_binding = args.name_prefix.get_output(context);
-        let path_prefix_binding = args.path_prefix.get_output(context);
+        let latest_binding = args.latest.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let name_prefix_binding = args.name_prefix.get_output(ctx);
+        let path_prefix_binding = args.path_prefix.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:iam/getServerCertificate:getServerCertificate".into(),
             version: super::super::super::get_version(),
@@ -76,7 +76,7 @@ pub mod get_server_certificate {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetServerCertificateResult {
             arn: o.get_field("arn"),
             certificate_body: o.get_field("certificateBody"),

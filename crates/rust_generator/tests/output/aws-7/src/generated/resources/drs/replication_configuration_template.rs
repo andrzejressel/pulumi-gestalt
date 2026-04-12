@@ -147,63 +147,59 @@ pub mod replication_configuration_template {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ReplicationConfigurationTemplateArgs,
     ) -> ReplicationConfigurationTemplateResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ReplicationConfigurationTemplateArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ReplicationConfigurationTemplateResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ReplicationConfigurationTemplateArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ReplicationConfigurationTemplateResult {
         let associate_default_security_group_binding = args
             .associate_default_security_group
-            .get_output(context);
+            .get_output(ctx);
         let auto_replicate_new_disks_binding = args
             .auto_replicate_new_disks
-            .get_output(context);
-        let bandwidth_throttling_binding = args.bandwidth_throttling.get_output(context);
-        let create_public_ip_binding = args.create_public_ip.get_output(context);
-        let data_plane_routing_binding = args.data_plane_routing.get_output(context);
+            .get_output(ctx);
+        let bandwidth_throttling_binding = args.bandwidth_throttling.get_output(ctx);
+        let create_public_ip_binding = args.create_public_ip.get_output(ctx);
+        let data_plane_routing_binding = args.data_plane_routing.get_output(ctx);
         let default_large_staging_disk_type_binding = args
             .default_large_staging_disk_type
-            .get_output(context);
-        let ebs_encryption_binding = args.ebs_encryption.get_output(context);
-        let ebs_encryption_key_arn_binding = args
-            .ebs_encryption_key_arn
-            .get_output(context);
-        let pit_policies_binding = args.pit_policies.get_output(context);
+            .get_output(ctx);
+        let ebs_encryption_binding = args.ebs_encryption.get_output(ctx);
+        let ebs_encryption_key_arn_binding = args.ebs_encryption_key_arn.get_output(ctx);
+        let pit_policies_binding = args.pit_policies.get_output(ctx);
         let replication_server_instance_type_binding = args
             .replication_server_instance_type
-            .get_output(context);
+            .get_output(ctx);
         let replication_servers_security_groups_ids_binding = args
             .replication_servers_security_groups_ids
-            .get_output(context);
-        let staging_area_subnet_id_binding = args
-            .staging_area_subnet_id
-            .get_output(context);
-        let staging_area_tags_binding = args.staging_area_tags.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let timeouts_binding = args.timeouts.get_output(context);
+            .get_output(ctx);
+        let staging_area_subnet_id_binding = args.staging_area_subnet_id.get_output(ctx);
+        let staging_area_tags_binding = args.staging_area_tags.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let timeouts_binding = args.timeouts.get_output(ctx);
         let use_dedicated_replication_server_binding = args
             .use_dedicated_replication_server
-            .get_output(context);
+            .get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:drs/replicationConfigurationTemplate:ReplicationConfigurationTemplate"
                 .into(),
@@ -277,7 +273,7 @@ pub mod replication_configuration_template {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ReplicationConfigurationTemplateResult {
             id: o.get_id(),
             urn: o.get_urn(),

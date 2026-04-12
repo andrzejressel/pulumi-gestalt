@@ -132,43 +132,41 @@ pub mod file_upload {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FileUploadArgs,
     ) -> FileUploadResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FileUploadArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> FileUploadResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FileUploadArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> FileUploadResult {
-        let authentication_type_binding = args.authentication_type.get_output(context);
-        let connection_string_binding = args.connection_string.get_output(context);
-        let container_name_binding = args.container_name.get_output(context);
-        let default_ttl_binding = args.default_ttl.get_output(context);
-        let identity_id_binding = args.identity_id.get_output(context);
-        let iothub_id_binding = args.iothub_id.get_output(context);
-        let lock_duration_binding = args.lock_duration.get_output(context);
-        let max_delivery_count_binding = args.max_delivery_count.get_output(context);
-        let notifications_enabled_binding = args
-            .notifications_enabled
-            .get_output(context);
-        let sas_ttl_binding = args.sas_ttl.get_output(context);
+        let authentication_type_binding = args.authentication_type.get_output(ctx);
+        let connection_string_binding = args.connection_string.get_output(ctx);
+        let container_name_binding = args.container_name.get_output(ctx);
+        let default_ttl_binding = args.default_ttl.get_output(ctx);
+        let identity_id_binding = args.identity_id.get_output(ctx);
+        let iothub_id_binding = args.iothub_id.get_output(ctx);
+        let lock_duration_binding = args.lock_duration.get_output(ctx);
+        let max_delivery_count_binding = args.max_delivery_count.get_output(ctx);
+        let notifications_enabled_binding = args.notifications_enabled.get_output(ctx);
+        let sas_ttl_binding = args.sas_ttl.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:iot/fileUpload:FileUpload".into(),
             name: name.to_string(),
@@ -217,7 +215,7 @@ pub mod file_upload {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         FileUploadResult {
             id: o.get_id(),
             urn: o.get_urn(),

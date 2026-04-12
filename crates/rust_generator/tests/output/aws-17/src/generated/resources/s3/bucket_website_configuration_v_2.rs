@@ -169,42 +169,40 @@ pub mod bucket_website_configuration_v_2 {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BucketWebsiteConfigurationV2Args,
     ) -> BucketWebsiteConfigurationV2Result {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BucketWebsiteConfigurationV2Args,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> BucketWebsiteConfigurationV2Result {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: BucketWebsiteConfigurationV2Args,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> BucketWebsiteConfigurationV2Result {
-        let bucket_binding = args.bucket.get_output(context);
-        let error_document_binding = args.error_document.get_output(context);
-        let expected_bucket_owner_binding = args
-            .expected_bucket_owner
-            .get_output(context);
-        let index_document_binding = args.index_document.get_output(context);
+        let bucket_binding = args.bucket.get_output(ctx);
+        let error_document_binding = args.error_document.get_output(ctx);
+        let expected_bucket_owner_binding = args.expected_bucket_owner.get_output(ctx);
+        let index_document_binding = args.index_document.get_output(ctx);
         let redirect_all_requests_to_binding = args
             .redirect_all_requests_to
-            .get_output(context);
-        let routing_rule_details_binding = args.routing_rule_details.get_output(context);
-        let routing_rules_binding = args.routing_rules.get_output(context);
+            .get_output(ctx);
+        let routing_rule_details_binding = args.routing_rule_details.get_output(ctx);
+        let routing_rules_binding = args.routing_rules.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:s3/bucketWebsiteConfigurationV2:BucketWebsiteConfigurationV2"
                 .into(),
@@ -242,7 +240,7 @@ pub mod bucket_website_configuration_v_2 {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         BucketWebsiteConfigurationV2Result {
             id: o.get_id(),
             urn: o.get_urn(),

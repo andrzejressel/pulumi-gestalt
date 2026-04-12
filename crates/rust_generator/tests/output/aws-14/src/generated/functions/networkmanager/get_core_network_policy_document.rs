@@ -96,19 +96,19 @@ pub mod get_core_network_policy_document {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetCoreNetworkPolicyDocumentArgs,
     ) -> GetCoreNetworkPolicyDocumentResult {
-        let attachment_policies_binding = args.attachment_policies.get_output(context);
+        let attachment_policies_binding = args.attachment_policies.get_output(ctx);
         let core_network_configurations_binding = args
             .core_network_configurations
-            .get_output(context);
+            .get_output(ctx);
         let network_function_groups_binding = args
             .network_function_groups
-            .get_output(context);
-        let segment_actions_binding = args.segment_actions.get_output(context);
-        let segments_binding = args.segments.get_output(context);
-        let version_binding = args.version.get_output(context);
+            .get_output(ctx);
+        let segment_actions_binding = args.segment_actions.get_output(ctx);
+        let segments_binding = args.segments.get_output(ctx);
+        let version_binding = args.version.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:networkmanager/getCoreNetworkPolicyDocument:getCoreNetworkPolicyDocument"
                 .into(),
@@ -140,7 +140,7 @@ pub mod get_core_network_policy_document {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetCoreNetworkPolicyDocumentResult {
             attachment_policies: o.get_field("attachmentPolicies"),
             core_network_configurations: o.get_field("coreNetworkConfigurations"),

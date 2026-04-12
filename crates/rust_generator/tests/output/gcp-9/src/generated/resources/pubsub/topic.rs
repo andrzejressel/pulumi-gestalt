@@ -339,45 +339,43 @@ pub mod topic {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TopicArgs,
     ) -> TopicResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TopicArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> TopicResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TopicArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> TopicResult {
         let ingestion_data_source_settings_binding = args
             .ingestion_data_source_settings
-            .get_output(context);
-        let kms_key_name_binding = args.kms_key_name.get_output(context);
-        let labels_binding = args.labels.get_output(context);
+            .get_output(ctx);
+        let kms_key_name_binding = args.kms_key_name.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
         let message_retention_duration_binding = args
             .message_retention_duration
-            .get_output(context);
-        let message_storage_policy_binding = args
-            .message_storage_policy
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let schema_settings_binding = args.schema_settings.get_output(context);
+            .get_output(ctx);
+        let message_storage_policy_binding = args.message_storage_policy.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let schema_settings_binding = args.schema_settings.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:pubsub/topic:Topic".into(),
             name: name.to_string(),
@@ -418,7 +416,7 @@ pub mod topic {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         TopicResult {
             id: o.get_id(),
             urn: o.get_urn(),

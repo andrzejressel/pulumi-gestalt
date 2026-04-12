@@ -57,36 +57,36 @@ pub mod assignment_dynamic_scope {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AssignmentDynamicScopeArgs,
     ) -> AssignmentDynamicScopeResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AssignmentDynamicScopeArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> AssignmentDynamicScopeResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: AssignmentDynamicScopeArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> AssignmentDynamicScopeResult {
-        let filter_binding = args.filter.get_output(context);
+        let filter_binding = args.filter.get_output(ctx);
         let maintenance_configuration_id_binding = args
             .maintenance_configuration_id
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:maintenance/assignmentDynamicScope:AssignmentDynamicScope"
                 .into(),
@@ -108,7 +108,7 @@ pub mod assignment_dynamic_scope {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         AssignmentDynamicScopeResult {
             id: o.get_id(),
             urn: o.get_urn(),

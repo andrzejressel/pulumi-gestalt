@@ -185,45 +185,45 @@ pub mod task {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TaskArgs,
     ) -> TaskResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TaskArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> TaskResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: TaskArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> TaskResult {
         let cloudwatch_log_group_arn_binding = args
             .cloudwatch_log_group_arn
-            .get_output(context);
+            .get_output(ctx);
         let destination_location_arn_binding = args
             .destination_location_arn
-            .get_output(context);
-        let excludes_binding = args.excludes.get_output(context);
-        let includes_binding = args.includes.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let options_binding = args.options.get_output(context);
-        let schedule_binding = args.schedule.get_output(context);
-        let source_location_arn_binding = args.source_location_arn.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let task_report_config_binding = args.task_report_config.get_output(context);
+            .get_output(ctx);
+        let excludes_binding = args.excludes.get_output(ctx);
+        let includes_binding = args.includes.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let options_binding = args.options.get_output(ctx);
+        let schedule_binding = args.schedule.get_output(ctx);
+        let source_location_arn_binding = args.source_location_arn.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let task_report_config_binding = args.task_report_config.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:datasync/task:Task".into(),
             name: name.to_string(),
@@ -272,7 +272,7 @@ pub mod task {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         TaskResult {
             id: o.get_id(),
             urn: o.get_urn(),

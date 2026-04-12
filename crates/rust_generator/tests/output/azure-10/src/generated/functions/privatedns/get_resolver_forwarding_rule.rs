@@ -41,13 +41,13 @@ pub mod get_resolver_forwarding_rule {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetResolverForwardingRuleArgs,
     ) -> GetResolverForwardingRuleResult {
         let dns_forwarding_ruleset_id_binding = args
             .dns_forwarding_ruleset_id
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:privatedns/getResolverForwardingRule:getResolverForwardingRule"
                 .into(),
@@ -63,7 +63,7 @@ pub mod get_resolver_forwarding_rule {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetResolverForwardingRuleResult {
             dns_forwarding_ruleset_id: o.get_field("dnsForwardingRulesetId"),
             domain_name: o.get_field("domainName"),

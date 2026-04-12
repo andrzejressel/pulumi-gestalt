@@ -27,11 +27,11 @@ pub mod get_mpa_account_scope {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetMpaAccountScopeArgs,
     ) -> GetMpaAccountScopeResult {
-        let billing_account_name_binding = args.billing_account_name.get_output(context);
-        let customer_name_binding = args.customer_name.get_output(context);
+        let billing_account_name_binding = args.billing_account_name.get_output(ctx);
+        let customer_name_binding = args.customer_name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:billing/getMpaAccountScope:getMpaAccountScope".into(),
             version: super::super::super::get_version(),
@@ -46,7 +46,7 @@ pub mod get_mpa_account_scope {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetMpaAccountScopeResult {
             billing_account_name: o.get_field("billingAccountName"),
             customer_name: o.get_field("customerName"),

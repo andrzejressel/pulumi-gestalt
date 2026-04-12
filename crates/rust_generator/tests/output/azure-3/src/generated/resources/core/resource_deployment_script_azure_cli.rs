@@ -192,52 +192,48 @@ pub mod resource_deployment_script_azure_cli {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ResourceDeploymentScriptAzureCliArgs,
     ) -> ResourceDeploymentScriptAzureCliResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ResourceDeploymentScriptAzureCliArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ResourceDeploymentScriptAzureCliResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ResourceDeploymentScriptAzureCliArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ResourceDeploymentScriptAzureCliResult {
-        let cleanup_preference_binding = args.cleanup_preference.get_output(context);
-        let command_line_binding = args.command_line.get_output(context);
-        let container_binding = args.container.get_output(context);
-        let environment_variables_binding = args
-            .environment_variables
-            .get_output(context);
-        let force_update_tag_binding = args.force_update_tag.get_output(context);
-        let identity_binding = args.identity.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let primary_script_uri_binding = args.primary_script_uri.get_output(context);
-        let resource_group_name_binding = args.resource_group_name.get_output(context);
-        let retention_interval_binding = args.retention_interval.get_output(context);
-        let script_content_binding = args.script_content.get_output(context);
-        let storage_account_binding = args.storage_account.get_output(context);
-        let supporting_script_uris_binding = args
-            .supporting_script_uris
-            .get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let timeout_binding = args.timeout.get_output(context);
-        let version_binding = args.version.get_output(context);
+        let cleanup_preference_binding = args.cleanup_preference.get_output(ctx);
+        let command_line_binding = args.command_line.get_output(ctx);
+        let container_binding = args.container.get_output(ctx);
+        let environment_variables_binding = args.environment_variables.get_output(ctx);
+        let force_update_tag_binding = args.force_update_tag.get_output(ctx);
+        let identity_binding = args.identity.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let primary_script_uri_binding = args.primary_script_uri.get_output(ctx);
+        let resource_group_name_binding = args.resource_group_name.get_output(ctx);
+        let retention_interval_binding = args.retention_interval.get_output(ctx);
+        let script_content_binding = args.script_content.get_output(ctx);
+        let storage_account_binding = args.storage_account.get_output(ctx);
+        let supporting_script_uris_binding = args.supporting_script_uris.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let timeout_binding = args.timeout.get_output(ctx);
+        let version_binding = args.version.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:core/resourceDeploymentScriptAzureCli:ResourceDeploymentScriptAzureCli"
                 .into(),
@@ -315,7 +311,7 @@ pub mod resource_deployment_script_azure_cli {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ResourceDeploymentScriptAzureCliResult {
             id: o.get_id(),
             urn: o.get_urn(),

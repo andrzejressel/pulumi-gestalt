@@ -83,16 +83,16 @@ pub mod get_dev_environment {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetDevEnvironmentArgs,
     ) -> GetDevEnvironmentResult {
-        let alias_binding = args.alias.get_output(context);
-        let creator_id_binding = args.creator_id.get_output(context);
-        let env_id_binding = args.env_id.get_output(context);
-        let project_name_binding = args.project_name.get_output(context);
-        let repositories_binding = args.repositories.get_output(context);
-        let space_name_binding = args.space_name.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let alias_binding = args.alias.get_output(ctx);
+        let creator_id_binding = args.creator_id.get_output(ctx);
+        let env_id_binding = args.env_id.get_output(ctx);
+        let project_name_binding = args.project_name.get_output(ctx);
+        let repositories_binding = args.repositories.get_output(ctx);
+        let space_name_binding = args.space_name.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:codecatalyst/getDevEnvironment:getDevEnvironment".into(),
             version: super::super::super::get_version(),
@@ -127,7 +127,7 @@ pub mod get_dev_environment {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetDevEnvironmentResult {
             alias: o.get_field("alias"),
             creator_id: o.get_field("creatorId"),

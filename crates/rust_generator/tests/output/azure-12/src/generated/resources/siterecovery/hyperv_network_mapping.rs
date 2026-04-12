@@ -96,38 +96,38 @@ pub mod hyperv_network_mapping {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: HypervNetworkMappingArgs,
     ) -> HypervNetworkMappingResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: HypervNetworkMappingArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> HypervNetworkMappingResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: HypervNetworkMappingArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> HypervNetworkMappingResult {
-        let name_binding = args.name.get_output(context);
-        let recovery_vault_id_binding = args.recovery_vault_id.get_output(context);
-        let source_network_name_binding = args.source_network_name.get_output(context);
+        let name_binding = args.name.get_output(ctx);
+        let recovery_vault_id_binding = args.recovery_vault_id.get_output(ctx);
+        let source_network_name_binding = args.source_network_name.get_output(ctx);
         let source_system_center_virtual_machine_manager_name_binding = args
             .source_system_center_virtual_machine_manager_name
-            .get_output(context);
-        let target_network_id_binding = args.target_network_id.get_output(context);
+            .get_output(ctx);
+        let target_network_id_binding = args.target_network_id.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:siterecovery/hypervNetworkMapping:HypervNetworkMapping".into(),
             name: name.to_string(),
@@ -157,7 +157,7 @@ pub mod hyperv_network_mapping {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         HypervNetworkMappingResult {
             id: o.get_id(),
             urn: o.get_urn(),

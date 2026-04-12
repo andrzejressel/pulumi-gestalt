@@ -25,10 +25,10 @@ pub mod get_subscription_template_deployment {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetSubscriptionTemplateDeploymentArgs,
     ) -> GetSubscriptionTemplateDeploymentResult {
-        let name_binding = args.name.get_output(context);
+        let name_binding = args.name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:core/getSubscriptionTemplateDeployment:getSubscriptionTemplateDeployment"
                 .into(),
@@ -40,7 +40,7 @@ pub mod get_subscription_template_deployment {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetSubscriptionTemplateDeploymentResult {
             id: o.get_field("id"),
             name: o.get_field("name"),

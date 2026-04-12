@@ -25,10 +25,10 @@ pub mod get_cluster_auth {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetClusterAuthArgs,
     ) -> GetClusterAuthResult {
-        let name_binding = args.name.get_output(context);
+        let name_binding = args.name.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:eks/getClusterAuth:getClusterAuth".into(),
             version: super::super::super::get_version(),
@@ -39,7 +39,7 @@ pub mod get_cluster_auth {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetClusterAuthResult {
             id: o.get_field("id"),
             name: o.get_field("name"),

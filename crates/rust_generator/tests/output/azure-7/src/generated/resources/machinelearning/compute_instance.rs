@@ -201,47 +201,45 @@ pub mod compute_instance {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ComputeInstanceArgs,
     ) -> ComputeInstanceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ComputeInstanceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ComputeInstanceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ComputeInstanceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ComputeInstanceResult {
-        let assign_to_user_binding = args.assign_to_user.get_output(context);
-        let authorization_type_binding = args.authorization_type.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let identity_binding = args.identity.get_output(context);
-        let local_auth_enabled_binding = args.local_auth_enabled.get_output(context);
+        let assign_to_user_binding = args.assign_to_user.get_output(ctx);
+        let authorization_type_binding = args.authorization_type.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let identity_binding = args.identity.get_output(ctx);
+        let local_auth_enabled_binding = args.local_auth_enabled.get_output(ctx);
         let machine_learning_workspace_id_binding = args
             .machine_learning_workspace_id
-            .get_output(context);
-        let name_binding = args.name.get_output(context);
-        let node_public_ip_enabled_binding = args
-            .node_public_ip_enabled
-            .get_output(context);
-        let ssh_binding = args.ssh.get_output(context);
-        let subnet_resource_id_binding = args.subnet_resource_id.get_output(context);
-        let tags_binding = args.tags.get_output(context);
-        let virtual_machine_size_binding = args.virtual_machine_size.get_output(context);
+            .get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let node_public_ip_enabled_binding = args.node_public_ip_enabled.get_output(ctx);
+        let ssh_binding = args.ssh.get_output(ctx);
+        let subnet_resource_id_binding = args.subnet_resource_id.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
+        let virtual_machine_size_binding = args.virtual_machine_size.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:machinelearning/computeInstance:ComputeInstance".into(),
             name: name.to_string(),
@@ -298,7 +296,7 @@ pub mod compute_instance {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ComputeInstanceResult {
             id: o.get_id(),
             urn: o.get_urn(),

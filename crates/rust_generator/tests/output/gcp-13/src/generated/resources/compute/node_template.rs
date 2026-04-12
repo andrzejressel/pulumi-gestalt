@@ -260,44 +260,42 @@ pub mod node_template {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NodeTemplateArgs,
     ) -> NodeTemplateResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NodeTemplateArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> NodeTemplateResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NodeTemplateArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> NodeTemplateResult {
-        let accelerators_binding = args.accelerators.get_output(context);
-        let cpu_overcommit_type_binding = args.cpu_overcommit_type.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let disks_binding = args.disks.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let node_affinity_labels_binding = args.node_affinity_labels.get_output(context);
-        let node_type_binding = args.node_type.get_output(context);
-        let node_type_flexibility_binding = args
-            .node_type_flexibility
-            .get_output(context);
-        let project_binding = args.project.get_output(context);
-        let region_binding = args.region.get_output(context);
-        let server_binding_binding = args.server_binding.get_output(context);
+        let accelerators_binding = args.accelerators.get_output(ctx);
+        let cpu_overcommit_type_binding = args.cpu_overcommit_type.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let disks_binding = args.disks.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let node_affinity_labels_binding = args.node_affinity_labels.get_output(ctx);
+        let node_type_binding = args.node_type.get_output(ctx);
+        let node_type_flexibility_binding = args.node_type_flexibility.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let region_binding = args.region.get_output(ctx);
+        let server_binding_binding = args.server_binding.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:compute/nodeTemplate:NodeTemplate".into(),
             name: name.to_string(),
@@ -350,7 +348,7 @@ pub mod node_template {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         NodeTemplateResult {
             id: o.get_id(),
             urn: o.get_urn(),

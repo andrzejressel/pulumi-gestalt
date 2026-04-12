@@ -99,19 +99,19 @@ pub mod get_permissions {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         args: GetPermissionsArgs,
     ) -> GetPermissionsResult {
-        let catalog_id_binding = args.catalog_id.get_output(context);
-        let catalog_resource_binding = args.catalog_resource.get_output(context);
-        let data_cells_filter_binding = args.data_cells_filter.get_output(context);
-        let data_location_binding = args.data_location.get_output(context);
-        let database_binding = args.database.get_output(context);
-        let lf_tag_binding = args.lf_tag.get_output(context);
-        let lf_tag_policy_binding = args.lf_tag_policy.get_output(context);
-        let principal_binding = args.principal.get_output(context);
-        let table_binding = args.table.get_output(context);
-        let table_with_columns_binding = args.table_with_columns.get_output(context);
+        let catalog_id_binding = args.catalog_id.get_output(ctx);
+        let catalog_resource_binding = args.catalog_resource.get_output(ctx);
+        let data_cells_filter_binding = args.data_cells_filter.get_output(ctx);
+        let data_location_binding = args.data_location.get_output(ctx);
+        let database_binding = args.database.get_output(ctx);
+        let lf_tag_binding = args.lf_tag.get_output(ctx);
+        let lf_tag_policy_binding = args.lf_tag_policy.get_output(ctx);
+        let principal_binding = args.principal.get_output(ctx);
+        let table_binding = args.table.get_output(ctx);
+        let table_with_columns_binding = args.table_with_columns.get_output(ctx);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:lakeformation/getPermissions:getPermissions".into(),
             version: super::super::super::get_version(),
@@ -158,7 +158,7 @@ pub mod get_permissions {
                 },
             ],
         };
-        let o = context.invoke_resource(request);
+        let o = ctx.invoke_resource(request);
         GetPermissionsResult {
             catalog_id: o.get_field("catalogId"),
             catalog_resource: o.get_field("catalogResource"),

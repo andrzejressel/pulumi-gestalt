@@ -336,48 +336,48 @@ pub mod node_pool {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NodePoolArgs,
     ) -> NodePoolResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NodePoolArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> NodePoolResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NodePoolArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> NodePoolResult {
-        let autoscaling_binding = args.autoscaling.get_output(context);
-        let cluster_binding = args.cluster.get_output(context);
-        let initial_node_count_binding = args.initial_node_count.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let management_binding = args.management.get_output(context);
-        let max_pods_per_node_binding = args.max_pods_per_node.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let name_prefix_binding = args.name_prefix.get_output(context);
-        let network_config_binding = args.network_config.get_output(context);
-        let node_config_binding = args.node_config.get_output(context);
-        let node_count_binding = args.node_count.get_output(context);
-        let node_locations_binding = args.node_locations.get_output(context);
-        let placement_policy_binding = args.placement_policy.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let queued_provisioning_binding = args.queued_provisioning.get_output(context);
-        let upgrade_settings_binding = args.upgrade_settings.get_output(context);
-        let version_binding = args.version.get_output(context);
+        let autoscaling_binding = args.autoscaling.get_output(ctx);
+        let cluster_binding = args.cluster.get_output(ctx);
+        let initial_node_count_binding = args.initial_node_count.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let management_binding = args.management.get_output(ctx);
+        let max_pods_per_node_binding = args.max_pods_per_node.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let name_prefix_binding = args.name_prefix.get_output(ctx);
+        let network_config_binding = args.network_config.get_output(ctx);
+        let node_config_binding = args.node_config.get_output(ctx);
+        let node_count_binding = args.node_count.get_output(ctx);
+        let node_locations_binding = args.node_locations.get_output(ctx);
+        let placement_policy_binding = args.placement_policy.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let queued_provisioning_binding = args.queued_provisioning.get_output(ctx);
+        let upgrade_settings_binding = args.upgrade_settings.get_output(ctx);
+        let version_binding = args.version.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:container/nodePool:NodePool".into(),
             name: name.to_string(),
@@ -454,7 +454,7 @@ pub mod node_pool {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         NodePoolResult {
             id: o.get_id(),
             urn: o.get_urn(),

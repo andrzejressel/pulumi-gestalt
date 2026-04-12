@@ -205,47 +205,45 @@ pub mod firewall_policy_rule {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FirewallPolicyRuleArgs,
     ) -> FirewallPolicyRuleResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FirewallPolicyRuleArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> FirewallPolicyRuleResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: FirewallPolicyRuleArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> FirewallPolicyRuleResult {
-        let action_binding = args.action.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let direction_binding = args.direction.get_output(context);
-        let disabled_binding = args.disabled.get_output(context);
-        let enable_logging_binding = args.enable_logging.get_output(context);
-        let firewall_policy_binding = args.firewall_policy.get_output(context);
-        let match__binding = args.match_.get_output(context);
-        let priority_binding = args.priority.get_output(context);
-        let security_profile_group_binding = args
-            .security_profile_group
-            .get_output(context);
-        let target_resources_binding = args.target_resources.get_output(context);
+        let action_binding = args.action.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let direction_binding = args.direction.get_output(ctx);
+        let disabled_binding = args.disabled.get_output(ctx);
+        let enable_logging_binding = args.enable_logging.get_output(ctx);
+        let firewall_policy_binding = args.firewall_policy.get_output(ctx);
+        let match__binding = args.match_.get_output(ctx);
+        let priority_binding = args.priority.get_output(ctx);
+        let security_profile_group_binding = args.security_profile_group.get_output(ctx);
+        let target_resources_binding = args.target_resources.get_output(ctx);
         let target_service_accounts_binding = args
             .target_service_accounts
-            .get_output(context);
-        let tls_inspect_binding = args.tls_inspect.get_output(context);
+            .get_output(ctx);
+        let tls_inspect_binding = args.tls_inspect.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:compute/firewallPolicyRule:FirewallPolicyRule".into(),
             name: name.to_string(),
@@ -302,7 +300,7 @@ pub mod firewall_policy_rule {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         FirewallPolicyRuleResult {
             id: o.get_id(),
             urn: o.get_urn(),

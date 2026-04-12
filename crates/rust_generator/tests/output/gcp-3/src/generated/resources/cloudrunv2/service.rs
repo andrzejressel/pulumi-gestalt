@@ -858,49 +858,49 @@ pub mod service {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServiceArgs,
     ) -> ServiceResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServiceArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> ServiceResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: ServiceArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> ServiceResult {
-        let annotations_binding = args.annotations.get_output(context);
-        let binary_authorization_binding = args.binary_authorization.get_output(context);
-        let client_binding = args.client.get_output(context);
-        let client_version_binding = args.client_version.get_output(context);
-        let custom_audiences_binding = args.custom_audiences.get_output(context);
-        let default_uri_disabled_binding = args.default_uri_disabled.get_output(context);
-        let deletion_protection_binding = args.deletion_protection.get_output(context);
-        let description_binding = args.description.get_output(context);
-        let ingress_binding = args.ingress.get_output(context);
-        let invoker_iam_disabled_binding = args.invoker_iam_disabled.get_output(context);
-        let labels_binding = args.labels.get_output(context);
-        let launch_stage_binding = args.launch_stage.get_output(context);
-        let location_binding = args.location.get_output(context);
-        let name_binding = args.name.get_output(context);
-        let project_binding = args.project.get_output(context);
-        let scaling_binding = args.scaling.get_output(context);
-        let template_binding = args.template.get_output(context);
-        let traffics_binding = args.traffics.get_output(context);
+        let annotations_binding = args.annotations.get_output(ctx);
+        let binary_authorization_binding = args.binary_authorization.get_output(ctx);
+        let client_binding = args.client.get_output(ctx);
+        let client_version_binding = args.client_version.get_output(ctx);
+        let custom_audiences_binding = args.custom_audiences.get_output(ctx);
+        let default_uri_disabled_binding = args.default_uri_disabled.get_output(ctx);
+        let deletion_protection_binding = args.deletion_protection.get_output(ctx);
+        let description_binding = args.description.get_output(ctx);
+        let ingress_binding = args.ingress.get_output(ctx);
+        let invoker_iam_disabled_binding = args.invoker_iam_disabled.get_output(ctx);
+        let labels_binding = args.labels.get_output(ctx);
+        let launch_stage_binding = args.launch_stage.get_output(ctx);
+        let location_binding = args.location.get_output(ctx);
+        let name_binding = args.name.get_output(ctx);
+        let project_binding = args.project.get_output(ctx);
+        let scaling_binding = args.scaling.get_output(ctx);
+        let template_binding = args.template.get_output(ctx);
+        let traffics_binding = args.traffics.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "gcp:cloudrunv2/service:Service".into(),
             name: name.to_string(),
@@ -981,7 +981,7 @@ pub mod service {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         ServiceResult {
             id: o.get_id(),
             urn: o.get_urn(),

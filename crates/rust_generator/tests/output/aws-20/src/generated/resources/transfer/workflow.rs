@@ -124,35 +124,35 @@ pub mod workflow {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkflowArgs,
     ) -> WorkflowResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkflowArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> WorkflowResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: WorkflowArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> WorkflowResult {
-        let description_binding = args.description.get_output(context);
-        let on_exception_steps_binding = args.on_exception_steps.get_output(context);
-        let steps_binding = args.steps.get_output(context);
-        let tags_binding = args.tags.get_output(context);
+        let description_binding = args.description.get_output(ctx);
+        let on_exception_steps_binding = args.on_exception_steps.get_output(ctx);
+        let steps_binding = args.steps.get_output(ctx);
+        let tags_binding = args.tags.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:transfer/workflow:Workflow".into(),
             name: name.to_string(),
@@ -177,7 +177,7 @@ pub mod workflow {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         WorkflowResult {
             id: o.get_id(),
             urn: o.get_urn(),

@@ -50,32 +50,32 @@ pub mod domain {
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DomainArgs,
     ) -> DomainResult {
-        __create(context, name, args, None)
+        __create(ctx, name, args, None)
     }
     ///
     /// Same as `create`, but with additional generic options that control the behavior of the resource registration.
     ///
     #[allow(non_snake_case, dead_code)]
     pub fn create_with_options(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DomainArgs,
         options: pulumi_gestalt_rust::CustomResourceOptions,
     ) -> DomainResult {
-        __create(context, name, args, Some(options))
+        __create(ctx, name, args, Some(options))
     }
     #[allow(non_snake_case, unused_imports, dead_code)]
     fn __create(
-        context: &pulumi_gestalt_rust::Context,
+        ctx: &pulumi_gestalt_rust::Context,
         name: &str,
         args: DomainArgs,
         options: Option<pulumi_gestalt_rust::CustomResourceOptions>,
     ) -> DomainResult {
-        let domain_name_binding = args.domain_name.get_output(context);
+        let domain_name_binding = args.domain_name.get_output(ctx);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:lightsail/domain:Domain".into(),
             name: name.to_string(),
@@ -88,7 +88,7 @@ pub mod domain {
             ],
             options,
         };
-        let o = context.register_resource(request);
+        let o = ctx.register_resource(request);
         DomainResult {
             id: o.get_id(),
             urn: o.get_urn(),
