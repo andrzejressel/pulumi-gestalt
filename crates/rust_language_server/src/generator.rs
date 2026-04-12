@@ -253,7 +253,7 @@ fn convert_expression(expression: &Expression) -> Result<ExpressionType> {
 fn convert_stdlib_function_call(
     name: &str,
     args: String,
-    args_pure: &Vec<FunctionCallArgument>,
+    args_pure: &[FunctionCallArgument],
 ) -> Result<String> {
     let arg_count = args_pure.len();
     match name {
