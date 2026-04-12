@@ -8,23 +8,16 @@ fn pulumi_main(context: &pulumi_gestalt_rust::Context) -> Result<()> {
             std::collections::BTreeMap<String, String>,
         >(None, "aMap")
         .expect("Expected config [aMap] to exist");
-    pulumi_gestalt_rust::add_export(
-        "entriesOutput",
-        &context.new_output(&pulumi_gestalt_rust::stdlib::entries(&aMap)),
-    );
-    pulumi_gestalt_rust::add_export(
-        "lookupOutput",
-        &context
-            .new_output(
-                &pulumi_gestalt_rust::stdlib::lookup(&aMap, "keyPresent", "default"),
-            ),
-    );
-    pulumi_gestalt_rust::add_export(
-        "lookupOutputDefault",
-        &context
-            .new_output(
-                &pulumi_gestalt_rust::stdlib::lookup(&aMap, "keyMissing", "default"),
-            ),
-    );
+    context.add_export("entriesOutput", &pulumi_gestalt_rust::stdlib::entries(&aMap));
+    context
+        .add_export(
+            "lookupOutput",
+            &pulumi_gestalt_rust::stdlib::lookup(&aMap, "keyPresent", "default"),
+        );
+    context
+        .add_export(
+            "lookupOutputDefault",
+            &pulumi_gestalt_rust::stdlib::lookup(&aMap, "keyMissing", "default"),
+        );
     Ok(())
 }

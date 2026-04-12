@@ -1,7 +1,8 @@
 use crate::pcl_model::node::Value;
+use crate::pcl_model::r#type::Value::OutputType;
 use crate::pcl_model::{
-    ConfigType, ConfigVariable, Expression, LocalVariable, Node, OutputVariable,
-    PclProtobufProgram, TemplateExpression, TupleConsExpression, expression,
+    ConfigType, ConfigVariable, Expression, FunctionCallArgument, LocalVariable, Node,
+    OutputVariable, PclProtobufProgram, TemplateExpression, TupleConsExpression, expression,
     literal_value_expression, traverse_index, traverser,
 };
 use rootcause::prelude::ResultExt;
@@ -76,18 +77,34 @@ fn convert_node(node: &Node) -> Result<String> {
 }
 
 fn convert_config_variable(config_variable: &ConfigVariable) -> Result<String> {
-    match &config_variable.config_type {
-        ConfigType::String => Ok(format!(
-            "let {} = context.require_config(None, \"{}\").expect(\"Expected config [{}] to exist\");",
-            config_variable.name, config_variable.name, config_variable.name
-        )),
-        config_type => Ok(format!(
-            "let {} = context.require_config_deserialize::<{}>(None, \"{}\").expect(\"Expected config [{}] to exist\");",
-            config_variable.name,
-            generate_config_type(config_type),
-            config_variable.name,
-            config_variable.name
-        )),
+    if config_variable.secret {
+        match &config_variable.config_type {
+            ConfigType::String => Ok(format!(
+                "let {} = context.require_config_secret(None, \"{}\").expect(\"Expected config [{}] to exist\");",
+                config_variable.name, config_variable.name, config_variable.name
+            )),
+            config_type => Ok(format!(
+                "let {} = context.require_config_secret_deserialize::<{}>(None, \"{}\").expect(\"Expected config [{}] to exist\");",
+                config_variable.name,
+                generate_config_type(config_type),
+                config_variable.name,
+                config_variable.name
+            )),
+        }
+    } else {
+        match &config_variable.config_type {
+            ConfigType::String => Ok(format!(
+                "let {} = context.require_config(None, \"{}\").expect(\"Expected config [{}] to exist\");",
+                config_variable.name, config_variable.name, config_variable.name
+            )),
+            config_type => Ok(format!(
+                "let {} = context.require_config_deserialize::<{}>(None, \"{}\").expect(\"Expected config [{}] to exist\");",
+                config_variable.name,
+                generate_config_type(config_type),
+                config_variable.name,
+                config_variable.name
+            )),
+        }
     }
 }
 
@@ -118,11 +135,11 @@ fn convert_output_variable(output_variable: &OutputVariable) -> Result<String> {
     let value = convert_expression(&output_variable.value).context("Failed to convert value")?;
     match value {
         ExpressionType::EmptyList => Ok(format!(
-            "pulumi_gestalt_rust::add_export(\"{}\", &context.new_output::<Vec<String>>(&Vec::new()));",
+            "context.add_export(\"{}\", &Vec::<String>::new());",
             output_variable.name
         )),
         ExpressionType::Other(s) => Ok(format!(
-            "pulumi_gestalt_rust::add_export(\"{}\", &context.new_output(&{}));",
+            "context.add_export(\"{}\", &{});",
             output_variable.name, s
         )),
     }
@@ -186,13 +203,8 @@ fn convert_expression(expression: &Expression) -> Result<ExpressionType> {
                 .collect::<Vec<_>>()
                 .join(", ");
             Ok(ExpressionType::Other(
-                convert_stdlib_function_call(
-                    &function_call.name,
-                    args,
-                    function_call.args.iter().map(|a| &a.value).collect(),
-                    function_call.args.len(),
-                )
-                .context("Failed to convert function call")?,
+                convert_stdlib_function_call(&function_call.name, args, &function_call.args)
+                    .context("Failed to convert function call")?,
             ))
         }
         expression::Value::RelativeTraversalExpression(_) => {
@@ -241,9 +253,9 @@ fn convert_expression(expression: &Expression) -> Result<ExpressionType> {
 fn convert_stdlib_function_call(
     name: &str,
     args: String,
-    args_pure: Vec<&Expression>,
-    arg_count: usize,
+    args_pure: &Vec<FunctionCallArgument>,
 ) -> Result<String> {
+    let arg_count = args_pure.len();
     match name {
         "fromBase64" => {
             ensure_arity(name, arg_count, 1)?;
@@ -260,12 +272,30 @@ fn convert_stdlib_function_call(
             ensure_arity(name, arg_count, 1)?;
             Ok(format!("pulumi_gestalt_rust::stdlib::sha1({})", args))
         }
+        "secret" => {
+            ensure_arity(name, arg_count, 1)?;
+            let arg_type = &args_pure[0].r#type;
+            if let OutputType(_) = arg_type.value {
+                Ok(format!("{}.secret()", args))
+            } else {
+                Ok(format!("context.new_secret(&{})", args))
+            }
+        }
+        "unsecret" => {
+            ensure_arity(name, arg_count, 1)?;
+            let arg_type = &args_pure[0].r#type;
+            if let OutputType(_) = arg_type.value {
+                Ok(format!("{}.unsecret()", args))
+            } else {
+                Ok(format!("context.new_output(&{})", args))
+            }
+        }
         "element" => {
             ensure_arity(name, arg_count, 2)?;
-            let first_arg = convert_expression(args_pure[0])
+            let first_arg = convert_expression(&args_pure[0].value)
                 .context_with(|| format!("Failed to convert argument [{:?}]", args_pure[0]))?
                 .to_string();
-            let second_arg = convert_expression(args_pure[1])
+            let second_arg = convert_expression(&args_pure[1].value)
                 .context_with(|| format!("Failed to convert argument [{:?}]", args_pure[1]))?
                 .to_string();
             Ok(format!(
@@ -275,10 +305,10 @@ fn convert_stdlib_function_call(
         }
         "join" => {
             ensure_arity(name, arg_count, 2)?;
-            let first_arg = convert_expression(args_pure[0])
+            let first_arg = convert_expression(&args_pure[0].value)
                 .context_with(|| format!("Failed to convert argument [{:?}]", args_pure[0]))?
                 .to_string();
-            let second_arg = convert_expression(args_pure[1])
+            let second_arg = convert_expression(&args_pure[1].value)
                 .context_with(|| format!("Failed to convert argument [{:?}]", args_pure[1]))?
                 .to_string();
             Ok(format!(
@@ -288,7 +318,7 @@ fn convert_stdlib_function_call(
         }
         "length" => {
             ensure_arity(name, arg_count, 1)?;
-            let first_arg = convert_expression(args_pure[0])
+            let first_arg = convert_expression(&args_pure[0].value)
                 .context_with(|| format!("Failed to convert argument [{:?}]", args_pure[0]))?
                 .to_string();
             Ok(format!(
@@ -332,7 +362,7 @@ fn convert_stdlib_function_call(
         }
         "entries" => {
             ensure_arity(name, arg_count, 1)?;
-            let first_arg = convert_expression(args_pure[0])
+            let first_arg = convert_expression(&args_pure[0].value)
                 .context_with(|| format!("Failed to convert argument [{:?}]", args_pure[0]))?
                 .to_string();
             Ok(format!(
@@ -341,13 +371,13 @@ fn convert_stdlib_function_call(
         }
         "lookup" => {
             ensure_arity(name, arg_count, 3)?;
-            let first_arg = convert_expression(args_pure[0])
+            let first_arg = convert_expression(&args_pure[0].value)
                 .context_with(|| format!("Failed to convert argument [{:?}]", args_pure[0]))?
                 .to_string();
-            let second_arg = convert_expression(args_pure[1])
+            let second_arg = convert_expression(&args_pure[1].value)
                 .context_with(|| format!("Failed to convert argument [{:?}]", args_pure[1]))?
                 .to_string();
-            let third_arg = convert_expression(args_pure[2])
+            let third_arg = convert_expression(&args_pure[2].value)
                 .context_with(|| format!("Failed to convert argument [{:?}]", args_pure[2]))?
                 .to_string();
             Ok(format!(

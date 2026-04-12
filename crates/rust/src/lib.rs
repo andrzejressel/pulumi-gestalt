@@ -5,6 +5,7 @@ mod native;
 #[doc(hidden)]
 #[path = "private/mod.rs"]
 pub mod __private;
+pub mod any_export;
 mod input_or_output;
 mod oneof;
 mod pulumi_any;
@@ -19,7 +20,6 @@ pub use oneof::OneOf3;
 pub use oneof::OneOf4;
 
 use anyhow::{Context as AnyhowContext, Result};
-
 pub use native::{
     CompositeOutput, Context, CustomResourceOptions, InvokeResourceRequest, Output, Provider,
     RegisterResourceRequest, ResourceRequestObjectField,
