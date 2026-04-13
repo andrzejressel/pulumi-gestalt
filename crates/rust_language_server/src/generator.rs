@@ -175,7 +175,11 @@ fn convert_expression(expression: &Expression) -> Result<ExpressionType> {
                 Ok(ExpressionType::Other(escape_rust_string(s)))
             }
             literal_value_expression::Value::NumberValue(n) => {
-                Ok(ExpressionType::Other(format!("{}_f64", n)))
+                if n > &(f32::MAX as f64) || n < &(f32::MIN as f64) {
+                    Ok(ExpressionType::Other(format!("{}_f64", n)))
+                } else {
+                    Ok(ExpressionType::Other(n.to_string()))
+                }
             }
             literal_value_expression::Value::BoolValue(b) => {
                 Ok(ExpressionType::Other(b.to_string()))
