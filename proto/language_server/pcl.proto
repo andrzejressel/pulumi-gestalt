@@ -189,6 +189,8 @@ enum Operation {
   MULTIPLY = 10;
   NOT_EQUAL = 11;
   SUBTRACT = 12;
+  LOGICAL_NOT = 13;
+  NEGATE = 14;
 }
 
 message Traversal {

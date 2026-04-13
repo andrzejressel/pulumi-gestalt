@@ -168,7 +168,6 @@ var expectedFailures = map[string]string{
 	"l1-builtin-try":                               "sdk snapshot validation for any-type-function: walk expected dir: lstat testdata/sdks/any-type-function-15.0.0: no such file or directory",
 	"l1-config-secret":                             "unsupported config variable type: output(number)",
 	"l1-config-types-object":                       "unsupported config variable type: map(int)",
-	"l1-config-types-primitive":                    "unsupported operation type in expression lowering",
 	"l1-elide-index":                               "sdk snapshot validation for simple: walk expected dir: lstat testdata/sdks/simple-2.0.0: no such file or directory",
 	"l1-keyword-overlap":                           "sdk snapshot validation for simple: walk expected dir: lstat testdata/sdks/simple-2.0.0: no such file or directory",
 	"l1-output-map":                                "sdk snapshot validation for sync: walk expected dir: lstat testdata/sdks/sync-3.0.0-alpha.1.internal+exp.sha.2143768: no such file or directory",

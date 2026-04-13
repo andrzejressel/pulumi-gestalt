@@ -357,6 +357,8 @@ pub enum Operation {
     Multiply = 10,
     NotEqual = 11,
     Subtract = 12,
+    LogicalNot = 13,
+    Negate = 14,
 }
 impl Operation {
     /// String value of the enum field names used in the ProtoBuf definition.
@@ -378,6 +380,8 @@ impl Operation {
             Self::Multiply => "MULTIPLY",
             Self::NotEqual => "NOT_EQUAL",
             Self::Subtract => "SUBTRACT",
+            Self::LogicalNot => "LOGICAL_NOT",
+            Self::Negate => "NEGATE",
         }
     }
     /// Creates an enum from field names used in the ProtoBuf definition.
@@ -396,6 +400,8 @@ impl Operation {
             "MULTIPLY" => Some(Self::Multiply),
             "NOT_EQUAL" => Some(Self::NotEqual),
             "SUBTRACT" => Some(Self::Subtract),
+            "LOGICAL_NOT" => Some(Self::LogicalNot),
+            "NEGATE" => Some(Self::Negate),
             _ => None,
         }
     }

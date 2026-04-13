@@ -1,0 +1,324 @@
+{
+  "nodes": [
+    {
+      "configVariable": {
+        "name": "aNumber",
+        "logicalName": "aNumber",
+        "configType": {
+          "numberType": {}
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "theNumber",
+        "logicalName": "theNumber",
+        "value": {
+          "binaryOpExpression": {
+            "left": {
+              "scopeTraversalExpression": {
+                "rootName": "aNumber",
+                "traversal": {
+                  "each": [
+                    {
+                      "traverseRoot": {
+                        "name": "aNumber"
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            "right": {
+              "literalValueExpression": {
+                "numberValue": 1.25
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "configVariable": {
+        "name": "optionalNumber",
+        "logicalName": "optionalNumber",
+        "configType": {
+          "numberType": {}
+        },
+        "defaultValue": {
+          "literalValueExpression": {
+            "numberValue": 41.5
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "defaultNumber",
+        "logicalName": "defaultNumber",
+        "value": {
+          "binaryOpExpression": {
+            "left": {
+              "scopeTraversalExpression": {
+                "rootName": "optionalNumber",
+                "traversal": {
+                  "each": [
+                    {
+                      "traverseRoot": {
+                        "name": "optionalNumber"
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            "right": {
+              "literalValueExpression": {
+                "numberValue": 1.2
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "configVariable": {
+        "name": "anInt",
+        "logicalName": "anInt",
+        "configType": {
+          "intType": {}
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "theInteger",
+        "logicalName": "theInteger",
+        "value": {
+          "binaryOpExpression": {
+            "left": {
+              "scopeTraversalExpression": {
+                "rootName": "anInt",
+                "traversal": {
+                  "each": [
+                    {
+                      "traverseRoot": {
+                        "name": "anInt"
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            "right": {
+              "literalValueExpression": {
+                "numberValue": 4
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "configVariable": {
+        "name": "optionalInt",
+        "logicalName": "optionalInt",
+        "configType": {
+          "intType": {}
+        },
+        "defaultValue": {
+          "literalValueExpression": {
+            "numberValue": 1
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "defaultInteger",
+        "logicalName": "defaultInteger",
+        "value": {
+          "binaryOpExpression": {
+            "left": {
+              "scopeTraversalExpression": {
+                "rootName": "optionalInt",
+                "traversal": {
+                  "each": [
+                    {
+                      "traverseRoot": {
+                        "name": "optionalInt"
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            "right": {
+              "literalValueExpression": {
+                "numberValue": 2
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "configVariable": {
+        "name": "aString",
+        "logicalName": "aString",
+        "configType": {
+          "stringType": {}
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "theString",
+        "logicalName": "theString",
+        "value": {
+          "templateExpression": {
+            "parts": [
+              {
+                "scopeTraversalExpression": {
+                  "rootName": "aString",
+                  "traversal": {
+                    "each": [
+                      {
+                        "traverseRoot": {
+                          "name": "aString"
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "literalValueExpression": {
+                  "stringValue": " World"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "configVariable": {
+        "name": "optionalString",
+        "logicalName": "optionalString",
+        "configType": {
+          "stringType": {}
+        },
+        "defaultValue": {
+          "templateExpression": {
+            "parts": [
+              {
+                "literalValueExpression": {
+                  "stringValue": "defaultStringValue"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "defaultString",
+        "logicalName": "defaultString",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "optionalString",
+            "traversal": {
+              "each": [
+                {
+                  "traverseRoot": {
+                    "name": "optionalString"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "configVariable": {
+        "name": "aBool",
+        "logicalName": "aBool",
+        "configType": {
+          "boolType": {}
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "theBool",
+        "logicalName": "theBool",
+        "value": {
+          "binaryOpExpression": {
+            "operation": "LOGICAL_AND",
+            "left": {
+              "unaryOpExpression": {
+                "operation": "LOGICAL_NOT",
+                "operand": {
+                  "scopeTraversalExpression": {
+                    "rootName": "aBool",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "aBool"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "right": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "configVariable": {
+        "name": "optionalBool",
+        "logicalName": "optionalBool",
+        "configType": {
+          "boolType": {}
+        },
+        "defaultValue": {
+          "literalValueExpression": {
+            "boolValue": false
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "defaultBool",
+        "logicalName": "defaultBool",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "optionalBool",
+            "traversal": {
+              "each": [
+                {
+                  "traverseRoot": {
+                    "name": "optionalBool"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

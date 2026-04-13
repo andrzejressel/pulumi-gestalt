@@ -1,7 +1,7 @@
 use crate::pcl_model::node::Value;
 use crate::pcl_model::r#type::Value::OutputType;
 use crate::pcl_model::{
-    ConfigType, ConfigVariable, Expression, FunctionCallArgument, LocalVariable, Node,
+    ConfigType, ConfigVariable, Expression, FunctionCallArgument, LocalVariable, Node, Operation,
     OutputVariable, PclProtobufProgram, TemplateExpression, TupleConsExpression, expression,
     literal_value_expression, traverse_index, traverser,
 };
@@ -77,6 +77,15 @@ fn convert_node(node: &Node) -> Result<String> {
 }
 
 fn convert_config_variable(config_variable: &ConfigVariable) -> Result<String> {
+    let default_expr = match &config_variable.default_value {
+        Some(expr) => Some(
+            convert_expression(expr)
+                .context("Failed to convert config variable default value")?
+                .to_string(),
+        ),
+        None => None,
+    };
+
     if config_variable.secret {
         match &config_variable.config_type {
             ConfigType::String => Ok(format!(
@@ -92,12 +101,23 @@ fn convert_config_variable(config_variable: &ConfigVariable) -> Result<String> {
             )),
         }
     } else {
-        match &config_variable.config_type {
-            ConfigType::String => Ok(format!(
+        match (&config_variable.config_type, default_expr) {
+            (ConfigType::String, Some(default)) => Ok(format!(
+                "let {} = ctx.require_config(None, \"{}\").unwrap_or_else(|_| {}.to_string());",
+                config_variable.name, config_variable.name, default
+            )),
+            (ConfigType::String, None) => Ok(format!(
                 "let {} = ctx.require_config(None, \"{}\").expect(\"Expected config [{}] to exist\");",
                 config_variable.name, config_variable.name, config_variable.name
             )),
-            config_type => Ok(format!(
+            (config_type, Some(default)) => Ok(format!(
+                "let {} = ctx.require_config_deserialize::<{}>(None, \"{}\").unwrap_or({});",
+                config_variable.name,
+                generate_config_type(config_type),
+                config_variable.name,
+                default
+            )),
+            (config_type, None) => Ok(format!(
                 "let {} = ctx.require_config_deserialize::<{}>(None, \"{}\").expect(\"Expected config [{}] to exist\");",
                 config_variable.name,
                 generate_config_type(config_type),
@@ -165,8 +185,34 @@ fn convert_expression(expression: &Expression) -> Result<ExpressionType> {
             let el = &parts[0];
             convert_expression(el)
         }
-        expression::Value::TemplateExpression(expr) => {
-            bail!("TemplateExpression not yet supported [{expr:?}]")
+        expression::Value::TemplateExpression(TemplateExpression { parts }) => {
+            let mut format_string = String::new();
+            let mut args = Vec::new();
+
+            for part in parts {
+                let converted =
+                    convert_expression(part).context("Failed to convert template part")?;
+                match converted {
+                    ExpressionType::Other(s) => {
+                        format_string.push_str("{}");
+                        args.push(s);
+                    }
+                    ExpressionType::EmptyList => {
+                        format_string.push_str("{:?}");
+                        args.push("Vec::new()".to_string());
+                    }
+                }
+            }
+
+            if args.is_empty() {
+                Ok(ExpressionType::Other("String::new()".to_string()))
+            } else {
+                Ok(ExpressionType::Other(format!(
+                    "format!(\"{}\", {})",
+                    format_string,
+                    args.join(", ")
+                )))
+            }
         }
         expression::Value::IndexExpression(_) => {
             bail!("IndexExpression not yet supported")
@@ -241,11 +287,51 @@ fn convert_expression(expression: &Expression) -> Result<ExpressionType> {
         expression::Value::ConditionalExpression(_) => {
             bail!("ConditionalExpression not yet supported")
         }
-        expression::Value::BinaryOpExpression(_) => {
-            bail!("BinaryOpExpression not yet supported")
+        expression::Value::BinaryOpExpression(binary_op) => {
+            let left =
+                convert_expression(&binary_op.left).context("Failed to convert left operand")?;
+            let right =
+                convert_expression(&binary_op.right).context("Failed to convert right operand")?;
+
+            let left_str = left.to_string();
+            let right_str = right.to_string();
+
+            let op_str = match binary_op.operation {
+                Operation::Add => "+",
+                Operation::Subtract => "-",
+                Operation::Multiply => "*",
+                Operation::Divide => "/",
+                Operation::Modulo => "%",
+                Operation::Equal => "==",
+                Operation::NotEqual => "!=",
+                Operation::GreaterThan => ">",
+                Operation::LessThan => "<",
+                Operation::GreaterThanOrEqual => ">=",
+                Operation::LessThanOrEqual => "<=",
+                Operation::LogicalAnd => "&&",
+                Operation::LogicalOr => "||",
+                Operation::LogicalNot | Operation::Negate => {
+                    bail!("BinaryOpExpression cannot have LogicalNot or Negate operation")
+                }
+            };
+
+            Ok(ExpressionType::Other(format!(
+                "({} {} {})",
+                left_str, op_str, right_str
+            )))
         }
-        expression::Value::UnaryOpExpression(_) => {
-            bail!("UnaryOpExpression not yet supported")
+        expression::Value::UnaryOpExpression(unary_op) => {
+            let operand =
+                convert_expression(&unary_op.operand).context("Failed to convert operand")?;
+            let operand_str = operand.to_string();
+
+            let result = match unary_op.operation {
+                Operation::LogicalNot => format!("!{}", operand_str),
+                Operation::Negate => format!("-{}", operand_str),
+                op => bail!("UnaryOpExpression unsupported operation: {:?}", op),
+            };
+
+            Ok(ExpressionType::Other(result))
         }
     }
 }

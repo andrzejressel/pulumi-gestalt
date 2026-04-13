@@ -152,18 +152,21 @@ func formatOperation(operation *hclsyntax.Operation) (astproto.Operation, error)
 		return astproto.Operation_LESS_THAN_OR_EQUAL, nil
 	case hclsyntax.OpLogicalAnd:
 		return astproto.Operation_LOGICAL_AND, nil
+	case hclsyntax.OpLogicalNot:
+		return astproto.Operation_LOGICAL_NOT, nil
 	case hclsyntax.OpLogicalOr:
 		return astproto.Operation_LOGICAL_OR, nil
 	case hclsyntax.OpModulo:
 		return astproto.Operation_MODULO, nil
 	case hclsyntax.OpMultiply:
 		return astproto.Operation_MULTIPLY, nil
+	case hclsyntax.OpNegate:
+		return astproto.Operation_NEGATE, nil
 	case hclsyntax.OpNotEqual:
 		return astproto.Operation_NOT_EQUAL, nil
 	case hclsyntax.OpSubtract:
 		return astproto.Operation_SUBTRACT, nil
 	default:
-		// Cannot return nil - the values are const which cannot be converted to pointers
 		return astproto.Operation_ADD, fmt.Errorf("unknown operation type: %v", operation)
 	}
 }

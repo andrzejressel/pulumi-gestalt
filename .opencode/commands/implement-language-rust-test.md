@@ -46,3 +46,5 @@ You can try replacing "-" with "_" in test names (and vice versa) if you have tr
 
 - Keep error messages explicit in runtime helpers (prefer contextual errors).
 - Follow the style used in previous builtin implementations for consistency.
+
+Name of your test: $1
