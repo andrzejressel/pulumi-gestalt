@@ -1,0 +1,70 @@
+{
+  "nodes": [
+    {
+      "outputVariable": {
+        "name": "zero",
+        "logicalName": "zero",
+        "value": {
+          "literalValueExpression": {
+            "numberValue": 0
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "one",
+        "logicalName": "one",
+        "value": {
+          "literalValueExpression": {
+            "numberValue": 1
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "e",
+        "logicalName": "e",
+        "value": {
+          "literalValueExpression": {
+            "numberValue": 2.718
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "minInt32",
+        "logicalName": "minInt32",
+        "value": {
+          "literalValueExpression": {
+            "numberValue": -2147483648
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "max",
+        "logicalName": "max",
+        "value": {
+          "literalValueExpression": {
+            "numberValue": 1.7976931348623157e+308
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "min",
+        "logicalName": "min",
+        "value": {
+          "literalValueExpression": {
+            "numberValue": 5e-324
+          }
+        }
+      }
+    }
+  ]
+}

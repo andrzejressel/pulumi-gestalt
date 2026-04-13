@@ -175,7 +175,7 @@ fn convert_expression(expression: &Expression) -> Result<ExpressionType> {
                 Ok(ExpressionType::Other(escape_rust_string(s)))
             }
             literal_value_expression::Value::NumberValue(n) => {
-                Ok(ExpressionType::Other(n.to_string()))
+                Ok(ExpressionType::Other(format!("{}_f64", n)))
             }
             literal_value_expression::Value::BoolValue(b) => {
                 Ok(ExpressionType::Other(b.to_string()))
