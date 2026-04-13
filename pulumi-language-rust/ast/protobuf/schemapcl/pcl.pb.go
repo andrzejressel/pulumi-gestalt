@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        v7.34.1
-// source: proto/language_server/pcl.proto
+// source: pcl.proto
 
 package schemapcl
 
@@ -90,11 +90,11 @@ func (x Operation) String() string {
 }
 
 func (Operation) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_language_server_pcl_proto_enumTypes[0].Descriptor()
+	return file_pcl_proto_enumTypes[0].Descriptor()
 }
 
 func (Operation) Type() protoreflect.EnumType {
-	return &file_proto_language_server_pcl_proto_enumTypes[0]
+	return &file_pcl_proto_enumTypes[0]
 }
 
 func (x Operation) Number() protoreflect.EnumNumber {
@@ -103,7 +103,7 @@ func (x Operation) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use Operation.Descriptor instead.
 func (Operation) EnumDescriptor() ([]byte, []int) {
-	return file_proto_language_server_pcl_proto_rawDescGZIP(), []int{0}
+	return file_pcl_proto_rawDescGZIP(), []int{0}
 }
 
 type PclProtobufProgram struct {
@@ -116,7 +116,7 @@ type PclProtobufProgram struct {
 
 func (x *PclProtobufProgram) Reset() {
 	*x = PclProtobufProgram{}
-	mi := &file_proto_language_server_pcl_proto_msgTypes[0]
+	mi := &file_pcl_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -128,7 +128,7 @@ func (x *PclProtobufProgram) String() string {
 func (*PclProtobufProgram) ProtoMessage() {}
 
 func (x *PclProtobufProgram) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_language_server_pcl_proto_msgTypes[0]
+	mi := &file_pcl_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -141,7 +141,7 @@ func (x *PclProtobufProgram) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PclProtobufProgram.ProtoReflect.Descriptor instead.
 func (*PclProtobufProgram) Descriptor() ([]byte, []int) {
-	return file_proto_language_server_pcl_proto_rawDescGZIP(), []int{0}
+	return file_pcl_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *PclProtobufProgram) GetNodes() []*Node {
@@ -168,7 +168,7 @@ type PluginReference struct {
 
 func (x *PluginReference) Reset() {
 	*x = PluginReference{}
-	mi := &file_proto_language_server_pcl_proto_msgTypes[1]
+	mi := &file_pcl_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -180,7 +180,7 @@ func (x *PluginReference) String() string {
 func (*PluginReference) ProtoMessage() {}
 
 func (x *PluginReference) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_language_server_pcl_proto_msgTypes[1]
+	mi := &file_pcl_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -193,7 +193,7 @@ func (x *PluginReference) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PluginReference.ProtoReflect.Descriptor instead.
 func (*PluginReference) Descriptor() ([]byte, []int) {
-	return file_proto_language_server_pcl_proto_rawDescGZIP(), []int{1}
+	return file_pcl_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *PluginReference) GetName() string {
@@ -225,7 +225,7 @@ type Node struct {
 
 func (x *Node) Reset() {
 	*x = Node{}
-	mi := &file_proto_language_server_pcl_proto_msgTypes[2]
+	mi := &file_pcl_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -237,7 +237,7 @@ func (x *Node) String() string {
 func (*Node) ProtoMessage() {}
 
 func (x *Node) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_language_server_pcl_proto_msgTypes[2]
+	mi := &file_pcl_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -250,7 +250,7 @@ func (x *Node) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Node.ProtoReflect.Descriptor instead.
 func (*Node) Descriptor() ([]byte, []int) {
-	return file_proto_language_server_pcl_proto_rawDescGZIP(), []int{2}
+	return file_pcl_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *Node) GetValue() isNode_Value {
@@ -337,7 +337,7 @@ type Resource struct {
 
 func (x *Resource) Reset() {
 	*x = Resource{}
-	mi := &file_proto_language_server_pcl_proto_msgTypes[3]
+	mi := &file_pcl_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -349,7 +349,7 @@ func (x *Resource) String() string {
 func (*Resource) ProtoMessage() {}
 
 func (x *Resource) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_language_server_pcl_proto_msgTypes[3]
+	mi := &file_pcl_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -362,7 +362,7 @@ func (x *Resource) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Resource.ProtoReflect.Descriptor instead.
 func (*Resource) Descriptor() ([]byte, []int) {
-	return file_proto_language_server_pcl_proto_rawDescGZIP(), []int{3}
+	return file_pcl_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *Resource) GetName() string {
@@ -410,7 +410,7 @@ type ResourceInput struct {
 
 func (x *ResourceInput) Reset() {
 	*x = ResourceInput{}
-	mi := &file_proto_language_server_pcl_proto_msgTypes[4]
+	mi := &file_pcl_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -422,7 +422,7 @@ func (x *ResourceInput) String() string {
 func (*ResourceInput) ProtoMessage() {}
 
 func (x *ResourceInput) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_language_server_pcl_proto_msgTypes[4]
+	mi := &file_pcl_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -435,7 +435,7 @@ func (x *ResourceInput) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResourceInput.ProtoReflect.Descriptor instead.
 func (*ResourceInput) Descriptor() ([]byte, []int) {
-	return file_proto_language_server_pcl_proto_rawDescGZIP(), []int{4}
+	return file_pcl_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *ResourceInput) GetName() string {
@@ -467,7 +467,7 @@ type ResourceOptions struct {
 
 func (x *ResourceOptions) Reset() {
 	*x = ResourceOptions{}
-	mi := &file_proto_language_server_pcl_proto_msgTypes[5]
+	mi := &file_pcl_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -479,7 +479,7 @@ func (x *ResourceOptions) String() string {
 func (*ResourceOptions) ProtoMessage() {}
 
 func (x *ResourceOptions) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_language_server_pcl_proto_msgTypes[5]
+	mi := &file_pcl_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -492,7 +492,7 @@ func (x *ResourceOptions) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResourceOptions.ProtoReflect.Descriptor instead.
 func (*ResourceOptions) Descriptor() ([]byte, []int) {
-	return file_proto_language_server_pcl_proto_rawDescGZIP(), []int{5}
+	return file_pcl_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *ResourceOptions) GetDependsOn() *Expression {
@@ -555,7 +555,7 @@ type LocalVariable struct {
 
 func (x *LocalVariable) Reset() {
 	*x = LocalVariable{}
-	mi := &file_proto_language_server_pcl_proto_msgTypes[6]
+	mi := &file_pcl_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -567,7 +567,7 @@ func (x *LocalVariable) String() string {
 func (*LocalVariable) ProtoMessage() {}
 
 func (x *LocalVariable) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_language_server_pcl_proto_msgTypes[6]
+	mi := &file_pcl_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -580,7 +580,7 @@ func (x *LocalVariable) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LocalVariable.ProtoReflect.Descriptor instead.
 func (*LocalVariable) Descriptor() ([]byte, []int) {
-	return file_proto_language_server_pcl_proto_rawDescGZIP(), []int{6}
+	return file_pcl_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *LocalVariable) GetName() string {
@@ -617,7 +617,7 @@ type ConfigVariable struct {
 
 func (x *ConfigVariable) Reset() {
 	*x = ConfigVariable{}
-	mi := &file_proto_language_server_pcl_proto_msgTypes[7]
+	mi := &file_pcl_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -629,7 +629,7 @@ func (x *ConfigVariable) String() string {
 func (*ConfigVariable) ProtoMessage() {}
 
 func (x *ConfigVariable) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_language_server_pcl_proto_msgTypes[7]
+	mi := &file_pcl_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -642,7 +642,7 @@ func (x *ConfigVariable) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfigVariable.ProtoReflect.Descriptor instead.
 func (*ConfigVariable) Descriptor() ([]byte, []int) {
-	return file_proto_language_server_pcl_proto_rawDescGZIP(), []int{7}
+	return file_pcl_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *ConfigVariable) GetName() string {
@@ -697,7 +697,7 @@ type ConfigType struct {
 
 func (x *ConfigType) Reset() {
 	*x = ConfigType{}
-	mi := &file_proto_language_server_pcl_proto_msgTypes[8]
+	mi := &file_pcl_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -709,7 +709,7 @@ func (x *ConfigType) String() string {
 func (*ConfigType) ProtoMessage() {}
 
 func (x *ConfigType) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_language_server_pcl_proto_msgTypes[8]
+	mi := &file_pcl_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -722,7 +722,7 @@ func (x *ConfigType) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfigType.ProtoReflect.Descriptor instead.
 func (*ConfigType) Descriptor() ([]byte, []int) {
-	return file_proto_language_server_pcl_proto_rawDescGZIP(), []int{8}
+	return file_pcl_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *ConfigType) GetValue() isConfigType_Value {
@@ -837,7 +837,7 @@ type OutputVariable struct {
 
 func (x *OutputVariable) Reset() {
 	*x = OutputVariable{}
-	mi := &file_proto_language_server_pcl_proto_msgTypes[9]
+	mi := &file_pcl_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -849,7 +849,7 @@ func (x *OutputVariable) String() string {
 func (*OutputVariable) ProtoMessage() {}
 
 func (x *OutputVariable) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_language_server_pcl_proto_msgTypes[9]
+	mi := &file_pcl_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -862,7 +862,7 @@ func (x *OutputVariable) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OutputVariable.ProtoReflect.Descriptor instead.
 func (*OutputVariable) Descriptor() ([]byte, []int) {
-	return file_proto_language_server_pcl_proto_rawDescGZIP(), []int{9}
+	return file_pcl_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *OutputVariable) GetName() string {
@@ -909,7 +909,7 @@ type Expression struct {
 
 func (x *Expression) Reset() {
 	*x = Expression{}
-	mi := &file_proto_language_server_pcl_proto_msgTypes[10]
+	mi := &file_pcl_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -921,7 +921,7 @@ func (x *Expression) String() string {
 func (*Expression) ProtoMessage() {}
 
 func (x *Expression) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_language_server_pcl_proto_msgTypes[10]
+	mi := &file_pcl_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -934,7 +934,7 @@ func (x *Expression) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Expression.ProtoReflect.Descriptor instead.
 func (*Expression) Descriptor() ([]byte, []int) {
-	return file_proto_language_server_pcl_proto_rawDescGZIP(), []int{10}
+	return file_pcl_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *Expression) GetValue() isExpression_Value {
@@ -1143,7 +1143,7 @@ type LiteralValueExpression struct {
 
 func (x *LiteralValueExpression) Reset() {
 	*x = LiteralValueExpression{}
-	mi := &file_proto_language_server_pcl_proto_msgTypes[11]
+	mi := &file_pcl_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1155,7 +1155,7 @@ func (x *LiteralValueExpression) String() string {
 func (*LiteralValueExpression) ProtoMessage() {}
 
 func (x *LiteralValueExpression) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_language_server_pcl_proto_msgTypes[11]
+	mi := &file_pcl_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1168,7 +1168,7 @@ func (x *LiteralValueExpression) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LiteralValueExpression.ProtoReflect.Descriptor instead.
 func (*LiteralValueExpression) Descriptor() ([]byte, []int) {
-	return file_proto_language_server_pcl_proto_rawDescGZIP(), []int{11}
+	return file_pcl_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *LiteralValueExpression) GetValue() isLiteralValueExpression_Value {
@@ -1251,7 +1251,7 @@ type TemplateExpression struct {
 
 func (x *TemplateExpression) Reset() {
 	*x = TemplateExpression{}
-	mi := &file_proto_language_server_pcl_proto_msgTypes[12]
+	mi := &file_pcl_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1263,7 +1263,7 @@ func (x *TemplateExpression) String() string {
 func (*TemplateExpression) ProtoMessage() {}
 
 func (x *TemplateExpression) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_language_server_pcl_proto_msgTypes[12]
+	mi := &file_pcl_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1276,7 +1276,7 @@ func (x *TemplateExpression) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TemplateExpression.ProtoReflect.Descriptor instead.
 func (*TemplateExpression) Descriptor() ([]byte, []int) {
-	return file_proto_language_server_pcl_proto_rawDescGZIP(), []int{12}
+	return file_pcl_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *TemplateExpression) GetParts() []*Expression {
@@ -1296,7 +1296,7 @@ type IndexExpression struct {
 
 func (x *IndexExpression) Reset() {
 	*x = IndexExpression{}
-	mi := &file_proto_language_server_pcl_proto_msgTypes[13]
+	mi := &file_pcl_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1308,7 +1308,7 @@ func (x *IndexExpression) String() string {
 func (*IndexExpression) ProtoMessage() {}
 
 func (x *IndexExpression) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_language_server_pcl_proto_msgTypes[13]
+	mi := &file_pcl_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1321,7 +1321,7 @@ func (x *IndexExpression) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IndexExpression.ProtoReflect.Descriptor instead.
 func (*IndexExpression) Descriptor() ([]byte, []int) {
-	return file_proto_language_server_pcl_proto_rawDescGZIP(), []int{13}
+	return file_pcl_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *IndexExpression) GetCollection() *Expression {
@@ -1347,7 +1347,7 @@ type ObjectConsExpression struct {
 
 func (x *ObjectConsExpression) Reset() {
 	*x = ObjectConsExpression{}
-	mi := &file_proto_language_server_pcl_proto_msgTypes[14]
+	mi := &file_pcl_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1359,7 +1359,7 @@ func (x *ObjectConsExpression) String() string {
 func (*ObjectConsExpression) ProtoMessage() {}
 
 func (x *ObjectConsExpression) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_language_server_pcl_proto_msgTypes[14]
+	mi := &file_pcl_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1372,7 +1372,7 @@ func (x *ObjectConsExpression) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ObjectConsExpression.ProtoReflect.Descriptor instead.
 func (*ObjectConsExpression) Descriptor() ([]byte, []int) {
-	return file_proto_language_server_pcl_proto_rawDescGZIP(), []int{14}
+	return file_pcl_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *ObjectConsExpression) GetProperties() map[string]*Expression {
@@ -1391,7 +1391,7 @@ type TupleConsExpression struct {
 
 func (x *TupleConsExpression) Reset() {
 	*x = TupleConsExpression{}
-	mi := &file_proto_language_server_pcl_proto_msgTypes[15]
+	mi := &file_pcl_proto_msgTypes[15]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1403,7 +1403,7 @@ func (x *TupleConsExpression) String() string {
 func (*TupleConsExpression) ProtoMessage() {}
 
 func (x *TupleConsExpression) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_language_server_pcl_proto_msgTypes[15]
+	mi := &file_pcl_proto_msgTypes[15]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1416,7 +1416,7 @@ func (x *TupleConsExpression) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TupleConsExpression.ProtoReflect.Descriptor instead.
 func (*TupleConsExpression) Descriptor() ([]byte, []int) {
-	return file_proto_language_server_pcl_proto_rawDescGZIP(), []int{15}
+	return file_pcl_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *TupleConsExpression) GetItems() []*Expression {
@@ -1436,7 +1436,7 @@ type FunctionCallExpression struct {
 
 func (x *FunctionCallExpression) Reset() {
 	*x = FunctionCallExpression{}
-	mi := &file_proto_language_server_pcl_proto_msgTypes[16]
+	mi := &file_pcl_proto_msgTypes[16]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1448,7 +1448,7 @@ func (x *FunctionCallExpression) String() string {
 func (*FunctionCallExpression) ProtoMessage() {}
 
 func (x *FunctionCallExpression) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_language_server_pcl_proto_msgTypes[16]
+	mi := &file_pcl_proto_msgTypes[16]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1461,7 +1461,7 @@ func (x *FunctionCallExpression) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FunctionCallExpression.ProtoReflect.Descriptor instead.
 func (*FunctionCallExpression) Descriptor() ([]byte, []int) {
-	return file_proto_language_server_pcl_proto_rawDescGZIP(), []int{16}
+	return file_pcl_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *FunctionCallExpression) GetName() string {
@@ -1488,7 +1488,7 @@ type FunctionCallArgument struct {
 
 func (x *FunctionCallArgument) Reset() {
 	*x = FunctionCallArgument{}
-	mi := &file_proto_language_server_pcl_proto_msgTypes[17]
+	mi := &file_pcl_proto_msgTypes[17]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1500,7 +1500,7 @@ func (x *FunctionCallArgument) String() string {
 func (*FunctionCallArgument) ProtoMessage() {}
 
 func (x *FunctionCallArgument) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_language_server_pcl_proto_msgTypes[17]
+	mi := &file_pcl_proto_msgTypes[17]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1513,7 +1513,7 @@ func (x *FunctionCallArgument) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FunctionCallArgument.ProtoReflect.Descriptor instead.
 func (*FunctionCallArgument) Descriptor() ([]byte, []int) {
-	return file_proto_language_server_pcl_proto_rawDescGZIP(), []int{17}
+	return file_pcl_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *FunctionCallArgument) GetValue() *Expression {
@@ -1547,7 +1547,7 @@ type Type struct {
 
 func (x *Type) Reset() {
 	*x = Type{}
-	mi := &file_proto_language_server_pcl_proto_msgTypes[18]
+	mi := &file_pcl_proto_msgTypes[18]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1559,7 +1559,7 @@ func (x *Type) String() string {
 func (*Type) ProtoMessage() {}
 
 func (x *Type) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_language_server_pcl_proto_msgTypes[18]
+	mi := &file_pcl_proto_msgTypes[18]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1572,7 +1572,7 @@ func (x *Type) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Type.ProtoReflect.Descriptor instead.
 func (*Type) Descriptor() ([]byte, []int) {
-	return file_proto_language_server_pcl_proto_rawDescGZIP(), []int{18}
+	return file_pcl_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *Type) GetValue() isType_Value {
@@ -1684,7 +1684,7 @@ type Empty struct {
 
 func (x *Empty) Reset() {
 	*x = Empty{}
-	mi := &file_proto_language_server_pcl_proto_msgTypes[19]
+	mi := &file_pcl_proto_msgTypes[19]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1696,7 +1696,7 @@ func (x *Empty) String() string {
 func (*Empty) ProtoMessage() {}
 
 func (x *Empty) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_language_server_pcl_proto_msgTypes[19]
+	mi := &file_pcl_proto_msgTypes[19]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1709,7 +1709,7 @@ func (x *Empty) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Empty.ProtoReflect.Descriptor instead.
 func (*Empty) Descriptor() ([]byte, []int) {
-	return file_proto_language_server_pcl_proto_rawDescGZIP(), []int{19}
+	return file_pcl_proto_rawDescGZIP(), []int{19}
 }
 
 type RelativeTraversalExpression struct {
@@ -1722,7 +1722,7 @@ type RelativeTraversalExpression struct {
 
 func (x *RelativeTraversalExpression) Reset() {
 	*x = RelativeTraversalExpression{}
-	mi := &file_proto_language_server_pcl_proto_msgTypes[20]
+	mi := &file_pcl_proto_msgTypes[20]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1734,7 +1734,7 @@ func (x *RelativeTraversalExpression) String() string {
 func (*RelativeTraversalExpression) ProtoMessage() {}
 
 func (x *RelativeTraversalExpression) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_language_server_pcl_proto_msgTypes[20]
+	mi := &file_pcl_proto_msgTypes[20]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1747,7 +1747,7 @@ func (x *RelativeTraversalExpression) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RelativeTraversalExpression.ProtoReflect.Descriptor instead.
 func (*RelativeTraversalExpression) Descriptor() ([]byte, []int) {
-	return file_proto_language_server_pcl_proto_rawDescGZIP(), []int{20}
+	return file_pcl_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *RelativeTraversalExpression) GetSource() *Expression {
@@ -1774,7 +1774,7 @@ type ScopeTraversalExpression struct {
 
 func (x *ScopeTraversalExpression) Reset() {
 	*x = ScopeTraversalExpression{}
-	mi := &file_proto_language_server_pcl_proto_msgTypes[21]
+	mi := &file_pcl_proto_msgTypes[21]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1786,7 +1786,7 @@ func (x *ScopeTraversalExpression) String() string {
 func (*ScopeTraversalExpression) ProtoMessage() {}
 
 func (x *ScopeTraversalExpression) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_language_server_pcl_proto_msgTypes[21]
+	mi := &file_pcl_proto_msgTypes[21]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1799,7 +1799,7 @@ func (x *ScopeTraversalExpression) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ScopeTraversalExpression.ProtoReflect.Descriptor instead.
 func (*ScopeTraversalExpression) Descriptor() ([]byte, []int) {
-	return file_proto_language_server_pcl_proto_rawDescGZIP(), []int{21}
+	return file_pcl_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *ScopeTraversalExpression) GetRootName() string {
@@ -1826,7 +1826,7 @@ type AnonymousFunctionExpression struct {
 
 func (x *AnonymousFunctionExpression) Reset() {
 	*x = AnonymousFunctionExpression{}
-	mi := &file_proto_language_server_pcl_proto_msgTypes[22]
+	mi := &file_pcl_proto_msgTypes[22]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1838,7 +1838,7 @@ func (x *AnonymousFunctionExpression) String() string {
 func (*AnonymousFunctionExpression) ProtoMessage() {}
 
 func (x *AnonymousFunctionExpression) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_language_server_pcl_proto_msgTypes[22]
+	mi := &file_pcl_proto_msgTypes[22]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1851,7 +1851,7 @@ func (x *AnonymousFunctionExpression) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AnonymousFunctionExpression.ProtoReflect.Descriptor instead.
 func (*AnonymousFunctionExpression) Descriptor() ([]byte, []int) {
-	return file_proto_language_server_pcl_proto_rawDescGZIP(), []int{22}
+	return file_pcl_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *AnonymousFunctionExpression) GetBody() *Expression {
@@ -1879,7 +1879,7 @@ type ConditionalExpression struct {
 
 func (x *ConditionalExpression) Reset() {
 	*x = ConditionalExpression{}
-	mi := &file_proto_language_server_pcl_proto_msgTypes[23]
+	mi := &file_pcl_proto_msgTypes[23]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1891,7 +1891,7 @@ func (x *ConditionalExpression) String() string {
 func (*ConditionalExpression) ProtoMessage() {}
 
 func (x *ConditionalExpression) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_language_server_pcl_proto_msgTypes[23]
+	mi := &file_pcl_proto_msgTypes[23]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1904,7 +1904,7 @@ func (x *ConditionalExpression) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConditionalExpression.ProtoReflect.Descriptor instead.
 func (*ConditionalExpression) Descriptor() ([]byte, []int) {
-	return file_proto_language_server_pcl_proto_rawDescGZIP(), []int{23}
+	return file_pcl_proto_rawDescGZIP(), []int{23}
 }
 
 func (x *ConditionalExpression) GetCondition() *Expression {
@@ -1939,7 +1939,7 @@ type BinaryOpExpression struct {
 
 func (x *BinaryOpExpression) Reset() {
 	*x = BinaryOpExpression{}
-	mi := &file_proto_language_server_pcl_proto_msgTypes[24]
+	mi := &file_pcl_proto_msgTypes[24]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1951,7 +1951,7 @@ func (x *BinaryOpExpression) String() string {
 func (*BinaryOpExpression) ProtoMessage() {}
 
 func (x *BinaryOpExpression) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_language_server_pcl_proto_msgTypes[24]
+	mi := &file_pcl_proto_msgTypes[24]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1964,7 +1964,7 @@ func (x *BinaryOpExpression) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BinaryOpExpression.ProtoReflect.Descriptor instead.
 func (*BinaryOpExpression) Descriptor() ([]byte, []int) {
-	return file_proto_language_server_pcl_proto_rawDescGZIP(), []int{24}
+	return file_pcl_proto_rawDescGZIP(), []int{24}
 }
 
 func (x *BinaryOpExpression) GetOperation() Operation {
@@ -1998,7 +1998,7 @@ type UnaryOpExpression struct {
 
 func (x *UnaryOpExpression) Reset() {
 	*x = UnaryOpExpression{}
-	mi := &file_proto_language_server_pcl_proto_msgTypes[25]
+	mi := &file_pcl_proto_msgTypes[25]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2010,7 +2010,7 @@ func (x *UnaryOpExpression) String() string {
 func (*UnaryOpExpression) ProtoMessage() {}
 
 func (x *UnaryOpExpression) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_language_server_pcl_proto_msgTypes[25]
+	mi := &file_pcl_proto_msgTypes[25]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2023,7 +2023,7 @@ func (x *UnaryOpExpression) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UnaryOpExpression.ProtoReflect.Descriptor instead.
 func (*UnaryOpExpression) Descriptor() ([]byte, []int) {
-	return file_proto_language_server_pcl_proto_rawDescGZIP(), []int{25}
+	return file_pcl_proto_rawDescGZIP(), []int{25}
 }
 
 func (x *UnaryOpExpression) GetOperation() Operation {
@@ -2049,7 +2049,7 @@ type Traversal struct {
 
 func (x *Traversal) Reset() {
 	*x = Traversal{}
-	mi := &file_proto_language_server_pcl_proto_msgTypes[26]
+	mi := &file_pcl_proto_msgTypes[26]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2061,7 +2061,7 @@ func (x *Traversal) String() string {
 func (*Traversal) ProtoMessage() {}
 
 func (x *Traversal) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_language_server_pcl_proto_msgTypes[26]
+	mi := &file_pcl_proto_msgTypes[26]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2074,7 +2074,7 @@ func (x *Traversal) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Traversal.ProtoReflect.Descriptor instead.
 func (*Traversal) Descriptor() ([]byte, []int) {
-	return file_proto_language_server_pcl_proto_rawDescGZIP(), []int{26}
+	return file_pcl_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *Traversal) GetEach() []*Traverser {
@@ -2099,7 +2099,7 @@ type Traverser struct {
 
 func (x *Traverser) Reset() {
 	*x = Traverser{}
-	mi := &file_proto_language_server_pcl_proto_msgTypes[27]
+	mi := &file_pcl_proto_msgTypes[27]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2111,7 +2111,7 @@ func (x *Traverser) String() string {
 func (*Traverser) ProtoMessage() {}
 
 func (x *Traverser) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_language_server_pcl_proto_msgTypes[27]
+	mi := &file_pcl_proto_msgTypes[27]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2124,7 +2124,7 @@ func (x *Traverser) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Traverser.ProtoReflect.Descriptor instead.
 func (*Traverser) Descriptor() ([]byte, []int) {
-	return file_proto_language_server_pcl_proto_rawDescGZIP(), []int{27}
+	return file_pcl_proto_rawDescGZIP(), []int{27}
 }
 
 func (x *Traverser) GetValue() isTraverser_Value {
@@ -2207,7 +2207,7 @@ type TraverseAttr struct {
 
 func (x *TraverseAttr) Reset() {
 	*x = TraverseAttr{}
-	mi := &file_proto_language_server_pcl_proto_msgTypes[28]
+	mi := &file_pcl_proto_msgTypes[28]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2219,7 +2219,7 @@ func (x *TraverseAttr) String() string {
 func (*TraverseAttr) ProtoMessage() {}
 
 func (x *TraverseAttr) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_language_server_pcl_proto_msgTypes[28]
+	mi := &file_pcl_proto_msgTypes[28]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2232,7 +2232,7 @@ func (x *TraverseAttr) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TraverseAttr.ProtoReflect.Descriptor instead.
 func (*TraverseAttr) Descriptor() ([]byte, []int) {
-	return file_proto_language_server_pcl_proto_rawDescGZIP(), []int{28}
+	return file_pcl_proto_rawDescGZIP(), []int{28}
 }
 
 func (x *TraverseAttr) GetName() string {
@@ -2255,7 +2255,7 @@ type TraverseIndex struct {
 
 func (x *TraverseIndex) Reset() {
 	*x = TraverseIndex{}
-	mi := &file_proto_language_server_pcl_proto_msgTypes[29]
+	mi := &file_pcl_proto_msgTypes[29]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2267,7 +2267,7 @@ func (x *TraverseIndex) String() string {
 func (*TraverseIndex) ProtoMessage() {}
 
 func (x *TraverseIndex) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_language_server_pcl_proto_msgTypes[29]
+	mi := &file_pcl_proto_msgTypes[29]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2280,7 +2280,7 @@ func (x *TraverseIndex) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TraverseIndex.ProtoReflect.Descriptor instead.
 func (*TraverseIndex) Descriptor() ([]byte, []int) {
-	return file_proto_language_server_pcl_proto_rawDescGZIP(), []int{29}
+	return file_pcl_proto_rawDescGZIP(), []int{29}
 }
 
 func (x *TraverseIndex) GetValue() isTraverseIndex_Value {
@@ -2333,7 +2333,7 @@ type TraverseRoot struct {
 
 func (x *TraverseRoot) Reset() {
 	*x = TraverseRoot{}
-	mi := &file_proto_language_server_pcl_proto_msgTypes[30]
+	mi := &file_pcl_proto_msgTypes[30]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2345,7 +2345,7 @@ func (x *TraverseRoot) String() string {
 func (*TraverseRoot) ProtoMessage() {}
 
 func (x *TraverseRoot) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_language_server_pcl_proto_msgTypes[30]
+	mi := &file_pcl_proto_msgTypes[30]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2358,7 +2358,7 @@ func (x *TraverseRoot) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TraverseRoot.ProtoReflect.Descriptor instead.
 func (*TraverseRoot) Descriptor() ([]byte, []int) {
-	return file_proto_language_server_pcl_proto_rawDescGZIP(), []int{30}
+	return file_pcl_proto_rawDescGZIP(), []int{30}
 }
 
 func (x *TraverseRoot) GetName() string {
@@ -2377,7 +2377,7 @@ type TraverseSplat struct {
 
 func (x *TraverseSplat) Reset() {
 	*x = TraverseSplat{}
-	mi := &file_proto_language_server_pcl_proto_msgTypes[31]
+	mi := &file_pcl_proto_msgTypes[31]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2389,7 +2389,7 @@ func (x *TraverseSplat) String() string {
 func (*TraverseSplat) ProtoMessage() {}
 
 func (x *TraverseSplat) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_language_server_pcl_proto_msgTypes[31]
+	mi := &file_pcl_proto_msgTypes[31]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2402,7 +2402,7 @@ func (x *TraverseSplat) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TraverseSplat.ProtoReflect.Descriptor instead.
 func (*TraverseSplat) Descriptor() ([]byte, []int) {
-	return file_proto_language_server_pcl_proto_rawDescGZIP(), []int{31}
+	return file_pcl_proto_rawDescGZIP(), []int{31}
 }
 
 func (x *TraverseSplat) GetEach() *Traversal {
@@ -2412,11 +2412,11 @@ func (x *TraverseSplat) GetEach() *Traversal {
 	return nil
 }
 
-var File_proto_language_server_pcl_proto protoreflect.FileDescriptor
+var File_pcl_proto protoreflect.FileDescriptor
 
-const file_proto_language_server_pcl_proto_rawDesc = "" +
+const file_pcl_proto_rawDesc = "" +
 	"\n" +
-	"\x1fproto/language_server/pcl.proto\x12\tpulumipcl\"q\n" +
+	"\tpcl.proto\x12\tpulumipcl\"q\n" +
 	"\x12PclProtobufProgram\x12%\n" +
 	"\x05nodes\x18\x01 \x03(\v2\x0f.pulumipcl.NodeR\x05nodes\x124\n" +
 	"\aplugins\x18\x02 \x03(\v2\x1a.pulumipcl.PluginReferenceR\aplugins\"?\n" +
@@ -2609,20 +2609,20 @@ const file_proto_language_server_pcl_proto_rawDesc = "" +
 	"\x06NEGATE\x10\x0eBTZRgithub.com/andrzejressel/pulumi-rust/ast/codegen/ast/schemapcl/schemapcl;schemapclb\x06proto3"
 
 var (
-	file_proto_language_server_pcl_proto_rawDescOnce sync.Once
-	file_proto_language_server_pcl_proto_rawDescData []byte
+	file_pcl_proto_rawDescOnce sync.Once
+	file_pcl_proto_rawDescData []byte
 )
 
-func file_proto_language_server_pcl_proto_rawDescGZIP() []byte {
-	file_proto_language_server_pcl_proto_rawDescOnce.Do(func() {
-		file_proto_language_server_pcl_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_proto_language_server_pcl_proto_rawDesc), len(file_proto_language_server_pcl_proto_rawDesc)))
+func file_pcl_proto_rawDescGZIP() []byte {
+	file_pcl_proto_rawDescOnce.Do(func() {
+		file_pcl_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_pcl_proto_rawDesc), len(file_pcl_proto_rawDesc)))
 	})
-	return file_proto_language_server_pcl_proto_rawDescData
+	return file_pcl_proto_rawDescData
 }
 
-var file_proto_language_server_pcl_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_proto_language_server_pcl_proto_msgTypes = make([]protoimpl.MessageInfo, 33)
-var file_proto_language_server_pcl_proto_goTypes = []any{
+var file_pcl_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_pcl_proto_msgTypes = make([]protoimpl.MessageInfo, 33)
+var file_pcl_proto_goTypes = []any{
 	(Operation)(0),                      // 0: pulumipcl.Operation
 	(*PclProtobufProgram)(nil),          // 1: pulumipcl.PclProtobufProgram
 	(*PluginReference)(nil),             // 2: pulumipcl.PluginReference
@@ -2658,7 +2658,7 @@ var file_proto_language_server_pcl_proto_goTypes = []any{
 	(*TraverseSplat)(nil),               // 32: pulumipcl.TraverseSplat
 	nil,                                 // 33: pulumipcl.ObjectConsExpression.PropertiesEntry
 }
-var file_proto_language_server_pcl_proto_depIdxs = []int32{
+var file_pcl_proto_depIdxs = []int32{
 	3,  // 0: pulumipcl.PclProtobufProgram.nodes:type_name -> pulumipcl.Node
 	2,  // 1: pulumipcl.PclProtobufProgram.plugins:type_name -> pulumipcl.PluginReference
 	4,  // 2: pulumipcl.Node.resource:type_name -> pulumipcl.Resource
@@ -2737,20 +2737,20 @@ var file_proto_language_server_pcl_proto_depIdxs = []int32{
 	0,  // [0:71] is the sub-list for field type_name
 }
 
-func init() { file_proto_language_server_pcl_proto_init() }
-func file_proto_language_server_pcl_proto_init() {
-	if File_proto_language_server_pcl_proto != nil {
+func init() { file_pcl_proto_init() }
+func file_pcl_proto_init() {
+	if File_pcl_proto != nil {
 		return
 	}
-	file_proto_language_server_pcl_proto_msgTypes[2].OneofWrappers = []any{
+	file_pcl_proto_msgTypes[2].OneofWrappers = []any{
 		(*Node_Resource)(nil),
 		(*Node_LocalVariable)(nil),
 		(*Node_ConfigVariable)(nil),
 		(*Node_OutputVariable)(nil),
 	}
-	file_proto_language_server_pcl_proto_msgTypes[3].OneofWrappers = []any{}
-	file_proto_language_server_pcl_proto_msgTypes[5].OneofWrappers = []any{}
-	file_proto_language_server_pcl_proto_msgTypes[8].OneofWrappers = []any{
+	file_pcl_proto_msgTypes[3].OneofWrappers = []any{}
+	file_pcl_proto_msgTypes[5].OneofWrappers = []any{}
+	file_pcl_proto_msgTypes[8].OneofWrappers = []any{
 		(*ConfigType_StringType)(nil),
 		(*ConfigType_NumberType)(nil),
 		(*ConfigType_IntType)(nil),
@@ -2758,7 +2758,7 @@ func file_proto_language_server_pcl_proto_init() {
 		(*ConfigType_ListType)(nil),
 		(*ConfigType_MapType)(nil),
 	}
-	file_proto_language_server_pcl_proto_msgTypes[10].OneofWrappers = []any{
+	file_pcl_proto_msgTypes[10].OneofWrappers = []any{
 		(*Expression_LiteralValueExpression)(nil),
 		(*Expression_TemplateExpression)(nil),
 		(*Expression_IndexExpression)(nil),
@@ -2772,13 +2772,13 @@ func file_proto_language_server_pcl_proto_init() {
 		(*Expression_BinaryOpExpression)(nil),
 		(*Expression_UnaryOpExpression)(nil),
 	}
-	file_proto_language_server_pcl_proto_msgTypes[11].OneofWrappers = []any{
+	file_pcl_proto_msgTypes[11].OneofWrappers = []any{
 		(*LiteralValueExpression_UnknownValue)(nil),
 		(*LiteralValueExpression_StringValue)(nil),
 		(*LiteralValueExpression_NumberValue)(nil),
 		(*LiteralValueExpression_BoolValue)(nil),
 	}
-	file_proto_language_server_pcl_proto_msgTypes[18].OneofWrappers = []any{
+	file_pcl_proto_msgTypes[18].OneofWrappers = []any{
 		(*Type_BoolType)(nil),
 		(*Type_IntType)(nil),
 		(*Type_NumberType)(nil),
@@ -2786,13 +2786,13 @@ func file_proto_language_server_pcl_proto_init() {
 		(*Type_Composite)(nil),
 		(*Type_OutputType)(nil),
 	}
-	file_proto_language_server_pcl_proto_msgTypes[27].OneofWrappers = []any{
+	file_pcl_proto_msgTypes[27].OneofWrappers = []any{
 		(*Traverser_TraverseAttr)(nil),
 		(*Traverser_TraverseIndex)(nil),
 		(*Traverser_TraverseRoot)(nil),
 		(*Traverser_TraverseSplat)(nil),
 	}
-	file_proto_language_server_pcl_proto_msgTypes[29].OneofWrappers = []any{
+	file_pcl_proto_msgTypes[29].OneofWrappers = []any{
 		(*TraverseIndex_IntIndex)(nil),
 		(*TraverseIndex_StringIndex)(nil),
 	}
@@ -2800,18 +2800,18 @@ func file_proto_language_server_pcl_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_language_server_pcl_proto_rawDesc), len(file_proto_language_server_pcl_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_pcl_proto_rawDesc), len(file_pcl_proto_rawDesc)),
 			NumEnums:      1,
 			NumMessages:   33,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_proto_language_server_pcl_proto_goTypes,
-		DependencyIndexes: file_proto_language_server_pcl_proto_depIdxs,
-		EnumInfos:         file_proto_language_server_pcl_proto_enumTypes,
-		MessageInfos:      file_proto_language_server_pcl_proto_msgTypes,
+		GoTypes:           file_pcl_proto_goTypes,
+		DependencyIndexes: file_pcl_proto_depIdxs,
+		EnumInfos:         file_pcl_proto_enumTypes,
+		MessageInfos:      file_pcl_proto_msgTypes,
 	}.Build()
-	File_proto_language_server_pcl_proto = out.File
-	file_proto_language_server_pcl_proto_goTypes = nil
-	file_proto_language_server_pcl_proto_depIdxs = nil
+	File_pcl_proto = out.File
+	file_pcl_proto_goTypes = nil
+	file_pcl_proto_depIdxs = nil
 }
