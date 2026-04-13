@@ -279,6 +279,8 @@ pub enum Operation {
     Multiply,
     NotEqual,
     Subtract,
+    LogicalNot,
+    Negate,
 }
 
 pub fn map_program(program: pb::PclProtobufProgram) -> PclProtobufProgram {
@@ -667,6 +669,8 @@ fn map_operation(value: i32) -> Operation {
         pb::Operation::Multiply => Operation::Multiply,
         pb::Operation::NotEqual => Operation::NotEqual,
         pb::Operation::Subtract => Operation::Subtract,
+        pb::Operation::LogicalNot => Operation::LogicalNot,
+        pb::Operation::Negate => Operation::Negate,
     }
 }
 

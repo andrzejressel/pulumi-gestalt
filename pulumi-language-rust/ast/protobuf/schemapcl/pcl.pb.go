@@ -37,6 +37,8 @@ const (
 	Operation_MULTIPLY              Operation = 10
 	Operation_NOT_EQUAL             Operation = 11
 	Operation_SUBTRACT              Operation = 12
+	Operation_LOGICAL_NOT           Operation = 13
+	Operation_NEGATE                Operation = 14
 )
 
 // Enum value maps for Operation.
@@ -55,6 +57,8 @@ var (
 		10: "MULTIPLY",
 		11: "NOT_EQUAL",
 		12: "SUBTRACT",
+		13: "LOGICAL_NOT",
+		14: "NEGATE",
 	}
 	Operation_value = map[string]int32{
 		"ADD":                   0,
@@ -70,6 +74,8 @@ var (
 		"MULTIPLY":              10,
 		"NOT_EQUAL":             11,
 		"SUBTRACT":              12,
+		"LOGICAL_NOT":           13,
+		"NEGATE":                14,
 	}
 )
 
@@ -2579,7 +2585,7 @@ const file_pcl_proto_rawDesc = "" +
 	"\fTraverseRoot\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\"9\n" +
 	"\rTraverseSplat\x12(\n" +
-	"\x04each\x18\x01 \x01(\v2\x14.pulumipcl.TraversalR\x04each*\xd7\x01\n" +
+	"\x04each\x18\x01 \x01(\v2\x14.pulumipcl.TraversalR\x04each*\xf4\x01\n" +
 	"\tOperation\x12\a\n" +
 	"\x03ADD\x10\x00\x12\n" +
 	"\n" +
@@ -2597,7 +2603,10 @@ const file_pcl_proto_rawDesc = "" +
 	"\bMULTIPLY\x10\n" +
 	"\x12\r\n" +
 	"\tNOT_EQUAL\x10\v\x12\f\n" +
-	"\bSUBTRACT\x10\fBTZRgithub.com/andrzejressel/pulumi-rust/ast/codegen/ast/schemapcl/schemapcl;schemapclb\x06proto3"
+	"\bSUBTRACT\x10\f\x12\x0f\n" +
+	"\vLOGICAL_NOT\x10\r\x12\n" +
+	"\n" +
+	"\x06NEGATE\x10\x0eBTZRgithub.com/andrzejressel/pulumi-rust/ast/codegen/ast/schemapcl/schemapcl;schemapclb\x06proto3"
 
 var (
 	file_pcl_proto_rawDescOnce sync.Once
