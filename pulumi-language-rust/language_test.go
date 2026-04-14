@@ -161,13 +161,13 @@ func TestRegenerateJsonWithTests(t *testing.T) {
 // expectedFailures maps the set of conformance tests we expect to fail to reasons they currently do so, so that we may
 // skip them with an informative message until they are fixed.
 var expectedFailures = map[string]string{
-	"l1-builtin-can":                               "unsupported config variable type: map(string)",
-	"l1-builtin-require-pulumi-version":            "unsupported node type: dynamic",
-	"l1-builtin-stash":                             "sdk snapshot validation for simple: walk expected dir: lstat testdata/sdks/simple-27.0.0: no such file or directory",
-	"l1-builtin-to-json":                           "unsupported config variable type: list(string)",
-	"l1-builtin-try":                               "sdk snapshot validation for any-type-function: walk expected dir: lstat testdata/sdks/any-type-function-15.0.0: no such file or directory",
-	"l1-config-secret":                             "unsupported config variable type: output(number)",
-	"l1-config-types-object":                       "unsupported config variable type: map(int)",
+	"l1-builtin-can":                               "https://github.com/andrzejressel/pulumi-gestalt/issues/2034",
+	"l1-builtin-require-pulumi-version":            "https://github.com/andrzejressel/pulumi-gestalt/issues/2047",
+	"l1-builtin-stash":                             "https://github.com/andrzejressel/pulumi-gestalt/issues/2049",
+	"l1-builtin-to-json":                           "https://github.com/andrzejressel/pulumi-gestalt/issues/2027",
+	"l1-builtin-try":                               "https://github.com/andrzejressel/pulumi-gestalt/issues/2035",
+	"l1-config-secret":                             "https://github.com/andrzejressel/pulumi-gestalt/issues/2048",
+	"l1-config-types-object":                       "https://github.com/andrzejressel/pulumi-gestalt/issues/2037",
 	"l1-elide-index":                               "sdk snapshot validation for simple: walk expected dir: lstat testdata/sdks/simple-2.0.0: no such file or directory",
 	"l1-keyword-overlap":                           "sdk snapshot validation for simple: walk expected dir: lstat testdata/sdks/simple-2.0.0: no such file or directory",
 	"l1-output-map":                                "sdk snapshot validation for sync: walk expected dir: lstat testdata/sdks/sync-3.0.0-alpha.1.internal+exp.sha.2143768: no such file or directory",
