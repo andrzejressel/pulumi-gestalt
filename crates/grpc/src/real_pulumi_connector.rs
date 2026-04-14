@@ -20,7 +20,7 @@ use tonic::transport::Channel;
 
 pub struct RealPulumiConnector {
     resource_monitor_client: ResourceMonitorClient<Channel>,
-    engine_url: String,
+    engine_client: EngineClient<Channel>,
     root_resource: String,
     in_preview: bool,
 }
@@ -35,8 +35,7 @@ impl RealPulumiConnector {
     ) -> Result<Self> {
         let resource_monitor_client =
             ResourceMonitorClient::connect(format!("tcp://{monitor_url}")).await?;
-        // I think it will be used for logging
-        let _engine_client = EngineClient::connect(format!("tcp://{engine_url}")).await?;
+        let engine_client = EngineClient::connect(format!("tcp://{engine_url}")).await?;
 
         let root_resource = Self::create_root_stack(
             resource_monitor_client.clone(),
@@ -47,7 +46,7 @@ impl RealPulumiConnector {
 
         let s = Self {
             resource_monitor_client,
-            engine_url,
+            engine_client,
             root_resource,
             in_preview,
         };
@@ -234,11 +233,8 @@ impl PulumiConnector for RealPulumiConnector {
 
     async fn require_pulumi_version(&self, version_range: &str) -> anyhow::Result<()> {
         use pulumi_gestalt_proto::pulumi::pulumirpc::RequirePulumiVersionRequest;
-        use pulumi_gestalt_proto::pulumi::pulumirpc::engine_client::EngineClient;
 
-        let mut client = EngineClient::connect(format!("tcp://{}", self.engine_url))
-            .await
-            .context("Failed to connect to engine for require_pulumi_version")?;
+        let mut client = self.engine_client.clone();
 
         client
             .require_pulumi_version(RequirePulumiVersionRequest {
