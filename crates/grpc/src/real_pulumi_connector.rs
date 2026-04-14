@@ -438,7 +438,7 @@ mod tests {
             parent: "".to_string(),
             custom: false,
             object: None,
-            protect: Some(false),
+            protect: None,
             dependencies: vec![],
             provider: "".to_string(),
             property_dependencies: Default::default(),
