@@ -12,7 +12,7 @@ anyhow.workspace = true
 pulumi_gestalt_core.workspace = true
 serde_json.workspace = true
 pulumi_gestalt_grpc_connection.workspace = true
-pulumi_gestalt_proto.workspace = true
+pulumi_gestalt_proto = { workspace = true, features = ["pulumi"] }
 uuid.workspace = true
 pulumi_gestalt_schema.workspace = true
 pulumi_gestalt_domain.workspace = true

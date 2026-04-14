@@ -339,6 +339,12 @@ impl Context {
     pub fn get_root_directory(&self) -> &str {
         self.inner.get_root_directory()
     }
+
+    pub fn require_pulumi_version(&self, version_range: &str) -> Result<()> {
+        self.runtime
+            .block_on(self.inner.require_pulumi_version(version_range))
+            .context("Failed to require Pulumi version")
+    }
 }
 
 pub struct RegisterResourceRequest<'a, OUTPUT> {

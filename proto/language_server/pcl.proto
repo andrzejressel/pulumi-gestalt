@@ -20,7 +20,12 @@ message Node {
     LocalVariable localVariable = 2;
     ConfigVariable configVariable = 3;
     OutputVariable outputVariable = 4;
+    PulumiBlock pulumiBlock = 5;
   }
+}
+
+message PulumiBlock {
+  Expression required_version_range = 1;
 }
 
 message Resource {
