@@ -2,13 +2,13 @@ use pulumi_gestalt_proto::pulumi::pulumirpc::engine_server::Engine;
 use pulumi_gestalt_proto::pulumi::pulumirpc::resource_monitor_server::ResourceMonitor;
 use pulumi_gestalt_proto::pulumi::pulumirpc::{
     CallResponse, Callback, GetRootResourceRequest, GetRootResourceResponse, InvokeResponse,
-    LogRequest, ReadResourceRequest, ReadResourceResponse, RegisterPackageRequest,
-    RegisterPackageResponse, RegisterResourceOutputsRequest, RegisterResourceRequest,
-    RegisterResourceResponse, ResourceCallRequest, ResourceInvokeRequest, SetRootResourceRequest,
-    SetRootResourceResponse, StartDebuggingRequest, SupportsFeatureRequest,
-    SupportsFeatureResponse,
+    LogRequest, ReadResourceRequest, ReadResourceResponse, RegisterErrorHookRequest,
+    RegisterPackageRequest, RegisterPackageResponse, RegisterResourceHookRequest,
+    RegisterResourceOutputsRequest, RegisterResourceRequest, RegisterResourceResponse,
+    RequirePulumiVersionRequest, RequirePulumiVersionResponse, ResourceCallRequest,
+    ResourceInvokeRequest, SetRootResourceRequest, SetRootResourceResponse, StartDebuggingRequest,
+    SupportsFeatureRequest, SupportsFeatureResponse,
 };
-use tonic::codegen::tokio_stream::wrappers::ReceiverStream;
 use tonic::{Request, Response, Status};
 
 pub(crate) struct MyResourceMonitorServer {}
@@ -28,15 +28,6 @@ impl ResourceMonitor for MyResourceMonitorServer {
         _request: Request<ResourceInvokeRequest>,
     ) -> Result<Response<InvokeResponse>, Status> {
         unimplemented!("invoke")
-    }
-
-    type StreamInvokeStream = ReceiverStream<Result<InvokeResponse, Status>>;
-
-    async fn stream_invoke(
-        &self,
-        _request: Request<ResourceInvokeRequest>,
-    ) -> Result<Response<Self::StreamInvokeStream>, Status> {
-        unimplemented!("stream_invoke")
     }
 
     async fn call(
@@ -125,6 +116,27 @@ impl ResourceMonitor for MyResourceMonitorServer {
     ) -> Result<Response<RegisterPackageResponse>, Status> {
         unimplemented!("register_package")
     }
+
+    async fn register_resource_hook(
+        &self,
+        _request: Request<RegisterResourceHookRequest>,
+    ) -> Result<Response<()>, Status> {
+        unimplemented!("register_resource_hook")
+    }
+
+    async fn register_error_hook(
+        &self,
+        _request: Request<RegisterErrorHookRequest>,
+    ) -> Result<Response<()>, Status> {
+        unimplemented!("register_error_hook")
+    }
+
+    async fn signal_and_wait_for_shutdown(
+        &self,
+        _request: Request<()>,
+    ) -> Result<Response<()>, Status> {
+        unimplemented!("signal_and_wait_for_shutdown")
+    }
 }
 
 #[tonic::async_trait]
@@ -154,5 +166,12 @@ impl Engine for MyResourceEngineServer {
         _request: Request<StartDebuggingRequest>,
     ) -> Result<Response<()>, Status> {
         unimplemented!("start_debugging")
+    }
+
+    async fn require_pulumi_version(
+        &self,
+        _request: Request<RequirePulumiVersionRequest>,
+    ) -> Result<Response<RequirePulumiVersionResponse>, Status> {
+        unimplemented!("require_pulumi_version")
     }
 }

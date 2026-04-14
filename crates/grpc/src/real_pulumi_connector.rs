@@ -438,7 +438,7 @@ mod tests {
             parent: "".to_string(),
             custom: false,
             object: None,
-            protect: false,
+            protect: Some(false),
             dependencies: vec![],
             provider: "".to_string(),
             property_dependencies: Default::default(),
@@ -458,7 +458,7 @@ mod tests {
             replace_on_changes: vec![],
             plugin_download_url: "".to_string(),
             plugin_checksums: Default::default(),
-            retain_on_delete: false,
+            retain_on_delete: None,
             aliases: vec![],
             deleted_with: "".to_string(),
             alias_specs: false,
@@ -466,6 +466,13 @@ mod tests {
             supports_result_reporting: false,
             transforms: vec![],
             package_ref: "".to_string(),
+            hooks: None,
+            hide_diffs: vec![],
+            env_var_mappings: Default::default(),
+            stack_trace: None,
+            parent_stack_trace_handle: "".to_string(),
+            replace_with: vec![],
+            replacement_trigger: None,
         }
     }
 

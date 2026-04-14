@@ -125,6 +125,19 @@ pub struct StartDebuggingRequest {
     #[prost(string, tag = "2")]
     pub message: ::prost::alloc::string::String,
 }
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
+pub struct RequirePulumiVersionRequest {
+    /// A version range to check against the engine (CLI) version. If the version is not compatible with the specified
+    /// range, an error is returned. The supported syntax for ranges is that of
+    /// <https://pkg.go.dev/github.com/blang/semver#ParseRange.> For example ">=3.0.0", or "!3.1.2". Ranges can be AND-ed
+    /// together by concatenating with spaces ">=3.5.0 !3.7.7", meaning greater-or-equal to 3.5.0 and not exactly 3.7.7.
+    /// Ranges can be OR-ed with the `||` operator: "\<3.4.0 || >3.8.0", meaning less-than 3.4.0 or greater-than 3.8.0.
+    #[prost(string, tag = "1")]
+    pub pulumi_version_range: ::prost::alloc::string::String,
+}
+/// empty
+#[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Message)]
+pub struct RequirePulumiVersionResponse {}
 /// LogSeverity is the severity level of a log message.  Errors are fatal; all others are informational.
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
@@ -319,6 +332,23 @@ pub mod engine_client {
                 .insert(GrpcMethod::new("pulumirpc.Engine", "StartDebugging"));
             self.inner.unary(req, path, codec).await
         }
+        /// RequirePulumiVersion checks that the version of the engine satisfies the passed in range.
+        pub async fn require_pulumi_version(
+            &mut self,
+            request: impl tonic::IntoRequest<super::RequirePulumiVersionRequest>,
+        ) -> std::result::Result<tonic::Response<super::RequirePulumiVersionResponse>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
+            let codec = tonic_prost::ProstCodec::default();
+            let path =
+                http::uri::PathAndQuery::from_static("/pulumirpc.Engine/RequirePulumiVersion");
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("pulumirpc.Engine", "RequirePulumiVersion"));
+            self.inner.unary(req, path, codec).await
+        }
     }
 }
 /// Generated server implementations.
@@ -356,6 +386,11 @@ pub mod engine_server {
             &self,
             request: tonic::Request<super::StartDebuggingRequest>,
         ) -> std::result::Result<tonic::Response<()>, tonic::Status>;
+        /// RequirePulumiVersion checks that the version of the engine satisfies the passed in range.
+        async fn require_pulumi_version(
+            &self,
+            request: tonic::Request<super::RequirePulumiVersionRequest>,
+        ) -> std::result::Result<tonic::Response<super::RequirePulumiVersionResponse>, tonic::Status>;
     }
     /// Engine is an auxiliary service offered to language and resource provider plugins. Its main purpose today is
     /// to serve as a common logging endpoint, but it also serves as a state storage mechanism for language hosts
@@ -591,6 +626,47 @@ pub mod engine_server {
                     };
                     Box::pin(fut)
                 }
+                "/pulumirpc.Engine/RequirePulumiVersion" => {
+                    #[allow(non_camel_case_types)]
+                    struct RequirePulumiVersionSvc<T: Engine>(pub Arc<T>);
+                    impl<T: Engine> tonic::server::UnaryService<super::RequirePulumiVersionRequest>
+                        for RequirePulumiVersionSvc<T>
+                    {
+                        type Response = super::RequirePulumiVersionResponse;
+                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::RequirePulumiVersionRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as Engine>::require_pulumi_version(&inner, request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = RequirePulumiVersionSvc(inner);
+                        let codec = tonic_prost::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
                 _ => Box::pin(async move {
                     let mut response = http::Response::new(tonic::body::Body::default());
                     let headers = response.headers_mut();
@@ -625,6 +701,54 @@ pub mod engine_server {
         const NAME: &'static str = SERVICE_NAME;
     }
 }
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
+pub struct Alias {
+    #[prost(oneof = "alias::Alias", tags = "1, 2")]
+    pub alias: ::core::option::Option<alias::Alias>,
+}
+/// Nested message and enum types in `Alias`.
+pub mod alias {
+    #[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
+    pub struct Spec {
+        /// The previous name of the resource.  If none is provided, we will use the current name.
+        #[prost(string, tag = "1")]
+        pub name: ::prost::alloc::string::String,
+        /// The previous type of the resource. If none is provided, we will use the current resoource type.
+        #[prost(string, tag = "2")]
+        pub r#type: ::prost::alloc::string::String,
+        /// The previous stack of the resource. If not set, the current stack of the resource is used.
+        #[prost(string, tag = "3")]
+        pub stack: ::prost::alloc::string::String,
+        /// The previous project of the resource. If not set, the current project of the resource is used.
+        #[prost(string, tag = "4")]
+        pub project: ::prost::alloc::string::String,
+        /// The previous parent of the resource. If not set, the current parent of the resource is used.
+        #[prost(oneof = "spec::Parent", tags = "5, 6")]
+        pub parent: ::core::option::Option<spec::Parent>,
+    }
+    /// Nested message and enum types in `Spec`.
+    pub mod spec {
+        /// The previous parent of the resource. If not set, the current parent of the resource is used.
+        #[derive(Clone, PartialEq, Eq, Hash, ::prost::Oneof)]
+        pub enum Parent {
+            /// The urn of the previous parent.
+            #[prost(string, tag = "5")]
+            ParentUrn(::prost::alloc::string::String),
+            /// Used to indicate the resource previously had no parent. If false this property is ignored.
+            #[prost(bool, tag = "6")]
+            NoParent(bool),
+        }
+    }
+    #[derive(Clone, PartialEq, Eq, Hash, ::prost::Oneof)]
+    pub enum Alias {
+        /// The previous urn to alias to.
+        #[prost(string, tag = "1")]
+        Urn(::prost::alloc::string::String),
+        /// An alias specification.
+        #[prost(message, tag = "2")]
+        Spec(Spec),
+    }
+}
 /// `ProviderHandshakeRequest` is the type of requests sent as part of a [](pulumirpc.ResourceProvider.Handshake) call.
 #[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ProviderHandshakeRequest {
@@ -643,10 +767,42 @@ pub struct ProviderHandshakeRequest {
     /// number), this field will be empty.
     #[prost(string, optional, tag = "3")]
     pub program_directory: ::core::option::Option<::prost::alloc::string::String>,
+    /// If true the engine will send URN, Name, Type, and ID to the provider as part of the configuration.
+    #[prost(bool, tag = "4")]
+    pub configure_with_urn: bool,
+    /// If true the engine supports views and can send the address of a [](pulumirpc.ResourceStatus) service which can be
+    /// used to e.g. create or update view resources.
+    #[prost(bool, tag = "5")]
+    pub supports_views: bool,
+    /// If true the engine supports letting the provider mark resource states as requiring refresh before update.
+    #[prost(bool, tag = "6")]
+    pub supports_refresh_before_update: bool,
+    /// If true the engine will send `preview` to `Invoke` methods to let them know if the current operation is a preview or up.
+    #[prost(bool, tag = "7")]
+    pub invoke_with_preview: bool,
 }
 /// `ProviderHandshakeResponse` is the type of responses sent by a [](pulumirpc.ResourceProvider.Handshake) call.
 #[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Message)]
-pub struct ProviderHandshakeResponse {}
+pub struct ProviderHandshakeResponse {
+    /// True if and only if the provider supports secrets. If true, the caller should pass secrets as strongly typed
+    /// values to the provider. *Must* match the value returned in response to [](pulumirpc.ResourceProvider.Configure).
+    #[prost(bool, tag = "1")]
+    pub accept_secrets: bool,
+    /// True if and only if the provider supports strongly typed resources. If true, the caller should pass resources as
+    /// strongly typed values to the provider. *Must* match the value returned in response to
+    /// [](pulumirpc.ResourceProvider.Configure).
+    #[prost(bool, tag = "2")]
+    pub accept_resources: bool,
+    /// True if and only if the provider supports output values as inputs. If true, the engine should pass output values
+    /// to the provider where possible. *Must* match the value returned in response to
+    /// [](pulumirpc.ResourceProvider.Configure).
+    #[prost(bool, tag = "3")]
+    pub accept_outputs: bool,
+    /// True if the provider accepts and respects autonaming configuration that the engine provides on behalf of the
+    /// user. *Must* match the value returned in response to [](pulumirpc.ResourceProvider.Configure).
+    #[prost(bool, tag = "4")]
+    pub supports_autonaming_configuration: bool,
+}
 /// `ParameterizeRequest` is the type of requests sent as part of a [](pulumirpc.ResourceProvider.Parameterize) call. A
 /// `ParameterizeRequest` may contain either:
 ///
@@ -792,13 +948,32 @@ pub struct ConfigureRequest {
     /// these calls. *Must* be true if the caller has previously called [](pulumirpc.ResourceProvider.Handshake).
     #[prost(bool, tag = "6")]
     pub sends_old_inputs_to_delete: bool,
+    /// The ID of the provider being configured. N.B. This will be null if configure_with_urn was false in
+    /// Handshake.
+    #[prost(string, optional, tag = "7")]
+    pub id: ::core::option::Option<::prost::alloc::string::String>,
+    /// The URN of the provider being configured. N.B. This will be null if configure_with_urn was false in
+    /// Handshake.
+    #[prost(string, optional, tag = "8")]
+    pub urn: ::core::option::Option<::prost::alloc::string::String>,
+    /// The name of the provider being configured. This must match the name specified by the `urn` field, and
+    /// is passed so that providers do not have to implement URN parsing in order to extract the name of the
+    /// provider.  N.B. This will be null if configure_with_urn was false in Handshake.
+    #[prost(string, optional, tag = "9")]
+    pub name: ::core::option::Option<::prost::alloc::string::String>,
+    /// The type of the provider being configured. This must match the type specified by the `urn` field, and
+    /// is passed so that providers do not have to implement URN parsing in order to extract the type of the
+    /// provider. N.B. This will be null if configure_with_urn was false in Handshake.
+    #[prost(string, optional, tag = "10")]
+    pub r#type: ::core::option::Option<::prost::alloc::string::String>,
 }
 /// `ConfigureResponse` is the type of responses sent by a [](pulumirpc.ResourceProvider.Configure) call. Its primary
 /// purpose is to communicate features that the provider supports back to the caller.
 #[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ConfigureResponse {
     /// True if and only if the provider supports secrets. If true, the caller should pass secrets as strongly typed
-    /// values to the provider. *Must* be true if the provider implements [](pulumirpc.ResourceProvider.Handshake).
+    /// values to the provider. *Must* match the value returned in response to [](pulumirpc.ResourceProvider.Handshake)
+    /// if the provider supports handshaking.
     #[prost(bool, tag = "1")]
     pub accept_secrets: bool,
     /// True if and only if the provider supports the `preview` field on [](pulumirpc.ResourceProvider.Create) and
@@ -807,16 +982,18 @@ pub struct ConfigureResponse {
     #[prost(bool, tag = "2")]
     pub supports_preview: bool,
     /// True if and only if the provider supports strongly typed resources. If true, the caller should pass resources as
-    /// strongly typed values to the provider. *Must* be true if the provider implements
-    /// [](pulumirpc.ResourceProvider.Handshake).
+    /// strongly typed values to the provider. *Must* match the value returned in response to
+    /// [](pulumirpc.ResourceProvider.Handshake) if the provider supports handshaking.
     #[prost(bool, tag = "3")]
     pub accept_resources: bool,
     /// True if and only if the provider supports output values as inputs. If true, the engine should pass output values
-    /// to the provider where possible. *Must* be true if the provider implements
-    /// [](pulumirpc.ResourceProvider.Handshake).
+    /// to the provider where possible. *Must* match the value returned in response to
+    /// [](pulumirpc.ResourceProvider.Handshake) if the provider supports handshaking.
     #[prost(bool, tag = "4")]
     pub accept_outputs: bool,
-    /// True if the provider accepts and respects Autonaming configuration that the engine provides on behalf of user.
+    /// True if the provider accepts and respects autonaming configuration that the engine provides on behalf of the
+    /// user. *Must* match the value returned in response to [](pulumirpc.ResourceProvider.Handshake) if the provider
+    /// supports handshaking.
     #[prost(bool, tag = "5")]
     pub supports_autonaming_configuration: bool,
 }
@@ -857,6 +1034,10 @@ pub struct InvokeRequest {
     /// the arguments for the function invocation.
     #[prost(message, optional, tag = "2")]
     pub args: ::core::option::Option<::prost_types::Struct>,
+    /// This is only set if `HandshakeRequest.invoke_with_preview` was true. If this is true then the engine is currently
+    /// running a preview deployment.
+    #[prost(bool, tag = "7")]
+    pub preview: bool,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct InvokeResponse {
@@ -909,6 +1090,9 @@ pub struct CallRequest {
     /// the engine can be passed output values back, returnDependencies can be left blank if returning output values.
     #[prost(bool, tag = "17")]
     pub accepts_output_values: bool,
+    /// The stack trace handle for the call. Supports stitching stack traces together across plugins.
+    #[prost(string, tag = "18")]
+    pub stack_trace_handle: ::prost::alloc::string::String,
 }
 /// Nested message and enum types in `CallRequest`.
 pub mod call_request {
@@ -1294,6 +1478,12 @@ pub struct CreateRequest {
     /// that providers do not have to implement URN parsing in order to extract the type of the resource.
     #[prost(string, tag = "6")]
     pub r#type: ::prost::alloc::string::String,
+    /// The address of a [](pulumirpc.ResourceStatus) service which can be used to e.g. create or update view resources.
+    #[prost(string, tag = "7")]
+    pub resource_status_address: ::prost::alloc::string::String,
+    /// The [](pulumirpc.ResourceStatus) service context token to pass when calling methods on the service.
+    #[prost(string, tag = "8")]
+    pub resource_status_token: ::prost::alloc::string::String,
 }
 /// `CreateResponse` is the type of responses sent by a [](pulumirpc.ResourceProvider.Create) call. A `CreateResponse`
 /// contains the ID of the created resource, as well as any output properties that arose from the creation process.
@@ -1306,6 +1496,9 @@ pub struct CreateResponse {
     /// additional values that were computed or made available during creation.
     #[prost(message, optional, tag = "2")]
     pub properties: ::core::option::Option<::prost_types::Struct>,
+    /// Indicates that this resource should always be refreshed prior to updates.
+    #[prost(bool, tag = "3")]
+    pub refresh_before_update: bool,
 }
 /// `ReadRequest` is the type of requests sent as part of a [](pulumirpc.ResourceProvider.Read) call.
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -1331,6 +1524,16 @@ pub struct ReadRequest {
     /// providers do not have to implement URN parsing in order to extract the type of the resource.
     #[prost(string, tag = "6")]
     pub r#type: ::prost::alloc::string::String,
+    /// The address of a [](pulumirpc.ResourceStatus) service which can be used to e.g. create or update view resources.
+    #[prost(string, tag = "7")]
+    pub resource_status_address: ::prost::alloc::string::String,
+    /// The [](pulumirpc.ResourceStatus) service context token to pass when calling methods on the service.
+    #[prost(string, tag = "8")]
+    pub resource_status_token: ::prost::alloc::string::String,
+    /// The old views for the resource being read. These will only be populated when the
+    /// [](pulumirpc.ResourceProvider.Read) call is being made as part of a refresh operation.
+    #[prost(message, repeated, tag = "9")]
+    pub old_views: ::prost::alloc::vec::Vec<View>,
 }
 /// `ReadResponse` is the type of responses sent by a [](pulumirpc.ResourceProvider.Read) call. A `ReadResponse` contains
 /// the ID of the resource being read, as well as any state that was successfully read from the live environment.
@@ -1346,6 +1549,9 @@ pub struct ReadResponse {
     /// [](pulumirpc.ResourceProvider.Check) call with the same values.
     #[prost(message, optional, tag = "3")]
     pub inputs: ::core::option::Option<::prost_types::Struct>,
+    /// Indicates that this resource should always be refreshed prior to updates.
+    #[prost(bool, tag = "4")]
+    pub refresh_before_update: bool,
 }
 /// `UpdateRequest` is the type of requests sent as part of a [](pulumirpc.ResourceProvider.Update) call.
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -1384,6 +1590,15 @@ pub struct UpdateRequest {
     /// that providers do not have to implement URN parsing in order to extract the type of the resource.
     #[prost(string, tag = "10")]
     pub r#type: ::prost::alloc::string::String,
+    /// The address of a [](pulumirpc.ResourceStatus) service which can be used to e.g. create or update view resources.
+    #[prost(string, tag = "11")]
+    pub resource_status_address: ::prost::alloc::string::String,
+    /// The [](pulumirpc.ResourceStatus) service context token to pass when calling methods on the service.
+    #[prost(string, tag = "12")]
+    pub resource_status_token: ::prost::alloc::string::String,
+    /// The old views for the resource being updated.
+    #[prost(message, repeated, tag = "13")]
+    pub old_views: ::prost::alloc::vec::Vec<View>,
 }
 /// `UpdateResponse` is the type of responses sent by a [](pulumirpc.ResourceProvider.Update) call.
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -1392,6 +1607,9 @@ pub struct UpdateResponse {
     /// additional values that were computed or made available during the update.
     #[prost(message, optional, tag = "1")]
     pub properties: ::core::option::Option<::prost_types::Struct>,
+    /// Indicates that this resource should always be refreshed prior to updates.
+    #[prost(bool, tag = "2")]
+    pub refresh_before_update: bool,
 }
 /// `DeleteRequest` is the type of requests sent as part of a [](pulumirpc.ResourceProvider.Delete) call.
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -1421,6 +1639,15 @@ pub struct DeleteRequest {
     /// that providers do not have to implement URN parsing in order to extract the type of the resource.
     #[prost(string, tag = "7")]
     pub r#type: ::prost::alloc::string::String,
+    /// The address of a [](pulumirpc.ResourceStatus) service which can be used to e.g. create or update view resources.
+    #[prost(string, tag = "8")]
+    pub resource_status_address: ::prost::alloc::string::String,
+    /// The [](pulumirpc.ResourceStatus) service context token to pass when calling methods on the service.
+    #[prost(string, tag = "9")]
+    pub resource_status_token: ::prost::alloc::string::String,
+    /// The old views for the resource being read.
+    #[prost(message, repeated, tag = "10")]
+    pub old_views: ::prost::alloc::vec::Vec<View>,
 }
 /// `ConstructRequest` is the type of requests sent as part of a [](pulumirpc.ResourceProvider.Construct) call. A
 /// `ConstructRequest` captures enough data to be able to register nested components against the caller's resource
@@ -1487,13 +1714,8 @@ pub struct ConstructRequest {
     pub organization: ::prost::alloc::string::String,
     /// True if and only if the resource (and by extension, its nested resources) should be marked as protected.
     /// Protected resources cannot be deleted without first being unprotected.
-    #[prost(bool, tag = "12")]
-    pub protect: bool,
-    /// A list of additional URNs that should be considered the same as this component's URN (and which will therefore be
-    /// used to build aliases for its nested resource URNs). These may be URNs that previously referred to this component
-    /// e.g. if it had its parent (and consequently URN) changed.
-    #[prost(string, repeated, tag = "14")]
-    pub aliases: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+    #[prost(bool, optional, tag = "12")]
+    pub protect: ::core::option::Option<bool>,
     /// A list of input properties whose values should be treated as [secret](output-secrets).
     #[prost(string, repeated, tag = "18")]
     pub additional_secret_outputs: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
@@ -1508,8 +1730,8 @@ pub struct ConstructRequest {
     #[prost(string, tag = "20")]
     pub deleted_with: ::prost::alloc::string::String,
     /// If true, this resource (and its nested resources) must be deleted *before* its replacement is created.
-    #[prost(bool, tag = "21")]
-    pub delete_before_replace: bool,
+    #[prost(bool, optional, tag = "21")]
+    pub delete_before_replace: ::core::option::Option<bool>,
     /// A set of [property paths](property-paths) that should be treated as unchanged.
     #[prost(string, repeated, tag = "22")]
     pub ignore_changes: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
@@ -1518,13 +1740,28 @@ pub struct ConstructRequest {
     pub replace_on_changes: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
     /// True if [](pulumirpc.ResourceProvider.Delete) should *not* be called when the resource (and by extension, its
     /// nested resources) are removed from a Pulumi program.
-    #[prost(bool, tag = "24")]
-    pub retain_on_delete: bool,
+    #[prost(bool, optional, tag = "24")]
+    pub retain_on_delete: ::core::option::Option<bool>,
     /// True if the caller is capable of accepting output values in response to the call. If this is set, these outputs
     /// may be used to communicate dependency information and so there is no need to populate
     /// [](pulumirpc.ConstructResponse)'s `stateDependencies` field.
     #[prost(bool, tag = "25")]
     pub accepts_output_values: bool,
+    #[prost(message, optional, tag = "26")]
+    pub resource_hooks: ::core::option::Option<construct_request::ResourceHooksBinding>,
+    /// The stack trace handle for the construct call. Supports stitching stack traces together across plugins.
+    #[prost(string, tag = "27")]
+    pub stack_trace_handle: ::prost::alloc::string::String,
+    /// The URNs of resources whose replaces will trigger a replace on this resource.
+    #[prost(string, repeated, tag = "28")]
+    pub replace_with: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+    /// a list of additional aliases that should be considered the same.
+    #[prost(message, repeated, tag = "29")]
+    pub aliases: ::prost::alloc::vec::Vec<Alias>,
+    /// If set, the engine will diff this value with the last recorded value, and trigger a replace if they are not
+    /// equal.
+    #[prost(message, optional, tag = "30")]
+    pub replacement_trigger: ::core::option::Option<::prost_types::Value>,
 }
 /// Nested message and enum types in `ConstructRequest`.
 pub mod construct_request {
@@ -1560,6 +1797,23 @@ pub mod construct_request {
         /// to complete.
         #[prost(string, tag = "3")]
         pub delete: ::prost::alloc::string::String,
+    }
+    #[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
+    pub struct ResourceHooksBinding {
+        #[prost(string, repeated, tag = "1")]
+        pub before_create: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+        #[prost(string, repeated, tag = "2")]
+        pub after_create: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+        #[prost(string, repeated, tag = "3")]
+        pub before_update: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+        #[prost(string, repeated, tag = "4")]
+        pub after_update: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+        #[prost(string, repeated, tag = "5")]
+        pub before_delete: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+        #[prost(string, repeated, tag = "6")]
+        pub after_delete: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+        #[prost(string, repeated, tag = "7")]
+        pub on_error: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
     }
 }
 /// `ConstructResponse` is the type of responses sent by a [](pulumirpc.ResourceProvider.Construct) call.
@@ -1606,48 +1860,73 @@ pub struct ErrorResourceInitFailed {
     /// the current inputs to this resource (only applicable for Read)
     #[prost(message, optional, tag = "4")]
     pub inputs: ::core::option::Option<::prost_types::Struct>,
+    /// Indicates that this resource should always be refreshed prior to updates.
+    #[prost(bool, tag = "5")]
+    pub refresh_before_update: bool,
 }
-/// GetMappingRequest allows providers to return ecosystem specific information to allow the provider to be
-/// converted from a source markup to Pulumi. It's expected that provider bridges that target a given ecosystem
-/// (e.g. Terraform, Kubernetes) would also publish a conversion plugin to convert markup from that ecosystem
-/// to Pulumi, using the bridged providers.
+/// `GetMappingRequest` is the type of requests sent as part of a [](pulumirpc.ResourceProvider.GetMapping) call.
 #[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct GetMappingRequest {
-    /// the conversion key for the mapping being requested.
+    /// The conversion key for the mapping being requested. This typically corresponds to the source language, such as
+    /// `terraform` in the case of mapping Terraform names to Pulumi names.
     #[prost(string, tag = "1")]
     pub key: ::prost::alloc::string::String,
-    /// the optional provider key for the mapping being requested, if this is empty the provider should assume this
-    /// request is from an old engine from before GetMappings and should return it's "primary" mapping. If this is set
-    /// then the `provider` field in GetMappingResponse should be the same.
+    /// An optional *source provider key* for the mapping being requested. If this is empty, the provider should assume
+    /// that this request is from an old engine prior to the introduction of [](pulumirpc.ResourceProvider.GetMappings).
+    /// In these cases the request should be answered with the "primary" mapping. If this field is set, the `provider`
+    /// field in the corresponding [](pulumirpc.GetMappingResponse) should contain the same value.
     #[prost(string, tag = "2")]
     pub provider: ::prost::alloc::string::String,
 }
-/// GetMappingResponse returns convert plugin specific data for this provider. This will normally be human
-/// readable JSON, but the engine doesn't mandate any form.
+/// `GetMappingResponse` is the type of responses sent by a [](pulumirpc.ResourceProvider.GetMapping) call. The data
+/// within a `GetMappingResponse` will normally be human-readable JSON (e.g. an object mapping names from the source to
+/// Pulumi), but the engine doesn't mandate any specific format.
 #[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct GetMappingResponse {
-    /// the provider key this is mapping for. For example the Pulumi provider "terraform-template" would return "template" for this.
+    /// The *source provider key* that this mapping contains data for.
     #[prost(string, tag = "1")]
     pub provider: ::prost::alloc::string::String,
-    /// the conversion plugin specific data.
+    /// Mapping data in a format specific to the conversion plugin/source language.
     #[prost(bytes = "vec", tag = "2")]
     pub data: ::prost::alloc::vec::Vec<u8>,
 }
-/// GetMappingsRequest allows providers to return ecosystem specific information without having to send back large data
-/// blobs for provider mappings that the engine doesn't then need.
+/// `GetMappingsRequest` is the type of requests sent as part of a [](pulumirpc.ResourceProvider.GetMappings) call.
 #[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct GetMappingsRequest {
-    /// the conversion key for the mapping being requested.
+    /// The conversion key for the mapping being requested. This typically corresponds to the source language, such as
+    /// `terraform` in the case of mapping Terraform names to Pulumi names.
     #[prost(string, tag = "1")]
     pub key: ::prost::alloc::string::String,
 }
-/// GetMappingsRequest returns a list of providers that this provider can provide mapping information for.
+/// `GetMappingsResponse` is the type of responses sent by a [](pulumirpc.ResourceProvider.GetMappings) call.
 #[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct GetMappingsResponse {
-    /// the provider keys this provider can supply mappings for. For example the Pulumi provider "terraform-template"
-    /// would return \["template"\] for this.
+    /// The set of *source provider keys* this provider can supply mappings for. For example the Pulumi provider
+    /// `terraform-template` would return `\["template"\]` for this.
     #[prost(string, repeated, tag = "1")]
     pub providers: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+}
+/// `View` represents the state of a view resource.
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct View {
+    /// The type of the view resource.
+    #[prost(string, tag = "1")]
+    pub r#type: ::prost::alloc::string::String,
+    /// The name of the view resource.
+    #[prost(string, tag = "2")]
+    pub name: ::prost::alloc::string::String,
+    /// An optional type of the parent view resource.
+    #[prost(string, tag = "3")]
+    pub parent_type: ::prost::alloc::string::String,
+    /// An optional name of the parent view resource.
+    #[prost(string, tag = "4")]
+    pub parent_name: ::prost::alloc::string::String,
+    /// The view resource's inputs.
+    #[prost(message, optional, tag = "5")]
+    pub inputs: ::core::option::Option<::prost_types::Struct>,
+    /// The view resource's outputs.
+    #[prost(message, optional, tag = "6")]
+    pub outputs: ::core::option::Option<::prost_types::Struct>,
 }
 /// Generated client implementations.
 pub mod resource_provider_client {
@@ -1745,9 +2024,9 @@ pub mod resource_provider_client {
         }
         /// `Handshake` is the first call made by the engine to a provider. It is used to pass the engine's address to the
         /// provider so that it may establish its own connections back, and to establish protocol configuration that will be
-        /// used to communicate between the two parties. Providers that support `Handshake` implicitly support the set of
-        /// feature flags previously handled by `Configure` prior to `Handshake`'s introduction, such as secrets and resource
-        /// references.
+        /// used to communicate between the two parties. Providers that support `Handshake` should return responses
+        /// consistent with those returned in response to [](pulumirpc.ResourceProvider.Configure) calls where there is
+        /// overlap due to the use of `Configure` prior to `Handshake`'s introduction.
         pub async fn handshake(
             &mut self,
             request: impl tonic::IntoRequest<super::ProviderHandshakeRequest>,
@@ -1940,28 +2219,6 @@ pub mod resource_provider_client {
             req.extensions_mut()
                 .insert(GrpcMethod::new("pulumirpc.ResourceProvider", "Invoke"));
             self.inner.unary(req, path, codec).await
-        }
-        /// StreamInvoke dynamically executes a built-in function in the provider, which returns a stream
-        /// of responses.
-        pub async fn stream_invoke(
-            &mut self,
-            request: impl tonic::IntoRequest<super::InvokeRequest>,
-        ) -> std::result::Result<
-            tonic::Response<tonic::codec::Streaming<super::InvokeResponse>>,
-            tonic::Status,
-        > {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
-            let codec = tonic_prost::ProstCodec::default();
-            let path =
-                http::uri::PathAndQuery::from_static("/pulumirpc.ResourceProvider/StreamInvoke");
-            let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "pulumirpc.ResourceProvider",
-                "StreamInvoke",
-            ));
-            self.inner.server_streaming(req, path, codec).await
         }
         /// Call dynamically executes a method in the provider associated with a component resource.
         pub async fn call(
@@ -2175,8 +2432,21 @@ pub mod resource_provider_client {
                 .insert(GrpcMethod::new("pulumirpc.ResourceProvider", "Attach"));
             self.inner.unary(req, path, codec).await
         }
-        /// GetMapping fetches the mapping for this resource provider, if any. A provider should return an empty
-        /// response (not an error) if it doesn't have a mapping for the given key.
+        /// `GetMapping` returns mappings designed to aid in [converting programs and state from other
+        /// ecosystems](converters). It accepts a "conversion key", which effectively corresponds to a source language, such
+        /// as `terraform`, and a *source provider name*, which is the name of the provider *in the source language*. Given
+        /// these, it returns source-specific mapping data for the provider requested. As an example, the Pulumi AWS
+        /// provider, which is bridged from the Terraform AWS provider and thus capable of mapping names between the two,
+        /// might respond to a call with key `terraform` and source provider name `aws` with mapping data for transforming
+        /// (among other things) Terraform AWS names such as `aws_s3_bucket` into Pulumi AWS types such as
+        /// `aws:s3/bucket:Bucket`. If a provider only supports a single source provider, or has some sensible default, it
+        /// may respond also to a call in which the source provider name is empty (`""`), which will be made when the engine
+        /// does not have sufficient knowledge to work out which provider offers a specific mapping.
+        ///
+        /// In general, it is expected that providers implemented by bridging an equivalent provider from another ecosystem
+        /// (such as bridged Terraform providers built atop the `pulumi-terraform-bridge`, for instance) implement
+        /// `GetMapping` to support conversion from that ecosystem into Pulumi using the same logic that underpins the
+        /// bridging itself.
         pub async fn get_mapping(
             &mut self,
             request: impl tonic::IntoRequest<super::GetMappingRequest>,
@@ -2193,9 +2463,17 @@ pub mod resource_provider_client {
                 .insert(GrpcMethod::new("pulumirpc.ResourceProvider", "GetMapping"));
             self.inner.unary(req, path, codec).await
         }
-        /// GetMappings is an optional method that returns what mappings (if any) a provider supports. If a provider does not
-        /// implement this method the engine falls back to the old behaviour of just calling GetMapping without a name.
-        /// If this method is implemented than the engine will then call GetMapping only with the names returned from this method.
+        /// `GetMappings` is an optional method designed to aid in [converting programs and state from other
+        /// ecosystems](converters). `GetMappings` accepts a "conversion key". This corresponds to a source language, for
+        /// which we want to retrieve mappings for names etc. from that source language into Pulumi. An example key might
+        /// therefore be `terraform` in the event that we wish to map e.g. Terraform resource names to Pulumi resource types.
+        /// Given a key, `GetMappings` returns a list of *source provider names* for which calls to `GetMapping` will return
+        /// mappings. So, continuing the Terraform example, the Pulumi AWS provider, which is bridged from the Terraform AWS
+        /// provider and thus capable of mapping names between the two, might return the list `["aws"]` in response to a call
+        /// with key `terraform`.
+        ///
+        /// If a provider does not implement `GetMappings`, the engine will fall back to calling `GetMapping` blindly without
+        /// a source provider name (that is, with the value `""`).
         pub async fn get_mappings(
             &mut self,
             request: impl tonic::IntoRequest<super::GetMappingsRequest>,
@@ -2229,9 +2507,9 @@ pub mod resource_provider_server {
     pub trait ResourceProvider: std::marker::Send + std::marker::Sync + 'static {
         /// `Handshake` is the first call made by the engine to a provider. It is used to pass the engine's address to the
         /// provider so that it may establish its own connections back, and to establish protocol configuration that will be
-        /// used to communicate between the two parties. Providers that support `Handshake` implicitly support the set of
-        /// feature flags previously handled by `Configure` prior to `Handshake`'s introduction, such as secrets and resource
-        /// references.
+        /// used to communicate between the two parties. Providers that support `Handshake` should return responses
+        /// consistent with those returned in response to [](pulumirpc.ResourceProvider.Configure) calls where there is
+        /// overlap due to the use of `Configure` prior to `Handshake`'s introduction.
         async fn handshake(
             &self,
             request: tonic::Request<super::ProviderHandshakeRequest>,
@@ -2345,17 +2623,6 @@ pub mod resource_provider_server {
             &self,
             request: tonic::Request<super::InvokeRequest>,
         ) -> std::result::Result<tonic::Response<super::InvokeResponse>, tonic::Status>;
-        /// Server streaming response type for the StreamInvoke method.
-        type StreamInvokeStream: tonic::codegen::tokio_stream::Stream<
-                Item = std::result::Result<super::InvokeResponse, tonic::Status>,
-            > + std::marker::Send
-            + 'static;
-        /// StreamInvoke dynamically executes a built-in function in the provider, which returns a stream
-        /// of responses.
-        async fn stream_invoke(
-            &self,
-            request: tonic::Request<super::InvokeRequest>,
-        ) -> std::result::Result<tonic::Response<Self::StreamInvokeStream>, tonic::Status>;
         /// Call dynamically executes a method in the provider associated with a component resource.
         async fn call(
             &self,
@@ -2454,15 +2721,36 @@ pub mod resource_provider_server {
             &self,
             request: tonic::Request<super::PluginAttach>,
         ) -> std::result::Result<tonic::Response<()>, tonic::Status>;
-        /// GetMapping fetches the mapping for this resource provider, if any. A provider should return an empty
-        /// response (not an error) if it doesn't have a mapping for the given key.
+        /// `GetMapping` returns mappings designed to aid in [converting programs and state from other
+        /// ecosystems](converters). It accepts a "conversion key", which effectively corresponds to a source language, such
+        /// as `terraform`, and a *source provider name*, which is the name of the provider *in the source language*. Given
+        /// these, it returns source-specific mapping data for the provider requested. As an example, the Pulumi AWS
+        /// provider, which is bridged from the Terraform AWS provider and thus capable of mapping names between the two,
+        /// might respond to a call with key `terraform` and source provider name `aws` with mapping data for transforming
+        /// (among other things) Terraform AWS names such as `aws_s3_bucket` into Pulumi AWS types such as
+        /// `aws:s3/bucket:Bucket`. If a provider only supports a single source provider, or has some sensible default, it
+        /// may respond also to a call in which the source provider name is empty (`""`), which will be made when the engine
+        /// does not have sufficient knowledge to work out which provider offers a specific mapping.
+        ///
+        /// In general, it is expected that providers implemented by bridging an equivalent provider from another ecosystem
+        /// (such as bridged Terraform providers built atop the `pulumi-terraform-bridge`, for instance) implement
+        /// `GetMapping` to support conversion from that ecosystem into Pulumi using the same logic that underpins the
+        /// bridging itself.
         async fn get_mapping(
             &self,
             request: tonic::Request<super::GetMappingRequest>,
         ) -> std::result::Result<tonic::Response<super::GetMappingResponse>, tonic::Status>;
-        /// GetMappings is an optional method that returns what mappings (if any) a provider supports. If a provider does not
-        /// implement this method the engine falls back to the old behaviour of just calling GetMapping without a name.
-        /// If this method is implemented than the engine will then call GetMapping only with the names returned from this method.
+        /// `GetMappings` is an optional method designed to aid in [converting programs and state from other
+        /// ecosystems](converters). `GetMappings` accepts a "conversion key". This corresponds to a source language, for
+        /// which we want to retrieve mappings for names etc. from that source language into Pulumi. An example key might
+        /// therefore be `terraform` in the event that we wish to map e.g. Terraform resource names to Pulumi resource types.
+        /// Given a key, `GetMappings` returns a list of *source provider names* for which calls to `GetMapping` will return
+        /// mappings. So, continuing the Terraform example, the Pulumi AWS provider, which is bridged from the Terraform AWS
+        /// provider and thus capable of mapping names between the two, might return the list `["aws"]` in response to a call
+        /// with key `terraform`.
+        ///
+        /// If a provider does not implement `GetMappings`, the engine will fall back to calling `GetMapping` blindly without
+        /// a source provider name (that is, with the value `""`).
         async fn get_mappings(
             &self,
             request: tonic::Request<super::GetMappingsRequest>,
@@ -2820,50 +3108,6 @@ pub mod resource_provider_server {
                                 max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
-                        Ok(res)
-                    };
-                    Box::pin(fut)
-                }
-                "/pulumirpc.ResourceProvider/StreamInvoke" => {
-                    #[allow(non_camel_case_types)]
-                    struct StreamInvokeSvc<T: ResourceProvider>(pub Arc<T>);
-                    impl<T: ResourceProvider>
-                        tonic::server::ServerStreamingService<super::InvokeRequest>
-                        for StreamInvokeSvc<T>
-                    {
-                        type Response = super::InvokeResponse;
-                        type ResponseStream = T::StreamInvokeStream;
-                        type Future =
-                            BoxFuture<tonic::Response<Self::ResponseStream>, tonic::Status>;
-                        fn call(
-                            &mut self,
-                            request: tonic::Request<super::InvokeRequest>,
-                        ) -> Self::Future {
-                            let inner = Arc::clone(&self.0);
-                            let fut = async move {
-                                <T as ResourceProvider>::stream_invoke(&inner, request).await
-                            };
-                            Box::pin(fut)
-                        }
-                    }
-                    let accept_compression_encodings = self.accept_compression_encodings;
-                    let send_compression_encodings = self.send_compression_encodings;
-                    let max_decoding_message_size = self.max_decoding_message_size;
-                    let max_encoding_message_size = self.max_encoding_message_size;
-                    let inner = self.inner.clone();
-                    let fut = async move {
-                        let method = StreamInvokeSvc(inner);
-                        let codec = tonic_prost::ProstCodec::default();
-                        let mut grpc = tonic::server::Grpc::new(codec)
-                            .apply_compression_config(
-                                accept_compression_encodings,
-                                send_compression_encodings,
-                            )
-                            .apply_max_message_size_config(
-                                max_decoding_message_size,
-                                max_encoding_message_size,
-                            );
-                        let res = grpc.server_streaming(method, req).await;
                         Ok(res)
                     };
                     Box::pin(fut)
@@ -3404,54 +3648,6 @@ pub mod resource_provider_server {
         const NAME: &'static str = SERVICE_NAME;
     }
 }
-#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
-pub struct Alias {
-    #[prost(oneof = "alias::Alias", tags = "1, 2")]
-    pub alias: ::core::option::Option<alias::Alias>,
-}
-/// Nested message and enum types in `Alias`.
-pub mod alias {
-    #[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
-    pub struct Spec {
-        /// The previous name of the resource.  If none is provided, we will use the current name.
-        #[prost(string, tag = "1")]
-        pub name: ::prost::alloc::string::String,
-        /// The previous type of the resource. If none is provided, we will use the current resoource type.
-        #[prost(string, tag = "2")]
-        pub r#type: ::prost::alloc::string::String,
-        /// The previous stack of the resource. If not set, the current stack of the resource is used.
-        #[prost(string, tag = "3")]
-        pub stack: ::prost::alloc::string::String,
-        /// The previous project of the resource. If not set, the current project of the resource is used.
-        #[prost(string, tag = "4")]
-        pub project: ::prost::alloc::string::String,
-        /// The previous parent of the resource. If not set, the current parent of the resource is used.
-        #[prost(oneof = "spec::Parent", tags = "5, 6")]
-        pub parent: ::core::option::Option<spec::Parent>,
-    }
-    /// Nested message and enum types in `Spec`.
-    pub mod spec {
-        /// The previous parent of the resource. If not set, the current parent of the resource is used.
-        #[derive(Clone, PartialEq, Eq, Hash, ::prost::Oneof)]
-        pub enum Parent {
-            /// The urn of the previous parent.
-            #[prost(string, tag = "5")]
-            ParentUrn(::prost::alloc::string::String),
-            /// Used to indicate the resource previously had no parent. If false this property is ignored.
-            #[prost(bool, tag = "6")]
-            NoParent(bool),
-        }
-    }
-    #[derive(Clone, PartialEq, Eq, Hash, ::prost::Oneof)]
-    pub enum Alias {
-        /// The previous urn to alias to.
-        #[prost(string, tag = "1")]
-        Urn(::prost::alloc::string::String),
-        /// An alias specification.
-        #[prost(message, tag = "2")]
-        Spec(Spec),
-    }
-}
 /// A SourcePosition represents a position in a source file.
 #[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct SourcePosition {
@@ -3464,6 +3660,20 @@ pub struct SourcePosition {
     /// The column in the line
     #[prost(int32, tag = "3")]
     pub column: i32,
+}
+/// A StackFrame represents a single stack frame.
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
+pub struct StackFrame {
+    /// The position of the frame's program counter. Optional.
+    #[prost(message, optional, tag = "1")]
+    pub pc: ::core::option::Option<SourcePosition>,
+}
+/// A StackTrace represents the frames on the stack at the point of an RPC call.
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct StackTrace {
+    /// The frames on the stack.
+    #[prost(message, repeated, tag = "1")]
+    pub frames: ::prost::alloc::vec::Vec<StackFrame>,
 }
 #[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct Callback {
@@ -3823,7 +4033,13 @@ pub struct ReadResourceRequest {
     /// the optional source position of the user code that initiated the read.
     #[prost(message, optional, tag = "14")]
     pub source_position: ::core::option::Option<SourcePosition>,
-    /// a reference from RegisterProviderRequest.
+    /// the optional stack trace at the time of the request.
+    #[prost(message, optional, tag = "17")]
+    pub stack_trace: ::core::option::Option<StackTrace>,
+    /// the optional parent stack trace handle for the request. Supports stitching stack traces across plugins.
+    #[prost(string, tag = "18")]
+    pub parent_stack_trace_handle: ::prost::alloc::string::String,
+    /// a reference from RegisterPackageRequest.
     #[prost(string, tag = "16")]
     pub package_ref: ::prost::alloc::string::String,
 }
@@ -3856,8 +4072,8 @@ pub struct RegisterResourceRequest {
     #[prost(message, optional, tag = "5")]
     pub object: ::core::option::Option<::prost_types::Struct>,
     /// true if the resource should be marked protected.
-    #[prost(bool, tag = "6")]
-    pub protect: bool,
+    #[prost(bool, optional, tag = "6")]
+    pub protect: ::core::option::Option<bool>,
     /// a list of URNs that this resource depends on, as observed by the language host.
     #[prost(string, repeated, tag = "7")]
     pub dependencies: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
@@ -3921,14 +4137,20 @@ pub struct RegisterResourceRequest {
     pub plugin_checksums:
         ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::vec::Vec<u8>>,
     /// if true the engine will not call the resource providers delete method for this resource.
-    #[prost(bool, tag = "25")]
-    pub retain_on_delete: bool,
+    #[prost(bool, optional, tag = "25")]
+    pub retain_on_delete: ::core::option::Option<bool>,
     /// a list of additional aliases that should be considered the same.
     #[prost(message, repeated, tag = "26")]
     pub aliases: ::prost::alloc::vec::Vec<Alias>,
     /// if set the engine will not call the resource providers delete method for this resource when specified resource is deleted.
     #[prost(string, tag = "27")]
     pub deleted_with: ::prost::alloc::string::String,
+    /// if set the engine will replace this resource when any of the specified resources are replaced.
+    #[prost(string, repeated, tag = "38")]
+    pub replace_with: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+    /// if set, the engine will diff this with the last recorded value, and trigger a replace if they are not equal.
+    #[prost(message, optional, tag = "39")]
+    pub replacement_trigger: ::core::option::Option<::prost_types::Value>,
     /// Indicates that alias specs are specified correctly according to the spec.
     /// Older versions of the Node.js SDK did not send alias specs correctly.
     /// If this is not set to true and the engine detects the request is from the
@@ -3941,15 +4163,30 @@ pub struct RegisterResourceRequest {
     /// the optional source position of the user code that initiated the register.
     #[prost(message, optional, tag = "29")]
     pub source_position: ::core::option::Option<SourcePosition>,
+    /// the optional stack trace at the time of the request.
+    #[prost(message, optional, tag = "35")]
+    pub stack_trace: ::core::option::Option<StackTrace>,
+    /// the optional parent stack trace handle for the request. Supports stitching stack traces across plugins.
+    #[prost(string, tag = "36")]
+    pub parent_stack_trace_handle: ::prost::alloc::string::String,
     /// a list of transforms to apply to the resource before registering it.
     #[prost(message, repeated, tag = "31")]
     pub transforms: ::prost::alloc::vec::Vec<Callback>,
     /// true if the request is from an SDK that supports the result field in the response.
     #[prost(bool, tag = "32")]
     pub supports_result_reporting: bool,
-    /// a reference from RegisterProviderRequest.
+    /// a reference from RegisterPackageRequest.
     #[prost(string, tag = "33")]
     pub package_ref: ::prost::alloc::string::String,
+    /// The resource hooks that should run at certain points in the resource's lifecycle.
+    #[prost(message, optional, tag = "34")]
+    pub hooks: ::core::option::Option<register_resource_request::ResourceHooksBinding>,
+    #[prost(string, repeated, tag = "37")]
+    pub hide_diffs: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+    /// environment variable remappings for provider resources (NEW_KEY -> OLD_KEY)
+    #[prost(map = "string, string", tag = "41")]
+    pub env_var_mappings:
+        ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::string::String>,
 }
 /// Nested message and enum types in `RegisterResourceRequest`.
 pub mod register_resource_request {
@@ -3972,6 +4209,23 @@ pub mod register_resource_request {
         /// The delete resource timeout represented as a string e.g. 5m.
         #[prost(string, tag = "3")]
         pub delete: ::prost::alloc::string::String,
+    }
+    #[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
+    pub struct ResourceHooksBinding {
+        #[prost(string, repeated, tag = "1")]
+        pub before_create: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+        #[prost(string, repeated, tag = "2")]
+        pub after_create: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+        #[prost(string, repeated, tag = "3")]
+        pub before_update: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+        #[prost(string, repeated, tag = "4")]
+        pub after_update: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+        #[prost(string, repeated, tag = "5")]
+        pub before_delete: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+        #[prost(string, repeated, tag = "6")]
+        pub after_delete: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+        #[prost(string, repeated, tag = "7")]
+        pub on_error: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
     }
 }
 /// RegisterResourceResponse is returned by the engine after a resource has finished being initialized.  It includes the
@@ -4050,7 +4304,13 @@ pub struct ResourceInvokeRequest {
     /// the optional source position of the user code that initiated the invoke.
     #[prost(message, optional, tag = "7")]
     pub source_position: ::core::option::Option<SourcePosition>,
-    /// a reference from RegisterProviderRequest.
+    /// the optional stack trace at the time of the request.
+    #[prost(message, optional, tag = "10")]
+    pub stack_trace: ::core::option::Option<StackTrace>,
+    /// the optional parent stack trace handle for the request. Supports stitching stack traces across plugins.
+    #[prost(string, tag = "11")]
+    pub parent_stack_trace_handle: ::prost::alloc::string::String,
+    /// a reference from RegisterPackageRequest.
     #[prost(string, tag = "9")]
     pub package_ref: ::prost::alloc::string::String,
 }
@@ -4084,7 +4344,13 @@ pub struct ResourceCallRequest {
     /// the optional source position of the user code that initiated the call.
     #[prost(message, optional, tag = "15")]
     pub source_position: ::core::option::Option<SourcePosition>,
-    /// a reference from RegisterProviderRequest.
+    /// the optional stack trace at the time of the request.
+    #[prost(message, optional, tag = "18")]
+    pub stack_trace: ::core::option::Option<StackTrace>,
+    /// the optional parent stack trace handle for the request. Supports stitching stack traces across plugins.
+    #[prost(string, tag = "19")]
+    pub parent_stack_trace_handle: ::prost::alloc::string::String,
+    /// a reference from RegisterPackageRequest.
     #[prost(string, tag = "17")]
     pub package_ref: ::prost::alloc::string::String,
 }
@@ -4103,8 +4369,8 @@ pub mod resource_call_request {
 pub struct TransformResourceOptions {
     #[prost(string, repeated, tag = "1")]
     pub depends_on: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
-    #[prost(bool, tag = "2")]
-    pub protect: bool,
+    #[prost(bool, optional, tag = "2")]
+    pub protect: ::core::option::Option<bool>,
     #[prost(string, repeated, tag = "3")]
     pub ignore_changes: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
     #[prost(string, repeated, tag = "4")]
@@ -4119,8 +4385,8 @@ pub struct TransformResourceOptions {
     pub custom_timeouts: ::core::option::Option<register_resource_request::CustomTimeouts>,
     #[prost(string, tag = "9")]
     pub plugin_download_url: ::prost::alloc::string::String,
-    #[prost(bool, tag = "10")]
-    pub retain_on_delete: bool,
+    #[prost(bool, optional, tag = "10")]
+    pub retain_on_delete: ::core::option::Option<bool>,
     #[prost(string, tag = "11")]
     pub deleted_with: ::prost::alloc::string::String,
     #[prost(bool, optional, tag = "12")]
@@ -4133,6 +4399,16 @@ pub struct TransformResourceOptions {
     #[prost(map = "string, bytes", tag = "15")]
     pub plugin_checksums:
         ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::vec::Vec<u8>>,
+    #[prost(message, optional, tag = "16")]
+    pub hooks: ::core::option::Option<register_resource_request::ResourceHooksBinding>,
+    #[prost(string, tag = "17")]
+    pub import: ::prost::alloc::string::String,
+    #[prost(string, repeated, tag = "18")]
+    pub hide_diff: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+    #[prost(string, repeated, tag = "19")]
+    pub replace_with: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+    #[prost(message, optional, tag = "20")]
+    pub replacement_trigger: ::core::option::Option<::prost_types::Value>,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct TransformRequest {
@@ -4200,6 +4476,82 @@ pub struct TransformInvokeOptions {
     pub plugin_checksums:
         ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::vec::Vec<u8>>,
 }
+/// ResourceHookRequest is the request object for resource hook callbacks in CallbackInvokeRequest.
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ResourceHookRequest {
+    /// the urn of the resource for which the hook is called.
+    #[prost(string, tag = "1")]
+    pub urn: ::prost::alloc::string::String,
+    /// the optional urn of the resource for which the hook is called.
+    #[prost(string, tag = "2")]
+    pub id: ::prost::alloc::string::String,
+    /// the name of the resource for which the hook is called.
+    #[prost(string, tag = "3")]
+    pub name: ::prost::alloc::string::String,
+    /// the type of the resource for which the hook is called.
+    #[prost(string, tag = "4")]
+    pub r#type: ::prost::alloc::string::String,
+    /// the optional checked new inputs of the resource.
+    #[prost(message, optional, tag = "5")]
+    pub new_inputs: ::core::option::Option<::prost_types::Struct>,
+    /// the optional checked old inputs of the resource.
+    #[prost(message, optional, tag = "6")]
+    pub old_inputs: ::core::option::Option<::prost_types::Struct>,
+    /// the optional new outputs of the resource.
+    #[prost(message, optional, tag = "7")]
+    pub new_outputs: ::core::option::Option<::prost_types::Struct>,
+    /// the optional old outputs of the resource.
+    #[prost(message, optional, tag = "8")]
+    pub old_outputs: ::core::option::Option<::prost_types::Struct>,
+}
+/// ResourceHookResponse is the response object for resource hook callbacks in CallbackInvokeResponse.
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
+pub struct ResourceHookResponse {
+    /// an optional error message to return from the hook.
+    #[prost(string, tag = "1")]
+    pub error: ::prost::alloc::string::String,
+}
+/// ErrorHookRequest is the request object for error hook callbacks in CallbackInvokeRequest.
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ErrorHookRequest {
+    /// the urn of the resource for which the hook is called.
+    #[prost(string, tag = "1")]
+    pub urn: ::prost::alloc::string::String,
+    /// the optional urn of the resource for which the hook is called.
+    #[prost(string, tag = "2")]
+    pub id: ::prost::alloc::string::String,
+    /// the name of the resource for which the hook is called.
+    #[prost(string, tag = "3")]
+    pub name: ::prost::alloc::string::String,
+    /// the type of the resource for which the hook is called.
+    #[prost(string, tag = "4")]
+    pub r#type: ::prost::alloc::string::String,
+    /// the optional checked new inputs of the resource.
+    #[prost(message, optional, tag = "5")]
+    pub new_inputs: ::core::option::Option<::prost_types::Struct>,
+    /// the optional checked old inputs of the resource.
+    #[prost(message, optional, tag = "6")]
+    pub old_inputs: ::core::option::Option<::prost_types::Struct>,
+    /// the optional old outputs of the resource.
+    #[prost(message, optional, tag = "7")]
+    pub old_outputs: ::core::option::Option<::prost_types::Struct>,
+    /// the operation that failed (create, read, update, or delete).
+    #[prost(string, tag = "8")]
+    pub failed_operation: ::prost::alloc::string::String,
+    /// the errors that have been seen so far (newest-first).
+    #[prost(string, repeated, tag = "9")]
+    pub errors: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+}
+/// ErrorHookResponse is the response object for error hook callbacks in CallbackInvokeResponse.
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
+pub struct ErrorHookResponse {
+    /// an optional error message to return from the hook.
+    #[prost(string, tag = "1")]
+    pub error: ::prost::alloc::string::String,
+    /// whether we should retry the operation.
+    #[prost(bool, tag = "2")]
+    pub retry: bool,
+}
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RegisterPackageRequest {
     /// the plugin name.
@@ -4222,6 +4574,8 @@ pub struct RegisterPackageRequest {
 #[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct RegisterPackageResponse {
     /// The UUID package reference for this registered package.
+    ///
+    /// Lifecycle methods accept this reference in the 'packageRef' field.
     #[prost(string, tag = "1")]
     pub r#ref: ::prost::alloc::string::String,
 }
@@ -4236,6 +4590,29 @@ pub struct Parameterization {
     /// the parameter value for the parameterized package.
     #[prost(bytes = "vec", tag = "3")]
     pub value: ::prost::alloc::vec::Vec<u8>,
+}
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
+pub struct RegisterResourceHookRequest {
+    /// The name of the hook. Must be unique within a program, registering the
+    /// same name twice is an error.
+    #[prost(string, tag = "1")]
+    pub name: ::prost::alloc::string::String,
+    /// the callback that the engine can call to run the hook.
+    #[prost(message, optional, tag = "2")]
+    pub callback: ::core::option::Option<Callback>,
+    /// whether to run the hook on dry runs.
+    #[prost(bool, tag = "3")]
+    pub on_dry_run: bool,
+}
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
+pub struct RegisterErrorHookRequest {
+    /// The name of the hook. Must be unique within a program, registering the
+    /// same name twice is an error.
+    #[prost(string, tag = "1")]
+    pub name: ::prost::alloc::string::String,
+    /// the callback that the engine can call to run the hook.
+    #[prost(message, optional, tag = "2")]
+    pub callback: ::core::option::Option<Callback>,
 }
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
@@ -4389,24 +4766,6 @@ pub mod resource_monitor_client {
                 .insert(GrpcMethod::new("pulumirpc.ResourceMonitor", "Invoke"));
             self.inner.unary(req, path, codec).await
         }
-        pub async fn stream_invoke(
-            &mut self,
-            request: impl tonic::IntoRequest<super::ResourceInvokeRequest>,
-        ) -> std::result::Result<
-            tonic::Response<tonic::codec::Streaming<super::InvokeResponse>>,
-            tonic::Status,
-        > {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
-            let codec = tonic_prost::ProstCodec::default();
-            let path =
-                http::uri::PathAndQuery::from_static("/pulumirpc.ResourceMonitor/StreamInvoke");
-            let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(GrpcMethod::new("pulumirpc.ResourceMonitor", "StreamInvoke"));
-            self.inner.server_streaming(req, path, codec).await
-        }
         pub async fn call(
             &mut self,
             request: impl tonic::IntoRequest<super::ResourceCallRequest>,
@@ -4511,6 +4870,49 @@ pub mod resource_monitor_client {
             ));
             self.inner.unary(req, path, codec).await
         }
+        /// Register a resource hook that can be called by the engine during certain
+        /// steps of a resource's lifecycle.
+        pub async fn register_resource_hook(
+            &mut self,
+            request: impl tonic::IntoRequest<super::RegisterResourceHookRequest>,
+        ) -> std::result::Result<tonic::Response<()>, tonic::Status> {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
+            let codec = tonic_prost::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/pulumirpc.ResourceMonitor/RegisterResourceHook",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut().insert(GrpcMethod::new(
+                "pulumirpc.ResourceMonitor",
+                "RegisterResourceHook",
+            ));
+            self.inner.unary(req, path, codec).await
+        }
+        /// Register an error hook that can be called by the engine when an operation fails and is retryable.
+        ///
+        /// Error hooks are a separate type of hook to other life cycle hooks as they have different inputs and outputs.
+        pub async fn register_error_hook(
+            &mut self,
+            request: impl tonic::IntoRequest<super::RegisterErrorHookRequest>,
+        ) -> std::result::Result<tonic::Response<()>, tonic::Status> {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
+            let codec = tonic_prost::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/pulumirpc.ResourceMonitor/RegisterErrorHook",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut().insert(GrpcMethod::new(
+                "pulumirpc.ResourceMonitor",
+                "RegisterErrorHook",
+            ));
+            self.inner.unary(req, path, codec).await
+        }
+        /// Registers a package and allocates a packageRef. The same package can be registered multiple times in Pulumi.
+        /// Multiple requests are idempotent and guaranteed to return the same result.
         pub async fn register_package(
             &mut self,
             request: impl tonic::IntoRequest<super::RegisterPackageRequest>,
@@ -4526,6 +4928,30 @@ pub mod resource_monitor_client {
             req.extensions_mut().insert(GrpcMethod::new(
                 "pulumirpc.ResourceMonitor",
                 "RegisterPackage",
+            ));
+            self.inner.unary(req, path, codec).await
+        }
+        /// SignalAndWaitForShutdown lets the resource monitor know that no more
+        /// events will be generated. This call blocks until the resource monitor is
+        /// finished, which will happen once all the steps have executed. This allows
+        /// the language runtime to stay running and handle callback requests, even
+        /// after the user program has completed. Runtime SDKs should call this after
+        /// executing the user's program. This can only be called once.
+        pub async fn signal_and_wait_for_shutdown(
+            &mut self,
+            request: impl tonic::IntoRequest<()>,
+        ) -> std::result::Result<tonic::Response<()>, tonic::Status> {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
+            let codec = tonic_prost::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/pulumirpc.ResourceMonitor/SignalAndWaitForShutdown",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut().insert(GrpcMethod::new(
+                "pulumirpc.ResourceMonitor",
+                "SignalAndWaitForShutdown",
             ));
             self.inner.unary(req, path, codec).await
         }
@@ -4552,15 +4978,6 @@ pub mod resource_monitor_server {
             &self,
             request: tonic::Request<super::ResourceInvokeRequest>,
         ) -> std::result::Result<tonic::Response<super::InvokeResponse>, tonic::Status>;
-        /// Server streaming response type for the StreamInvoke method.
-        type StreamInvokeStream: tonic::codegen::tokio_stream::Stream<
-                Item = std::result::Result<super::InvokeResponse, tonic::Status>,
-            > + std::marker::Send
-            + 'static;
-        async fn stream_invoke(
-            &self,
-            request: tonic::Request<super::ResourceInvokeRequest>,
-        ) -> std::result::Result<tonic::Response<Self::StreamInvokeStream>, tonic::Status>;
         async fn call(
             &self,
             request: tonic::Request<super::ResourceCallRequest>,
@@ -4587,10 +5004,35 @@ pub mod resource_monitor_server {
             &self,
             request: tonic::Request<super::Callback>,
         ) -> std::result::Result<tonic::Response<()>, tonic::Status>;
+        /// Register a resource hook that can be called by the engine during certain
+        /// steps of a resource's lifecycle.
+        async fn register_resource_hook(
+            &self,
+            request: tonic::Request<super::RegisterResourceHookRequest>,
+        ) -> std::result::Result<tonic::Response<()>, tonic::Status>;
+        /// Register an error hook that can be called by the engine when an operation fails and is retryable.
+        ///
+        /// Error hooks are a separate type of hook to other life cycle hooks as they have different inputs and outputs.
+        async fn register_error_hook(
+            &self,
+            request: tonic::Request<super::RegisterErrorHookRequest>,
+        ) -> std::result::Result<tonic::Response<()>, tonic::Status>;
+        /// Registers a package and allocates a packageRef. The same package can be registered multiple times in Pulumi.
+        /// Multiple requests are idempotent and guaranteed to return the same result.
         async fn register_package(
             &self,
             request: tonic::Request<super::RegisterPackageRequest>,
         ) -> std::result::Result<tonic::Response<super::RegisterPackageResponse>, tonic::Status>;
+        /// SignalAndWaitForShutdown lets the resource monitor know that no more
+        /// events will be generated. This call blocks until the resource monitor is
+        /// finished, which will happen once all the steps have executed. This allows
+        /// the language runtime to stay running and handle callback requests, even
+        /// after the user program has completed. Runtime SDKs should call this after
+        /// executing the user's program. This can only be called once.
+        async fn signal_and_wait_for_shutdown(
+            &self,
+            request: tonic::Request<()>,
+        ) -> std::result::Result<tonic::Response<()>, tonic::Status>;
     }
     /// ResourceMonitor is the interface a source uses to talk back to the planning monitor orchestrating the execution.
     #[derive(Debug)]
@@ -4745,50 +5187,6 @@ pub mod resource_monitor_server {
                                 max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
-                        Ok(res)
-                    };
-                    Box::pin(fut)
-                }
-                "/pulumirpc.ResourceMonitor/StreamInvoke" => {
-                    #[allow(non_camel_case_types)]
-                    struct StreamInvokeSvc<T: ResourceMonitor>(pub Arc<T>);
-                    impl<T: ResourceMonitor>
-                        tonic::server::ServerStreamingService<super::ResourceInvokeRequest>
-                        for StreamInvokeSvc<T>
-                    {
-                        type Response = super::InvokeResponse;
-                        type ResponseStream = T::StreamInvokeStream;
-                        type Future =
-                            BoxFuture<tonic::Response<Self::ResponseStream>, tonic::Status>;
-                        fn call(
-                            &mut self,
-                            request: tonic::Request<super::ResourceInvokeRequest>,
-                        ) -> Self::Future {
-                            let inner = Arc::clone(&self.0);
-                            let fut = async move {
-                                <T as ResourceMonitor>::stream_invoke(&inner, request).await
-                            };
-                            Box::pin(fut)
-                        }
-                    }
-                    let accept_compression_encodings = self.accept_compression_encodings;
-                    let send_compression_encodings = self.send_compression_encodings;
-                    let max_decoding_message_size = self.max_decoding_message_size;
-                    let max_encoding_message_size = self.max_encoding_message_size;
-                    let inner = self.inner.clone();
-                    let fut = async move {
-                        let method = StreamInvokeSvc(inner);
-                        let codec = tonic_prost::ProstCodec::default();
-                        let mut grpc = tonic::server::Grpc::new(codec)
-                            .apply_compression_config(
-                                accept_compression_encodings,
-                                send_compression_encodings,
-                            )
-                            .apply_max_message_size_config(
-                                max_decoding_message_size,
-                                max_encoding_message_size,
-                            );
-                        let res = grpc.server_streaming(method, req).await;
                         Ok(res)
                     };
                     Box::pin(fut)
@@ -5043,6 +5441,91 @@ pub mod resource_monitor_server {
                     };
                     Box::pin(fut)
                 }
+                "/pulumirpc.ResourceMonitor/RegisterResourceHook" => {
+                    #[allow(non_camel_case_types)]
+                    struct RegisterResourceHookSvc<T: ResourceMonitor>(pub Arc<T>);
+                    impl<T: ResourceMonitor>
+                        tonic::server::UnaryService<super::RegisterResourceHookRequest>
+                        for RegisterResourceHookSvc<T>
+                    {
+                        type Response = ();
+                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::RegisterResourceHookRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as ResourceMonitor>::register_resource_hook(&inner, request)
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = RegisterResourceHookSvc(inner);
+                        let codec = tonic_prost::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/pulumirpc.ResourceMonitor/RegisterErrorHook" => {
+                    #[allow(non_camel_case_types)]
+                    struct RegisterErrorHookSvc<T: ResourceMonitor>(pub Arc<T>);
+                    impl<T: ResourceMonitor>
+                        tonic::server::UnaryService<super::RegisterErrorHookRequest>
+                        for RegisterErrorHookSvc<T>
+                    {
+                        type Response = ();
+                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::RegisterErrorHookRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as ResourceMonitor>::register_error_hook(&inner, request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = RegisterErrorHookSvc(inner);
+                        let codec = tonic_prost::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
                 "/pulumirpc.ResourceMonitor/RegisterPackage" => {
                     #[allow(non_camel_case_types)]
                     struct RegisterPackageSvc<T: ResourceMonitor>(pub Arc<T>);
@@ -5070,6 +5553,45 @@ pub mod resource_monitor_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = RegisterPackageSvc(inner);
+                        let codec = tonic_prost::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/pulumirpc.ResourceMonitor/SignalAndWaitForShutdown" => {
+                    #[allow(non_camel_case_types)]
+                    struct SignalAndWaitForShutdownSvc<T: ResourceMonitor>(pub Arc<T>);
+                    impl<T: ResourceMonitor> tonic::server::UnaryService<()> for SignalAndWaitForShutdownSvc<T> {
+                        type Response = ();
+                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        fn call(&mut self, request: tonic::Request<()>) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as ResourceMonitor>::signal_and_wait_for_shutdown(
+                                    &inner, request,
+                                )
+                                .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = SignalAndWaitForShutdownSvc(inner);
                         let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
