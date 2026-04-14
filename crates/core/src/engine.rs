@@ -383,6 +383,10 @@ impl<FunctionContext> Engine<FunctionContext> {
             }
         }
     }
+
+    pub async fn require_pulumi_version(&self, version_range: &str) -> anyhow::Result<()> {
+        self.pulumi.require_pulumi_version(version_range).await
+    }
 }
 
 #[cfg(test)]
