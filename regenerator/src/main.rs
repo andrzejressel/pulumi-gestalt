@@ -106,7 +106,6 @@ fn main() {
         "cyclic-types",
         "docker",
         "different-enum",
-        "functions-secrets",
         "mini-awsnative",
         "nested-module",
         "nested-module-thirdparty",
@@ -117,8 +116,6 @@ fn main() {
         "provider_as_function_parameter",
         "random",
         "reserved_names",
-        "unions-inline",
-        "unions-inside-arrays",
         "workarounds",
     ];
     tests.sort();
