@@ -1,0 +1,103 @@
+{
+  "nodes": [
+    {
+      "configVariable": {
+        "name": "aNumber",
+        "logicalName": "aNumber",
+        "configType": {
+          "numberType": {}
+        },
+        "secret": true
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "roundtrip",
+        "logicalName": "roundtrip",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "aNumber",
+            "traversal": {
+              "each": [
+                {
+                  "traverseRoot": {
+                    "name": "aNumber"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "theSecretNumber",
+        "logicalName": "theSecretNumber",
+        "value": {
+          "functionCallExpression": {
+            "name": "__apply",
+            "args": [
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "aNumber",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "aNumber"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "type": {
+                  "outputType": {
+                    "numberType": {}
+                  }
+                }
+              },
+              {
+                "value": {
+                  "anonymousFunctionExpression": {
+                    "body": {
+                      "binaryOpExpression": {
+                        "left": {
+                          "scopeTraversalExpression": {
+                            "rootName": "aNumber",
+                            "traversal": {
+                              "each": [
+                                {
+                                  "traverseRoot": {
+                                    "name": "aNumber"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        },
+                        "right": {
+                          "literalValueExpression": {
+                            "numberValue": 1.25
+                          }
+                        }
+                      }
+                    },
+                    "parameters": [
+                      "aNumber"
+                    ]
+                  }
+                },
+                "type": {
+                  "composite": {}
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,10 +1,12 @@
 use crate::pcl_model::node::Value;
 use crate::pcl_model::r#type::Value::OutputType;
 use crate::pcl_model::{
-    ConfigType, ConfigVariable, Expression, FunctionCallArgument, LocalVariable, Node, Operation,
-    OutputVariable, PclProtobufProgram, PulumiBlock, TemplateExpression, TupleConsExpression,
-    expression, literal_value_expression, traverse_index, traverser,
+    ConfigType, ConfigVariable, Expression, FunctionCallArgument, FunctionCallExpression,
+    LocalVariable, Node, Operation, OutputVariable, PclProtobufProgram, PulumiBlock,
+    TemplateExpression, TupleConsExpression, expression, literal_value_expression, traverse_index,
+    traverser,
 };
+use rootcause::option_ext::OptionExt;
 use rootcause::prelude::ResultExt;
 use rootcause::{Result, bail};
 
@@ -257,6 +259,14 @@ fn convert_expression(expression: &Expression) -> Result<ExpressionType> {
             }
         }
         expression::Value::FunctionCallExpression(function_call) => {
+            // The __apply intrinsic is produced by pcl.RewriteApplies and requires special
+            // handling: the last arg is an AnonymousFunctionExpression (the callback), and the
+            // preceding args are the Output-typed expressions to apply over.
+            if function_call.name == "__apply" {
+                return Ok(ExpressionType::Other(
+                    convert_apply_call(function_call).context("Failed to convert __apply call")?,
+                ));
+            }
             let args = function_call
                 .args
                 .iter()
@@ -301,8 +311,12 @@ fn convert_expression(expression: &Expression) -> Result<ExpressionType> {
             }
             Ok(ExpressionType::Other(converted))
         }
-        expression::Value::AnonymousFunctionExpression(_) => {
-            bail!("AnonymousFunctionExpression not yet supported")
+        expression::Value::AnonymousFunctionExpression(anon_fn) => {
+            let params = anon_fn.parameters.join(", ");
+            let body = convert_expression(&anon_fn.body)
+                .context("Failed to convert anonymous function body")?
+                .to_string();
+            Ok(ExpressionType::Other(format!("|{}| {}", params, body)))
         }
         expression::Value::ConditionalExpression(_) => {
             bail!("ConditionalExpression not yet supported")
@@ -353,6 +367,73 @@ fn convert_expression(expression: &Expression) -> Result<ExpressionType> {
 
             Ok(ExpressionType::Other(result))
         }
+    }
+}
+
+/// Generates Rust code for a `__apply` intrinsic call produced by `pcl.RewriteApplies`.
+///
+/// The `__apply` call has the shape:
+///   `__apply(output_arg_1, ..., output_arg_N, anonymous_fn)`
+///
+/// For a single output argument this emits:
+///   `output_arg.map(|param| body)`
+///
+/// For N > 1 output arguments this emits:
+///   `pulumi_gestalt_rust::__private::output::combineN(o1, o2, ...).map(|(p1, p2, ...)| body)`
+fn convert_apply_call(function_call: &FunctionCallExpression) -> Result<String> {
+    let n_args = function_call.args.len();
+    if n_args < 2 {
+        bail!(
+            "__apply requires at least 2 arguments (outputs + callback), got {}",
+            n_args
+        );
+    }
+
+    // Last arg must be the AnonymousFunctionExpression (the callback).
+    let callback_arg = &function_call.args[n_args - 1];
+    let anon_fn = match &callback_arg.value.value {
+        expression::Value::AnonymousFunctionExpression(anon_fn) => anon_fn,
+        _ => bail!("Last argument of __apply must be an AnonymousFunctionExpression"),
+    };
+
+    let body = convert_expression(&anon_fn.body)
+        .context("Failed to convert __apply callback body")?
+        .to_string();
+
+    // All args except the last are the Output-typed expressions to apply over.
+    let output_args = &function_call.args[..n_args - 1];
+
+    if output_args.len() == 1 {
+        // Single output: output.map(|param| body)
+        let output_expr = convert_expression(&output_args[0].value)
+            .context("Failed to convert __apply output argument")?
+            .to_string();
+        let param = anon_fn
+            .parameters
+            .first()
+            .context("__apply callback must have at least one parameter")?;
+        Ok(format!("{}.map(|{}| {})", output_expr, param, body))
+    } else {
+        // Multiple outputs: combineN(o1, o2, ...).map(|(p1, p2, ...)| body)
+        let n = output_args.len();
+        if n > 16 {
+            bail!("__apply with more than 16 output arguments is not supported");
+        }
+        let mut output_exprs = Vec::new();
+        for a in output_args {
+            output_exprs.push(
+                convert_expression(&a.value)
+                    .context("Failed to convert __apply output argument")?
+                    .to_string(),
+            );
+        }
+        let combine_fn = format!("pulumi_gestalt_rust::__private::output::combine{}", n);
+        let combine_args = output_exprs.join(", ");
+        let params = anon_fn.parameters.join(", ");
+        Ok(format!(
+            "{}({}).map(|({})| {})",
+            combine_fn, combine_args, params, body
+        ))
     }
 }
 

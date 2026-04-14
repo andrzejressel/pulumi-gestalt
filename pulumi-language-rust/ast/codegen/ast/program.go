@@ -685,10 +685,40 @@ func transformProgram(pclNodes []pcl.Node, pclPackages []*schema.Package) (*astp
 	}, nil
 }
 
+// nameInfo implements pcl.NameInfo for RewriteApplies, returning parameter names unchanged.
+type nameInfo int
+
+func (nameInfo) Format(name string) string { return name }
+
+// rewriteAppliesInNodes rewrites output-dependent expressions in each node so that
+// any sub-expression that observes the resolved value of an Output is wrapped in a
+// call to the __apply intrinsic. This mirrors what Go/Node.js/Python/Java code
+// generators do via pcl.RewriteApplies before emitting code.
+func rewriteAppliesInNodes(nodes []pcl.Node) {
+	for _, node := range nodes {
+		switch n := node.(type) {
+		case *pcl.OutputVariable:
+			rewritten, _ := pcl.RewriteApplies(n.Value, nameInfo(0), false)
+			n.Value = rewritten
+		case *pcl.LocalVariable:
+			rewritten, _ := pcl.RewriteApplies(n.Definition.Value, nameInfo(0), false)
+			n.Definition.Value = rewritten
+		case *pcl.Resource:
+			for _, input := range n.Inputs {
+				rewritten, _ := pcl.RewriteApplies(input.Value, nameInfo(0), false)
+				input.Value = rewritten
+			}
+		}
+	}
+}
+
 func generateProtobufProgram(program *pcl.Program) (*astproto.PclProtobufProgram, error) {
 	pcl.MapProvidersAsResources(program)
 	// Linearize the nodes into an order appropriate for procedural code generation.
 	nodes := pcl.Linearize(program)
+	// Rewrite output-dependent expressions into __apply intrinsic calls so that
+	// the Rust code generator can emit proper .map() / combineN().map() calls.
+	rewriteAppliesInNodes(nodes)
 	packages, err := program.PackageSnapshots()
 	if err != nil {
 		return nil, err
