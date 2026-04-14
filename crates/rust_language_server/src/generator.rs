@@ -2,8 +2,8 @@ use crate::pcl_model::node::Value;
 use crate::pcl_model::r#type::Value::OutputType;
 use crate::pcl_model::{
     ConfigType, ConfigVariable, Expression, FunctionCallArgument, LocalVariable, Node, Operation,
-    OutputVariable, PclProtobufProgram, TemplateExpression, TupleConsExpression, expression,
-    literal_value_expression, traverse_index, traverser,
+    OutputVariable, PclProtobufProgram, PulumiBlock, TemplateExpression, TupleConsExpression,
+    expression, literal_value_expression, traverse_index, traverser,
 };
 use rootcause::prelude::ResultExt;
 use rootcause::{Result, bail};
@@ -72,6 +72,9 @@ fn convert_node(node: &Node) -> Result<String> {
             .context("Failed to convert config variable")?),
         Value::OutputVariable(output) => {
             Ok(convert_output_variable(output).context("Failed to convert output variable")?)
+        }
+        Value::PulumiBlock(pulumi_block) => {
+            Ok(convert_pulumi_block(pulumi_block).context("Failed to convert pulumi block")?)
         }
     }
 }
@@ -163,6 +166,22 @@ fn convert_output_variable(output_variable: &OutputVariable) -> Result<String> {
             output_variable.name, s
         )),
     }
+}
+
+fn convert_pulumi_block(pulumi_block: &PulumiBlock) -> Result<String> {
+    let version_expr = match &pulumi_block.required_version_range {
+        Some(expr) => expr,
+        None => bail!("PulumiBlock requires required_version_range"),
+    };
+    let version = convert_expression(version_expr)
+        .context("Failed to convert required_version_range")?
+        .to_string();
+    Ok(format!(
+        "ctx.require_pulumi_version(&{version}).unwrap_or_else(|e| {{ \
+         eprintln!(\"{{}}\" , e); \
+         std::process::exit(32); \
+         }});"
+    ))
 }
 
 fn convert_expression(expression: &Expression) -> Result<ExpressionType> {

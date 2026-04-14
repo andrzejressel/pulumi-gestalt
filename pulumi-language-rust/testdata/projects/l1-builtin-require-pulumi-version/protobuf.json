@@ -1,0 +1,31 @@
+{
+  "nodes": [
+    {
+      "configVariable": {
+        "name": "version",
+        "logicalName": "version",
+        "configType": {
+          "stringType": {}
+        }
+      }
+    },
+    {
+      "pulumiBlock": {
+        "required_version_range": {
+          "scopeTraversalExpression": {
+            "rootName": "version",
+            "traversal": {
+              "each": [
+                {
+                  "traverseRoot": {
+                    "name": "version"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

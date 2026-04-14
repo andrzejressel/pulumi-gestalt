@@ -15,6 +15,7 @@ pub struct Context<FunctionContext> {
     project: String,
     organization: String,
     root_directory: String,
+    engine_url: String,
 }
 
 pub struct Output<FunctionContext> {
@@ -71,7 +72,7 @@ impl<T> Context<T> {
 
         let pulumi_connector = RealPulumiConnector::new(
             pulumi_monitor_url,
-            pulumi_engine_url,
+            pulumi_engine_url.clone(),
             pulumi_project.clone(),
             pulumi_stack.clone(),
             in_preview,
@@ -90,6 +91,7 @@ impl<T> Context<T> {
             .project(pulumi_project)
             .organization(pulumi_organization)
             .root_directory(pulumi_root_directory)
+            .engine_url(pulumi_engine_url)
             .build()
     }
 
@@ -197,6 +199,24 @@ impl<T> Context<T> {
 
     pub fn get_root_directory(&self) -> &str {
         &self.root_directory
+    }
+
+    pub async fn require_pulumi_version(&self, version_range: &str) -> anyhow::Result<()> {
+        use pulumi_gestalt_proto::pulumi::pulumirpc::RequirePulumiVersionRequest;
+        use pulumi_gestalt_proto::pulumi::pulumirpc::engine_client::EngineClient;
+
+        let mut client = EngineClient::connect(format!("tcp://{}", self.engine_url))
+            .await
+            .context("Failed to connect to engine for require_pulumi_version")?;
+
+        client
+            .require_pulumi_version(RequirePulumiVersionRequest {
+                pulumi_version_range: version_range.to_string(),
+            })
+            .await
+            .context("Pulumi version requirement not satisfied")?;
+
+        Ok(())
     }
 }
 

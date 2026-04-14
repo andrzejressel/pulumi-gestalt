@@ -25,6 +25,7 @@ pub mod node {
         LocalVariable(super::LocalVariable),
         ConfigVariable(super::ConfigVariable),
         OutputVariable(super::OutputVariable),
+        PulumiBlock(super::PulumiBlock),
     }
 }
 
@@ -75,6 +76,11 @@ pub struct OutputVariable {
     pub name: String,
     pub logical_name: String,
     pub value: Expression,
+}
+
+#[derive(Clone, PartialEq, Debug)]
+pub struct PulumiBlock {
+    pub required_version_range: Option<Expression>,
 }
 
 #[derive(Clone, PartialEq, Debug)]
@@ -319,6 +325,7 @@ fn map_node_value(value: pb::node::Value) -> node::Value {
         pb::node::Value::OutputVariable(output) => {
             node::Value::OutputVariable(map_output_variable(output))
         }
+        pb::node::Value::PulumiBlock(block) => node::Value::PulumiBlock(map_pulumi_block(block)),
     }
 }
 
@@ -378,6 +385,12 @@ fn map_output_variable(output: pb::OutputVariable) -> OutputVariable {
         name: output.name,
         logical_name: output.logical_name,
         value: map_expression(required(output.value, "output_variable.value")),
+    }
+}
+
+fn map_pulumi_block(block: pb::PulumiBlock) -> PulumiBlock {
+    PulumiBlock {
+        required_version_range: block.required_version_range.map(map_expression),
     }
 }
 

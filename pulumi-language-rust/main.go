@@ -13,6 +13,7 @@ import (
 	"path"
 	"path/filepath"
 	"strings"
+	"syscall"
 	"time"
 
 	"github.com/andrzejressel/pulumi-gestalt/pulumi-language-rust/codegen/rust"
@@ -175,6 +176,15 @@ func (host *rustLanguageHost) Run(_ context.Context, req *pulumirpc.RunRequest) 
 		os.Stderr.Write(stderrBuf.Bytes())
 
 		logging.V(5).Infof("InstallDependencies(Directory=%s): failed", req.Info.ProgramDirectory) //nolint:staticcheck
+
+		// Exit code 32 signals a bail (e.g. require_pulumi_version failed).
+		if exiterr, ok := err.(*exec.ExitError); ok {
+			if status, stok := exiterr.Sys().(syscall.WaitStatus); stok {
+				if status.ExitStatus() == 32 {
+					return &pulumirpc.RunResponse{Bail: true}, nil
+				}
+			}
+		}
 		return nil, err
 	}
 

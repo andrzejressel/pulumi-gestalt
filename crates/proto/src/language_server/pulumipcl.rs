@@ -15,7 +15,7 @@ pub struct PluginReference {
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Node {
-    #[prost(oneof = "node::Value", tags = "1, 2, 3, 4")]
+    #[prost(oneof = "node::Value", tags = "1, 2, 3, 4, 5")]
     pub value: ::core::option::Option<node::Value>,
 }
 /// Nested message and enum types in `Node`.
@@ -30,7 +30,14 @@ pub mod node {
         ConfigVariable(super::ConfigVariable),
         #[prost(message, tag = "4")]
         OutputVariable(super::OutputVariable),
+        #[prost(message, tag = "5")]
+        PulumiBlock(super::PulumiBlock),
     }
+}
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct PulumiBlock {
+    #[prost(message, optional, tag = "1")]
+    pub required_version_range: ::core::option::Option<Expression>,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Resource {

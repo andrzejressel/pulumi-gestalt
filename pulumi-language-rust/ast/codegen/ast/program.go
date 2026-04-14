@@ -582,6 +582,17 @@ func transformConfigType(variableType model.Type) (*astproto.ConfigType, error) 
 	}
 }
 
+func transformPulumiBlock(block *pcl.PulumiBlock) (*astproto.PulumiBlock, error) {
+	requiredVersionRange, err := transformExpression(block.RequiredVersion)
+	if err != nil {
+		return nil, fmt.Errorf("could not transform pulumi block required version: %w", err)
+	}
+
+	return &astproto.PulumiBlock{
+		RequiredVersionRange: requiredVersionRange,
+	}, nil
+}
+
 func transformConfigVariable(variable *pcl.ConfigVariable) (*astproto.ConfigVariable, error) {
 	defaultValue, err := transformExpression(variable.DefaultValue)
 	if err != nil {
@@ -640,6 +651,14 @@ func transformProgram(pclNodes []pcl.Node, pclPackages []*schema.Package) (*astp
 			}
 			transformedNode = &astproto.Node{
 				Value: &astproto.Node_ConfigVariable{ConfigVariable: transformedVariable},
+			}
+		case *pcl.PulumiBlock:
+			transformedPulumiBlock, err := transformPulumiBlock(node)
+			if err != nil {
+				return nil, err
+			}
+			transformedNode = &astproto.Node{
+				Value: &astproto.Node_PulumiBlock{PulumiBlock: transformedPulumiBlock},
 			}
 		default:
 			return nil, fmt.Errorf("unknown node type type: %v", node.Type())
