@@ -23,9 +23,8 @@ Use this playbook when you want to unskip a language conformance test in
 6. Regenerate/accept conformance snapshots for the single test:
    `PULUMI_ACCEPT=1 go test ./... -run 'TestLanguage/$1' -count=1`
    from `pulumi-language-rust`.
-7. Run formatting and checks:
-   - `just fmt`
-   - `just check`
+7. Regenerate Github Actions and reformat code:
+   - `just regenerator fmt`
    - Optional targeted re-run:
      `go test ./... -run 'TestLanguage/$1' -count=1`
 8. Create branch called $1 and push changes to it.
