@@ -177,10 +177,7 @@ fn convert_pulumi_block(pulumi_block: &PulumiBlock) -> Result<String> {
         .context("Failed to convert required_version_range")?
         .to_string();
     Ok(format!(
-        "ctx.require_pulumi_version(&{version}).unwrap_or_else(|e| {{ \
-         eprintln!(\"{{}}\" , e); \
-         std::process::exit(32); \
-         }});"
+        "ctx.require_pulumi_version(&{version}).expect(\"Failed to require Pulumi version\");"
     ))
 }
 
