@@ -1,4 +1,5 @@
 use crate::{FieldName, NodeValue, ResourceFields};
+use anyhow;
 use async_trait::async_trait;
 use bon::Builder;
 use std::collections::HashMap;
@@ -12,6 +13,7 @@ pub trait PulumiConnector: Send + Sync {
     async fn register_resource(&self, req: RegisterResourceRequest) -> RegisterResourceResult;
     async fn resource_invoke(&self, req: ResourceInvokeRequest) -> ResourceInvokeResult;
     async fn register_outputs(&self, req: RegisterOutputsRequest) -> ();
+    async fn require_pulumi_version(&self, version_range: &str) -> anyhow::Result<()>;
 }
 
 #[derive(Builder)]

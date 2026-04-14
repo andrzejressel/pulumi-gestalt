@@ -20,6 +20,7 @@ use tonic::transport::Channel;
 
 pub struct RealPulumiConnector {
     resource_monitor_client: ResourceMonitorClient<Channel>,
+    engine_url: String,
     root_resource: String,
     in_preview: bool,
 }
@@ -46,6 +47,7 @@ impl RealPulumiConnector {
 
         let s = Self {
             resource_monitor_client,
+            engine_url,
             root_resource,
             in_preview,
         };
@@ -228,6 +230,24 @@ impl PulumiConnector for RealPulumiConnector {
             .await
             .context("Failed to register resource outputs")
             .unwrap();
+    }
+
+    async fn require_pulumi_version(&self, version_range: &str) -> anyhow::Result<()> {
+        use pulumi_gestalt_proto::pulumi::pulumirpc::RequirePulumiVersionRequest;
+        use pulumi_gestalt_proto::pulumi::pulumirpc::engine_client::EngineClient;
+
+        let mut client = EngineClient::connect(format!("tcp://{}", self.engine_url))
+            .await
+            .context("Failed to connect to engine for require_pulumi_version")?;
+
+        client
+            .require_pulumi_version(RequirePulumiVersionRequest {
+                pulumi_version_range: version_range.to_string(),
+            })
+            .await
+            .context("Pulumi version requirement not satisfied")?;
+
+        Ok(())
     }
 }
 
