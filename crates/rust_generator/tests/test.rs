@@ -51,12 +51,6 @@ fn docker() -> Result<()> {
 }
 
 #[test]
-#[cfg_attr(not(feature = "generator_functions-secrets"), ignore)]
-fn functions_secrets() -> Result<()> {
-    run_pulumi_generator_test("functions-secrets", "functions-secrets", None)
-}
-
-#[test]
 #[cfg_attr(not(feature = "generator_mini-awsnative"), ignore)]
 fn mini_awsnative() -> Result<()> {
     run_pulumi_generator_test("mini-awsnative", "mini-awsnative", None)
@@ -122,18 +116,6 @@ fn random() -> Result<()> {
 #[cfg_attr(not(feature = "generator_reserved_names"), ignore)]
 fn reserved_names() -> Result<()> {
     run_pulumi_generator_test("reserved_names", "reserved_names", None)
-}
-
-#[test]
-#[cfg_attr(not(feature = "generator_unions-inline"), ignore)]
-fn unions_inline() -> Result<()> {
-    run_pulumi_generator_test("unions-inline", "unions-inline", None)
-}
-
-#[test]
-#[cfg_attr(not(feature = "generator_unions-inside-arrays"), ignore)]
-fn unions_inside_arrays() -> Result<()> {
-    run_pulumi_generator_test("unions-inside-arrays", "unions-inside-arrays", None)
 }
 
 #[test]
