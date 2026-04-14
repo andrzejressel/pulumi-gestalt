@@ -175,7 +175,6 @@ func (host *rustLanguageHost) Run(_ context.Context, req *pulumirpc.RunRequest) 
 		os.Stderr.Write(stderrBuf.Bytes())
 
 		logging.V(5).Infof("InstallDependencies(Directory=%s): failed", req.Info.ProgramDirectory) //nolint:staticcheck
-
 		return nil, err
 	}
 
