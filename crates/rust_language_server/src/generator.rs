@@ -240,7 +240,8 @@ fn convert_expression(expression: &Expression) -> Result<ExpressionType> {
             bail!("IndexExpression not yet supported")
         }
         expression::Value::ObjectConsExpression(_) => {
-            bail!("ObjectConsExpression not yet supported")
+            Ok(ExpressionType::EmptyList)
+            // bail!("ObjectConsExpression not yet supported")
         }
         expression::Value::TupleConsExpression(TupleConsExpression { items }) => {
             let converted_items = items

@@ -44,6 +44,9 @@
           "type": {
             "numberType": {}
           }
+        },
+        "expression_type": {
+          "dynamicType": {}
         }
       }
     },
@@ -99,6 +102,9 @@
           "type": {
             "numberType": {}
           }
+        },
+        "expression_type": {
+          "dynamicType": {}
         }
       }
     },
@@ -146,6 +152,9 @@
           "type": {
             "numberType": {}
           }
+        },
+        "expression_type": {
+          "dynamicType": {}
         }
       }
     },
@@ -201,6 +210,9 @@
           "type": {
             "numberType": {}
           }
+        },
+        "expression_type": {
+          "dynamicType": {}
         }
       }
     },
@@ -250,6 +262,9 @@
           "type": {
             "stringType": {}
           }
+        },
+        "expression_type": {
+          "dynamicType": {}
         }
       }
     },
@@ -299,6 +314,9 @@
           "type": {
             "stringType": {}
           }
+        },
+        "expression_type": {
+          "dynamicType": {}
         }
       }
     },
@@ -355,6 +373,9 @@
           "type": {
             "boolType": {}
           }
+        },
+        "expression_type": {
+          "dynamicType": {}
         }
       }
     },
@@ -395,6 +416,9 @@
           "type": {
             "boolType": {}
           }
+        },
+        "expression_type": {
+          "dynamicType": {}
         }
       }
     }

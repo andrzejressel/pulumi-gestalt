@@ -11,6 +11,9 @@
           "type": {
             "boolType": {}
           }
+        },
+        "expression_type": {
+          "boolType": {}
         }
       }
     },
@@ -25,6 +28,9 @@
           "type": {
             "boolType": {}
           }
+        },
+        "expression_type": {
+          "boolType": {}
         }
       }
     }

@@ -1,0 +1,159 @@
+{
+  "nodes": [
+    {
+      "outputVariable": {
+        "name": "empty",
+        "logicalName": "empty",
+        "value": {
+          "objectConsExpression": {}
+        },
+        "expression_type": {
+          "dynamicType": {}
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "strings",
+        "logicalName": "strings",
+        "value": {
+          "objectConsExpression": {
+            "properties": {
+              "farewell": {
+                "templateExpression": {
+                  "parts": [
+                    {
+                      "literalValueExpression": {
+                        "stringValue": "Goodbye, world!"
+                      },
+                      "type": {
+                        "stringType": {}
+                      }
+                    }
+                  ]
+                },
+                "type": {
+                  "stringType": {}
+                }
+              },
+              "greeting": {
+                "templateExpression": {
+                  "parts": [
+                    {
+                      "literalValueExpression": {
+                        "stringValue": "Hello, world!"
+                      },
+                      "type": {
+                        "stringType": {}
+                      }
+                    }
+                  ]
+                },
+                "type": {
+                  "stringType": {}
+                }
+              }
+            }
+          }
+        },
+        "expression_type": {
+          "dynamicType": {}
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "numbers",
+        "logicalName": "numbers",
+        "value": {
+          "objectConsExpression": {
+            "properties": {
+              "1": {
+                "literalValueExpression": {
+                  "numberValue": 1
+                },
+                "type": {
+                  "intType": {}
+                }
+              },
+              "2": {
+                "literalValueExpression": {
+                  "numberValue": 2
+                },
+                "type": {
+                  "intType": {}
+                }
+              }
+            }
+          }
+        },
+        "expression_type": {
+          "dynamicType": {}
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "keys",
+        "logicalName": "keys",
+        "value": {
+          "objectConsExpression": {
+            "properties": {
+              "MYKEY": {
+                "literalValueExpression": {
+                  "numberValue": 6
+                },
+                "type": {
+                  "intType": {}
+                }
+              },
+              "MY_KEY": {
+                "literalValueExpression": {
+                  "numberValue": 4
+                },
+                "type": {
+                  "intType": {}
+                }
+              },
+              "my-key": {
+                "literalValueExpression": {
+                  "numberValue": 2
+                },
+                "type": {
+                  "intType": {}
+                }
+              },
+              "my.key": {
+                "literalValueExpression": {
+                  "numberValue": 1
+                },
+                "type": {
+                  "intType": {}
+                }
+              },
+              "my_key": {
+                "literalValueExpression": {
+                  "numberValue": 3
+                },
+                "type": {
+                  "intType": {}
+                }
+              },
+              "mykey": {
+                "literalValueExpression": {
+                  "numberValue": 5
+                },
+                "type": {
+                  "intType": {}
+                }
+              }
+            }
+          }
+        },
+        "expression_type": {
+          "dynamicType": {}
+        }
+      }
+    }
+  ]
+}

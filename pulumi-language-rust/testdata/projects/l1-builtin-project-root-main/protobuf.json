@@ -11,6 +11,9 @@
           "type": {
             "stringType": {}
           }
+        },
+        "expression_type": {
+          "dynamicType": {}
         }
       }
     },
@@ -25,6 +28,9 @@
           "type": {
             "stringType": {}
           }
+        },
+        "expression_type": {
+          "dynamicType": {}
         }
       }
     }

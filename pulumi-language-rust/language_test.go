@@ -168,7 +168,6 @@ var expectedFailures = map[string]string{
 	"l1-config-types-object":                       "https://github.com/andrzejressel/pulumi-gestalt/issues/2037",
 	"l1-elide-index":                               "https://github.com/andrzejressel/pulumi-gestalt/issues/2062",
 	"l1-keyword-overlap":                           "https://github.com/andrzejressel/pulumi-gestalt/issues/2063",
-	"l1-output-map":                                "https://github.com/andrzejressel/pulumi-gestalt/issues/2064",
 	"l1-output-null":                               "https://github.com/andrzejressel/pulumi-gestalt/issues/2065",
 	"l1-proxy-index":                               "https://github.com/andrzejressel/pulumi-gestalt/issues/2066",
 	"l1-stack-reference":                           "https://github.com/andrzejressel/pulumi-gestalt/issues/2067",
