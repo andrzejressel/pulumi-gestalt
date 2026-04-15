@@ -27,13 +27,22 @@
                     }
                   ]
                 }
+              },
+              "type": {
+                "numberType": {}
               }
             },
             "right": {
               "literalValueExpression": {
                 "numberValue": 1.25
+              },
+              "type": {
+                "numberType": {}
               }
             }
+          },
+          "type": {
+            "numberType": {}
           }
         }
       }
@@ -48,6 +57,9 @@
         "defaultValue": {
           "literalValueExpression": {
             "numberValue": 41.5
+          },
+          "type": {
+            "numberType": {}
           }
         }
       }
@@ -70,13 +82,22 @@
                     }
                   ]
                 }
+              },
+              "type": {
+                "numberType": {}
               }
             },
             "right": {
               "literalValueExpression": {
                 "numberValue": 1.2
+              },
+              "type": {
+                "numberType": {}
               }
             }
+          },
+          "type": {
+            "numberType": {}
           }
         }
       }
@@ -108,13 +129,22 @@
                     }
                   ]
                 }
+              },
+              "type": {
+                "intType": {}
               }
             },
             "right": {
               "literalValueExpression": {
                 "numberValue": 4
+              },
+              "type": {
+                "intType": {}
               }
             }
+          },
+          "type": {
+            "numberType": {}
           }
         }
       }
@@ -129,6 +159,9 @@
         "defaultValue": {
           "literalValueExpression": {
             "numberValue": 1
+          },
+          "type": {
+            "intType": {}
           }
         }
       }
@@ -151,13 +184,22 @@
                     }
                   ]
                 }
+              },
+              "type": {
+                "intType": {}
               }
             },
             "right": {
               "literalValueExpression": {
                 "numberValue": 2
+              },
+              "type": {
+                "intType": {}
               }
             }
+          },
+          "type": {
+            "numberType": {}
           }
         }
       }
@@ -190,14 +232,23 @@
                       }
                     ]
                   }
+                },
+                "type": {
+                  "stringType": {}
                 }
               },
               {
                 "literalValueExpression": {
                   "stringValue": " World"
+                },
+                "type": {
+                  "stringType": {}
                 }
               }
             ]
+          },
+          "type": {
+            "stringType": {}
           }
         }
       }
@@ -215,9 +266,15 @@
               {
                 "literalValueExpression": {
                   "stringValue": "defaultStringValue"
+                },
+                "type": {
+                  "stringType": {}
                 }
               }
             ]
+          },
+          "type": {
+            "stringType": {}
           }
         }
       }
@@ -238,6 +295,9 @@
                 }
               ]
             }
+          },
+          "type": {
+            "stringType": {}
           }
         }
       }
@@ -273,15 +333,27 @@
                         }
                       ]
                     }
+                  },
+                  "type": {
+                    "boolType": {}
                   }
                 }
+              },
+              "type": {
+                "boolType": {}
               }
             },
             "right": {
               "literalValueExpression": {
                 "boolValue": true
+              },
+              "type": {
+                "boolType": {}
               }
             }
+          },
+          "type": {
+            "boolType": {}
           }
         }
       }
@@ -296,6 +368,9 @@
         "defaultValue": {
           "literalValueExpression": {
             "boolValue": false
+          },
+          "type": {
+            "boolType": {}
           }
         }
       }
@@ -316,6 +391,9 @@
                 }
               ]
             }
+          },
+          "type": {
+            "boolType": {}
           }
         }
       }

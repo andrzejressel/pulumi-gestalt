@@ -122,6 +122,38 @@ pub mod config_type {
     }
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
+pub struct TupleExpressionType {
+    #[prost(message, repeated, tag = "1")]
+    pub element_types: ::prost::alloc::vec::Vec<ExpressionType>,
+}
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ExpressionType {
+    #[prost(oneof = "expression_type::Value", tags = "1, 2, 3, 4, 5, 6, 7, 8")]
+    pub value: ::core::option::Option<expression_type::Value>,
+}
+/// Nested message and enum types in `ExpressionType`.
+pub mod expression_type {
+    #[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum Value {
+        #[prost(message, tag = "1")]
+        StringType(super::Empty),
+        #[prost(message, tag = "2")]
+        NumberType(super::Empty),
+        #[prost(message, tag = "3")]
+        IntType(super::Empty),
+        #[prost(message, tag = "4")]
+        BoolType(super::Empty),
+        #[prost(message, tag = "5")]
+        ListType(::prost::alloc::boxed::Box<super::ExpressionType>),
+        #[prost(message, tag = "6")]
+        MapType(::prost::alloc::boxed::Box<super::ExpressionType>),
+        #[prost(message, tag = "7")]
+        OutputType(::prost::alloc::boxed::Box<super::ExpressionType>),
+        #[prost(message, tag = "8")]
+        TupleType(super::TupleExpressionType),
+    }
+}
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct OutputVariable {
     #[prost(string, tag = "1")]
     pub name: ::prost::alloc::string::String,
@@ -132,10 +164,9 @@ pub struct OutputVariable {
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Expression {
-    #[prost(
-        oneof = "expression::Value",
-        tags = "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12"
-    )]
+    #[prost(message, optional, tag = "13")]
+    pub r#type: ::core::option::Option<ExpressionType>,
+    #[prost(oneof = "expression::Value", tags = "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12")]
     pub value: ::core::option::Option<expression::Value>,
 }
 /// Nested message and enum types in `Expression`.
@@ -155,11 +186,15 @@ pub mod expression {
         #[prost(message, tag = "6")]
         FunctionCallExpression(super::FunctionCallExpression),
         #[prost(message, tag = "7")]
-        RelativeTraversalExpression(::prost::alloc::boxed::Box<super::RelativeTraversalExpression>),
+        RelativeTraversalExpression(
+            ::prost::alloc::boxed::Box<super::RelativeTraversalExpression>,
+        ),
         #[prost(message, tag = "8")]
         ScopeTraversalExpression(super::ScopeTraversalExpression),
         #[prost(message, tag = "9")]
-        AnonymousFunctionExpression(::prost::alloc::boxed::Box<super::AnonymousFunctionExpression>),
+        AnonymousFunctionExpression(
+            ::prost::alloc::boxed::Box<super::AnonymousFunctionExpression>,
+        ),
         #[prost(message, tag = "10")]
         ConditionalExpression(::prost::alloc::boxed::Box<super::ConditionalExpression>),
         #[prost(message, tag = "11")]
@@ -202,7 +237,10 @@ pub struct IndexExpression {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ObjectConsExpression {
     #[prost(map = "string, message", tag = "1")]
-    pub properties: ::std::collections::HashMap<::prost::alloc::string::String, Expression>,
+    pub properties: ::std::collections::HashMap<
+        ::prost::alloc::string::String,
+        Expression,
+    >,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct TupleConsExpression {

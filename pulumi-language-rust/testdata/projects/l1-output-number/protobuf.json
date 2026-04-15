@@ -7,6 +7,9 @@
         "value": {
           "literalValueExpression": {
             "numberValue": 0
+          },
+          "type": {
+            "intType": {}
           }
         }
       }
@@ -18,6 +21,9 @@
         "value": {
           "literalValueExpression": {
             "numberValue": 1
+          },
+          "type": {
+            "intType": {}
           }
         }
       }
@@ -29,6 +35,9 @@
         "value": {
           "literalValueExpression": {
             "numberValue": 2.718
+          },
+          "type": {
+            "numberType": {}
           }
         }
       }
@@ -40,6 +49,9 @@
         "value": {
           "literalValueExpression": {
             "numberValue": -2147483648
+          },
+          "type": {
+            "intType": {}
           }
         }
       }
@@ -51,6 +63,9 @@
         "value": {
           "literalValueExpression": {
             "numberValue": 1.7976931348623157e+308
+          },
+          "type": {
+            "numberType": {}
           }
         }
       }
@@ -62,6 +77,9 @@
         "value": {
           "literalValueExpression": {
             "numberValue": 5e-324
+          },
+          "type": {
+            "numberType": {}
           }
         }
       }

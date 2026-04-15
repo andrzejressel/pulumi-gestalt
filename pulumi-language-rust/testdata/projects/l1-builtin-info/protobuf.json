@@ -7,6 +7,9 @@
         "value": {
           "functionCallExpression": {
             "name": "stack"
+          },
+          "type": {
+            "stringType": {}
           }
         }
       }
@@ -18,6 +21,9 @@
         "value": {
           "functionCallExpression": {
             "name": "project"
+          },
+          "type": {
+            "stringType": {}
           }
         }
       }
@@ -29,6 +35,9 @@
         "value": {
           "functionCallExpression": {
             "name": "organization"
+          },
+          "type": {
+            "stringType": {}
           }
         }
       }

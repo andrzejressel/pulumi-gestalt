@@ -86,6 +86,7 @@ pub struct PulumiBlock {
 #[derive(Clone, PartialEq, Debug)]
 pub struct Expression {
     pub value: expression::Value,
+    pub expression_type: Option<ExpressionType>,
 }
 
 pub mod expression {
@@ -270,6 +271,18 @@ pub enum ConfigType {
     Map(Box<ConfigType>),
 }
 
+#[derive(Clone, Debug, PartialEq, Eq, Hash, PartialOrd, Ord)]
+pub enum ExpressionType {
+    String,
+    Number,
+    Int,
+    Bool,
+    List(Box<ExpressionType>),
+    Map(Box<ExpressionType>),
+    Output(Box<ExpressionType>),
+    Tuple(Vec<ExpressionType>),
+}
+
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord)]
 pub enum Operation {
     Add,
@@ -397,6 +410,7 @@ fn map_pulumi_block(block: pb::PulumiBlock) -> PulumiBlock {
 fn map_expression(expression: pb::Expression) -> Expression {
     Expression {
         value: map_expression_value(required(expression.value, "expression.value")),
+        expression_type: expression.r#type.map(map_expression_type),
     }
 }
 
@@ -663,6 +677,30 @@ fn map_config_type(value: pb::ConfigType) -> ConfigType {
         pb::config_type::Value::BoolType(_) => ConfigType::Bool,
         pb::config_type::Value::ListType(v) => ConfigType::List(Box::new(map_config_type(*v))),
         pb::config_type::Value::MapType(v) => ConfigType::Map(Box::new(map_config_type(*v))),
+    }
+}
+
+fn map_expression_type(value: pb::ExpressionType) -> ExpressionType {
+    match required(value.value, "expression_type.value") {
+        pb::expression_type::Value::StringType(_) => ExpressionType::String,
+        pb::expression_type::Value::NumberType(_) => ExpressionType::Number,
+        pb::expression_type::Value::IntType(_) => ExpressionType::Int,
+        pb::expression_type::Value::BoolType(_) => ExpressionType::Bool,
+        pb::expression_type::Value::ListType(v) => {
+            ExpressionType::List(Box::new(map_expression_type(*v)))
+        }
+        pb::expression_type::Value::MapType(v) => {
+            ExpressionType::Map(Box::new(map_expression_type(*v)))
+        }
+        pb::expression_type::Value::OutputType(v) => {
+            ExpressionType::Output(Box::new(map_expression_type(*v)))
+        }
+        pb::expression_type::Value::TupleType(v) => ExpressionType::Tuple(
+            v.element_types
+                .into_iter()
+                .map(map_expression_type)
+                .collect(),
+        ),
     }
 }
 

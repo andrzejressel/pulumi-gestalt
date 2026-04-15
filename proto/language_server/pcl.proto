@@ -76,6 +76,23 @@ message ConfigType {
   }
 }
 
+message TupleExpressionType {
+  repeated ExpressionType element_types = 1;
+}
+
+message ExpressionType {
+  oneof value {
+    Empty stringType = 1;
+    Empty numberType = 2;
+    Empty intType = 3;
+    Empty boolType = 4;
+    ExpressionType listType = 5;
+    ExpressionType mapType = 6;
+    ExpressionType outputType = 7;
+    TupleExpressionType tupleType = 8;
+  }
+}
+
 message OutputVariable {
   string name = 1;
   string logicalName = 2;
@@ -97,6 +114,7 @@ message Expression {
     BinaryOpExpression binaryOpExpression = 11;
     UnaryOpExpression unaryOpExpression = 12;
   }
+  optional ExpressionType type = 13;
 }
 
 message LiteralValueExpression {

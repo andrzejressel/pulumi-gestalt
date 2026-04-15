@@ -7,6 +7,9 @@
         "value": {
           "literalValueExpression": {
             "boolValue": true
+          },
+          "type": {
+            "boolType": {}
           }
         }
       }
