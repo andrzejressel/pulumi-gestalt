@@ -16,6 +16,7 @@
     "l1-main",
     "l1-output-array",
     "l1-output-bool",
+    "l1-output-map",
     "l1-output-number",
     "l1-output-string"
   ]

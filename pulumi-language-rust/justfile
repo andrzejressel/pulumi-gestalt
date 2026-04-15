@@ -21,6 +21,7 @@ fmt:
     go fmt ./...
 
 test:
+    just build-rust-bridge
     go test -v -count=1 ./...
 
 test-local $LOCAL_TEST="1":
