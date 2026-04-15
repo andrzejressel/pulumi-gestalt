@@ -30,6 +30,9 @@
                         }
                       ]
                     }
+                  },
+                  "type": {
+                    "stringType": {}
                   }
                 },
                 "type": {
@@ -37,6 +40,9 @@
                 }
               }
             ]
+          },
+          "type": {
+            "stringType": {}
           }
         }
       }
@@ -57,6 +63,9 @@
                 }
               ]
             }
+          },
+          "type": {
+            "stringType": {}
           }
         }
       }

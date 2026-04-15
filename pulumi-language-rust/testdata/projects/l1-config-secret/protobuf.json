@@ -26,6 +26,11 @@
                 }
               ]
             }
+          },
+          "type": {
+            "outputType": {
+              "numberType": {}
+            }
           }
         }
       }
@@ -50,6 +55,11 @@
                           }
                         }
                       ]
+                    }
+                  },
+                  "type": {
+                    "outputType": {
+                      "numberType": {}
                     }
                   }
                 },
@@ -76,13 +86,22 @@
                                 }
                               ]
                             }
+                          },
+                          "type": {
+                            "numberType": {}
                           }
                         },
                         "right": {
                           "literalValueExpression": {
                             "numberValue": 1.25
+                          },
+                          "type": {
+                            "numberType": {}
                           }
                         }
+                      },
+                      "type": {
+                        "numberType": {}
                       }
                     },
                     "parameters": [
@@ -95,6 +114,11 @@
                 }
               }
             ]
+          },
+          "type": {
+            "outputType": {
+              "numberType": {}
+            }
           }
         }
       }

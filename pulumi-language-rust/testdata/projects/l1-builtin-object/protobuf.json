@@ -32,6 +32,11 @@
                         }
                       ]
                     }
+                  },
+                  "type": {
+                    "mapType": {
+                      "stringType": {}
+                    }
                   }
                 },
                 "type": {
@@ -64,6 +69,11 @@
                         }
                       ]
                     }
+                  },
+                  "type": {
+                    "mapType": {
+                      "stringType": {}
+                    }
                   }
                 },
                 "type": {
@@ -77,9 +87,15 @@
                       {
                         "literalValueExpression": {
                           "stringValue": "keyPresent"
+                        },
+                        "type": {
+                          "stringType": {}
                         }
                       }
                     ]
+                  },
+                  "type": {
+                    "stringType": {}
                   }
                 },
                 "type": {
@@ -93,9 +109,15 @@
                       {
                         "literalValueExpression": {
                           "stringValue": "default"
+                        },
+                        "type": {
+                          "stringType": {}
                         }
                       }
                     ]
+                  },
+                  "type": {
+                    "stringType": {}
                   }
                 },
                 "type": {
@@ -103,6 +125,9 @@
                 }
               }
             ]
+          },
+          "type": {
+            "stringType": {}
           }
         }
       }
@@ -128,6 +153,11 @@
                         }
                       ]
                     }
+                  },
+                  "type": {
+                    "mapType": {
+                      "stringType": {}
+                    }
                   }
                 },
                 "type": {
@@ -141,9 +171,15 @@
                       {
                         "literalValueExpression": {
                           "stringValue": "keyMissing"
+                        },
+                        "type": {
+                          "stringType": {}
                         }
                       }
                     ]
+                  },
+                  "type": {
+                    "stringType": {}
                   }
                 },
                 "type": {
@@ -157,9 +193,15 @@
                       {
                         "literalValueExpression": {
                           "stringValue": "default"
+                        },
+                        "type": {
+                          "stringType": {}
                         }
                       }
                     ]
+                  },
+                  "type": {
+                    "stringType": {}
                   }
                 },
                 "type": {
@@ -167,6 +209,9 @@
                 }
               }
             ]
+          },
+          "type": {
+            "stringType": {}
           }
         }
       }

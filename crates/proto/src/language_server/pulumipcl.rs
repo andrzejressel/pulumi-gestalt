@@ -122,6 +122,38 @@ pub mod config_type {
     }
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
+pub struct TupleExpressionType {
+    #[prost(message, repeated, tag = "1")]
+    pub element_types: ::prost::alloc::vec::Vec<ExpressionType>,
+}
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ExpressionType {
+    #[prost(oneof = "expression_type::Value", tags = "1, 2, 3, 4, 5, 6, 7, 8")]
+    pub value: ::core::option::Option<expression_type::Value>,
+}
+/// Nested message and enum types in `ExpressionType`.
+pub mod expression_type {
+    #[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum Value {
+        #[prost(message, tag = "1")]
+        StringType(super::Empty),
+        #[prost(message, tag = "2")]
+        NumberType(super::Empty),
+        #[prost(message, tag = "3")]
+        IntType(super::Empty),
+        #[prost(message, tag = "4")]
+        BoolType(super::Empty),
+        #[prost(message, tag = "5")]
+        ListType(::prost::alloc::boxed::Box<super::ExpressionType>),
+        #[prost(message, tag = "6")]
+        MapType(::prost::alloc::boxed::Box<super::ExpressionType>),
+        #[prost(message, tag = "7")]
+        OutputType(::prost::alloc::boxed::Box<super::ExpressionType>),
+        #[prost(message, tag = "8")]
+        TupleType(super::TupleExpressionType),
+    }
+}
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct OutputVariable {
     #[prost(string, tag = "1")]
     pub name: ::prost::alloc::string::String,
@@ -132,6 +164,8 @@ pub struct OutputVariable {
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Expression {
+    #[prost(message, optional, tag = "13")]
+    pub r#type: ::core::option::Option<ExpressionType>,
     #[prost(
         oneof = "expression::Value",
         tags = "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12"

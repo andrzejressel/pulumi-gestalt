@@ -52,6 +52,11 @@
                         }
                       ]
                     }
+                  },
+                  "type": {
+                    "listType": {
+                      "stringType": {}
+                    }
                   }
                 },
                 "type": {
@@ -62,6 +67,9 @@
                 "value": {
                   "literalValueExpression": {
                     "numberValue": 1
+                  },
+                  "type": {
+                    "intType": {}
                   }
                 },
                 "type": {
@@ -69,6 +77,9 @@
                 }
               }
             ]
+          },
+          "type": {
+            "stringType": {}
           }
         }
       }
@@ -94,6 +105,11 @@
                         }
                       ]
                     }
+                  },
+                  "type": {
+                    "listType": {
+                      "stringType": {}
+                    }
                   }
                 },
                 "type": {
@@ -104,6 +120,9 @@
                 "value": {
                   "literalValueExpression": {
                     "numberValue": 2
+                  },
+                  "type": {
+                    "intType": {}
                   }
                 },
                 "type": {
@@ -111,6 +130,9 @@
                 }
               }
             ]
+          },
+          "type": {
+            "stringType": {}
           }
         }
       }
@@ -130,9 +152,15 @@
                       {
                         "literalValueExpression": {
                           "stringValue": "|"
+                        },
+                        "type": {
+                          "stringType": {}
                         }
                       }
                     ]
+                  },
+                  "type": {
+                    "stringType": {}
                   }
                 },
                 "type": {
@@ -152,6 +180,11 @@
                         }
                       ]
                     }
+                  },
+                  "type": {
+                    "listType": {
+                      "stringType": {}
+                    }
                   }
                 },
                 "type": {
@@ -159,6 +192,9 @@
                 }
               }
             ]
+          },
+          "type": {
+            "stringType": {}
           }
         }
       }
@@ -184,6 +220,11 @@
                         }
                       ]
                     }
+                  },
+                  "type": {
+                    "listType": {
+                      "stringType": {}
+                    }
                   }
                 },
                 "type": {
@@ -191,6 +232,9 @@
                 }
               }
             ]
+          },
+          "type": {
+            "intType": {}
           }
         }
       }
@@ -210,9 +254,15 @@
                       {
                         "literalValueExpression": {
                           "stringValue": "-"
+                        },
+                        "type": {
+                          "stringType": {}
                         }
                       }
                     ]
+                  },
+                  "type": {
+                    "stringType": {}
                   }
                 },
                 "type": {
@@ -232,6 +282,9 @@
                         }
                       ]
                     }
+                  },
+                  "type": {
+                    "stringType": {}
                   }
                 },
                 "type": {
@@ -239,6 +292,11 @@
                 }
               }
             ]
+          },
+          "type": {
+            "listType": {
+              "stringType": {}
+            }
           }
         }
       }
@@ -267,6 +325,11 @@
                               }
                             ]
                           }
+                        },
+                        "type": {
+                          "listType": {
+                            "stringType": {}
+                          }
                         }
                       },
                       "type": {
@@ -277,6 +340,9 @@
                 }
               }
             ]
+          },
+          "type": {
+            "tupleType": {}
           }
         }
       }

@@ -35,6 +35,11 @@
                 }
               ]
             }
+          },
+          "type": {
+            "outputType": {
+              "stringType": {}
+            }
           }
         }
       }
@@ -55,6 +60,9 @@
                 }
               ]
             }
+          },
+          "type": {
+            "stringType": {}
           }
         }
       }
@@ -80,6 +88,11 @@
                         }
                       ]
                     }
+                  },
+                  "type": {
+                    "outputType": {
+                      "stringType": {}
+                    }
                   }
                 },
                 "type": {
@@ -89,6 +102,11 @@
                 }
               }
             ]
+          },
+          "type": {
+            "outputType": {
+              "stringType": {}
+            }
           }
         }
       }
@@ -114,6 +132,11 @@
                         }
                       ]
                     }
+                  },
+                  "type": {
+                    "outputType": {
+                      "stringType": {}
+                    }
                   }
                 },
                 "type": {
@@ -123,6 +146,11 @@
                 }
               }
             ]
+          },
+          "type": {
+            "outputType": {
+              "stringType": {}
+            }
           }
         }
       }
@@ -148,6 +176,9 @@
                         }
                       ]
                     }
+                  },
+                  "type": {
+                    "stringType": {}
                   }
                 },
                 "type": {
@@ -155,6 +186,11 @@
                 }
               }
             ]
+          },
+          "type": {
+            "outputType": {
+              "stringType": {}
+            }
           }
         }
       }
