@@ -1,6 +1,6 @@
 use crate::Output;
 use anyhow::{Context as AnyhowContext, Result};
-use serde::{Deserialize, Serialize, de::DeserializeOwned};
+use serde::{de::DeserializeOwned, Deserialize, Serialize};
 use serde_json::Value;
 
 /// Represents a dynamically typed Pulumi value.
@@ -24,7 +24,7 @@ impl PulumiAny {
     /// Deserialize the wrapped value into a concrete type.
     pub fn deserialize_as<T>(&self) -> Result<T>
     where
-        T: Serialize + DeserializeOwned,
+        T: DeserializeOwned,
     {
         serde_json::from_value(self.0.clone())
             .context("Failed to deserialize `PulumiAny` into requested type")
@@ -41,6 +41,25 @@ impl From<PulumiAny> for Value {
     fn from(value: PulumiAny) -> Self {
         value.0
     }
+}
+
+/// Construct a [`PulumiAny`] value from a JSON literal.
+///
+/// The syntax is identical to [`serde_json::json!`] — any valid JSON literal is accepted,
+/// including objects, arrays, strings, numbers, booleans, and `null`.
+///
+/// # Examples
+///
+/// ```
+/// use pulumi_gestalt_rust::{PulumiAny, pulumi_any};
+///
+/// let v: PulumiAny = pulumi_any!({"name": "Alice", "count": 3});
+/// ```
+#[macro_export]
+macro_rules! pulumi_any {
+    ($($tt:tt)*) => {
+        $crate::PulumiAny::from(::serde_json::json!($($tt)*))
+    };
 }
 
 /// Extension trait for converting values to [`PulumiAny`].
@@ -138,5 +157,32 @@ mod tests {
     #[should_panic(expected = "Failed to serialize value while converting to `PulumiAny`")]
     fn to_pulumi_any_panics_for_invalid_payload() {
         let _ = FailingSerialize.to_pulumi_any();
+    }
+
+    #[test]
+    fn pulumi_any_macro_creates_value() {
+        let v = pulumi_any!({"name": "macro_test", "count": 5});
+        let decoded: ExampleInput = v.deserialize_as().unwrap();
+        assert_eq!(
+            decoded,
+            ExampleInput {
+                name: "macro_test".to_string(),
+                count: 5,
+            }
+        );
+    }
+
+    #[test]
+    fn pulumi_any_macro_array() {
+        let v = pulumi_any!([1, 2, 3]);
+        let decoded: Vec<i32> = v.deserialize_as().unwrap();
+        assert_eq!(decoded, vec![1, 2, 3]);
+    }
+
+    #[test]
+    fn pulumi_any_macro_scalar() {
+        let v = pulumi_any!(42);
+        let decoded: i32 = v.deserialize_as().unwrap();
+        assert_eq!(decoded, 42);
     }
 }
