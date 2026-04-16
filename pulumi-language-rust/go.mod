@@ -1,8 +1,6 @@
 module github.com/andrzejressel/pulumi-gestalt/pulumi-language-rust
 
-go 1.25.8
-
-toolchain go1.26.2
+go 1.25.9
 
 require (
 	github.com/hashicorp/hcl/v2 v2.24.0

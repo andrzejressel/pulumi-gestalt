@@ -1,5 +1,5 @@
 use pulumi_gestalt_proto::language_server::pulumipcl as pb;
-use std::collections::HashMap;
+use std::collections::BTreeMap;
 
 #[derive(Clone, PartialEq, Debug)]
 pub struct PclProtobufProgram {
@@ -76,6 +76,7 @@ pub struct OutputVariable {
     pub name: String,
     pub logical_name: String,
     pub value: Expression,
+    pub expression_type: Option<ExpressionType>,
 }
 
 #[derive(Clone, PartialEq, Debug)]
@@ -135,7 +136,7 @@ pub struct IndexExpression {
 
 #[derive(Clone, PartialEq, Debug)]
 pub struct ObjectConsExpression {
-    pub properties: HashMap<String, Expression>,
+    pub properties: BTreeMap<String, Expression>,
 }
 
 #[derive(Clone, PartialEq, Debug)]
@@ -277,6 +278,7 @@ pub enum ExpressionType {
     Number,
     Int,
     Bool,
+    Dynamic,
     List(Box<ExpressionType>),
     Map(Box<ExpressionType>),
     Output(Box<ExpressionType>),
@@ -398,6 +400,7 @@ fn map_output_variable(output: pb::OutputVariable) -> OutputVariable {
         name: output.name,
         logical_name: output.logical_name,
         value: map_expression(required(output.value, "output_variable.value")),
+        expression_type: output.expression_type.map(map_expression_type),
     }
 }
 
@@ -701,6 +704,7 @@ fn map_expression_type(value: pb::ExpressionType) -> ExpressionType {
                 .map(map_expression_type)
                 .collect(),
         ),
+        pb::expression_type::Value::DynamicType(_) => ExpressionType::Dynamic,
     }
 }
 

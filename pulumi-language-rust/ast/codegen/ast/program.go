@@ -245,15 +245,14 @@ func transformExpression(expr model.Expression) (*astproto.Expression, error) {
 	case *model.ObjectConsExpression:
 		properties := make(map[string]*astproto.Expression)
 		for _, item := range expr.Items {
-			if lit, ok := item.Key.(*model.LiteralValueExpression); ok {
-				propertyKey := lit.Value.AsString()
-				transformedValue, err := transformExpression(item.Value)
-				if err != nil {
-					return nil, err
-				}
-				properties[propertyKey] = transformedValue
+			key := objectKey(item)
+			transformedValue, err := transformExpression(item.Value)
+			if err != nil {
+				return nil, fmt.Errorf("Failed to get value for key %s: %w", key, err)
 			}
+			properties[key] = transformedValue
 		}
+		fmt.Printf("Type for OCE %s\n", expressionType)
 		return &astproto.Expression{
 			Value: &astproto.Expression_ObjectConsExpression{
 				ObjectConsExpression: &astproto.ObjectConsExpression{
@@ -543,11 +542,13 @@ func transformOutput(output *pcl.OutputVariable) (*astproto.OutputVariable, erro
 	if err != nil {
 		return nil, err
 	}
+	expressionType := transformExpressionType(output.Type())
 
 	return &astproto.OutputVariable{
-		Name:        output.Name(),
-		LogicalName: output.LogicalName(),
-		Value:       value,
+		Name:           output.Name(),
+		LogicalName:    output.LogicalName(),
+		Value:          value,
+		ExpressionType: expressionType,
 	}, nil
 }
 
@@ -616,6 +617,10 @@ func transformExpressionType(t model.Type) *astproto.ExpressionType {
 	case model.BoolType:
 		return &astproto.ExpressionType{
 			Value: &astproto.ExpressionType_BoolType{BoolType: &astproto.Empty{}},
+		}
+	case model.DynamicType:
+		return &astproto.ExpressionType{
+			Value: &astproto.ExpressionType_DynamicType{DynamicType: &astproto.Empty{}},
 		}
 	default:
 		switch t := t.(type) {
@@ -852,4 +857,20 @@ func GenerateSerializedProtobufProgram(program *pcl.Program) (map[string][]byte,
 	}
 	str := base64.StdEncoding.EncodeToString(out)
 	return map[string][]byte{"main.pcl.protobuf": []byte(str)}, nil, nil
+}
+
+func objectKey(item model.ObjectConsItem) string {
+	switch key := item.Key.(type) {
+	case *model.LiteralValueExpression:
+		return key.Value.AsString()
+	case *model.TemplateExpression:
+		// assume a template expression has one constant part that is a LiteralValueExpression
+		if len(key.Parts) == 1 {
+			if literal, ok := key.Parts[0].(*model.LiteralValueExpression); ok {
+				return literal.Value.AsString()
+			}
+		}
+	}
+
+	return ""
 }

@@ -101,7 +101,7 @@ func setupHealthChecks(engineAddress string) (chan bool, error) {
 
 	err := rpcutil.Healthcheck(ctx, engineAddress, 5*time.Minute, cancel)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("could not start health checks: %w", err)
 	}
 
 	return cancelChannel, nil
@@ -140,13 +140,11 @@ func (host *rustLanguageHost) Run(_ context.Context, req *pulumirpc.RunRequest) 
 
 	config, err := host.constructConfig(req)
 	if err != nil {
-		err = fmt.Errorf("failed to serialize configuration: %w", err)
-		return nil, err
+		return nil, fmt.Errorf("failed to serialize configuration: %w", err)
 	}
 	configSecretKeys, err := host.constructConfigSecretKeys(req)
 	if err != nil {
-		err = fmt.Errorf("failed to serialize configuration secret keys: %w", err)
-		return nil, err
+		return nil, fmt.Errorf("failed to serialize configuration secret keys: %w", err)
 	}
 
 	var stdoutBuf bytes.Buffer
@@ -175,7 +173,7 @@ func (host *rustLanguageHost) Run(_ context.Context, req *pulumirpc.RunRequest) 
 		os.Stderr.Write(stderrBuf.Bytes())
 
 		logging.V(5).Infof("InstallDependencies(Directory=%s): failed", req.Info.ProgramDirectory) //nolint:staticcheck
-		return nil, err
+		return nil, fmt.Errorf("Failed to run command: %w", err)
 	}
 
 	return &pulumirpc.RunResponse{Error: errResult}, nil
@@ -220,7 +218,7 @@ func (host *rustLanguageHost) constructConfig(req *pulumirpc.RunRequest) (string
 
 	configJSON, err := json.Marshal(configMap)
 	if err != nil {
-		return "", err
+		return "", fmt.Errorf("failed to serialize configuration: %w", err)
 	}
 
 	return string(configJSON), nil
@@ -236,7 +234,7 @@ func (host *rustLanguageHost) constructConfigSecretKeys(req *pulumirpc.RunReques
 
 	configSecretKeysJSON, err := json.Marshal(configSecretKeys)
 	if err != nil {
-		return "", err
+		return "", fmt.Errorf("failed to serialize configuration secret keys: %w", err)
 	}
 
 	return string(configSecretKeysJSON), nil
@@ -253,7 +251,7 @@ func (host *rustLanguageHost) InstallDependencies(
 
 	closer, stdout, stderr, err := rpcutil.MakeInstallDependenciesStreams(server, req.IsTerminal)
 	if err != nil {
-		return err
+		return fmt.Errorf("failed to create install dependency streams: %w", err)
 	}
 	defer closer.Close()
 
@@ -263,7 +261,7 @@ func (host *rustLanguageHost) InstallDependencies(
 	if host.testing {
 		home, err := os.UserHomeDir()
 		if err != nil {
-			return fmt.Errorf("could not get user home directory: %v", err)
+			return fmt.Errorf("could not get user home directory: %w", err)
 		}
 		env = append(env, fmt.Sprintf("CARGO_TARGET_DIR=%s/test_target/%s", home, directoryName))
 	}
@@ -276,7 +274,7 @@ func (host *rustLanguageHost) InstallDependencies(
 
 	if err := runCommand(cmd); err != nil {
 		logging.V(5).Infof("InstallDependencies(Directory=%s): failed", req.Info.ProgramDirectory) //nolint:staticcheck
-		return err
+		return fmt.Errorf("cargo build failed: %w", err)
 	}
 
 	defer closer.Close()
@@ -297,12 +295,12 @@ func (host *rustLanguageHost) GenerateProgram(
 ) (*pulumirpc.GenerateProgramResponse, error) {
 	loader, err := schema.NewLoaderClient(req.LoaderTarget)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to create loader client: %w", err)
 	}
 	defer loader.Close()
 	files, diags, err := generateProgramFromSource(req.Source, schema.NewCachedLoader(loader), req.Strict)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to generate program from source: %w", err)
 	}
 
 	return &pulumirpc.GenerateProgramResponse{
@@ -314,7 +312,7 @@ func (host *rustLanguageHost) GenerateProgram(
 func (host *rustLanguageHost) GenerateProject(_ context.Context, req *pulumirpc.GenerateProjectRequest) (*pulumirpc.GenerateProjectResponse, error) {
 	loader, err := schema.NewLoaderClient(req.LoaderTarget)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to create loader client: %w", err)
 	}
 
 	var extraOptions []pcl.BindOption
@@ -326,7 +324,7 @@ func (host *rustLanguageHost) GenerateProject(_ context.Context, req *pulumirpc.
 
 	program, diags, err := pcl.BindDirectory(req.SourceDirectory, loader, extraOptions...)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to bind directory: %w", err)
 	}
 
 	if diags.HasErrors() {
@@ -342,7 +340,7 @@ func (host *rustLanguageHost) GenerateProject(_ context.Context, req *pulumirpc.
 
 	var project workspace.Project
 	if err := json.Unmarshal([]byte(req.Project), &project); err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to deserialize project: %w", err)
 	}
 
 	err = generateProject(req.TargetDirectory, project, program, host.testing)
@@ -357,13 +355,13 @@ func (host *rustLanguageHost) GeneratePackage(_ context.Context, req *pulumirpc.
 
 	loader, err := schema.NewLoaderClient(req.LoaderTarget)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to create loader client: %w", err)
 	}
 
 	var spec schema.PackageSpec
 	err = json.Unmarshal([]byte(req.Schema), &spec)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to deserialize schema: %w", err)
 	}
 
 	diags := hcl.Diagnostics{}
@@ -371,7 +369,7 @@ func (host *rustLanguageHost) GeneratePackage(_ context.Context, req *pulumirpc.
 		AllowDanglingReferences: true,
 	})
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to bind schema spec: %w", err)
 	}
 	diags = diags.Extend(bindDiags)
 	if bindDiags.HasErrors() {
@@ -382,7 +380,7 @@ func (host *rustLanguageHost) GeneratePackage(_ context.Context, req *pulumirpc.
 
 	err = rust.GeneratePackage(pkg, req.Directory)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to generate package: %w", err)
 	}
 
 	return &pulumirpc.GeneratePackageResponse{
@@ -404,7 +402,7 @@ func generateProgramFromSource(
 	for path, contents := range source {
 		err := parser.ParseFile(strings.NewReader(contents), path)
 		if err != nil {
-			return nil, nil, err
+			return nil, nil, fmt.Errorf("failed to parse source file %q: %w", path, err)
 		}
 	}
 	if parser.Diagnostics.HasErrors() {
@@ -421,7 +419,7 @@ func generateProgramFromSource(
 
 	program, diags, err := pcl.BindProgram(parser.Files, bindOptions...)
 	if err != nil {
-		return nil, nil, err
+		return nil, nil, fmt.Errorf("failed to bind program: %w", err)
 	}
 	if diags.HasErrors() {
 		return nil, diags, nil
@@ -432,7 +430,7 @@ func generateProgramFromSource(
 
 	files, generationDiags, err := rust.GenerateProgram(program)
 	if err != nil {
-		return nil, nil, err
+		return nil, nil, fmt.Errorf("failed to generate program: %w", err)
 	}
 
 	return files, diags.Extend(generationDiags), nil
@@ -450,23 +448,22 @@ func generateProject(
 		projectDirectory = filepath.Join(directory, project.Main)
 	}
 
-	protobufContent, protobufJSON, err := rust.GenerateProject(program, projectDirectory)
+	_, protobufJSON, err := rust.GenerateProject(program, projectDirectory)
 	if err != nil {
-		return err
+		return fmt.Errorf("failed to generate project files: %w", err)
 	}
 
 	// Set the runtime to "java" then marshal to Pulumi.yaml
 	project.Runtime = workspace.NewProjectRuntimeInfo("rust", nil)
 	projectBytes, err := encoding.YAML.Marshal(project)
 	if err != nil {
-		return err
+		return fmt.Errorf("failed to marshal project to YAML: %w", err)
 	}
 
 	filesWithPackages := make(map[string][]byte)
 
 	filesWithPackages[filepath.Join(rootDirectory, "Pulumi.yaml")] = projectBytes
 	if testing {
-		filesWithPackages[filepath.Join(rootDirectory, "protobuf.bin")] = protobufContent
 		filesWithPackages[filepath.Join(rootDirectory, "protobuf.json")] = protobufJSON
 	}
 	//filesWithPackages[filepath.Join(rootDirectory, "Cargo.toml")] = []byte("[package]\nname=\"TEST\"")

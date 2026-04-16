@@ -32,6 +32,9 @@
               "numberType": {}
             }
           }
+        },
+        "expression_type": {
+          "dynamicType": {}
         }
       }
     },
@@ -107,6 +110,9 @@
                     "parameters": [
                       "aNumber"
                     ]
+                  },
+                  "type": {
+                    "dynamicType": {}
                   }
                 },
                 "type": {
@@ -120,6 +126,9 @@
               "numberType": {}
             }
           }
+        },
+        "expression_type": {
+          "dynamicType": {}
         }
       }
     }

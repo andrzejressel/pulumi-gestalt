@@ -128,7 +128,7 @@ pub struct TupleExpressionType {
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ExpressionType {
-    #[prost(oneof = "expression_type::Value", tags = "1, 2, 3, 4, 5, 6, 7, 8")]
+    #[prost(oneof = "expression_type::Value", tags = "1, 2, 3, 4, 5, 6, 7, 8, 9")]
     pub value: ::core::option::Option<expression_type::Value>,
 }
 /// Nested message and enum types in `ExpressionType`.
@@ -151,6 +151,8 @@ pub mod expression_type {
         OutputType(::prost::alloc::boxed::Box<super::ExpressionType>),
         #[prost(message, tag = "8")]
         TupleType(super::TupleExpressionType),
+        #[prost(message, tag = "9")]
+        DynamicType(super::Empty),
     }
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -161,6 +163,8 @@ pub struct OutputVariable {
     pub logical_name: ::prost::alloc::string::String,
     #[prost(message, optional, tag = "3")]
     pub value: ::core::option::Option<Expression>,
+    #[prost(message, optional, tag = "4")]
+    pub expression_type: ::core::option::Option<ExpressionType>,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Expression {

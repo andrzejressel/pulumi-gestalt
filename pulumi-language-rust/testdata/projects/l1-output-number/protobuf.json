@@ -11,6 +11,9 @@
           "type": {
             "intType": {}
           }
+        },
+        "expression_type": {
+          "dynamicType": {}
         }
       }
     },
@@ -25,6 +28,9 @@
           "type": {
             "intType": {}
           }
+        },
+        "expression_type": {
+          "dynamicType": {}
         }
       }
     },
@@ -39,6 +45,9 @@
           "type": {
             "numberType": {}
           }
+        },
+        "expression_type": {
+          "dynamicType": {}
         }
       }
     },
@@ -53,6 +62,9 @@
           "type": {
             "intType": {}
           }
+        },
+        "expression_type": {
+          "dynamicType": {}
         }
       }
     },
@@ -67,6 +79,9 @@
           "type": {
             "numberType": {}
           }
+        },
+        "expression_type": {
+          "dynamicType": {}
         }
       }
     },
@@ -81,6 +96,9 @@
           "type": {
             "numberType": {}
           }
+        },
+        "expression_type": {
+          "dynamicType": {}
         }
       }
     }

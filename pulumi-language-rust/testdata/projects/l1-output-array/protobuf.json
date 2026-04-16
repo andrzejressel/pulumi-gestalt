@@ -9,6 +9,9 @@
           "type": {
             "tupleType": {}
           }
+        },
+        "expression_type": {
+          "dynamicType": {}
         }
       }
     },
@@ -67,6 +70,9 @@
               ]
             }
           }
+        },
+        "expression_type": {
+          "dynamicType": {}
         }
       }
     },
@@ -151,6 +157,9 @@
               ]
             }
           }
+        },
+        "expression_type": {
+          "dynamicType": {}
         }
       }
     },
@@ -349,6 +358,9 @@
               ]
             }
           }
+        },
+        "expression_type": {
+          "dynamicType": {}
         }
       }
     },
@@ -3367,6 +3379,9 @@
               ]
             }
           }
+        },
+        "expression_type": {
+          "dynamicType": {}
         }
       }
     }

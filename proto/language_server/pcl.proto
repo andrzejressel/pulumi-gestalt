@@ -90,6 +90,7 @@ message ExpressionType {
     ExpressionType mapType = 6;
     ExpressionType outputType = 7;
     TupleExpressionType tupleType = 8;
+    Empty dynamicType = 9;
   }
 }
 
@@ -97,6 +98,7 @@ message OutputVariable {
   string name = 1;
   string logicalName = 2;
   Expression value = 3;
+  optional ExpressionType expression_type = 4;
 }
 
 message Expression {
