@@ -1,0 +1,229 @@
+{
+  "nodes": [
+    {
+      "configVariable": {
+        "name": "aMap",
+        "logicalName": "aMap",
+        "configType": {
+          "mapType": {
+            "stringType": {}
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "entriesOutput",
+        "logicalName": "entriesOutput",
+        "value": {
+          "functionCallExpression": {
+            "name": "entries",
+            "args": [
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "aMap",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "aMap"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "type": {
+                    "mapType": {
+                      "stringType": {}
+                    }
+                  }
+                },
+                "type": {
+                  "composite": {}
+                }
+              }
+            ]
+          }
+        },
+        "expression_type": {
+          "dynamicType": {}
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "lookupOutput",
+        "logicalName": "lookupOutput",
+        "value": {
+          "functionCallExpression": {
+            "name": "lookup",
+            "args": [
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "aMap",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "aMap"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "type": {
+                    "mapType": {
+                      "stringType": {}
+                    }
+                  }
+                },
+                "type": {
+                  "composite": {}
+                }
+              },
+              {
+                "value": {
+                  "templateExpression": {
+                    "parts": [
+                      {
+                        "literalValueExpression": {
+                          "stringValue": "keyPresent"
+                        },
+                        "type": {
+                          "stringType": {}
+                        }
+                      }
+                    ]
+                  },
+                  "type": {
+                    "stringType": {}
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              },
+              {
+                "value": {
+                  "templateExpression": {
+                    "parts": [
+                      {
+                        "literalValueExpression": {
+                          "stringValue": "default"
+                        },
+                        "type": {
+                          "stringType": {}
+                        }
+                      }
+                    ]
+                  },
+                  "type": {
+                    "stringType": {}
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              }
+            ]
+          },
+          "type": {
+            "stringType": {}
+          }
+        },
+        "expression_type": {
+          "dynamicType": {}
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "lookupOutputDefault",
+        "logicalName": "lookupOutputDefault",
+        "value": {
+          "functionCallExpression": {
+            "name": "lookup",
+            "args": [
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "aMap",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "aMap"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "type": {
+                    "mapType": {
+                      "stringType": {}
+                    }
+                  }
+                },
+                "type": {
+                  "composite": {}
+                }
+              },
+              {
+                "value": {
+                  "templateExpression": {
+                    "parts": [
+                      {
+                        "literalValueExpression": {
+                          "stringValue": "keyMissing"
+                        },
+                        "type": {
+                          "stringType": {}
+                        }
+                      }
+                    ]
+                  },
+                  "type": {
+                    "stringType": {}
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              },
+              {
+                "value": {
+                  "templateExpression": {
+                    "parts": [
+                      {
+                        "literalValueExpression": {
+                          "stringValue": "default"
+                        },
+                        "type": {
+                          "stringType": {}
+                        }
+                      }
+                    ]
+                  },
+                  "type": {
+                    "stringType": {}
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              }
+            ]
+          },
+          "type": {
+            "stringType": {}
+          }
+        },
+        "expression_type": {
+          "dynamicType": {}
+        }
+      }
+    }
+  ]
+}

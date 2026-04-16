@@ -1,0 +1,38 @@
+{
+  "nodes": [
+    {
+      "outputVariable": {
+        "name": "rootDirectoryOutput",
+        "logicalName": "rootDirectoryOutput",
+        "value": {
+          "functionCallExpression": {
+            "name": "rootDirectory"
+          },
+          "type": {
+            "stringType": {}
+          }
+        },
+        "expression_type": {
+          "dynamicType": {}
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "workingDirectoryOutput",
+        "logicalName": "workingDirectoryOutput",
+        "value": {
+          "functionCallExpression": {
+            "name": "cwd"
+          },
+          "type": {
+            "stringType": {}
+          }
+        },
+        "expression_type": {
+          "dynamicType": {}
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "nodes": [
+    {
+      "outputVariable": {
+        "name": "stackOutput",
+        "logicalName": "stackOutput",
+        "value": {
+          "functionCallExpression": {
+            "name": "stack"
+          },
+          "type": {
+            "stringType": {}
+          }
+        },
+        "expression_type": {
+          "dynamicType": {}
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "projectOutput",
+        "logicalName": "projectOutput",
+        "value": {
+          "functionCallExpression": {
+            "name": "project"
+          },
+          "type": {
+            "stringType": {}
+          }
+        },
+        "expression_type": {
+          "dynamicType": {}
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "organizationOutput",
+        "logicalName": "organizationOutput",
+        "value": {
+          "functionCallExpression": {
+            "name": "organization"
+          },
+          "type": {
+            "stringType": {}
+          }
+        },
+        "expression_type": {
+          "dynamicType": {}
+        }
+      }
+    }
+  ]
+}
