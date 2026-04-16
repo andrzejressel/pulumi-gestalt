@@ -459,6 +459,27 @@ fn convert_stdlib_function_call(
             ensure_arity(name, arg_count, 1)?;
             Ok(format!("pulumi_gestalt_rust::stdlib::sha1({})", args))
         }
+        "readFile" => {
+            ensure_arity(name, arg_count, 1)?;
+            Ok(format!(
+                "pulumi_gestalt_rust::stdlib::read_file({}).expect(\"Failed to read file\")",
+                args
+            ))
+        }
+        "filebase64" => {
+            ensure_arity(name, arg_count, 1)?;
+            Ok(format!(
+                "pulumi_gestalt_rust::stdlib::filebase64({}).expect(\"Failed to read file as base64\")",
+                args
+            ))
+        }
+        "filebase64sha256" => {
+            ensure_arity(name, arg_count, 1)?;
+            Ok(format!(
+                "pulumi_gestalt_rust::stdlib::filebase64sha256({}).expect(\"Failed to compute file sha256\")",
+                args
+            ))
+        }
         "secret" => {
             ensure_arity(name, arg_count, 1)?;
             let arg_type = &args_pure[0].r#type;
