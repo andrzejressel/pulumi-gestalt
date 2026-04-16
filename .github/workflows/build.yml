@@ -136,7 +136,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c # v6.4.0
         with:
-          go-version: '1.25.9'
+          go-version: '1.26.2'
           cache-dependency-path: "**/go.sum"
       - run: pulumi login --local
       - name: Cache Pulumi providers
@@ -172,7 +172,7 @@ jobs:
       - run: pulumi login --local
       - uses: actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c # v6.4.0
         with:
-          go-version: '1.25.9'
+          go-version: '1.26.2'
           cache-dependency-path: "**/go.sum"
       - name: Cache Pulumi providers
         uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
@@ -219,7 +219,7 @@ jobs:
           command: docker pull public.ecr.aws/ubuntu/ubuntu:latest
       - uses: actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c # v6.4.0
         with:
-          go-version: '1.25.9'
+          go-version: '1.26.2'
           cache-dependency-path: "**/go.sum"
       - run: go version
       - name: Install requirements
@@ -257,7 +257,7 @@ jobs:
       - run: pulumi login --local
       - uses: actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c # v6.4.0
         with:
-          go-version: '1.25.9'
+          go-version: '1.26.2'
           cache-dependency-path: "**/go.sum"
       - run: just c-ci-flow
         env:
@@ -290,7 +290,7 @@ jobs:
       - run: pulumi login --local
       - uses: actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c # v6.4.0
         with:
-          go-version: '1.25.9'
+          go-version: '1.26.2'
           cache-dependency-path: "**/go.sum"
       - name: Pull required docker images
         if: runner.os == 'Linux'
@@ -325,7 +325,7 @@ jobs:
       - uses: jdx/mise-action@1648a7812b9aeae629881980618f079932869151 # v4.0.1
       - uses: actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c # v6.4.0
         with:
-          go-version: '1.25.9'
+          go-version: '1.26.2'
           cache-dependency-path: "pulumi-language-rust/go.sum"
       - name: Install requirements
         run: just install-requirements
