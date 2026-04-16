@@ -14,6 +14,7 @@ related_crate = "pulumi_gestalt"
 anyhow.workspace = true
 base64.workspace = true
 sha1.workspace = true
+sha2.workspace = true
 serde.workspace = true
 serde_json.workspace = true
 bon.workspace = true
@@ -24,3 +25,4 @@ hex.workspace = true
 
 [dev-dependencies]
 pulumi_gestalt_build = { path = "../rust_build" }
+tempfile.workspace = true

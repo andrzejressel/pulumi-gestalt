@@ -162,6 +162,7 @@ func TestRegenerateJsonWithTests(t *testing.T) {
 // skip them with an informative message until they are fixed.
 var expectedFailures = map[string]string{
 	"l1-builtin-can":                               "https://github.com/andrzejressel/pulumi-gestalt/issues/2034",
+	"l1-builtin-file":                              "https://github.com/andrzejressel/pulumi-gestalt/issues/2081",
 	"l1-builtin-stash":                             "https://github.com/andrzejressel/pulumi-gestalt/issues/2049",
 	"l1-builtin-to-json":                           "https://github.com/andrzejressel/pulumi-gestalt/issues/2027",
 	"l1-builtin-try":                               "https://github.com/andrzejressel/pulumi-gestalt/issues/2035",
@@ -262,6 +263,7 @@ var expectedFailures = map[string]string{
 	"l3-for":                                       "unsupported config variable type: list(string)",
 	"l3-for-resource":                              "unsupported expression type: for-expression",
 	"l3-range":                                     "unsupported config variable type: list(string)",
+	"l3-range-ref":                                 "not yet implemented",
 	"l3-range-parent-scope":                        "sdk snapshot validation for nestedobject: walk expected dir: lstat testdata/sdks/nestedobject-1.42.0: no such file or directory",
 	"l3-range-resource-output-traversal":           "sdk snapshot validation for nestedobject: walk expected dir: lstat testdata/sdks/nestedobject-1.42.0: no such file or directory",
 	"l3-rewrite-conversions":                       "not yet implemented",

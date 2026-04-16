@@ -42,6 +42,25 @@ pub fn sha1(input: impl AsRef<str>) -> String {
     hex::encode(hash)
 }
 
+pub fn read_file(path: impl AsRef<str>) -> Result<String> {
+    std::fs::read_to_string(path.as_ref())
+        .with_context(|| format!("Failed to read file: {}", path.as_ref()))
+}
+
+pub fn filebase64(path: impl AsRef<str>) -> Result<String> {
+    let bytes = std::fs::read(path.as_ref())
+        .with_context(|| format!("Failed to read file: {}", path.as_ref()))?;
+    Ok(STANDARD.encode(bytes))
+}
+
+pub fn filebase64sha256(path: impl AsRef<str>) -> Result<String> {
+    use sha2::{Digest as Sha2Digest, Sha256};
+    let bytes = std::fs::read(path.as_ref())
+        .with_context(|| format!("Failed to read file: {}", path.as_ref()))?;
+    let hash = Sha256::digest(&bytes);
+    Ok(STANDARD.encode(hash))
+}
+
 pub fn element<T: Clone, I: TryInto<i64>>(list: impl AsRef<[T]>, index: I) -> Result<T> {
     let index = index
         .try_into()
@@ -117,8 +136,8 @@ where
 #[cfg(test)]
 mod tests {
     use super::{
-        Entry, cwd, element, entries, from_base64, join, length, lookup, sha1, single_or_none,
-        split, to_base64,
+        Entry, cwd, element, entries, filebase64, filebase64sha256, from_base64, join, length,
+        lookup, read_file, sha1, single_or_none, split, to_base64,
     };
     use std::collections::BTreeMap;
 
@@ -193,6 +212,42 @@ mod tests {
             sha1("goodbye world"),
             "0078bb8e5c9d8abf7f1e4e14c87d9023235b6230"
         );
+    }
+
+    #[test]
+    fn read_file_reads_existing_file() {
+        use std::io::Write;
+        let mut tmp = tempfile::NamedTempFile::new().unwrap();
+        write!(tmp, "hello from file").unwrap();
+        let result = read_file(tmp.path().to_str().unwrap()).unwrap();
+        assert_eq!(result, "hello from file");
+    }
+
+    #[test]
+    fn read_file_returns_error_for_missing_file() {
+        let result = read_file("/nonexistent/path/file.txt");
+        assert!(result.is_err());
+        let msg = result.unwrap_err().to_string();
+        assert!(msg.contains("Failed to read file"));
+    }
+
+    #[test]
+    fn filebase64_encodes_file_contents() {
+        use std::io::Write;
+        let mut tmp = tempfile::NamedTempFile::new().unwrap();
+        write!(tmp, "hello").unwrap();
+        let result = filebase64(tmp.path().to_str().unwrap()).unwrap();
+        assert_eq!(result, "aGVsbG8=");
+    }
+
+    #[test]
+    fn filebase64sha256_hashes_known_content() {
+        use std::io::Write;
+        // "The quick brown fox jumps over the lazy dog" without trailing newline
+        let mut tmp = tempfile::NamedTempFile::new().unwrap();
+        write!(tmp, "The quick brown fox jumps over the lazy dog").unwrap();
+        let result = filebase64sha256(tmp.path().to_str().unwrap()).unwrap();
+        assert_eq!(result, "16j7swfXgJRpypq8sAguT41WUeRtPNt2LQLQvzfJ5ZI=");
     }
 
     #[test]

@@ -1,0 +1,187 @@
+{
+  "nodes": [
+    {
+      "localVariable": {
+        "name": "fileContent",
+        "logicalName": "fileContent",
+        "value": {
+          "functionCallExpression": {
+            "name": "readFile",
+            "args": [
+              {
+                "value": {
+                  "templateExpression": {
+                    "parts": [
+                      {
+                        "literalValueExpression": {
+                          "stringValue": "testfile.txt"
+                        },
+                        "type": {
+                          "stringType": {}
+                        }
+                      }
+                    ]
+                  },
+                  "type": {
+                    "stringType": {}
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              }
+            ]
+          },
+          "type": {
+            "stringType": {}
+          }
+        }
+      }
+    },
+    {
+      "localVariable": {
+        "name": "fileB64",
+        "logicalName": "fileB64",
+        "value": {
+          "functionCallExpression": {
+            "name": "filebase64",
+            "args": [
+              {
+                "value": {
+                  "templateExpression": {
+                    "parts": [
+                      {
+                        "literalValueExpression": {
+                          "stringValue": "testfile.txt"
+                        },
+                        "type": {
+                          "stringType": {}
+                        }
+                      }
+                    ]
+                  },
+                  "type": {
+                    "stringType": {}
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              }
+            ]
+          },
+          "type": {
+            "stringType": {}
+          }
+        }
+      }
+    },
+    {
+      "localVariable": {
+        "name": "fileSha",
+        "logicalName": "fileSha",
+        "value": {
+          "functionCallExpression": {
+            "name": "filebase64sha256",
+            "args": [
+              {
+                "value": {
+                  "templateExpression": {
+                    "parts": [
+                      {
+                        "literalValueExpression": {
+                          "stringValue": "testfile.txt"
+                        },
+                        "type": {
+                          "stringType": {}
+                        }
+                      }
+                    ]
+                  },
+                  "type": {
+                    "stringType": {}
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              }
+            ]
+          },
+          "type": {
+            "stringType": {}
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "fileContent",
+        "logicalName": "fileContent",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "fileContent",
+            "traversal": {
+              "each": [
+                {
+                  "traverseRoot": {
+                    "name": "fileContent"
+                  }
+                }
+              ]
+            }
+          },
+          "type": {
+            "stringType": {}
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "fileB64",
+        "logicalName": "fileB64",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "fileB64",
+            "traversal": {
+              "each": [
+                {
+                  "traverseRoot": {
+                    "name": "fileB64"
+                  }
+                }
+              ]
+            }
+          },
+          "type": {
+            "stringType": {}
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "fileSha",
+        "logicalName": "fileSha",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "fileSha",
+            "traversal": {
+              "each": [
+                {
+                  "traverseRoot": {
+                    "name": "fileSha"
+                  }
+                }
+              ]
+            }
+          },
+          "type": {
+            "stringType": {}
+          }
+        }
+      }
+    }
+  ]
+}
