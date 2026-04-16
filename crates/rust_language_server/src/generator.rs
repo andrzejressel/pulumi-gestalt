@@ -239,10 +239,30 @@ fn convert_expression(expression: &Expression) -> Result<ExpressionType> {
         expression::Value::IndexExpression(_) => {
             bail!("IndexExpression not yet supported")
         }
-        expression::Value::ObjectConsExpression(_) => {
-            Ok(ExpressionType::EmptyList)
-            // bail!("ObjectConsExpression not yet supported")
-        }
+        expression::Value::ObjectConsExpression(obj_cons) => match &expression.expression_type {
+            Some(crate::pcl_model::ExpressionType::Dynamic) | None => {
+                let props = obj_cons
+                    .properties
+                    .iter()
+                    .map(|(key, val)| {
+                        let v = convert_expression_as_json_value(val)
+                            .context("Failed to convert ObjectConsExpression property")?;
+                        Ok(format!("\"{}\": {}", key, v))
+                    })
+                    .collect::<Result<Vec<_>>>()
+                    .context("Failed to convert ObjectConsExpression properties")?;
+                let body = props.join(", ");
+                Ok(ExpressionType::Other(format!(
+                    "pulumi_gestalt_rust::pulumi_any!({{{}}})",
+                    body
+                )))
+            }
+            other =>
+                bail!(
+                "ObjectConsExpression with non-dynamic expression type {:?} is not supported",
+                other
+            ),
+        },
         expression::Value::TupleConsExpression(TupleConsExpression { items }) => {
             let converted_items = items
                 .iter()
@@ -367,6 +387,63 @@ fn convert_expression(expression: &Expression) -> Result<ExpressionType> {
             };
 
             Ok(ExpressionType::Other(result))
+        }
+    }
+}
+
+fn convert_expression_as_json_value(expression: &Expression) -> Result<String> {
+    match &expression.value {
+        expression::Value::LiteralValueExpression(literal_value) => match &literal_value.value {
+            literal_value_expression::Value::UnknownValue(_) => {
+                bail!("UnknownValue not supported in json value")
+            }
+            literal_value_expression::Value::StringValue(s) => Ok(escape_rust_string(s)),
+            literal_value_expression::Value::NumberValue(n) => {
+                if n > &(f32::MAX as f64) || n < &(f32::MIN as f64) {
+                    Ok(format!("{}_f64", n))
+                } else {
+                    Ok(n.to_string())
+                }
+            }
+            literal_value_expression::Value::BoolValue(b) => Ok(b.to_string()),
+        },
+        expression::Value::ObjectConsExpression(obj_cons) => match &expression.expression_type {
+            Some(crate::pcl_model::ExpressionType::Dynamic) => {
+                let props = obj_cons
+                    .properties
+                    .iter()
+                    .map(|(key, val)| {
+                        let v = convert_expression_as_json_value(val)
+                            .context("Failed to convert nested ObjectConsExpression property")?;
+                        Ok(format!("\"{}\": {}", key, v))
+                    })
+                    .collect::<Result<Vec<_>>>()
+                    .context("Failed to convert nested ObjectConsExpression properties")?;
+                Ok(format!("{{{}}}", props.join(", ")))
+            }
+            other => bail!(
+                "ObjectConsExpression with non-dynamic expression type {:?} is not supported",
+                other
+            ),
+        },
+        expression::Value::TupleConsExpression(TupleConsExpression { items }) => {
+            if items.is_empty() {
+                Ok("[]".to_string())
+            } else {
+                let elems = items
+                    .iter()
+                    .map(convert_expression_as_json_value)
+                    .collect::<Result<Vec<_>>>()
+                    .context("Failed to convert TupleConsExpression items as json values")?
+                    .join(", ");
+                Ok(format!("[{}]", elems))
+            }
+        }
+        _ => {
+            let converted = convert_expression(expression)
+                .context("Failed to convert expression as json value")?
+                .to_string();
+            Ok(format!("({})", converted))
         }
     }
 }

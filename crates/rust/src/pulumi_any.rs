@@ -1,6 +1,6 @@
 use crate::Output;
 use anyhow::{Context as AnyhowContext, Result};
-use serde::{de::DeserializeOwned, Deserialize, Serialize};
+use serde::{Deserialize, Serialize, de::DeserializeOwned};
 use serde_json::Value;
 
 /// Represents a dynamically typed Pulumi value.
