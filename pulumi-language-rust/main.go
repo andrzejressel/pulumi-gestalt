@@ -448,7 +448,7 @@ func generateProject(
 		projectDirectory = filepath.Join(directory, project.Main)
 	}
 
-	protobufContent, protobufJSON, err := rust.GenerateProject(program, projectDirectory)
+	_, protobufJSON, err := rust.GenerateProject(program, projectDirectory)
 	if err != nil {
 		return fmt.Errorf("failed to generate project files: %w", err)
 	}
@@ -464,7 +464,6 @@ func generateProject(
 
 	filesWithPackages[filepath.Join(rootDirectory, "Pulumi.yaml")] = projectBytes
 	if testing {
-		filesWithPackages[filepath.Join(rootDirectory, "protobuf.bin")] = protobufContent
 		filesWithPackages[filepath.Join(rootDirectory, "protobuf.json")] = protobufJSON
 	}
 	//filesWithPackages[filepath.Join(rootDirectory, "Cargo.toml")] = []byte("[package]\nname=\"TEST\"")
