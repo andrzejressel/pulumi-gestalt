@@ -70,7 +70,7 @@ jobs:
       - uses: jdx/mise-action@1648a7812b9aeae629881980618f079932869151 # v4.0.1
       - uses: actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c # v6.4.0
         with:
-          go-version: '1.25.9'
+          go-version: '1.26.2'
           cache-dependency-path: "**/go.sum"
       - run: go version
 
@@ -122,7 +122,7 @@ jobs:
       - uses: jdx/mise-action@1648a7812b9aeae629881980618f079932869151 # v4.0.1
       - uses: actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c # v6.4.0
         with:
-          go-version: '1.25.9'
+          go-version: '1.26.2'
           cache-dependency-path: "pulumi-language-rust/go.sum"
       - name: Install requirements
         run: just install-requirements

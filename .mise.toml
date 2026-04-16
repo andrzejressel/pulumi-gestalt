@@ -8,4 +8,4 @@ pulumi = "3.230.0"
 protoc = "34.1"
 protoc-gen-go = "1.36.11"
 "cargo:https://github.com/ihciah/rust2go" = { version = "rev:d06121090dcd6d5fca5528be6ab8bcc56b3907bc", crate = "rust2go-cli" }
-go = "1.25.9"
+go = "1.26.2"
