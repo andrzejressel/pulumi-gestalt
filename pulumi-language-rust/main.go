@@ -140,13 +140,11 @@ func (host *rustLanguageHost) Run(_ context.Context, req *pulumirpc.RunRequest) 
 
 	config, err := host.constructConfig(req)
 	if err != nil {
-		err = fmt.Errorf("failed to serialize configuration: %w", err)
-		return nil, err
+		return nil, fmt.Errorf("failed to serialize configuration: %w", err)
 	}
 	configSecretKeys, err := host.constructConfigSecretKeys(req)
 	if err != nil {
-		err = fmt.Errorf("failed to serialize configuration secret keys: %w", err)
-		return nil, err
+		return nil, fmt.Errorf("failed to serialize configuration secret keys: %w", err)
 	}
 
 	var stdoutBuf bytes.Buffer
@@ -175,7 +173,7 @@ func (host *rustLanguageHost) Run(_ context.Context, req *pulumirpc.RunRequest) 
 		os.Stderr.Write(stderrBuf.Bytes())
 
 		logging.V(5).Infof("InstallDependencies(Directory=%s): failed", req.Info.ProgramDirectory) //nolint:staticcheck
-		return nil, err
+		return nil, fmt.Errorf("Failed to run command: %w", err)
 	}
 
 	return &pulumirpc.RunResponse{Error: errResult}, nil
@@ -220,7 +218,7 @@ func (host *rustLanguageHost) constructConfig(req *pulumirpc.RunRequest) (string
 
 	configJSON, err := json.Marshal(configMap)
 	if err != nil {
-		return "", err
+		return "", fmt.Errorf("failed to serialize configuration: %w", err)
 	}
 
 	return string(configJSON), nil
@@ -236,7 +234,7 @@ func (host *rustLanguageHost) constructConfigSecretKeys(req *pulumirpc.RunReques
 
 	configSecretKeysJSON, err := json.Marshal(configSecretKeys)
 	if err != nil {
-		return "", err
+		return "", fmt.Errorf("failed to serialize configuration secret keys: %w", err)
 	}
 
 	return string(configSecretKeysJSON), nil
