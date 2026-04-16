@@ -2,6 +2,7 @@
   "tests": [
     "l1-builtin-base64",
     "l1-builtin-cwd",
+    "l1-builtin-file",
     "l1-builtin-info",
     "l1-builtin-list",
     "l1-builtin-object",

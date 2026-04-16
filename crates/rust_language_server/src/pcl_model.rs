@@ -1,5 +1,5 @@
 use pulumi_gestalt_proto::language_server::pulumipcl as pb;
-use std::collections::HashMap;
+use std::collections::BTreeMap;
 
 #[derive(Clone, PartialEq, Debug)]
 pub struct PclProtobufProgram {
@@ -136,7 +136,7 @@ pub struct IndexExpression {
 
 #[derive(Clone, PartialEq, Debug)]
 pub struct ObjectConsExpression {
-    pub properties: HashMap<String, Expression>,
+    pub properties: BTreeMap<String, Expression>,
 }
 
 #[derive(Clone, PartialEq, Debug)]
