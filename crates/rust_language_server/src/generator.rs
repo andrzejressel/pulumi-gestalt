@@ -257,8 +257,7 @@ fn convert_expression(expression: &Expression) -> Result<ExpressionType> {
                     body
                 )))
             }
-            other =>
-                bail!(
+            other => bail!(
                 "ObjectConsExpression with non-dynamic expression type {:?} is not supported",
                 other
             ),
