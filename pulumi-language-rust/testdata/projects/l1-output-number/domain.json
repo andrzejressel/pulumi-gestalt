@@ -1,0 +1,52 @@
+{
+  "statements": [
+    {
+      "Export": {
+        "name": "zero",
+        "value": {
+          "Number": 0.0
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "one",
+        "value": {
+          "Number": 1.0
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "e",
+        "value": {
+          "Number": 2.718
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "minInt32",
+        "value": {
+          "Number": -2147483648.0
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "max",
+        "value": {
+          "Number": 1.7976931348623157e+308
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "min",
+        "value": {
+          "Number": 5e-324
+        }
+      }
+    }
+  ]
+}

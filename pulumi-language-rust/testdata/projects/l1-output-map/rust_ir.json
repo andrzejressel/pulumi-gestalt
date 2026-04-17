@@ -1,0 +1,96 @@
+{
+  "statements": [
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "empty"
+            },
+            {
+              "Ref": {
+                "MacroCall": {
+                  "path": "pulumi_gestalt_rust::pulumi_any!",
+                  "body": "{}"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "strings"
+            },
+            {
+              "Ref": {
+                "MacroCall": {
+                  "path": "pulumi_gestalt_rust::pulumi_any!",
+                  "body": "{\"farewell\": (\"Goodbye, world!\"), \"greeting\": (\"Hello, world!\")}"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "numbers"
+            },
+            {
+              "Ref": {
+                "MacroCall": {
+                  "path": "pulumi_gestalt_rust::pulumi_any!",
+                  "body": "{\"1\": 1, \"2\": 2}"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "keys"
+            },
+            {
+              "Ref": {
+                "MacroCall": {
+                  "path": "pulumi_gestalt_rust::pulumi_any!",
+                  "body": "{\"MYKEY\": 6, \"MY_KEY\": 4, \"my-key\": 2, \"my.key\": 1, \"my_key\": 3, \"mykey\": 5}"
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

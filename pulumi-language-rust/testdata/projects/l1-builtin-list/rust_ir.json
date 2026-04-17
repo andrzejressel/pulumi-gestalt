@@ -1,0 +1,286 @@
+{
+  "statements": [
+    {
+      "Let": {
+        "name": "aList",
+        "value": {
+          "Expect": {
+            "expr": {
+              "MethodCall": {
+                "receiver": {
+                  "Identifier": "ctx"
+                },
+                "method": "require_config_deserialize::<Vec<String>>",
+                "args": [
+                  {
+                    "Identifier": "None"
+                  },
+                  {
+                    "StringLiteral": "aList"
+                  }
+                ]
+              }
+            },
+            "message": "Expected config [aList] to exist"
+          }
+        }
+      }
+    },
+    {
+      "Let": {
+        "name": "singleOrNoneList",
+        "value": {
+          "Expect": {
+            "expr": {
+              "MethodCall": {
+                "receiver": {
+                  "Identifier": "ctx"
+                },
+                "method": "require_config_deserialize::<Vec<String>>",
+                "args": [
+                  {
+                    "Identifier": "None"
+                  },
+                  {
+                    "StringLiteral": "singleOrNoneList"
+                  }
+                ]
+              }
+            },
+            "message": "Expected config [singleOrNoneList] to exist"
+          }
+        }
+      }
+    },
+    {
+      "Let": {
+        "name": "aString",
+        "value": {
+          "Expect": {
+            "expr": {
+              "MethodCall": {
+                "receiver": {
+                  "Identifier": "ctx"
+                },
+                "method": "require_config",
+                "args": [
+                  {
+                    "Identifier": "None"
+                  },
+                  {
+                    "StringLiteral": "aString"
+                  }
+                ]
+              }
+            },
+            "message": "Expected config [aString] to exist"
+          }
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "elementOutput1"
+            },
+            {
+              "Ref": {
+                "Expect": {
+                  "expr": {
+                    "FunctionCall": {
+                      "path": "pulumi_gestalt_rust::stdlib::element",
+                      "args": [
+                        {
+                          "Ref": {
+                            "Identifier": "aList"
+                          }
+                        },
+                        {
+                          "NumberLiteral": 1.0
+                        }
+                      ]
+                    }
+                  },
+                  "message": "Element should exist"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "elementOutput2"
+            },
+            {
+              "Ref": {
+                "Expect": {
+                  "expr": {
+                    "FunctionCall": {
+                      "path": "pulumi_gestalt_rust::stdlib::element",
+                      "args": [
+                        {
+                          "Ref": {
+                            "Identifier": "aList"
+                          }
+                        },
+                        {
+                          "NumberLiteral": 2.0
+                        }
+                      ]
+                    }
+                  },
+                  "message": "Element should exist"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "joinOutput"
+            },
+            {
+              "Ref": {
+                "FunctionCall": {
+                  "path": "pulumi_gestalt_rust::stdlib::join",
+                  "args": [
+                    {
+                      "StringLiteral": "|"
+                    },
+                    {
+                      "Ref": {
+                        "Identifier": "aList"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "lengthOutput"
+            },
+            {
+              "Ref": {
+                "FunctionCall": {
+                  "path": "pulumi_gestalt_rust::stdlib::length",
+                  "args": [
+                    {
+                      "Ref": {
+                        "Identifier": "aList"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "splitOutput"
+            },
+            {
+              "Ref": {
+                "FunctionCall": {
+                  "path": "pulumi_gestalt_rust::stdlib::split",
+                  "args": [
+                    {
+                      "StringLiteral": "-"
+                    },
+                    {
+                      "Identifier": "aString"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "singleOrNoneOutput"
+            },
+            {
+              "Ref": {
+                "Vec": {
+                  "elements": [
+                    {
+                      "Expect": {
+                        "expr": {
+                          "FunctionCall": {
+                            "path": "pulumi_gestalt_rust::stdlib::single_or_none",
+                            "args": [
+                              {
+                                "Identifier": "singleOrNoneList"
+                              }
+                            ]
+                          }
+                        },
+                        "message": "Should get first element"
+                      }
+                    }
+                  ],
+                  "type_hint": null
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

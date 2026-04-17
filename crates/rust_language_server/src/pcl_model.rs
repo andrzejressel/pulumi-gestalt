@@ -1,25 +1,25 @@
 use pulumi_gestalt_proto::language_server::pulumipcl as pb;
 use std::collections::BTreeMap;
 
-#[derive(Clone, PartialEq, Debug)]
+#[derive(Clone, PartialEq, Debug, serde::Serialize)]
 pub struct PclProtobufProgram {
     pub nodes: Vec<Node>,
     pub plugins: Vec<PluginReference>,
 }
 
-#[derive(Clone, PartialEq, Eq, Hash, Debug)]
+#[derive(Clone, PartialEq, Eq, Hash, Debug, serde::Serialize)]
 pub struct PluginReference {
     pub name: String,
     pub version: String,
 }
 
-#[derive(Clone, PartialEq, Debug)]
+#[derive(Clone, PartialEq, Debug, serde::Serialize)]
 pub struct Node {
     pub value: node::Value,
 }
 
 pub mod node {
-    #[derive(Clone, PartialEq, Debug)]
+    #[derive(Clone, PartialEq, Debug, serde::Serialize)]
     pub enum Value {
         Resource(super::Resource),
         LocalVariable(super::LocalVariable),
@@ -29,7 +29,7 @@ pub mod node {
     }
 }
 
-#[derive(Clone, PartialEq, Debug)]
+#[derive(Clone, PartialEq, Debug, serde::Serialize)]
 pub struct Resource {
     pub name: String,
     pub logical_name: String,
@@ -38,13 +38,13 @@ pub struct Resource {
     pub options: Option<ResourceOptions>,
 }
 
-#[derive(Clone, PartialEq, Debug)]
+#[derive(Clone, PartialEq, Debug, serde::Serialize)]
 pub struct ResourceInput {
     pub name: String,
     pub value: Expression,
 }
 
-#[derive(Clone, PartialEq, Debug)]
+#[derive(Clone, PartialEq, Debug, serde::Serialize)]
 pub struct ResourceOptions {
     pub depends_on: Option<Expression>,
     pub protect: Option<Expression>,
@@ -55,14 +55,14 @@ pub struct ResourceOptions {
     pub range: Option<Expression>,
 }
 
-#[derive(Clone, PartialEq, Debug)]
+#[derive(Clone, PartialEq, Debug, serde::Serialize)]
 pub struct LocalVariable {
     pub name: String,
     pub logical_name: String,
     pub value: Expression,
 }
 
-#[derive(Clone, PartialEq, Debug)]
+#[derive(Clone, PartialEq, Debug, serde::Serialize)]
 pub struct ConfigVariable {
     pub name: String,
     pub logical_name: String,
@@ -71,7 +71,7 @@ pub struct ConfigVariable {
     pub secret: bool,
 }
 
-#[derive(Clone, PartialEq, Debug)]
+#[derive(Clone, PartialEq, Debug, serde::Serialize)]
 pub struct OutputVariable {
     pub name: String,
     pub logical_name: String,
@@ -79,19 +79,19 @@ pub struct OutputVariable {
     pub expression_type: Option<ExpressionType>,
 }
 
-#[derive(Clone, PartialEq, Debug)]
+#[derive(Clone, PartialEq, Debug, serde::Serialize)]
 pub struct PulumiBlock {
     pub required_version_range: Option<Expression>,
 }
 
-#[derive(Clone, PartialEq, Debug)]
+#[derive(Clone, PartialEq, Debug, serde::Serialize)]
 pub struct Expression {
     pub value: expression::Value,
     pub expression_type: Option<ExpressionType>,
 }
 
 pub mod expression {
-    #[derive(Clone, PartialEq, Debug)]
+    #[derive(Clone, PartialEq, Debug, serde::Serialize)]
     pub enum Value {
         LiteralValueExpression(super::LiteralValueExpression),
         TemplateExpression(super::TemplateExpression),
@@ -108,13 +108,13 @@ pub mod expression {
     }
 }
 
-#[derive(Clone, PartialEq, Debug)]
+#[derive(Clone, PartialEq, Debug, serde::Serialize)]
 pub struct LiteralValueExpression {
     pub value: literal_value_expression::Value,
 }
 
 pub mod literal_value_expression {
-    #[derive(Clone, PartialEq, Debug)]
+    #[derive(Clone, PartialEq, Debug, serde::Serialize)]
     pub enum Value {
         UnknownValue(bool),
         StringValue(String),
@@ -123,46 +123,46 @@ pub mod literal_value_expression {
     }
 }
 
-#[derive(Clone, PartialEq, Debug)]
+#[derive(Clone, PartialEq, Debug, serde::Serialize)]
 pub struct TemplateExpression {
     pub parts: Vec<Expression>,
 }
 
-#[derive(Clone, PartialEq, Debug)]
+#[derive(Clone, PartialEq, Debug, serde::Serialize)]
 pub struct IndexExpression {
     pub collection: Box<Expression>,
     pub key: Box<Expression>,
 }
 
-#[derive(Clone, PartialEq, Debug)]
+#[derive(Clone, PartialEq, Debug, serde::Serialize)]
 pub struct ObjectConsExpression {
     pub properties: BTreeMap<String, Expression>,
 }
 
-#[derive(Clone, PartialEq, Debug)]
+#[derive(Clone, PartialEq, Debug, serde::Serialize)]
 pub struct TupleConsExpression {
     pub items: Vec<Expression>,
 }
 
-#[derive(Clone, PartialEq, Debug)]
+#[derive(Clone, PartialEq, Debug, serde::Serialize)]
 pub struct FunctionCallExpression {
     pub name: String,
     pub args: Vec<FunctionCallArgument>,
 }
 
-#[derive(Clone, PartialEq, Debug)]
+#[derive(Clone, PartialEq, Debug, serde::Serialize)]
 pub struct FunctionCallArgument {
     pub value: Expression,
     pub r#type: Type,
 }
 
-#[derive(Clone, PartialEq, Debug)]
+#[derive(Clone, PartialEq, Debug, serde::Serialize)]
 pub struct Type {
     pub value: r#type::Value,
 }
 
 pub mod r#type {
-    #[derive(Clone, PartialEq, Debug)]
+    #[derive(Clone, PartialEq, Debug, serde::Serialize)]
     pub enum Value {
         BoolType(super::Empty),
         IntType(super::Empty),
@@ -173,59 +173,59 @@ pub mod r#type {
     }
 }
 
-#[derive(Clone, PartialEq, Eq, Hash, Debug)]
+#[derive(Clone, PartialEq, Eq, Hash, Debug, serde::Serialize)]
 pub struct Empty {}
 
-#[derive(Clone, PartialEq, Debug)]
+#[derive(Clone, PartialEq, Debug, serde::Serialize)]
 pub struct RelativeTraversalExpression {
     pub source: Box<Expression>,
     pub traversal: Traversal,
 }
 
-#[derive(Clone, PartialEq, Debug)]
+#[derive(Clone, PartialEq, Debug, serde::Serialize)]
 pub struct ScopeTraversalExpression {
     pub root_name: String,
     pub traversal: Traversal,
 }
 
-#[derive(Clone, PartialEq, Debug)]
+#[derive(Clone, PartialEq, Debug, serde::Serialize)]
 pub struct AnonymousFunctionExpression {
     pub body: Box<Expression>,
     pub parameters: Vec<String>,
 }
 
-#[derive(Clone, PartialEq, Debug)]
+#[derive(Clone, PartialEq, Debug, serde::Serialize)]
 pub struct ConditionalExpression {
     pub condition: Box<Expression>,
     pub true_expr: Box<Expression>,
     pub false_expr: Box<Expression>,
 }
 
-#[derive(Clone, PartialEq, Debug)]
+#[derive(Clone, PartialEq, Debug, serde::Serialize)]
 pub struct BinaryOpExpression {
     pub operation: Operation,
     pub left: Box<Expression>,
     pub right: Box<Expression>,
 }
 
-#[derive(Clone, PartialEq, Debug)]
+#[derive(Clone, PartialEq, Debug, serde::Serialize)]
 pub struct UnaryOpExpression {
     pub operation: Operation,
     pub operand: Box<Expression>,
 }
 
-#[derive(Clone, PartialEq, Debug)]
+#[derive(Clone, PartialEq, Debug, serde::Serialize)]
 pub struct Traversal {
     pub each: Vec<Traverser>,
 }
 
-#[derive(Clone, PartialEq, Debug)]
+#[derive(Clone, PartialEq, Debug, serde::Serialize)]
 pub struct Traverser {
     pub value: traverser::Value,
 }
 
 pub mod traverser {
-    #[derive(Clone, PartialEq, Debug)]
+    #[derive(Clone, PartialEq, Debug, serde::Serialize)]
     pub enum Value {
         TraverseAttr(super::TraverseAttr),
         TraverseIndex(super::TraverseIndex),
@@ -234,35 +234,35 @@ pub mod traverser {
     }
 }
 
-#[derive(Clone, PartialEq, Eq, Hash, Debug)]
+#[derive(Clone, PartialEq, Eq, Hash, Debug, serde::Serialize)]
 pub struct TraverseAttr {
     pub name: String,
 }
 
-#[derive(Clone, PartialEq, Eq, Hash, Debug)]
+#[derive(Clone, PartialEq, Eq, Hash, Debug, serde::Serialize)]
 pub struct TraverseIndex {
     pub value: traverse_index::Value,
 }
 
 pub mod traverse_index {
-    #[derive(Clone, PartialEq, Eq, Hash, Debug)]
+    #[derive(Clone, PartialEq, Eq, Hash, Debug, serde::Serialize)]
     pub enum Value {
         IntIndex(i64),
         StringIndex(String),
     }
 }
 
-#[derive(Clone, PartialEq, Eq, Hash, Debug)]
+#[derive(Clone, PartialEq, Eq, Hash, Debug, serde::Serialize)]
 pub struct TraverseRoot {
     pub name: String,
 }
 
-#[derive(Clone, PartialEq, Debug)]
+#[derive(Clone, PartialEq, Debug, serde::Serialize)]
 pub struct TraverseSplat {
     pub each: Traversal,
 }
 
-#[derive(Clone, Debug, PartialEq, Eq, Hash, PartialOrd, Ord)]
+#[derive(Clone, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, serde::Serialize)]
 pub enum ConfigType {
     String,
     Number,
@@ -272,7 +272,7 @@ pub enum ConfigType {
     Map(Box<ConfigType>),
 }
 
-#[derive(Clone, Debug, PartialEq, Eq, Hash, PartialOrd, Ord)]
+#[derive(Clone, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, serde::Serialize)]
 pub enum ExpressionType {
     String,
     Number,
@@ -285,7 +285,7 @@ pub enum ExpressionType {
     Tuple(Vec<ExpressionType>),
 }
 
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, serde::Serialize)]
 pub enum Operation {
     Add,
     Divide,

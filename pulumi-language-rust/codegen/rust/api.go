@@ -34,6 +34,7 @@ typedef struct GeneratePackageResultRef {
 
 typedef struct GenerateProgramRequestRef {
   struct ListRef protobuf;
+  bool testing;
 } GenerateProgramRequestRef;
 
 typedef struct GenerateProgramResultRef {
@@ -44,6 +45,7 @@ typedef struct GenerateProgramResultRef {
 typedef struct GenerateProjectRequestRef {
   struct ListRef protobuf;
   struct StringRef directory;
+  bool testing;
 } GenerateProjectRequestRef;
 
 typedef struct GenerateProjectResultRef {
@@ -245,18 +247,21 @@ func refGeneratePackageRequest(p *GeneratePackageRequest, buffer *[]byte) C.Gene
 type GenerateProjectRequest struct {
 	protobuf  []uint8
 	directory string
+	testing   bool
 }
 
 func newGenerateProjectRequest(p C.GenerateProjectRequestRef) GenerateProjectRequest {
 	return GenerateProjectRequest{
 		protobuf:  new_list_mapper_primitive(newC_uint8_t)(p.protobuf),
 		directory: newString(p.directory),
+		testing:   newC_bool(p.testing),
 	}
 }
 func ownGenerateProjectRequest(p C.GenerateProjectRequestRef) GenerateProjectRequest {
 	return GenerateProjectRequest{
 		protobuf:  new_list_mapper(newC_uint8_t)(p.protobuf),
 		directory: ownString(p.directory),
+		testing:   newC_bool(p.testing),
 	}
 }
 func cntGenerateProjectRequest(s *GenerateProjectRequest, cnt *uint) [0]C.GenerateProjectRequestRef {
@@ -268,21 +273,25 @@ func refGenerateProjectRequest(p *GenerateProjectRequest, buffer *[]byte) C.Gene
 	return C.GenerateProjectRequestRef{
 		protobuf:  ref_list_mapper_primitive(refC_uint8_t)(&p.protobuf, buffer),
 		directory: refString(&p.directory, buffer),
+		testing:   refC_bool(&p.testing, buffer),
 	}
 }
 
 type GenerateProgramRequest struct {
 	protobuf []uint8
+	testing  bool
 }
 
 func newGenerateProgramRequest(p C.GenerateProgramRequestRef) GenerateProgramRequest {
 	return GenerateProgramRequest{
 		protobuf: new_list_mapper_primitive(newC_uint8_t)(p.protobuf),
+		testing:  newC_bool(p.testing),
 	}
 }
 func ownGenerateProgramRequest(p C.GenerateProgramRequestRef) GenerateProgramRequest {
 	return GenerateProgramRequest{
 		protobuf: new_list_mapper(newC_uint8_t)(p.protobuf),
+		testing:  newC_bool(p.testing),
 	}
 }
 func cntGenerateProgramRequest(s *GenerateProgramRequest, cnt *uint) [0]C.GenerateProgramRequestRef {
@@ -293,6 +302,7 @@ func cntGenerateProgramRequest(s *GenerateProgramRequest, cnt *uint) [0]C.Genera
 func refGenerateProgramRequest(p *GenerateProgramRequest, buffer *[]byte) C.GenerateProgramRequestRef {
 	return C.GenerateProgramRequestRef{
 		protobuf: ref_list_mapper_primitive(refC_uint8_t)(&p.protobuf, buffer),
+		testing:  refC_bool(&p.testing, buffer),
 	}
 }
 

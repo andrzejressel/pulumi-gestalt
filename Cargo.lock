@@ -3801,6 +3801,8 @@ dependencies = [
  "pulumi_gestalt_schema",
  "rootcause",
  "rust2go",
+ "serde",
+ "serde_json",
  "syn",
 ]
 

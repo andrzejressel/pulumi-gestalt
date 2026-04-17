@@ -4,18 +4,18 @@
 /// Pulumi semantics. It is produced by lowering the Domain IR and consumed
 /// by the renderer that emits source text.
 
-#[derive(Clone, Debug, PartialEq)]
+#[derive(Clone, Debug, PartialEq, serde::Serialize)]
 pub struct RustFile {
     pub statements: Vec<RustStatement>,
 }
 
-#[derive(Clone, Debug, PartialEq)]
+#[derive(Clone, Debug, PartialEq, serde::Serialize)]
 pub enum RustStatement {
     Let { name: String, value: RustExpr },
     Expr(RustExpr),
 }
 
-#[derive(Clone, Debug, PartialEq)]
+#[derive(Clone, Debug, PartialEq, serde::Serialize)]
 pub enum RustExpr {
     /// `"hello"` — regular string literal.
     StringLiteral(String),

@@ -1,0 +1,111 @@
+{
+  "statements": [
+    {
+      "Export": {
+        "name": "empty",
+        "value": {
+          "PulumiAny": {
+            "Object": []
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "strings",
+        "value": {
+          "PulumiAny": {
+            "Object": [
+              [
+                "farewell",
+                {
+                  "Expr": {
+                    "String": "Goodbye, world!"
+                  }
+                }
+              ],
+              [
+                "greeting",
+                {
+                  "Expr": {
+                    "String": "Hello, world!"
+                  }
+                }
+              ]
+            ]
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "numbers",
+        "value": {
+          "PulumiAny": {
+            "Object": [
+              [
+                "1",
+                {
+                  "Number": 1.0
+                }
+              ],
+              [
+                "2",
+                {
+                  "Number": 2.0
+                }
+              ]
+            ]
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "keys",
+        "value": {
+          "PulumiAny": {
+            "Object": [
+              [
+                "MYKEY",
+                {
+                  "Number": 6.0
+                }
+              ],
+              [
+                "MY_KEY",
+                {
+                  "Number": 4.0
+                }
+              ],
+              [
+                "my-key",
+                {
+                  "Number": 2.0
+                }
+              ],
+              [
+                "my.key",
+                {
+                  "Number": 1.0
+                }
+              ],
+              [
+                "my_key",
+                {
+                  "Number": 3.0
+                }
+              ],
+              [
+                "mykey",
+                {
+                  "Number": 5.0
+                }
+              ]
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

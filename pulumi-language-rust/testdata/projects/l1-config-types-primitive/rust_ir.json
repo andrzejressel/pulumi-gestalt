@@ -1,0 +1,460 @@
+{
+  "statements": [
+    {
+      "Let": {
+        "name": "aNumber",
+        "value": {
+          "Expect": {
+            "expr": {
+              "MethodCall": {
+                "receiver": {
+                  "Identifier": "ctx"
+                },
+                "method": "require_config_deserialize::<f64>",
+                "args": [
+                  {
+                    "Identifier": "None"
+                  },
+                  {
+                    "StringLiteral": "aNumber"
+                  }
+                ]
+              }
+            },
+            "message": "Expected config [aNumber] to exist"
+          }
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "theNumber"
+            },
+            {
+              "Ref": {
+                "BinaryOp": {
+                  "left": {
+                    "Identifier": "aNumber"
+                  },
+                  "op": "+",
+                  "right": {
+                    "NumberLiteral": 1.25
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Let": {
+        "name": "optionalNumber",
+        "value": {
+          "MethodCall": {
+            "receiver": {
+              "MethodCall": {
+                "receiver": {
+                  "Identifier": "ctx"
+                },
+                "method": "require_config_deserialize::<f64>",
+                "args": [
+                  {
+                    "Identifier": "None"
+                  },
+                  {
+                    "StringLiteral": "optionalNumber"
+                  }
+                ]
+              }
+            },
+            "method": "unwrap_or",
+            "args": [
+              {
+                "NumberLiteral": 41.5
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "defaultNumber"
+            },
+            {
+              "Ref": {
+                "BinaryOp": {
+                  "left": {
+                    "Identifier": "optionalNumber"
+                  },
+                  "op": "+",
+                  "right": {
+                    "NumberLiteral": 1.2
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Let": {
+        "name": "anInt",
+        "value": {
+          "Expect": {
+            "expr": {
+              "MethodCall": {
+                "receiver": {
+                  "Identifier": "ctx"
+                },
+                "method": "require_config_deserialize::<i64>",
+                "args": [
+                  {
+                    "Identifier": "None"
+                  },
+                  {
+                    "StringLiteral": "anInt"
+                  }
+                ]
+              }
+            },
+            "message": "Expected config [anInt] to exist"
+          }
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "theInteger"
+            },
+            {
+              "Ref": {
+                "BinaryOp": {
+                  "left": {
+                    "Identifier": "anInt"
+                  },
+                  "op": "+",
+                  "right": {
+                    "NumberLiteral": 4.0
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Let": {
+        "name": "optionalInt",
+        "value": {
+          "MethodCall": {
+            "receiver": {
+              "MethodCall": {
+                "receiver": {
+                  "Identifier": "ctx"
+                },
+                "method": "require_config_deserialize::<i64>",
+                "args": [
+                  {
+                    "Identifier": "None"
+                  },
+                  {
+                    "StringLiteral": "optionalInt"
+                  }
+                ]
+              }
+            },
+            "method": "unwrap_or",
+            "args": [
+              {
+                "NumberLiteral": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "defaultInteger"
+            },
+            {
+              "Ref": {
+                "BinaryOp": {
+                  "left": {
+                    "Identifier": "optionalInt"
+                  },
+                  "op": "+",
+                  "right": {
+                    "NumberLiteral": 2.0
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Let": {
+        "name": "aString",
+        "value": {
+          "Expect": {
+            "expr": {
+              "MethodCall": {
+                "receiver": {
+                  "Identifier": "ctx"
+                },
+                "method": "require_config",
+                "args": [
+                  {
+                    "Identifier": "None"
+                  },
+                  {
+                    "StringLiteral": "aString"
+                  }
+                ]
+              }
+            },
+            "message": "Expected config [aString] to exist"
+          }
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "theString"
+            },
+            {
+              "Ref": {
+                "Format": {
+                  "fmt": "{}{}",
+                  "args": [
+                    {
+                      "Identifier": "aString"
+                    },
+                    {
+                      "StringLiteral": " World"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Let": {
+        "name": "optionalString",
+        "value": {
+          "MethodCall": {
+            "receiver": {
+              "MethodCall": {
+                "receiver": {
+                  "Identifier": "ctx"
+                },
+                "method": "require_config",
+                "args": [
+                  {
+                    "Identifier": "None"
+                  },
+                  {
+                    "StringLiteral": "optionalString"
+                  }
+                ]
+              }
+            },
+            "method": "unwrap_or_else",
+            "args": [
+              {
+                "Closure": {
+                  "params": [
+                    "_"
+                  ],
+                  "body": {
+                    "MethodCall": {
+                      "receiver": {
+                        "StringLiteral": "defaultStringValue"
+                      },
+                      "method": "to_string",
+                      "args": []
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "defaultString"
+            },
+            {
+              "Ref": {
+                "Identifier": "optionalString"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Let": {
+        "name": "aBool",
+        "value": {
+          "Expect": {
+            "expr": {
+              "MethodCall": {
+                "receiver": {
+                  "Identifier": "ctx"
+                },
+                "method": "require_config_deserialize::<bool>",
+                "args": [
+                  {
+                    "Identifier": "None"
+                  },
+                  {
+                    "StringLiteral": "aBool"
+                  }
+                ]
+              }
+            },
+            "message": "Expected config [aBool] to exist"
+          }
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "theBool"
+            },
+            {
+              "Ref": {
+                "BinaryOp": {
+                  "left": {
+                    "UnaryOp": {
+                      "op": "!",
+                      "operand": {
+                        "Identifier": "aBool"
+                      }
+                    }
+                  },
+                  "op": "&&",
+                  "right": {
+                    "BoolLiteral": true
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Let": {
+        "name": "optionalBool",
+        "value": {
+          "MethodCall": {
+            "receiver": {
+              "MethodCall": {
+                "receiver": {
+                  "Identifier": "ctx"
+                },
+                "method": "require_config_deserialize::<bool>",
+                "args": [
+                  {
+                    "Identifier": "None"
+                  },
+                  {
+                    "StringLiteral": "optionalBool"
+                  }
+                ]
+              }
+            },
+            "method": "unwrap_or",
+            "args": [
+              {
+                "BoolLiteral": false
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "defaultBool"
+            },
+            {
+              "Ref": {
+                "Identifier": "optionalBool"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

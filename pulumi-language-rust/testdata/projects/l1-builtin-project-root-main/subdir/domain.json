@@ -1,0 +1,26 @@
+{
+  "statements": [
+    {
+      "Export": {
+        "name": "rootDirectoryOutput",
+        "value": {
+          "StdlibCall": {
+            "func": "RootDirectory",
+            "args": []
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "workingDirectoryOutput",
+        "value": {
+          "StdlibCall": {
+            "func": "Cwd",
+            "args": []
+          }
+        }
+      }
+    }
+  ]
+}

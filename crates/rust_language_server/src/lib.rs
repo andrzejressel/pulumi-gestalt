@@ -33,19 +33,40 @@ fn generate_project(req: GenerateProjectRequest) -> Result<()> {
         .to_str()
         .context("Current directory is not valid UTF-8")?;
     let model_program = pcl_model::map_program(program);
-    let main_rs = generate_main(&model_program).context("Failed to generate main.rs")?;
+    let result = generate_main(&model_program).context("Failed to generate main.rs")?;
     let cargo_rs = include_str!("./Cargo.toml.template");
     let cargo_rs = cargo_rs.replace("{{CURRENT_DIR}}", current_dir);
-    let files = vec![
+    let mut files = vec![
         FileWithContent {
             path: "src/main.rs".to_string(),
-            content: main_rs.into_bytes(),
+            content: result.main_rs.into_bytes(),
         },
         FileWithContent {
             path: "Cargo.toml".to_string(),
             content: cargo_rs.as_bytes().to_vec(),
         },
     ];
+
+    if req.testing {
+        let protobuf_json = serde_json::to_vec_pretty(&model_program)
+            .context("Failed to serialize protobuf to JSON")?;
+        files.push(FileWithContent {
+            path: "protobuf.json".to_string(),
+            content: protobuf_json,
+        });
+        let domain_json = serde_json::to_vec_pretty(&result.domain)
+            .context("Failed to serialize domain IR to JSON")?;
+        files.push(FileWithContent {
+            path: "domain.json".to_string(),
+            content: domain_json,
+        });
+        let rust_ir_json = serde_json::to_vec_pretty(&result.rust_ir)
+            .context("Failed to serialize Rust IR to JSON")?;
+        files.push(FileWithContent {
+            path: "rust_ir.json".to_string(),
+            content: rust_ir_json,
+        });
+    }
 
     let dir = Path::new(&req.directory);
     for file in &files {
@@ -117,8 +138,8 @@ impl G2RCall for G2RCallImpl {
             };
         let model_program = pcl_model::map_program(program);
 
-        let main_rs = match generate_main(&model_program) {
-            Ok(main_rs) => main_rs,
+        let result = match generate_main(&model_program) {
+            Ok(result) => result,
             Err(error) => {
                 return GenerateProgramResult {
                     files_content: vec![],
@@ -126,12 +147,53 @@ impl G2RCall for G2RCallImpl {
                 };
             }
         };
-        let file = vec![FileWithContent {
+
+        let mut files = vec![FileWithContent {
             path: "main.rs".to_string(),
-            content: main_rs.into_bytes(),
+            content: result.main_rs.into_bytes(),
         }];
+
+        if req.testing {
+            match serde_json::to_vec_pretty(&model_program) {
+                Ok(json) => files.push(FileWithContent {
+                    path: "protobuf.json".to_string(),
+                    content: json,
+                }),
+                Err(error) => {
+                    return GenerateProgramResult {
+                        files_content: vec![],
+                        error: format!("failed to serialize protobuf to JSON: {error:?}"),
+                    };
+                }
+            }
+            match serde_json::to_vec_pretty(&result.domain) {
+                Ok(json) => files.push(FileWithContent {
+                    path: "domain.json".to_string(),
+                    content: json,
+                }),
+                Err(error) => {
+                    return GenerateProgramResult {
+                        files_content: vec![],
+                        error: format!("failed to serialize domain IR to JSON: {error:?}"),
+                    };
+                }
+            }
+            match serde_json::to_vec_pretty(&result.rust_ir) {
+                Ok(json) => files.push(FileWithContent {
+                    path: "rust_ir.json".to_string(),
+                    content: json,
+                }),
+                Err(error) => {
+                    return GenerateProgramResult {
+                        files_content: vec![],
+                        error: format!("failed to serialize Rust IR to JSON: {error:?}"),
+                    };
+                }
+            }
+        }
+
         GenerateProgramResult {
-            files_content: file,
+            files_content: files,
             error: String::new(),
         }
     }
@@ -152,5 +214,6 @@ pub fn generate_project_from_protobuf(protobuf: Vec<u8>, directory: String) -> R
     generate_project(GenerateProjectRequest {
         protobuf,
         directory,
+        testing: false,
     })
 }

@@ -4,12 +4,12 @@
 /// knowledge of the target language (Rust). It sits between the PCL IR (which
 /// mirrors the protobuf wire format) and the Rust IR (which mirrors Rust syntax).
 
-#[derive(Clone, Debug, PartialEq)]
+#[derive(Clone, Debug, PartialEq, serde::Serialize)]
 pub struct Program {
     pub statements: Vec<Statement>,
 }
 
-#[derive(Clone, Debug, PartialEq)]
+#[derive(Clone, Debug, PartialEq, serde::Serialize)]
 pub enum Statement {
     ConfigBinding(ConfigBinding),
     LocalBinding { name: String, value: Expr },
@@ -17,7 +17,7 @@ pub enum Statement {
     RequirePulumiVersion(Expr),
 }
 
-#[derive(Clone, Debug, PartialEq)]
+#[derive(Clone, Debug, PartialEq, serde::Serialize)]
 pub struct ConfigBinding {
     pub name: String,
     pub config_type: ConfigType,
@@ -25,7 +25,7 @@ pub struct ConfigBinding {
     pub secret: bool,
 }
 
-#[derive(Clone, Debug, PartialEq)]
+#[derive(Clone, Debug, PartialEq, serde::Serialize)]
 pub enum ConfigType {
     String,
     Number,
@@ -35,7 +35,7 @@ pub enum ConfigType {
     Map(Box<ConfigType>),
 }
 
-#[derive(Clone, Debug, PartialEq)]
+#[derive(Clone, Debug, PartialEq, serde::Serialize)]
 pub enum Expr {
     // Literals
     String(String),
@@ -90,7 +90,7 @@ pub enum Expr {
     },
 }
 
-#[derive(Clone, Debug, PartialEq)]
+#[derive(Clone, Debug, PartialEq, serde::Serialize)]
 pub enum JsonValue {
     String(String),
     Number(f64),
@@ -100,7 +100,7 @@ pub enum JsonValue {
     Expr(Box<Expr>),
 }
 
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, serde::Serialize)]
 pub enum StdlibFn {
     FromBase64,
     ToBase64,
@@ -122,7 +122,7 @@ pub enum StdlibFn {
     Lookup,
 }
 
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, serde::Serialize)]
 pub enum BinOp {
     Add,
     Sub,
@@ -139,7 +139,7 @@ pub enum BinOp {
     Or,
 }
 
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, serde::Serialize)]
 pub enum UnaryOp {
     Not,
     Neg,

@@ -1,0 +1,34 @@
+{
+  "statements": [
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "rootDirectoryOutput"
+            },
+            {
+              "Ref": {
+                "ToStringCall": {
+                  "Ref": {
+                    "MethodCall": {
+                      "receiver": {
+                        "Identifier": "ctx"
+                      },
+                      "method": "get_root_directory",
+                      "args": []
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

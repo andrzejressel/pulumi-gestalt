@@ -1,0 +1,71 @@
+{
+  "statements": [
+    {
+      "ConfigBinding": {
+        "name": "aMap",
+        "config_type": {
+          "Map": "String"
+        },
+        "default": null,
+        "secret": false
+      }
+    },
+    {
+      "Export": {
+        "name": "entriesOutput",
+        "value": {
+          "StdlibCall": {
+            "func": "Entries",
+            "args": [
+              {
+                "Variable": "aMap"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "lookupOutput",
+        "value": {
+          "StdlibCall": {
+            "func": "Lookup",
+            "args": [
+              {
+                "Variable": "aMap"
+              },
+              {
+                "String": "keyPresent"
+              },
+              {
+                "String": "default"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "lookupOutputDefault",
+        "value": {
+          "StdlibCall": {
+            "func": "Lookup",
+            "args": [
+              {
+                "Variable": "aMap"
+              },
+              {
+                "String": "keyMissing"
+              },
+              {
+                "String": "default"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

@@ -298,7 +298,7 @@ func (host *rustLanguageHost) GenerateProgram(
 		return nil, fmt.Errorf("failed to create loader client: %w", err)
 	}
 	defer loader.Close()
-	files, diags, err := generateProgramFromSource(req.Source, schema.NewCachedLoader(loader), req.Strict)
+	files, diags, err := generateProgramFromSource(req.Source, schema.NewCachedLoader(loader), req.Strict, host.testing)
 	if err != nil {
 		return nil, fmt.Errorf("failed to generate program from source: %w", err)
 	}
@@ -397,6 +397,7 @@ func generateProgramFromSource(
 	source map[string]string,
 	loader schema.ReferenceLoader,
 	strict bool,
+	testing bool,
 ) (map[string][]byte, hcl.Diagnostics, error) {
 	parser := hclsyntax.NewParser()
 	for path, contents := range source {
@@ -428,7 +429,7 @@ func generateProgramFromSource(
 		return nil, nil, fmt.Errorf("internal error: program was nil")
 	}
 
-	files, generationDiags, err := rust.GenerateProgram(program)
+	files, generationDiags, err := rust.GenerateProgram(program, testing)
 	if err != nil {
 		return nil, nil, fmt.Errorf("failed to generate program: %w", err)
 	}
@@ -448,7 +449,7 @@ func generateProject(
 		projectDirectory = filepath.Join(directory, project.Main)
 	}
 
-	_, protobufJSON, err := rust.GenerateProject(program, projectDirectory)
+	_, protobufJSON, err := rust.GenerateProject(program, projectDirectory, testing)
 	if err != nil {
 		return fmt.Errorf("failed to generate project files: %w", err)
 	}

@@ -1,0 +1,52 @@
+{
+  "statements": [
+    {
+      "Let": {
+        "name": "version",
+        "value": {
+          "Expect": {
+            "expr": {
+              "MethodCall": {
+                "receiver": {
+                  "Identifier": "ctx"
+                },
+                "method": "require_config",
+                "args": [
+                  {
+                    "Identifier": "None"
+                  },
+                  {
+                    "StringLiteral": "version"
+                  }
+                ]
+              }
+            },
+            "message": "Expected config [version] to exist"
+          }
+        }
+      }
+    },
+    {
+      "Expr": {
+        "Expect": {
+          "expr": {
+            "MethodCall": {
+              "receiver": {
+                "Identifier": "ctx"
+              },
+              "method": "require_pulumi_version",
+              "args": [
+                {
+                  "Ref": {
+                    "Identifier": "version"
+                  }
+                }
+              ]
+            }
+          },
+          "message": "Failed to require Pulumi version"
+        }
+      }
+    }
+  ]
+}

@@ -42,7 +42,7 @@ func GeneratePackage(pkg *schema.Package, dir string) error {
 	return nil
 }
 
-func GenerateProgram(pkg *pcl.Program) (map[string][]byte, hcl.Diagnostics, error) {
+func GenerateProgram(pkg *pcl.Program, testing bool) (map[string][]byte, hcl.Diagnostics, error) {
 	protobufProgram, err := ast.GenerateProtobuf(pkg)
 	if err != nil {
 		return nil, nil, fmt.Errorf("error generating protobuf program: %v", err)
@@ -55,6 +55,7 @@ func GenerateProgram(pkg *pcl.Program) (map[string][]byte, hcl.Diagnostics, erro
 
 	req := GenerateProgramRequest{
 		protobuf: obj,
+		testing:  testing,
 	}
 
 	result := G2RCallImpl{}.generate_program(&req)
@@ -72,7 +73,7 @@ func GenerateProgram(pkg *pcl.Program) (map[string][]byte, hcl.Diagnostics, erro
 
 }
 
-func GenerateProject(pkg *pcl.Program, dir string) ([]byte, []byte, error) {
+func GenerateProject(pkg *pcl.Program, dir string, testing bool) ([]byte, []byte, error) {
 	protobufProgram, err := ast.GenerateProtobuf(pkg)
 	if err != nil {
 		return nil, nil, fmt.Errorf("error generating protobuf program: %v", err)
@@ -97,6 +98,7 @@ func GenerateProject(pkg *pcl.Program, dir string) ([]byte, []byte, error) {
 	req := GenerateProjectRequest{
 		protobuf:  obj,
 		directory: dir,
+		testing:   testing,
 	}
 
 	result := G2RCallImpl{}.generate_project(&req)

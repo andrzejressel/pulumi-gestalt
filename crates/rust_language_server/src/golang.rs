@@ -8,11 +8,13 @@ pub struct GeneratePackageRequest {
 pub struct GenerateProjectRequest {
     pub protobuf: Vec<u8>,
     pub directory: String,
+    pub testing: bool,
 }
 
 #[derive(rust2go::R2G, Clone)]
 pub struct GenerateProgramRequest {
     pub protobuf: Vec<u8>,
+    pub testing: bool,
 }
 
 #[derive(rust2go::R2G, Clone)]

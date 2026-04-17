@@ -1,0 +1,180 @@
+{
+  "statements": [
+    {
+      "Let": {
+        "name": "aSecret",
+        "value": {
+          "Expect": {
+            "expr": {
+              "MethodCall": {
+                "receiver": {
+                  "Identifier": "ctx"
+                },
+                "method": "require_config_secret",
+                "args": [
+                  {
+                    "Identifier": "None"
+                  },
+                  {
+                    "StringLiteral": "aSecret"
+                  }
+                ]
+              }
+            },
+            "message": "Expected config [aSecret] to exist"
+          }
+        }
+      }
+    },
+    {
+      "Let": {
+        "name": "notSecret",
+        "value": {
+          "Expect": {
+            "expr": {
+              "MethodCall": {
+                "receiver": {
+                  "Identifier": "ctx"
+                },
+                "method": "require_config",
+                "args": [
+                  {
+                    "Identifier": "None"
+                  },
+                  {
+                    "StringLiteral": "notSecret"
+                  }
+                ]
+              }
+            },
+            "message": "Expected config [notSecret] to exist"
+          }
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "roundtripSecret"
+            },
+            {
+              "Ref": {
+                "Identifier": "aSecret"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "roundtripNotSecret"
+            },
+            {
+              "Ref": {
+                "Identifier": "notSecret"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "double"
+            },
+            {
+              "Ref": {
+                "MethodCall": {
+                  "receiver": {
+                    "Identifier": "aSecret"
+                  },
+                  "method": "secret",
+                  "args": []
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "open"
+            },
+            {
+              "Ref": {
+                "MethodCall": {
+                  "receiver": {
+                    "Identifier": "aSecret"
+                  },
+                  "method": "unsecret",
+                  "args": []
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "close"
+            },
+            {
+              "Ref": {
+                "MethodCall": {
+                  "receiver": {
+                    "Identifier": "ctx"
+                  },
+                  "method": "new_secret",
+                  "args": [
+                    {
+                      "Ref": {
+                        "Identifier": "notSecret"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

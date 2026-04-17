@@ -1,0 +1,24 @@
+{
+  "nodes": [
+    {
+      "value": {
+        "OutputVariable": {
+          "name": "output_true",
+          "logical_name": "output_true",
+          "value": {
+            "value": {
+              "LiteralValueExpression": {
+                "value": {
+                  "BoolValue": true
+                }
+              }
+            },
+            "expression_type": "Bool"
+          },
+          "expression_type": "Bool"
+        }
+      }
+    }
+  ],
+  "plugins": []
+}
