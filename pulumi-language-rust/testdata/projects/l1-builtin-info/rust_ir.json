@@ -1,0 +1,94 @@
+{
+  "statements": [
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "stackOutput"
+            },
+            {
+              "Ref": {
+                "ToStringCall": {
+                  "Ref": {
+                    "MethodCall": {
+                      "receiver": {
+                        "Identifier": "ctx"
+                      },
+                      "method": "get_stack",
+                      "args": []
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "projectOutput"
+            },
+            {
+              "Ref": {
+                "ToStringCall": {
+                  "Ref": {
+                    "MethodCall": {
+                      "receiver": {
+                        "Identifier": "ctx"
+                      },
+                      "method": "get_project",
+                      "args": []
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "organizationOutput"
+            },
+            {
+              "Ref": {
+                "ToStringCall": {
+                  "Ref": {
+                    "MethodCall": {
+                      "receiver": {
+                        "Identifier": "ctx"
+                      },
+                      "method": "get_organization",
+                      "args": []
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
