@@ -11,10 +11,15 @@ use std::fs::create_dir_all;
 use std::path::Path;
 use std::{env, fs};
 
+mod domain_ir;
+mod domain_to_rust;
 mod generator;
 mod golang;
 mod package_model;
 mod pcl_model;
+mod pcl_to_domain;
+mod rust_ir;
+mod rust_to_string;
 
 fn generate_project(req: GenerateProjectRequest) -> Result<()> {
     let program = pulumi_gestalt_proto::language_server::pulumipcl::PclProtobufProgram::decode(
