@@ -85,10 +85,22 @@ pub fn render_expr(expr: &RustExpr) -> String {
         RustExpr::MethodCall {
             receiver,
             method,
+            type_params,
             args,
         } => {
             let rendered_args = args.iter().map(render_expr).collect::<Vec<_>>().join(", ");
-            format!("{}.{}({})", render_expr(receiver), method, rendered_args)
+            let turbofish = if type_params.is_empty() {
+                String::new()
+            } else {
+                format!("::<{}>", type_params.join(", "))
+            };
+            format!(
+                "{}.{}{}({})",
+                render_expr(receiver),
+                method,
+                turbofish,
+                rendered_args
+            )
         }
         RustExpr::Closure { params, body } => {
             let params_str = params.join(", ");

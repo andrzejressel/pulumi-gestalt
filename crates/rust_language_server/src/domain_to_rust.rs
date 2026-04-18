@@ -36,6 +36,7 @@ fn lower_statement(stmt: &Statement) -> RustStatement {
             RustStatement::Expr(RustExpr::MethodCall {
                 receiver: Box::new(RustExpr::Identifier("ctx".to_string())),
                 method: "add_export".to_string(),
+                type_params: vec![],
                 args: vec![RustExpr::StringLiteral(name.clone()), arg],
             })
         }
@@ -45,6 +46,7 @@ fn lower_statement(stmt: &Statement) -> RustStatement {
                 expr: Box::new(RustExpr::MethodCall {
                     receiver: Box::new(RustExpr::Identifier("ctx".to_string())),
                     method: "require_pulumi_version".to_string(),
+                    type_params: vec![],
                     args: vec![RustExpr::Ref(Box::new(version_expr))],
                 }),
                 message: "Failed to require Pulumi version".to_string(),
@@ -73,6 +75,7 @@ fn lower_config_secret(config: &ConfigBinding) -> RustExpr {
             expr: Box::new(RustExpr::MethodCall {
                 receiver: Box::new(RustExpr::Identifier("ctx".to_string())),
                 method: "require_config_secret".to_string(),
+                type_params: vec![],
                 args: vec![
                     RustExpr::Identifier("None".to_string()),
                     RustExpr::StringLiteral(name.clone()),
@@ -104,17 +107,20 @@ fn lower_config_normal(config: &ConfigBinding) -> RustExpr {
             receiver: Box::new(RustExpr::MethodCall {
                 receiver: Box::new(RustExpr::Identifier("ctx".to_string())),
                 method: "require_config".to_string(),
+                type_params: vec![],
                 args: vec![
                     RustExpr::Identifier("None".to_string()),
                     RustExpr::StringLiteral(name.clone()),
                 ],
             }),
             method: "unwrap_or_else".to_string(),
+            type_params: vec![],
             args: vec![RustExpr::Closure {
                 params: vec!["_".to_string()],
                 body: Box::new(RustExpr::MethodCall {
                     receiver: Box::new(default),
                     method: "to_string".to_string(),
+                    type_params: vec![],
                     args: vec![],
                 }),
             }],
@@ -123,6 +129,7 @@ fn lower_config_normal(config: &ConfigBinding) -> RustExpr {
             expr: Box::new(RustExpr::MethodCall {
                 receiver: Box::new(RustExpr::Identifier("ctx".to_string())),
                 method: "require_config".to_string(),
+                type_params: vec![],
                 args: vec![
                     RustExpr::Identifier("None".to_string()),
                     RustExpr::StringLiteral(name.clone()),
@@ -141,6 +148,7 @@ fn lower_config_normal(config: &ConfigBinding) -> RustExpr {
                 ],
             )),
             method: "unwrap_or".to_string(),
+            type_params: vec![],
             args: vec![default],
         },
         (ct, None) => RustExpr::Expect {
@@ -159,20 +167,16 @@ fn lower_config_normal(config: &ConfigBinding) -> RustExpr {
 }
 
 /// Helper to generate `receiver.method::<Type>(args)`.
-///
-/// We encode this as a `FunctionCall` with the full turbofish path since
-/// the Rust IR `MethodCall` doesn't carry generic parameters.
 fn turbofish_method_call(
     receiver: RustExpr,
     method: &str,
     type_param: &str,
     args: Vec<RustExpr>,
 ) -> RustExpr {
-    // We model this as a method call with the turbofish baked into the method name.
-    // The renderer will emit it as `receiver.method::<T>(args)`.
     RustExpr::MethodCall {
         receiver: Box::new(receiver),
-        method: format!("{}::<{}>", method, type_param),
+        method: method.to_string(),
+        type_params: vec![type_param.to_string()],
         args,
     }
 }
@@ -245,6 +249,7 @@ fn lower_expr(expr: &Expr) -> RustExpr {
         } => RustExpr::MethodCall {
             receiver: Box::new(lower_expr(output)),
             method: "map".to_string(),
+            type_params: vec![],
             args: vec![RustExpr::Closure {
                 params: params.clone(),
                 body: Box::new(lower_expr(body)),
@@ -263,6 +268,7 @@ fn lower_expr(expr: &Expr) -> RustExpr {
             RustExpr::MethodCall {
                 receiver: Box::new(combine),
                 method: "map".to_string(),
+                type_params: vec![],
                 args: vec![RustExpr::Closure {
                     params: params.clone(),
                     body: Box::new(lower_expr(body)),
@@ -272,21 +278,25 @@ fn lower_expr(expr: &Expr) -> RustExpr {
         Expr::MakeSecret(inner) => RustExpr::MethodCall {
             receiver: Box::new(lower_expr(inner)),
             method: "secret".to_string(),
+            type_params: vec![],
             args: vec![],
         },
         Expr::MakeUnsecret(inner) => RustExpr::MethodCall {
             receiver: Box::new(lower_expr(inner)),
             method: "unsecret".to_string(),
+            type_params: vec![],
             args: vec![],
         },
         Expr::NewSecret(inner) => RustExpr::MethodCall {
             receiver: Box::new(RustExpr::Identifier("ctx".to_string())),
             method: "new_secret".to_string(),
+            type_params: vec![],
             args: vec![RustExpr::Ref(Box::new(lower_expr(inner)))],
         },
         Expr::NewOutput(inner) => RustExpr::MethodCall {
             receiver: Box::new(RustExpr::Identifier("ctx".to_string())),
             method: "new_output".to_string(),
+            type_params: vec![],
             args: vec![RustExpr::Ref(Box::new(lower_expr(inner)))],
         },
         Expr::PulumiAny(json) => {
@@ -396,6 +406,7 @@ fn lower_stdlib_call(func: &StdlibFn, args: &[Expr]) -> RustExpr {
             RustExpr::ToStringCall(Box::new(RustExpr::Ref(Box::new(RustExpr::MethodCall {
                 receiver: Box::new(RustExpr::Identifier("ctx".to_string())),
                 method: "get_root_directory".to_string(),
+                type_params: vec![],
                 args: vec![],
             }))))
         }
@@ -403,6 +414,7 @@ fn lower_stdlib_call(func: &StdlibFn, args: &[Expr]) -> RustExpr {
             RustExpr::ToStringCall(Box::new(RustExpr::Ref(Box::new(RustExpr::MethodCall {
                 receiver: Box::new(RustExpr::Identifier("ctx".to_string())),
                 method: "get_stack".to_string(),
+                type_params: vec![],
                 args: vec![],
             }))))
         }
@@ -410,6 +422,7 @@ fn lower_stdlib_call(func: &StdlibFn, args: &[Expr]) -> RustExpr {
             RustExpr::ToStringCall(Box::new(RustExpr::Ref(Box::new(RustExpr::MethodCall {
                 receiver: Box::new(RustExpr::Identifier("ctx".to_string())),
                 method: "get_organization".to_string(),
+                type_params: vec![],
                 args: vec![],
             }))))
         }
@@ -417,6 +430,7 @@ fn lower_stdlib_call(func: &StdlibFn, args: &[Expr]) -> RustExpr {
             RustExpr::ToStringCall(Box::new(RustExpr::Ref(Box::new(RustExpr::MethodCall {
                 receiver: Box::new(RustExpr::Identifier("ctx".to_string())),
                 method: "get_project".to_string(),
+                type_params: vec![],
                 args: vec![],
             }))))
         }

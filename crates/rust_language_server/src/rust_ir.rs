@@ -40,10 +40,11 @@ pub enum RustExpr {
     Format { fmt: String, args: Vec<RustExpr> },
     /// `path::to::func(args...)`
     FunctionCall { path: String, args: Vec<RustExpr> },
-    /// `receiver.method(args...)`
+    /// `receiver.method(args...)` or `receiver.method::<T>(args...)` with type parameters
     MethodCall {
         receiver: Box<RustExpr>,
         method: String,
+        type_params: Vec<String>,
         args: Vec<RustExpr>,
     },
     /// `|params| body`
