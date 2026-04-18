@@ -1,0 +1,14 @@
+{
+  "statements": [
+    {
+      "Export": {
+        "name": "array",
+        "value": {
+          "List": [
+            "Null"
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -104,9 +104,7 @@ fn lower_pulumi_block(block: &PulumiBlock) -> Result<Statement> {
 fn lower_expression(expression: &Expression) -> Result<Expr> {
     match &expression.value {
         expression::Value::LiteralValueExpression(lit) => match &lit.value {
-            literal_value_expression::Value::UnknownValue(_) => {
-                bail!("UnknownValue not yet supported")
-            }
+            literal_value_expression::Value::UnknownValue(_) => Ok(Expr::Null),
             literal_value_expression::Value::StringValue(s) => Ok(Expr::String(s.clone())),
             literal_value_expression::Value::NumberValue(n) => Ok(Expr::Number(*n)),
             literal_value_expression::Value::BoolValue(b) => Ok(Expr::Bool(*b)),
@@ -236,9 +234,7 @@ fn lower_object_to_json(
 fn lower_expression_to_json(expression: &Expression) -> Result<JsonValue> {
     match &expression.value {
         expression::Value::LiteralValueExpression(lit) => match &lit.value {
-            literal_value_expression::Value::UnknownValue(_) => {
-                bail!("UnknownValue not supported in json value")
-            }
+            literal_value_expression::Value::UnknownValue(_) => Ok(JsonValue::Null),
             literal_value_expression::Value::StringValue(s) => Ok(JsonValue::String(s.clone())),
             literal_value_expression::Value::NumberValue(n) => Ok(JsonValue::Number(*n)),
             literal_value_expression::Value::BoolValue(b) => Ok(JsonValue::Bool(*b)),
