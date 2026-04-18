@@ -1,0 +1,129 @@
+{
+  "statements": [
+    {
+      "Let": {
+        "name": "aMap",
+        "value": {
+          "Expect": {
+            "expr": {
+              "MethodCall": {
+                "receiver": {
+                  "Identifier": "ctx"
+                },
+                "method": "require_config_deserialize::<std::collections::BTreeMap<String, String>>",
+                "args": [
+                  {
+                    "Identifier": "None"
+                  },
+                  {
+                    "StringLiteral": "aMap"
+                  }
+                ]
+              }
+            },
+            "message": "Expected config [aMap] to exist"
+          }
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "entriesOutput"
+            },
+            {
+              "Ref": {
+                "FunctionCall": {
+                  "path": "pulumi_gestalt_rust::stdlib::entries",
+                  "args": [
+                    {
+                      "Ref": {
+                        "Identifier": "aMap"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "lookupOutput"
+            },
+            {
+              "Ref": {
+                "FunctionCall": {
+                  "path": "pulumi_gestalt_rust::stdlib::lookup",
+                  "args": [
+                    {
+                      "Ref": {
+                        "Identifier": "aMap"
+                      }
+                    },
+                    {
+                      "StringLiteral": "keyPresent"
+                    },
+                    {
+                      "StringLiteral": "default"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "lookupOutputDefault"
+            },
+            {
+              "Ref": {
+                "FunctionCall": {
+                  "path": "pulumi_gestalt_rust::stdlib::lookup",
+                  "args": [
+                    {
+                      "Ref": {
+                        "Identifier": "aMap"
+                      }
+                    },
+                    {
+                      "StringLiteral": "keyMissing"
+                    },
+                    {
+                      "StringLiteral": "default"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

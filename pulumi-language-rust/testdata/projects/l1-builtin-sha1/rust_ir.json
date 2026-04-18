@@ -1,0 +1,65 @@
+{
+  "statements": [
+    {
+      "Let": {
+        "name": "input",
+        "value": {
+          "Expect": {
+            "expr": {
+              "MethodCall": {
+                "receiver": {
+                  "Identifier": "ctx"
+                },
+                "method": "require_config",
+                "args": [
+                  {
+                    "Identifier": "None"
+                  },
+                  {
+                    "StringLiteral": "input"
+                  }
+                ]
+              }
+            },
+            "message": "Expected config [input] to exist"
+          }
+        }
+      }
+    },
+    {
+      "Let": {
+        "name": "hash",
+        "value": {
+          "FunctionCall": {
+            "path": "pulumi_gestalt_rust::stdlib::sha1",
+            "args": [
+              {
+                "Identifier": "input"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "hash"
+            },
+            {
+              "Ref": {
+                "Identifier": "hash"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

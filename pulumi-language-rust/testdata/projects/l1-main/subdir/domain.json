@@ -1,0 +1,12 @@
+{
+  "statements": [
+    {
+      "Export": {
+        "name": "output_true",
+        "value": {
+          "Bool": true
+        }
+      }
+    }
+  ]
+}

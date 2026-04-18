@@ -1,0 +1,124 @@
+{
+  "statements": [
+    {
+      "Let": {
+        "name": "fileContent",
+        "value": {
+          "Expect": {
+            "expr": {
+              "FunctionCall": {
+                "path": "pulumi_gestalt_rust::stdlib::read_file",
+                "args": [
+                  {
+                    "StringLiteral": "testfile.txt"
+                  }
+                ]
+              }
+            },
+            "message": "Failed to read file"
+          }
+        }
+      }
+    },
+    {
+      "Let": {
+        "name": "fileB64",
+        "value": {
+          "Expect": {
+            "expr": {
+              "FunctionCall": {
+                "path": "pulumi_gestalt_rust::stdlib::filebase64",
+                "args": [
+                  {
+                    "StringLiteral": "testfile.txt"
+                  }
+                ]
+              }
+            },
+            "message": "Failed to read file as base64"
+          }
+        }
+      }
+    },
+    {
+      "Let": {
+        "name": "fileSha",
+        "value": {
+          "Expect": {
+            "expr": {
+              "FunctionCall": {
+                "path": "pulumi_gestalt_rust::stdlib::filebase64sha256",
+                "args": [
+                  {
+                    "StringLiteral": "testfile.txt"
+                  }
+                ]
+              }
+            },
+            "message": "Failed to compute file sha256"
+          }
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "fileContent"
+            },
+            {
+              "Ref": {
+                "Identifier": "fileContent"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "fileB64"
+            },
+            {
+              "Ref": {
+                "Identifier": "fileB64"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "fileSha"
+            },
+            {
+              "Ref": {
+                "Identifier": "fileSha"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

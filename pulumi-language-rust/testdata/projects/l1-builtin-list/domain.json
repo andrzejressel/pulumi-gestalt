@@ -1,0 +1,138 @@
+{
+  "statements": [
+    {
+      "ConfigBinding": {
+        "name": "aList",
+        "config_type": {
+          "List": "String"
+        },
+        "default": null,
+        "secret": false
+      }
+    },
+    {
+      "ConfigBinding": {
+        "name": "singleOrNoneList",
+        "config_type": {
+          "List": "String"
+        },
+        "default": null,
+        "secret": false
+      }
+    },
+    {
+      "ConfigBinding": {
+        "name": "aString",
+        "config_type": "String",
+        "default": null,
+        "secret": false
+      }
+    },
+    {
+      "Export": {
+        "name": "elementOutput1",
+        "value": {
+          "StdlibCall": {
+            "func": "Element",
+            "args": [
+              {
+                "Variable": "aList"
+              },
+              {
+                "Number": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "elementOutput2",
+        "value": {
+          "StdlibCall": {
+            "func": "Element",
+            "args": [
+              {
+                "Variable": "aList"
+              },
+              {
+                "Number": 2.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "joinOutput",
+        "value": {
+          "StdlibCall": {
+            "func": "Join",
+            "args": [
+              {
+                "String": "|"
+              },
+              {
+                "Variable": "aList"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "lengthOutput",
+        "value": {
+          "StdlibCall": {
+            "func": "Length",
+            "args": [
+              {
+                "Variable": "aList"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "splitOutput",
+        "value": {
+          "StdlibCall": {
+            "func": "Split",
+            "args": [
+              {
+                "String": "-"
+              },
+              {
+                "Variable": "aString"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "singleOrNoneOutput",
+        "value": {
+          "List": [
+            {
+              "StdlibCall": {
+                "func": "SingleOrNone",
+                "args": [
+                  {
+                    "Variable": "singleOrNoneList"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

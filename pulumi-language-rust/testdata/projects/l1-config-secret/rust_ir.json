@@ -1,0 +1,95 @@
+{
+  "statements": [
+    {
+      "Let": {
+        "name": "aNumber",
+        "value": {
+          "Expect": {
+            "expr": {
+              "MethodCall": {
+                "receiver": {
+                  "Identifier": "ctx"
+                },
+                "method": "require_config_secret_deserialize::<f64>",
+                "args": [
+                  {
+                    "Identifier": "None"
+                  },
+                  {
+                    "StringLiteral": "aNumber"
+                  }
+                ]
+              }
+            },
+            "message": "Expected config [aNumber] to exist"
+          }
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "roundtrip"
+            },
+            {
+              "Ref": {
+                "Identifier": "aNumber"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "theSecretNumber"
+            },
+            {
+              "Ref": {
+                "MethodCall": {
+                  "receiver": {
+                    "Identifier": "aNumber"
+                  },
+                  "method": "map",
+                  "args": [
+                    {
+                      "Closure": {
+                        "params": [
+                          "aNumber"
+                        ],
+                        "body": {
+                          "BinaryOp": {
+                            "left": {
+                              "Identifier": "aNumber"
+                            },
+                            "op": "+",
+                            "right": {
+                              "NumberLiteral": 1.25
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

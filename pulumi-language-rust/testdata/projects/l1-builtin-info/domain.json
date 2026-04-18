@@ -1,0 +1,37 @@
+{
+  "statements": [
+    {
+      "Export": {
+        "name": "stackOutput",
+        "value": {
+          "StdlibCall": {
+            "func": "Stack",
+            "args": []
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "projectOutput",
+        "value": {
+          "StdlibCall": {
+            "func": "Project",
+            "args": []
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "organizationOutput",
+        "value": {
+          "StdlibCall": {
+            "func": "Organization",
+            "args": []
+          }
+        }
+      }
+    }
+  ]
+}

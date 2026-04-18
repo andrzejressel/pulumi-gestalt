@@ -1,0 +1,73 @@
+{
+  "statements": [
+    {
+      "LocalBinding": {
+        "name": "fileContent",
+        "value": {
+          "StdlibCall": {
+            "func": "ReadFile",
+            "args": [
+              {
+                "String": "testfile.txt"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "LocalBinding": {
+        "name": "fileB64",
+        "value": {
+          "StdlibCall": {
+            "func": "FileBase64",
+            "args": [
+              {
+                "String": "testfile.txt"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "LocalBinding": {
+        "name": "fileSha",
+        "value": {
+          "StdlibCall": {
+            "func": "FileBase64Sha256",
+            "args": [
+              {
+                "String": "testfile.txt"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "fileContent",
+        "value": {
+          "Variable": "fileContent"
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "fileB64",
+        "value": {
+          "Variable": "fileB64"
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "fileSha",
+        "value": {
+          "Variable": "fileSha"
+        }
+      }
+    }
+  ]
+}

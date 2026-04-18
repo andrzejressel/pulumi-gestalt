@@ -1,0 +1,62 @@
+{
+  "statements": [
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "rootDirectoryOutput"
+            },
+            {
+              "Ref": {
+                "ToStringCall": {
+                  "Ref": {
+                    "MethodCall": {
+                      "receiver": {
+                        "Identifier": "ctx"
+                      },
+                      "method": "get_root_directory",
+                      "args": []
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "workingDirectoryOutput"
+            },
+            {
+              "Ref": {
+                "Expect": {
+                  "expr": {
+                    "FunctionCall": {
+                      "path": "pulumi_gestalt_rust::stdlib::cwd",
+                      "args": []
+                    }
+                  },
+                  "message": "Failed to get current directory"
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "statements": [
+    {
+      "ConfigBinding": {
+        "name": "aSecret",
+        "config_type": "String",
+        "default": null,
+        "secret": true
+      }
+    },
+    {
+      "ConfigBinding": {
+        "name": "notSecret",
+        "config_type": "String",
+        "default": null,
+        "secret": false
+      }
+    },
+    {
+      "Export": {
+        "name": "roundtripSecret",
+        "value": {
+          "Variable": "aSecret"
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "roundtripNotSecret",
+        "value": {
+          "Variable": "notSecret"
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "double",
+        "value": {
+          "MakeSecret": {
+            "Variable": "aSecret"
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "open",
+        "value": {
+          "MakeUnsecret": {
+            "Variable": "aSecret"
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "close",
+        "value": {
+          "NewSecret": {
+            "Variable": "notSecret"
+          }
+        }
+      }
+    }
+  ]
+}

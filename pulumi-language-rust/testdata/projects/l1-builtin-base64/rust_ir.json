@@ -1,0 +1,97 @@
+{
+  "statements": [
+    {
+      "Let": {
+        "name": "input",
+        "value": {
+          "Expect": {
+            "expr": {
+              "MethodCall": {
+                "receiver": {
+                  "Identifier": "ctx"
+                },
+                "method": "require_config",
+                "args": [
+                  {
+                    "Identifier": "None"
+                  },
+                  {
+                    "StringLiteral": "input"
+                  }
+                ]
+              }
+            },
+            "message": "Expected config [input] to exist"
+          }
+        }
+      }
+    },
+    {
+      "Let": {
+        "name": "bytes",
+        "value": {
+          "Expect": {
+            "expr": {
+              "FunctionCall": {
+                "path": "pulumi_gestalt_rust::stdlib::from_base64",
+                "args": [
+                  {
+                    "Identifier": "input"
+                  }
+                ]
+              }
+            },
+            "message": "Fail to convert from base64"
+          }
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "data"
+            },
+            {
+              "Ref": {
+                "Identifier": "bytes"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "args": [
+            {
+              "StringLiteral": "roundtrip"
+            },
+            {
+              "Ref": {
+                "FunctionCall": {
+                  "path": "pulumi_gestalt_rust::stdlib::to_base64",
+                  "args": [
+                    {
+                      "Identifier": "bytes"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

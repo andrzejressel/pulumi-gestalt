@@ -1,0 +1,194 @@
+{
+  "statements": [
+    {
+      "ConfigBinding": {
+        "name": "aNumber",
+        "config_type": "Number",
+        "default": null,
+        "secret": false
+      }
+    },
+    {
+      "Export": {
+        "name": "theNumber",
+        "value": {
+          "BinaryOp": {
+            "left": {
+              "Variable": "aNumber"
+            },
+            "op": "Add",
+            "right": {
+              "Number": 1.25
+            }
+          }
+        }
+      }
+    },
+    {
+      "ConfigBinding": {
+        "name": "optionalNumber",
+        "config_type": "Number",
+        "default": {
+          "Number": 41.5
+        },
+        "secret": false
+      }
+    },
+    {
+      "Export": {
+        "name": "defaultNumber",
+        "value": {
+          "BinaryOp": {
+            "left": {
+              "Variable": "optionalNumber"
+            },
+            "op": "Add",
+            "right": {
+              "Number": 1.2
+            }
+          }
+        }
+      }
+    },
+    {
+      "ConfigBinding": {
+        "name": "anInt",
+        "config_type": "Int",
+        "default": null,
+        "secret": false
+      }
+    },
+    {
+      "Export": {
+        "name": "theInteger",
+        "value": {
+          "BinaryOp": {
+            "left": {
+              "Variable": "anInt"
+            },
+            "op": "Add",
+            "right": {
+              "Number": 4.0
+            }
+          }
+        }
+      }
+    },
+    {
+      "ConfigBinding": {
+        "name": "optionalInt",
+        "config_type": "Int",
+        "default": {
+          "Number": 1.0
+        },
+        "secret": false
+      }
+    },
+    {
+      "Export": {
+        "name": "defaultInteger",
+        "value": {
+          "BinaryOp": {
+            "left": {
+              "Variable": "optionalInt"
+            },
+            "op": "Add",
+            "right": {
+              "Number": 2.0
+            }
+          }
+        }
+      }
+    },
+    {
+      "ConfigBinding": {
+        "name": "aString",
+        "config_type": "String",
+        "default": null,
+        "secret": false
+      }
+    },
+    {
+      "Export": {
+        "name": "theString",
+        "value": {
+          "Format": {
+            "parts": [
+              {
+                "Variable": "aString"
+              },
+              {
+                "String": " World"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "ConfigBinding": {
+        "name": "optionalString",
+        "config_type": "String",
+        "default": {
+          "String": "defaultStringValue"
+        },
+        "secret": false
+      }
+    },
+    {
+      "Export": {
+        "name": "defaultString",
+        "value": {
+          "Variable": "optionalString"
+        }
+      }
+    },
+    {
+      "ConfigBinding": {
+        "name": "aBool",
+        "config_type": "Bool",
+        "default": null,
+        "secret": false
+      }
+    },
+    {
+      "Export": {
+        "name": "theBool",
+        "value": {
+          "BinaryOp": {
+            "left": {
+              "UnaryOp": {
+                "op": "Not",
+                "operand": {
+                  "Variable": "aBool"
+                }
+              }
+            },
+            "op": "And",
+            "right": {
+              "Bool": true
+            }
+          }
+        }
+      }
+    },
+    {
+      "ConfigBinding": {
+        "name": "optionalBool",
+        "config_type": "Bool",
+        "default": {
+          "Bool": false
+        },
+        "secret": false
+      }
+    },
+    {
+      "Export": {
+        "name": "defaultBool",
+        "value": {
+          "Variable": "optionalBool"
+        }
+      }
+    }
+  ]
+}

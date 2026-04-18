@@ -1,0 +1,35 @@
+{
+  "statements": [
+    {
+      "ConfigBinding": {
+        "name": "input",
+        "config_type": "String",
+        "default": null,
+        "secret": false
+      }
+    },
+    {
+      "LocalBinding": {
+        "name": "hash",
+        "value": {
+          "StdlibCall": {
+            "func": "Sha1",
+            "args": [
+              {
+                "Variable": "input"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "hash",
+        "value": {
+          "Variable": "hash"
+        }
+      }
+    }
+  ]
+}
