@@ -7,6 +7,7 @@
             "Identifier": "ctx"
           },
           "method": "add_export",
+          "type_params": [],
           "args": [
             {
               "StringLiteral": "rootDirectoryOutput"
@@ -20,6 +21,7 @@
                         "Identifier": "ctx"
                       },
                       "method": "get_root_directory",
+                      "type_params": [],
                       "args": []
                     }
                   }
@@ -37,6 +39,7 @@
             "Identifier": "ctx"
           },
           "method": "add_export",
+          "type_params": [],
           "args": [
             {
               "StringLiteral": "workingDirectoryOutput"

@@ -11,6 +11,7 @@
                   "Identifier": "ctx"
                 },
                 "method": "require_config",
+                "type_params": [],
                 "args": [
                   {
                     "Identifier": "None"
@@ -35,6 +36,7 @@
                 "Identifier": "ctx"
               },
               "method": "require_pulumi_version",
+              "type_params": [],
               "args": [
                 {
                   "Ref": {

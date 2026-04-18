@@ -10,7 +10,10 @@
                 "receiver": {
                   "Identifier": "ctx"
                 },
-                "method": "require_config_secret_deserialize::<f64>",
+                "method": "require_config_secret_deserialize",
+                "type_params": [
+                  "f64"
+                ],
                 "args": [
                   {
                     "Identifier": "None"
@@ -33,6 +36,7 @@
             "Identifier": "ctx"
           },
           "method": "add_export",
+          "type_params": [],
           "args": [
             {
               "StringLiteral": "roundtrip"
@@ -53,6 +57,7 @@
             "Identifier": "ctx"
           },
           "method": "add_export",
+          "type_params": [],
           "args": [
             {
               "StringLiteral": "theSecretNumber"
@@ -64,6 +69,7 @@
                     "Identifier": "aNumber"
                   },
                   "method": "map",
+                  "type_params": [],
                   "args": [
                     {
                       "Closure": {

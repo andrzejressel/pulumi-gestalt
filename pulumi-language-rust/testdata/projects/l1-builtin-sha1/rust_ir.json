@@ -11,6 +11,7 @@
                   "Identifier": "ctx"
                 },
                 "method": "require_config",
+                "type_params": [],
                 "args": [
                   {
                     "Identifier": "None"
@@ -48,6 +49,7 @@
             "Identifier": "ctx"
           },
           "method": "add_export",
+          "type_params": [],
           "args": [
             {
               "StringLiteral": "hash"
