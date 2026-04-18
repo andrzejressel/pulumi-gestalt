@@ -67,6 +67,7 @@
             "Identifier": "ctx"
           },
           "method": "add_export",
+          "type_params": [],
           "args": [
             {
               "StringLiteral": "fileContent"
@@ -87,6 +88,7 @@
             "Identifier": "ctx"
           },
           "method": "add_export",
+          "type_params": [],
           "args": [
             {
               "StringLiteral": "fileB64"
@@ -107,6 +109,7 @@
             "Identifier": "ctx"
           },
           "method": "add_export",
+          "type_params": [],
           "args": [
             {
               "StringLiteral": "fileSha"

@@ -10,7 +10,10 @@
                 "receiver": {
                   "Identifier": "ctx"
                 },
-                "method": "require_config_deserialize::<f64>",
+                "method": "require_config_deserialize",
+                "type_params": [
+                  "f64"
+                ],
                 "args": [
                   {
                     "Identifier": "None"
@@ -33,6 +36,7 @@
             "Identifier": "ctx"
           },
           "method": "add_export",
+          "type_params": [],
           "args": [
             {
               "StringLiteral": "theNumber"
@@ -64,7 +68,10 @@
                 "receiver": {
                   "Identifier": "ctx"
                 },
-                "method": "require_config_deserialize::<f64>",
+                "method": "require_config_deserialize",
+                "type_params": [
+                  "f64"
+                ],
                 "args": [
                   {
                     "Identifier": "None"
@@ -76,6 +83,7 @@
               }
             },
             "method": "unwrap_or",
+            "type_params": [],
             "args": [
               {
                 "NumberLiteral": 41.5
@@ -92,6 +100,7 @@
             "Identifier": "ctx"
           },
           "method": "add_export",
+          "type_params": [],
           "args": [
             {
               "StringLiteral": "defaultNumber"
@@ -123,7 +132,10 @@
                 "receiver": {
                   "Identifier": "ctx"
                 },
-                "method": "require_config_deserialize::<i64>",
+                "method": "require_config_deserialize",
+                "type_params": [
+                  "i64"
+                ],
                 "args": [
                   {
                     "Identifier": "None"
@@ -146,6 +158,7 @@
             "Identifier": "ctx"
           },
           "method": "add_export",
+          "type_params": [],
           "args": [
             {
               "StringLiteral": "theInteger"
@@ -177,7 +190,10 @@
                 "receiver": {
                   "Identifier": "ctx"
                 },
-                "method": "require_config_deserialize::<i64>",
+                "method": "require_config_deserialize",
+                "type_params": [
+                  "i64"
+                ],
                 "args": [
                   {
                     "Identifier": "None"
@@ -189,6 +205,7 @@
               }
             },
             "method": "unwrap_or",
+            "type_params": [],
             "args": [
               {
                 "NumberLiteral": 1.0
@@ -205,6 +222,7 @@
             "Identifier": "ctx"
           },
           "method": "add_export",
+          "type_params": [],
           "args": [
             {
               "StringLiteral": "defaultInteger"
@@ -237,6 +255,7 @@
                   "Identifier": "ctx"
                 },
                 "method": "require_config",
+                "type_params": [],
                 "args": [
                   {
                     "Identifier": "None"
@@ -259,6 +278,7 @@
             "Identifier": "ctx"
           },
           "method": "add_export",
+          "type_params": [],
           "args": [
             {
               "StringLiteral": "theString"
@@ -293,6 +313,7 @@
                   "Identifier": "ctx"
                 },
                 "method": "require_config",
+                "type_params": [],
                 "args": [
                   {
                     "Identifier": "None"
@@ -304,6 +325,7 @@
               }
             },
             "method": "unwrap_or_else",
+            "type_params": [],
             "args": [
               {
                 "Closure": {
@@ -316,6 +338,7 @@
                         "StringLiteral": "defaultStringValue"
                       },
                       "method": "to_string",
+                      "type_params": [],
                       "args": []
                     }
                   }
@@ -333,6 +356,7 @@
             "Identifier": "ctx"
           },
           "method": "add_export",
+          "type_params": [],
           "args": [
             {
               "StringLiteral": "defaultString"
@@ -356,7 +380,10 @@
                 "receiver": {
                   "Identifier": "ctx"
                 },
-                "method": "require_config_deserialize::<bool>",
+                "method": "require_config_deserialize",
+                "type_params": [
+                  "bool"
+                ],
                 "args": [
                   {
                     "Identifier": "None"
@@ -379,6 +406,7 @@
             "Identifier": "ctx"
           },
           "method": "add_export",
+          "type_params": [],
           "args": [
             {
               "StringLiteral": "theBool"
@@ -415,7 +443,10 @@
                 "receiver": {
                   "Identifier": "ctx"
                 },
-                "method": "require_config_deserialize::<bool>",
+                "method": "require_config_deserialize",
+                "type_params": [
+                  "bool"
+                ],
                 "args": [
                   {
                     "Identifier": "None"
@@ -427,6 +458,7 @@
               }
             },
             "method": "unwrap_or",
+            "type_params": [],
             "args": [
               {
                 "BoolLiteral": false
@@ -443,6 +475,7 @@
             "Identifier": "ctx"
           },
           "method": "add_export",
+          "type_params": [],
           "args": [
             {
               "StringLiteral": "defaultBool"

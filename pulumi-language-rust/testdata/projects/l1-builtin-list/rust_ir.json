@@ -10,7 +10,10 @@
                 "receiver": {
                   "Identifier": "ctx"
                 },
-                "method": "require_config_deserialize::<Vec<String>>",
+                "method": "require_config_deserialize",
+                "type_params": [
+                  "Vec<String>"
+                ],
                 "args": [
                   {
                     "Identifier": "None"
@@ -36,7 +39,10 @@
                 "receiver": {
                   "Identifier": "ctx"
                 },
-                "method": "require_config_deserialize::<Vec<String>>",
+                "method": "require_config_deserialize",
+                "type_params": [
+                  "Vec<String>"
+                ],
                 "args": [
                   {
                     "Identifier": "None"
@@ -63,6 +69,7 @@
                   "Identifier": "ctx"
                 },
                 "method": "require_config",
+                "type_params": [],
                 "args": [
                   {
                     "Identifier": "None"
@@ -85,6 +92,7 @@
             "Identifier": "ctx"
           },
           "method": "add_export",
+          "type_params": [],
           "args": [
             {
               "StringLiteral": "elementOutput1"
@@ -122,6 +130,7 @@
             "Identifier": "ctx"
           },
           "method": "add_export",
+          "type_params": [],
           "args": [
             {
               "StringLiteral": "elementOutput2"
@@ -159,6 +168,7 @@
             "Identifier": "ctx"
           },
           "method": "add_export",
+          "type_params": [],
           "args": [
             {
               "StringLiteral": "joinOutput"
@@ -191,6 +201,7 @@
             "Identifier": "ctx"
           },
           "method": "add_export",
+          "type_params": [],
           "args": [
             {
               "StringLiteral": "lengthOutput"
@@ -220,6 +231,7 @@
             "Identifier": "ctx"
           },
           "method": "add_export",
+          "type_params": [],
           "args": [
             {
               "StringLiteral": "splitOutput"
@@ -250,6 +262,7 @@
             "Identifier": "ctx"
           },
           "method": "add_export",
+          "type_params": [],
           "args": [
             {
               "StringLiteral": "singleOrNoneOutput"

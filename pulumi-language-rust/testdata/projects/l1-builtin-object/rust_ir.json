@@ -10,7 +10,10 @@
                 "receiver": {
                   "Identifier": "ctx"
                 },
-                "method": "require_config_deserialize::<std::collections::BTreeMap<String, String>>",
+                "method": "require_config_deserialize",
+                "type_params": [
+                  "std::collections::BTreeMap<String, String>"
+                ],
                 "args": [
                   {
                     "Identifier": "None"
@@ -33,6 +36,7 @@
             "Identifier": "ctx"
           },
           "method": "add_export",
+          "type_params": [],
           "args": [
             {
               "StringLiteral": "entriesOutput"
@@ -62,6 +66,7 @@
             "Identifier": "ctx"
           },
           "method": "add_export",
+          "type_params": [],
           "args": [
             {
               "StringLiteral": "lookupOutput"
@@ -97,6 +102,7 @@
             "Identifier": "ctx"
           },
           "method": "add_export",
+          "type_params": [],
           "args": [
             {
               "StringLiteral": "lookupOutputDefault"

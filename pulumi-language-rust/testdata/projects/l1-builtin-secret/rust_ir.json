@@ -11,6 +11,7 @@
                   "Identifier": "ctx"
                 },
                 "method": "require_config_secret",
+                "type_params": [],
                 "args": [
                   {
                     "Identifier": "None"
@@ -37,6 +38,7 @@
                   "Identifier": "ctx"
                 },
                 "method": "require_config",
+                "type_params": [],
                 "args": [
                   {
                     "Identifier": "None"
@@ -59,6 +61,7 @@
             "Identifier": "ctx"
           },
           "method": "add_export",
+          "type_params": [],
           "args": [
             {
               "StringLiteral": "roundtripSecret"
@@ -79,6 +82,7 @@
             "Identifier": "ctx"
           },
           "method": "add_export",
+          "type_params": [],
           "args": [
             {
               "StringLiteral": "roundtripNotSecret"
@@ -99,6 +103,7 @@
             "Identifier": "ctx"
           },
           "method": "add_export",
+          "type_params": [],
           "args": [
             {
               "StringLiteral": "double"
@@ -110,6 +115,7 @@
                     "Identifier": "aSecret"
                   },
                   "method": "secret",
+                  "type_params": [],
                   "args": []
                 }
               }
@@ -125,6 +131,7 @@
             "Identifier": "ctx"
           },
           "method": "add_export",
+          "type_params": [],
           "args": [
             {
               "StringLiteral": "open"
@@ -136,6 +143,7 @@
                     "Identifier": "aSecret"
                   },
                   "method": "unsecret",
+                  "type_params": [],
                   "args": []
                 }
               }
@@ -151,6 +159,7 @@
             "Identifier": "ctx"
           },
           "method": "add_export",
+          "type_params": [],
           "args": [
             {
               "StringLiteral": "close"
@@ -162,6 +171,7 @@
                     "Identifier": "ctx"
                   },
                   "method": "new_secret",
+                  "type_params": [],
                   "args": [
                     {
                       "Ref": {
