@@ -124,5 +124,6 @@ pub fn render_expr(expr: &RustExpr) -> String {
         RustExpr::ToStringCall(inner) => {
             format!("({}).to_string()", render_expr(inner))
         }
+        RustExpr::Null => "serde_json::Value::Null".to_string(),
     }
 }

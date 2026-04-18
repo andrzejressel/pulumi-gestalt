@@ -208,6 +208,7 @@ fn lower_expr(expr: &Expr) -> RustExpr {
         }
         Expr::Number(n) => RustExpr::NumberLiteral(*n),
         Expr::Bool(b) => RustExpr::BoolLiteral(*b),
+        Expr::Null => RustExpr::Null,
         Expr::Variable(name) => RustExpr::Identifier(name.clone()),
         Expr::FieldAccess(base, field) => {
             RustExpr::FieldAccess(Box::new(lower_expr(base)), field.clone())
@@ -466,6 +467,7 @@ fn render_json_value(json: &JsonValue) -> String {
             }
         }
         JsonValue::Bool(b) => b.to_string(),
+        JsonValue::Null => "null".to_string(),
         JsonValue::Object(props) => {
             let inner = props
                 .iter()

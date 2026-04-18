@@ -41,6 +41,7 @@ pub enum Expr {
     String(String),
     Number(f64),
     Bool(bool),
+    Null,
 
     // Structural
     Variable(String),
@@ -95,6 +96,7 @@ pub enum JsonValue {
     String(String),
     Number(f64),
     Bool(bool),
+    Null,
     Object(Vec<(String, JsonValue)>),
     Array(Vec<JsonValue>),
     Expr(Box<Expr>),
