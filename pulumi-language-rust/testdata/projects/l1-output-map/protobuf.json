@@ -5,7 +5,10 @@
         "name": "empty",
         "logicalName": "empty",
         "value": {
-          "objectConsExpression": {}
+          "objectConsExpression": {},
+          "type": {
+            "objectType": {}
+          }
         },
         "expression_type": {
           "dynamicType": {}
@@ -54,6 +57,18 @@
                 }
               }
             }
+          },
+          "type": {
+            "objectType": {
+              "properties": {
+                "farewell": {
+                  "stringType": {}
+                },
+                "greeting": {
+                  "stringType": {}
+                }
+              }
+            }
           }
         },
         "expression_type": {
@@ -81,6 +96,18 @@
                   "numberValue": 2
                 },
                 "type": {
+                  "intType": {}
+                }
+              }
+            }
+          },
+          "type": {
+            "objectType": {
+              "properties": {
+                "1": {
+                  "intType": {}
+                },
+                "2": {
                   "intType": {}
                 }
               }
@@ -144,6 +171,30 @@
                   "numberValue": 5
                 },
                 "type": {
+                  "intType": {}
+                }
+              }
+            }
+          },
+          "type": {
+            "objectType": {
+              "properties": {
+                "MYKEY": {
+                  "intType": {}
+                },
+                "MY_KEY": {
+                  "intType": {}
+                },
+                "my-key": {
+                  "intType": {}
+                },
+                "my.key": {
+                  "intType": {}
+                },
+                "my_key": {
+                  "intType": {}
+                },
+                "mykey": {
                   "intType": {}
                 }
               }

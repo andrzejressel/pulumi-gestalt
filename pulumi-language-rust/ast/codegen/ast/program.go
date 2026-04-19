@@ -176,7 +176,10 @@ func transformExpression(expr model.Expression) (*astproto.Expression, error) {
 		return nil, nil
 	}
 
-	expressionType := transformExpressionType(expr.Type())
+	expressionType, err := transformExpressionType(expr.Type())
+	if err != nil {
+		return nil, fmt.Errorf("could not transform expression type for %T (%v): %w", expr, expr, err)
+	}
 
 	switch expr := expr.(type) {
 	/* TODO: Support enums
@@ -252,7 +255,6 @@ func transformExpression(expr model.Expression) (*astproto.Expression, error) {
 			}
 			properties[key] = transformedValue
 		}
-		fmt.Printf("Type for OCE %s\n", expressionType)
 		return &astproto.Expression{
 			Value: &astproto.Expression_ObjectConsExpression{
 				ObjectConsExpression: &astproto.ObjectConsExpression{
@@ -542,7 +544,10 @@ func transformOutput(output *pcl.OutputVariable) (*astproto.OutputVariable, erro
 	if err != nil {
 		return nil, err
 	}
-	expressionType := transformExpressionType(output.Type())
+	expressionType, err := transformExpressionType(output.Type())
+	if err != nil {
+		return nil, fmt.Errorf("could not transform expression type for output %q: %w", output.Name(), err)
+	}
 
 	return &astproto.OutputVariable{
 		Name:           output.Name(),
@@ -599,55 +604,58 @@ func transformConfigType(variableType model.Type) (*astproto.ConfigType, error) 
 // transformExpressionType converts an expression's type to an ExpressionType proto message.
 // Unlike transformConfigType, it does not unwrap Output types — Output<T> is represented
 // as ExpressionType with an outputType variant wrapping the inner type.
-// Unknown/composite types are silently treated as nil since the Expression.type field is optional.
-func transformExpressionType(t model.Type) *astproto.ExpressionType {
+func transformExpressionType(t model.Type) (*astproto.ExpressionType, error) {
 	switch t {
 	case model.StringType:
 		return &astproto.ExpressionType{
 			Value: &astproto.ExpressionType_StringType{StringType: &astproto.Empty{}},
-		}
+		}, nil
 	case model.NumberType:
 		return &astproto.ExpressionType{
 			Value: &astproto.ExpressionType_NumberType{NumberType: &astproto.Empty{}},
-		}
+		}, nil
 	case model.IntType:
 		return &astproto.ExpressionType{
 			Value: &astproto.ExpressionType_IntType{IntType: &astproto.Empty{}},
-		}
+		}, nil
 	case model.BoolType:
 		return &astproto.ExpressionType{
 			Value: &astproto.ExpressionType_BoolType{BoolType: &astproto.Empty{}},
-		}
+		}, nil
 	case model.DynamicType:
 		return &astproto.ExpressionType{
 			Value: &astproto.ExpressionType_DynamicType{DynamicType: &astproto.Empty{}},
-		}
+		}, nil
+	case model.NoneType:
+		return &astproto.ExpressionType{
+			Value: &astproto.ExpressionType_NoneType{NoneType: &astproto.Empty{}},
+		}, nil
 	default:
 		switch t := t.(type) {
 		case *model.OutputType:
-			inner := transformExpressionType(t.ElementType)
-			if inner == nil {
-				return nil
+			inner, err := transformExpressionType(t.ElementType)
+			if err != nil {
+				return nil, fmt.Errorf("could not transform output element type: %w", err)
 			}
 			return &astproto.ExpressionType{
 				Value: &astproto.ExpressionType_OutputType{OutputType: inner},
-			}
+			}, nil
 		case *model.ListType:
-			inner := transformExpressionType(t.ElementType)
-			if inner == nil {
-				return nil
+			inner, err := transformExpressionType(t.ElementType)
+			if err != nil {
+				return nil, fmt.Errorf("could not transform list element type: %w", err)
 			}
 			return &astproto.ExpressionType{
 				Value: &astproto.ExpressionType_ListType{ListType: inner},
-			}
+			}, nil
 		case *model.MapType:
-			inner := transformExpressionType(t.ElementType)
-			if inner == nil {
-				return nil
+			inner, err := transformExpressionType(t.ElementType)
+			if err != nil {
+				return nil, fmt.Errorf("could not transform map element type: %w", err)
 			}
 			return &astproto.ExpressionType{
 				Value: &astproto.ExpressionType_MapType{MapType: inner},
-			}
+			}, nil
 		case *model.ConstType:
 			// Singleton/literal type — delegate to the underlying base type.
 			// e.g. cty.StringVal("Hello") → string, cty.NumberIntVal(0) → int
@@ -655,10 +663,11 @@ func transformExpressionType(t model.Type) *astproto.ExpressionType {
 		case *model.TupleType:
 			elementTypes := make([]*astproto.ExpressionType, 0, len(t.ElementTypes))
 			for _, elemType := range t.ElementTypes {
-				transformed := transformExpressionType(elemType)
-				if transformed != nil {
-					elementTypes = append(elementTypes, transformed)
+				transformed, err := transformExpressionType(elemType)
+				if err != nil {
+					return nil, fmt.Errorf("could not transform tuple element type: %w", err)
 				}
+				elementTypes = append(elementTypes, transformed)
 			}
 			return &astproto.ExpressionType{
 				Value: &astproto.ExpressionType_TupleType{
@@ -666,10 +675,41 @@ func transformExpressionType(t model.Type) *astproto.ExpressionType {
 						ElementTypes: elementTypes,
 					},
 				},
+			}, nil
+		case *model.ObjectType:
+			properties := make(map[string]*astproto.ExpressionType, len(t.Properties))
+			for name, propType := range t.Properties {
+				transformed, err := transformExpressionType(propType)
+				if err != nil {
+					return nil, fmt.Errorf("could not transform object property type %q: %w", name, err)
+				}
+				properties[name] = transformed
 			}
+			return &astproto.ExpressionType{
+				Value: &astproto.ExpressionType_ObjectType{
+					ObjectType: &astproto.ObjectExpressionType{
+						Properties: properties,
+					},
+				},
+			}, nil
+		case *model.UnionType:
+			elementTypes := make([]*astproto.ExpressionType, 0, len(t.ElementTypes))
+			for _, elemType := range t.ElementTypes {
+				transformed, err := transformExpressionType(elemType)
+				if err != nil {
+					return nil, fmt.Errorf("could not transform union element type: %w", err)
+				}
+				elementTypes = append(elementTypes, transformed)
+			}
+			return &astproto.ExpressionType{
+				Value: &astproto.ExpressionType_UnionType{
+					UnionType: &astproto.UnionExpressionType{
+						ElementTypes: elementTypes,
+					},
+				},
+			}, nil
 		default:
-			fmt.Printf("Unknown expression type: %v", t)
-			return nil
+			return nil, fmt.Errorf("unknown expression type: %T (%v)", t, t)
 		}
 	}
 }

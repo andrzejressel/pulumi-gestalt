@@ -352,12 +352,39 @@
                       }
                     }
                   ]
+                },
+                "type": {
+                  "unionType": {
+                    "element_types": [
+                      {
+                        "noneType": {}
+                      },
+                      {
+                        "stringType": {}
+                      }
+                    ]
+                  }
                 }
               }
             ]
           },
           "type": {
-            "tupleType": {}
+            "tupleType": {
+              "element_types": [
+                {
+                  "unionType": {
+                    "element_types": [
+                      {
+                        "noneType": {}
+                      },
+                      {
+                        "stringType": {}
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
           }
         },
         "expression_type": {

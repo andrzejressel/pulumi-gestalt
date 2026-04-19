@@ -10,12 +10,21 @@
               {
                 "literalValueExpression": {
                   "unknownValue": true
+                },
+                "type": {
+                  "noneType": {}
                 }
               }
             ]
           },
           "type": {
-            "tupleType": {}
+            "tupleType": {
+              "element_types": [
+                {
+                  "noneType": {}
+                }
+              ]
+            }
           }
         },
         "expression_type": {

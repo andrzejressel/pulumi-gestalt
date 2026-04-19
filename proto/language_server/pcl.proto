@@ -80,6 +80,14 @@ message TupleExpressionType {
   repeated ExpressionType element_types = 1;
 }
 
+message ObjectExpressionType {
+  map<string, ExpressionType> properties = 1;
+}
+
+message UnionExpressionType {
+  repeated ExpressionType element_types = 1;
+}
+
 message ExpressionType {
   oneof value {
     Empty stringType = 1;
@@ -91,6 +99,9 @@ message ExpressionType {
     ExpressionType outputType = 7;
     TupleExpressionType tupleType = 8;
     Empty dynamicType = 9;
+    ObjectExpressionType objectType = 10;
+    Empty noneType = 11;
+    UnionExpressionType unionType = 12;
   }
 }
 
