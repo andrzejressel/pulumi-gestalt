@@ -668,7 +668,6 @@ func transformExpressionType(t model.Type) *astproto.ExpressionType {
 				},
 			}
 		default:
-			fmt.Printf("Unknown expression type: %v", t)
 			return nil
 		}
 	}
