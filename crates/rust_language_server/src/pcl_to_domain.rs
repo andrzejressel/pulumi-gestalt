@@ -124,7 +124,11 @@ fn lower_expression(expression: &Expression) -> Result<Expr> {
             bail!("IndexExpression not yet supported")
         }
         expression::Value::ObjectConsExpression(obj) => match &expression.expression_type {
-            Some(pcl_model::ExpressionType::Dynamic) | None => {
+            Some(pcl_model::ExpressionType::Dynamic)
+            | Some(pcl_model::ExpressionType::Object(_))
+            | Some(pcl_model::ExpressionType::None)
+            | Some(pcl_model::ExpressionType::Union(_))
+            | None => {
                 let json = lower_object_to_json(obj, expression)
                     .context("Failed to lower ObjectConsExpression")?;
                 Ok(Expr::PulumiAny(json))
@@ -240,7 +244,10 @@ fn lower_expression_to_json(expression: &Expression) -> Result<JsonValue> {
             literal_value_expression::Value::BoolValue(b) => Ok(JsonValue::Bool(*b)),
         },
         expression::Value::ObjectConsExpression(obj) => match &expression.expression_type {
-            Some(pcl_model::ExpressionType::Dynamic) => lower_object_to_json(obj, expression),
+            Some(pcl_model::ExpressionType::Dynamic)
+            | Some(pcl_model::ExpressionType::Object(_))
+            | Some(pcl_model::ExpressionType::None)
+            | Some(pcl_model::ExpressionType::Union(_)) => lower_object_to_json(obj, expression),
             other => bail!(
                 "ObjectConsExpression with non-dynamic expression type {:?} is not supported",
                 other

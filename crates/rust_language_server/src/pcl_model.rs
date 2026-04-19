@@ -279,10 +279,13 @@ pub enum ExpressionType {
     Int,
     Bool,
     Dynamic,
+    None,
     List(Box<ExpressionType>),
     Map(Box<ExpressionType>),
     Output(Box<ExpressionType>),
     Tuple(Vec<ExpressionType>),
+    Object(BTreeMap<String, ExpressionType>),
+    Union(Vec<ExpressionType>),
 }
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, serde::Serialize)]
@@ -705,6 +708,19 @@ fn map_expression_type(value: pb::ExpressionType) -> ExpressionType {
                 .collect(),
         ),
         pb::expression_type::Value::DynamicType(_) => ExpressionType::Dynamic,
+        pb::expression_type::Value::NoneType(_) => ExpressionType::None,
+        pb::expression_type::Value::ObjectType(v) => ExpressionType::Object(
+            v.properties
+                .into_iter()
+                .map(|(name, expr_type)| (name, map_expression_type(expr_type)))
+                .collect(),
+        ),
+        pb::expression_type::Value::UnionType(v) => ExpressionType::Union(
+            v.element_types
+                .into_iter()
+                .map(map_expression_type)
+                .collect(),
+        ),
     }
 }
 

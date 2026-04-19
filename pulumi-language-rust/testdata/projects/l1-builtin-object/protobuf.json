@@ -44,6 +44,20 @@
                 }
               }
             ]
+          },
+          "type": {
+            "listType": {
+              "objectType": {
+                "properties": {
+                  "key": {
+                    "stringType": {}
+                  },
+                  "value": {
+                    "stringType": {}
+                  }
+                }
+              }
+            }
           }
         },
         "expression_type": {

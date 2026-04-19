@@ -127,8 +127,21 @@ pub struct TupleExpressionType {
     pub element_types: ::prost::alloc::vec::Vec<ExpressionType>,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ObjectExpressionType {
+    #[prost(map = "string, message", tag = "1")]
+    pub properties: ::std::collections::HashMap<::prost::alloc::string::String, ExpressionType>,
+}
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct UnionExpressionType {
+    #[prost(message, repeated, tag = "1")]
+    pub element_types: ::prost::alloc::vec::Vec<ExpressionType>,
+}
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ExpressionType {
-    #[prost(oneof = "expression_type::Value", tags = "1, 2, 3, 4, 5, 6, 7, 8, 9")]
+    #[prost(
+        oneof = "expression_type::Value",
+        tags = "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12"
+    )]
     pub value: ::core::option::Option<expression_type::Value>,
 }
 /// Nested message and enum types in `ExpressionType`.
@@ -153,6 +166,12 @@ pub mod expression_type {
         TupleType(super::TupleExpressionType),
         #[prost(message, tag = "9")]
         DynamicType(super::Empty),
+        #[prost(message, tag = "10")]
+        ObjectType(super::ObjectExpressionType),
+        #[prost(message, tag = "11")]
+        NoneType(super::Empty),
+        #[prost(message, tag = "12")]
+        UnionType(super::UnionExpressionType),
     }
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
