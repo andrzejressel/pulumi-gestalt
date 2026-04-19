@@ -48,6 +48,14 @@
         "squidfunk/mkdocs-material"
       ],
       "groupName": "mkdocs-material"
+    },
+    {
+      "matchPackageNames": [
+        "pulumi",
+        "github.com/pulumi/pulumi/pkg/v3",
+        "github.com/pulumi/pulumi/sdk/v3"
+      ],
+      "groupName": "pulumi"
     }
   ]
 }
