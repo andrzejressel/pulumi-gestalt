@@ -11,6 +11,7 @@
     "l1-builtin-require-pulumi-version",
     "l1-builtin-secret",
     "l1-builtin-sha1",
+    "l1-builtin-stash",
     "l1-config-secret",
     "l1-config-types-primitive",
     "l1-elide-index",

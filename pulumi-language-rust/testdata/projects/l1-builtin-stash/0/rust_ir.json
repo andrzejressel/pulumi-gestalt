@@ -1,0 +1,103 @@
+{
+  "statements": [
+    {
+      "Let": {
+        "name": "myStash",
+        "value": {
+          "FunctionCall": {
+            "path": "pulumi_gestalt_rust::resources::stash::create",
+            "args": [
+              {
+                "Ref": {
+                  "Identifier": "ctx"
+                }
+              },
+              {
+                "StringLiteral": "myStash"
+              },
+              {
+                "MethodCall": {
+                  "receiver": {
+                    "MethodCall": {
+                      "receiver": {
+                        "FunctionCall": {
+                          "path": "pulumi_gestalt_rust::resources::stash::StashArgs::builder",
+                          "args": []
+                        }
+                      },
+                      "method": "input",
+                      "type_params": [],
+                      "args": [
+                        {
+                          "MacroCall": {
+                            "path": "pulumi_gestalt_rust::pulumi_any!",
+                            "body": "{\"\": false, \"key\": [(\"value\"), (\"s\")]}"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "method": "build_struct",
+                  "type_params": [],
+                  "args": []
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "type_params": [],
+          "args": [
+            {
+              "StringLiteral": "stashInput"
+            },
+            {
+              "Ref": {
+                "FieldAccess": [
+                  {
+                    "Identifier": "myStash"
+                  },
+                  "input"
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "type_params": [],
+          "args": [
+            {
+              "StringLiteral": "stashOutput"
+            },
+            {
+              "Ref": {
+                "FieldAccess": [
+                  {
+                    "Identifier": "myStash"
+                  },
+                  "output"
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

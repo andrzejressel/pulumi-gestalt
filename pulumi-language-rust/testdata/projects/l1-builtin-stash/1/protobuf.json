@@ -1,0 +1,105 @@
+{
+  "nodes": [
+    {
+      "resource": {
+        "name": "myStash",
+        "logicalName": "myStash",
+        "token": "pulumi:index:Stash",
+        "inputs": [
+          {
+            "name": "input",
+            "value": {
+              "templateExpression": {
+                "parts": [
+                  {
+                    "literalValueExpression": {
+                      "stringValue": "ignored"
+                    },
+                    "type": {
+                      "stringType": {}
+                    }
+                  }
+                ]
+              },
+              "type": {
+                "stringType": {}
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "stashInput",
+        "logicalName": "stashInput",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "myStash",
+            "traversal": {
+              "each": [
+                {
+                  "traverseRoot": {
+                    "name": "myStash"
+                  }
+                },
+                {
+                  "traverseAttr": {
+                    "name": "input"
+                  }
+                }
+              ]
+            }
+          },
+          "type": {
+            "outputType": {
+              "dynamicType": {}
+            }
+          }
+        },
+        "expression_type": {
+          "dynamicType": {}
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "stashOutput",
+        "logicalName": "stashOutput",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "myStash",
+            "traversal": {
+              "each": [
+                {
+                  "traverseRoot": {
+                    "name": "myStash"
+                  }
+                },
+                {
+                  "traverseAttr": {
+                    "name": "output"
+                  }
+                }
+              ]
+            }
+          },
+          "type": {
+            "outputType": {
+              "dynamicType": {}
+            }
+          }
+        },
+        "expression_type": {
+          "dynamicType": {}
+        }
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "name": "pulumi",
+      "version": "3.0.0"
+    }
+  ]
+}
