@@ -1,0 +1,71 @@
+{
+  "statements": [
+    {
+      "Resource": {
+        "name": "myStash",
+        "logical_name": "myStash",
+        "token": "pulumi:index:Stash",
+        "inputs": [
+          [
+            "input",
+            {
+              "PulumiAny": {
+                "Object": [
+                  [
+                    "",
+                    {
+                      "Bool": false
+                    }
+                  ],
+                  [
+                    "key",
+                    {
+                      "Array": [
+                        {
+                          "Expr": {
+                            "String": "value"
+                          }
+                        },
+                        {
+                          "Expr": {
+                            "String": "s"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "Export": {
+        "name": "stashInput",
+        "value": {
+          "FieldAccess": [
+            {
+              "Variable": "myStash"
+            },
+            "input"
+          ]
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "stashOutput",
+        "value": {
+          "FieldAccess": [
+            {
+              "Variable": "myStash"
+            },
+            "output"
+          ]
+        }
+      }
+    }
+  ]
+}
