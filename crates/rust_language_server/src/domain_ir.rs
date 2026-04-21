@@ -12,9 +12,25 @@ pub struct Program {
 #[derive(Clone, Debug, PartialEq, serde::Serialize)]
 pub enum Statement {
     ConfigBinding(ConfigBinding),
-    LocalBinding { name: String, value: Expr },
-    Export { name: String, value: Expr },
+    LocalBinding {
+        name: String,
+        value: Expr,
+    },
+    Export {
+        name: String,
+        value: Expr,
+    },
     RequirePulumiVersion(Expr),
+    Resource {
+        /// Rust variable name (snake_case), e.g. `my_stash`.
+        name: String,
+        /// Pulumi logical name used in the API call, e.g. `"myStash"`.
+        logical_name: String,
+        /// Normalised 3-part type token, e.g. `"pulumi:index:Stash"`.
+        token: String,
+        /// Input fields: `(field_name, value)`.
+        inputs: Vec<(String, Expr)>,
+    },
 }
 
 #[derive(Clone, Debug, PartialEq, serde::Serialize)]

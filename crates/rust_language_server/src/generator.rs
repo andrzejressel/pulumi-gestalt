@@ -16,7 +16,8 @@ pub struct GenerateResult {
 pub fn generate_main(model_program: &PclProtobufProgram) -> Result<GenerateResult> {
     let domain =
         crate::pcl_to_domain::lower(model_program).context("Failed to lower PCL to domain IR")?;
-    let rust_ir = crate::domain_to_rust::lower(&domain);
+    let rust_ir =
+        crate::domain_to_rust::lower(&domain).context("Failed to lower domain IR to Rust IR")?;
     let main_rs =
         crate::rust_to_string::render(&rust_ir).context("Failed to render Rust IR to string")?;
     Ok(GenerateResult {
