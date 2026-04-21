@@ -52,7 +52,120 @@ fn lower_statement(stmt: &Statement) -> RustStatement {
                 message: "Failed to require Pulumi version".to_string(),
             })
         }
+        Statement::Resource {
+            name,
+            logical_name,
+            token,
+            inputs,
+        } => lower_resource(name, logical_name, token, inputs),
     }
+}
+
+fn lower_resource(
+    name: &str,
+    logical_name: &str,
+    token: &str,
+    inputs: &[(String, Expr)],
+) -> RustStatement {
+    let module = token_to_module_path(token);
+    let type_name = token_to_type_name(token);
+    let args_type = format!("{}::{}Args", module, type_name);
+
+    // Build the args via the builder: ModulePath::TypeArgs::builder().field(val)...build_struct()
+    let builder_start = RustExpr::FunctionCall {
+        path: format!("{}::builder", args_type),
+        args: vec![],
+    };
+    let builder_with_fields = inputs.iter().fold(builder_start, |acc, (field, expr)| {
+        let lowered = lower_expr(expr);
+        let input_val = wrap_as_pulumi_any(lowered);
+        RustExpr::MethodCall {
+            receiver: Box::new(acc),
+            method: field.clone(),
+            type_params: vec![],
+            args: vec![input_val],
+        }
+    });
+    let args_expr = RustExpr::MethodCall {
+        receiver: Box::new(builder_with_fields),
+        method: "build_struct".to_string(),
+        type_params: vec![],
+        args: vec![],
+    };
+
+    let create_call = RustExpr::FunctionCall {
+        path: format!("{}::create", module),
+        args: vec![
+            RustExpr::Ref(Box::new(RustExpr::Identifier("ctx".to_string()))),
+            RustExpr::StringLiteral(logical_name.to_string()),
+            args_expr,
+        ],
+    };
+
+    RustStatement::Let {
+        name: name.to_string(),
+        value: create_call,
+    }
+}
+
+/// Wraps a plain value expression in `pulumi_gestalt_rust::pulumi_any!(...)`.
+///
+/// Plain literals (`"test"`, `42`, `true`, `null`) cannot be passed directly to
+/// resource input fields typed as `InputOrOutput<PulumiAny>`.  They must be
+/// wrapped.  Expressions that already produce an `Output` or are already a
+/// `pulumi_any!` invocation are passed through unchanged.
+fn wrap_as_pulumi_any(expr: RustExpr) -> RustExpr {
+    match &expr {
+        // Already wrapped — pass through.
+        RustExpr::MacroCall { path, .. } if path == "pulumi_gestalt_rust::pulumi_any!" => expr,
+        // Output-producing expressions — pass through directly.
+        RustExpr::FieldAccess(..)
+        | RustExpr::MethodCall { .. }
+        | RustExpr::FunctionCall { .. }
+        | RustExpr::Identifier(_) => expr,
+        // Plain literals and everything else — wrap in pulumi_any!.
+        _ => {
+            let body = crate::rust_to_string::render_expr(&expr);
+            RustExpr::MacroCall {
+                path: "pulumi_gestalt_rust::pulumi_any!".to_string(),
+                body,
+            }
+        }
+    }
+}
+
+/// Maps a 3-part Pulumi type token to a Rust module path.
+///
+/// Example: `"pulumi:index:Stash"` → `"pulumi_gestalt_rust::resources::stash"`
+fn token_to_module_path(token: &str) -> String {
+    let parts: Vec<&str> = token.split(':').collect();
+    // parts[0] = pkg (e.g. "pulumi"), parts[1] = module (e.g. "index"), parts[2] = type
+    let type_name = parts.get(2).copied().unwrap_or("unknown");
+    let snake_type = to_snake_case(type_name);
+    format!("pulumi_gestalt_rust::resources::{}", snake_type)
+}
+
+/// Extracts the PascalCase type name from a 3-part token.
+///
+/// Example: `"pulumi:index:Stash"` → `"Stash"`
+fn token_to_type_name(token: &str) -> String {
+    token.split(':').nth(2).unwrap_or("Unknown").to_string()
+}
+
+/// Converts a PascalCase identifier to snake_case.
+fn to_snake_case(name: &str) -> String {
+    let mut result = String::new();
+    for (i, ch) in name.chars().enumerate() {
+        if ch.is_uppercase() {
+            if i > 0 {
+                result.push('_');
+            }
+            result.push(ch.to_ascii_lowercase());
+        } else {
+            result.push(ch);
+        }
+    }
+    result
 }
 
 fn lower_config_binding(config: &ConfigBinding) -> RustStatement {
