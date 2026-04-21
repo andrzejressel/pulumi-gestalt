@@ -10,7 +10,7 @@ use crate::pcl_model::node::Value;
 use crate::pcl_model::r#type::Value::OutputType;
 use crate::pcl_model::{
     self, ConfigVariable, Expression, FunctionCallExpression, LocalVariable, Node, OutputVariable,
-    PclProtobufProgram, PulumiBlock, TemplateExpression, TupleConsExpression, expression,
+    PclProtobufProgram, PulumiBlock, Resource, TemplateExpression, TupleConsExpression, expression,
     literal_value_expression, traverse_index, traverser,
 };
 use rootcause::option_ext::OptionExt;
@@ -30,8 +30,8 @@ pub fn lower(program: &PclProtobufProgram) -> Result<Program> {
 
 fn lower_node(node: &Node) -> Result<Statement> {
     match &node.value {
-        Value::Resource(_) => {
-            bail!("Resource not yet supported")
+        Value::Resource(resource) => {
+            Ok(lower_resource(resource).context("Failed to lower resource")?)
         }
         Value::LocalVariable(local) => {
             Ok(lower_local_variable(local).context("Failed to lower local variable")?)
@@ -99,6 +99,39 @@ fn lower_pulumi_block(block: &PulumiBlock) -> Result<Statement> {
     let version =
         lower_expression(version_expr).context("Failed to lower required_version_range")?;
     Ok(Statement::RequirePulumiVersion(version))
+}
+
+fn lower_resource(resource: &Resource) -> Result<Statement> {
+    let token = normalize_token(&resource.token);
+    let inputs = resource
+        .inputs
+        .iter()
+        .map(|input| {
+            let expr =
+                lower_expression(&input.value).context("Failed to lower resource input value")?;
+            Ok((input.name.clone(), expr))
+        })
+        .collect::<Result<Vec<_>>>()
+        .context("Failed to lower resource inputs")?;
+    Ok(Statement::Resource {
+        name: resource.name.clone(),
+        logical_name: resource.logical_name.clone(),
+        token,
+        inputs,
+    })
+}
+
+/// Normalises a Pulumi type token to the canonical 3-part form.
+///
+/// A 2-part token like `"pulumi:Stash"` is expanded to `"pulumi:index:Stash"`.
+/// A 3-part token is returned unchanged.
+fn normalize_token(token: &str) -> String {
+    let parts: Vec<&str> = token.split(':').collect();
+    if parts.len() == 2 {
+        format!("{}:index:{}", parts[0], parts[1])
+    } else {
+        token.to_string()
+    }
 }
 
 fn lower_expression(expression: &Expression) -> Result<Expr> {

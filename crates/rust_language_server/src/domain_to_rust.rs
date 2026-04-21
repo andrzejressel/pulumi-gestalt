@@ -7,20 +7,26 @@ use crate::domain_ir::{
     BinOp, ConfigBinding, ConfigType, Expr, JsonValue, Program, Statement, StdlibFn, UnaryOp,
 };
 use crate::rust_ir::{RustExpr, RustFile, RustStatement};
+use rootcause::Result;
+use rootcause::bail;
+use rootcause::prelude::ResultExt;
 
-pub fn lower(program: &Program) -> RustFile {
-    RustFile {
-        statements: program.statements.iter().map(lower_statement).collect(),
-    }
+pub fn lower(program: &Program) -> Result<RustFile> {
+    let statements = program
+        .statements
+        .iter()
+        .map(lower_statement)
+        .collect::<Result<Vec<_>>>()?;
+    Ok(RustFile { statements })
 }
 
-fn lower_statement(stmt: &Statement) -> RustStatement {
+fn lower_statement(stmt: &Statement) -> Result<RustStatement> {
     match stmt {
-        Statement::ConfigBinding(config) => lower_config_binding(config),
-        Statement::LocalBinding { name, value } => RustStatement::Let {
+        Statement::ConfigBinding(config) => Ok(lower_config_binding(config)),
+        Statement::LocalBinding { name, value } => Ok(RustStatement::Let {
             name: name.clone(),
             value: lower_expr(value),
-        },
+        }),
         Statement::Export { name, value } => {
             let lowered = lower_expr(value);
             let arg = match &lowered {
@@ -33,16 +39,16 @@ fn lower_statement(stmt: &Statement) -> RustStatement {
                 })),
                 other => RustExpr::Ref(Box::new(other.clone())),
             };
-            RustStatement::Expr(RustExpr::MethodCall {
+            Ok(RustStatement::Expr(RustExpr::MethodCall {
                 receiver: Box::new(RustExpr::Identifier("ctx".to_string())),
                 method: "add_export".to_string(),
                 type_params: vec![],
                 args: vec![RustExpr::StringLiteral(name.clone()), arg],
-            })
+            }))
         }
         Statement::RequirePulumiVersion(version) => {
             let version_expr = lower_expr(version);
-            RustStatement::Expr(RustExpr::Expect {
+            Ok(RustStatement::Expr(RustExpr::Expect {
                 expr: Box::new(RustExpr::MethodCall {
                     receiver: Box::new(RustExpr::Identifier("ctx".to_string())),
                     method: "require_pulumi_version".to_string(),
@@ -50,8 +56,97 @@ fn lower_statement(stmt: &Statement) -> RustStatement {
                     args: vec![RustExpr::Ref(Box::new(version_expr))],
                 }),
                 message: "Failed to require Pulumi version".to_string(),
-            })
+            }))
         }
+        Statement::Resource {
+            name,
+            logical_name,
+            token,
+            inputs,
+        } => Ok(lower_resource(name, logical_name, token, inputs)
+            .context_with(|| format!("Failed to lower statement [{:?}]", stmt))?),
+    }
+}
+
+fn lower_resource(
+    name: &str,
+    logical_name: &str,
+    token: &str,
+    inputs: &[(String, Expr)],
+) -> Result<RustStatement> {
+    let (module_path, struct_name) =
+        get_full_resource_path(token).context("Failed to resolve resource token")?;
+
+    // Build the args via the builder: ModulePath::TypeArgs::builder().field(val)...build_struct()
+    let builder_start = RustExpr::FunctionCall {
+        path: format!("{module_path}::{struct_name}Args::builder"),
+        args: vec![],
+    };
+    let builder_with_fields = inputs.iter().fold(builder_start, |acc, (field, expr)| {
+        let lowered = lower_expr(expr);
+        let input_val = wrap_as_pulumi_any(lowered);
+        RustExpr::MethodCall {
+            receiver: Box::new(acc),
+            method: field.clone(),
+            type_params: vec![],
+            args: vec![input_val],
+        }
+    });
+    let args_expr = RustExpr::MethodCall {
+        receiver: Box::new(builder_with_fields),
+        method: "build_struct".to_string(),
+        type_params: vec![],
+        args: vec![],
+    };
+
+    let create_call = RustExpr::FunctionCall {
+        path: format!("{module_path}::create"),
+        args: vec![
+            RustExpr::Ref(Box::new(RustExpr::Identifier("ctx".to_string()))),
+            RustExpr::StringLiteral(logical_name.to_string()),
+            args_expr,
+        ],
+    };
+
+    Ok(RustStatement::Let {
+        name: name.to_string(),
+        value: create_call,
+    })
+}
+
+/// Wraps a plain value expression in `pulumi_gestalt_rust::pulumi_any!(...)`.
+///
+/// Plain literals (`"test"`, `42`, `true`, `null`) cannot be passed directly to
+/// resource input fields typed as `InputOrOutput<PulumiAny>`.  They must be
+/// wrapped.  Expressions that already produce an `Output` or are already a
+/// `pulumi_any!` invocation are passed through unchanged.
+fn wrap_as_pulumi_any(expr: RustExpr) -> RustExpr {
+    match &expr {
+        // Already wrapped — pass through.
+        RustExpr::MacroCall { path, .. } if path == "pulumi_gestalt_rust::pulumi_any!" => expr,
+        // Output-producing expressions — pass through directly.
+        RustExpr::FieldAccess(..)
+        | RustExpr::MethodCall { .. }
+        | RustExpr::FunctionCall { .. }
+        | RustExpr::Identifier(_) => expr,
+        // Plain literals and everything else — wrap in pulumi_any!.
+        _ => {
+            let body = crate::rust_to_string::render_expr(&expr);
+            RustExpr::MacroCall {
+                path: "pulumi_gestalt_rust::pulumi_any!".to_string(),
+                body,
+            }
+        }
+    }
+}
+
+fn get_full_resource_path(token: &str) -> Result<(String, String)> {
+    match token {
+        "pulumi:index:Stash" => Ok((
+            "pulumi_gestalt_rust::resources::stash".to_string(),
+            "Stash".to_string(),
+        )),
+        another => bail!("Unknown resource token: {}", another),
     }
 }
 
